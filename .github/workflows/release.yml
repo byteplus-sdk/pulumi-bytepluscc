@@ -1,0 +1,187 @@
+# This GitHub action can publish assets for release when a tag is created.
+# Currently its setup to run on any tag that matches the pattern "v*" (ie. v0.1.0).
+#
+# This uses an action (hashicorp/ghaction-import-gpg) that assumes you set your
+# private key in the `GPG_PRIVATE_KEY` secret and passphrase in the `PASSPHRASE`
+# secret. If you would rather own your own GPG handling, please fork this action
+# or use an alternative one for key handling.
+#
+# You will need to pass the `--batch` flag to `gpg` in your signing step
+# in `goreleaser` to indicate this is being used in a non-interactive mode.
+#
+name: release
+on:
+  push:
+    tags:
+      - 'v*'
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+  PUBLISH_NPM: true
+  NPM_REGISTRY_URL: https://registry.npmjs.org
+  # IF YOU NEED TO PUBLISH A NUGET PACKAGE THEN ENSURE AN NUGET_PUBLISH_KEY
+  # SECRET IS SET AND PUBLISH_NUGET: TRUE. IF YOU WANT TO PUBLISH TO AN ALTERNATIVE
+  # NPM REGISTRY THEN ENSURE THE NPM_REGISTRY_URL IS CHANGED
+  NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_TOKEN }}
+  NUGET_FEED_URL: https://api.nuget.org/v3/index.json
+  PUBLISH_NUGET: true
+  # IF YOU NEED TO PUBLISH A PYPI PACKAGE THEN ENSURE AN PYPI_API_TOKEN
+  # SECRET IS SET AND PUBLISH_PYPI: TRUE. IF YOU WANT TO PUBLISH TO AN ALTERNATIVE
+  # PYPI REGISTRY THEN ENSURE THE PYPI_REPOSITORY_URL IS SET. IF YOU ARE USING AN API_TOKEN THEN
+  # YOU DO NOT NEED TO CHANGE THE PYPI_USERNAME (__token__) , IF YOU ARE USING PASSWORD AUTHENTICATION THEN YOU WILL
+  # NEED TO CHANGE TO USE THE CORRECT PASSWORD
+  PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+  PYPI_USERNAME: "__token__"
+  PYPI_REPOSITORY_URL: ""
+  PUBLISH_PYPI: true
+
+  PUBLISH_GO: true
+  PUBLISH_JAVA: true
+  SIGNING_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+  SIGNING_PASSWORD: ${{ secrets.PASSPHRASE }}
+  PUBLISH_REPO_USERNAME: ${{secrets.PUBLISH_REPO_USERNAME}}
+  PUBLISH_REPO_PASSWORD: ${{secrets.PUBLISH_REPO_PASSWORD}}
+
+permissions:
+  contents: write
+jobs:
+  publish_binary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Unshallow
+        run: git fetch --prune --unshallow
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.21'
+      - name: Install pulumictl
+        uses: jaxxstorm/action-install-gh-release@v1.5.0
+        with:
+          repo: pulumi/pulumictl
+          tag: v0.0.32
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v3.0.0
+        with:
+          version: v1.26.2
+          args: release --rm-dist
+        env:
+          GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+          # GitHub sets this automatically
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish_sdk:
+    name: Publish SDKs
+    runs-on: ubuntu-latest
+    needs: publish_binary
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Unshallow clone for tags
+        run: git fetch --prune --unshallow --tags
+      - id: version
+        uses: pulumi/provider-version-action@v1
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.goversion }}
+      - name: Install pulumictl
+        uses: jaxxstorm/action-install-gh-release@v1.5.0
+        with:
+          repo: pulumi/pulumictl
+          tag: v0.0.32
+      - name: Install Pulumi CLI
+        uses: pulumi/action-install-pulumi-cli@v2.0.0
+        with:
+          pulumi-version: 3.76.1
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.nodeversion }}
+          registry-url: ${{ env.NPM_REGISTRY_URL }}
+      - name: Setup DotNet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnetverson }}
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.pythonversion }}
+      - name: Build SDK
+        run: make build_${{ matrix.language }}
+      - name: Check worktree clean
+        run: |
+          git update-index -q --refresh
+          if ! git diff-files --quiet; then
+              >&2 echo "error: working tree is not clean, aborting!"
+              git status
+              git diff
+              exit 1
+          fi
+      - if: ${{ matrix.language == 'python' && env.PUBLISH_PYPI == 'true' }}
+        name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: ${{ env.PYPI_USERNAME }}
+          password: ${{ env.PYPI_PASSWORD }}
+          packages_dir: ${{ github.workspace }}/sdk/python/bin/dist
+        continue-on-error: true
+      - if: ${{ matrix.language == 'nodejs' && env.PUBLISH_NPM == 'true' }}
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          access: "public"
+          token: ${{ env.NPM_TOKEN }}
+          package: ${{ github.workspace }}/sdk/nodejs/bin/package.json
+        continue-on-error: true
+      - if: ${{ matrix.language == 'dotnet' && env.PUBLISH_NUGET == 'true' }}
+        name: publish nuget package
+        run: |
+          dotnet nuget push ${{ github.workspace }}/sdk/dotnet/bin/Debug/*.nupkg -s ${{ env.NUGET_FEED_URL }} -k ${{ env.NUGET_PUBLISH_KEY }}
+          echo "done publishing packages"
+        continue-on-error: true
+      - if: ${{ matrix.language == 'go' && env.PUBLISH_GO == 'true' }}
+        uses: pulumi/publish-go-sdk-action@v1
+        with:
+          repository: ${{ github.repository }}
+          base-ref: ${{ github.sha }}
+          source: sdk
+          path: sdk
+          version: ${{ steps.version.outputs.version }}
+          additive: false
+        continue-on-error: true
+      - if: ${{ matrix.language == 'java' && env.PUBLISH_JAVA == 'true' }}
+        uses: gradle/gradle-build-action@9b814496b50909128c6a52622b416c5ffa04db49
+        env:
+          PACKAGE_VERSION: ${{ steps.version.outputs.version }}
+        with:
+          arguments: publishToSonatype closeAndReleaseSonatypeStagingRepository
+          build-root-directory: ./sdk/java
+          gradle-version: ${{ matrix.gradleversion }}
+        continue-on-error: true
+    strategy:
+      fail-fast: true
+      matrix:
+        dotnetversion:
+          - 6.0.408
+        goversion:
+          - "1.21"
+        language:
+          - nodejs
+          - python
+          - dotnet
+          - go
+          - java
+        nodeversion:
+          - 23.x
+        pythonversion:
+          - "3.9"
+        javaversion:
+          - "1.8"
+        gradleversion:
+          - "7.4.1"

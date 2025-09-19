@@ -1,0 +1,29 @@
+{
+    "name": "@byteplus/pulumi-bytepluscc",
+    "version": "${VERSION}",
+    "description": "A Pulumi package to safely use randomness in Pulumi programs.",
+    "keywords": [
+        "byteplus",
+        "bytepluscc",
+        "category/cloud"
+    ],
+    "homepage": "https://github.com/byteplus/pulumi-bytepluscc",
+    "repository": "https://github.com/byteplus/pulumi-bytepluscc",
+    "license": "MPL-2.0",
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3.142.0"
+    },
+    "devDependencies": {
+        "@types/mime": "^2.0.0",
+        "@types/node": "^10.0.0",
+        "typescript": "^4.3.5"
+    },
+    "pulumi": {
+        "resource": true,
+        "name": "bytepluscc",
+        "server": "github://api.github.com/byteplus"
+    }
+}

@@ -1,0 +1,1127 @@
+{
+    "name": "bytepluscc",
+    "description": "A Pulumi package to safely use randomness in Pulumi programs.",
+    "keywords": [
+        "byteplus",
+        "bytepluscc",
+        "category/cloud"
+    ],
+    "homepage": "https://github.com/byteplus/pulumi-bytepluscc",
+    "license": "MPL-2.0",
+    "attribution": "This Pulumi package is based on the [`bytepluscc` Terraform Provider](https://github.com/byteplus/terraform-provider-bytepluscc).",
+    "repository": "https://github.com/byteplus/pulumi-bytepluscc",
+    "logoUrl": "https://avatars.githubusercontent.com/u/67365215",
+    "pluginDownloadURL": "github://api.github.com/byteplus",
+    "publisher": "Byteplus",
+    "meta": {
+        "moduleFormat": "(.*)(?:/[^/]*)"
+    },
+    "language": {
+        "csharp": {
+            "packageReferences": {
+                "Pulumi": "3.*"
+            },
+            "compatibility": "tfbridge20"
+        },
+        "go": {
+            "importBasePath": "github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc",
+            "generateResourceContainerTypes": true,
+            "generateExtraInputTypes": true,
+            "respectSchemaVersion": true
+        },
+        "java": {
+            "basePackage": "com.byteplus",
+            "buildFiles": "",
+            "gradleNexusPublishPluginVersion": "",
+            "gradleTest": ""
+        },
+        "nodejs": {
+            "packageName": "@byteplus/pulumi-bytepluscc",
+            "packageDescription": "A Pulumi package to safely use randomness in Pulumi programs.",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/byteplus/terraform-provider-bytepluscc)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-bytepluscc` repo](https://github.com/byteplus/pulumi-bytepluscc/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-bytepluscc` repo](https://github.com/byteplus/terraform-provider-bytepluscc/issues).",
+            "devDependencies": {
+                "@types/mime": "^2.0.0",
+                "@types/node": "^10.0.0"
+            },
+            "compatibility": "tfbridge20",
+            "disableUnionOutputTypes": true
+        },
+        "python": {
+            "packageName": "pulumi_bytepluscc",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/byteplus/terraform-provider-bytepluscc)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-bytepluscc` repo](https://github.com/byteplus/pulumi-bytepluscc/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-bytepluscc` repo](https://github.com/byteplus/terraform-provider-bytepluscc/issues).",
+            "compatibility": "tfbridge20",
+            "pyproject": {}
+        }
+    },
+    "config": {
+        "variables": {
+            "accessKey": {
+                "type": "string",
+                "description": "The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`\nenvironment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_ACCESS_KEY"
+                    ]
+                }
+            },
+            "assumeRole": {
+                "$ref": "#/types/bytepluscc:config/assumeRole:assumeRole",
+                "description": "An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.\n"
+            },
+            "customerHeaders": {
+                "type": "string",
+                "description": "CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and\ncolons (:) to separate each header key from its corresponding value.\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_CUSTOMER_HEADERS"
+                    ]
+                }
+            },
+            "disableSsl": {
+                "type": "boolean",
+                "description": "Disable SSL for Byteplus Provider\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_DISABLE_SSL"
+                    ]
+                }
+            },
+            "endpoints": {
+                "$ref": "#/types/bytepluscc:config/endpoints:endpoints",
+                "description": "An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.\n"
+            },
+            "proxyUrl": {
+                "type": "string",
+                "description": "PROXY URL for Byteplus Provider\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_PROXY_URL"
+                    ]
+                }
+            },
+            "region": {
+                "type": "string",
+                "description": "The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment\nvariable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_REGION"
+                    ]
+                }
+            },
+            "secretKey": {
+                "type": "string",
+                "description": "he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`\nenvironment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_SECRET_KEY"
+                    ]
+                }
+            }
+        }
+    },
+    "types": {
+        "bytepluscc:config/assumeRole:assumeRole": {
+            "properties": {
+                "assumeRoleTrn": {
+                    "type": "string",
+                    "description": "he TRN of the role to assume.\n"
+                },
+                "durationSeconds": {
+                    "type": "integer",
+                    "description": "The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.\n"
+                },
+                "policy": {
+                    "type": "string",
+                    "description": "A more restrictive policy when making the AssumeRole call\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "assumeRoleTrn"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:config/endpoints:endpoints": {
+            "properties": {
+                "cloudcontrolapi": {
+                    "type": "string",
+                    "description": "Use this to override the default Cloud Control API service endpoint URL\n"
+                },
+                "sts": {
+                    "type": "string",
+                    "description": "Use this to override the default STS service endpoint URL\n"
+                }
+            },
+            "type": "object"
+        },
+        "bytepluscc:ecs/ImageDetectionResults:ImageDetectionResults": {
+            "properties": {
+                "detectionStatus": {
+                    "type": "string",
+                    "description": "检测状态。可以选择Finished（已完成）、Processing（处理中）类型。\n"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/ImageDetectionResultsItem:ImageDetectionResultsItem"
+                    }
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "detectionStatus",
+                        "items"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/ImageDetectionResultsItem:ImageDetectionResultsItem": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "检测项名称。\n"
+                },
+                "result": {
+                    "type": "string",
+                    "description": "该检测项对应结果。\n"
+                },
+                "riskCode": {
+                    "type": "string",
+                    "description": "风险描述码。\n"
+                },
+                "riskLevel": {
+                    "type": "string",
+                    "description": "风险等级。若该参数返回值为空，表示无风险。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "name",
+                        "result",
+                        "riskCode",
+                        "riskLevel"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/ImageSnapshot:ImageSnapshot": {
+            "properties": {
+                "size": {
+                    "type": "integer",
+                    "description": "快照大小。单位为GiB。\n"
+                },
+                "snapshotId": {
+                    "type": "string",
+                    "description": "快照ID。\n"
+                },
+                "volumeKind": {
+                    "type": "string",
+                    "description": "云盘种类。system：系统盘。data：数据盘。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "size",
+                        "snapshotId",
+                        "volumeKind"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/ImageTag:ImageTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "镜像标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "镜像标签的值。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/getImageDetectionResults:getImageDetectionResults": {
+            "properties": {
+                "detectionStatus": {
+                    "type": "string",
+                    "description": "检测状态。可以选择Finished（已完成）、Processing（处理中）类型。\n"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/getImageDetectionResultsItem:getImageDetectionResultsItem"
+                    },
+                    "description": "镜像检测项详情。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "detectionStatus",
+                "items"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getImageDetectionResultsItem:getImageDetectionResultsItem": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "检测项名称。\n"
+                },
+                "result": {
+                    "type": "string",
+                    "description": "该检测项对应结果。\n"
+                },
+                "riskCode": {
+                    "type": "string",
+                    "description": "风险描述码。\n"
+                },
+                "riskLevel": {
+                    "type": "string",
+                    "description": "风险等级。若该参数返回值为空，表示无风险。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "result",
+                "riskCode",
+                "riskLevel"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getImageSnapshot:getImageSnapshot": {
+            "properties": {
+                "size": {
+                    "type": "integer",
+                    "description": "快照大小。单位为GiB。\n"
+                },
+                "snapshotId": {
+                    "type": "string",
+                    "description": "快照ID。\n"
+                },
+                "volumeKind": {
+                    "type": "string",
+                    "description": "云盘种类。system：系统盘。data：数据盘。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "size",
+                "snapshotId",
+                "volumeKind"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getImageTag:getImageTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "镜像标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "镜像标签的值。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:index/ProviderAssumeRole:ProviderAssumeRole": {
+            "properties": {
+                "assumeRoleTrn": {
+                    "type": "string",
+                    "description": "he TRN of the role to assume.\n"
+                },
+                "durationSeconds": {
+                    "type": "integer",
+                    "description": "The duration of the session when making the AssumeRole call. Its value ranges from 900 to 43200(seconds), and default is 3600 seconds.\n"
+                },
+                "policy": {
+                    "type": "string",
+                    "description": "A more restrictive policy when making the AssumeRole call\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "assumeRoleTrn"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": []
+                }
+            }
+        },
+        "bytepluscc:index/ProviderEndpoints:ProviderEndpoints": {
+            "properties": {
+                "cloudcontrolapi": {
+                    "type": "string",
+                    "description": "Use this to override the default Cloud Control API service endpoint URL\n"
+                },
+                "sts": {
+                    "type": "string",
+                    "description": "Use this to override the default STS service endpoint URL\n"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "provider": {
+        "description": "The provider type for the bytepluscc package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
+        "properties": {
+            "accessKey": {
+                "type": "string",
+                "description": "The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`\nenvironment variable\n"
+            },
+            "assumeRole": {
+                "$ref": "#/types/bytepluscc:index/ProviderAssumeRole:ProviderAssumeRole",
+                "description": "An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.\n"
+            },
+            "customerHeaders": {
+                "type": "string",
+                "description": "CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and\ncolons (:) to separate each header key from its corresponding value.\n"
+            },
+            "disableSsl": {
+                "type": "boolean",
+                "description": "Disable SSL for Byteplus Provider\n"
+            },
+            "endpoints": {
+                "$ref": "#/types/bytepluscc:index/ProviderEndpoints:ProviderEndpoints",
+                "description": "An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.\n"
+            },
+            "proxyUrl": {
+                "type": "string",
+                "description": "PROXY URL for Byteplus Provider\n"
+            },
+            "region": {
+                "type": "string",
+                "description": "The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment\nvariable\n"
+            },
+            "secretKey": {
+                "type": "string",
+                "description": "he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`\nenvironment variable\n"
+            }
+        },
+        "inputProperties": {
+            "accessKey": {
+                "type": "string",
+                "description": "The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`\nenvironment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_ACCESS_KEY"
+                    ]
+                }
+            },
+            "assumeRole": {
+                "$ref": "#/types/bytepluscc:index/ProviderAssumeRole:ProviderAssumeRole",
+                "description": "An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.\n"
+            },
+            "customerHeaders": {
+                "type": "string",
+                "description": "CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and\ncolons (:) to separate each header key from its corresponding value.\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_CUSTOMER_HEADERS"
+                    ]
+                }
+            },
+            "disableSsl": {
+                "type": "boolean",
+                "description": "Disable SSL for Byteplus Provider\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_DISABLE_SSL"
+                    ]
+                }
+            },
+            "endpoints": {
+                "$ref": "#/types/bytepluscc:index/ProviderEndpoints:ProviderEndpoints",
+                "description": "An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.\n"
+            },
+            "proxyUrl": {
+                "type": "string",
+                "description": "PROXY URL for Byteplus Provider\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_PROXY_URL"
+                    ]
+                }
+            },
+            "region": {
+                "type": "string",
+                "description": "The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment\nvariable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_REGION"
+                    ]
+                }
+            },
+            "secretKey": {
+                "type": "string",
+                "description": "he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`\nenvironment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_SECRET_KEY"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "terraformConfig": "pulumi:providers:bytepluscc/terraformConfig"
+        }
+    },
+    "resources": {
+        "bytepluscc:ecs/image:Image": {
+            "description": "镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst imageDemo = new bytepluscc.ecs.Image(\"ImageDemo\", {\n    bootMode: \"UEFI\",\n    description: \"ImageDemo Example\",\n    imageName: \"image-demo\",\n    instanceId: \"i-ydzhj1el8gr9cxxdnxxxx\",\n    kernel: \"Linux\",\n    licenseType: \"BYOL\",\n    osName: \"CentOS\",\n    osType: \"Linux\",\n    platform: \"CentOS\",\n    platformVersion: \"8.3\",\n    projectName: \"default\",\n    sharePermissions: [\"2000000***\"],\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nimage_demo = bytepluscc.ecs.Image(\"ImageDemo\",\n    boot_mode=\"UEFI\",\n    description=\"ImageDemo Example\",\n    image_name=\"image-demo\",\n    instance_id=\"i-ydzhj1el8gr9cxxdnxxxx\",\n    kernel=\"Linux\",\n    license_type=\"BYOL\",\n    os_name=\"CentOS\",\n    os_type=\"Linux\",\n    platform=\"CentOS\",\n    platform_version=\"8.3\",\n    project_name=\"default\",\n    share_permissions=[\"2000000***\"],\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var imageDemo = new Bytepluscc.Ecs.Image(\"ImageDemo\", new()\n    {\n        BootMode = \"UEFI\",\n        Description = \"ImageDemo Example\",\n        ImageName = \"image-demo\",\n        InstanceId = \"i-ydzhj1el8gr9cxxdnxxxx\",\n        Kernel = \"Linux\",\n        LicenseType = \"BYOL\",\n        OsName = \"CentOS\",\n        OsType = \"Linux\",\n        Platform = \"CentOS\",\n        PlatformVersion = \"8.3\",\n        ProjectName = \"default\",\n        SharePermissions = new[]\n        {\n            \"2000000***\",\n        },\n        Tags = new[]\n        {\n            new Bytepluscc.Ecs.Inputs.ImageTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc/ecs\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := ecs.NewImage(ctx, \"ImageDemo\", \u0026ecs.ImageArgs{\n\t\t\tBootMode:        pulumi.String(\"UEFI\"),\n\t\t\tDescription:     pulumi.String(\"ImageDemo Example\"),\n\t\t\tImageName:       pulumi.String(\"image-demo\"),\n\t\t\tInstanceId:      pulumi.String(\"i-ydzhj1el8gr9cxxdnxxxx\"),\n\t\t\tKernel:          pulumi.String(\"Linux\"),\n\t\t\tLicenseType:     pulumi.String(\"BYOL\"),\n\t\t\tOsName:          pulumi.String(\"CentOS\"),\n\t\t\tOsType:          pulumi.String(\"Linux\"),\n\t\t\tPlatform:        pulumi.String(\"CentOS\"),\n\t\t\tPlatformVersion: pulumi.String(\"8.3\"),\n\t\t\tProjectName:     pulumi.String(\"default\"),\n\t\t\tSharePermissions: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"2000000***\"),\n\t\t\t},\n\t\t\tTags: ecs.ImageTagArray{\n\t\t\t\t\u0026ecs.ImageTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.ecs.Image;\nimport com.byteplus.bytepluscc.ecs.ImageArgs;\nimport com.pulumi.bytepluscc.ecs.inputs.ImageTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var imageDemo = new Image(\"imageDemo\", ImageArgs.builder()\n            .bootMode(\"UEFI\")\n            .description(\"ImageDemo Example\")\n            .imageName(\"image-demo\")\n            .instanceId(\"i-ydzhj1el8gr9cxxdnxxxx\")\n            .kernel(\"Linux\")\n            .licenseType(\"BYOL\")\n            .osName(\"CentOS\")\n            .osType(\"Linux\")\n            .platform(\"CentOS\")\n            .platformVersion(\"8.3\")\n            .projectName(\"default\")\n            .sharePermissions(\"2000000***\")\n            .tags(ImageTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  imageDemo:\n    type: bytepluscc:ecs:Image\n    name: ImageDemo\n    properties:\n      bootMode: UEFI\n      description: ImageDemo Example\n      imageName: image-demo\n      instanceId: i-ydzhj1el8gr9cxxdnxxxx\n      kernel: Linux\n      licenseType: BYOL\n      osName: CentOS\n      osType: Linux\n      platform: CentOS\n      platformVersion: '8.3'\n      projectName: default\n      sharePermissions:\n        - 2000000***\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:ecs/image:Image example \"image_id\"\n```\n\n",
+            "properties": {
+                "architecture": {
+                    "type": "string",
+                    "description": "镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。\n"
+                },
+                "bootMode": {
+                    "type": "string",
+                    "description": "镜像的启动模式。可以选择BIOS、UEFI类型。\n"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "description": "镜像创建时间\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。\n"
+                },
+                "detectionResults": {
+                    "$ref": "#/types/bytepluscc:ecs/ImageDetectionResults:ImageDetectionResults",
+                    "description": "镜像的检测结果。\n"
+                },
+                "imageId": {
+                    "type": "string",
+                    "description": "镜像ID。\n"
+                },
+                "imageName": {
+                    "type": "string",
+                    "description": "镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。\n"
+                },
+                "imageOwnerId": {
+                    "type": "string",
+                    "description": "镜像所属的账号ID。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。\n"
+                },
+                "isInstallRunCommandAgent": {
+                    "type": "boolean",
+                    "description": "镜像中是否安装了云助手Agent。\n"
+                },
+                "isLts": {
+                    "type": "boolean",
+                    "description": "公共镜像是否长期维护。\n"
+                },
+                "isSupportCloudInit": {
+                    "type": "boolean",
+                    "description": "镜像是否支持Cloud-init。\n"
+                },
+                "kernel": {
+                    "type": "string",
+                    "description": "镜像的内核版本。\n"
+                },
+                "licenseType": {
+                    "type": "string",
+                    "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
+                },
+                "osName": {
+                    "type": "string",
+                    "description": "镜像操作系统的名称。\n"
+                },
+                "osType": {
+                    "type": "string",
+                    "description": "操作系统类型。\n"
+                },
+                "platform": {
+                    "type": "string",
+                    "description": "镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。\n"
+                },
+                "platformVersion": {
+                    "type": "string",
+                    "description": "镜像的发行版本。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。\n"
+                },
+                "sharePermissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "镜像共享的账户\n"
+                },
+                "shareStatus": {
+                    "type": "string",
+                    "description": "镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。\n"
+                },
+                "size": {
+                    "type": "integer",
+                    "description": "镜像大小，单位为GiB。\n"
+                },
+                "snapshotGroupId": {
+                    "type": "string",
+                    "description": "快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。\n"
+                },
+                "snapshotId": {
+                    "type": "string",
+                    "description": "系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。\n"
+                },
+                "snapshots": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/ImageSnapshot:ImageSnapshot"
+                    }
+                },
+                "status": {
+                    "type": "string",
+                    "description": "镜像的状态。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/ImageTag:ImageTag"
+                    }
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "镜像更新时间\n"
+                },
+                "virtualSize": {
+                    "type": "number",
+                    "description": "镜像大小，单位为Byte。\n"
+                },
+                "visibility": {
+                    "type": "string",
+                    "description": "镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。\n"
+                }
+            },
+            "required": [
+                "architecture",
+                "bootMode",
+                "createdAt",
+                "description",
+                "detectionResults",
+                "imageId",
+                "imageName",
+                "imageOwnerId",
+                "instanceId",
+                "isInstallRunCommandAgent",
+                "isLts",
+                "isSupportCloudInit",
+                "kernel",
+                "licenseType",
+                "osName",
+                "osType",
+                "platform",
+                "platformVersion",
+                "projectName",
+                "sharePermissions",
+                "shareStatus",
+                "size",
+                "snapshotGroupId",
+                "snapshotId",
+                "snapshots",
+                "status",
+                "tags",
+                "updatedAt",
+                "virtualSize",
+                "visibility"
+            ],
+            "inputProperties": {
+                "bootMode": {
+                    "type": "string",
+                    "description": "镜像的启动模式。可以选择BIOS、UEFI类型。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。\n"
+                },
+                "detectionResults": {
+                    "$ref": "#/types/bytepluscc:ecs/ImageDetectionResults:ImageDetectionResults",
+                    "description": "镜像的检测结果。\n"
+                },
+                "imageName": {
+                    "type": "string",
+                    "description": "镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。\n"
+                },
+                "kernel": {
+                    "type": "string",
+                    "description": "镜像的内核版本。\n"
+                },
+                "licenseType": {
+                    "type": "string",
+                    "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
+                },
+                "osName": {
+                    "type": "string",
+                    "description": "镜像操作系统的名称。\n"
+                },
+                "osType": {
+                    "type": "string",
+                    "description": "操作系统类型。\n"
+                },
+                "platform": {
+                    "type": "string",
+                    "description": "镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。\n"
+                },
+                "platformVersion": {
+                    "type": "string",
+                    "description": "镜像的发行版本。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。\n"
+                },
+                "sharePermissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "镜像共享的账户\n"
+                },
+                "snapshotGroupId": {
+                    "type": "string",
+                    "description": "快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。\n"
+                },
+                "snapshotId": {
+                    "type": "string",
+                    "description": "系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/ImageTag:ImageTag"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "imageName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Image resources.\n",
+                "properties": {
+                    "architecture": {
+                        "type": "string",
+                        "description": "镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。\n"
+                    },
+                    "bootMode": {
+                        "type": "string",
+                        "description": "镜像的启动模式。可以选择BIOS、UEFI类型。\n"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "镜像创建时间\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。\n"
+                    },
+                    "detectionResults": {
+                        "$ref": "#/types/bytepluscc:ecs/ImageDetectionResults:ImageDetectionResults",
+                        "description": "镜像的检测结果。\n"
+                    },
+                    "imageId": {
+                        "type": "string",
+                        "description": "镜像ID。\n"
+                    },
+                    "imageName": {
+                        "type": "string",
+                        "description": "镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。\n"
+                    },
+                    "imageOwnerId": {
+                        "type": "string",
+                        "description": "镜像所属的账号ID。\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。\n"
+                    },
+                    "isInstallRunCommandAgent": {
+                        "type": "boolean",
+                        "description": "镜像中是否安装了云助手Agent。\n"
+                    },
+                    "isLts": {
+                        "type": "boolean",
+                        "description": "公共镜像是否长期维护。\n"
+                    },
+                    "isSupportCloudInit": {
+                        "type": "boolean",
+                        "description": "镜像是否支持Cloud-init。\n"
+                    },
+                    "kernel": {
+                        "type": "string",
+                        "description": "镜像的内核版本。\n"
+                    },
+                    "licenseType": {
+                        "type": "string",
+                        "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
+                    },
+                    "osName": {
+                        "type": "string",
+                        "description": "镜像操作系统的名称。\n"
+                    },
+                    "osType": {
+                        "type": "string",
+                        "description": "操作系统类型。\n"
+                    },
+                    "platform": {
+                        "type": "string",
+                        "description": "镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。\n"
+                    },
+                    "platformVersion": {
+                        "type": "string",
+                        "description": "镜像的发行版本。\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。\n"
+                    },
+                    "sharePermissions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "镜像共享的账户\n"
+                    },
+                    "shareStatus": {
+                        "type": "string",
+                        "description": "镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。\n"
+                    },
+                    "size": {
+                        "type": "integer",
+                        "description": "镜像大小，单位为GiB。\n"
+                    },
+                    "snapshotGroupId": {
+                        "type": "string",
+                        "description": "快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。\n"
+                    },
+                    "snapshotId": {
+                        "type": "string",
+                        "description": "系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。\n"
+                    },
+                    "snapshots": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/ImageSnapshot:ImageSnapshot"
+                        }
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "镜像的状态。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/ImageTag:ImageTag"
+                        }
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "镜像更新时间\n"
+                    },
+                    "virtualSize": {
+                        "type": "number",
+                        "description": "镜像大小，单位为Byte。\n"
+                    },
+                    "visibility": {
+                        "type": "string",
+                        "description": "镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。\n"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "functions": {
+        "bytepluscc:ecs/getImage:getImage": {
+            "description": "Data Source schema for Volcengine::ECS::Image\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getImage.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getImage.\n",
+                "properties": {
+                    "architecture": {
+                        "description": "镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。\n",
+                        "type": "string"
+                    },
+                    "bootMode": {
+                        "description": "镜像的启动模式。可以选择BIOS、UEFI类型。\n",
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "description": "镜像创建时间\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。\n",
+                        "type": "string"
+                    },
+                    "detectionResults": {
+                        "$ref": "#/types/bytepluscc:ecs/getImageDetectionResults:getImageDetectionResults",
+                        "description": "镜像的检测结果。\n"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "imageId": {
+                        "description": "镜像ID。\n",
+                        "type": "string"
+                    },
+                    "imageName": {
+                        "description": "镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。\n",
+                        "type": "string"
+                    },
+                    "imageOwnerId": {
+                        "description": "镜像所属的账号ID。\n",
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "description": "实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。\n",
+                        "type": "string"
+                    },
+                    "isInstallRunCommandAgent": {
+                        "description": "镜像中是否安装了云助手Agent。\n",
+                        "type": "boolean"
+                    },
+                    "isLts": {
+                        "description": "公共镜像是否长期维护。\n",
+                        "type": "boolean"
+                    },
+                    "isSupportCloudInit": {
+                        "description": "镜像是否支持Cloud-init。\n",
+                        "type": "boolean"
+                    },
+                    "kernel": {
+                        "description": "镜像的内核版本。\n",
+                        "type": "string"
+                    },
+                    "licenseType": {
+                        "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n",
+                        "type": "string"
+                    },
+                    "osName": {
+                        "description": "镜像操作系统的名称。\n",
+                        "type": "string"
+                    },
+                    "osType": {
+                        "description": "操作系统类型。\n",
+                        "type": "string"
+                    },
+                    "platform": {
+                        "description": "镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。\n",
+                        "type": "string"
+                    },
+                    "platformVersion": {
+                        "description": "镜像的发行版本。\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。\n",
+                        "type": "string"
+                    },
+                    "sharePermissions": {
+                        "description": "镜像共享的账户\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "shareStatus": {
+                        "description": "镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。\n",
+                        "type": "string"
+                    },
+                    "size": {
+                        "description": "镜像大小，单位为GiB。\n",
+                        "type": "integer"
+                    },
+                    "snapshotGroupId": {
+                        "description": "快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。\n",
+                        "type": "string"
+                    },
+                    "snapshotId": {
+                        "description": "系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。\n",
+                        "type": "string"
+                    },
+                    "snapshots": {
+                        "description": "镜像关联快照的信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/getImageSnapshot:getImageSnapshot"
+                        },
+                        "type": "array"
+                    },
+                    "status": {
+                        "description": "镜像的状态。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "镜像绑定的标签列表。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/getImageTag:getImageTag"
+                        },
+                        "type": "array"
+                    },
+                    "updatedAt": {
+                        "description": "镜像更新时间\n",
+                        "type": "string"
+                    },
+                    "virtualSize": {
+                        "description": "镜像大小，单位为Byte。\n",
+                        "type": "number"
+                    },
+                    "visibility": {
+                        "description": "镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "architecture",
+                    "bootMode",
+                    "createdAt",
+                    "description",
+                    "detectionResults",
+                    "id",
+                    "imageId",
+                    "imageName",
+                    "imageOwnerId",
+                    "instanceId",
+                    "isInstallRunCommandAgent",
+                    "isLts",
+                    "isSupportCloudInit",
+                    "kernel",
+                    "licenseType",
+                    "osName",
+                    "osType",
+                    "platform",
+                    "platformVersion",
+                    "projectName",
+                    "sharePermissions",
+                    "shareStatus",
+                    "size",
+                    "snapshotGroupId",
+                    "snapshotId",
+                    "snapshots",
+                    "status",
+                    "tags",
+                    "updatedAt",
+                    "virtualSize",
+                    "visibility"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:ecs/getImages:getImages": {
+            "description": "Plural Data Source schema for Volcengine::ECS::Image\n",
+            "outputs": {
+                "description": "A collection of values returned by getImages.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "pulumi:providers:bytepluscc/terraformConfig": {
+            "description": "This function returns a Terraform config object with terraform-namecased keys,to be used with the Terraform Module Provider.",
+            "inputs": {
+                "properties": {
+                    "__self__": {
+                        "type": "ref",
+                        "$ref": "#/resources/pulumi:providers:bytepluscc"
+                    }
+                },
+                "type": "pulumi:providers:bytepluscc/terraformConfig",
+                "required": [
+                    "__self__"
+                ]
+            },
+            "outputs": {
+                "properties": {
+                    "result": {
+                        "additionalProperties": {
+                            "$ref": "pulumi.json#/Any"
+                        },
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "result"
+                ],
+                "type": "object"
+            }
+        }
+    }
+}

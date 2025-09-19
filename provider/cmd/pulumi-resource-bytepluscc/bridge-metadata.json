@@ -1,0 +1,62 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "bytepluscc_ecs_image": {
+                "current": "bytepluscc:ecs/image:Image",
+                "majorVersion": 1,
+                "fields": {
+                    "detection_results": {
+                        "fields": {
+                            "items": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "share_permission": {
+                        "maxItemsOne": false
+                    },
+                    "snapshots": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            }
+        },
+        "datasources": {
+            "bytepluscc_ecs_image": {
+                "current": "bytepluscc:ecs/getImage:getImage",
+                "majorVersion": 1,
+                "fields": {
+                    "detection_results": {
+                        "fields": {
+                            "items": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "share_permission": {
+                        "maxItemsOne": false
+                    },
+                    "snapshots": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_ecs_images": {
+                "current": "bytepluscc:ecs/getImages:getImages",
+                "majorVersion": 1,
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            }
+        }
+    },
+    "auto-settings": {}
+}
