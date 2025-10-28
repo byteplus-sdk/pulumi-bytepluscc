@@ -20,21 +20,6 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     public static final ImageArgs Empty = new ImageArgs();
 
     /**
-     * 镜像的启动模式。可以选择BIOS、UEFI类型。
-     * 
-     */
-    @Import(name="bootMode")
-    private @Nullable Output<String> bootMode;
-
-    /**
-     * @return 镜像的启动模式。可以选择BIOS、UEFI类型。
-     * 
-     */
-    public Optional<Output<String>> bootMode() {
-        return Optional.ofNullable(this.bootMode);
-    }
-
-    /**
      * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
      * 
      */
@@ -254,7 +239,6 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     private ImageArgs() {}
 
     private ImageArgs(ImageArgs $) {
-        this.bootMode = $.bootMode;
         this.description = $.description;
         this.detectionResults = $.detectionResults;
         this.imageName = $.imageName;
@@ -288,27 +272,6 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(ImageArgs defaults) {
             $ = new ImageArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @param bootMode 镜像的启动模式。可以选择BIOS、UEFI类型。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder bootMode(@Nullable Output<String> bootMode) {
-            $.bootMode = bootMode;
-            return this;
-        }
-
-        /**
-         * @param bootMode 镜像的启动模式。可以选择BIOS、UEFI类型。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder bootMode(String bootMode) {
-            return bootMode(Output.of(bootMode));
         }
 
         /**

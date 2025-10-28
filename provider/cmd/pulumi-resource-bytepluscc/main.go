@@ -23,7 +23,7 @@ import (
 
 	tfbridge "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/pf/tfbridge"
 
-	bytepluscc "github.com/byteplus/pulumi-bytepluscc/provider"
+	bytepluscc "github.com/byteplus-sdk/pulumi-bytepluscc/provider"
 )
 
 //go:embed schema-embed.json

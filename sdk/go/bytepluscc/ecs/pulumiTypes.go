@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
+	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -510,6 +510,2044 @@ func (o ImageTagArrayOutput) Index(i pulumi.IntInput) ImageTagOutput {
 	}).(ImageTagOutput)
 }
 
+type InstanceCpuMemory struct {
+	// 实例的核数。
+	CoreCount *int `pulumi:"coreCount"`
+	// 实例的CPU数量。
+	CpuNumber *int `pulumi:"cpuNumber"`
+	// 实例的内存大小，单位MB。
+	MemorySize *int `pulumi:"memorySize"`
+	// 实例的每核线程数。
+	ThreadsPerCore *int `pulumi:"threadsPerCore"`
+}
+
+// InstanceCpuMemoryInput is an input type that accepts InstanceCpuMemoryArgs and InstanceCpuMemoryOutput values.
+// You can construct a concrete instance of `InstanceCpuMemoryInput` via:
+//
+//	InstanceCpuMemoryArgs{...}
+type InstanceCpuMemoryInput interface {
+	pulumi.Input
+
+	ToInstanceCpuMemoryOutput() InstanceCpuMemoryOutput
+	ToInstanceCpuMemoryOutputWithContext(context.Context) InstanceCpuMemoryOutput
+}
+
+type InstanceCpuMemoryArgs struct {
+	// 实例的核数。
+	CoreCount pulumi.IntPtrInput `pulumi:"coreCount"`
+	// 实例的CPU数量。
+	CpuNumber pulumi.IntPtrInput `pulumi:"cpuNumber"`
+	// 实例的内存大小，单位MB。
+	MemorySize pulumi.IntPtrInput `pulumi:"memorySize"`
+	// 实例的每核线程数。
+	ThreadsPerCore pulumi.IntPtrInput `pulumi:"threadsPerCore"`
+}
+
+func (InstanceCpuMemoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceCpuMemory)(nil)).Elem()
+}
+
+func (i InstanceCpuMemoryArgs) ToInstanceCpuMemoryOutput() InstanceCpuMemoryOutput {
+	return i.ToInstanceCpuMemoryOutputWithContext(context.Background())
+}
+
+func (i InstanceCpuMemoryArgs) ToInstanceCpuMemoryOutputWithContext(ctx context.Context) InstanceCpuMemoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCpuMemoryOutput)
+}
+
+func (i InstanceCpuMemoryArgs) ToInstanceCpuMemoryPtrOutput() InstanceCpuMemoryPtrOutput {
+	return i.ToInstanceCpuMemoryPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceCpuMemoryArgs) ToInstanceCpuMemoryPtrOutputWithContext(ctx context.Context) InstanceCpuMemoryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCpuMemoryOutput).ToInstanceCpuMemoryPtrOutputWithContext(ctx)
+}
+
+// InstanceCpuMemoryPtrInput is an input type that accepts InstanceCpuMemoryArgs, InstanceCpuMemoryPtr and InstanceCpuMemoryPtrOutput values.
+// You can construct a concrete instance of `InstanceCpuMemoryPtrInput` via:
+//
+//	        InstanceCpuMemoryArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceCpuMemoryPtrInput interface {
+	pulumi.Input
+
+	ToInstanceCpuMemoryPtrOutput() InstanceCpuMemoryPtrOutput
+	ToInstanceCpuMemoryPtrOutputWithContext(context.Context) InstanceCpuMemoryPtrOutput
+}
+
+type instanceCpuMemoryPtrType InstanceCpuMemoryArgs
+
+func InstanceCpuMemoryPtr(v *InstanceCpuMemoryArgs) InstanceCpuMemoryPtrInput {
+	return (*instanceCpuMemoryPtrType)(v)
+}
+
+func (*instanceCpuMemoryPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceCpuMemory)(nil)).Elem()
+}
+
+func (i *instanceCpuMemoryPtrType) ToInstanceCpuMemoryPtrOutput() InstanceCpuMemoryPtrOutput {
+	return i.ToInstanceCpuMemoryPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceCpuMemoryPtrType) ToInstanceCpuMemoryPtrOutputWithContext(ctx context.Context) InstanceCpuMemoryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCpuMemoryPtrOutput)
+}
+
+type InstanceCpuMemoryOutput struct{ *pulumi.OutputState }
+
+func (InstanceCpuMemoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceCpuMemory)(nil)).Elem()
+}
+
+func (o InstanceCpuMemoryOutput) ToInstanceCpuMemoryOutput() InstanceCpuMemoryOutput {
+	return o
+}
+
+func (o InstanceCpuMemoryOutput) ToInstanceCpuMemoryOutputWithContext(ctx context.Context) InstanceCpuMemoryOutput {
+	return o
+}
+
+func (o InstanceCpuMemoryOutput) ToInstanceCpuMemoryPtrOutput() InstanceCpuMemoryPtrOutput {
+	return o.ToInstanceCpuMemoryPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceCpuMemoryOutput) ToInstanceCpuMemoryPtrOutputWithContext(ctx context.Context) InstanceCpuMemoryPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceCpuMemory) *InstanceCpuMemory {
+		return &v
+	}).(InstanceCpuMemoryPtrOutput)
+}
+
+// 实例的核数。
+func (o InstanceCpuMemoryOutput) CoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.CoreCount }).(pulumi.IntPtrOutput)
+}
+
+// 实例的CPU数量。
+func (o InstanceCpuMemoryOutput) CpuNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.CpuNumber }).(pulumi.IntPtrOutput)
+}
+
+// 实例的内存大小，单位MB。
+func (o InstanceCpuMemoryOutput) MemorySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.MemorySize }).(pulumi.IntPtrOutput)
+}
+
+// 实例的每核线程数。
+func (o InstanceCpuMemoryOutput) ThreadsPerCore() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.ThreadsPerCore }).(pulumi.IntPtrOutput)
+}
+
+type InstanceCpuMemoryPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceCpuMemoryPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceCpuMemory)(nil)).Elem()
+}
+
+func (o InstanceCpuMemoryPtrOutput) ToInstanceCpuMemoryPtrOutput() InstanceCpuMemoryPtrOutput {
+	return o
+}
+
+func (o InstanceCpuMemoryPtrOutput) ToInstanceCpuMemoryPtrOutputWithContext(ctx context.Context) InstanceCpuMemoryPtrOutput {
+	return o
+}
+
+func (o InstanceCpuMemoryPtrOutput) Elem() InstanceCpuMemoryOutput {
+	return o.ApplyT(func(v *InstanceCpuMemory) InstanceCpuMemory {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceCpuMemory
+		return ret
+	}).(InstanceCpuMemoryOutput)
+}
+
+// 实例的核数。
+func (o InstanceCpuMemoryPtrOutput) CoreCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceCpuMemory) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CoreCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例的CPU数量。
+func (o InstanceCpuMemoryPtrOutput) CpuNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceCpuMemory) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CpuNumber
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例的内存大小，单位MB。
+func (o InstanceCpuMemoryPtrOutput) MemorySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceCpuMemory) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemorySize
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例的每核线程数。
+func (o InstanceCpuMemoryPtrOutput) ThreadsPerCore() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceCpuMemory) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ThreadsPerCore
+	}).(pulumi.IntPtrOutput)
+}
+
+type InstanceEipAddress struct {
+	// 实例的分配ID。
+	AllocationId *string `pulumi:"allocationId"`
+	// 公网IP的带宽上限，默认值为1，单位：Mbps。
+	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	BandwidthMbps *int `pulumi:"bandwidthMbps"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	// - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//   - 二者的安全防护类型相同。
+	//   - 二者的地域相同。
+	//   - 公网IP的计费方式必须是按量计费。
+	//   - 共享带宽包为IPv4类型。
+	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：
+	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	// - PayByTraffic：按量计费-按实际流量计费。
+	// - PrePaid：包年包月。
+	//   :::tip
+	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   :::
+	ChargeType *string `pulumi:"chargeType"`
+	// 实例的IP地址。
+	IpAddress *string `pulumi:"ipAddress"`
+	// 公网IP的线路类型，默认为BGP。取值：
+	// - BGP：BGP（多线）。
+	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//   - ChinaMobile：中国移动静态单线。
+	//   - ChinaTelecom：中国电信静态单线。
+	//   - ChinaUnicom：中国联通静态单线。
+	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	Isp *string `pulumi:"isp"`
+	// 实例是否随实例释放。
+	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
+}
+
+// InstanceEipAddressInput is an input type that accepts InstanceEipAddressArgs and InstanceEipAddressOutput values.
+// You can construct a concrete instance of `InstanceEipAddressInput` via:
+//
+//	InstanceEipAddressArgs{...}
+type InstanceEipAddressInput interface {
+	pulumi.Input
+
+	ToInstanceEipAddressOutput() InstanceEipAddressOutput
+	ToInstanceEipAddressOutputWithContext(context.Context) InstanceEipAddressOutput
+}
+
+type InstanceEipAddressArgs struct {
+	// 实例的分配ID。
+	AllocationId pulumi.StringPtrInput `pulumi:"allocationId"`
+	// 公网IP的带宽上限，默认值为1，单位：Mbps。
+	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	BandwidthMbps pulumi.IntPtrInput `pulumi:"bandwidthMbps"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	// - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//   - 二者的安全防护类型相同。
+	//   - 二者的地域相同。
+	//   - 公网IP的计费方式必须是按量计费。
+	//   - 共享带宽包为IPv4类型。
+	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：
+	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	// - PayByTraffic：按量计费-按实际流量计费。
+	// - PrePaid：包年包月。
+	//   :::tip
+	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   :::
+	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
+	// 实例的IP地址。
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// 公网IP的线路类型，默认为BGP。取值：
+	// - BGP：BGP（多线）。
+	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//   - ChinaMobile：中国移动静态单线。
+	//   - ChinaTelecom：中国电信静态单线。
+	//   - ChinaUnicom：中国联通静态单线。
+	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// 实例是否随实例释放。
+	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
+}
+
+func (InstanceEipAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEipAddress)(nil)).Elem()
+}
+
+func (i InstanceEipAddressArgs) ToInstanceEipAddressOutput() InstanceEipAddressOutput {
+	return i.ToInstanceEipAddressOutputWithContext(context.Background())
+}
+
+func (i InstanceEipAddressArgs) ToInstanceEipAddressOutputWithContext(ctx context.Context) InstanceEipAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEipAddressOutput)
+}
+
+func (i InstanceEipAddressArgs) ToInstanceEipAddressPtrOutput() InstanceEipAddressPtrOutput {
+	return i.ToInstanceEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceEipAddressArgs) ToInstanceEipAddressPtrOutputWithContext(ctx context.Context) InstanceEipAddressPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEipAddressOutput).ToInstanceEipAddressPtrOutputWithContext(ctx)
+}
+
+// InstanceEipAddressPtrInput is an input type that accepts InstanceEipAddressArgs, InstanceEipAddressPtr and InstanceEipAddressPtrOutput values.
+// You can construct a concrete instance of `InstanceEipAddressPtrInput` via:
+//
+//	        InstanceEipAddressArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceEipAddressPtrInput interface {
+	pulumi.Input
+
+	ToInstanceEipAddressPtrOutput() InstanceEipAddressPtrOutput
+	ToInstanceEipAddressPtrOutputWithContext(context.Context) InstanceEipAddressPtrOutput
+}
+
+type instanceEipAddressPtrType InstanceEipAddressArgs
+
+func InstanceEipAddressPtr(v *InstanceEipAddressArgs) InstanceEipAddressPtrInput {
+	return (*instanceEipAddressPtrType)(v)
+}
+
+func (*instanceEipAddressPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceEipAddress)(nil)).Elem()
+}
+
+func (i *instanceEipAddressPtrType) ToInstanceEipAddressPtrOutput() InstanceEipAddressPtrOutput {
+	return i.ToInstanceEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceEipAddressPtrType) ToInstanceEipAddressPtrOutputWithContext(ctx context.Context) InstanceEipAddressPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEipAddressPtrOutput)
+}
+
+type InstanceEipAddressOutput struct{ *pulumi.OutputState }
+
+func (InstanceEipAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEipAddress)(nil)).Elem()
+}
+
+func (o InstanceEipAddressOutput) ToInstanceEipAddressOutput() InstanceEipAddressOutput {
+	return o
+}
+
+func (o InstanceEipAddressOutput) ToInstanceEipAddressOutputWithContext(ctx context.Context) InstanceEipAddressOutput {
+	return o
+}
+
+func (o InstanceEipAddressOutput) ToInstanceEipAddressPtrOutput() InstanceEipAddressPtrOutput {
+	return o.ToInstanceEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceEipAddressOutput) ToInstanceEipAddressPtrOutputWithContext(ctx context.Context) InstanceEipAddressPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceEipAddress) *InstanceEipAddress {
+		return &v
+	}).(InstanceEipAddressPtrOutput)
+}
+
+// 实例的分配ID。
+func (o InstanceEipAddressOutput) AllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *string { return v.AllocationId }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的带宽上限，默认值为1，单位：Mbps。
+// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+func (o InstanceEipAddressOutput) BandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *int { return v.BandwidthMbps }).(pulumi.IntPtrOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+// - 公网IP加入到共享带宽包必须同时满足如下条件：
+//   - 二者的安全防护类型相同。
+//   - 二者的地域相同。
+//   - 公网IP的计费方式必须是按量计费。
+//   - 共享带宽包为IPv4类型。
+func (o InstanceEipAddressOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的计费方式，取值：
+//   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//   - PayByTraffic：按量计费-按实际流量计费。
+//   - PrePaid：包年包月。
+//     :::tip
+//     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+//     :::
+func (o InstanceEipAddressOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
+}
+
+// 实例的IP地址。
+func (o InstanceEipAddressOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的线路类型，默认为BGP。取值：
+// - BGP：BGP（多线）。
+// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+//   - ChinaMobile：中国移动静态单线。
+//   - ChinaTelecom：中国电信静态单线。
+//   - ChinaUnicom：中国联通静态单线。
+//
+// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+func (o InstanceEipAddressOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+// 实例是否随实例释放。
+func (o InstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+type InstanceEipAddressPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceEipAddressPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceEipAddress)(nil)).Elem()
+}
+
+func (o InstanceEipAddressPtrOutput) ToInstanceEipAddressPtrOutput() InstanceEipAddressPtrOutput {
+	return o
+}
+
+func (o InstanceEipAddressPtrOutput) ToInstanceEipAddressPtrOutputWithContext(ctx context.Context) InstanceEipAddressPtrOutput {
+	return o
+}
+
+func (o InstanceEipAddressPtrOutput) Elem() InstanceEipAddressOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) InstanceEipAddress {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceEipAddress
+		return ret
+	}).(InstanceEipAddressOutput)
+}
+
+// 实例的分配ID。
+func (o InstanceEipAddressPtrOutput) AllocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AllocationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的带宽上限，默认值为1，单位：Mbps。
+// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+func (o InstanceEipAddressPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthMbps
+	}).(pulumi.IntPtrOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+// - 公网IP加入到共享带宽包必须同时满足如下条件：
+//   - 二者的安全防护类型相同。
+//   - 二者的地域相同。
+//   - 公网IP的计费方式必须是按量计费。
+//   - 共享带宽包为IPv4类型。
+func (o InstanceEipAddressPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthPackageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的计费方式，取值：
+//   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//   - PayByTraffic：按量计费-按实际流量计费。
+//   - PrePaid：包年包月。
+//     :::tip
+//     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+//     :::
+func (o InstanceEipAddressPtrOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的IP地址。
+func (o InstanceEipAddressPtrOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的线路类型，默认为BGP。取值：
+// - BGP：BGP（多线）。
+// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+//   - ChinaMobile：中国移动静态单线。
+//   - ChinaTelecom：中国电信静态单线。
+//   - ChinaUnicom：中国联通静态单线。
+//
+// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+func (o InstanceEipAddressPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例是否随实例释放。
+func (o InstanceEipAddressPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ReleaseWithInstance
+	}).(pulumi.BoolPtrOutput)
+}
+
+type InstanceImage struct {
+	// 实例的镜像ID。
+	ImageId string `pulumi:"imageId"`
+	// 实例的镜像发布版本。
+	ImageReleaseVersion *string `pulumi:"imageReleaseVersion"`
+	// 实例是否保留镜像凭证。
+	KeepImageCredential *bool `pulumi:"keepImageCredential"`
+	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy *string `pulumi:"securityEnhancementStrategy"`
+}
+
+// InstanceImageInput is an input type that accepts InstanceImageArgs and InstanceImageOutput values.
+// You can construct a concrete instance of `InstanceImageInput` via:
+//
+//	InstanceImageArgs{...}
+type InstanceImageInput interface {
+	pulumi.Input
+
+	ToInstanceImageOutput() InstanceImageOutput
+	ToInstanceImageOutputWithContext(context.Context) InstanceImageOutput
+}
+
+type InstanceImageArgs struct {
+	// 实例的镜像ID。
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// 实例的镜像发布版本。
+	ImageReleaseVersion pulumi.StringPtrInput `pulumi:"imageReleaseVersion"`
+	// 实例是否保留镜像凭证。
+	KeepImageCredential pulumi.BoolPtrInput `pulumi:"keepImageCredential"`
+	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy pulumi.StringPtrInput `pulumi:"securityEnhancementStrategy"`
+}
+
+func (InstanceImageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceImage)(nil)).Elem()
+}
+
+func (i InstanceImageArgs) ToInstanceImageOutput() InstanceImageOutput {
+	return i.ToInstanceImageOutputWithContext(context.Background())
+}
+
+func (i InstanceImageArgs) ToInstanceImageOutputWithContext(ctx context.Context) InstanceImageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceImageOutput)
+}
+
+func (i InstanceImageArgs) ToInstanceImagePtrOutput() InstanceImagePtrOutput {
+	return i.ToInstanceImagePtrOutputWithContext(context.Background())
+}
+
+func (i InstanceImageArgs) ToInstanceImagePtrOutputWithContext(ctx context.Context) InstanceImagePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceImageOutput).ToInstanceImagePtrOutputWithContext(ctx)
+}
+
+// InstanceImagePtrInput is an input type that accepts InstanceImageArgs, InstanceImagePtr and InstanceImagePtrOutput values.
+// You can construct a concrete instance of `InstanceImagePtrInput` via:
+//
+//	        InstanceImageArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceImagePtrInput interface {
+	pulumi.Input
+
+	ToInstanceImagePtrOutput() InstanceImagePtrOutput
+	ToInstanceImagePtrOutputWithContext(context.Context) InstanceImagePtrOutput
+}
+
+type instanceImagePtrType InstanceImageArgs
+
+func InstanceImagePtr(v *InstanceImageArgs) InstanceImagePtrInput {
+	return (*instanceImagePtrType)(v)
+}
+
+func (*instanceImagePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceImage)(nil)).Elem()
+}
+
+func (i *instanceImagePtrType) ToInstanceImagePtrOutput() InstanceImagePtrOutput {
+	return i.ToInstanceImagePtrOutputWithContext(context.Background())
+}
+
+func (i *instanceImagePtrType) ToInstanceImagePtrOutputWithContext(ctx context.Context) InstanceImagePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceImagePtrOutput)
+}
+
+type InstanceImageOutput struct{ *pulumi.OutputState }
+
+func (InstanceImageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceImage)(nil)).Elem()
+}
+
+func (o InstanceImageOutput) ToInstanceImageOutput() InstanceImageOutput {
+	return o
+}
+
+func (o InstanceImageOutput) ToInstanceImageOutputWithContext(ctx context.Context) InstanceImageOutput {
+	return o
+}
+
+func (o InstanceImageOutput) ToInstanceImagePtrOutput() InstanceImagePtrOutput {
+	return o.ToInstanceImagePtrOutputWithContext(context.Background())
+}
+
+func (o InstanceImageOutput) ToInstanceImagePtrOutputWithContext(ctx context.Context) InstanceImagePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceImage) *InstanceImage {
+		return &v
+	}).(InstanceImagePtrOutput)
+}
+
+// 实例的镜像ID。
+func (o InstanceImageOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceImage) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// 实例的镜像发布版本。
+func (o InstanceImageOutput) ImageReleaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceImage) *string { return v.ImageReleaseVersion }).(pulumi.StringPtrOutput)
+}
+
+// 实例是否保留镜像凭证。
+func (o InstanceImageOutput) KeepImageCredential() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceImage) *bool { return v.KeepImageCredential }).(pulumi.BoolPtrOutput)
+}
+
+// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+func (o InstanceImageOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceImage) *string { return v.SecurityEnhancementStrategy }).(pulumi.StringPtrOutput)
+}
+
+type InstanceImagePtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceImagePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceImage)(nil)).Elem()
+}
+
+func (o InstanceImagePtrOutput) ToInstanceImagePtrOutput() InstanceImagePtrOutput {
+	return o
+}
+
+func (o InstanceImagePtrOutput) ToInstanceImagePtrOutputWithContext(ctx context.Context) InstanceImagePtrOutput {
+	return o
+}
+
+func (o InstanceImagePtrOutput) Elem() InstanceImageOutput {
+	return o.ApplyT(func(v *InstanceImage) InstanceImage {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceImage
+		return ret
+	}).(InstanceImageOutput)
+}
+
+// 实例的镜像ID。
+func (o InstanceImagePtrOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceImage) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ImageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的镜像发布版本。
+func (o InstanceImagePtrOutput) ImageReleaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceImage) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageReleaseVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例是否保留镜像凭证。
+func (o InstanceImagePtrOutput) KeepImageCredential() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceImage) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.KeepImageCredential
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+func (o InstanceImagePtrOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceImage) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityEnhancementStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceKeyPair struct {
+	// 实例的公钥。
+	KeyPairId *string `pulumi:"keyPairId"`
+	// 实例的密钥对名称。
+	KeyPairName *string `pulumi:"keyPairName"`
+}
+
+// InstanceKeyPairInput is an input type that accepts InstanceKeyPairArgs and InstanceKeyPairOutput values.
+// You can construct a concrete instance of `InstanceKeyPairInput` via:
+//
+//	InstanceKeyPairArgs{...}
+type InstanceKeyPairInput interface {
+	pulumi.Input
+
+	ToInstanceKeyPairOutput() InstanceKeyPairOutput
+	ToInstanceKeyPairOutputWithContext(context.Context) InstanceKeyPairOutput
+}
+
+type InstanceKeyPairArgs struct {
+	// 实例的公钥。
+	KeyPairId pulumi.StringPtrInput `pulumi:"keyPairId"`
+	// 实例的密钥对名称。
+	KeyPairName pulumi.StringPtrInput `pulumi:"keyPairName"`
+}
+
+func (InstanceKeyPairArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceKeyPair)(nil)).Elem()
+}
+
+func (i InstanceKeyPairArgs) ToInstanceKeyPairOutput() InstanceKeyPairOutput {
+	return i.ToInstanceKeyPairOutputWithContext(context.Background())
+}
+
+func (i InstanceKeyPairArgs) ToInstanceKeyPairOutputWithContext(ctx context.Context) InstanceKeyPairOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceKeyPairOutput)
+}
+
+func (i InstanceKeyPairArgs) ToInstanceKeyPairPtrOutput() InstanceKeyPairPtrOutput {
+	return i.ToInstanceKeyPairPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceKeyPairArgs) ToInstanceKeyPairPtrOutputWithContext(ctx context.Context) InstanceKeyPairPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceKeyPairOutput).ToInstanceKeyPairPtrOutputWithContext(ctx)
+}
+
+// InstanceKeyPairPtrInput is an input type that accepts InstanceKeyPairArgs, InstanceKeyPairPtr and InstanceKeyPairPtrOutput values.
+// You can construct a concrete instance of `InstanceKeyPairPtrInput` via:
+//
+//	        InstanceKeyPairArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceKeyPairPtrInput interface {
+	pulumi.Input
+
+	ToInstanceKeyPairPtrOutput() InstanceKeyPairPtrOutput
+	ToInstanceKeyPairPtrOutputWithContext(context.Context) InstanceKeyPairPtrOutput
+}
+
+type instanceKeyPairPtrType InstanceKeyPairArgs
+
+func InstanceKeyPairPtr(v *InstanceKeyPairArgs) InstanceKeyPairPtrInput {
+	return (*instanceKeyPairPtrType)(v)
+}
+
+func (*instanceKeyPairPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceKeyPair)(nil)).Elem()
+}
+
+func (i *instanceKeyPairPtrType) ToInstanceKeyPairPtrOutput() InstanceKeyPairPtrOutput {
+	return i.ToInstanceKeyPairPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceKeyPairPtrType) ToInstanceKeyPairPtrOutputWithContext(ctx context.Context) InstanceKeyPairPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceKeyPairPtrOutput)
+}
+
+type InstanceKeyPairOutput struct{ *pulumi.OutputState }
+
+func (InstanceKeyPairOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceKeyPair)(nil)).Elem()
+}
+
+func (o InstanceKeyPairOutput) ToInstanceKeyPairOutput() InstanceKeyPairOutput {
+	return o
+}
+
+func (o InstanceKeyPairOutput) ToInstanceKeyPairOutputWithContext(ctx context.Context) InstanceKeyPairOutput {
+	return o
+}
+
+func (o InstanceKeyPairOutput) ToInstanceKeyPairPtrOutput() InstanceKeyPairPtrOutput {
+	return o.ToInstanceKeyPairPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceKeyPairOutput) ToInstanceKeyPairPtrOutputWithContext(ctx context.Context) InstanceKeyPairPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceKeyPair) *InstanceKeyPair {
+		return &v
+	}).(InstanceKeyPairPtrOutput)
+}
+
+// 实例的公钥。
+func (o InstanceKeyPairOutput) KeyPairId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceKeyPair) *string { return v.KeyPairId }).(pulumi.StringPtrOutput)
+}
+
+// 实例的密钥对名称。
+func (o InstanceKeyPairOutput) KeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceKeyPair) *string { return v.KeyPairName }).(pulumi.StringPtrOutput)
+}
+
+type InstanceKeyPairPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceKeyPairPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceKeyPair)(nil)).Elem()
+}
+
+func (o InstanceKeyPairPtrOutput) ToInstanceKeyPairPtrOutput() InstanceKeyPairPtrOutput {
+	return o
+}
+
+func (o InstanceKeyPairPtrOutput) ToInstanceKeyPairPtrOutputWithContext(ctx context.Context) InstanceKeyPairPtrOutput {
+	return o
+}
+
+func (o InstanceKeyPairPtrOutput) Elem() InstanceKeyPairOutput {
+	return o.ApplyT(func(v *InstanceKeyPair) InstanceKeyPair {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceKeyPair
+		return ret
+	}).(InstanceKeyPairOutput)
+}
+
+// 实例的公钥。
+func (o InstanceKeyPairPtrOutput) KeyPairId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceKeyPair) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyPairId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的密钥对名称。
+func (o InstanceKeyPairPtrOutput) KeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceKeyPair) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyPairName
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceOperationSystem struct {
+	// 实例的操作系统名称。
+	Name *string `pulumi:"name"`
+	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	Type *string `pulumi:"type"`
+}
+
+// InstanceOperationSystemInput is an input type that accepts InstanceOperationSystemArgs and InstanceOperationSystemOutput values.
+// You can construct a concrete instance of `InstanceOperationSystemInput` via:
+//
+//	InstanceOperationSystemArgs{...}
+type InstanceOperationSystemInput interface {
+	pulumi.Input
+
+	ToInstanceOperationSystemOutput() InstanceOperationSystemOutput
+	ToInstanceOperationSystemOutputWithContext(context.Context) InstanceOperationSystemOutput
+}
+
+type InstanceOperationSystemArgs struct {
+	// 实例的操作系统名称。
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (InstanceOperationSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceOperationSystem)(nil)).Elem()
+}
+
+func (i InstanceOperationSystemArgs) ToInstanceOperationSystemOutput() InstanceOperationSystemOutput {
+	return i.ToInstanceOperationSystemOutputWithContext(context.Background())
+}
+
+func (i InstanceOperationSystemArgs) ToInstanceOperationSystemOutputWithContext(ctx context.Context) InstanceOperationSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceOperationSystemOutput)
+}
+
+func (i InstanceOperationSystemArgs) ToInstanceOperationSystemPtrOutput() InstanceOperationSystemPtrOutput {
+	return i.ToInstanceOperationSystemPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceOperationSystemArgs) ToInstanceOperationSystemPtrOutputWithContext(ctx context.Context) InstanceOperationSystemPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceOperationSystemOutput).ToInstanceOperationSystemPtrOutputWithContext(ctx)
+}
+
+// InstanceOperationSystemPtrInput is an input type that accepts InstanceOperationSystemArgs, InstanceOperationSystemPtr and InstanceOperationSystemPtrOutput values.
+// You can construct a concrete instance of `InstanceOperationSystemPtrInput` via:
+//
+//	        InstanceOperationSystemArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceOperationSystemPtrInput interface {
+	pulumi.Input
+
+	ToInstanceOperationSystemPtrOutput() InstanceOperationSystemPtrOutput
+	ToInstanceOperationSystemPtrOutputWithContext(context.Context) InstanceOperationSystemPtrOutput
+}
+
+type instanceOperationSystemPtrType InstanceOperationSystemArgs
+
+func InstanceOperationSystemPtr(v *InstanceOperationSystemArgs) InstanceOperationSystemPtrInput {
+	return (*instanceOperationSystemPtrType)(v)
+}
+
+func (*instanceOperationSystemPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceOperationSystem)(nil)).Elem()
+}
+
+func (i *instanceOperationSystemPtrType) ToInstanceOperationSystemPtrOutput() InstanceOperationSystemPtrOutput {
+	return i.ToInstanceOperationSystemPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceOperationSystemPtrType) ToInstanceOperationSystemPtrOutputWithContext(ctx context.Context) InstanceOperationSystemPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceOperationSystemPtrOutput)
+}
+
+type InstanceOperationSystemOutput struct{ *pulumi.OutputState }
+
+func (InstanceOperationSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceOperationSystem)(nil)).Elem()
+}
+
+func (o InstanceOperationSystemOutput) ToInstanceOperationSystemOutput() InstanceOperationSystemOutput {
+	return o
+}
+
+func (o InstanceOperationSystemOutput) ToInstanceOperationSystemOutputWithContext(ctx context.Context) InstanceOperationSystemOutput {
+	return o
+}
+
+func (o InstanceOperationSystemOutput) ToInstanceOperationSystemPtrOutput() InstanceOperationSystemPtrOutput {
+	return o.ToInstanceOperationSystemPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceOperationSystemOutput) ToInstanceOperationSystemPtrOutputWithContext(ctx context.Context) InstanceOperationSystemPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceOperationSystem) *InstanceOperationSystem {
+		return &v
+	}).(InstanceOperationSystemPtrOutput)
+}
+
+// 实例的操作系统名称。
+func (o InstanceOperationSystemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceOperationSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+func (o InstanceOperationSystemOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceOperationSystem) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type InstanceOperationSystemPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceOperationSystemPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceOperationSystem)(nil)).Elem()
+}
+
+func (o InstanceOperationSystemPtrOutput) ToInstanceOperationSystemPtrOutput() InstanceOperationSystemPtrOutput {
+	return o
+}
+
+func (o InstanceOperationSystemPtrOutput) ToInstanceOperationSystemPtrOutputWithContext(ctx context.Context) InstanceOperationSystemPtrOutput {
+	return o
+}
+
+func (o InstanceOperationSystemPtrOutput) Elem() InstanceOperationSystemOutput {
+	return o.ApplyT(func(v *InstanceOperationSystem) InstanceOperationSystem {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceOperationSystem
+		return ret
+	}).(InstanceOperationSystemOutput)
+}
+
+// 实例的操作系统名称。
+func (o InstanceOperationSystemPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceOperationSystem) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+func (o InstanceOperationSystemPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceOperationSystem) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstancePlacement struct {
+	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	Affinity *string `pulumi:"affinity"`
+	// 实例的专用主机集群ID。
+	DedicatedHostClusterId *string `pulumi:"dedicatedHostClusterId"`
+	// 实例的专用主机ID。
+	DedicatedHostId *string `pulumi:"dedicatedHostId"`
+	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	Tenancy *string `pulumi:"tenancy"`
+}
+
+// InstancePlacementInput is an input type that accepts InstancePlacementArgs and InstancePlacementOutput values.
+// You can construct a concrete instance of `InstancePlacementInput` via:
+//
+//	InstancePlacementArgs{...}
+type InstancePlacementInput interface {
+	pulumi.Input
+
+	ToInstancePlacementOutput() InstancePlacementOutput
+	ToInstancePlacementOutputWithContext(context.Context) InstancePlacementOutput
+}
+
+type InstancePlacementArgs struct {
+	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	Affinity pulumi.StringPtrInput `pulumi:"affinity"`
+	// 实例的专用主机集群ID。
+	DedicatedHostClusterId pulumi.StringPtrInput `pulumi:"dedicatedHostClusterId"`
+	// 实例的专用主机ID。
+	DedicatedHostId pulumi.StringPtrInput `pulumi:"dedicatedHostId"`
+	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	Tenancy pulumi.StringPtrInput `pulumi:"tenancy"`
+}
+
+func (InstancePlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePlacement)(nil)).Elem()
+}
+
+func (i InstancePlacementArgs) ToInstancePlacementOutput() InstancePlacementOutput {
+	return i.ToInstancePlacementOutputWithContext(context.Background())
+}
+
+func (i InstancePlacementArgs) ToInstancePlacementOutputWithContext(ctx context.Context) InstancePlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePlacementOutput)
+}
+
+func (i InstancePlacementArgs) ToInstancePlacementPtrOutput() InstancePlacementPtrOutput {
+	return i.ToInstancePlacementPtrOutputWithContext(context.Background())
+}
+
+func (i InstancePlacementArgs) ToInstancePlacementPtrOutputWithContext(ctx context.Context) InstancePlacementPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePlacementOutput).ToInstancePlacementPtrOutputWithContext(ctx)
+}
+
+// InstancePlacementPtrInput is an input type that accepts InstancePlacementArgs, InstancePlacementPtr and InstancePlacementPtrOutput values.
+// You can construct a concrete instance of `InstancePlacementPtrInput` via:
+//
+//	        InstancePlacementArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstancePlacementPtrInput interface {
+	pulumi.Input
+
+	ToInstancePlacementPtrOutput() InstancePlacementPtrOutput
+	ToInstancePlacementPtrOutputWithContext(context.Context) InstancePlacementPtrOutput
+}
+
+type instancePlacementPtrType InstancePlacementArgs
+
+func InstancePlacementPtr(v *InstancePlacementArgs) InstancePlacementPtrInput {
+	return (*instancePlacementPtrType)(v)
+}
+
+func (*instancePlacementPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePlacement)(nil)).Elem()
+}
+
+func (i *instancePlacementPtrType) ToInstancePlacementPtrOutput() InstancePlacementPtrOutput {
+	return i.ToInstancePlacementPtrOutputWithContext(context.Background())
+}
+
+func (i *instancePlacementPtrType) ToInstancePlacementPtrOutputWithContext(ctx context.Context) InstancePlacementPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePlacementPtrOutput)
+}
+
+type InstancePlacementOutput struct{ *pulumi.OutputState }
+
+func (InstancePlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePlacement)(nil)).Elem()
+}
+
+func (o InstancePlacementOutput) ToInstancePlacementOutput() InstancePlacementOutput {
+	return o
+}
+
+func (o InstancePlacementOutput) ToInstancePlacementOutputWithContext(ctx context.Context) InstancePlacementOutput {
+	return o
+}
+
+func (o InstancePlacementOutput) ToInstancePlacementPtrOutput() InstancePlacementPtrOutput {
+	return o.ToInstancePlacementPtrOutputWithContext(context.Background())
+}
+
+func (o InstancePlacementOutput) ToInstancePlacementPtrOutputWithContext(ctx context.Context) InstancePlacementPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstancePlacement) *InstancePlacement {
+		return &v
+	}).(InstancePlacementPtrOutput)
+}
+
+// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+func (o InstancePlacementOutput) Affinity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePlacement) *string { return v.Affinity }).(pulumi.StringPtrOutput)
+}
+
+// 实例的专用主机集群ID。
+func (o InstancePlacementOutput) DedicatedHostClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePlacement) *string { return v.DedicatedHostClusterId }).(pulumi.StringPtrOutput)
+}
+
+// 实例的专用主机ID。
+func (o InstancePlacementOutput) DedicatedHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePlacement) *string { return v.DedicatedHostId }).(pulumi.StringPtrOutput)
+}
+
+// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+func (o InstancePlacementOutput) Tenancy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePlacement) *string { return v.Tenancy }).(pulumi.StringPtrOutput)
+}
+
+type InstancePlacementPtrOutput struct{ *pulumi.OutputState }
+
+func (InstancePlacementPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePlacement)(nil)).Elem()
+}
+
+func (o InstancePlacementPtrOutput) ToInstancePlacementPtrOutput() InstancePlacementPtrOutput {
+	return o
+}
+
+func (o InstancePlacementPtrOutput) ToInstancePlacementPtrOutputWithContext(ctx context.Context) InstancePlacementPtrOutput {
+	return o
+}
+
+func (o InstancePlacementPtrOutput) Elem() InstancePlacementOutput {
+	return o.ApplyT(func(v *InstancePlacement) InstancePlacement {
+		if v != nil {
+			return *v
+		}
+		var ret InstancePlacement
+		return ret
+	}).(InstancePlacementOutput)
+}
+
+// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+func (o InstancePlacementPtrOutput) Affinity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePlacement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Affinity
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的专用主机集群ID。
+func (o InstancePlacementPtrOutput) DedicatedHostClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePlacement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DedicatedHostClusterId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的专用主机ID。
+func (o InstancePlacementPtrOutput) DedicatedHostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePlacement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DedicatedHostId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+func (o InstancePlacementPtrOutput) Tenancy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePlacement) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Tenancy
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstancePrimaryNetworkInterface struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount *int `pulumi:"ipv6AddressCount"`
+	// 实例的IPv6地址。
+	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
+	// 实例的MAC地址。
+	MacAddress *string `pulumi:"macAddress"`
+	// 实例的网络接口ID。
+	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
+	// 实例的主IP地址。
+	PrimaryIpAddress *string `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId *string `pulumi:"vpcId"`
+}
+
+// InstancePrimaryNetworkInterfaceInput is an input type that accepts InstancePrimaryNetworkInterfaceArgs and InstancePrimaryNetworkInterfaceOutput values.
+// You can construct a concrete instance of `InstancePrimaryNetworkInterfaceInput` via:
+//
+//	InstancePrimaryNetworkInterfaceArgs{...}
+type InstancePrimaryNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToInstancePrimaryNetworkInterfaceOutput() InstancePrimaryNetworkInterfaceOutput
+	ToInstancePrimaryNetworkInterfaceOutputWithContext(context.Context) InstancePrimaryNetworkInterfaceOutput
+}
+
+type InstancePrimaryNetworkInterfaceArgs struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount pulumi.IntPtrInput `pulumi:"ipv6AddressCount"`
+	// 实例的IPv6地址。
+	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
+	// 实例的MAC地址。
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// 实例的网络接口ID。
+	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
+	// 实例的主IP地址。
+	PrimaryIpAddress pulumi.StringPtrInput `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+}
+
+func (InstancePrimaryNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePrimaryNetworkInterface)(nil)).Elem()
+}
+
+func (i InstancePrimaryNetworkInterfaceArgs) ToInstancePrimaryNetworkInterfaceOutput() InstancePrimaryNetworkInterfaceOutput {
+	return i.ToInstancePrimaryNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i InstancePrimaryNetworkInterfaceArgs) ToInstancePrimaryNetworkInterfaceOutputWithContext(ctx context.Context) InstancePrimaryNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePrimaryNetworkInterfaceOutput)
+}
+
+func (i InstancePrimaryNetworkInterfaceArgs) ToInstancePrimaryNetworkInterfacePtrOutput() InstancePrimaryNetworkInterfacePtrOutput {
+	return i.ToInstancePrimaryNetworkInterfacePtrOutputWithContext(context.Background())
+}
+
+func (i InstancePrimaryNetworkInterfaceArgs) ToInstancePrimaryNetworkInterfacePtrOutputWithContext(ctx context.Context) InstancePrimaryNetworkInterfacePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePrimaryNetworkInterfaceOutput).ToInstancePrimaryNetworkInterfacePtrOutputWithContext(ctx)
+}
+
+// InstancePrimaryNetworkInterfacePtrInput is an input type that accepts InstancePrimaryNetworkInterfaceArgs, InstancePrimaryNetworkInterfacePtr and InstancePrimaryNetworkInterfacePtrOutput values.
+// You can construct a concrete instance of `InstancePrimaryNetworkInterfacePtrInput` via:
+//
+//	        InstancePrimaryNetworkInterfaceArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstancePrimaryNetworkInterfacePtrInput interface {
+	pulumi.Input
+
+	ToInstancePrimaryNetworkInterfacePtrOutput() InstancePrimaryNetworkInterfacePtrOutput
+	ToInstancePrimaryNetworkInterfacePtrOutputWithContext(context.Context) InstancePrimaryNetworkInterfacePtrOutput
+}
+
+type instancePrimaryNetworkInterfacePtrType InstancePrimaryNetworkInterfaceArgs
+
+func InstancePrimaryNetworkInterfacePtr(v *InstancePrimaryNetworkInterfaceArgs) InstancePrimaryNetworkInterfacePtrInput {
+	return (*instancePrimaryNetworkInterfacePtrType)(v)
+}
+
+func (*instancePrimaryNetworkInterfacePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePrimaryNetworkInterface)(nil)).Elem()
+}
+
+func (i *instancePrimaryNetworkInterfacePtrType) ToInstancePrimaryNetworkInterfacePtrOutput() InstancePrimaryNetworkInterfacePtrOutput {
+	return i.ToInstancePrimaryNetworkInterfacePtrOutputWithContext(context.Background())
+}
+
+func (i *instancePrimaryNetworkInterfacePtrType) ToInstancePrimaryNetworkInterfacePtrOutputWithContext(ctx context.Context) InstancePrimaryNetworkInterfacePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstancePrimaryNetworkInterfacePtrOutput)
+}
+
+type InstancePrimaryNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (InstancePrimaryNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstancePrimaryNetworkInterface)(nil)).Elem()
+}
+
+func (o InstancePrimaryNetworkInterfaceOutput) ToInstancePrimaryNetworkInterfaceOutput() InstancePrimaryNetworkInterfaceOutput {
+	return o
+}
+
+func (o InstancePrimaryNetworkInterfaceOutput) ToInstancePrimaryNetworkInterfaceOutputWithContext(ctx context.Context) InstancePrimaryNetworkInterfaceOutput {
+	return o
+}
+
+func (o InstancePrimaryNetworkInterfaceOutput) ToInstancePrimaryNetworkInterfacePtrOutput() InstancePrimaryNetworkInterfacePtrOutput {
+	return o.ToInstancePrimaryNetworkInterfacePtrOutputWithContext(context.Background())
+}
+
+func (o InstancePrimaryNetworkInterfaceOutput) ToInstancePrimaryNetworkInterfacePtrOutputWithContext(ctx context.Context) InstancePrimaryNetworkInterfacePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstancePrimaryNetworkInterface) *InstancePrimaryNetworkInterface {
+		return &v
+	}).(InstancePrimaryNetworkInterfacePtrOutput)
+}
+
+// 实例的IPv6地址数量。
+func (o InstancePrimaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *int { return v.Ipv6AddressCount }).(pulumi.IntPtrOutput)
+}
+
+// 实例的IPv6地址。
+func (o InstancePrimaryNetworkInterfaceOutput) Ipv6Addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
+}
+
+// 实例的MAC地址。
+func (o InstancePrimaryNetworkInterfaceOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+// 实例的网络接口ID。
+func (o InstancePrimaryNetworkInterfaceOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
+}
+
+// 实例的主IP地址。
+func (o InstancePrimaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.PrimaryIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// 实例的私有IP地址。
+func (o InstancePrimaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// 实例的安全组ID。
+func (o InstancePrimaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的子网ID。
+func (o InstancePrimaryNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// 实例的VPC ID。
+func (o InstancePrimaryNetworkInterfaceOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+type InstancePrimaryNetworkInterfacePtrOutput struct{ *pulumi.OutputState }
+
+func (InstancePrimaryNetworkInterfacePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstancePrimaryNetworkInterface)(nil)).Elem()
+}
+
+func (o InstancePrimaryNetworkInterfacePtrOutput) ToInstancePrimaryNetworkInterfacePtrOutput() InstancePrimaryNetworkInterfacePtrOutput {
+	return o
+}
+
+func (o InstancePrimaryNetworkInterfacePtrOutput) ToInstancePrimaryNetworkInterfacePtrOutputWithContext(ctx context.Context) InstancePrimaryNetworkInterfacePtrOutput {
+	return o
+}
+
+func (o InstancePrimaryNetworkInterfacePtrOutput) Elem() InstancePrimaryNetworkInterfaceOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) InstancePrimaryNetworkInterface {
+		if v != nil {
+			return *v
+		}
+		var ret InstancePrimaryNetworkInterface
+		return ret
+	}).(InstancePrimaryNetworkInterfaceOutput)
+}
+
+// 实例的IPv6地址数量。
+func (o InstancePrimaryNetworkInterfacePtrOutput) Ipv6AddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6AddressCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例的IPv6地址。
+func (o InstancePrimaryNetworkInterfacePtrOutput) Ipv6Addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Ipv6Addresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// 实例的MAC地址。
+func (o InstancePrimaryNetworkInterfacePtrOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MacAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的网络接口ID。
+func (o InstancePrimaryNetworkInterfacePtrOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkInterfaceId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的主IP地址。
+func (o InstancePrimaryNetworkInterfacePtrOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrimaryIpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的私有IP地址。
+func (o InstancePrimaryNetworkInterfacePtrOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) []string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateIpAddresses
+	}).(pulumi.StringArrayOutput)
+}
+
+// 实例的安全组ID。
+func (o InstancePrimaryNetworkInterfacePtrOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityGroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// 实例的子网ID。
+func (o InstancePrimaryNetworkInterfacePtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的VPC ID。
+func (o InstancePrimaryNetworkInterfacePtrOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VpcId
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceSecondaryNetworkInterface struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount *int `pulumi:"ipv6AddressCount"`
+	// 实例的主IP地址。
+	PrimaryIpAddress *string `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId *string `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId *string `pulumi:"vpcId"`
+}
+
+// InstanceSecondaryNetworkInterfaceInput is an input type that accepts InstanceSecondaryNetworkInterfaceArgs and InstanceSecondaryNetworkInterfaceOutput values.
+// You can construct a concrete instance of `InstanceSecondaryNetworkInterfaceInput` via:
+//
+//	InstanceSecondaryNetworkInterfaceArgs{...}
+type InstanceSecondaryNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToInstanceSecondaryNetworkInterfaceOutput() InstanceSecondaryNetworkInterfaceOutput
+	ToInstanceSecondaryNetworkInterfaceOutputWithContext(context.Context) InstanceSecondaryNetworkInterfaceOutput
+}
+
+type InstanceSecondaryNetworkInterfaceArgs struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount pulumi.IntPtrInput `pulumi:"ipv6AddressCount"`
+	// 实例的主IP地址。
+	PrimaryIpAddress pulumi.StringPtrInput `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+}
+
+func (InstanceSecondaryNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (i InstanceSecondaryNetworkInterfaceArgs) ToInstanceSecondaryNetworkInterfaceOutput() InstanceSecondaryNetworkInterfaceOutput {
+	return i.ToInstanceSecondaryNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i InstanceSecondaryNetworkInterfaceArgs) ToInstanceSecondaryNetworkInterfaceOutputWithContext(ctx context.Context) InstanceSecondaryNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceSecondaryNetworkInterfaceOutput)
+}
+
+// InstanceSecondaryNetworkInterfaceArrayInput is an input type that accepts InstanceSecondaryNetworkInterfaceArray and InstanceSecondaryNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `InstanceSecondaryNetworkInterfaceArrayInput` via:
+//
+//	InstanceSecondaryNetworkInterfaceArray{ InstanceSecondaryNetworkInterfaceArgs{...} }
+type InstanceSecondaryNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToInstanceSecondaryNetworkInterfaceArrayOutput() InstanceSecondaryNetworkInterfaceArrayOutput
+	ToInstanceSecondaryNetworkInterfaceArrayOutputWithContext(context.Context) InstanceSecondaryNetworkInterfaceArrayOutput
+}
+
+type InstanceSecondaryNetworkInterfaceArray []InstanceSecondaryNetworkInterfaceInput
+
+func (InstanceSecondaryNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (i InstanceSecondaryNetworkInterfaceArray) ToInstanceSecondaryNetworkInterfaceArrayOutput() InstanceSecondaryNetworkInterfaceArrayOutput {
+	return i.ToInstanceSecondaryNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceSecondaryNetworkInterfaceArray) ToInstanceSecondaryNetworkInterfaceArrayOutputWithContext(ctx context.Context) InstanceSecondaryNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceSecondaryNetworkInterfaceArrayOutput)
+}
+
+type InstanceSecondaryNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (InstanceSecondaryNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (o InstanceSecondaryNetworkInterfaceOutput) ToInstanceSecondaryNetworkInterfaceOutput() InstanceSecondaryNetworkInterfaceOutput {
+	return o
+}
+
+func (o InstanceSecondaryNetworkInterfaceOutput) ToInstanceSecondaryNetworkInterfaceOutputWithContext(ctx context.Context) InstanceSecondaryNetworkInterfaceOutput {
+	return o
+}
+
+// 实例的IPv6地址数量。
+func (o InstanceSecondaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *int { return v.Ipv6AddressCount }).(pulumi.IntPtrOutput)
+}
+
+// 实例的主IP地址。
+func (o InstanceSecondaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.PrimaryIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// 实例的私有IP地址。
+func (o InstanceSecondaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// 实例的安全组ID。
+func (o InstanceSecondaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的子网ID。
+func (o InstanceSecondaryNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// 实例的VPC ID。
+func (o InstanceSecondaryNetworkInterfaceOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+type InstanceSecondaryNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceSecondaryNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (o InstanceSecondaryNetworkInterfaceArrayOutput) ToInstanceSecondaryNetworkInterfaceArrayOutput() InstanceSecondaryNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o InstanceSecondaryNetworkInterfaceArrayOutput) ToInstanceSecondaryNetworkInterfaceArrayOutputWithContext(ctx context.Context) InstanceSecondaryNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o InstanceSecondaryNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) InstanceSecondaryNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceSecondaryNetworkInterface {
+		return vs[0].([]InstanceSecondaryNetworkInterface)[vs[1].(int)]
+	}).(InstanceSecondaryNetworkInterfaceOutput)
+}
+
+type InstanceSystemVolume struct {
+	// 实例是否随实例删除。
+	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
+	// 实例的额外性能IOPS。
+	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
+	// 实例的额外性能吞吐量，单位MB。
+	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
+	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
+	// 实例的大小，单位GiB。
+	Size *int `pulumi:"size"`
+	// 实例的快照ID。
+	SnapshotId *string `pulumi:"snapshotId"`
+	// 实例的卷ID。
+	VolumeId *string `pulumi:"volumeId"`
+	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// InstanceSystemVolumeInput is an input type that accepts InstanceSystemVolumeArgs and InstanceSystemVolumeOutput values.
+// You can construct a concrete instance of `InstanceSystemVolumeInput` via:
+//
+//	InstanceSystemVolumeArgs{...}
+type InstanceSystemVolumeInput interface {
+	pulumi.Input
+
+	ToInstanceSystemVolumeOutput() InstanceSystemVolumeOutput
+	ToInstanceSystemVolumeOutputWithContext(context.Context) InstanceSystemVolumeOutput
+}
+
+type InstanceSystemVolumeArgs struct {
+	// 实例是否随实例删除。
+	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
+	// 实例的额外性能IOPS。
+	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
+	// 实例的额外性能吞吐量，单位MB。
+	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
+	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
+	// 实例的大小，单位GiB。
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 实例的快照ID。
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// 实例的卷ID。
+	VolumeId pulumi.StringPtrInput `pulumi:"volumeId"`
+	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (InstanceSystemVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceSystemVolume)(nil)).Elem()
+}
+
+func (i InstanceSystemVolumeArgs) ToInstanceSystemVolumeOutput() InstanceSystemVolumeOutput {
+	return i.ToInstanceSystemVolumeOutputWithContext(context.Background())
+}
+
+func (i InstanceSystemVolumeArgs) ToInstanceSystemVolumeOutputWithContext(ctx context.Context) InstanceSystemVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceSystemVolumeOutput)
+}
+
+func (i InstanceSystemVolumeArgs) ToInstanceSystemVolumePtrOutput() InstanceSystemVolumePtrOutput {
+	return i.ToInstanceSystemVolumePtrOutputWithContext(context.Background())
+}
+
+func (i InstanceSystemVolumeArgs) ToInstanceSystemVolumePtrOutputWithContext(ctx context.Context) InstanceSystemVolumePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceSystemVolumeOutput).ToInstanceSystemVolumePtrOutputWithContext(ctx)
+}
+
+// InstanceSystemVolumePtrInput is an input type that accepts InstanceSystemVolumeArgs, InstanceSystemVolumePtr and InstanceSystemVolumePtrOutput values.
+// You can construct a concrete instance of `InstanceSystemVolumePtrInput` via:
+//
+//	        InstanceSystemVolumeArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceSystemVolumePtrInput interface {
+	pulumi.Input
+
+	ToInstanceSystemVolumePtrOutput() InstanceSystemVolumePtrOutput
+	ToInstanceSystemVolumePtrOutputWithContext(context.Context) InstanceSystemVolumePtrOutput
+}
+
+type instanceSystemVolumePtrType InstanceSystemVolumeArgs
+
+func InstanceSystemVolumePtr(v *InstanceSystemVolumeArgs) InstanceSystemVolumePtrInput {
+	return (*instanceSystemVolumePtrType)(v)
+}
+
+func (*instanceSystemVolumePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceSystemVolume)(nil)).Elem()
+}
+
+func (i *instanceSystemVolumePtrType) ToInstanceSystemVolumePtrOutput() InstanceSystemVolumePtrOutput {
+	return i.ToInstanceSystemVolumePtrOutputWithContext(context.Background())
+}
+
+func (i *instanceSystemVolumePtrType) ToInstanceSystemVolumePtrOutputWithContext(ctx context.Context) InstanceSystemVolumePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceSystemVolumePtrOutput)
+}
+
+type InstanceSystemVolumeOutput struct{ *pulumi.OutputState }
+
+func (InstanceSystemVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceSystemVolume)(nil)).Elem()
+}
+
+func (o InstanceSystemVolumeOutput) ToInstanceSystemVolumeOutput() InstanceSystemVolumeOutput {
+	return o
+}
+
+func (o InstanceSystemVolumeOutput) ToInstanceSystemVolumeOutputWithContext(ctx context.Context) InstanceSystemVolumeOutput {
+	return o
+}
+
+func (o InstanceSystemVolumeOutput) ToInstanceSystemVolumePtrOutput() InstanceSystemVolumePtrOutput {
+	return o.ToInstanceSystemVolumePtrOutputWithContext(context.Background())
+}
+
+func (o InstanceSystemVolumeOutput) ToInstanceSystemVolumePtrOutputWithContext(ctx context.Context) InstanceSystemVolumePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceSystemVolume) *InstanceSystemVolume {
+		return &v
+	}).(InstanceSystemVolumePtrOutput)
+}
+
+// 实例是否随实例删除。
+func (o InstanceSystemVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// 实例的额外性能IOPS。
+func (o InstanceSystemVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
+}
+
+// 实例的额外性能吞吐量，单位MB。
+func (o InstanceSystemVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
+}
+
+// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+func (o InstanceSystemVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// 实例的大小，单位GiB。
+func (o InstanceSystemVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 实例的快照ID。
+func (o InstanceSystemVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// 实例的卷ID。
+func (o InstanceSystemVolumeOutput) VolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.VolumeId }).(pulumi.StringPtrOutput)
+}
+
+// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+func (o InstanceSystemVolumeOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type InstanceSystemVolumePtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceSystemVolumePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceSystemVolume)(nil)).Elem()
+}
+
+func (o InstanceSystemVolumePtrOutput) ToInstanceSystemVolumePtrOutput() InstanceSystemVolumePtrOutput {
+	return o
+}
+
+func (o InstanceSystemVolumePtrOutput) ToInstanceSystemVolumePtrOutputWithContext(ctx context.Context) InstanceSystemVolumePtrOutput {
+	return o
+}
+
+func (o InstanceSystemVolumePtrOutput) Elem() InstanceSystemVolumeOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) InstanceSystemVolume {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceSystemVolume
+		return ret
+	}).(InstanceSystemVolumeOutput)
+}
+
+// 实例是否随实例删除。
+func (o InstanceSystemVolumePtrOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DeleteWithInstance
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 实例的额外性能IOPS。
+func (o InstanceSystemVolumePtrOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ExtraPerformanceIops
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例的额外性能吞吐量，单位MB。
+func (o InstanceSystemVolumePtrOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ExtraPerformanceThroughputMb
+	}).(pulumi.IntPtrOutput)
+}
+
+// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+func (o InstanceSystemVolumePtrOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExtraPerformanceTypeId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的大小，单位GiB。
+func (o InstanceSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Size
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例的快照ID。
+func (o InstanceSystemVolumePtrOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SnapshotId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的卷ID。
+func (o InstanceSystemVolumePtrOutput) VolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VolumeId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+func (o InstanceSystemVolumePtrOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceSystemVolume) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VolumeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceTag struct {
+	// 实例的键。
+	Key *string `pulumi:"key"`
+	// 实例的值。
+	Value *string `pulumi:"value"`
+}
+
+// InstanceTagInput is an input type that accepts InstanceTagArgs and InstanceTagOutput values.
+// You can construct a concrete instance of `InstanceTagInput` via:
+//
+//	InstanceTagArgs{...}
+type InstanceTagInput interface {
+	pulumi.Input
+
+	ToInstanceTagOutput() InstanceTagOutput
+	ToInstanceTagOutputWithContext(context.Context) InstanceTagOutput
+}
+
+type InstanceTagArgs struct {
+	// 实例的键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 实例的值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (InstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutput() InstanceTagOutput {
+	return i.ToInstanceTagOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagOutput)
+}
+
+// InstanceTagArrayInput is an input type that accepts InstanceTagArray and InstanceTagArrayOutput values.
+// You can construct a concrete instance of `InstanceTagArrayInput` via:
+//
+//	InstanceTagArray{ InstanceTagArgs{...} }
+type InstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToInstanceTagArrayOutput() InstanceTagArrayOutput
+	ToInstanceTagArrayOutputWithContext(context.Context) InstanceTagArrayOutput
+}
+
+type InstanceTagArray []InstanceTagInput
+
+func (InstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return i.ToInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagArrayOutput)
+}
+
+type InstanceTagOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutput() InstanceTagOutput {
+	return o
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return o
+}
+
+// 实例的键。
+func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 实例的值。
+func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type InstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceTag {
+		return vs[0].([]InstanceTag)[vs[1].(int)]
+	}).(InstanceTagOutput)
+}
+
 type GetImageDetectionResults struct {
 	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
 	DetectionStatus string `pulumi:"detectionStatus"`
@@ -916,6 +2954,1049 @@ func (o GetImageTagArrayOutput) Index(i pulumi.IntInput) GetImageTagOutput {
 	}).(GetImageTagOutput)
 }
 
+type GetInstanceCpuMemory struct {
+	// 实例的核数。
+	CoreCount int `pulumi:"coreCount"`
+	// 实例的CPU数量。
+	CpuNumber int `pulumi:"cpuNumber"`
+	// 实例的内存大小，单位MB。
+	MemorySize int `pulumi:"memorySize"`
+	// 实例的每核线程数。
+	ThreadsPerCore int `pulumi:"threadsPerCore"`
+}
+
+// GetInstanceCpuMemoryInput is an input type that accepts GetInstanceCpuMemoryArgs and GetInstanceCpuMemoryOutput values.
+// You can construct a concrete instance of `GetInstanceCpuMemoryInput` via:
+//
+//	GetInstanceCpuMemoryArgs{...}
+type GetInstanceCpuMemoryInput interface {
+	pulumi.Input
+
+	ToGetInstanceCpuMemoryOutput() GetInstanceCpuMemoryOutput
+	ToGetInstanceCpuMemoryOutputWithContext(context.Context) GetInstanceCpuMemoryOutput
+}
+
+type GetInstanceCpuMemoryArgs struct {
+	// 实例的核数。
+	CoreCount pulumi.IntInput `pulumi:"coreCount"`
+	// 实例的CPU数量。
+	CpuNumber pulumi.IntInput `pulumi:"cpuNumber"`
+	// 实例的内存大小，单位MB。
+	MemorySize pulumi.IntInput `pulumi:"memorySize"`
+	// 实例的每核线程数。
+	ThreadsPerCore pulumi.IntInput `pulumi:"threadsPerCore"`
+}
+
+func (GetInstanceCpuMemoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceCpuMemory)(nil)).Elem()
+}
+
+func (i GetInstanceCpuMemoryArgs) ToGetInstanceCpuMemoryOutput() GetInstanceCpuMemoryOutput {
+	return i.ToGetInstanceCpuMemoryOutputWithContext(context.Background())
+}
+
+func (i GetInstanceCpuMemoryArgs) ToGetInstanceCpuMemoryOutputWithContext(ctx context.Context) GetInstanceCpuMemoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceCpuMemoryOutput)
+}
+
+type GetInstanceCpuMemoryOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceCpuMemoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceCpuMemory)(nil)).Elem()
+}
+
+func (o GetInstanceCpuMemoryOutput) ToGetInstanceCpuMemoryOutput() GetInstanceCpuMemoryOutput {
+	return o
+}
+
+func (o GetInstanceCpuMemoryOutput) ToGetInstanceCpuMemoryOutputWithContext(ctx context.Context) GetInstanceCpuMemoryOutput {
+	return o
+}
+
+// 实例的核数。
+func (o GetInstanceCpuMemoryOutput) CoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.CoreCount }).(pulumi.IntOutput)
+}
+
+// 实例的CPU数量。
+func (o GetInstanceCpuMemoryOutput) CpuNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.CpuNumber }).(pulumi.IntOutput)
+}
+
+// 实例的内存大小，单位MB。
+func (o GetInstanceCpuMemoryOutput) MemorySize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.MemorySize }).(pulumi.IntOutput)
+}
+
+// 实例的每核线程数。
+func (o GetInstanceCpuMemoryOutput) ThreadsPerCore() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.ThreadsPerCore }).(pulumi.IntOutput)
+}
+
+type GetInstanceEipAddress struct {
+	// 实例的分配ID。
+	AllocationId string `pulumi:"allocationId"`
+	// 公网IP的带宽上限，默认值为1，单位：Mbps。
+	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	BandwidthMbps int `pulumi:"bandwidthMbps"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	// - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//   - 二者的安全防护类型相同。
+	//   - 二者的地域相同。
+	//   - 公网IP的计费方式必须是按量计费。
+	//   - 共享带宽包为IPv4类型。
+	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：
+	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	// - PayByTraffic：按量计费-按实际流量计费。
+	// - PrePaid：包年包月。
+	//   :::tip
+	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   :::
+	ChargeType string `pulumi:"chargeType"`
+	// 实例的IP地址。
+	IpAddress string `pulumi:"ipAddress"`
+	// 公网IP的线路类型，默认为BGP。取值：
+	// - BGP：BGP（多线）。
+	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//   - ChinaMobile：中国移动静态单线。
+	//   - ChinaTelecom：中国电信静态单线。
+	//   - ChinaUnicom：中国联通静态单线。
+	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	Isp string `pulumi:"isp"`
+	// 实例是否随实例释放。
+	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
+}
+
+// GetInstanceEipAddressInput is an input type that accepts GetInstanceEipAddressArgs and GetInstanceEipAddressOutput values.
+// You can construct a concrete instance of `GetInstanceEipAddressInput` via:
+//
+//	GetInstanceEipAddressArgs{...}
+type GetInstanceEipAddressInput interface {
+	pulumi.Input
+
+	ToGetInstanceEipAddressOutput() GetInstanceEipAddressOutput
+	ToGetInstanceEipAddressOutputWithContext(context.Context) GetInstanceEipAddressOutput
+}
+
+type GetInstanceEipAddressArgs struct {
+	// 实例的分配ID。
+	AllocationId pulumi.StringInput `pulumi:"allocationId"`
+	// 公网IP的带宽上限，默认值为1，单位：Mbps。
+	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	// - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//   - 二者的安全防护类型相同。
+	//   - 二者的地域相同。
+	//   - 公网IP的计费方式必须是按量计费。
+	//   - 共享带宽包为IPv4类型。
+	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：
+	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	// - PayByTraffic：按量计费-按实际流量计费。
+	// - PrePaid：包年包月。
+	//   :::tip
+	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   :::
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// 实例的IP地址。
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// 公网IP的线路类型，默认为BGP。取值：
+	// - BGP：BGP（多线）。
+	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//   - ChinaMobile：中国移动静态单线。
+	//   - ChinaTelecom：中国电信静态单线。
+	//   - ChinaUnicom：中国联通静态单线。
+	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// 实例是否随实例释放。
+	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
+}
+
+func (GetInstanceEipAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEipAddress)(nil)).Elem()
+}
+
+func (i GetInstanceEipAddressArgs) ToGetInstanceEipAddressOutput() GetInstanceEipAddressOutput {
+	return i.ToGetInstanceEipAddressOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEipAddressArgs) ToGetInstanceEipAddressOutputWithContext(ctx context.Context) GetInstanceEipAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEipAddressOutput)
+}
+
+type GetInstanceEipAddressOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEipAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEipAddress)(nil)).Elem()
+}
+
+func (o GetInstanceEipAddressOutput) ToGetInstanceEipAddressOutput() GetInstanceEipAddressOutput {
+	return o
+}
+
+func (o GetInstanceEipAddressOutput) ToGetInstanceEipAddressOutputWithContext(ctx context.Context) GetInstanceEipAddressOutput {
+	return o
+}
+
+// 实例的分配ID。
+func (o GetInstanceEipAddressOutput) AllocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.AllocationId }).(pulumi.StringOutput)
+}
+
+// 公网IP的带宽上限，默认值为1，单位：Mbps。
+// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+func (o GetInstanceEipAddressOutput) BandwidthMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) int { return v.BandwidthMbps }).(pulumi.IntOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+// - 公网IP加入到共享带宽包必须同时满足如下条件：
+//   - 二者的安全防护类型相同。
+//   - 二者的地域相同。
+//   - 公网IP的计费方式必须是按量计费。
+//   - 共享带宽包为IPv4类型。
+func (o GetInstanceEipAddressOutput) BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
+}
+
+// 公网IP的计费方式，取值：
+//   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//   - PayByTraffic：按量计费-按实际流量计费。
+//   - PrePaid：包年包月。
+//     :::tip
+//     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+//     :::
+func (o GetInstanceEipAddressOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// 实例的IP地址。
+func (o GetInstanceEipAddressOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// 公网IP的线路类型，默认为BGP。取值：
+// - BGP：BGP（多线）。
+// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+//   - ChinaMobile：中国移动静态单线。
+//   - ChinaTelecom：中国电信静态单线。
+//   - ChinaUnicom：中国联通静态单线。
+//
+// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+func (o GetInstanceEipAddressOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// 实例是否随实例释放。
+func (o GetInstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
+}
+
+type GetInstanceImage struct {
+	// 实例的镜像ID。
+	ImageId string `pulumi:"imageId"`
+	// 实例的镜像发布版本。
+	ImageReleaseVersion string `pulumi:"imageReleaseVersion"`
+	// 实例是否保留镜像凭证。
+	KeepImageCredential bool `pulumi:"keepImageCredential"`
+	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy string `pulumi:"securityEnhancementStrategy"`
+}
+
+// GetInstanceImageInput is an input type that accepts GetInstanceImageArgs and GetInstanceImageOutput values.
+// You can construct a concrete instance of `GetInstanceImageInput` via:
+//
+//	GetInstanceImageArgs{...}
+type GetInstanceImageInput interface {
+	pulumi.Input
+
+	ToGetInstanceImageOutput() GetInstanceImageOutput
+	ToGetInstanceImageOutputWithContext(context.Context) GetInstanceImageOutput
+}
+
+type GetInstanceImageArgs struct {
+	// 实例的镜像ID。
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// 实例的镜像发布版本。
+	ImageReleaseVersion pulumi.StringInput `pulumi:"imageReleaseVersion"`
+	// 实例是否保留镜像凭证。
+	KeepImageCredential pulumi.BoolInput `pulumi:"keepImageCredential"`
+	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy pulumi.StringInput `pulumi:"securityEnhancementStrategy"`
+}
+
+func (GetInstanceImageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceImage)(nil)).Elem()
+}
+
+func (i GetInstanceImageArgs) ToGetInstanceImageOutput() GetInstanceImageOutput {
+	return i.ToGetInstanceImageOutputWithContext(context.Background())
+}
+
+func (i GetInstanceImageArgs) ToGetInstanceImageOutputWithContext(ctx context.Context) GetInstanceImageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceImageOutput)
+}
+
+type GetInstanceImageOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceImageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceImage)(nil)).Elem()
+}
+
+func (o GetInstanceImageOutput) ToGetInstanceImageOutput() GetInstanceImageOutput {
+	return o
+}
+
+func (o GetInstanceImageOutput) ToGetInstanceImageOutputWithContext(ctx context.Context) GetInstanceImageOutput {
+	return o
+}
+
+// 实例的镜像ID。
+func (o GetInstanceImageOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceImage) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// 实例的镜像发布版本。
+func (o GetInstanceImageOutput) ImageReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceImage) string { return v.ImageReleaseVersion }).(pulumi.StringOutput)
+}
+
+// 实例是否保留镜像凭证。
+func (o GetInstanceImageOutput) KeepImageCredential() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceImage) bool { return v.KeepImageCredential }).(pulumi.BoolOutput)
+}
+
+// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+func (o GetInstanceImageOutput) SecurityEnhancementStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceImage) string { return v.SecurityEnhancementStrategy }).(pulumi.StringOutput)
+}
+
+type GetInstanceKeyPair struct {
+	// 实例的公钥。
+	KeyPairId string `pulumi:"keyPairId"`
+	// 实例的密钥对名称。
+	KeyPairName string `pulumi:"keyPairName"`
+}
+
+// GetInstanceKeyPairInput is an input type that accepts GetInstanceKeyPairArgs and GetInstanceKeyPairOutput values.
+// You can construct a concrete instance of `GetInstanceKeyPairInput` via:
+//
+//	GetInstanceKeyPairArgs{...}
+type GetInstanceKeyPairInput interface {
+	pulumi.Input
+
+	ToGetInstanceKeyPairOutput() GetInstanceKeyPairOutput
+	ToGetInstanceKeyPairOutputWithContext(context.Context) GetInstanceKeyPairOutput
+}
+
+type GetInstanceKeyPairArgs struct {
+	// 实例的公钥。
+	KeyPairId pulumi.StringInput `pulumi:"keyPairId"`
+	// 实例的密钥对名称。
+	KeyPairName pulumi.StringInput `pulumi:"keyPairName"`
+}
+
+func (GetInstanceKeyPairArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceKeyPair)(nil)).Elem()
+}
+
+func (i GetInstanceKeyPairArgs) ToGetInstanceKeyPairOutput() GetInstanceKeyPairOutput {
+	return i.ToGetInstanceKeyPairOutputWithContext(context.Background())
+}
+
+func (i GetInstanceKeyPairArgs) ToGetInstanceKeyPairOutputWithContext(ctx context.Context) GetInstanceKeyPairOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceKeyPairOutput)
+}
+
+type GetInstanceKeyPairOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceKeyPairOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceKeyPair)(nil)).Elem()
+}
+
+func (o GetInstanceKeyPairOutput) ToGetInstanceKeyPairOutput() GetInstanceKeyPairOutput {
+	return o
+}
+
+func (o GetInstanceKeyPairOutput) ToGetInstanceKeyPairOutputWithContext(ctx context.Context) GetInstanceKeyPairOutput {
+	return o
+}
+
+// 实例的公钥。
+func (o GetInstanceKeyPairOutput) KeyPairId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceKeyPair) string { return v.KeyPairId }).(pulumi.StringOutput)
+}
+
+// 实例的密钥对名称。
+func (o GetInstanceKeyPairOutput) KeyPairName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceKeyPair) string { return v.KeyPairName }).(pulumi.StringOutput)
+}
+
+type GetInstanceOperationSystem struct {
+	// 实例的操作系统名称。
+	Name string `pulumi:"name"`
+	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceOperationSystemInput is an input type that accepts GetInstanceOperationSystemArgs and GetInstanceOperationSystemOutput values.
+// You can construct a concrete instance of `GetInstanceOperationSystemInput` via:
+//
+//	GetInstanceOperationSystemArgs{...}
+type GetInstanceOperationSystemInput interface {
+	pulumi.Input
+
+	ToGetInstanceOperationSystemOutput() GetInstanceOperationSystemOutput
+	ToGetInstanceOperationSystemOutputWithContext(context.Context) GetInstanceOperationSystemOutput
+}
+
+type GetInstanceOperationSystemArgs struct {
+	// 实例的操作系统名称。
+	Name pulumi.StringInput `pulumi:"name"`
+	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceOperationSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceOperationSystem)(nil)).Elem()
+}
+
+func (i GetInstanceOperationSystemArgs) ToGetInstanceOperationSystemOutput() GetInstanceOperationSystemOutput {
+	return i.ToGetInstanceOperationSystemOutputWithContext(context.Background())
+}
+
+func (i GetInstanceOperationSystemArgs) ToGetInstanceOperationSystemOutputWithContext(ctx context.Context) GetInstanceOperationSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceOperationSystemOutput)
+}
+
+type GetInstanceOperationSystemOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceOperationSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceOperationSystem)(nil)).Elem()
+}
+
+func (o GetInstanceOperationSystemOutput) ToGetInstanceOperationSystemOutput() GetInstanceOperationSystemOutput {
+	return o
+}
+
+func (o GetInstanceOperationSystemOutput) ToGetInstanceOperationSystemOutputWithContext(ctx context.Context) GetInstanceOperationSystemOutput {
+	return o
+}
+
+// 实例的操作系统名称。
+func (o GetInstanceOperationSystemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceOperationSystem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+func (o GetInstanceOperationSystemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceOperationSystem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetInstancePlacement struct {
+	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	Affinity string `pulumi:"affinity"`
+	// 实例的专用主机集群ID。
+	DedicatedHostClusterId string `pulumi:"dedicatedHostClusterId"`
+	// 实例的专用主机ID。
+	DedicatedHostId string `pulumi:"dedicatedHostId"`
+	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	Tenancy string `pulumi:"tenancy"`
+}
+
+// GetInstancePlacementInput is an input type that accepts GetInstancePlacementArgs and GetInstancePlacementOutput values.
+// You can construct a concrete instance of `GetInstancePlacementInput` via:
+//
+//	GetInstancePlacementArgs{...}
+type GetInstancePlacementInput interface {
+	pulumi.Input
+
+	ToGetInstancePlacementOutput() GetInstancePlacementOutput
+	ToGetInstancePlacementOutputWithContext(context.Context) GetInstancePlacementOutput
+}
+
+type GetInstancePlacementArgs struct {
+	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	Affinity pulumi.StringInput `pulumi:"affinity"`
+	// 实例的专用主机集群ID。
+	DedicatedHostClusterId pulumi.StringInput `pulumi:"dedicatedHostClusterId"`
+	// 实例的专用主机ID。
+	DedicatedHostId pulumi.StringInput `pulumi:"dedicatedHostId"`
+	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	Tenancy pulumi.StringInput `pulumi:"tenancy"`
+}
+
+func (GetInstancePlacementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePlacement)(nil)).Elem()
+}
+
+func (i GetInstancePlacementArgs) ToGetInstancePlacementOutput() GetInstancePlacementOutput {
+	return i.ToGetInstancePlacementOutputWithContext(context.Background())
+}
+
+func (i GetInstancePlacementArgs) ToGetInstancePlacementOutputWithContext(ctx context.Context) GetInstancePlacementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePlacementOutput)
+}
+
+type GetInstancePlacementOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePlacementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePlacement)(nil)).Elem()
+}
+
+func (o GetInstancePlacementOutput) ToGetInstancePlacementOutput() GetInstancePlacementOutput {
+	return o
+}
+
+func (o GetInstancePlacementOutput) ToGetInstancePlacementOutputWithContext(ctx context.Context) GetInstancePlacementOutput {
+	return o
+}
+
+// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+func (o GetInstancePlacementOutput) Affinity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePlacement) string { return v.Affinity }).(pulumi.StringOutput)
+}
+
+// 实例的专用主机集群ID。
+func (o GetInstancePlacementOutput) DedicatedHostClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePlacement) string { return v.DedicatedHostClusterId }).(pulumi.StringOutput)
+}
+
+// 实例的专用主机ID。
+func (o GetInstancePlacementOutput) DedicatedHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePlacement) string { return v.DedicatedHostId }).(pulumi.StringOutput)
+}
+
+// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+func (o GetInstancePlacementOutput) Tenancy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePlacement) string { return v.Tenancy }).(pulumi.StringOutput)
+}
+
+type GetInstancePrimaryNetworkInterface struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount int `pulumi:"ipv6AddressCount"`
+	// 实例的IPv6地址。
+	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
+	// 实例的MAC地址。
+	MacAddress string `pulumi:"macAddress"`
+	// 实例的网络接口ID。
+	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
+	// 实例的主IP地址。
+	PrimaryIpAddress string `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetInstancePrimaryNetworkInterfaceInput is an input type that accepts GetInstancePrimaryNetworkInterfaceArgs and GetInstancePrimaryNetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetInstancePrimaryNetworkInterfaceInput` via:
+//
+//	GetInstancePrimaryNetworkInterfaceArgs{...}
+type GetInstancePrimaryNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetInstancePrimaryNetworkInterfaceOutput() GetInstancePrimaryNetworkInterfaceOutput
+	ToGetInstancePrimaryNetworkInterfaceOutputWithContext(context.Context) GetInstancePrimaryNetworkInterfaceOutput
+}
+
+type GetInstancePrimaryNetworkInterfaceArgs struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount pulumi.IntInput `pulumi:"ipv6AddressCount"`
+	// 实例的IPv6地址。
+	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
+	// 实例的MAC地址。
+	MacAddress pulumi.StringInput `pulumi:"macAddress"`
+	// 实例的网络接口ID。
+	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
+	// 实例的主IP地址。
+	PrimaryIpAddress pulumi.StringInput `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetInstancePrimaryNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePrimaryNetworkInterface)(nil)).Elem()
+}
+
+func (i GetInstancePrimaryNetworkInterfaceArgs) ToGetInstancePrimaryNetworkInterfaceOutput() GetInstancePrimaryNetworkInterfaceOutput {
+	return i.ToGetInstancePrimaryNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetInstancePrimaryNetworkInterfaceArgs) ToGetInstancePrimaryNetworkInterfaceOutputWithContext(ctx context.Context) GetInstancePrimaryNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePrimaryNetworkInterfaceOutput)
+}
+
+type GetInstancePrimaryNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePrimaryNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePrimaryNetworkInterface)(nil)).Elem()
+}
+
+func (o GetInstancePrimaryNetworkInterfaceOutput) ToGetInstancePrimaryNetworkInterfaceOutput() GetInstancePrimaryNetworkInterfaceOutput {
+	return o
+}
+
+func (o GetInstancePrimaryNetworkInterfaceOutput) ToGetInstancePrimaryNetworkInterfaceOutputWithContext(ctx context.Context) GetInstancePrimaryNetworkInterfaceOutput {
+	return o
+}
+
+// 实例的IPv6地址数量。
+func (o GetInstancePrimaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) int { return v.Ipv6AddressCount }).(pulumi.IntOutput)
+}
+
+// 实例的IPv6地址。
+func (o GetInstancePrimaryNetworkInterfaceOutput) Ipv6Addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
+}
+
+// 实例的MAC地址。
+func (o GetInstancePrimaryNetworkInterfaceOutput) MacAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.MacAddress }).(pulumi.StringOutput)
+}
+
+// 实例的网络接口ID。
+func (o GetInstancePrimaryNetworkInterfaceOutput) NetworkInterfaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
+}
+
+// 实例的主IP地址。
+func (o GetInstancePrimaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.PrimaryIpAddress }).(pulumi.StringOutput)
+}
+
+// 实例的私有IP地址。
+func (o GetInstancePrimaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// 实例的安全组ID。
+func (o GetInstancePrimaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的子网ID。
+func (o GetInstancePrimaryNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// 实例的VPC ID。
+func (o GetInstancePrimaryNetworkInterfaceOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetInstanceSecondaryNetworkInterface struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount int `pulumi:"ipv6AddressCount"`
+	// 实例的IPv6地址。
+	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
+	// 实例的MAC地址。
+	MacAddress string `pulumi:"macAddress"`
+	// 实例的网络接口ID。
+	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
+	// 实例的主IP地址。
+	PrimaryIpAddress string `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetInstanceSecondaryNetworkInterfaceInput is an input type that accepts GetInstanceSecondaryNetworkInterfaceArgs and GetInstanceSecondaryNetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetInstanceSecondaryNetworkInterfaceInput` via:
+//
+//	GetInstanceSecondaryNetworkInterfaceArgs{...}
+type GetInstanceSecondaryNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetInstanceSecondaryNetworkInterfaceOutput() GetInstanceSecondaryNetworkInterfaceOutput
+	ToGetInstanceSecondaryNetworkInterfaceOutputWithContext(context.Context) GetInstanceSecondaryNetworkInterfaceOutput
+}
+
+type GetInstanceSecondaryNetworkInterfaceArgs struct {
+	// 实例的IPv6地址数量。
+	Ipv6AddressCount pulumi.IntInput `pulumi:"ipv6AddressCount"`
+	// 实例的IPv6地址。
+	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
+	// 实例的MAC地址。
+	MacAddress pulumi.StringInput `pulumi:"macAddress"`
+	// 实例的网络接口ID。
+	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
+	// 实例的主IP地址。
+	PrimaryIpAddress pulumi.StringInput `pulumi:"primaryIpAddress"`
+	// 实例的私有IP地址。
+	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
+	// 实例的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// 实例的VPC ID。
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetInstanceSecondaryNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (i GetInstanceSecondaryNetworkInterfaceArgs) ToGetInstanceSecondaryNetworkInterfaceOutput() GetInstanceSecondaryNetworkInterfaceOutput {
+	return i.ToGetInstanceSecondaryNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetInstanceSecondaryNetworkInterfaceArgs) ToGetInstanceSecondaryNetworkInterfaceOutputWithContext(ctx context.Context) GetInstanceSecondaryNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceSecondaryNetworkInterfaceOutput)
+}
+
+// GetInstanceSecondaryNetworkInterfaceArrayInput is an input type that accepts GetInstanceSecondaryNetworkInterfaceArray and GetInstanceSecondaryNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `GetInstanceSecondaryNetworkInterfaceArrayInput` via:
+//
+//	GetInstanceSecondaryNetworkInterfaceArray{ GetInstanceSecondaryNetworkInterfaceArgs{...} }
+type GetInstanceSecondaryNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceSecondaryNetworkInterfaceArrayOutput() GetInstanceSecondaryNetworkInterfaceArrayOutput
+	ToGetInstanceSecondaryNetworkInterfaceArrayOutputWithContext(context.Context) GetInstanceSecondaryNetworkInterfaceArrayOutput
+}
+
+type GetInstanceSecondaryNetworkInterfaceArray []GetInstanceSecondaryNetworkInterfaceInput
+
+func (GetInstanceSecondaryNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (i GetInstanceSecondaryNetworkInterfaceArray) ToGetInstanceSecondaryNetworkInterfaceArrayOutput() GetInstanceSecondaryNetworkInterfaceArrayOutput {
+	return i.ToGetInstanceSecondaryNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceSecondaryNetworkInterfaceArray) ToGetInstanceSecondaryNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetInstanceSecondaryNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceSecondaryNetworkInterfaceArrayOutput)
+}
+
+type GetInstanceSecondaryNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceSecondaryNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (o GetInstanceSecondaryNetworkInterfaceOutput) ToGetInstanceSecondaryNetworkInterfaceOutput() GetInstanceSecondaryNetworkInterfaceOutput {
+	return o
+}
+
+func (o GetInstanceSecondaryNetworkInterfaceOutput) ToGetInstanceSecondaryNetworkInterfaceOutputWithContext(ctx context.Context) GetInstanceSecondaryNetworkInterfaceOutput {
+	return o
+}
+
+// 实例的IPv6地址数量。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) int { return v.Ipv6AddressCount }).(pulumi.IntOutput)
+}
+
+// 实例的IPv6地址。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) Ipv6Addresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
+}
+
+// 实例的MAC地址。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) MacAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.MacAddress }).(pulumi.StringOutput)
+}
+
+// 实例的网络接口ID。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) NetworkInterfaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
+}
+
+// 实例的主IP地址。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.PrimaryIpAddress }).(pulumi.StringOutput)
+}
+
+// 实例的私有IP地址。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// 实例的安全组ID。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的子网ID。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// 实例的VPC ID。
+func (o GetInstanceSecondaryNetworkInterfaceOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetInstanceSecondaryNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceSecondaryNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceSecondaryNetworkInterface)(nil)).Elem()
+}
+
+func (o GetInstanceSecondaryNetworkInterfaceArrayOutput) ToGetInstanceSecondaryNetworkInterfaceArrayOutput() GetInstanceSecondaryNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetInstanceSecondaryNetworkInterfaceArrayOutput) ToGetInstanceSecondaryNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetInstanceSecondaryNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetInstanceSecondaryNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetInstanceSecondaryNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceSecondaryNetworkInterface {
+		return vs[0].([]GetInstanceSecondaryNetworkInterface)[vs[1].(int)]
+	}).(GetInstanceSecondaryNetworkInterfaceOutput)
+}
+
+type GetInstanceSystemVolume struct {
+	// 实例是否随实例删除。
+	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
+	// 实例的额外性能IOPS。
+	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
+	// 实例的额外性能吞吐量，单位MB。
+	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
+	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
+	// 实例的大小，单位GiB。
+	Size int `pulumi:"size"`
+	// 实例的快照ID。
+	SnapshotId string `pulumi:"snapshotId"`
+	// 实例的卷ID。
+	VolumeId string `pulumi:"volumeId"`
+	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetInstanceSystemVolumeInput is an input type that accepts GetInstanceSystemVolumeArgs and GetInstanceSystemVolumeOutput values.
+// You can construct a concrete instance of `GetInstanceSystemVolumeInput` via:
+//
+//	GetInstanceSystemVolumeArgs{...}
+type GetInstanceSystemVolumeInput interface {
+	pulumi.Input
+
+	ToGetInstanceSystemVolumeOutput() GetInstanceSystemVolumeOutput
+	ToGetInstanceSystemVolumeOutputWithContext(context.Context) GetInstanceSystemVolumeOutput
+}
+
+type GetInstanceSystemVolumeArgs struct {
+	// 实例是否随实例删除。
+	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
+	// 实例的额外性能IOPS。
+	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
+	// 实例的额外性能吞吐量，单位MB。
+	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
+	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
+	// 实例的大小，单位GiB。
+	Size pulumi.IntInput `pulumi:"size"`
+	// 实例的快照ID。
+	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
+	// 实例的卷ID。
+	VolumeId pulumi.StringInput `pulumi:"volumeId"`
+	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetInstanceSystemVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSystemVolume)(nil)).Elem()
+}
+
+func (i GetInstanceSystemVolumeArgs) ToGetInstanceSystemVolumeOutput() GetInstanceSystemVolumeOutput {
+	return i.ToGetInstanceSystemVolumeOutputWithContext(context.Background())
+}
+
+func (i GetInstanceSystemVolumeArgs) ToGetInstanceSystemVolumeOutputWithContext(ctx context.Context) GetInstanceSystemVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceSystemVolumeOutput)
+}
+
+type GetInstanceSystemVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceSystemVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSystemVolume)(nil)).Elem()
+}
+
+func (o GetInstanceSystemVolumeOutput) ToGetInstanceSystemVolumeOutput() GetInstanceSystemVolumeOutput {
+	return o
+}
+
+func (o GetInstanceSystemVolumeOutput) ToGetInstanceSystemVolumeOutputWithContext(ctx context.Context) GetInstanceSystemVolumeOutput {
+	return o
+}
+
+// 实例是否随实例删除。
+func (o GetInstanceSystemVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
+}
+
+// 实例的额外性能IOPS。
+func (o GetInstanceSystemVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
+}
+
+// 实例的额外性能吞吐量，单位MB。
+func (o GetInstanceSystemVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
+}
+
+// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+func (o GetInstanceSystemVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
+}
+
+// 实例的大小，单位GiB。
+func (o GetInstanceSystemVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 实例的快照ID。
+func (o GetInstanceSystemVolumeOutput) SnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
+}
+
+// 实例的卷ID。
+func (o GetInstanceSystemVolumeOutput) VolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.VolumeId }).(pulumi.StringOutput)
+}
+
+// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+func (o GetInstanceSystemVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetInstanceTag struct {
+	// 实例的键。
+	Key string `pulumi:"key"`
+	// 实例的值。
+	Value string `pulumi:"value"`
+}
+
+// GetInstanceTagInput is an input type that accepts GetInstanceTagArgs and GetInstanceTagOutput values.
+// You can construct a concrete instance of `GetInstanceTagInput` via:
+//
+//	GetInstanceTagArgs{...}
+type GetInstanceTagInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagOutput() GetInstanceTagOutput
+	ToGetInstanceTagOutputWithContext(context.Context) GetInstanceTagOutput
+}
+
+type GetInstanceTagArgs struct {
+	// 实例的键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 实例的值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetInstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return i.ToGetInstanceTagOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagOutput)
+}
+
+// GetInstanceTagArrayInput is an input type that accepts GetInstanceTagArray and GetInstanceTagArrayOutput values.
+// You can construct a concrete instance of `GetInstanceTagArrayInput` via:
+//
+//	GetInstanceTagArray{ GetInstanceTagArgs{...} }
+type GetInstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput
+	ToGetInstanceTagArrayOutputWithContext(context.Context) GetInstanceTagArrayOutput
+}
+
+type GetInstanceTagArray []GetInstanceTagInput
+
+func (GetInstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return i.ToGetInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagArrayOutput)
+}
+
+type GetInstanceTagOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return o
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return o
+}
+
+// 实例的键。
+func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 实例的值。
+func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetInstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceTag {
+		return vs[0].([]GetInstanceTag)[vs[1].(int)]
+	}).(GetInstanceTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsPtrInput)(nil)).Elem(), ImageDetectionResultsArgs{})
@@ -925,6 +4006,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageSnapshotArrayInput)(nil)).Elem(), ImageSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageTagInput)(nil)).Elem(), ImageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageTagArrayInput)(nil)).Elem(), ImageTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuMemoryInput)(nil)).Elem(), InstanceCpuMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuMemoryPtrInput)(nil)).Elem(), InstanceCpuMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEipAddressInput)(nil)).Elem(), InstanceEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEipAddressPtrInput)(nil)).Elem(), InstanceEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceImageInput)(nil)).Elem(), InstanceImageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceImagePtrInput)(nil)).Elem(), InstanceImageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceKeyPairInput)(nil)).Elem(), InstanceKeyPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceKeyPairPtrInput)(nil)).Elem(), InstanceKeyPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceOperationSystemInput)(nil)).Elem(), InstanceOperationSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceOperationSystemPtrInput)(nil)).Elem(), InstanceOperationSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePlacementInput)(nil)).Elem(), InstancePlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePlacementPtrInput)(nil)).Elem(), InstancePlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePrimaryNetworkInterfaceInput)(nil)).Elem(), InstancePrimaryNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstancePrimaryNetworkInterfacePtrInput)(nil)).Elem(), InstancePrimaryNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSecondaryNetworkInterfaceInput)(nil)).Elem(), InstanceSecondaryNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSecondaryNetworkInterfaceArrayInput)(nil)).Elem(), InstanceSecondaryNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSystemVolumeInput)(nil)).Elem(), InstanceSystemVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSystemVolumePtrInput)(nil)).Elem(), InstanceSystemVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsInput)(nil)).Elem(), GetImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemInput)(nil)).Elem(), GetImageDetectionResultsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemArrayInput)(nil)).Elem(), GetImageDetectionResultsItemArray{})
@@ -932,6 +4033,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageSnapshotArrayInput)(nil)).Elem(), GetImageSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageTagInput)(nil)).Elem(), GetImageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageTagArrayInput)(nil)).Elem(), GetImageTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCpuMemoryInput)(nil)).Elem(), GetInstanceCpuMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEipAddressInput)(nil)).Elem(), GetInstanceEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceImageInput)(nil)).Elem(), GetInstanceImageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceKeyPairInput)(nil)).Elem(), GetInstanceKeyPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceOperationSystemInput)(nil)).Elem(), GetInstanceOperationSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePlacementInput)(nil)).Elem(), GetInstancePlacementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePrimaryNetworkInterfaceInput)(nil)).Elem(), GetInstancePrimaryNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSecondaryNetworkInterfaceInput)(nil)).Elem(), GetInstanceSecondaryNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSecondaryNetworkInterfaceArrayInput)(nil)).Elem(), GetInstanceSecondaryNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSystemVolumeInput)(nil)).Elem(), GetInstanceSystemVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterOutputType(ImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsPtrOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsItemOutput{})
@@ -940,6 +4053,26 @@ func init() {
 	pulumi.RegisterOutputType(ImageSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(ImageTagOutput{})
 	pulumi.RegisterOutputType(ImageTagArrayOutput{})
+	pulumi.RegisterOutputType(InstanceCpuMemoryOutput{})
+	pulumi.RegisterOutputType(InstanceCpuMemoryPtrOutput{})
+	pulumi.RegisterOutputType(InstanceEipAddressOutput{})
+	pulumi.RegisterOutputType(InstanceEipAddressPtrOutput{})
+	pulumi.RegisterOutputType(InstanceImageOutput{})
+	pulumi.RegisterOutputType(InstanceImagePtrOutput{})
+	pulumi.RegisterOutputType(InstanceKeyPairOutput{})
+	pulumi.RegisterOutputType(InstanceKeyPairPtrOutput{})
+	pulumi.RegisterOutputType(InstanceOperationSystemOutput{})
+	pulumi.RegisterOutputType(InstanceOperationSystemPtrOutput{})
+	pulumi.RegisterOutputType(InstancePlacementOutput{})
+	pulumi.RegisterOutputType(InstancePlacementPtrOutput{})
+	pulumi.RegisterOutputType(InstancePrimaryNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(InstancePrimaryNetworkInterfacePtrOutput{})
+	pulumi.RegisterOutputType(InstanceSecondaryNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(InstanceSecondaryNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(InstanceSystemVolumeOutput{})
+	pulumi.RegisterOutputType(InstanceSystemVolumePtrOutput{})
+	pulumi.RegisterOutputType(InstanceTagOutput{})
+	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemArrayOutput{})
@@ -947,4 +4080,16 @@ func init() {
 	pulumi.RegisterOutputType(GetImageSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetImageTagOutput{})
 	pulumi.RegisterOutputType(GetImageTagArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceCpuMemoryOutput{})
+	pulumi.RegisterOutputType(GetInstanceEipAddressOutput{})
+	pulumi.RegisterOutputType(GetInstanceImageOutput{})
+	pulumi.RegisterOutputType(GetInstanceKeyPairOutput{})
+	pulumi.RegisterOutputType(GetInstanceOperationSystemOutput{})
+	pulumi.RegisterOutputType(GetInstancePlacementOutput{})
+	pulumi.RegisterOutputType(GetInstancePrimaryNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetInstanceSecondaryNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetInstanceSecondaryNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceSystemVolumeOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
 }

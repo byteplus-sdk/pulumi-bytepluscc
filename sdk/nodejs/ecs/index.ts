@@ -15,10 +15,25 @@ export const getImages: typeof import("./getImages").getImages = null as any;
 export const getImagesOutput: typeof import("./getImages").getImagesOutput = null as any;
 utilities.lazyLoad(exports, ["getImages","getImagesOutput"], () => require("./getImages"));
 
+export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
+export const getInstance: typeof import("./getInstance").getInstance = null as any;
+export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getInstance","getInstanceOutput"], () => require("./getInstance"));
+
+export { GetInstancesResult } from "./getInstances";
+export const getInstances: typeof import("./getInstances").getInstances = null as any;
+export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
+
 export { ImageArgs, ImageState } from "./image";
 export type Image = import("./image").Image;
 export const Image: typeof import("./image").Image = null as any;
 utilities.lazyLoad(exports, ["Image"], () => require("./image"));
+
+export { InstanceArgs, InstanceState } from "./instance";
+export type Instance = import("./instance").Instance;
+export const Instance: typeof import("./instance").Instance = null as any;
+utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
 
 
 const _module = {
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:ecs/image:Image":
                 return new Image(name, <any>undefined, { urn })
+            case "bytepluscc:ecs/instance:Instance":
+                return new Instance(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/image", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "ecs/instance", _module)

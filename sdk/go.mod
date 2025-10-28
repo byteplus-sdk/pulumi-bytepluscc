@@ -1,4 +1,4 @@
-module github.com/byteplus/pulumi-bytepluscc/sdk
+module github.com/byteplus-sdk/pulumi-bytepluscc/sdk
 
 go 1.23.0
 

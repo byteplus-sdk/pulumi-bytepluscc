@@ -9,32 +9,6 @@ import * as utilities from "../utilities";
 /**
  * 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
- *
- * const imageDemo = new bytepluscc.ecs.Image("ImageDemo", {
- *     bootMode: "UEFI",
- *     description: "ImageDemo Example",
- *     imageName: "image-demo",
- *     instanceId: "i-ydzhj1el8gr9cxxdnxxxx",
- *     kernel: "Linux",
- *     licenseType: "BYOL",
- *     osName: "CentOS",
- *     osType: "Linux",
- *     platform: "CentOS",
- *     platformVersion: "8.3",
- *     projectName: "default",
- *     sharePermissions: ["2000000***"],
- *     tags: [{
- *         key: "env",
- *         value: "test",
- *     }],
- * });
- * ```
- *
  * ## Import
  *
  * ```sh
@@ -76,7 +50,7 @@ export class Image extends pulumi.CustomResource {
     /**
      * 镜像的启动模式。可以选择BIOS、UEFI类型。
      */
-    public readonly bootMode!: pulumi.Output<string>;
+    public /*out*/ readonly bootMode!: pulumi.Output<string>;
     /**
      * 镜像创建时间
      */
@@ -232,7 +206,6 @@ export class Image extends pulumi.CustomResource {
             if ((!args || args.imageName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'imageName'");
             }
-            resourceInputs["bootMode"] = args ? args.bootMode : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["detectionResults"] = args ? args.detectionResults : undefined;
             resourceInputs["imageName"] = args ? args.imageName : undefined;
@@ -249,6 +222,7 @@ export class Image extends pulumi.CustomResource {
             resourceInputs["snapshotId"] = args ? args.snapshotId : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["architecture"] = undefined /*out*/;
+            resourceInputs["bootMode"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["imageId"] = undefined /*out*/;
             resourceInputs["imageOwnerId"] = undefined /*out*/;
@@ -392,10 +366,6 @@ export interface ImageState {
  * The set of arguments for constructing a Image resource.
  */
 export interface ImageArgs {
-    /**
-     * 镜像的启动模式。可以选择BIOS、UEFI类型。
-     */
-    bootMode?: pulumi.Input<string>;
     /**
      * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
      */

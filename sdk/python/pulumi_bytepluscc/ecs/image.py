@@ -23,7 +23,6 @@ __all__ = ['ImageArgs', 'Image']
 class ImageArgs:
     def __init__(__self__, *,
                  image_name: pulumi.Input[builtins.str],
-                 boot_mode: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  detection_results: Optional[pulumi.Input['ImageDetectionResultsArgs']] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -41,7 +40,6 @@ class ImageArgs:
         """
         The set of arguments for constructing a Image resource.
         :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
-        :param pulumi.Input[builtins.str] boot_mode: 镜像的启动模式。可以选择BIOS、UEFI类型。
         :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
         :param pulumi.Input['ImageDetectionResultsArgs'] detection_results: 镜像的检测结果。
         :param pulumi.Input[builtins.str] instance_id: 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
@@ -57,8 +55,6 @@ class ImageArgs:
         :param pulumi.Input[builtins.str] snapshot_id: 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
         """
         pulumi.set(__self__, "image_name", image_name)
-        if boot_mode is not None:
-            pulumi.set(__self__, "boot_mode", boot_mode)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if detection_results is not None:
@@ -99,18 +95,6 @@ class ImageArgs:
     @image_name.setter
     def image_name(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "image_name", value)
-
-    @property
-    @pulumi.getter(name="bootMode")
-    def boot_mode(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        镜像的启动模式。可以选择BIOS、UEFI类型。
-        """
-        return pulumi.get(self, "boot_mode")
-
-    @boot_mode.setter
-    def boot_mode(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "boot_mode", value)
 
     @property
     @pulumi.getter
@@ -764,7 +748,6 @@ class Image(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_mode: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  detection_results: Optional[pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']]] = None,
                  image_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -784,31 +767,6 @@ class Image(pulumi.CustomResource):
         """
         镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        image_demo = bytepluscc.ecs.Image("ImageDemo",
-            boot_mode="UEFI",
-            description="ImageDemo Example",
-            image_name="image-demo",
-            instance_id="i-ydzhj1el8gr9cxxdnxxxx",
-            kernel="Linux",
-            license_type="BYOL",
-            os_name="CentOS",
-            os_type="Linux",
-            platform="CentOS",
-            platform_version="8.3",
-            project_name="default",
-            share_permissions=["2000000***"],
-            tags=[{
-                "key": "env",
-                "value": "test",
-            }])
-        ```
-
         ## Import
 
         ```sh
@@ -817,7 +775,6 @@ class Image(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] boot_mode: 镜像的启动模式。可以选择BIOS、UEFI类型。
         :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
         :param pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']] detection_results: 镜像的检测结果。
         :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
@@ -842,31 +799,6 @@ class Image(pulumi.CustomResource):
         """
         镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        image_demo = bytepluscc.ecs.Image("ImageDemo",
-            boot_mode="UEFI",
-            description="ImageDemo Example",
-            image_name="image-demo",
-            instance_id="i-ydzhj1el8gr9cxxdnxxxx",
-            kernel="Linux",
-            license_type="BYOL",
-            os_name="CentOS",
-            os_type="Linux",
-            platform="CentOS",
-            platform_version="8.3",
-            project_name="default",
-            share_permissions=["2000000***"],
-            tags=[{
-                "key": "env",
-                "value": "test",
-            }])
-        ```
-
         ## Import
 
         ```sh
@@ -888,7 +820,6 @@ class Image(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_mode: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  detection_results: Optional[pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']]] = None,
                  image_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -913,7 +844,6 @@ class Image(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ImageArgs.__new__(ImageArgs)
 
-            __props__.__dict__["boot_mode"] = boot_mode
             __props__.__dict__["description"] = description
             __props__.__dict__["detection_results"] = detection_results
             if image_name is None and not opts.urn:
@@ -932,6 +862,7 @@ class Image(pulumi.CustomResource):
             __props__.__dict__["snapshot_id"] = snapshot_id
             __props__.__dict__["tags"] = tags
             __props__.__dict__["architecture"] = None
+            __props__.__dict__["boot_mode"] = None
             __props__.__dict__["created_at"] = None
             __props__.__dict__["image_id"] = None
             __props__.__dict__["image_owner_id"] = None

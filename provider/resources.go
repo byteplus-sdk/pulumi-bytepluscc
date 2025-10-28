@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/byteplus/pulumi-bytepluscc/provider/cmd/pulumi-resource-bytepluscc/token"
-	"github.com/byteplus/pulumi-bytepluscc/provider/pkg/version"
-	"github.com/byteplus/terraform-provider-bytepluscc/shim"
+	"github.com/byteplus-sdk/pulumi-bytepluscc/provider/cmd/pulumi-resource-bytepluscc/token"
+	"github.com/byteplus-sdk/pulumi-bytepluscc/provider/pkg/version"
+	"github.com/byteplus-sdk/terraform-provider-bytepluscc/shim"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/info"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 
@@ -48,19 +48,18 @@ func Provider() tfbridge.ProviderInfo {
 		Description: "A Pulumi package to safely use randomness in Pulumi programs.",
 		Keywords:    []string{"byteplus", "bytepluscc", "category/cloud"},
 		License:     "MPL-2.0",
-		Homepage:    "https://github.com/byteplus/pulumi-bytepluscc",
+		Homepage:    "https://github.com/byteplus-sdk/pulumi-bytepluscc",
 		Publisher:   "Byteplus",
 		LogoURL:     "https://avatars.githubusercontent.com/u/67365215",
-		Repository:  "https://github.com/byteplus/pulumi-bytepluscc",
+		Repository:  "https://github.com/byteplus-sdk/pulumi-bytepluscc",
 		Version:     version.Version,
 		// PluginDownloadURL is an optional URL used to download the Provider
 		// for use in Pulumi programs
-		PluginDownloadURL: "github://api.github.com/byteplus",
+		PluginDownloadURL: "github://api.github.com/byteplus-sdk",
 		MetadataInfo:      tfbridge.NewProviderMetadata(metadata),
 		Resources:         map[string]*tfbridge.ResourceInfo{},
 		GitHubHost:        "github.com",
-		GitHubOrg:         "byteplus",
-		UpstreamRepoPath:  "/Users/bytedance/terraform_workspace/terraform-provider-bytepluscc",
+		GitHubOrg:         "byteplus-sdk",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"region": {
 				Default: &tfbridge.DefaultInfo{
@@ -128,7 +127,7 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		Golang: &tfbridge.GolangInfo{
 			ImportBasePath: filepath.Join(
-				fmt.Sprintf("github.com/byteplus/pulumi-%[1]s/sdk/", byteplusccPKG),
+				fmt.Sprintf("github.com/byteplus-sdk/pulumi-%[1]s/sdk/", byteplusccPKG),
 				tfbridge.GetModuleMajorVersion(version.Version),
 				"go",
 				byteplusccPKG,
@@ -141,6 +140,7 @@ func Provider() tfbridge.ProviderInfo {
 			PackageReferences: map[string]string{
 				"Pulumi": "3.*",
 			},
+			RootNamespace: "Byteplus.Pulumi",
 		},
 		Python: &tfbridge.PythonInfo{
 			PackageName: "pulumi_bytepluscc",
@@ -153,7 +153,7 @@ func Provider() tfbridge.ProviderInfo {
 				"@types/mime": "^2.0.0",
 			},
 			// See the documentation for tfbridge.OverlayInfo for how to lay out this
-			// section, or refer to the AWS provider. Delete this section if there are
+			// section, or refer to the Byteplus provider. Delete this section if there are
 			// no overlay files.
 			// Overlay: &tfbridge.OverlayInfo{},
 			PackageName: "@byteplus/pulumi-bytepluscc",

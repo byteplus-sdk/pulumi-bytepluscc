@@ -1,18 +1,18 @@
-module github.com/byteplus/terraform-provider-bytepluscc/shim
+module github.com/byteplus-sdk/terraform-provider-bytepluscc/shim
 
 go 1.23.0
 
 require (
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.2
 	github.com/hashicorp/terraform-plugin-framework v1.15.0
-	github.com/byteplus/terraform-provider-bytepluscc v0.0.4
 )
-replace github.com/byteplus/terraform-provider-bytepluscc => /Users/bytedance/terraform_workspace/terraform-provider-bytepluscc
 
 require (
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/hashicorp/go-hclog v1.6.3 // indirect
 	github.com/hashicorp/terraform-plugin-framework-jsontypes v0.2.0 // indirect
+	github.com/hashicorp/terraform-plugin-framework-timetypes v0.5.0 // indirect
 	github.com/hashicorp/terraform-plugin-framework-validators v0.18.0 // indirect
 	github.com/hashicorp/terraform-plugin-go v0.27.0 // indirect
 	github.com/hashicorp/terraform-plugin-log v0.9.0 // indirect

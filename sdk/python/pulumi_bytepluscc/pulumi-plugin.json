@@ -1,5 +1,5 @@
 {
   "resource": true,
   "name": "bytepluscc",
-  "server": "github://api.github.com/byteplus"
+  "server": "github://api.github.com/byteplus-sdk"
 }

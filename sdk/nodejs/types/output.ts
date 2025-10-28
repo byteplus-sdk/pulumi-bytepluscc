@@ -5,6 +5,357 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export namespace alb {
+    export interface GetListenerDomainExtension {
+        /**
+         * 域名使用的服务器证书 ID 。当证书来源为 certCenter 时生效。
+         */
+        certCenterCertificateId: string;
+        /**
+         * 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+         */
+        certificateId: string;
+        /**
+         * 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+         */
+        certificateSource: string;
+        /**
+         * 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+         */
+        domain: string;
+        /**
+         * 扩展域名 ID 。
+         */
+        domainExtensionId: string;
+        /**
+         * 扩展域名所属的监听器 ID。
+         */
+        listenerId: string;
+        /**
+         * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pcaLeaf 时必传。
+         */
+        pcaLeafCertificateId: string;
+        /**
+         * 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+         */
+        san: string;
+    }
+
+    export interface GetListenerServerGroup {
+        /**
+         * 服务器组 ID 。
+         */
+        serverGroupId: string;
+        /**
+         * 服务器组名称。
+         */
+        serverGroupName: string;
+    }
+
+    export interface GetListenerTag {
+        /**
+         * 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         */
+        value: string;
+    }
+
+    export interface ListenerDomainExtension {
+        /**
+         * 域名使用的服务器证书 ID 。当证书来源为 certCenter 时生效。
+         */
+        certCenterCertificateId: string;
+        /**
+         * 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+         */
+        certificateId: string;
+        /**
+         * 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+         */
+        certificateSource: string;
+        /**
+         * 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+         */
+        domain: string;
+        /**
+         * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pcaLeaf 时必传。
+         */
+        pcaLeafCertificateId: string;
+        /**
+         * 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+         */
+        san: string;
+    }
+
+    export interface ListenerServerGroup {
+        /**
+         * 服务器组 ID 。
+         */
+        serverGroupId: string;
+        /**
+         * 服务器组名称。
+         */
+        serverGroupName: string;
+    }
+
+    export interface ListenerTag {
+        /**
+         * 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         */
+        value: string;
+    }
+
+}
+
+export namespace autoscaling {
+    export interface GetScalingConfigurationEip {
+        /**
+         * 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+         */
+        bandwidth: number;
+        /**
+         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+         */
+        bandwidthPackageId: string;
+        /**
+         * 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+         */
+        billingType: string;
+        /**
+         * 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+         */
+        isp: string;
+    }
+
+    export interface GetScalingConfigurationInstanceTypeOverride {
+        /**
+         * 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+         */
+        instanceType: string;
+        /**
+         * 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+         */
+        priceLimit: number;
+    }
+
+    export interface GetScalingConfigurationTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetScalingConfigurationVolume {
+        /**
+         * 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+         */
+        deleteWithInstance: boolean;
+        /**
+         * 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+         */
+        size: number;
+        /**
+         * 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+         */
+        volumeType: string;
+    }
+
+    export interface ScalingConfigurationEip {
+        /**
+         * 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+         */
+        bandwidth: number;
+        /**
+         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+         */
+        bandwidthPackageId: string;
+        /**
+         * 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+         */
+        billingType: string;
+        /**
+         * 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+         */
+        isp: string;
+    }
+
+    export interface ScalingConfigurationInstanceTypeOverride {
+        /**
+         * 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+         */
+        instanceType: string;
+        /**
+         * 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+         */
+        priceLimit: number;
+    }
+
+    export interface ScalingConfigurationTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface ScalingConfigurationVolume {
+        /**
+         * 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+         */
+        deleteWithInstance: boolean;
+        /**
+         * 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+         */
+        size: number;
+        /**
+         * 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+         */
+        volumeType: string;
+    }
+
+}
+
+export namespace clb {
+    export interface GetListenerHealthCheck {
+        /**
+         * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+         */
+        domain: string;
+        /**
+         * 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+         */
+        enabled: string;
+        /**
+         * 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         */
+        healthyThreshold: number;
+        /**
+         * 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+         */
+        httpCode: string;
+        /**
+         * 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+         */
+        interval: number;
+        /**
+         * 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+         */
+        method: string;
+        /**
+         * 健康检查的端口，取值范围为1-65535。
+         */
+        port: number;
+        /**
+         * 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+         */
+        timeout: number;
+        /**
+         * 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         */
+        udpExpect: string;
+        /**
+         * 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         */
+        udpRequest: string;
+        /**
+         * 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         */
+        unhealthyThreshold: number;
+        /**
+         * 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         */
+        uri: string;
+    }
+
+    export interface GetListenerTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value: string;
+    }
+
+    export interface ListenerHealthCheck {
+        /**
+         * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+         */
+        domain: string;
+        /**
+         * 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+         */
+        enabled: string;
+        /**
+         * 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         */
+        healthyThreshold: number;
+        /**
+         * 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+         */
+        httpCode: string;
+        /**
+         * 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+         */
+        interval: number;
+        /**
+         * 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+         */
+        method: string;
+        /**
+         * 健康检查的端口，取值范围为1-65535。
+         */
+        port: number;
+        /**
+         * 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+         */
+        timeout: number;
+        /**
+         * 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         */
+        udpExpect: string;
+        /**
+         * 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+         */
+        udpRequest: string;
+        /**
+         * 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+         */
+        unhealthyThreshold: number;
+        /**
+         * 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         */
+        uri: string;
+    }
+
+    export interface ListenerTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value: string;
+    }
+
+}
+
 export namespace config {
     export interface AssumeRole {
         /**
@@ -91,6 +442,261 @@ export namespace ecs {
         value: string;
     }
 
+    export interface GetInstanceCpuMemory {
+        /**
+         * 实例的核数。
+         */
+        coreCount: number;
+        /**
+         * 实例的CPU数量。
+         */
+        cpuNumber: number;
+        /**
+         * 实例的内存大小，单位MB。
+         */
+        memorySize: number;
+        /**
+         * 实例的每核线程数。
+         */
+        threadsPerCore: number;
+    }
+
+    export interface GetInstanceEipAddress {
+        /**
+         * 实例的分配ID。
+         */
+        allocationId: string;
+        /**
+         * 公网IP的带宽上限，默认值为1，单位：Mbps。
+         * - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+         * - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+         */
+        bandwidthMbps: number;
+        /**
+         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         * - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+         * - 公网IP加入到共享带宽包必须同时满足如下条件：
+         *   - 二者的安全防护类型相同。
+         *   - 二者的地域相同。
+         *   - 公网IP的计费方式必须是按量计费。
+         *   - 共享带宽包为IPv4类型。
+         */
+        bandwidthPackageId: string;
+        /**
+         * 公网IP的计费方式，取值：
+         * - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+         * - PayByTraffic：按量计费-按实际流量计费。
+         * - PrePaid：包年包月。
+         * :::tip
+         * 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+         * :::
+         */
+        chargeType: string;
+        /**
+         * 实例的IP地址。
+         */
+        ipAddress: string;
+        /**
+         * 公网IP的线路类型，默认为BGP。取值：
+         * - BGP：BGP（多线）。
+         * - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+         *   - ChinaMobile：中国移动静态单线。
+         *   - ChinaTelecom：中国电信静态单线。
+         *   - ChinaUnicom：中国联通静态单线。
+         * - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+         * - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+         */
+        isp: string;
+        /**
+         * 实例是否随实例释放。
+         */
+        releaseWithInstance: boolean;
+    }
+
+    export interface GetInstanceImage {
+        /**
+         * 实例的镜像ID。
+         */
+        imageId: string;
+        /**
+         * 实例的镜像发布版本。
+         */
+        imageReleaseVersion: string;
+        /**
+         * 实例是否保留镜像凭证。
+         */
+        keepImageCredential: boolean;
+        /**
+         * 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+         */
+        securityEnhancementStrategy: string;
+    }
+
+    export interface GetInstanceKeyPair {
+        /**
+         * 实例的公钥。
+         */
+        keyPairId: string;
+        /**
+         * 实例的密钥对名称。
+         */
+        keyPairName: string;
+    }
+
+    export interface GetInstanceOperationSystem {
+        /**
+         * 实例的操作系统名称。
+         */
+        name: string;
+        /**
+         * 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+         */
+        type: string;
+    }
+
+    export interface GetInstancePlacement {
+        /**
+         * 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+         */
+        affinity: string;
+        /**
+         * 实例的专用主机集群ID。
+         */
+        dedicatedHostClusterId: string;
+        /**
+         * 实例的专用主机ID。
+         */
+        dedicatedHostId: string;
+        /**
+         * 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+         */
+        tenancy: string;
+    }
+
+    export interface GetInstancePrimaryNetworkInterface {
+        /**
+         * 实例的IPv6地址数量。
+         */
+        ipv6AddressCount: number;
+        /**
+         * 实例的IPv6地址。
+         */
+        ipv6Addresses: string[];
+        /**
+         * 实例的MAC地址。
+         */
+        macAddress: string;
+        /**
+         * 实例的网络接口ID。
+         */
+        networkInterfaceId: string;
+        /**
+         * 实例的主IP地址。
+         */
+        primaryIpAddress: string;
+        /**
+         * 实例的私有IP地址。
+         */
+        privateIpAddresses: string[];
+        /**
+         * 实例的安全组ID。
+         */
+        securityGroupIds: string[];
+        /**
+         * 实例的子网ID。
+         */
+        subnetId: string;
+        /**
+         * 实例的VPC ID。
+         */
+        vpcId: string;
+    }
+
+    export interface GetInstanceSecondaryNetworkInterface {
+        /**
+         * 实例的IPv6地址数量。
+         */
+        ipv6AddressCount: number;
+        /**
+         * 实例的IPv6地址。
+         */
+        ipv6Addresses: string[];
+        /**
+         * 实例的MAC地址。
+         */
+        macAddress: string;
+        /**
+         * 实例的网络接口ID。
+         */
+        networkInterfaceId: string;
+        /**
+         * 实例的主IP地址。
+         */
+        primaryIpAddress: string;
+        /**
+         * 实例的私有IP地址。
+         */
+        privateIpAddresses: string[];
+        /**
+         * 实例的安全组ID。
+         */
+        securityGroupIds: string[];
+        /**
+         * 实例的子网ID。
+         */
+        subnetId: string;
+        /**
+         * 实例的VPC ID。
+         */
+        vpcId: string;
+    }
+
+    export interface GetInstanceSystemVolume {
+        /**
+         * 实例是否随实例删除。
+         */
+        deleteWithInstance: boolean;
+        /**
+         * 实例的额外性能IOPS。
+         */
+        extraPerformanceIops: number;
+        /**
+         * 实例的额外性能吞吐量，单位MB。
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * 实例的大小，单位GiB。
+         */
+        size: number;
+        /**
+         * 实例的快照ID。
+         */
+        snapshotId: string;
+        /**
+         * 实例的卷ID。
+         */
+        volumeId: string;
+        /**
+         * 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+         */
+        volumeType: string;
+    }
+
+    export interface GetInstanceTag {
+        /**
+         * 实例的键。
+         */
+        key: string;
+        /**
+         * 实例的值。
+         */
+        value: string;
+    }
+
     export interface ImageDetectionResults {
         /**
          * 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
@@ -140,6 +746,403 @@ export namespace ecs {
         key: string;
         /**
          * 镜像标签的值。
+         */
+        value: string;
+    }
+
+    export interface InstanceCpuMemory {
+        /**
+         * 实例的核数。
+         */
+        coreCount: number;
+        /**
+         * 实例的CPU数量。
+         */
+        cpuNumber: number;
+        /**
+         * 实例的内存大小，单位MB。
+         */
+        memorySize: number;
+        /**
+         * 实例的每核线程数。
+         */
+        threadsPerCore: number;
+    }
+
+    export interface InstanceEipAddress {
+        /**
+         * 实例的分配ID。
+         */
+        allocationId: string;
+        /**
+         * 公网IP的带宽上限，默认值为1，单位：Mbps。
+         * - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+         * - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+         */
+        bandwidthMbps: number;
+        /**
+         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         * - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+         * - 公网IP加入到共享带宽包必须同时满足如下条件：
+         *   - 二者的安全防护类型相同。
+         *   - 二者的地域相同。
+         *   - 公网IP的计费方式必须是按量计费。
+         *   - 共享带宽包为IPv4类型。
+         */
+        bandwidthPackageId: string;
+        /**
+         * 公网IP的计费方式，取值：
+         * - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+         * - PayByTraffic：按量计费-按实际流量计费。
+         * - PrePaid：包年包月。
+         * :::tip
+         * 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+         * :::
+         */
+        chargeType: string;
+        /**
+         * 实例的IP地址。
+         */
+        ipAddress: string;
+        /**
+         * 公网IP的线路类型，默认为BGP。取值：
+         * - BGP：BGP（多线）。
+         * - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+         *   - ChinaMobile：中国移动静态单线。
+         *   - ChinaTelecom：中国电信静态单线。
+         *   - ChinaUnicom：中国联通静态单线。
+         * - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+         * - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+         */
+        isp: string;
+        /**
+         * 实例是否随实例释放。
+         */
+        releaseWithInstance: boolean;
+    }
+
+    export interface InstanceImage {
+        /**
+         * 实例的镜像ID。
+         */
+        imageId: string;
+        /**
+         * 实例的镜像发布版本。
+         */
+        imageReleaseVersion: string;
+        /**
+         * 实例是否保留镜像凭证。
+         */
+        keepImageCredential: boolean;
+        /**
+         * 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+         */
+        securityEnhancementStrategy: string;
+    }
+
+    export interface InstanceKeyPair {
+        /**
+         * 实例的公钥。
+         */
+        keyPairId: string;
+        /**
+         * 实例的密钥对名称。
+         */
+        keyPairName: string;
+    }
+
+    export interface InstanceOperationSystem {
+        /**
+         * 实例的操作系统名称。
+         */
+        name: string;
+        /**
+         * 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+         */
+        type: string;
+    }
+
+    export interface InstancePlacement {
+        /**
+         * 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+         */
+        affinity: string;
+        /**
+         * 实例的专用主机集群ID。
+         */
+        dedicatedHostClusterId: string;
+        /**
+         * 实例的专用主机ID。
+         */
+        dedicatedHostId: string;
+        /**
+         * 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+         */
+        tenancy: string;
+    }
+
+    export interface InstancePrimaryNetworkInterface {
+        /**
+         * 实例的IPv6地址数量。
+         */
+        ipv6AddressCount: number;
+        /**
+         * 实例的IPv6地址。
+         */
+        ipv6Addresses: string[];
+        /**
+         * 实例的MAC地址。
+         */
+        macAddress: string;
+        /**
+         * 实例的网络接口ID。
+         */
+        networkInterfaceId: string;
+        /**
+         * 实例的主IP地址。
+         */
+        primaryIpAddress: string;
+        /**
+         * 实例的私有IP地址。
+         */
+        privateIpAddresses: string[];
+        /**
+         * 实例的安全组ID。
+         */
+        securityGroupIds: string[];
+        /**
+         * 实例的子网ID。
+         */
+        subnetId: string;
+        /**
+         * 实例的VPC ID。
+         */
+        vpcId: string;
+    }
+
+    export interface InstanceSecondaryNetworkInterface {
+        /**
+         * 实例的IPv6地址数量。
+         */
+        ipv6AddressCount: number;
+        /**
+         * 实例的主IP地址。
+         */
+        primaryIpAddress: string;
+        /**
+         * 实例的私有IP地址。
+         */
+        privateIpAddresses: string[];
+        /**
+         * 实例的安全组ID。
+         */
+        securityGroupIds: string[];
+        /**
+         * 实例的子网ID。
+         */
+        subnetId: string;
+        /**
+         * 实例的VPC ID。
+         */
+        vpcId: string;
+    }
+
+    export interface InstanceSystemVolume {
+        /**
+         * 实例是否随实例删除。
+         */
+        deleteWithInstance: boolean;
+        /**
+         * 实例的额外性能IOPS。
+         */
+        extraPerformanceIops: number;
+        /**
+         * 实例的额外性能吞吐量，单位MB。
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * 实例的大小，单位GiB。
+         */
+        size: number;
+        /**
+         * 实例的快照ID。
+         */
+        snapshotId: string;
+        /**
+         * 实例的卷ID。
+         */
+        volumeId: string;
+        /**
+         * 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+         */
+        volumeType: string;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 实例的键。
+         */
+        key: string;
+        /**
+         * 实例的值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace storageebs {
+    export interface GetVolumeBaselinePerformance {
+        /**
+         * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         */
+        iops: number;
+        /**
+         * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         */
+        throughput: number;
+    }
+
+    export interface GetVolumeExtraPerformance {
+        /**
+         * 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * 云盘的额外IOPS。
+         */
+        iops: number;
+        /**
+         * 云盘的额外吞吐量。
+         */
+        throughput: number;
+    }
+
+    export interface GetVolumeTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetVolumeTotalPerformance {
+        /**
+         * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         */
+        iops: number;
+        /**
+         * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         */
+        throughput: number;
+    }
+
+    export interface VolumeBaselinePerformance {
+        /**
+         * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         */
+        iops: number;
+        /**
+         * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         */
+        throughput: number;
+    }
+
+    export interface VolumeExtraPerformance {
+        /**
+         * 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * 云盘的额外IOPS。
+         */
+        iops: number;
+        /**
+         * 云盘的额外吞吐量。
+         */
+        throughput: number;
+    }
+
+    export interface VolumeTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface VolumeTotalPerformance {
+        /**
+         * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+         */
+        iops: number;
+        /**
+         * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+         */
+        throughput: number;
+    }
+
+}
+
+export namespace vpc {
+    export interface GetVpcAssociateCen {
+        /**
+         * CEN的ID。
+         */
+        cenId: string;
+        /**
+         * CEN的用户ID。
+         */
+        cenOwnerId: string;
+        /**
+         * VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+         */
+        cenStatus: string;
+    }
+
+    export interface GetVpcTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface VpcAssociateCen {
+        /**
+         * CEN的ID。
+         */
+        cenId: string;
+        /**
+         * CEN的用户ID。
+         */
+        cenOwnerId: string;
+        /**
+         * VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+         */
+        cenStatus: string;
+    }
+
+    export interface VpcTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
          */
         value: string;
     }

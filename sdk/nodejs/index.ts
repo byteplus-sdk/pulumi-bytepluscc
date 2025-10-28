@@ -10,14 +10,26 @@ import { Provider } from "./provider";
 
 
 // Export sub-modules:
+import * as alb from "./alb";
+import * as autoscaling from "./autoscaling";
+import * as clb from "./clb";
 import * as config from "./config";
+import * as cr from "./cr";
 import * as ecs from "./ecs";
+import * as storageebs from "./storageebs";
 import * as types from "./types";
+import * as vpc from "./vpc";
 
 export {
+    alb,
+    autoscaling,
+    clb,
     config,
+    cr,
     ecs,
+    storageebs,
     types,
+    vpc,
 };
 pulumi.runtime.registerResourcePackage("bytepluscc", {
     version: utilities.getVersion(),

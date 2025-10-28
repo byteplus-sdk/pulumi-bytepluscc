@@ -17,7 +17,7 @@ package main
 import (
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/pf/tfgen"
 
-	bytepluscc "github.com/byteplus/pulumi-bytepluscc/provider"
+	bytepluscc "github.com/byteplus-sdk/pulumi-bytepluscc/provider"
 )
 
 func main() {

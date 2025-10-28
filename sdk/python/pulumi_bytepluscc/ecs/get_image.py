@@ -414,7 +414,7 @@ class AwaitableGetImageResult(GetImageResult):
 def get_image(id: Optional[builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImageResult:
     """
-    Data Source schema for Volcengine::ECS::Image
+    Data Source schema for Byteplus::ECS::Image
 
 
     :param builtins.str id: Uniquely identifies the resource.
@@ -459,7 +459,7 @@ def get_image(id: Optional[builtins.str] = None,
 def get_image_output(id: Optional[pulumi.Input[builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageResult]:
     """
-    Data Source schema for Volcengine::ECS::Image
+    Data Source schema for Byteplus::ECS::Image
 
 
     :param builtins.str id: Uniquely identifies the resource.

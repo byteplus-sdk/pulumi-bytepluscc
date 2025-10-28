@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Immutable;
 
-namespace Pulumi.Bytepluscc
+namespace Byteplus.Pulumi.Bytepluscc
 {
     public static class Config
     {
@@ -43,11 +43,11 @@ namespace Pulumi.Bytepluscc
             set => _accessKey.Set(value);
         }
 
-        private static readonly __Value<Pulumi.Bytepluscc.Config.Types.AssumeRole?> _assumeRole = new __Value<Pulumi.Bytepluscc.Config.Types.AssumeRole?>(() => __config.GetObject<Pulumi.Bytepluscc.Config.Types.AssumeRole>("assumeRole"));
+        private static readonly __Value<Byteplus.Pulumi.Bytepluscc.Config.Types.AssumeRole?> _assumeRole = new __Value<Byteplus.Pulumi.Bytepluscc.Config.Types.AssumeRole?>(() => __config.GetObject<Byteplus.Pulumi.Bytepluscc.Config.Types.AssumeRole>("assumeRole"));
         /// <summary>
         /// An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
         /// </summary>
-        public static Pulumi.Bytepluscc.Config.Types.AssumeRole? AssumeRole
+        public static Byteplus.Pulumi.Bytepluscc.Config.Types.AssumeRole? AssumeRole
         {
             get => _assumeRole.Get();
             set => _assumeRole.Set(value);
@@ -74,11 +74,11 @@ namespace Pulumi.Bytepluscc
             set => _disableSsl.Set(value);
         }
 
-        private static readonly __Value<Pulumi.Bytepluscc.Config.Types.Endpoints?> _endpoints = new __Value<Pulumi.Bytepluscc.Config.Types.Endpoints?>(() => __config.GetObject<Pulumi.Bytepluscc.Config.Types.Endpoints>("endpoints"));
+        private static readonly __Value<Byteplus.Pulumi.Bytepluscc.Config.Types.Endpoints?> _endpoints = new __Value<Byteplus.Pulumi.Bytepluscc.Config.Types.Endpoints?>(() => __config.GetObject<Byteplus.Pulumi.Bytepluscc.Config.Types.Endpoints>("endpoints"));
         /// <summary>
         /// An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
         /// </summary>
-        public static Pulumi.Bytepluscc.Config.Types.Endpoints? Endpoints
+        public static Byteplus.Pulumi.Bytepluscc.Config.Types.Endpoints? Endpoints
         {
             get => _endpoints.Get();
             set => _endpoints.Set(value);

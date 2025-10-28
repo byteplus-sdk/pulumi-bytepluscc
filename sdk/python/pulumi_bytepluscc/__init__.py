@@ -11,23 +11,97 @@ from ._inputs import *
 
 # Make subpackages available:
 if typing.TYPE_CHECKING:
+    import pulumi_bytepluscc.alb as __alb
+    alb = __alb
+    import pulumi_bytepluscc.autoscaling as __autoscaling
+    autoscaling = __autoscaling
+    import pulumi_bytepluscc.clb as __clb
+    clb = __clb
     import pulumi_bytepluscc.config as __config
     config = __config
+    import pulumi_bytepluscc.cr as __cr
+    cr = __cr
     import pulumi_bytepluscc.ecs as __ecs
     ecs = __ecs
+    import pulumi_bytepluscc.storageebs as __storageebs
+    storageebs = __storageebs
+    import pulumi_bytepluscc.vpc as __vpc
+    vpc = __vpc
 else:
+    alb = _utilities.lazy_import('pulumi_bytepluscc.alb')
+    autoscaling = _utilities.lazy_import('pulumi_bytepluscc.autoscaling')
+    clb = _utilities.lazy_import('pulumi_bytepluscc.clb')
     config = _utilities.lazy_import('pulumi_bytepluscc.config')
+    cr = _utilities.lazy_import('pulumi_bytepluscc.cr')
     ecs = _utilities.lazy_import('pulumi_bytepluscc.ecs')
+    storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
+    vpc = _utilities.lazy_import('pulumi_bytepluscc.vpc')
 
 _utilities.register(
     resource_modules="""
 [
  {
   "pkg": "bytepluscc",
+  "mod": "alb/listener",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/listener:Listener": "Listener"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "autoscaling/scalingConfiguration",
+  "fqn": "pulumi_bytepluscc.autoscaling",
+  "classes": {
+   "bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration": "ScalingConfiguration"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "clb/listener",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/listener:Listener": "Listener"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cr/repository",
+  "fqn": "pulumi_bytepluscc.cr",
+  "classes": {
+   "bytepluscc:cr/repository:Repository": "Repository"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "ecs/image",
   "fqn": "pulumi_bytepluscc.ecs",
   "classes": {
    "bytepluscc:ecs/image:Image": "Image"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ecs/instance",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "storageebs/volume",
+  "fqn": "pulumi_bytepluscc.storageebs",
+  "classes": {
+   "bytepluscc:storageebs/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/vpc",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/vpc:Vpc": "Vpc"
   }
  }
 ]

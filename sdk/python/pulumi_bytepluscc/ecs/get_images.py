@@ -64,7 +64,7 @@ class AwaitableGetImagesResult(GetImagesResult):
 
 def get_images(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImagesResult:
     """
-    Plural Data Source schema for Volcengine::ECS::Image
+    Plural Data Source schema for Byteplus::ECS::Image
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -75,7 +75,7 @@ def get_images(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImage
         ids=pulumi.get(__ret__, 'ids'))
 def get_images_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagesResult]:
     """
-    Plural Data Source schema for Volcengine::ECS::Image
+    Plural Data Source schema for Byteplus::ECS::Image
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

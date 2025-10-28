@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/blang/semver"
-	"github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
+	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:ecs/image:Image":
 		r = &Image{}
+	case "bytepluscc:ecs/instance:Instance":
+		r = &Instance{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"ecs/image",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/instance",
 		&module{version},
 	)
 }

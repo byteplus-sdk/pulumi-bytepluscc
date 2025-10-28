@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
+	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 

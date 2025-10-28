@@ -25,9 +25,9 @@ setup(name='pulumi_bytepluscc',
       long_description=readme(),
       long_description_content_type='text/markdown',
       keywords='byteplus bytepluscc category/cloud',
-      url='https://github.com/byteplus/pulumi-bytepluscc',
+      url='https://github.com/byteplus-sdk/pulumi-bytepluscc',
       project_urls={
-          'Repository': 'https://github.com/byteplus/pulumi-bytepluscc'
+          'Repository': 'https://github.com/byteplus-sdk/pulumi-bytepluscc'
       },
       license='MPL-2.0',
       packages=find_packages(),

@@ -2,6 +2,10 @@ archives:
   - id: archive
     name_template: "{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}"
 
+before:
+  hooks:
+    - make tfgen
+
 builds:
   - binary: pulumi-resource-bytepluscc
     dir: provider
@@ -15,7 +19,7 @@ builds:
       - windows
       - linux
     ldflags:
-      - -X github.com/byteplus/pulumi-bytepluscc/provider/pkg/version.Version={{.Tag}}
+      - -X github.com/byteplus-sdk/pulumi-bytepluscc/provider/pkg/version.Version={{.Tag}}
     main: ./cmd/pulumi-resource-bytepluscc/
 changelog:
   skip: true

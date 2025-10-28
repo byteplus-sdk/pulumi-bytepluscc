@@ -12,11 +12,11 @@ This package is available in many languages in the standard packaging formats.
 
 To use from JavaScript or TypeScript in Node.js, install using either `npm`:
 
-    $ npm install @pulumi/pulumi-bytepluscc
+    $ npm install @byteplus/pulumi-bytepluscc
 
 or `yarn`:
 
-    $ yarn add @pulumi/pulumi-bytepluscc
+    $ yarn add @byteplus/pulumi-bytepluscc
 
 ### Python
 
@@ -28,13 +28,13 @@ To use from Python, install using `pip`:
 
 To use from Go, use `go get` to grab the latest version of the library
 
-    $ go get github.com/byteplus/pulumi-byteplus/sdk
+    $ go get github.com/byteplus-sdk/pulumi-bytepluscc/sdk
 
 ### .NET
 
 To use from .NET, install using `dotnet add package`:
 
-    $ dotnet add package Pulumi.Bytepluscc
+    $ dotnet add package Byteplus.Pulumi.Bytepluscc
 
 
 ## Configuration Reference

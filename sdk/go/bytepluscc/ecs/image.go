@@ -8,56 +8,11 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
+	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc/ecs"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ecs.NewImage(ctx, "ImageDemo", &ecs.ImageArgs{
-//				BootMode:        pulumi.String("UEFI"),
-//				Description:     pulumi.String("ImageDemo Example"),
-//				ImageName:       pulumi.String("image-demo"),
-//				InstanceId:      pulumi.String("i-ydzhj1el8gr9cxxdnxxxx"),
-//				Kernel:          pulumi.String("Linux"),
-//				LicenseType:     pulumi.String("BYOL"),
-//				OsName:          pulumi.String("CentOS"),
-//				OsType:          pulumi.String("Linux"),
-//				Platform:        pulumi.String("CentOS"),
-//				PlatformVersion: pulumi.String("8.3"),
-//				ProjectName:     pulumi.String("default"),
-//				SharePermissions: pulumi.StringArray{
-//					pulumi.String("2000000***"),
-//				},
-//				Tags: ecs.ImageTagArray{
-//					&ecs.ImageTagArgs{
-//						Key:   pulumi.String("env"),
-//						Value: pulumi.String("test"),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 //
 // ## Import
 //
@@ -286,8 +241,6 @@ func (ImageState) ElementType() reflect.Type {
 }
 
 type imageArgs struct {
-	// 镜像的启动模式。可以选择BIOS、UEFI类型。
-	BootMode *string `pulumi:"bootMode"`
 	// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
 	Description *string `pulumi:"description"`
 	// 镜像的检测结果。
@@ -321,8 +274,6 @@ type imageArgs struct {
 
 // The set of arguments for constructing a Image resource.
 type ImageArgs struct {
-	// 镜像的启动模式。可以选择BIOS、UEFI类型。
-	BootMode pulumi.StringPtrInput
 	// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
 	Description pulumi.StringPtrInput
 	// 镜像的检测结果。

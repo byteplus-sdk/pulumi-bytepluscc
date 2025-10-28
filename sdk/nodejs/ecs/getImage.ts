@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Data Source schema for Volcengine::ECS::Image
+ * Data Source schema for Byteplus::ECS::Image
  */
 export function getImage(args: GetImageArgs, opts?: pulumi.InvokeOptions): Promise<GetImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -156,7 +156,7 @@ export interface GetImageResult {
     readonly visibility: string;
 }
 /**
- * Data Source schema for Volcengine::ECS::Image
+ * Data Source schema for Byteplus::ECS::Image
  */
 export function getImageOutput(args: GetImageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -7,11 +7,11 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/byteplus/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
+	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Data Source schema for Volcengine::ECS::Image
+// Data Source schema for Byteplus::ECS::Image
 func LookupImage(ctx *pulumi.Context, args *LookupImageArgs, opts ...pulumi.InvokeOption) (*LookupImageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupImageResult

@@ -1,17 +1,15 @@
-module github.com/byteplus/pulumi-bytepluscc/provider
+module github.com/byteplus-sdk/pulumi-bytepluscc/provider
 
 go 1.24.2
 
 require (
-	github.com/byteplus/terraform-provider-bytepluscc/shim v0.0.0
+	github.com/byteplus-sdk/terraform-provider-bytepluscc/shim v0.0.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.108.0
 	github.com/pulumi/pulumi/pkg/v3 v3.166.0
 	github.com/pulumi/pulumi/sdk/v3 v3.166.0
 )
 
-replace github.com/byteplus/terraform-provider-bytepluscc/shim => ./shim
-
-replace github.com/byteplus/terraform-provider-bytepluscc => /Users/bytedance/terraform_workspace/terraform-provider-bytepluscc
+replace github.com/byteplus-sdk/terraform-provider-bytepluscc/shim => ./shim
 
 require (
 	cloud.google.com/go v0.112.1 // indirect
@@ -41,7 +39,7 @@ require (
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
 	github.com/bgentry/speakeasy v0.1.0 // indirect
 	github.com/blang/semver v3.5.1+incompatible // indirect
-	github.com/byteplus/terraform-provider-bytepluscc v0.0.4 // indirect
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.2 // indirect
 	github.com/charmbracelet/bubbles v0.16.1 // indirect
 	github.com/charmbracelet/bubbletea v0.25.0 // indirect
 	github.com/charmbracelet/lipgloss v0.7.1 // indirect
@@ -87,6 +85,7 @@ require (
 	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
 	github.com/hashicorp/terraform-plugin-framework v1.15.0 // indirect
 	github.com/hashicorp/terraform-plugin-framework-jsontypes v0.2.0 // indirect
+	github.com/hashicorp/terraform-plugin-framework-timetypes v0.5.0 // indirect
 	github.com/hashicorp/terraform-plugin-framework-validators v0.18.0 // indirect
 	github.com/hashicorp/terraform-plugin-go v0.27.0 // indirect
 	github.com/hashicorp/terraform-plugin-log v0.9.0 // indirect

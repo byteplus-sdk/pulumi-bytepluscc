@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.ecs;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.ecs.inputs.GetImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImagePlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetInstanceArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.ecs.outputs.GetImageResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImagesResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetInstanceResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetInstancesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -18,87 +22,171 @@ import java.util.concurrent.CompletableFuture;
 
 public final class EcsFunctions {
     /**
-     * Data Source schema for Volcengine::ECS::Image
+     * Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args) {
         return getImage(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Volcengine::ECS::Image
+     * Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static CompletableFuture<GetImageResult> getImagePlain(GetImagePlainArgs args) {
         return getImagePlain(args, InvokeOptions.Empty);
     }
     /**
-     * Data Source schema for Volcengine::ECS::Image
+     * Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:ecs/getImage:getImage", TypeShape.of(GetImageResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::ECS::Image
+     * Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:ecs/getImage:getImage", TypeShape.of(GetImageResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Data Source schema for Volcengine::ECS::Image
+     * Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static CompletableFuture<GetImageResult> getImagePlain(GetImagePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getImage:getImage", TypeShape.of(GetImageResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::ECS::Image
+     * Plural Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static Output<GetImagesResult> getImages() {
         return getImages(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::ECS::Image
+     * Plural Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static CompletableFuture<GetImagesResult> getImagesPlain() {
         return getImagesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::ECS::Image
+     * Plural Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static Output<GetImagesResult> getImages(InvokeArgs args) {
         return getImages(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::ECS::Image
+     * Plural Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static CompletableFuture<GetImagesResult> getImagesPlain(InvokeArgs args) {
         return getImagesPlain(args, InvokeOptions.Empty);
     }
     /**
-     * Plural Data Source schema for Volcengine::ECS::Image
+     * Plural Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static Output<GetImagesResult> getImages(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:ecs/getImages:getImages", TypeShape.of(GetImagesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::ECS::Image
+     * Plural Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static Output<GetImagesResult> getImages(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:ecs/getImages:getImages", TypeShape.of(GetImagesResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * Plural Data Source schema for Volcengine::ECS::Image
+     * Plural Data Source schema for Byteplus::ECS::Image
      * 
      */
     public static CompletableFuture<GetImagesResult> getImagesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getImages:getImages", TypeShape.of(GetImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static Output<GetInstanceResult> getInstance(GetInstanceArgs args) {
+        return getInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args) {
+        return getInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static Output<GetInstanceResult> getInstance(GetInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInstance:getInstance", TypeShape.of(GetInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static Output<GetInstanceResult> getInstance(GetInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInstance:getInstance", TypeShape.of(GetInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getInstance:getInstance", TypeShape.of(GetInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static Output<GetInstancesResult> getInstances() {
+        return getInstances(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static CompletableFuture<GetInstancesResult> getInstancesPlain() {
+        return getInstancesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static Output<GetInstancesResult> getInstances(InvokeArgs args) {
+        return getInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args) {
+        return getInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static Output<GetInstancesResult> getInstances(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static Output<GetInstancesResult> getInstances(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Instance
+     * 
+     */
+    public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
     }
 }

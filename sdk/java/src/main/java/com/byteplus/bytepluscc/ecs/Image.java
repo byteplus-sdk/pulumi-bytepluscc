@@ -26,52 +26,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.byteplus.bytepluscc.ecs.Image;
- * import com.byteplus.bytepluscc.ecs.ImageArgs;
- * import com.pulumi.bytepluscc.ecs.inputs.ImageTagArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var imageDemo = new Image("imageDemo", ImageArgs.builder()
- *             .bootMode("UEFI")
- *             .description("ImageDemo Example")
- *             .imageName("image-demo")
- *             .instanceId("i-ydzhj1el8gr9cxxdnxxxx")
- *             .kernel("Linux")
- *             .licenseType("BYOL")
- *             .osName("CentOS")
- *             .osType("Linux")
- *             .platform("CentOS")
- *             .platformVersion("8.3")
- *             .projectName("default")
- *             .sharePermissions("2000000***")
- *             .tags(ImageTagArgs.builder()
- *                 .key("env")
- *                 .value("test")
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -527,7 +481,7 @@ public class Image extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<java.lang.String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
-            .pluginDownloadURL("github://api.github.com/byteplus")
+            .pluginDownloadURL("github://api.github.com/byteplus-sdk")
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

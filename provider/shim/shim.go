@@ -1,7 +1,7 @@
 package shim
 
 import (
-	"github.com/byteplus/terraform-provider-bytepluscc/internal/provider"
+	"github.com/byteplus-sdk/terraform-provider-bytepluscc/internal/provider"
 	tfpf "github.com/hashicorp/terraform-plugin-framework/provider"
 )
 
