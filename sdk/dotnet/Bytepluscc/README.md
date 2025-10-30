@@ -1,1 +1,1 @@
-A Pulumi package to safely use randomness in Pulumi programs.
+A Pulumi package to safely use byteplus Resource in Pulumi programs.

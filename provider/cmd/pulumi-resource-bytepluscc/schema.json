@@ -1,6 +1,6 @@
 {
     "name": "bytepluscc",
-    "description": "A Pulumi package to safely use randomness in Pulumi programs.",
+    "description": "A Pulumi package to safely use byteplus Resource in Pulumi programs.",
     "keywords": [
         "byteplus",
         "bytepluscc",
@@ -38,7 +38,7 @@
         },
         "nodejs": {
             "packageName": "@byteplus/pulumi-bytepluscc",
-            "packageDescription": "A Pulumi package to safely use randomness in Pulumi programs.",
+            "packageDescription": "A Pulumi package to safely use byteplus Resource in Pulumi programs.",
             "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/byteplus-sdk/terraform-provider-bytepluscc)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-bytepluscc` repo](https://github.com/byteplus-sdk/pulumi-bytepluscc/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-bytepluscc` repo](https://github.com/byteplus-sdk/terraform-provider-bytepluscc/issues).",
             "devDependencies": {
                 "@types/mime": "^2.0.0",

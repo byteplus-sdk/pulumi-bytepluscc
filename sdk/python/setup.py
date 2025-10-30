@@ -21,7 +21,7 @@ def readme():
 setup(name='pulumi_bytepluscc',
       python_requires='>=3.9',
       version=VERSION,
-      description="A Pulumi package to safely use randomness in Pulumi programs.",
+      description="A Pulumi package to safely use byteplus Resource in Pulumi programs.",
       long_description=readme(),
       long_description_content_type='text/markdown',
       keywords='byteplus bytepluscc category/cloud',
