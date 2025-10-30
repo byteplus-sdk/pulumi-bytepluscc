@@ -1,7 +1,7 @@
 ---
 # *** WARNING: This file was auto-generated. Do not edit by hand unless you're certain you know what you are doing! ***
-title: Volcenginecc Provider
-meta_desc: Provides an overview on how to configure the Pulumi Volcenginecc provider.
+title: Bytepluscc Provider
+meta_desc: Provides an overview on how to configure the Pulumi Bytepluscc provider.
 layout: package
 ---
 
@@ -21,7 +21,7 @@ The Byteplus Cloud Control Provider enables interaction with various Byteplus-su
 
 ## Authentication
 
-The volcenginecc provider accepts several ways to enter credentials for authentication.
+The bytepluscc provider accepts several ways to enter credentials for authentication.
 The following methods are supported, in this order, and explained below:
 
 - Static credentials
@@ -30,7 +30,7 @@ The following methods are supported, in this order, and explained below:
 ### Static credentials
 
 Static credentials can be provided by adding `accessKey`, `secretKey` and `region` in-line in the
-volcengine provider configuration:
+bytepluscc provider configuration:
 
 Usage:
 

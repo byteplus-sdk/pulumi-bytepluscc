@@ -35,20 +35,6 @@ Use the navigation on the left to read about the available resources.
 
 {{< chooser language "typescript,python,go,csharp,java,yaml" >}}
 {{% choosable language typescript %}}
-```yaml
-# Pulumi.yaml provider configuration file
-name: pulumi-cr-repository
-description: A minimal TypeScript Pulumi program
-runtime:
-  name: nodejs
-  options:
-    packagemanager: npm
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: typescript
-
-```
 ```typescript
 
 import * as pulumi from "@pulumi/pulumi";
@@ -81,20 +67,6 @@ export const CrRepository = (provider:any) => {
 ```
 {{% /choosable %}}
 {{% choosable language python %}}
-```yaml
-name: pulumi-python-demo
-description: pulumi python demo
-runtime:
-  name: python
-  options:
-    toolchain: pip
-    virtualenv: venv
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: python
-
-```
 ```python
 Example currently unavailable in this language
 
@@ -113,16 +85,7 @@ Example currently unavailable in this language
 ```
 {{% /choosable %}}
 {{% choosable language go %}}
-```yaml
-# Pulumi.yaml provider configuration file
-name: pulumi-clb-listener
-description: pulumi-clb-listener
-runtime: go
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: go
-```
+
 ```go
 package main
 
@@ -225,17 +188,6 @@ Example currently unavailable in this language
 ```
 {{% /choosable %}}
 {{% choosable language java %}}
-```yaml
-# Pulumi.yaml provider configuration file
-name: pulumi-java-iam-user
-description: pulumi java iam user
-runtime: java
-config:
-  pulumi:tags:
-    value:
-      pulumi:template: java
-
-```
 ```java
 Example currently unavailable in this language
 ```

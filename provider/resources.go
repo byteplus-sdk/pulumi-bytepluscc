@@ -45,7 +45,7 @@ func Provider() tfbridge.ProviderInfo {
 	prov := tfbridge.ProviderInfo{
 		P:           pf.ShimProvider(shim.NewProvider()),
 		Name:        "bytepluscc",
-		Description: "A Pulumi package to safely use randomness in Pulumi programs.",
+		Description: "A Pulumi package to safely use byteplus Resource in Pulumi programs.",
 		Keywords:    []string{"byteplus", "bytepluscc", "category/cloud"},
 		License:     "MPL-2.0",
 		Homepage:    "https://github.com/byteplus-sdk/pulumi-bytepluscc",

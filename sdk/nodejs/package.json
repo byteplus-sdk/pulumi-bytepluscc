@@ -1,7 +1,7 @@
 {
     "name": "@byteplus/pulumi-bytepluscc",
     "version": "${VERSION}",
-    "description": "A Pulumi package to safely use randomness in Pulumi programs.",
+    "description": "A Pulumi package to safely use byteplus Resource in Pulumi programs.",
     "keywords": [
         "byteplus",
         "bytepluscc",

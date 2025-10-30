@@ -4,7 +4,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Byteplus</Authors>
     <Company>Byteplus</Company>
-    <Description>A Pulumi package to safely use randomness in Pulumi programs.</Description>
+    <Description>A Pulumi package to safely use byteplus Resource in Pulumi programs.</Description>
     <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/byteplus-sdk/pulumi-bytepluscc</PackageProjectUrl>
     <RepositoryUrl>https://github.com/byteplus-sdk/pulumi-bytepluscc</RepositoryUrl>

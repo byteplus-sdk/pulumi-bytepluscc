@@ -106,7 +106,7 @@ build_dotnet: .make/build_dotnet
 		echo "$(PROVIDER_VERSION)" >version.txt
 	@touch $@
 .make/build_dotnet: .make/generate_dotnet
-	cd sdk/dotnet/ && dotnet build
+	cd sdk/dotnet/ && dotnet build -p:Version=$(PROVIDER_VERSION)
 	@touch $@
 .PHONY: generate_dotnet build_dotnet
 
