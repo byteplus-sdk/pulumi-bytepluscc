@@ -23,15 +23,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-        /// 该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+        /// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+        /// - 该功能正在邀测中，如需试用，请联系客户经理申请。
         /// </summary>
         [Output("affinityGroupSize")]
         public Output<int> AffinityGroupSize { get; private set; } = null!;
 
         /// <summary>
-        /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-        /// 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+        /// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         /// </summary>
         [Output("autoRenew")]
         public Output<bool> AutoRenew { get; private set; } = null!;
@@ -44,9 +44,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<int> AutoRenewPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        /// 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
         /// 当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-        /// - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+        /// - 该功能正在邀测中，如需使用，请联系客户经理申请。
         /// </summary>
         [Output("cpuMaxFrequency")]
         public Output<double> CpuMaxFrequency { get; private set; } = null!;
@@ -65,9 +65,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
         /// <summary>
         /// 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-        /// Unlimited：无性能约束模式（暂不支持）。 :::tip -
+        /// Unlimited：无性能约束模式（暂不支持）。 **提示:** -
         /// 仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-        /// 不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+        /// 不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         /// </summary>
         [Output("creditSpecification")]
         public Output<string> CreditSpecification { get; private set; } = null!;
@@ -127,8 +127,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<string> Hostname { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的高性能计算集群ID。 :::tip
-        /// 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        /// 实例所属的高性能计算集群ID。 **提示:**
+        /// 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         /// </summary>
         [Output("hpcClusterId")]
         public Output<string> HpcClusterId { get; private set; } = null!;
@@ -190,14 +190,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// <summary>
         /// 购买资源的时长（N）。 -
         /// `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-        /// `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+        /// `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
         /// 仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
         /// </summary>
         [Output("period")]
         public Output<int> Period { get; private set; } = null!;
 
         /// <summary>
-        /// 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        /// 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
         /// 仅当`InstanceChargeType`取值为`PrePaid`时生效。
         /// </summary>
         [Output("periodUnit")]
@@ -331,15 +331,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-        /// 该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+        /// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+        /// - 该功能正在邀测中，如需试用，请联系客户经理申请。
         /// </summary>
         [Input("affinityGroupSize")]
         public Input<int>? AffinityGroupSize { get; set; }
 
         /// <summary>
-        /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-        /// 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+        /// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
@@ -352,18 +352,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<int>? AutoRenewPeriod { get; set; }
 
         /// <summary>
-        /// 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        /// 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
         /// 当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-        /// - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+        /// - 该功能正在邀测中，如需使用，请联系客户经理申请。
         /// </summary>
         [Input("cpuMaxFrequency")]
         public Input<double>? CpuMaxFrequency { get; set; }
 
         /// <summary>
         /// 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-        /// Unlimited：无性能约束模式（暂不支持）。 :::tip -
+        /// Unlimited：无性能约束模式（暂不支持）。 **提示:** -
         /// 仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-        /// 不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+        /// 不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         /// </summary>
         [Input("creditSpecification")]
         public Input<string>? CreditSpecification { get; set; }
@@ -417,8 +417,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<string>? Hostname { get; set; }
 
         /// <summary>
-        /// 实例所属的高性能计算集群ID。 :::tip
-        /// 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        /// 实例所属的高性能计算集群ID。 **提示:**
+        /// 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         /// </summary>
         [Input("hpcClusterId")]
         public Input<string>? HpcClusterId { get; set; }
@@ -474,14 +474,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// <summary>
         /// 购买资源的时长（N）。 -
         /// `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-        /// `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+        /// `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
         /// 仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        /// 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
         /// 仅当`InstanceChargeType`取值为`PrePaid`时生效。
         /// </summary>
         [Input("periodUnit")]
@@ -580,15 +580,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-        /// 该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+        /// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+        /// - 该功能正在邀测中，如需试用，请联系客户经理申请。
         /// </summary>
         [Input("affinityGroupSize")]
         public Input<int>? AffinityGroupSize { get; set; }
 
         /// <summary>
-        /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-        /// 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+        /// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
@@ -601,9 +601,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<int>? AutoRenewPeriod { get; set; }
 
         /// <summary>
-        /// 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        /// 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
         /// 当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-        /// - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+        /// - 该功能正在邀测中，如需使用，请联系客户经理申请。
         /// </summary>
         [Input("cpuMaxFrequency")]
         public Input<double>? CpuMaxFrequency { get; set; }
@@ -622,9 +622,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
         /// <summary>
         /// 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-        /// Unlimited：无性能约束模式（暂不支持）。 :::tip -
+        /// Unlimited：无性能约束模式（暂不支持）。 **提示:** -
         /// 仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-        /// 不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+        /// 不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         /// </summary>
         [Input("creditSpecification")]
         public Input<string>? CreditSpecification { get; set; }
@@ -684,8 +684,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<string>? Hostname { get; set; }
 
         /// <summary>
-        /// 实例所属的高性能计算集群ID。 :::tip
-        /// 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        /// 实例所属的高性能计算集群ID。 **提示:**
+        /// 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         /// </summary>
         [Input("hpcClusterId")]
         public Input<string>? HpcClusterId { get; set; }
@@ -747,14 +747,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// <summary>
         /// 购买资源的时长（N）。 -
         /// `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-        /// `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+        /// `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
         /// 仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        /// 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
         /// 仅当`InstanceChargeType`取值为`PrePaid`时生效。
         /// </summary>
         [Input("periodUnit")]

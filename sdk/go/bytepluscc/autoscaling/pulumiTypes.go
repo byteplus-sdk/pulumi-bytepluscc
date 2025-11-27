@@ -208,9 +208,9 @@ func (o ScalingConfigurationEipPtrOutput) Isp() pulumi.StringPtrOutput {
 }
 
 type ScalingConfigurationInstanceTypeOverride struct {
-	// 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
 	InstanceType *string `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
 	PriceLimit *float64 `pulumi:"priceLimit"`
 }
 
@@ -226,9 +226,9 @@ type ScalingConfigurationInstanceTypeOverrideInput interface {
 }
 
 type ScalingConfigurationInstanceTypeOverrideArgs struct {
-	// 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
 	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
 	PriceLimit pulumi.Float64PtrInput `pulumi:"priceLimit"`
 }
 
@@ -283,12 +283,12 @@ func (o ScalingConfigurationInstanceTypeOverrideOutput) ToScalingConfigurationIn
 	return o
 }
 
-// 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
 func (o ScalingConfigurationInstanceTypeOverrideOutput) InstanceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationInstanceTypeOverride) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
 }
 
-// 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
 func (o ScalingConfigurationInstanceTypeOverrideOutput) PriceLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationInstanceTypeOverride) *float64 { return v.PriceLimit }).(pulumi.Float64PtrOutput)
 }
@@ -420,11 +420,11 @@ func (o ScalingConfigurationTagArrayOutput) Index(i pulumi.IntInput) ScalingConf
 }
 
 type ScalingConfigurationVolume struct {
-	// 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+	// 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
 	Size *int `pulumi:"size"`
-	// 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+	// 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -440,11 +440,11 @@ type ScalingConfigurationVolumeInput interface {
 }
 
 type ScalingConfigurationVolumeArgs struct {
-	// 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+	// 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+	// 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -499,17 +499,17 @@ func (o ScalingConfigurationVolumeOutput) ToScalingConfigurationVolumeOutputWith
 	return o
 }
 
-// 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+// 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 func (o ScalingConfigurationVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+// 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
 func (o ScalingConfigurationVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+// 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
 func (o ScalingConfigurationVolumeOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -532,6 +532,536 @@ func (o ScalingConfigurationVolumeArrayOutput) Index(i pulumi.IntInput) ScalingC
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScalingConfigurationVolume {
 		return vs[0].([]ScalingConfigurationVolume)[vs[1].(int)]
 	}).(ScalingConfigurationVolumeOutput)
+}
+
+type ScalingGroupInstancesDistribution struct {
+	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	CompensateWithOnDemand *bool `pulumi:"compensateWithOnDemand"`
+	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	OnDemandBaseCapacity *int `pulumi:"onDemandBaseCapacity"`
+	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	OnDemandPercentageAboveBaseCapacity *int `pulumi:"onDemandPercentageAboveBaseCapacity"`
+	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	SpotInstanceRemedy *bool `pulumi:"spotInstanceRemedy"`
+}
+
+// ScalingGroupInstancesDistributionInput is an input type that accepts ScalingGroupInstancesDistributionArgs and ScalingGroupInstancesDistributionOutput values.
+// You can construct a concrete instance of `ScalingGroupInstancesDistributionInput` via:
+//
+//	ScalingGroupInstancesDistributionArgs{...}
+type ScalingGroupInstancesDistributionInput interface {
+	pulumi.Input
+
+	ToScalingGroupInstancesDistributionOutput() ScalingGroupInstancesDistributionOutput
+	ToScalingGroupInstancesDistributionOutputWithContext(context.Context) ScalingGroupInstancesDistributionOutput
+}
+
+type ScalingGroupInstancesDistributionArgs struct {
+	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	CompensateWithOnDemand pulumi.BoolPtrInput `pulumi:"compensateWithOnDemand"`
+	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	OnDemandBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandBaseCapacity"`
+	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	OnDemandPercentageAboveBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
+	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	SpotInstanceRemedy pulumi.BoolPtrInput `pulumi:"spotInstanceRemedy"`
+}
+
+func (ScalingGroupInstancesDistributionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupInstancesDistribution)(nil)).Elem()
+}
+
+func (i ScalingGroupInstancesDistributionArgs) ToScalingGroupInstancesDistributionOutput() ScalingGroupInstancesDistributionOutput {
+	return i.ToScalingGroupInstancesDistributionOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupInstancesDistributionArgs) ToScalingGroupInstancesDistributionOutputWithContext(ctx context.Context) ScalingGroupInstancesDistributionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupInstancesDistributionOutput)
+}
+
+func (i ScalingGroupInstancesDistributionArgs) ToScalingGroupInstancesDistributionPtrOutput() ScalingGroupInstancesDistributionPtrOutput {
+	return i.ToScalingGroupInstancesDistributionPtrOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupInstancesDistributionArgs) ToScalingGroupInstancesDistributionPtrOutputWithContext(ctx context.Context) ScalingGroupInstancesDistributionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupInstancesDistributionOutput).ToScalingGroupInstancesDistributionPtrOutputWithContext(ctx)
+}
+
+// ScalingGroupInstancesDistributionPtrInput is an input type that accepts ScalingGroupInstancesDistributionArgs, ScalingGroupInstancesDistributionPtr and ScalingGroupInstancesDistributionPtrOutput values.
+// You can construct a concrete instance of `ScalingGroupInstancesDistributionPtrInput` via:
+//
+//	        ScalingGroupInstancesDistributionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScalingGroupInstancesDistributionPtrInput interface {
+	pulumi.Input
+
+	ToScalingGroupInstancesDistributionPtrOutput() ScalingGroupInstancesDistributionPtrOutput
+	ToScalingGroupInstancesDistributionPtrOutputWithContext(context.Context) ScalingGroupInstancesDistributionPtrOutput
+}
+
+type scalingGroupInstancesDistributionPtrType ScalingGroupInstancesDistributionArgs
+
+func ScalingGroupInstancesDistributionPtr(v *ScalingGroupInstancesDistributionArgs) ScalingGroupInstancesDistributionPtrInput {
+	return (*scalingGroupInstancesDistributionPtrType)(v)
+}
+
+func (*scalingGroupInstancesDistributionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingGroupInstancesDistribution)(nil)).Elem()
+}
+
+func (i *scalingGroupInstancesDistributionPtrType) ToScalingGroupInstancesDistributionPtrOutput() ScalingGroupInstancesDistributionPtrOutput {
+	return i.ToScalingGroupInstancesDistributionPtrOutputWithContext(context.Background())
+}
+
+func (i *scalingGroupInstancesDistributionPtrType) ToScalingGroupInstancesDistributionPtrOutputWithContext(ctx context.Context) ScalingGroupInstancesDistributionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupInstancesDistributionPtrOutput)
+}
+
+type ScalingGroupInstancesDistributionOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupInstancesDistributionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupInstancesDistribution)(nil)).Elem()
+}
+
+func (o ScalingGroupInstancesDistributionOutput) ToScalingGroupInstancesDistributionOutput() ScalingGroupInstancesDistributionOutput {
+	return o
+}
+
+func (o ScalingGroupInstancesDistributionOutput) ToScalingGroupInstancesDistributionOutputWithContext(ctx context.Context) ScalingGroupInstancesDistributionOutput {
+	return o
+}
+
+func (o ScalingGroupInstancesDistributionOutput) ToScalingGroupInstancesDistributionPtrOutput() ScalingGroupInstancesDistributionPtrOutput {
+	return o.ToScalingGroupInstancesDistributionPtrOutputWithContext(context.Background())
+}
+
+func (o ScalingGroupInstancesDistributionOutput) ToScalingGroupInstancesDistributionPtrOutputWithContext(ctx context.Context) ScalingGroupInstancesDistributionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScalingGroupInstancesDistribution) *ScalingGroupInstancesDistribution {
+		return &v
+	}).(ScalingGroupInstancesDistributionPtrOutput)
+}
+
+// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+func (o ScalingGroupInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *bool { return v.CompensateWithOnDemand }).(pulumi.BoolPtrOutput)
+}
+
+// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+func (o ScalingGroupInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *int { return v.OnDemandBaseCapacity }).(pulumi.IntPtrOutput)
+}
+
+// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+func (o ScalingGroupInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntPtrOutput)
+}
+
+// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+func (o ScalingGroupInstancesDistributionOutput) SpotInstanceRemedy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *bool { return v.SpotInstanceRemedy }).(pulumi.BoolPtrOutput)
+}
+
+type ScalingGroupInstancesDistributionPtrOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupInstancesDistributionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingGroupInstancesDistribution)(nil)).Elem()
+}
+
+func (o ScalingGroupInstancesDistributionPtrOutput) ToScalingGroupInstancesDistributionPtrOutput() ScalingGroupInstancesDistributionPtrOutput {
+	return o
+}
+
+func (o ScalingGroupInstancesDistributionPtrOutput) ToScalingGroupInstancesDistributionPtrOutputWithContext(ctx context.Context) ScalingGroupInstancesDistributionPtrOutput {
+	return o
+}
+
+func (o ScalingGroupInstancesDistributionPtrOutput) Elem() ScalingGroupInstancesDistributionOutput {
+	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) ScalingGroupInstancesDistribution {
+		if v != nil {
+			return *v
+		}
+		var ret ScalingGroupInstancesDistribution
+		return ret
+	}).(ScalingGroupInstancesDistributionOutput)
+}
+
+// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+func (o ScalingGroupInstancesDistributionPtrOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CompensateWithOnDemand
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+func (o ScalingGroupInstancesDistributionPtrOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *int {
+		if v == nil {
+			return nil
+		}
+		return v.OnDemandBaseCapacity
+	}).(pulumi.IntPtrOutput)
+}
+
+// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+func (o ScalingGroupInstancesDistributionPtrOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *int {
+		if v == nil {
+			return nil
+		}
+		return v.OnDemandPercentageAboveBaseCapacity
+	}).(pulumi.IntPtrOutput)
+}
+
+// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+func (o ScalingGroupInstancesDistributionPtrOutput) SpotInstanceRemedy() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SpotInstanceRemedy
+	}).(pulumi.BoolPtrOutput)
+}
+
+type ScalingGroupLaunchTemplateOverride struct {
+	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	InstanceType *string `pulumi:"instanceType"`
+	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	PriceLimit *float64 `pulumi:"priceLimit"`
+}
+
+// ScalingGroupLaunchTemplateOverrideInput is an input type that accepts ScalingGroupLaunchTemplateOverrideArgs and ScalingGroupLaunchTemplateOverrideOutput values.
+// You can construct a concrete instance of `ScalingGroupLaunchTemplateOverrideInput` via:
+//
+//	ScalingGroupLaunchTemplateOverrideArgs{...}
+type ScalingGroupLaunchTemplateOverrideInput interface {
+	pulumi.Input
+
+	ToScalingGroupLaunchTemplateOverrideOutput() ScalingGroupLaunchTemplateOverrideOutput
+	ToScalingGroupLaunchTemplateOverrideOutputWithContext(context.Context) ScalingGroupLaunchTemplateOverrideOutput
+}
+
+type ScalingGroupLaunchTemplateOverrideArgs struct {
+	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
+	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	PriceLimit pulumi.Float64PtrInput `pulumi:"priceLimit"`
+}
+
+func (ScalingGroupLaunchTemplateOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (i ScalingGroupLaunchTemplateOverrideArgs) ToScalingGroupLaunchTemplateOverrideOutput() ScalingGroupLaunchTemplateOverrideOutput {
+	return i.ToScalingGroupLaunchTemplateOverrideOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupLaunchTemplateOverrideArgs) ToScalingGroupLaunchTemplateOverrideOutputWithContext(ctx context.Context) ScalingGroupLaunchTemplateOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupLaunchTemplateOverrideOutput)
+}
+
+// ScalingGroupLaunchTemplateOverrideArrayInput is an input type that accepts ScalingGroupLaunchTemplateOverrideArray and ScalingGroupLaunchTemplateOverrideArrayOutput values.
+// You can construct a concrete instance of `ScalingGroupLaunchTemplateOverrideArrayInput` via:
+//
+//	ScalingGroupLaunchTemplateOverrideArray{ ScalingGroupLaunchTemplateOverrideArgs{...} }
+type ScalingGroupLaunchTemplateOverrideArrayInput interface {
+	pulumi.Input
+
+	ToScalingGroupLaunchTemplateOverrideArrayOutput() ScalingGroupLaunchTemplateOverrideArrayOutput
+	ToScalingGroupLaunchTemplateOverrideArrayOutputWithContext(context.Context) ScalingGroupLaunchTemplateOverrideArrayOutput
+}
+
+type ScalingGroupLaunchTemplateOverrideArray []ScalingGroupLaunchTemplateOverrideInput
+
+func (ScalingGroupLaunchTemplateOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (i ScalingGroupLaunchTemplateOverrideArray) ToScalingGroupLaunchTemplateOverrideArrayOutput() ScalingGroupLaunchTemplateOverrideArrayOutput {
+	return i.ToScalingGroupLaunchTemplateOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupLaunchTemplateOverrideArray) ToScalingGroupLaunchTemplateOverrideArrayOutputWithContext(ctx context.Context) ScalingGroupLaunchTemplateOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupLaunchTemplateOverrideArrayOutput)
+}
+
+type ScalingGroupLaunchTemplateOverrideOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupLaunchTemplateOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (o ScalingGroupLaunchTemplateOverrideOutput) ToScalingGroupLaunchTemplateOverrideOutput() ScalingGroupLaunchTemplateOverrideOutput {
+	return o
+}
+
+func (o ScalingGroupLaunchTemplateOverrideOutput) ToScalingGroupLaunchTemplateOverrideOutputWithContext(ctx context.Context) ScalingGroupLaunchTemplateOverrideOutput {
+	return o
+}
+
+// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+func (o ScalingGroupLaunchTemplateOverrideOutput) InstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupLaunchTemplateOverride) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
+}
+
+// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+func (o ScalingGroupLaunchTemplateOverrideOutput) PriceLimit() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ScalingGroupLaunchTemplateOverride) *float64 { return v.PriceLimit }).(pulumi.Float64PtrOutput)
+}
+
+type ScalingGroupLaunchTemplateOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupLaunchTemplateOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (o ScalingGroupLaunchTemplateOverrideArrayOutput) ToScalingGroupLaunchTemplateOverrideArrayOutput() ScalingGroupLaunchTemplateOverrideArrayOutput {
+	return o
+}
+
+func (o ScalingGroupLaunchTemplateOverrideArrayOutput) ToScalingGroupLaunchTemplateOverrideArrayOutputWithContext(ctx context.Context) ScalingGroupLaunchTemplateOverrideArrayOutput {
+	return o
+}
+
+func (o ScalingGroupLaunchTemplateOverrideArrayOutput) Index(i pulumi.IntInput) ScalingGroupLaunchTemplateOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScalingGroupLaunchTemplateOverride {
+		return vs[0].([]ScalingGroupLaunchTemplateOverride)[vs[1].(int)]
+	}).(ScalingGroupLaunchTemplateOverrideOutput)
+}
+
+type ScalingGroupServerGroupAttribute struct {
+	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	Port *int `pulumi:"port"`
+	// 负载均衡后端服务器组的ID。
+	ServerGroupId *string `pulumi:"serverGroupId"`
+	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	Type *string `pulumi:"type"`
+	// 负载均衡后端服务器组中服务器的权重。
+	Weight *int `pulumi:"weight"`
+}
+
+// ScalingGroupServerGroupAttributeInput is an input type that accepts ScalingGroupServerGroupAttributeArgs and ScalingGroupServerGroupAttributeOutput values.
+// You can construct a concrete instance of `ScalingGroupServerGroupAttributeInput` via:
+//
+//	ScalingGroupServerGroupAttributeArgs{...}
+type ScalingGroupServerGroupAttributeInput interface {
+	pulumi.Input
+
+	ToScalingGroupServerGroupAttributeOutput() ScalingGroupServerGroupAttributeOutput
+	ToScalingGroupServerGroupAttributeOutputWithContext(context.Context) ScalingGroupServerGroupAttributeOutput
+}
+
+type ScalingGroupServerGroupAttributeArgs struct {
+	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 负载均衡后端服务器组的ID。
+	ServerGroupId pulumi.StringPtrInput `pulumi:"serverGroupId"`
+	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// 负载均衡后端服务器组中服务器的权重。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (ScalingGroupServerGroupAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (i ScalingGroupServerGroupAttributeArgs) ToScalingGroupServerGroupAttributeOutput() ScalingGroupServerGroupAttributeOutput {
+	return i.ToScalingGroupServerGroupAttributeOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupServerGroupAttributeArgs) ToScalingGroupServerGroupAttributeOutputWithContext(ctx context.Context) ScalingGroupServerGroupAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupServerGroupAttributeOutput)
+}
+
+// ScalingGroupServerGroupAttributeArrayInput is an input type that accepts ScalingGroupServerGroupAttributeArray and ScalingGroupServerGroupAttributeArrayOutput values.
+// You can construct a concrete instance of `ScalingGroupServerGroupAttributeArrayInput` via:
+//
+//	ScalingGroupServerGroupAttributeArray{ ScalingGroupServerGroupAttributeArgs{...} }
+type ScalingGroupServerGroupAttributeArrayInput interface {
+	pulumi.Input
+
+	ToScalingGroupServerGroupAttributeArrayOutput() ScalingGroupServerGroupAttributeArrayOutput
+	ToScalingGroupServerGroupAttributeArrayOutputWithContext(context.Context) ScalingGroupServerGroupAttributeArrayOutput
+}
+
+type ScalingGroupServerGroupAttributeArray []ScalingGroupServerGroupAttributeInput
+
+func (ScalingGroupServerGroupAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (i ScalingGroupServerGroupAttributeArray) ToScalingGroupServerGroupAttributeArrayOutput() ScalingGroupServerGroupAttributeArrayOutput {
+	return i.ToScalingGroupServerGroupAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupServerGroupAttributeArray) ToScalingGroupServerGroupAttributeArrayOutputWithContext(ctx context.Context) ScalingGroupServerGroupAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupServerGroupAttributeArrayOutput)
+}
+
+type ScalingGroupServerGroupAttributeOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupServerGroupAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (o ScalingGroupServerGroupAttributeOutput) ToScalingGroupServerGroupAttributeOutput() ScalingGroupServerGroupAttributeOutput {
+	return o
+}
+
+func (o ScalingGroupServerGroupAttributeOutput) ToScalingGroupServerGroupAttributeOutputWithContext(ctx context.Context) ScalingGroupServerGroupAttributeOutput {
+	return o
+}
+
+// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+func (o ScalingGroupServerGroupAttributeOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 负载均衡后端服务器组的ID。
+func (o ScalingGroupServerGroupAttributeOutput) ServerGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *string { return v.ServerGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+func (o ScalingGroupServerGroupAttributeOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// 负载均衡后端服务器组中服务器的权重。
+func (o ScalingGroupServerGroupAttributeOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type ScalingGroupServerGroupAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupServerGroupAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (o ScalingGroupServerGroupAttributeArrayOutput) ToScalingGroupServerGroupAttributeArrayOutput() ScalingGroupServerGroupAttributeArrayOutput {
+	return o
+}
+
+func (o ScalingGroupServerGroupAttributeArrayOutput) ToScalingGroupServerGroupAttributeArrayOutputWithContext(ctx context.Context) ScalingGroupServerGroupAttributeArrayOutput {
+	return o
+}
+
+func (o ScalingGroupServerGroupAttributeArrayOutput) Index(i pulumi.IntInput) ScalingGroupServerGroupAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScalingGroupServerGroupAttribute {
+		return vs[0].([]ScalingGroupServerGroupAttribute)[vs[1].(int)]
+	}).(ScalingGroupServerGroupAttributeOutput)
+}
+
+type ScalingGroupTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// ScalingGroupTagInput is an input type that accepts ScalingGroupTagArgs and ScalingGroupTagOutput values.
+// You can construct a concrete instance of `ScalingGroupTagInput` via:
+//
+//	ScalingGroupTagArgs{...}
+type ScalingGroupTagInput interface {
+	pulumi.Input
+
+	ToScalingGroupTagOutput() ScalingGroupTagOutput
+	ToScalingGroupTagOutputWithContext(context.Context) ScalingGroupTagOutput
+}
+
+type ScalingGroupTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ScalingGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupTag)(nil)).Elem()
+}
+
+func (i ScalingGroupTagArgs) ToScalingGroupTagOutput() ScalingGroupTagOutput {
+	return i.ToScalingGroupTagOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupTagArgs) ToScalingGroupTagOutputWithContext(ctx context.Context) ScalingGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupTagOutput)
+}
+
+// ScalingGroupTagArrayInput is an input type that accepts ScalingGroupTagArray and ScalingGroupTagArrayOutput values.
+// You can construct a concrete instance of `ScalingGroupTagArrayInput` via:
+//
+//	ScalingGroupTagArray{ ScalingGroupTagArgs{...} }
+type ScalingGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToScalingGroupTagArrayOutput() ScalingGroupTagArrayOutput
+	ToScalingGroupTagArrayOutputWithContext(context.Context) ScalingGroupTagArrayOutput
+}
+
+type ScalingGroupTagArray []ScalingGroupTagInput
+
+func (ScalingGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupTag)(nil)).Elem()
+}
+
+func (i ScalingGroupTagArray) ToScalingGroupTagArrayOutput() ScalingGroupTagArrayOutput {
+	return i.ToScalingGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupTagArray) ToScalingGroupTagArrayOutputWithContext(ctx context.Context) ScalingGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupTagArrayOutput)
+}
+
+type ScalingGroupTagOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupTag)(nil)).Elem()
+}
+
+func (o ScalingGroupTagOutput) ToScalingGroupTagOutput() ScalingGroupTagOutput {
+	return o
+}
+
+func (o ScalingGroupTagOutput) ToScalingGroupTagOutputWithContext(ctx context.Context) ScalingGroupTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o ScalingGroupTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o ScalingGroupTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ScalingGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupTag)(nil)).Elem()
+}
+
+func (o ScalingGroupTagArrayOutput) ToScalingGroupTagArrayOutput() ScalingGroupTagArrayOutput {
+	return o
+}
+
+func (o ScalingGroupTagArrayOutput) ToScalingGroupTagArrayOutputWithContext(ctx context.Context) ScalingGroupTagArrayOutput {
+	return o
+}
+
+func (o ScalingGroupTagArrayOutput) Index(i pulumi.IntInput) ScalingGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScalingGroupTag {
+		return vs[0].([]ScalingGroupTag)[vs[1].(int)]
+	}).(ScalingGroupTagOutput)
 }
 
 type GetScalingConfigurationEip struct {
@@ -614,9 +1144,9 @@ func (o GetScalingConfigurationEipOutput) Isp() pulumi.StringOutput {
 }
 
 type GetScalingConfigurationInstanceTypeOverride struct {
-	// 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
 	InstanceType string `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
 	PriceLimit float64 `pulumi:"priceLimit"`
 }
 
@@ -632,9 +1162,9 @@ type GetScalingConfigurationInstanceTypeOverrideInput interface {
 }
 
 type GetScalingConfigurationInstanceTypeOverrideArgs struct {
-	// 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
 	InstanceType pulumi.StringInput `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
 	PriceLimit pulumi.Float64Input `pulumi:"priceLimit"`
 }
 
@@ -689,12 +1219,12 @@ func (o GetScalingConfigurationInstanceTypeOverrideOutput) ToGetScalingConfigura
 	return o
 }
 
-// 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
 func (o GetScalingConfigurationInstanceTypeOverrideOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationInstanceTypeOverride) string { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
 func (o GetScalingConfigurationInstanceTypeOverrideOutput) PriceLimit() pulumi.Float64Output {
 	return o.ApplyT(func(v GetScalingConfigurationInstanceTypeOverride) float64 { return v.PriceLimit }).(pulumi.Float64Output)
 }
@@ -826,11 +1356,11 @@ func (o GetScalingConfigurationTagArrayOutput) Index(i pulumi.IntInput) GetScali
 }
 
 type GetScalingConfigurationVolume struct {
-	// 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+	// 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
 	Size int `pulumi:"size"`
-	// 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+	// 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -846,11 +1376,11 @@ type GetScalingConfigurationVolumeInput interface {
 }
 
 type GetScalingConfigurationVolumeArgs struct {
-	// 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+	// 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
 	Size pulumi.IntInput `pulumi:"size"`
-	// 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+	// 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -905,17 +1435,17 @@ func (o GetScalingConfigurationVolumeOutput) ToGetScalingConfigurationVolumeOutp
 	return o
 }
 
-// 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+// 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 func (o GetScalingConfigurationVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
 }
 
-// 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+// 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
 func (o GetScalingConfigurationVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+// 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
 func (o GetScalingConfigurationVolumeOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) string { return v.VolumeType }).(pulumi.StringOutput)
 }
@@ -940,6 +1470,439 @@ func (o GetScalingConfigurationVolumeArrayOutput) Index(i pulumi.IntInput) GetSc
 	}).(GetScalingConfigurationVolumeOutput)
 }
 
+type GetScalingGroupInstancesDistribution struct {
+	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	CompensateWithOnDemand bool `pulumi:"compensateWithOnDemand"`
+	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	OnDemandBaseCapacity int `pulumi:"onDemandBaseCapacity"`
+	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	OnDemandPercentageAboveBaseCapacity int `pulumi:"onDemandPercentageAboveBaseCapacity"`
+	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	SpotInstanceRemedy bool `pulumi:"spotInstanceRemedy"`
+}
+
+// GetScalingGroupInstancesDistributionInput is an input type that accepts GetScalingGroupInstancesDistributionArgs and GetScalingGroupInstancesDistributionOutput values.
+// You can construct a concrete instance of `GetScalingGroupInstancesDistributionInput` via:
+//
+//	GetScalingGroupInstancesDistributionArgs{...}
+type GetScalingGroupInstancesDistributionInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupInstancesDistributionOutput() GetScalingGroupInstancesDistributionOutput
+	ToGetScalingGroupInstancesDistributionOutputWithContext(context.Context) GetScalingGroupInstancesDistributionOutput
+}
+
+type GetScalingGroupInstancesDistributionArgs struct {
+	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	CompensateWithOnDemand pulumi.BoolInput `pulumi:"compensateWithOnDemand"`
+	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	OnDemandBaseCapacity pulumi.IntInput `pulumi:"onDemandBaseCapacity"`
+	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	OnDemandPercentageAboveBaseCapacity pulumi.IntInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
+	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	SpotInstanceRemedy pulumi.BoolInput `pulumi:"spotInstanceRemedy"`
+}
+
+func (GetScalingGroupInstancesDistributionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupInstancesDistribution)(nil)).Elem()
+}
+
+func (i GetScalingGroupInstancesDistributionArgs) ToGetScalingGroupInstancesDistributionOutput() GetScalingGroupInstancesDistributionOutput {
+	return i.ToGetScalingGroupInstancesDistributionOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupInstancesDistributionArgs) ToGetScalingGroupInstancesDistributionOutputWithContext(ctx context.Context) GetScalingGroupInstancesDistributionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupInstancesDistributionOutput)
+}
+
+type GetScalingGroupInstancesDistributionOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupInstancesDistributionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupInstancesDistribution)(nil)).Elem()
+}
+
+func (o GetScalingGroupInstancesDistributionOutput) ToGetScalingGroupInstancesDistributionOutput() GetScalingGroupInstancesDistributionOutput {
+	return o
+}
+
+func (o GetScalingGroupInstancesDistributionOutput) ToGetScalingGroupInstancesDistributionOutputWithContext(ctx context.Context) GetScalingGroupInstancesDistributionOutput {
+	return o
+}
+
+// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+func (o GetScalingGroupInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) bool { return v.CompensateWithOnDemand }).(pulumi.BoolOutput)
+}
+
+// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+func (o GetScalingGroupInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) int { return v.OnDemandBaseCapacity }).(pulumi.IntOutput)
+}
+
+// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+func (o GetScalingGroupInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntOutput)
+}
+
+// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+func (o GetScalingGroupInstancesDistributionOutput) SpotInstanceRemedy() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) bool { return v.SpotInstanceRemedy }).(pulumi.BoolOutput)
+}
+
+type GetScalingGroupLaunchTemplateOverride struct {
+	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	InstanceType string `pulumi:"instanceType"`
+	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	PriceLimit float64 `pulumi:"priceLimit"`
+	// 实例规格的权重。
+	WeightedCapacity int `pulumi:"weightedCapacity"`
+}
+
+// GetScalingGroupLaunchTemplateOverrideInput is an input type that accepts GetScalingGroupLaunchTemplateOverrideArgs and GetScalingGroupLaunchTemplateOverrideOutput values.
+// You can construct a concrete instance of `GetScalingGroupLaunchTemplateOverrideInput` via:
+//
+//	GetScalingGroupLaunchTemplateOverrideArgs{...}
+type GetScalingGroupLaunchTemplateOverrideInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupLaunchTemplateOverrideOutput() GetScalingGroupLaunchTemplateOverrideOutput
+	ToGetScalingGroupLaunchTemplateOverrideOutputWithContext(context.Context) GetScalingGroupLaunchTemplateOverrideOutput
+}
+
+type GetScalingGroupLaunchTemplateOverrideArgs struct {
+	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	InstanceType pulumi.StringInput `pulumi:"instanceType"`
+	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	PriceLimit pulumi.Float64Input `pulumi:"priceLimit"`
+	// 实例规格的权重。
+	WeightedCapacity pulumi.IntInput `pulumi:"weightedCapacity"`
+}
+
+func (GetScalingGroupLaunchTemplateOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (i GetScalingGroupLaunchTemplateOverrideArgs) ToGetScalingGroupLaunchTemplateOverrideOutput() GetScalingGroupLaunchTemplateOverrideOutput {
+	return i.ToGetScalingGroupLaunchTemplateOverrideOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupLaunchTemplateOverrideArgs) ToGetScalingGroupLaunchTemplateOverrideOutputWithContext(ctx context.Context) GetScalingGroupLaunchTemplateOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupLaunchTemplateOverrideOutput)
+}
+
+// GetScalingGroupLaunchTemplateOverrideArrayInput is an input type that accepts GetScalingGroupLaunchTemplateOverrideArray and GetScalingGroupLaunchTemplateOverrideArrayOutput values.
+// You can construct a concrete instance of `GetScalingGroupLaunchTemplateOverrideArrayInput` via:
+//
+//	GetScalingGroupLaunchTemplateOverrideArray{ GetScalingGroupLaunchTemplateOverrideArgs{...} }
+type GetScalingGroupLaunchTemplateOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupLaunchTemplateOverrideArrayOutput() GetScalingGroupLaunchTemplateOverrideArrayOutput
+	ToGetScalingGroupLaunchTemplateOverrideArrayOutputWithContext(context.Context) GetScalingGroupLaunchTemplateOverrideArrayOutput
+}
+
+type GetScalingGroupLaunchTemplateOverrideArray []GetScalingGroupLaunchTemplateOverrideInput
+
+func (GetScalingGroupLaunchTemplateOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (i GetScalingGroupLaunchTemplateOverrideArray) ToGetScalingGroupLaunchTemplateOverrideArrayOutput() GetScalingGroupLaunchTemplateOverrideArrayOutput {
+	return i.ToGetScalingGroupLaunchTemplateOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupLaunchTemplateOverrideArray) ToGetScalingGroupLaunchTemplateOverrideArrayOutputWithContext(ctx context.Context) GetScalingGroupLaunchTemplateOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupLaunchTemplateOverrideArrayOutput)
+}
+
+type GetScalingGroupLaunchTemplateOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupLaunchTemplateOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (o GetScalingGroupLaunchTemplateOverrideOutput) ToGetScalingGroupLaunchTemplateOverrideOutput() GetScalingGroupLaunchTemplateOverrideOutput {
+	return o
+}
+
+func (o GetScalingGroupLaunchTemplateOverrideOutput) ToGetScalingGroupLaunchTemplateOverrideOutputWithContext(ctx context.Context) GetScalingGroupLaunchTemplateOverrideOutput {
+	return o
+}
+
+// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+func (o GetScalingGroupLaunchTemplateOverrideOutput) InstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupLaunchTemplateOverride) string { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+func (o GetScalingGroupLaunchTemplateOverrideOutput) PriceLimit() pulumi.Float64Output {
+	return o.ApplyT(func(v GetScalingGroupLaunchTemplateOverride) float64 { return v.PriceLimit }).(pulumi.Float64Output)
+}
+
+// 实例规格的权重。
+func (o GetScalingGroupLaunchTemplateOverrideOutput) WeightedCapacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingGroupLaunchTemplateOverride) int { return v.WeightedCapacity }).(pulumi.IntOutput)
+}
+
+type GetScalingGroupLaunchTemplateOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupLaunchTemplateOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupLaunchTemplateOverride)(nil)).Elem()
+}
+
+func (o GetScalingGroupLaunchTemplateOverrideArrayOutput) ToGetScalingGroupLaunchTemplateOverrideArrayOutput() GetScalingGroupLaunchTemplateOverrideArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupLaunchTemplateOverrideArrayOutput) ToGetScalingGroupLaunchTemplateOverrideArrayOutputWithContext(ctx context.Context) GetScalingGroupLaunchTemplateOverrideArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupLaunchTemplateOverrideArrayOutput) Index(i pulumi.IntInput) GetScalingGroupLaunchTemplateOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScalingGroupLaunchTemplateOverride {
+		return vs[0].([]GetScalingGroupLaunchTemplateOverride)[vs[1].(int)]
+	}).(GetScalingGroupLaunchTemplateOverrideOutput)
+}
+
+type GetScalingGroupServerGroupAttribute struct {
+	// 负载均衡实例的ID。
+	LoadBalancerId string `pulumi:"loadBalancerId"`
+	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	Port int `pulumi:"port"`
+	// 负载均衡后端服务器组的ID。
+	ServerGroupId string `pulumi:"serverGroupId"`
+	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	Type string `pulumi:"type"`
+	// 负载均衡后端服务器组中服务器的权重。
+	Weight int `pulumi:"weight"`
+}
+
+// GetScalingGroupServerGroupAttributeInput is an input type that accepts GetScalingGroupServerGroupAttributeArgs and GetScalingGroupServerGroupAttributeOutput values.
+// You can construct a concrete instance of `GetScalingGroupServerGroupAttributeInput` via:
+//
+//	GetScalingGroupServerGroupAttributeArgs{...}
+type GetScalingGroupServerGroupAttributeInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupServerGroupAttributeOutput() GetScalingGroupServerGroupAttributeOutput
+	ToGetScalingGroupServerGroupAttributeOutputWithContext(context.Context) GetScalingGroupServerGroupAttributeOutput
+}
+
+type GetScalingGroupServerGroupAttributeArgs struct {
+	// 负载均衡实例的ID。
+	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
+	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 负载均衡后端服务器组的ID。
+	ServerGroupId pulumi.StringInput `pulumi:"serverGroupId"`
+	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	Type pulumi.StringInput `pulumi:"type"`
+	// 负载均衡后端服务器组中服务器的权重。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetScalingGroupServerGroupAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (i GetScalingGroupServerGroupAttributeArgs) ToGetScalingGroupServerGroupAttributeOutput() GetScalingGroupServerGroupAttributeOutput {
+	return i.ToGetScalingGroupServerGroupAttributeOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupServerGroupAttributeArgs) ToGetScalingGroupServerGroupAttributeOutputWithContext(ctx context.Context) GetScalingGroupServerGroupAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupServerGroupAttributeOutput)
+}
+
+// GetScalingGroupServerGroupAttributeArrayInput is an input type that accepts GetScalingGroupServerGroupAttributeArray and GetScalingGroupServerGroupAttributeArrayOutput values.
+// You can construct a concrete instance of `GetScalingGroupServerGroupAttributeArrayInput` via:
+//
+//	GetScalingGroupServerGroupAttributeArray{ GetScalingGroupServerGroupAttributeArgs{...} }
+type GetScalingGroupServerGroupAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupServerGroupAttributeArrayOutput() GetScalingGroupServerGroupAttributeArrayOutput
+	ToGetScalingGroupServerGroupAttributeArrayOutputWithContext(context.Context) GetScalingGroupServerGroupAttributeArrayOutput
+}
+
+type GetScalingGroupServerGroupAttributeArray []GetScalingGroupServerGroupAttributeInput
+
+func (GetScalingGroupServerGroupAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (i GetScalingGroupServerGroupAttributeArray) ToGetScalingGroupServerGroupAttributeArrayOutput() GetScalingGroupServerGroupAttributeArrayOutput {
+	return i.ToGetScalingGroupServerGroupAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupServerGroupAttributeArray) ToGetScalingGroupServerGroupAttributeArrayOutputWithContext(ctx context.Context) GetScalingGroupServerGroupAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupServerGroupAttributeArrayOutput)
+}
+
+type GetScalingGroupServerGroupAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupServerGroupAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (o GetScalingGroupServerGroupAttributeOutput) ToGetScalingGroupServerGroupAttributeOutput() GetScalingGroupServerGroupAttributeOutput {
+	return o
+}
+
+func (o GetScalingGroupServerGroupAttributeOutput) ToGetScalingGroupServerGroupAttributeOutputWithContext(ctx context.Context) GetScalingGroupServerGroupAttributeOutput {
+	return o
+}
+
+// 负载均衡实例的ID。
+func (o GetScalingGroupServerGroupAttributeOutput) LoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+}
+
+// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+func (o GetScalingGroupServerGroupAttributeOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 负载均衡后端服务器组的ID。
+func (o GetScalingGroupServerGroupAttributeOutput) ServerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) string { return v.ServerGroupId }).(pulumi.StringOutput)
+}
+
+// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+func (o GetScalingGroupServerGroupAttributeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// 负载均衡后端服务器组中服务器的权重。
+func (o GetScalingGroupServerGroupAttributeOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetScalingGroupServerGroupAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupServerGroupAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupServerGroupAttribute)(nil)).Elem()
+}
+
+func (o GetScalingGroupServerGroupAttributeArrayOutput) ToGetScalingGroupServerGroupAttributeArrayOutput() GetScalingGroupServerGroupAttributeArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupServerGroupAttributeArrayOutput) ToGetScalingGroupServerGroupAttributeArrayOutputWithContext(ctx context.Context) GetScalingGroupServerGroupAttributeArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupServerGroupAttributeArrayOutput) Index(i pulumi.IntInput) GetScalingGroupServerGroupAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScalingGroupServerGroupAttribute {
+		return vs[0].([]GetScalingGroupServerGroupAttribute)[vs[1].(int)]
+	}).(GetScalingGroupServerGroupAttributeOutput)
+}
+
+type GetScalingGroupTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetScalingGroupTagInput is an input type that accepts GetScalingGroupTagArgs and GetScalingGroupTagOutput values.
+// You can construct a concrete instance of `GetScalingGroupTagInput` via:
+//
+//	GetScalingGroupTagArgs{...}
+type GetScalingGroupTagInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupTagOutput() GetScalingGroupTagOutput
+	ToGetScalingGroupTagOutputWithContext(context.Context) GetScalingGroupTagOutput
+}
+
+type GetScalingGroupTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetScalingGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupTag)(nil)).Elem()
+}
+
+func (i GetScalingGroupTagArgs) ToGetScalingGroupTagOutput() GetScalingGroupTagOutput {
+	return i.ToGetScalingGroupTagOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupTagArgs) ToGetScalingGroupTagOutputWithContext(ctx context.Context) GetScalingGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupTagOutput)
+}
+
+// GetScalingGroupTagArrayInput is an input type that accepts GetScalingGroupTagArray and GetScalingGroupTagArrayOutput values.
+// You can construct a concrete instance of `GetScalingGroupTagArrayInput` via:
+//
+//	GetScalingGroupTagArray{ GetScalingGroupTagArgs{...} }
+type GetScalingGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupTagArrayOutput() GetScalingGroupTagArrayOutput
+	ToGetScalingGroupTagArrayOutputWithContext(context.Context) GetScalingGroupTagArrayOutput
+}
+
+type GetScalingGroupTagArray []GetScalingGroupTagInput
+
+func (GetScalingGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupTag)(nil)).Elem()
+}
+
+func (i GetScalingGroupTagArray) ToGetScalingGroupTagArrayOutput() GetScalingGroupTagArrayOutput {
+	return i.ToGetScalingGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupTagArray) ToGetScalingGroupTagArrayOutputWithContext(ctx context.Context) GetScalingGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupTagArrayOutput)
+}
+
+type GetScalingGroupTagOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupTag)(nil)).Elem()
+}
+
+func (o GetScalingGroupTagOutput) ToGetScalingGroupTagOutput() GetScalingGroupTagOutput {
+	return o
+}
+
+func (o GetScalingGroupTagOutput) ToGetScalingGroupTagOutputWithContext(ctx context.Context) GetScalingGroupTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetScalingGroupTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetScalingGroupTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetScalingGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupTag)(nil)).Elem()
+}
+
+func (o GetScalingGroupTagArrayOutput) ToGetScalingGroupTagArrayOutput() GetScalingGroupTagArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupTagArrayOutput) ToGetScalingGroupTagArrayOutputWithContext(ctx context.Context) GetScalingGroupTagArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupTagArrayOutput) Index(i pulumi.IntInput) GetScalingGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScalingGroupTag {
+		return vs[0].([]GetScalingGroupTag)[vs[1].(int)]
+	}).(GetScalingGroupTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationEipInput)(nil)).Elem(), ScalingConfigurationEipArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationEipPtrInput)(nil)).Elem(), ScalingConfigurationEipArgs{})
@@ -949,6 +1912,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationTagArrayInput)(nil)).Elem(), ScalingConfigurationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationVolumeInput)(nil)).Elem(), ScalingConfigurationVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationVolumeArrayInput)(nil)).Elem(), ScalingConfigurationVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstancesDistributionInput)(nil)).Elem(), ScalingGroupInstancesDistributionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstancesDistributionPtrInput)(nil)).Elem(), ScalingGroupInstancesDistributionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupLaunchTemplateOverrideInput)(nil)).Elem(), ScalingGroupLaunchTemplateOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupLaunchTemplateOverrideArrayInput)(nil)).Elem(), ScalingGroupLaunchTemplateOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupServerGroupAttributeInput)(nil)).Elem(), ScalingGroupServerGroupAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupServerGroupAttributeArrayInput)(nil)).Elem(), ScalingGroupServerGroupAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupTagInput)(nil)).Elem(), ScalingGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupTagArrayInput)(nil)).Elem(), ScalingGroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationEipInput)(nil)).Elem(), GetScalingConfigurationEipArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationInstanceTypeOverrideInput)(nil)).Elem(), GetScalingConfigurationInstanceTypeOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationInstanceTypeOverrideArrayInput)(nil)).Elem(), GetScalingConfigurationInstanceTypeOverrideArray{})
@@ -956,6 +1927,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationTagArrayInput)(nil)).Elem(), GetScalingConfigurationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationVolumeInput)(nil)).Elem(), GetScalingConfigurationVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationVolumeArrayInput)(nil)).Elem(), GetScalingConfigurationVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupInstancesDistributionInput)(nil)).Elem(), GetScalingGroupInstancesDistributionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupLaunchTemplateOverrideInput)(nil)).Elem(), GetScalingGroupLaunchTemplateOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupLaunchTemplateOverrideArrayInput)(nil)).Elem(), GetScalingGroupLaunchTemplateOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupServerGroupAttributeInput)(nil)).Elem(), GetScalingGroupServerGroupAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupServerGroupAttributeArrayInput)(nil)).Elem(), GetScalingGroupServerGroupAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupTagInput)(nil)).Elem(), GetScalingGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupTagArrayInput)(nil)).Elem(), GetScalingGroupTagArray{})
 	pulumi.RegisterOutputType(ScalingConfigurationEipOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationEipPtrOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationInstanceTypeOverrideOutput{})
@@ -964,6 +1942,14 @@ func init() {
 	pulumi.RegisterOutputType(ScalingConfigurationTagArrayOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationVolumeOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationVolumeArrayOutput{})
+	pulumi.RegisterOutputType(ScalingGroupInstancesDistributionOutput{})
+	pulumi.RegisterOutputType(ScalingGroupInstancesDistributionPtrOutput{})
+	pulumi.RegisterOutputType(ScalingGroupLaunchTemplateOverrideOutput{})
+	pulumi.RegisterOutputType(ScalingGroupLaunchTemplateOverrideArrayOutput{})
+	pulumi.RegisterOutputType(ScalingGroupServerGroupAttributeOutput{})
+	pulumi.RegisterOutputType(ScalingGroupServerGroupAttributeArrayOutput{})
+	pulumi.RegisterOutputType(ScalingGroupTagOutput{})
+	pulumi.RegisterOutputType(ScalingGroupTagArrayOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationEipOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationInstanceTypeOverrideOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationInstanceTypeOverrideArrayOutput{})
@@ -971,4 +1957,11 @@ func init() {
 	pulumi.RegisterOutputType(GetScalingConfigurationTagArrayOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationVolumeOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupInstancesDistributionOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupLaunchTemplateOverrideOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupLaunchTemplateOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupServerGroupAttributeOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupServerGroupAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupTagOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupTagArrayOutput{})
 }

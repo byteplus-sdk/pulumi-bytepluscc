@@ -13,8 +13,14 @@ from ._inputs import *
 if typing.TYPE_CHECKING:
     import pulumi_bytepluscc.alb as __alb
     alb = __alb
+    import pulumi_bytepluscc.apig as __apig
+    apig = __apig
     import pulumi_bytepluscc.autoscaling as __autoscaling
     autoscaling = __autoscaling
+    import pulumi_bytepluscc.cdn as __cdn
+    cdn = __cdn
+    import pulumi_bytepluscc.cen as __cen
+    cen = __cen
     import pulumi_bytepluscc.clb as __clb
     clb = __clb
     import pulumi_bytepluscc.config as __config
@@ -23,18 +29,39 @@ if typing.TYPE_CHECKING:
     cr = __cr
     import pulumi_bytepluscc.ecs as __ecs
     ecs = __ecs
+    import pulumi_bytepluscc.iam as __iam
+    iam = __iam
+    import pulumi_bytepluscc.natgateway as __natgateway
+    natgateway = __natgateway
+    import pulumi_bytepluscc.organization as __organization
+    organization = __organization
+    import pulumi_bytepluscc.rdsmysql as __rdsmysql
+    rdsmysql = __rdsmysql
     import pulumi_bytepluscc.storageebs as __storageebs
     storageebs = __storageebs
+    import pulumi_bytepluscc.vefaas as __vefaas
+    vefaas = __vefaas
+    import pulumi_bytepluscc.vke as __vke
+    vke = __vke
     import pulumi_bytepluscc.vpc as __vpc
     vpc = __vpc
 else:
     alb = _utilities.lazy_import('pulumi_bytepluscc.alb')
+    apig = _utilities.lazy_import('pulumi_bytepluscc.apig')
     autoscaling = _utilities.lazy_import('pulumi_bytepluscc.autoscaling')
+    cdn = _utilities.lazy_import('pulumi_bytepluscc.cdn')
+    cen = _utilities.lazy_import('pulumi_bytepluscc.cen')
     clb = _utilities.lazy_import('pulumi_bytepluscc.clb')
     config = _utilities.lazy_import('pulumi_bytepluscc.config')
     cr = _utilities.lazy_import('pulumi_bytepluscc.cr')
     ecs = _utilities.lazy_import('pulumi_bytepluscc.ecs')
+    iam = _utilities.lazy_import('pulumi_bytepluscc.iam')
+    natgateway = _utilities.lazy_import('pulumi_bytepluscc.natgateway')
+    organization = _utilities.lazy_import('pulumi_bytepluscc.organization')
+    rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
+    vefaas = _utilities.lazy_import('pulumi_bytepluscc.vefaas')
+    vke = _utilities.lazy_import('pulumi_bytepluscc.vke')
     vpc = _utilities.lazy_import('pulumi_bytepluscc.vpc')
 
 _utilities.register(
@@ -50,10 +77,58 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "apig/gatewayService",
+  "fqn": "pulumi_bytepluscc.apig",
+  "classes": {
+   "bytepluscc:apig/gatewayService:GatewayService": "GatewayService"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "apig/upstream",
+  "fqn": "pulumi_bytepluscc.apig",
+  "classes": {
+   "bytepluscc:apig/upstream:Upstream": "Upstream"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "apig/upstreamSource",
+  "fqn": "pulumi_bytepluscc.apig",
+  "classes": {
+   "bytepluscc:apig/upstreamSource:UpstreamSource": "UpstreamSource"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "autoscaling/scalingConfiguration",
   "fqn": "pulumi_bytepluscc.autoscaling",
   "classes": {
    "bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration": "ScalingConfiguration"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "autoscaling/scalingGroup",
+  "fqn": "pulumi_bytepluscc.autoscaling",
+  "classes": {
+   "bytepluscc:autoscaling/scalingGroup:ScalingGroup": "ScalingGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cdn/shareConfig",
+  "fqn": "pulumi_bytepluscc.cdn",
+  "classes": {
+   "bytepluscc:cdn/shareConfig:ShareConfig": "ShareConfig"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cen/cen",
+  "fqn": "pulumi_bytepluscc.cen",
+  "classes": {
+   "bytepluscc:cen/cen:Cen": "Cen"
   }
  },
  {
@@ -90,10 +165,106 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "iam/policy",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/policy:Policy": "Policy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "iam/role",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/role:Role": "Role"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "iam/user",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/user:User": "User"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "natgateway/dnatentry",
+  "fqn": "pulumi_bytepluscc.natgateway",
+  "classes": {
+   "bytepluscc:natgateway/dnatentry:Dnatentry": "Dnatentry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "natgateway/ngw",
+  "fqn": "pulumi_bytepluscc.natgateway",
+  "classes": {
+   "bytepluscc:natgateway/ngw:Ngw": "Ngw"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "natgateway/snatentry",
+  "fqn": "pulumi_bytepluscc.natgateway",
+  "classes": {
+   "bytepluscc:natgateway/snatentry:Snatentry": "Snatentry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "organization/unit",
+  "fqn": "pulumi_bytepluscc.organization",
+  "classes": {
+   "bytepluscc:organization/unit:Unit": "Unit"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdsmysql/dbAccount",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/dbAccount:DbAccount": "DbAccount"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "storageebs/volume",
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {
    "bytepluscc:storageebs/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vefaas/kafkaTrigger",
+  "fqn": "pulumi_bytepluscc.vefaas",
+  "classes": {
+   "bytepluscc:vefaas/kafkaTrigger:KafkaTrigger": "KafkaTrigger"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vefaas/sandbox",
+  "fqn": "pulumi_bytepluscc.vefaas",
+  "classes": {
+   "bytepluscc:vefaas/sandbox:Sandbox": "Sandbox"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vke/cluster",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/cluster:Cluster": "Cluster"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vke/permission",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/permission:Permission": "Permission"
   }
  },
  {

@@ -131,7 +131,7 @@ public final class GetListenerResult {
      */
     private String pcaSubCaCertificateId;
     /**
-     * @return 监听器的监听端口，取值：1 - 65535 。
+     * @return 监听器的监听端口，取值：1   - 65535 。
      * 
      */
     private Integer port;
@@ -334,7 +334,7 @@ public final class GetListenerResult {
         return this.pcaSubCaCertificateId;
     }
     /**
-     * @return 监听器的监听端口，取值：1 - 65535 。
+     * @return 监听器的监听端口，取值：1   - 65535 。
      * 
      */
     public Integer port() {

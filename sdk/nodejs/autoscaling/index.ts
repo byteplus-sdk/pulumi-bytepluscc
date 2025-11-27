@@ -15,10 +15,25 @@ export const getScalingConfigurations: typeof import("./getScalingConfigurations
 export const getScalingConfigurationsOutput: typeof import("./getScalingConfigurations").getScalingConfigurationsOutput = null as any;
 utilities.lazyLoad(exports, ["getScalingConfigurations","getScalingConfigurationsOutput"], () => require("./getScalingConfigurations"));
 
+export { GetScalingGroupArgs, GetScalingGroupResult, GetScalingGroupOutputArgs } from "./getScalingGroup";
+export const getScalingGroup: typeof import("./getScalingGroup").getScalingGroup = null as any;
+export const getScalingGroupOutput: typeof import("./getScalingGroup").getScalingGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getScalingGroup","getScalingGroupOutput"], () => require("./getScalingGroup"));
+
+export { GetScalingGroupsResult } from "./getScalingGroups";
+export const getScalingGroups: typeof import("./getScalingGroups").getScalingGroups = null as any;
+export const getScalingGroupsOutput: typeof import("./getScalingGroups").getScalingGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getScalingGroups","getScalingGroupsOutput"], () => require("./getScalingGroups"));
+
 export { ScalingConfigurationArgs, ScalingConfigurationState } from "./scalingConfiguration";
 export type ScalingConfiguration = import("./scalingConfiguration").ScalingConfiguration;
 export const ScalingConfiguration: typeof import("./scalingConfiguration").ScalingConfiguration = null as any;
 utilities.lazyLoad(exports, ["ScalingConfiguration"], () => require("./scalingConfiguration"));
+
+export { ScalingGroupArgs, ScalingGroupState } from "./scalingGroup";
+export type ScalingGroup = import("./scalingGroup").ScalingGroup;
+export const ScalingGroup: typeof import("./scalingGroup").ScalingGroup = null as any;
+utilities.lazyLoad(exports, ["ScalingGroup"], () => require("./scalingGroup"));
 
 
 const _module = {
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration":
                 return new ScalingConfiguration(name, <any>undefined, { urn })
+            case "bytepluscc:autoscaling/scalingGroup:ScalingGroup":
+                return new ScalingGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingConfiguration", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingGroup", _module)

@@ -376,31 +376,31 @@ class InstanceEipAddress(dict):
         """
         :param builtins.str allocation_id: 实例的分配ID。
         :param builtins.int bandwidth_mbps: 公网IP的带宽上限，默认值为1，单位：Mbps。
-               - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-               - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+                   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+                   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
         :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-               - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-               - 公网IP加入到共享带宽包必须同时满足如下条件：
-                 - 二者的安全防护类型相同。
-                 - 二者的地域相同。
-                 - 公网IP的计费方式必须是按量计费。
-                 - 共享带宽包为IPv4类型。
+                   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+                   - 公网IP加入到共享带宽包必须同时满足如下条件：
+                     - 二者的安全防护类型相同。
+                     - 二者的地域相同。
+                     - 公网IP的计费方式必须是按量计费。
+                     - 共享带宽包为IPv4类型。
         :param builtins.str charge_type: 公网IP的计费方式，取值：
-               - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-               - PayByTraffic：按量计费-按实际流量计费。
-               - PrePaid：包年包月。
-               :::tip
-               实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-               :::
+                   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+                   - PayByTraffic：按量计费-按实际流量计费。
+                   - PrePaid：包年包月。
+                 
+                 **提示:**
+                 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
         :param builtins.str ip_address: 实例的IP地址。
         :param builtins.str isp: 公网IP的线路类型，默认为BGP。取值：
-               - BGP：BGP（多线）。
-               - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-                 - ChinaMobile：中国移动静态单线。
-                 - ChinaTelecom：中国电信静态单线。
-                 - ChinaUnicom：中国联通静态单线。
-               - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-               - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+                   - BGP：BGP（多线）。
+                   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+                     - ChinaMobile：中国移动静态单线。
+                     - ChinaTelecom：中国电信静态单线。
+                     - ChinaUnicom：中国联通静态单线。
+                   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+                   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
         :param builtins.bool release_with_instance: 实例是否随实例释放。
         """
         if allocation_id is not None:
@@ -431,8 +431,8 @@ class InstanceEipAddress(dict):
     def bandwidth_mbps(self) -> Optional[builtins.int]:
         """
         公网IP的带宽上限，默认值为1，单位：Mbps。
-        - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-        - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+            - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+            - `ChargeType`传入`PayByTraffic`：取值范围1～200。
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -441,12 +441,12 @@ class InstanceEipAddress(dict):
     def bandwidth_package_id(self) -> Optional[builtins.str]:
         """
         共享带宽包的ID，表示将公网IP加入到共享带宽包。
-        - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-        - 公网IP加入到共享带宽包必须同时满足如下条件：
-          - 二者的安全防护类型相同。
-          - 二者的地域相同。
-          - 公网IP的计费方式必须是按量计费。
-          - 共享带宽包为IPv4类型。
+            - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+            - 公网IP加入到共享带宽包必须同时满足如下条件：
+              - 二者的安全防护类型相同。
+              - 二者的地域相同。
+              - 公网IP的计费方式必须是按量计费。
+              - 共享带宽包为IPv4类型。
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -455,12 +455,12 @@ class InstanceEipAddress(dict):
     def charge_type(self) -> Optional[builtins.str]:
         """
         公网IP的计费方式，取值：
-        - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-        - PayByTraffic：按量计费-按实际流量计费。
-        - PrePaid：包年包月。
-        :::tip
-        实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-        :::
+            - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+            - PayByTraffic：按量计费-按实际流量计费。
+            - PrePaid：包年包月。
+          
+          **提示:**
+          实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
         """
         return pulumi.get(self, "charge_type")
 
@@ -477,13 +477,13 @@ class InstanceEipAddress(dict):
     def isp(self) -> Optional[builtins.str]:
         """
         公网IP的线路类型，默认为BGP。取值：
-        - BGP：BGP（多线）。
-        - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-          - ChinaMobile：中国移动静态单线。
-          - ChinaTelecom：中国电信静态单线。
-          - ChinaUnicom：中国联通静态单线。
-        - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-        - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+            - BGP：BGP（多线）。
+            - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+              - ChinaMobile：中国移动静态单线。
+              - ChinaTelecom：中国电信静态单线。
+              - ChinaUnicom：中国联通静态单线。
+            - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+            - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
         """
         return pulumi.get(self, "isp")
 
@@ -1356,31 +1356,31 @@ class GetInstanceEipAddressResult(dict):
         """
         :param builtins.str allocation_id: 实例的分配ID。
         :param builtins.int bandwidth_mbps: 公网IP的带宽上限，默认值为1，单位：Mbps。
-               - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-               - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+                   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+                   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
         :param builtins.str bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-               - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-               - 公网IP加入到共享带宽包必须同时满足如下条件：
-                 - 二者的安全防护类型相同。
-                 - 二者的地域相同。
-                 - 公网IP的计费方式必须是按量计费。
-                 - 共享带宽包为IPv4类型。
+                   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+                   - 公网IP加入到共享带宽包必须同时满足如下条件：
+                     - 二者的安全防护类型相同。
+                     - 二者的地域相同。
+                     - 公网IP的计费方式必须是按量计费。
+                     - 共享带宽包为IPv4类型。
         :param builtins.str charge_type: 公网IP的计费方式，取值：
-               - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-               - PayByTraffic：按量计费-按实际流量计费。
-               - PrePaid：包年包月。
-               :::tip
-               实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-               :::
+                   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+                   - PayByTraffic：按量计费-按实际流量计费。
+                   - PrePaid：包年包月。
+                 
+                 **提示:**
+                 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
         :param builtins.str ip_address: 实例的IP地址。
         :param builtins.str isp: 公网IP的线路类型，默认为BGP。取值：
-               - BGP：BGP（多线）。
-               - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-                 - ChinaMobile：中国移动静态单线。
-                 - ChinaTelecom：中国电信静态单线。
-                 - ChinaUnicom：中国联通静态单线。
-               - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-               - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+                   - BGP：BGP（多线）。
+                   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+                     - ChinaMobile：中国移动静态单线。
+                     - ChinaTelecom：中国电信静态单线。
+                     - ChinaUnicom：中国联通静态单线。
+                   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+                   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
         :param builtins.bool release_with_instance: 实例是否随实例释放。
         """
         pulumi.set(__self__, "allocation_id", allocation_id)
@@ -1404,8 +1404,8 @@ class GetInstanceEipAddressResult(dict):
     def bandwidth_mbps(self) -> builtins.int:
         """
         公网IP的带宽上限，默认值为1，单位：Mbps。
-        - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-        - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+            - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+            - `ChargeType`传入`PayByTraffic`：取值范围1～200。
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -1414,12 +1414,12 @@ class GetInstanceEipAddressResult(dict):
     def bandwidth_package_id(self) -> builtins.str:
         """
         共享带宽包的ID，表示将公网IP加入到共享带宽包。
-        - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-        - 公网IP加入到共享带宽包必须同时满足如下条件：
-          - 二者的安全防护类型相同。
-          - 二者的地域相同。
-          - 公网IP的计费方式必须是按量计费。
-          - 共享带宽包为IPv4类型。
+            - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+            - 公网IP加入到共享带宽包必须同时满足如下条件：
+              - 二者的安全防护类型相同。
+              - 二者的地域相同。
+              - 公网IP的计费方式必须是按量计费。
+              - 共享带宽包为IPv4类型。
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -1428,12 +1428,12 @@ class GetInstanceEipAddressResult(dict):
     def charge_type(self) -> builtins.str:
         """
         公网IP的计费方式，取值：
-        - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-        - PayByTraffic：按量计费-按实际流量计费。
-        - PrePaid：包年包月。
-        :::tip
-        实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-        :::
+            - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+            - PayByTraffic：按量计费-按实际流量计费。
+            - PrePaid：包年包月。
+          
+          **提示:**
+          实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
         """
         return pulumi.get(self, "charge_type")
 
@@ -1450,13 +1450,13 @@ class GetInstanceEipAddressResult(dict):
     def isp(self) -> builtins.str:
         """
         公网IP的线路类型，默认为BGP。取值：
-        - BGP：BGP（多线）。
-        - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-          - ChinaMobile：中国移动静态单线。
-          - ChinaTelecom：中国电信静态单线。
-          - ChinaUnicom：中国联通静态单线。
-        - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-        - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+            - BGP：BGP（多线）。
+            - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+              - ChinaMobile：中国移动静态单线。
+              - ChinaTelecom：中国电信静态单线。
+              - ChinaUnicom：中国联通静态单线。
+            - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+            - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
         """
         return pulumi.get(self, "isp")
 

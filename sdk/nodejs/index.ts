@@ -11,24 +11,42 @@ import { Provider } from "./provider";
 
 // Export sub-modules:
 import * as alb from "./alb";
+import * as apig from "./apig";
 import * as autoscaling from "./autoscaling";
+import * as cdn from "./cdn";
+import * as cen from "./cen";
 import * as clb from "./clb";
 import * as config from "./config";
 import * as cr from "./cr";
 import * as ecs from "./ecs";
+import * as iam from "./iam";
+import * as natgateway from "./natgateway";
+import * as organization from "./organization";
+import * as rdsmysql from "./rdsmysql";
 import * as storageebs from "./storageebs";
 import * as types from "./types";
+import * as vefaas from "./vefaas";
+import * as vke from "./vke";
 import * as vpc from "./vpc";
 
 export {
     alb,
+    apig,
     autoscaling,
+    cdn,
+    cen,
     clb,
     config,
     cr,
     ecs,
+    iam,
+    natgateway,
+    organization,
+    rdsmysql,
     storageebs,
     types,
+    vefaas,
+    vke,
     vpc,
 };
 pulumi.runtime.registerResourcePackage("bytepluscc", {

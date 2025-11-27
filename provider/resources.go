@@ -170,6 +170,10 @@ func Provider() tfbridge.ProviderInfo {
 	}
 	prov.MustComputeTokens(token.VolcengineToken("bytepluscc_", makeToken))
 	prov.MustApplyAutoAliases()
-
+	for k := range prov.Resources {
+		if k == "bytepluscc_natgateway_nat_ip" {
+			delete(prov.Resources, k)
+		}
+	}
 	return prov
 }

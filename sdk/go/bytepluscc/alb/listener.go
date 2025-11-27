@@ -65,7 +65,7 @@ type Listener struct {
 	PcaRootCaCertificateId pulumi.StringOutput `pulumi:"pcaRootCaCertificateId"`
 	// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
 	PcaSubCaCertificateId pulumi.StringOutput `pulumi:"pcaSubCaCertificateId"`
-	// 监听器的监听端口，取值：1 - 65535 。
+	// 监听器的监听端口，取值：1   - 65535 。
 	Port pulumi.IntOutput `pulumi:"port"`
 	// 监听器所属项目名称。
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
@@ -166,7 +166,7 @@ type listenerState struct {
 	PcaRootCaCertificateId *string `pulumi:"pcaRootCaCertificateId"`
 	// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
 	PcaSubCaCertificateId *string `pulumi:"pcaSubCaCertificateId"`
-	// 监听器的监听端口，取值：1 - 65535 。
+	// 监听器的监听端口，取值：1   - 65535 。
 	Port *int `pulumi:"port"`
 	// 监听器所属项目名称。
 	ProjectName *string `pulumi:"projectName"`
@@ -226,7 +226,7 @@ type ListenerState struct {
 	PcaRootCaCertificateId pulumi.StringPtrInput
 	// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
 	PcaSubCaCertificateId pulumi.StringPtrInput
-	// 监听器的监听端口，取值：1 - 65535 。
+	// 监听器的监听端口，取值：1   - 65535 。
 	Port pulumi.IntPtrInput
 	// 监听器所属项目名称。
 	ProjectName pulumi.StringPtrInput
@@ -286,7 +286,7 @@ type listenerArgs struct {
 	PcaRootCaCertificateId *string `pulumi:"pcaRootCaCertificateId"`
 	// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
 	PcaSubCaCertificateId *string `pulumi:"pcaSubCaCertificateId"`
-	// 监听器的监听端口，取值：1 - 65535 。
+	// 监听器的监听端口，取值：1   - 65535 。
 	Port int `pulumi:"port"`
 	// 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
 	Protocol string `pulumi:"protocol"`
@@ -337,7 +337,7 @@ type ListenerArgs struct {
 	PcaRootCaCertificateId pulumi.StringPtrInput
 	// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
 	PcaSubCaCertificateId pulumi.StringPtrInput
-	// 监听器的监听端口，取值：1 - 65535 。
+	// 监听器的监听端口，取值：1   - 65535 。
 	Port pulumi.IntInput
 	// 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
 	Protocol pulumi.StringInput
@@ -543,7 +543,7 @@ func (o ListenerOutput) PcaSubCaCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.PcaSubCaCertificateId }).(pulumi.StringOutput)
 }
 
-// 监听器的监听端口，取值：1 - 65535 。
+// 监听器的监听端口，取值：1   - 65535 。
 func (o ListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }

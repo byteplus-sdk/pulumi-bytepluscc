@@ -123,7 +123,7 @@ export interface GetListenerResult {
      */
     readonly pcaSubCaCertificateId: string;
     /**
-     * 监听器的监听端口，取值：1 - 65535 。
+     * 监听器的监听端口，取值：1   - 65535 。
      */
     readonly port: number;
     /**

@@ -45,32 +45,32 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
-     * 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-     * 该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+     * 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+     * - 该功能正在邀测中，如需试用，请联系客户经理申请。
      * 
      */
     @Export(name="affinityGroupSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> affinityGroupSize;
 
     /**
-     * @return 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-     * 该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+     * @return 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+     * - 该功能正在邀测中，如需试用，请联系客户经理申请。
      * 
      */
     public Output<Integer> affinityGroupSize() {
         return this.affinityGroupSize;
     }
     /**
-     * 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-     * 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+     * 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+     * **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
      * 
      */
     @Export(name="autoRenew", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenew;
 
     /**
-     * @return 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-     * 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+     * @return 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+     * **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
      * 
      */
     public Output<Boolean> autoRenew() {
@@ -93,18 +93,18 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.autoRenewPeriod;
     }
     /**
-     * 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+     * 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
      * 当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-     * - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+     * - 该功能正在邀测中，如需使用，请联系客户经理申请。
      * 
      */
     @Export(name="cpuMaxFrequency", refs={Double.class}, tree="[0]")
     private Output<Double> cpuMaxFrequency;
 
     /**
-     * @return 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+     * @return 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
      * 当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-     * - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+     * - 该功能正在邀测中，如需使用，请联系客户经理申请。
      * 
      */
     public Output<Double> cpuMaxFrequency() {
@@ -140,9 +140,9 @@ public class Instance extends com.pulumi.resources.CustomResource {
     }
     /**
      * 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-     * Unlimited：无性能约束模式（暂不支持）。 :::tip -
+     * Unlimited：无性能约束模式（暂不支持）。 **提示:** -
      * 仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-     * 不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+     * 不传或传入空值时，突发性能实例默认为`Standard`标准模式。
      * 
      */
     @Export(name="creditSpecification", refs={String.class}, tree="[0]")
@@ -150,9 +150,9 @@ public class Instance extends com.pulumi.resources.CustomResource {
 
     /**
      * @return 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-     * Unlimited：无性能约束模式（暂不支持）。 :::tip -
+     * Unlimited：无性能约束模式（暂不支持）。 **提示:** -
      * 仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-     * 不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+     * 不传或传入空值时，突发性能实例默认为`Standard`标准模式。
      * 
      */
     public Output<String> creditSpecification() {
@@ -281,16 +281,16 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.hostname;
     }
     /**
-     * 实例所属的高性能计算集群ID。 :::tip
-     * 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+     * 实例所属的高性能计算集群ID。 **提示:**
+     * 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
      * 
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
-     * @return 实例所属的高性能计算集群ID。 :::tip
-     * 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+     * @return 实例所属的高性能计算集群ID。 **提示:**
+     * 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
      * 
      */
     public Output<String> hpcClusterId() {
@@ -423,7 +423,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * 购买资源的时长（N）。 -
      * `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-     * `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+     * `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
      * 仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
      * 
      */
@@ -433,7 +433,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return 购买资源的时长（N）。 -
      * `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-     * `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+     * `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
      * 仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
      * 
      */
@@ -441,7 +441,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.period;
     }
     /**
-     * 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+     * 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
      * 仅当`InstanceChargeType`取值为`PrePaid`时生效。
      * 
      */
@@ -449,7 +449,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     private Output<String> periodUnit;
 
     /**
-     * @return 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+     * @return 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
      * 仅当`InstanceChargeType`取值为`PrePaid`时生效。
      * 
      */
