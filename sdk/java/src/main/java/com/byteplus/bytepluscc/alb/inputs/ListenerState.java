@@ -343,14 +343,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的监听端口，取值：1 - 65535 。
+     * 监听器的监听端口，取值：1   - 65535 。
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 监听器的监听端口，取值：1 - 65535 。
+     * @return 监听器的监听端口，取值：1   - 65535 。
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -964,7 +964,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器的监听端口，取值：1 - 65535 。
+         * @param port 监听器的监听端口，取值：1   - 65535 。
          * 
          * @return builder
          * 
@@ -975,7 +975,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器的监听端口，取值：1 - 65535 。
+         * @param port 监听器的监听端口，取值：1   - 65535 。
          * 
          * @return builder
          * 

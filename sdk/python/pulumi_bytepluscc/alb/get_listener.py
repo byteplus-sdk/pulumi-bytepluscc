@@ -311,7 +311,7 @@ class GetListenerResult:
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        监听器的监听端口，取值：1 - 65535 。
+        监听器的监听端口，取值：1   - 65535 。
         """
         return pulumi.get(self, "port")
 

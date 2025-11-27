@@ -336,14 +336,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.pcaSubCaCertificateId;
     }
     /**
-     * 监听器的监听端口，取值：1 - 65535 。
+     * 监听器的监听端口，取值：1   - 65535 。
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
-     * @return 监听器的监听端口，取值：1 - 65535 。
+     * @return 监听器的监听端口，取值：1   - 65535 。
      * 
      */
     public Output<Integer> port() {

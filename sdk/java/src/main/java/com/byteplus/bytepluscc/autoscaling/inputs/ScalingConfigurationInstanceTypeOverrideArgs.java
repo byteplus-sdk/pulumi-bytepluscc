@@ -17,14 +17,14 @@ public final class ScalingConfigurationInstanceTypeOverrideArgs extends com.pulu
     public static final ScalingConfigurationInstanceTypeOverrideArgs Empty = new ScalingConfigurationInstanceTypeOverrideArgs();
 
     /**
-     * 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
+     * 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
+     * @return 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -32,14 +32,14 @@ public final class ScalingConfigurationInstanceTypeOverrideArgs extends com.pulu
     }
 
     /**
-     * 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
+     * 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
      * 
      */
     @Import(name="priceLimit")
     private @Nullable Output<Double> priceLimit;
 
     /**
-     * @return 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
+     * @return 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
      * 
      */
     public Optional<Output<Double>> priceLimit() {
@@ -72,7 +72,7 @@ public final class ScalingConfigurationInstanceTypeOverrideArgs extends com.pulu
         }
 
         /**
-         * @param instanceType 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
+         * @param instanceType 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ScalingConfigurationInstanceTypeOverrideArgs extends com.pulu
         }
 
         /**
-         * @param instanceType 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
+         * @param instanceType 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&amp;分隔。
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ScalingConfigurationInstanceTypeOverrideArgs extends com.pulu
         }
 
         /**
-         * @param priceLimit 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
+         * @param priceLimit 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ScalingConfigurationInstanceTypeOverrideArgs extends com.pulu
         }
 
         /**
-         * @param priceLimit 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
+         * @param priceLimit 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&amp;分隔。
          * 
          * @return builder
          * 

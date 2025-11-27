@@ -20,10 +20,18 @@ __all__ = [
     'ScalingConfigurationInstanceTypeOverride',
     'ScalingConfigurationTag',
     'ScalingConfigurationVolume',
+    'ScalingGroupInstancesDistribution',
+    'ScalingGroupLaunchTemplateOverride',
+    'ScalingGroupServerGroupAttribute',
+    'ScalingGroupTag',
     'GetScalingConfigurationEipResult',
     'GetScalingConfigurationInstanceTypeOverrideResult',
     'GetScalingConfigurationTagResult',
     'GetScalingConfigurationVolumeResult',
+    'GetScalingGroupInstancesDistributionResult',
+    'GetScalingGroupLaunchTemplateOverrideResult',
+    'GetScalingGroupServerGroupAttributeResult',
+    'GetScalingGroupTagResult',
 ]
 
 @pulumi.output_type
@@ -125,8 +133,8 @@ class ScalingConfigurationInstanceTypeOverride(dict):
                  instance_type: Optional[builtins.str] = None,
                  price_limit: Optional[builtins.float] = None):
         """
-        :param builtins.str instance_type: 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
-        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        :param builtins.str instance_type: 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
         """
         if instance_type is not None:
             pulumi.set(__self__, "instance_type", instance_type)
@@ -137,7 +145,7 @@ class ScalingConfigurationInstanceTypeOverride(dict):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[builtins.str]:
         """
-        指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+        指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
         """
         return pulumi.get(self, "instance_type")
 
@@ -145,7 +153,7 @@ class ScalingConfigurationInstanceTypeOverride(dict):
     @pulumi.getter(name="priceLimit")
     def price_limit(self) -> Optional[builtins.float]:
         """
-        指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
         """
         return pulumi.get(self, "price_limit")
 
@@ -207,9 +215,9 @@ class ScalingConfigurationVolume(dict):
                  size: Optional[builtins.int] = None,
                  volume_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
-        :param builtins.int size: 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
-        :param builtins.str volume_type: 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        :param builtins.bool delete_with_instance: 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        :param builtins.int size: 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
+        :param builtins.str volume_type: 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
         """
         if delete_with_instance is not None:
             pulumi.set(__self__, "delete_with_instance", delete_with_instance)
@@ -222,7 +230,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[builtins.bool]:
         """
-        云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -230,7 +238,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+        云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
         """
         return pulumi.get(self, "size")
 
@@ -238,9 +246,240 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[builtins.str]:
         """
-        云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
         """
         return pulumi.get(self, "volume_type")
+
+
+@pulumi.output_type
+class ScalingGroupInstancesDistribution(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compensateWithOnDemand":
+            suggest = "compensate_with_on_demand"
+        elif key == "onDemandBaseCapacity":
+            suggest = "on_demand_base_capacity"
+        elif key == "onDemandPercentageAboveBaseCapacity":
+            suggest = "on_demand_percentage_above_base_capacity"
+        elif key == "spotInstanceRemedy":
+            suggest = "spot_instance_remedy"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScalingGroupInstancesDistribution. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScalingGroupInstancesDistribution.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScalingGroupInstancesDistribution.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compensate_with_on_demand: Optional[builtins.bool] = None,
+                 on_demand_base_capacity: Optional[builtins.int] = None,
+                 on_demand_percentage_above_base_capacity: Optional[builtins.int] = None,
+                 spot_instance_remedy: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool compensate_with_on_demand: 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+        :param builtins.int on_demand_base_capacity: 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+        :param builtins.int on_demand_percentage_above_base_capacity: 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+        :param builtins.bool spot_instance_remedy: 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        """
+        if compensate_with_on_demand is not None:
+            pulumi.set(__self__, "compensate_with_on_demand", compensate_with_on_demand)
+        if on_demand_base_capacity is not None:
+            pulumi.set(__self__, "on_demand_base_capacity", on_demand_base_capacity)
+        if on_demand_percentage_above_base_capacity is not None:
+            pulumi.set(__self__, "on_demand_percentage_above_base_capacity", on_demand_percentage_above_base_capacity)
+        if spot_instance_remedy is not None:
+            pulumi.set(__self__, "spot_instance_remedy", spot_instance_remedy)
+
+    @property
+    @pulumi.getter(name="compensateWithOnDemand")
+    def compensate_with_on_demand(self) -> Optional[builtins.bool]:
+        """
+        当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+        """
+        return pulumi.get(self, "compensate_with_on_demand")
+
+    @property
+    @pulumi.getter(name="onDemandBaseCapacity")
+    def on_demand_base_capacity(self) -> Optional[builtins.int]:
+        """
+        伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+        """
+        return pulumi.get(self, "on_demand_base_capacity")
+
+    @property
+    @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
+    def on_demand_percentage_above_base_capacity(self) -> Optional[builtins.int]:
+        """
+        伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+        """
+        return pulumi.get(self, "on_demand_percentage_above_base_capacity")
+
+    @property
+    @pulumi.getter(name="spotInstanceRemedy")
+    def spot_instance_remedy(self) -> Optional[builtins.bool]:
+        """
+        是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        """
+        return pulumi.get(self, "spot_instance_remedy")
+
+
+@pulumi.output_type
+class ScalingGroupLaunchTemplateOverride(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceType":
+            suggest = "instance_type"
+        elif key == "priceLimit":
+            suggest = "price_limit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScalingGroupLaunchTemplateOverride. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScalingGroupLaunchTemplateOverride.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScalingGroupLaunchTemplateOverride.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_type: Optional[builtins.str] = None,
+                 price_limit: Optional[builtins.float] = None):
+        """
+        :param builtins.str instance_type: 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        """
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+        if price_limit is not None:
+            pulumi.set(__self__, "price_limit", price_limit)
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> Optional[builtins.str]:
+        """
+        指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter(name="priceLimit")
+    def price_limit(self) -> Optional[builtins.float]:
+        """
+        指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        """
+        return pulumi.get(self, "price_limit")
+
+
+@pulumi.output_type
+class ScalingGroupServerGroupAttribute(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serverGroupId":
+            suggest = "server_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScalingGroupServerGroupAttribute. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScalingGroupServerGroupAttribute.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScalingGroupServerGroupAttribute.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 port: Optional[builtins.int] = None,
+                 server_group_id: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 weight: Optional[builtins.int] = None):
+        """
+        :param builtins.int port: 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+        :param builtins.str server_group_id: 负载均衡后端服务器组的ID。
+        :param builtins.str type: 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+        :param builtins.int weight: 负载均衡后端服务器组中服务器的权重。
+        """
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if server_group_id is not None:
+            pulumi.set(__self__, "server_group_id", server_group_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="serverGroupId")
+    def server_group_id(self) -> Optional[builtins.str]:
+        """
+        负载均衡后端服务器组的ID。
+        """
+        return pulumi.get(self, "server_group_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.int]:
+        """
+        负载均衡后端服务器组中服务器的权重。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class ScalingGroupTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -300,8 +539,8 @@ class GetScalingConfigurationInstanceTypeOverrideResult(dict):
                  instance_type: builtins.str,
                  price_limit: builtins.float):
         """
-        :param builtins.str instance_type: 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
-        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        :param builtins.str instance_type: 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
         """
         pulumi.set(__self__, "instance_type", instance_type)
         pulumi.set(__self__, "price_limit", price_limit)
@@ -310,7 +549,7 @@ class GetScalingConfigurationInstanceTypeOverrideResult(dict):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+        指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
         """
         return pulumi.get(self, "instance_type")
 
@@ -318,7 +557,7 @@ class GetScalingConfigurationInstanceTypeOverrideResult(dict):
     @pulumi.getter(name="priceLimit")
     def price_limit(self) -> builtins.float:
         """
-        指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+        指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
         """
         return pulumi.get(self, "price_limit")
 
@@ -359,9 +598,9 @@ class GetScalingConfigurationVolumeResult(dict):
                  size: builtins.int,
                  volume_type: builtins.str):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
-        :param builtins.int size: 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
-        :param builtins.str volume_type: 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        :param builtins.bool delete_with_instance: 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        :param builtins.int size: 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
+        :param builtins.str volume_type: 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
         """
         pulumi.set(__self__, "delete_with_instance", delete_with_instance)
         pulumi.set(__self__, "size", size)
@@ -371,7 +610,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> builtins.bool:
         """
-        云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -379,7 +618,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+        云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
         """
         return pulumi.get(self, "size")
 
@@ -387,8 +626,190 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
         """
         return pulumi.get(self, "volume_type")
+
+
+@pulumi.output_type
+class GetScalingGroupInstancesDistributionResult(dict):
+    def __init__(__self__, *,
+                 compensate_with_on_demand: builtins.bool,
+                 on_demand_base_capacity: builtins.int,
+                 on_demand_percentage_above_base_capacity: builtins.int,
+                 spot_instance_remedy: builtins.bool):
+        """
+        :param builtins.bool compensate_with_on_demand: 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+        :param builtins.int on_demand_base_capacity: 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+        :param builtins.int on_demand_percentage_above_base_capacity: 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+        :param builtins.bool spot_instance_remedy: 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        """
+        pulumi.set(__self__, "compensate_with_on_demand", compensate_with_on_demand)
+        pulumi.set(__self__, "on_demand_base_capacity", on_demand_base_capacity)
+        pulumi.set(__self__, "on_demand_percentage_above_base_capacity", on_demand_percentage_above_base_capacity)
+        pulumi.set(__self__, "spot_instance_remedy", spot_instance_remedy)
+
+    @property
+    @pulumi.getter(name="compensateWithOnDemand")
+    def compensate_with_on_demand(self) -> builtins.bool:
+        """
+        当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+        """
+        return pulumi.get(self, "compensate_with_on_demand")
+
+    @property
+    @pulumi.getter(name="onDemandBaseCapacity")
+    def on_demand_base_capacity(self) -> builtins.int:
+        """
+        伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+        """
+        return pulumi.get(self, "on_demand_base_capacity")
+
+    @property
+    @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
+    def on_demand_percentage_above_base_capacity(self) -> builtins.int:
+        """
+        伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+        """
+        return pulumi.get(self, "on_demand_percentage_above_base_capacity")
+
+    @property
+    @pulumi.getter(name="spotInstanceRemedy")
+    def spot_instance_remedy(self) -> builtins.bool:
+        """
+        是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+        """
+        return pulumi.get(self, "spot_instance_remedy")
+
+
+@pulumi.output_type
+class GetScalingGroupLaunchTemplateOverrideResult(dict):
+    def __init__(__self__, *,
+                 instance_type: builtins.str,
+                 price_limit: builtins.float,
+                 weighted_capacity: builtins.int):
+        """
+        :param builtins.str instance_type: 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+        :param builtins.float price_limit: 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        :param builtins.int weighted_capacity: 实例规格的权重。
+        """
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "price_limit", price_limit)
+        pulumi.set(__self__, "weighted_capacity", weighted_capacity)
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> builtins.str:
+        """
+        指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter(name="priceLimit")
+    def price_limit(self) -> builtins.float:
+        """
+        指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+        """
+        return pulumi.get(self, "price_limit")
+
+    @property
+    @pulumi.getter(name="weightedCapacity")
+    def weighted_capacity(self) -> builtins.int:
+        """
+        实例规格的权重。
+        """
+        return pulumi.get(self, "weighted_capacity")
+
+
+@pulumi.output_type
+class GetScalingGroupServerGroupAttributeResult(dict):
+    def __init__(__self__, *,
+                 load_balancer_id: builtins.str,
+                 port: builtins.int,
+                 server_group_id: builtins.str,
+                 type: builtins.str,
+                 weight: builtins.int):
+        """
+        :param builtins.str load_balancer_id: 负载均衡实例的ID。
+        :param builtins.int port: 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+        :param builtins.str server_group_id: 负载均衡后端服务器组的ID。
+        :param builtins.str type: 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+        :param builtins.int weight: 负载均衡后端服务器组中服务器的权重。
+        """
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "server_group_id", server_group_id)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="loadBalancerId")
+    def load_balancer_id(self) -> builtins.str:
+        """
+        负载均衡实例的ID。
+        """
+        return pulumi.get(self, "load_balancer_id")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="serverGroupId")
+    def server_group_id(self) -> builtins.str:
+        """
+        负载均衡后端服务器组的ID。
+        """
+        return pulumi.get(self, "server_group_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.int:
+        """
+        负载均衡后端服务器组中服务器的权重。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetScalingGroupTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
 
 

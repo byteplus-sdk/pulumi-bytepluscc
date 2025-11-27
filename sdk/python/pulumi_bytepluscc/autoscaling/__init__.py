@@ -8,6 +8,9 @@ import typing
 # Export this package's modules as members:
 from .get_scaling_configuration import *
 from .get_scaling_configurations import *
+from .get_scaling_group import *
+from .get_scaling_groups import *
 from .scaling_configuration import *
+from .scaling_group import *
 from ._inputs import *
 from . import outputs

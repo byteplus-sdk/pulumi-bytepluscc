@@ -708,35 +708,35 @@ type InstanceEipAddress struct {
 	// 实例的分配ID。
 	AllocationId *string `pulumi:"allocationId"`
 	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
 	BandwidthMbps *int `pulumi:"bandwidthMbps"`
 	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	// - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//   - 二者的安全防护类型相同。
-	//   - 二者的地域相同。
-	//   - 公网IP的计费方式必须是按量计费。
-	//   - 共享带宽包为IPv4类型。
+	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//       - 二者的安全防护类型相同。
+	//       - 二者的地域相同。
+	//       - 公网IP的计费方式必须是按量计费。
+	//       - 共享带宽包为IPv4类型。
 	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
 	// 公网IP的计费方式，取值：
-	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	// - PayByTraffic：按量计费-按实际流量计费。
-	// - PrePaid：包年包月。
-	//   :::tip
+	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	//     - PayByTraffic：按量计费-按实际流量计费。
+	//     - PrePaid：包年包月。
+	//
+	//   **提示:**
 	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-	//   :::
 	ChargeType *string `pulumi:"chargeType"`
 	// 实例的IP地址。
 	IpAddress *string `pulumi:"ipAddress"`
 	// 公网IP的线路类型，默认为BGP。取值：
-	// - BGP：BGP（多线）。
-	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//   - ChinaMobile：中国移动静态单线。
-	//   - ChinaTelecom：中国电信静态单线。
-	//   - ChinaUnicom：中国联通静态单线。
-	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	//     - BGP：BGP（多线）。
+	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//       - ChinaMobile：中国移动静态单线。
+	//       - ChinaTelecom：中国电信静态单线。
+	//       - ChinaUnicom：中国联通静态单线。
+	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
 	Isp *string `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
@@ -757,35 +757,35 @@ type InstanceEipAddressArgs struct {
 	// 实例的分配ID。
 	AllocationId pulumi.StringPtrInput `pulumi:"allocationId"`
 	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
 	BandwidthMbps pulumi.IntPtrInput `pulumi:"bandwidthMbps"`
 	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	// - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//   - 二者的安全防护类型相同。
-	//   - 二者的地域相同。
-	//   - 公网IP的计费方式必须是按量计费。
-	//   - 共享带宽包为IPv4类型。
+	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//       - 二者的安全防护类型相同。
+	//       - 二者的地域相同。
+	//       - 公网IP的计费方式必须是按量计费。
+	//       - 共享带宽包为IPv4类型。
 	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
 	// 公网IP的计费方式，取值：
-	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	// - PayByTraffic：按量计费-按实际流量计费。
-	// - PrePaid：包年包月。
-	//   :::tip
+	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	//     - PayByTraffic：按量计费-按实际流量计费。
+	//     - PrePaid：包年包月。
+	//
+	//   **提示:**
 	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-	//   :::
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
 	// 实例的IP地址。
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// 公网IP的线路类型，默认为BGP。取值：
-	// - BGP：BGP（多线）。
-	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//   - ChinaMobile：中国移动静态单线。
-	//   - ChinaTelecom：中国电信静态单线。
-	//   - ChinaUnicom：中国联通静态单线。
-	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	//     - BGP：BGP（多线）。
+	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//       - ChinaMobile：中国移动静态单线。
+	//       - ChinaTelecom：中国电信静态单线。
+	//       - ChinaUnicom：中国联通静态单线。
+	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
@@ -874,15 +874,15 @@ func (o InstanceEipAddressOutput) AllocationId() pulumi.StringPtrOutput {
 }
 
 // 公网IP的带宽上限，默认值为1，单位：Mbps。
-// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+//   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+//   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
 func (o InstanceEipAddressOutput) BandwidthMbps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *int { return v.BandwidthMbps }).(pulumi.IntPtrOutput)
 }
 
 // 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-// - 公网IP加入到共享带宽包必须同时满足如下条件：
+//   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+//   - 公网IP加入到共享带宽包必须同时满足如下条件：
 //   - 二者的安全防护类型相同。
 //   - 二者的地域相同。
 //   - 公网IP的计费方式必须是按量计费。
@@ -892,12 +892,15 @@ func (o InstanceEipAddressOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 }
 
 // 公网IP的计费方式，取值：
+//
 //   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//
 //   - PayByTraffic：按量计费-按实际流量计费。
+//
 //   - PrePaid：包年包月。
-//     :::tip
+//
+//     **提示:**
 //     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-//     :::
 func (o InstanceEipAddressOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
@@ -908,14 +911,13 @@ func (o InstanceEipAddressOutput) IpAddress() pulumi.StringPtrOutput {
 }
 
 // 公网IP的线路类型，默认为BGP。取值：
-// - BGP：BGP（多线）。
-// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+//   - BGP：BGP（多线）。
+//   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
 //   - ChinaMobile：中国移动静态单线。
 //   - ChinaTelecom：中国电信静态单线。
 //   - ChinaUnicom：中国联通静态单线。
-//
-// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+//   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+//   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
 func (o InstanceEipAddressOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
@@ -960,8 +962,8 @@ func (o InstanceEipAddressPtrOutput) AllocationId() pulumi.StringPtrOutput {
 }
 
 // 公网IP的带宽上限，默认值为1，单位：Mbps。
-// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+//   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+//   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
 func (o InstanceEipAddressPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *int {
 		if v == nil {
@@ -972,8 +974,8 @@ func (o InstanceEipAddressPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
 }
 
 // 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-// - 公网IP加入到共享带宽包必须同时满足如下条件：
+//   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+//   - 公网IP加入到共享带宽包必须同时满足如下条件：
 //   - 二者的安全防护类型相同。
 //   - 二者的地域相同。
 //   - 公网IP的计费方式必须是按量计费。
@@ -988,12 +990,15 @@ func (o InstanceEipAddressPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput
 }
 
 // 公网IP的计费方式，取值：
+//
 //   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//
 //   - PayByTraffic：按量计费-按实际流量计费。
+//
 //   - PrePaid：包年包月。
-//     :::tip
+//
+//     **提示:**
 //     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-//     :::
 func (o InstanceEipAddressPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *string {
 		if v == nil {
@@ -1014,14 +1019,13 @@ func (o InstanceEipAddressPtrOutput) IpAddress() pulumi.StringPtrOutput {
 }
 
 // 公网IP的线路类型，默认为BGP。取值：
-// - BGP：BGP（多线）。
-// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+//   - BGP：BGP（多线）。
+//   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
 //   - ChinaMobile：中国移动静态单线。
 //   - ChinaTelecom：中国电信静态单线。
 //   - ChinaUnicom：中国联通静态单线。
-//
-// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+//   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+//   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
 func (o InstanceEipAddressPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *string {
 		if v == nil {
@@ -3037,35 +3041,35 @@ type GetInstanceEipAddress struct {
 	// 实例的分配ID。
 	AllocationId string `pulumi:"allocationId"`
 	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
 	BandwidthMbps int `pulumi:"bandwidthMbps"`
 	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	// - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//   - 二者的安全防护类型相同。
-	//   - 二者的地域相同。
-	//   - 公网IP的计费方式必须是按量计费。
-	//   - 共享带宽包为IPv4类型。
+	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//       - 二者的安全防护类型相同。
+	//       - 二者的地域相同。
+	//       - 公网IP的计费方式必须是按量计费。
+	//       - 共享带宽包为IPv4类型。
 	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
 	// 公网IP的计费方式，取值：
-	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	// - PayByTraffic：按量计费-按实际流量计费。
-	// - PrePaid：包年包月。
-	//   :::tip
+	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	//     - PayByTraffic：按量计费-按实际流量计费。
+	//     - PrePaid：包年包月。
+	//
+	//   **提示:**
 	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-	//   :::
 	ChargeType string `pulumi:"chargeType"`
 	// 实例的IP地址。
 	IpAddress string `pulumi:"ipAddress"`
 	// 公网IP的线路类型，默认为BGP。取值：
-	// - BGP：BGP（多线）。
-	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//   - ChinaMobile：中国移动静态单线。
-	//   - ChinaTelecom：中国电信静态单线。
-	//   - ChinaUnicom：中国联通静态单线。
-	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	//     - BGP：BGP（多线）。
+	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//       - ChinaMobile：中国移动静态单线。
+	//       - ChinaTelecom：中国电信静态单线。
+	//       - ChinaUnicom：中国联通静态单线。
+	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
 	Isp string `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
@@ -3086,35 +3090,35 @@ type GetInstanceEipAddressArgs struct {
 	// 实例的分配ID。
 	AllocationId pulumi.StringInput `pulumi:"allocationId"`
 	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
 	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
 	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	// - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//   - 二者的安全防护类型相同。
-	//   - 二者的地域相同。
-	//   - 公网IP的计费方式必须是按量计费。
-	//   - 共享带宽包为IPv4类型。
+	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
+	//       - 二者的安全防护类型相同。
+	//       - 二者的地域相同。
+	//       - 公网IP的计费方式必须是按量计费。
+	//       - 共享带宽包为IPv4类型。
 	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
 	// 公网IP的计费方式，取值：
-	// - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	// - PayByTraffic：按量计费-按实际流量计费。
-	// - PrePaid：包年包月。
-	//   :::tip
+	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+	//     - PayByTraffic：按量计费-按实际流量计费。
+	//     - PrePaid：包年包月。
+	//
+	//   **提示:**
 	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-	//   :::
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
 	// 实例的IP地址。
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// 公网IP的线路类型，默认为BGP。取值：
-	// - BGP：BGP（多线）。
-	// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//   - ChinaMobile：中国移动静态单线。
-	//   - ChinaTelecom：中国电信静态单线。
-	//   - ChinaUnicom：中国联通静态单线。
-	// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	//     - BGP：BGP（多线）。
+	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+	//       - ChinaMobile：中国移动静态单线。
+	//       - ChinaTelecom：中国电信静态单线。
+	//       - ChinaUnicom：中国联通静态单线。
+	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
 	Isp pulumi.StringInput `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
@@ -3152,15 +3156,15 @@ func (o GetInstanceEipAddressOutput) AllocationId() pulumi.StringOutput {
 }
 
 // 公网IP的带宽上限，默认值为1，单位：Mbps。
-// - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-// - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+//   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+//   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
 func (o GetInstanceEipAddressOutput) BandwidthMbps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) int { return v.BandwidthMbps }).(pulumi.IntOutput)
 }
 
 // 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-// - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-// - 公网IP加入到共享带宽包必须同时满足如下条件：
+//   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+//   - 公网IP加入到共享带宽包必须同时满足如下条件：
 //   - 二者的安全防护类型相同。
 //   - 二者的地域相同。
 //   - 公网IP的计费方式必须是按量计费。
@@ -3170,12 +3174,15 @@ func (o GetInstanceEipAddressOutput) BandwidthPackageId() pulumi.StringOutput {
 }
 
 // 公网IP的计费方式，取值：
+//
 //   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//
 //   - PayByTraffic：按量计费-按实际流量计费。
+//
 //   - PrePaid：包年包月。
-//     :::tip
+//
+//     **提示:**
 //     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-//     :::
 func (o GetInstanceEipAddressOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.ChargeType }).(pulumi.StringOutput)
 }
@@ -3186,14 +3193,13 @@ func (o GetInstanceEipAddressOutput) IpAddress() pulumi.StringOutput {
 }
 
 // 公网IP的线路类型，默认为BGP。取值：
-// - BGP：BGP（多线）。
-// - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+//   - BGP：BGP（多线）。
+//   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
 //   - ChinaMobile：中国移动静态单线。
 //   - ChinaTelecom：中国电信静态单线。
 //   - ChinaUnicom：中国联通静态单线。
-//
-// - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-// - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+//   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+//   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
 func (o GetInstanceEipAddressOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.Isp }).(pulumi.StringOutput)
 }

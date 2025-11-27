@@ -68,19 +68,19 @@ class InstanceArgs:
         :param pulumi.Input['InstancePrimaryNetworkInterfaceArgs'] primary_network_interface: 实例的主网卡。
         :param pulumi.Input['InstanceSystemVolumeArgs'] system_volume: 实例的系统卷。
         :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区ID。
-        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-               该功能正在邀测中，如需试用，请联系客户经理申请。 :::
-        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-               仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+               - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+               **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
                `PeriodUnit`取值为`Month`时，该参数取值为1、2、3、6、12。
-        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
                当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-               - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+               - 该功能正在邀测中，如需使用，请联系客户经理申请。
         :param pulumi.Input[builtins.str] credit_specification: 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-               Unlimited：无性能约束模式（暂不支持）。 :::tip -
+               Unlimited：无性能约束模式（暂不支持）。 **提示:** -
                仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-               不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+               不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         :param pulumi.Input[builtins.bool] deletion_protection: 实例删除保护属性，指定是否支持通过控制台或API删除实例。取值： -
                true：开启实例删除保护。 - false（默认）：关闭实例删除保护。
                开启实例删除保护后，在控制台或调用API删除实例时，会收到删除失败的错误码。如需删除，请先关闭实例删除保护。
@@ -99,8 +99,8 @@ class InstanceArgs:
                允许使用字母、数字或中划线“-”，不能完全是数字。 -
                不能以中划线开头或结尾，且不能连续使用中划线。 -
                Windows系统长度限制在2～15个字符之间。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 :::tip
-               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
+               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
         :param pulumi.Input['InstanceKeyPairArgs'] key_pair: 实例的密钥对名称。
@@ -108,9 +108,9 @@ class InstanceArgs:
         :param pulumi.Input[builtins.str] password: 实例的密码。
         :param pulumi.Input[builtins.int] period: 购买资源的时长（N）。 -
                `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
-        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input['InstancePlacementArgs'] placement: 实例的部署信息。
         :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
@@ -270,8 +270,8 @@ class InstanceArgs:
     @pulumi.getter(name="affinityGroupSize")
     def affinity_group_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-        该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+        亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+        - 该功能正在邀测中，如需试用，请联系客户经理申请。
         """
         return pulumi.get(self, "affinity_group_size")
 
@@ -283,8 +283,8 @@ class InstanceArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-        仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+        **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         """
         return pulumi.get(self, "auto_renew")
 
@@ -309,9 +309,9 @@ class InstanceArgs:
     @pulumi.getter(name="cpuMaxFrequency")
     def cpu_max_frequency(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
         当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-        - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+        - 该功能正在邀测中，如需使用，请联系客户经理申请。
         """
         return pulumi.get(self, "cpu_max_frequency")
 
@@ -324,9 +324,9 @@ class InstanceArgs:
     def credit_specification(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         突发性能实例的运行模式，取值： - Standard：标准模式。 -
-        Unlimited：无性能约束模式（暂不支持）。 :::tip -
+        Unlimited：无性能约束模式（暂不支持）。 **提示:** -
         仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-        不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+        不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         """
         return pulumi.get(self, "credit_specification")
 
@@ -422,8 +422,8 @@ class InstanceArgs:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的高性能计算集群ID。 :::tip
-        仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        实例所属的高性能计算集群ID。 **提示:**
+        仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -486,7 +486,7 @@ class InstanceArgs:
         """
         购买资源的时长（N）。 -
         `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-        `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+        `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
         仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
         """
         return pulumi.get(self, "period")
@@ -499,7 +499,7 @@ class InstanceArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
         仅当`InstanceChargeType`取值为`PrePaid`时生效。
         """
         return pulumi.get(self, "period_unit")
@@ -662,21 +662,21 @@ class _InstanceState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-               该功能正在邀测中，如需试用，请联系客户经理申请。 :::
-        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-               仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+               - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+               **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
                `PeriodUnit`取值为`Month`时，该参数取值为1、2、3、6、12。
-        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
                当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-               - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+               - 该功能正在邀测中，如需使用，请联系客户经理申请。
         :param pulumi.Input['InstanceCpuMemoryArgs'] cpu_memory: 实例的CPU选项。
         :param pulumi.Input[builtins.str] created_at: 实例的创建时间。
         :param pulumi.Input[builtins.str] credit_specification: 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-               Unlimited：无性能约束模式（暂不支持）。 :::tip -
+               Unlimited：无性能约束模式（暂不支持）。 **提示:** -
                仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-               不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+               不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         :param pulumi.Input[builtins.bool] deletion_protection: 实例删除保护属性，指定是否支持通过控制台或API删除实例。取值： -
                true：开启实例删除保护。 - false（默认）：关闭实例删除保护。
                开启实例删除保护后，在控制台或调用API删除实例时，会收到删除失败的错误码。如需删除，请先关闭实例删除保护。
@@ -696,8 +696,8 @@ class _InstanceState:
                允许使用字母、数字或中划线“-”，不能完全是数字。 -
                不能以中划线开头或结尾，且不能连续使用中划线。 -
                Windows系统长度限制在2～15个字符之间。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 :::tip
-               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
+               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         :param pulumi.Input['InstanceImageArgs'] image: 实例的镜像。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
@@ -714,9 +714,9 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] password: 实例的密码。
         :param pulumi.Input[builtins.int] period: 购买资源的时长（N）。 -
                `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
-        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input['InstancePlacementArgs'] placement: 实例的部署信息。
         :param pulumi.Input['InstancePrimaryNetworkInterfaceArgs'] primary_network_interface: 实例的主网卡。
@@ -819,8 +819,8 @@ class _InstanceState:
     @pulumi.getter(name="affinityGroupSize")
     def affinity_group_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-        该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+        亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+        - 该功能正在邀测中，如需试用，请联系客户经理申请。
         """
         return pulumi.get(self, "affinity_group_size")
 
@@ -832,8 +832,8 @@ class _InstanceState:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-        仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+        **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         """
         return pulumi.get(self, "auto_renew")
 
@@ -858,9 +858,9 @@ class _InstanceState:
     @pulumi.getter(name="cpuMaxFrequency")
     def cpu_max_frequency(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
         当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-        - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+        - 该功能正在邀测中，如需使用，请联系客户经理申请。
         """
         return pulumi.get(self, "cpu_max_frequency")
 
@@ -897,9 +897,9 @@ class _InstanceState:
     def credit_specification(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         突发性能实例的运行模式，取值： - Standard：标准模式。 -
-        Unlimited：无性能约束模式（暂不支持）。 :::tip -
+        Unlimited：无性能约束模式（暂不支持）。 **提示:** -
         仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-        不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+        不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         """
         return pulumi.get(self, "credit_specification")
 
@@ -1007,8 +1007,8 @@ class _InstanceState:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的高性能计算集群ID。 :::tip
-        仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        实例所属的高性能计算集群ID。 **提示:**
+        仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -1124,7 +1124,7 @@ class _InstanceState:
         """
         购买资源的时长（N）。 -
         `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-        `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+        `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
         仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
         """
         return pulumi.get(self, "period")
@@ -1137,7 +1137,7 @@ class _InstanceState:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
         仅当`InstanceChargeType`取值为`PrePaid`时生效。
         """
         return pulumi.get(self, "period_unit")
@@ -1356,19 +1356,19 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-               该功能正在邀测中，如需试用，请联系客户经理申请。 :::
-        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-               仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+               - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+               **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
                `PeriodUnit`取值为`Month`时，该参数取值为1、2、3、6、12。
-        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
                当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-               - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+               - 该功能正在邀测中，如需使用，请联系客户经理申请。
         :param pulumi.Input[builtins.str] credit_specification: 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-               Unlimited：无性能约束模式（暂不支持）。 :::tip -
+               Unlimited：无性能约束模式（暂不支持）。 **提示:** -
                仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-               不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+               不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         :param pulumi.Input[builtins.bool] deletion_protection: 实例删除保护属性，指定是否支持通过控制台或API删除实例。取值： -
                true：开启实例删除保护。 - false（默认）：关闭实例删除保护。
                开启实例删除保护后，在控制台或调用API删除实例时，会收到删除失败的错误码。如需删除，请先关闭实例删除保护。
@@ -1387,8 +1387,8 @@ class Instance(pulumi.CustomResource):
                允许使用字母、数字或中划线“-”，不能完全是数字。 -
                不能以中划线开头或结尾，且不能连续使用中划线。 -
                Windows系统长度限制在2～15个字符之间。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 :::tip
-               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
+               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         :param pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']] image: 实例的镜像。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
@@ -1404,9 +1404,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] password: 实例的密码。
         :param pulumi.Input[builtins.int] period: 购买资源的时长（N）。 -
                `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
-        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']] placement: 实例的部署信息。
         :param pulumi.Input[Union['InstancePrimaryNetworkInterfaceArgs', 'InstancePrimaryNetworkInterfaceArgsDict']] primary_network_interface: 实例的主网卡。
@@ -1604,21 +1604,21 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-               该功能正在邀测中，如需试用，请联系客户经理申请。 :::
-        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-               仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+               - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+               **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
                `PeriodUnit`取值为`Month`时，该参数取值为1、2、3、6、12。
-        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        :param pulumi.Input[builtins.float] cpu_max_frequency: 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
                当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-               - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+               - 该功能正在邀测中，如需使用，请联系客户经理申请。
         :param pulumi.Input[Union['InstanceCpuMemoryArgs', 'InstanceCpuMemoryArgsDict']] cpu_memory: 实例的CPU选项。
         :param pulumi.Input[builtins.str] created_at: 实例的创建时间。
         :param pulumi.Input[builtins.str] credit_specification: 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-               Unlimited：无性能约束模式（暂不支持）。 :::tip -
+               Unlimited：无性能约束模式（暂不支持）。 **提示:** -
                仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-               不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+               不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         :param pulumi.Input[builtins.bool] deletion_protection: 实例删除保护属性，指定是否支持通过控制台或API删除实例。取值： -
                true：开启实例删除保护。 - false（默认）：关闭实例删除保护。
                开启实例删除保护后，在控制台或调用API删除实例时，会收到删除失败的错误码。如需删除，请先关闭实例删除保护。
@@ -1638,8 +1638,8 @@ class Instance(pulumi.CustomResource):
                允许使用字母、数字或中划线“-”，不能完全是数字。 -
                不能以中划线开头或结尾，且不能连续使用中划线。 -
                Windows系统长度限制在2～15个字符之间。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 :::tip
-               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
+               仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         :param pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']] image: 实例的镜像。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
@@ -1656,9 +1656,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] password: 实例的密码。
         :param pulumi.Input[builtins.int] period: 购买资源的时长（N）。 -
                `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+               `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
-        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        :param pulumi.Input[builtins.str] period_unit: 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
                仅当`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']] placement: 实例的部署信息。
         :param pulumi.Input[Union['InstancePrimaryNetworkInterfaceArgs', 'InstancePrimaryNetworkInterfaceArgsDict']] primary_network_interface: 实例的主网卡。
@@ -1728,8 +1728,8 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="affinityGroupSize")
     def affinity_group_size(self) -> pulumi.Output[builtins.int]:
         """
-        亲和组规格，取值：2。 :::tip - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。 -
-        该功能正在邀测中，如需试用，请联系客户经理申请。 :::
+        亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
+        - 该功能正在邀测中，如需试用，请联系客户经理申请。
         """
         return pulumi.get(self, "affinity_group_size")
 
@@ -1737,8 +1737,8 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> pulumi.Output[builtins.bool]:
         """
-        实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。 :::tip
-        仅当参数`InstanceChargeType`取值为`PrePaid`时生效。 :::
+        实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
+        **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         """
         return pulumi.get(self, "auto_renew")
 
@@ -1755,9 +1755,9 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="cpuMaxFrequency")
     def cpu_max_frequency(self) -> pulumi.Output[builtins.float]:
         """
-        指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 :::tip -
+        指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
         当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-        - 该功能正在邀测中，如需使用，请联系客户经理申请。 :::
+        - 该功能正在邀测中，如需使用，请联系客户经理申请。
         """
         return pulumi.get(self, "cpu_max_frequency")
 
@@ -1782,9 +1782,9 @@ class Instance(pulumi.CustomResource):
     def credit_specification(self) -> pulumi.Output[builtins.str]:
         """
         突发性能实例的运行模式，取值： - Standard：标准模式。 -
-        Unlimited：无性能约束模式（暂不支持）。 :::tip -
+        Unlimited：无性能约束模式（暂不支持）。 **提示:** -
         仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-        不传或传入空值时，突发性能实例默认为`Standard`标准模式。 :::
+        不传或传入空值时，突发性能实例默认为`Standard`标准模式。
         """
         return pulumi.get(self, "credit_specification")
 
@@ -1860,8 +1860,8 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的高性能计算集群ID。 :::tip
-        仅当创建高性能计算GPU型实例时，该参数生效且为必填项。 :::
+        实例所属的高性能计算集群ID。 **提示:**
+        仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -1941,7 +1941,7 @@ class Instance(pulumi.CustomResource):
         """
         购买资源的时长（N）。 -
         `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-        `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 :::tip
+        `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
         仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
         """
         return pulumi.get(self, "period")
@@ -1950,7 +1950,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> pulumi.Output[builtins.str]:
         """
-        购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 :::tip
+        购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
         仅当`InstanceChargeType`取值为`PrePaid`时生效。
         """
         return pulumi.get(self, "period_unit")

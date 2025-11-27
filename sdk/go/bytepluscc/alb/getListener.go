@@ -76,7 +76,7 @@ type LookupListenerResult struct {
 	PcaRootCaCertificateId string `pulumi:"pcaRootCaCertificateId"`
 	// HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pcaSub 时，必须指定 PcaSubCACertificateId 参数。
 	PcaSubCaCertificateId string `pulumi:"pcaSubCaCertificateId"`
-	// 监听器的监听端口，取值：1 - 65535 。
+	// 监听器的监听端口，取值：1   - 65535 。
 	Port int `pulumi:"port"`
 	// 监听器所属项目名称。
 	ProjectName string `pulumi:"projectName"`
@@ -243,7 +243,7 @@ func (o LookupListenerResultOutput) PcaSubCaCertificateId() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupListenerResult) string { return v.PcaSubCaCertificateId }).(pulumi.StringOutput)
 }
 
-// 监听器的监听端口，取值：1 - 65535 。
+// 监听器的监听端口，取值：1   - 65535 。
 func (o LookupListenerResultOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.Port }).(pulumi.IntOutput)
 }

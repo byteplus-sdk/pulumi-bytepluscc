@@ -114,6 +114,753 @@ export namespace alb {
 
 }
 
+export namespace apig {
+    export interface GatewayServiceAuthSpec {
+        /**
+         * 是否开启认证。
+         */
+        enable: boolean;
+    }
+
+    export interface GatewayServiceCustomDomain {
+        /**
+         * 自定义域名。
+         */
+        domain: string;
+        /**
+         * 自定义域名ID。
+         */
+        domainId: string;
+    }
+
+    export interface GatewayServiceDomain {
+        /**
+         * 域名。
+         */
+        domain: string;
+        /**
+         * 域名类型。取值：public：公网。private：私网。
+         */
+        type: string;
+    }
+
+    export interface GatewayServiceDomainSpec {
+        /**
+         * 开启私网域名公网解析。
+         */
+        enablePublicResolution: boolean;
+    }
+
+    export interface GetGatewayServiceAuthSpec {
+        /**
+         * 是否开启认证。
+         */
+        enable: boolean;
+    }
+
+    export interface GetGatewayServiceCustomDomain {
+        /**
+         * 自定义域名。
+         */
+        domain: string;
+        /**
+         * 自定义域名ID。
+         */
+        domainId: string;
+    }
+
+    export interface GetGatewayServiceDomain {
+        /**
+         * 域名。
+         */
+        domain: string;
+        /**
+         * 域名类型。取值：public：公网。private：私网。
+         */
+        type: string;
+    }
+
+    export interface GetGatewayServiceDomainSpec {
+        /**
+         * 开启私网域名公网解析。
+         */
+        enablePublicResolution: boolean;
+    }
+
+    export interface GetUpstreamBackendTarget {
+        /**
+         * 健康检查状态。
+         */
+        healthStatus: string;
+        /**
+         * 后端节点IP。
+         */
+        ip: string;
+        /**
+         * 后端节点端口。
+         */
+        port: number;
+    }
+
+    export interface GetUpstreamCircuitBreakingSettings {
+        /**
+         * 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+         */
+        baseEjectionTime: number;
+        /**
+         * 连续失败次数。取值限制为1~100。默认值为5。
+         */
+        consecutiveErrors: number;
+        /**
+         * 开启。
+         */
+        enable: boolean;
+        /**
+         * 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+         */
+        interval: number;
+        /**
+         * 最大熔断比例。取值限制为1~100。默认值为20%。
+         */
+        maxEjectionPercent: number;
+        /**
+         * 最小健康比例。取值限制为0~100。默认值为60%。
+         */
+        minHealthPercent: number;
+    }
+
+    export interface GetUpstreamLoadBalancerSettings {
+        /**
+         * 一致性哈希负载均衡。
+         */
+        consistentHashLb: outputs.apig.GetUpstreamLoadBalancerSettingsConsistentHashLb;
+        /**
+         * 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+         */
+        lbPolicy: string;
+        /**
+         * 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+         */
+        simpleLb: string;
+        /**
+         * 预热时间。单位为秒。
+         */
+        warmupDuration: number;
+    }
+
+    export interface GetUpstreamLoadBalancerSettingsConsistentHashLb {
+        /**
+         * 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+         */
+        hashKey: string;
+        /**
+         * Cookie。
+         */
+        httpCookie: outputs.apig.GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie;
+        /**
+         * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         */
+        httpHeaderName: string;
+        /**
+         * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         */
+        httpQueryParameterName: string;
+        /**
+         * 源IP地址。
+         */
+        useSourceIp: string;
+    }
+
+    export interface GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie {
+        /**
+         * 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+         */
+        name: string;
+        /**
+         * 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+         */
+        path: string;
+        /**
+         * 有效期。单位为秒。
+         */
+        ttl: number;
+    }
+
+    export interface GetUpstreamSourceIngressSettings {
+        /**
+         * 是否启用所有Ingress类。
+         */
+        enableAllIngressClasses: boolean;
+        /**
+         * 是否全部命名空间。
+         */
+        enableAllNamespaces: boolean;
+        /**
+         * 是否开启。
+         */
+        enableIngress: boolean;
+        /**
+         * 是否监听IngressClass为空的资源。
+         */
+        enableIngressWithoutIngressClass: boolean;
+        /**
+         * 指定IngressClass。
+         */
+        ingressClasses: string[];
+        /**
+         * 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+         */
+        updateStatus: boolean;
+        /**
+         * 指定命名空间。
+         */
+        watchNamespaces: string[];
+    }
+
+    export interface GetUpstreamSourceSourceSpec {
+        /**
+         * 容器集群来源。
+         */
+        k8SSource: outputs.apig.GetUpstreamSourceSourceSpecK8SSource;
+        /**
+         * 注册中心来源。
+         */
+        nacosSource: outputs.apig.GetUpstreamSourceSourceSpecNacosSource;
+    }
+
+    export interface GetUpstreamSourceSourceSpecK8SSource {
+        /**
+         * 集群ID。
+         */
+        clusterId: string;
+        /**
+         * 集群类型。
+         */
+        clusterType: string;
+    }
+
+    export interface GetUpstreamSourceSourceSpecNacosSource {
+        /**
+         * 认证配置。
+         */
+        authConfig: outputs.apig.GetUpstreamSourceSourceSpecNacosSourceAuthConfig;
+        /**
+         * Nacos ID。
+         */
+        nacosId: string;
+        /**
+         * Nacos名称。
+         */
+        nacosName: string;
+    }
+
+    export interface GetUpstreamSourceSourceSpecNacosSourceAuthConfig {
+        /**
+         * Basic认证。
+         */
+        basic: outputs.apig.GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic;
+    }
+
+    export interface GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
+        /**
+         * 密码。
+         */
+        password: string;
+        /**
+         * 用户名。
+         */
+        username: string;
+    }
+
+    export interface GetUpstreamTlsSettings {
+        /**
+         * SNI。留空时会将访问网关的域名透传到upstream。
+         */
+        sni: string;
+        /**
+         * TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+         */
+        tlsMode: string;
+    }
+
+    export interface GetUpstreamUpstreamSpec {
+        /**
+         * AI模型代理。
+         */
+        aiProvider: outputs.apig.GetUpstreamUpstreamSpecAiProvider;
+        /**
+         * 云服务器。
+         */
+        ecsInstances: outputs.apig.GetUpstreamUpstreamSpecEcsInstance[];
+        /**
+         * 容器服务。
+         */
+        k8SService: outputs.apig.GetUpstreamUpstreamSpecK8SService;
+        /**
+         * 注册中心。
+         */
+        nacosService: outputs.apig.GetUpstreamUpstreamSpecNacosService;
+        /**
+         * 函数服务。
+         */
+        veFaas: outputs.apig.GetUpstreamUpstreamSpecVeFaas;
+    }
+
+    export interface GetUpstreamUpstreamSpecAiProvider {
+        /**
+         * 模型地址。
+         */
+        baseUrl: string;
+        /**
+         * 火山自部署模型服务。
+         */
+        customModelService: outputs.apig.GetUpstreamUpstreamSpecAiProviderCustomModelService;
+        /**
+         * 模型服务商名称。
+         */
+        name: string;
+        /**
+         * 模型API key。
+         */
+        token: string;
+    }
+
+    export interface GetUpstreamUpstreamSpecAiProviderCustomModelService {
+        /**
+         * 模型服务名称。
+         */
+        name: string;
+        /**
+         * 命名空间。
+         */
+        namespace: string;
+        /**
+         * 端口。
+         */
+        port: number;
+    }
+
+    export interface GetUpstreamUpstreamSpecEcsInstance {
+        /**
+         * 云服务器ID。
+         */
+        ecsId: string;
+        /**
+         * IP地址。
+         */
+        ip: string;
+        /**
+         * 端口。
+         */
+        port: number;
+    }
+
+    export interface GetUpstreamUpstreamSpecK8SService {
+        /**
+         * 容器服务名称。长度限制为2~63个字符。
+         */
+        name: string;
+        /**
+         * 命名空间。长度限制为2~63个字符。
+         */
+        namespace: string;
+        /**
+         * 端口。
+         */
+        port: number;
+    }
+
+    export interface GetUpstreamUpstreamSpecNacosService {
+        /**
+         * 分组。
+         */
+        group: string;
+        /**
+         * 命名空间。
+         */
+        namespace: string;
+        /**
+         * 命名空间ID。
+         */
+        namespaceId: string;
+        /**
+         * 服务。
+         */
+        service: string;
+        /**
+         * Upstream来源ID。
+         */
+        upstreamSourceId: string;
+    }
+
+    export interface GetUpstreamUpstreamSpecVeFaas {
+        /**
+         * 函数ID。
+         */
+        functionId: string;
+    }
+
+    export interface GetUpstreamVersionDetail {
+        /**
+         * 标签。
+         */
+        labels: outputs.apig.GetUpstreamVersionDetailLabel[];
+        /**
+         * 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+         */
+        name: string;
+        /**
+         * 更新时间。
+         */
+        updateTime: string;
+    }
+
+    export interface GetUpstreamVersionDetailLabel {
+        /**
+         * 键。
+         */
+        key: string;
+        /**
+         * 值。
+         */
+        value: string;
+    }
+
+    export interface UpstreamBackendTarget {
+        /**
+         * 健康检查状态。
+         */
+        healthStatus: string;
+        /**
+         * 后端节点IP。
+         */
+        ip: string;
+        /**
+         * 后端节点端口。
+         */
+        port: number;
+    }
+
+    export interface UpstreamCircuitBreakingSettings {
+        /**
+         * 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+         */
+        baseEjectionTime: number;
+        /**
+         * 连续失败次数。取值限制为1~100。默认值为5。
+         */
+        consecutiveErrors: number;
+        /**
+         * 开启。
+         */
+        enable: boolean;
+        /**
+         * 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+         */
+        interval: number;
+        /**
+         * 最大熔断比例。取值限制为1~100。默认值为20%。
+         */
+        maxEjectionPercent: number;
+        /**
+         * 最小健康比例。取值限制为0~100。默认值为60%。
+         */
+        minHealthPercent: number;
+    }
+
+    export interface UpstreamLoadBalancerSettings {
+        /**
+         * 一致性哈希负载均衡。
+         */
+        consistentHashLb: outputs.apig.UpstreamLoadBalancerSettingsConsistentHashLb;
+        /**
+         * 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+         */
+        lbPolicy: string;
+        /**
+         * 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+         */
+        simpleLb: string;
+        /**
+         * 预热时间。单位为秒。
+         */
+        warmupDuration: number;
+    }
+
+    export interface UpstreamLoadBalancerSettingsConsistentHashLb {
+        /**
+         * 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+         */
+        hashKey: string;
+        /**
+         * Cookie。
+         */
+        httpCookie: outputs.apig.UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie;
+        /**
+         * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         */
+        httpHeaderName: string;
+        /**
+         * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         */
+        httpQueryParameterName: string;
+        /**
+         * 源IP地址。
+         */
+        useSourceIp: string;
+    }
+
+    export interface UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie {
+        /**
+         * 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+         */
+        name: string;
+        /**
+         * 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+         */
+        path: string;
+        /**
+         * 有效期。单位为秒。
+         */
+        ttl: number;
+    }
+
+    export interface UpstreamSourceIngressSettings {
+        /**
+         * 是否启用所有Ingress类。
+         */
+        enableAllIngressClasses: boolean;
+        /**
+         * 是否全部命名空间。
+         */
+        enableAllNamespaces: boolean;
+        /**
+         * 是否开启。
+         */
+        enableIngress: boolean;
+        /**
+         * 是否监听IngressClass为空的资源。
+         */
+        enableIngressWithoutIngressClass: boolean;
+        /**
+         * 指定IngressClass。
+         */
+        ingressClasses: string[];
+        /**
+         * 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+         */
+        updateStatus: boolean;
+        /**
+         * 指定命名空间。
+         */
+        watchNamespaces: string[];
+    }
+
+    export interface UpstreamSourceSourceSpec {
+        /**
+         * 容器集群来源。
+         */
+        k8SSource: outputs.apig.UpstreamSourceSourceSpecK8SSource;
+        /**
+         * 注册中心来源。
+         */
+        nacosSource: outputs.apig.UpstreamSourceSourceSpecNacosSource;
+    }
+
+    export interface UpstreamSourceSourceSpecK8SSource {
+        /**
+         * 集群ID。
+         */
+        clusterId: string;
+        /**
+         * 集群类型。
+         */
+        clusterType: string;
+    }
+
+    export interface UpstreamSourceSourceSpecNacosSource {
+        /**
+         * 认证配置。
+         */
+        authConfig: outputs.apig.UpstreamSourceSourceSpecNacosSourceAuthConfig;
+        /**
+         * Nacos ID。
+         */
+        nacosId: string;
+        /**
+         * Nacos名称。
+         */
+        nacosName: string;
+    }
+
+    export interface UpstreamSourceSourceSpecNacosSourceAuthConfig {
+        /**
+         * Basic认证。
+         */
+        basic: outputs.apig.UpstreamSourceSourceSpecNacosSourceAuthConfigBasic;
+    }
+
+    export interface UpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
+        /**
+         * 密码。
+         */
+        password: string;
+        /**
+         * 用户名。
+         */
+        username: string;
+    }
+
+    export interface UpstreamTlsSettings {
+        /**
+         * SNI。留空时会将访问网关的域名透传到upstream。
+         */
+        sni: string;
+        /**
+         * TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+         */
+        tlsMode: string;
+    }
+
+    export interface UpstreamUpstreamSpec {
+        /**
+         * AI模型代理。
+         */
+        aiProvider: outputs.apig.UpstreamUpstreamSpecAiProvider;
+        ecsInstances: outputs.apig.UpstreamUpstreamSpecEcsInstance[];
+        /**
+         * 容器服务。
+         */
+        k8SService: outputs.apig.UpstreamUpstreamSpecK8SService;
+        /**
+         * 注册中心。
+         */
+        nacosService: outputs.apig.UpstreamUpstreamSpecNacosService;
+        /**
+         * 函数服务。
+         */
+        veFaas: outputs.apig.UpstreamUpstreamSpecVeFaas;
+    }
+
+    export interface UpstreamUpstreamSpecAiProvider {
+        /**
+         * 模型地址。
+         */
+        baseUrl: string;
+        /**
+         * 火山自部署模型服务。
+         */
+        customModelService: outputs.apig.UpstreamUpstreamSpecAiProviderCustomModelService;
+        /**
+         * 模型服务商名称。
+         */
+        name: string;
+        /**
+         * 模型API key。
+         */
+        token: string;
+    }
+
+    export interface UpstreamUpstreamSpecAiProviderCustomModelService {
+        /**
+         * 模型服务名称。
+         */
+        name: string;
+        /**
+         * 命名空间。
+         */
+        namespace: string;
+        /**
+         * 端口。
+         */
+        port: number;
+    }
+
+    export interface UpstreamUpstreamSpecEcsInstance {
+        /**
+         * 云服务器ID。
+         */
+        ecsId: string;
+        /**
+         * IP地址。
+         */
+        ip: string;
+        /**
+         * 端口。
+         */
+        port: number;
+    }
+
+    export interface UpstreamUpstreamSpecK8SService {
+        /**
+         * 容器服务名称。长度限制为2~63个字符。
+         */
+        name: string;
+        /**
+         * 命名空间。长度限制为2~63个字符。
+         */
+        namespace: string;
+        /**
+         * 端口。
+         */
+        port: number;
+    }
+
+    export interface UpstreamUpstreamSpecNacosService {
+        /**
+         * 分组。
+         */
+        group: string;
+        /**
+         * 命名空间。
+         */
+        namespace: string;
+        /**
+         * 命名空间ID。
+         */
+        namespaceId: string;
+        /**
+         * 服务。
+         */
+        service: string;
+        /**
+         * Upstream来源ID。
+         */
+        upstreamSourceId: string;
+    }
+
+    export interface UpstreamUpstreamSpecVeFaas {
+        /**
+         * 函数ID。
+         */
+        functionId: string;
+    }
+
+    export interface UpstreamVersionDetail {
+        labels: outputs.apig.UpstreamVersionDetailLabel[];
+        /**
+         * 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+         */
+        name: string;
+        /**
+         * 更新时间。
+         */
+        updateTime: string;
+    }
+
+    export interface UpstreamVersionDetailLabel {
+        /**
+         * 键。
+         */
+        key: string;
+        /**
+         * 值。
+         */
+        value: string;
+    }
+
+}
+
 export namespace autoscaling {
     export interface GetScalingConfigurationEip {
         /**
@@ -136,11 +883,11 @@ export namespace autoscaling {
 
     export interface GetScalingConfigurationInstanceTypeOverride {
         /**
-         * 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+         * 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
          */
         instanceType: string;
         /**
-         * 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+         * 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
          */
         priceLimit: number;
     }
@@ -158,17 +905,85 @@ export namespace autoscaling {
 
     export interface GetScalingConfigurationVolume {
         /**
-         * 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+         * 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
          */
         deleteWithInstance: boolean;
         /**
-         * 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+         * 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
          */
         size: number;
         /**
-         * 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+         * 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
          */
         volumeType: string;
+    }
+
+    export interface GetScalingGroupInstancesDistribution {
+        /**
+         * 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+         */
+        compensateWithOnDemand: boolean;
+        /**
+         * 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+         */
+        onDemandBaseCapacity: number;
+        /**
+         * 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+         */
+        onDemandPercentageAboveBaseCapacity: number;
+        /**
+         * 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+         */
+        spotInstanceRemedy: boolean;
+    }
+
+    export interface GetScalingGroupLaunchTemplateOverride {
+        /**
+         * 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+         */
+        instanceType: string;
+        /**
+         * 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+         */
+        priceLimit: number;
+        /**
+         * 实例规格的权重。
+         */
+        weightedCapacity: number;
+    }
+
+    export interface GetScalingGroupServerGroupAttribute {
+        /**
+         * 负载均衡实例的ID。
+         */
+        loadBalancerId: string;
+        /**
+         * 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+         */
+        port: number;
+        /**
+         * 负载均衡后端服务器组的ID。
+         */
+        serverGroupId: string;
+        /**
+         * 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+         */
+        type: string;
+        /**
+         * 负载均衡后端服务器组中服务器的权重。
+         */
+        weight: number;
+    }
+
+    export interface GetScalingGroupTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
     }
 
     export interface ScalingConfigurationEip {
@@ -192,11 +1007,11 @@ export namespace autoscaling {
 
     export interface ScalingConfigurationInstanceTypeOverride {
         /**
-         * 指定抢占式实例的规格。参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+         * 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
          */
         instanceType: string;
         /**
-         * 指定抢占式实例规格每小时的最高价格参数 - N：表示实例规格的序号，取值为1 ～ 10。取值 - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+         * 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
          */
         priceLimit: number;
     }
@@ -214,17 +1029,257 @@ export namespace autoscaling {
 
     export interface ScalingConfigurationVolume {
         /**
-         * 云盘是否随实例释放：参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 - 15。参数 - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+         * 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
          */
         deleteWithInstance: boolean;
         /**
-         * 云盘的容量，单位为GiB。参数 - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值 - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10 - 500。数据盘取值范围：10 - 8192。多个云盘之间用&分隔。
+         * 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
          */
         size: number;
         /**
-         * 云盘的类型：参数 - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数 - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+         * 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
          */
         volumeType: string;
+    }
+
+    export interface ScalingGroupInstancesDistribution {
+        /**
+         * 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+         */
+        compensateWithOnDemand: boolean;
+        /**
+         * 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+         */
+        onDemandBaseCapacity: number;
+        /**
+         * 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+         */
+        onDemandPercentageAboveBaseCapacity: number;
+        /**
+         * 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+         */
+        spotInstanceRemedy: boolean;
+    }
+
+    export interface ScalingGroupLaunchTemplateOverride {
+        /**
+         * 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+         */
+        instanceType: string;
+        /**
+         * 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+         */
+        priceLimit: number;
+    }
+
+    export interface ScalingGroupServerGroupAttribute {
+        /**
+         * 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+         */
+        port: number;
+        /**
+         * 负载均衡后端服务器组的ID。
+         */
+        serverGroupId: string;
+        /**
+         * 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+         */
+        type: string;
+        /**
+         * 负载均衡后端服务器组中服务器的权重。
+         */
+        weight: number;
+    }
+
+    export interface ScalingGroupTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace cdn {
+    export interface GetShareConfigAllowIpAccessRule {
+        /**
+         * 表示一个条目列表。列表中的每个条目是一个 IP 地址或 CIDR 网段。IP 地址和网段可以是 IPv4 和 IPv6 格式。列表的额度如下：对于 AddSharedConfig，列表中条目的数量不能超过 30,000 个。
+         */
+        rules: string[];
+    }
+
+    export interface GetShareConfigAllowRefererAccessRule {
+        /**
+         * 表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
+         */
+        allowEmpty: boolean;
+        /**
+         * 表示该通用列表的内容。
+         */
+        commonType: outputs.cdn.GetShareConfigAllowRefererAccessRuleCommonType;
+    }
+
+    export interface GetShareConfigAllowRefererAccessRuleCommonType {
+        /**
+         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         */
+        ignoreCase: boolean;
+        /**
+         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         */
+        rules: string[];
+    }
+
+    export interface GetShareConfigCommonMatchs {
+        /**
+         * 表示该通用列表的内容。
+         */
+        commonType: outputs.cdn.GetShareConfigCommonMatchsCommonType;
+    }
+
+    export interface GetShareConfigCommonMatchsCommonType {
+        /**
+         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         */
+        ignoreCase: boolean;
+        /**
+         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         */
+        rules: string[];
+    }
+
+    export interface GetShareConfigDenyIpAccessRule {
+        /**
+         * 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+         */
+        rules: string[];
+    }
+
+    export interface GetShareConfigDenyRefererAccessRule {
+        /**
+         * 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+         */
+        allowEmpty: boolean;
+        /**
+         * 表示该通用列表的内容。
+         */
+        commonType: outputs.cdn.GetShareConfigDenyRefererAccessRuleCommonType;
+    }
+
+    export interface GetShareConfigDenyRefererAccessRuleCommonType {
+        /**
+         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         */
+        ignoreCase: boolean;
+        /**
+         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         */
+        rules: string[];
+    }
+
+    export interface ShareConfigAllowIpAccessRule {
+        /**
+         * 表示一个条目列表。列表中的每个条目是一个 IP 地址或 CIDR 网段。IP 地址和网段可以是 IPv4 和 IPv6 格式。列表的额度如下：对于 AddSharedConfig，列表中条目的数量不能超过 30,000 个。
+         */
+        rules: string[];
+    }
+
+    export interface ShareConfigAllowRefererAccessRule {
+        /**
+         * 表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
+         */
+        allowEmpty: boolean;
+        /**
+         * 表示该通用列表的内容。
+         */
+        commonType: outputs.cdn.ShareConfigAllowRefererAccessRuleCommonType;
+    }
+
+    export interface ShareConfigAllowRefererAccessRuleCommonType {
+        /**
+         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         */
+        ignoreCase: boolean;
+        /**
+         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         */
+        rules: string[];
+    }
+
+    export interface ShareConfigCommonMatchs {
+        /**
+         * 表示该通用列表的内容。
+         */
+        commonType: outputs.cdn.ShareConfigCommonMatchsCommonType;
+    }
+
+    export interface ShareConfigCommonMatchsCommonType {
+        /**
+         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         */
+        ignoreCase: boolean;
+        /**
+         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         */
+        rules: string[];
+    }
+
+    export interface ShareConfigDenyIpAccessRule {
+        /**
+         * 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+         */
+        rules: string[];
+    }
+
+    export interface ShareConfigDenyRefererAccessRule {
+        /**
+         * 表示是否允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示允许。false：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。该参数的默认值是 true。
+         */
+        allowEmpty: boolean;
+        /**
+         * 表示该通用列表的内容。
+         */
+        commonType: outputs.cdn.ShareConfigDenyRefererAccessRuleCommonType;
+    }
+
+    export interface ShareConfigDenyRefererAccessRuleCommonType {
+        /**
+         * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
+         */
+        ignoreCase: boolean;
+        /**
+         * 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
+         */
+        rules: string[];
+    }
+
+}
+
+export namespace cen {
+    export interface CenTag {
+        /**
+         * 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+         */
+        value: string;
+    }
+
+    export interface GetCenTag {
+        /**
+         * 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
+         */
+        value: string;
     }
 
 }
@@ -468,28 +1523,28 @@ export namespace ecs {
         allocationId: string;
         /**
          * 公网IP的带宽上限，默认值为1，单位：Mbps。
-         * - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-         * - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+         *     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+         *     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
          */
         bandwidthMbps: number;
         /**
          * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-         * - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-         * - 公网IP加入到共享带宽包必须同时满足如下条件：
-         *   - 二者的安全防护类型相同。
-         *   - 二者的地域相同。
-         *   - 公网IP的计费方式必须是按量计费。
-         *   - 共享带宽包为IPv4类型。
+         *     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+         *     - 公网IP加入到共享带宽包必须同时满足如下条件：
+         *       - 二者的安全防护类型相同。
+         *       - 二者的地域相同。
+         *       - 公网IP的计费方式必须是按量计费。
+         *       - 共享带宽包为IPv4类型。
          */
         bandwidthPackageId: string;
         /**
          * 公网IP的计费方式，取值：
-         * - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-         * - PayByTraffic：按量计费-按实际流量计费。
-         * - PrePaid：包年包月。
-         * :::tip
-         * 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-         * :::
+         *     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+         *     - PayByTraffic：按量计费-按实际流量计费。
+         *     - PrePaid：包年包月。
+         *   
+         *   **提示:**
+         *   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
          */
         chargeType: string;
         /**
@@ -498,13 +1553,13 @@ export namespace ecs {
         ipAddress: string;
         /**
          * 公网IP的线路类型，默认为BGP。取值：
-         * - BGP：BGP（多线）。
-         * - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-         *   - ChinaMobile：中国移动静态单线。
-         *   - ChinaTelecom：中国电信静态单线。
-         *   - ChinaUnicom：中国联通静态单线。
-         * - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-         * - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+         *     - BGP：BGP（多线）。
+         *     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+         *       - ChinaMobile：中国移动静态单线。
+         *       - ChinaTelecom：中国电信静态单线。
+         *       - ChinaUnicom：中国联通静态单线。
+         *     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+         *     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
          */
         isp: string;
         /**
@@ -776,28 +1831,28 @@ export namespace ecs {
         allocationId: string;
         /**
          * 公网IP的带宽上限，默认值为1，单位：Mbps。
-         * - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-         * - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+         *     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
+         *     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
          */
         bandwidthMbps: number;
         /**
          * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-         * - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-         * - 公网IP加入到共享带宽包必须同时满足如下条件：
-         *   - 二者的安全防护类型相同。
-         *   - 二者的地域相同。
-         *   - 公网IP的计费方式必须是按量计费。
-         *   - 共享带宽包为IPv4类型。
+         *     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
+         *     - 公网IP加入到共享带宽包必须同时满足如下条件：
+         *       - 二者的安全防护类型相同。
+         *       - 二者的地域相同。
+         *       - 公网IP的计费方式必须是按量计费。
+         *       - 共享带宽包为IPv4类型。
          */
         bandwidthPackageId: string;
         /**
          * 公网IP的计费方式，取值：
-         * - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-         * - PayByTraffic：按量计费-按实际流量计费。
-         * - PrePaid：包年包月。
-         * :::tip
-         * 实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
-         * :::
+         *     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+         *     - PayByTraffic：按量计费-按实际流量计费。
+         *     - PrePaid：包年包月。
+         *   
+         *   **提示:**
+         *   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
          */
         chargeType: string;
         /**
@@ -806,13 +1861,13 @@ export namespace ecs {
         ipAddress: string;
         /**
          * 公网IP的线路类型，默认为BGP。取值：
-         * - BGP：BGP（多线）。
-         * - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-         *   - ChinaMobile：中国移动静态单线。
-         *   - ChinaTelecom：中国电信静态单线。
-         *   - ChinaUnicom：中国联通静态单线。
-         * - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-         * - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+         *     - BGP：BGP（多线）。
+         *     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
+         *       - ChinaMobile：中国移动静态单线。
+         *       - ChinaTelecom：中国电信静态单线。
+         *       - ChinaUnicom：中国联通静态单线。
+         *     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
+         *     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
          */
         isp: string;
         /**
@@ -995,6 +2050,692 @@ export namespace ecs {
 
 }
 
+export namespace iam {
+    export interface GetPolicyPolicyRole {
+        /**
+         * 策略绑定时间。
+         */
+        createdTime: string;
+        /**
+         * 策略描述。
+         */
+        description: string;
+        /**
+         * 显示名称。
+         */
+        displayName: string;
+        /**
+         * 唯一标识。
+         */
+        entitiesId: number;
+        /**
+         * 对应用户、角色、用户组的名称。
+         */
+        name: string;
+        /**
+         * 策略绑定的项目列表。
+         */
+        policyScopes: outputs.iam.GetPolicyPolicyRolePolicyScope[];
+    }
+
+    export interface GetPolicyPolicyRolePolicyScope {
+        /**
+         * 项目授权时间。
+         */
+        createdTime: string;
+        /**
+         * 授权类型。Global代表全局授权，Project代表按项目授权。
+         */
+        policyScopeType: string;
+        /**
+         * 项目显示名。
+         */
+        projectDisplayName: string;
+        /**
+         * 项目名。
+         */
+        projectName: string;
+    }
+
+    export interface GetPolicyPolicyUser {
+        /**
+         * 策略绑定时间。
+         */
+        createdTime: string;
+        /**
+         * 策略描述。
+         */
+        description: string;
+        /**
+         * 显示名称。
+         */
+        displayName: string;
+        /**
+         * 唯一标识。
+         */
+        entitiesId: number;
+        /**
+         * 对应用户、角色、用户组的名称。
+         */
+        name: string;
+        /**
+         * 策略绑定的项目列表。
+         */
+        policyScopes: outputs.iam.GetPolicyPolicyUserPolicyScope[];
+    }
+
+    export interface GetPolicyPolicyUserGroup {
+        /**
+         * 策略绑定时间。
+         */
+        createdTime: string;
+        /**
+         * 策略描述。
+         */
+        description: string;
+        /**
+         * 显示名称。
+         */
+        displayName: string;
+        /**
+         * 唯一标识。
+         */
+        entitiesId: number;
+        /**
+         * 对应用户、角色、用户组的名称。
+         */
+        name: string;
+        /**
+         * 策略绑定的项目列表。
+         */
+        policyScopes: outputs.iam.GetPolicyPolicyUserGroupPolicyScope[];
+    }
+
+    export interface GetPolicyPolicyUserGroupPolicyScope {
+        /**
+         * 项目授权时间。
+         */
+        createdTime: string;
+        /**
+         * 授权类型。Global代表全局授权，Project代表按项目授权。
+         */
+        policyScopeType: string;
+        /**
+         * 项目显示名。
+         */
+        projectDisplayName: string;
+        /**
+         * 项目名。
+         */
+        projectName: string;
+    }
+
+    export interface GetPolicyPolicyUserPolicyScope {
+        /**
+         * 项目授权时间。
+         */
+        createdTime: string;
+        /**
+         * 授权类型。Global代表全局授权，Project代表按项目授权。
+         */
+        policyScopeType: string;
+        /**
+         * 项目显示名。
+         */
+        projectDisplayName: string;
+        /**
+         * 项目名。
+         */
+        projectName: string;
+    }
+
+    export interface GetRolePolicy {
+        /**
+         * 策略名。
+         */
+        policyName: string;
+        /**
+         * 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         */
+        policyType: string;
+    }
+
+    export interface GetRoleTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetUserAccessKey {
+        /**
+         * 访问密钥ID。
+         */
+        accessKeyId: string;
+        /**
+         * 访问密钥创建时间。
+         */
+        createdTime: string;
+        /**
+         * 最近一次使用的服务区域。
+         */
+        region: string;
+        /**
+         * 访问密钥最近一次使用时间。
+         */
+        requestTime: string;
+        /**
+         * 最近一次使用的服务名称。
+         */
+        service: string;
+        /**
+         * 访问密钥状态。Active代表启用，Inactive代表禁用。
+         */
+        status: string;
+        /**
+         * 访问密钥更新时间。
+         */
+        updatedTime: string;
+        /**
+         * 访问密钥Secret。
+         */
+        userName: string;
+    }
+
+    export interface GetUserLoginProfile {
+        /**
+         * 登录配置创建时间。
+         */
+        createDate: string;
+        /**
+         * 上次登录时间。
+         */
+        lastLoginDate: string;
+        /**
+         * 上次登录IP。
+         */
+        lastLoginIp: string;
+        /**
+         * 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+         */
+        lastResetPasswordTime: number;
+        /**
+         * 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+         */
+        loginAllowed: boolean;
+        /**
+         * 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+         */
+        loginLocked: boolean;
+        /**
+         * 登录密码。
+         */
+        password: string;
+        /**
+         * 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+         */
+        passwordExpireAt: number;
+        /**
+         * 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+         */
+        passwordResetRequired: boolean;
+        /**
+         * 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+         */
+        safeAuthExemptDuration: number;
+        /**
+         * 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+         */
+        safeAuthExemptRequired: number;
+        /**
+         * 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+         */
+        safeAuthExemptUnit: number;
+        /**
+         * 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+         */
+        safeAuthFlag: boolean;
+        /**
+         * 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+         */
+        safeAuthType: string;
+        /**
+         * 登录配置更新时间。
+         */
+        updateDate: string;
+    }
+
+    export interface GetUserPolicy {
+        /**
+         * 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+         */
+        policyName: string;
+        /**
+         * 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         */
+        policyType: string;
+    }
+
+    export interface GetUserSecurityConfig {
+        /**
+         * 是否开启操作保护。0代表开启，1代表关闭。
+         */
+        safeAuthClose: number;
+        /**
+         * 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+         */
+        safeAuthExemptDuration: number;
+        /**
+         * 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+         */
+        safeAuthType: string;
+    }
+
+    export interface GetUserTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface PolicyPolicyRole {
+        /**
+         * 对应用户、角色、用户组的名称。
+         */
+        name: string;
+        policyScopes: outputs.iam.PolicyPolicyRolePolicyScope[];
+    }
+
+    export interface PolicyPolicyRolePolicyScope {
+        /**
+         * 项目名。
+         */
+        projectName: string;
+    }
+
+    export interface PolicyPolicyUser {
+        /**
+         * 对应用户、角色、用户组的名称。
+         */
+        name: string;
+        policyScopes: outputs.iam.PolicyPolicyUserPolicyScope[];
+    }
+
+    export interface PolicyPolicyUserGroup {
+        /**
+         * 对应用户、角色、用户组的名称。
+         */
+        name: string;
+        policyScopes: outputs.iam.PolicyPolicyUserGroupPolicyScope[];
+    }
+
+    export interface PolicyPolicyUserGroupPolicyScope {
+        /**
+         * 项目名。
+         */
+        projectName: string;
+    }
+
+    export interface PolicyPolicyUserPolicyScope {
+        /**
+         * 项目名。
+         */
+        projectName: string;
+    }
+
+    export interface RolePolicy {
+        /**
+         * 策略名。
+         */
+        policyName: string;
+        /**
+         * 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         */
+        policyType: string;
+    }
+
+    export interface RoleTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface UserAccessKey {
+        /**
+         * 访问密钥ID。
+         */
+        accessKeyId: string;
+        /**
+         * 访问密钥创建时间。
+         */
+        createdTime: string;
+        /**
+         * 最近一次使用的服务区域。
+         */
+        region: string;
+        /**
+         * 访问密钥最近一次使用时间。
+         */
+        requestTime: string;
+        /**
+         * 最近一次使用的服务名称。
+         */
+        service: string;
+        /**
+         * 访问密钥状态。Active代表启用，Inactive代表禁用。
+         */
+        status: string;
+        /**
+         * 访问密钥更新时间。
+         */
+        updatedTime: string;
+        /**
+         * 访问密钥Secret。
+         */
+        userName: string;
+    }
+
+    export interface UserLoginProfile {
+        /**
+         * 登录配置创建时间。
+         */
+        createDate: string;
+        /**
+         * 上次登录时间。
+         */
+        lastLoginDate: string;
+        /**
+         * 上次登录IP。
+         */
+        lastLoginIp: string;
+        /**
+         * 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+         */
+        lastResetPasswordTime: number;
+        /**
+         * 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+         */
+        loginAllowed: boolean;
+        /**
+         * 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+         */
+        loginLocked: boolean;
+        /**
+         * 登录密码。
+         */
+        password: string;
+        /**
+         * 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+         */
+        passwordExpireAt: number;
+        /**
+         * 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+         */
+        passwordResetRequired: boolean;
+        /**
+         * 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+         */
+        safeAuthExemptDuration: number;
+        /**
+         * 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+         */
+        safeAuthExemptRequired: number;
+        /**
+         * 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+         */
+        safeAuthExemptUnit: number;
+        /**
+         * 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+         */
+        safeAuthFlag: boolean;
+        /**
+         * 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+         */
+        safeAuthType: string;
+        /**
+         * 登录配置更新时间。
+         */
+        updateDate: string;
+    }
+
+    export interface UserPolicy {
+        /**
+         * 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+         */
+        policyName: string;
+        /**
+         * 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+         */
+        policyType: string;
+    }
+
+    export interface UserSecurityConfig {
+        /**
+         * 是否开启操作保护。0代表开启，1代表关闭。
+         */
+        safeAuthClose: number;
+        /**
+         * 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+         */
+        safeAuthExemptDuration: number;
+        /**
+         * 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+         */
+        safeAuthType: string;
+    }
+
+    export interface UserTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace natgateway {
+    export interface GetNgwEipAddress {
+        /**
+         * 公网IP的ID。
+         */
+        allocationId: string;
+        /**
+         * 公网IP的地址。
+         */
+        eipAddress: string;
+        /**
+         * 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+         */
+        usingStatus: string;
+    }
+
+    export interface GetNgwNatIpAddress {
+        /**
+         * 中转Ip地址。
+         */
+        natIpAddress: string;
+        /**
+         * 中转Ip id。
+         */
+        natIpId: string;
+    }
+
+    export interface GetNgwTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface NgwEipAddress {
+        /**
+         * 公网IP的ID。
+         */
+        allocationId: string;
+        /**
+         * 公网IP的地址。
+         */
+        eipAddress: string;
+        /**
+         * 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+         */
+        usingStatus: string;
+    }
+
+    export interface NgwNatIpAddress {
+        /**
+         * 中转Ip地址。
+         */
+        natIpAddress: string;
+        /**
+         * 中转Ip id。
+         */
+        natIpId: string;
+    }
+
+    export interface NgwTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace rdsmysql {
+    export interface DbAccountAccountPrivilege {
+        /**
+         * 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+         */
+        accountPrivilege: string;
+        /**
+         * 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+         */
+        accountPrivilegeDetails: string[];
+        /**
+         * 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+         */
+        dbName: string;
+    }
+
+    export interface DbAccountTableColumnPrivilege {
+        columnPrivileges: outputs.rdsmysql.DbAccountTableColumnPrivilegeColumnPrivilege[];
+        /**
+         * 对账号进行权限设置的表所属的数据库的名称。
+         */
+        dbName: string;
+        tablePrivileges: outputs.rdsmysql.DbAccountTableColumnPrivilegeTablePrivilege[];
+    }
+
+    export interface DbAccountTableColumnPrivilegeColumnPrivilege {
+        /**
+         * 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+         */
+        accountPrivilegeDetails: string[];
+        /**
+         * 对账号进行列权限设置的列的名称。
+         */
+        columnName: string;
+        /**
+         * 对账号进行列权限设置的表所属的数据库的名称。
+         */
+        tableName: string;
+    }
+
+    export interface DbAccountTableColumnPrivilegeTablePrivilege {
+        /**
+         * 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+         */
+        accountPrivilegeDetails: string[];
+        /**
+         * 对账号进行权限设置的表的名称。
+         */
+        tableName: string;
+    }
+
+    export interface GetDbAccountAccountPrivilege {
+        /**
+         * 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+         */
+        accountPrivilege: string;
+        /**
+         * 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+         */
+        accountPrivilegeDetails: string[];
+        /**
+         * 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+         */
+        dbName: string;
+    }
+
+    export interface GetDbAccountTableColumnPrivilege {
+        /**
+         * 账号的列权限信息。
+         */
+        columnPrivileges: outputs.rdsmysql.GetDbAccountTableColumnPrivilegeColumnPrivilege[];
+        /**
+         * 对账号进行权限设置的表所属的数据库的名称。
+         */
+        dbName: string;
+        /**
+         * 账号的表权限信息。
+         */
+        tablePrivileges: outputs.rdsmysql.GetDbAccountTableColumnPrivilegeTablePrivilege[];
+    }
+
+    export interface GetDbAccountTableColumnPrivilegeColumnPrivilege {
+        /**
+         * 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+         */
+        accountPrivilegeDetails: string[];
+        /**
+         * 对账号进行列权限设置的列的名称。
+         */
+        columnName: string;
+        /**
+         * 对账号进行列权限设置的表所属的数据库的名称。
+         */
+        tableName: string;
+    }
+
+    export interface GetDbAccountTableColumnPrivilegeTablePrivilege {
+        /**
+         * 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+         */
+        accountPrivilegeDetails: string[];
+        /**
+         * 对账号进行权限设置的表的名称。
+         */
+        tableName: string;
+    }
+
+}
+
 export namespace storageebs {
     export interface GetVolumeBaselinePerformance {
         /**
@@ -1090,6 +2831,590 @@ export namespace storageebs {
          * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
          */
         throughput: number;
+    }
+
+}
+
+export namespace vefaas {
+    export interface GetKafkaTriggerKafkaCredentials {
+        /**
+         * Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+         */
+        mechanism: string;
+        /**
+         * 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+         */
+        password: string;
+        /**
+         * 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+         */
+        username: string;
+    }
+
+    export interface GetSandboxEnv {
+        /**
+         * 环境变量键。
+         */
+        key: string;
+        /**
+         * 环境变量值。
+         */
+        value: string;
+    }
+
+    export interface GetSandboxInstanceImageInfo {
+        /**
+         * 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+         */
+        command: string;
+        /**
+         * 沙箱实例使用的已预热镜像地址。
+         */
+        image: string;
+        /**
+         * 沙箱实例使用的已预热镜像 ID。
+         */
+        imageId: string;
+        /**
+         * 沙箱实例镜像监听端口。
+         */
+        port: number;
+    }
+
+    export interface GetSandboxInstanceTosMountConfig {
+        /**
+         * 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+         */
+        enable: boolean;
+        /**
+         * 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+         */
+        tosMountPoints: outputs.vefaas.GetSandboxInstanceTosMountConfigTosMountPoint[];
+    }
+
+    export interface GetSandboxInstanceTosMountConfigTosMountPoint {
+        /**
+         * 沙箱实例挂载的 TOS 远端目录。
+         */
+        bucketPath: string;
+        /**
+         * 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+         */
+        localMountPath: string;
+    }
+
+    export interface KafkaTriggerKafkaCredentials {
+        /**
+         * Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+         */
+        mechanism: string;
+        /**
+         * 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+         */
+        password: string;
+        /**
+         * 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+         */
+        username: string;
+    }
+
+    export interface SandboxEnv {
+        /**
+         * 环境变量键。
+         */
+        key: string;
+        /**
+         * 环境变量值。
+         */
+        value: string;
+    }
+
+    export interface SandboxInstanceImageInfo {
+        /**
+         * 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+         */
+        command: string;
+        /**
+         * 沙箱实例使用的已预热镜像地址。
+         */
+        image: string;
+        /**
+         * 沙箱实例使用的已预热镜像 ID。
+         */
+        imageId: string;
+        /**
+         * 沙箱实例镜像监听端口。
+         */
+        port: number;
+    }
+
+    export interface SandboxInstanceTosMountConfig {
+        /**
+         * 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+         */
+        enable: boolean;
+        tosMountPoints: outputs.vefaas.SandboxInstanceTosMountConfigTosMountPoint[];
+    }
+
+    export interface SandboxInstanceTosMountConfigTosMountPoint {
+        /**
+         * 沙箱实例挂载的 TOS 远端目录。
+         */
+        bucketPath: string;
+        /**
+         * 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+         */
+        localMountPath: string;
+    }
+
+}
+
+export namespace vke {
+    export interface ClusterClusterConfig {
+        /**
+         * 集群 API Server 访问的 IPv4 地址信息。
+         */
+        apiServerEndpoints: outputs.vke.ClusterClusterConfigApiServerEndpoints;
+        /**
+         * 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+         */
+        apiServerPublicAccessConfig: outputs.vke.ClusterClusterConfigApiServerPublicAccessConfig;
+        /**
+         * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         */
+        apiServerPublicAccessEnabled: boolean;
+        /**
+         * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         */
+        resourcePublicAccessDefaultEnabled: boolean;
+        /**
+         * 集群控制面及节点使用的的安全组。
+         */
+        securityGroupIds: string[];
+        /**
+         * 集群控制面在私有网络内通信的子网 ID。
+         */
+        subnetIds: string[];
+        /**
+         * 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+         */
+        vpcId: string;
+    }
+
+    export interface ClusterClusterConfigApiServerEndpoints {
+        /**
+         * 集群 API Server 私网的 IPv4 地址。
+         */
+        privateIp: outputs.vke.ClusterClusterConfigApiServerEndpointsPrivateIp;
+        /**
+         * 集群 API Server 公网的 IPv4 地址。
+         */
+        publicIp: outputs.vke.ClusterClusterConfigApiServerEndpointsPublicIp;
+    }
+
+    export interface ClusterClusterConfigApiServerEndpointsPrivateIp {
+        /**
+         * 私网 IP 的 IPv4 地址。
+         */
+        ipv4: string;
+    }
+
+    export interface ClusterClusterConfigApiServerEndpointsPublicIp {
+        /**
+         * 公网 IP 的 IPv4 地址。
+         */
+        ipv4: string;
+    }
+
+    export interface ClusterClusterConfigApiServerPublicAccessConfig {
+        /**
+         * 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+         */
+        publicAccessNetworkConfig: outputs.vke.ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig;
+    }
+
+    export interface ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig {
+        /**
+         * 公网 IP 的带宽峰值，单位：Mbps。
+         */
+        bandwidth: number;
+        /**
+         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         */
+        billingType: number;
+        /**
+         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         */
+        isp: string;
+    }
+
+    export interface ClusterLoggingConfig {
+        /**
+         * 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+         */
+        logProjectId: string;
+        logSetups: outputs.vke.ClusterLoggingConfigLogSetup[];
+    }
+
+    export interface ClusterLoggingConfigLogSetup {
+        /**
+         * 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+         */
+        enabled: boolean;
+        /**
+         * 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+         */
+        logTtl: number;
+        /**
+         * 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+         */
+        logType: string;
+    }
+
+    export interface ClusterMonitoringConfig {
+        componentConfigs: outputs.vke.ClusterMonitoringConfigComponentConfig[];
+        /**
+         * 监控数据所属的工作区 ID。
+         */
+        workspaceId: string;
+    }
+
+    export interface ClusterMonitoringConfigComponentConfig {
+        /**
+         * 是否启用该监控组件，true 表示启用，false 表示禁用。
+         */
+        enabled: boolean;
+        /**
+         * 监控组件的名称，例如 'prometheus'、'grafana' 等。
+         */
+        name: string;
+    }
+
+    export interface ClusterNodeStatistics {
+        /**
+         * Phase=Creating的节点总数量。
+         */
+        creatingCount: number;
+        /**
+         * Phase=Deleting的节点总数量。
+         */
+        deletingCount: number;
+        /**
+         * Phase=Failed的节点总数量。
+         */
+        failedCount: number;
+        /**
+         * Phase=Running的节点总数量。
+         */
+        runningCount: number;
+        /**
+         * 节点总数量。
+         */
+        totalCount: number;
+        /**
+         * Phase=Updating的节点总数量。
+         */
+        updatingCount: number;
+    }
+
+    export interface ClusterPodsConfig {
+        /**
+         * Flannel 网络配置。
+         */
+        flannelConfig: outputs.vke.ClusterPodsConfigFlannelConfig;
+        /**
+         * 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+         */
+        podNetworkMode: string;
+        /**
+         * VPC-CNI 网络配置。
+         */
+        vpcCniConfig: outputs.vke.ClusterPodsConfigVpcCniConfig;
+    }
+
+    export interface ClusterPodsConfigFlannelConfig {
+        /**
+         * Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+         */
+        maxPodsPerNode: number;
+        /**
+         * Flannel 容器网络的 Pod CIDR。
+         */
+        podCidrs: string[];
+    }
+
+    export interface ClusterPodsConfigVpcCniConfig {
+        /**
+         * VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+         */
+        subnetIds: string[];
+        /**
+         * 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+         */
+        trunkEniEnabled: boolean;
+    }
+
+    export interface ClusterServicesConfig {
+        /**
+         * Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+         */
+        serviceCidrsv4s: string[];
+    }
+
+    export interface ClusterStatus {
+        conditions: outputs.vke.ClusterStatusCondition[];
+        /**
+         * 集群状态阶段
+         */
+        phase: string;
+    }
+
+    export interface ClusterStatusCondition {
+        /**
+         * 条件类型
+         */
+        type: string;
+    }
+
+    export interface ClusterTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetClusterClusterConfig {
+        /**
+         * 集群 API Server 访问的 IPv4 地址信息。
+         */
+        apiServerEndpoints: outputs.vke.GetClusterClusterConfigApiServerEndpoints;
+        /**
+         * 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+         */
+        apiServerPublicAccessConfig: outputs.vke.GetClusterClusterConfigApiServerPublicAccessConfig;
+        /**
+         * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         */
+        apiServerPublicAccessEnabled: boolean;
+        /**
+         * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+         */
+        resourcePublicAccessDefaultEnabled: boolean;
+        /**
+         * 集群控制面及节点使用的的安全组。
+         */
+        securityGroupIds: string[];
+        /**
+         * 集群控制面在私有网络内通信的子网 ID。
+         */
+        subnetIds: string[];
+        /**
+         * 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+         */
+        vpcId: string;
+    }
+
+    export interface GetClusterClusterConfigApiServerEndpoints {
+        /**
+         * 集群 API Server 私网的 IPv4 地址。
+         */
+        privateIp: outputs.vke.GetClusterClusterConfigApiServerEndpointsPrivateIp;
+        /**
+         * 集群 API Server 公网的 IPv4 地址。
+         */
+        publicIp: outputs.vke.GetClusterClusterConfigApiServerEndpointsPublicIp;
+    }
+
+    export interface GetClusterClusterConfigApiServerEndpointsPrivateIp {
+        /**
+         * 私网 IP 的 IPv4 地址。
+         */
+        ipv4: string;
+    }
+
+    export interface GetClusterClusterConfigApiServerEndpointsPublicIp {
+        /**
+         * 公网 IP 的 IPv4 地址。
+         */
+        ipv4: string;
+    }
+
+    export interface GetClusterClusterConfigApiServerPublicAccessConfig {
+        /**
+         * 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+         */
+        publicAccessNetworkConfig: outputs.vke.GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig;
+    }
+
+    export interface GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig {
+        /**
+         * 公网 IP 的带宽峰值，单位：Mbps。
+         */
+        bandwidth: number;
+        /**
+         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         */
+        billingType: number;
+        /**
+         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         */
+        isp: string;
+    }
+
+    export interface GetClusterLoggingConfig {
+        /**
+         * 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+         */
+        logProjectId: string;
+        /**
+         * 集群的日志选项信息。
+         */
+        logSetups: outputs.vke.GetClusterLoggingConfigLogSetup[];
+    }
+
+    export interface GetClusterLoggingConfigLogSetup {
+        /**
+         * 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+         */
+        enabled: boolean;
+        /**
+         * 采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
+         */
+        logTopicId: string;
+        /**
+         * 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+         */
+        logTtl: number;
+        /**
+         * 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+         */
+        logType: string;
+    }
+
+    export interface GetClusterMonitoringConfig {
+        /**
+         * 监控组件的配置列表。
+         */
+        componentConfigs: outputs.vke.GetClusterMonitoringConfigComponentConfig[];
+        /**
+         * 监控数据所属的工作区 ID。
+         */
+        workspaceId: string;
+    }
+
+    export interface GetClusterMonitoringConfigComponentConfig {
+        /**
+         * 是否启用该监控组件，true 表示启用，false 表示禁用。
+         */
+        enabled: boolean;
+        /**
+         * 监控组件的名称，例如 'prometheus'、'grafana' 等。
+         */
+        name: string;
+    }
+
+    export interface GetClusterNodeStatistics {
+        /**
+         * Phase=Creating的节点总数量。
+         */
+        creatingCount: number;
+        /**
+         * Phase=Deleting的节点总数量。
+         */
+        deletingCount: number;
+        /**
+         * Phase=Failed的节点总数量。
+         */
+        failedCount: number;
+        /**
+         * Phase=Running的节点总数量。
+         */
+        runningCount: number;
+        /**
+         * 节点总数量。
+         */
+        totalCount: number;
+        /**
+         * Phase=Updating的节点总数量。
+         */
+        updatingCount: number;
+    }
+
+    export interface GetClusterPodsConfig {
+        /**
+         * Flannel 网络配置。
+         */
+        flannelConfig: outputs.vke.GetClusterPodsConfigFlannelConfig;
+        /**
+         * 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+         */
+        podNetworkMode: string;
+        /**
+         * VPC-CNI 网络配置。
+         */
+        vpcCniConfig: outputs.vke.GetClusterPodsConfigVpcCniConfig;
+    }
+
+    export interface GetClusterPodsConfigFlannelConfig {
+        /**
+         * Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+         */
+        maxPodsPerNode: number;
+        /**
+         * Flannel 容器网络的 Pod CIDR。
+         */
+        podCidrs: string[];
+    }
+
+    export interface GetClusterPodsConfigVpcCniConfig {
+        /**
+         * VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+         */
+        subnetIds: string[];
+        /**
+         * 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+         */
+        trunkEniEnabled: boolean;
+    }
+
+    export interface GetClusterServicesConfig {
+        /**
+         * Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+         */
+        serviceCidrsv4s: string[];
+    }
+
+    export interface GetClusterStatus {
+        /**
+         * 状态条件列表
+         */
+        conditions: outputs.vke.GetClusterStatusCondition[];
+        /**
+         * 集群状态阶段
+         */
+        phase: string;
+    }
+
+    export interface GetClusterStatusCondition {
+        /**
+         * 条件类型
+         */
+        type: string;
+    }
+
+    export interface GetClusterTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
     }
 
 }

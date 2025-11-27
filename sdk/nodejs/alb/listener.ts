@@ -129,7 +129,7 @@ export class Listener extends pulumi.CustomResource {
      */
     public readonly pcaSubCaCertificateId!: pulumi.Output<string>;
     /**
-     * 监听器的监听端口，取值：1 - 65535 。
+     * 监听器的监听端口，取值：1   - 65535 。
      */
     public readonly port!: pulumi.Output<number>;
     /**
@@ -338,7 +338,7 @@ export interface ListenerState {
      */
     pcaSubCaCertificateId?: pulumi.Input<string>;
     /**
-     * 监听器的监听端口，取值：1 - 65535 。
+     * 监听器的监听端口，取值：1   - 65535 。
      */
     port?: pulumi.Input<number>;
     /**
@@ -447,7 +447,7 @@ export interface ListenerArgs {
      */
     pcaSubCaCertificateId?: pulumi.Input<string>;
     /**
-     * 监听器的监听端口，取值：1 - 65535 。
+     * 监听器的监听端口，取值：1   - 65535 。
      */
     port: pulumi.Input<number>;
     /**

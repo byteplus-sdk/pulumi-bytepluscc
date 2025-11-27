@@ -152,7 +152,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<string> PcaSubCaCertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的监听端口，取值：1 - 65535 。
+        /// 监听器的监听端口，取值：1   - 65535 。
         /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
@@ -369,7 +369,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? PcaSubCaCertificateId { get; set; }
 
         /// <summary>
-        /// 监听器的监听端口，取值：1 - 65535 。
+        /// 监听器的监听端口，取值：1   - 65535 。
         /// </summary>
         [Input("port", required: true)]
         public Input<int> Port { get; set; } = null!;
@@ -551,7 +551,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<string>? PcaSubCaCertificateId { get; set; }
 
         /// <summary>
-        /// 监听器的监听端口，取值：1 - 65535 。
+        /// 监听器的监听端口，取值：1   - 65535 。
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

@@ -1,6 +1,6 @@
 {
   "resource": true,
   "name": "bytepluscc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "server": "github://api.github.com/byteplus-sdk"
 }

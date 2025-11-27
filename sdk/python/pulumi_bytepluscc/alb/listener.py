@@ -50,7 +50,7 @@ class ListenerArgs:
         """
         The set of arguments for constructing a Listener resource.
         :param pulumi.Input[builtins.str] load_balancer_id: 监听器所属的负载均衡实例 ID。
-        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1 - 65535 。
+        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1   - 65535 。
         :param pulumi.Input[builtins.str] protocol: 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
         :param pulumi.Input[builtins.str] server_group_id: 监听器的默认服务器组。
         :param pulumi.Input[builtins.str] access_log_record_customized_headers_enabled: 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
@@ -135,7 +135,7 @@ class ListenerArgs:
     @pulumi.getter
     def port(self) -> pulumi.Input[builtins.int]:
         """
-        监听器的监听端口，取值：1 - 65535 。
+        监听器的监听端口，取值：1   - 65535 。
         """
         return pulumi.get(self, "port")
 
@@ -467,7 +467,7 @@ class _ListenerState:
         :param pulumi.Input[builtins.str] pca_leaf_certificate_id: HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
         :param pulumi.Input[builtins.str] pca_root_ca_certificate_id: HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
         :param pulumi.Input[builtins.str] pca_sub_ca_certificate_id: HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
-        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1 - 65535 。
+        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1   - 65535 。
         :param pulumi.Input[builtins.str] project_name: 监听器所属项目名称。
         :param pulumi.Input[builtins.str] protocol: 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
         :param pulumi.Input[builtins.str] server_group_id: 监听器的默认服务器组。
@@ -800,7 +800,7 @@ class _ListenerState:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        监听器的监听端口，取值：1 - 65535 。
+        监听器的监听端口，取值：1   - 65535 。
         """
         return pulumi.get(self, "port")
 
@@ -949,7 +949,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] pca_leaf_certificate_id: HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
         :param pulumi.Input[builtins.str] pca_root_ca_certificate_id: HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
         :param pulumi.Input[builtins.str] pca_sub_ca_certificate_id: HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
-        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1 - 65535 。
+        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1   - 65535 。
         :param pulumi.Input[builtins.str] protocol: 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
         :param pulumi.Input[builtins.str] server_group_id: 监听器的默认服务器组。
         """
@@ -1123,7 +1123,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] pca_leaf_certificate_id: HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
         :param pulumi.Input[builtins.str] pca_root_ca_certificate_id: HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
         :param pulumi.Input[builtins.str] pca_sub_ca_certificate_id: HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
-        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1 - 65535 。
+        :param pulumi.Input[builtins.int] port: 监听器的监听端口，取值：1   - 65535 。
         :param pulumi.Input[builtins.str] project_name: 监听器所属项目名称。
         :param pulumi.Input[builtins.str] protocol: 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
         :param pulumi.Input[builtins.str] server_group_id: 监听器的默认服务器组。
@@ -1343,7 +1343,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def port(self) -> pulumi.Output[builtins.int]:
         """
-        监听器的监听端口，取值：1 - 65535 。
+        监听器的监听端口，取值：1   - 65535 。
         """
         return pulumi.get(self, "port")
 
