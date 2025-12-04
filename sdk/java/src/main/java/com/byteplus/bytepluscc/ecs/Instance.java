@@ -559,6 +559,28 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.status;
     }
     /**
+     * StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+     * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+     * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+     * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 
+     */
+    @Export(name="stoppedMode", refs={String.class}, tree="[0]")
+    private Output<String> stoppedMode;
+
+    /**
+     * @return StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+     * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+     * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+     * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 
+     */
+    public Output<String> stoppedMode() {
+        return this.stoppedMode;
+    }
+    /**
      * 实例的系统卷。
      * 
      */

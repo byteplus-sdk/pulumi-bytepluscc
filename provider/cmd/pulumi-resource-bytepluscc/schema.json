@@ -4792,6 +4792,464 @@
                 }
             }
         },
+        "bytepluscc:rdsmysql/InstanceAddressObject:InstanceAddressObject": {
+            "properties": {
+                "dnsVisibility": {
+                    "type": "boolean",
+                    "description": "false：私网解析（默认）。true：私网以及公网解析。\n"
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "连接域名。\n"
+                },
+                "eipId": {
+                    "type": "string",
+                    "description": "EIP 的 ID，仅对 Public 地址有效。\n"
+                },
+                "internetProtocol": {
+                    "type": "string",
+                    "description": "IP 协议版本。取值为 IPv4。\n"
+                },
+                "ipAddress": {
+                    "type": "string",
+                    "description": "IP 地址。\n"
+                },
+                "networkType": {
+                    "type": "string",
+                    "description": "网络地址类型，取值为：Private：私网地址。Public：公网地址。\n"
+                },
+                "port": {
+                    "type": "string",
+                    "description": "端口。\n"
+                },
+                "subnetId": {
+                    "type": "string",
+                    "description": "子网 ID，仅对 Private 地址有效。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "dnsVisibility",
+                        "domain",
+                        "eipId",
+                        "internetProtocol",
+                        "ipAddress",
+                        "networkType",
+                        "port",
+                        "subnetId"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceAutoStorageScalingConfig:InstanceAutoStorageScalingConfig": {
+            "properties": {
+                "enableStorageAutoScale": {
+                    "type": "boolean",
+                    "description": "是否开启实例的自动扩容功能。取值：true：是。false：否。\n"
+                },
+                "storageThreshold": {
+                    "type": "integer",
+                    "description": "触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。\n"
+                },
+                "storageUpperBound": {
+                    "type": "integer",
+                    "description": "可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "enableStorageAutoScale",
+                        "storageThreshold",
+                        "storageUpperBound"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceChargeDetail:InstanceChargeDetail": {
+            "properties": {
+                "autoRenew": {
+                    "type": "boolean",
+                    "description": "预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。\n"
+                },
+                "chargeEndTime": {
+                    "type": "string",
+                    "description": "包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "chargeStartTime": {
+                    "type": "string",
+                    "description": "实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "chargeStatus": {
+                    "type": "string",
+                    "description": "实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。\n"
+                },
+                "chargeType": {
+                    "type": "string",
+                    "description": "付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。\n"
+                },
+                "number": {
+                    "type": "integer",
+                    "description": "实例购买数量。取值范围为 1~50。默认值为 1。\n"
+                },
+                "overdueReclaimTime": {
+                    "type": "string",
+                    "description": "实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "overdueTime": {
+                    "type": "string",
+                    "description": "实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "period": {
+                    "type": "integer",
+                    "description": "预付费场景下的购买时长。\n"
+                },
+                "periodUnit": {
+                    "type": "string",
+                    "description": "预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。\n"
+                },
+                "tempModifyEndTime": {
+                    "type": "string",
+                    "description": "临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "tempModifyStartTime": {
+                    "type": "string",
+                    "description": "临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "chargeType"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "autoRenew",
+                        "chargeEndTime",
+                        "chargeStartTime",
+                        "chargeStatus",
+                        "chargeType",
+                        "number",
+                        "overdueReclaimTime",
+                        "overdueTime",
+                        "period",
+                        "periodUnit",
+                        "tempModifyEndTime",
+                        "tempModifyStartTime"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceDisasterRecoveryInstance:InstanceDisasterRecoveryInstance": {
+            "properties": {
+                "dtsTaskId": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的 ID。\n"
+                },
+                "dtsTaskName": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的名称。\n"
+                },
+                "dtsTaskStatus": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的状态。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "灾备实例的 ID。\n"
+                },
+                "instanceName": {
+                    "type": "string",
+                    "description": "灾备实例的名称。\n"
+                },
+                "secondsBehindMaster": {
+                    "type": "integer",
+                    "description": "灾备实例与主实例之间的时延。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "dtsTaskId",
+                        "dtsTaskName",
+                        "dtsTaskStatus",
+                        "instanceId",
+                        "instanceName",
+                        "secondsBehindMaster"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceEndpoint:InstanceEndpoint": {
+            "properties": {
+                "autoAddNewNodes": {
+                    "type": "string",
+                    "description": "当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。\n"
+                },
+                "connectionInfoTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "连接终端标签。\n"
+                },
+                "connectionMode": {
+                    "type": "string",
+                    "description": "连接终端类型。取值：Proxy：代理终端。Direct：直连终端。\n"
+                },
+                "connectionPoolType": {
+                    "type": "string",
+                    "description": "代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "连接终端的描述信息。\n"
+                },
+                "enableConnectionPersistent": {
+                    "type": "boolean",
+                    "description": "是否启用连接保持。取值：true：是。false：否。\n"
+                },
+                "enableReadOnly": {
+                    "type": "string",
+                    "description": "是否已开启全局只读，取值：Enable：开启。Disable：未开启。\n"
+                },
+                "enableReadWriteSplitting": {
+                    "type": "string",
+                    "description": "是否已开启读写分离，取值：Enable：开启。Disable：未开启。\n"
+                },
+                "endpointId": {
+                    "type": "string",
+                    "description": "实例连接终端 ID。\n"
+                },
+                "endpointName": {
+                    "type": "string",
+                    "description": "实例连接终端名称。\n"
+                },
+                "endpointType": {
+                    "type": "string",
+                    "description": "终端类型。取值为 Custom，自定义终端。\n"
+                },
+                "idleConnectionReclaim": {
+                    "type": "boolean",
+                    "description": "空闲连接回收功能是否开启。true：开启。false：不开启。\n"
+                },
+                "implicitTransSplit": {
+                    "type": "boolean",
+                    "description": "是否开启事务分离。取值：true：是。false：否。\n"
+                },
+                "masterNodeRouting": {
+                    "type": "boolean",
+                    "description": "是否开启主节点路由。取值：true：是。false：否。\n"
+                },
+                "masterProtectorTimeout": {
+                    "type": "integer",
+                    "description": "过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。\n"
+                },
+                "multiStatementsMode": {
+                    "type": "string",
+                    "description": "代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。\n"
+                },
+                "overloadProtection": {
+                    "type": "boolean",
+                    "description": "是否开启过载保护。取值：true：是。false：否。\n"
+                },
+                "readOnlyNodeDistributionType": {
+                    "type": "string",
+                    "description": "读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。\n"
+                },
+                "readOnlyNodeMaxDelayTime": {
+                    "type": "integer",
+                    "description": "只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。\n"
+                },
+                "readOnlyNodeWeights": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceEndpointReadOnlyNodeWeight:InstanceEndpointReadOnlyNodeWeight"
+                    }
+                },
+                "readWriteMode": {
+                    "type": "string",
+                    "description": "读写模式：ReadWrite：读写。ReadOnly：只读。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "autoAddNewNodes",
+                        "connectionInfoTags",
+                        "connectionMode",
+                        "connectionPoolType",
+                        "description",
+                        "enableConnectionPersistent",
+                        "enableReadOnly",
+                        "enableReadWriteSplitting",
+                        "endpointId",
+                        "endpointName",
+                        "endpointType",
+                        "idleConnectionReclaim",
+                        "implicitTransSplit",
+                        "masterNodeRouting",
+                        "masterProtectorTimeout",
+                        "multiStatementsMode",
+                        "overloadProtection",
+                        "readOnlyNodeDistributionType",
+                        "readOnlyNodeMaxDelayTime",
+                        "readOnlyNodeWeights",
+                        "readWriteMode"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceEndpointReadOnlyNodeWeight:InstanceEndpointReadOnlyNodeWeight": {
+            "properties": {
+                "nodeId": {
+                    "type": "string",
+                    "description": "只读节点需要传入 NodeId，主节点无需传入。\n"
+                },
+                "nodeType": {
+                    "type": "string",
+                    "description": "节点类型。Primary：主节点。ReadOnly：只读节点。\n"
+                },
+                "weight": {
+                    "type": "integer",
+                    "description": "节点的读权重，以 100 递增，最大值为 10000。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "nodeId",
+                        "nodeType",
+                        "weight"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceMaintenanceWindow:InstanceMaintenanceWindow": {
+            "properties": {
+                "dayKind": {
+                    "type": "string",
+                    "description": "可维护周期粒度，取值为 Week，周。\n"
+                },
+                "dayOfWeeks": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。\n"
+                },
+                "maintenanceTime": {
+                    "type": "string",
+                    "description": "实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "dayKind",
+                        "dayOfWeeks",
+                        "maintenanceTime"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceNode:InstanceNode": {
+            "properties": {
+                "nodeSpec": {
+                    "type": "string",
+                    "description": "节点规格。\n"
+                },
+                "nodeType": {
+                    "type": "string",
+                    "description": "节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "可用区 ID。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "nodeSpec",
+                "nodeType",
+                "zoneId"
+            ]
+        },
+        "bytepluscc:rdsmysql/InstanceProxyDetail:InstanceProxyDetail": {
+            "properties": {
+                "dbProxyStatus": {
+                    "type": "string",
+                    "description": "实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中\n"
+                },
+                "proxyResourceInfo": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceProxyDetailProxyResourceInfo:InstanceProxyDetailProxyResourceInfo",
+                    "description": "实例的数据库代理服务的资源信息。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "dbProxyStatus",
+                        "proxyResourceInfo"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceProxyDetailProxyResourceInfo:InstanceProxyDetailProxyResourceInfo": {
+            "properties": {
+                "currentProxyCpuNum": {
+                    "type": "integer",
+                    "description": "实例数据库代理服务当前的核数。\n"
+                },
+                "maxProxyCpuNum": {
+                    "type": "integer",
+                    "description": "用户可为数据库代理服务配置的最多核数。\n"
+                },
+                "minProxyCpuNum": {
+                    "type": "integer",
+                    "description": "用户可为数据库代理服务配置的最少核数。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "currentProxyCpuNum",
+                        "maxProxyCpuNum",
+                        "minProxyCpuNum"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/InstanceTag:InstanceTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "标签值。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:rdsmysql/getDbAccountAccountPrivilege:getDbAccountAccountPrivilege": {
             "properties": {
                 "accountPrivilege": {
@@ -4903,6 +5361,517 @@
             "required": [
                 "accountPrivilegeDetails",
                 "tableName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceAddressObject:getInstanceAddressObject": {
+            "properties": {
+                "dnsVisibility": {
+                    "type": "boolean",
+                    "description": "false：私网解析（默认）。true：私网以及公网解析。\n"
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "连接域名。\n"
+                },
+                "eipId": {
+                    "type": "string",
+                    "description": "EIP 的 ID，仅对 Public 地址有效。\n"
+                },
+                "internetProtocol": {
+                    "type": "string",
+                    "description": "IP 协议版本。取值为 IPv4。\n"
+                },
+                "ipAddress": {
+                    "type": "string",
+                    "description": "IP 地址。\n"
+                },
+                "networkType": {
+                    "type": "string",
+                    "description": "网络地址类型，取值为：Private：私网地址。Public：公网地址。\n"
+                },
+                "port": {
+                    "type": "string",
+                    "description": "端口。\n"
+                },
+                "subnetId": {
+                    "type": "string",
+                    "description": "子网 ID，仅对 Private 地址有效。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dnsVisibility",
+                "domain",
+                "eipId",
+                "internetProtocol",
+                "ipAddress",
+                "networkType",
+                "port",
+                "subnetId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceAutoStorageScalingConfig:getInstanceAutoStorageScalingConfig": {
+            "properties": {
+                "enableStorageAutoScale": {
+                    "type": "boolean",
+                    "description": "是否开启实例的自动扩容功能。取值：true：是。false：否。\n"
+                },
+                "storageThreshold": {
+                    "type": "integer",
+                    "description": "触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。\n"
+                },
+                "storageUpperBound": {
+                    "type": "integer",
+                    "description": "可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "enableStorageAutoScale",
+                "storageThreshold",
+                "storageUpperBound"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceChargeDetail:getInstanceChargeDetail": {
+            "properties": {
+                "autoRenew": {
+                    "type": "boolean",
+                    "description": "预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。\n"
+                },
+                "chargeEndTime": {
+                    "type": "string",
+                    "description": "包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "chargeStartTime": {
+                    "type": "string",
+                    "description": "实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "chargeStatus": {
+                    "type": "string",
+                    "description": "实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。\n"
+                },
+                "chargeType": {
+                    "type": "string",
+                    "description": "付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。\n"
+                },
+                "number": {
+                    "type": "integer",
+                    "description": "实例购买数量。取值范围为 1~50。默认值为 1。\n"
+                },
+                "overdueReclaimTime": {
+                    "type": "string",
+                    "description": "实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "overdueTime": {
+                    "type": "string",
+                    "description": "实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "period": {
+                    "type": "integer",
+                    "description": "预付费场景下的购买时长。\n"
+                },
+                "periodUnit": {
+                    "type": "string",
+                    "description": "预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。\n"
+                },
+                "tempModifyEndTime": {
+                    "type": "string",
+                    "description": "临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "tempModifyStartTime": {
+                    "type": "string",
+                    "description": "临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "autoRenew",
+                "chargeEndTime",
+                "chargeStartTime",
+                "chargeStatus",
+                "chargeType",
+                "number",
+                "overdueReclaimTime",
+                "overdueTime",
+                "period",
+                "periodUnit",
+                "tempModifyEndTime",
+                "tempModifyStartTime"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceDisasterRecoveryInstance:getInstanceDisasterRecoveryInstance": {
+            "properties": {
+                "dtsTaskId": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的 ID。\n"
+                },
+                "dtsTaskName": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的名称。\n"
+                },
+                "dtsTaskStatus": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的状态。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "灾备实例的 ID。\n"
+                },
+                "instanceName": {
+                    "type": "string",
+                    "description": "灾备实例的名称。\n"
+                },
+                "secondsBehindMaster": {
+                    "type": "integer",
+                    "description": "灾备实例与主实例之间的时延。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dtsTaskId",
+                "dtsTaskName",
+                "dtsTaskStatus",
+                "instanceId",
+                "instanceName",
+                "secondsBehindMaster"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceEndpoint:getInstanceEndpoint": {
+            "properties": {
+                "autoAddNewNodes": {
+                    "type": "string",
+                    "description": "当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。\n"
+                },
+                "connectionInfoTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "连接终端标签。\n"
+                },
+                "connectionMode": {
+                    "type": "string",
+                    "description": "连接终端类型。取值：Proxy：代理终端。Direct：直连终端。\n"
+                },
+                "connectionPoolType": {
+                    "type": "string",
+                    "description": "代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "连接终端的描述信息。\n"
+                },
+                "enableConnectionPersistent": {
+                    "type": "boolean",
+                    "description": "是否启用连接保持。取值：true：是。false：否。\n"
+                },
+                "enableReadOnly": {
+                    "type": "string",
+                    "description": "是否已开启全局只读，取值：Enable：开启。Disable：未开启。\n"
+                },
+                "enableReadWriteSplitting": {
+                    "type": "string",
+                    "description": "是否已开启读写分离，取值：Enable：开启。Disable：未开启。\n"
+                },
+                "endpointId": {
+                    "type": "string",
+                    "description": "实例连接终端 ID。\n"
+                },
+                "endpointName": {
+                    "type": "string",
+                    "description": "实例连接终端名称。\n"
+                },
+                "endpointType": {
+                    "type": "string",
+                    "description": "终端类型。取值为 Custom，自定义终端。\n"
+                },
+                "idleConnectionReclaim": {
+                    "type": "boolean",
+                    "description": "空闲连接回收功能是否开启。true：开启。false：不开启。\n"
+                },
+                "implicitTransSplit": {
+                    "type": "boolean",
+                    "description": "是否开启事务分离。取值：true：是。false：否。\n"
+                },
+                "masterNodeRouting": {
+                    "type": "boolean",
+                    "description": "是否开启主节点路由。取值：true：是。false：否。\n"
+                },
+                "masterProtectorTimeout": {
+                    "type": "integer",
+                    "description": "过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。\n"
+                },
+                "multiStatementsMode": {
+                    "type": "string",
+                    "description": "代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。\n"
+                },
+                "overloadProtection": {
+                    "type": "boolean",
+                    "description": "是否开启过载保护。取值：true：是。false：否。\n"
+                },
+                "readOnlyNodeDistributionType": {
+                    "type": "string",
+                    "description": "读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。\n"
+                },
+                "readOnlyNodeMaxDelayTime": {
+                    "type": "integer",
+                    "description": "只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。\n"
+                },
+                "readOnlyNodeWeights": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/getInstanceEndpointReadOnlyNodeWeight:getInstanceEndpointReadOnlyNodeWeight"
+                    },
+                    "description": "连接终端配置的节点列表及对应的只读权重。\n"
+                },
+                "readWriteMode": {
+                    "type": "string",
+                    "description": "读写模式：ReadWrite：读写。ReadOnly：只读。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "autoAddNewNodes",
+                "connectionInfoTags",
+                "connectionMode",
+                "connectionPoolType",
+                "description",
+                "enableConnectionPersistent",
+                "enableReadOnly",
+                "enableReadWriteSplitting",
+                "endpointId",
+                "endpointName",
+                "endpointType",
+                "idleConnectionReclaim",
+                "implicitTransSplit",
+                "masterNodeRouting",
+                "masterProtectorTimeout",
+                "multiStatementsMode",
+                "overloadProtection",
+                "readOnlyNodeDistributionType",
+                "readOnlyNodeMaxDelayTime",
+                "readOnlyNodeWeights",
+                "readWriteMode"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceEndpointReadOnlyNodeWeight:getInstanceEndpointReadOnlyNodeWeight": {
+            "properties": {
+                "nodeId": {
+                    "type": "string",
+                    "description": "只读节点需要传入 NodeId，主节点无需传入。\n"
+                },
+                "nodeType": {
+                    "type": "string",
+                    "description": "节点类型。Primary：主节点。ReadOnly：只读节点。\n"
+                },
+                "weight": {
+                    "type": "integer",
+                    "description": "节点的读权重，以 100 递增，最大值为 10000。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "nodeId",
+                "nodeType",
+                "weight"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceMaintenanceWindow:getInstanceMaintenanceWindow": {
+            "properties": {
+                "dayKind": {
+                    "type": "string",
+                    "description": "可维护周期粒度，取值为 Week，周。\n"
+                },
+                "dayOfWeeks": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。\n"
+                },
+                "maintenanceTime": {
+                    "type": "string",
+                    "description": "实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dayKind",
+                "dayOfWeeks",
+                "maintenanceTime"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceNode:getInstanceNode": {
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "description": "节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。\n"
+                },
+                "delayReplicationTime": {
+                    "type": "integer",
+                    "description": "只读节点的延迟复制时间，取值为 0~604800，单位为秒。\n"
+                },
+                "memory": {
+                    "type": "integer",
+                    "description": "内存大小，单位为 GB。\n"
+                },
+                "nodeId": {
+                    "type": "string",
+                    "description": "节点 ID。\n"
+                },
+                "nodeSpec": {
+                    "type": "string",
+                    "description": "节点规格。\n"
+                },
+                "nodeStatus": {
+                    "type": "string",
+                    "description": "节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。\n"
+                },
+                "nodeType": {
+                    "type": "string",
+                    "description": "节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。\n"
+                },
+                "syncDelay": {
+                    "type": "integer",
+                    "description": "节点与主节点之间的延迟时间。单位为毫秒（ms）。\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "节点更新本地时间。\n"
+                },
+                "vcpu": {
+                    "type": "integer",
+                    "description": "节点的 CPU 核数。\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "可用区 ID。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createTime",
+                "delayReplicationTime",
+                "memory",
+                "nodeId",
+                "nodeSpec",
+                "nodeStatus",
+                "nodeType",
+                "syncDelay",
+                "updateTime",
+                "vcpu",
+                "zoneId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceProxyDetail:getInstanceProxyDetail": {
+            "properties": {
+                "dbProxyStatus": {
+                    "type": "string",
+                    "description": "实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中\n"
+                },
+                "proxyResourceInfo": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/getInstanceProxyDetailProxyResourceInfo:getInstanceProxyDetailProxyResourceInfo",
+                    "description": "实例的数据库代理服务的资源信息。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dbProxyStatus",
+                "proxyResourceInfo"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceProxyDetailProxyResourceInfo:getInstanceProxyDetailProxyResourceInfo": {
+            "properties": {
+                "currentProxyCpuNum": {
+                    "type": "integer",
+                    "description": "实例数据库代理服务当前的核数。\n"
+                },
+                "maxProxyCpuNum": {
+                    "type": "integer",
+                    "description": "用户可为数据库代理服务配置的最多核数。\n"
+                },
+                "minProxyCpuNum": {
+                    "type": "integer",
+                    "description": "用户可为数据库代理服务配置的最少核数。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "currentProxyCpuNum",
+                "maxProxyCpuNum",
+                "minProxyCpuNum"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getInstanceTag:getInstanceTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "标签值。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
             ],
             "language": {
                 "nodejs": {
@@ -9614,6 +10583,10 @@
                     "type": "string",
                     "description": "实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中\nSTOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误\nDELETING：删除中。\n"
                 },
+                "stoppedMode": {
+                    "type": "string",
+                    "description": "StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：\nKeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。\nStopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。\n有关节省停机的启用条件，请参见按量计费节省停机模式说明。\n默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。\n"
+                },
                 "systemVolume": {
                     "$ref": "#/types/bytepluscc:ecs/InstanceSystemVolume:InstanceSystemVolume",
                     "description": "实例的系统卷。\n"
@@ -9674,6 +10647,7 @@
                 "spotPriceLimit",
                 "spotStrategy",
                 "status",
+                "stoppedMode",
                 "systemVolume",
                 "tags",
                 "updatedAt",
@@ -9795,6 +10769,10 @@
                 "status": {
                     "type": "string",
                     "description": "实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中\nSTOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误\nDELETING：删除中。\n"
+                },
+                "stoppedMode": {
+                    "type": "string",
+                    "description": "StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：\nKeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。\nStopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。\n有关节省停机的启用条件，请参见按量计费节省停机模式说明。\n默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。\n"
                 },
                 "systemVolume": {
                     "$ref": "#/types/bytepluscc:ecs/InstanceSystemVolume:InstanceSystemVolume",
@@ -9959,6 +10937,10 @@
                     "status": {
                         "type": "string",
                         "description": "实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中\nSTOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误\nDELETING：删除中。\n"
+                    },
+                    "stoppedMode": {
+                        "type": "string",
+                        "description": "StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：\nKeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。\nStopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。\n有关节省停机的启用条件，请参见按量计费节省停机模式说明。\n默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。\n"
                     },
                     "systemVolume": {
                         "$ref": "#/types/bytepluscc:ecs/InstanceSystemVolume:InstanceSystemVolume",
@@ -11531,6 +12513,803 @@
                         "items": {
                             "$ref": "#/types/bytepluscc:rdsmysql/DbAccountTableColumnPrivilege:DbAccountTableColumnPrivilege"
                         }
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/instance:Instance": {
+            "description": "云数据库 MySQL 版是火山引擎基于开源数据库 MySQL 打造的弹性、可靠的在线关系型数据库服务。 MySQL 实例使用云原生方式部署，结合本地 SSD 存储类型，提供高性能读写能力；完全兼容 MySQL 引擎，并提供实例管理、备份恢复、日志管理、监控告警、数据迁移等全套解决方案，帮助企业简化繁杂的数据库管理和运维任务，使企业有更多的时间与资源聚焦于自己的核心业务。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  rDSMySQLInstanceDemo:\n    type: bytepluscc:rdsmysql:Instance\n    name: RDSMySQLInstanceDemo\n    properties:\n      deletionProtection: Disabled\n      dbEngineVersion: MySQL_5_7\n      nodes:\n        - zone_id: cn-beijing-a\n          node_spec: rds.mysql.c.s.1c2g\n          node_type: Primary\n        - zone_id: cn-beijing-a\n          node_spec: rds.mysql.c.s.1c2g\n          node_type: Secondary\n        - zone_id: cn-beijing-a\n          node_spec: rds.mysql.c.s.1c2g\n          node_type: ReadOnly\n      storageType: CloudESSD_PL0\n      storageSpace: 100\n      instanceType: DoubleNode\n      vpcId: vpc-rrco37ovjq4gv0x58xxxxx\n      subnetId: subnet-rrwqhg3qzxfkv0x57xxxxx\n      instanceName: RDSMySQLInstanceDemo-PostPaid\n      superAccountName: test_account\n      superAccountPassword: '***********'\n      lowerCaseTableNames: '1'\n      dbTimeZone: UTC +08:00\n      chargeDetail:\n        charge_type: PostPaid\n        auto_renew: false\n        number: 1\n      allowListIds:\n        - acl-8cde5e16f44143788234ca4489xxxxx\n        - acl-31f6053bd6be4cff88c1b205d20xxxxx\n      port: 3306\n      maintenanceWindow:\n        day_kind: Week\n        day_of_week:\n          - Monday\n        maintenance_time: 18:00Z-21:59Z\n      autoStorageScalingConfig:\n        enable_storage_auto_scale: true\n        storage_threshold: 10\n        storage_upper_bound: 3000\n      projectName: default\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:rdsmysql/instance:Instance example \"instance_id\"\n```\n\n",
+            "properties": {
+                "addressObjects": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceAddressObject:InstanceAddressObject"
+                    }
+                },
+                "allowListIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。\n"
+                },
+                "allowListVersion": {
+                    "type": "string",
+                    "description": "白名单版本。\n"
+                },
+                "autoStorageScalingConfig": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceAutoStorageScalingConfig:InstanceAutoStorageScalingConfig",
+                    "description": "自动扩容配置。\n"
+                },
+                "autoUpgradeMinorVersion": {
+                    "type": "string",
+                    "description": "实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。\n"
+                },
+                "backupAuditLogSize": {
+                    "type": "integer",
+                    "description": "备份中审计日志使用的空间。\n"
+                },
+                "backupBinLogSize": {
+                    "type": "integer",
+                    "description": "备份中 Binlog 日志使用的空间。\n"
+                },
+                "backupDataSize": {
+                    "type": "integer",
+                    "description": "备份中数据使用的空间。\n"
+                },
+                "backupErrorLogSize": {
+                    "type": "integer",
+                    "description": "备份中错误日志使用的空间。\n"
+                },
+                "backupFreeQuotaSize": {
+                    "type": "integer",
+                    "description": "免费的备份存储空间，单位为 GB。\n"
+                },
+                "backupLogSize": {
+                    "type": "integer",
+                    "description": "备份中日志使用的空间。\n"
+                },
+                "backupSlowLogSize": {
+                    "type": "integer",
+                    "description": "备份中慢日志使用的空间。\n"
+                },
+                "backupUse": {
+                    "type": "number",
+                    "description": "实例的备份已使用的空间，单位为 GB。\n"
+                },
+                "basicBackupBinlogSize": {
+                    "type": "integer",
+                    "description": "基础备份中 Binlog 日志使用的空间。\n"
+                },
+                "basicBackupDataSize": {
+                    "type": "integer",
+                    "description": "基础备份中数据使用的空间。\n"
+                },
+                "chargeDetail": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceChargeDetail:InstanceChargeDetail",
+                    "description": "付费方式。\n"
+                },
+                "cpuNum": {
+                    "type": "integer",
+                    "description": "实例数据库代理服务的 CPU 核数。\n"
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "实例创建本地时间。\n"
+                },
+                "currentKernelVersion": {
+                    "type": "string",
+                    "description": "实例的内核小版本。\n"
+                },
+                "dbEngineVersion": {
+                    "type": "string",
+                    "description": "兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。\n"
+                },
+                "dbParamGroupId": {
+                    "type": "string",
+                    "description": "参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。\n"
+                },
+                "dbTimeZone": {
+                    "type": "string",
+                    "description": "时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。\n"
+                },
+                "deletionProtection": {
+                    "type": "string",
+                    "description": "是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。\n"
+                },
+                "disasterRecoveryInstances": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceDisasterRecoveryInstance:InstanceDisasterRecoveryInstance"
+                    }
+                },
+                "drDtsTaskId": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。\n"
+                },
+                "drDtsTaskName": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的名称。\n"
+                },
+                "drDtsTaskStatus": {
+                    "type": "string",
+                    "description": "主实例与灾备实例之间同步任务的状态。\n"
+                },
+                "drSecondsBehindMaster": {
+                    "type": "integer",
+                    "description": "灾备实例与主实例之间的时延。\n"
+                },
+                "endpoints": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceEndpoint:InstanceEndpoint"
+                    }
+                },
+                "globalReadOnly": {
+                    "type": "boolean",
+                    "description": "是否开启全局只读。取值：true：是。false：否。默认值为 false。\n"
+                },
+                "hasDisasterRecoveryInstances": {
+                    "type": "boolean",
+                    "description": "实例是否有灾备实例。取值：true：是。false：否。\n"
+                },
+                "hasGreenInstance": {
+                    "type": "boolean",
+                    "description": "实例是否处于蓝绿部署中。取值：true：是。false：否。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "实例 ID。\n"
+                },
+                "instanceName": {
+                    "type": "string",
+                    "description": "实例名称。\n"
+                },
+                "instanceStatus": {
+                    "type": "string",
+                    "description": "实例状态。\n"
+                },
+                "instanceType": {
+                    "type": "string",
+                    "description": "实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。\n"
+                },
+                "lowerCaseTableNames": {
+                    "type": "string",
+                    "description": "表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。\n"
+                },
+                "maintenanceWindow": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceMaintenanceWindow:InstanceMaintenanceWindow",
+                    "description": "在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。\n"
+                },
+                "masterInstanceId": {
+                    "type": "string",
+                    "description": "主实例的 ID。\n"
+                },
+                "masterInstanceName": {
+                    "type": "string",
+                    "description": "主实例的名称。\n"
+                },
+                "memory": {
+                    "type": "integer",
+                    "description": "内存大小。单位：GB。\n"
+                },
+                "nodeCpuUsedPercentage": {
+                    "type": "number",
+                    "description": "实例主节点 CPU 使用率近一分钟的平均值。\n"
+                },
+                "nodeMemoryUsedPercentage": {
+                    "type": "number",
+                    "description": "实例主节点内存使用率近一分钟的平均值。\n"
+                },
+                "nodeNumber": {
+                    "type": "string",
+                    "description": "节点数量。\n"
+                },
+                "nodeSpaceUsedPercentage": {
+                    "type": "number",
+                    "description": "实例主节点磁盘使用率近一分钟的平均值。\n"
+                },
+                "nodeSpec": {
+                    "type": "string",
+                    "description": "节点规格。\n"
+                },
+                "nodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceNode:InstanceNode"
+                    }
+                },
+                "port": {
+                    "type": "integer",
+                    "description": "默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "所属项目。\n"
+                },
+                "proxyDetail": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceProxyDetail:InstanceProxyDetail",
+                    "description": "proxy信息\n"
+                },
+                "storageAuditLogSize": {
+                    "type": "integer",
+                    "description": "实例存储空间中审计日志使用的空间。\n"
+                },
+                "storageBinLogSize": {
+                    "type": "integer",
+                    "description": "实例存储空间中 Binlog 使用的空间。\n"
+                },
+                "storageDataSize": {
+                    "type": "integer",
+                    "description": "实例存储空间中数据使用的空间。\n"
+                },
+                "storageErrorLogSize": {
+                    "type": "integer",
+                    "description": "实例存储空间中错误日志使用的空间。\n"
+                },
+                "storageLogSize": {
+                    "type": "integer",
+                    "description": "实例存储空间中日志使用的空间。\n"
+                },
+                "storageSlowLogSize": {
+                    "type": "integer",
+                    "description": "实例存储空间中慢日志使用的空间。\n"
+                },
+                "storageSpace": {
+                    "type": "integer",
+                    "description": "实例总存储空间。单位为 GB。\n"
+                },
+                "storageType": {
+                    "type": "string",
+                    "description": "实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。\n"
+                },
+                "storageUse": {
+                    "type": "number",
+                    "description": "实例已使用用存储空间，单位为 GB。\n"
+                },
+                "subnetId": {
+                    "type": "string",
+                    "description": "子网 ID。\n"
+                },
+                "superAccountName": {
+                    "type": "string",
+                    "description": "高权限账号名称。不传此参数默认不创建高权限账号。\n"
+                },
+                "superAccountPassword": {
+                    "type": "string",
+                    "description": "高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^\u0026*()_+-=,.\u0026?|/。\n"
+                },
+                "syncMode": {
+                    "type": "string",
+                    "description": "数据同步方式：SemiSync：半同步。Async：异步。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceTag:InstanceTag"
+                    }
+                },
+                "timeZone": {
+                    "type": "string",
+                    "description": "时区。\n"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "实例更新本地时间。\n"
+                },
+                "vcpu": {
+                    "type": "integer",
+                    "description": "CPU 大小。例如：1 表示 1U。\n"
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "专有网络（VPC） ID。\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "实例主节点所在可用区。\n"
+                },
+                "zoneIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "实例各节点所在的可用区列表。\n"
+                }
+            },
+            "required": [
+                "addressObjects",
+                "allowListIds",
+                "allowListVersion",
+                "autoStorageScalingConfig",
+                "autoUpgradeMinorVersion",
+                "backupAuditLogSize",
+                "backupBinLogSize",
+                "backupDataSize",
+                "backupErrorLogSize",
+                "backupFreeQuotaSize",
+                "backupLogSize",
+                "backupSlowLogSize",
+                "backupUse",
+                "basicBackupBinlogSize",
+                "basicBackupDataSize",
+                "chargeDetail",
+                "cpuNum",
+                "createdTime",
+                "currentKernelVersion",
+                "dbEngineVersion",
+                "dbParamGroupId",
+                "dbTimeZone",
+                "deletionProtection",
+                "disasterRecoveryInstances",
+                "drDtsTaskId",
+                "drDtsTaskName",
+                "drDtsTaskStatus",
+                "drSecondsBehindMaster",
+                "endpoints",
+                "globalReadOnly",
+                "hasDisasterRecoveryInstances",
+                "hasGreenInstance",
+                "instanceId",
+                "instanceName",
+                "instanceStatus",
+                "instanceType",
+                "lowerCaseTableNames",
+                "maintenanceWindow",
+                "masterInstanceId",
+                "masterInstanceName",
+                "memory",
+                "nodeCpuUsedPercentage",
+                "nodeMemoryUsedPercentage",
+                "nodeNumber",
+                "nodeSpaceUsedPercentage",
+                "nodeSpec",
+                "nodes",
+                "port",
+                "projectName",
+                "proxyDetail",
+                "storageAuditLogSize",
+                "storageBinLogSize",
+                "storageDataSize",
+                "storageErrorLogSize",
+                "storageLogSize",
+                "storageSlowLogSize",
+                "storageSpace",
+                "storageType",
+                "storageUse",
+                "subnetId",
+                "superAccountName",
+                "superAccountPassword",
+                "syncMode",
+                "tags",
+                "timeZone",
+                "updatedTime",
+                "vcpu",
+                "vpcId",
+                "zoneId",
+                "zoneIds"
+            ],
+            "inputProperties": {
+                "allowListIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。\n"
+                },
+                "autoStorageScalingConfig": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceAutoStorageScalingConfig:InstanceAutoStorageScalingConfig",
+                    "description": "自动扩容配置。\n"
+                },
+                "autoUpgradeMinorVersion": {
+                    "type": "string",
+                    "description": "实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。\n"
+                },
+                "chargeDetail": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceChargeDetail:InstanceChargeDetail",
+                    "description": "付费方式。\n"
+                },
+                "cpuNum": {
+                    "type": "integer",
+                    "description": "实例数据库代理服务的 CPU 核数。\n"
+                },
+                "dbEngineVersion": {
+                    "type": "string",
+                    "description": "兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。\n"
+                },
+                "dbParamGroupId": {
+                    "type": "string",
+                    "description": "参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。\n"
+                },
+                "dbTimeZone": {
+                    "type": "string",
+                    "description": "时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。\n"
+                },
+                "deletionProtection": {
+                    "type": "string",
+                    "description": "是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。\n"
+                },
+                "globalReadOnly": {
+                    "type": "boolean",
+                    "description": "是否开启全局只读。取值：true：是。false：否。默认值为 false。\n"
+                },
+                "instanceName": {
+                    "type": "string",
+                    "description": "实例名称。\n"
+                },
+                "instanceType": {
+                    "type": "string",
+                    "description": "实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。\n"
+                },
+                "lowerCaseTableNames": {
+                    "type": "string",
+                    "description": "表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。\n"
+                },
+                "maintenanceWindow": {
+                    "$ref": "#/types/bytepluscc:rdsmysql/InstanceMaintenanceWindow:InstanceMaintenanceWindow",
+                    "description": "在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。\n"
+                },
+                "nodeSpec": {
+                    "type": "string",
+                    "description": "节点规格。\n"
+                },
+                "nodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceNode:InstanceNode"
+                    }
+                },
+                "port": {
+                    "type": "integer",
+                    "description": "默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "所属项目。\n"
+                },
+                "storageSpace": {
+                    "type": "integer",
+                    "description": "实例总存储空间。单位为 GB。\n"
+                },
+                "storageType": {
+                    "type": "string",
+                    "description": "实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。\n"
+                },
+                "subnetId": {
+                    "type": "string",
+                    "description": "子网 ID。\n"
+                },
+                "superAccountName": {
+                    "type": "string",
+                    "description": "高权限账号名称。不传此参数默认不创建高权限账号。\n"
+                },
+                "superAccountPassword": {
+                    "type": "string",
+                    "description": "高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^\u0026*()_+-=,.\u0026?|/。\n"
+                },
+                "syncMode": {
+                    "type": "string",
+                    "description": "数据同步方式：SemiSync：半同步。Async：异步。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceTag:InstanceTag"
+                    }
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "专有网络（VPC） ID。\n"
+                }
+            },
+            "requiredInputs": [
+                "chargeDetail",
+                "dbEngineVersion",
+                "nodes",
+                "storageSpace",
+                "storageType",
+                "subnetId",
+                "vpcId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Instance resources.\n",
+                "properties": {
+                    "addressObjects": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/InstanceAddressObject:InstanceAddressObject"
+                        }
+                    },
+                    "allowListIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。\n"
+                    },
+                    "allowListVersion": {
+                        "type": "string",
+                        "description": "白名单版本。\n"
+                    },
+                    "autoStorageScalingConfig": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceAutoStorageScalingConfig:InstanceAutoStorageScalingConfig",
+                        "description": "自动扩容配置。\n"
+                    },
+                    "autoUpgradeMinorVersion": {
+                        "type": "string",
+                        "description": "实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。\n"
+                    },
+                    "backupAuditLogSize": {
+                        "type": "integer",
+                        "description": "备份中审计日志使用的空间。\n"
+                    },
+                    "backupBinLogSize": {
+                        "type": "integer",
+                        "description": "备份中 Binlog 日志使用的空间。\n"
+                    },
+                    "backupDataSize": {
+                        "type": "integer",
+                        "description": "备份中数据使用的空间。\n"
+                    },
+                    "backupErrorLogSize": {
+                        "type": "integer",
+                        "description": "备份中错误日志使用的空间。\n"
+                    },
+                    "backupFreeQuotaSize": {
+                        "type": "integer",
+                        "description": "免费的备份存储空间，单位为 GB。\n"
+                    },
+                    "backupLogSize": {
+                        "type": "integer",
+                        "description": "备份中日志使用的空间。\n"
+                    },
+                    "backupSlowLogSize": {
+                        "type": "integer",
+                        "description": "备份中慢日志使用的空间。\n"
+                    },
+                    "backupUse": {
+                        "type": "number",
+                        "description": "实例的备份已使用的空间，单位为 GB。\n"
+                    },
+                    "basicBackupBinlogSize": {
+                        "type": "integer",
+                        "description": "基础备份中 Binlog 日志使用的空间。\n"
+                    },
+                    "basicBackupDataSize": {
+                        "type": "integer",
+                        "description": "基础备份中数据使用的空间。\n"
+                    },
+                    "chargeDetail": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceChargeDetail:InstanceChargeDetail",
+                        "description": "付费方式。\n"
+                    },
+                    "cpuNum": {
+                        "type": "integer",
+                        "description": "实例数据库代理服务的 CPU 核数。\n"
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "实例创建本地时间。\n"
+                    },
+                    "currentKernelVersion": {
+                        "type": "string",
+                        "description": "实例的内核小版本。\n"
+                    },
+                    "dbEngineVersion": {
+                        "type": "string",
+                        "description": "兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。\n"
+                    },
+                    "dbParamGroupId": {
+                        "type": "string",
+                        "description": "参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。\n"
+                    },
+                    "dbTimeZone": {
+                        "type": "string",
+                        "description": "时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。\n"
+                    },
+                    "deletionProtection": {
+                        "type": "string",
+                        "description": "是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。\n"
+                    },
+                    "disasterRecoveryInstances": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/InstanceDisasterRecoveryInstance:InstanceDisasterRecoveryInstance"
+                        }
+                    },
+                    "drDtsTaskId": {
+                        "type": "string",
+                        "description": "主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。\n"
+                    },
+                    "drDtsTaskName": {
+                        "type": "string",
+                        "description": "主实例与灾备实例之间同步任务的名称。\n"
+                    },
+                    "drDtsTaskStatus": {
+                        "type": "string",
+                        "description": "主实例与灾备实例之间同步任务的状态。\n"
+                    },
+                    "drSecondsBehindMaster": {
+                        "type": "integer",
+                        "description": "灾备实例与主实例之间的时延。\n"
+                    },
+                    "endpoints": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/InstanceEndpoint:InstanceEndpoint"
+                        }
+                    },
+                    "globalReadOnly": {
+                        "type": "boolean",
+                        "description": "是否开启全局只读。取值：true：是。false：否。默认值为 false。\n"
+                    },
+                    "hasDisasterRecoveryInstances": {
+                        "type": "boolean",
+                        "description": "实例是否有灾备实例。取值：true：是。false：否。\n"
+                    },
+                    "hasGreenInstance": {
+                        "type": "boolean",
+                        "description": "实例是否处于蓝绿部署中。取值：true：是。false：否。\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "实例 ID。\n"
+                    },
+                    "instanceName": {
+                        "type": "string",
+                        "description": "实例名称。\n"
+                    },
+                    "instanceStatus": {
+                        "type": "string",
+                        "description": "实例状态。\n"
+                    },
+                    "instanceType": {
+                        "type": "string",
+                        "description": "实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。\n"
+                    },
+                    "lowerCaseTableNames": {
+                        "type": "string",
+                        "description": "表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。\n"
+                    },
+                    "maintenanceWindow": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceMaintenanceWindow:InstanceMaintenanceWindow",
+                        "description": "在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。\n"
+                    },
+                    "masterInstanceId": {
+                        "type": "string",
+                        "description": "主实例的 ID。\n"
+                    },
+                    "masterInstanceName": {
+                        "type": "string",
+                        "description": "主实例的名称。\n"
+                    },
+                    "memory": {
+                        "type": "integer",
+                        "description": "内存大小。单位：GB。\n"
+                    },
+                    "nodeCpuUsedPercentage": {
+                        "type": "number",
+                        "description": "实例主节点 CPU 使用率近一分钟的平均值。\n"
+                    },
+                    "nodeMemoryUsedPercentage": {
+                        "type": "number",
+                        "description": "实例主节点内存使用率近一分钟的平均值。\n"
+                    },
+                    "nodeNumber": {
+                        "type": "string",
+                        "description": "节点数量。\n"
+                    },
+                    "nodeSpaceUsedPercentage": {
+                        "type": "number",
+                        "description": "实例主节点磁盘使用率近一分钟的平均值。\n"
+                    },
+                    "nodeSpec": {
+                        "type": "string",
+                        "description": "节点规格。\n"
+                    },
+                    "nodes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/InstanceNode:InstanceNode"
+                        }
+                    },
+                    "port": {
+                        "type": "integer",
+                        "description": "默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "所属项目。\n"
+                    },
+                    "proxyDetail": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/InstanceProxyDetail:InstanceProxyDetail",
+                        "description": "proxy信息\n"
+                    },
+                    "storageAuditLogSize": {
+                        "type": "integer",
+                        "description": "实例存储空间中审计日志使用的空间。\n"
+                    },
+                    "storageBinLogSize": {
+                        "type": "integer",
+                        "description": "实例存储空间中 Binlog 使用的空间。\n"
+                    },
+                    "storageDataSize": {
+                        "type": "integer",
+                        "description": "实例存储空间中数据使用的空间。\n"
+                    },
+                    "storageErrorLogSize": {
+                        "type": "integer",
+                        "description": "实例存储空间中错误日志使用的空间。\n"
+                    },
+                    "storageLogSize": {
+                        "type": "integer",
+                        "description": "实例存储空间中日志使用的空间。\n"
+                    },
+                    "storageSlowLogSize": {
+                        "type": "integer",
+                        "description": "实例存储空间中慢日志使用的空间。\n"
+                    },
+                    "storageSpace": {
+                        "type": "integer",
+                        "description": "实例总存储空间。单位为 GB。\n"
+                    },
+                    "storageType": {
+                        "type": "string",
+                        "description": "实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。\n"
+                    },
+                    "storageUse": {
+                        "type": "number",
+                        "description": "实例已使用用存储空间，单位为 GB。\n"
+                    },
+                    "subnetId": {
+                        "type": "string",
+                        "description": "子网 ID。\n"
+                    },
+                    "superAccountName": {
+                        "type": "string",
+                        "description": "高权限账号名称。不传此参数默认不创建高权限账号。\n"
+                    },
+                    "superAccountPassword": {
+                        "type": "string",
+                        "description": "高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^\u0026*()_+-=,.\u0026?|/。\n"
+                    },
+                    "syncMode": {
+                        "type": "string",
+                        "description": "数据同步方式：SemiSync：半同步。Async：异步。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/InstanceTag:InstanceTag"
+                        }
+                    },
+                    "timeZone": {
+                        "type": "string",
+                        "description": "时区。\n"
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "实例更新本地时间。\n"
+                    },
+                    "vcpu": {
+                        "type": "integer",
+                        "description": "CPU 大小。例如：1 表示 1U。\n"
+                    },
+                    "vpcId": {
+                        "type": "string",
+                        "description": "专有网络（VPC） ID。\n"
+                    },
+                    "zoneId": {
+                        "type": "string",
+                        "description": "实例主节点所在可用区。\n"
+                    },
+                    "zoneIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "实例各节点所在的可用区列表。\n"
                     }
                 },
                 "type": "object"
@@ -15084,6 +16863,9 @@
                     "status": {
                         "type": "string"
                     },
+                    "stoppedMode": {
+                        "type": "string"
+                    },
                     "systemVolume": {
                         "$ref": "#/types/bytepluscc:ecs/getInstanceSystemVolume:getInstanceSystemVolume"
                     },
@@ -15140,6 +16922,7 @@
                     "spotPriceLimit",
                     "spotStrategy",
                     "status",
+                    "stoppedMode",
                     "systemVolume",
                     "tags",
                     "updatedAt",
@@ -16293,6 +18076,430 @@
             "description": "Plural Data Source schema for Byteplus::RDSMySQL::DBAccount\n",
             "outputs": {
                 "description": "A collection of values returned by getDbAccounts.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/getInstance:getInstance": {
+            "description": "Data Source schema for Byteplus::RDSMySQL::Instance\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getInstance.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getInstance.\n",
+                "properties": {
+                    "addressObjects": {
+                        "description": "默认终端的连接信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/getInstanceAddressObject:getInstanceAddressObject"
+                        },
+                        "type": "array"
+                    },
+                    "allowListIds": {
+                        "description": "白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "allowListVersion": {
+                        "description": "白名单版本。\n",
+                        "type": "string"
+                    },
+                    "autoStorageScalingConfig": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/getInstanceAutoStorageScalingConfig:getInstanceAutoStorageScalingConfig",
+                        "description": "自动扩容配置。\n"
+                    },
+                    "autoUpgradeMinorVersion": {
+                        "description": "实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。\n",
+                        "type": "string"
+                    },
+                    "backupAuditLogSize": {
+                        "description": "备份中审计日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "backupBinLogSize": {
+                        "description": "备份中 Binlog 日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "backupDataSize": {
+                        "description": "备份中数据使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "backupErrorLogSize": {
+                        "description": "备份中错误日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "backupFreeQuotaSize": {
+                        "description": "免费的备份存储空间，单位为 GB。\n",
+                        "type": "integer"
+                    },
+                    "backupLogSize": {
+                        "description": "备份中日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "backupSlowLogSize": {
+                        "description": "备份中慢日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "backupUse": {
+                        "description": "实例的备份已使用的空间，单位为 GB。\n",
+                        "type": "number"
+                    },
+                    "basicBackupBinlogSize": {
+                        "description": "基础备份中 Binlog 日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "basicBackupDataSize": {
+                        "description": "基础备份中数据使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "chargeDetail": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/getInstanceChargeDetail:getInstanceChargeDetail",
+                        "description": "付费方式。\n"
+                    },
+                    "cpuNum": {
+                        "description": "实例数据库代理服务的 CPU 核数。\n",
+                        "type": "integer"
+                    },
+                    "createdTime": {
+                        "description": "实例创建本地时间。\n",
+                        "type": "string"
+                    },
+                    "currentKernelVersion": {
+                        "description": "实例的内核小版本。\n",
+                        "type": "string"
+                    },
+                    "dbEngineVersion": {
+                        "description": "兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。\n",
+                        "type": "string"
+                    },
+                    "dbParamGroupId": {
+                        "description": "参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。\n",
+                        "type": "string"
+                    },
+                    "dbTimeZone": {
+                        "description": "时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。\n",
+                        "type": "string"
+                    },
+                    "deletionProtection": {
+                        "description": "是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。\n",
+                        "type": "string"
+                    },
+                    "disasterRecoveryInstances": {
+                        "description": "实例的灾备实例的信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/getInstanceDisasterRecoveryInstance:getInstanceDisasterRecoveryInstance"
+                        },
+                        "type": "array"
+                    },
+                    "drDtsTaskId": {
+                        "description": "主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。\n",
+                        "type": "string"
+                    },
+                    "drDtsTaskName": {
+                        "description": "主实例与灾备实例之间同步任务的名称。\n",
+                        "type": "string"
+                    },
+                    "drDtsTaskStatus": {
+                        "description": "主实例与灾备实例之间同步任务的状态。\n",
+                        "type": "string"
+                    },
+                    "drSecondsBehindMaster": {
+                        "description": "灾备实例与主实例之间的时延。\n",
+                        "type": "integer"
+                    },
+                    "endpoints": {
+                        "description": "实例的连接信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/getInstanceEndpoint:getInstanceEndpoint"
+                        },
+                        "type": "array"
+                    },
+                    "globalReadOnly": {
+                        "description": "是否开启全局只读。取值：true：是。false：否。默认值为 false。\n",
+                        "type": "boolean"
+                    },
+                    "hasDisasterRecoveryInstances": {
+                        "description": "实例是否有灾备实例。取值：true：是。false：否。\n",
+                        "type": "boolean"
+                    },
+                    "hasGreenInstance": {
+                        "description": "实例是否处于蓝绿部署中。取值：true：是。false：否。\n",
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "description": "实例 ID。\n",
+                        "type": "string"
+                    },
+                    "instanceName": {
+                        "description": "实例名称。\n",
+                        "type": "string"
+                    },
+                    "instanceStatus": {
+                        "description": "实例状态。\n",
+                        "type": "string"
+                    },
+                    "instanceType": {
+                        "description": "实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。\n",
+                        "type": "string"
+                    },
+                    "lowerCaseTableNames": {
+                        "description": "表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。\n",
+                        "type": "string"
+                    },
+                    "maintenanceWindow": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/getInstanceMaintenanceWindow:getInstanceMaintenanceWindow",
+                        "description": "在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。\n"
+                    },
+                    "masterInstanceId": {
+                        "description": "主实例的 ID。\n",
+                        "type": "string"
+                    },
+                    "masterInstanceName": {
+                        "description": "主实例的名称。\n",
+                        "type": "string"
+                    },
+                    "memory": {
+                        "description": "内存大小。单位：GB。\n",
+                        "type": "integer"
+                    },
+                    "nodeCpuUsedPercentage": {
+                        "description": "实例主节点 CPU 使用率近一分钟的平均值。\n",
+                        "type": "number"
+                    },
+                    "nodeMemoryUsedPercentage": {
+                        "description": "实例主节点内存使用率近一分钟的平均值。\n",
+                        "type": "number"
+                    },
+                    "nodeNumber": {
+                        "description": "节点数量。\n",
+                        "type": "string"
+                    },
+                    "nodeSpaceUsedPercentage": {
+                        "description": "实例主节点磁盘使用率近一分钟的平均值。\n",
+                        "type": "number"
+                    },
+                    "nodeSpec": {
+                        "description": "节点规格。\n",
+                        "type": "string"
+                    },
+                    "nodes": {
+                        "description": "实例节点信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/getInstanceNode:getInstanceNode"
+                        },
+                        "type": "array"
+                    },
+                    "port": {
+                        "description": "默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。\n",
+                        "type": "integer"
+                    },
+                    "projectName": {
+                        "description": "所属项目。\n",
+                        "type": "string"
+                    },
+                    "proxyDetail": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/getInstanceProxyDetail:getInstanceProxyDetail",
+                        "description": "proxy信息\n"
+                    },
+                    "storageAuditLogSize": {
+                        "description": "实例存储空间中审计日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "storageBinLogSize": {
+                        "description": "实例存储空间中 Binlog 使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "storageDataSize": {
+                        "description": "实例存储空间中数据使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "storageErrorLogSize": {
+                        "description": "实例存储空间中错误日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "storageLogSize": {
+                        "description": "实例存储空间中日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "storageSlowLogSize": {
+                        "description": "实例存储空间中慢日志使用的空间。\n",
+                        "type": "integer"
+                    },
+                    "storageSpace": {
+                        "description": "实例总存储空间。单位为 GB。\n",
+                        "type": "integer"
+                    },
+                    "storageType": {
+                        "description": "实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。\n",
+                        "type": "string"
+                    },
+                    "storageUse": {
+                        "description": "实例已使用用存储空间，单位为 GB。\n",
+                        "type": "number"
+                    },
+                    "subnetId": {
+                        "description": "子网 ID。\n",
+                        "type": "string"
+                    },
+                    "superAccountName": {
+                        "description": "高权限账号名称。不传此参数默认不创建高权限账号。\n",
+                        "type": "string"
+                    },
+                    "superAccountPassword": {
+                        "description": "高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^\u0026*()_+-=,.\u0026?|/。\n",
+                        "type": "string"
+                    },
+                    "syncMode": {
+                        "description": "数据同步方式：SemiSync：半同步。Async：异步。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "RDS MySQL 实例的标签信息\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/getInstanceTag:getInstanceTag"
+                        },
+                        "type": "array"
+                    },
+                    "timeZone": {
+                        "description": "时区。\n",
+                        "type": "string"
+                    },
+                    "updatedTime": {
+                        "description": "实例更新本地时间。\n",
+                        "type": "string"
+                    },
+                    "vcpu": {
+                        "description": "CPU 大小。例如：1 表示 1U。\n",
+                        "type": "integer"
+                    },
+                    "vpcId": {
+                        "description": "专有网络（VPC） ID。\n",
+                        "type": "string"
+                    },
+                    "zoneId": {
+                        "description": "实例主节点所在可用区。\n",
+                        "type": "string"
+                    },
+                    "zoneIds": {
+                        "description": "实例各节点所在的可用区列表。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "addressObjects",
+                    "allowListIds",
+                    "allowListVersion",
+                    "autoStorageScalingConfig",
+                    "autoUpgradeMinorVersion",
+                    "backupAuditLogSize",
+                    "backupBinLogSize",
+                    "backupDataSize",
+                    "backupErrorLogSize",
+                    "backupFreeQuotaSize",
+                    "backupLogSize",
+                    "backupSlowLogSize",
+                    "backupUse",
+                    "basicBackupBinlogSize",
+                    "basicBackupDataSize",
+                    "chargeDetail",
+                    "cpuNum",
+                    "createdTime",
+                    "currentKernelVersion",
+                    "dbEngineVersion",
+                    "dbParamGroupId",
+                    "dbTimeZone",
+                    "deletionProtection",
+                    "disasterRecoveryInstances",
+                    "drDtsTaskId",
+                    "drDtsTaskName",
+                    "drDtsTaskStatus",
+                    "drSecondsBehindMaster",
+                    "endpoints",
+                    "globalReadOnly",
+                    "hasDisasterRecoveryInstances",
+                    "hasGreenInstance",
+                    "id",
+                    "instanceId",
+                    "instanceName",
+                    "instanceStatus",
+                    "instanceType",
+                    "lowerCaseTableNames",
+                    "maintenanceWindow",
+                    "masterInstanceId",
+                    "masterInstanceName",
+                    "memory",
+                    "nodeCpuUsedPercentage",
+                    "nodeMemoryUsedPercentage",
+                    "nodeNumber",
+                    "nodeSpaceUsedPercentage",
+                    "nodeSpec",
+                    "nodes",
+                    "port",
+                    "projectName",
+                    "proxyDetail",
+                    "storageAuditLogSize",
+                    "storageBinLogSize",
+                    "storageDataSize",
+                    "storageErrorLogSize",
+                    "storageLogSize",
+                    "storageSlowLogSize",
+                    "storageSpace",
+                    "storageType",
+                    "storageUse",
+                    "subnetId",
+                    "superAccountName",
+                    "superAccountPassword",
+                    "syncMode",
+                    "tags",
+                    "timeZone",
+                    "updatedTime",
+                    "vcpu",
+                    "vpcId",
+                    "zoneId",
+                    "zoneIds"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/getInstances:getInstances": {
+            "description": "Plural Data Source schema for Byteplus::RDSMySQL::Instance\n",
+            "outputs": {
+                "description": "A collection of values returned by getInstances.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",

@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, affinity_group_size=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, created_at=None, credit_specification=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, affinity_group_size=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, created_at=None, credit_specification=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
         if affinity_group_size and not isinstance(affinity_group_size, int):
             raise TypeError("Expected argument 'affinity_group_size' to be a int")
         pulumi.set(__self__, "affinity_group_size", affinity_group_size)
@@ -128,6 +128,9 @@ class GetInstanceResult:
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
+        if stopped_mode and not isinstance(stopped_mode, str):
+            raise TypeError("Expected argument 'stopped_mode' to be a str")
+        pulumi.set(__self__, "stopped_mode", stopped_mode)
         if system_volume and not isinstance(system_volume, dict):
             raise TypeError("Expected argument 'system_volume' to be a dict")
         pulumi.set(__self__, "system_volume", system_volume)
@@ -313,6 +316,11 @@ class GetInstanceResult:
         return pulumi.get(self, "status")
 
     @property
+    @pulumi.getter(name="stoppedMode")
+    def stopped_mode(self) -> builtins.str:
+        return pulumi.get(self, "stopped_mode")
+
+    @property
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> 'outputs.GetInstanceSystemVolumeResult':
         return pulumi.get(self, "system_volume")
@@ -382,6 +390,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             spot_price_limit=self.spot_price_limit,
             spot_strategy=self.spot_strategy,
             status=self.status,
+            stopped_mode=self.stopped_mode,
             system_volume=self.system_volume,
             tags=self.tags,
             updated_at=self.updated_at,
@@ -434,6 +443,7 @@ def get_instance(id: Optional[builtins.str] = None,
         spot_price_limit=pulumi.get(__ret__, 'spot_price_limit'),
         spot_strategy=pulumi.get(__ret__, 'spot_strategy'),
         status=pulumi.get(__ret__, 'status'),
+        stopped_mode=pulumi.get(__ret__, 'stopped_mode'),
         system_volume=pulumi.get(__ret__, 'system_volume'),
         tags=pulumi.get(__ret__, 'tags'),
         updated_at=pulumi.get(__ret__, 'updated_at'),
@@ -483,6 +493,7 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         spot_price_limit=pulumi.get(__response__, 'spot_price_limit'),
         spot_strategy=pulumi.get(__response__, 'spot_strategy'),
         status=pulumi.get(__response__, 'status'),
+        stopped_mode=pulumi.get(__response__, 'stopped_mode'),
         system_volume=pulumi.get(__response__, 'system_volume'),
         tags=pulumi.get(__response__, 'tags'),
         updated_at=pulumi.get(__response__, 'updated_at'),

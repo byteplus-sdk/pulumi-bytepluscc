@@ -122,6 +122,12 @@ type Instance struct {
 	// STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
 	// DELETING：删除中。
 	Status pulumi.StringOutput `pulumi:"status"`
+	// StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	StoppedMode pulumi.StringOutput `pulumi:"stoppedMode"`
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolumeOutput `pulumi:"systemVolume"`
 	Tags         InstanceTagArrayOutput     `pulumi:"tags"`
@@ -285,6 +291,12 @@ type instanceState struct {
 	// STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
 	// DELETING：删除中。
 	Status *string `pulumi:"status"`
+	// StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	StoppedMode *string `pulumi:"stoppedMode"`
 	// 实例的系统卷。
 	SystemVolume *InstanceSystemVolume `pulumi:"systemVolume"`
 	Tags         []InstanceTag         `pulumi:"tags"`
@@ -401,6 +413,12 @@ type InstanceState struct {
 	// STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
 	// DELETING：删除中。
 	Status pulumi.StringPtrInput
+	// StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	StoppedMode pulumi.StringPtrInput
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolumePtrInput
 	Tags         InstanceTagArrayInput
@@ -513,6 +531,12 @@ type instanceArgs struct {
 	// STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
 	// DELETING：删除中。
 	Status *string `pulumi:"status"`
+	// StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	StoppedMode *string `pulumi:"stoppedMode"`
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolume `pulumi:"systemVolume"`
 	Tags         []InstanceTag        `pulumi:"tags"`
@@ -620,6 +644,12 @@ type InstanceArgs struct {
 	// STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
 	// DELETING：删除中。
 	Status pulumi.StringPtrInput
+	// StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	StoppedMode pulumi.StringPtrInput
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolumeInput
 	Tags         InstanceTagArrayInput
@@ -914,6 +944,15 @@ func (o InstanceOutput) SpotStrategy() pulumi.StringOutput {
 // DELETING：删除中。
 func (o InstanceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+func (o InstanceOutput) StoppedMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StoppedMode }).(pulumi.StringOutput)
 }
 
 // 实例的系统卷。

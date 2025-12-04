@@ -20,6 +20,21 @@ export const getDbAccounts: typeof import("./getDbAccounts").getDbAccounts = nul
 export const getDbAccountsOutput: typeof import("./getDbAccounts").getDbAccountsOutput = null as any;
 utilities.lazyLoad(exports, ["getDbAccounts","getDbAccountsOutput"], () => require("./getDbAccounts"));
 
+export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
+export const getInstance: typeof import("./getInstance").getInstance = null as any;
+export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getInstance","getInstanceOutput"], () => require("./getInstance"));
+
+export { GetInstancesResult } from "./getInstances";
+export const getInstances: typeof import("./getInstances").getInstances = null as any;
+export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
+
+export { InstanceArgs, InstanceState } from "./instance";
+export type Instance = import("./instance").Instance;
+export const Instance: typeof import("./instance").Instance = null as any;
+utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:rdsmysql/dbAccount:DbAccount":
                 return new DbAccount(name, <any>undefined, { urn })
+            case "bytepluscc:rdsmysql/instance:Instance":
+                return new Instance(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/dbAccount", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instance", _module)
