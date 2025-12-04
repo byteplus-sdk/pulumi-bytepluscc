@@ -60,6 +60,7 @@ export interface GetInstanceResult {
     readonly spotPriceLimit: number;
     readonly spotStrategy: string;
     readonly status: string;
+    readonly stoppedMode: string;
     readonly systemVolume: outputs.ecs.GetInstanceSystemVolume;
     readonly tags: outputs.ecs.GetInstanceTag[];
     readonly updatedAt: string;

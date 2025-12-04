@@ -229,6 +229,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdsmysql/instance",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "storageebs/volume",
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {

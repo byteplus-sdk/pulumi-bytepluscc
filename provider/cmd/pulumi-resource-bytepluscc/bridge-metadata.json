@@ -393,6 +393,49 @@
                     }
                 }
             },
+            "bytepluscc_rdsmysql_instance": {
+                "current": "bytepluscc:rdsmysql/instance:Instance",
+                "fields": {
+                    "address_objects": {
+                        "maxItemsOne": false
+                    },
+                    "allow_list_ids": {
+                        "maxItemsOne": false
+                    },
+                    "disaster_recovery_instances": {
+                        "maxItemsOne": false
+                    },
+                    "endpoints": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "connection_info_tags": {
+                                    "maxItemsOne": false
+                                },
+                                "read_only_node_weight": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "maintenance_window": {
+                        "fields": {
+                            "day_of_week": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "nodes": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "zone_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_storageebs_volume": {
                 "current": "bytepluscc:storageebs/volume:Volume",
                 "fields": {
@@ -1077,6 +1120,57 @@
             },
             "bytepluscc_rdsmysql_db_accounts": {
                 "current": "bytepluscc:rdsmysql/getDbAccounts:getDbAccounts",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_instance": {
+                "current": "bytepluscc:rdsmysql/getInstance:getInstance",
+                "fields": {
+                    "address_objects": {
+                        "maxItemsOne": false
+                    },
+                    "allow_list_ids": {
+                        "maxItemsOne": false
+                    },
+                    "disaster_recovery_instances": {
+                        "maxItemsOne": false
+                    },
+                    "endpoints": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "connection_info_tags": {
+                                    "maxItemsOne": false
+                                },
+                                "read_only_node_weight": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "maintenance_window": {
+                        "fields": {
+                            "day_of_week": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "nodes": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "zone_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_instances": {
+                "current": "bytepluscc:rdsmysql/getInstances:getInstances",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

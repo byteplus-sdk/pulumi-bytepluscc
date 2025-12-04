@@ -57,6 +57,7 @@ public final class GetInstanceResult {
     private Double spotPriceLimit;
     private String spotStrategy;
     private String status;
+    private String stoppedMode;
     private GetInstanceSystemVolume systemVolume;
     private List<GetInstanceTag> tags;
     private String updatedAt;
@@ -164,6 +165,9 @@ public final class GetInstanceResult {
     public String status() {
         return this.status;
     }
+    public String stoppedMode() {
+        return this.stoppedMode;
+    }
     public GetInstanceSystemVolume systemVolume() {
         return this.systemVolume;
     }
@@ -225,6 +229,7 @@ public final class GetInstanceResult {
         private Double spotPriceLimit;
         private String spotStrategy;
         private String status;
+        private String stoppedMode;
         private GetInstanceSystemVolume systemVolume;
         private List<GetInstanceTag> tags;
         private String updatedAt;
@@ -267,6 +272,7 @@ public final class GetInstanceResult {
     	      this.spotPriceLimit = defaults.spotPriceLimit;
     	      this.spotStrategy = defaults.spotStrategy;
     	      this.status = defaults.status;
+    	      this.stoppedMode = defaults.stoppedMode;
     	      this.systemVolume = defaults.systemVolume;
     	      this.tags = defaults.tags;
     	      this.updatedAt = defaults.updatedAt;
@@ -543,6 +549,14 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder stoppedMode(String stoppedMode) {
+            if (stoppedMode == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "stoppedMode");
+            }
+            this.stoppedMode = stoppedMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemVolume(GetInstanceSystemVolume systemVolume) {
             if (systemVolume == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "systemVolume");
@@ -628,6 +642,7 @@ public final class GetInstanceResult {
             _resultValue.spotPriceLimit = spotPriceLimit;
             _resultValue.spotStrategy = spotStrategy;
             _resultValue.status = status;
+            _resultValue.stoppedMode = stoppedMode;
             _resultValue.systemVolume = systemVolume;
             _resultValue.tags = tags;
             _resultValue.updatedAt = updatedAt;

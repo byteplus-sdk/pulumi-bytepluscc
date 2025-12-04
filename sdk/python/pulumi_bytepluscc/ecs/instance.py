@@ -52,6 +52,7 @@ class InstanceArgs:
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
+                 stopped_mode: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
                  user_data: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
@@ -123,6 +124,11 @@ class InstanceArgs:
         :param pulumi.Input[builtins.str] status: 实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中
                STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
                DELETING：删除中。
+        :param pulumi.Input[builtins.str] stopped_mode: StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+               KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+               StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+               有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
                Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
                Windows实例：脚本内容不能超过8KB，且无需Base64编码。
@@ -182,6 +188,8 @@ class InstanceArgs:
             pulumi.set(__self__, "spot_strategy", spot_strategy)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if stopped_mode is not None:
+            pulumi.set(__self__, "stopped_mode", stopped_mode)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
         if user_data is not None:
@@ -584,6 +592,22 @@ class InstanceArgs:
         pulumi.set(self, "status", value)
 
     @property
+    @pulumi.getter(name="stoppedMode")
+    def stopped_mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+        KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+        StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+        有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        """
+        return pulumi.get(self, "stopped_mode")
+
+    @stopped_mode.setter
+    def stopped_mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stopped_mode", value)
+
+    @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]]:
         return pulumi.get(self, "tags")
@@ -654,6 +678,7 @@ class _InstanceState:
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
+                 stopped_mode: Optional[pulumi.Input[builtins.str]] = None,
                  system_volume: Optional[pulumi.Input['InstanceSystemVolumeArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
                  updated_at: Optional[pulumi.Input[builtins.str]] = None,
@@ -730,6 +755,11 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] status: 实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中
                STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
                DELETING：删除中。
+        :param pulumi.Input[builtins.str] stopped_mode: StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+               KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+               StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+               有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
         :param pulumi.Input['InstanceSystemVolumeArgs'] system_volume: 实例的系统卷。
         :param pulumi.Input[builtins.str] updated_at: 实例的更新时间。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
@@ -802,6 +832,8 @@ class _InstanceState:
             pulumi.set(__self__, "spot_strategy", spot_strategy)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if stopped_mode is not None:
+            pulumi.set(__self__, "stopped_mode", stopped_mode)
         if system_volume is not None:
             pulumi.set(__self__, "system_volume", system_volume)
         if tags is not None:
@@ -1234,6 +1266,22 @@ class _InstanceState:
         pulumi.set(self, "status", value)
 
     @property
+    @pulumi.getter(name="stoppedMode")
+    def stopped_mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+        KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+        StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+        有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        """
+        return pulumi.get(self, "stopped_mode")
+
+    @stopped_mode.setter
+    def stopped_mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "stopped_mode", value)
+
+    @property
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> Optional[pulumi.Input['InstanceSystemVolumeArgs']]:
         """
@@ -1339,6 +1387,7 @@ class Instance(pulumi.CustomResource):
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
+                 stopped_mode: Optional[pulumi.Input[builtins.str]] = None,
                  system_volume: Optional[pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
                  user_data: Optional[pulumi.Input[builtins.str]] = None,
@@ -1420,6 +1469,11 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] status: 实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中
                STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
                DELETING：删除中。
+        :param pulumi.Input[builtins.str] stopped_mode: StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+               KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+               StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+               有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
         :param pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']] system_volume: 实例的系统卷。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
                Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
@@ -1485,6 +1539,7 @@ class Instance(pulumi.CustomResource):
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
+                 stopped_mode: Optional[pulumi.Input[builtins.str]] = None,
                  system_volume: Optional[pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
                  user_data: Optional[pulumi.Input[builtins.str]] = None,
@@ -1535,6 +1590,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["spot_price_limit"] = spot_price_limit
             __props__.__dict__["spot_strategy"] = spot_strategy
             __props__.__dict__["status"] = status
+            __props__.__dict__["stopped_mode"] = stopped_mode
             if system_volume is None and not opts.urn:
                 raise TypeError("Missing required property 'system_volume'")
             __props__.__dict__["system_volume"] = system_volume
@@ -1591,6 +1647,7 @@ class Instance(pulumi.CustomResource):
             spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
             spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
             status: Optional[pulumi.Input[builtins.str]] = None,
+            stopped_mode: Optional[pulumi.Input[builtins.str]] = None,
             system_volume: Optional[pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
             updated_at: Optional[pulumi.Input[builtins.str]] = None,
@@ -1672,6 +1729,11 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] status: 实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中
                STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
                DELETING：删除中。
+        :param pulumi.Input[builtins.str] stopped_mode: StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+               KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+               StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+               有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
         :param pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']] system_volume: 实例的系统卷。
         :param pulumi.Input[builtins.str] updated_at: 实例的更新时间。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
@@ -1716,6 +1778,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["spot_price_limit"] = spot_price_limit
         __props__.__dict__["spot_strategy"] = spot_strategy
         __props__.__dict__["status"] = status
+        __props__.__dict__["stopped_mode"] = stopped_mode
         __props__.__dict__["system_volume"] = system_volume
         __props__.__dict__["tags"] = tags
         __props__.__dict__["updated_at"] = updated_at
@@ -2013,6 +2076,18 @@ class Instance(pulumi.CustomResource):
         DELETING：删除中。
         """
         return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="stoppedMode")
+    def stopped_mode(self) -> pulumi.Output[builtins.str]:
+        """
+        StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+        KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+        StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+        有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        """
+        return pulumi.get(self, "stopped_mode")
 
     @property
     @pulumi.getter(name="systemVolume")

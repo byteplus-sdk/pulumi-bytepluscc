@@ -462,6 +462,1945 @@ func (o DbAccountTableColumnPrivilegeTablePrivilegeArrayOutput) Index(i pulumi.I
 	}).(DbAccountTableColumnPrivilegeTablePrivilegeOutput)
 }
 
+type InstanceAddressObject struct {
+	// false：私网解析（默认）。true：私网以及公网解析。
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain *string `pulumi:"domain"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId *string `pulumi:"eipId"`
+	// IP 协议版本。取值为 IPv4。
+	InternetProtocol *string `pulumi:"internetProtocol"`
+	// IP 地址。
+	IpAddress *string `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	NetworkType *string `pulumi:"networkType"`
+	// 端口。
+	Port *string `pulumi:"port"`
+	// 子网 ID，仅对 Private 地址有效。
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// InstanceAddressObjectInput is an input type that accepts InstanceAddressObjectArgs and InstanceAddressObjectOutput values.
+// You can construct a concrete instance of `InstanceAddressObjectInput` via:
+//
+//	InstanceAddressObjectArgs{...}
+type InstanceAddressObjectInput interface {
+	pulumi.Input
+
+	ToInstanceAddressObjectOutput() InstanceAddressObjectOutput
+	ToInstanceAddressObjectOutputWithContext(context.Context) InstanceAddressObjectOutput
+}
+
+type InstanceAddressObjectArgs struct {
+	// false：私网解析（默认）。true：私网以及公网解析。
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId pulumi.StringPtrInput `pulumi:"eipId"`
+	// IP 协议版本。取值为 IPv4。
+	InternetProtocol pulumi.StringPtrInput `pulumi:"internetProtocol"`
+	// IP 地址。
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// 端口。
+	Port pulumi.StringPtrInput `pulumi:"port"`
+	// 子网 ID，仅对 Private 地址有效。
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (InstanceAddressObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceAddressObject)(nil)).Elem()
+}
+
+func (i InstanceAddressObjectArgs) ToInstanceAddressObjectOutput() InstanceAddressObjectOutput {
+	return i.ToInstanceAddressObjectOutputWithContext(context.Background())
+}
+
+func (i InstanceAddressObjectArgs) ToInstanceAddressObjectOutputWithContext(ctx context.Context) InstanceAddressObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceAddressObjectOutput)
+}
+
+// InstanceAddressObjectArrayInput is an input type that accepts InstanceAddressObjectArray and InstanceAddressObjectArrayOutput values.
+// You can construct a concrete instance of `InstanceAddressObjectArrayInput` via:
+//
+//	InstanceAddressObjectArray{ InstanceAddressObjectArgs{...} }
+type InstanceAddressObjectArrayInput interface {
+	pulumi.Input
+
+	ToInstanceAddressObjectArrayOutput() InstanceAddressObjectArrayOutput
+	ToInstanceAddressObjectArrayOutputWithContext(context.Context) InstanceAddressObjectArrayOutput
+}
+
+type InstanceAddressObjectArray []InstanceAddressObjectInput
+
+func (InstanceAddressObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceAddressObject)(nil)).Elem()
+}
+
+func (i InstanceAddressObjectArray) ToInstanceAddressObjectArrayOutput() InstanceAddressObjectArrayOutput {
+	return i.ToInstanceAddressObjectArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceAddressObjectArray) ToInstanceAddressObjectArrayOutputWithContext(ctx context.Context) InstanceAddressObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceAddressObjectArrayOutput)
+}
+
+type InstanceAddressObjectOutput struct{ *pulumi.OutputState }
+
+func (InstanceAddressObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceAddressObject)(nil)).Elem()
+}
+
+func (o InstanceAddressObjectOutput) ToInstanceAddressObjectOutput() InstanceAddressObjectOutput {
+	return o
+}
+
+func (o InstanceAddressObjectOutput) ToInstanceAddressObjectOutputWithContext(ctx context.Context) InstanceAddressObjectOutput {
+	return o
+}
+
+// false：私网解析（默认）。true：私网以及公网解析。
+func (o InstanceAddressObjectOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// 连接域名。
+func (o InstanceAddressObjectOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// EIP 的 ID，仅对 Public 地址有效。
+func (o InstanceAddressObjectOutput) EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *string { return v.EipId }).(pulumi.StringPtrOutput)
+}
+
+// IP 协议版本。取值为 IPv4。
+func (o InstanceAddressObjectOutput) InternetProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *string { return v.InternetProtocol }).(pulumi.StringPtrOutput)
+}
+
+// IP 地址。
+func (o InstanceAddressObjectOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+func (o InstanceAddressObjectOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// 端口。
+func (o InstanceAddressObjectOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+// 子网 ID，仅对 Private 地址有效。
+func (o InstanceAddressObjectOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceAddressObject) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type InstanceAddressObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceAddressObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceAddressObject)(nil)).Elem()
+}
+
+func (o InstanceAddressObjectArrayOutput) ToInstanceAddressObjectArrayOutput() InstanceAddressObjectArrayOutput {
+	return o
+}
+
+func (o InstanceAddressObjectArrayOutput) ToInstanceAddressObjectArrayOutputWithContext(ctx context.Context) InstanceAddressObjectArrayOutput {
+	return o
+}
+
+func (o InstanceAddressObjectArrayOutput) Index(i pulumi.IntInput) InstanceAddressObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceAddressObject {
+		return vs[0].([]InstanceAddressObject)[vs[1].(int)]
+	}).(InstanceAddressObjectOutput)
+}
+
+type InstanceAutoStorageScalingConfig struct {
+	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	EnableStorageAutoScale *bool `pulumi:"enableStorageAutoScale"`
+	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	StorageThreshold *int `pulumi:"storageThreshold"`
+	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	StorageUpperBound *int `pulumi:"storageUpperBound"`
+}
+
+// InstanceAutoStorageScalingConfigInput is an input type that accepts InstanceAutoStorageScalingConfigArgs and InstanceAutoStorageScalingConfigOutput values.
+// You can construct a concrete instance of `InstanceAutoStorageScalingConfigInput` via:
+//
+//	InstanceAutoStorageScalingConfigArgs{...}
+type InstanceAutoStorageScalingConfigInput interface {
+	pulumi.Input
+
+	ToInstanceAutoStorageScalingConfigOutput() InstanceAutoStorageScalingConfigOutput
+	ToInstanceAutoStorageScalingConfigOutputWithContext(context.Context) InstanceAutoStorageScalingConfigOutput
+}
+
+type InstanceAutoStorageScalingConfigArgs struct {
+	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	EnableStorageAutoScale pulumi.BoolPtrInput `pulumi:"enableStorageAutoScale"`
+	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	StorageThreshold pulumi.IntPtrInput `pulumi:"storageThreshold"`
+	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	StorageUpperBound pulumi.IntPtrInput `pulumi:"storageUpperBound"`
+}
+
+func (InstanceAutoStorageScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceAutoStorageScalingConfig)(nil)).Elem()
+}
+
+func (i InstanceAutoStorageScalingConfigArgs) ToInstanceAutoStorageScalingConfigOutput() InstanceAutoStorageScalingConfigOutput {
+	return i.ToInstanceAutoStorageScalingConfigOutputWithContext(context.Background())
+}
+
+func (i InstanceAutoStorageScalingConfigArgs) ToInstanceAutoStorageScalingConfigOutputWithContext(ctx context.Context) InstanceAutoStorageScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceAutoStorageScalingConfigOutput)
+}
+
+func (i InstanceAutoStorageScalingConfigArgs) ToInstanceAutoStorageScalingConfigPtrOutput() InstanceAutoStorageScalingConfigPtrOutput {
+	return i.ToInstanceAutoStorageScalingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceAutoStorageScalingConfigArgs) ToInstanceAutoStorageScalingConfigPtrOutputWithContext(ctx context.Context) InstanceAutoStorageScalingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceAutoStorageScalingConfigOutput).ToInstanceAutoStorageScalingConfigPtrOutputWithContext(ctx)
+}
+
+// InstanceAutoStorageScalingConfigPtrInput is an input type that accepts InstanceAutoStorageScalingConfigArgs, InstanceAutoStorageScalingConfigPtr and InstanceAutoStorageScalingConfigPtrOutput values.
+// You can construct a concrete instance of `InstanceAutoStorageScalingConfigPtrInput` via:
+//
+//	        InstanceAutoStorageScalingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceAutoStorageScalingConfigPtrInput interface {
+	pulumi.Input
+
+	ToInstanceAutoStorageScalingConfigPtrOutput() InstanceAutoStorageScalingConfigPtrOutput
+	ToInstanceAutoStorageScalingConfigPtrOutputWithContext(context.Context) InstanceAutoStorageScalingConfigPtrOutput
+}
+
+type instanceAutoStorageScalingConfigPtrType InstanceAutoStorageScalingConfigArgs
+
+func InstanceAutoStorageScalingConfigPtr(v *InstanceAutoStorageScalingConfigArgs) InstanceAutoStorageScalingConfigPtrInput {
+	return (*instanceAutoStorageScalingConfigPtrType)(v)
+}
+
+func (*instanceAutoStorageScalingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceAutoStorageScalingConfig)(nil)).Elem()
+}
+
+func (i *instanceAutoStorageScalingConfigPtrType) ToInstanceAutoStorageScalingConfigPtrOutput() InstanceAutoStorageScalingConfigPtrOutput {
+	return i.ToInstanceAutoStorageScalingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceAutoStorageScalingConfigPtrType) ToInstanceAutoStorageScalingConfigPtrOutputWithContext(ctx context.Context) InstanceAutoStorageScalingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceAutoStorageScalingConfigPtrOutput)
+}
+
+type InstanceAutoStorageScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (InstanceAutoStorageScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceAutoStorageScalingConfig)(nil)).Elem()
+}
+
+func (o InstanceAutoStorageScalingConfigOutput) ToInstanceAutoStorageScalingConfigOutput() InstanceAutoStorageScalingConfigOutput {
+	return o
+}
+
+func (o InstanceAutoStorageScalingConfigOutput) ToInstanceAutoStorageScalingConfigOutputWithContext(ctx context.Context) InstanceAutoStorageScalingConfigOutput {
+	return o
+}
+
+func (o InstanceAutoStorageScalingConfigOutput) ToInstanceAutoStorageScalingConfigPtrOutput() InstanceAutoStorageScalingConfigPtrOutput {
+	return o.ToInstanceAutoStorageScalingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceAutoStorageScalingConfigOutput) ToInstanceAutoStorageScalingConfigPtrOutputWithContext(ctx context.Context) InstanceAutoStorageScalingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceAutoStorageScalingConfig) *InstanceAutoStorageScalingConfig {
+		return &v
+	}).(InstanceAutoStorageScalingConfigPtrOutput)
+}
+
+// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+func (o InstanceAutoStorageScalingConfigOutput) EnableStorageAutoScale() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *bool { return v.EnableStorageAutoScale }).(pulumi.BoolPtrOutput)
+}
+
+// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+func (o InstanceAutoStorageScalingConfigOutput) StorageThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *int { return v.StorageThreshold }).(pulumi.IntPtrOutput)
+}
+
+// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+func (o InstanceAutoStorageScalingConfigOutput) StorageUpperBound() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *int { return v.StorageUpperBound }).(pulumi.IntPtrOutput)
+}
+
+type InstanceAutoStorageScalingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceAutoStorageScalingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceAutoStorageScalingConfig)(nil)).Elem()
+}
+
+func (o InstanceAutoStorageScalingConfigPtrOutput) ToInstanceAutoStorageScalingConfigPtrOutput() InstanceAutoStorageScalingConfigPtrOutput {
+	return o
+}
+
+func (o InstanceAutoStorageScalingConfigPtrOutput) ToInstanceAutoStorageScalingConfigPtrOutputWithContext(ctx context.Context) InstanceAutoStorageScalingConfigPtrOutput {
+	return o
+}
+
+func (o InstanceAutoStorageScalingConfigPtrOutput) Elem() InstanceAutoStorageScalingConfigOutput {
+	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) InstanceAutoStorageScalingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceAutoStorageScalingConfig
+		return ret
+	}).(InstanceAutoStorageScalingConfigOutput)
+}
+
+// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+func (o InstanceAutoStorageScalingConfigPtrOutput) EnableStorageAutoScale() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableStorageAutoScale
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+func (o InstanceAutoStorageScalingConfigPtrOutput) StorageThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.StorageThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+func (o InstanceAutoStorageScalingConfigPtrOutput) StorageUpperBound() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.StorageUpperBound
+	}).(pulumi.IntPtrOutput)
+}
+
+type InstanceChargeDetail struct {
+	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	AutoRenew *bool `pulumi:"autoRenew"`
+	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeEndTime *string `pulumi:"chargeEndTime"`
+	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeStartTime *string `pulumi:"chargeStartTime"`
+	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	ChargeStatus *string `pulumi:"chargeStatus"`
+	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	ChargeType string `pulumi:"chargeType"`
+	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	Number *int `pulumi:"number"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueTime *string `pulumi:"overdueTime"`
+	// 预付费场景下的购买时长。
+	Period *int `pulumi:"period"`
+	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	PeriodUnit *string `pulumi:"periodUnit"`
+	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyEndTime *string `pulumi:"tempModifyEndTime"`
+	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyStartTime *string `pulumi:"tempModifyStartTime"`
+}
+
+// InstanceChargeDetailInput is an input type that accepts InstanceChargeDetailArgs and InstanceChargeDetailOutput values.
+// You can construct a concrete instance of `InstanceChargeDetailInput` via:
+//
+//	InstanceChargeDetailArgs{...}
+type InstanceChargeDetailInput interface {
+	pulumi.Input
+
+	ToInstanceChargeDetailOutput() InstanceChargeDetailOutput
+	ToInstanceChargeDetailOutputWithContext(context.Context) InstanceChargeDetailOutput
+}
+
+type InstanceChargeDetailArgs struct {
+	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
+	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeEndTime pulumi.StringPtrInput `pulumi:"chargeEndTime"`
+	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
+	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
+	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	Number pulumi.IntPtrInput `pulumi:"number"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
+	// 预付费场景下的购买时长。
+	Period pulumi.IntPtrInput `pulumi:"period"`
+	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
+	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyEndTime pulumi.StringPtrInput `pulumi:"tempModifyEndTime"`
+	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyStartTime pulumi.StringPtrInput `pulumi:"tempModifyStartTime"`
+}
+
+func (InstanceChargeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceChargeDetail)(nil)).Elem()
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailOutput() InstanceChargeDetailOutput {
+	return i.ToInstanceChargeDetailOutputWithContext(context.Background())
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailOutputWithContext(ctx context.Context) InstanceChargeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeDetailOutput)
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return i.ToInstanceChargeDetailPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceChargeDetailArgs) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeDetailOutput).ToInstanceChargeDetailPtrOutputWithContext(ctx)
+}
+
+// InstanceChargeDetailPtrInput is an input type that accepts InstanceChargeDetailArgs, InstanceChargeDetailPtr and InstanceChargeDetailPtrOutput values.
+// You can construct a concrete instance of `InstanceChargeDetailPtrInput` via:
+//
+//	        InstanceChargeDetailArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceChargeDetailPtrInput interface {
+	pulumi.Input
+
+	ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput
+	ToInstanceChargeDetailPtrOutputWithContext(context.Context) InstanceChargeDetailPtrOutput
+}
+
+type instanceChargeDetailPtrType InstanceChargeDetailArgs
+
+func InstanceChargeDetailPtr(v *InstanceChargeDetailArgs) InstanceChargeDetailPtrInput {
+	return (*instanceChargeDetailPtrType)(v)
+}
+
+func (*instanceChargeDetailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceChargeDetail)(nil)).Elem()
+}
+
+func (i *instanceChargeDetailPtrType) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return i.ToInstanceChargeDetailPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceChargeDetailPtrType) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeDetailPtrOutput)
+}
+
+type InstanceChargeDetailOutput struct{ *pulumi.OutputState }
+
+func (InstanceChargeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceChargeDetail)(nil)).Elem()
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailOutput() InstanceChargeDetailOutput {
+	return o
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailOutputWithContext(ctx context.Context) InstanceChargeDetailOutput {
+	return o
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return o.ToInstanceChargeDetailPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceChargeDetailOutput) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceChargeDetail) *InstanceChargeDetail {
+		return &v
+	}).(InstanceChargeDetailPtrOutput)
+}
+
+// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+func (o InstanceChargeDetailOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
+}
+
+// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailOutput) ChargeEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeEndTime }).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailOutput) ChargeStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+func (o InstanceChargeDetailOutput) ChargeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
+}
+
+// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+func (o InstanceChargeDetailOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// 实例购买数量。取值范围为 1~50。默认值为 1。
+func (o InstanceChargeDetailOutput) Number() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *int { return v.Number }).(pulumi.IntPtrOutput)
+}
+
+// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
+}
+
+// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailOutput) OverdueTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
+}
+
+// 预付费场景下的购买时长。
+func (o InstanceChargeDetailOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *int { return v.Period }).(pulumi.IntPtrOutput)
+}
+
+// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+func (o InstanceChargeDetailOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
+}
+
+// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailOutput) TempModifyEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.TempModifyEndTime }).(pulumi.StringPtrOutput)
+}
+
+// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailOutput) TempModifyStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.TempModifyStartTime }).(pulumi.StringPtrOutput)
+}
+
+type InstanceChargeDetailPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceChargeDetailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceChargeDetail)(nil)).Elem()
+}
+
+func (o InstanceChargeDetailPtrOutput) ToInstanceChargeDetailPtrOutput() InstanceChargeDetailPtrOutput {
+	return o
+}
+
+func (o InstanceChargeDetailPtrOutput) ToInstanceChargeDetailPtrOutputWithContext(ctx context.Context) InstanceChargeDetailPtrOutput {
+	return o
+}
+
+func (o InstanceChargeDetailPtrOutput) Elem() InstanceChargeDetailOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) InstanceChargeDetail {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceChargeDetail
+		return ret
+	}).(InstanceChargeDetailOutput)
+}
+
+// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+func (o InstanceChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenew
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+func (o InstanceChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+func (o InstanceChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例购买数量。取值范围为 1~50。默认值为 1。
+func (o InstanceChargeDetailPtrOutput) Number() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Number
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OverdueReclaimTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OverdueTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 预付费场景下的购买时长。
+func (o InstanceChargeDetailPtrOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Period
+	}).(pulumi.IntPtrOutput)
+}
+
+// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+func (o InstanceChargeDetailPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeriodUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailPtrOutput) TempModifyEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TempModifyEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o InstanceChargeDetailPtrOutput) TempModifyStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TempModifyStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceDisasterRecoveryInstance struct {
+	// 主实例与灾备实例之间同步任务的 ID。
+	DtsTaskId *string `pulumi:"dtsTaskId"`
+	// 主实例与灾备实例之间同步任务的名称。
+	DtsTaskName *string `pulumi:"dtsTaskName"`
+	// 主实例与灾备实例之间同步任务的状态。
+	DtsTaskStatus *string `pulumi:"dtsTaskStatus"`
+	// 灾备实例的 ID。
+	InstanceId *string `pulumi:"instanceId"`
+	// 灾备实例的名称。
+	InstanceName *string `pulumi:"instanceName"`
+	// 灾备实例与主实例之间的时延。
+	SecondsBehindMaster *int `pulumi:"secondsBehindMaster"`
+}
+
+// InstanceDisasterRecoveryInstanceInput is an input type that accepts InstanceDisasterRecoveryInstanceArgs and InstanceDisasterRecoveryInstanceOutput values.
+// You can construct a concrete instance of `InstanceDisasterRecoveryInstanceInput` via:
+//
+//	InstanceDisasterRecoveryInstanceArgs{...}
+type InstanceDisasterRecoveryInstanceInput interface {
+	pulumi.Input
+
+	ToInstanceDisasterRecoveryInstanceOutput() InstanceDisasterRecoveryInstanceOutput
+	ToInstanceDisasterRecoveryInstanceOutputWithContext(context.Context) InstanceDisasterRecoveryInstanceOutput
+}
+
+type InstanceDisasterRecoveryInstanceArgs struct {
+	// 主实例与灾备实例之间同步任务的 ID。
+	DtsTaskId pulumi.StringPtrInput `pulumi:"dtsTaskId"`
+	// 主实例与灾备实例之间同步任务的名称。
+	DtsTaskName pulumi.StringPtrInput `pulumi:"dtsTaskName"`
+	// 主实例与灾备实例之间同步任务的状态。
+	DtsTaskStatus pulumi.StringPtrInput `pulumi:"dtsTaskStatus"`
+	// 灾备实例的 ID。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 灾备实例的名称。
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// 灾备实例与主实例之间的时延。
+	SecondsBehindMaster pulumi.IntPtrInput `pulumi:"secondsBehindMaster"`
+}
+
+func (InstanceDisasterRecoveryInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (i InstanceDisasterRecoveryInstanceArgs) ToInstanceDisasterRecoveryInstanceOutput() InstanceDisasterRecoveryInstanceOutput {
+	return i.ToInstanceDisasterRecoveryInstanceOutputWithContext(context.Background())
+}
+
+func (i InstanceDisasterRecoveryInstanceArgs) ToInstanceDisasterRecoveryInstanceOutputWithContext(ctx context.Context) InstanceDisasterRecoveryInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceDisasterRecoveryInstanceOutput)
+}
+
+// InstanceDisasterRecoveryInstanceArrayInput is an input type that accepts InstanceDisasterRecoveryInstanceArray and InstanceDisasterRecoveryInstanceArrayOutput values.
+// You can construct a concrete instance of `InstanceDisasterRecoveryInstanceArrayInput` via:
+//
+//	InstanceDisasterRecoveryInstanceArray{ InstanceDisasterRecoveryInstanceArgs{...} }
+type InstanceDisasterRecoveryInstanceArrayInput interface {
+	pulumi.Input
+
+	ToInstanceDisasterRecoveryInstanceArrayOutput() InstanceDisasterRecoveryInstanceArrayOutput
+	ToInstanceDisasterRecoveryInstanceArrayOutputWithContext(context.Context) InstanceDisasterRecoveryInstanceArrayOutput
+}
+
+type InstanceDisasterRecoveryInstanceArray []InstanceDisasterRecoveryInstanceInput
+
+func (InstanceDisasterRecoveryInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (i InstanceDisasterRecoveryInstanceArray) ToInstanceDisasterRecoveryInstanceArrayOutput() InstanceDisasterRecoveryInstanceArrayOutput {
+	return i.ToInstanceDisasterRecoveryInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceDisasterRecoveryInstanceArray) ToInstanceDisasterRecoveryInstanceArrayOutputWithContext(ctx context.Context) InstanceDisasterRecoveryInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceDisasterRecoveryInstanceArrayOutput)
+}
+
+type InstanceDisasterRecoveryInstanceOutput struct{ *pulumi.OutputState }
+
+func (InstanceDisasterRecoveryInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (o InstanceDisasterRecoveryInstanceOutput) ToInstanceDisasterRecoveryInstanceOutput() InstanceDisasterRecoveryInstanceOutput {
+	return o
+}
+
+func (o InstanceDisasterRecoveryInstanceOutput) ToInstanceDisasterRecoveryInstanceOutputWithContext(ctx context.Context) InstanceDisasterRecoveryInstanceOutput {
+	return o
+}
+
+// 主实例与灾备实例之间同步任务的 ID。
+func (o InstanceDisasterRecoveryInstanceOutput) DtsTaskId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.DtsTaskId }).(pulumi.StringPtrOutput)
+}
+
+// 主实例与灾备实例之间同步任务的名称。
+func (o InstanceDisasterRecoveryInstanceOutput) DtsTaskName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.DtsTaskName }).(pulumi.StringPtrOutput)
+}
+
+// 主实例与灾备实例之间同步任务的状态。
+func (o InstanceDisasterRecoveryInstanceOutput) DtsTaskStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.DtsTaskStatus }).(pulumi.StringPtrOutput)
+}
+
+// 灾备实例的 ID。
+func (o InstanceDisasterRecoveryInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 灾备实例的名称。
+func (o InstanceDisasterRecoveryInstanceOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// 灾备实例与主实例之间的时延。
+func (o InstanceDisasterRecoveryInstanceOutput) SecondsBehindMaster() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *int { return v.SecondsBehindMaster }).(pulumi.IntPtrOutput)
+}
+
+type InstanceDisasterRecoveryInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceDisasterRecoveryInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (o InstanceDisasterRecoveryInstanceArrayOutput) ToInstanceDisasterRecoveryInstanceArrayOutput() InstanceDisasterRecoveryInstanceArrayOutput {
+	return o
+}
+
+func (o InstanceDisasterRecoveryInstanceArrayOutput) ToInstanceDisasterRecoveryInstanceArrayOutputWithContext(ctx context.Context) InstanceDisasterRecoveryInstanceArrayOutput {
+	return o
+}
+
+func (o InstanceDisasterRecoveryInstanceArrayOutput) Index(i pulumi.IntInput) InstanceDisasterRecoveryInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceDisasterRecoveryInstance {
+		return vs[0].([]InstanceDisasterRecoveryInstance)[vs[1].(int)]
+	}).(InstanceDisasterRecoveryInstanceOutput)
+}
+
+type InstanceEndpoint struct {
+	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	AutoAddNewNodes *string `pulumi:"autoAddNewNodes"`
+	// 连接终端标签。
+	ConnectionInfoTags []string `pulumi:"connectionInfoTags"`
+	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	ConnectionMode *string `pulumi:"connectionMode"`
+	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	ConnectionPoolType *string `pulumi:"connectionPoolType"`
+	// 连接终端的描述信息。
+	Description *string `pulumi:"description"`
+	// 是否启用连接保持。取值：true：是。false：否。
+	EnableConnectionPersistent *bool `pulumi:"enableConnectionPersistent"`
+	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	EnableReadOnly *string `pulumi:"enableReadOnly"`
+	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	EnableReadWriteSplitting *string `pulumi:"enableReadWriteSplitting"`
+	// 实例连接终端 ID。
+	EndpointId *string `pulumi:"endpointId"`
+	// 实例连接终端名称。
+	EndpointName *string `pulumi:"endpointName"`
+	// 终端类型。取值为 Custom，自定义终端。
+	EndpointType *string `pulumi:"endpointType"`
+	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	IdleConnectionReclaim *bool `pulumi:"idleConnectionReclaim"`
+	// 是否开启事务分离。取值：true：是。false：否。
+	ImplicitTransSplit *bool `pulumi:"implicitTransSplit"`
+	// 是否开启主节点路由。取值：true：是。false：否。
+	MasterNodeRouting *bool `pulumi:"masterNodeRouting"`
+	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	MasterProtectorTimeout *int `pulumi:"masterProtectorTimeout"`
+	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	MultiStatementsMode *string `pulumi:"multiStatementsMode"`
+	// 是否开启过载保护。取值：true：是。false：否。
+	OverloadProtection *bool `pulumi:"overloadProtection"`
+	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	ReadOnlyNodeDistributionType *string `pulumi:"readOnlyNodeDistributionType"`
+	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	ReadOnlyNodeMaxDelayTime *int                                 `pulumi:"readOnlyNodeMaxDelayTime"`
+	ReadOnlyNodeWeights      []InstanceEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
+	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	ReadWriteMode *string `pulumi:"readWriteMode"`
+}
+
+// InstanceEndpointInput is an input type that accepts InstanceEndpointArgs and InstanceEndpointOutput values.
+// You can construct a concrete instance of `InstanceEndpointInput` via:
+//
+//	InstanceEndpointArgs{...}
+type InstanceEndpointInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointOutput() InstanceEndpointOutput
+	ToInstanceEndpointOutputWithContext(context.Context) InstanceEndpointOutput
+}
+
+type InstanceEndpointArgs struct {
+	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	AutoAddNewNodes pulumi.StringPtrInput `pulumi:"autoAddNewNodes"`
+	// 连接终端标签。
+	ConnectionInfoTags pulumi.StringArrayInput `pulumi:"connectionInfoTags"`
+	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	ConnectionMode pulumi.StringPtrInput `pulumi:"connectionMode"`
+	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	ConnectionPoolType pulumi.StringPtrInput `pulumi:"connectionPoolType"`
+	// 连接终端的描述信息。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 是否启用连接保持。取值：true：是。false：否。
+	EnableConnectionPersistent pulumi.BoolPtrInput `pulumi:"enableConnectionPersistent"`
+	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	EnableReadOnly pulumi.StringPtrInput `pulumi:"enableReadOnly"`
+	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	EnableReadWriteSplitting pulumi.StringPtrInput `pulumi:"enableReadWriteSplitting"`
+	// 实例连接终端 ID。
+	EndpointId pulumi.StringPtrInput `pulumi:"endpointId"`
+	// 实例连接终端名称。
+	EndpointName pulumi.StringPtrInput `pulumi:"endpointName"`
+	// 终端类型。取值为 Custom，自定义终端。
+	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
+	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	IdleConnectionReclaim pulumi.BoolPtrInput `pulumi:"idleConnectionReclaim"`
+	// 是否开启事务分离。取值：true：是。false：否。
+	ImplicitTransSplit pulumi.BoolPtrInput `pulumi:"implicitTransSplit"`
+	// 是否开启主节点路由。取值：true：是。false：否。
+	MasterNodeRouting pulumi.BoolPtrInput `pulumi:"masterNodeRouting"`
+	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	MasterProtectorTimeout pulumi.IntPtrInput `pulumi:"masterProtectorTimeout"`
+	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	MultiStatementsMode pulumi.StringPtrInput `pulumi:"multiStatementsMode"`
+	// 是否开启过载保护。取值：true：是。false：否。
+	OverloadProtection pulumi.BoolPtrInput `pulumi:"overloadProtection"`
+	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	ReadOnlyNodeDistributionType pulumi.StringPtrInput `pulumi:"readOnlyNodeDistributionType"`
+	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	ReadOnlyNodeMaxDelayTime pulumi.IntPtrInput                           `pulumi:"readOnlyNodeMaxDelayTime"`
+	ReadOnlyNodeWeights      InstanceEndpointReadOnlyNodeWeightArrayInput `pulumi:"readOnlyNodeWeights"`
+	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	ReadWriteMode pulumi.StringPtrInput `pulumi:"readWriteMode"`
+}
+
+func (InstanceEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpoint)(nil)).Elem()
+}
+
+func (i InstanceEndpointArgs) ToInstanceEndpointOutput() InstanceEndpointOutput {
+	return i.ToInstanceEndpointOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointArgs) ToInstanceEndpointOutputWithContext(ctx context.Context) InstanceEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointOutput)
+}
+
+// InstanceEndpointArrayInput is an input type that accepts InstanceEndpointArray and InstanceEndpointArrayOutput values.
+// You can construct a concrete instance of `InstanceEndpointArrayInput` via:
+//
+//	InstanceEndpointArray{ InstanceEndpointArgs{...} }
+type InstanceEndpointArrayInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointArrayOutput() InstanceEndpointArrayOutput
+	ToInstanceEndpointArrayOutputWithContext(context.Context) InstanceEndpointArrayOutput
+}
+
+type InstanceEndpointArray []InstanceEndpointInput
+
+func (InstanceEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpoint)(nil)).Elem()
+}
+
+func (i InstanceEndpointArray) ToInstanceEndpointArrayOutput() InstanceEndpointArrayOutput {
+	return i.ToInstanceEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointArray) ToInstanceEndpointArrayOutputWithContext(ctx context.Context) InstanceEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointArrayOutput)
+}
+
+type InstanceEndpointOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpoint)(nil)).Elem()
+}
+
+func (o InstanceEndpointOutput) ToInstanceEndpointOutput() InstanceEndpointOutput {
+	return o
+}
+
+func (o InstanceEndpointOutput) ToInstanceEndpointOutputWithContext(ctx context.Context) InstanceEndpointOutput {
+	return o
+}
+
+// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+func (o InstanceEndpointOutput) AutoAddNewNodes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.AutoAddNewNodes }).(pulumi.StringPtrOutput)
+}
+
+// 连接终端标签。
+func (o InstanceEndpointOutput) ConnectionInfoTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceEndpoint) []string { return v.ConnectionInfoTags }).(pulumi.StringArrayOutput)
+}
+
+// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+func (o InstanceEndpointOutput) ConnectionMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ConnectionMode }).(pulumi.StringPtrOutput)
+}
+
+// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+func (o InstanceEndpointOutput) ConnectionPoolType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ConnectionPoolType }).(pulumi.StringPtrOutput)
+}
+
+// 连接终端的描述信息。
+func (o InstanceEndpointOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 是否启用连接保持。取值：true：是。false：否。
+func (o InstanceEndpointOutput) EnableConnectionPersistent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.EnableConnectionPersistent }).(pulumi.BoolPtrOutput)
+}
+
+// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+func (o InstanceEndpointOutput) EnableReadOnly() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EnableReadOnly }).(pulumi.StringPtrOutput)
+}
+
+// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+func (o InstanceEndpointOutput) EnableReadWriteSplitting() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EnableReadWriteSplitting }).(pulumi.StringPtrOutput)
+}
+
+// 实例连接终端 ID。
+func (o InstanceEndpointOutput) EndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointId }).(pulumi.StringPtrOutput)
+}
+
+// 实例连接终端名称。
+func (o InstanceEndpointOutput) EndpointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointName }).(pulumi.StringPtrOutput)
+}
+
+// 终端类型。取值为 Custom，自定义终端。
+func (o InstanceEndpointOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
+}
+
+// 空闲连接回收功能是否开启。true：开启。false：不开启。
+func (o InstanceEndpointOutput) IdleConnectionReclaim() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.IdleConnectionReclaim }).(pulumi.BoolPtrOutput)
+}
+
+// 是否开启事务分离。取值：true：是。false：否。
+func (o InstanceEndpointOutput) ImplicitTransSplit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.ImplicitTransSplit }).(pulumi.BoolPtrOutput)
+}
+
+// 是否开启主节点路由。取值：true：是。false：否。
+func (o InstanceEndpointOutput) MasterNodeRouting() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.MasterNodeRouting }).(pulumi.BoolPtrOutput)
+}
+
+// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+func (o InstanceEndpointOutput) MasterProtectorTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *int { return v.MasterProtectorTimeout }).(pulumi.IntPtrOutput)
+}
+
+// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+func (o InstanceEndpointOutput) MultiStatementsMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.MultiStatementsMode }).(pulumi.StringPtrOutput)
+}
+
+// 是否开启过载保护。取值：true：是。false：否。
+func (o InstanceEndpointOutput) OverloadProtection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.OverloadProtection }).(pulumi.BoolPtrOutput)
+}
+
+// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+func (o InstanceEndpointOutput) ReadOnlyNodeDistributionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ReadOnlyNodeDistributionType }).(pulumi.StringPtrOutput)
+}
+
+// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+func (o InstanceEndpointOutput) ReadOnlyNodeMaxDelayTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *int { return v.ReadOnlyNodeMaxDelayTime }).(pulumi.IntPtrOutput)
+}
+
+func (o InstanceEndpointOutput) ReadOnlyNodeWeights() InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o.ApplyT(func(v InstanceEndpoint) []InstanceEndpointReadOnlyNodeWeight { return v.ReadOnlyNodeWeights }).(InstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+// 读写模式：ReadWrite：读写。ReadOnly：只读。
+func (o InstanceEndpointOutput) ReadWriteMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ReadWriteMode }).(pulumi.StringPtrOutput)
+}
+
+type InstanceEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpoint)(nil)).Elem()
+}
+
+func (o InstanceEndpointArrayOutput) ToInstanceEndpointArrayOutput() InstanceEndpointArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointArrayOutput) ToInstanceEndpointArrayOutputWithContext(ctx context.Context) InstanceEndpointArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointArrayOutput) Index(i pulumi.IntInput) InstanceEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpoint {
+		return vs[0].([]InstanceEndpoint)[vs[1].(int)]
+	}).(InstanceEndpointOutput)
+}
+
+type InstanceEndpointReadOnlyNodeWeight struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId *string `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType *string `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。
+	Weight *int `pulumi:"weight"`
+}
+
+// InstanceEndpointReadOnlyNodeWeightInput is an input type that accepts InstanceEndpointReadOnlyNodeWeightArgs and InstanceEndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `InstanceEndpointReadOnlyNodeWeightInput` via:
+//
+//	InstanceEndpointReadOnlyNodeWeightArgs{...}
+type InstanceEndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointReadOnlyNodeWeightOutput() InstanceEndpointReadOnlyNodeWeightOutput
+	ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Context) InstanceEndpointReadOnlyNodeWeightOutput
+}
+
+type InstanceEndpointReadOnlyNodeWeightArgs struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (InstanceEndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArgs) ToInstanceEndpointReadOnlyNodeWeightOutput() InstanceEndpointReadOnlyNodeWeightOutput {
+	return i.ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArgs) ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+// InstanceEndpointReadOnlyNodeWeightArrayInput is an input type that accepts InstanceEndpointReadOnlyNodeWeightArray and InstanceEndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `InstanceEndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	InstanceEndpointReadOnlyNodeWeightArray{ InstanceEndpointReadOnlyNodeWeightArgs{...} }
+type InstanceEndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToInstanceEndpointReadOnlyNodeWeightArrayOutput() InstanceEndpointReadOnlyNodeWeightArrayOutput
+	ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) InstanceEndpointReadOnlyNodeWeightArrayOutput
+}
+
+type InstanceEndpointReadOnlyNodeWeightArray []InstanceEndpointReadOnlyNodeWeightInput
+
+func (InstanceEndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArray) ToInstanceEndpointReadOnlyNodeWeightArrayOutput() InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceEndpointReadOnlyNodeWeightArray) ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type InstanceEndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightOutput) ToInstanceEndpointReadOnlyNodeWeightOutput() InstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightOutput) ToInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// 只读节点需要传入 NodeId，主节点无需传入。
+func (o InstanceEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// 节点类型。Primary：主节点。ReadOnly：只读节点。
+func (o InstanceEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// 节点的读权重，以 100 递增，最大值为 10000。
+func (o InstanceEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type InstanceEndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceEndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightArrayOutput) ToInstanceEndpointReadOnlyNodeWeightArrayOutput() InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightArrayOutput) ToInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) InstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o InstanceEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) InstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceEndpointReadOnlyNodeWeight {
+		return vs[0].([]InstanceEndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(InstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+type InstanceMaintenanceWindow struct {
+	// 可维护周期粒度，取值为 Week，周。
+	DayKind *string `pulumi:"dayKind"`
+	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	DayOfWeeks []string `pulumi:"dayOfWeeks"`
+	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	MaintenanceTime *string `pulumi:"maintenanceTime"`
+}
+
+// InstanceMaintenanceWindowInput is an input type that accepts InstanceMaintenanceWindowArgs and InstanceMaintenanceWindowOutput values.
+// You can construct a concrete instance of `InstanceMaintenanceWindowInput` via:
+//
+//	InstanceMaintenanceWindowArgs{...}
+type InstanceMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToInstanceMaintenanceWindowOutput() InstanceMaintenanceWindowOutput
+	ToInstanceMaintenanceWindowOutputWithContext(context.Context) InstanceMaintenanceWindowOutput
+}
+
+type InstanceMaintenanceWindowArgs struct {
+	// 可维护周期粒度，取值为 Week，周。
+	DayKind pulumi.StringPtrInput `pulumi:"dayKind"`
+	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	DayOfWeeks pulumi.StringArrayInput `pulumi:"dayOfWeeks"`
+	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	MaintenanceTime pulumi.StringPtrInput `pulumi:"maintenanceTime"`
+}
+
+func (InstanceMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowOutput() InstanceMaintenanceWindowOutput {
+	return i.ToInstanceMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowOutputWithContext(ctx context.Context) InstanceMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowOutput)
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return i.ToInstanceMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceMaintenanceWindowArgs) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowOutput).ToInstanceMaintenanceWindowPtrOutputWithContext(ctx)
+}
+
+// InstanceMaintenanceWindowPtrInput is an input type that accepts InstanceMaintenanceWindowArgs, InstanceMaintenanceWindowPtr and InstanceMaintenanceWindowPtrOutput values.
+// You can construct a concrete instance of `InstanceMaintenanceWindowPtrInput` via:
+//
+//	        InstanceMaintenanceWindowArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceMaintenanceWindowPtrInput interface {
+	pulumi.Input
+
+	ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput
+	ToInstanceMaintenanceWindowPtrOutputWithContext(context.Context) InstanceMaintenanceWindowPtrOutput
+}
+
+type instanceMaintenanceWindowPtrType InstanceMaintenanceWindowArgs
+
+func InstanceMaintenanceWindowPtr(v *InstanceMaintenanceWindowArgs) InstanceMaintenanceWindowPtrInput {
+	return (*instanceMaintenanceWindowPtrType)(v)
+}
+
+func (*instanceMaintenanceWindowPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (i *instanceMaintenanceWindowPtrType) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return i.ToInstanceMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceMaintenanceWindowPtrType) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceMaintenanceWindowPtrOutput)
+}
+
+type InstanceMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (InstanceMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowOutput() InstanceMaintenanceWindowOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowOutputWithContext(ctx context.Context) InstanceMaintenanceWindowOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return o.ToInstanceMaintenanceWindowPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceMaintenanceWindow) *InstanceMaintenanceWindow {
+		return &v
+	}).(InstanceMaintenanceWindowPtrOutput)
+}
+
+// 可维护周期粒度，取值为 Week，周。
+func (o InstanceMaintenanceWindowOutput) DayKind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindow) *string { return v.DayKind }).(pulumi.StringPtrOutput)
+}
+
+// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+func (o InstanceMaintenanceWindowOutput) DayOfWeeks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindow) []string { return v.DayOfWeeks }).(pulumi.StringArrayOutput)
+}
+
+// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+func (o InstanceMaintenanceWindowOutput) MaintenanceTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceMaintenanceWindow) *string { return v.MaintenanceTime }).(pulumi.StringPtrOutput)
+}
+
+type InstanceMaintenanceWindowPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceMaintenanceWindowPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (o InstanceMaintenanceWindowPtrOutput) ToInstanceMaintenanceWindowPtrOutput() InstanceMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowPtrOutput) ToInstanceMaintenanceWindowPtrOutputWithContext(ctx context.Context) InstanceMaintenanceWindowPtrOutput {
+	return o
+}
+
+func (o InstanceMaintenanceWindowPtrOutput) Elem() InstanceMaintenanceWindowOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceWindow) InstanceMaintenanceWindow {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceMaintenanceWindow
+		return ret
+	}).(InstanceMaintenanceWindowOutput)
+}
+
+// 可维护周期粒度，取值为 Week，周。
+func (o InstanceMaintenanceWindowPtrOutput) DayKind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DayKind
+	}).(pulumi.StringPtrOutput)
+}
+
+// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+func (o InstanceMaintenanceWindowPtrOutput) DayOfWeeks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceWindow) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DayOfWeeks
+	}).(pulumi.StringArrayOutput)
+}
+
+// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+func (o InstanceMaintenanceWindowPtrOutput) MaintenanceTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaintenanceTime
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceNode struct {
+	// 节点规格。
+	NodeSpec string `pulumi:"nodeSpec"`
+	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	NodeType string `pulumi:"nodeType"`
+	// 可用区 ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// InstanceNodeInput is an input type that accepts InstanceNodeArgs and InstanceNodeOutput values.
+// You can construct a concrete instance of `InstanceNodeInput` via:
+//
+//	InstanceNodeArgs{...}
+type InstanceNodeInput interface {
+	pulumi.Input
+
+	ToInstanceNodeOutput() InstanceNodeOutput
+	ToInstanceNodeOutputWithContext(context.Context) InstanceNodeOutput
+}
+
+type InstanceNodeArgs struct {
+	// 节点规格。
+	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
+	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// 可用区 ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (InstanceNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceNode)(nil)).Elem()
+}
+
+func (i InstanceNodeArgs) ToInstanceNodeOutput() InstanceNodeOutput {
+	return i.ToInstanceNodeOutputWithContext(context.Background())
+}
+
+func (i InstanceNodeArgs) ToInstanceNodeOutputWithContext(ctx context.Context) InstanceNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceNodeOutput)
+}
+
+// InstanceNodeArrayInput is an input type that accepts InstanceNodeArray and InstanceNodeArrayOutput values.
+// You can construct a concrete instance of `InstanceNodeArrayInput` via:
+//
+//	InstanceNodeArray{ InstanceNodeArgs{...} }
+type InstanceNodeArrayInput interface {
+	pulumi.Input
+
+	ToInstanceNodeArrayOutput() InstanceNodeArrayOutput
+	ToInstanceNodeArrayOutputWithContext(context.Context) InstanceNodeArrayOutput
+}
+
+type InstanceNodeArray []InstanceNodeInput
+
+func (InstanceNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceNode)(nil)).Elem()
+}
+
+func (i InstanceNodeArray) ToInstanceNodeArrayOutput() InstanceNodeArrayOutput {
+	return i.ToInstanceNodeArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceNodeArray) ToInstanceNodeArrayOutputWithContext(ctx context.Context) InstanceNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceNodeArrayOutput)
+}
+
+type InstanceNodeOutput struct{ *pulumi.OutputState }
+
+func (InstanceNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceNode)(nil)).Elem()
+}
+
+func (o InstanceNodeOutput) ToInstanceNodeOutput() InstanceNodeOutput {
+	return o
+}
+
+func (o InstanceNodeOutput) ToInstanceNodeOutputWithContext(ctx context.Context) InstanceNodeOutput {
+	return o
+}
+
+// 节点规格。
+func (o InstanceNodeOutput) NodeSpec() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceNode) string { return v.NodeSpec }).(pulumi.StringOutput)
+}
+
+// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+func (o InstanceNodeOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// 可用区 ID。
+func (o InstanceNodeOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v InstanceNode) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type InstanceNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceNode)(nil)).Elem()
+}
+
+func (o InstanceNodeArrayOutput) ToInstanceNodeArrayOutput() InstanceNodeArrayOutput {
+	return o
+}
+
+func (o InstanceNodeArrayOutput) ToInstanceNodeArrayOutputWithContext(ctx context.Context) InstanceNodeArrayOutput {
+	return o
+}
+
+func (o InstanceNodeArrayOutput) Index(i pulumi.IntInput) InstanceNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceNode {
+		return vs[0].([]InstanceNode)[vs[1].(int)]
+	}).(InstanceNodeOutput)
+}
+
+type InstanceProxyDetail struct {
+	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	DbProxyStatus *string `pulumi:"dbProxyStatus"`
+	// 实例的数据库代理服务的资源信息。
+	ProxyResourceInfo *InstanceProxyDetailProxyResourceInfo `pulumi:"proxyResourceInfo"`
+}
+
+// InstanceProxyDetailInput is an input type that accepts InstanceProxyDetailArgs and InstanceProxyDetailOutput values.
+// You can construct a concrete instance of `InstanceProxyDetailInput` via:
+//
+//	InstanceProxyDetailArgs{...}
+type InstanceProxyDetailInput interface {
+	pulumi.Input
+
+	ToInstanceProxyDetailOutput() InstanceProxyDetailOutput
+	ToInstanceProxyDetailOutputWithContext(context.Context) InstanceProxyDetailOutput
+}
+
+type InstanceProxyDetailArgs struct {
+	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	DbProxyStatus pulumi.StringPtrInput `pulumi:"dbProxyStatus"`
+	// 实例的数据库代理服务的资源信息。
+	ProxyResourceInfo InstanceProxyDetailProxyResourceInfoPtrInput `pulumi:"proxyResourceInfo"`
+}
+
+func (InstanceProxyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceProxyDetail)(nil)).Elem()
+}
+
+func (i InstanceProxyDetailArgs) ToInstanceProxyDetailOutput() InstanceProxyDetailOutput {
+	return i.ToInstanceProxyDetailOutputWithContext(context.Background())
+}
+
+func (i InstanceProxyDetailArgs) ToInstanceProxyDetailOutputWithContext(ctx context.Context) InstanceProxyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceProxyDetailOutput)
+}
+
+func (i InstanceProxyDetailArgs) ToInstanceProxyDetailPtrOutput() InstanceProxyDetailPtrOutput {
+	return i.ToInstanceProxyDetailPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceProxyDetailArgs) ToInstanceProxyDetailPtrOutputWithContext(ctx context.Context) InstanceProxyDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceProxyDetailOutput).ToInstanceProxyDetailPtrOutputWithContext(ctx)
+}
+
+// InstanceProxyDetailPtrInput is an input type that accepts InstanceProxyDetailArgs, InstanceProxyDetailPtr and InstanceProxyDetailPtrOutput values.
+// You can construct a concrete instance of `InstanceProxyDetailPtrInput` via:
+//
+//	        InstanceProxyDetailArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceProxyDetailPtrInput interface {
+	pulumi.Input
+
+	ToInstanceProxyDetailPtrOutput() InstanceProxyDetailPtrOutput
+	ToInstanceProxyDetailPtrOutputWithContext(context.Context) InstanceProxyDetailPtrOutput
+}
+
+type instanceProxyDetailPtrType InstanceProxyDetailArgs
+
+func InstanceProxyDetailPtr(v *InstanceProxyDetailArgs) InstanceProxyDetailPtrInput {
+	return (*instanceProxyDetailPtrType)(v)
+}
+
+func (*instanceProxyDetailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceProxyDetail)(nil)).Elem()
+}
+
+func (i *instanceProxyDetailPtrType) ToInstanceProxyDetailPtrOutput() InstanceProxyDetailPtrOutput {
+	return i.ToInstanceProxyDetailPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceProxyDetailPtrType) ToInstanceProxyDetailPtrOutputWithContext(ctx context.Context) InstanceProxyDetailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceProxyDetailPtrOutput)
+}
+
+type InstanceProxyDetailOutput struct{ *pulumi.OutputState }
+
+func (InstanceProxyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceProxyDetail)(nil)).Elem()
+}
+
+func (o InstanceProxyDetailOutput) ToInstanceProxyDetailOutput() InstanceProxyDetailOutput {
+	return o
+}
+
+func (o InstanceProxyDetailOutput) ToInstanceProxyDetailOutputWithContext(ctx context.Context) InstanceProxyDetailOutput {
+	return o
+}
+
+func (o InstanceProxyDetailOutput) ToInstanceProxyDetailPtrOutput() InstanceProxyDetailPtrOutput {
+	return o.ToInstanceProxyDetailPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceProxyDetailOutput) ToInstanceProxyDetailPtrOutputWithContext(ctx context.Context) InstanceProxyDetailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceProxyDetail) *InstanceProxyDetail {
+		return &v
+	}).(InstanceProxyDetailPtrOutput)
+}
+
+// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+func (o InstanceProxyDetailOutput) DbProxyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceProxyDetail) *string { return v.DbProxyStatus }).(pulumi.StringPtrOutput)
+}
+
+// 实例的数据库代理服务的资源信息。
+func (o InstanceProxyDetailOutput) ProxyResourceInfo() InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return o.ApplyT(func(v InstanceProxyDetail) *InstanceProxyDetailProxyResourceInfo { return v.ProxyResourceInfo }).(InstanceProxyDetailProxyResourceInfoPtrOutput)
+}
+
+type InstanceProxyDetailPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceProxyDetailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceProxyDetail)(nil)).Elem()
+}
+
+func (o InstanceProxyDetailPtrOutput) ToInstanceProxyDetailPtrOutput() InstanceProxyDetailPtrOutput {
+	return o
+}
+
+func (o InstanceProxyDetailPtrOutput) ToInstanceProxyDetailPtrOutputWithContext(ctx context.Context) InstanceProxyDetailPtrOutput {
+	return o
+}
+
+func (o InstanceProxyDetailPtrOutput) Elem() InstanceProxyDetailOutput {
+	return o.ApplyT(func(v *InstanceProxyDetail) InstanceProxyDetail {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceProxyDetail
+		return ret
+	}).(InstanceProxyDetailOutput)
+}
+
+// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+func (o InstanceProxyDetailPtrOutput) DbProxyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceProxyDetail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DbProxyStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的数据库代理服务的资源信息。
+func (o InstanceProxyDetailPtrOutput) ProxyResourceInfo() InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return o.ApplyT(func(v *InstanceProxyDetail) *InstanceProxyDetailProxyResourceInfo {
+		if v == nil {
+			return nil
+		}
+		return v.ProxyResourceInfo
+	}).(InstanceProxyDetailProxyResourceInfoPtrOutput)
+}
+
+type InstanceProxyDetailProxyResourceInfo struct {
+	// 实例数据库代理服务当前的核数。
+	CurrentProxyCpuNum *int `pulumi:"currentProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最多核数。
+	MaxProxyCpuNum *int `pulumi:"maxProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最少核数。
+	MinProxyCpuNum *int `pulumi:"minProxyCpuNum"`
+}
+
+// InstanceProxyDetailProxyResourceInfoInput is an input type that accepts InstanceProxyDetailProxyResourceInfoArgs and InstanceProxyDetailProxyResourceInfoOutput values.
+// You can construct a concrete instance of `InstanceProxyDetailProxyResourceInfoInput` via:
+//
+//	InstanceProxyDetailProxyResourceInfoArgs{...}
+type InstanceProxyDetailProxyResourceInfoInput interface {
+	pulumi.Input
+
+	ToInstanceProxyDetailProxyResourceInfoOutput() InstanceProxyDetailProxyResourceInfoOutput
+	ToInstanceProxyDetailProxyResourceInfoOutputWithContext(context.Context) InstanceProxyDetailProxyResourceInfoOutput
+}
+
+type InstanceProxyDetailProxyResourceInfoArgs struct {
+	// 实例数据库代理服务当前的核数。
+	CurrentProxyCpuNum pulumi.IntPtrInput `pulumi:"currentProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最多核数。
+	MaxProxyCpuNum pulumi.IntPtrInput `pulumi:"maxProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最少核数。
+	MinProxyCpuNum pulumi.IntPtrInput `pulumi:"minProxyCpuNum"`
+}
+
+func (InstanceProxyDetailProxyResourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceProxyDetailProxyResourceInfo)(nil)).Elem()
+}
+
+func (i InstanceProxyDetailProxyResourceInfoArgs) ToInstanceProxyDetailProxyResourceInfoOutput() InstanceProxyDetailProxyResourceInfoOutput {
+	return i.ToInstanceProxyDetailProxyResourceInfoOutputWithContext(context.Background())
+}
+
+func (i InstanceProxyDetailProxyResourceInfoArgs) ToInstanceProxyDetailProxyResourceInfoOutputWithContext(ctx context.Context) InstanceProxyDetailProxyResourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceProxyDetailProxyResourceInfoOutput)
+}
+
+func (i InstanceProxyDetailProxyResourceInfoArgs) ToInstanceProxyDetailProxyResourceInfoPtrOutput() InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return i.ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceProxyDetailProxyResourceInfoArgs) ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(ctx context.Context) InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceProxyDetailProxyResourceInfoOutput).ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(ctx)
+}
+
+// InstanceProxyDetailProxyResourceInfoPtrInput is an input type that accepts InstanceProxyDetailProxyResourceInfoArgs, InstanceProxyDetailProxyResourceInfoPtr and InstanceProxyDetailProxyResourceInfoPtrOutput values.
+// You can construct a concrete instance of `InstanceProxyDetailProxyResourceInfoPtrInput` via:
+//
+//	        InstanceProxyDetailProxyResourceInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceProxyDetailProxyResourceInfoPtrInput interface {
+	pulumi.Input
+
+	ToInstanceProxyDetailProxyResourceInfoPtrOutput() InstanceProxyDetailProxyResourceInfoPtrOutput
+	ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(context.Context) InstanceProxyDetailProxyResourceInfoPtrOutput
+}
+
+type instanceProxyDetailProxyResourceInfoPtrType InstanceProxyDetailProxyResourceInfoArgs
+
+func InstanceProxyDetailProxyResourceInfoPtr(v *InstanceProxyDetailProxyResourceInfoArgs) InstanceProxyDetailProxyResourceInfoPtrInput {
+	return (*instanceProxyDetailProxyResourceInfoPtrType)(v)
+}
+
+func (*instanceProxyDetailProxyResourceInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceProxyDetailProxyResourceInfo)(nil)).Elem()
+}
+
+func (i *instanceProxyDetailProxyResourceInfoPtrType) ToInstanceProxyDetailProxyResourceInfoPtrOutput() InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return i.ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceProxyDetailProxyResourceInfoPtrType) ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(ctx context.Context) InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceProxyDetailProxyResourceInfoPtrOutput)
+}
+
+type InstanceProxyDetailProxyResourceInfoOutput struct{ *pulumi.OutputState }
+
+func (InstanceProxyDetailProxyResourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceProxyDetailProxyResourceInfo)(nil)).Elem()
+}
+
+func (o InstanceProxyDetailProxyResourceInfoOutput) ToInstanceProxyDetailProxyResourceInfoOutput() InstanceProxyDetailProxyResourceInfoOutput {
+	return o
+}
+
+func (o InstanceProxyDetailProxyResourceInfoOutput) ToInstanceProxyDetailProxyResourceInfoOutputWithContext(ctx context.Context) InstanceProxyDetailProxyResourceInfoOutput {
+	return o
+}
+
+func (o InstanceProxyDetailProxyResourceInfoOutput) ToInstanceProxyDetailProxyResourceInfoPtrOutput() InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return o.ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceProxyDetailProxyResourceInfoOutput) ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(ctx context.Context) InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceProxyDetailProxyResourceInfo) *InstanceProxyDetailProxyResourceInfo {
+		return &v
+	}).(InstanceProxyDetailProxyResourceInfoPtrOutput)
+}
+
+// 实例数据库代理服务当前的核数。
+func (o InstanceProxyDetailProxyResourceInfoOutput) CurrentProxyCpuNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceProxyDetailProxyResourceInfo) *int { return v.CurrentProxyCpuNum }).(pulumi.IntPtrOutput)
+}
+
+// 用户可为数据库代理服务配置的最多核数。
+func (o InstanceProxyDetailProxyResourceInfoOutput) MaxProxyCpuNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceProxyDetailProxyResourceInfo) *int { return v.MaxProxyCpuNum }).(pulumi.IntPtrOutput)
+}
+
+// 用户可为数据库代理服务配置的最少核数。
+func (o InstanceProxyDetailProxyResourceInfoOutput) MinProxyCpuNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceProxyDetailProxyResourceInfo) *int { return v.MinProxyCpuNum }).(pulumi.IntPtrOutput)
+}
+
+type InstanceProxyDetailProxyResourceInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceProxyDetailProxyResourceInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceProxyDetailProxyResourceInfo)(nil)).Elem()
+}
+
+func (o InstanceProxyDetailProxyResourceInfoPtrOutput) ToInstanceProxyDetailProxyResourceInfoPtrOutput() InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return o
+}
+
+func (o InstanceProxyDetailProxyResourceInfoPtrOutput) ToInstanceProxyDetailProxyResourceInfoPtrOutputWithContext(ctx context.Context) InstanceProxyDetailProxyResourceInfoPtrOutput {
+	return o
+}
+
+func (o InstanceProxyDetailProxyResourceInfoPtrOutput) Elem() InstanceProxyDetailProxyResourceInfoOutput {
+	return o.ApplyT(func(v *InstanceProxyDetailProxyResourceInfo) InstanceProxyDetailProxyResourceInfo {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceProxyDetailProxyResourceInfo
+		return ret
+	}).(InstanceProxyDetailProxyResourceInfoOutput)
+}
+
+// 实例数据库代理服务当前的核数。
+func (o InstanceProxyDetailProxyResourceInfoPtrOutput) CurrentProxyCpuNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceProxyDetailProxyResourceInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CurrentProxyCpuNum
+	}).(pulumi.IntPtrOutput)
+}
+
+// 用户可为数据库代理服务配置的最多核数。
+func (o InstanceProxyDetailProxyResourceInfoPtrOutput) MaxProxyCpuNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceProxyDetailProxyResourceInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxProxyCpuNum
+	}).(pulumi.IntPtrOutput)
+}
+
+// 用户可为数据库代理服务配置的最少核数。
+func (o InstanceProxyDetailProxyResourceInfoPtrOutput) MinProxyCpuNum() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceProxyDetailProxyResourceInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinProxyCpuNum
+	}).(pulumi.IntPtrOutput)
+}
+
+type InstanceTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// InstanceTagInput is an input type that accepts InstanceTagArgs and InstanceTagOutput values.
+// You can construct a concrete instance of `InstanceTagInput` via:
+//
+//	InstanceTagArgs{...}
+type InstanceTagInput interface {
+	pulumi.Input
+
+	ToInstanceTagOutput() InstanceTagOutput
+	ToInstanceTagOutputWithContext(context.Context) InstanceTagOutput
+}
+
+type InstanceTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (InstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutput() InstanceTagOutput {
+	return i.ToInstanceTagOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagOutput)
+}
+
+// InstanceTagArrayInput is an input type that accepts InstanceTagArray and InstanceTagArrayOutput values.
+// You can construct a concrete instance of `InstanceTagArrayInput` via:
+//
+//	InstanceTagArray{ InstanceTagArgs{...} }
+type InstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToInstanceTagArrayOutput() InstanceTagArrayOutput
+	ToInstanceTagArrayOutputWithContext(context.Context) InstanceTagArrayOutput
+}
+
+type InstanceTagArray []InstanceTagInput
+
+func (InstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return i.ToInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagArrayOutput)
+}
+
+type InstanceTagOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutput() InstanceTagOutput {
+	return o
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return o
+}
+
+// 标签键。
+func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type InstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceTag {
+		return vs[0].([]InstanceTag)[vs[1].(int)]
+	}).(InstanceTagOutput)
+}
+
 type GetDbAccountAccountPrivilege struct {
 	// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
 	AccountPrivilege string `pulumi:"accountPrivilege"`
@@ -917,6 +2856,1415 @@ func (o GetDbAccountTableColumnPrivilegeTablePrivilegeArrayOutput) Index(i pulum
 	}).(GetDbAccountTableColumnPrivilegeTablePrivilegeOutput)
 }
 
+type GetInstanceAddressObject struct {
+	// false：私网解析（默认）。true：私网以及公网解析。
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain string `pulumi:"domain"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId string `pulumi:"eipId"`
+	// IP 协议版本。取值为 IPv4。
+	InternetProtocol string `pulumi:"internetProtocol"`
+	// IP 地址。
+	IpAddress string `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	NetworkType string `pulumi:"networkType"`
+	// 端口。
+	Port string `pulumi:"port"`
+	// 子网 ID，仅对 Private 地址有效。
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstanceAddressObjectInput is an input type that accepts GetInstanceAddressObjectArgs and GetInstanceAddressObjectOutput values.
+// You can construct a concrete instance of `GetInstanceAddressObjectInput` via:
+//
+//	GetInstanceAddressObjectArgs{...}
+type GetInstanceAddressObjectInput interface {
+	pulumi.Input
+
+	ToGetInstanceAddressObjectOutput() GetInstanceAddressObjectOutput
+	ToGetInstanceAddressObjectOutputWithContext(context.Context) GetInstanceAddressObjectOutput
+}
+
+type GetInstanceAddressObjectArgs struct {
+	// false：私网解析（默认）。true：私网以及公网解析。
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// IP 协议版本。取值为 IPv4。
+	InternetProtocol pulumi.StringInput `pulumi:"internetProtocol"`
+	// IP 地址。
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// 端口。
+	Port pulumi.StringInput `pulumi:"port"`
+	// 子网 ID，仅对 Private 地址有效。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstanceAddressObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceAddressObject)(nil)).Elem()
+}
+
+func (i GetInstanceAddressObjectArgs) ToGetInstanceAddressObjectOutput() GetInstanceAddressObjectOutput {
+	return i.ToGetInstanceAddressObjectOutputWithContext(context.Background())
+}
+
+func (i GetInstanceAddressObjectArgs) ToGetInstanceAddressObjectOutputWithContext(ctx context.Context) GetInstanceAddressObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAddressObjectOutput)
+}
+
+// GetInstanceAddressObjectArrayInput is an input type that accepts GetInstanceAddressObjectArray and GetInstanceAddressObjectArrayOutput values.
+// You can construct a concrete instance of `GetInstanceAddressObjectArrayInput` via:
+//
+//	GetInstanceAddressObjectArray{ GetInstanceAddressObjectArgs{...} }
+type GetInstanceAddressObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceAddressObjectArrayOutput() GetInstanceAddressObjectArrayOutput
+	ToGetInstanceAddressObjectArrayOutputWithContext(context.Context) GetInstanceAddressObjectArrayOutput
+}
+
+type GetInstanceAddressObjectArray []GetInstanceAddressObjectInput
+
+func (GetInstanceAddressObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceAddressObject)(nil)).Elem()
+}
+
+func (i GetInstanceAddressObjectArray) ToGetInstanceAddressObjectArrayOutput() GetInstanceAddressObjectArrayOutput {
+	return i.ToGetInstanceAddressObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceAddressObjectArray) ToGetInstanceAddressObjectArrayOutputWithContext(ctx context.Context) GetInstanceAddressObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAddressObjectArrayOutput)
+}
+
+type GetInstanceAddressObjectOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceAddressObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceAddressObject)(nil)).Elem()
+}
+
+func (o GetInstanceAddressObjectOutput) ToGetInstanceAddressObjectOutput() GetInstanceAddressObjectOutput {
+	return o
+}
+
+func (o GetInstanceAddressObjectOutput) ToGetInstanceAddressObjectOutputWithContext(ctx context.Context) GetInstanceAddressObjectOutput {
+	return o
+}
+
+// false：私网解析（默认）。true：私网以及公网解析。
+func (o GetInstanceAddressObjectOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// 连接域名。
+func (o GetInstanceAddressObjectOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// EIP 的 ID，仅对 Public 地址有效。
+func (o GetInstanceAddressObjectOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// IP 协议版本。取值为 IPv4。
+func (o GetInstanceAddressObjectOutput) InternetProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.InternetProtocol }).(pulumi.StringOutput)
+}
+
+// IP 地址。
+func (o GetInstanceAddressObjectOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+func (o GetInstanceAddressObjectOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// 端口。
+func (o GetInstanceAddressObjectOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// 子网 ID，仅对 Private 地址有效。
+func (o GetInstanceAddressObjectOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetInstanceAddressObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceAddressObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceAddressObject)(nil)).Elem()
+}
+
+func (o GetInstanceAddressObjectArrayOutput) ToGetInstanceAddressObjectArrayOutput() GetInstanceAddressObjectArrayOutput {
+	return o
+}
+
+func (o GetInstanceAddressObjectArrayOutput) ToGetInstanceAddressObjectArrayOutputWithContext(ctx context.Context) GetInstanceAddressObjectArrayOutput {
+	return o
+}
+
+func (o GetInstanceAddressObjectArrayOutput) Index(i pulumi.IntInput) GetInstanceAddressObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceAddressObject {
+		return vs[0].([]GetInstanceAddressObject)[vs[1].(int)]
+	}).(GetInstanceAddressObjectOutput)
+}
+
+type GetInstanceAutoStorageScalingConfig struct {
+	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	EnableStorageAutoScale bool `pulumi:"enableStorageAutoScale"`
+	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	StorageThreshold int `pulumi:"storageThreshold"`
+	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	StorageUpperBound int `pulumi:"storageUpperBound"`
+}
+
+// GetInstanceAutoStorageScalingConfigInput is an input type that accepts GetInstanceAutoStorageScalingConfigArgs and GetInstanceAutoStorageScalingConfigOutput values.
+// You can construct a concrete instance of `GetInstanceAutoStorageScalingConfigInput` via:
+//
+//	GetInstanceAutoStorageScalingConfigArgs{...}
+type GetInstanceAutoStorageScalingConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceAutoStorageScalingConfigOutput() GetInstanceAutoStorageScalingConfigOutput
+	ToGetInstanceAutoStorageScalingConfigOutputWithContext(context.Context) GetInstanceAutoStorageScalingConfigOutput
+}
+
+type GetInstanceAutoStorageScalingConfigArgs struct {
+	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	EnableStorageAutoScale pulumi.BoolInput `pulumi:"enableStorageAutoScale"`
+	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	StorageThreshold pulumi.IntInput `pulumi:"storageThreshold"`
+	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	StorageUpperBound pulumi.IntInput `pulumi:"storageUpperBound"`
+}
+
+func (GetInstanceAutoStorageScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceAutoStorageScalingConfig)(nil)).Elem()
+}
+
+func (i GetInstanceAutoStorageScalingConfigArgs) ToGetInstanceAutoStorageScalingConfigOutput() GetInstanceAutoStorageScalingConfigOutput {
+	return i.ToGetInstanceAutoStorageScalingConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceAutoStorageScalingConfigArgs) ToGetInstanceAutoStorageScalingConfigOutputWithContext(ctx context.Context) GetInstanceAutoStorageScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceAutoStorageScalingConfigOutput)
+}
+
+type GetInstanceAutoStorageScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceAutoStorageScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceAutoStorageScalingConfig)(nil)).Elem()
+}
+
+func (o GetInstanceAutoStorageScalingConfigOutput) ToGetInstanceAutoStorageScalingConfigOutput() GetInstanceAutoStorageScalingConfigOutput {
+	return o
+}
+
+func (o GetInstanceAutoStorageScalingConfigOutput) ToGetInstanceAutoStorageScalingConfigOutputWithContext(ctx context.Context) GetInstanceAutoStorageScalingConfigOutput {
+	return o
+}
+
+// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+func (o GetInstanceAutoStorageScalingConfigOutput) EnableStorageAutoScale() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) bool { return v.EnableStorageAutoScale }).(pulumi.BoolOutput)
+}
+
+// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+func (o GetInstanceAutoStorageScalingConfigOutput) StorageThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) int { return v.StorageThreshold }).(pulumi.IntOutput)
+}
+
+// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+func (o GetInstanceAutoStorageScalingConfigOutput) StorageUpperBound() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) int { return v.StorageUpperBound }).(pulumi.IntOutput)
+}
+
+type GetInstanceChargeDetail struct {
+	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	AutoRenew bool `pulumi:"autoRenew"`
+	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeEndTime string `pulumi:"chargeEndTime"`
+	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeStartTime string `pulumi:"chargeStartTime"`
+	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	ChargeStatus string `pulumi:"chargeStatus"`
+	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	ChargeType string `pulumi:"chargeType"`
+	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	Number int `pulumi:"number"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueTime string `pulumi:"overdueTime"`
+	// 预付费场景下的购买时长。
+	Period int `pulumi:"period"`
+	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	PeriodUnit string `pulumi:"periodUnit"`
+	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyEndTime string `pulumi:"tempModifyEndTime"`
+	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyStartTime string `pulumi:"tempModifyStartTime"`
+}
+
+// GetInstanceChargeDetailInput is an input type that accepts GetInstanceChargeDetailArgs and GetInstanceChargeDetailOutput values.
+// You can construct a concrete instance of `GetInstanceChargeDetailInput` via:
+//
+//	GetInstanceChargeDetailArgs{...}
+type GetInstanceChargeDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceChargeDetailOutput() GetInstanceChargeDetailOutput
+	ToGetInstanceChargeDetailOutputWithContext(context.Context) GetInstanceChargeDetailOutput
+}
+
+type GetInstanceChargeDetailArgs struct {
+	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
+	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeEndTime pulumi.StringInput `pulumi:"chargeEndTime"`
+	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
+	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
+	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	Number pulumi.IntInput `pulumi:"number"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
+	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
+	// 预付费场景下的购买时长。
+	Period pulumi.IntInput `pulumi:"period"`
+	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
+	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyEndTime pulumi.StringInput `pulumi:"tempModifyEndTime"`
+	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	TempModifyStartTime pulumi.StringInput `pulumi:"tempModifyStartTime"`
+}
+
+func (GetInstanceChargeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceChargeDetail)(nil)).Elem()
+}
+
+func (i GetInstanceChargeDetailArgs) ToGetInstanceChargeDetailOutput() GetInstanceChargeDetailOutput {
+	return i.ToGetInstanceChargeDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceChargeDetailArgs) ToGetInstanceChargeDetailOutputWithContext(ctx context.Context) GetInstanceChargeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceChargeDetailOutput)
+}
+
+type GetInstanceChargeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceChargeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceChargeDetail)(nil)).Elem()
+}
+
+func (o GetInstanceChargeDetailOutput) ToGetInstanceChargeDetailOutput() GetInstanceChargeDetailOutput {
+	return o
+}
+
+func (o GetInstanceChargeDetailOutput) ToGetInstanceChargeDetailOutputWithContext(ctx context.Context) GetInstanceChargeDetailOutput {
+	return o
+}
+
+// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+func (o GetInstanceChargeDetailOutput) AutoRenew() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) bool { return v.AutoRenew }).(pulumi.BoolOutput)
+}
+
+// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o GetInstanceChargeDetailOutput) ChargeEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeEndTime }).(pulumi.StringOutput)
+}
+
+// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o GetInstanceChargeDetailOutput) ChargeStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStartTime }).(pulumi.StringOutput)
+}
+
+// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+func (o GetInstanceChargeDetailOutput) ChargeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStatus }).(pulumi.StringOutput)
+}
+
+// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+func (o GetInstanceChargeDetailOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// 实例购买数量。取值范围为 1~50。默认值为 1。
+func (o GetInstanceChargeDetailOutput) Number() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) int { return v.Number }).(pulumi.IntOutput)
+}
+
+// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o GetInstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
+}
+
+// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o GetInstanceChargeDetailOutput) OverdueTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueTime }).(pulumi.StringOutput)
+}
+
+// 预付费场景下的购买时长。
+func (o GetInstanceChargeDetailOutput) Period() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) int { return v.Period }).(pulumi.IntOutput)
+}
+
+// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+func (o GetInstanceChargeDetailOutput) PeriodUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.PeriodUnit }).(pulumi.StringOutput)
+}
+
+// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o GetInstanceChargeDetailOutput) TempModifyEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.TempModifyEndTime }).(pulumi.StringOutput)
+}
+
+// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o GetInstanceChargeDetailOutput) TempModifyStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.TempModifyStartTime }).(pulumi.StringOutput)
+}
+
+type GetInstanceDisasterRecoveryInstance struct {
+	// 主实例与灾备实例之间同步任务的 ID。
+	DtsTaskId string `pulumi:"dtsTaskId"`
+	// 主实例与灾备实例之间同步任务的名称。
+	DtsTaskName string `pulumi:"dtsTaskName"`
+	// 主实例与灾备实例之间同步任务的状态。
+	DtsTaskStatus string `pulumi:"dtsTaskStatus"`
+	// 灾备实例的 ID。
+	InstanceId string `pulumi:"instanceId"`
+	// 灾备实例的名称。
+	InstanceName string `pulumi:"instanceName"`
+	// 灾备实例与主实例之间的时延。
+	SecondsBehindMaster int `pulumi:"secondsBehindMaster"`
+}
+
+// GetInstanceDisasterRecoveryInstanceInput is an input type that accepts GetInstanceDisasterRecoveryInstanceArgs and GetInstanceDisasterRecoveryInstanceOutput values.
+// You can construct a concrete instance of `GetInstanceDisasterRecoveryInstanceInput` via:
+//
+//	GetInstanceDisasterRecoveryInstanceArgs{...}
+type GetInstanceDisasterRecoveryInstanceInput interface {
+	pulumi.Input
+
+	ToGetInstanceDisasterRecoveryInstanceOutput() GetInstanceDisasterRecoveryInstanceOutput
+	ToGetInstanceDisasterRecoveryInstanceOutputWithContext(context.Context) GetInstanceDisasterRecoveryInstanceOutput
+}
+
+type GetInstanceDisasterRecoveryInstanceArgs struct {
+	// 主实例与灾备实例之间同步任务的 ID。
+	DtsTaskId pulumi.StringInput `pulumi:"dtsTaskId"`
+	// 主实例与灾备实例之间同步任务的名称。
+	DtsTaskName pulumi.StringInput `pulumi:"dtsTaskName"`
+	// 主实例与灾备实例之间同步任务的状态。
+	DtsTaskStatus pulumi.StringInput `pulumi:"dtsTaskStatus"`
+	// 灾备实例的 ID。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 灾备实例的名称。
+	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// 灾备实例与主实例之间的时延。
+	SecondsBehindMaster pulumi.IntInput `pulumi:"secondsBehindMaster"`
+}
+
+func (GetInstanceDisasterRecoveryInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (i GetInstanceDisasterRecoveryInstanceArgs) ToGetInstanceDisasterRecoveryInstanceOutput() GetInstanceDisasterRecoveryInstanceOutput {
+	return i.ToGetInstanceDisasterRecoveryInstanceOutputWithContext(context.Background())
+}
+
+func (i GetInstanceDisasterRecoveryInstanceArgs) ToGetInstanceDisasterRecoveryInstanceOutputWithContext(ctx context.Context) GetInstanceDisasterRecoveryInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceDisasterRecoveryInstanceOutput)
+}
+
+// GetInstanceDisasterRecoveryInstanceArrayInput is an input type that accepts GetInstanceDisasterRecoveryInstanceArray and GetInstanceDisasterRecoveryInstanceArrayOutput values.
+// You can construct a concrete instance of `GetInstanceDisasterRecoveryInstanceArrayInput` via:
+//
+//	GetInstanceDisasterRecoveryInstanceArray{ GetInstanceDisasterRecoveryInstanceArgs{...} }
+type GetInstanceDisasterRecoveryInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceDisasterRecoveryInstanceArrayOutput() GetInstanceDisasterRecoveryInstanceArrayOutput
+	ToGetInstanceDisasterRecoveryInstanceArrayOutputWithContext(context.Context) GetInstanceDisasterRecoveryInstanceArrayOutput
+}
+
+type GetInstanceDisasterRecoveryInstanceArray []GetInstanceDisasterRecoveryInstanceInput
+
+func (GetInstanceDisasterRecoveryInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (i GetInstanceDisasterRecoveryInstanceArray) ToGetInstanceDisasterRecoveryInstanceArrayOutput() GetInstanceDisasterRecoveryInstanceArrayOutput {
+	return i.ToGetInstanceDisasterRecoveryInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceDisasterRecoveryInstanceArray) ToGetInstanceDisasterRecoveryInstanceArrayOutputWithContext(ctx context.Context) GetInstanceDisasterRecoveryInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceDisasterRecoveryInstanceArrayOutput)
+}
+
+type GetInstanceDisasterRecoveryInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceDisasterRecoveryInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (o GetInstanceDisasterRecoveryInstanceOutput) ToGetInstanceDisasterRecoveryInstanceOutput() GetInstanceDisasterRecoveryInstanceOutput {
+	return o
+}
+
+func (o GetInstanceDisasterRecoveryInstanceOutput) ToGetInstanceDisasterRecoveryInstanceOutputWithContext(ctx context.Context) GetInstanceDisasterRecoveryInstanceOutput {
+	return o
+}
+
+// 主实例与灾备实例之间同步任务的 ID。
+func (o GetInstanceDisasterRecoveryInstanceOutput) DtsTaskId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.DtsTaskId }).(pulumi.StringOutput)
+}
+
+// 主实例与灾备实例之间同步任务的名称。
+func (o GetInstanceDisasterRecoveryInstanceOutput) DtsTaskName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.DtsTaskName }).(pulumi.StringOutput)
+}
+
+// 主实例与灾备实例之间同步任务的状态。
+func (o GetInstanceDisasterRecoveryInstanceOutput) DtsTaskStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.DtsTaskStatus }).(pulumi.StringOutput)
+}
+
+// 灾备实例的 ID。
+func (o GetInstanceDisasterRecoveryInstanceOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 灾备实例的名称。
+func (o GetInstanceDisasterRecoveryInstanceOutput) InstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// 灾备实例与主实例之间的时延。
+func (o GetInstanceDisasterRecoveryInstanceOutput) SecondsBehindMaster() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) int { return v.SecondsBehindMaster }).(pulumi.IntOutput)
+}
+
+type GetInstanceDisasterRecoveryInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceDisasterRecoveryInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceDisasterRecoveryInstance)(nil)).Elem()
+}
+
+func (o GetInstanceDisasterRecoveryInstanceArrayOutput) ToGetInstanceDisasterRecoveryInstanceArrayOutput() GetInstanceDisasterRecoveryInstanceArrayOutput {
+	return o
+}
+
+func (o GetInstanceDisasterRecoveryInstanceArrayOutput) ToGetInstanceDisasterRecoveryInstanceArrayOutputWithContext(ctx context.Context) GetInstanceDisasterRecoveryInstanceArrayOutput {
+	return o
+}
+
+func (o GetInstanceDisasterRecoveryInstanceArrayOutput) Index(i pulumi.IntInput) GetInstanceDisasterRecoveryInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceDisasterRecoveryInstance {
+		return vs[0].([]GetInstanceDisasterRecoveryInstance)[vs[1].(int)]
+	}).(GetInstanceDisasterRecoveryInstanceOutput)
+}
+
+type GetInstanceEndpoint struct {
+	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	AutoAddNewNodes string `pulumi:"autoAddNewNodes"`
+	// 连接终端标签。
+	ConnectionInfoTags []string `pulumi:"connectionInfoTags"`
+	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	ConnectionMode string `pulumi:"connectionMode"`
+	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	ConnectionPoolType string `pulumi:"connectionPoolType"`
+	// 连接终端的描述信息。
+	Description string `pulumi:"description"`
+	// 是否启用连接保持。取值：true：是。false：否。
+	EnableConnectionPersistent bool `pulumi:"enableConnectionPersistent"`
+	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	EnableReadOnly string `pulumi:"enableReadOnly"`
+	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	EnableReadWriteSplitting string `pulumi:"enableReadWriteSplitting"`
+	// 实例连接终端 ID。
+	EndpointId string `pulumi:"endpointId"`
+	// 实例连接终端名称。
+	EndpointName string `pulumi:"endpointName"`
+	// 终端类型。取值为 Custom，自定义终端。
+	EndpointType string `pulumi:"endpointType"`
+	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	IdleConnectionReclaim bool `pulumi:"idleConnectionReclaim"`
+	// 是否开启事务分离。取值：true：是。false：否。
+	ImplicitTransSplit bool `pulumi:"implicitTransSplit"`
+	// 是否开启主节点路由。取值：true：是。false：否。
+	MasterNodeRouting bool `pulumi:"masterNodeRouting"`
+	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	MasterProtectorTimeout int `pulumi:"masterProtectorTimeout"`
+	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	MultiStatementsMode string `pulumi:"multiStatementsMode"`
+	// 是否开启过载保护。取值：true：是。false：否。
+	OverloadProtection bool `pulumi:"overloadProtection"`
+	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	ReadOnlyNodeDistributionType string `pulumi:"readOnlyNodeDistributionType"`
+	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	ReadOnlyNodeMaxDelayTime int `pulumi:"readOnlyNodeMaxDelayTime"`
+	// 连接终端配置的节点列表及对应的只读权重。
+	ReadOnlyNodeWeights []GetInstanceEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
+	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	ReadWriteMode string `pulumi:"readWriteMode"`
+}
+
+// GetInstanceEndpointInput is an input type that accepts GetInstanceEndpointArgs and GetInstanceEndpointOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointInput` via:
+//
+//	GetInstanceEndpointArgs{...}
+type GetInstanceEndpointInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointOutput() GetInstanceEndpointOutput
+	ToGetInstanceEndpointOutputWithContext(context.Context) GetInstanceEndpointOutput
+}
+
+type GetInstanceEndpointArgs struct {
+	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	AutoAddNewNodes pulumi.StringInput `pulumi:"autoAddNewNodes"`
+	// 连接终端标签。
+	ConnectionInfoTags pulumi.StringArrayInput `pulumi:"connectionInfoTags"`
+	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	ConnectionMode pulumi.StringInput `pulumi:"connectionMode"`
+	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	ConnectionPoolType pulumi.StringInput `pulumi:"connectionPoolType"`
+	// 连接终端的描述信息。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 是否启用连接保持。取值：true：是。false：否。
+	EnableConnectionPersistent pulumi.BoolInput `pulumi:"enableConnectionPersistent"`
+	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	EnableReadOnly pulumi.StringInput `pulumi:"enableReadOnly"`
+	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	EnableReadWriteSplitting pulumi.StringInput `pulumi:"enableReadWriteSplitting"`
+	// 实例连接终端 ID。
+	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	// 实例连接终端名称。
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
+	// 终端类型。取值为 Custom，自定义终端。
+	EndpointType pulumi.StringInput `pulumi:"endpointType"`
+	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	IdleConnectionReclaim pulumi.BoolInput `pulumi:"idleConnectionReclaim"`
+	// 是否开启事务分离。取值：true：是。false：否。
+	ImplicitTransSplit pulumi.BoolInput `pulumi:"implicitTransSplit"`
+	// 是否开启主节点路由。取值：true：是。false：否。
+	MasterNodeRouting pulumi.BoolInput `pulumi:"masterNodeRouting"`
+	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	MasterProtectorTimeout pulumi.IntInput `pulumi:"masterProtectorTimeout"`
+	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	MultiStatementsMode pulumi.StringInput `pulumi:"multiStatementsMode"`
+	// 是否开启过载保护。取值：true：是。false：否。
+	OverloadProtection pulumi.BoolInput `pulumi:"overloadProtection"`
+	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	ReadOnlyNodeDistributionType pulumi.StringInput `pulumi:"readOnlyNodeDistributionType"`
+	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	ReadOnlyNodeMaxDelayTime pulumi.IntInput `pulumi:"readOnlyNodeMaxDelayTime"`
+	// 连接终端配置的节点列表及对应的只读权重。
+	ReadOnlyNodeWeights GetInstanceEndpointReadOnlyNodeWeightArrayInput `pulumi:"readOnlyNodeWeights"`
+	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	ReadWriteMode pulumi.StringInput `pulumi:"readWriteMode"`
+}
+
+func (GetInstanceEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointArgs) ToGetInstanceEndpointOutput() GetInstanceEndpointOutput {
+	return i.ToGetInstanceEndpointOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointArgs) ToGetInstanceEndpointOutputWithContext(ctx context.Context) GetInstanceEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointOutput)
+}
+
+// GetInstanceEndpointArrayInput is an input type that accepts GetInstanceEndpointArray and GetInstanceEndpointArrayOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointArrayInput` via:
+//
+//	GetInstanceEndpointArray{ GetInstanceEndpointArgs{...} }
+type GetInstanceEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointArrayOutput() GetInstanceEndpointArrayOutput
+	ToGetInstanceEndpointArrayOutputWithContext(context.Context) GetInstanceEndpointArrayOutput
+}
+
+type GetInstanceEndpointArray []GetInstanceEndpointInput
+
+func (GetInstanceEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointArray) ToGetInstanceEndpointArrayOutput() GetInstanceEndpointArrayOutput {
+	return i.ToGetInstanceEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointArray) ToGetInstanceEndpointArrayOutputWithContext(ctx context.Context) GetInstanceEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointArrayOutput)
+}
+
+type GetInstanceEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointOutput) ToGetInstanceEndpointOutput() GetInstanceEndpointOutput {
+	return o
+}
+
+func (o GetInstanceEndpointOutput) ToGetInstanceEndpointOutputWithContext(ctx context.Context) GetInstanceEndpointOutput {
+	return o
+}
+
+// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+func (o GetInstanceEndpointOutput) AutoAddNewNodes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.AutoAddNewNodes }).(pulumi.StringOutput)
+}
+
+// 连接终端标签。
+func (o GetInstanceEndpointOutput) ConnectionInfoTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) []string { return v.ConnectionInfoTags }).(pulumi.StringArrayOutput)
+}
+
+// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+func (o GetInstanceEndpointOutput) ConnectionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ConnectionMode }).(pulumi.StringOutput)
+}
+
+// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+func (o GetInstanceEndpointOutput) ConnectionPoolType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ConnectionPoolType }).(pulumi.StringOutput)
+}
+
+// 连接终端的描述信息。
+func (o GetInstanceEndpointOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 是否启用连接保持。取值：true：是。false：否。
+func (o GetInstanceEndpointOutput) EnableConnectionPersistent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.EnableConnectionPersistent }).(pulumi.BoolOutput)
+}
+
+// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+func (o GetInstanceEndpointOutput) EnableReadOnly() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EnableReadOnly }).(pulumi.StringOutput)
+}
+
+// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+func (o GetInstanceEndpointOutput) EnableReadWriteSplitting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EnableReadWriteSplitting }).(pulumi.StringOutput)
+}
+
+// 实例连接终端 ID。
+func (o GetInstanceEndpointOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// 实例连接终端名称。
+func (o GetInstanceEndpointOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
+// 终端类型。取值为 Custom，自定义终端。
+func (o GetInstanceEndpointOutput) EndpointType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
+}
+
+// 空闲连接回收功能是否开启。true：开启。false：不开启。
+func (o GetInstanceEndpointOutput) IdleConnectionReclaim() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.IdleConnectionReclaim }).(pulumi.BoolOutput)
+}
+
+// 是否开启事务分离。取值：true：是。false：否。
+func (o GetInstanceEndpointOutput) ImplicitTransSplit() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.ImplicitTransSplit }).(pulumi.BoolOutput)
+}
+
+// 是否开启主节点路由。取值：true：是。false：否。
+func (o GetInstanceEndpointOutput) MasterNodeRouting() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.MasterNodeRouting }).(pulumi.BoolOutput)
+}
+
+// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+func (o GetInstanceEndpointOutput) MasterProtectorTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) int { return v.MasterProtectorTimeout }).(pulumi.IntOutput)
+}
+
+// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+func (o GetInstanceEndpointOutput) MultiStatementsMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.MultiStatementsMode }).(pulumi.StringOutput)
+}
+
+// 是否开启过载保护。取值：true：是。false：否。
+func (o GetInstanceEndpointOutput) OverloadProtection() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.OverloadProtection }).(pulumi.BoolOutput)
+}
+
+// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+func (o GetInstanceEndpointOutput) ReadOnlyNodeDistributionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ReadOnlyNodeDistributionType }).(pulumi.StringOutput)
+}
+
+// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+func (o GetInstanceEndpointOutput) ReadOnlyNodeMaxDelayTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) int { return v.ReadOnlyNodeMaxDelayTime }).(pulumi.IntOutput)
+}
+
+// 连接终端配置的节点列表及对应的只读权重。
+func (o GetInstanceEndpointOutput) ReadOnlyNodeWeights() GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) []GetInstanceEndpointReadOnlyNodeWeight { return v.ReadOnlyNodeWeights }).(GetInstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+// 读写模式：ReadWrite：读写。ReadOnly：只读。
+func (o GetInstanceEndpointOutput) ReadWriteMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ReadWriteMode }).(pulumi.StringOutput)
+}
+
+type GetInstanceEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpoint)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointArrayOutput) ToGetInstanceEndpointArrayOutput() GetInstanceEndpointArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointArrayOutput) ToGetInstanceEndpointArrayOutputWithContext(ctx context.Context) GetInstanceEndpointArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointArrayOutput) Index(i pulumi.IntInput) GetInstanceEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpoint {
+		return vs[0].([]GetInstanceEndpoint)[vs[1].(int)]
+	}).(GetInstanceEndpointOutput)
+}
+
+type GetInstanceEndpointReadOnlyNodeWeight struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId string `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType string `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。
+	Weight int `pulumi:"weight"`
+}
+
+// GetInstanceEndpointReadOnlyNodeWeightInput is an input type that accepts GetInstanceEndpointReadOnlyNodeWeightArgs and GetInstanceEndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointReadOnlyNodeWeightInput` via:
+//
+//	GetInstanceEndpointReadOnlyNodeWeightArgs{...}
+type GetInstanceEndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointReadOnlyNodeWeightOutput() GetInstanceEndpointReadOnlyNodeWeightOutput
+	ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Context) GetInstanceEndpointReadOnlyNodeWeightOutput
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightArgs struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetInstanceEndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArgs) ToGetInstanceEndpointReadOnlyNodeWeightOutput() GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return i.ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArgs) ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+// GetInstanceEndpointReadOnlyNodeWeightArrayInput is an input type that accepts GetInstanceEndpointReadOnlyNodeWeightArray and GetInstanceEndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `GetInstanceEndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	GetInstanceEndpointReadOnlyNodeWeightArray{ GetInstanceEndpointReadOnlyNodeWeightArgs{...} }
+type GetInstanceEndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceEndpointReadOnlyNodeWeightArrayOutput() GetInstanceEndpointReadOnlyNodeWeightArrayOutput
+	ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) GetInstanceEndpointReadOnlyNodeWeightArrayOutput
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightArray []GetInstanceEndpointReadOnlyNodeWeightInput
+
+func (GetInstanceEndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArray) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutput() GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceEndpointReadOnlyNodeWeightArray) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) ToGetInstanceEndpointReadOnlyNodeWeightOutput() GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) ToGetInstanceEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// 只读节点需要传入 NodeId，主节点无需传入。
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// 节点类型。Primary：主节点。ReadOnly：只读节点。
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// 节点的读权重，以 100 递增，最大值为 10000。
+func (o GetInstanceEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetInstanceEndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceEndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightArrayOutput) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutput() GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightArrayOutput) ToGetInstanceEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetInstanceEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) GetInstanceEndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceEndpointReadOnlyNodeWeight {
+		return vs[0].([]GetInstanceEndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(GetInstanceEndpointReadOnlyNodeWeightOutput)
+}
+
+type GetInstanceMaintenanceWindow struct {
+	// 可维护周期粒度，取值为 Week，周。
+	DayKind string `pulumi:"dayKind"`
+	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	DayOfWeeks []string `pulumi:"dayOfWeeks"`
+	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	MaintenanceTime string `pulumi:"maintenanceTime"`
+}
+
+// GetInstanceMaintenanceWindowInput is an input type that accepts GetInstanceMaintenanceWindowArgs and GetInstanceMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetInstanceMaintenanceWindowInput` via:
+//
+//	GetInstanceMaintenanceWindowArgs{...}
+type GetInstanceMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetInstanceMaintenanceWindowOutput() GetInstanceMaintenanceWindowOutput
+	ToGetInstanceMaintenanceWindowOutputWithContext(context.Context) GetInstanceMaintenanceWindowOutput
+}
+
+type GetInstanceMaintenanceWindowArgs struct {
+	// 可维护周期粒度，取值为 Week，周。
+	DayKind pulumi.StringInput `pulumi:"dayKind"`
+	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	DayOfWeeks pulumi.StringArrayInput `pulumi:"dayOfWeeks"`
+	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	MaintenanceTime pulumi.StringInput `pulumi:"maintenanceTime"`
+}
+
+func (GetInstanceMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetInstanceMaintenanceWindowArgs) ToGetInstanceMaintenanceWindowOutput() GetInstanceMaintenanceWindowOutput {
+	return i.ToGetInstanceMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetInstanceMaintenanceWindowArgs) ToGetInstanceMaintenanceWindowOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceMaintenanceWindowOutput)
+}
+
+type GetInstanceMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetInstanceMaintenanceWindowOutput) ToGetInstanceMaintenanceWindowOutput() GetInstanceMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetInstanceMaintenanceWindowOutput) ToGetInstanceMaintenanceWindowOutputWithContext(ctx context.Context) GetInstanceMaintenanceWindowOutput {
+	return o
+}
+
+// 可维护周期粒度，取值为 Week，周。
+func (o GetInstanceMaintenanceWindowOutput) DayKind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindow) string { return v.DayKind }).(pulumi.StringOutput)
+}
+
+// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+func (o GetInstanceMaintenanceWindowOutput) DayOfWeeks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindow) []string { return v.DayOfWeeks }).(pulumi.StringArrayOutput)
+}
+
+// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+func (o GetInstanceMaintenanceWindowOutput) MaintenanceTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceMaintenanceWindow) string { return v.MaintenanceTime }).(pulumi.StringOutput)
+}
+
+type GetInstanceNode struct {
+	// 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	CreateTime string `pulumi:"createTime"`
+	// 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+	DelayReplicationTime int `pulumi:"delayReplicationTime"`
+	// 内存大小，单位为 GB。
+	Memory int `pulumi:"memory"`
+	// 节点 ID。
+	NodeId string `pulumi:"nodeId"`
+	// 节点规格。
+	NodeSpec string `pulumi:"nodeSpec"`
+	// 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+	NodeStatus string `pulumi:"nodeStatus"`
+	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	NodeType string `pulumi:"nodeType"`
+	// 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+	SyncDelay int `pulumi:"syncDelay"`
+	// 节点更新本地时间。
+	UpdateTime string `pulumi:"updateTime"`
+	// 节点的 CPU 核数。
+	Vcpu int `pulumi:"vcpu"`
+	// 可用区 ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetInstanceNodeInput is an input type that accepts GetInstanceNodeArgs and GetInstanceNodeOutput values.
+// You can construct a concrete instance of `GetInstanceNodeInput` via:
+//
+//	GetInstanceNodeArgs{...}
+type GetInstanceNodeInput interface {
+	pulumi.Input
+
+	ToGetInstanceNodeOutput() GetInstanceNodeOutput
+	ToGetInstanceNodeOutputWithContext(context.Context) GetInstanceNodeOutput
+}
+
+type GetInstanceNodeArgs struct {
+	// 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+	DelayReplicationTime pulumi.IntInput `pulumi:"delayReplicationTime"`
+	// 内存大小，单位为 GB。
+	Memory pulumi.IntInput `pulumi:"memory"`
+	// 节点 ID。
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// 节点规格。
+	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
+	// 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
+	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+	SyncDelay pulumi.IntInput `pulumi:"syncDelay"`
+	// 节点更新本地时间。
+	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
+	// 节点的 CPU 核数。
+	Vcpu pulumi.IntInput `pulumi:"vcpu"`
+	// 可用区 ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetInstanceNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceNode)(nil)).Elem()
+}
+
+func (i GetInstanceNodeArgs) ToGetInstanceNodeOutput() GetInstanceNodeOutput {
+	return i.ToGetInstanceNodeOutputWithContext(context.Background())
+}
+
+func (i GetInstanceNodeArgs) ToGetInstanceNodeOutputWithContext(ctx context.Context) GetInstanceNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceNodeOutput)
+}
+
+// GetInstanceNodeArrayInput is an input type that accepts GetInstanceNodeArray and GetInstanceNodeArrayOutput values.
+// You can construct a concrete instance of `GetInstanceNodeArrayInput` via:
+//
+//	GetInstanceNodeArray{ GetInstanceNodeArgs{...} }
+type GetInstanceNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceNodeArrayOutput() GetInstanceNodeArrayOutput
+	ToGetInstanceNodeArrayOutputWithContext(context.Context) GetInstanceNodeArrayOutput
+}
+
+type GetInstanceNodeArray []GetInstanceNodeInput
+
+func (GetInstanceNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceNode)(nil)).Elem()
+}
+
+func (i GetInstanceNodeArray) ToGetInstanceNodeArrayOutput() GetInstanceNodeArrayOutput {
+	return i.ToGetInstanceNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceNodeArray) ToGetInstanceNodeArrayOutputWithContext(ctx context.Context) GetInstanceNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceNodeArrayOutput)
+}
+
+type GetInstanceNodeOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceNode)(nil)).Elem()
+}
+
+func (o GetInstanceNodeOutput) ToGetInstanceNodeOutput() GetInstanceNodeOutput {
+	return o
+}
+
+func (o GetInstanceNodeOutput) ToGetInstanceNodeOutputWithContext(ctx context.Context) GetInstanceNodeOutput {
+	return o
+}
+
+// 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+func (o GetInstanceNodeOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNode) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+func (o GetInstanceNodeOutput) DelayReplicationTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceNode) int { return v.DelayReplicationTime }).(pulumi.IntOutput)
+}
+
+// 内存大小，单位为 GB。
+func (o GetInstanceNodeOutput) Memory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceNode) int { return v.Memory }).(pulumi.IntOutput)
+}
+
+// 节点 ID。
+func (o GetInstanceNodeOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// 节点规格。
+func (o GetInstanceNodeOutput) NodeSpec() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeSpec }).(pulumi.StringOutput)
+}
+
+// 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+func (o GetInstanceNodeOutput) NodeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeStatus }).(pulumi.StringOutput)
+}
+
+// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+func (o GetInstanceNodeOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+func (o GetInstanceNodeOutput) SyncDelay() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceNode) int { return v.SyncDelay }).(pulumi.IntOutput)
+}
+
+// 节点更新本地时间。
+func (o GetInstanceNodeOutput) UpdateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNode) string { return v.UpdateTime }).(pulumi.StringOutput)
+}
+
+// 节点的 CPU 核数。
+func (o GetInstanceNodeOutput) Vcpu() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceNode) int { return v.Vcpu }).(pulumi.IntOutput)
+}
+
+// 可用区 ID。
+func (o GetInstanceNodeOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceNode) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetInstanceNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceNode)(nil)).Elem()
+}
+
+func (o GetInstanceNodeArrayOutput) ToGetInstanceNodeArrayOutput() GetInstanceNodeArrayOutput {
+	return o
+}
+
+func (o GetInstanceNodeArrayOutput) ToGetInstanceNodeArrayOutputWithContext(ctx context.Context) GetInstanceNodeArrayOutput {
+	return o
+}
+
+func (o GetInstanceNodeArrayOutput) Index(i pulumi.IntInput) GetInstanceNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceNode {
+		return vs[0].([]GetInstanceNode)[vs[1].(int)]
+	}).(GetInstanceNodeOutput)
+}
+
+type GetInstanceProxyDetail struct {
+	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	DbProxyStatus string `pulumi:"dbProxyStatus"`
+	// 实例的数据库代理服务的资源信息。
+	ProxyResourceInfo GetInstanceProxyDetailProxyResourceInfo `pulumi:"proxyResourceInfo"`
+}
+
+// GetInstanceProxyDetailInput is an input type that accepts GetInstanceProxyDetailArgs and GetInstanceProxyDetailOutput values.
+// You can construct a concrete instance of `GetInstanceProxyDetailInput` via:
+//
+//	GetInstanceProxyDetailArgs{...}
+type GetInstanceProxyDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceProxyDetailOutput() GetInstanceProxyDetailOutput
+	ToGetInstanceProxyDetailOutputWithContext(context.Context) GetInstanceProxyDetailOutput
+}
+
+type GetInstanceProxyDetailArgs struct {
+	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	DbProxyStatus pulumi.StringInput `pulumi:"dbProxyStatus"`
+	// 实例的数据库代理服务的资源信息。
+	ProxyResourceInfo GetInstanceProxyDetailProxyResourceInfoInput `pulumi:"proxyResourceInfo"`
+}
+
+func (GetInstanceProxyDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceProxyDetail)(nil)).Elem()
+}
+
+func (i GetInstanceProxyDetailArgs) ToGetInstanceProxyDetailOutput() GetInstanceProxyDetailOutput {
+	return i.ToGetInstanceProxyDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceProxyDetailArgs) ToGetInstanceProxyDetailOutputWithContext(ctx context.Context) GetInstanceProxyDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceProxyDetailOutput)
+}
+
+type GetInstanceProxyDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceProxyDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceProxyDetail)(nil)).Elem()
+}
+
+func (o GetInstanceProxyDetailOutput) ToGetInstanceProxyDetailOutput() GetInstanceProxyDetailOutput {
+	return o
+}
+
+func (o GetInstanceProxyDetailOutput) ToGetInstanceProxyDetailOutputWithContext(ctx context.Context) GetInstanceProxyDetailOutput {
+	return o
+}
+
+// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+func (o GetInstanceProxyDetailOutput) DbProxyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceProxyDetail) string { return v.DbProxyStatus }).(pulumi.StringOutput)
+}
+
+// 实例的数据库代理服务的资源信息。
+func (o GetInstanceProxyDetailOutput) ProxyResourceInfo() GetInstanceProxyDetailProxyResourceInfoOutput {
+	return o.ApplyT(func(v GetInstanceProxyDetail) GetInstanceProxyDetailProxyResourceInfo { return v.ProxyResourceInfo }).(GetInstanceProxyDetailProxyResourceInfoOutput)
+}
+
+type GetInstanceProxyDetailProxyResourceInfo struct {
+	// 实例数据库代理服务当前的核数。
+	CurrentProxyCpuNum int `pulumi:"currentProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最多核数。
+	MaxProxyCpuNum int `pulumi:"maxProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最少核数。
+	MinProxyCpuNum int `pulumi:"minProxyCpuNum"`
+}
+
+// GetInstanceProxyDetailProxyResourceInfoInput is an input type that accepts GetInstanceProxyDetailProxyResourceInfoArgs and GetInstanceProxyDetailProxyResourceInfoOutput values.
+// You can construct a concrete instance of `GetInstanceProxyDetailProxyResourceInfoInput` via:
+//
+//	GetInstanceProxyDetailProxyResourceInfoArgs{...}
+type GetInstanceProxyDetailProxyResourceInfoInput interface {
+	pulumi.Input
+
+	ToGetInstanceProxyDetailProxyResourceInfoOutput() GetInstanceProxyDetailProxyResourceInfoOutput
+	ToGetInstanceProxyDetailProxyResourceInfoOutputWithContext(context.Context) GetInstanceProxyDetailProxyResourceInfoOutput
+}
+
+type GetInstanceProxyDetailProxyResourceInfoArgs struct {
+	// 实例数据库代理服务当前的核数。
+	CurrentProxyCpuNum pulumi.IntInput `pulumi:"currentProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最多核数。
+	MaxProxyCpuNum pulumi.IntInput `pulumi:"maxProxyCpuNum"`
+	// 用户可为数据库代理服务配置的最少核数。
+	MinProxyCpuNum pulumi.IntInput `pulumi:"minProxyCpuNum"`
+}
+
+func (GetInstanceProxyDetailProxyResourceInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceProxyDetailProxyResourceInfo)(nil)).Elem()
+}
+
+func (i GetInstanceProxyDetailProxyResourceInfoArgs) ToGetInstanceProxyDetailProxyResourceInfoOutput() GetInstanceProxyDetailProxyResourceInfoOutput {
+	return i.ToGetInstanceProxyDetailProxyResourceInfoOutputWithContext(context.Background())
+}
+
+func (i GetInstanceProxyDetailProxyResourceInfoArgs) ToGetInstanceProxyDetailProxyResourceInfoOutputWithContext(ctx context.Context) GetInstanceProxyDetailProxyResourceInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceProxyDetailProxyResourceInfoOutput)
+}
+
+type GetInstanceProxyDetailProxyResourceInfoOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceProxyDetailProxyResourceInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceProxyDetailProxyResourceInfo)(nil)).Elem()
+}
+
+func (o GetInstanceProxyDetailProxyResourceInfoOutput) ToGetInstanceProxyDetailProxyResourceInfoOutput() GetInstanceProxyDetailProxyResourceInfoOutput {
+	return o
+}
+
+func (o GetInstanceProxyDetailProxyResourceInfoOutput) ToGetInstanceProxyDetailProxyResourceInfoOutputWithContext(ctx context.Context) GetInstanceProxyDetailProxyResourceInfoOutput {
+	return o
+}
+
+// 实例数据库代理服务当前的核数。
+func (o GetInstanceProxyDetailProxyResourceInfoOutput) CurrentProxyCpuNum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceProxyDetailProxyResourceInfo) int { return v.CurrentProxyCpuNum }).(pulumi.IntOutput)
+}
+
+// 用户可为数据库代理服务配置的最多核数。
+func (o GetInstanceProxyDetailProxyResourceInfoOutput) MaxProxyCpuNum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceProxyDetailProxyResourceInfo) int { return v.MaxProxyCpuNum }).(pulumi.IntOutput)
+}
+
+// 用户可为数据库代理服务配置的最少核数。
+func (o GetInstanceProxyDetailProxyResourceInfoOutput) MinProxyCpuNum() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceProxyDetailProxyResourceInfo) int { return v.MinProxyCpuNum }).(pulumi.IntOutput)
+}
+
+type GetInstanceTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetInstanceTagInput is an input type that accepts GetInstanceTagArgs and GetInstanceTagOutput values.
+// You can construct a concrete instance of `GetInstanceTagInput` via:
+//
+//	GetInstanceTagArgs{...}
+type GetInstanceTagInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagOutput() GetInstanceTagOutput
+	ToGetInstanceTagOutputWithContext(context.Context) GetInstanceTagOutput
+}
+
+type GetInstanceTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetInstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return i.ToGetInstanceTagOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagOutput)
+}
+
+// GetInstanceTagArrayInput is an input type that accepts GetInstanceTagArray and GetInstanceTagArrayOutput values.
+// You can construct a concrete instance of `GetInstanceTagArrayInput` via:
+//
+//	GetInstanceTagArray{ GetInstanceTagArgs{...} }
+type GetInstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput
+	ToGetInstanceTagArrayOutputWithContext(context.Context) GetInstanceTagArrayOutput
+}
+
+type GetInstanceTagArray []GetInstanceTagInput
+
+func (GetInstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return i.ToGetInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagArrayOutput)
+}
+
+type GetInstanceTagOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return o
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetInstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceTag {
+		return vs[0].([]GetInstanceTag)[vs[1].(int)]
+	}).(GetInstanceTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountAccountPrivilegeInput)(nil)).Elem(), DbAccountAccountPrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountAccountPrivilegeArrayInput)(nil)).Elem(), DbAccountAccountPrivilegeArray{})
@@ -926,6 +4274,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountTableColumnPrivilegeColumnPrivilegeArrayInput)(nil)).Elem(), DbAccountTableColumnPrivilegeColumnPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountTableColumnPrivilegeTablePrivilegeInput)(nil)).Elem(), DbAccountTableColumnPrivilegeTablePrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountTableColumnPrivilegeTablePrivilegeArrayInput)(nil)).Elem(), DbAccountTableColumnPrivilegeTablePrivilegeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAddressObjectInput)(nil)).Elem(), InstanceAddressObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAddressObjectArrayInput)(nil)).Elem(), InstanceAddressObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAutoStorageScalingConfigInput)(nil)).Elem(), InstanceAutoStorageScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAutoStorageScalingConfigPtrInput)(nil)).Elem(), InstanceAutoStorageScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailInput)(nil)).Elem(), InstanceChargeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailPtrInput)(nil)).Elem(), InstanceChargeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDisasterRecoveryInstanceInput)(nil)).Elem(), InstanceDisasterRecoveryInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDisasterRecoveryInstanceArrayInput)(nil)).Elem(), InstanceDisasterRecoveryInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointInput)(nil)).Elem(), InstanceEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointArrayInput)(nil)).Elem(), InstanceEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeightInput)(nil)).Elem(), InstanceEndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), InstanceEndpointReadOnlyNodeWeightArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowInput)(nil)).Elem(), InstanceMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceMaintenanceWindowPtrInput)(nil)).Elem(), InstanceMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeInput)(nil)).Elem(), InstanceNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeArrayInput)(nil)).Elem(), InstanceNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailInput)(nil)).Elem(), InstanceProxyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailPtrInput)(nil)).Elem(), InstanceProxyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailProxyResourceInfoInput)(nil)).Elem(), InstanceProxyDetailProxyResourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailProxyResourceInfoPtrInput)(nil)).Elem(), InstanceProxyDetailProxyResourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountAccountPrivilegeInput)(nil)).Elem(), GetDbAccountAccountPrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountAccountPrivilegeArrayInput)(nil)).Elem(), GetDbAccountAccountPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeArgs{})
@@ -934,6 +4304,23 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeColumnPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeTablePrivilegeInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeTablePrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeTablePrivilegeArrayInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeTablePrivilegeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAddressObjectInput)(nil)).Elem(), GetInstanceAddressObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAddressObjectArrayInput)(nil)).Elem(), GetInstanceAddressObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAutoStorageScalingConfigInput)(nil)).Elem(), GetInstanceAutoStorageScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeDetailInput)(nil)).Elem(), GetInstanceChargeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDisasterRecoveryInstanceInput)(nil)).Elem(), GetInstanceDisasterRecoveryInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDisasterRecoveryInstanceArrayInput)(nil)).Elem(), GetInstanceDisasterRecoveryInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointInput)(nil)).Elem(), GetInstanceEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointArrayInput)(nil)).Elem(), GetInstanceEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetInstanceEndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), GetInstanceEndpointReadOnlyNodeWeightArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceMaintenanceWindowInput)(nil)).Elem(), GetInstanceMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeInput)(nil)).Elem(), GetInstanceNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeArrayInput)(nil)).Elem(), GetInstanceNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceProxyDetailInput)(nil)).Elem(), GetInstanceProxyDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceProxyDetailProxyResourceInfoInput)(nil)).Elem(), GetInstanceProxyDetailProxyResourceInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterOutputType(DbAccountAccountPrivilegeOutput{})
 	pulumi.RegisterOutputType(DbAccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeOutput{})
@@ -942,6 +4329,28 @@ func init() {
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeTablePrivilegeOutput{})
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeTablePrivilegeArrayOutput{})
+	pulumi.RegisterOutputType(InstanceAddressObjectOutput{})
+	pulumi.RegisterOutputType(InstanceAddressObjectArrayOutput{})
+	pulumi.RegisterOutputType(InstanceAutoStorageScalingConfigOutput{})
+	pulumi.RegisterOutputType(InstanceAutoStorageScalingConfigPtrOutput{})
+	pulumi.RegisterOutputType(InstanceChargeDetailOutput{})
+	pulumi.RegisterOutputType(InstanceChargeDetailPtrOutput{})
+	pulumi.RegisterOutputType(InstanceDisasterRecoveryInstanceOutput{})
+	pulumi.RegisterOutputType(InstanceDisasterRecoveryInstanceArrayOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointArrayOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(InstanceEndpointReadOnlyNodeWeightArrayOutput{})
+	pulumi.RegisterOutputType(InstanceMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(InstanceMaintenanceWindowPtrOutput{})
+	pulumi.RegisterOutputType(InstanceNodeOutput{})
+	pulumi.RegisterOutputType(InstanceNodeArrayOutput{})
+	pulumi.RegisterOutputType(InstanceProxyDetailOutput{})
+	pulumi.RegisterOutputType(InstanceProxyDetailPtrOutput{})
+	pulumi.RegisterOutputType(InstanceProxyDetailProxyResourceInfoOutput{})
+	pulumi.RegisterOutputType(InstanceProxyDetailProxyResourceInfoPtrOutput{})
+	pulumi.RegisterOutputType(InstanceTagOutput{})
+	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetDbAccountAccountPrivilegeOutput{})
 	pulumi.RegisterOutputType(GetDbAccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeOutput{})
@@ -950,4 +4359,21 @@ func init() {
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeTablePrivilegeOutput{})
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeTablePrivilegeArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceAddressObjectOutput{})
+	pulumi.RegisterOutputType(GetInstanceAddressObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceAutoStorageScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceChargeDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceDisasterRecoveryInstanceOutput{})
+	pulumi.RegisterOutputType(GetInstanceDisasterRecoveryInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(GetInstanceEndpointReadOnlyNodeWeightArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetInstanceNodeOutput{})
+	pulumi.RegisterOutputType(GetInstanceNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceProxyDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceProxyDetailProxyResourceInfoOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
 }

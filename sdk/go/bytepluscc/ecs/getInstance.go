@@ -62,6 +62,7 @@ type LookupInstanceResult struct {
 	SpotPriceLimit             float64                                `pulumi:"spotPriceLimit"`
 	SpotStrategy               string                                 `pulumi:"spotStrategy"`
 	Status                     string                                 `pulumi:"status"`
+	StoppedMode                string                                 `pulumi:"stoppedMode"`
 	SystemVolume               GetInstanceSystemVolume                `pulumi:"systemVolume"`
 	Tags                       []GetInstanceTag                       `pulumi:"tags"`
 	UpdatedAt                  string                                 `pulumi:"updatedAt"`
@@ -235,6 +236,10 @@ func (o LookupInstanceResultOutput) SpotStrategy() pulumi.StringOutput {
 
 func (o LookupInstanceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o LookupInstanceResultOutput) StoppedMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.StoppedMode }).(pulumi.StringOutput)
 }
 
 func (o LookupInstanceResultOutput) SystemVolume() GetInstanceSystemVolumeOutput {

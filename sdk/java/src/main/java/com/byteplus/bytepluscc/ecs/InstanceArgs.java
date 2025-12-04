@@ -516,6 +516,29 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+     * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+     * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+     * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 
+     */
+    @Import(name="stoppedMode")
+    private @Nullable Output<String> stoppedMode;
+
+    /**
+     * @return StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+     * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+     * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+     * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 
+     */
+    public Optional<Output<String>> stoppedMode() {
+        return Optional.ofNullable(this.stoppedMode);
+    }
+
+    /**
      * 实例的系统卷。
      * 
      */
@@ -617,6 +640,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.spotPriceLimit = $.spotPriceLimit;
         this.spotStrategy = $.spotStrategy;
         this.status = $.status;
+        this.stoppedMode = $.stoppedMode;
         this.systemVolume = $.systemVolume;
         this.tags = $.tags;
         this.userData = $.userData;
@@ -1294,6 +1318,35 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param stoppedMode StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+         * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+         * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+         * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+         * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stoppedMode(@Nullable Output<String> stoppedMode) {
+            $.stoppedMode = stoppedMode;
+            return this;
+        }
+
+        /**
+         * @param stoppedMode StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
+         * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
+         * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
+         * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
+         * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stoppedMode(String stoppedMode) {
+            return stoppedMode(Output.of(stoppedMode));
         }
 
         /**

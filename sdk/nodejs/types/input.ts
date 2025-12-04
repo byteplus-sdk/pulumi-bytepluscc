@@ -1321,6 +1321,299 @@ export namespace rdsmysql {
         tableName?: pulumi.Input<string>;
     }
 
+    export interface InstanceAddressObject {
+        /**
+         * false：私网解析（默认）。true：私网以及公网解析。
+         */
+        dnsVisibility?: pulumi.Input<boolean>;
+        /**
+         * 连接域名。
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * EIP 的 ID，仅对 Public 地址有效。
+         */
+        eipId?: pulumi.Input<string>;
+        /**
+         * IP 协议版本。取值为 IPv4。
+         */
+        internetProtocol?: pulumi.Input<string>;
+        /**
+         * IP 地址。
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * 端口。
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * 子网 ID，仅对 Private 地址有效。
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceAutoStorageScalingConfig {
+        /**
+         * 是否开启实例的自动扩容功能。取值：true：是。false：否。
+         */
+        enableStorageAutoScale?: pulumi.Input<boolean>;
+        /**
+         * 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+         */
+        storageThreshold?: pulumi.Input<number>;
+        /**
+         * 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+         */
+        storageUpperBound?: pulumi.Input<number>;
+    }
+
+    export interface InstanceChargeDetail {
+        /**
+         * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         */
+        chargeEndTime?: pulumi.Input<string>;
+        /**
+         * 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         */
+        chargeStartTime?: pulumi.Input<string>;
+        /**
+         * 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+         */
+        chargeStatus?: pulumi.Input<string>;
+        /**
+         * 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+         */
+        chargeType: pulumi.Input<string>;
+        /**
+         * 实例购买数量。取值范围为 1~50。默认值为 1。
+         */
+        number?: pulumi.Input<number>;
+        /**
+         * 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         */
+        overdueReclaimTime?: pulumi.Input<string>;
+        /**
+         * 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         */
+        overdueTime?: pulumi.Input<string>;
+        /**
+         * 预付费场景下的购买时长。
+         */
+        period?: pulumi.Input<number>;
+        /**
+         * 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+         */
+        periodUnit?: pulumi.Input<string>;
+        /**
+         * 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         */
+        tempModifyEndTime?: pulumi.Input<string>;
+        /**
+         * 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+         */
+        tempModifyStartTime?: pulumi.Input<string>;
+    }
+
+    export interface InstanceDisasterRecoveryInstance {
+        /**
+         * 主实例与灾备实例之间同步任务的 ID。
+         */
+        dtsTaskId?: pulumi.Input<string>;
+        /**
+         * 主实例与灾备实例之间同步任务的名称。
+         */
+        dtsTaskName?: pulumi.Input<string>;
+        /**
+         * 主实例与灾备实例之间同步任务的状态。
+         */
+        dtsTaskStatus?: pulumi.Input<string>;
+        /**
+         * 灾备实例的 ID。
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * 灾备实例的名称。
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * 灾备实例与主实例之间的时延。
+         */
+        secondsBehindMaster?: pulumi.Input<number>;
+    }
+
+    export interface InstanceEndpoint {
+        /**
+         * 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+         */
+        autoAddNewNodes?: pulumi.Input<string>;
+        /**
+         * 连接终端标签。
+         */
+        connectionInfoTags?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+         */
+        connectionMode?: pulumi.Input<string>;
+        /**
+         * 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+         */
+        connectionPoolType?: pulumi.Input<string>;
+        /**
+         * 连接终端的描述信息。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 是否启用连接保持。取值：true：是。false：否。
+         */
+        enableConnectionPersistent?: pulumi.Input<boolean>;
+        /**
+         * 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+         */
+        enableReadOnly?: pulumi.Input<string>;
+        /**
+         * 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+         */
+        enableReadWriteSplitting?: pulumi.Input<string>;
+        /**
+         * 实例连接终端 ID。
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * 实例连接终端名称。
+         */
+        endpointName?: pulumi.Input<string>;
+        /**
+         * 终端类型。取值为 Custom，自定义终端。
+         */
+        endpointType?: pulumi.Input<string>;
+        /**
+         * 空闲连接回收功能是否开启。true：开启。false：不开启。
+         */
+        idleConnectionReclaim?: pulumi.Input<boolean>;
+        /**
+         * 是否开启事务分离。取值：true：是。false：否。
+         */
+        implicitTransSplit?: pulumi.Input<boolean>;
+        /**
+         * 是否开启主节点路由。取值：true：是。false：否。
+         */
+        masterNodeRouting?: pulumi.Input<boolean>;
+        /**
+         * 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+         */
+        masterProtectorTimeout?: pulumi.Input<number>;
+        /**
+         * 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+         */
+        multiStatementsMode?: pulumi.Input<string>;
+        /**
+         * 是否开启过载保护。取值：true：是。false：否。
+         */
+        overloadProtection?: pulumi.Input<boolean>;
+        /**
+         * 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+         */
+        readOnlyNodeDistributionType?: pulumi.Input<string>;
+        /**
+         * 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+         */
+        readOnlyNodeMaxDelayTime?: pulumi.Input<number>;
+        readOnlyNodeWeights?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceEndpointReadOnlyNodeWeight>[]>;
+        /**
+         * 读写模式：ReadWrite：读写。ReadOnly：只读。
+         */
+        readWriteMode?: pulumi.Input<string>;
+    }
+
+    export interface InstanceEndpointReadOnlyNodeWeight {
+        /**
+         * 只读节点需要传入 NodeId，主节点无需传入。
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * 节点类型。Primary：主节点。ReadOnly：只读节点。
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * 节点的读权重，以 100 递增，最大值为 10000。
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface InstanceMaintenanceWindow {
+        /**
+         * 可维护周期粒度，取值为 Week，周。
+         */
+        dayKind?: pulumi.Input<string>;
+        /**
+         * 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+         */
+        dayOfWeeks?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+         */
+        maintenanceTime?: pulumi.Input<string>;
+    }
+
+    export interface InstanceNode {
+        /**
+         * 节点规格。
+         */
+        nodeSpec: pulumi.Input<string>;
+        /**
+         * 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+         */
+        nodeType: pulumi.Input<string>;
+        /**
+         * 可用区 ID。
+         */
+        zoneId: pulumi.Input<string>;
+    }
+
+    export interface InstanceProxyDetail {
+        /**
+         * 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+         */
+        dbProxyStatus?: pulumi.Input<string>;
+        /**
+         * 实例的数据库代理服务的资源信息。
+         */
+        proxyResourceInfo?: pulumi.Input<inputs.rdsmysql.InstanceProxyDetailProxyResourceInfo>;
+    }
+
+    export interface InstanceProxyDetailProxyResourceInfo {
+        /**
+         * 实例数据库代理服务当前的核数。
+         */
+        currentProxyCpuNum?: pulumi.Input<number>;
+        /**
+         * 用户可为数据库代理服务配置的最多核数。
+         */
+        maxProxyCpuNum?: pulumi.Input<number>;
+        /**
+         * 用户可为数据库代理服务配置的最少核数。
+         */
+        minProxyCpuNum?: pulumi.Input<number>;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
 }
 
 export namespace storageebs {

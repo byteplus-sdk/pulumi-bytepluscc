@@ -91,6 +91,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public readonly double SpotPriceLimit;
         public readonly string SpotStrategy;
         public readonly string Status;
+        public readonly string StoppedMode;
         public readonly Outputs.GetInstanceSystemVolumeResult SystemVolume;
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         public readonly string UpdatedAt;
@@ -166,6 +167,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
             string status,
 
+            string stoppedMode,
+
             Outputs.GetInstanceSystemVolumeResult systemVolume,
 
             ImmutableArray<Outputs.GetInstanceTagResult> tags,
@@ -211,6 +214,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             SpotPriceLimit = spotPriceLimit;
             SpotStrategy = spotStrategy;
             Status = status;
+            StoppedMode = stoppedMode;
             SystemVolume = systemVolume;
             Tags = tags;
             UpdatedAt = updatedAt;
