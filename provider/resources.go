@@ -21,6 +21,8 @@ import (
 	_ "embed"
 	"fmt"
 	"path/filepath"
+	"strings"
+	"unicode"
 
 	"github.com/byteplus-sdk/pulumi-bytepluscc/provider/cmd/pulumi-resource-bytepluscc/token"
 	"github.com/byteplus-sdk/pulumi-bytepluscc/provider/pkg/version"
@@ -169,6 +171,18 @@ func Provider() tfbridge.ProviderInfo {
 		return tokens.MakeStandard(byteplusccPKG)(module, name)
 	}
 	prov.MustComputeTokens(token.VolcengineToken("bytepluscc_", makeToken))
+	for k := range prov.Resources {
+		// 获取第二跟斜杠后面的值
+		lastPart := extractAndConvertToCamelCase(k)
+		//如果当前类的字段存在同名，比如domain的class下有domain字段，则domain字段 + Value
+		if prov.P.ResourcesMap().Get(k).Schema().Get(lastPart) != nil {
+			prov.Resources[k].Fields = map[string]*info.Schema{
+				lastPart: {
+					CSharpName: toCamelCase(lastPart) + "Value",
+				},
+			}
+		}
+	}
 	prov.MustApplyAutoAliases()
 	for k := range prov.Resources {
 		if k == "bytepluscc_natgateway_nat_ip" {
@@ -176,4 +190,53 @@ func Provider() tfbridge.ProviderInfo {
 		}
 	}
 	return prov
+}
+func extractAndConvertToCamelCase(input string) string {
+	// 按下划线分割字符串
+	parts := strings.Split(input, "_")
+	// 如果少于3个部分，返回空字符串或原字符串
+	if len(parts) < 3 {
+		return input
+	}
+	// 获取第二根下划线后的所有部分
+	remainingParts := parts[2:]
+	// 直接返回第二根下划线后的所有内容，保持下划线分隔符
+	return strings.Join(remainingParts, "_")
+}
+
+// toCamelCase 将字符串转换为驼峰命名，首字母大写
+func toCamelCase(s string) string {
+	if len(s) == 0 {
+		return ""
+	}
+
+	// 按下划线分割字符串
+	parts := strings.Split(s, "_")
+	var result strings.Builder
+
+	for i, part := range parts {
+		if len(part) == 0 {
+			continue
+		}
+		if i == 0 {
+			// 首字母大写
+			result.WriteString(capitalizeFirst(part))
+		} else {
+			// 其余部分首字母大写，其余小写
+			result.WriteString(capitalizeFirst(strings.ToLower(part)))
+		}
+	}
+
+	return result.String()
+}
+
+// capitalizeFirst 将字符串首字母大写
+func capitalizeFirst(s string) string {
+	if len(s) == 0 {
+		return ""
+	}
+
+	runes := []rune(s)
+	runes[0] = unicode.ToUpper(runes[0])
+	return string(runes)
 }
