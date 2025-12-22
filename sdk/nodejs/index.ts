@@ -19,7 +19,10 @@ import * as clb from "./clb";
 import * as config from "./config";
 import * as cr from "./cr";
 import * as ecs from "./ecs";
+import * as escloud from "./escloud";
+import * as hbase from "./hbase";
 import * as iam from "./iam";
+import * as kms from "./kms";
 import * as natgateway from "./natgateway";
 import * as organization from "./organization";
 import * as rdsmysql from "./rdsmysql";
@@ -39,7 +42,10 @@ export {
     config,
     cr,
     ecs,
+    escloud,
+    hbase,
     iam,
+    kms,
     natgateway,
     organization,
     rdsmysql,

@@ -1,6 +1,17 @@
 {
     "auto-aliasing": {
         "resources": {
+            "bytepluscc_alb_certificate": {
+                "current": "bytepluscc:alb/certificate:Certificate",
+                "fields": {
+                    "listeners": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_alb_listener": {
                 "current": "bytepluscc:alb/listener:Listener",
                 "fields": {
@@ -14,6 +25,45 @@
                         "maxItemsOne": false
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_apig_custom_domain": {
+                "current": "bytepluscc:apig/customDomain:CustomDomain",
+                "fields": {
+                    "protocol": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_apig_gateway": {
+                "current": "bytepluscc:apig/gateway:Gateway",
+                "fields": {
+                    "custom_log": {
+                        "fields": {
+                            "custom_variables": {
+                                "maxItemsOne": false
+                            },
+                            "request_headers": {
+                                "maxItemsOne": false
+                            },
+                            "response_headers": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "events": {
+                        "maxItemsOne": false
+                    },
+                    "network_spec": {
+                        "fields": {
+                            "subnets": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "subnet_ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -250,6 +300,41 @@
                     }
                 }
             },
+            "bytepluscc_escloud_instance": {
+                "current": "bytepluscc:escloud/instance:Instance",
+                "fields": {
+                    "instance_configuration": {
+                        "fields": {
+                            "network_specs": {
+                                "maxItemsOne": false
+                            },
+                            "node_specs_assigns": {
+                                "maxItemsOne": false
+                            },
+                            "tags": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "maintenance_day": {
+                        "maxItemsOne": false
+                    },
+                    "sub_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_hbase_instance": {
+                "current": "bytepluscc:hbase/instance:Instance",
+                "fields": {
+                    "endpoints": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_iam_policy": {
                 "current": "bytepluscc:iam/policy:Policy",
                 "fields": {
@@ -459,6 +544,9 @@
                                 "maxItemsOne": false
                             }
                         }
+                    },
+                    "metadata": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -563,6 +651,25 @@
             }
         },
         "datasources": {
+            "bytepluscc_alb_certificate": {
+                "current": "bytepluscc:alb/getCertificate:getCertificate",
+                "fields": {
+                    "listeners": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_alb_certificates": {
+                "current": "bytepluscc:alb/getCertificates:getCertificates",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_alb_listener": {
                 "current": "bytepluscc:alb/getListener:getListener",
                 "fields": {
@@ -588,6 +695,53 @@
                     }
                 }
             },
+            "bytepluscc_apig_custom_domain": {
+                "current": "bytepluscc:apig/getCustomDomain:getCustomDomain",
+                "fields": {
+                    "protocol": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_apig_custom_domains": {
+                "current": "bytepluscc:apig/getCustomDomains:getCustomDomains",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_apig_gateway": {
+                "current": "bytepluscc:apig/getGateway:getGateway",
+                "fields": {
+                    "custom_log": {
+                        "fields": {
+                            "custom_variables": {
+                                "maxItemsOne": false
+                            },
+                            "request_headers": {
+                                "maxItemsOne": false
+                            },
+                            "response_headers": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "events": {
+                        "maxItemsOne": false
+                    },
+                    "network_spec": {
+                        "fields": {
+                            "subnets": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "subnet_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_apig_gateway_service": {
                 "current": "bytepluscc:apig/getGatewayService:getGatewayService",
                 "fields": {
@@ -604,6 +758,14 @@
             },
             "bytepluscc_apig_gateway_services": {
                 "current": "bytepluscc:apig/getGatewayServices:getGatewayServices",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_apig_gateways": {
+                "current": "bytepluscc:apig/getGateways:getGateways",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -911,6 +1073,57 @@
                     }
                 }
             },
+            "bytepluscc_escloud_instance": {
+                "current": "bytepluscc:escloud/getInstance:getInstance",
+                "fields": {
+                    "instance_configuration": {
+                        "fields": {
+                            "network_specs": {
+                                "maxItemsOne": false
+                            },
+                            "node_specs_assigns": {
+                                "maxItemsOne": false
+                            },
+                            "tags": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "maintenance_day": {
+                        "maxItemsOne": false
+                    },
+                    "sub_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_escloud_instances": {
+                "current": "bytepluscc:escloud/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_hbase_instance": {
+                "current": "bytepluscc:hbase/getInstance:getInstance",
+                "fields": {
+                    "endpoints": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_hbase_instances": {
+                "current": "bytepluscc:hbase/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_iam_policies": {
                 "current": "bytepluscc:iam/getPolicies:getPolicies",
                 "fields": {
@@ -992,6 +1205,29 @@
             },
             "bytepluscc_iam_users": {
                 "current": "bytepluscc:iam/getUsers:getUsers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kms_key": {
+                "current": "bytepluscc:kms/getKey:getKey",
+                "fields": {
+                    "multi_region_configuration": {
+                        "fields": {
+                            "replica_keys": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kms_keys": {
+                "current": "bytepluscc:kms/getKeys:getKeys",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -1216,6 +1452,9 @@
                                 "maxItemsOne": false
                             }
                         }
+                    },
+                    "metadata": {
+                        "maxItemsOne": false
                     }
                 }
             },

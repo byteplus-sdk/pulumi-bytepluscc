@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.alb;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.alb.inputs.GetCertificateArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetCertificatePlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetListenerArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetListenerPlainArgs;
+import com.byteplus.bytepluscc.alb.outputs.GetCertificateResult;
+import com.byteplus.bytepluscc.alb.outputs.GetCertificatesResult;
 import com.byteplus.bytepluscc.alb.outputs.GetListenerResult;
 import com.byteplus.bytepluscc.alb.outputs.GetListenersResult;
 import com.pulumi.core.Output;
@@ -17,6 +21,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class AlbFunctions {
+    /**
+     * Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
+        return getCertificate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
+        return getCertificatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates() {
+        return getCertificates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificatesResult> getCertificatesPlain() {
+        return getCertificatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates(InvokeArgs args) {
+        return getCertificates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(InvokeArgs args) {
+        return getCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::ALB::Listener
      * 

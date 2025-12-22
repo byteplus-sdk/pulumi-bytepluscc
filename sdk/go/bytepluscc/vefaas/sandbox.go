@@ -46,9 +46,8 @@ type Sandbox struct {
 	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
 	MaxConcurrency pulumi.IntOutput `pulumi:"maxConcurrency"`
 	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-	MemoryMb pulumi.IntOutput `pulumi:"memoryMb"`
-	// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-	Metadata pulumi.StringOutput `pulumi:"metadata"`
+	MemoryMb  pulumi.IntOutput           `pulumi:"memoryMb"`
+	Metadatas SandboxMetadataArrayOutput `pulumi:"metadatas"`
 	// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
 	Pending pulumi.BoolOutput `pulumi:"pending"`
 	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
@@ -120,9 +119,8 @@ type sandboxState struct {
 	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
 	MaxConcurrency *int `pulumi:"maxConcurrency"`
 	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-	MemoryMb *int `pulumi:"memoryMb"`
-	// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-	Metadata *string `pulumi:"metadata"`
+	MemoryMb  *int              `pulumi:"memoryMb"`
+	Metadatas []SandboxMetadata `pulumi:"metadatas"`
 	// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
 	Pending *bool `pulumi:"pending"`
 	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
@@ -162,9 +160,8 @@ type SandboxState struct {
 	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
 	MaxConcurrency pulumi.IntPtrInput
 	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-	MemoryMb pulumi.IntPtrInput
-	// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-	Metadata pulumi.StringPtrInput
+	MemoryMb  pulumi.IntPtrInput
+	Metadatas SandboxMetadataArrayInput
 	// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
 	Pending pulumi.BoolPtrInput
 	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
@@ -196,9 +193,8 @@ type sandboxArgs struct {
 	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
 	MaxConcurrency *int `pulumi:"maxConcurrency"`
 	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-	MemoryMb *int `pulumi:"memoryMb"`
-	// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-	Metadata *string `pulumi:"metadata"`
+	MemoryMb  *int              `pulumi:"memoryMb"`
+	Metadatas []SandboxMetadata `pulumi:"metadatas"`
 	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
 	RequestTimeout *int `pulumi:"requestTimeout"`
 	// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
@@ -219,9 +215,8 @@ type SandboxArgs struct {
 	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
 	MaxConcurrency pulumi.IntPtrInput
 	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-	MemoryMb pulumi.IntPtrInput
-	// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-	Metadata pulumi.StringPtrInput
+	MemoryMb  pulumi.IntPtrInput
+	Metadatas SandboxMetadataArrayInput
 	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
 	RequestTimeout pulumi.IntPtrInput
 	// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
@@ -379,9 +374,8 @@ func (o SandboxOutput) MemoryMb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.IntOutput { return v.MemoryMb }).(pulumi.IntOutput)
 }
 
-// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-func (o SandboxOutput) Metadata() pulumi.StringOutput {
-	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.Metadata }).(pulumi.StringOutput)
+func (o SandboxOutput) Metadatas() SandboxMetadataArrayOutput {
+	return o.ApplyT(func(v *Sandbox) SandboxMetadataArrayOutput { return v.Metadatas }).(SandboxMetadataArrayOutput)
 }
 
 // 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。

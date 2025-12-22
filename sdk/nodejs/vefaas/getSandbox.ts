@@ -89,7 +89,7 @@ export interface GetSandboxResult {
     /**
      * 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
      */
-    readonly metadata: string;
+    readonly metadatas: outputs.vefaas.GetSandboxMetadata[];
     /**
      * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
      */

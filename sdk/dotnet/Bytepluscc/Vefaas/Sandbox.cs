@@ -97,11 +97,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         [Output("memoryMb")]
         public Output<int> MemoryMb { get; private set; } = null!;
 
-        /// <summary>
-        /// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;"key":"value"&gt;。
-        /// </summary>
-        [Output("metadata")]
-        public Output<string> Metadata { get; private set; } = null!;
+        [Output("metadatas")]
+        public Output<ImmutableArray<Outputs.SandboxMetadata>> Metadatas { get; private set; } = null!;
 
         /// <summary>
         /// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
@@ -230,11 +227,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         [Input("memoryMb")]
         public Input<int>? MemoryMb { get; set; }
 
-        /// <summary>
-        /// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;"key":"value"&gt;。
-        /// </summary>
-        [Input("metadata")]
-        public Input<string>? Metadata { get; set; }
+        [Input("metadatas")]
+        private InputList<Inputs.SandboxMetadataArgs>? _metadatas;
+        public InputList<Inputs.SandboxMetadataArgs> Metadatas
+        {
+            get => _metadatas ?? (_metadatas = new InputList<Inputs.SandboxMetadataArgs>());
+            set => _metadatas = value;
+        }
 
         /// <summary>
         /// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
@@ -336,11 +335,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         [Input("memoryMb")]
         public Input<int>? MemoryMb { get; set; }
 
-        /// <summary>
-        /// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;"key":"value"&gt;。
-        /// </summary>
-        [Input("metadata")]
-        public Input<string>? Metadata { get; set; }
+        [Input("metadatas")]
+        private InputList<Inputs.SandboxMetadataGetArgs>? _metadatas;
+        public InputList<Inputs.SandboxMetadataGetArgs> Metadatas
+        {
+            get => _metadatas ?? (_metadatas = new InputList<Inputs.SandboxMetadataGetArgs>());
+            set => _metadatas = value;
+        }
 
         /// <summary>
         /// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。

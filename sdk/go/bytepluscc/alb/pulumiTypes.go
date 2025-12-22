@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type CertificateTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// CertificateTagInput is an input type that accepts CertificateTagArgs and CertificateTagOutput values.
+// You can construct a concrete instance of `CertificateTagInput` via:
+//
+//	CertificateTagArgs{...}
+type CertificateTagInput interface {
+	pulumi.Input
+
+	ToCertificateTagOutput() CertificateTagOutput
+	ToCertificateTagOutputWithContext(context.Context) CertificateTagOutput
+}
+
+type CertificateTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (CertificateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateTag)(nil)).Elem()
+}
+
+func (i CertificateTagArgs) ToCertificateTagOutput() CertificateTagOutput {
+	return i.ToCertificateTagOutputWithContext(context.Background())
+}
+
+func (i CertificateTagArgs) ToCertificateTagOutputWithContext(ctx context.Context) CertificateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateTagOutput)
+}
+
+// CertificateTagArrayInput is an input type that accepts CertificateTagArray and CertificateTagArrayOutput values.
+// You can construct a concrete instance of `CertificateTagArrayInput` via:
+//
+//	CertificateTagArray{ CertificateTagArgs{...} }
+type CertificateTagArrayInput interface {
+	pulumi.Input
+
+	ToCertificateTagArrayOutput() CertificateTagArrayOutput
+	ToCertificateTagArrayOutputWithContext(context.Context) CertificateTagArrayOutput
+}
+
+type CertificateTagArray []CertificateTagInput
+
+func (CertificateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateTag)(nil)).Elem()
+}
+
+func (i CertificateTagArray) ToCertificateTagArrayOutput() CertificateTagArrayOutput {
+	return i.ToCertificateTagArrayOutputWithContext(context.Background())
+}
+
+func (i CertificateTagArray) ToCertificateTagArrayOutputWithContext(ctx context.Context) CertificateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateTagArrayOutput)
+}
+
+type CertificateTagOutput struct{ *pulumi.OutputState }
+
+func (CertificateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateTag)(nil)).Elem()
+}
+
+func (o CertificateTagOutput) ToCertificateTagOutput() CertificateTagOutput {
+	return o
+}
+
+func (o CertificateTagOutput) ToCertificateTagOutputWithContext(ctx context.Context) CertificateTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o CertificateTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o CertificateTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type CertificateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (CertificateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateTag)(nil)).Elem()
+}
+
+func (o CertificateTagArrayOutput) ToCertificateTagArrayOutput() CertificateTagArrayOutput {
+	return o
+}
+
+func (o CertificateTagArrayOutput) ToCertificateTagArrayOutputWithContext(ctx context.Context) CertificateTagArrayOutput {
+	return o
+}
+
+func (o CertificateTagArrayOutput) Index(i pulumi.IntInput) CertificateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateTag {
+		return vs[0].([]CertificateTag)[vs[1].(int)]
+	}).(CertificateTagOutput)
+}
+
 type ListenerDomainExtension struct {
 	// 域名使用的服务器证书 ID 。当证书来源为 certCenter 时生效。
 	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
@@ -365,6 +471,112 @@ func (o ListenerTagArrayOutput) Index(i pulumi.IntInput) ListenerTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ListenerTag {
 		return vs[0].([]ListenerTag)[vs[1].(int)]
 	}).(ListenerTagOutput)
+}
+
+type GetCertificateTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetCertificateTagInput is an input type that accepts GetCertificateTagArgs and GetCertificateTagOutput values.
+// You can construct a concrete instance of `GetCertificateTagInput` via:
+//
+//	GetCertificateTagArgs{...}
+type GetCertificateTagInput interface {
+	pulumi.Input
+
+	ToGetCertificateTagOutput() GetCertificateTagOutput
+	ToGetCertificateTagOutputWithContext(context.Context) GetCertificateTagOutput
+}
+
+type GetCertificateTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateTag)(nil)).Elem()
+}
+
+func (i GetCertificateTagArgs) ToGetCertificateTagOutput() GetCertificateTagOutput {
+	return i.ToGetCertificateTagOutputWithContext(context.Background())
+}
+
+func (i GetCertificateTagArgs) ToGetCertificateTagOutputWithContext(ctx context.Context) GetCertificateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateTagOutput)
+}
+
+// GetCertificateTagArrayInput is an input type that accepts GetCertificateTagArray and GetCertificateTagArrayOutput values.
+// You can construct a concrete instance of `GetCertificateTagArrayInput` via:
+//
+//	GetCertificateTagArray{ GetCertificateTagArgs{...} }
+type GetCertificateTagArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateTagArrayOutput() GetCertificateTagArrayOutput
+	ToGetCertificateTagArrayOutputWithContext(context.Context) GetCertificateTagArrayOutput
+}
+
+type GetCertificateTagArray []GetCertificateTagInput
+
+func (GetCertificateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateTag)(nil)).Elem()
+}
+
+func (i GetCertificateTagArray) ToGetCertificateTagArrayOutput() GetCertificateTagArrayOutput {
+	return i.ToGetCertificateTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateTagArray) ToGetCertificateTagArrayOutputWithContext(ctx context.Context) GetCertificateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateTagArrayOutput)
+}
+
+type GetCertificateTagOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateTag)(nil)).Elem()
+}
+
+func (o GetCertificateTagOutput) ToGetCertificateTagOutput() GetCertificateTagOutput {
+	return o
+}
+
+func (o GetCertificateTagOutput) ToGetCertificateTagOutputWithContext(ctx context.Context) GetCertificateTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetCertificateTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetCertificateTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateTag)(nil)).Elem()
+}
+
+func (o GetCertificateTagArrayOutput) ToGetCertificateTagArrayOutput() GetCertificateTagArrayOutput {
+	return o
+}
+
+func (o GetCertificateTagArrayOutput) ToGetCertificateTagArrayOutputWithContext(ctx context.Context) GetCertificateTagArrayOutput {
+	return o
+}
+
+func (o GetCertificateTagArrayOutput) Index(i pulumi.IntInput) GetCertificateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateTag {
+		return vs[0].([]GetCertificateTag)[vs[1].(int)]
+	}).(GetCertificateTagOutput)
 }
 
 type GetListenerDomainExtension struct {
@@ -740,24 +952,32 @@ func (o GetListenerTagArrayOutput) Index(i pulumi.IntInput) GetListenerTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagInput)(nil)).Elem(), CertificateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagArrayInput)(nil)).Elem(), CertificateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerDomainExtensionInput)(nil)).Elem(), ListenerDomainExtensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerDomainExtensionArrayInput)(nil)).Elem(), ListenerDomainExtensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerServerGroupInput)(nil)).Elem(), ListenerServerGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerServerGroupArrayInput)(nil)).Elem(), ListenerServerGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagArrayInput)(nil)).Elem(), ListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagInput)(nil)).Elem(), GetCertificateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagArrayInput)(nil)).Elem(), GetCertificateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerDomainExtensionInput)(nil)).Elem(), GetListenerDomainExtensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerDomainExtensionArrayInput)(nil)).Elem(), GetListenerDomainExtensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerServerGroupInput)(nil)).Elem(), GetListenerServerGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerServerGroupArrayInput)(nil)).Elem(), GetListenerServerGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
+	pulumi.RegisterOutputType(CertificateTagOutput{})
+	pulumi.RegisterOutputType(CertificateTagArrayOutput{})
 	pulumi.RegisterOutputType(ListenerDomainExtensionOutput{})
 	pulumi.RegisterOutputType(ListenerDomainExtensionArrayOutput{})
 	pulumi.RegisterOutputType(ListenerServerGroupOutput{})
 	pulumi.RegisterOutputType(ListenerServerGroupArrayOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
 	pulumi.RegisterOutputType(ListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateTagOutput{})
+	pulumi.RegisterOutputType(GetCertificateTagArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerDomainExtensionOutput{})
 	pulumi.RegisterOutputType(GetListenerDomainExtensionArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerServerGroupOutput{})

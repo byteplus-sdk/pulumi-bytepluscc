@@ -28,7 +28,7 @@ class GetSandboxResult:
     """
     A collection of values returned by getSandbox.
     """
-    def __init__(__self__, availability_zone=None, cpu_milli=None, created_time=None, envs=None, error_code=None, error_message=None, expire_at=None, function_id=None, id=None, instance_image_info=None, instance_tos_mount_config=None, instance_type=None, max_concurrency=None, memory_mb=None, metadata=None, pending=None, request_timeout=None, revision_number=None, sandbox_id=None, status=None, timeout=None):
+    def __init__(__self__, availability_zone=None, cpu_milli=None, created_time=None, envs=None, error_code=None, error_message=None, expire_at=None, function_id=None, id=None, instance_image_info=None, instance_tos_mount_config=None, instance_type=None, max_concurrency=None, memory_mb=None, metadatas=None, pending=None, request_timeout=None, revision_number=None, sandbox_id=None, status=None, timeout=None):
         if availability_zone and not isinstance(availability_zone, str):
             raise TypeError("Expected argument 'availability_zone' to be a str")
         pulumi.set(__self__, "availability_zone", availability_zone)
@@ -71,9 +71,9 @@ class GetSandboxResult:
         if memory_mb and not isinstance(memory_mb, int):
             raise TypeError("Expected argument 'memory_mb' to be a int")
         pulumi.set(__self__, "memory_mb", memory_mb)
-        if metadata and not isinstance(metadata, str):
-            raise TypeError("Expected argument 'metadata' to be a str")
-        pulumi.set(__self__, "metadata", metadata)
+        if metadatas and not isinstance(metadatas, list):
+            raise TypeError("Expected argument 'metadatas' to be a list")
+        pulumi.set(__self__, "metadatas", metadatas)
         if pending and not isinstance(pending, bool):
             raise TypeError("Expected argument 'pending' to be a bool")
         pulumi.set(__self__, "pending", pending)
@@ -207,11 +207,11 @@ class GetSandboxResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> builtins.str:
+    def metadatas(self) -> Sequence['outputs.GetSandboxMetadataResult']:
         """
         沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
         """
-        return pulumi.get(self, "metadata")
+        return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
@@ -282,7 +282,7 @@ class AwaitableGetSandboxResult(GetSandboxResult):
             instance_type=self.instance_type,
             max_concurrency=self.max_concurrency,
             memory_mb=self.memory_mb,
-            metadata=self.metadata,
+            metadatas=self.metadatas,
             pending=self.pending,
             request_timeout=self.request_timeout,
             revision_number=self.revision_number,
@@ -319,7 +319,7 @@ def get_sandbox(id: Optional[builtins.str] = None,
         instance_type=pulumi.get(__ret__, 'instance_type'),
         max_concurrency=pulumi.get(__ret__, 'max_concurrency'),
         memory_mb=pulumi.get(__ret__, 'memory_mb'),
-        metadata=pulumi.get(__ret__, 'metadata'),
+        metadatas=pulumi.get(__ret__, 'metadatas'),
         pending=pulumi.get(__ret__, 'pending'),
         request_timeout=pulumi.get(__ret__, 'request_timeout'),
         revision_number=pulumi.get(__ret__, 'revision_number'),
@@ -353,7 +353,7 @@ def get_sandbox_output(id: Optional[pulumi.Input[builtins.str]] = None,
         instance_type=pulumi.get(__response__, 'instance_type'),
         max_concurrency=pulumi.get(__response__, 'max_concurrency'),
         memory_mb=pulumi.get(__response__, 'memory_mb'),
-        metadata=pulumi.get(__response__, 'metadata'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
         pending=pulumi.get(__response__, 'pending'),
         request_timeout=pulumi.get(__response__, 'request_timeout'),
         revision_number=pulumi.get(__response__, 'revision_number'),

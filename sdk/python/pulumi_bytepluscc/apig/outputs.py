@@ -17,10 +17,25 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'GatewayBackendSpec',
+    'GatewayCustomLog',
+    'GatewayCustomLogCustomVariable',
+    'GatewayCustomLogRequestHeader',
+    'GatewayCustomLogResponseHeader',
+    'GatewayEvent',
+    'GatewayLogSpec',
+    'GatewayMonitorSpec',
+    'GatewayNetworkSpec',
+    'GatewayNetworkSpecSubnet',
+    'GatewayResourceSpec',
+    'GatewayResourceSpecNetworkType',
     'GatewayServiceAuthSpec',
     'GatewayServiceCustomDomain',
     'GatewayServiceDomain',
     'GatewayServiceDomainSpec',
+    'GatewayTraceSpec',
+    'GatewayTraceSpecApmTraceSpec',
+    'GatewayTraceSpecTlsTraceSpec',
     'UpstreamBackendTarget',
     'UpstreamCircuitBreakingSettings',
     'UpstreamLoadBalancerSettings',
@@ -42,10 +57,25 @@ __all__ = [
     'UpstreamUpstreamSpecVeFaas',
     'UpstreamVersionDetail',
     'UpstreamVersionDetailLabel',
+    'GetGatewayBackendSpecResult',
+    'GetGatewayCustomLogResult',
+    'GetGatewayCustomLogCustomVariableResult',
+    'GetGatewayCustomLogRequestHeaderResult',
+    'GetGatewayCustomLogResponseHeaderResult',
+    'GetGatewayEventResult',
+    'GetGatewayLogSpecResult',
+    'GetGatewayMonitorSpecResult',
+    'GetGatewayNetworkSpecResult',
+    'GetGatewayNetworkSpecSubnetResult',
+    'GetGatewayResourceSpecResult',
+    'GetGatewayResourceSpecNetworkTypeResult',
     'GetGatewayServiceAuthSpecResult',
     'GetGatewayServiceCustomDomainResult',
     'GetGatewayServiceDomainResult',
     'GetGatewayServiceDomainSpecResult',
+    'GetGatewayTraceSpecResult',
+    'GetGatewayTraceSpecApmTraceSpecResult',
+    'GetGatewayTraceSpecTlsTraceSpecResult',
     'GetUpstreamBackendTargetResult',
     'GetUpstreamCircuitBreakingSettingsResult',
     'GetUpstreamLoadBalancerSettingsResult',
@@ -68,6 +98,706 @@ __all__ = [
     'GetUpstreamVersionDetailResult',
     'GetUpstreamVersionDetailLabelResult',
 ]
+
+@pulumi.output_type
+class GatewayBackendSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isVkeWithFlannelCniSupported":
+            suggest = "is_vke_with_flannel_cni_supported"
+        elif key == "vkePodCidr":
+            suggest = "vke_pod_cidr"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayBackendSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayBackendSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayBackendSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_vke_with_flannel_cni_supported: Optional[builtins.bool] = None,
+                 vke_pod_cidr: Optional[builtins.str] = None):
+        """
+        :param builtins.bool is_vke_with_flannel_cni_supported: 是否支持VKE Flannel CNI。
+        :param builtins.str vke_pod_cidr: VKE Pod CIDR。
+        """
+        if is_vke_with_flannel_cni_supported is not None:
+            pulumi.set(__self__, "is_vke_with_flannel_cni_supported", is_vke_with_flannel_cni_supported)
+        if vke_pod_cidr is not None:
+            pulumi.set(__self__, "vke_pod_cidr", vke_pod_cidr)
+
+    @property
+    @pulumi.getter(name="isVkeWithFlannelCniSupported")
+    def is_vke_with_flannel_cni_supported(self) -> Optional[builtins.bool]:
+        """
+        是否支持VKE Flannel CNI。
+        """
+        return pulumi.get(self, "is_vke_with_flannel_cni_supported")
+
+    @property
+    @pulumi.getter(name="vkePodCidr")
+    def vke_pod_cidr(self) -> Optional[builtins.str]:
+        """
+        VKE Pod CIDR。
+        """
+        return pulumi.get(self, "vke_pod_cidr")
+
+
+@pulumi.output_type
+class GatewayCustomLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customVariables":
+            suggest = "custom_variables"
+        elif key == "requestHeaders":
+            suggest = "request_headers"
+        elif key == "responseHeaders":
+            suggest = "response_headers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayCustomLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayCustomLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayCustomLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_variables: Optional[Sequence['outputs.GatewayCustomLogCustomVariable']] = None,
+                 request_headers: Optional[Sequence['outputs.GatewayCustomLogRequestHeader']] = None,
+                 response_headers: Optional[Sequence['outputs.GatewayCustomLogResponseHeader']] = None):
+        if custom_variables is not None:
+            pulumi.set(__self__, "custom_variables", custom_variables)
+        if request_headers is not None:
+            pulumi.set(__self__, "request_headers", request_headers)
+        if response_headers is not None:
+            pulumi.set(__self__, "response_headers", response_headers)
+
+    @property
+    @pulumi.getter(name="customVariables")
+    def custom_variables(self) -> Optional[Sequence['outputs.GatewayCustomLogCustomVariable']]:
+        return pulumi.get(self, "custom_variables")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Optional[Sequence['outputs.GatewayCustomLogRequestHeader']]:
+        return pulumi.get(self, "request_headers")
+
+    @property
+    @pulumi.getter(name="responseHeaders")
+    def response_headers(self) -> Optional[Sequence['outputs.GatewayCustomLogResponseHeader']]:
+        return pulumi.get(self, "response_headers")
+
+
+@pulumi.output_type
+class GatewayCustomLogCustomVariable(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aliasesInLog":
+            suggest = "aliases_in_log"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayCustomLogCustomVariable. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayCustomLogCustomVariable.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayCustomLogCustomVariable.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aliases_in_log: Optional[builtins.str] = None,
+                 key: Optional[builtins.str] = None):
+        """
+        :param builtins.str aliases_in_log: 字段别名。
+        :param builtins.str key: 请求头键。
+        """
+        if aliases_in_log is not None:
+            pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> Optional[builtins.str]:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GatewayCustomLogRequestHeader(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aliasesInLog":
+            suggest = "aliases_in_log"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayCustomLogRequestHeader. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayCustomLogRequestHeader.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayCustomLogRequestHeader.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aliases_in_log: Optional[builtins.str] = None,
+                 key: Optional[builtins.str] = None):
+        """
+        :param builtins.str aliases_in_log: 字段别名。
+        :param builtins.str key: 请求头键。
+        """
+        if aliases_in_log is not None:
+            pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> Optional[builtins.str]:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GatewayCustomLogResponseHeader(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aliasesInLog":
+            suggest = "aliases_in_log"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayCustomLogResponseHeader. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayCustomLogResponseHeader.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayCustomLogResponseHeader.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aliases_in_log: Optional[builtins.str] = None,
+                 key: Optional[builtins.str] = None):
+        """
+        :param builtins.str aliases_in_log: 字段别名。
+        :param builtins.str key: 请求头键。
+        """
+        if aliases_in_log is not None:
+            pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> Optional[builtins.str]:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GatewayEvent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "createdTime":
+            suggest = "created_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayEvent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayEvent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayEvent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 code: Optional[builtins.str] = None,
+                 created_time: Optional[builtins.str] = None,
+                 data: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None):
+        """
+        :param builtins.str code: 事件代码。
+        :param builtins.str created_time: 事件创建时间。
+        :param builtins.str data: 附带信息。
+        :param builtins.str description: 事件描述。
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if created_time is not None:
+            pulumi.set(__self__, "created_time", created_time)
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def code(self) -> Optional[builtins.str]:
+        """
+        事件代码。
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> Optional[builtins.str]:
+        """
+        事件创建时间。
+        """
+        return pulumi.get(self, "created_time")
+
+    @property
+    @pulumi.getter
+    def data(self) -> Optional[builtins.str]:
+        """
+        附带信息。
+        """
+        return pulumi.get(self, "data")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        事件描述。
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GatewayLogSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "projectId":
+            suggest = "project_id"
+        elif key == "topicId":
+            suggest = "topic_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayLogSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayLogSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayLogSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable: Optional[builtins.bool] = None,
+                 project_id: Optional[builtins.str] = None,
+                 topic_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable: 是否开启日志服务。
+        :param builtins.str project_id: 日志项目ID。
+        :param builtins.str topic_id: 日志主题ID。ProjectId 指定项目里面的日志主题。
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[builtins.bool]:
+        """
+        是否开启日志服务。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[builtins.str]:
+        """
+        日志项目ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        日志主题ID。ProjectId 指定项目里面的日志主题。
+        """
+        return pulumi.get(self, "topic_id")
+
+
+@pulumi.output_type
+class GatewayMonitorSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "workspaceId":
+            suggest = "workspace_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayMonitorSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayMonitorSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayMonitorSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable: Optional[builtins.bool] = None,
+                 workspace_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable: 托管Prometheus（VMP）服务。
+        :param builtins.str workspace_id: Prometheus工作区ID。
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if workspace_id is not None:
+            pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[builtins.bool]:
+        """
+        托管Prometheus（VMP）服务。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> Optional[builtins.str]:
+        """
+        Prometheus工作区ID。
+        """
+        return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class GatewayNetworkSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "vpcId":
+            suggest = "vpc_id"
+        elif key == "vpcName":
+            suggest = "vpc_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayNetworkSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayNetworkSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayNetworkSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 subnets: Optional[Sequence['outputs.GatewayNetworkSpecSubnet']] = None,
+                 vpc_id: Optional[builtins.str] = None,
+                 vpc_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str vpc_id: VPC ID。
+        :param builtins.str vpc_name: VPC名称。
+        """
+        if subnets is not None:
+            pulumi.set(__self__, "subnets", subnets)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+        if vpc_name is not None:
+            pulumi.set(__self__, "vpc_name", vpc_name)
+
+    @property
+    @pulumi.getter
+    def subnets(self) -> Optional[Sequence['outputs.GatewayNetworkSpecSubnet']]:
+        return pulumi.get(self, "subnets")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[builtins.str]:
+        """
+        VPC ID。
+        """
+        return pulumi.get(self, "vpc_id")
+
+    @property
+    @pulumi.getter(name="vpcName")
+    def vpc_name(self) -> Optional[builtins.str]:
+        """
+        VPC名称。
+        """
+        return pulumi.get(self, "vpc_name")
+
+
+@pulumi.output_type
+class GatewayNetworkSpecSubnet(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "subnetName":
+            suggest = "subnet_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayNetworkSpecSubnet. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayNetworkSpecSubnet.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayNetworkSpecSubnet.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 az: Optional[builtins.str] = None,
+                 subnet_id: Optional[builtins.str] = None,
+                 subnet_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str az: 可用区。
+        :param builtins.str subnet_id: 子网ID。
+        :param builtins.str subnet_name: 子网名称。
+        """
+        if az is not None:
+            pulumi.set(__self__, "az", az)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if subnet_name is not None:
+            pulumi.set(__self__, "subnet_name", subnet_name)
+
+    @property
+    @pulumi.getter
+    def az(self) -> Optional[builtins.str]:
+        """
+        可用区。
+        """
+        return pulumi.get(self, "az")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[builtins.str]:
+        """
+        子网ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subnetName")
+    def subnet_name(self) -> Optional[builtins.str]:
+        """
+        子网名称。
+        """
+        return pulumi.get(self, "subnet_name")
+
+
+@pulumi.output_type
+class GatewayResourceSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clbSpecCode":
+            suggest = "clb_spec_code"
+        elif key == "instanceSpecCode":
+            suggest = "instance_spec_code"
+        elif key == "networkType":
+            suggest = "network_type"
+        elif key == "publicNetworkBandwidth":
+            suggest = "public_network_bandwidth"
+        elif key == "publicNetworkBillingType":
+            suggest = "public_network_billing_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayResourceSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayResourceSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayResourceSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 clb_spec_code: Optional[builtins.str] = None,
+                 instance_spec_code: Optional[builtins.str] = None,
+                 network_type: Optional['outputs.GatewayResourceSpecNetworkType'] = None,
+                 public_network_bandwidth: Optional[builtins.int] = None,
+                 public_network_billing_type: Optional[builtins.str] = None,
+                 replicas: Optional[builtins.int] = None):
+        """
+        :param builtins.str clb_spec_code: CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        :param builtins.str instance_spec_code: 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        :param 'GatewayResourceSpecNetworkTypeArgs' network_type: 网络类型。默认值为开启公网，开启私网。
+        :param builtins.int public_network_bandwidth: 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        :param builtins.str public_network_billing_type: 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        :param builtins.int replicas: 节点数量。取值限制为2~100。
+        """
+        if clb_spec_code is not None:
+            pulumi.set(__self__, "clb_spec_code", clb_spec_code)
+        if instance_spec_code is not None:
+            pulumi.set(__self__, "instance_spec_code", instance_spec_code)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if public_network_bandwidth is not None:
+            pulumi.set(__self__, "public_network_bandwidth", public_network_bandwidth)
+        if public_network_billing_type is not None:
+            pulumi.set(__self__, "public_network_billing_type", public_network_billing_type)
+        if replicas is not None:
+            pulumi.set(__self__, "replicas", replicas)
+
+    @property
+    @pulumi.getter(name="clbSpecCode")
+    def clb_spec_code(self) -> Optional[builtins.str]:
+        """
+        CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        """
+        return pulumi.get(self, "clb_spec_code")
+
+    @property
+    @pulumi.getter(name="instanceSpecCode")
+    def instance_spec_code(self) -> Optional[builtins.str]:
+        """
+        节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        """
+        return pulumi.get(self, "instance_spec_code")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional['outputs.GatewayResourceSpecNetworkType']:
+        """
+        网络类型。默认值为开启公网，开启私网。
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="publicNetworkBandwidth")
+    def public_network_bandwidth(self) -> Optional[builtins.int]:
+        """
+        公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        """
+        return pulumi.get(self, "public_network_bandwidth")
+
+    @property
+    @pulumi.getter(name="publicNetworkBillingType")
+    def public_network_billing_type(self) -> Optional[builtins.str]:
+        """
+        公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        """
+        return pulumi.get(self, "public_network_billing_type")
+
+    @property
+    @pulumi.getter
+    def replicas(self) -> Optional[builtins.int]:
+        """
+        节点数量。取值限制为2~100。
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class GatewayResourceSpecNetworkType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enablePrivateNetwork":
+            suggest = "enable_private_network"
+        elif key == "enablePublicNetwork":
+            suggest = "enable_public_network"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayResourceSpecNetworkType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayResourceSpecNetworkType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayResourceSpecNetworkType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_private_network: Optional[builtins.bool] = None,
+                 enable_public_network: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool enable_private_network: 是否启用私网。
+        :param builtins.bool enable_public_network: 是否启用公网。
+        """
+        if enable_private_network is not None:
+            pulumi.set(__self__, "enable_private_network", enable_private_network)
+        if enable_public_network is not None:
+            pulumi.set(__self__, "enable_public_network", enable_public_network)
+
+    @property
+    @pulumi.getter(name="enablePrivateNetwork")
+    def enable_private_network(self) -> Optional[builtins.bool]:
+        """
+        是否启用私网。
+        """
+        return pulumi.get(self, "enable_private_network")
+
+    @property
+    @pulumi.getter(name="enablePublicNetwork")
+    def enable_public_network(self) -> Optional[builtins.bool]:
+        """
+        是否启用公网。
+        """
+        return pulumi.get(self, "enable_public_network")
+
 
 @pulumi.output_type
 class GatewayServiceAuthSpec(dict):
@@ -201,6 +931,196 @@ class GatewayServiceDomainSpec(dict):
         开启私网域名公网解析。
         """
         return pulumi.get(self, "enable_public_resolution")
+
+
+@pulumi.output_type
+class GatewayTraceSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apmTraceSpec":
+            suggest = "apm_trace_spec"
+        elif key == "tlsTraceSpec":
+            suggest = "tls_trace_spec"
+        elif key == "traceType":
+            suggest = "trace_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayTraceSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayTraceSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayTraceSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apm_trace_spec: Optional['outputs.GatewayTraceSpecApmTraceSpec'] = None,
+                 enable: Optional[builtins.bool] = None,
+                 tls_trace_spec: Optional['outputs.GatewayTraceSpecTlsTraceSpec'] = None,
+                 trace_type: Optional[builtins.str] = None):
+        """
+        :param 'GatewayTraceSpecApmTraceSpecArgs' apm_trace_spec: 应用性能监控全链路版链路追踪配置。
+        :param builtins.bool enable: 是否启用链路追踪。
+        :param 'GatewayTraceSpecTlsTraceSpecArgs' tls_trace_spec: 链路追踪配置信息。
+        :param builtins.str trace_type: 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        """
+        if apm_trace_spec is not None:
+            pulumi.set(__self__, "apm_trace_spec", apm_trace_spec)
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if tls_trace_spec is not None:
+            pulumi.set(__self__, "tls_trace_spec", tls_trace_spec)
+        if trace_type is not None:
+            pulumi.set(__self__, "trace_type", trace_type)
+
+    @property
+    @pulumi.getter(name="apmTraceSpec")
+    def apm_trace_spec(self) -> Optional['outputs.GatewayTraceSpecApmTraceSpec']:
+        """
+        应用性能监控全链路版链路追踪配置。
+        """
+        return pulumi.get(self, "apm_trace_spec")
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[builtins.bool]:
+        """
+        是否启用链路追踪。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="tlsTraceSpec")
+    def tls_trace_spec(self) -> Optional['outputs.GatewayTraceSpecTlsTraceSpec']:
+        """
+        链路追踪配置信息。
+        """
+        return pulumi.get(self, "tls_trace_spec")
+
+    @property
+    @pulumi.getter(name="traceType")
+    def trace_type(self) -> Optional[builtins.str]:
+        """
+        链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        """
+        return pulumi.get(self, "trace_type")
+
+
+@pulumi.output_type
+class GatewayTraceSpecApmTraceSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apiKey":
+            suggest = "api_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayTraceSpecApmTraceSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayTraceSpecApmTraceSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayTraceSpecApmTraceSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 api_key: Optional[builtins.str] = None):
+        """
+        :param builtins.str api_key: API Key。
+        """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+
+    @property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> Optional[builtins.str]:
+        """
+        API Key。
+        """
+        return pulumi.get(self, "api_key")
+
+
+@pulumi.output_type
+class GatewayTraceSpecTlsTraceSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "iamUserAk":
+            suggest = "iam_user_ak"
+        elif key == "iamUserSk":
+            suggest = "iam_user_sk"
+        elif key == "projectId":
+            suggest = "project_id"
+        elif key == "traceId":
+            suggest = "trace_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayTraceSpecTlsTraceSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayTraceSpecTlsTraceSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayTraceSpecTlsTraceSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 iam_user_ak: Optional[builtins.str] = None,
+                 iam_user_sk: Optional[builtins.str] = None,
+                 project_id: Optional[builtins.str] = None,
+                 trace_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str iam_user_ak: Access key。
+        :param builtins.str iam_user_sk: Secret key。
+        :param builtins.str project_id: 日志项目ID。
+        :param builtins.str trace_id: Trace ID。
+        """
+        if iam_user_ak is not None:
+            pulumi.set(__self__, "iam_user_ak", iam_user_ak)
+        if iam_user_sk is not None:
+            pulumi.set(__self__, "iam_user_sk", iam_user_sk)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if trace_id is not None:
+            pulumi.set(__self__, "trace_id", trace_id)
+
+    @property
+    @pulumi.getter(name="iamUserAk")
+    def iam_user_ak(self) -> Optional[builtins.str]:
+        """
+        Access key。
+        """
+        return pulumi.get(self, "iam_user_ak")
+
+    @property
+    @pulumi.getter(name="iamUserSk")
+    def iam_user_sk(self) -> Optional[builtins.str]:
+        """
+        Secret key。
+        """
+        return pulumi.get(self, "iam_user_sk")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[builtins.str]:
+        """
+        日志项目ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="traceId")
+    def trace_id(self) -> Optional[builtins.str]:
+        """
+        Trace ID。
+        """
+        return pulumi.get(self, "trace_id")
 
 
 @pulumi.output_type
@@ -1478,6 +2398,464 @@ class UpstreamVersionDetailLabel(dict):
 
 
 @pulumi.output_type
+class GetGatewayBackendSpecResult(dict):
+    def __init__(__self__, *,
+                 is_vke_with_flannel_cni_supported: builtins.bool,
+                 vke_pod_cidr: builtins.str):
+        """
+        :param builtins.bool is_vke_with_flannel_cni_supported: 是否支持VKE Flannel CNI。
+        :param builtins.str vke_pod_cidr: VKE Pod CIDR。
+        """
+        pulumi.set(__self__, "is_vke_with_flannel_cni_supported", is_vke_with_flannel_cni_supported)
+        pulumi.set(__self__, "vke_pod_cidr", vke_pod_cidr)
+
+    @property
+    @pulumi.getter(name="isVkeWithFlannelCniSupported")
+    def is_vke_with_flannel_cni_supported(self) -> builtins.bool:
+        """
+        是否支持VKE Flannel CNI。
+        """
+        return pulumi.get(self, "is_vke_with_flannel_cni_supported")
+
+    @property
+    @pulumi.getter(name="vkePodCidr")
+    def vke_pod_cidr(self) -> builtins.str:
+        """
+        VKE Pod CIDR。
+        """
+        return pulumi.get(self, "vke_pod_cidr")
+
+
+@pulumi.output_type
+class GetGatewayCustomLogResult(dict):
+    def __init__(__self__, *,
+                 custom_variables: Sequence['outputs.GetGatewayCustomLogCustomVariableResult'],
+                 request_headers: Sequence['outputs.GetGatewayCustomLogRequestHeaderResult'],
+                 response_headers: Sequence['outputs.GetGatewayCustomLogResponseHeaderResult']):
+        """
+        :param Sequence['GetGatewayCustomLogCustomVariableArgs'] custom_variables: 自定义变量信息。
+        :param Sequence['GetGatewayCustomLogRequestHeaderArgs'] request_headers: 请求头信息。
+        :param Sequence['GetGatewayCustomLogResponseHeaderArgs'] response_headers: 响应头信息。
+        """
+        pulumi.set(__self__, "custom_variables", custom_variables)
+        pulumi.set(__self__, "request_headers", request_headers)
+        pulumi.set(__self__, "response_headers", response_headers)
+
+    @property
+    @pulumi.getter(name="customVariables")
+    def custom_variables(self) -> Sequence['outputs.GetGatewayCustomLogCustomVariableResult']:
+        """
+        自定义变量信息。
+        """
+        return pulumi.get(self, "custom_variables")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Sequence['outputs.GetGatewayCustomLogRequestHeaderResult']:
+        """
+        请求头信息。
+        """
+        return pulumi.get(self, "request_headers")
+
+    @property
+    @pulumi.getter(name="responseHeaders")
+    def response_headers(self) -> Sequence['outputs.GetGatewayCustomLogResponseHeaderResult']:
+        """
+        响应头信息。
+        """
+        return pulumi.get(self, "response_headers")
+
+
+@pulumi.output_type
+class GetGatewayCustomLogCustomVariableResult(dict):
+    def __init__(__self__, *,
+                 aliases_in_log: builtins.str,
+                 key: builtins.str):
+        """
+        :param builtins.str aliases_in_log: 字段别名。
+        :param builtins.str key: 请求头键。
+        """
+        pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> builtins.str:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetGatewayCustomLogRequestHeaderResult(dict):
+    def __init__(__self__, *,
+                 aliases_in_log: builtins.str,
+                 key: builtins.str):
+        """
+        :param builtins.str aliases_in_log: 字段别名。
+        :param builtins.str key: 请求头键。
+        """
+        pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> builtins.str:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetGatewayCustomLogResponseHeaderResult(dict):
+    def __init__(__self__, *,
+                 aliases_in_log: builtins.str,
+                 key: builtins.str):
+        """
+        :param builtins.str aliases_in_log: 字段别名。
+        :param builtins.str key: 请求头键。
+        """
+        pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> builtins.str:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetGatewayEventResult(dict):
+    def __init__(__self__, *,
+                 code: builtins.str,
+                 created_time: builtins.str,
+                 data: builtins.str,
+                 description: builtins.str):
+        """
+        :param builtins.str code: 事件代码。
+        :param builtins.str created_time: 事件创建时间。
+        :param builtins.str data: 附带信息。
+        :param builtins.str description: 事件描述。
+        """
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def code(self) -> builtins.str:
+        """
+        事件代码。
+        """
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> builtins.str:
+        """
+        事件创建时间。
+        """
+        return pulumi.get(self, "created_time")
+
+    @property
+    @pulumi.getter
+    def data(self) -> builtins.str:
+        """
+        附带信息。
+        """
+        return pulumi.get(self, "data")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        事件描述。
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class GetGatewayLogSpecResult(dict):
+    def __init__(__self__, *,
+                 enable: builtins.bool,
+                 project_id: builtins.str,
+                 topic_id: builtins.str):
+        """
+        :param builtins.bool enable: 是否开启日志服务。
+        :param builtins.str project_id: 日志项目ID。
+        :param builtins.str topic_id: 日志主题ID。ProjectId 指定项目里面的日志主题。
+        """
+        pulumi.set(__self__, "enable", enable)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> builtins.bool:
+        """
+        是否开启日志服务。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        日志项目ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        日志主题ID。ProjectId 指定项目里面的日志主题。
+        """
+        return pulumi.get(self, "topic_id")
+
+
+@pulumi.output_type
+class GetGatewayMonitorSpecResult(dict):
+    def __init__(__self__, *,
+                 enable: builtins.bool,
+                 workspace_id: builtins.str):
+        """
+        :param builtins.bool enable: 托管Prometheus（VMP）服务。
+        :param builtins.str workspace_id: Prometheus工作区ID。
+        """
+        pulumi.set(__self__, "enable", enable)
+        pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> builtins.bool:
+        """
+        托管Prometheus（VMP）服务。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> builtins.str:
+        """
+        Prometheus工作区ID。
+        """
+        return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class GetGatewayNetworkSpecResult(dict):
+    def __init__(__self__, *,
+                 subnets: Sequence['outputs.GetGatewayNetworkSpecSubnetResult'],
+                 vpc_id: builtins.str,
+                 vpc_name: builtins.str):
+        """
+        :param Sequence['GetGatewayNetworkSpecSubnetArgs'] subnets: 子网配置信息列表。
+        :param builtins.str vpc_id: VPC ID。
+        :param builtins.str vpc_name: VPC名称。
+        """
+        pulumi.set(__self__, "subnets", subnets)
+        pulumi.set(__self__, "vpc_id", vpc_id)
+        pulumi.set(__self__, "vpc_name", vpc_name)
+
+    @property
+    @pulumi.getter
+    def subnets(self) -> Sequence['outputs.GetGatewayNetworkSpecSubnetResult']:
+        """
+        子网配置信息列表。
+        """
+        return pulumi.get(self, "subnets")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> builtins.str:
+        """
+        VPC ID。
+        """
+        return pulumi.get(self, "vpc_id")
+
+    @property
+    @pulumi.getter(name="vpcName")
+    def vpc_name(self) -> builtins.str:
+        """
+        VPC名称。
+        """
+        return pulumi.get(self, "vpc_name")
+
+
+@pulumi.output_type
+class GetGatewayNetworkSpecSubnetResult(dict):
+    def __init__(__self__, *,
+                 az: builtins.str,
+                 subnet_id: builtins.str,
+                 subnet_name: builtins.str):
+        """
+        :param builtins.str az: 可用区。
+        :param builtins.str subnet_id: 子网ID。
+        :param builtins.str subnet_name: 子网名称。
+        """
+        pulumi.set(__self__, "az", az)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subnet_name", subnet_name)
+
+    @property
+    @pulumi.getter
+    def az(self) -> builtins.str:
+        """
+        可用区。
+        """
+        return pulumi.get(self, "az")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        子网ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subnetName")
+    def subnet_name(self) -> builtins.str:
+        """
+        子网名称。
+        """
+        return pulumi.get(self, "subnet_name")
+
+
+@pulumi.output_type
+class GetGatewayResourceSpecResult(dict):
+    def __init__(__self__, *,
+                 clb_spec_code: builtins.str,
+                 instance_spec_code: builtins.str,
+                 network_type: 'outputs.GetGatewayResourceSpecNetworkTypeResult',
+                 public_network_bandwidth: builtins.int,
+                 public_network_billing_type: builtins.str,
+                 replicas: builtins.int):
+        """
+        :param builtins.str clb_spec_code: CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        :param builtins.str instance_spec_code: 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        :param 'GetGatewayResourceSpecNetworkTypeArgs' network_type: 网络类型。默认值为开启公网，开启私网。
+        :param builtins.int public_network_bandwidth: 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        :param builtins.str public_network_billing_type: 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        :param builtins.int replicas: 节点数量。取值限制为2~100。
+        """
+        pulumi.set(__self__, "clb_spec_code", clb_spec_code)
+        pulumi.set(__self__, "instance_spec_code", instance_spec_code)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "public_network_bandwidth", public_network_bandwidth)
+        pulumi.set(__self__, "public_network_billing_type", public_network_billing_type)
+        pulumi.set(__self__, "replicas", replicas)
+
+    @property
+    @pulumi.getter(name="clbSpecCode")
+    def clb_spec_code(self) -> builtins.str:
+        """
+        CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        """
+        return pulumi.get(self, "clb_spec_code")
+
+    @property
+    @pulumi.getter(name="instanceSpecCode")
+    def instance_spec_code(self) -> builtins.str:
+        """
+        节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        """
+        return pulumi.get(self, "instance_spec_code")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> 'outputs.GetGatewayResourceSpecNetworkTypeResult':
+        """
+        网络类型。默认值为开启公网，开启私网。
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter(name="publicNetworkBandwidth")
+    def public_network_bandwidth(self) -> builtins.int:
+        """
+        公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        """
+        return pulumi.get(self, "public_network_bandwidth")
+
+    @property
+    @pulumi.getter(name="publicNetworkBillingType")
+    def public_network_billing_type(self) -> builtins.str:
+        """
+        公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        """
+        return pulumi.get(self, "public_network_billing_type")
+
+    @property
+    @pulumi.getter
+    def replicas(self) -> builtins.int:
+        """
+        节点数量。取值限制为2~100。
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class GetGatewayResourceSpecNetworkTypeResult(dict):
+    def __init__(__self__, *,
+                 enable_private_network: builtins.bool,
+                 enable_public_network: builtins.bool):
+        """
+        :param builtins.bool enable_private_network: 是否启用私网。
+        :param builtins.bool enable_public_network: 是否启用公网。
+        """
+        pulumi.set(__self__, "enable_private_network", enable_private_network)
+        pulumi.set(__self__, "enable_public_network", enable_public_network)
+
+    @property
+    @pulumi.getter(name="enablePrivateNetwork")
+    def enable_private_network(self) -> builtins.bool:
+        """
+        是否启用私网。
+        """
+        return pulumi.get(self, "enable_private_network")
+
+    @property
+    @pulumi.getter(name="enablePublicNetwork")
+    def enable_public_network(self) -> builtins.bool:
+        """
+        是否启用公网。
+        """
+        return pulumi.get(self, "enable_public_network")
+
+
+@pulumi.output_type
 class GetGatewayServiceAuthSpecResult(dict):
     def __init__(__self__, *,
                  enable: builtins.bool):
@@ -1569,6 +2947,126 @@ class GetGatewayServiceDomainSpecResult(dict):
         开启私网域名公网解析。
         """
         return pulumi.get(self, "enable_public_resolution")
+
+
+@pulumi.output_type
+class GetGatewayTraceSpecResult(dict):
+    def __init__(__self__, *,
+                 apm_trace_spec: 'outputs.GetGatewayTraceSpecApmTraceSpecResult',
+                 enable: builtins.bool,
+                 tls_trace_spec: 'outputs.GetGatewayTraceSpecTlsTraceSpecResult',
+                 trace_type: builtins.str):
+        """
+        :param 'GetGatewayTraceSpecApmTraceSpecArgs' apm_trace_spec: 应用性能监控全链路版链路追踪配置。
+        :param builtins.bool enable: 是否启用链路追踪。
+        :param 'GetGatewayTraceSpecTlsTraceSpecArgs' tls_trace_spec: 链路追踪配置信息。
+        :param builtins.str trace_type: 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        """
+        pulumi.set(__self__, "apm_trace_spec", apm_trace_spec)
+        pulumi.set(__self__, "enable", enable)
+        pulumi.set(__self__, "tls_trace_spec", tls_trace_spec)
+        pulumi.set(__self__, "trace_type", trace_type)
+
+    @property
+    @pulumi.getter(name="apmTraceSpec")
+    def apm_trace_spec(self) -> 'outputs.GetGatewayTraceSpecApmTraceSpecResult':
+        """
+        应用性能监控全链路版链路追踪配置。
+        """
+        return pulumi.get(self, "apm_trace_spec")
+
+    @property
+    @pulumi.getter
+    def enable(self) -> builtins.bool:
+        """
+        是否启用链路追踪。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="tlsTraceSpec")
+    def tls_trace_spec(self) -> 'outputs.GetGatewayTraceSpecTlsTraceSpecResult':
+        """
+        链路追踪配置信息。
+        """
+        return pulumi.get(self, "tls_trace_spec")
+
+    @property
+    @pulumi.getter(name="traceType")
+    def trace_type(self) -> builtins.str:
+        """
+        链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        """
+        return pulumi.get(self, "trace_type")
+
+
+@pulumi.output_type
+class GetGatewayTraceSpecApmTraceSpecResult(dict):
+    def __init__(__self__, *,
+                 api_key: builtins.str):
+        """
+        :param builtins.str api_key: API Key。
+        """
+        pulumi.set(__self__, "api_key", api_key)
+
+    @property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> builtins.str:
+        """
+        API Key。
+        """
+        return pulumi.get(self, "api_key")
+
+
+@pulumi.output_type
+class GetGatewayTraceSpecTlsTraceSpecResult(dict):
+    def __init__(__self__, *,
+                 iam_user_ak: builtins.str,
+                 iam_user_sk: builtins.str,
+                 project_id: builtins.str,
+                 trace_id: builtins.str):
+        """
+        :param builtins.str iam_user_ak: Access key。
+        :param builtins.str iam_user_sk: Secret key。
+        :param builtins.str project_id: 日志项目ID。
+        :param builtins.str trace_id: Trace ID。
+        """
+        pulumi.set(__self__, "iam_user_ak", iam_user_ak)
+        pulumi.set(__self__, "iam_user_sk", iam_user_sk)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "trace_id", trace_id)
+
+    @property
+    @pulumi.getter(name="iamUserAk")
+    def iam_user_ak(self) -> builtins.str:
+        """
+        Access key。
+        """
+        return pulumi.get(self, "iam_user_ak")
+
+    @property
+    @pulumi.getter(name="iamUserSk")
+    def iam_user_sk(self) -> builtins.str:
+        """
+        Secret key。
+        """
+        return pulumi.get(self, "iam_user_sk")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        日志项目ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="traceId")
+    def trace_id(self) -> builtins.str:
+        """
+        Trace ID。
+        """
+        return pulumi.get(self, "trace_id")
 
 
 @pulumi.output_type

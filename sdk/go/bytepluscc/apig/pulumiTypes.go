@@ -13,6 +13,1772 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GatewayBackendSpec struct {
+	// 是否支持VKE Flannel CNI。
+	IsVkeWithFlannelCniSupported *bool `pulumi:"isVkeWithFlannelCniSupported"`
+	// VKE Pod CIDR。
+	VkePodCidr *string `pulumi:"vkePodCidr"`
+}
+
+// GatewayBackendSpecInput is an input type that accepts GatewayBackendSpecArgs and GatewayBackendSpecOutput values.
+// You can construct a concrete instance of `GatewayBackendSpecInput` via:
+//
+//	GatewayBackendSpecArgs{...}
+type GatewayBackendSpecInput interface {
+	pulumi.Input
+
+	ToGatewayBackendSpecOutput() GatewayBackendSpecOutput
+	ToGatewayBackendSpecOutputWithContext(context.Context) GatewayBackendSpecOutput
+}
+
+type GatewayBackendSpecArgs struct {
+	// 是否支持VKE Flannel CNI。
+	IsVkeWithFlannelCniSupported pulumi.BoolPtrInput `pulumi:"isVkeWithFlannelCniSupported"`
+	// VKE Pod CIDR。
+	VkePodCidr pulumi.StringPtrInput `pulumi:"vkePodCidr"`
+}
+
+func (GatewayBackendSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayBackendSpec)(nil)).Elem()
+}
+
+func (i GatewayBackendSpecArgs) ToGatewayBackendSpecOutput() GatewayBackendSpecOutput {
+	return i.ToGatewayBackendSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayBackendSpecArgs) ToGatewayBackendSpecOutputWithContext(ctx context.Context) GatewayBackendSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayBackendSpecOutput)
+}
+
+func (i GatewayBackendSpecArgs) ToGatewayBackendSpecPtrOutput() GatewayBackendSpecPtrOutput {
+	return i.ToGatewayBackendSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayBackendSpecArgs) ToGatewayBackendSpecPtrOutputWithContext(ctx context.Context) GatewayBackendSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayBackendSpecOutput).ToGatewayBackendSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayBackendSpecPtrInput is an input type that accepts GatewayBackendSpecArgs, GatewayBackendSpecPtr and GatewayBackendSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayBackendSpecPtrInput` via:
+//
+//	        GatewayBackendSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayBackendSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayBackendSpecPtrOutput() GatewayBackendSpecPtrOutput
+	ToGatewayBackendSpecPtrOutputWithContext(context.Context) GatewayBackendSpecPtrOutput
+}
+
+type gatewayBackendSpecPtrType GatewayBackendSpecArgs
+
+func GatewayBackendSpecPtr(v *GatewayBackendSpecArgs) GatewayBackendSpecPtrInput {
+	return (*gatewayBackendSpecPtrType)(v)
+}
+
+func (*gatewayBackendSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayBackendSpec)(nil)).Elem()
+}
+
+func (i *gatewayBackendSpecPtrType) ToGatewayBackendSpecPtrOutput() GatewayBackendSpecPtrOutput {
+	return i.ToGatewayBackendSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayBackendSpecPtrType) ToGatewayBackendSpecPtrOutputWithContext(ctx context.Context) GatewayBackendSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayBackendSpecPtrOutput)
+}
+
+type GatewayBackendSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayBackendSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayBackendSpec)(nil)).Elem()
+}
+
+func (o GatewayBackendSpecOutput) ToGatewayBackendSpecOutput() GatewayBackendSpecOutput {
+	return o
+}
+
+func (o GatewayBackendSpecOutput) ToGatewayBackendSpecOutputWithContext(ctx context.Context) GatewayBackendSpecOutput {
+	return o
+}
+
+func (o GatewayBackendSpecOutput) ToGatewayBackendSpecPtrOutput() GatewayBackendSpecPtrOutput {
+	return o.ToGatewayBackendSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayBackendSpecOutput) ToGatewayBackendSpecPtrOutputWithContext(ctx context.Context) GatewayBackendSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayBackendSpec) *GatewayBackendSpec {
+		return &v
+	}).(GatewayBackendSpecPtrOutput)
+}
+
+// 是否支持VKE Flannel CNI。
+func (o GatewayBackendSpecOutput) IsVkeWithFlannelCniSupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayBackendSpec) *bool { return v.IsVkeWithFlannelCniSupported }).(pulumi.BoolPtrOutput)
+}
+
+// VKE Pod CIDR。
+func (o GatewayBackendSpecOutput) VkePodCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayBackendSpec) *string { return v.VkePodCidr }).(pulumi.StringPtrOutput)
+}
+
+type GatewayBackendSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayBackendSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayBackendSpec)(nil)).Elem()
+}
+
+func (o GatewayBackendSpecPtrOutput) ToGatewayBackendSpecPtrOutput() GatewayBackendSpecPtrOutput {
+	return o
+}
+
+func (o GatewayBackendSpecPtrOutput) ToGatewayBackendSpecPtrOutputWithContext(ctx context.Context) GatewayBackendSpecPtrOutput {
+	return o
+}
+
+func (o GatewayBackendSpecPtrOutput) Elem() GatewayBackendSpecOutput {
+	return o.ApplyT(func(v *GatewayBackendSpec) GatewayBackendSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayBackendSpec
+		return ret
+	}).(GatewayBackendSpecOutput)
+}
+
+// 是否支持VKE Flannel CNI。
+func (o GatewayBackendSpecPtrOutput) IsVkeWithFlannelCniSupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayBackendSpec) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsVkeWithFlannelCniSupported
+	}).(pulumi.BoolPtrOutput)
+}
+
+// VKE Pod CIDR。
+func (o GatewayBackendSpecPtrOutput) VkePodCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayBackendSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VkePodCidr
+	}).(pulumi.StringPtrOutput)
+}
+
+type GatewayCustomLog struct {
+	CustomVariables []GatewayCustomLogCustomVariable `pulumi:"customVariables"`
+	RequestHeaders  []GatewayCustomLogRequestHeader  `pulumi:"requestHeaders"`
+	ResponseHeaders []GatewayCustomLogResponseHeader `pulumi:"responseHeaders"`
+}
+
+// GatewayCustomLogInput is an input type that accepts GatewayCustomLogArgs and GatewayCustomLogOutput values.
+// You can construct a concrete instance of `GatewayCustomLogInput` via:
+//
+//	GatewayCustomLogArgs{...}
+type GatewayCustomLogInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogOutput() GatewayCustomLogOutput
+	ToGatewayCustomLogOutputWithContext(context.Context) GatewayCustomLogOutput
+}
+
+type GatewayCustomLogArgs struct {
+	CustomVariables GatewayCustomLogCustomVariableArrayInput `pulumi:"customVariables"`
+	RequestHeaders  GatewayCustomLogRequestHeaderArrayInput  `pulumi:"requestHeaders"`
+	ResponseHeaders GatewayCustomLogResponseHeaderArrayInput `pulumi:"responseHeaders"`
+}
+
+func (GatewayCustomLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLog)(nil)).Elem()
+}
+
+func (i GatewayCustomLogArgs) ToGatewayCustomLogOutput() GatewayCustomLogOutput {
+	return i.ToGatewayCustomLogOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogArgs) ToGatewayCustomLogOutputWithContext(ctx context.Context) GatewayCustomLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogOutput)
+}
+
+func (i GatewayCustomLogArgs) ToGatewayCustomLogPtrOutput() GatewayCustomLogPtrOutput {
+	return i.ToGatewayCustomLogPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogArgs) ToGatewayCustomLogPtrOutputWithContext(ctx context.Context) GatewayCustomLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogOutput).ToGatewayCustomLogPtrOutputWithContext(ctx)
+}
+
+// GatewayCustomLogPtrInput is an input type that accepts GatewayCustomLogArgs, GatewayCustomLogPtr and GatewayCustomLogPtrOutput values.
+// You can construct a concrete instance of `GatewayCustomLogPtrInput` via:
+//
+//	        GatewayCustomLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayCustomLogPtrInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogPtrOutput() GatewayCustomLogPtrOutput
+	ToGatewayCustomLogPtrOutputWithContext(context.Context) GatewayCustomLogPtrOutput
+}
+
+type gatewayCustomLogPtrType GatewayCustomLogArgs
+
+func GatewayCustomLogPtr(v *GatewayCustomLogArgs) GatewayCustomLogPtrInput {
+	return (*gatewayCustomLogPtrType)(v)
+}
+
+func (*gatewayCustomLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayCustomLog)(nil)).Elem()
+}
+
+func (i *gatewayCustomLogPtrType) ToGatewayCustomLogPtrOutput() GatewayCustomLogPtrOutput {
+	return i.ToGatewayCustomLogPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayCustomLogPtrType) ToGatewayCustomLogPtrOutputWithContext(ctx context.Context) GatewayCustomLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogPtrOutput)
+}
+
+type GatewayCustomLogOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLog)(nil)).Elem()
+}
+
+func (o GatewayCustomLogOutput) ToGatewayCustomLogOutput() GatewayCustomLogOutput {
+	return o
+}
+
+func (o GatewayCustomLogOutput) ToGatewayCustomLogOutputWithContext(ctx context.Context) GatewayCustomLogOutput {
+	return o
+}
+
+func (o GatewayCustomLogOutput) ToGatewayCustomLogPtrOutput() GatewayCustomLogPtrOutput {
+	return o.ToGatewayCustomLogPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayCustomLogOutput) ToGatewayCustomLogPtrOutputWithContext(ctx context.Context) GatewayCustomLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayCustomLog) *GatewayCustomLog {
+		return &v
+	}).(GatewayCustomLogPtrOutput)
+}
+
+func (o GatewayCustomLogOutput) CustomVariables() GatewayCustomLogCustomVariableArrayOutput {
+	return o.ApplyT(func(v GatewayCustomLog) []GatewayCustomLogCustomVariable { return v.CustomVariables }).(GatewayCustomLogCustomVariableArrayOutput)
+}
+
+func (o GatewayCustomLogOutput) RequestHeaders() GatewayCustomLogRequestHeaderArrayOutput {
+	return o.ApplyT(func(v GatewayCustomLog) []GatewayCustomLogRequestHeader { return v.RequestHeaders }).(GatewayCustomLogRequestHeaderArrayOutput)
+}
+
+func (o GatewayCustomLogOutput) ResponseHeaders() GatewayCustomLogResponseHeaderArrayOutput {
+	return o.ApplyT(func(v GatewayCustomLog) []GatewayCustomLogResponseHeader { return v.ResponseHeaders }).(GatewayCustomLogResponseHeaderArrayOutput)
+}
+
+type GatewayCustomLogPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayCustomLog)(nil)).Elem()
+}
+
+func (o GatewayCustomLogPtrOutput) ToGatewayCustomLogPtrOutput() GatewayCustomLogPtrOutput {
+	return o
+}
+
+func (o GatewayCustomLogPtrOutput) ToGatewayCustomLogPtrOutputWithContext(ctx context.Context) GatewayCustomLogPtrOutput {
+	return o
+}
+
+func (o GatewayCustomLogPtrOutput) Elem() GatewayCustomLogOutput {
+	return o.ApplyT(func(v *GatewayCustomLog) GatewayCustomLog {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayCustomLog
+		return ret
+	}).(GatewayCustomLogOutput)
+}
+
+func (o GatewayCustomLogPtrOutput) CustomVariables() GatewayCustomLogCustomVariableArrayOutput {
+	return o.ApplyT(func(v *GatewayCustomLog) []GatewayCustomLogCustomVariable {
+		if v == nil {
+			return nil
+		}
+		return v.CustomVariables
+	}).(GatewayCustomLogCustomVariableArrayOutput)
+}
+
+func (o GatewayCustomLogPtrOutput) RequestHeaders() GatewayCustomLogRequestHeaderArrayOutput {
+	return o.ApplyT(func(v *GatewayCustomLog) []GatewayCustomLogRequestHeader {
+		if v == nil {
+			return nil
+		}
+		return v.RequestHeaders
+	}).(GatewayCustomLogRequestHeaderArrayOutput)
+}
+
+func (o GatewayCustomLogPtrOutput) ResponseHeaders() GatewayCustomLogResponseHeaderArrayOutput {
+	return o.ApplyT(func(v *GatewayCustomLog) []GatewayCustomLogResponseHeader {
+		if v == nil {
+			return nil
+		}
+		return v.ResponseHeaders
+	}).(GatewayCustomLogResponseHeaderArrayOutput)
+}
+
+type GatewayCustomLogCustomVariable struct {
+	// 字段别名。
+	AliasesInLog *string `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key *string `pulumi:"key"`
+}
+
+// GatewayCustomLogCustomVariableInput is an input type that accepts GatewayCustomLogCustomVariableArgs and GatewayCustomLogCustomVariableOutput values.
+// You can construct a concrete instance of `GatewayCustomLogCustomVariableInput` via:
+//
+//	GatewayCustomLogCustomVariableArgs{...}
+type GatewayCustomLogCustomVariableInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogCustomVariableOutput() GatewayCustomLogCustomVariableOutput
+	ToGatewayCustomLogCustomVariableOutputWithContext(context.Context) GatewayCustomLogCustomVariableOutput
+}
+
+type GatewayCustomLogCustomVariableArgs struct {
+	// 字段别名。
+	AliasesInLog pulumi.StringPtrInput `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+}
+
+func (GatewayCustomLogCustomVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (i GatewayCustomLogCustomVariableArgs) ToGatewayCustomLogCustomVariableOutput() GatewayCustomLogCustomVariableOutput {
+	return i.ToGatewayCustomLogCustomVariableOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogCustomVariableArgs) ToGatewayCustomLogCustomVariableOutputWithContext(ctx context.Context) GatewayCustomLogCustomVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogCustomVariableOutput)
+}
+
+// GatewayCustomLogCustomVariableArrayInput is an input type that accepts GatewayCustomLogCustomVariableArray and GatewayCustomLogCustomVariableArrayOutput values.
+// You can construct a concrete instance of `GatewayCustomLogCustomVariableArrayInput` via:
+//
+//	GatewayCustomLogCustomVariableArray{ GatewayCustomLogCustomVariableArgs{...} }
+type GatewayCustomLogCustomVariableArrayInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogCustomVariableArrayOutput() GatewayCustomLogCustomVariableArrayOutput
+	ToGatewayCustomLogCustomVariableArrayOutputWithContext(context.Context) GatewayCustomLogCustomVariableArrayOutput
+}
+
+type GatewayCustomLogCustomVariableArray []GatewayCustomLogCustomVariableInput
+
+func (GatewayCustomLogCustomVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (i GatewayCustomLogCustomVariableArray) ToGatewayCustomLogCustomVariableArrayOutput() GatewayCustomLogCustomVariableArrayOutput {
+	return i.ToGatewayCustomLogCustomVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogCustomVariableArray) ToGatewayCustomLogCustomVariableArrayOutputWithContext(ctx context.Context) GatewayCustomLogCustomVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogCustomVariableArrayOutput)
+}
+
+type GatewayCustomLogCustomVariableOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogCustomVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (o GatewayCustomLogCustomVariableOutput) ToGatewayCustomLogCustomVariableOutput() GatewayCustomLogCustomVariableOutput {
+	return o
+}
+
+func (o GatewayCustomLogCustomVariableOutput) ToGatewayCustomLogCustomVariableOutputWithContext(ctx context.Context) GatewayCustomLogCustomVariableOutput {
+	return o
+}
+
+// 字段别名。
+func (o GatewayCustomLogCustomVariableOutput) AliasesInLog() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayCustomLogCustomVariable) *string { return v.AliasesInLog }).(pulumi.StringPtrOutput)
+}
+
+// 请求头键。
+func (o GatewayCustomLogCustomVariableOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayCustomLogCustomVariable) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+type GatewayCustomLogCustomVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogCustomVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (o GatewayCustomLogCustomVariableArrayOutput) ToGatewayCustomLogCustomVariableArrayOutput() GatewayCustomLogCustomVariableArrayOutput {
+	return o
+}
+
+func (o GatewayCustomLogCustomVariableArrayOutput) ToGatewayCustomLogCustomVariableArrayOutputWithContext(ctx context.Context) GatewayCustomLogCustomVariableArrayOutput {
+	return o
+}
+
+func (o GatewayCustomLogCustomVariableArrayOutput) Index(i pulumi.IntInput) GatewayCustomLogCustomVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GatewayCustomLogCustomVariable {
+		return vs[0].([]GatewayCustomLogCustomVariable)[vs[1].(int)]
+	}).(GatewayCustomLogCustomVariableOutput)
+}
+
+type GatewayCustomLogRequestHeader struct {
+	// 字段别名。
+	AliasesInLog *string `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key *string `pulumi:"key"`
+}
+
+// GatewayCustomLogRequestHeaderInput is an input type that accepts GatewayCustomLogRequestHeaderArgs and GatewayCustomLogRequestHeaderOutput values.
+// You can construct a concrete instance of `GatewayCustomLogRequestHeaderInput` via:
+//
+//	GatewayCustomLogRequestHeaderArgs{...}
+type GatewayCustomLogRequestHeaderInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogRequestHeaderOutput() GatewayCustomLogRequestHeaderOutput
+	ToGatewayCustomLogRequestHeaderOutputWithContext(context.Context) GatewayCustomLogRequestHeaderOutput
+}
+
+type GatewayCustomLogRequestHeaderArgs struct {
+	// 字段别名。
+	AliasesInLog pulumi.StringPtrInput `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+}
+
+func (GatewayCustomLogRequestHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (i GatewayCustomLogRequestHeaderArgs) ToGatewayCustomLogRequestHeaderOutput() GatewayCustomLogRequestHeaderOutput {
+	return i.ToGatewayCustomLogRequestHeaderOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogRequestHeaderArgs) ToGatewayCustomLogRequestHeaderOutputWithContext(ctx context.Context) GatewayCustomLogRequestHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogRequestHeaderOutput)
+}
+
+// GatewayCustomLogRequestHeaderArrayInput is an input type that accepts GatewayCustomLogRequestHeaderArray and GatewayCustomLogRequestHeaderArrayOutput values.
+// You can construct a concrete instance of `GatewayCustomLogRequestHeaderArrayInput` via:
+//
+//	GatewayCustomLogRequestHeaderArray{ GatewayCustomLogRequestHeaderArgs{...} }
+type GatewayCustomLogRequestHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogRequestHeaderArrayOutput() GatewayCustomLogRequestHeaderArrayOutput
+	ToGatewayCustomLogRequestHeaderArrayOutputWithContext(context.Context) GatewayCustomLogRequestHeaderArrayOutput
+}
+
+type GatewayCustomLogRequestHeaderArray []GatewayCustomLogRequestHeaderInput
+
+func (GatewayCustomLogRequestHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (i GatewayCustomLogRequestHeaderArray) ToGatewayCustomLogRequestHeaderArrayOutput() GatewayCustomLogRequestHeaderArrayOutput {
+	return i.ToGatewayCustomLogRequestHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogRequestHeaderArray) ToGatewayCustomLogRequestHeaderArrayOutputWithContext(ctx context.Context) GatewayCustomLogRequestHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogRequestHeaderArrayOutput)
+}
+
+type GatewayCustomLogRequestHeaderOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogRequestHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (o GatewayCustomLogRequestHeaderOutput) ToGatewayCustomLogRequestHeaderOutput() GatewayCustomLogRequestHeaderOutput {
+	return o
+}
+
+func (o GatewayCustomLogRequestHeaderOutput) ToGatewayCustomLogRequestHeaderOutputWithContext(ctx context.Context) GatewayCustomLogRequestHeaderOutput {
+	return o
+}
+
+// 字段别名。
+func (o GatewayCustomLogRequestHeaderOutput) AliasesInLog() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayCustomLogRequestHeader) *string { return v.AliasesInLog }).(pulumi.StringPtrOutput)
+}
+
+// 请求头键。
+func (o GatewayCustomLogRequestHeaderOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayCustomLogRequestHeader) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+type GatewayCustomLogRequestHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogRequestHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (o GatewayCustomLogRequestHeaderArrayOutput) ToGatewayCustomLogRequestHeaderArrayOutput() GatewayCustomLogRequestHeaderArrayOutput {
+	return o
+}
+
+func (o GatewayCustomLogRequestHeaderArrayOutput) ToGatewayCustomLogRequestHeaderArrayOutputWithContext(ctx context.Context) GatewayCustomLogRequestHeaderArrayOutput {
+	return o
+}
+
+func (o GatewayCustomLogRequestHeaderArrayOutput) Index(i pulumi.IntInput) GatewayCustomLogRequestHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GatewayCustomLogRequestHeader {
+		return vs[0].([]GatewayCustomLogRequestHeader)[vs[1].(int)]
+	}).(GatewayCustomLogRequestHeaderOutput)
+}
+
+type GatewayCustomLogResponseHeader struct {
+	// 字段别名。
+	AliasesInLog *string `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key *string `pulumi:"key"`
+}
+
+// GatewayCustomLogResponseHeaderInput is an input type that accepts GatewayCustomLogResponseHeaderArgs and GatewayCustomLogResponseHeaderOutput values.
+// You can construct a concrete instance of `GatewayCustomLogResponseHeaderInput` via:
+//
+//	GatewayCustomLogResponseHeaderArgs{...}
+type GatewayCustomLogResponseHeaderInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogResponseHeaderOutput() GatewayCustomLogResponseHeaderOutput
+	ToGatewayCustomLogResponseHeaderOutputWithContext(context.Context) GatewayCustomLogResponseHeaderOutput
+}
+
+type GatewayCustomLogResponseHeaderArgs struct {
+	// 字段别名。
+	AliasesInLog pulumi.StringPtrInput `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+}
+
+func (GatewayCustomLogResponseHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (i GatewayCustomLogResponseHeaderArgs) ToGatewayCustomLogResponseHeaderOutput() GatewayCustomLogResponseHeaderOutput {
+	return i.ToGatewayCustomLogResponseHeaderOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogResponseHeaderArgs) ToGatewayCustomLogResponseHeaderOutputWithContext(ctx context.Context) GatewayCustomLogResponseHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogResponseHeaderOutput)
+}
+
+// GatewayCustomLogResponseHeaderArrayInput is an input type that accepts GatewayCustomLogResponseHeaderArray and GatewayCustomLogResponseHeaderArrayOutput values.
+// You can construct a concrete instance of `GatewayCustomLogResponseHeaderArrayInput` via:
+//
+//	GatewayCustomLogResponseHeaderArray{ GatewayCustomLogResponseHeaderArgs{...} }
+type GatewayCustomLogResponseHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGatewayCustomLogResponseHeaderArrayOutput() GatewayCustomLogResponseHeaderArrayOutput
+	ToGatewayCustomLogResponseHeaderArrayOutputWithContext(context.Context) GatewayCustomLogResponseHeaderArrayOutput
+}
+
+type GatewayCustomLogResponseHeaderArray []GatewayCustomLogResponseHeaderInput
+
+func (GatewayCustomLogResponseHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (i GatewayCustomLogResponseHeaderArray) ToGatewayCustomLogResponseHeaderArrayOutput() GatewayCustomLogResponseHeaderArrayOutput {
+	return i.ToGatewayCustomLogResponseHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GatewayCustomLogResponseHeaderArray) ToGatewayCustomLogResponseHeaderArrayOutputWithContext(ctx context.Context) GatewayCustomLogResponseHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayCustomLogResponseHeaderArrayOutput)
+}
+
+type GatewayCustomLogResponseHeaderOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogResponseHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (o GatewayCustomLogResponseHeaderOutput) ToGatewayCustomLogResponseHeaderOutput() GatewayCustomLogResponseHeaderOutput {
+	return o
+}
+
+func (o GatewayCustomLogResponseHeaderOutput) ToGatewayCustomLogResponseHeaderOutputWithContext(ctx context.Context) GatewayCustomLogResponseHeaderOutput {
+	return o
+}
+
+// 字段别名。
+func (o GatewayCustomLogResponseHeaderOutput) AliasesInLog() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayCustomLogResponseHeader) *string { return v.AliasesInLog }).(pulumi.StringPtrOutput)
+}
+
+// 请求头键。
+func (o GatewayCustomLogResponseHeaderOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayCustomLogResponseHeader) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+type GatewayCustomLogResponseHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GatewayCustomLogResponseHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (o GatewayCustomLogResponseHeaderArrayOutput) ToGatewayCustomLogResponseHeaderArrayOutput() GatewayCustomLogResponseHeaderArrayOutput {
+	return o
+}
+
+func (o GatewayCustomLogResponseHeaderArrayOutput) ToGatewayCustomLogResponseHeaderArrayOutputWithContext(ctx context.Context) GatewayCustomLogResponseHeaderArrayOutput {
+	return o
+}
+
+func (o GatewayCustomLogResponseHeaderArrayOutput) Index(i pulumi.IntInput) GatewayCustomLogResponseHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GatewayCustomLogResponseHeader {
+		return vs[0].([]GatewayCustomLogResponseHeader)[vs[1].(int)]
+	}).(GatewayCustomLogResponseHeaderOutput)
+}
+
+type GatewayEvent struct {
+	// 事件代码。
+	Code *string `pulumi:"code"`
+	// 事件创建时间。
+	CreatedTime *string `pulumi:"createdTime"`
+	// 附带信息。
+	Data *string `pulumi:"data"`
+	// 事件描述。
+	Description *string `pulumi:"description"`
+}
+
+// GatewayEventInput is an input type that accepts GatewayEventArgs and GatewayEventOutput values.
+// You can construct a concrete instance of `GatewayEventInput` via:
+//
+//	GatewayEventArgs{...}
+type GatewayEventInput interface {
+	pulumi.Input
+
+	ToGatewayEventOutput() GatewayEventOutput
+	ToGatewayEventOutputWithContext(context.Context) GatewayEventOutput
+}
+
+type GatewayEventArgs struct {
+	// 事件代码。
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// 事件创建时间。
+	CreatedTime pulumi.StringPtrInput `pulumi:"createdTime"`
+	// 附带信息。
+	Data pulumi.StringPtrInput `pulumi:"data"`
+	// 事件描述。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+}
+
+func (GatewayEventArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayEvent)(nil)).Elem()
+}
+
+func (i GatewayEventArgs) ToGatewayEventOutput() GatewayEventOutput {
+	return i.ToGatewayEventOutputWithContext(context.Background())
+}
+
+func (i GatewayEventArgs) ToGatewayEventOutputWithContext(ctx context.Context) GatewayEventOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayEventOutput)
+}
+
+// GatewayEventArrayInput is an input type that accepts GatewayEventArray and GatewayEventArrayOutput values.
+// You can construct a concrete instance of `GatewayEventArrayInput` via:
+//
+//	GatewayEventArray{ GatewayEventArgs{...} }
+type GatewayEventArrayInput interface {
+	pulumi.Input
+
+	ToGatewayEventArrayOutput() GatewayEventArrayOutput
+	ToGatewayEventArrayOutputWithContext(context.Context) GatewayEventArrayOutput
+}
+
+type GatewayEventArray []GatewayEventInput
+
+func (GatewayEventArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayEvent)(nil)).Elem()
+}
+
+func (i GatewayEventArray) ToGatewayEventArrayOutput() GatewayEventArrayOutput {
+	return i.ToGatewayEventArrayOutputWithContext(context.Background())
+}
+
+func (i GatewayEventArray) ToGatewayEventArrayOutputWithContext(ctx context.Context) GatewayEventArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayEventArrayOutput)
+}
+
+type GatewayEventOutput struct{ *pulumi.OutputState }
+
+func (GatewayEventOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayEvent)(nil)).Elem()
+}
+
+func (o GatewayEventOutput) ToGatewayEventOutput() GatewayEventOutput {
+	return o
+}
+
+func (o GatewayEventOutput) ToGatewayEventOutputWithContext(ctx context.Context) GatewayEventOutput {
+	return o
+}
+
+// 事件代码。
+func (o GatewayEventOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayEvent) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// 事件创建时间。
+func (o GatewayEventOutput) CreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayEvent) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// 附带信息。
+func (o GatewayEventOutput) Data() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayEvent) *string { return v.Data }).(pulumi.StringPtrOutput)
+}
+
+// 事件描述。
+func (o GatewayEventOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayEvent) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+type GatewayEventArrayOutput struct{ *pulumi.OutputState }
+
+func (GatewayEventArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayEvent)(nil)).Elem()
+}
+
+func (o GatewayEventArrayOutput) ToGatewayEventArrayOutput() GatewayEventArrayOutput {
+	return o
+}
+
+func (o GatewayEventArrayOutput) ToGatewayEventArrayOutputWithContext(ctx context.Context) GatewayEventArrayOutput {
+	return o
+}
+
+func (o GatewayEventArrayOutput) Index(i pulumi.IntInput) GatewayEventOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GatewayEvent {
+		return vs[0].([]GatewayEvent)[vs[1].(int)]
+	}).(GatewayEventOutput)
+}
+
+type GatewayLogSpec struct {
+	// 是否开启日志服务。
+	Enable *bool `pulumi:"enable"`
+	// 日志项目ID。
+	ProjectId *string `pulumi:"projectId"`
+	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	TopicId *string `pulumi:"topicId"`
+}
+
+// GatewayLogSpecInput is an input type that accepts GatewayLogSpecArgs and GatewayLogSpecOutput values.
+// You can construct a concrete instance of `GatewayLogSpecInput` via:
+//
+//	GatewayLogSpecArgs{...}
+type GatewayLogSpecInput interface {
+	pulumi.Input
+
+	ToGatewayLogSpecOutput() GatewayLogSpecOutput
+	ToGatewayLogSpecOutputWithContext(context.Context) GatewayLogSpecOutput
+}
+
+type GatewayLogSpecArgs struct {
+	// 是否开启日志服务。
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// 日志项目ID。
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+}
+
+func (GatewayLogSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayLogSpec)(nil)).Elem()
+}
+
+func (i GatewayLogSpecArgs) ToGatewayLogSpecOutput() GatewayLogSpecOutput {
+	return i.ToGatewayLogSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayLogSpecArgs) ToGatewayLogSpecOutputWithContext(ctx context.Context) GatewayLogSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayLogSpecOutput)
+}
+
+func (i GatewayLogSpecArgs) ToGatewayLogSpecPtrOutput() GatewayLogSpecPtrOutput {
+	return i.ToGatewayLogSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayLogSpecArgs) ToGatewayLogSpecPtrOutputWithContext(ctx context.Context) GatewayLogSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayLogSpecOutput).ToGatewayLogSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayLogSpecPtrInput is an input type that accepts GatewayLogSpecArgs, GatewayLogSpecPtr and GatewayLogSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayLogSpecPtrInput` via:
+//
+//	        GatewayLogSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayLogSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayLogSpecPtrOutput() GatewayLogSpecPtrOutput
+	ToGatewayLogSpecPtrOutputWithContext(context.Context) GatewayLogSpecPtrOutput
+}
+
+type gatewayLogSpecPtrType GatewayLogSpecArgs
+
+func GatewayLogSpecPtr(v *GatewayLogSpecArgs) GatewayLogSpecPtrInput {
+	return (*gatewayLogSpecPtrType)(v)
+}
+
+func (*gatewayLogSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayLogSpec)(nil)).Elem()
+}
+
+func (i *gatewayLogSpecPtrType) ToGatewayLogSpecPtrOutput() GatewayLogSpecPtrOutput {
+	return i.ToGatewayLogSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayLogSpecPtrType) ToGatewayLogSpecPtrOutputWithContext(ctx context.Context) GatewayLogSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayLogSpecPtrOutput)
+}
+
+type GatewayLogSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayLogSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayLogSpec)(nil)).Elem()
+}
+
+func (o GatewayLogSpecOutput) ToGatewayLogSpecOutput() GatewayLogSpecOutput {
+	return o
+}
+
+func (o GatewayLogSpecOutput) ToGatewayLogSpecOutputWithContext(ctx context.Context) GatewayLogSpecOutput {
+	return o
+}
+
+func (o GatewayLogSpecOutput) ToGatewayLogSpecPtrOutput() GatewayLogSpecPtrOutput {
+	return o.ToGatewayLogSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayLogSpecOutput) ToGatewayLogSpecPtrOutputWithContext(ctx context.Context) GatewayLogSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayLogSpec) *GatewayLogSpec {
+		return &v
+	}).(GatewayLogSpecPtrOutput)
+}
+
+// 是否开启日志服务。
+func (o GatewayLogSpecOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayLogSpec) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// 日志项目ID。
+func (o GatewayLogSpecOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayLogSpec) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+// 日志主题ID。ProjectId 指定项目里面的日志主题。
+func (o GatewayLogSpecOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayLogSpec) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+type GatewayLogSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayLogSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayLogSpec)(nil)).Elem()
+}
+
+func (o GatewayLogSpecPtrOutput) ToGatewayLogSpecPtrOutput() GatewayLogSpecPtrOutput {
+	return o
+}
+
+func (o GatewayLogSpecPtrOutput) ToGatewayLogSpecPtrOutputWithContext(ctx context.Context) GatewayLogSpecPtrOutput {
+	return o
+}
+
+func (o GatewayLogSpecPtrOutput) Elem() GatewayLogSpecOutput {
+	return o.ApplyT(func(v *GatewayLogSpec) GatewayLogSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayLogSpec
+		return ret
+	}).(GatewayLogSpecOutput)
+}
+
+// 是否开启日志服务。
+func (o GatewayLogSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayLogSpec) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 日志项目ID。
+func (o GatewayLogSpecPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayLogSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 日志主题ID。ProjectId 指定项目里面的日志主题。
+func (o GatewayLogSpecPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayLogSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
+	}).(pulumi.StringPtrOutput)
+}
+
+type GatewayMonitorSpec struct {
+	// 托管Prometheus（VMP）服务。
+	Enable *bool `pulumi:"enable"`
+	// Prometheus工作区ID。
+	WorkspaceId *string `pulumi:"workspaceId"`
+}
+
+// GatewayMonitorSpecInput is an input type that accepts GatewayMonitorSpecArgs and GatewayMonitorSpecOutput values.
+// You can construct a concrete instance of `GatewayMonitorSpecInput` via:
+//
+//	GatewayMonitorSpecArgs{...}
+type GatewayMonitorSpecInput interface {
+	pulumi.Input
+
+	ToGatewayMonitorSpecOutput() GatewayMonitorSpecOutput
+	ToGatewayMonitorSpecOutputWithContext(context.Context) GatewayMonitorSpecOutput
+}
+
+type GatewayMonitorSpecArgs struct {
+	// 托管Prometheus（VMP）服务。
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// Prometheus工作区ID。
+	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
+}
+
+func (GatewayMonitorSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayMonitorSpec)(nil)).Elem()
+}
+
+func (i GatewayMonitorSpecArgs) ToGatewayMonitorSpecOutput() GatewayMonitorSpecOutput {
+	return i.ToGatewayMonitorSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayMonitorSpecArgs) ToGatewayMonitorSpecOutputWithContext(ctx context.Context) GatewayMonitorSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayMonitorSpecOutput)
+}
+
+func (i GatewayMonitorSpecArgs) ToGatewayMonitorSpecPtrOutput() GatewayMonitorSpecPtrOutput {
+	return i.ToGatewayMonitorSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayMonitorSpecArgs) ToGatewayMonitorSpecPtrOutputWithContext(ctx context.Context) GatewayMonitorSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayMonitorSpecOutput).ToGatewayMonitorSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayMonitorSpecPtrInput is an input type that accepts GatewayMonitorSpecArgs, GatewayMonitorSpecPtr and GatewayMonitorSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayMonitorSpecPtrInput` via:
+//
+//	        GatewayMonitorSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayMonitorSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayMonitorSpecPtrOutput() GatewayMonitorSpecPtrOutput
+	ToGatewayMonitorSpecPtrOutputWithContext(context.Context) GatewayMonitorSpecPtrOutput
+}
+
+type gatewayMonitorSpecPtrType GatewayMonitorSpecArgs
+
+func GatewayMonitorSpecPtr(v *GatewayMonitorSpecArgs) GatewayMonitorSpecPtrInput {
+	return (*gatewayMonitorSpecPtrType)(v)
+}
+
+func (*gatewayMonitorSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayMonitorSpec)(nil)).Elem()
+}
+
+func (i *gatewayMonitorSpecPtrType) ToGatewayMonitorSpecPtrOutput() GatewayMonitorSpecPtrOutput {
+	return i.ToGatewayMonitorSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayMonitorSpecPtrType) ToGatewayMonitorSpecPtrOutputWithContext(ctx context.Context) GatewayMonitorSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayMonitorSpecPtrOutput)
+}
+
+type GatewayMonitorSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayMonitorSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayMonitorSpec)(nil)).Elem()
+}
+
+func (o GatewayMonitorSpecOutput) ToGatewayMonitorSpecOutput() GatewayMonitorSpecOutput {
+	return o
+}
+
+func (o GatewayMonitorSpecOutput) ToGatewayMonitorSpecOutputWithContext(ctx context.Context) GatewayMonitorSpecOutput {
+	return o
+}
+
+func (o GatewayMonitorSpecOutput) ToGatewayMonitorSpecPtrOutput() GatewayMonitorSpecPtrOutput {
+	return o.ToGatewayMonitorSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayMonitorSpecOutput) ToGatewayMonitorSpecPtrOutputWithContext(ctx context.Context) GatewayMonitorSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayMonitorSpec) *GatewayMonitorSpec {
+		return &v
+	}).(GatewayMonitorSpecPtrOutput)
+}
+
+// 托管Prometheus（VMP）服务。
+func (o GatewayMonitorSpecOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayMonitorSpec) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// Prometheus工作区ID。
+func (o GatewayMonitorSpecOutput) WorkspaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayMonitorSpec) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
+}
+
+type GatewayMonitorSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayMonitorSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayMonitorSpec)(nil)).Elem()
+}
+
+func (o GatewayMonitorSpecPtrOutput) ToGatewayMonitorSpecPtrOutput() GatewayMonitorSpecPtrOutput {
+	return o
+}
+
+func (o GatewayMonitorSpecPtrOutput) ToGatewayMonitorSpecPtrOutputWithContext(ctx context.Context) GatewayMonitorSpecPtrOutput {
+	return o
+}
+
+func (o GatewayMonitorSpecPtrOutput) Elem() GatewayMonitorSpecOutput {
+	return o.ApplyT(func(v *GatewayMonitorSpec) GatewayMonitorSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayMonitorSpec
+		return ret
+	}).(GatewayMonitorSpecOutput)
+}
+
+// 托管Prometheus（VMP）服务。
+func (o GatewayMonitorSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayMonitorSpec) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Prometheus工作区ID。
+func (o GatewayMonitorSpecPtrOutput) WorkspaceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayMonitorSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WorkspaceId
+	}).(pulumi.StringPtrOutput)
+}
+
+type GatewayNetworkSpec struct {
+	Subnets []GatewayNetworkSpecSubnet `pulumi:"subnets"`
+	// VPC ID。
+	VpcId *string `pulumi:"vpcId"`
+	// VPC名称。
+	VpcName *string `pulumi:"vpcName"`
+}
+
+// GatewayNetworkSpecInput is an input type that accepts GatewayNetworkSpecArgs and GatewayNetworkSpecOutput values.
+// You can construct a concrete instance of `GatewayNetworkSpecInput` via:
+//
+//	GatewayNetworkSpecArgs{...}
+type GatewayNetworkSpecInput interface {
+	pulumi.Input
+
+	ToGatewayNetworkSpecOutput() GatewayNetworkSpecOutput
+	ToGatewayNetworkSpecOutputWithContext(context.Context) GatewayNetworkSpecOutput
+}
+
+type GatewayNetworkSpecArgs struct {
+	Subnets GatewayNetworkSpecSubnetArrayInput `pulumi:"subnets"`
+	// VPC ID。
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+	// VPC名称。
+	VpcName pulumi.StringPtrInput `pulumi:"vpcName"`
+}
+
+func (GatewayNetworkSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayNetworkSpec)(nil)).Elem()
+}
+
+func (i GatewayNetworkSpecArgs) ToGatewayNetworkSpecOutput() GatewayNetworkSpecOutput {
+	return i.ToGatewayNetworkSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayNetworkSpecArgs) ToGatewayNetworkSpecOutputWithContext(ctx context.Context) GatewayNetworkSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayNetworkSpecOutput)
+}
+
+func (i GatewayNetworkSpecArgs) ToGatewayNetworkSpecPtrOutput() GatewayNetworkSpecPtrOutput {
+	return i.ToGatewayNetworkSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayNetworkSpecArgs) ToGatewayNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayNetworkSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayNetworkSpecOutput).ToGatewayNetworkSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayNetworkSpecPtrInput is an input type that accepts GatewayNetworkSpecArgs, GatewayNetworkSpecPtr and GatewayNetworkSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayNetworkSpecPtrInput` via:
+//
+//	        GatewayNetworkSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayNetworkSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayNetworkSpecPtrOutput() GatewayNetworkSpecPtrOutput
+	ToGatewayNetworkSpecPtrOutputWithContext(context.Context) GatewayNetworkSpecPtrOutput
+}
+
+type gatewayNetworkSpecPtrType GatewayNetworkSpecArgs
+
+func GatewayNetworkSpecPtr(v *GatewayNetworkSpecArgs) GatewayNetworkSpecPtrInput {
+	return (*gatewayNetworkSpecPtrType)(v)
+}
+
+func (*gatewayNetworkSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayNetworkSpec)(nil)).Elem()
+}
+
+func (i *gatewayNetworkSpecPtrType) ToGatewayNetworkSpecPtrOutput() GatewayNetworkSpecPtrOutput {
+	return i.ToGatewayNetworkSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayNetworkSpecPtrType) ToGatewayNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayNetworkSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayNetworkSpecPtrOutput)
+}
+
+type GatewayNetworkSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayNetworkSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayNetworkSpec)(nil)).Elem()
+}
+
+func (o GatewayNetworkSpecOutput) ToGatewayNetworkSpecOutput() GatewayNetworkSpecOutput {
+	return o
+}
+
+func (o GatewayNetworkSpecOutput) ToGatewayNetworkSpecOutputWithContext(ctx context.Context) GatewayNetworkSpecOutput {
+	return o
+}
+
+func (o GatewayNetworkSpecOutput) ToGatewayNetworkSpecPtrOutput() GatewayNetworkSpecPtrOutput {
+	return o.ToGatewayNetworkSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayNetworkSpecOutput) ToGatewayNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayNetworkSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayNetworkSpec) *GatewayNetworkSpec {
+		return &v
+	}).(GatewayNetworkSpecPtrOutput)
+}
+
+func (o GatewayNetworkSpecOutput) Subnets() GatewayNetworkSpecSubnetArrayOutput {
+	return o.ApplyT(func(v GatewayNetworkSpec) []GatewayNetworkSpecSubnet { return v.Subnets }).(GatewayNetworkSpecSubnetArrayOutput)
+}
+
+// VPC ID。
+func (o GatewayNetworkSpecOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayNetworkSpec) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+// VPC名称。
+func (o GatewayNetworkSpecOutput) VpcName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayNetworkSpec) *string { return v.VpcName }).(pulumi.StringPtrOutput)
+}
+
+type GatewayNetworkSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayNetworkSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayNetworkSpec)(nil)).Elem()
+}
+
+func (o GatewayNetworkSpecPtrOutput) ToGatewayNetworkSpecPtrOutput() GatewayNetworkSpecPtrOutput {
+	return o
+}
+
+func (o GatewayNetworkSpecPtrOutput) ToGatewayNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayNetworkSpecPtrOutput {
+	return o
+}
+
+func (o GatewayNetworkSpecPtrOutput) Elem() GatewayNetworkSpecOutput {
+	return o.ApplyT(func(v *GatewayNetworkSpec) GatewayNetworkSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayNetworkSpec
+		return ret
+	}).(GatewayNetworkSpecOutput)
+}
+
+func (o GatewayNetworkSpecPtrOutput) Subnets() GatewayNetworkSpecSubnetArrayOutput {
+	return o.ApplyT(func(v *GatewayNetworkSpec) []GatewayNetworkSpecSubnet {
+		if v == nil {
+			return nil
+		}
+		return v.Subnets
+	}).(GatewayNetworkSpecSubnetArrayOutput)
+}
+
+// VPC ID。
+func (o GatewayNetworkSpecPtrOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayNetworkSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VpcId
+	}).(pulumi.StringPtrOutput)
+}
+
+// VPC名称。
+func (o GatewayNetworkSpecPtrOutput) VpcName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayNetworkSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VpcName
+	}).(pulumi.StringPtrOutput)
+}
+
+type GatewayNetworkSpecSubnet struct {
+	// 可用区。
+	Az *string `pulumi:"az"`
+	// 子网ID。
+	SubnetId *string `pulumi:"subnetId"`
+	// 子网名称。
+	SubnetName *string `pulumi:"subnetName"`
+}
+
+// GatewayNetworkSpecSubnetInput is an input type that accepts GatewayNetworkSpecSubnetArgs and GatewayNetworkSpecSubnetOutput values.
+// You can construct a concrete instance of `GatewayNetworkSpecSubnetInput` via:
+//
+//	GatewayNetworkSpecSubnetArgs{...}
+type GatewayNetworkSpecSubnetInput interface {
+	pulumi.Input
+
+	ToGatewayNetworkSpecSubnetOutput() GatewayNetworkSpecSubnetOutput
+	ToGatewayNetworkSpecSubnetOutputWithContext(context.Context) GatewayNetworkSpecSubnetOutput
+}
+
+type GatewayNetworkSpecSubnetArgs struct {
+	// 可用区。
+	Az pulumi.StringPtrInput `pulumi:"az"`
+	// 子网ID。
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// 子网名称。
+	SubnetName pulumi.StringPtrInput `pulumi:"subnetName"`
+}
+
+func (GatewayNetworkSpecSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (i GatewayNetworkSpecSubnetArgs) ToGatewayNetworkSpecSubnetOutput() GatewayNetworkSpecSubnetOutput {
+	return i.ToGatewayNetworkSpecSubnetOutputWithContext(context.Background())
+}
+
+func (i GatewayNetworkSpecSubnetArgs) ToGatewayNetworkSpecSubnetOutputWithContext(ctx context.Context) GatewayNetworkSpecSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayNetworkSpecSubnetOutput)
+}
+
+// GatewayNetworkSpecSubnetArrayInput is an input type that accepts GatewayNetworkSpecSubnetArray and GatewayNetworkSpecSubnetArrayOutput values.
+// You can construct a concrete instance of `GatewayNetworkSpecSubnetArrayInput` via:
+//
+//	GatewayNetworkSpecSubnetArray{ GatewayNetworkSpecSubnetArgs{...} }
+type GatewayNetworkSpecSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGatewayNetworkSpecSubnetArrayOutput() GatewayNetworkSpecSubnetArrayOutput
+	ToGatewayNetworkSpecSubnetArrayOutputWithContext(context.Context) GatewayNetworkSpecSubnetArrayOutput
+}
+
+type GatewayNetworkSpecSubnetArray []GatewayNetworkSpecSubnetInput
+
+func (GatewayNetworkSpecSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (i GatewayNetworkSpecSubnetArray) ToGatewayNetworkSpecSubnetArrayOutput() GatewayNetworkSpecSubnetArrayOutput {
+	return i.ToGatewayNetworkSpecSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GatewayNetworkSpecSubnetArray) ToGatewayNetworkSpecSubnetArrayOutputWithContext(ctx context.Context) GatewayNetworkSpecSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayNetworkSpecSubnetArrayOutput)
+}
+
+type GatewayNetworkSpecSubnetOutput struct{ *pulumi.OutputState }
+
+func (GatewayNetworkSpecSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (o GatewayNetworkSpecSubnetOutput) ToGatewayNetworkSpecSubnetOutput() GatewayNetworkSpecSubnetOutput {
+	return o
+}
+
+func (o GatewayNetworkSpecSubnetOutput) ToGatewayNetworkSpecSubnetOutputWithContext(ctx context.Context) GatewayNetworkSpecSubnetOutput {
+	return o
+}
+
+// 可用区。
+func (o GatewayNetworkSpecSubnetOutput) Az() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayNetworkSpecSubnet) *string { return v.Az }).(pulumi.StringPtrOutput)
+}
+
+// 子网ID。
+func (o GatewayNetworkSpecSubnetOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayNetworkSpecSubnet) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// 子网名称。
+func (o GatewayNetworkSpecSubnetOutput) SubnetName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayNetworkSpecSubnet) *string { return v.SubnetName }).(pulumi.StringPtrOutput)
+}
+
+type GatewayNetworkSpecSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GatewayNetworkSpecSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (o GatewayNetworkSpecSubnetArrayOutput) ToGatewayNetworkSpecSubnetArrayOutput() GatewayNetworkSpecSubnetArrayOutput {
+	return o
+}
+
+func (o GatewayNetworkSpecSubnetArrayOutput) ToGatewayNetworkSpecSubnetArrayOutputWithContext(ctx context.Context) GatewayNetworkSpecSubnetArrayOutput {
+	return o
+}
+
+func (o GatewayNetworkSpecSubnetArrayOutput) Index(i pulumi.IntInput) GatewayNetworkSpecSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GatewayNetworkSpecSubnet {
+		return vs[0].([]GatewayNetworkSpecSubnet)[vs[1].(int)]
+	}).(GatewayNetworkSpecSubnetOutput)
+}
+
+type GatewayResourceSpec struct {
+	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	ClbSpecCode *string `pulumi:"clbSpecCode"`
+	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	InstanceSpecCode *string `pulumi:"instanceSpecCode"`
+	// 网络类型。默认值为开启公网，开启私网。
+	NetworkType *GatewayResourceSpecNetworkType `pulumi:"networkType"`
+	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	PublicNetworkBandwidth *int `pulumi:"publicNetworkBandwidth"`
+	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	PublicNetworkBillingType *string `pulumi:"publicNetworkBillingType"`
+	// 节点数量。取值限制为2~100。
+	Replicas *int `pulumi:"replicas"`
+}
+
+// GatewayResourceSpecInput is an input type that accepts GatewayResourceSpecArgs and GatewayResourceSpecOutput values.
+// You can construct a concrete instance of `GatewayResourceSpecInput` via:
+//
+//	GatewayResourceSpecArgs{...}
+type GatewayResourceSpecInput interface {
+	pulumi.Input
+
+	ToGatewayResourceSpecOutput() GatewayResourceSpecOutput
+	ToGatewayResourceSpecOutputWithContext(context.Context) GatewayResourceSpecOutput
+}
+
+type GatewayResourceSpecArgs struct {
+	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	ClbSpecCode pulumi.StringPtrInput `pulumi:"clbSpecCode"`
+	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	InstanceSpecCode pulumi.StringPtrInput `pulumi:"instanceSpecCode"`
+	// 网络类型。默认值为开启公网，开启私网。
+	NetworkType GatewayResourceSpecNetworkTypePtrInput `pulumi:"networkType"`
+	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	PublicNetworkBandwidth pulumi.IntPtrInput `pulumi:"publicNetworkBandwidth"`
+	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	PublicNetworkBillingType pulumi.StringPtrInput `pulumi:"publicNetworkBillingType"`
+	// 节点数量。取值限制为2~100。
+	Replicas pulumi.IntPtrInput `pulumi:"replicas"`
+}
+
+func (GatewayResourceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayResourceSpec)(nil)).Elem()
+}
+
+func (i GatewayResourceSpecArgs) ToGatewayResourceSpecOutput() GatewayResourceSpecOutput {
+	return i.ToGatewayResourceSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayResourceSpecArgs) ToGatewayResourceSpecOutputWithContext(ctx context.Context) GatewayResourceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayResourceSpecOutput)
+}
+
+func (i GatewayResourceSpecArgs) ToGatewayResourceSpecPtrOutput() GatewayResourceSpecPtrOutput {
+	return i.ToGatewayResourceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayResourceSpecArgs) ToGatewayResourceSpecPtrOutputWithContext(ctx context.Context) GatewayResourceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayResourceSpecOutput).ToGatewayResourceSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayResourceSpecPtrInput is an input type that accepts GatewayResourceSpecArgs, GatewayResourceSpecPtr and GatewayResourceSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayResourceSpecPtrInput` via:
+//
+//	        GatewayResourceSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayResourceSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayResourceSpecPtrOutput() GatewayResourceSpecPtrOutput
+	ToGatewayResourceSpecPtrOutputWithContext(context.Context) GatewayResourceSpecPtrOutput
+}
+
+type gatewayResourceSpecPtrType GatewayResourceSpecArgs
+
+func GatewayResourceSpecPtr(v *GatewayResourceSpecArgs) GatewayResourceSpecPtrInput {
+	return (*gatewayResourceSpecPtrType)(v)
+}
+
+func (*gatewayResourceSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayResourceSpec)(nil)).Elem()
+}
+
+func (i *gatewayResourceSpecPtrType) ToGatewayResourceSpecPtrOutput() GatewayResourceSpecPtrOutput {
+	return i.ToGatewayResourceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayResourceSpecPtrType) ToGatewayResourceSpecPtrOutputWithContext(ctx context.Context) GatewayResourceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayResourceSpecPtrOutput)
+}
+
+type GatewayResourceSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayResourceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayResourceSpec)(nil)).Elem()
+}
+
+func (o GatewayResourceSpecOutput) ToGatewayResourceSpecOutput() GatewayResourceSpecOutput {
+	return o
+}
+
+func (o GatewayResourceSpecOutput) ToGatewayResourceSpecOutputWithContext(ctx context.Context) GatewayResourceSpecOutput {
+	return o
+}
+
+func (o GatewayResourceSpecOutput) ToGatewayResourceSpecPtrOutput() GatewayResourceSpecPtrOutput {
+	return o.ToGatewayResourceSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayResourceSpecOutput) ToGatewayResourceSpecPtrOutputWithContext(ctx context.Context) GatewayResourceSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayResourceSpec) *GatewayResourceSpec {
+		return &v
+	}).(GatewayResourceSpecPtrOutput)
+}
+
+// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+func (o GatewayResourceSpecOutput) ClbSpecCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpec) *string { return v.ClbSpecCode }).(pulumi.StringPtrOutput)
+}
+
+// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+func (o GatewayResourceSpecOutput) InstanceSpecCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpec) *string { return v.InstanceSpecCode }).(pulumi.StringPtrOutput)
+}
+
+// 网络类型。默认值为开启公网，开启私网。
+func (o GatewayResourceSpecOutput) NetworkType() GatewayResourceSpecNetworkTypePtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpec) *GatewayResourceSpecNetworkType { return v.NetworkType }).(GatewayResourceSpecNetworkTypePtrOutput)
+}
+
+// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+func (o GatewayResourceSpecOutput) PublicNetworkBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpec) *int { return v.PublicNetworkBandwidth }).(pulumi.IntPtrOutput)
+}
+
+// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+func (o GatewayResourceSpecOutput) PublicNetworkBillingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpec) *string { return v.PublicNetworkBillingType }).(pulumi.StringPtrOutput)
+}
+
+// 节点数量。取值限制为2~100。
+func (o GatewayResourceSpecOutput) Replicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpec) *int { return v.Replicas }).(pulumi.IntPtrOutput)
+}
+
+type GatewayResourceSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayResourceSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayResourceSpec)(nil)).Elem()
+}
+
+func (o GatewayResourceSpecPtrOutput) ToGatewayResourceSpecPtrOutput() GatewayResourceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayResourceSpecPtrOutput) ToGatewayResourceSpecPtrOutputWithContext(ctx context.Context) GatewayResourceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayResourceSpecPtrOutput) Elem() GatewayResourceSpecOutput {
+	return o.ApplyT(func(v *GatewayResourceSpec) GatewayResourceSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayResourceSpec
+		return ret
+	}).(GatewayResourceSpecOutput)
+}
+
+// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+func (o GatewayResourceSpecPtrOutput) ClbSpecCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClbSpecCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+func (o GatewayResourceSpecPtrOutput) InstanceSpecCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceSpecCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// 网络类型。默认值为开启公网，开启私网。
+func (o GatewayResourceSpecPtrOutput) NetworkType() GatewayResourceSpecNetworkTypePtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpec) *GatewayResourceSpecNetworkType {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkType
+	}).(GatewayResourceSpecNetworkTypePtrOutput)
+}
+
+// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+func (o GatewayResourceSpecPtrOutput) PublicNetworkBandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpec) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PublicNetworkBandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+func (o GatewayResourceSpecPtrOutput) PublicNetworkBillingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PublicNetworkBillingType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点数量。取值限制为2~100。
+func (o GatewayResourceSpecPtrOutput) Replicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpec) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Replicas
+	}).(pulumi.IntPtrOutput)
+}
+
+type GatewayResourceSpecNetworkType struct {
+	// 是否启用私网。
+	EnablePrivateNetwork *bool `pulumi:"enablePrivateNetwork"`
+	// 是否启用公网。
+	EnablePublicNetwork *bool `pulumi:"enablePublicNetwork"`
+}
+
+// GatewayResourceSpecNetworkTypeInput is an input type that accepts GatewayResourceSpecNetworkTypeArgs and GatewayResourceSpecNetworkTypeOutput values.
+// You can construct a concrete instance of `GatewayResourceSpecNetworkTypeInput` via:
+//
+//	GatewayResourceSpecNetworkTypeArgs{...}
+type GatewayResourceSpecNetworkTypeInput interface {
+	pulumi.Input
+
+	ToGatewayResourceSpecNetworkTypeOutput() GatewayResourceSpecNetworkTypeOutput
+	ToGatewayResourceSpecNetworkTypeOutputWithContext(context.Context) GatewayResourceSpecNetworkTypeOutput
+}
+
+type GatewayResourceSpecNetworkTypeArgs struct {
+	// 是否启用私网。
+	EnablePrivateNetwork pulumi.BoolPtrInput `pulumi:"enablePrivateNetwork"`
+	// 是否启用公网。
+	EnablePublicNetwork pulumi.BoolPtrInput `pulumi:"enablePublicNetwork"`
+}
+
+func (GatewayResourceSpecNetworkTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayResourceSpecNetworkType)(nil)).Elem()
+}
+
+func (i GatewayResourceSpecNetworkTypeArgs) ToGatewayResourceSpecNetworkTypeOutput() GatewayResourceSpecNetworkTypeOutput {
+	return i.ToGatewayResourceSpecNetworkTypeOutputWithContext(context.Background())
+}
+
+func (i GatewayResourceSpecNetworkTypeArgs) ToGatewayResourceSpecNetworkTypeOutputWithContext(ctx context.Context) GatewayResourceSpecNetworkTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayResourceSpecNetworkTypeOutput)
+}
+
+func (i GatewayResourceSpecNetworkTypeArgs) ToGatewayResourceSpecNetworkTypePtrOutput() GatewayResourceSpecNetworkTypePtrOutput {
+	return i.ToGatewayResourceSpecNetworkTypePtrOutputWithContext(context.Background())
+}
+
+func (i GatewayResourceSpecNetworkTypeArgs) ToGatewayResourceSpecNetworkTypePtrOutputWithContext(ctx context.Context) GatewayResourceSpecNetworkTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayResourceSpecNetworkTypeOutput).ToGatewayResourceSpecNetworkTypePtrOutputWithContext(ctx)
+}
+
+// GatewayResourceSpecNetworkTypePtrInput is an input type that accepts GatewayResourceSpecNetworkTypeArgs, GatewayResourceSpecNetworkTypePtr and GatewayResourceSpecNetworkTypePtrOutput values.
+// You can construct a concrete instance of `GatewayResourceSpecNetworkTypePtrInput` via:
+//
+//	        GatewayResourceSpecNetworkTypeArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayResourceSpecNetworkTypePtrInput interface {
+	pulumi.Input
+
+	ToGatewayResourceSpecNetworkTypePtrOutput() GatewayResourceSpecNetworkTypePtrOutput
+	ToGatewayResourceSpecNetworkTypePtrOutputWithContext(context.Context) GatewayResourceSpecNetworkTypePtrOutput
+}
+
+type gatewayResourceSpecNetworkTypePtrType GatewayResourceSpecNetworkTypeArgs
+
+func GatewayResourceSpecNetworkTypePtr(v *GatewayResourceSpecNetworkTypeArgs) GatewayResourceSpecNetworkTypePtrInput {
+	return (*gatewayResourceSpecNetworkTypePtrType)(v)
+}
+
+func (*gatewayResourceSpecNetworkTypePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayResourceSpecNetworkType)(nil)).Elem()
+}
+
+func (i *gatewayResourceSpecNetworkTypePtrType) ToGatewayResourceSpecNetworkTypePtrOutput() GatewayResourceSpecNetworkTypePtrOutput {
+	return i.ToGatewayResourceSpecNetworkTypePtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayResourceSpecNetworkTypePtrType) ToGatewayResourceSpecNetworkTypePtrOutputWithContext(ctx context.Context) GatewayResourceSpecNetworkTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayResourceSpecNetworkTypePtrOutput)
+}
+
+type GatewayResourceSpecNetworkTypeOutput struct{ *pulumi.OutputState }
+
+func (GatewayResourceSpecNetworkTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayResourceSpecNetworkType)(nil)).Elem()
+}
+
+func (o GatewayResourceSpecNetworkTypeOutput) ToGatewayResourceSpecNetworkTypeOutput() GatewayResourceSpecNetworkTypeOutput {
+	return o
+}
+
+func (o GatewayResourceSpecNetworkTypeOutput) ToGatewayResourceSpecNetworkTypeOutputWithContext(ctx context.Context) GatewayResourceSpecNetworkTypeOutput {
+	return o
+}
+
+func (o GatewayResourceSpecNetworkTypeOutput) ToGatewayResourceSpecNetworkTypePtrOutput() GatewayResourceSpecNetworkTypePtrOutput {
+	return o.ToGatewayResourceSpecNetworkTypePtrOutputWithContext(context.Background())
+}
+
+func (o GatewayResourceSpecNetworkTypeOutput) ToGatewayResourceSpecNetworkTypePtrOutputWithContext(ctx context.Context) GatewayResourceSpecNetworkTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayResourceSpecNetworkType) *GatewayResourceSpecNetworkType {
+		return &v
+	}).(GatewayResourceSpecNetworkTypePtrOutput)
+}
+
+// 是否启用私网。
+func (o GatewayResourceSpecNetworkTypeOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpecNetworkType) *bool { return v.EnablePrivateNetwork }).(pulumi.BoolPtrOutput)
+}
+
+// 是否启用公网。
+func (o GatewayResourceSpecNetworkTypeOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayResourceSpecNetworkType) *bool { return v.EnablePublicNetwork }).(pulumi.BoolPtrOutput)
+}
+
+type GatewayResourceSpecNetworkTypePtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayResourceSpecNetworkTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayResourceSpecNetworkType)(nil)).Elem()
+}
+
+func (o GatewayResourceSpecNetworkTypePtrOutput) ToGatewayResourceSpecNetworkTypePtrOutput() GatewayResourceSpecNetworkTypePtrOutput {
+	return o
+}
+
+func (o GatewayResourceSpecNetworkTypePtrOutput) ToGatewayResourceSpecNetworkTypePtrOutputWithContext(ctx context.Context) GatewayResourceSpecNetworkTypePtrOutput {
+	return o
+}
+
+func (o GatewayResourceSpecNetworkTypePtrOutput) Elem() GatewayResourceSpecNetworkTypeOutput {
+	return o.ApplyT(func(v *GatewayResourceSpecNetworkType) GatewayResourceSpecNetworkType {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayResourceSpecNetworkType
+		return ret
+	}).(GatewayResourceSpecNetworkTypeOutput)
+}
+
+// 是否启用私网。
+func (o GatewayResourceSpecNetworkTypePtrOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpecNetworkType) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePrivateNetwork
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否启用公网。
+func (o GatewayResourceSpecNetworkTypePtrOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayResourceSpecNetworkType) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePublicNetwork
+	}).(pulumi.BoolPtrOutput)
+}
+
 type GatewayServiceAuthSpec struct {
 	// 是否开启认证。
 	Enable *bool `pulumi:"enable"`
@@ -497,6 +2263,531 @@ func (o GatewayServiceDomainSpecPtrOutput) EnablePublicResolution() pulumi.BoolP
 		}
 		return v.EnablePublicResolution
 	}).(pulumi.BoolPtrOutput)
+}
+
+type GatewayTraceSpec struct {
+	// 应用性能监控全链路版链路追踪配置。
+	ApmTraceSpec *GatewayTraceSpecApmTraceSpec `pulumi:"apmTraceSpec"`
+	// 是否启用链路追踪。
+	Enable *bool `pulumi:"enable"`
+	// 链路追踪配置信息。
+	TlsTraceSpec *GatewayTraceSpecTlsTraceSpec `pulumi:"tlsTraceSpec"`
+	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	TraceType *string `pulumi:"traceType"`
+}
+
+// GatewayTraceSpecInput is an input type that accepts GatewayTraceSpecArgs and GatewayTraceSpecOutput values.
+// You can construct a concrete instance of `GatewayTraceSpecInput` via:
+//
+//	GatewayTraceSpecArgs{...}
+type GatewayTraceSpecInput interface {
+	pulumi.Input
+
+	ToGatewayTraceSpecOutput() GatewayTraceSpecOutput
+	ToGatewayTraceSpecOutputWithContext(context.Context) GatewayTraceSpecOutput
+}
+
+type GatewayTraceSpecArgs struct {
+	// 应用性能监控全链路版链路追踪配置。
+	ApmTraceSpec GatewayTraceSpecApmTraceSpecPtrInput `pulumi:"apmTraceSpec"`
+	// 是否启用链路追踪。
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// 链路追踪配置信息。
+	TlsTraceSpec GatewayTraceSpecTlsTraceSpecPtrInput `pulumi:"tlsTraceSpec"`
+	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	TraceType pulumi.StringPtrInput `pulumi:"traceType"`
+}
+
+func (GatewayTraceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayTraceSpec)(nil)).Elem()
+}
+
+func (i GatewayTraceSpecArgs) ToGatewayTraceSpecOutput() GatewayTraceSpecOutput {
+	return i.ToGatewayTraceSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayTraceSpecArgs) ToGatewayTraceSpecOutputWithContext(ctx context.Context) GatewayTraceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecOutput)
+}
+
+func (i GatewayTraceSpecArgs) ToGatewayTraceSpecPtrOutput() GatewayTraceSpecPtrOutput {
+	return i.ToGatewayTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayTraceSpecArgs) ToGatewayTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecOutput).ToGatewayTraceSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayTraceSpecPtrInput is an input type that accepts GatewayTraceSpecArgs, GatewayTraceSpecPtr and GatewayTraceSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayTraceSpecPtrInput` via:
+//
+//	        GatewayTraceSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayTraceSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayTraceSpecPtrOutput() GatewayTraceSpecPtrOutput
+	ToGatewayTraceSpecPtrOutputWithContext(context.Context) GatewayTraceSpecPtrOutput
+}
+
+type gatewayTraceSpecPtrType GatewayTraceSpecArgs
+
+func GatewayTraceSpecPtr(v *GatewayTraceSpecArgs) GatewayTraceSpecPtrInput {
+	return (*gatewayTraceSpecPtrType)(v)
+}
+
+func (*gatewayTraceSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayTraceSpec)(nil)).Elem()
+}
+
+func (i *gatewayTraceSpecPtrType) ToGatewayTraceSpecPtrOutput() GatewayTraceSpecPtrOutput {
+	return i.ToGatewayTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayTraceSpecPtrType) ToGatewayTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecPtrOutput)
+}
+
+type GatewayTraceSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayTraceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayTraceSpec)(nil)).Elem()
+}
+
+func (o GatewayTraceSpecOutput) ToGatewayTraceSpecOutput() GatewayTraceSpecOutput {
+	return o
+}
+
+func (o GatewayTraceSpecOutput) ToGatewayTraceSpecOutputWithContext(ctx context.Context) GatewayTraceSpecOutput {
+	return o
+}
+
+func (o GatewayTraceSpecOutput) ToGatewayTraceSpecPtrOutput() GatewayTraceSpecPtrOutput {
+	return o.ToGatewayTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayTraceSpecOutput) ToGatewayTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayTraceSpec) *GatewayTraceSpec {
+		return &v
+	}).(GatewayTraceSpecPtrOutput)
+}
+
+// 应用性能监控全链路版链路追踪配置。
+func (o GatewayTraceSpecOutput) ApmTraceSpec() GatewayTraceSpecApmTraceSpecPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpec) *GatewayTraceSpecApmTraceSpec { return v.ApmTraceSpec }).(GatewayTraceSpecApmTraceSpecPtrOutput)
+}
+
+// 是否启用链路追踪。
+func (o GatewayTraceSpecOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpec) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// 链路追踪配置信息。
+func (o GatewayTraceSpecOutput) TlsTraceSpec() GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpec) *GatewayTraceSpecTlsTraceSpec { return v.TlsTraceSpec }).(GatewayTraceSpecTlsTraceSpecPtrOutput)
+}
+
+// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+func (o GatewayTraceSpecOutput) TraceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpec) *string { return v.TraceType }).(pulumi.StringPtrOutput)
+}
+
+type GatewayTraceSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayTraceSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayTraceSpec)(nil)).Elem()
+}
+
+func (o GatewayTraceSpecPtrOutput) ToGatewayTraceSpecPtrOutput() GatewayTraceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayTraceSpecPtrOutput) ToGatewayTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayTraceSpecPtrOutput) Elem() GatewayTraceSpecOutput {
+	return o.ApplyT(func(v *GatewayTraceSpec) GatewayTraceSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayTraceSpec
+		return ret
+	}).(GatewayTraceSpecOutput)
+}
+
+// 应用性能监控全链路版链路追踪配置。
+func (o GatewayTraceSpecPtrOutput) ApmTraceSpec() GatewayTraceSpecApmTraceSpecPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpec) *GatewayTraceSpecApmTraceSpec {
+		if v == nil {
+			return nil
+		}
+		return v.ApmTraceSpec
+	}).(GatewayTraceSpecApmTraceSpecPtrOutput)
+}
+
+// 是否启用链路追踪。
+func (o GatewayTraceSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpec) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 链路追踪配置信息。
+func (o GatewayTraceSpecPtrOutput) TlsTraceSpec() GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpec) *GatewayTraceSpecTlsTraceSpec {
+		if v == nil {
+			return nil
+		}
+		return v.TlsTraceSpec
+	}).(GatewayTraceSpecTlsTraceSpecPtrOutput)
+}
+
+// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+func (o GatewayTraceSpecPtrOutput) TraceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TraceType
+	}).(pulumi.StringPtrOutput)
+}
+
+type GatewayTraceSpecApmTraceSpec struct {
+	// API Key。
+	ApiKey *string `pulumi:"apiKey"`
+}
+
+// GatewayTraceSpecApmTraceSpecInput is an input type that accepts GatewayTraceSpecApmTraceSpecArgs and GatewayTraceSpecApmTraceSpecOutput values.
+// You can construct a concrete instance of `GatewayTraceSpecApmTraceSpecInput` via:
+//
+//	GatewayTraceSpecApmTraceSpecArgs{...}
+type GatewayTraceSpecApmTraceSpecInput interface {
+	pulumi.Input
+
+	ToGatewayTraceSpecApmTraceSpecOutput() GatewayTraceSpecApmTraceSpecOutput
+	ToGatewayTraceSpecApmTraceSpecOutputWithContext(context.Context) GatewayTraceSpecApmTraceSpecOutput
+}
+
+type GatewayTraceSpecApmTraceSpecArgs struct {
+	// API Key。
+	ApiKey pulumi.StringPtrInput `pulumi:"apiKey"`
+}
+
+func (GatewayTraceSpecApmTraceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayTraceSpecApmTraceSpec)(nil)).Elem()
+}
+
+func (i GatewayTraceSpecApmTraceSpecArgs) ToGatewayTraceSpecApmTraceSpecOutput() GatewayTraceSpecApmTraceSpecOutput {
+	return i.ToGatewayTraceSpecApmTraceSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayTraceSpecApmTraceSpecArgs) ToGatewayTraceSpecApmTraceSpecOutputWithContext(ctx context.Context) GatewayTraceSpecApmTraceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecApmTraceSpecOutput)
+}
+
+func (i GatewayTraceSpecApmTraceSpecArgs) ToGatewayTraceSpecApmTraceSpecPtrOutput() GatewayTraceSpecApmTraceSpecPtrOutput {
+	return i.ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayTraceSpecApmTraceSpecArgs) ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecApmTraceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecApmTraceSpecOutput).ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayTraceSpecApmTraceSpecPtrInput is an input type that accepts GatewayTraceSpecApmTraceSpecArgs, GatewayTraceSpecApmTraceSpecPtr and GatewayTraceSpecApmTraceSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayTraceSpecApmTraceSpecPtrInput` via:
+//
+//	        GatewayTraceSpecApmTraceSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayTraceSpecApmTraceSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayTraceSpecApmTraceSpecPtrOutput() GatewayTraceSpecApmTraceSpecPtrOutput
+	ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(context.Context) GatewayTraceSpecApmTraceSpecPtrOutput
+}
+
+type gatewayTraceSpecApmTraceSpecPtrType GatewayTraceSpecApmTraceSpecArgs
+
+func GatewayTraceSpecApmTraceSpecPtr(v *GatewayTraceSpecApmTraceSpecArgs) GatewayTraceSpecApmTraceSpecPtrInput {
+	return (*gatewayTraceSpecApmTraceSpecPtrType)(v)
+}
+
+func (*gatewayTraceSpecApmTraceSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayTraceSpecApmTraceSpec)(nil)).Elem()
+}
+
+func (i *gatewayTraceSpecApmTraceSpecPtrType) ToGatewayTraceSpecApmTraceSpecPtrOutput() GatewayTraceSpecApmTraceSpecPtrOutput {
+	return i.ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayTraceSpecApmTraceSpecPtrType) ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecApmTraceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecApmTraceSpecPtrOutput)
+}
+
+type GatewayTraceSpecApmTraceSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayTraceSpecApmTraceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayTraceSpecApmTraceSpec)(nil)).Elem()
+}
+
+func (o GatewayTraceSpecApmTraceSpecOutput) ToGatewayTraceSpecApmTraceSpecOutput() GatewayTraceSpecApmTraceSpecOutput {
+	return o
+}
+
+func (o GatewayTraceSpecApmTraceSpecOutput) ToGatewayTraceSpecApmTraceSpecOutputWithContext(ctx context.Context) GatewayTraceSpecApmTraceSpecOutput {
+	return o
+}
+
+func (o GatewayTraceSpecApmTraceSpecOutput) ToGatewayTraceSpecApmTraceSpecPtrOutput() GatewayTraceSpecApmTraceSpecPtrOutput {
+	return o.ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayTraceSpecApmTraceSpecOutput) ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecApmTraceSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayTraceSpecApmTraceSpec) *GatewayTraceSpecApmTraceSpec {
+		return &v
+	}).(GatewayTraceSpecApmTraceSpecPtrOutput)
+}
+
+// API Key。
+func (o GatewayTraceSpecApmTraceSpecOutput) ApiKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpecApmTraceSpec) *string { return v.ApiKey }).(pulumi.StringPtrOutput)
+}
+
+type GatewayTraceSpecApmTraceSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayTraceSpecApmTraceSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayTraceSpecApmTraceSpec)(nil)).Elem()
+}
+
+func (o GatewayTraceSpecApmTraceSpecPtrOutput) ToGatewayTraceSpecApmTraceSpecPtrOutput() GatewayTraceSpecApmTraceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayTraceSpecApmTraceSpecPtrOutput) ToGatewayTraceSpecApmTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecApmTraceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayTraceSpecApmTraceSpecPtrOutput) Elem() GatewayTraceSpecApmTraceSpecOutput {
+	return o.ApplyT(func(v *GatewayTraceSpecApmTraceSpec) GatewayTraceSpecApmTraceSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayTraceSpecApmTraceSpec
+		return ret
+	}).(GatewayTraceSpecApmTraceSpecOutput)
+}
+
+// API Key。
+func (o GatewayTraceSpecApmTraceSpecPtrOutput) ApiKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpecApmTraceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ApiKey
+	}).(pulumi.StringPtrOutput)
+}
+
+type GatewayTraceSpecTlsTraceSpec struct {
+	// Access key。
+	IamUserAk *string `pulumi:"iamUserAk"`
+	// Secret key。
+	IamUserSk *string `pulumi:"iamUserSk"`
+	// 日志项目ID。
+	ProjectId *string `pulumi:"projectId"`
+	// Trace ID。
+	TraceId *string `pulumi:"traceId"`
+}
+
+// GatewayTraceSpecTlsTraceSpecInput is an input type that accepts GatewayTraceSpecTlsTraceSpecArgs and GatewayTraceSpecTlsTraceSpecOutput values.
+// You can construct a concrete instance of `GatewayTraceSpecTlsTraceSpecInput` via:
+//
+//	GatewayTraceSpecTlsTraceSpecArgs{...}
+type GatewayTraceSpecTlsTraceSpecInput interface {
+	pulumi.Input
+
+	ToGatewayTraceSpecTlsTraceSpecOutput() GatewayTraceSpecTlsTraceSpecOutput
+	ToGatewayTraceSpecTlsTraceSpecOutputWithContext(context.Context) GatewayTraceSpecTlsTraceSpecOutput
+}
+
+type GatewayTraceSpecTlsTraceSpecArgs struct {
+	// Access key。
+	IamUserAk pulumi.StringPtrInput `pulumi:"iamUserAk"`
+	// Secret key。
+	IamUserSk pulumi.StringPtrInput `pulumi:"iamUserSk"`
+	// 日志项目ID。
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+	// Trace ID。
+	TraceId pulumi.StringPtrInput `pulumi:"traceId"`
+}
+
+func (GatewayTraceSpecTlsTraceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayTraceSpecTlsTraceSpec)(nil)).Elem()
+}
+
+func (i GatewayTraceSpecTlsTraceSpecArgs) ToGatewayTraceSpecTlsTraceSpecOutput() GatewayTraceSpecTlsTraceSpecOutput {
+	return i.ToGatewayTraceSpecTlsTraceSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayTraceSpecTlsTraceSpecArgs) ToGatewayTraceSpecTlsTraceSpecOutputWithContext(ctx context.Context) GatewayTraceSpecTlsTraceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecTlsTraceSpecOutput)
+}
+
+func (i GatewayTraceSpecTlsTraceSpecArgs) ToGatewayTraceSpecTlsTraceSpecPtrOutput() GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return i.ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayTraceSpecTlsTraceSpecArgs) ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecTlsTraceSpecOutput).ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayTraceSpecTlsTraceSpecPtrInput is an input type that accepts GatewayTraceSpecTlsTraceSpecArgs, GatewayTraceSpecTlsTraceSpecPtr and GatewayTraceSpecTlsTraceSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayTraceSpecTlsTraceSpecPtrInput` via:
+//
+//	        GatewayTraceSpecTlsTraceSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayTraceSpecTlsTraceSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayTraceSpecTlsTraceSpecPtrOutput() GatewayTraceSpecTlsTraceSpecPtrOutput
+	ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(context.Context) GatewayTraceSpecTlsTraceSpecPtrOutput
+}
+
+type gatewayTraceSpecTlsTraceSpecPtrType GatewayTraceSpecTlsTraceSpecArgs
+
+func GatewayTraceSpecTlsTraceSpecPtr(v *GatewayTraceSpecTlsTraceSpecArgs) GatewayTraceSpecTlsTraceSpecPtrInput {
+	return (*gatewayTraceSpecTlsTraceSpecPtrType)(v)
+}
+
+func (*gatewayTraceSpecTlsTraceSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayTraceSpecTlsTraceSpec)(nil)).Elem()
+}
+
+func (i *gatewayTraceSpecTlsTraceSpecPtrType) ToGatewayTraceSpecTlsTraceSpecPtrOutput() GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return i.ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayTraceSpecTlsTraceSpecPtrType) ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayTraceSpecTlsTraceSpecPtrOutput)
+}
+
+type GatewayTraceSpecTlsTraceSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayTraceSpecTlsTraceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayTraceSpecTlsTraceSpec)(nil)).Elem()
+}
+
+func (o GatewayTraceSpecTlsTraceSpecOutput) ToGatewayTraceSpecTlsTraceSpecOutput() GatewayTraceSpecTlsTraceSpecOutput {
+	return o
+}
+
+func (o GatewayTraceSpecTlsTraceSpecOutput) ToGatewayTraceSpecTlsTraceSpecOutputWithContext(ctx context.Context) GatewayTraceSpecTlsTraceSpecOutput {
+	return o
+}
+
+func (o GatewayTraceSpecTlsTraceSpecOutput) ToGatewayTraceSpecTlsTraceSpecPtrOutput() GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return o.ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayTraceSpecTlsTraceSpecOutput) ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayTraceSpecTlsTraceSpec) *GatewayTraceSpecTlsTraceSpec {
+		return &v
+	}).(GatewayTraceSpecTlsTraceSpecPtrOutput)
+}
+
+// Access key。
+func (o GatewayTraceSpecTlsTraceSpecOutput) IamUserAk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpecTlsTraceSpec) *string { return v.IamUserAk }).(pulumi.StringPtrOutput)
+}
+
+// Secret key。
+func (o GatewayTraceSpecTlsTraceSpecOutput) IamUserSk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpecTlsTraceSpec) *string { return v.IamUserSk }).(pulumi.StringPtrOutput)
+}
+
+// 日志项目ID。
+func (o GatewayTraceSpecTlsTraceSpecOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpecTlsTraceSpec) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+// Trace ID。
+func (o GatewayTraceSpecTlsTraceSpecOutput) TraceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GatewayTraceSpecTlsTraceSpec) *string { return v.TraceId }).(pulumi.StringPtrOutput)
+}
+
+type GatewayTraceSpecTlsTraceSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayTraceSpecTlsTraceSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayTraceSpecTlsTraceSpec)(nil)).Elem()
+}
+
+func (o GatewayTraceSpecTlsTraceSpecPtrOutput) ToGatewayTraceSpecTlsTraceSpecPtrOutput() GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayTraceSpecTlsTraceSpecPtrOutput) ToGatewayTraceSpecTlsTraceSpecPtrOutputWithContext(ctx context.Context) GatewayTraceSpecTlsTraceSpecPtrOutput {
+	return o
+}
+
+func (o GatewayTraceSpecTlsTraceSpecPtrOutput) Elem() GatewayTraceSpecTlsTraceSpecOutput {
+	return o.ApplyT(func(v *GatewayTraceSpecTlsTraceSpec) GatewayTraceSpecTlsTraceSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayTraceSpecTlsTraceSpec
+		return ret
+	}).(GatewayTraceSpecTlsTraceSpecOutput)
+}
+
+// Access key。
+func (o GatewayTraceSpecTlsTraceSpecPtrOutput) IamUserAk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpecTlsTraceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IamUserAk
+	}).(pulumi.StringPtrOutput)
+}
+
+// Secret key。
+func (o GatewayTraceSpecTlsTraceSpecPtrOutput) IamUserSk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpecTlsTraceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IamUserSk
+	}).(pulumi.StringPtrOutput)
+}
+
+// 日志项目ID。
+func (o GatewayTraceSpecTlsTraceSpecPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpecTlsTraceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Trace ID。
+func (o GatewayTraceSpecTlsTraceSpecPtrOutput) TraceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GatewayTraceSpecTlsTraceSpec) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TraceId
+	}).(pulumi.StringPtrOutput)
 }
 
 type UpstreamBackendTarget struct {
@@ -4061,6 +6352,1053 @@ func (o UpstreamVersionDetailLabelArrayOutput) Index(i pulumi.IntInput) Upstream
 	}).(UpstreamVersionDetailLabelOutput)
 }
 
+type GetGatewayBackendSpec struct {
+	// 是否支持VKE Flannel CNI。
+	IsVkeWithFlannelCniSupported bool `pulumi:"isVkeWithFlannelCniSupported"`
+	// VKE Pod CIDR。
+	VkePodCidr string `pulumi:"vkePodCidr"`
+}
+
+// GetGatewayBackendSpecInput is an input type that accepts GetGatewayBackendSpecArgs and GetGatewayBackendSpecOutput values.
+// You can construct a concrete instance of `GetGatewayBackendSpecInput` via:
+//
+//	GetGatewayBackendSpecArgs{...}
+type GetGatewayBackendSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayBackendSpecOutput() GetGatewayBackendSpecOutput
+	ToGetGatewayBackendSpecOutputWithContext(context.Context) GetGatewayBackendSpecOutput
+}
+
+type GetGatewayBackendSpecArgs struct {
+	// 是否支持VKE Flannel CNI。
+	IsVkeWithFlannelCniSupported pulumi.BoolInput `pulumi:"isVkeWithFlannelCniSupported"`
+	// VKE Pod CIDR。
+	VkePodCidr pulumi.StringInput `pulumi:"vkePodCidr"`
+}
+
+func (GetGatewayBackendSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayBackendSpec)(nil)).Elem()
+}
+
+func (i GetGatewayBackendSpecArgs) ToGetGatewayBackendSpecOutput() GetGatewayBackendSpecOutput {
+	return i.ToGetGatewayBackendSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayBackendSpecArgs) ToGetGatewayBackendSpecOutputWithContext(ctx context.Context) GetGatewayBackendSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayBackendSpecOutput)
+}
+
+type GetGatewayBackendSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayBackendSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayBackendSpec)(nil)).Elem()
+}
+
+func (o GetGatewayBackendSpecOutput) ToGetGatewayBackendSpecOutput() GetGatewayBackendSpecOutput {
+	return o
+}
+
+func (o GetGatewayBackendSpecOutput) ToGetGatewayBackendSpecOutputWithContext(ctx context.Context) GetGatewayBackendSpecOutput {
+	return o
+}
+
+// 是否支持VKE Flannel CNI。
+func (o GetGatewayBackendSpecOutput) IsVkeWithFlannelCniSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayBackendSpec) bool { return v.IsVkeWithFlannelCniSupported }).(pulumi.BoolOutput)
+}
+
+// VKE Pod CIDR。
+func (o GetGatewayBackendSpecOutput) VkePodCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayBackendSpec) string { return v.VkePodCidr }).(pulumi.StringOutput)
+}
+
+type GetGatewayCustomLog struct {
+	// 自定义变量信息。
+	CustomVariables []GetGatewayCustomLogCustomVariable `pulumi:"customVariables"`
+	// 请求头信息。
+	RequestHeaders []GetGatewayCustomLogRequestHeader `pulumi:"requestHeaders"`
+	// 响应头信息。
+	ResponseHeaders []GetGatewayCustomLogResponseHeader `pulumi:"responseHeaders"`
+}
+
+// GetGatewayCustomLogInput is an input type that accepts GetGatewayCustomLogArgs and GetGatewayCustomLogOutput values.
+// You can construct a concrete instance of `GetGatewayCustomLogInput` via:
+//
+//	GetGatewayCustomLogArgs{...}
+type GetGatewayCustomLogInput interface {
+	pulumi.Input
+
+	ToGetGatewayCustomLogOutput() GetGatewayCustomLogOutput
+	ToGetGatewayCustomLogOutputWithContext(context.Context) GetGatewayCustomLogOutput
+}
+
+type GetGatewayCustomLogArgs struct {
+	// 自定义变量信息。
+	CustomVariables GetGatewayCustomLogCustomVariableArrayInput `pulumi:"customVariables"`
+	// 请求头信息。
+	RequestHeaders GetGatewayCustomLogRequestHeaderArrayInput `pulumi:"requestHeaders"`
+	// 响应头信息。
+	ResponseHeaders GetGatewayCustomLogResponseHeaderArrayInput `pulumi:"responseHeaders"`
+}
+
+func (GetGatewayCustomLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLog)(nil)).Elem()
+}
+
+func (i GetGatewayCustomLogArgs) ToGetGatewayCustomLogOutput() GetGatewayCustomLogOutput {
+	return i.ToGetGatewayCustomLogOutputWithContext(context.Background())
+}
+
+func (i GetGatewayCustomLogArgs) ToGetGatewayCustomLogOutputWithContext(ctx context.Context) GetGatewayCustomLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayCustomLogOutput)
+}
+
+type GetGatewayCustomLogOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayCustomLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLog)(nil)).Elem()
+}
+
+func (o GetGatewayCustomLogOutput) ToGetGatewayCustomLogOutput() GetGatewayCustomLogOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogOutput) ToGetGatewayCustomLogOutputWithContext(ctx context.Context) GetGatewayCustomLogOutput {
+	return o
+}
+
+// 自定义变量信息。
+func (o GetGatewayCustomLogOutput) CustomVariables() GetGatewayCustomLogCustomVariableArrayOutput {
+	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogCustomVariable { return v.CustomVariables }).(GetGatewayCustomLogCustomVariableArrayOutput)
+}
+
+// 请求头信息。
+func (o GetGatewayCustomLogOutput) RequestHeaders() GetGatewayCustomLogRequestHeaderArrayOutput {
+	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogRequestHeader { return v.RequestHeaders }).(GetGatewayCustomLogRequestHeaderArrayOutput)
+}
+
+// 响应头信息。
+func (o GetGatewayCustomLogOutput) ResponseHeaders() GetGatewayCustomLogResponseHeaderArrayOutput {
+	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogResponseHeader { return v.ResponseHeaders }).(GetGatewayCustomLogResponseHeaderArrayOutput)
+}
+
+type GetGatewayCustomLogCustomVariable struct {
+	// 字段别名。
+	AliasesInLog string `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key string `pulumi:"key"`
+}
+
+// GetGatewayCustomLogCustomVariableInput is an input type that accepts GetGatewayCustomLogCustomVariableArgs and GetGatewayCustomLogCustomVariableOutput values.
+// You can construct a concrete instance of `GetGatewayCustomLogCustomVariableInput` via:
+//
+//	GetGatewayCustomLogCustomVariableArgs{...}
+type GetGatewayCustomLogCustomVariableInput interface {
+	pulumi.Input
+
+	ToGetGatewayCustomLogCustomVariableOutput() GetGatewayCustomLogCustomVariableOutput
+	ToGetGatewayCustomLogCustomVariableOutputWithContext(context.Context) GetGatewayCustomLogCustomVariableOutput
+}
+
+type GetGatewayCustomLogCustomVariableArgs struct {
+	// 字段别名。
+	AliasesInLog pulumi.StringInput `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetGatewayCustomLogCustomVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (i GetGatewayCustomLogCustomVariableArgs) ToGetGatewayCustomLogCustomVariableOutput() GetGatewayCustomLogCustomVariableOutput {
+	return i.ToGetGatewayCustomLogCustomVariableOutputWithContext(context.Background())
+}
+
+func (i GetGatewayCustomLogCustomVariableArgs) ToGetGatewayCustomLogCustomVariableOutputWithContext(ctx context.Context) GetGatewayCustomLogCustomVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayCustomLogCustomVariableOutput)
+}
+
+// GetGatewayCustomLogCustomVariableArrayInput is an input type that accepts GetGatewayCustomLogCustomVariableArray and GetGatewayCustomLogCustomVariableArrayOutput values.
+// You can construct a concrete instance of `GetGatewayCustomLogCustomVariableArrayInput` via:
+//
+//	GetGatewayCustomLogCustomVariableArray{ GetGatewayCustomLogCustomVariableArgs{...} }
+type GetGatewayCustomLogCustomVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetGatewayCustomLogCustomVariableArrayOutput() GetGatewayCustomLogCustomVariableArrayOutput
+	ToGetGatewayCustomLogCustomVariableArrayOutputWithContext(context.Context) GetGatewayCustomLogCustomVariableArrayOutput
+}
+
+type GetGatewayCustomLogCustomVariableArray []GetGatewayCustomLogCustomVariableInput
+
+func (GetGatewayCustomLogCustomVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (i GetGatewayCustomLogCustomVariableArray) ToGetGatewayCustomLogCustomVariableArrayOutput() GetGatewayCustomLogCustomVariableArrayOutput {
+	return i.ToGetGatewayCustomLogCustomVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetGatewayCustomLogCustomVariableArray) ToGetGatewayCustomLogCustomVariableArrayOutputWithContext(ctx context.Context) GetGatewayCustomLogCustomVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayCustomLogCustomVariableArrayOutput)
+}
+
+type GetGatewayCustomLogCustomVariableOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayCustomLogCustomVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (o GetGatewayCustomLogCustomVariableOutput) ToGetGatewayCustomLogCustomVariableOutput() GetGatewayCustomLogCustomVariableOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogCustomVariableOutput) ToGetGatewayCustomLogCustomVariableOutputWithContext(ctx context.Context) GetGatewayCustomLogCustomVariableOutput {
+	return o
+}
+
+// 字段别名。
+func (o GetGatewayCustomLogCustomVariableOutput) AliasesInLog() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayCustomLogCustomVariable) string { return v.AliasesInLog }).(pulumi.StringOutput)
+}
+
+// 请求头键。
+func (o GetGatewayCustomLogCustomVariableOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayCustomLogCustomVariable) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetGatewayCustomLogCustomVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayCustomLogCustomVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayCustomLogCustomVariable)(nil)).Elem()
+}
+
+func (o GetGatewayCustomLogCustomVariableArrayOutput) ToGetGatewayCustomLogCustomVariableArrayOutput() GetGatewayCustomLogCustomVariableArrayOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogCustomVariableArrayOutput) ToGetGatewayCustomLogCustomVariableArrayOutputWithContext(ctx context.Context) GetGatewayCustomLogCustomVariableArrayOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogCustomVariableArrayOutput) Index(i pulumi.IntInput) GetGatewayCustomLogCustomVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGatewayCustomLogCustomVariable {
+		return vs[0].([]GetGatewayCustomLogCustomVariable)[vs[1].(int)]
+	}).(GetGatewayCustomLogCustomVariableOutput)
+}
+
+type GetGatewayCustomLogRequestHeader struct {
+	// 字段别名。
+	AliasesInLog string `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key string `pulumi:"key"`
+}
+
+// GetGatewayCustomLogRequestHeaderInput is an input type that accepts GetGatewayCustomLogRequestHeaderArgs and GetGatewayCustomLogRequestHeaderOutput values.
+// You can construct a concrete instance of `GetGatewayCustomLogRequestHeaderInput` via:
+//
+//	GetGatewayCustomLogRequestHeaderArgs{...}
+type GetGatewayCustomLogRequestHeaderInput interface {
+	pulumi.Input
+
+	ToGetGatewayCustomLogRequestHeaderOutput() GetGatewayCustomLogRequestHeaderOutput
+	ToGetGatewayCustomLogRequestHeaderOutputWithContext(context.Context) GetGatewayCustomLogRequestHeaderOutput
+}
+
+type GetGatewayCustomLogRequestHeaderArgs struct {
+	// 字段别名。
+	AliasesInLog pulumi.StringInput `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetGatewayCustomLogRequestHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (i GetGatewayCustomLogRequestHeaderArgs) ToGetGatewayCustomLogRequestHeaderOutput() GetGatewayCustomLogRequestHeaderOutput {
+	return i.ToGetGatewayCustomLogRequestHeaderOutputWithContext(context.Background())
+}
+
+func (i GetGatewayCustomLogRequestHeaderArgs) ToGetGatewayCustomLogRequestHeaderOutputWithContext(ctx context.Context) GetGatewayCustomLogRequestHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayCustomLogRequestHeaderOutput)
+}
+
+// GetGatewayCustomLogRequestHeaderArrayInput is an input type that accepts GetGatewayCustomLogRequestHeaderArray and GetGatewayCustomLogRequestHeaderArrayOutput values.
+// You can construct a concrete instance of `GetGatewayCustomLogRequestHeaderArrayInput` via:
+//
+//	GetGatewayCustomLogRequestHeaderArray{ GetGatewayCustomLogRequestHeaderArgs{...} }
+type GetGatewayCustomLogRequestHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGetGatewayCustomLogRequestHeaderArrayOutput() GetGatewayCustomLogRequestHeaderArrayOutput
+	ToGetGatewayCustomLogRequestHeaderArrayOutputWithContext(context.Context) GetGatewayCustomLogRequestHeaderArrayOutput
+}
+
+type GetGatewayCustomLogRequestHeaderArray []GetGatewayCustomLogRequestHeaderInput
+
+func (GetGatewayCustomLogRequestHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (i GetGatewayCustomLogRequestHeaderArray) ToGetGatewayCustomLogRequestHeaderArrayOutput() GetGatewayCustomLogRequestHeaderArrayOutput {
+	return i.ToGetGatewayCustomLogRequestHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GetGatewayCustomLogRequestHeaderArray) ToGetGatewayCustomLogRequestHeaderArrayOutputWithContext(ctx context.Context) GetGatewayCustomLogRequestHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayCustomLogRequestHeaderArrayOutput)
+}
+
+type GetGatewayCustomLogRequestHeaderOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayCustomLogRequestHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (o GetGatewayCustomLogRequestHeaderOutput) ToGetGatewayCustomLogRequestHeaderOutput() GetGatewayCustomLogRequestHeaderOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogRequestHeaderOutput) ToGetGatewayCustomLogRequestHeaderOutputWithContext(ctx context.Context) GetGatewayCustomLogRequestHeaderOutput {
+	return o
+}
+
+// 字段别名。
+func (o GetGatewayCustomLogRequestHeaderOutput) AliasesInLog() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayCustomLogRequestHeader) string { return v.AliasesInLog }).(pulumi.StringOutput)
+}
+
+// 请求头键。
+func (o GetGatewayCustomLogRequestHeaderOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayCustomLogRequestHeader) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetGatewayCustomLogRequestHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayCustomLogRequestHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayCustomLogRequestHeader)(nil)).Elem()
+}
+
+func (o GetGatewayCustomLogRequestHeaderArrayOutput) ToGetGatewayCustomLogRequestHeaderArrayOutput() GetGatewayCustomLogRequestHeaderArrayOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogRequestHeaderArrayOutput) ToGetGatewayCustomLogRequestHeaderArrayOutputWithContext(ctx context.Context) GetGatewayCustomLogRequestHeaderArrayOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogRequestHeaderArrayOutput) Index(i pulumi.IntInput) GetGatewayCustomLogRequestHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGatewayCustomLogRequestHeader {
+		return vs[0].([]GetGatewayCustomLogRequestHeader)[vs[1].(int)]
+	}).(GetGatewayCustomLogRequestHeaderOutput)
+}
+
+type GetGatewayCustomLogResponseHeader struct {
+	// 字段别名。
+	AliasesInLog string `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key string `pulumi:"key"`
+}
+
+// GetGatewayCustomLogResponseHeaderInput is an input type that accepts GetGatewayCustomLogResponseHeaderArgs and GetGatewayCustomLogResponseHeaderOutput values.
+// You can construct a concrete instance of `GetGatewayCustomLogResponseHeaderInput` via:
+//
+//	GetGatewayCustomLogResponseHeaderArgs{...}
+type GetGatewayCustomLogResponseHeaderInput interface {
+	pulumi.Input
+
+	ToGetGatewayCustomLogResponseHeaderOutput() GetGatewayCustomLogResponseHeaderOutput
+	ToGetGatewayCustomLogResponseHeaderOutputWithContext(context.Context) GetGatewayCustomLogResponseHeaderOutput
+}
+
+type GetGatewayCustomLogResponseHeaderArgs struct {
+	// 字段别名。
+	AliasesInLog pulumi.StringInput `pulumi:"aliasesInLog"`
+	// 请求头键。
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetGatewayCustomLogResponseHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (i GetGatewayCustomLogResponseHeaderArgs) ToGetGatewayCustomLogResponseHeaderOutput() GetGatewayCustomLogResponseHeaderOutput {
+	return i.ToGetGatewayCustomLogResponseHeaderOutputWithContext(context.Background())
+}
+
+func (i GetGatewayCustomLogResponseHeaderArgs) ToGetGatewayCustomLogResponseHeaderOutputWithContext(ctx context.Context) GetGatewayCustomLogResponseHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayCustomLogResponseHeaderOutput)
+}
+
+// GetGatewayCustomLogResponseHeaderArrayInput is an input type that accepts GetGatewayCustomLogResponseHeaderArray and GetGatewayCustomLogResponseHeaderArrayOutput values.
+// You can construct a concrete instance of `GetGatewayCustomLogResponseHeaderArrayInput` via:
+//
+//	GetGatewayCustomLogResponseHeaderArray{ GetGatewayCustomLogResponseHeaderArgs{...} }
+type GetGatewayCustomLogResponseHeaderArrayInput interface {
+	pulumi.Input
+
+	ToGetGatewayCustomLogResponseHeaderArrayOutput() GetGatewayCustomLogResponseHeaderArrayOutput
+	ToGetGatewayCustomLogResponseHeaderArrayOutputWithContext(context.Context) GetGatewayCustomLogResponseHeaderArrayOutput
+}
+
+type GetGatewayCustomLogResponseHeaderArray []GetGatewayCustomLogResponseHeaderInput
+
+func (GetGatewayCustomLogResponseHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (i GetGatewayCustomLogResponseHeaderArray) ToGetGatewayCustomLogResponseHeaderArrayOutput() GetGatewayCustomLogResponseHeaderArrayOutput {
+	return i.ToGetGatewayCustomLogResponseHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i GetGatewayCustomLogResponseHeaderArray) ToGetGatewayCustomLogResponseHeaderArrayOutputWithContext(ctx context.Context) GetGatewayCustomLogResponseHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayCustomLogResponseHeaderArrayOutput)
+}
+
+type GetGatewayCustomLogResponseHeaderOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayCustomLogResponseHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (o GetGatewayCustomLogResponseHeaderOutput) ToGetGatewayCustomLogResponseHeaderOutput() GetGatewayCustomLogResponseHeaderOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogResponseHeaderOutput) ToGetGatewayCustomLogResponseHeaderOutputWithContext(ctx context.Context) GetGatewayCustomLogResponseHeaderOutput {
+	return o
+}
+
+// 字段别名。
+func (o GetGatewayCustomLogResponseHeaderOutput) AliasesInLog() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayCustomLogResponseHeader) string { return v.AliasesInLog }).(pulumi.StringOutput)
+}
+
+// 请求头键。
+func (o GetGatewayCustomLogResponseHeaderOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayCustomLogResponseHeader) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetGatewayCustomLogResponseHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayCustomLogResponseHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayCustomLogResponseHeader)(nil)).Elem()
+}
+
+func (o GetGatewayCustomLogResponseHeaderArrayOutput) ToGetGatewayCustomLogResponseHeaderArrayOutput() GetGatewayCustomLogResponseHeaderArrayOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogResponseHeaderArrayOutput) ToGetGatewayCustomLogResponseHeaderArrayOutputWithContext(ctx context.Context) GetGatewayCustomLogResponseHeaderArrayOutput {
+	return o
+}
+
+func (o GetGatewayCustomLogResponseHeaderArrayOutput) Index(i pulumi.IntInput) GetGatewayCustomLogResponseHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGatewayCustomLogResponseHeader {
+		return vs[0].([]GetGatewayCustomLogResponseHeader)[vs[1].(int)]
+	}).(GetGatewayCustomLogResponseHeaderOutput)
+}
+
+type GetGatewayEvent struct {
+	// 事件代码。
+	Code string `pulumi:"code"`
+	// 事件创建时间。
+	CreatedTime string `pulumi:"createdTime"`
+	// 附带信息。
+	Data string `pulumi:"data"`
+	// 事件描述。
+	Description string `pulumi:"description"`
+}
+
+// GetGatewayEventInput is an input type that accepts GetGatewayEventArgs and GetGatewayEventOutput values.
+// You can construct a concrete instance of `GetGatewayEventInput` via:
+//
+//	GetGatewayEventArgs{...}
+type GetGatewayEventInput interface {
+	pulumi.Input
+
+	ToGetGatewayEventOutput() GetGatewayEventOutput
+	ToGetGatewayEventOutputWithContext(context.Context) GetGatewayEventOutput
+}
+
+type GetGatewayEventArgs struct {
+	// 事件代码。
+	Code pulumi.StringInput `pulumi:"code"`
+	// 事件创建时间。
+	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	// 附带信息。
+	Data pulumi.StringInput `pulumi:"data"`
+	// 事件描述。
+	Description pulumi.StringInput `pulumi:"description"`
+}
+
+func (GetGatewayEventArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayEvent)(nil)).Elem()
+}
+
+func (i GetGatewayEventArgs) ToGetGatewayEventOutput() GetGatewayEventOutput {
+	return i.ToGetGatewayEventOutputWithContext(context.Background())
+}
+
+func (i GetGatewayEventArgs) ToGetGatewayEventOutputWithContext(ctx context.Context) GetGatewayEventOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayEventOutput)
+}
+
+// GetGatewayEventArrayInput is an input type that accepts GetGatewayEventArray and GetGatewayEventArrayOutput values.
+// You can construct a concrete instance of `GetGatewayEventArrayInput` via:
+//
+//	GetGatewayEventArray{ GetGatewayEventArgs{...} }
+type GetGatewayEventArrayInput interface {
+	pulumi.Input
+
+	ToGetGatewayEventArrayOutput() GetGatewayEventArrayOutput
+	ToGetGatewayEventArrayOutputWithContext(context.Context) GetGatewayEventArrayOutput
+}
+
+type GetGatewayEventArray []GetGatewayEventInput
+
+func (GetGatewayEventArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayEvent)(nil)).Elem()
+}
+
+func (i GetGatewayEventArray) ToGetGatewayEventArrayOutput() GetGatewayEventArrayOutput {
+	return i.ToGetGatewayEventArrayOutputWithContext(context.Background())
+}
+
+func (i GetGatewayEventArray) ToGetGatewayEventArrayOutputWithContext(ctx context.Context) GetGatewayEventArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayEventArrayOutput)
+}
+
+type GetGatewayEventOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayEventOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayEvent)(nil)).Elem()
+}
+
+func (o GetGatewayEventOutput) ToGetGatewayEventOutput() GetGatewayEventOutput {
+	return o
+}
+
+func (o GetGatewayEventOutput) ToGetGatewayEventOutputWithContext(ctx context.Context) GetGatewayEventOutput {
+	return o
+}
+
+// 事件代码。
+func (o GetGatewayEventOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayEvent) string { return v.Code }).(pulumi.StringOutput)
+}
+
+// 事件创建时间。
+func (o GetGatewayEventOutput) CreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayEvent) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// 附带信息。
+func (o GetGatewayEventOutput) Data() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayEvent) string { return v.Data }).(pulumi.StringOutput)
+}
+
+// 事件描述。
+func (o GetGatewayEventOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayEvent) string { return v.Description }).(pulumi.StringOutput)
+}
+
+type GetGatewayEventArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayEventArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayEvent)(nil)).Elem()
+}
+
+func (o GetGatewayEventArrayOutput) ToGetGatewayEventArrayOutput() GetGatewayEventArrayOutput {
+	return o
+}
+
+func (o GetGatewayEventArrayOutput) ToGetGatewayEventArrayOutputWithContext(ctx context.Context) GetGatewayEventArrayOutput {
+	return o
+}
+
+func (o GetGatewayEventArrayOutput) Index(i pulumi.IntInput) GetGatewayEventOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGatewayEvent {
+		return vs[0].([]GetGatewayEvent)[vs[1].(int)]
+	}).(GetGatewayEventOutput)
+}
+
+type GetGatewayLogSpec struct {
+	// 是否开启日志服务。
+	Enable bool `pulumi:"enable"`
+	// 日志项目ID。
+	ProjectId string `pulumi:"projectId"`
+	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetGatewayLogSpecInput is an input type that accepts GetGatewayLogSpecArgs and GetGatewayLogSpecOutput values.
+// You can construct a concrete instance of `GetGatewayLogSpecInput` via:
+//
+//	GetGatewayLogSpecArgs{...}
+type GetGatewayLogSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayLogSpecOutput() GetGatewayLogSpecOutput
+	ToGetGatewayLogSpecOutputWithContext(context.Context) GetGatewayLogSpecOutput
+}
+
+type GetGatewayLogSpecArgs struct {
+	// 是否开启日志服务。
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// 日志项目ID。
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetGatewayLogSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayLogSpec)(nil)).Elem()
+}
+
+func (i GetGatewayLogSpecArgs) ToGetGatewayLogSpecOutput() GetGatewayLogSpecOutput {
+	return i.ToGetGatewayLogSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayLogSpecArgs) ToGetGatewayLogSpecOutputWithContext(ctx context.Context) GetGatewayLogSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayLogSpecOutput)
+}
+
+type GetGatewayLogSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayLogSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayLogSpec)(nil)).Elem()
+}
+
+func (o GetGatewayLogSpecOutput) ToGetGatewayLogSpecOutput() GetGatewayLogSpecOutput {
+	return o
+}
+
+func (o GetGatewayLogSpecOutput) ToGetGatewayLogSpecOutputWithContext(ctx context.Context) GetGatewayLogSpecOutput {
+	return o
+}
+
+// 是否开启日志服务。
+func (o GetGatewayLogSpecOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayLogSpec) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// 日志项目ID。
+func (o GetGatewayLogSpecOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayLogSpec) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// 日志主题ID。ProjectId 指定项目里面的日志主题。
+func (o GetGatewayLogSpecOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayLogSpec) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+type GetGatewayMonitorSpec struct {
+	// 托管Prometheus（VMP）服务。
+	Enable bool `pulumi:"enable"`
+	// Prometheus工作区ID。
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetGatewayMonitorSpecInput is an input type that accepts GetGatewayMonitorSpecArgs and GetGatewayMonitorSpecOutput values.
+// You can construct a concrete instance of `GetGatewayMonitorSpecInput` via:
+//
+//	GetGatewayMonitorSpecArgs{...}
+type GetGatewayMonitorSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayMonitorSpecOutput() GetGatewayMonitorSpecOutput
+	ToGetGatewayMonitorSpecOutputWithContext(context.Context) GetGatewayMonitorSpecOutput
+}
+
+type GetGatewayMonitorSpecArgs struct {
+	// 托管Prometheus（VMP）服务。
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// Prometheus工作区ID。
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetGatewayMonitorSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayMonitorSpec)(nil)).Elem()
+}
+
+func (i GetGatewayMonitorSpecArgs) ToGetGatewayMonitorSpecOutput() GetGatewayMonitorSpecOutput {
+	return i.ToGetGatewayMonitorSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayMonitorSpecArgs) ToGetGatewayMonitorSpecOutputWithContext(ctx context.Context) GetGatewayMonitorSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayMonitorSpecOutput)
+}
+
+type GetGatewayMonitorSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayMonitorSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayMonitorSpec)(nil)).Elem()
+}
+
+func (o GetGatewayMonitorSpecOutput) ToGetGatewayMonitorSpecOutput() GetGatewayMonitorSpecOutput {
+	return o
+}
+
+func (o GetGatewayMonitorSpecOutput) ToGetGatewayMonitorSpecOutputWithContext(ctx context.Context) GetGatewayMonitorSpecOutput {
+	return o
+}
+
+// 托管Prometheus（VMP）服务。
+func (o GetGatewayMonitorSpecOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayMonitorSpec) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// Prometheus工作区ID。
+func (o GetGatewayMonitorSpecOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayMonitorSpec) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetGatewayNetworkSpec struct {
+	// 子网配置信息列表。
+	Subnets []GetGatewayNetworkSpecSubnet `pulumi:"subnets"`
+	// VPC ID。
+	VpcId string `pulumi:"vpcId"`
+	// VPC名称。
+	VpcName string `pulumi:"vpcName"`
+}
+
+// GetGatewayNetworkSpecInput is an input type that accepts GetGatewayNetworkSpecArgs and GetGatewayNetworkSpecOutput values.
+// You can construct a concrete instance of `GetGatewayNetworkSpecInput` via:
+//
+//	GetGatewayNetworkSpecArgs{...}
+type GetGatewayNetworkSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayNetworkSpecOutput() GetGatewayNetworkSpecOutput
+	ToGetGatewayNetworkSpecOutputWithContext(context.Context) GetGatewayNetworkSpecOutput
+}
+
+type GetGatewayNetworkSpecArgs struct {
+	// 子网配置信息列表。
+	Subnets GetGatewayNetworkSpecSubnetArrayInput `pulumi:"subnets"`
+	// VPC ID。
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+	// VPC名称。
+	VpcName pulumi.StringInput `pulumi:"vpcName"`
+}
+
+func (GetGatewayNetworkSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayNetworkSpec)(nil)).Elem()
+}
+
+func (i GetGatewayNetworkSpecArgs) ToGetGatewayNetworkSpecOutput() GetGatewayNetworkSpecOutput {
+	return i.ToGetGatewayNetworkSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayNetworkSpecArgs) ToGetGatewayNetworkSpecOutputWithContext(ctx context.Context) GetGatewayNetworkSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayNetworkSpecOutput)
+}
+
+type GetGatewayNetworkSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayNetworkSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayNetworkSpec)(nil)).Elem()
+}
+
+func (o GetGatewayNetworkSpecOutput) ToGetGatewayNetworkSpecOutput() GetGatewayNetworkSpecOutput {
+	return o
+}
+
+func (o GetGatewayNetworkSpecOutput) ToGetGatewayNetworkSpecOutputWithContext(ctx context.Context) GetGatewayNetworkSpecOutput {
+	return o
+}
+
+// 子网配置信息列表。
+func (o GetGatewayNetworkSpecOutput) Subnets() GetGatewayNetworkSpecSubnetArrayOutput {
+	return o.ApplyT(func(v GetGatewayNetworkSpec) []GetGatewayNetworkSpecSubnet { return v.Subnets }).(GetGatewayNetworkSpecSubnetArrayOutput)
+}
+
+// VPC ID。
+func (o GetGatewayNetworkSpecOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayNetworkSpec) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+// VPC名称。
+func (o GetGatewayNetworkSpecOutput) VpcName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayNetworkSpec) string { return v.VpcName }).(pulumi.StringOutput)
+}
+
+type GetGatewayNetworkSpecSubnet struct {
+	// 可用区。
+	Az string `pulumi:"az"`
+	// 子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// 子网名称。
+	SubnetName string `pulumi:"subnetName"`
+}
+
+// GetGatewayNetworkSpecSubnetInput is an input type that accepts GetGatewayNetworkSpecSubnetArgs and GetGatewayNetworkSpecSubnetOutput values.
+// You can construct a concrete instance of `GetGatewayNetworkSpecSubnetInput` via:
+//
+//	GetGatewayNetworkSpecSubnetArgs{...}
+type GetGatewayNetworkSpecSubnetInput interface {
+	pulumi.Input
+
+	ToGetGatewayNetworkSpecSubnetOutput() GetGatewayNetworkSpecSubnetOutput
+	ToGetGatewayNetworkSpecSubnetOutputWithContext(context.Context) GetGatewayNetworkSpecSubnetOutput
+}
+
+type GetGatewayNetworkSpecSubnetArgs struct {
+	// 可用区。
+	Az pulumi.StringInput `pulumi:"az"`
+	// 子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// 子网名称。
+	SubnetName pulumi.StringInput `pulumi:"subnetName"`
+}
+
+func (GetGatewayNetworkSpecSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (i GetGatewayNetworkSpecSubnetArgs) ToGetGatewayNetworkSpecSubnetOutput() GetGatewayNetworkSpecSubnetOutput {
+	return i.ToGetGatewayNetworkSpecSubnetOutputWithContext(context.Background())
+}
+
+func (i GetGatewayNetworkSpecSubnetArgs) ToGetGatewayNetworkSpecSubnetOutputWithContext(ctx context.Context) GetGatewayNetworkSpecSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayNetworkSpecSubnetOutput)
+}
+
+// GetGatewayNetworkSpecSubnetArrayInput is an input type that accepts GetGatewayNetworkSpecSubnetArray and GetGatewayNetworkSpecSubnetArrayOutput values.
+// You can construct a concrete instance of `GetGatewayNetworkSpecSubnetArrayInput` via:
+//
+//	GetGatewayNetworkSpecSubnetArray{ GetGatewayNetworkSpecSubnetArgs{...} }
+type GetGatewayNetworkSpecSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetGatewayNetworkSpecSubnetArrayOutput() GetGatewayNetworkSpecSubnetArrayOutput
+	ToGetGatewayNetworkSpecSubnetArrayOutputWithContext(context.Context) GetGatewayNetworkSpecSubnetArrayOutput
+}
+
+type GetGatewayNetworkSpecSubnetArray []GetGatewayNetworkSpecSubnetInput
+
+func (GetGatewayNetworkSpecSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (i GetGatewayNetworkSpecSubnetArray) ToGetGatewayNetworkSpecSubnetArrayOutput() GetGatewayNetworkSpecSubnetArrayOutput {
+	return i.ToGetGatewayNetworkSpecSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetGatewayNetworkSpecSubnetArray) ToGetGatewayNetworkSpecSubnetArrayOutputWithContext(ctx context.Context) GetGatewayNetworkSpecSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayNetworkSpecSubnetArrayOutput)
+}
+
+type GetGatewayNetworkSpecSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayNetworkSpecSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (o GetGatewayNetworkSpecSubnetOutput) ToGetGatewayNetworkSpecSubnetOutput() GetGatewayNetworkSpecSubnetOutput {
+	return o
+}
+
+func (o GetGatewayNetworkSpecSubnetOutput) ToGetGatewayNetworkSpecSubnetOutputWithContext(ctx context.Context) GetGatewayNetworkSpecSubnetOutput {
+	return o
+}
+
+// 可用区。
+func (o GetGatewayNetworkSpecSubnetOutput) Az() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayNetworkSpecSubnet) string { return v.Az }).(pulumi.StringOutput)
+}
+
+// 子网ID。
+func (o GetGatewayNetworkSpecSubnetOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayNetworkSpecSubnet) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// 子网名称。
+func (o GetGatewayNetworkSpecSubnetOutput) SubnetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayNetworkSpecSubnet) string { return v.SubnetName }).(pulumi.StringOutput)
+}
+
+type GetGatewayNetworkSpecSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayNetworkSpecSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGatewayNetworkSpecSubnet)(nil)).Elem()
+}
+
+func (o GetGatewayNetworkSpecSubnetArrayOutput) ToGetGatewayNetworkSpecSubnetArrayOutput() GetGatewayNetworkSpecSubnetArrayOutput {
+	return o
+}
+
+func (o GetGatewayNetworkSpecSubnetArrayOutput) ToGetGatewayNetworkSpecSubnetArrayOutputWithContext(ctx context.Context) GetGatewayNetworkSpecSubnetArrayOutput {
+	return o
+}
+
+func (o GetGatewayNetworkSpecSubnetArrayOutput) Index(i pulumi.IntInput) GetGatewayNetworkSpecSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGatewayNetworkSpecSubnet {
+		return vs[0].([]GetGatewayNetworkSpecSubnet)[vs[1].(int)]
+	}).(GetGatewayNetworkSpecSubnetOutput)
+}
+
+type GetGatewayResourceSpec struct {
+	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	ClbSpecCode string `pulumi:"clbSpecCode"`
+	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	InstanceSpecCode string `pulumi:"instanceSpecCode"`
+	// 网络类型。默认值为开启公网，开启私网。
+	NetworkType GetGatewayResourceSpecNetworkType `pulumi:"networkType"`
+	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	PublicNetworkBandwidth int `pulumi:"publicNetworkBandwidth"`
+	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	PublicNetworkBillingType string `pulumi:"publicNetworkBillingType"`
+	// 节点数量。取值限制为2~100。
+	Replicas int `pulumi:"replicas"`
+}
+
+// GetGatewayResourceSpecInput is an input type that accepts GetGatewayResourceSpecArgs and GetGatewayResourceSpecOutput values.
+// You can construct a concrete instance of `GetGatewayResourceSpecInput` via:
+//
+//	GetGatewayResourceSpecArgs{...}
+type GetGatewayResourceSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayResourceSpecOutput() GetGatewayResourceSpecOutput
+	ToGetGatewayResourceSpecOutputWithContext(context.Context) GetGatewayResourceSpecOutput
+}
+
+type GetGatewayResourceSpecArgs struct {
+	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	ClbSpecCode pulumi.StringInput `pulumi:"clbSpecCode"`
+	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	InstanceSpecCode pulumi.StringInput `pulumi:"instanceSpecCode"`
+	// 网络类型。默认值为开启公网，开启私网。
+	NetworkType GetGatewayResourceSpecNetworkTypeInput `pulumi:"networkType"`
+	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	PublicNetworkBandwidth pulumi.IntInput `pulumi:"publicNetworkBandwidth"`
+	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	PublicNetworkBillingType pulumi.StringInput `pulumi:"publicNetworkBillingType"`
+	// 节点数量。取值限制为2~100。
+	Replicas pulumi.IntInput `pulumi:"replicas"`
+}
+
+func (GetGatewayResourceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayResourceSpec)(nil)).Elem()
+}
+
+func (i GetGatewayResourceSpecArgs) ToGetGatewayResourceSpecOutput() GetGatewayResourceSpecOutput {
+	return i.ToGetGatewayResourceSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayResourceSpecArgs) ToGetGatewayResourceSpecOutputWithContext(ctx context.Context) GetGatewayResourceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayResourceSpecOutput)
+}
+
+type GetGatewayResourceSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayResourceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayResourceSpec)(nil)).Elem()
+}
+
+func (o GetGatewayResourceSpecOutput) ToGetGatewayResourceSpecOutput() GetGatewayResourceSpecOutput {
+	return o
+}
+
+func (o GetGatewayResourceSpecOutput) ToGetGatewayResourceSpecOutputWithContext(ctx context.Context) GetGatewayResourceSpecOutput {
+	return o
+}
+
+// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+func (o GetGatewayResourceSpecOutput) ClbSpecCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpec) string { return v.ClbSpecCode }).(pulumi.StringOutput)
+}
+
+// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+func (o GetGatewayResourceSpecOutput) InstanceSpecCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpec) string { return v.InstanceSpecCode }).(pulumi.StringOutput)
+}
+
+// 网络类型。默认值为开启公网，开启私网。
+func (o GetGatewayResourceSpecOutput) NetworkType() GetGatewayResourceSpecNetworkTypeOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpec) GetGatewayResourceSpecNetworkType { return v.NetworkType }).(GetGatewayResourceSpecNetworkTypeOutput)
+}
+
+// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+func (o GetGatewayResourceSpecOutput) PublicNetworkBandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpec) int { return v.PublicNetworkBandwidth }).(pulumi.IntOutput)
+}
+
+// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+func (o GetGatewayResourceSpecOutput) PublicNetworkBillingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpec) string { return v.PublicNetworkBillingType }).(pulumi.StringOutput)
+}
+
+// 节点数量。取值限制为2~100。
+func (o GetGatewayResourceSpecOutput) Replicas() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpec) int { return v.Replicas }).(pulumi.IntOutput)
+}
+
+type GetGatewayResourceSpecNetworkType struct {
+	// 是否启用私网。
+	EnablePrivateNetwork bool `pulumi:"enablePrivateNetwork"`
+	// 是否启用公网。
+	EnablePublicNetwork bool `pulumi:"enablePublicNetwork"`
+}
+
+// GetGatewayResourceSpecNetworkTypeInput is an input type that accepts GetGatewayResourceSpecNetworkTypeArgs and GetGatewayResourceSpecNetworkTypeOutput values.
+// You can construct a concrete instance of `GetGatewayResourceSpecNetworkTypeInput` via:
+//
+//	GetGatewayResourceSpecNetworkTypeArgs{...}
+type GetGatewayResourceSpecNetworkTypeInput interface {
+	pulumi.Input
+
+	ToGetGatewayResourceSpecNetworkTypeOutput() GetGatewayResourceSpecNetworkTypeOutput
+	ToGetGatewayResourceSpecNetworkTypeOutputWithContext(context.Context) GetGatewayResourceSpecNetworkTypeOutput
+}
+
+type GetGatewayResourceSpecNetworkTypeArgs struct {
+	// 是否启用私网。
+	EnablePrivateNetwork pulumi.BoolInput `pulumi:"enablePrivateNetwork"`
+	// 是否启用公网。
+	EnablePublicNetwork pulumi.BoolInput `pulumi:"enablePublicNetwork"`
+}
+
+func (GetGatewayResourceSpecNetworkTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayResourceSpecNetworkType)(nil)).Elem()
+}
+
+func (i GetGatewayResourceSpecNetworkTypeArgs) ToGetGatewayResourceSpecNetworkTypeOutput() GetGatewayResourceSpecNetworkTypeOutput {
+	return i.ToGetGatewayResourceSpecNetworkTypeOutputWithContext(context.Background())
+}
+
+func (i GetGatewayResourceSpecNetworkTypeArgs) ToGetGatewayResourceSpecNetworkTypeOutputWithContext(ctx context.Context) GetGatewayResourceSpecNetworkTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayResourceSpecNetworkTypeOutput)
+}
+
+type GetGatewayResourceSpecNetworkTypeOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayResourceSpecNetworkTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayResourceSpecNetworkType)(nil)).Elem()
+}
+
+func (o GetGatewayResourceSpecNetworkTypeOutput) ToGetGatewayResourceSpecNetworkTypeOutput() GetGatewayResourceSpecNetworkTypeOutput {
+	return o
+}
+
+func (o GetGatewayResourceSpecNetworkTypeOutput) ToGetGatewayResourceSpecNetworkTypeOutputWithContext(ctx context.Context) GetGatewayResourceSpecNetworkTypeOutput {
+	return o
+}
+
+// 是否启用私网。
+func (o GetGatewayResourceSpecNetworkTypeOutput) EnablePrivateNetwork() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpecNetworkType) bool { return v.EnablePrivateNetwork }).(pulumi.BoolOutput)
+}
+
+// 是否启用公网。
+func (o GetGatewayResourceSpecNetworkTypeOutput) EnablePublicNetwork() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayResourceSpecNetworkType) bool { return v.EnablePublicNetwork }).(pulumi.BoolOutput)
+}
+
 type GetGatewayServiceAuthSpec struct {
 	// 是否开启认证。
 	Enable bool `pulumi:"enable"`
@@ -4375,6 +7713,216 @@ func (o GetGatewayServiceDomainSpecOutput) ToGetGatewayServiceDomainSpecOutputWi
 // 开启私网域名公网解析。
 func (o GetGatewayServiceDomainSpecOutput) EnablePublicResolution() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayServiceDomainSpec) bool { return v.EnablePublicResolution }).(pulumi.BoolOutput)
+}
+
+type GetGatewayTraceSpec struct {
+	// 应用性能监控全链路版链路追踪配置。
+	ApmTraceSpec GetGatewayTraceSpecApmTraceSpec `pulumi:"apmTraceSpec"`
+	// 是否启用链路追踪。
+	Enable bool `pulumi:"enable"`
+	// 链路追踪配置信息。
+	TlsTraceSpec GetGatewayTraceSpecTlsTraceSpec `pulumi:"tlsTraceSpec"`
+	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	TraceType string `pulumi:"traceType"`
+}
+
+// GetGatewayTraceSpecInput is an input type that accepts GetGatewayTraceSpecArgs and GetGatewayTraceSpecOutput values.
+// You can construct a concrete instance of `GetGatewayTraceSpecInput` via:
+//
+//	GetGatewayTraceSpecArgs{...}
+type GetGatewayTraceSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayTraceSpecOutput() GetGatewayTraceSpecOutput
+	ToGetGatewayTraceSpecOutputWithContext(context.Context) GetGatewayTraceSpecOutput
+}
+
+type GetGatewayTraceSpecArgs struct {
+	// 应用性能监控全链路版链路追踪配置。
+	ApmTraceSpec GetGatewayTraceSpecApmTraceSpecInput `pulumi:"apmTraceSpec"`
+	// 是否启用链路追踪。
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// 链路追踪配置信息。
+	TlsTraceSpec GetGatewayTraceSpecTlsTraceSpecInput `pulumi:"tlsTraceSpec"`
+	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	TraceType pulumi.StringInput `pulumi:"traceType"`
+}
+
+func (GetGatewayTraceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayTraceSpec)(nil)).Elem()
+}
+
+func (i GetGatewayTraceSpecArgs) ToGetGatewayTraceSpecOutput() GetGatewayTraceSpecOutput {
+	return i.ToGetGatewayTraceSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayTraceSpecArgs) ToGetGatewayTraceSpecOutputWithContext(ctx context.Context) GetGatewayTraceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayTraceSpecOutput)
+}
+
+type GetGatewayTraceSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayTraceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayTraceSpec)(nil)).Elem()
+}
+
+func (o GetGatewayTraceSpecOutput) ToGetGatewayTraceSpecOutput() GetGatewayTraceSpecOutput {
+	return o
+}
+
+func (o GetGatewayTraceSpecOutput) ToGetGatewayTraceSpecOutputWithContext(ctx context.Context) GetGatewayTraceSpecOutput {
+	return o
+}
+
+// 应用性能监控全链路版链路追踪配置。
+func (o GetGatewayTraceSpecOutput) ApmTraceSpec() GetGatewayTraceSpecApmTraceSpecOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpec) GetGatewayTraceSpecApmTraceSpec { return v.ApmTraceSpec }).(GetGatewayTraceSpecApmTraceSpecOutput)
+}
+
+// 是否启用链路追踪。
+func (o GetGatewayTraceSpecOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpec) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// 链路追踪配置信息。
+func (o GetGatewayTraceSpecOutput) TlsTraceSpec() GetGatewayTraceSpecTlsTraceSpecOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpec) GetGatewayTraceSpecTlsTraceSpec { return v.TlsTraceSpec }).(GetGatewayTraceSpecTlsTraceSpecOutput)
+}
+
+// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+func (o GetGatewayTraceSpecOutput) TraceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpec) string { return v.TraceType }).(pulumi.StringOutput)
+}
+
+type GetGatewayTraceSpecApmTraceSpec struct {
+	// API Key。
+	ApiKey string `pulumi:"apiKey"`
+}
+
+// GetGatewayTraceSpecApmTraceSpecInput is an input type that accepts GetGatewayTraceSpecApmTraceSpecArgs and GetGatewayTraceSpecApmTraceSpecOutput values.
+// You can construct a concrete instance of `GetGatewayTraceSpecApmTraceSpecInput` via:
+//
+//	GetGatewayTraceSpecApmTraceSpecArgs{...}
+type GetGatewayTraceSpecApmTraceSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayTraceSpecApmTraceSpecOutput() GetGatewayTraceSpecApmTraceSpecOutput
+	ToGetGatewayTraceSpecApmTraceSpecOutputWithContext(context.Context) GetGatewayTraceSpecApmTraceSpecOutput
+}
+
+type GetGatewayTraceSpecApmTraceSpecArgs struct {
+	// API Key。
+	ApiKey pulumi.StringInput `pulumi:"apiKey"`
+}
+
+func (GetGatewayTraceSpecApmTraceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayTraceSpecApmTraceSpec)(nil)).Elem()
+}
+
+func (i GetGatewayTraceSpecApmTraceSpecArgs) ToGetGatewayTraceSpecApmTraceSpecOutput() GetGatewayTraceSpecApmTraceSpecOutput {
+	return i.ToGetGatewayTraceSpecApmTraceSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayTraceSpecApmTraceSpecArgs) ToGetGatewayTraceSpecApmTraceSpecOutputWithContext(ctx context.Context) GetGatewayTraceSpecApmTraceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayTraceSpecApmTraceSpecOutput)
+}
+
+type GetGatewayTraceSpecApmTraceSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayTraceSpecApmTraceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayTraceSpecApmTraceSpec)(nil)).Elem()
+}
+
+func (o GetGatewayTraceSpecApmTraceSpecOutput) ToGetGatewayTraceSpecApmTraceSpecOutput() GetGatewayTraceSpecApmTraceSpecOutput {
+	return o
+}
+
+func (o GetGatewayTraceSpecApmTraceSpecOutput) ToGetGatewayTraceSpecApmTraceSpecOutputWithContext(ctx context.Context) GetGatewayTraceSpecApmTraceSpecOutput {
+	return o
+}
+
+// API Key。
+func (o GetGatewayTraceSpecApmTraceSpecOutput) ApiKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpecApmTraceSpec) string { return v.ApiKey }).(pulumi.StringOutput)
+}
+
+type GetGatewayTraceSpecTlsTraceSpec struct {
+	// Access key。
+	IamUserAk string `pulumi:"iamUserAk"`
+	// Secret key。
+	IamUserSk string `pulumi:"iamUserSk"`
+	// 日志项目ID。
+	ProjectId string `pulumi:"projectId"`
+	// Trace ID。
+	TraceId string `pulumi:"traceId"`
+}
+
+// GetGatewayTraceSpecTlsTraceSpecInput is an input type that accepts GetGatewayTraceSpecTlsTraceSpecArgs and GetGatewayTraceSpecTlsTraceSpecOutput values.
+// You can construct a concrete instance of `GetGatewayTraceSpecTlsTraceSpecInput` via:
+//
+//	GetGatewayTraceSpecTlsTraceSpecArgs{...}
+type GetGatewayTraceSpecTlsTraceSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayTraceSpecTlsTraceSpecOutput() GetGatewayTraceSpecTlsTraceSpecOutput
+	ToGetGatewayTraceSpecTlsTraceSpecOutputWithContext(context.Context) GetGatewayTraceSpecTlsTraceSpecOutput
+}
+
+type GetGatewayTraceSpecTlsTraceSpecArgs struct {
+	// Access key。
+	IamUserAk pulumi.StringInput `pulumi:"iamUserAk"`
+	// Secret key。
+	IamUserSk pulumi.StringInput `pulumi:"iamUserSk"`
+	// 日志项目ID。
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// Trace ID。
+	TraceId pulumi.StringInput `pulumi:"traceId"`
+}
+
+func (GetGatewayTraceSpecTlsTraceSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayTraceSpecTlsTraceSpec)(nil)).Elem()
+}
+
+func (i GetGatewayTraceSpecTlsTraceSpecArgs) ToGetGatewayTraceSpecTlsTraceSpecOutput() GetGatewayTraceSpecTlsTraceSpecOutput {
+	return i.ToGetGatewayTraceSpecTlsTraceSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayTraceSpecTlsTraceSpecArgs) ToGetGatewayTraceSpecTlsTraceSpecOutputWithContext(ctx context.Context) GetGatewayTraceSpecTlsTraceSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayTraceSpecTlsTraceSpecOutput)
+}
+
+type GetGatewayTraceSpecTlsTraceSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayTraceSpecTlsTraceSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayTraceSpecTlsTraceSpec)(nil)).Elem()
+}
+
+func (o GetGatewayTraceSpecTlsTraceSpecOutput) ToGetGatewayTraceSpecTlsTraceSpecOutput() GetGatewayTraceSpecTlsTraceSpecOutput {
+	return o
+}
+
+func (o GetGatewayTraceSpecTlsTraceSpecOutput) ToGetGatewayTraceSpecTlsTraceSpecOutputWithContext(ctx context.Context) GetGatewayTraceSpecTlsTraceSpecOutput {
+	return o
+}
+
+// Access key。
+func (o GetGatewayTraceSpecTlsTraceSpecOutput) IamUserAk() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpecTlsTraceSpec) string { return v.IamUserAk }).(pulumi.StringOutput)
+}
+
+// Secret key。
+func (o GetGatewayTraceSpecTlsTraceSpecOutput) IamUserSk() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpecTlsTraceSpec) string { return v.IamUserSk }).(pulumi.StringOutput)
+}
+
+// 日志项目ID。
+func (o GetGatewayTraceSpecTlsTraceSpecOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpecTlsTraceSpec) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Trace ID。
+func (o GetGatewayTraceSpecTlsTraceSpecOutput) TraceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGatewayTraceSpecTlsTraceSpec) string { return v.TraceId }).(pulumi.StringOutput)
 }
 
 type GetUpstreamBackendTarget struct {
@@ -6092,6 +9640,30 @@ func (o GetUpstreamVersionDetailLabelArrayOutput) Index(i pulumi.IntInput) GetUp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayBackendSpecInput)(nil)).Elem(), GatewayBackendSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayBackendSpecPtrInput)(nil)).Elem(), GatewayBackendSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogInput)(nil)).Elem(), GatewayCustomLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogPtrInput)(nil)).Elem(), GatewayCustomLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogCustomVariableInput)(nil)).Elem(), GatewayCustomLogCustomVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogCustomVariableArrayInput)(nil)).Elem(), GatewayCustomLogCustomVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogRequestHeaderInput)(nil)).Elem(), GatewayCustomLogRequestHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogRequestHeaderArrayInput)(nil)).Elem(), GatewayCustomLogRequestHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogResponseHeaderInput)(nil)).Elem(), GatewayCustomLogResponseHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayCustomLogResponseHeaderArrayInput)(nil)).Elem(), GatewayCustomLogResponseHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayEventInput)(nil)).Elem(), GatewayEventArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayEventArrayInput)(nil)).Elem(), GatewayEventArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayLogSpecInput)(nil)).Elem(), GatewayLogSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayLogSpecPtrInput)(nil)).Elem(), GatewayLogSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayMonitorSpecInput)(nil)).Elem(), GatewayMonitorSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayMonitorSpecPtrInput)(nil)).Elem(), GatewayMonitorSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayNetworkSpecInput)(nil)).Elem(), GatewayNetworkSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayNetworkSpecPtrInput)(nil)).Elem(), GatewayNetworkSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayNetworkSpecSubnetInput)(nil)).Elem(), GatewayNetworkSpecSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayNetworkSpecSubnetArrayInput)(nil)).Elem(), GatewayNetworkSpecSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayResourceSpecInput)(nil)).Elem(), GatewayResourceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayResourceSpecPtrInput)(nil)).Elem(), GatewayResourceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayResourceSpecNetworkTypeInput)(nil)).Elem(), GatewayResourceSpecNetworkTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayResourceSpecNetworkTypePtrInput)(nil)).Elem(), GatewayResourceSpecNetworkTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceAuthSpecInput)(nil)).Elem(), GatewayServiceAuthSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceAuthSpecPtrInput)(nil)).Elem(), GatewayServiceAuthSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceCustomDomainInput)(nil)).Elem(), GatewayServiceCustomDomainArgs{})
@@ -6100,6 +9672,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceDomainArrayInput)(nil)).Elem(), GatewayServiceDomainArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceDomainSpecInput)(nil)).Elem(), GatewayServiceDomainSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceDomainSpecPtrInput)(nil)).Elem(), GatewayServiceDomainSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecInput)(nil)).Elem(), GatewayTraceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecPtrInput)(nil)).Elem(), GatewayTraceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecApmTraceSpecInput)(nil)).Elem(), GatewayTraceSpecApmTraceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecApmTraceSpecPtrInput)(nil)).Elem(), GatewayTraceSpecApmTraceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecTlsTraceSpecInput)(nil)).Elem(), GatewayTraceSpecTlsTraceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecTlsTraceSpecPtrInput)(nil)).Elem(), GatewayTraceSpecTlsTraceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamBackendTargetInput)(nil)).Elem(), UpstreamBackendTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamBackendTargetArrayInput)(nil)).Elem(), UpstreamBackendTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamCircuitBreakingSettingsInput)(nil)).Elem(), UpstreamCircuitBreakingSettingsArgs{})
@@ -6142,12 +9720,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamVersionDetailArrayInput)(nil)).Elem(), UpstreamVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamVersionDetailLabelInput)(nil)).Elem(), UpstreamVersionDetailLabelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamVersionDetailLabelArrayInput)(nil)).Elem(), UpstreamVersionDetailLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayBackendSpecInput)(nil)).Elem(), GetGatewayBackendSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayCustomLogInput)(nil)).Elem(), GetGatewayCustomLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayCustomLogCustomVariableInput)(nil)).Elem(), GetGatewayCustomLogCustomVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayCustomLogCustomVariableArrayInput)(nil)).Elem(), GetGatewayCustomLogCustomVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayCustomLogRequestHeaderInput)(nil)).Elem(), GetGatewayCustomLogRequestHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayCustomLogRequestHeaderArrayInput)(nil)).Elem(), GetGatewayCustomLogRequestHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayCustomLogResponseHeaderInput)(nil)).Elem(), GetGatewayCustomLogResponseHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayCustomLogResponseHeaderArrayInput)(nil)).Elem(), GetGatewayCustomLogResponseHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayEventInput)(nil)).Elem(), GetGatewayEventArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayEventArrayInput)(nil)).Elem(), GetGatewayEventArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayLogSpecInput)(nil)).Elem(), GetGatewayLogSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayMonitorSpecInput)(nil)).Elem(), GetGatewayMonitorSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayNetworkSpecInput)(nil)).Elem(), GetGatewayNetworkSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayNetworkSpecSubnetInput)(nil)).Elem(), GetGatewayNetworkSpecSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayNetworkSpecSubnetArrayInput)(nil)).Elem(), GetGatewayNetworkSpecSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayResourceSpecInput)(nil)).Elem(), GetGatewayResourceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayResourceSpecNetworkTypeInput)(nil)).Elem(), GetGatewayResourceSpecNetworkTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceAuthSpecInput)(nil)).Elem(), GetGatewayServiceAuthSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceCustomDomainInput)(nil)).Elem(), GetGatewayServiceCustomDomainArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceCustomDomainArrayInput)(nil)).Elem(), GetGatewayServiceCustomDomainArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceDomainInput)(nil)).Elem(), GetGatewayServiceDomainArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceDomainArrayInput)(nil)).Elem(), GetGatewayServiceDomainArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceDomainSpecInput)(nil)).Elem(), GetGatewayServiceDomainSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayTraceSpecInput)(nil)).Elem(), GetGatewayTraceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayTraceSpecApmTraceSpecInput)(nil)).Elem(), GetGatewayTraceSpecApmTraceSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayTraceSpecTlsTraceSpecInput)(nil)).Elem(), GetGatewayTraceSpecTlsTraceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamBackendTargetInput)(nil)).Elem(), GetUpstreamBackendTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamBackendTargetArrayInput)(nil)).Elem(), GetUpstreamBackendTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamCircuitBreakingSettingsInput)(nil)).Elem(), GetUpstreamCircuitBreakingSettingsArgs{})
@@ -6173,6 +9771,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamVersionDetailArrayInput)(nil)).Elem(), GetUpstreamVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamVersionDetailLabelInput)(nil)).Elem(), GetUpstreamVersionDetailLabelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamVersionDetailLabelArrayInput)(nil)).Elem(), GetUpstreamVersionDetailLabelArray{})
+	pulumi.RegisterOutputType(GatewayBackendSpecOutput{})
+	pulumi.RegisterOutputType(GatewayBackendSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogPtrOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogCustomVariableOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogCustomVariableArrayOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogRequestHeaderOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogRequestHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogResponseHeaderOutput{})
+	pulumi.RegisterOutputType(GatewayCustomLogResponseHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GatewayEventOutput{})
+	pulumi.RegisterOutputType(GatewayEventArrayOutput{})
+	pulumi.RegisterOutputType(GatewayLogSpecOutput{})
+	pulumi.RegisterOutputType(GatewayLogSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayMonitorSpecOutput{})
+	pulumi.RegisterOutputType(GatewayMonitorSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayNetworkSpecOutput{})
+	pulumi.RegisterOutputType(GatewayNetworkSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayNetworkSpecSubnetOutput{})
+	pulumi.RegisterOutputType(GatewayNetworkSpecSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GatewayResourceSpecOutput{})
+	pulumi.RegisterOutputType(GatewayResourceSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayResourceSpecNetworkTypeOutput{})
+	pulumi.RegisterOutputType(GatewayResourceSpecNetworkTypePtrOutput{})
 	pulumi.RegisterOutputType(GatewayServiceAuthSpecOutput{})
 	pulumi.RegisterOutputType(GatewayServiceAuthSpecPtrOutput{})
 	pulumi.RegisterOutputType(GatewayServiceCustomDomainOutput{})
@@ -6181,6 +9803,12 @@ func init() {
 	pulumi.RegisterOutputType(GatewayServiceDomainArrayOutput{})
 	pulumi.RegisterOutputType(GatewayServiceDomainSpecOutput{})
 	pulumi.RegisterOutputType(GatewayServiceDomainSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayTraceSpecOutput{})
+	pulumi.RegisterOutputType(GatewayTraceSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayTraceSpecApmTraceSpecOutput{})
+	pulumi.RegisterOutputType(GatewayTraceSpecApmTraceSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayTraceSpecTlsTraceSpecOutput{})
+	pulumi.RegisterOutputType(GatewayTraceSpecTlsTraceSpecPtrOutput{})
 	pulumi.RegisterOutputType(UpstreamBackendTargetOutput{})
 	pulumi.RegisterOutputType(UpstreamBackendTargetArrayOutput{})
 	pulumi.RegisterOutputType(UpstreamCircuitBreakingSettingsOutput{})
@@ -6223,12 +9851,32 @@ func init() {
 	pulumi.RegisterOutputType(UpstreamVersionDetailArrayOutput{})
 	pulumi.RegisterOutputType(UpstreamVersionDetailLabelOutput{})
 	pulumi.RegisterOutputType(UpstreamVersionDetailLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetGatewayBackendSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayCustomLogOutput{})
+	pulumi.RegisterOutputType(GetGatewayCustomLogCustomVariableOutput{})
+	pulumi.RegisterOutputType(GetGatewayCustomLogCustomVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetGatewayCustomLogRequestHeaderOutput{})
+	pulumi.RegisterOutputType(GetGatewayCustomLogRequestHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GetGatewayCustomLogResponseHeaderOutput{})
+	pulumi.RegisterOutputType(GetGatewayCustomLogResponseHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GetGatewayEventOutput{})
+	pulumi.RegisterOutputType(GetGatewayEventArrayOutput{})
+	pulumi.RegisterOutputType(GetGatewayLogSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayMonitorSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayNetworkSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayNetworkSpecSubnetOutput{})
+	pulumi.RegisterOutputType(GetGatewayNetworkSpecSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetGatewayResourceSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayResourceSpecNetworkTypeOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceAuthSpecOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceCustomDomainOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceCustomDomainArrayOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceDomainOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceDomainArrayOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceDomainSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayTraceSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayTraceSpecApmTraceSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayTraceSpecTlsTraceSpecOutput{})
 	pulumi.RegisterOutputType(GetUpstreamBackendTargetOutput{})
 	pulumi.RegisterOutputType(GetUpstreamBackendTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetUpstreamCircuitBreakingSettingsOutput{})

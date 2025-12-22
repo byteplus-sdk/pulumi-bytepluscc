@@ -6,9 +6,15 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .custom_domain import *
+from .gateway import *
 from .gateway_service import *
+from .get_custom_domain import *
+from .get_custom_domains import *
+from .get_gateway import *
 from .get_gateway_service import *
 from .get_gateway_services import *
+from .get_gateways import *
 from .get_upstream import *
 from .get_upstream_source import *
 from .get_upstream_sources import *

@@ -9,6 +9,7 @@ import com.byteplus.bytepluscc.vefaas.inputs.SandboxState;
 import com.byteplus.bytepluscc.vefaas.outputs.SandboxEnv;
 import com.byteplus.bytepluscc.vefaas.outputs.SandboxInstanceImageInfo;
 import com.byteplus.bytepluscc.vefaas.outputs.SandboxInstanceTosMountConfig;
+import com.byteplus.bytepluscc.vefaas.outputs.SandboxMetadata;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -210,19 +211,11 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
     public Output<Integer> memoryMb() {
         return this.memoryMb;
     }
-    /**
-     * 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
-     * 
-     */
-    @Export(name="metadata", refs={String.class}, tree="[0]")
-    private Output<String> metadata;
+    @Export(name="metadatas", refs={List.class,SandboxMetadata.class}, tree="[0,1]")
+    private Output<List<SandboxMetadata>> metadatas;
 
-    /**
-     * @return 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
-     * 
-     */
-    public Output<String> metadata() {
-        return this.metadata;
+    public Output<List<SandboxMetadata>> metadatas() {
+        return this.metadatas;
     }
     /**
      * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。

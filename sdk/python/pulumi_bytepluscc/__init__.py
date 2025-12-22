@@ -29,8 +29,14 @@ if typing.TYPE_CHECKING:
     cr = __cr
     import pulumi_bytepluscc.ecs as __ecs
     ecs = __ecs
+    import pulumi_bytepluscc.escloud as __escloud
+    escloud = __escloud
+    import pulumi_bytepluscc.hbase as __hbase
+    hbase = __hbase
     import pulumi_bytepluscc.iam as __iam
     iam = __iam
+    import pulumi_bytepluscc.kms as __kms
+    kms = __kms
     import pulumi_bytepluscc.natgateway as __natgateway
     natgateway = __natgateway
     import pulumi_bytepluscc.organization as __organization
@@ -55,7 +61,10 @@ else:
     config = _utilities.lazy_import('pulumi_bytepluscc.config')
     cr = _utilities.lazy_import('pulumi_bytepluscc.cr')
     ecs = _utilities.lazy_import('pulumi_bytepluscc.ecs')
+    escloud = _utilities.lazy_import('pulumi_bytepluscc.escloud')
+    hbase = _utilities.lazy_import('pulumi_bytepluscc.hbase')
     iam = _utilities.lazy_import('pulumi_bytepluscc.iam')
+    kms = _utilities.lazy_import('pulumi_bytepluscc.kms')
     natgateway = _utilities.lazy_import('pulumi_bytepluscc.natgateway')
     organization = _utilities.lazy_import('pulumi_bytepluscc.organization')
     rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
@@ -69,10 +78,34 @@ _utilities.register(
 [
  {
   "pkg": "bytepluscc",
+  "mod": "alb/certificate",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/certificate:Certificate": "Certificate"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "alb/listener",
   "fqn": "pulumi_bytepluscc.alb",
   "classes": {
    "bytepluscc:alb/listener:Listener": "Listener"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "apig/customDomain",
+  "fqn": "pulumi_bytepluscc.apig",
+  "classes": {
+   "bytepluscc:apig/customDomain:CustomDomain": "CustomDomain"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "apig/gateway",
+  "fqn": "pulumi_bytepluscc.apig",
+  "classes": {
+   "bytepluscc:apig/gateway:Gateway": "Gateway"
   }
  },
  {
@@ -161,6 +194,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.ecs",
   "classes": {
    "bytepluscc:ecs/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "escloud/instance",
+  "fqn": "pulumi_bytepluscc.escloud",
+  "classes": {
+   "bytepluscc:escloud/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "hbase/instance",
+  "fqn": "pulumi_bytepluscc.hbase",
+  "classes": {
+   "bytepluscc:hbase/instance:Instance": "Instance"
   }
  },
  {
