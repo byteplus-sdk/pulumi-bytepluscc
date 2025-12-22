@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.vefaas.outputs;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxEnv;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxInstanceImageInfo;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxInstanceTosMountConfig;
+import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxMetadata;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
@@ -90,7 +91,7 @@ public final class GetSandboxResult {
      * @return 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
      * 
      */
-    private String metadata;
+    private List<GetSandboxMetadata> metadatas;
     /**
      * @return 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
      * 
@@ -225,8 +226,8 @@ public final class GetSandboxResult {
      * @return 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
      * 
      */
-    public String metadata() {
-        return this.metadata;
+    public List<GetSandboxMetadata> metadatas() {
+        return this.metadatas;
     }
     /**
      * @return 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
@@ -294,7 +295,7 @@ public final class GetSandboxResult {
         private String instanceType;
         private Integer maxConcurrency;
         private Integer memoryMb;
-        private String metadata;
+        private List<GetSandboxMetadata> metadatas;
         private Boolean pending;
         private Integer requestTimeout;
         private Integer revisionNumber;
@@ -318,7 +319,7 @@ public final class GetSandboxResult {
     	      this.instanceType = defaults.instanceType;
     	      this.maxConcurrency = defaults.maxConcurrency;
     	      this.memoryMb = defaults.memoryMb;
-    	      this.metadata = defaults.metadata;
+    	      this.metadatas = defaults.metadatas;
     	      this.pending = defaults.pending;
     	      this.requestTimeout = defaults.requestTimeout;
     	      this.revisionNumber = defaults.revisionNumber;
@@ -443,12 +444,15 @@ public final class GetSandboxResult {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(String metadata) {
-            if (metadata == null) {
-              throw new MissingRequiredPropertyException("GetSandboxResult", "metadata");
+        public Builder metadatas(List<GetSandboxMetadata> metadatas) {
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetSandboxResult", "metadatas");
             }
-            this.metadata = metadata;
+            this.metadatas = metadatas;
             return this;
+        }
+        public Builder metadatas(GetSandboxMetadata... metadatas) {
+            return metadatas(List.of(metadatas));
         }
         @CustomType.Setter
         public Builder pending(Boolean pending) {
@@ -514,7 +518,7 @@ public final class GetSandboxResult {
             _resultValue.instanceType = instanceType;
             _resultValue.maxConcurrency = maxConcurrency;
             _resultValue.memoryMb = memoryMb;
-            _resultValue.metadata = metadata;
+            _resultValue.metadatas = metadatas;
             _resultValue.pending = pending;
             _resultValue.requestTimeout = requestTimeout;
             _resultValue.revisionNumber = revisionNumber;

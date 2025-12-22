@@ -16,6 +16,30 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'GatewayBackendSpecArgs',
+    'GatewayBackendSpecArgsDict',
+    'GatewayCustomLogArgs',
+    'GatewayCustomLogArgsDict',
+    'GatewayCustomLogCustomVariableArgs',
+    'GatewayCustomLogCustomVariableArgsDict',
+    'GatewayCustomLogRequestHeaderArgs',
+    'GatewayCustomLogRequestHeaderArgsDict',
+    'GatewayCustomLogResponseHeaderArgs',
+    'GatewayCustomLogResponseHeaderArgsDict',
+    'GatewayEventArgs',
+    'GatewayEventArgsDict',
+    'GatewayLogSpecArgs',
+    'GatewayLogSpecArgsDict',
+    'GatewayMonitorSpecArgs',
+    'GatewayMonitorSpecArgsDict',
+    'GatewayNetworkSpecArgs',
+    'GatewayNetworkSpecArgsDict',
+    'GatewayNetworkSpecSubnetArgs',
+    'GatewayNetworkSpecSubnetArgsDict',
+    'GatewayResourceSpecArgs',
+    'GatewayResourceSpecArgsDict',
+    'GatewayResourceSpecNetworkTypeArgs',
+    'GatewayResourceSpecNetworkTypeArgsDict',
     'GatewayServiceAuthSpecArgs',
     'GatewayServiceAuthSpecArgsDict',
     'GatewayServiceCustomDomainArgs',
@@ -24,6 +48,12 @@ __all__ = [
     'GatewayServiceDomainArgsDict',
     'GatewayServiceDomainSpecArgs',
     'GatewayServiceDomainSpecArgsDict',
+    'GatewayTraceSpecArgs',
+    'GatewayTraceSpecArgsDict',
+    'GatewayTraceSpecApmTraceSpecArgs',
+    'GatewayTraceSpecApmTraceSpecArgsDict',
+    'GatewayTraceSpecTlsTraceSpecArgs',
+    'GatewayTraceSpecTlsTraceSpecArgsDict',
     'UpstreamBackendTargetArgs',
     'UpstreamBackendTargetArgsDict',
     'UpstreamCircuitBreakingSettingsArgs',
@@ -69,6 +99,800 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class GatewayBackendSpecArgsDict(TypedDict):
+        is_vke_with_flannel_cni_supported: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否支持VKE Flannel CNI。
+        """
+        vke_pod_cidr: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VKE Pod CIDR。
+        """
+elif False:
+    GatewayBackendSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayBackendSpecArgs:
+    def __init__(__self__, *,
+                 is_vke_with_flannel_cni_supported: Optional[pulumi.Input[builtins.bool]] = None,
+                 vke_pod_cidr: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] is_vke_with_flannel_cni_supported: 是否支持VKE Flannel CNI。
+        :param pulumi.Input[builtins.str] vke_pod_cidr: VKE Pod CIDR。
+        """
+        if is_vke_with_flannel_cni_supported is not None:
+            pulumi.set(__self__, "is_vke_with_flannel_cni_supported", is_vke_with_flannel_cni_supported)
+        if vke_pod_cidr is not None:
+            pulumi.set(__self__, "vke_pod_cidr", vke_pod_cidr)
+
+    @property
+    @pulumi.getter(name="isVkeWithFlannelCniSupported")
+    def is_vke_with_flannel_cni_supported(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否支持VKE Flannel CNI。
+        """
+        return pulumi.get(self, "is_vke_with_flannel_cni_supported")
+
+    @is_vke_with_flannel_cni_supported.setter
+    def is_vke_with_flannel_cni_supported(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_vke_with_flannel_cni_supported", value)
+
+    @property
+    @pulumi.getter(name="vkePodCidr")
+    def vke_pod_cidr(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        VKE Pod CIDR。
+        """
+        return pulumi.get(self, "vke_pod_cidr")
+
+    @vke_pod_cidr.setter
+    def vke_pod_cidr(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vke_pod_cidr", value)
+
+
+if not MYPY:
+    class GatewayCustomLogArgsDict(TypedDict):
+        custom_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogCustomVariableArgsDict']]]]
+        request_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogRequestHeaderArgsDict']]]]
+        response_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogResponseHeaderArgsDict']]]]
+elif False:
+    GatewayCustomLogArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayCustomLogArgs:
+    def __init__(__self__, *,
+                 custom_variables: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogCustomVariableArgs']]]] = None,
+                 request_headers: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogRequestHeaderArgs']]]] = None,
+                 response_headers: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogResponseHeaderArgs']]]] = None):
+        if custom_variables is not None:
+            pulumi.set(__self__, "custom_variables", custom_variables)
+        if request_headers is not None:
+            pulumi.set(__self__, "request_headers", request_headers)
+        if response_headers is not None:
+            pulumi.set(__self__, "response_headers", response_headers)
+
+    @property
+    @pulumi.getter(name="customVariables")
+    def custom_variables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogCustomVariableArgs']]]]:
+        return pulumi.get(self, "custom_variables")
+
+    @custom_variables.setter
+    def custom_variables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogCustomVariableArgs']]]]):
+        pulumi.set(self, "custom_variables", value)
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogRequestHeaderArgs']]]]:
+        return pulumi.get(self, "request_headers")
+
+    @request_headers.setter
+    def request_headers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogRequestHeaderArgs']]]]):
+        pulumi.set(self, "request_headers", value)
+
+    @property
+    @pulumi.getter(name="responseHeaders")
+    def response_headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogResponseHeaderArgs']]]]:
+        return pulumi.get(self, "response_headers")
+
+    @response_headers.setter
+    def response_headers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayCustomLogResponseHeaderArgs']]]]):
+        pulumi.set(self, "response_headers", value)
+
+
+if not MYPY:
+    class GatewayCustomLogCustomVariableArgsDict(TypedDict):
+        aliases_in_log: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段别名。
+        """
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        请求头键。
+        """
+elif False:
+    GatewayCustomLogCustomVariableArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayCustomLogCustomVariableArgs:
+    def __init__(__self__, *,
+                 aliases_in_log: Optional[pulumi.Input[builtins.str]] = None,
+                 key: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] aliases_in_log: 字段别名。
+        :param pulumi.Input[builtins.str] key: 请求头键。
+        """
+        if aliases_in_log is not None:
+            pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @aliases_in_log.setter
+    def aliases_in_log(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "aliases_in_log", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+
+if not MYPY:
+    class GatewayCustomLogRequestHeaderArgsDict(TypedDict):
+        aliases_in_log: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段别名。
+        """
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        请求头键。
+        """
+elif False:
+    GatewayCustomLogRequestHeaderArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayCustomLogRequestHeaderArgs:
+    def __init__(__self__, *,
+                 aliases_in_log: Optional[pulumi.Input[builtins.str]] = None,
+                 key: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] aliases_in_log: 字段别名。
+        :param pulumi.Input[builtins.str] key: 请求头键。
+        """
+        if aliases_in_log is not None:
+            pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @aliases_in_log.setter
+    def aliases_in_log(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "aliases_in_log", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+
+if not MYPY:
+    class GatewayCustomLogResponseHeaderArgsDict(TypedDict):
+        aliases_in_log: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段别名。
+        """
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        请求头键。
+        """
+elif False:
+    GatewayCustomLogResponseHeaderArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayCustomLogResponseHeaderArgs:
+    def __init__(__self__, *,
+                 aliases_in_log: Optional[pulumi.Input[builtins.str]] = None,
+                 key: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] aliases_in_log: 字段别名。
+        :param pulumi.Input[builtins.str] key: 请求头键。
+        """
+        if aliases_in_log is not None:
+            pulumi.set(__self__, "aliases_in_log", aliases_in_log)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="aliasesInLog")
+    def aliases_in_log(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段别名。
+        """
+        return pulumi.get(self, "aliases_in_log")
+
+    @aliases_in_log.setter
+    def aliases_in_log(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "aliases_in_log", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        请求头键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+
+if not MYPY:
+    class GatewayEventArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[builtins.str]]
+        """
+        事件代码。
+        """
+        created_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        事件创建时间。
+        """
+        data: NotRequired[pulumi.Input[builtins.str]]
+        """
+        附带信息。
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        事件描述。
+        """
+elif False:
+    GatewayEventArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayEventArgs:
+    def __init__(__self__, *,
+                 code: Optional[pulumi.Input[builtins.str]] = None,
+                 created_time: Optional[pulumi.Input[builtins.str]] = None,
+                 data: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] code: 事件代码。
+        :param pulumi.Input[builtins.str] created_time: 事件创建时间。
+        :param pulumi.Input[builtins.str] data: 附带信息。
+        :param pulumi.Input[builtins.str] description: 事件描述。
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if created_time is not None:
+            pulumi.set(__self__, "created_time", created_time)
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def code(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        事件代码。
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "code", value)
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        事件创建时间。
+        """
+        return pulumi.get(self, "created_time")
+
+    @created_time.setter
+    def created_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "created_time", value)
+
+    @property
+    @pulumi.getter
+    def data(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        附带信息。
+        """
+        return pulumi.get(self, "data")
+
+    @data.setter
+    def data(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "data", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        事件描述。
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
+if not MYPY:
+    class GatewayLogSpecArgsDict(TypedDict):
+        enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否开启日志服务。
+        """
+        project_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        日志项目ID。
+        """
+        topic_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        日志主题ID。ProjectId 指定项目里面的日志主题。
+        """
+elif False:
+    GatewayLogSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayLogSpecArgs:
+    def __init__(__self__, *,
+                 enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 project_id: Optional[pulumi.Input[builtins.str]] = None,
+                 topic_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable: 是否开启日志服务。
+        :param pulumi.Input[builtins.str] project_id: 日志项目ID。
+        :param pulumi.Input[builtins.str] topic_id: 日志主题ID。ProjectId 指定项目里面的日志主题。
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否开启日志服务。
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable", value)
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        日志项目ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        日志主题ID。ProjectId 指定项目里面的日志主题。
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "topic_id", value)
+
+
+if not MYPY:
+    class GatewayMonitorSpecArgsDict(TypedDict):
+        enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        托管Prometheus（VMP）服务。
+        """
+        workspace_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Prometheus工作区ID。
+        """
+elif False:
+    GatewayMonitorSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayMonitorSpecArgs:
+    def __init__(__self__, *,
+                 enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 workspace_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable: 托管Prometheus（VMP）服务。
+        :param pulumi.Input[builtins.str] workspace_id: Prometheus工作区ID。
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if workspace_id is not None:
+            pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        托管Prometheus（VMP）服务。
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable", value)
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Prometheus工作区ID。
+        """
+        return pulumi.get(self, "workspace_id")
+
+    @workspace_id.setter
+    def workspace_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "workspace_id", value)
+
+
+if not MYPY:
+    class GatewayNetworkSpecArgsDict(TypedDict):
+        subnets: NotRequired[pulumi.Input[Sequence[pulumi.Input['GatewayNetworkSpecSubnetArgsDict']]]]
+        vpc_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VPC ID。
+        """
+        vpc_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        VPC名称。
+        """
+elif False:
+    GatewayNetworkSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayNetworkSpecArgs:
+    def __init__(__self__, *,
+                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayNetworkSpecSubnetArgs']]]] = None,
+                 vpc_id: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID。
+        :param pulumi.Input[builtins.str] vpc_name: VPC名称。
+        """
+        if subnets is not None:
+            pulumi.set(__self__, "subnets", subnets)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+        if vpc_name is not None:
+            pulumi.set(__self__, "vpc_name", vpc_name)
+
+    @property
+    @pulumi.getter
+    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayNetworkSpecSubnetArgs']]]]:
+        return pulumi.get(self, "subnets")
+
+    @subnets.setter
+    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayNetworkSpecSubnetArgs']]]]):
+        pulumi.set(self, "subnets", value)
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        VPC ID。
+        """
+        return pulumi.get(self, "vpc_id")
+
+    @vpc_id.setter
+    def vpc_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_id", value)
+
+    @property
+    @pulumi.getter(name="vpcName")
+    def vpc_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        VPC名称。
+        """
+        return pulumi.get(self, "vpc_name")
+
+    @vpc_name.setter
+    def vpc_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_name", value)
+
+
+if not MYPY:
+    class GatewayNetworkSpecSubnetArgsDict(TypedDict):
+        az: NotRequired[pulumi.Input[builtins.str]]
+        """
+        可用区。
+        """
+        subnet_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        子网ID。
+        """
+        subnet_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        子网名称。
+        """
+elif False:
+    GatewayNetworkSpecSubnetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayNetworkSpecSubnetArgs:
+    def __init__(__self__, *,
+                 az: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+                 subnet_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] az: 可用区。
+        :param pulumi.Input[builtins.str] subnet_id: 子网ID。
+        :param pulumi.Input[builtins.str] subnet_name: 子网名称。
+        """
+        if az is not None:
+            pulumi.set(__self__, "az", az)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if subnet_name is not None:
+            pulumi.set(__self__, "subnet_name", subnet_name)
+
+    @property
+    @pulumi.getter
+    def az(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        可用区。
+        """
+        return pulumi.get(self, "az")
+
+    @az.setter
+    def az(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "az", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        子网ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="subnetName")
+    def subnet_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        子网名称。
+        """
+        return pulumi.get(self, "subnet_name")
+
+    @subnet_name.setter
+    def subnet_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_name", value)
+
+
+if not MYPY:
+    class GatewayResourceSpecArgsDict(TypedDict):
+        clb_spec_code: NotRequired[pulumi.Input[builtins.str]]
+        """
+        CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        """
+        instance_spec_code: NotRequired[pulumi.Input[builtins.str]]
+        """
+        节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        """
+        network_type: NotRequired[pulumi.Input['GatewayResourceSpecNetworkTypeArgsDict']]
+        """
+        网络类型。默认值为开启公网，开启私网。
+        """
+        public_network_bandwidth: NotRequired[pulumi.Input[builtins.int]]
+        """
+        公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        """
+        public_network_billing_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        """
+        replicas: NotRequired[pulumi.Input[builtins.int]]
+        """
+        节点数量。取值限制为2~100。
+        """
+elif False:
+    GatewayResourceSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayResourceSpecArgs:
+    def __init__(__self__, *,
+                 clb_spec_code: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_spec_code: Optional[pulumi.Input[builtins.str]] = None,
+                 network_type: Optional[pulumi.Input['GatewayResourceSpecNetworkTypeArgs']] = None,
+                 public_network_bandwidth: Optional[pulumi.Input[builtins.int]] = None,
+                 public_network_billing_type: Optional[pulumi.Input[builtins.str]] = None,
+                 replicas: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] clb_spec_code: CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        :param pulumi.Input[builtins.str] instance_spec_code: 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        :param pulumi.Input['GatewayResourceSpecNetworkTypeArgs'] network_type: 网络类型。默认值为开启公网，开启私网。
+        :param pulumi.Input[builtins.int] public_network_bandwidth: 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        :param pulumi.Input[builtins.str] public_network_billing_type: 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        :param pulumi.Input[builtins.int] replicas: 节点数量。取值限制为2~100。
+        """
+        if clb_spec_code is not None:
+            pulumi.set(__self__, "clb_spec_code", clb_spec_code)
+        if instance_spec_code is not None:
+            pulumi.set(__self__, "instance_spec_code", instance_spec_code)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if public_network_bandwidth is not None:
+            pulumi.set(__self__, "public_network_bandwidth", public_network_bandwidth)
+        if public_network_billing_type is not None:
+            pulumi.set(__self__, "public_network_billing_type", public_network_billing_type)
+        if replicas is not None:
+            pulumi.set(__self__, "replicas", replicas)
+
+    @property
+    @pulumi.getter(name="clbSpecCode")
+    def clb_spec_code(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        """
+        return pulumi.get(self, "clb_spec_code")
+
+    @clb_spec_code.setter
+    def clb_spec_code(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "clb_spec_code", value)
+
+    @property
+    @pulumi.getter(name="instanceSpecCode")
+    def instance_spec_code(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        """
+        return pulumi.get(self, "instance_spec_code")
+
+    @instance_spec_code.setter
+    def instance_spec_code(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_spec_code", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input['GatewayResourceSpecNetworkTypeArgs']]:
+        """
+        网络类型。默认值为开启公网，开启私网。
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input['GatewayResourceSpecNetworkTypeArgs']]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter(name="publicNetworkBandwidth")
+    def public_network_bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        """
+        return pulumi.get(self, "public_network_bandwidth")
+
+    @public_network_bandwidth.setter
+    def public_network_bandwidth(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "public_network_bandwidth", value)
+
+    @property
+    @pulumi.getter(name="publicNetworkBillingType")
+    def public_network_billing_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        """
+        return pulumi.get(self, "public_network_billing_type")
+
+    @public_network_billing_type.setter
+    def public_network_billing_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "public_network_billing_type", value)
+
+    @property
+    @pulumi.getter
+    def replicas(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        节点数量。取值限制为2~100。
+        """
+        return pulumi.get(self, "replicas")
+
+    @replicas.setter
+    def replicas(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "replicas", value)
+
+
+if not MYPY:
+    class GatewayResourceSpecNetworkTypeArgsDict(TypedDict):
+        enable_private_network: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否启用私网。
+        """
+        enable_public_network: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否启用公网。
+        """
+elif False:
+    GatewayResourceSpecNetworkTypeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayResourceSpecNetworkTypeArgs:
+    def __init__(__self__, *,
+                 enable_private_network: Optional[pulumi.Input[builtins.bool]] = None,
+                 enable_public_network: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable_private_network: 是否启用私网。
+        :param pulumi.Input[builtins.bool] enable_public_network: 是否启用公网。
+        """
+        if enable_private_network is not None:
+            pulumi.set(__self__, "enable_private_network", enable_private_network)
+        if enable_public_network is not None:
+            pulumi.set(__self__, "enable_public_network", enable_public_network)
+
+    @property
+    @pulumi.getter(name="enablePrivateNetwork")
+    def enable_private_network(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否启用私网。
+        """
+        return pulumi.get(self, "enable_private_network")
+
+    @enable_private_network.setter
+    def enable_private_network(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_private_network", value)
+
+    @property
+    @pulumi.getter(name="enablePublicNetwork")
+    def enable_public_network(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否启用公网。
+        """
+        return pulumi.get(self, "enable_public_network")
+
+    @enable_public_network.setter
+    def enable_public_network(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_public_network", value)
+
 
 if not MYPY:
     class GatewayServiceAuthSpecArgsDict(TypedDict):
@@ -236,6 +1060,222 @@ class GatewayServiceDomainSpecArgs:
     @enable_public_resolution.setter
     def enable_public_resolution(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "enable_public_resolution", value)
+
+
+if not MYPY:
+    class GatewayTraceSpecArgsDict(TypedDict):
+        apm_trace_spec: NotRequired[pulumi.Input['GatewayTraceSpecApmTraceSpecArgsDict']]
+        """
+        应用性能监控全链路版链路追踪配置。
+        """
+        enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否启用链路追踪。
+        """
+        tls_trace_spec: NotRequired[pulumi.Input['GatewayTraceSpecTlsTraceSpecArgsDict']]
+        """
+        链路追踪配置信息。
+        """
+        trace_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        """
+elif False:
+    GatewayTraceSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayTraceSpecArgs:
+    def __init__(__self__, *,
+                 apm_trace_spec: Optional[pulumi.Input['GatewayTraceSpecApmTraceSpecArgs']] = None,
+                 enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 tls_trace_spec: Optional[pulumi.Input['GatewayTraceSpecTlsTraceSpecArgs']] = None,
+                 trace_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input['GatewayTraceSpecApmTraceSpecArgs'] apm_trace_spec: 应用性能监控全链路版链路追踪配置。
+        :param pulumi.Input[builtins.bool] enable: 是否启用链路追踪。
+        :param pulumi.Input['GatewayTraceSpecTlsTraceSpecArgs'] tls_trace_spec: 链路追踪配置信息。
+        :param pulumi.Input[builtins.str] trace_type: 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        """
+        if apm_trace_spec is not None:
+            pulumi.set(__self__, "apm_trace_spec", apm_trace_spec)
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if tls_trace_spec is not None:
+            pulumi.set(__self__, "tls_trace_spec", tls_trace_spec)
+        if trace_type is not None:
+            pulumi.set(__self__, "trace_type", trace_type)
+
+    @property
+    @pulumi.getter(name="apmTraceSpec")
+    def apm_trace_spec(self) -> Optional[pulumi.Input['GatewayTraceSpecApmTraceSpecArgs']]:
+        """
+        应用性能监控全链路版链路追踪配置。
+        """
+        return pulumi.get(self, "apm_trace_spec")
+
+    @apm_trace_spec.setter
+    def apm_trace_spec(self, value: Optional[pulumi.Input['GatewayTraceSpecApmTraceSpecArgs']]):
+        pulumi.set(self, "apm_trace_spec", value)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否启用链路追踪。
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable", value)
+
+    @property
+    @pulumi.getter(name="tlsTraceSpec")
+    def tls_trace_spec(self) -> Optional[pulumi.Input['GatewayTraceSpecTlsTraceSpecArgs']]:
+        """
+        链路追踪配置信息。
+        """
+        return pulumi.get(self, "tls_trace_spec")
+
+    @tls_trace_spec.setter
+    def tls_trace_spec(self, value: Optional[pulumi.Input['GatewayTraceSpecTlsTraceSpecArgs']]):
+        pulumi.set(self, "tls_trace_spec", value)
+
+    @property
+    @pulumi.getter(name="traceType")
+    def trace_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        """
+        return pulumi.get(self, "trace_type")
+
+    @trace_type.setter
+    def trace_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "trace_type", value)
+
+
+if not MYPY:
+    class GatewayTraceSpecApmTraceSpecArgsDict(TypedDict):
+        api_key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        API Key。
+        """
+elif False:
+    GatewayTraceSpecApmTraceSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayTraceSpecApmTraceSpecArgs:
+    def __init__(__self__, *,
+                 api_key: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] api_key: API Key。
+        """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+
+    @property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        API Key。
+        """
+        return pulumi.get(self, "api_key")
+
+    @api_key.setter
+    def api_key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "api_key", value)
+
+
+if not MYPY:
+    class GatewayTraceSpecTlsTraceSpecArgsDict(TypedDict):
+        iam_user_ak: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Access key。
+        """
+        iam_user_sk: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Secret key。
+        """
+        project_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        日志项目ID。
+        """
+        trace_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Trace ID。
+        """
+elif False:
+    GatewayTraceSpecTlsTraceSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayTraceSpecTlsTraceSpecArgs:
+    def __init__(__self__, *,
+                 iam_user_ak: Optional[pulumi.Input[builtins.str]] = None,
+                 iam_user_sk: Optional[pulumi.Input[builtins.str]] = None,
+                 project_id: Optional[pulumi.Input[builtins.str]] = None,
+                 trace_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] iam_user_ak: Access key。
+        :param pulumi.Input[builtins.str] iam_user_sk: Secret key。
+        :param pulumi.Input[builtins.str] project_id: 日志项目ID。
+        :param pulumi.Input[builtins.str] trace_id: Trace ID。
+        """
+        if iam_user_ak is not None:
+            pulumi.set(__self__, "iam_user_ak", iam_user_ak)
+        if iam_user_sk is not None:
+            pulumi.set(__self__, "iam_user_sk", iam_user_sk)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if trace_id is not None:
+            pulumi.set(__self__, "trace_id", trace_id)
+
+    @property
+    @pulumi.getter(name="iamUserAk")
+    def iam_user_ak(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Access key。
+        """
+        return pulumi.get(self, "iam_user_ak")
+
+    @iam_user_ak.setter
+    def iam_user_ak(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "iam_user_ak", value)
+
+    @property
+    @pulumi.getter(name="iamUserSk")
+    def iam_user_sk(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Secret key。
+        """
+        return pulumi.get(self, "iam_user_sk")
+
+    @iam_user_sk.setter
+    def iam_user_sk(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "iam_user_sk", value)
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        日志项目ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="traceId")
+    def trace_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Trace ID。
+        """
+        return pulumi.get(self, "trace_id")
+
+    @trace_id.setter
+    def trace_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "trace_id", value)
 
 
 if not MYPY:

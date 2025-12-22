@@ -22,11 +22,13 @@ __all__ = [
     'SandboxInstanceImageInfo',
     'SandboxInstanceTosMountConfig',
     'SandboxInstanceTosMountConfigTosMountPoint',
+    'SandboxMetadata',
     'GetKafkaTriggerKafkaCredentialsResult',
     'GetSandboxEnvResult',
     'GetSandboxInstanceImageInfoResult',
     'GetSandboxInstanceTosMountConfigResult',
     'GetSandboxInstanceTosMountConfigTosMountPointResult',
+    'GetSandboxMetadataResult',
 ]
 
 @pulumi.output_type
@@ -270,6 +272,37 @@ class SandboxInstanceTosMountConfigTosMountPoint(dict):
 
 
 @pulumi.output_type
+class SandboxMetadata(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetKafkaTriggerKafkaCredentialsResult(dict):
     def __init__(__self__, *,
                  mechanism: builtins.str,
@@ -445,5 +478,34 @@ class GetSandboxInstanceTosMountConfigTosMountPointResult(dict):
         沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
         """
         return pulumi.get(self, "local_mount_path")
+
+
+@pulumi.output_type
+class GetSandboxMetadataResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
 
 

@@ -748,6 +748,112 @@ func (o SandboxInstanceTosMountConfigTosMountPointArrayOutput) Index(i pulumi.In
 	}).(SandboxInstanceTosMountConfigTosMountPointOutput)
 }
 
+type SandboxMetadata struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// SandboxMetadataInput is an input type that accepts SandboxMetadataArgs and SandboxMetadataOutput values.
+// You can construct a concrete instance of `SandboxMetadataInput` via:
+//
+//	SandboxMetadataArgs{...}
+type SandboxMetadataInput interface {
+	pulumi.Input
+
+	ToSandboxMetadataOutput() SandboxMetadataOutput
+	ToSandboxMetadataOutputWithContext(context.Context) SandboxMetadataOutput
+}
+
+type SandboxMetadataArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SandboxMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SandboxMetadata)(nil)).Elem()
+}
+
+func (i SandboxMetadataArgs) ToSandboxMetadataOutput() SandboxMetadataOutput {
+	return i.ToSandboxMetadataOutputWithContext(context.Background())
+}
+
+func (i SandboxMetadataArgs) ToSandboxMetadataOutputWithContext(ctx context.Context) SandboxMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SandboxMetadataOutput)
+}
+
+// SandboxMetadataArrayInput is an input type that accepts SandboxMetadataArray and SandboxMetadataArrayOutput values.
+// You can construct a concrete instance of `SandboxMetadataArrayInput` via:
+//
+//	SandboxMetadataArray{ SandboxMetadataArgs{...} }
+type SandboxMetadataArrayInput interface {
+	pulumi.Input
+
+	ToSandboxMetadataArrayOutput() SandboxMetadataArrayOutput
+	ToSandboxMetadataArrayOutputWithContext(context.Context) SandboxMetadataArrayOutput
+}
+
+type SandboxMetadataArray []SandboxMetadataInput
+
+func (SandboxMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SandboxMetadata)(nil)).Elem()
+}
+
+func (i SandboxMetadataArray) ToSandboxMetadataArrayOutput() SandboxMetadataArrayOutput {
+	return i.ToSandboxMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i SandboxMetadataArray) ToSandboxMetadataArrayOutputWithContext(ctx context.Context) SandboxMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SandboxMetadataArrayOutput)
+}
+
+type SandboxMetadataOutput struct{ *pulumi.OutputState }
+
+func (SandboxMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SandboxMetadata)(nil)).Elem()
+}
+
+func (o SandboxMetadataOutput) ToSandboxMetadataOutput() SandboxMetadataOutput {
+	return o
+}
+
+func (o SandboxMetadataOutput) ToSandboxMetadataOutputWithContext(ctx context.Context) SandboxMetadataOutput {
+	return o
+}
+
+// 标签键。
+func (o SandboxMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SandboxMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o SandboxMetadataOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SandboxMetadata) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SandboxMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (SandboxMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SandboxMetadata)(nil)).Elem()
+}
+
+func (o SandboxMetadataArrayOutput) ToSandboxMetadataArrayOutput() SandboxMetadataArrayOutput {
+	return o
+}
+
+func (o SandboxMetadataArrayOutput) ToSandboxMetadataArrayOutputWithContext(ctx context.Context) SandboxMetadataArrayOutput {
+	return o
+}
+
+func (o SandboxMetadataArrayOutput) Index(i pulumi.IntInput) SandboxMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SandboxMetadata {
+		return vs[0].([]SandboxMetadata)[vs[1].(int)]
+	}).(SandboxMetadataOutput)
+}
+
 type GetKafkaTriggerKafkaCredentials struct {
 	// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
 	Mechanism string `pulumi:"mechanism"`
@@ -1172,6 +1278,112 @@ func (o GetSandboxInstanceTosMountConfigTosMountPointArrayOutput) Index(i pulumi
 	}).(GetSandboxInstanceTosMountConfigTosMountPointOutput)
 }
 
+type GetSandboxMetadata struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetSandboxMetadataInput is an input type that accepts GetSandboxMetadataArgs and GetSandboxMetadataOutput values.
+// You can construct a concrete instance of `GetSandboxMetadataInput` via:
+//
+//	GetSandboxMetadataArgs{...}
+type GetSandboxMetadataInput interface {
+	pulumi.Input
+
+	ToGetSandboxMetadataOutput() GetSandboxMetadataOutput
+	ToGetSandboxMetadataOutputWithContext(context.Context) GetSandboxMetadataOutput
+}
+
+type GetSandboxMetadataArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSandboxMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSandboxMetadata)(nil)).Elem()
+}
+
+func (i GetSandboxMetadataArgs) ToGetSandboxMetadataOutput() GetSandboxMetadataOutput {
+	return i.ToGetSandboxMetadataOutputWithContext(context.Background())
+}
+
+func (i GetSandboxMetadataArgs) ToGetSandboxMetadataOutputWithContext(ctx context.Context) GetSandboxMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSandboxMetadataOutput)
+}
+
+// GetSandboxMetadataArrayInput is an input type that accepts GetSandboxMetadataArray and GetSandboxMetadataArrayOutput values.
+// You can construct a concrete instance of `GetSandboxMetadataArrayInput` via:
+//
+//	GetSandboxMetadataArray{ GetSandboxMetadataArgs{...} }
+type GetSandboxMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetSandboxMetadataArrayOutput() GetSandboxMetadataArrayOutput
+	ToGetSandboxMetadataArrayOutputWithContext(context.Context) GetSandboxMetadataArrayOutput
+}
+
+type GetSandboxMetadataArray []GetSandboxMetadataInput
+
+func (GetSandboxMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSandboxMetadata)(nil)).Elem()
+}
+
+func (i GetSandboxMetadataArray) ToGetSandboxMetadataArrayOutput() GetSandboxMetadataArrayOutput {
+	return i.ToGetSandboxMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetSandboxMetadataArray) ToGetSandboxMetadataArrayOutputWithContext(ctx context.Context) GetSandboxMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSandboxMetadataArrayOutput)
+}
+
+type GetSandboxMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetSandboxMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSandboxMetadata)(nil)).Elem()
+}
+
+func (o GetSandboxMetadataOutput) ToGetSandboxMetadataOutput() GetSandboxMetadataOutput {
+	return o
+}
+
+func (o GetSandboxMetadataOutput) ToGetSandboxMetadataOutputWithContext(ctx context.Context) GetSandboxMetadataOutput {
+	return o
+}
+
+// 标签键。
+func (o GetSandboxMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSandboxMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetSandboxMetadataOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSandboxMetadata) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSandboxMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSandboxMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSandboxMetadata)(nil)).Elem()
+}
+
+func (o GetSandboxMetadataArrayOutput) ToGetSandboxMetadataArrayOutput() GetSandboxMetadataArrayOutput {
+	return o
+}
+
+func (o GetSandboxMetadataArrayOutput) ToGetSandboxMetadataArrayOutputWithContext(ctx context.Context) GetSandboxMetadataArrayOutput {
+	return o
+}
+
+func (o GetSandboxMetadataArrayOutput) Index(i pulumi.IntInput) GetSandboxMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSandboxMetadata {
+		return vs[0].([]GetSandboxMetadata)[vs[1].(int)]
+	}).(GetSandboxMetadataOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*KafkaTriggerKafkaCredentialsInput)(nil)).Elem(), KafkaTriggerKafkaCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KafkaTriggerKafkaCredentialsPtrInput)(nil)).Elem(), KafkaTriggerKafkaCredentialsArgs{})
@@ -1183,6 +1395,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SandboxInstanceTosMountConfigPtrInput)(nil)).Elem(), SandboxInstanceTosMountConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SandboxInstanceTosMountConfigTosMountPointInput)(nil)).Elem(), SandboxInstanceTosMountConfigTosMountPointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SandboxInstanceTosMountConfigTosMountPointArrayInput)(nil)).Elem(), SandboxInstanceTosMountConfigTosMountPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SandboxMetadataInput)(nil)).Elem(), SandboxMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SandboxMetadataArrayInput)(nil)).Elem(), SandboxMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKafkaTriggerKafkaCredentialsInput)(nil)).Elem(), GetKafkaTriggerKafkaCredentialsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxEnvInput)(nil)).Elem(), GetSandboxEnvArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxEnvArrayInput)(nil)).Elem(), GetSandboxEnvArray{})
@@ -1190,6 +1404,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxInstanceTosMountConfigInput)(nil)).Elem(), GetSandboxInstanceTosMountConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxInstanceTosMountConfigTosMountPointInput)(nil)).Elem(), GetSandboxInstanceTosMountConfigTosMountPointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxInstanceTosMountConfigTosMountPointArrayInput)(nil)).Elem(), GetSandboxInstanceTosMountConfigTosMountPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxMetadataInput)(nil)).Elem(), GetSandboxMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSandboxMetadataArrayInput)(nil)).Elem(), GetSandboxMetadataArray{})
 	pulumi.RegisterOutputType(KafkaTriggerKafkaCredentialsOutput{})
 	pulumi.RegisterOutputType(KafkaTriggerKafkaCredentialsPtrOutput{})
 	pulumi.RegisterOutputType(SandboxEnvOutput{})
@@ -1200,6 +1416,8 @@ func init() {
 	pulumi.RegisterOutputType(SandboxInstanceTosMountConfigPtrOutput{})
 	pulumi.RegisterOutputType(SandboxInstanceTosMountConfigTosMountPointOutput{})
 	pulumi.RegisterOutputType(SandboxInstanceTosMountConfigTosMountPointArrayOutput{})
+	pulumi.RegisterOutputType(SandboxMetadataOutput{})
+	pulumi.RegisterOutputType(SandboxMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetKafkaTriggerKafkaCredentialsOutput{})
 	pulumi.RegisterOutputType(GetSandboxEnvOutput{})
 	pulumi.RegisterOutputType(GetSandboxEnvArrayOutput{})
@@ -1207,4 +1425,6 @@ func init() {
 	pulumi.RegisterOutputType(GetSandboxInstanceTosMountConfigOutput{})
 	pulumi.RegisterOutputType(GetSandboxInstanceTosMountConfigTosMountPointOutput{})
 	pulumi.RegisterOutputType(GetSandboxInstanceTosMountConfigTosMountPointArrayOutput{})
+	pulumi.RegisterOutputType(GetSandboxMetadataOutput{})
+	pulumi.RegisterOutputType(GetSandboxMetadataArrayOutput{})
 }

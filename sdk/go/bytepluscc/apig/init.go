@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:apig/customDomain:CustomDomain":
+		r = &CustomDomain{}
+	case "bytepluscc:apig/gateway:Gateway":
+		r = &Gateway{}
 	case "bytepluscc:apig/gatewayService:GatewayService":
 		r = &GatewayService{}
 	case "bytepluscc:apig/upstream:Upstream":
@@ -40,6 +44,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"apig/customDomain",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"apig/gateway",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"apig/gatewayService",

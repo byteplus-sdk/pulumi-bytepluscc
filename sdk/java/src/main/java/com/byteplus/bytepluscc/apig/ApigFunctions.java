@@ -4,14 +4,22 @@
 package com.byteplus.bytepluscc.apig;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.apig.inputs.GetCustomDomainArgs;
+import com.byteplus.bytepluscc.apig.inputs.GetCustomDomainPlainArgs;
+import com.byteplus.bytepluscc.apig.inputs.GetGatewayArgs;
+import com.byteplus.bytepluscc.apig.inputs.GetGatewayPlainArgs;
 import com.byteplus.bytepluscc.apig.inputs.GetGatewayServiceArgs;
 import com.byteplus.bytepluscc.apig.inputs.GetGatewayServicePlainArgs;
 import com.byteplus.bytepluscc.apig.inputs.GetUpstreamArgs;
 import com.byteplus.bytepluscc.apig.inputs.GetUpstreamPlainArgs;
 import com.byteplus.bytepluscc.apig.inputs.GetUpstreamSourceArgs;
 import com.byteplus.bytepluscc.apig.inputs.GetUpstreamSourcePlainArgs;
+import com.byteplus.bytepluscc.apig.outputs.GetCustomDomainResult;
+import com.byteplus.bytepluscc.apig.outputs.GetCustomDomainsResult;
+import com.byteplus.bytepluscc.apig.outputs.GetGatewayResult;
 import com.byteplus.bytepluscc.apig.outputs.GetGatewayServiceResult;
 import com.byteplus.bytepluscc.apig.outputs.GetGatewayServicesResult;
+import com.byteplus.bytepluscc.apig.outputs.GetGatewaysResult;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamResult;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamSourceResult;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamSourcesResult;
@@ -25,6 +33,125 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class ApigFunctions {
+    /**
+     * Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static Output<GetCustomDomainResult> getCustomDomain(GetCustomDomainArgs args) {
+        return getCustomDomain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static CompletableFuture<GetCustomDomainResult> getCustomDomainPlain(GetCustomDomainPlainArgs args) {
+        return getCustomDomainPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static Output<GetCustomDomainResult> getCustomDomain(GetCustomDomainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getCustomDomain:getCustomDomain", TypeShape.of(GetCustomDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static Output<GetCustomDomainResult> getCustomDomain(GetCustomDomainArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getCustomDomain:getCustomDomain", TypeShape.of(GetCustomDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static CompletableFuture<GetCustomDomainResult> getCustomDomainPlain(GetCustomDomainPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:apig/getCustomDomain:getCustomDomain", TypeShape.of(GetCustomDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static Output<GetCustomDomainsResult> getCustomDomains() {
+        return getCustomDomains(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static CompletableFuture<GetCustomDomainsResult> getCustomDomainsPlain() {
+        return getCustomDomainsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static Output<GetCustomDomainsResult> getCustomDomains(InvokeArgs args) {
+        return getCustomDomains(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static CompletableFuture<GetCustomDomainsResult> getCustomDomainsPlain(InvokeArgs args) {
+        return getCustomDomainsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static Output<GetCustomDomainsResult> getCustomDomains(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getCustomDomains:getCustomDomains", TypeShape.of(GetCustomDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static Output<GetCustomDomainsResult> getCustomDomains(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getCustomDomains:getCustomDomains", TypeShape.of(GetCustomDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::CustomDomain
+     * 
+     */
+    public static CompletableFuture<GetCustomDomainsResult> getCustomDomainsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:apig/getCustomDomains:getCustomDomains", TypeShape.of(GetCustomDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static Output<GetGatewayResult> getGateway(GetGatewayArgs args) {
+        return getGateway(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static CompletableFuture<GetGatewayResult> getGatewayPlain(GetGatewayPlainArgs args) {
+        return getGatewayPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static Output<GetGatewayResult> getGateway(GetGatewayArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getGateway:getGateway", TypeShape.of(GetGatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static Output<GetGatewayResult> getGateway(GetGatewayArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getGateway:getGateway", TypeShape.of(GetGatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static CompletableFuture<GetGatewayResult> getGatewayPlain(GetGatewayPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:apig/getGateway:getGateway", TypeShape.of(GetGatewayResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::APIG::GatewayService
      * 
@@ -108,6 +235,55 @@ public final class ApigFunctions {
      */
     public static CompletableFuture<GetGatewayServicesResult> getGatewayServicesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:apig/getGatewayServices:getGatewayServices", TypeShape.of(GetGatewayServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static Output<GetGatewaysResult> getGateways() {
+        return getGateways(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static CompletableFuture<GetGatewaysResult> getGatewaysPlain() {
+        return getGatewaysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static Output<GetGatewaysResult> getGateways(InvokeArgs args) {
+        return getGateways(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(InvokeArgs args) {
+        return getGatewaysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static Output<GetGatewaysResult> getGateways(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getGateways:getGateways", TypeShape.of(GetGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static Output<GetGatewaysResult> getGateways(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:apig/getGateways:getGateways", TypeShape.of(GetGatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::APIG::Gateway
+     * 
+     */
+    public static CompletableFuture<GetGatewaysResult> getGatewaysPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:apig/getGateways:getGateways", TypeShape.of(GetGatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::APIG::Upstream

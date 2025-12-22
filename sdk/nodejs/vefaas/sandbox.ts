@@ -92,10 +92,7 @@ export class Sandbox extends pulumi.CustomResource {
      * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
      */
     public readonly memoryMb!: pulumi.Output<number>;
-    /**
-     * 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-     */
-    public readonly metadata!: pulumi.Output<string>;
+    public readonly metadatas!: pulumi.Output<outputs.vefaas.SandboxMetadata[]>;
     /**
      * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
      */
@@ -147,7 +144,7 @@ export class Sandbox extends pulumi.CustomResource {
             resourceInputs["instanceType"] = state ? state.instanceType : undefined;
             resourceInputs["maxConcurrency"] = state ? state.maxConcurrency : undefined;
             resourceInputs["memoryMb"] = state ? state.memoryMb : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
             resourceInputs["pending"] = state ? state.pending : undefined;
             resourceInputs["requestTimeout"] = state ? state.requestTimeout : undefined;
             resourceInputs["revisionNumber"] = state ? state.revisionNumber : undefined;
@@ -166,7 +163,7 @@ export class Sandbox extends pulumi.CustomResource {
             resourceInputs["instanceTosMountConfig"] = args ? args.instanceTosMountConfig : undefined;
             resourceInputs["maxConcurrency"] = args ? args.maxConcurrency : undefined;
             resourceInputs["memoryMb"] = args ? args.memoryMb : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["metadatas"] = args ? args.metadatas : undefined;
             resourceInputs["requestTimeout"] = args ? args.requestTimeout : undefined;
             resourceInputs["timeout"] = args ? args.timeout : undefined;
             resourceInputs["availabilityZone"] = undefined /*out*/;
@@ -238,10 +235,7 @@ export interface SandboxState {
      * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
      */
     memoryMb?: pulumi.Input<number>;
-    /**
-     * 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-     */
-    metadata?: pulumi.Input<string>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.vefaas.SandboxMetadata>[]>;
     /**
      * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
      */
@@ -297,10 +291,7 @@ export interface SandboxArgs {
      * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
      */
     memoryMb?: pulumi.Input<number>;
-    /**
-     * 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-     */
-    metadata?: pulumi.Input<string>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.vefaas.SandboxMetadata>[]>;
     /**
      * 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
      */

@@ -29,7 +29,7 @@ class SandboxArgs:
                  instance_tos_mount_config: Optional[pulumi.Input['SandboxInstanceTosMountConfigArgs']] = None,
                  max_concurrency: Optional[pulumi.Input[builtins.int]] = None,
                  memory_mb: Optional[pulumi.Input[builtins.int]] = None,
-                 metadata: Optional[pulumi.Input[builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SandboxMetadataArgs']]]] = None,
                  request_timeout: Optional[pulumi.Input[builtins.int]] = None,
                  timeout: Optional[pulumi.Input[builtins.int]] = None):
         """
@@ -40,7 +40,6 @@ class SandboxArgs:
         :param pulumi.Input['SandboxInstanceTosMountConfigArgs'] instance_tos_mount_config: 沙箱实例级别对象存储（TOS）存储挂载配置。
         :param pulumi.Input[builtins.int] max_concurrency: 单实例请求最大并发数：取值范围：10~1000,默认值：100。
         :param pulumi.Input[builtins.int] memory_mb: 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-        :param pulumi.Input[builtins.str] metadata: 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
         :param pulumi.Input[builtins.int] request_timeout: 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
         :param pulumi.Input[builtins.int] timeout: 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
         """
@@ -57,8 +56,8 @@ class SandboxArgs:
             pulumi.set(__self__, "max_concurrency", max_concurrency)
         if memory_mb is not None:
             pulumi.set(__self__, "memory_mb", memory_mb)
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
         if request_timeout is not None:
             pulumi.set(__self__, "request_timeout", request_timeout)
         if timeout is not None:
@@ -147,15 +146,12 @@ class SandboxArgs:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-        """
-        return pulumi.get(self, "metadata")
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SandboxMetadataArgs']]]]:
+        return pulumi.get(self, "metadatas")
 
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "metadata", value)
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SandboxMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
 
     @property
     @pulumi.getter(name="requestTimeout")
@@ -198,7 +194,7 @@ class _SandboxState:
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  max_concurrency: Optional[pulumi.Input[builtins.int]] = None,
                  memory_mb: Optional[pulumi.Input[builtins.int]] = None,
-                 metadata: Optional[pulumi.Input[builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SandboxMetadataArgs']]]] = None,
                  pending: Optional[pulumi.Input[builtins.bool]] = None,
                  request_timeout: Optional[pulumi.Input[builtins.int]] = None,
                  revision_number: Optional[pulumi.Input[builtins.int]] = None,
@@ -219,7 +215,6 @@ class _SandboxState:
         :param pulumi.Input[builtins.str] instance_type: 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
         :param pulumi.Input[builtins.int] max_concurrency: 单实例请求最大并发数：取值范围：10~1000,默认值：100。
         :param pulumi.Input[builtins.int] memory_mb: 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-        :param pulumi.Input[builtins.str] metadata: 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
         :param pulumi.Input[builtins.bool] pending: 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
         :param pulumi.Input[builtins.int] request_timeout: 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
         :param pulumi.Input[builtins.int] revision_number: 函数实例版本编号。
@@ -253,8 +248,8 @@ class _SandboxState:
             pulumi.set(__self__, "max_concurrency", max_concurrency)
         if memory_mb is not None:
             pulumi.set(__self__, "memory_mb", memory_mb)
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
         if pending is not None:
             pulumi.set(__self__, "pending", pending)
         if request_timeout is not None:
@@ -423,15 +418,12 @@ class _SandboxState:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-        """
-        return pulumi.get(self, "metadata")
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SandboxMetadataArgs']]]]:
+        return pulumi.get(self, "metadatas")
 
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "metadata", value)
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SandboxMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
 
     @property
     @pulumi.getter
@@ -519,7 +511,7 @@ class Sandbox(pulumi.CustomResource):
                  instance_tos_mount_config: Optional[pulumi.Input[Union['SandboxInstanceTosMountConfigArgs', 'SandboxInstanceTosMountConfigArgsDict']]] = None,
                  max_concurrency: Optional[pulumi.Input[builtins.int]] = None,
                  memory_mb: Optional[pulumi.Input[builtins.int]] = None,
-                 metadata: Optional[pulumi.Input[builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SandboxMetadataArgs', 'SandboxMetadataArgsDict']]]]] = None,
                  request_timeout: Optional[pulumi.Input[builtins.int]] = None,
                  timeout: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
@@ -540,7 +532,6 @@ class Sandbox(pulumi.CustomResource):
         :param pulumi.Input[Union['SandboxInstanceTosMountConfigArgs', 'SandboxInstanceTosMountConfigArgsDict']] instance_tos_mount_config: 沙箱实例级别对象存储（TOS）存储挂载配置。
         :param pulumi.Input[builtins.int] max_concurrency: 单实例请求最大并发数：取值范围：10~1000,默认值：100。
         :param pulumi.Input[builtins.int] memory_mb: 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-        :param pulumi.Input[builtins.str] metadata: 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
         :param pulumi.Input[builtins.int] request_timeout: 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
         :param pulumi.Input[builtins.int] timeout: 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
         """
@@ -581,7 +572,7 @@ class Sandbox(pulumi.CustomResource):
                  instance_tos_mount_config: Optional[pulumi.Input[Union['SandboxInstanceTosMountConfigArgs', 'SandboxInstanceTosMountConfigArgsDict']]] = None,
                  max_concurrency: Optional[pulumi.Input[builtins.int]] = None,
                  memory_mb: Optional[pulumi.Input[builtins.int]] = None,
-                 metadata: Optional[pulumi.Input[builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SandboxMetadataArgs', 'SandboxMetadataArgsDict']]]]] = None,
                  request_timeout: Optional[pulumi.Input[builtins.int]] = None,
                  timeout: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
@@ -602,7 +593,7 @@ class Sandbox(pulumi.CustomResource):
             __props__.__dict__["instance_tos_mount_config"] = instance_tos_mount_config
             __props__.__dict__["max_concurrency"] = max_concurrency
             __props__.__dict__["memory_mb"] = memory_mb
-            __props__.__dict__["metadata"] = metadata
+            __props__.__dict__["metadatas"] = metadatas
             __props__.__dict__["request_timeout"] = request_timeout
             __props__.__dict__["timeout"] = timeout
             __props__.__dict__["availability_zone"] = None
@@ -638,7 +629,7 @@ class Sandbox(pulumi.CustomResource):
             instance_type: Optional[pulumi.Input[builtins.str]] = None,
             max_concurrency: Optional[pulumi.Input[builtins.int]] = None,
             memory_mb: Optional[pulumi.Input[builtins.int]] = None,
-            metadata: Optional[pulumi.Input[builtins.str]] = None,
+            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SandboxMetadataArgs', 'SandboxMetadataArgsDict']]]]] = None,
             pending: Optional[pulumi.Input[builtins.bool]] = None,
             request_timeout: Optional[pulumi.Input[builtins.int]] = None,
             revision_number: Optional[pulumi.Input[builtins.int]] = None,
@@ -664,7 +655,6 @@ class Sandbox(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] instance_type: 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
         :param pulumi.Input[builtins.int] max_concurrency: 单实例请求最大并发数：取值范围：10~1000,默认值：100。
         :param pulumi.Input[builtins.int] memory_mb: 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
-        :param pulumi.Input[builtins.str] metadata: 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
         :param pulumi.Input[builtins.bool] pending: 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
         :param pulumi.Input[builtins.int] request_timeout: 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
         :param pulumi.Input[builtins.int] revision_number: 函数实例版本编号。
@@ -689,7 +679,7 @@ class Sandbox(pulumi.CustomResource):
         __props__.__dict__["instance_type"] = instance_type
         __props__.__dict__["max_concurrency"] = max_concurrency
         __props__.__dict__["memory_mb"] = memory_mb
-        __props__.__dict__["metadata"] = metadata
+        __props__.__dict__["metadatas"] = metadatas
         __props__.__dict__["pending"] = pending
         __props__.__dict__["request_timeout"] = request_timeout
         __props__.__dict__["revision_number"] = revision_number
@@ -801,11 +791,8 @@ class Sandbox(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output[builtins.str]:
-        """
-        沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
-        """
-        return pulumi.get(self, "metadata")
+    def metadatas(self) -> pulumi.Output[Sequence['outputs.SandboxMetadata']]:
+        return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter

@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.vefaas.inputs;
 import com.byteplus.bytepluscc.vefaas.inputs.SandboxEnvArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.SandboxInstanceImageInfoArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.SandboxInstanceTosMountConfigArgs;
+import com.byteplus.bytepluscc.vefaas.inputs.SandboxMetadataArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
@@ -208,19 +209,11 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.memoryMb);
     }
 
-    /**
-     * 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
-     * 
-     */
-    @Import(name="metadata")
-    private @Nullable Output<String> metadata;
+    @Import(name="metadatas")
+    private @Nullable Output<List<SandboxMetadataArgs>> metadatas;
 
-    /**
-     * @return 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
-     * 
-     */
-    public Optional<Output<String>> metadata() {
-        return Optional.ofNullable(this.metadata);
+    public Optional<Output<List<SandboxMetadataArgs>>> metadatas() {
+        return Optional.ofNullable(this.metadatas);
     }
 
     /**
@@ -329,7 +322,7 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         this.instanceType = $.instanceType;
         this.maxConcurrency = $.maxConcurrency;
         this.memoryMb = $.memoryMb;
-        this.metadata = $.metadata;
+        this.metadatas = $.metadatas;
         this.pending = $.pending;
         this.requestTimeout = $.requestTimeout;
         this.revisionNumber = $.revisionNumber;
@@ -621,25 +614,17 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
             return memoryMb(Output.of(memoryMb));
         }
 
-        /**
-         * @param metadata 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder metadata(@Nullable Output<String> metadata) {
-            $.metadata = metadata;
+        public Builder metadatas(@Nullable Output<List<SandboxMetadataArgs>> metadatas) {
+            $.metadatas = metadatas;
             return this;
         }
 
-        /**
-         * @param metadata 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder metadata(String metadata) {
-            return metadata(Output.of(metadata));
+        public Builder metadatas(List<SandboxMetadataArgs> metadatas) {
+            return metadatas(Output.of(metadatas));
+        }
+
+        public Builder metadatas(SandboxMetadataArgs... metadatas) {
+            return metadatas(List.of(metadatas));
         }
 
         /**

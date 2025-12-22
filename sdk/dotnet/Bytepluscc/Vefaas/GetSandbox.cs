@@ -123,7 +123,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         /// <summary>
         /// 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;"key":"value"&gt;。
         /// </summary>
-        public readonly string Metadata;
+        public readonly ImmutableArray<Outputs.GetSandboxMetadataResult> Metadatas;
         /// <summary>
         /// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
         /// </summary>
@@ -179,7 +179,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
 
             int memoryMb,
 
-            string metadata,
+            ImmutableArray<Outputs.GetSandboxMetadataResult> metadatas,
 
             bool pending,
 
@@ -207,7 +207,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
             InstanceType = instanceType;
             MaxConcurrency = maxConcurrency;
             MemoryMb = memoryMb;
-            Metadata = metadata;
+            Metadatas = metadatas;
             Pending = pending;
             RequestTimeout = requestTimeout;
             RevisionNumber = revisionNumber;
