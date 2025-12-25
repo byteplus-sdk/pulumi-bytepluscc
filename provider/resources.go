@@ -172,11 +172,6 @@ func Provider() tfbridge.ProviderInfo {
 	}
 	prov.MustComputeTokens(token.VolcengineToken("bytepluscc_", makeToken))
 	for k := range prov.Resources {
-		if k == "bytepluscc_kms_key" {
-			delete(prov.Resources, k)
-		}
-	}
-	for k := range prov.Resources {
 		// 获取第二跟斜杠后面的值
 		lastPart := extractAndConvertToCamelCase(k)
 		//如果当前类的字段存在同名，比如domain的class下有domain字段，则domain字段 + Value
@@ -187,13 +182,24 @@ func Provider() tfbridge.ProviderInfo {
 				},
 			}
 		}
-	}
-	prov.MustApplyAutoAliases()
-	for k := range prov.Resources {
-		if k == "bytepluscc_natgateway_nat_ip" {
-			delete(prov.Resources, k)
+		//如果当前类的字段存在同名，比如domain的class下有domain_state字段，则domain_state字段 + Value
+		if prov.P.ResourcesMap().Get(k).Schema().Get(lastPart+"_state") != nil {
+			prov.Resources[k].Fields = map[string]*info.Schema{
+				lastPart + "_state": {
+					CSharpName: toCamelCase(lastPart+"_state") + "Value",
+				},
+			}
+		}
+		//如果当前类的字段存在同名，比如domain的class下有domain_args字段，则domain_args字段 + Value
+		if prov.P.ResourcesMap().Get(k).Schema().Get(lastPart+"_args") != nil {
+			prov.Resources[k].Fields = map[string]*info.Schema{
+				lastPart + "_args": {
+					CSharpName: toCamelCase(lastPart+"_args") + "Value",
+				},
+			}
 		}
 	}
+	prov.MustApplyAutoAliases()
 	return prov
 }
 func extractAndConvertToCamelCase(input string) string {
