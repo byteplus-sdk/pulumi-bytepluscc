@@ -50,6 +50,11 @@ export const getSnatentry: typeof import("./getSnatentry").getSnatentry = null a
 export const getSnatentryOutput: typeof import("./getSnatentry").getSnatentryOutput = null as any;
 utilities.lazyLoad(exports, ["getSnatentry","getSnatentryOutput"], () => require("./getSnatentry"));
 
+export { NatIpArgs, NatIpState } from "./natIp";
+export type NatIp = import("./natIp").NatIp;
+export const NatIp: typeof import("./natIp").NatIp = null as any;
+utilities.lazyLoad(exports, ["NatIp"], () => require("./natIp"));
+
 export { NgwArgs, NgwState } from "./ngw";
 export type Ngw = import("./ngw").Ngw;
 export const Ngw: typeof import("./ngw").Ngw = null as any;
@@ -67,6 +72,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:natgateway/dnatentry:Dnatentry":
                 return new Dnatentry(name, <any>undefined, { urn })
+            case "bytepluscc:natgateway/natIp:NatIp":
+                return new NatIp(name, <any>undefined, { urn })
             case "bytepluscc:natgateway/ngw:Ngw":
                 return new Ngw(name, <any>undefined, { urn })
             case "bytepluscc:natgateway/snatentry:Snatentry":
@@ -77,5 +84,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "natgateway/dnatentry", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "natgateway/natIp", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "natgateway/ngw", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "natgateway/snatentry", _module)

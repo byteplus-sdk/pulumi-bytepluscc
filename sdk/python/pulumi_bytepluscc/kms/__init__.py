@@ -8,4 +8,6 @@ import typing
 # Export this package's modules as members:
 from .get_key import *
 from .get_keys import *
+from .key import *
+from ._inputs import *
 from . import outputs

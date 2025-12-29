@@ -15,6 +15,16 @@ export const getPolicy: typeof import("./getPolicy").getPolicy = null as any;
 export const getPolicyOutput: typeof import("./getPolicy").getPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getPolicy","getPolicyOutput"], () => require("./getPolicy"));
 
+export { GetProjectArgs, GetProjectResult, GetProjectOutputArgs } from "./getProject";
+export const getProject: typeof import("./getProject").getProject = null as any;
+export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
+utilities.lazyLoad(exports, ["getProject","getProjectOutput"], () => require("./getProject"));
+
+export { GetProjectsResult } from "./getProjects";
+export const getProjects: typeof import("./getProjects").getProjects = null as any;
+export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
+
 export { GetRoleArgs, GetRoleResult, GetRoleOutputArgs } from "./getRole";
 export const getRole: typeof import("./getRole").getRole = null as any;
 export const getRoleOutput: typeof import("./getRole").getRoleOutput = null as any;
@@ -40,6 +50,11 @@ export type Policy = import("./policy").Policy;
 export const Policy: typeof import("./policy").Policy = null as any;
 utilities.lazyLoad(exports, ["Policy"], () => require("./policy"));
 
+export { ProjectArgs, ProjectState } from "./project";
+export type Project = import("./project").Project;
+export const Project: typeof import("./project").Project = null as any;
+utilities.lazyLoad(exports, ["Project"], () => require("./project"));
+
 export { RoleArgs, RoleState } from "./role";
 export type Role = import("./role").Role;
 export const Role: typeof import("./role").Role = null as any;
@@ -57,6 +72,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:iam/policy:Policy":
                 return new Policy(name, <any>undefined, { urn })
+            case "bytepluscc:iam/project:Project":
+                return new Project(name, <any>undefined, { urn })
             case "bytepluscc:iam/role:Role":
                 return new Role(name, <any>undefined, { urn })
             case "bytepluscc:iam/user:User":
@@ -67,5 +84,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/policy", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "iam/project", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/role", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/user", _module)

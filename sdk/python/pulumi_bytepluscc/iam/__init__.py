@@ -8,11 +8,14 @@ import typing
 # Export this package's modules as members:
 from .get_policies import *
 from .get_policy import *
+from .get_project import *
+from .get_projects import *
 from .get_role import *
 from .get_roles import *
 from .get_user import *
 from .get_users import *
 from .policy import *
+from .project import *
 from .role import *
 from .user import *
 from ._inputs import *

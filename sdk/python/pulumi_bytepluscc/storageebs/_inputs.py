@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'SnapshotTagArgs',
+    'SnapshotTagArgsDict',
     'VolumeBaselinePerformanceArgs',
     'VolumeBaselinePerformanceArgsDict',
     'VolumeExtraPerformanceArgs',
@@ -27,6 +29,58 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class SnapshotTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+elif False:
+    SnapshotTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SnapshotTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        :param pulumi.Input[builtins.str] value: 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class VolumeBaselinePerformanceArgsDict(TypedDict):

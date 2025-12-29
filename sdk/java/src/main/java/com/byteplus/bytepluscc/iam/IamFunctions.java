@@ -6,12 +6,16 @@ package com.byteplus.bytepluscc.iam;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.iam.inputs.GetPolicyArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetPolicyPlainArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetProjectArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetProjectPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetRoleArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetRolePlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetUserArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetUserPlainArgs;
 import com.byteplus.bytepluscc.iam.outputs.GetPoliciesResult;
 import com.byteplus.bytepluscc.iam.outputs.GetPolicyResult;
+import com.byteplus.bytepluscc.iam.outputs.GetProjectResult;
+import com.byteplus.bytepluscc.iam.outputs.GetProjectsResult;
 import com.byteplus.bytepluscc.iam.outputs.GetRoleResult;
 import com.byteplus.bytepluscc.iam.outputs.GetRolesResult;
 import com.byteplus.bytepluscc.iam.outputs.GetUserResult;
@@ -108,6 +112,90 @@ public final class IamFunctions {
      */
     public static CompletableFuture<GetPolicyResult> getPolicyPlain(GetPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:iam/getPolicy:getPolicy", TypeShape.of(GetPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args) {
+        return getProject(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
+        return getProjectPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects() {
+        return getProjects(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static CompletableFuture<GetProjectsResult> getProjectsPlain() {
+        return getProjectsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(InvokeArgs args) {
+        return getProjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static CompletableFuture<GetProjectsResult> getProjectsPlain(InvokeArgs args) {
+        return getProjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::Project
+     * 
+     */
+    public static CompletableFuture<GetProjectsResult> getProjectsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::IAM::Role

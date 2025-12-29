@@ -1548,6 +1548,318 @@ export namespace autoscaling {
 
 }
 
+export namespace bmq {
+    export interface GetInstanceEndpoints {
+        /**
+         * 实例私网访问接入点响应数据。
+         */
+        overlay: outputs.bmq.GetInstanceEndpointsOverlay;
+        /**
+         * 实例公网访问接入点响应数据。
+         */
+        public: outputs.bmq.GetInstanceEndpointsPublic;
+    }
+
+    export interface GetInstanceEndpointsOverlay {
+        /**
+         * 域名映射地址。
+         */
+        address: string;
+        /**
+         * 实例绑定的EIP的ID。
+         */
+        eipId: string;
+        /**
+         * 私网Plain接入点。
+         */
+        plain: string;
+        /**
+         * 普通接入点端口。
+         */
+        plainPort: number;
+        /**
+         * 私网SASL认证接入点。
+         */
+        sasl: string;
+        /**
+         * 认证接入点端口。
+         */
+        saslPort: number;
+        /**
+         * 加密接入点。
+         */
+        ssl: string;
+        /**
+         * 加密接入点端口。
+         */
+        sslPort: number;
+        /**
+         * 接入点状态。
+         */
+        status: string;
+        /**
+         * 售卖区网络关联的VPC ID列表。
+         */
+        vpcIds: string[];
+    }
+
+    export interface GetInstanceEndpointsPublic {
+        /**
+         * 域名映射地址。
+         */
+        address: string;
+        /**
+         * 实例绑定的EIP的ID。
+         */
+        eipId: string;
+        /**
+         * 私网Plain接入点。
+         */
+        plain: string;
+        /**
+         * 普通接入点端口。
+         */
+        plainPort: number;
+        /**
+         * 私网SASL认证接入点。
+         */
+        sasl: string;
+        /**
+         * 认证接入点端口。
+         */
+        saslPort: number;
+        /**
+         * 加密接入点。
+         */
+        ssl: string;
+        /**
+         * 加密接入点端口。
+         */
+        sslPort: number;
+        /**
+         * 接入点状态。
+         */
+        status: string;
+        /**
+         * 售卖区网络关联的VPC ID列表。
+         */
+        vpcIds: string[];
+    }
+
+    export interface GetInstanceResourceTag {
+        /**
+         * 标签键值对。
+         */
+        tagKvs: outputs.bmq.GetInstanceResourceTagTagKv[];
+        /**
+         * 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         */
+        type: string;
+    }
+
+    export interface GetInstanceResourceTagTagKv {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         */
+        type: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetInstanceResources {
+        /**
+         * 资源统计响应数据。
+         */
+        storage: outputs.bmq.GetInstanceResourcesStorage;
+    }
+
+    export interface GetInstanceResourcesStorage {
+        /**
+         * 资源大小。
+         */
+        size: number;
+        /**
+         * 资源单位。
+         */
+        unit: string;
+    }
+
+    export interface GetInstanceTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         */
+        type: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface InstanceEndpoints {
+        /**
+         * 实例私网访问接入点响应数据。
+         */
+        overlay: outputs.bmq.InstanceEndpointsOverlay;
+        /**
+         * 实例公网访问接入点响应数据。
+         */
+        public: outputs.bmq.InstanceEndpointsPublic;
+    }
+
+    export interface InstanceEndpointsOverlay {
+        /**
+         * 域名映射地址。
+         */
+        address: string;
+        /**
+         * 实例绑定的EIP的ID。
+         */
+        eipId: string;
+        /**
+         * 私网Plain接入点。
+         */
+        plain: string;
+        /**
+         * 普通接入点端口。
+         */
+        plainPort: number;
+        /**
+         * 私网SASL认证接入点。
+         */
+        sasl: string;
+        /**
+         * 认证接入点端口。
+         */
+        saslPort: number;
+        /**
+         * 加密接入点。
+         */
+        ssl: string;
+        /**
+         * 加密接入点端口。
+         */
+        sslPort: number;
+        /**
+         * 接入点状态。
+         */
+        status: string;
+        /**
+         * 售卖区网络关联的VPC ID列表。
+         */
+        vpcIds: string[];
+    }
+
+    export interface InstanceEndpointsPublic {
+        /**
+         * 域名映射地址。
+         */
+        address: string;
+        /**
+         * 实例绑定的EIP的ID。
+         */
+        eipId: string;
+        /**
+         * 私网Plain接入点。
+         */
+        plain: string;
+        /**
+         * 普通接入点端口。
+         */
+        plainPort: number;
+        /**
+         * 私网SASL认证接入点。
+         */
+        sasl: string;
+        /**
+         * 认证接入点端口。
+         */
+        saslPort: number;
+        /**
+         * 加密接入点。
+         */
+        ssl: string;
+        /**
+         * 加密接入点端口。
+         */
+        sslPort: number;
+        /**
+         * 接入点状态。
+         */
+        status: string;
+        /**
+         * 售卖区网络关联的VPC ID列表。
+         */
+        vpcIds: string[];
+    }
+
+    export interface InstanceResourceTag {
+        tagKvs: outputs.bmq.InstanceResourceTagTagKv[];
+        /**
+         * 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         */
+        type: string;
+    }
+
+    export interface InstanceResourceTagTagKv {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         */
+        type: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface InstanceResources {
+        /**
+         * 资源统计响应数据。
+         */
+        storage: outputs.bmq.InstanceResourcesStorage;
+    }
+
+    export interface InstanceResourcesStorage {
+        /**
+         * 资源大小。
+         */
+        size: number;
+        /**
+         * 资源单位。
+         */
+        unit: string;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+         */
+        type: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+}
+
 export namespace cdn {
     export interface GetShareConfigAllowIpAccessRule {
         /**
@@ -1880,6 +2192,31 @@ export namespace config {
          * Use this to override the default STS service endpoint URL
          */
         sts?: string;
+    }
+
+}
+
+export namespace dns {
+    export interface GetZoneTag {
+        /**
+         * 标签的键。
+         */
+        key: string;
+        /**
+         * 标签的值。
+         */
+        value: string;
+    }
+
+    export interface ZoneTag {
+        /**
+         * 标签的键。
+         */
+        key: string;
+        /**
+         * 标签的值。
+         */
+        value: string;
     }
 
 }
@@ -3660,6 +3997,61 @@ export namespace escloud {
 
 }
 
+export namespace firewallcenter {
+    export interface DnsControlPolicyDomainListV1 {
+        /**
+         * 具体地址信息。
+         */
+        address: string;
+        /**
+         * 描述信息。
+         */
+        description: string;
+        /**
+         * 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+         */
+        type: string;
+    }
+
+    export interface DnsControlPolicySource {
+        /**
+         * VPC地域信息。
+         */
+        region: string;
+        /**
+         * VPC ID。
+         */
+        vpcId: string;
+    }
+
+    export interface GetDnsControlPolicyDomainListV1 {
+        /**
+         * 具体地址信息。
+         */
+        address: string;
+        /**
+         * 描述信息。
+         */
+        description: string;
+        /**
+         * 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+         */
+        type: string;
+    }
+
+    export interface GetDnsControlPolicySource {
+        /**
+         * VPC地域信息。
+         */
+        region: string;
+        /**
+         * VPC ID。
+         */
+        vpcId: string;
+    }
+
+}
+
 export namespace hbase {
     export interface GetInstanceEndpoint {
         /**
@@ -4239,6 +4631,53 @@ export namespace iam {
 
 }
 
+export namespace kafka {
+    export interface GetTopicAccessPolicy {
+        /**
+         * SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+         */
+        accessPolicy: string;
+        /**
+         * SASL 用户名称。
+         */
+        userName: string;
+    }
+
+    export interface GetTopicTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface TopicAccessPolicy {
+        /**
+         * SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+         */
+        accessPolicy: string;
+        /**
+         * SASL 用户名称。
+         */
+        userName: string;
+    }
+
+    export interface TopicTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+}
+
 export namespace kms {
     export interface GetKeyMultiRegionConfiguration {
         /**
@@ -4278,6 +4717,51 @@ export namespace kms {
     }
 
     export interface GetKeyTag {
+        /**
+         * KMS密钥的标签键
+         */
+        key: string;
+        /**
+         * KMS密钥的标签值
+         */
+        value: string;
+    }
+
+    export interface KeyMultiRegionConfiguration {
+        /**
+         * 多区域密钥的类型。
+         */
+        multiRegionKeyType: string;
+        /**
+         * 主多区域键的事务识别号和区域 ID。
+         */
+        primaryKey: outputs.kms.KeyMultiRegionConfigurationPrimaryKey;
+        replicaKeys: outputs.kms.KeyMultiRegionConfigurationReplicaKey[];
+    }
+
+    export interface KeyMultiRegionConfigurationPrimaryKey {
+        /**
+         * 多区域密钥的区域 ID。
+         */
+        region: string;
+        /**
+         * 多区域密钥的 TRN。
+         */
+        trn: string;
+    }
+
+    export interface KeyMultiRegionConfigurationReplicaKey {
+        /**
+         * 多区域密钥的区域 ID。
+         */
+        region: string;
+        /**
+         * 多区域密钥的转换。
+         */
+        trn: string;
+    }
+
+    export interface KeyTag {
         /**
          * KMS密钥的标签键
          */
@@ -4361,6 +4845,99 @@ export namespace natgateway {
         key: string;
         /**
          * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace privatelink {
+    export interface EndpointServicePrivateDnsNameConfiguration {
+        /**
+         * 域验证名称。
+         */
+        name: string;
+        /**
+         * 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+         */
+        status: string;
+        /**
+         * 域验证类型。TXT：TXT记录。
+         */
+        type: string;
+        /**
+         * 域验证值。
+         */
+        value: string;
+    }
+
+    export interface EndpointServiceResource {
+        /**
+         * 终端节点服务ID。
+         */
+        instanceId: string;
+        /**
+         * 待添加到终端节点服务中的服务资源ID。
+         */
+        resourceId: string;
+        /**
+         * 负载均衡提供服务的可用区。
+         */
+        zoneIds: string[];
+    }
+
+    export interface EndpointServiceTag {
+        /**
+         * 终端节点服务标签的标签键。
+         */
+        key: string;
+        /**
+         * 终端节点服务标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface GetEndpointServicePrivateDnsNameConfiguration {
+        /**
+         * 域验证名称。
+         */
+        name: string;
+        /**
+         * 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+         */
+        status: string;
+        /**
+         * 域验证类型。TXT：TXT记录。
+         */
+        type: string;
+        /**
+         * 域验证值。
+         */
+        value: string;
+    }
+
+    export interface GetEndpointServiceResource {
+        /**
+         * 终端节点服务ID。
+         */
+        instanceId: string;
+        /**
+         * 待添加到终端节点服务中的服务资源ID。
+         */
+        resourceId: string;
+        /**
+         * 负载均衡提供服务的可用区。
+         */
+        zoneIds: string[];
+    }
+
+    export interface GetEndpointServiceTag {
+        /**
+         * 终端节点服务标签的标签键。
+         */
+        key: string;
+        /**
+         * 终端节点服务标签的标签值。
          */
         value: string;
     }
@@ -5099,7 +5676,198 @@ export namespace rdsmysql {
 
 }
 
+export namespace redis {
+    export interface GetInstanceCapacity {
+        /**
+         * 当前实例的内存总容量。单位：MiB。
+         */
+        total: number;
+        /**
+         * 当前实例已用容量。单位：MiB。
+         */
+        used: number;
+    }
+
+    export interface GetInstanceConfigureNode {
+        /**
+         * 每个节点所属的可用区。
+         */
+        az: string;
+    }
+
+    export interface GetInstanceInstanceShard {
+        /**
+         * 分片中的节点数量
+         */
+        nodeNumber: number;
+        /**
+         * 分片中所有 Server 节点的详情列表。
+         */
+        serverNodes: outputs.redis.GetInstanceInstanceShardServerNode[];
+        /**
+         * 分片 ID。
+         */
+        shardId: string;
+    }
+
+    export interface GetInstanceInstanceShardServerNode {
+        /**
+         * 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+         */
+        currentRole: string;
+        /**
+         * 节点 ID。
+         */
+        nodeId: string;
+        /**
+         * 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+         */
+        status: string;
+        /**
+         * 节点所在的可用区。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetInstanceVisitAddr {
+        /**
+         * 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+         */
+        addrType: string;
+        /**
+         * IP 地址或者域名。
+         */
+        address: string;
+        /**
+         * 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+         */
+        eipId: string;
+        /**
+         * 端口号。
+         */
+        port: string;
+        /**
+         * 连接地址所对应的 IPv6 地址。
+         */
+        viPv6: string;
+        /**
+         * 连接地址所对应的 IPv4 地址。
+         */
+        vip: string;
+    }
+
+    export interface InstanceCapacity {
+        /**
+         * 当前实例的内存总容量。单位：MiB。
+         */
+        total: number;
+        /**
+         * 当前实例已用容量。单位：MiB。
+         */
+        used: number;
+    }
+
+    export interface InstanceConfigureNode {
+        /**
+         * 每个节点所属的可用区。
+         */
+        az: string;
+    }
+
+    export interface InstanceInstanceShard {
+        /**
+         * 分片中的节点数量
+         */
+        nodeNumber: number;
+        serverNodes: outputs.redis.InstanceInstanceShardServerNode[];
+        /**
+         * 分片 ID。
+         */
+        shardId: string;
+    }
+
+    export interface InstanceInstanceShardServerNode {
+        /**
+         * 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+         */
+        currentRole: string;
+        /**
+         * 节点 ID。
+         */
+        nodeId: string;
+        /**
+         * 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+         */
+        status: string;
+        /**
+         * 节点所在的可用区。
+         */
+        zoneId: string;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface InstanceVisitAddr {
+        /**
+         * 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+         */
+        addrType: string;
+        /**
+         * IP 地址或者域名。
+         */
+        address: string;
+        /**
+         * 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+         */
+        eipId: string;
+        /**
+         * 端口号。
+         */
+        port: string;
+        /**
+         * 连接地址所对应的 IPv6 地址。
+         */
+        viPv6: string;
+        /**
+         * 连接地址所对应的 IPv4 地址。
+         */
+        vip: string;
+    }
+
+}
+
 export namespace storageebs {
+    export interface GetSnapshotTag {
+        /**
+         * 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         */
+        key: string;
+        /**
+         * 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         */
+        value: string;
+    }
+
     export interface GetVolumeBaselinePerformance {
         /**
          * 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
@@ -5146,6 +5914,17 @@ export namespace storageebs {
          * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
          */
         throughput: number;
+    }
+
+    export interface SnapshotTag {
+        /**
+         * 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         */
+        key: string;
+        /**
+         * 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         */
+        value: string;
     }
 
     export interface VolumeBaselinePerformance {
@@ -5354,7 +6133,69 @@ export namespace vefaas {
 
 }
 
+export namespace vepfs {
+    export interface GetInstanceCapacityInfo {
+        /**
+         * 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+         */
+        totalTiB: number;
+        /**
+         * 已使用容量（GiB）。
+         */
+        usedGiB: number;
+    }
+
+    export interface GetInstanceTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 标签类型，说明如下：Custom: 用户自定义标签。System: 系统标签。
+         */
+        type: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface InstanceCapacityInfo {
+        /**
+         * 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+         */
+        totalTiB: number;
+        /**
+         * 已使用容量（GiB）。
+         */
+        usedGiB: number;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+}
+
 export namespace vke {
+    export interface AddonStatus {
+        conditions: outputs.vke.AddonStatusCondition[];
+        /**
+         * 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+         */
+        phase: string;
+    }
+
+    export interface AddonStatusCondition {
+    }
+
     export interface ClusterClusterConfig {
         /**
          * 集群 API Server 访问的 IPv4 地址信息。
@@ -5570,6 +6411,24 @@ export namespace vke {
          * 标签值。
          */
         value: string;
+    }
+
+    export interface GetAddonStatus {
+        /**
+         * 组件当前主状态下的状态条件。
+         */
+        conditions: outputs.vke.GetAddonStatusCondition[];
+        /**
+         * 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+         */
+        phase: string;
+    }
+
+    export interface GetAddonStatusCondition {
+        /**
+         * 组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+         */
+        type: string;
     }
 
     export interface GetClusterClusterConfig {
@@ -5802,9 +6661,1219 @@ export namespace vke {
         value: string;
     }
 
+    export interface GetNodePoolAutoScaling {
+        /**
+         * 配置节点池的期望节点数。
+         */
+        desiredReplicas: number;
+        /**
+         * 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+         */
+        enabled: boolean;
+        /**
+         * 配置节点池的最大节点数。
+         */
+        maxReplicas: number;
+        /**
+         * 配置节点池的最小节点数。
+         */
+        minReplicas: number;
+        /**
+         * 优先级。
+         */
+        priority: number;
+        /**
+         * 伸缩组ID。
+         */
+        scalingGroupId: string;
+        /**
+         * 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+         */
+        subnetPolicy: string;
+    }
+
+    export interface GetNodePoolKubernetesConfig {
+        /**
+         * 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+         */
+        autoSyncDisabled: boolean;
+        /**
+         * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+         */
+        cordon: boolean;
+        /**
+         * Kubelet 组件的相关配置
+         */
+        kubeletConfig: outputs.vke.GetNodePoolKubernetesConfigKubeletConfig;
+        /**
+         * 节点池/节点的 Kubernetes 标签（Labels）信息。
+         */
+        labels: outputs.vke.GetNodePoolKubernetesConfigLabel[];
+        /**
+         * Kubernetes 中节点对象的元数据名称前缀。
+         */
+        namePrefix: string;
+        /**
+         * Kubernetes 中节点对象的元数据名称后缀。
+         */
+        nameSuffix: string;
+        /**
+         * Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+         */
+        nameUseHostname: boolean;
+        /**
+         * 节点池/节点的 Kubernetes 污点（Taints）信息。
+         */
+        taints: outputs.vke.GetNodePoolKubernetesConfigTaint[];
+    }
+
+    export interface GetNodePoolKubernetesConfigKubeletConfig {
+        /**
+         * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+         */
+        cpuManagerPolicy: string;
+        /**
+         * 特性门控。
+         */
+        featureGates: outputs.vke.GetNodePoolKubernetesConfigKubeletConfigFeatureGates;
+        /**
+         * 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+         */
+        kubeApiBurst: number;
+        /**
+         * 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+         */
+        kubeApiQps: number;
+        /**
+         * 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+         */
+        kubeReserveds: outputs.vke.GetNodePoolKubernetesConfigKubeletConfigKubeReserved[];
+        /**
+         * 配置 kubelet 支持的最大 Pod 数量
+         */
+        maxPods: number;
+        /**
+         * 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+         */
+        registryBurst: number;
+        /**
+         * 可用来限制镜像仓库的 QPS 上限
+         */
+        registryPullQps: number;
+        /**
+         * 逐一拉取镜像。
+         */
+        serializeImagePulls: boolean;
+        /**
+         * 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+         */
+        systemReserveds: outputs.vke.GetNodePoolKubernetesConfigKubeletConfigSystemReserved[];
+        /**
+         * 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+         */
+        topologyManagerPolicy: string;
+        /**
+         * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+         */
+        topologyManagerScope: string;
+    }
+
+    export interface GetNodePoolKubernetesConfigKubeletConfigFeatureGates {
+        /**
+         * 是否开启特性开关本地垂直Pod伸缩
+         */
+        inPlacePodVerticalScaling: boolean;
+        /**
+         * 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+         */
+        qoSResourceManager: boolean;
+    }
+
+    export interface GetNodePoolKubernetesConfigKubeletConfigKubeReserved {
+        /**
+         * 资源名称，取值为 cpu 或 memory。
+         */
+        name: string;
+        /**
+         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+         */
+        quantity: string;
+    }
+
+    export interface GetNodePoolKubernetesConfigKubeletConfigSystemReserved {
+        /**
+         * 资源名称，取值为 cpu 或 memory。
+         */
+        name: string;
+        /**
+         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+         */
+        quantity: string;
+    }
+
+    export interface GetNodePoolKubernetesConfigLabel {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetNodePoolKubernetesConfigTaint {
+        /**
+         * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         */
+        effect: string;
+        /**
+         * 污点键。
+         */
+        key: string;
+        /**
+         * 污点值。
+         */
+        value: string;
+    }
+
+    export interface GetNodePoolManagement {
+        /**
+         * 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+         */
+        enabled: boolean;
+        /**
+         * 检查自愈配置。
+         */
+        remedyConfig: outputs.vke.GetNodePoolManagementRemedyConfig;
+    }
+
+    export interface GetNodePoolManagementRemedyConfig {
+        /**
+         * 是否开启检查自愈。
+         */
+        enabled: boolean;
+        /**
+         * 检查自愈规则ID。
+         */
+        remedyId: string;
+    }
+
+    export interface GetNodePoolNodeConfig {
+        /**
+         * 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+         */
+        additionalContainerStorageEnabled: boolean;
+        /**
+         * 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+         */
+        autoRenew: boolean;
+        /**
+         * 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+         */
+        autoRenewPeriod: number;
+        /**
+         * 节点的数据盘配置。
+         */
+        dataVolumes: outputs.vke.GetNodePoolNodeConfigDataVolume[];
+        /**
+         * 实例在部署集中的分组号，0表示未设置
+         */
+        deploymentSetGroupNumber: number;
+        /**
+         * 实例需要加入的部署集ID
+         */
+        deploymentSetId: string;
+        /**
+         * 节点对应的主机名称。
+         */
+        hostname: string;
+        /**
+         * 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         */
+        hpcClusterIds: string[];
+        /**
+         * 节点对应云服务器所使用的镜像 ID。
+         */
+        imageId: string;
+        /**
+         * 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+         */
+        initializeScript: string;
+        /**
+         * 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+         */
+        instanceChargeType: string;
+        /**
+         * 节点（实例）名称。
+         */
+        instanceName: string;
+        /**
+         * 节点对应的云服务器实例规格 ID 列表。
+         */
+        instanceTypeIds: string[];
+        /**
+         * 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+         */
+        instancesDistribution: outputs.vke.GetNodePoolNodeConfigInstancesDistribution;
+        /**
+         * 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+         */
+        namePrefix: string;
+        /**
+         * 节点间的网络通讯模式。
+         */
+        networkTrafficMode: string;
+        /**
+         * 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+         */
+        period: number;
+        /**
+         * 部署节点前执行脚本。
+         */
+        preScript: string;
+        /**
+         * ECS所属项目，一个ECS只能归属于一个项目。
+         */
+        projectName: string;
+        /**
+         * 节点自动开启公网访问的配置信息
+         */
+        publicAccessConfig: outputs.vke.GetNodePoolNodeConfigPublicAccessConfig;
+        /**
+         * 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+         */
+        publicAccessEnabled: boolean;
+        /**
+         * 节点安全配置。
+         */
+        security: outputs.vke.GetNodePoolNodeConfigSecurity;
+        /**
+         * 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+         */
+        spotStrategy: string;
+        /**
+         * 节点网络所属的子网 ID 列表。
+         */
+        subnetIds: string[];
+        /**
+         * 节点的系统盘配置。
+         */
+        systemVolume: outputs.vke.GetNodePoolNodeConfigSystemVolume;
+        /**
+         * 节点池配置的标签信息
+         */
+        tags: outputs.vke.GetNodePoolNodeConfigTag[];
+    }
+
+    export interface GetNodePoolNodeConfigDataVolume {
+        /**
+         * 文件系统，取值：  - Ext4 (默认值)  - Xfs
+         */
+        fileSystem: string;
+        /**
+         * 磁盘格式化后的目标挂载目录。
+         */
+        mountPoint: string;
+        /**
+         * 放置组Id
+         */
+        placementGroupId: string;
+        /**
+         * 磁盘容量，单位 GiB。
+         */
+        size: number;
+        /**
+         * 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+         */
+        snapshotId: string;
+        /**
+         * 放置子组
+         */
+        subgroupNumber: number;
+        /**
+         * 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         */
+        type: string;
+    }
+
+    export interface GetNodePoolNodeConfigInstancesDistribution {
+        /**
+         * 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+         */
+        capacityRebalance: boolean;
+        /**
+         * 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+         */
+        compensateWithOnDemand: boolean;
+        /**
+         * 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+         */
+        onDemandBaseCapacity: number;
+        /**
+         * 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+         */
+        onDemandPercentageAboveBaseCapacity: number;
+    }
+
+    export interface GetNodePoolNodeConfigPublicAccessConfig {
+        /**
+         * 公网 IP 的带宽峰值，单位：Mbps。
+         */
+        bandwidth: number;
+        /**
+         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         */
+        billingType: number;
+        /**
+         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         */
+        isp: string;
+    }
+
+    export interface GetNodePoolNodeConfigSecurity {
+        /**
+         * 节点的访问方式配置。
+         */
+        login: outputs.vke.GetNodePoolNodeConfigSecurityLogin;
+        /**
+         * 节点网络所在的安全组 ID 列表。
+         */
+        securityGroupIds: string[];
+        /**
+         * 节点的安全策略，参数值说明：Hids：主机安全加固。
+         */
+        securityStrategies: string[];
+        /**
+         * 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+         */
+        securityStrategyEnabled: boolean;
+    }
+
+    export interface GetNodePoolNodeConfigSecurityLogin {
+        /**
+         * Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+         */
+        password: string;
+        /**
+         * SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+         */
+        sshKeyPairName: string;
+        /**
+         * 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+         */
+        type: string;
+    }
+
+    export interface GetNodePoolNodeConfigSystemVolume {
+        /**
+         * 放置组Id
+         */
+        placementGroupId: string;
+        /**
+         * 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+         */
+        size: number;
+        /**
+         * 放置子组
+         */
+        subgroupNumber: number;
+        /**
+         * 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         */
+        type: string;
+    }
+
+    export interface GetNodePoolNodeConfigTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetNodePoolNodeStatistics {
+        /**
+         * Phase=Creating的节点总数量。
+         */
+        creatingCount: number;
+        /**
+         * Phase=Deleting的节点总数量。
+         */
+        deletingCount: number;
+        /**
+         * Phase=Failed的节点总数量。
+         */
+        failedCount: number;
+        /**
+         * Phase=Running的节点总数量。
+         */
+        runningCount: number;
+        /**
+         * 节点池中的节点总数量。
+         */
+        totalCount: number;
+        /**
+         * Phase=Updating的节点总数量。
+         */
+        updatingCount: number;
+    }
+
+    export interface GetNodePoolStatus {
+        /**
+         * 节点池当前主状态下的状态条件，即进入该主状态的原因。
+         */
+        conditions: outputs.vke.GetNodePoolStatusCondition[];
+        /**
+         * 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+         */
+        phase: string;
+    }
+
+    export interface GetNodePoolStatusCondition {
+        /**
+         * 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+         */
+        type: string;
+    }
+
+    export interface GetNodePoolTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface NodePoolAutoScaling {
+        /**
+         * 配置节点池的期望节点数。
+         */
+        desiredReplicas: number;
+        /**
+         * 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+         */
+        enabled: boolean;
+        /**
+         * 配置节点池的最大节点数。
+         */
+        maxReplicas: number;
+        /**
+         * 配置节点池的最小节点数。
+         */
+        minReplicas: number;
+        /**
+         * 优先级。
+         */
+        priority: number;
+        /**
+         * 伸缩组ID。
+         */
+        scalingGroupId: string;
+        /**
+         * 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+         */
+        subnetPolicy: string;
+    }
+
+    export interface NodePoolKubernetesConfig {
+        /**
+         * 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+         */
+        autoSyncDisabled: boolean;
+        /**
+         * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+         */
+        cordon: boolean;
+        /**
+         * Kubelet 组件的相关配置
+         */
+        kubeletConfig: outputs.vke.NodePoolKubernetesConfigKubeletConfig;
+        labels: outputs.vke.NodePoolKubernetesConfigLabel[];
+        /**
+         * Kubernetes 中节点对象的元数据名称前缀。
+         */
+        namePrefix: string;
+        /**
+         * Kubernetes 中节点对象的元数据名称后缀。
+         */
+        nameSuffix: string;
+        /**
+         * Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+         */
+        nameUseHostname: boolean;
+        taints: outputs.vke.NodePoolKubernetesConfigTaint[];
+    }
+
+    export interface NodePoolKubernetesConfigKubeletConfig {
+        /**
+         * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+         */
+        cpuManagerPolicy: string;
+        /**
+         * 特性门控。
+         */
+        featureGates: outputs.vke.NodePoolKubernetesConfigKubeletConfigFeatureGates;
+        /**
+         * 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+         */
+        kubeApiBurst: number;
+        /**
+         * 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+         */
+        kubeApiQps: number;
+        kubeReserveds: outputs.vke.NodePoolKubernetesConfigKubeletConfigKubeReserved[];
+        /**
+         * 配置 kubelet 支持的最大 Pod 数量
+         */
+        maxPods: number;
+        /**
+         * 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+         */
+        registryBurst: number;
+        /**
+         * 可用来限制镜像仓库的 QPS 上限
+         */
+        registryPullQps: number;
+        /**
+         * 逐一拉取镜像。
+         */
+        serializeImagePulls: boolean;
+        systemReserveds: outputs.vke.NodePoolKubernetesConfigKubeletConfigSystemReserved[];
+        /**
+         * 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+         */
+        topologyManagerPolicy: string;
+        /**
+         * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+         */
+        topologyManagerScope: string;
+    }
+
+    export interface NodePoolKubernetesConfigKubeletConfigFeatureGates {
+        /**
+         * 是否开启特性开关本地垂直Pod伸缩
+         */
+        inPlacePodVerticalScaling: boolean;
+        /**
+         * 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+         */
+        qoSResourceManager: boolean;
+    }
+
+    export interface NodePoolKubernetesConfigKubeletConfigKubeReserved {
+        /**
+         * 资源名称，取值为 cpu 或 memory。
+         */
+        name: string;
+        /**
+         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+         */
+        quantity: string;
+    }
+
+    export interface NodePoolKubernetesConfigKubeletConfigSystemReserved {
+        /**
+         * 资源名称，取值为 cpu 或 memory。
+         */
+        name: string;
+        /**
+         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+         */
+        quantity: string;
+    }
+
+    export interface NodePoolKubernetesConfigLabel {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface NodePoolKubernetesConfigTaint {
+        /**
+         * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         */
+        effect: string;
+        /**
+         * 污点键。
+         */
+        key: string;
+        /**
+         * 污点值。
+         */
+        value: string;
+    }
+
+    export interface NodePoolManagement {
+        /**
+         * 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+         */
+        enabled: boolean;
+        /**
+         * 检查自愈配置。
+         */
+        remedyConfig: outputs.vke.NodePoolManagementRemedyConfig;
+    }
+
+    export interface NodePoolManagementRemedyConfig {
+        /**
+         * 是否开启检查自愈。
+         */
+        enabled: boolean;
+        /**
+         * 检查自愈规则ID。
+         */
+        remedyId: string;
+    }
+
+    export interface NodePoolNodeConfig {
+        /**
+         * 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+         */
+        additionalContainerStorageEnabled: boolean;
+        /**
+         * 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+         */
+        autoRenew: boolean;
+        /**
+         * 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+         */
+        autoRenewPeriod: number;
+        dataVolumes: outputs.vke.NodePoolNodeConfigDataVolume[];
+        /**
+         * 实例在部署集中的分组号，0表示未设置
+         */
+        deploymentSetGroupNumber: number;
+        /**
+         * 实例需要加入的部署集ID
+         */
+        deploymentSetId: string;
+        /**
+         * 节点对应的主机名称。
+         */
+        hostname: string;
+        /**
+         * 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         */
+        hpcClusterIds: string[];
+        /**
+         * 节点对应云服务器所使用的镜像 ID。
+         */
+        imageId: string;
+        /**
+         * 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+         */
+        initializeScript: string;
+        /**
+         * 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+         */
+        instanceChargeType: string;
+        /**
+         * 节点（实例）名称。
+         */
+        instanceName: string;
+        /**
+         * 节点对应的云服务器实例规格 ID 列表。
+         */
+        instanceTypeIds: string[];
+        /**
+         * 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+         */
+        instancesDistribution: outputs.vke.NodePoolNodeConfigInstancesDistribution;
+        /**
+         * 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+         */
+        namePrefix: string;
+        /**
+         * 节点间的网络通讯模式。
+         */
+        networkTrafficMode: string;
+        /**
+         * 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+         */
+        period: number;
+        /**
+         * 部署节点前执行脚本。
+         */
+        preScript: string;
+        /**
+         * ECS所属项目，一个ECS只能归属于一个项目。
+         */
+        projectName: string;
+        /**
+         * 节点自动开启公网访问的配置信息
+         */
+        publicAccessConfig: outputs.vke.NodePoolNodeConfigPublicAccessConfig;
+        /**
+         * 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+         */
+        publicAccessEnabled: boolean;
+        /**
+         * 节点安全配置。
+         */
+        security: outputs.vke.NodePoolNodeConfigSecurity;
+        /**
+         * 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+         */
+        spotStrategy: string;
+        /**
+         * 节点网络所属的子网 ID 列表。
+         */
+        subnetIds: string[];
+        /**
+         * 节点的系统盘配置。
+         */
+        systemVolume: outputs.vke.NodePoolNodeConfigSystemVolume;
+        tags: outputs.vke.NodePoolNodeConfigTag[];
+    }
+
+    export interface NodePoolNodeConfigDataVolume {
+        /**
+         * 文件系统，取值：  - Ext4 (默认值)  - Xfs
+         */
+        fileSystem: string;
+        /**
+         * 磁盘格式化后的目标挂载目录。
+         */
+        mountPoint: string;
+        /**
+         * 放置组Id
+         */
+        placementGroupId: string;
+        /**
+         * 磁盘容量，单位 GiB。
+         */
+        size: number;
+        /**
+         * 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+         */
+        snapshotId: string;
+        /**
+         * 放置子组
+         */
+        subgroupNumber: number;
+        /**
+         * 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         */
+        type: string;
+    }
+
+    export interface NodePoolNodeConfigInstancesDistribution {
+        /**
+         * 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+         */
+        capacityRebalance: boolean;
+        /**
+         * 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+         */
+        compensateWithOnDemand: boolean;
+        /**
+         * 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+         */
+        onDemandBaseCapacity: number;
+        /**
+         * 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+         */
+        onDemandPercentageAboveBaseCapacity: number;
+    }
+
+    export interface NodePoolNodeConfigPublicAccessConfig {
+        /**
+         * 公网 IP 的带宽峰值，单位：Mbps。
+         */
+        bandwidth: number;
+        /**
+         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         */
+        billingType: number;
+        /**
+         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         */
+        isp: string;
+    }
+
+    export interface NodePoolNodeConfigSecurity {
+        /**
+         * 节点的访问方式配置。
+         */
+        login: outputs.vke.NodePoolNodeConfigSecurityLogin;
+        /**
+         * 节点网络所在的安全组 ID 列表。
+         */
+        securityGroupIds: string[];
+        /**
+         * 节点的安全策略，参数值说明：Hids：主机安全加固。
+         */
+        securityStrategies: string[];
+        /**
+         * 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+         */
+        securityStrategyEnabled: boolean;
+    }
+
+    export interface NodePoolNodeConfigSecurityLogin {
+        /**
+         * Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+         */
+        password: string;
+        /**
+         * SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+         */
+        sshKeyPairName: string;
+        /**
+         * 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+         */
+        type: string;
+    }
+
+    export interface NodePoolNodeConfigSystemVolume {
+        /**
+         * 放置组Id
+         */
+        placementGroupId: string;
+        /**
+         * 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+         */
+        size: number;
+        /**
+         * 放置子组
+         */
+        subgroupNumber: number;
+        /**
+         * 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         */
+        type: string;
+    }
+
+    export interface NodePoolNodeConfigTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface NodePoolNodeStatistics {
+        /**
+         * Phase=Creating的节点总数量。
+         */
+        creatingCount: number;
+        /**
+         * Phase=Deleting的节点总数量。
+         */
+        deletingCount: number;
+        /**
+         * Phase=Failed的节点总数量。
+         */
+        failedCount: number;
+        /**
+         * Phase=Running的节点总数量。
+         */
+        runningCount: number;
+        /**
+         * 节点池中的节点总数量。
+         */
+        totalCount: number;
+        /**
+         * Phase=Updating的节点总数量。
+         */
+        updatingCount: number;
+    }
+
+    export interface NodePoolStatus {
+        conditions: outputs.vke.NodePoolStatusCondition[];
+        /**
+         * 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+         */
+        phase: string;
+    }
+
+    export interface NodePoolStatusCondition {
+        /**
+         * 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+         */
+        type: string;
+    }
+
+    export interface NodePoolTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
 }
 
 export namespace vpc {
+    export interface EniPrimaryIpAddress {
+        /**
+         * 网卡主私网IPv4关联的公网IP的信息。
+         */
+        associatedElasticIp: outputs.vpc.EniPrimaryIpAddressAssociatedElasticIp;
+        /**
+         * 是否为主私网IPv4地址。
+         */
+        primary: boolean;
+        /**
+         * 网卡的私网IP地址。
+         */
+        privateIpAddress: string;
+    }
+
+    export interface EniPrimaryIpAddressAssociatedElasticIp {
+        /**
+         * 公网IP的ID。
+         */
+        allocationId: string;
+        /**
+         * 公网IP的地址。
+         */
+        eipAddress: string;
+        /**
+         * 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+         */
+        releaseWithInstance: boolean;
+    }
+
+    export interface EniPrivateIpSet {
+        /**
+         * 网卡主私网IPv4关联的公网IP的信息。
+         */
+        associatedElasticIp: outputs.vpc.EniPrivateIpSetAssociatedElasticIp;
+        /**
+         * 网卡的私网IP地址。
+         */
+        privateIpAddress: string;
+    }
+
+    export interface EniPrivateIpSetAssociatedElasticIp {
+        /**
+         * 公网IP的ID。
+         */
+        allocationId: string;
+    }
+
+    export interface EniTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface GetEniPrimaryIpAddress {
+        /**
+         * 网卡主私网IPv4关联的公网IP的信息。
+         */
+        associatedElasticIp: outputs.vpc.GetEniPrimaryIpAddressAssociatedElasticIp;
+        /**
+         * 是否为主私网IPv4地址。
+         */
+        primary: boolean;
+        /**
+         * 网卡的私网IP地址。
+         */
+        privateIpAddress: string;
+    }
+
+    export interface GetEniPrimaryIpAddressAssociatedElasticIp {
+        /**
+         * 公网IP的ID。
+         */
+        allocationId: string;
+        /**
+         * 公网IP的地址。
+         */
+        eipAddress: string;
+        /**
+         * 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+         */
+        releaseWithInstance: boolean;
+    }
+
+    export interface GetEniPrivateIpSet {
+        /**
+         * 网卡主私网IPv4关联的公网IP的信息。
+         */
+        associatedElasticIp: outputs.vpc.GetEniPrivateIpSetAssociatedElasticIp;
+        /**
+         * 是否为主私网IPv4地址。
+         */
+        primary: boolean;
+        /**
+         * 网卡的私网IP地址。
+         */
+        privateIpAddress: string;
+    }
+
+    export interface GetEniPrivateIpSetAssociatedElasticIp {
+        /**
+         * 公网IP的ID。
+         */
+        allocationId: string;
+        /**
+         * 公网IP的地址。
+         */
+        eipAddress: string;
+        /**
+         * 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+         */
+        releaseWithInstance: boolean;
+    }
+
+    export interface GetEniTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface GetSecurityGroupEgressPermission {
+        /**
+         * 源地址的IPv4 CIDR或IPv6 CIDR
+         */
+        cidrIp: string;
+        /**
+         * 安全组规则创建时间。
+         */
+        creationTime: string;
+        /**
+         * 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+         */
+        description: string;
+        /**
+         * 安全组规则方向。ingress：入方向。egress：出方向
+         */
+        direction: string;
+        /**
+         * 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+         */
+        policy: string;
+        /**
+         * 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portEnd: number;
+        /**
+         * 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portStart: number;
+        /**
+         * 前缀列表的CIDR。
+         */
+        prefixListCidrs: string[];
+        /**
+         * 前缀列表的ID
+         */
+        prefixListId: string;
+        /**
+         * 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+         */
+        priority: number;
+        /**
+         * 协议类型。tcp、udp、icmp、icmpv6、all
+         */
+        protocol: string;
+        /**
+         * 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+         */
+        sourceGroupId: string;
+        /**
+         * 安全组规则更新时间。
+         */
+        updateTime: string;
+    }
+
+    export interface GetSecurityGroupIngressPermission {
+        /**
+         * 源地址的IPv4 CIDR或IPv6 CIDR
+         */
+        cidrIp: string;
+        /**
+         * 安全组规则创建时间。
+         */
+        creationTime: string;
+        /**
+         * 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+         */
+        description: string;
+        /**
+         * 安全组规则方向。ingress：入方向。egress：出方向
+         */
+        direction: string;
+        /**
+         * 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+         */
+        policy: string;
+        /**
+         * 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portEnd: number;
+        /**
+         * 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portStart: number;
+        /**
+         * 前缀列表的CIDR。
+         */
+        prefixListCidrs: string[];
+        /**
+         * 前缀列表的ID
+         */
+        prefixListId: string;
+        /**
+         * 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+         */
+        priority: number;
+        /**
+         * 协议类型。tcp、udp、icmp、icmpv6、all
+         */
+        protocol: string;
+        /**
+         * 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+         */
+        sourceGroupId: string;
+        /**
+         * 安全组规则更新时间。
+         */
+        updateTime: string;
+    }
+
+    export interface GetSecurityGroupTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
     export interface GetVpcAssociateCen {
         /**
          * CEN的ID。
@@ -5827,6 +7896,103 @@ export namespace vpc {
         key: string;
         /**
          * 标签值。
+         */
+        value: string;
+    }
+
+    export interface SecurityGroupEgressPermission {
+        /**
+         * 源地址的IPv4 CIDR或IPv6 CIDR
+         */
+        cidrIp: string;
+        /**
+         * 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+         */
+        description: string;
+        /**
+         * 安全组规则方向。ingress：入方向。egress：出方向
+         */
+        direction: string;
+        /**
+         * 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+         */
+        policy: string;
+        /**
+         * 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portEnd: number;
+        /**
+         * 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portStart: number;
+        /**
+         * 前缀列表的ID
+         */
+        prefixListId: string;
+        /**
+         * 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+         */
+        priority: number;
+        /**
+         * 协议类型。tcp、udp、icmp、icmpv6、all
+         */
+        protocol: string;
+        /**
+         * 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+         */
+        sourceGroupId: string;
+    }
+
+    export interface SecurityGroupIngressPermission {
+        /**
+         * 源地址的IPv4 CIDR或IPv6 CIDR
+         */
+        cidrIp: string;
+        /**
+         * 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+         */
+        description: string;
+        /**
+         * 安全组规则方向。ingress：入方向。egress：出方向
+         */
+        direction: string;
+        /**
+         * 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+         */
+        policy: string;
+        /**
+         * 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portEnd: number;
+        /**
+         * 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+         */
+        portStart: number;
+        /**
+         * 前缀列表的ID
+         */
+        prefixListId: string;
+        /**
+         * 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+         */
+        priority: number;
+        /**
+         * 协议类型。tcp、udp、icmp、icmpv6、all
+         */
+        protocol: string;
+        /**
+         * 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+         */
+        sourceGroupId: string;
+    }
+
+    export interface SecurityGroupTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
          */
         value: string;
     }

@@ -12,9 +12,9 @@ import (
 )
 
 // Data Source schema for Byteplus::KMS::Key
-func GetKey(ctx *pulumi.Context, args *GetKeyArgs, opts ...pulumi.InvokeOption) (*GetKeyResult, error) {
+func LookupKey(ctx *pulumi.Context, args *LookupKeyArgs, opts ...pulumi.InvokeOption) (*LookupKeyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetKeyResult
+	var rv LookupKeyResult
 	err := ctx.Invoke("bytepluscc:kms/getKey:getKey", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -23,13 +23,13 @@ func GetKey(ctx *pulumi.Context, args *GetKeyArgs, opts ...pulumi.InvokeOption) 
 }
 
 // A collection of arguments for invoking getKey.
-type GetKeyArgs struct {
+type LookupKeyArgs struct {
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 }
 
 // A collection of values returned by getKey.
-type GetKeyResult struct {
+type LookupKeyResult struct {
 	// 密钥创建时间。
 	CreatedTime int `pulumi:"createdTime"`
 	// 密钥描述:长度为 0   - 8192 个字符。
@@ -74,145 +74,145 @@ type GetKeyResult struct {
 	UpdatedTime int `pulumi:"updatedTime"`
 }
 
-func GetKeyOutput(ctx *pulumi.Context, args GetKeyOutputArgs, opts ...pulumi.InvokeOption) GetKeyResultOutput {
+func LookupKeyOutput(ctx *pulumi.Context, args LookupKeyOutputArgs, opts ...pulumi.InvokeOption) LookupKeyResultOutput {
 	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetKeyResultOutput, error) {
-			args := v.(GetKeyArgs)
+		ApplyT(func(v interface{}) (LookupKeyResultOutput, error) {
+			args := v.(LookupKeyArgs)
 			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("bytepluscc:kms/getKey:getKey", args, GetKeyResultOutput{}, options).(GetKeyResultOutput), nil
-		}).(GetKeyResultOutput)
+			return ctx.InvokeOutput("bytepluscc:kms/getKey:getKey", args, LookupKeyResultOutput{}, options).(LookupKeyResultOutput), nil
+		}).(LookupKeyResultOutput)
 }
 
 // A collection of arguments for invoking getKey.
-type GetKeyOutputArgs struct {
+type LookupKeyOutputArgs struct {
 	// Uniquely identifies the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
-func (GetKeyOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetKeyArgs)(nil)).Elem()
+func (LookupKeyOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupKeyArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getKey.
-type GetKeyResultOutput struct{ *pulumi.OutputState }
+type LookupKeyResultOutput struct{ *pulumi.OutputState }
 
-func (GetKeyResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetKeyResult)(nil)).Elem()
+func (LookupKeyResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupKeyResult)(nil)).Elem()
 }
 
-func (o GetKeyResultOutput) ToGetKeyResultOutput() GetKeyResultOutput {
+func (o LookupKeyResultOutput) ToLookupKeyResultOutput() LookupKeyResultOutput {
 	return o
 }
 
-func (o GetKeyResultOutput) ToGetKeyResultOutputWithContext(ctx context.Context) GetKeyResultOutput {
+func (o LookupKeyResultOutput) ToLookupKeyResultOutputWithContext(ctx context.Context) LookupKeyResultOutput {
 	return o
 }
 
 // 密钥创建时间。
-func (o GetKeyResultOutput) CreatedTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetKeyResult) int { return v.CreatedTime }).(pulumi.IntOutput)
+func (o LookupKeyResultOutput) CreatedTime() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyResult) int { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
 // 密钥描述:长度为 0   - 8192 个字符。
-func (o GetKeyResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // Uniquely identifies the resource.
-func (o GetKeyResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // 密钥唯一标识符，UUID形式。
-func (o GetKeyResultOutput) KeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.KeyId }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyId }).(pulumi.StringOutput)
 }
 
 // 密钥材料过期时间，当值为空时表示不会过期。
-func (o GetKeyResultOutput) KeyMaterialExpireTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.KeyMaterialExpireTime }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) KeyMaterialExpireTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyMaterialExpireTime }).(pulumi.StringOutput)
 }
 
 // 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
-func (o GetKeyResultOutput) KeyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.KeyName }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyName }).(pulumi.StringOutput)
 }
 
 // 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
-func (o GetKeyResultOutput) KeySpec() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.KeySpec }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) KeySpec() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeySpec }).(pulumi.StringOutput)
 }
 
 // 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
-func (o GetKeyResultOutput) KeyState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.KeyState }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) KeyState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyState }).(pulumi.StringOutput)
 }
 
 // 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
-func (o GetKeyResultOutput) KeyUsage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.KeyUsage }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) KeyUsage() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyUsage }).(pulumi.StringOutput)
 }
 
 // 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
-func (o GetKeyResultOutput) KeyringName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.KeyringName }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) KeyringName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyringName }).(pulumi.StringOutput)
 }
 
 // 密钥最后轮转时间。
-func (o GetKeyResultOutput) LastRotationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.LastRotationTime }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) LastRotationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.LastRotationTime }).(pulumi.StringOutput)
 }
 
 // 是否为 Multi-region 类型的主密钥。
-func (o GetKeyResultOutput) MultiRegion() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetKeyResult) bool { return v.MultiRegion }).(pulumi.BoolOutput)
+func (o LookupKeyResultOutput) MultiRegion() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupKeyResult) bool { return v.MultiRegion }).(pulumi.BoolOutput)
 }
 
 // Multi-region key 配置信息。
-func (o GetKeyResultOutput) MultiRegionConfiguration() GetKeyMultiRegionConfigurationOutput {
-	return o.ApplyT(func(v GetKeyResult) GetKeyMultiRegionConfiguration { return v.MultiRegionConfiguration }).(GetKeyMultiRegionConfigurationOutput)
+func (o LookupKeyResultOutput) MultiRegionConfiguration() GetKeyMultiRegionConfigurationOutput {
+	return o.ApplyT(func(v LookupKeyResult) GetKeyMultiRegionConfiguration { return v.MultiRegionConfiguration }).(GetKeyMultiRegionConfigurationOutput)
 }
 
 // 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
-func (o GetKeyResultOutput) Origin() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.Origin }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) Origin() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.Origin }).(pulumi.StringOutput)
 }
 
 // 密钥保护级别，取值：SOFTWARE，HSM。
-func (o GetKeyResultOutput) ProtectionLevel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.ProtectionLevel }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) ProtectionLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.ProtectionLevel }).(pulumi.StringOutput)
 }
 
 // 密钥轮转状态，取值：Enable，Disable。
-func (o GetKeyResultOutput) RotateState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.RotateState }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) RotateState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.RotateState }).(pulumi.StringOutput)
 }
 
 // 密钥删除时间。
-func (o GetKeyResultOutput) ScheduleDeleteTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.ScheduleDeleteTime }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) ScheduleDeleteTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.ScheduleDeleteTime }).(pulumi.StringOutput)
 }
 
 // 密钥轮转时间。
-func (o GetKeyResultOutput) ScheduleRotationTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.ScheduleRotationTime }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) ScheduleRotationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.ScheduleRotationTime }).(pulumi.StringOutput)
 }
 
 // KMS密钥的标签信息
-func (o GetKeyResultOutput) Tags() GetKeyTagArrayOutput {
-	return o.ApplyT(func(v GetKeyResult) []GetKeyTag { return v.Tags }).(GetKeyTagArrayOutput)
+func (o LookupKeyResultOutput) Tags() GetKeyTagArrayOutput {
+	return o.ApplyT(func(v LookupKeyResult) []GetKeyTag { return v.Tags }).(GetKeyTagArrayOutput)
 }
 
 // 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
-func (o GetKeyResultOutput) Trn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKeyResult) string { return v.Trn }).(pulumi.StringOutput)
+func (o LookupKeyResultOutput) Trn() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyResult) string { return v.Trn }).(pulumi.StringOutput)
 }
 
 // 密钥更新时间。
-func (o GetKeyResultOutput) UpdatedTime() pulumi.IntOutput {
-	return o.ApplyT(func(v GetKeyResult) int { return v.UpdatedTime }).(pulumi.IntOutput)
+func (o LookupKeyResultOutput) UpdatedTime() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyResult) int { return v.UpdatedTime }).(pulumi.IntOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetKeyResultOutput{})
+	pulumi.RegisterOutputType(LookupKeyResultOutput{})
 }

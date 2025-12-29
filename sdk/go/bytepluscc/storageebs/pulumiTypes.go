@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type SnapshotTag struct {
+	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key *string `pulumi:"key"`
+	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value *string `pulumi:"value"`
+}
+
+// SnapshotTagInput is an input type that accepts SnapshotTagArgs and SnapshotTagOutput values.
+// You can construct a concrete instance of `SnapshotTagInput` via:
+//
+//	SnapshotTagArgs{...}
+type SnapshotTagInput interface {
+	pulumi.Input
+
+	ToSnapshotTagOutput() SnapshotTagOutput
+	ToSnapshotTagOutputWithContext(context.Context) SnapshotTagOutput
+}
+
+type SnapshotTagArgs struct {
+	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SnapshotTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotTag)(nil)).Elem()
+}
+
+func (i SnapshotTagArgs) ToSnapshotTagOutput() SnapshotTagOutput {
+	return i.ToSnapshotTagOutputWithContext(context.Background())
+}
+
+func (i SnapshotTagArgs) ToSnapshotTagOutputWithContext(ctx context.Context) SnapshotTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotTagOutput)
+}
+
+// SnapshotTagArrayInput is an input type that accepts SnapshotTagArray and SnapshotTagArrayOutput values.
+// You can construct a concrete instance of `SnapshotTagArrayInput` via:
+//
+//	SnapshotTagArray{ SnapshotTagArgs{...} }
+type SnapshotTagArrayInput interface {
+	pulumi.Input
+
+	ToSnapshotTagArrayOutput() SnapshotTagArrayOutput
+	ToSnapshotTagArrayOutputWithContext(context.Context) SnapshotTagArrayOutput
+}
+
+type SnapshotTagArray []SnapshotTagInput
+
+func (SnapshotTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotTag)(nil)).Elem()
+}
+
+func (i SnapshotTagArray) ToSnapshotTagArrayOutput() SnapshotTagArrayOutput {
+	return i.ToSnapshotTagArrayOutputWithContext(context.Background())
+}
+
+func (i SnapshotTagArray) ToSnapshotTagArrayOutputWithContext(ctx context.Context) SnapshotTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SnapshotTagArrayOutput)
+}
+
+type SnapshotTagOutput struct{ *pulumi.OutputState }
+
+func (SnapshotTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SnapshotTag)(nil)).Elem()
+}
+
+func (o SnapshotTagOutput) ToSnapshotTagOutput() SnapshotTagOutput {
+	return o
+}
+
+func (o SnapshotTagOutput) ToSnapshotTagOutputWithContext(ctx context.Context) SnapshotTagOutput {
+	return o
+}
+
+// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+func (o SnapshotTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+func (o SnapshotTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SnapshotTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SnapshotTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SnapshotTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SnapshotTag)(nil)).Elem()
+}
+
+func (o SnapshotTagArrayOutput) ToSnapshotTagArrayOutput() SnapshotTagArrayOutput {
+	return o
+}
+
+func (o SnapshotTagArrayOutput) ToSnapshotTagArrayOutputWithContext(ctx context.Context) SnapshotTagArrayOutput {
+	return o
+}
+
+func (o SnapshotTagArrayOutput) Index(i pulumi.IntInput) SnapshotTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SnapshotTag {
+		return vs[0].([]SnapshotTag)[vs[1].(int)]
+	}).(SnapshotTagOutput)
+}
+
 type VolumeBaselinePerformance struct {
 	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
 	Iops *float64 `pulumi:"iops"`
@@ -606,6 +712,112 @@ func (o VolumeTotalPerformancePtrOutput) Throughput() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
+type GetSnapshotTag struct {
+	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key string `pulumi:"key"`
+	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value string `pulumi:"value"`
+}
+
+// GetSnapshotTagInput is an input type that accepts GetSnapshotTagArgs and GetSnapshotTagOutput values.
+// You can construct a concrete instance of `GetSnapshotTagInput` via:
+//
+//	GetSnapshotTagArgs{...}
+type GetSnapshotTagInput interface {
+	pulumi.Input
+
+	ToGetSnapshotTagOutput() GetSnapshotTagOutput
+	ToGetSnapshotTagOutputWithContext(context.Context) GetSnapshotTagOutput
+}
+
+type GetSnapshotTagArgs struct {
+	// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSnapshotTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotTag)(nil)).Elem()
+}
+
+func (i GetSnapshotTagArgs) ToGetSnapshotTagOutput() GetSnapshotTagOutput {
+	return i.ToGetSnapshotTagOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotTagArgs) ToGetSnapshotTagOutputWithContext(ctx context.Context) GetSnapshotTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotTagOutput)
+}
+
+// GetSnapshotTagArrayInput is an input type that accepts GetSnapshotTagArray and GetSnapshotTagArrayOutput values.
+// You can construct a concrete instance of `GetSnapshotTagArrayInput` via:
+//
+//	GetSnapshotTagArray{ GetSnapshotTagArgs{...} }
+type GetSnapshotTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSnapshotTagArrayOutput() GetSnapshotTagArrayOutput
+	ToGetSnapshotTagArrayOutputWithContext(context.Context) GetSnapshotTagArrayOutput
+}
+
+type GetSnapshotTagArray []GetSnapshotTagInput
+
+func (GetSnapshotTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotTag)(nil)).Elem()
+}
+
+func (i GetSnapshotTagArray) ToGetSnapshotTagArrayOutput() GetSnapshotTagArrayOutput {
+	return i.ToGetSnapshotTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSnapshotTagArray) ToGetSnapshotTagArrayOutputWithContext(ctx context.Context) GetSnapshotTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSnapshotTagArrayOutput)
+}
+
+type GetSnapshotTagOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSnapshotTag)(nil)).Elem()
+}
+
+func (o GetSnapshotTagOutput) ToGetSnapshotTagOutput() GetSnapshotTagOutput {
+	return o
+}
+
+func (o GetSnapshotTagOutput) ToGetSnapshotTagOutputWithContext(ctx context.Context) GetSnapshotTagOutput {
+	return o
+}
+
+// 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+func (o GetSnapshotTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+func (o GetSnapshotTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSnapshotTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSnapshotTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSnapshotTag)(nil)).Elem()
+}
+
+func (o GetSnapshotTagArrayOutput) ToGetSnapshotTagArrayOutput() GetSnapshotTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotTagArrayOutput) ToGetSnapshotTagArrayOutputWithContext(ctx context.Context) GetSnapshotTagArrayOutput {
+	return o
+}
+
+func (o GetSnapshotTagArrayOutput) Index(i pulumi.IntInput) GetSnapshotTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSnapshotTag {
+		return vs[0].([]GetSnapshotTag)[vs[1].(int)]
+	}).(GetSnapshotTagOutput)
+}
+
 type GetVolumeBaselinePerformance struct {
 	// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
 	Iops float64 `pulumi:"iops"`
@@ -905,6 +1117,8 @@ func (o GetVolumeTotalPerformanceOutput) Throughput() pulumi.Float64Output {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotTagInput)(nil)).Elem(), SnapshotTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SnapshotTagArrayInput)(nil)).Elem(), SnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBaselinePerformanceInput)(nil)).Elem(), VolumeBaselinePerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBaselinePerformancePtrInput)(nil)).Elem(), VolumeBaselinePerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeExtraPerformanceInput)(nil)).Elem(), VolumeExtraPerformanceArgs{})
@@ -913,11 +1127,15 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeTagArrayInput)(nil)).Elem(), VolumeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeTotalPerformanceInput)(nil)).Elem(), VolumeTotalPerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeTotalPerformancePtrInput)(nil)).Elem(), VolumeTotalPerformanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotTagInput)(nil)).Elem(), GetSnapshotTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotTagArrayInput)(nil)).Elem(), GetSnapshotTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeBaselinePerformanceInput)(nil)).Elem(), GetVolumeBaselinePerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeExtraPerformanceInput)(nil)).Elem(), GetVolumeExtraPerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeTagInput)(nil)).Elem(), GetVolumeTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeTagArrayInput)(nil)).Elem(), GetVolumeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVolumeTotalPerformanceInput)(nil)).Elem(), GetVolumeTotalPerformanceArgs{})
+	pulumi.RegisterOutputType(SnapshotTagOutput{})
+	pulumi.RegisterOutputType(SnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(VolumeBaselinePerformanceOutput{})
 	pulumi.RegisterOutputType(VolumeBaselinePerformancePtrOutput{})
 	pulumi.RegisterOutputType(VolumeExtraPerformanceOutput{})
@@ -926,6 +1144,8 @@ func init() {
 	pulumi.RegisterOutputType(VolumeTagArrayOutput{})
 	pulumi.RegisterOutputType(VolumeTotalPerformanceOutput{})
 	pulumi.RegisterOutputType(VolumeTotalPerformancePtrOutput{})
+	pulumi.RegisterOutputType(GetSnapshotTagOutput{})
+	pulumi.RegisterOutputType(GetSnapshotTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVolumeBaselinePerformanceOutput{})
 	pulumi.RegisterOutputType(GetVolumeExtraPerformanceOutput{})
 	pulumi.RegisterOutputType(GetVolumeTagOutput{})

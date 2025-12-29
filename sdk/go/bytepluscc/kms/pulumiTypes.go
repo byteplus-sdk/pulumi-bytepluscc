@@ -13,6 +13,545 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type KeyMultiRegionConfiguration struct {
+	// 多区域密钥的类型。
+	MultiRegionKeyType *string `pulumi:"multiRegionKeyType"`
+	// 主多区域键的事务识别号和区域 ID。
+	PrimaryKey  *KeyMultiRegionConfigurationPrimaryKey  `pulumi:"primaryKey"`
+	ReplicaKeys []KeyMultiRegionConfigurationReplicaKey `pulumi:"replicaKeys"`
+}
+
+// KeyMultiRegionConfigurationInput is an input type that accepts KeyMultiRegionConfigurationArgs and KeyMultiRegionConfigurationOutput values.
+// You can construct a concrete instance of `KeyMultiRegionConfigurationInput` via:
+//
+//	KeyMultiRegionConfigurationArgs{...}
+type KeyMultiRegionConfigurationInput interface {
+	pulumi.Input
+
+	ToKeyMultiRegionConfigurationOutput() KeyMultiRegionConfigurationOutput
+	ToKeyMultiRegionConfigurationOutputWithContext(context.Context) KeyMultiRegionConfigurationOutput
+}
+
+type KeyMultiRegionConfigurationArgs struct {
+	// 多区域密钥的类型。
+	MultiRegionKeyType pulumi.StringPtrInput `pulumi:"multiRegionKeyType"`
+	// 主多区域键的事务识别号和区域 ID。
+	PrimaryKey  KeyMultiRegionConfigurationPrimaryKeyPtrInput   `pulumi:"primaryKey"`
+	ReplicaKeys KeyMultiRegionConfigurationReplicaKeyArrayInput `pulumi:"replicaKeys"`
+}
+
+func (KeyMultiRegionConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyMultiRegionConfiguration)(nil)).Elem()
+}
+
+func (i KeyMultiRegionConfigurationArgs) ToKeyMultiRegionConfigurationOutput() KeyMultiRegionConfigurationOutput {
+	return i.ToKeyMultiRegionConfigurationOutputWithContext(context.Background())
+}
+
+func (i KeyMultiRegionConfigurationArgs) ToKeyMultiRegionConfigurationOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationOutput)
+}
+
+func (i KeyMultiRegionConfigurationArgs) ToKeyMultiRegionConfigurationPtrOutput() KeyMultiRegionConfigurationPtrOutput {
+	return i.ToKeyMultiRegionConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i KeyMultiRegionConfigurationArgs) ToKeyMultiRegionConfigurationPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationOutput).ToKeyMultiRegionConfigurationPtrOutputWithContext(ctx)
+}
+
+// KeyMultiRegionConfigurationPtrInput is an input type that accepts KeyMultiRegionConfigurationArgs, KeyMultiRegionConfigurationPtr and KeyMultiRegionConfigurationPtrOutput values.
+// You can construct a concrete instance of `KeyMultiRegionConfigurationPtrInput` via:
+//
+//	        KeyMultiRegionConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyMultiRegionConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToKeyMultiRegionConfigurationPtrOutput() KeyMultiRegionConfigurationPtrOutput
+	ToKeyMultiRegionConfigurationPtrOutputWithContext(context.Context) KeyMultiRegionConfigurationPtrOutput
+}
+
+type keyMultiRegionConfigurationPtrType KeyMultiRegionConfigurationArgs
+
+func KeyMultiRegionConfigurationPtr(v *KeyMultiRegionConfigurationArgs) KeyMultiRegionConfigurationPtrInput {
+	return (*keyMultiRegionConfigurationPtrType)(v)
+}
+
+func (*keyMultiRegionConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyMultiRegionConfiguration)(nil)).Elem()
+}
+
+func (i *keyMultiRegionConfigurationPtrType) ToKeyMultiRegionConfigurationPtrOutput() KeyMultiRegionConfigurationPtrOutput {
+	return i.ToKeyMultiRegionConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *keyMultiRegionConfigurationPtrType) ToKeyMultiRegionConfigurationPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationPtrOutput)
+}
+
+type KeyMultiRegionConfigurationOutput struct{ *pulumi.OutputState }
+
+func (KeyMultiRegionConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyMultiRegionConfiguration)(nil)).Elem()
+}
+
+func (o KeyMultiRegionConfigurationOutput) ToKeyMultiRegionConfigurationOutput() KeyMultiRegionConfigurationOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationOutput) ToKeyMultiRegionConfigurationOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationOutput) ToKeyMultiRegionConfigurationPtrOutput() KeyMultiRegionConfigurationPtrOutput {
+	return o.ToKeyMultiRegionConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o KeyMultiRegionConfigurationOutput) ToKeyMultiRegionConfigurationPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyMultiRegionConfiguration) *KeyMultiRegionConfiguration {
+		return &v
+	}).(KeyMultiRegionConfigurationPtrOutput)
+}
+
+// 多区域密钥的类型。
+func (o KeyMultiRegionConfigurationOutput) MultiRegionKeyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyMultiRegionConfiguration) *string { return v.MultiRegionKeyType }).(pulumi.StringPtrOutput)
+}
+
+// 主多区域键的事务识别号和区域 ID。
+func (o KeyMultiRegionConfigurationOutput) PrimaryKey() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return o.ApplyT(func(v KeyMultiRegionConfiguration) *KeyMultiRegionConfigurationPrimaryKey { return v.PrimaryKey }).(KeyMultiRegionConfigurationPrimaryKeyPtrOutput)
+}
+
+func (o KeyMultiRegionConfigurationOutput) ReplicaKeys() KeyMultiRegionConfigurationReplicaKeyArrayOutput {
+	return o.ApplyT(func(v KeyMultiRegionConfiguration) []KeyMultiRegionConfigurationReplicaKey { return v.ReplicaKeys }).(KeyMultiRegionConfigurationReplicaKeyArrayOutput)
+}
+
+type KeyMultiRegionConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (KeyMultiRegionConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyMultiRegionConfiguration)(nil)).Elem()
+}
+
+func (o KeyMultiRegionConfigurationPtrOutput) ToKeyMultiRegionConfigurationPtrOutput() KeyMultiRegionConfigurationPtrOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationPtrOutput) ToKeyMultiRegionConfigurationPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPtrOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationPtrOutput) Elem() KeyMultiRegionConfigurationOutput {
+	return o.ApplyT(func(v *KeyMultiRegionConfiguration) KeyMultiRegionConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret KeyMultiRegionConfiguration
+		return ret
+	}).(KeyMultiRegionConfigurationOutput)
+}
+
+// 多区域密钥的类型。
+func (o KeyMultiRegionConfigurationPtrOutput) MultiRegionKeyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyMultiRegionConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MultiRegionKeyType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 主多区域键的事务识别号和区域 ID。
+func (o KeyMultiRegionConfigurationPtrOutput) PrimaryKey() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return o.ApplyT(func(v *KeyMultiRegionConfiguration) *KeyMultiRegionConfigurationPrimaryKey {
+		if v == nil {
+			return nil
+		}
+		return v.PrimaryKey
+	}).(KeyMultiRegionConfigurationPrimaryKeyPtrOutput)
+}
+
+func (o KeyMultiRegionConfigurationPtrOutput) ReplicaKeys() KeyMultiRegionConfigurationReplicaKeyArrayOutput {
+	return o.ApplyT(func(v *KeyMultiRegionConfiguration) []KeyMultiRegionConfigurationReplicaKey {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicaKeys
+	}).(KeyMultiRegionConfigurationReplicaKeyArrayOutput)
+}
+
+type KeyMultiRegionConfigurationPrimaryKey struct {
+	// 多区域密钥的区域 ID。
+	Region *string `pulumi:"region"`
+	// 多区域密钥的 TRN。
+	Trn *string `pulumi:"trn"`
+}
+
+// KeyMultiRegionConfigurationPrimaryKeyInput is an input type that accepts KeyMultiRegionConfigurationPrimaryKeyArgs and KeyMultiRegionConfigurationPrimaryKeyOutput values.
+// You can construct a concrete instance of `KeyMultiRegionConfigurationPrimaryKeyInput` via:
+//
+//	KeyMultiRegionConfigurationPrimaryKeyArgs{...}
+type KeyMultiRegionConfigurationPrimaryKeyInput interface {
+	pulumi.Input
+
+	ToKeyMultiRegionConfigurationPrimaryKeyOutput() KeyMultiRegionConfigurationPrimaryKeyOutput
+	ToKeyMultiRegionConfigurationPrimaryKeyOutputWithContext(context.Context) KeyMultiRegionConfigurationPrimaryKeyOutput
+}
+
+type KeyMultiRegionConfigurationPrimaryKeyArgs struct {
+	// 多区域密钥的区域 ID。
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// 多区域密钥的 TRN。
+	Trn pulumi.StringPtrInput `pulumi:"trn"`
+}
+
+func (KeyMultiRegionConfigurationPrimaryKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyMultiRegionConfigurationPrimaryKey)(nil)).Elem()
+}
+
+func (i KeyMultiRegionConfigurationPrimaryKeyArgs) ToKeyMultiRegionConfigurationPrimaryKeyOutput() KeyMultiRegionConfigurationPrimaryKeyOutput {
+	return i.ToKeyMultiRegionConfigurationPrimaryKeyOutputWithContext(context.Background())
+}
+
+func (i KeyMultiRegionConfigurationPrimaryKeyArgs) ToKeyMultiRegionConfigurationPrimaryKeyOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPrimaryKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationPrimaryKeyOutput)
+}
+
+func (i KeyMultiRegionConfigurationPrimaryKeyArgs) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutput() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return i.ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(context.Background())
+}
+
+func (i KeyMultiRegionConfigurationPrimaryKeyArgs) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationPrimaryKeyOutput).ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(ctx)
+}
+
+// KeyMultiRegionConfigurationPrimaryKeyPtrInput is an input type that accepts KeyMultiRegionConfigurationPrimaryKeyArgs, KeyMultiRegionConfigurationPrimaryKeyPtr and KeyMultiRegionConfigurationPrimaryKeyPtrOutput values.
+// You can construct a concrete instance of `KeyMultiRegionConfigurationPrimaryKeyPtrInput` via:
+//
+//	        KeyMultiRegionConfigurationPrimaryKeyArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyMultiRegionConfigurationPrimaryKeyPtrInput interface {
+	pulumi.Input
+
+	ToKeyMultiRegionConfigurationPrimaryKeyPtrOutput() KeyMultiRegionConfigurationPrimaryKeyPtrOutput
+	ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(context.Context) KeyMultiRegionConfigurationPrimaryKeyPtrOutput
+}
+
+type keyMultiRegionConfigurationPrimaryKeyPtrType KeyMultiRegionConfigurationPrimaryKeyArgs
+
+func KeyMultiRegionConfigurationPrimaryKeyPtr(v *KeyMultiRegionConfigurationPrimaryKeyArgs) KeyMultiRegionConfigurationPrimaryKeyPtrInput {
+	return (*keyMultiRegionConfigurationPrimaryKeyPtrType)(v)
+}
+
+func (*keyMultiRegionConfigurationPrimaryKeyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyMultiRegionConfigurationPrimaryKey)(nil)).Elem()
+}
+
+func (i *keyMultiRegionConfigurationPrimaryKeyPtrType) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutput() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return i.ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(context.Background())
+}
+
+func (i *keyMultiRegionConfigurationPrimaryKeyPtrType) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationPrimaryKeyPtrOutput)
+}
+
+type KeyMultiRegionConfigurationPrimaryKeyOutput struct{ *pulumi.OutputState }
+
+func (KeyMultiRegionConfigurationPrimaryKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyMultiRegionConfigurationPrimaryKey)(nil)).Elem()
+}
+
+func (o KeyMultiRegionConfigurationPrimaryKeyOutput) ToKeyMultiRegionConfigurationPrimaryKeyOutput() KeyMultiRegionConfigurationPrimaryKeyOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationPrimaryKeyOutput) ToKeyMultiRegionConfigurationPrimaryKeyOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPrimaryKeyOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationPrimaryKeyOutput) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutput() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return o.ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(context.Background())
+}
+
+func (o KeyMultiRegionConfigurationPrimaryKeyOutput) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyMultiRegionConfigurationPrimaryKey) *KeyMultiRegionConfigurationPrimaryKey {
+		return &v
+	}).(KeyMultiRegionConfigurationPrimaryKeyPtrOutput)
+}
+
+// 多区域密钥的区域 ID。
+func (o KeyMultiRegionConfigurationPrimaryKeyOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyMultiRegionConfigurationPrimaryKey) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// 多区域密钥的 TRN。
+func (o KeyMultiRegionConfigurationPrimaryKeyOutput) Trn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyMultiRegionConfigurationPrimaryKey) *string { return v.Trn }).(pulumi.StringPtrOutput)
+}
+
+type KeyMultiRegionConfigurationPrimaryKeyPtrOutput struct{ *pulumi.OutputState }
+
+func (KeyMultiRegionConfigurationPrimaryKeyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyMultiRegionConfigurationPrimaryKey)(nil)).Elem()
+}
+
+func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutput() KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) ToKeyMultiRegionConfigurationPrimaryKeyPtrOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationPrimaryKeyPtrOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Elem() KeyMultiRegionConfigurationPrimaryKeyOutput {
+	return o.ApplyT(func(v *KeyMultiRegionConfigurationPrimaryKey) KeyMultiRegionConfigurationPrimaryKey {
+		if v != nil {
+			return *v
+		}
+		var ret KeyMultiRegionConfigurationPrimaryKey
+		return ret
+	}).(KeyMultiRegionConfigurationPrimaryKeyOutput)
+}
+
+// 多区域密钥的区域 ID。
+func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyMultiRegionConfigurationPrimaryKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+// 多区域密钥的 TRN。
+func (o KeyMultiRegionConfigurationPrimaryKeyPtrOutput) Trn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyMultiRegionConfigurationPrimaryKey) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Trn
+	}).(pulumi.StringPtrOutput)
+}
+
+type KeyMultiRegionConfigurationReplicaKey struct {
+	// 多区域密钥的区域 ID。
+	Region *string `pulumi:"region"`
+	// 多区域密钥的转换。
+	Trn *string `pulumi:"trn"`
+}
+
+// KeyMultiRegionConfigurationReplicaKeyInput is an input type that accepts KeyMultiRegionConfigurationReplicaKeyArgs and KeyMultiRegionConfigurationReplicaKeyOutput values.
+// You can construct a concrete instance of `KeyMultiRegionConfigurationReplicaKeyInput` via:
+//
+//	KeyMultiRegionConfigurationReplicaKeyArgs{...}
+type KeyMultiRegionConfigurationReplicaKeyInput interface {
+	pulumi.Input
+
+	ToKeyMultiRegionConfigurationReplicaKeyOutput() KeyMultiRegionConfigurationReplicaKeyOutput
+	ToKeyMultiRegionConfigurationReplicaKeyOutputWithContext(context.Context) KeyMultiRegionConfigurationReplicaKeyOutput
+}
+
+type KeyMultiRegionConfigurationReplicaKeyArgs struct {
+	// 多区域密钥的区域 ID。
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// 多区域密钥的转换。
+	Trn pulumi.StringPtrInput `pulumi:"trn"`
+}
+
+func (KeyMultiRegionConfigurationReplicaKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyMultiRegionConfigurationReplicaKey)(nil)).Elem()
+}
+
+func (i KeyMultiRegionConfigurationReplicaKeyArgs) ToKeyMultiRegionConfigurationReplicaKeyOutput() KeyMultiRegionConfigurationReplicaKeyOutput {
+	return i.ToKeyMultiRegionConfigurationReplicaKeyOutputWithContext(context.Background())
+}
+
+func (i KeyMultiRegionConfigurationReplicaKeyArgs) ToKeyMultiRegionConfigurationReplicaKeyOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationReplicaKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationReplicaKeyOutput)
+}
+
+// KeyMultiRegionConfigurationReplicaKeyArrayInput is an input type that accepts KeyMultiRegionConfigurationReplicaKeyArray and KeyMultiRegionConfigurationReplicaKeyArrayOutput values.
+// You can construct a concrete instance of `KeyMultiRegionConfigurationReplicaKeyArrayInput` via:
+//
+//	KeyMultiRegionConfigurationReplicaKeyArray{ KeyMultiRegionConfigurationReplicaKeyArgs{...} }
+type KeyMultiRegionConfigurationReplicaKeyArrayInput interface {
+	pulumi.Input
+
+	ToKeyMultiRegionConfigurationReplicaKeyArrayOutput() KeyMultiRegionConfigurationReplicaKeyArrayOutput
+	ToKeyMultiRegionConfigurationReplicaKeyArrayOutputWithContext(context.Context) KeyMultiRegionConfigurationReplicaKeyArrayOutput
+}
+
+type KeyMultiRegionConfigurationReplicaKeyArray []KeyMultiRegionConfigurationReplicaKeyInput
+
+func (KeyMultiRegionConfigurationReplicaKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyMultiRegionConfigurationReplicaKey)(nil)).Elem()
+}
+
+func (i KeyMultiRegionConfigurationReplicaKeyArray) ToKeyMultiRegionConfigurationReplicaKeyArrayOutput() KeyMultiRegionConfigurationReplicaKeyArrayOutput {
+	return i.ToKeyMultiRegionConfigurationReplicaKeyArrayOutputWithContext(context.Background())
+}
+
+func (i KeyMultiRegionConfigurationReplicaKeyArray) ToKeyMultiRegionConfigurationReplicaKeyArrayOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationReplicaKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyMultiRegionConfigurationReplicaKeyArrayOutput)
+}
+
+type KeyMultiRegionConfigurationReplicaKeyOutput struct{ *pulumi.OutputState }
+
+func (KeyMultiRegionConfigurationReplicaKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyMultiRegionConfigurationReplicaKey)(nil)).Elem()
+}
+
+func (o KeyMultiRegionConfigurationReplicaKeyOutput) ToKeyMultiRegionConfigurationReplicaKeyOutput() KeyMultiRegionConfigurationReplicaKeyOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationReplicaKeyOutput) ToKeyMultiRegionConfigurationReplicaKeyOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationReplicaKeyOutput {
+	return o
+}
+
+// 多区域密钥的区域 ID。
+func (o KeyMultiRegionConfigurationReplicaKeyOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyMultiRegionConfigurationReplicaKey) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// 多区域密钥的转换。
+func (o KeyMultiRegionConfigurationReplicaKeyOutput) Trn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyMultiRegionConfigurationReplicaKey) *string { return v.Trn }).(pulumi.StringPtrOutput)
+}
+
+type KeyMultiRegionConfigurationReplicaKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (KeyMultiRegionConfigurationReplicaKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyMultiRegionConfigurationReplicaKey)(nil)).Elem()
+}
+
+func (o KeyMultiRegionConfigurationReplicaKeyArrayOutput) ToKeyMultiRegionConfigurationReplicaKeyArrayOutput() KeyMultiRegionConfigurationReplicaKeyArrayOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationReplicaKeyArrayOutput) ToKeyMultiRegionConfigurationReplicaKeyArrayOutputWithContext(ctx context.Context) KeyMultiRegionConfigurationReplicaKeyArrayOutput {
+	return o
+}
+
+func (o KeyMultiRegionConfigurationReplicaKeyArrayOutput) Index(i pulumi.IntInput) KeyMultiRegionConfigurationReplicaKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeyMultiRegionConfigurationReplicaKey {
+		return vs[0].([]KeyMultiRegionConfigurationReplicaKey)[vs[1].(int)]
+	}).(KeyMultiRegionConfigurationReplicaKeyOutput)
+}
+
+type KeyTag struct {
+	// KMS密钥的标签键
+	Key *string `pulumi:"key"`
+	// KMS密钥的标签值
+	Value *string `pulumi:"value"`
+}
+
+// KeyTagInput is an input type that accepts KeyTagArgs and KeyTagOutput values.
+// You can construct a concrete instance of `KeyTagInput` via:
+//
+//	KeyTagArgs{...}
+type KeyTagInput interface {
+	pulumi.Input
+
+	ToKeyTagOutput() KeyTagOutput
+	ToKeyTagOutputWithContext(context.Context) KeyTagOutput
+}
+
+type KeyTagArgs struct {
+	// KMS密钥的标签键
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// KMS密钥的标签值
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (KeyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyTag)(nil)).Elem()
+}
+
+func (i KeyTagArgs) ToKeyTagOutput() KeyTagOutput {
+	return i.ToKeyTagOutputWithContext(context.Background())
+}
+
+func (i KeyTagArgs) ToKeyTagOutputWithContext(ctx context.Context) KeyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyTagOutput)
+}
+
+// KeyTagArrayInput is an input type that accepts KeyTagArray and KeyTagArrayOutput values.
+// You can construct a concrete instance of `KeyTagArrayInput` via:
+//
+//	KeyTagArray{ KeyTagArgs{...} }
+type KeyTagArrayInput interface {
+	pulumi.Input
+
+	ToKeyTagArrayOutput() KeyTagArrayOutput
+	ToKeyTagArrayOutputWithContext(context.Context) KeyTagArrayOutput
+}
+
+type KeyTagArray []KeyTagInput
+
+func (KeyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyTag)(nil)).Elem()
+}
+
+func (i KeyTagArray) ToKeyTagArrayOutput() KeyTagArrayOutput {
+	return i.ToKeyTagArrayOutputWithContext(context.Background())
+}
+
+func (i KeyTagArray) ToKeyTagArrayOutputWithContext(ctx context.Context) KeyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyTagArrayOutput)
+}
+
+type KeyTagOutput struct{ *pulumi.OutputState }
+
+func (KeyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyTag)(nil)).Elem()
+}
+
+func (o KeyTagOutput) ToKeyTagOutput() KeyTagOutput {
+	return o
+}
+
+func (o KeyTagOutput) ToKeyTagOutputWithContext(ctx context.Context) KeyTagOutput {
+	return o
+}
+
+// KMS密钥的标签键
+func (o KeyTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// KMS密钥的标签值
+func (o KeyTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type KeyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (KeyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyTag)(nil)).Elem()
+}
+
+func (o KeyTagArrayOutput) ToKeyTagArrayOutput() KeyTagArrayOutput {
+	return o
+}
+
+func (o KeyTagArrayOutput) ToKeyTagArrayOutputWithContext(ctx context.Context) KeyTagArrayOutput {
+	return o
+}
+
+func (o KeyTagArrayOutput) Index(i pulumi.IntInput) KeyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeyTag {
+		return vs[0].([]KeyTag)[vs[1].(int)]
+	}).(KeyTagOutput)
+}
+
 type GetKeyMultiRegionConfiguration struct {
 	// 多区域密钥的类型。
 	MultiRegionKeyType string `pulumi:"multiRegionKeyType"`
@@ -359,12 +898,28 @@ func (o GetKeyTagArrayOutput) Index(i pulumi.IntInput) GetKeyTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationInput)(nil)).Elem(), KeyMultiRegionConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationPtrInput)(nil)).Elem(), KeyMultiRegionConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationPrimaryKeyInput)(nil)).Elem(), KeyMultiRegionConfigurationPrimaryKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationPrimaryKeyPtrInput)(nil)).Elem(), KeyMultiRegionConfigurationPrimaryKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationReplicaKeyInput)(nil)).Elem(), KeyMultiRegionConfigurationReplicaKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyMultiRegionConfigurationReplicaKeyArrayInput)(nil)).Elem(), KeyMultiRegionConfigurationReplicaKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyTagInput)(nil)).Elem(), KeyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyTagArrayInput)(nil)).Elem(), KeyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationInput)(nil)).Elem(), GetKeyMultiRegionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationPrimaryKeyInput)(nil)).Elem(), GetKeyMultiRegionConfigurationPrimaryKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationReplicaKeyInput)(nil)).Elem(), GetKeyMultiRegionConfigurationReplicaKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyMultiRegionConfigurationReplicaKeyArrayInput)(nil)).Elem(), GetKeyMultiRegionConfigurationReplicaKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyTagInput)(nil)).Elem(), GetKeyTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyTagArrayInput)(nil)).Elem(), GetKeyTagArray{})
+	pulumi.RegisterOutputType(KeyMultiRegionConfigurationOutput{})
+	pulumi.RegisterOutputType(KeyMultiRegionConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(KeyMultiRegionConfigurationPrimaryKeyOutput{})
+	pulumi.RegisterOutputType(KeyMultiRegionConfigurationPrimaryKeyPtrOutput{})
+	pulumi.RegisterOutputType(KeyMultiRegionConfigurationReplicaKeyOutput{})
+	pulumi.RegisterOutputType(KeyMultiRegionConfigurationReplicaKeyArrayOutput{})
+	pulumi.RegisterOutputType(KeyTagOutput{})
+	pulumi.RegisterOutputType(KeyTagArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyMultiRegionConfigurationOutput{})
 	pulumi.RegisterOutputType(GetKeyMultiRegionConfigurationPrimaryKeyOutput{})
 	pulumi.RegisterOutputType(GetKeyMultiRegionConfigurationReplicaKeyOutput{})

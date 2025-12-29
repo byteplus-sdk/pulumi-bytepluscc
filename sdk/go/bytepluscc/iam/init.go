@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:iam/policy:Policy":
 		r = &Policy{}
+	case "bytepluscc:iam/project:Project":
+		r = &Project{}
 	case "bytepluscc:iam/role:Role":
 		r = &Role{}
 	case "bytepluscc:iam/user:User":
@@ -43,6 +45,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"iam/policy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"iam/project",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

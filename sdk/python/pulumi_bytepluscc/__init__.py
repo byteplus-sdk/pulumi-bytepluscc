@@ -17,36 +17,52 @@ if typing.TYPE_CHECKING:
     apig = __apig
     import pulumi_bytepluscc.autoscaling as __autoscaling
     autoscaling = __autoscaling
+    import pulumi_bytepluscc.bmq as __bmq
+    bmq = __bmq
     import pulumi_bytepluscc.cdn as __cdn
     cdn = __cdn
     import pulumi_bytepluscc.cen as __cen
     cen = __cen
     import pulumi_bytepluscc.clb as __clb
     clb = __clb
+    import pulumi_bytepluscc.cloudidentity as __cloudidentity
+    cloudidentity = __cloudidentity
     import pulumi_bytepluscc.config as __config
     config = __config
     import pulumi_bytepluscc.cr as __cr
     cr = __cr
+    import pulumi_bytepluscc.dns as __dns
+    dns = __dns
     import pulumi_bytepluscc.ecs as __ecs
     ecs = __ecs
     import pulumi_bytepluscc.escloud as __escloud
     escloud = __escloud
+    import pulumi_bytepluscc.firewallcenter as __firewallcenter
+    firewallcenter = __firewallcenter
     import pulumi_bytepluscc.hbase as __hbase
     hbase = __hbase
     import pulumi_bytepluscc.iam as __iam
     iam = __iam
+    import pulumi_bytepluscc.kafka as __kafka
+    kafka = __kafka
     import pulumi_bytepluscc.kms as __kms
     kms = __kms
     import pulumi_bytepluscc.natgateway as __natgateway
     natgateway = __natgateway
     import pulumi_bytepluscc.organization as __organization
     organization = __organization
+    import pulumi_bytepluscc.privatelink as __privatelink
+    privatelink = __privatelink
     import pulumi_bytepluscc.rdsmysql as __rdsmysql
     rdsmysql = __rdsmysql
+    import pulumi_bytepluscc.redis as __redis
+    redis = __redis
     import pulumi_bytepluscc.storageebs as __storageebs
     storageebs = __storageebs
     import pulumi_bytepluscc.vefaas as __vefaas
     vefaas = __vefaas
+    import pulumi_bytepluscc.vepfs as __vepfs
+    vepfs = __vepfs
     import pulumi_bytepluscc.vke as __vke
     vke = __vke
     import pulumi_bytepluscc.vpc as __vpc
@@ -55,21 +71,29 @@ else:
     alb = _utilities.lazy_import('pulumi_bytepluscc.alb')
     apig = _utilities.lazy_import('pulumi_bytepluscc.apig')
     autoscaling = _utilities.lazy_import('pulumi_bytepluscc.autoscaling')
+    bmq = _utilities.lazy_import('pulumi_bytepluscc.bmq')
     cdn = _utilities.lazy_import('pulumi_bytepluscc.cdn')
     cen = _utilities.lazy_import('pulumi_bytepluscc.cen')
     clb = _utilities.lazy_import('pulumi_bytepluscc.clb')
+    cloudidentity = _utilities.lazy_import('pulumi_bytepluscc.cloudidentity')
     config = _utilities.lazy_import('pulumi_bytepluscc.config')
     cr = _utilities.lazy_import('pulumi_bytepluscc.cr')
+    dns = _utilities.lazy_import('pulumi_bytepluscc.dns')
     ecs = _utilities.lazy_import('pulumi_bytepluscc.ecs')
     escloud = _utilities.lazy_import('pulumi_bytepluscc.escloud')
+    firewallcenter = _utilities.lazy_import('pulumi_bytepluscc.firewallcenter')
     hbase = _utilities.lazy_import('pulumi_bytepluscc.hbase')
     iam = _utilities.lazy_import('pulumi_bytepluscc.iam')
+    kafka = _utilities.lazy_import('pulumi_bytepluscc.kafka')
     kms = _utilities.lazy_import('pulumi_bytepluscc.kms')
     natgateway = _utilities.lazy_import('pulumi_bytepluscc.natgateway')
     organization = _utilities.lazy_import('pulumi_bytepluscc.organization')
+    privatelink = _utilities.lazy_import('pulumi_bytepluscc.privatelink')
     rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
+    redis = _utilities.lazy_import('pulumi_bytepluscc.redis')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
     vefaas = _utilities.lazy_import('pulumi_bytepluscc.vefaas')
+    vepfs = _utilities.lazy_import('pulumi_bytepluscc.vepfs')
     vke = _utilities.lazy_import('pulumi_bytepluscc.vke')
     vpc = _utilities.lazy_import('pulumi_bytepluscc.vpc')
 
@@ -150,6 +174,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "bmq/instance",
+  "fqn": "pulumi_bytepluscc.bmq",
+  "classes": {
+   "bytepluscc:bmq/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cdn/shareConfig",
   "fqn": "pulumi_bytepluscc.cdn",
   "classes": {
@@ -174,10 +206,26 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudidentity/user",
+  "fqn": "pulumi_bytepluscc.cloudidentity",
+  "classes": {
+   "bytepluscc:cloudidentity/user:User": "User"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cr/repository",
   "fqn": "pulumi_bytepluscc.cr",
   "classes": {
    "bytepluscc:cr/repository:Repository": "Repository"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "dns/zone",
+  "fqn": "pulumi_bytepluscc.dns",
+  "classes": {
+   "bytepluscc:dns/zone:Zone": "Zone"
   }
  },
  {
@@ -206,6 +254,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "firewallcenter/dnsControlPolicy",
+  "fqn": "pulumi_bytepluscc.firewallcenter",
+  "classes": {
+   "bytepluscc:firewallcenter/dnsControlPolicy:DnsControlPolicy": "DnsControlPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "hbase/instance",
   "fqn": "pulumi_bytepluscc.hbase",
   "classes": {
@@ -218,6 +274,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.iam",
   "classes": {
    "bytepluscc:iam/policy:Policy": "Policy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "iam/project",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/project:Project": "Project"
   }
  },
  {
@@ -238,10 +302,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "kafka/topic",
+  "fqn": "pulumi_bytepluscc.kafka",
+  "classes": {
+   "bytepluscc:kafka/topic:Topic": "Topic"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "kms/key",
+  "fqn": "pulumi_bytepluscc.kms",
+  "classes": {
+   "bytepluscc:kms/key:Key": "Key"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "natgateway/dnatentry",
   "fqn": "pulumi_bytepluscc.natgateway",
   "classes": {
    "bytepluscc:natgateway/dnatentry:Dnatentry": "Dnatentry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "natgateway/natIp",
+  "fqn": "pulumi_bytepluscc.natgateway",
+  "classes": {
+   "bytepluscc:natgateway/natIp:NatIp": "NatIp"
   }
  },
  {
@@ -270,6 +358,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "privatelink/endpointService",
+  "fqn": "pulumi_bytepluscc.privatelink",
+  "classes": {
+   "bytepluscc:privatelink/endpointService:EndpointService": "EndpointService"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdsmysql/dbAccount",
   "fqn": "pulumi_bytepluscc.rdsmysql",
   "classes": {
@@ -282,6 +378,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.rdsmysql",
   "classes": {
    "bytepluscc:rdsmysql/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "redis/instance",
+  "fqn": "pulumi_bytepluscc.redis",
+  "classes": {
+   "bytepluscc:redis/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "storageebs/snapshot",
+  "fqn": "pulumi_bytepluscc.storageebs",
+  "classes": {
+   "bytepluscc:storageebs/snapshot:Snapshot": "Snapshot"
   }
  },
  {
@@ -310,6 +422,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vepfs/instance",
+  "fqn": "pulumi_bytepluscc.vepfs",
+  "classes": {
+   "bytepluscc:vepfs/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vke/addon",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/addon:Addon": "Addon"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vke/cluster",
   "fqn": "pulumi_bytepluscc.vke",
   "classes": {
@@ -318,10 +446,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vke/nodePool",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/nodePool:NodePool": "NodePool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vke/permission",
   "fqn": "pulumi_bytepluscc.vke",
   "classes": {
    "bytepluscc:vke/permission:Permission": "Permission"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/eni",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/eni:Eni": "Eni"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/securityGroup",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/securityGroup:SecurityGroup": "SecurityGroup"
   }
  },
  {
