@@ -6,8 +6,14 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .eni import *
+from .get_eni import *
+from .get_enis import *
+from .get_security_group import *
+from .get_security_groups import *
 from .get_vpc import *
 from .get_vpcs import *
+from .security_group import *
 from .vpc import *
 from ._inputs import *
 from . import outputs

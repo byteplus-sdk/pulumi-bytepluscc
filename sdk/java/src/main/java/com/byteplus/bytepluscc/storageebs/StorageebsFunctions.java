@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.storageebs;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.storageebs.inputs.GetSnapshotArgs;
+import com.byteplus.bytepluscc.storageebs.inputs.GetSnapshotPlainArgs;
 import com.byteplus.bytepluscc.storageebs.inputs.GetVolumeArgs;
 import com.byteplus.bytepluscc.storageebs.inputs.GetVolumePlainArgs;
+import com.byteplus.bytepluscc.storageebs.outputs.GetSnapshotResult;
+import com.byteplus.bytepluscc.storageebs.outputs.GetSnapshotsResult;
 import com.byteplus.bytepluscc.storageebs.outputs.GetVolumeResult;
 import com.byteplus.bytepluscc.storageebs.outputs.GetVolumesResult;
 import com.pulumi.core.Output;
@@ -17,6 +21,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class StorageebsFunctions {
+    /**
+     * Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args) {
+        return getSnapshot(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args) {
+        return getSnapshotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:storageebs/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:storageebs/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:storageebs/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots() {
+        return getSnapshots(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain() {
+        return getSnapshotsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots(InvokeArgs args) {
+        return getSnapshots(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(InvokeArgs args) {
+        return getSnapshotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:storageebs/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:storageebs/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::StorageEBS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:storageebs/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::StorageEBS::Volume
      * 

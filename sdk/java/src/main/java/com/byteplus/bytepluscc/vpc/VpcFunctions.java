@@ -4,8 +4,16 @@
 package com.byteplus.bytepluscc.vpc;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vpc.inputs.GetEniArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetEniPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcPlainArgs;
+import com.byteplus.bytepluscc.vpc.outputs.GetEniResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetEnisResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetVpcResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetVpcsResult;
 import com.pulumi.core.Output;
@@ -17,6 +25,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VpcFunctions {
+    /**
+     * Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static Output<GetEniResult> getEni(GetEniArgs args) {
+        return getEni(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static CompletableFuture<GetEniResult> getEniPlain(GetEniPlainArgs args) {
+        return getEniPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static Output<GetEniResult> getEni(GetEniArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEni:getEni", TypeShape.of(GetEniResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static Output<GetEniResult> getEni(GetEniArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEni:getEni", TypeShape.of(GetEniResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static CompletableFuture<GetEniResult> getEniPlain(GetEniPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getEni:getEni", TypeShape.of(GetEniResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static Output<GetEnisResult> getEnis() {
+        return getEnis(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static CompletableFuture<GetEnisResult> getEnisPlain() {
+        return getEnisPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static Output<GetEnisResult> getEnis(InvokeArgs args) {
+        return getEnis(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static CompletableFuture<GetEnisResult> getEnisPlain(InvokeArgs args) {
+        return getEnisPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static Output<GetEnisResult> getEnis(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEnis:getEnis", TypeShape.of(GetEnisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static Output<GetEnisResult> getEnis(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEnis:getEnis", TypeShape.of(GetEnisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::ENI
+     * 
+     */
+    public static CompletableFuture<GetEnisResult> getEnisPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getEnis:getEnis", TypeShape.of(GetEnisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static Output<GetSecurityGroupResult> getSecurityGroup(GetSecurityGroupArgs args) {
+        return getSecurityGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static CompletableFuture<GetSecurityGroupResult> getSecurityGroupPlain(GetSecurityGroupPlainArgs args) {
+        return getSecurityGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static Output<GetSecurityGroupResult> getSecurityGroup(GetSecurityGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSecurityGroup:getSecurityGroup", TypeShape.of(GetSecurityGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static Output<GetSecurityGroupResult> getSecurityGroup(GetSecurityGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSecurityGroup:getSecurityGroup", TypeShape.of(GetSecurityGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static CompletableFuture<GetSecurityGroupResult> getSecurityGroupPlain(GetSecurityGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getSecurityGroup:getSecurityGroup", TypeShape.of(GetSecurityGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static Output<GetSecurityGroupsResult> getSecurityGroups() {
+        return getSecurityGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static CompletableFuture<GetSecurityGroupsResult> getSecurityGroupsPlain() {
+        return getSecurityGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static Output<GetSecurityGroupsResult> getSecurityGroups(InvokeArgs args) {
+        return getSecurityGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static CompletableFuture<GetSecurityGroupsResult> getSecurityGroupsPlain(InvokeArgs args) {
+        return getSecurityGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static Output<GetSecurityGroupsResult> getSecurityGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSecurityGroups:getSecurityGroups", TypeShape.of(GetSecurityGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static Output<GetSecurityGroupsResult> getSecurityGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSecurityGroups:getSecurityGroups", TypeShape.of(GetSecurityGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::SecurityGroup
+     * 
+     */
+    public static CompletableFuture<GetSecurityGroupsResult> getSecurityGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getSecurityGroups:getSecurityGroups", TypeShape.of(GetSecurityGroupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VPC::VPC
      * 

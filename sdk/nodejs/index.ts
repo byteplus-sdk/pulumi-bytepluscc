@@ -13,22 +13,30 @@ import { Provider } from "./provider";
 import * as alb from "./alb";
 import * as apig from "./apig";
 import * as autoscaling from "./autoscaling";
+import * as bmq from "./bmq";
 import * as cdn from "./cdn";
 import * as cen from "./cen";
 import * as clb from "./clb";
+import * as cloudidentity from "./cloudidentity";
 import * as config from "./config";
 import * as cr from "./cr";
+import * as dns from "./dns";
 import * as ecs from "./ecs";
 import * as escloud from "./escloud";
+import * as firewallcenter from "./firewallcenter";
 import * as hbase from "./hbase";
 import * as iam from "./iam";
+import * as kafka from "./kafka";
 import * as kms from "./kms";
 import * as natgateway from "./natgateway";
 import * as organization from "./organization";
+import * as privatelink from "./privatelink";
 import * as rdsmysql from "./rdsmysql";
+import * as redis from "./redis";
 import * as storageebs from "./storageebs";
 import * as types from "./types";
 import * as vefaas from "./vefaas";
+import * as vepfs from "./vepfs";
 import * as vke from "./vke";
 import * as vpc from "./vpc";
 
@@ -36,22 +44,30 @@ export {
     alb,
     apig,
     autoscaling,
+    bmq,
     cdn,
     cen,
     clb,
+    cloudidentity,
     config,
     cr,
+    dns,
     ecs,
     escloud,
+    firewallcenter,
     hbase,
     iam,
+    kafka,
     kms,
     natgateway,
     organization,
+    privatelink,
     rdsmysql,
+    redis,
     storageebs,
     types,
     vefaas,
+    vepfs,
     vke,
     vpc,
 };

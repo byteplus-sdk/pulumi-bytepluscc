@@ -15,6 +15,7 @@ from .get_ngw import *
 from .get_ngws import *
 from .get_snatentries import *
 from .get_snatentry import *
+from .nat_ip import *
 from .ngw import *
 from .snatentry import *
 from ._inputs import *

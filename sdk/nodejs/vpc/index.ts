@@ -5,6 +5,31 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { EniArgs, EniState } from "./eni";
+export type Eni = import("./eni").Eni;
+export const Eni: typeof import("./eni").Eni = null as any;
+utilities.lazyLoad(exports, ["Eni"], () => require("./eni"));
+
+export { GetEniArgs, GetEniResult, GetEniOutputArgs } from "./getEni";
+export const getEni: typeof import("./getEni").getEni = null as any;
+export const getEniOutput: typeof import("./getEni").getEniOutput = null as any;
+utilities.lazyLoad(exports, ["getEni","getEniOutput"], () => require("./getEni"));
+
+export { GetEnisResult } from "./getEnis";
+export const getEnis: typeof import("./getEnis").getEnis = null as any;
+export const getEnisOutput: typeof import("./getEnis").getEnisOutput = null as any;
+utilities.lazyLoad(exports, ["getEnis","getEnisOutput"], () => require("./getEnis"));
+
+export { GetSecurityGroupArgs, GetSecurityGroupResult, GetSecurityGroupOutputArgs } from "./getSecurityGroup";
+export const getSecurityGroup: typeof import("./getSecurityGroup").getSecurityGroup = null as any;
+export const getSecurityGroupOutput: typeof import("./getSecurityGroup").getSecurityGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityGroup","getSecurityGroupOutput"], () => require("./getSecurityGroup"));
+
+export { GetSecurityGroupsResult } from "./getSecurityGroups";
+export const getSecurityGroups: typeof import("./getSecurityGroups").getSecurityGroups = null as any;
+export const getSecurityGroupsOutput: typeof import("./getSecurityGroups").getSecurityGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityGroups","getSecurityGroupsOutput"], () => require("./getSecurityGroups"));
+
 export { GetVpcArgs, GetVpcResult, GetVpcOutputArgs } from "./getVpc";
 export const getVpc: typeof import("./getVpc").getVpc = null as any;
 export const getVpcOutput: typeof import("./getVpc").getVpcOutput = null as any;
@@ -14,6 +39,11 @@ export { GetVpcsResult } from "./getVpcs";
 export const getVpcs: typeof import("./getVpcs").getVpcs = null as any;
 export const getVpcsOutput: typeof import("./getVpcs").getVpcsOutput = null as any;
 utilities.lazyLoad(exports, ["getVpcs","getVpcsOutput"], () => require("./getVpcs"));
+
+export { SecurityGroupArgs, SecurityGroupState } from "./securityGroup";
+export type SecurityGroup = import("./securityGroup").SecurityGroup;
+export const SecurityGroup: typeof import("./securityGroup").SecurityGroup = null as any;
+utilities.lazyLoad(exports, ["SecurityGroup"], () => require("./securityGroup"));
 
 export { VpcArgs, VpcState } from "./vpc";
 export type Vpc = import("./vpc").Vpc;
@@ -25,6 +55,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vpc/eni:Eni":
+                return new Eni(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/securityGroup:SecurityGroup":
+                return new SecurityGroup(name, <any>undefined, { urn })
             case "bytepluscc:vpc/vpc:Vpc":
                 return new Vpc(name, <any>undefined, { urn })
             default:
@@ -32,4 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eni", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/securityGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/vpc", _module)

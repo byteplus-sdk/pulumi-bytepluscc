@@ -12,9 +12,9 @@ import (
 )
 
 // Data Source schema for Byteplus::NatGateway::NatIp
-func GetNatIp(ctx *pulumi.Context, args *GetNatIpArgs, opts ...pulumi.InvokeOption) (*GetNatIpResult, error) {
+func LookupNatIp(ctx *pulumi.Context, args *LookupNatIpArgs, opts ...pulumi.InvokeOption) (*LookupNatIpResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetNatIpResult
+	var rv LookupNatIpResult
 	err := ctx.Invoke("bytepluscc:natgateway/getNatIp:getNatIp", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -23,13 +23,13 @@ func GetNatIp(ctx *pulumi.Context, args *GetNatIpArgs, opts ...pulumi.InvokeOpti
 }
 
 // A collection of arguments for invoking getNatIp.
-type GetNatIpArgs struct {
+type LookupNatIpArgs struct {
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 }
 
 // A collection of values returned by getNatIp.
-type GetNatIpResult struct {
+type LookupNatIpResult struct {
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 	// 是否为默认中转IP。true：是。false：否。
@@ -50,85 +50,85 @@ type GetNatIpResult struct {
 	UsingStatus string `pulumi:"usingStatus"`
 }
 
-func GetNatIpOutput(ctx *pulumi.Context, args GetNatIpOutputArgs, opts ...pulumi.InvokeOption) GetNatIpResultOutput {
+func LookupNatIpOutput(ctx *pulumi.Context, args LookupNatIpOutputArgs, opts ...pulumi.InvokeOption) LookupNatIpResultOutput {
 	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNatIpResultOutput, error) {
-			args := v.(GetNatIpArgs)
+		ApplyT(func(v interface{}) (LookupNatIpResultOutput, error) {
+			args := v.(LookupNatIpArgs)
 			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("bytepluscc:natgateway/getNatIp:getNatIp", args, GetNatIpResultOutput{}, options).(GetNatIpResultOutput), nil
-		}).(GetNatIpResultOutput)
+			return ctx.InvokeOutput("bytepluscc:natgateway/getNatIp:getNatIp", args, LookupNatIpResultOutput{}, options).(LookupNatIpResultOutput), nil
+		}).(LookupNatIpResultOutput)
 }
 
 // A collection of arguments for invoking getNatIp.
-type GetNatIpOutputArgs struct {
+type LookupNatIpOutputArgs struct {
 	// Uniquely identifies the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
-func (GetNatIpOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNatIpArgs)(nil)).Elem()
+func (LookupNatIpOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupNatIpArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getNatIp.
-type GetNatIpResultOutput struct{ *pulumi.OutputState }
+type LookupNatIpResultOutput struct{ *pulumi.OutputState }
 
-func (GetNatIpResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNatIpResult)(nil)).Elem()
+func (LookupNatIpResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupNatIpResult)(nil)).Elem()
 }
 
-func (o GetNatIpResultOutput) ToGetNatIpResultOutput() GetNatIpResultOutput {
+func (o LookupNatIpResultOutput) ToLookupNatIpResultOutput() LookupNatIpResultOutput {
 	return o
 }
 
-func (o GetNatIpResultOutput) ToGetNatIpResultOutputWithContext(ctx context.Context) GetNatIpResultOutput {
+func (o LookupNatIpResultOutput) ToLookupNatIpResultOutputWithContext(ctx context.Context) LookupNatIpResultOutput {
 	return o
 }
 
 // Uniquely identifies the resource.
-func (o GetNatIpResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // 是否为默认中转IP。true：是。false：否。
-func (o GetNatIpResultOutput) IsDefault() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNatIpResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
+func (o LookupNatIpResultOutput) IsDefault() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupNatIpResult) bool { return v.IsDefault }).(pulumi.BoolOutput)
 }
 
 // 私网NAT网关ID。
-func (o GetNatIpResultOutput) NatGatewayId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.NatGatewayId }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) NatGatewayId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.NatGatewayId }).(pulumi.StringOutput)
 }
 
 // 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
-func (o GetNatIpResultOutput) NatIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.NatIp }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) NatIp() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.NatIp }).(pulumi.StringOutput)
 }
 
 // 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-func (o GetNatIpResultOutput) NatIpDescription() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.NatIpDescription }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) NatIpDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.NatIpDescription }).(pulumi.StringOutput)
 }
 
 // 中转IP的ID。
-func (o GetNatIpResultOutput) NatIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.NatIpId }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) NatIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.NatIpId }).(pulumi.StringOutput)
 }
 
 // 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
-func (o GetNatIpResultOutput) NatIpName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.NatIpName }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) NatIpName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.NatIpName }).(pulumi.StringOutput)
 }
 
 // 中转IP的状态。Creating：创建中。Available：可用。Deleting：删除中。Deleted：已删除。
-func (o GetNatIpResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
 // 中转IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
-func (o GetNatIpResultOutput) UsingStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNatIpResult) string { return v.UsingStatus }).(pulumi.StringOutput)
+func (o LookupNatIpResultOutput) UsingStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNatIpResult) string { return v.UsingStatus }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetNatIpResultOutput{})
+	pulumi.RegisterOutputType(LookupNatIpResultOutput{})
 }

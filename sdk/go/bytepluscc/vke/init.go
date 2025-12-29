@@ -21,8 +21,12 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:vke/addon:Addon":
+		r = &Addon{}
 	case "bytepluscc:vke/cluster:Cluster":
 		r = &Cluster{}
+	case "bytepluscc:vke/nodePool:NodePool":
+		r = &NodePool{}
 	case "bytepluscc:vke/permission:Permission":
 		r = &Permission{}
 	default:
@@ -40,7 +44,17 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"vke/addon",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"vke/cluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vke/nodePool",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

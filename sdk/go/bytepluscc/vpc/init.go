@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:vpc/eni:Eni":
+		r = &Eni{}
+	case "bytepluscc:vpc/securityGroup:SecurityGroup":
+		r = &SecurityGroup{}
 	case "bytepluscc:vpc/vpc:Vpc":
 		r = &Vpc{}
 	default:
@@ -36,6 +40,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/eni",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/securityGroup",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vpc/vpc",

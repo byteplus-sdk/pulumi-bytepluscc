@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AddonArgs, AddonState } from "./addon";
+export type Addon = import("./addon").Addon;
+export const Addon: typeof import("./addon").Addon = null as any;
+utilities.lazyLoad(exports, ["Addon"], () => require("./addon"));
+
 export { ClusterArgs, ClusterState } from "./cluster";
 export type Cluster = import("./cluster").Cluster;
 export const Cluster: typeof import("./cluster").Cluster = null as any;
 utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
+
+export { GetAddonArgs, GetAddonResult, GetAddonOutputArgs } from "./getAddon";
+export const getAddon: typeof import("./getAddon").getAddon = null as any;
+export const getAddonOutput: typeof import("./getAddon").getAddonOutput = null as any;
+utilities.lazyLoad(exports, ["getAddon","getAddonOutput"], () => require("./getAddon"));
+
+export { GetAddonsResult } from "./getAddons";
+export const getAddons: typeof import("./getAddons").getAddons = null as any;
+export const getAddonsOutput: typeof import("./getAddons").getAddonsOutput = null as any;
+utilities.lazyLoad(exports, ["getAddons","getAddonsOutput"], () => require("./getAddons"));
 
 export { GetClusterArgs, GetClusterResult, GetClusterOutputArgs } from "./getCluster";
 export const getCluster: typeof import("./getCluster").getCluster = null as any;
@@ -20,6 +35,16 @@ export const getClusters: typeof import("./getClusters").getClusters = null as a
 export const getClustersOutput: typeof import("./getClusters").getClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getClusters","getClustersOutput"], () => require("./getClusters"));
 
+export { GetNodePoolArgs, GetNodePoolResult, GetNodePoolOutputArgs } from "./getNodePool";
+export const getNodePool: typeof import("./getNodePool").getNodePool = null as any;
+export const getNodePoolOutput: typeof import("./getNodePool").getNodePoolOutput = null as any;
+utilities.lazyLoad(exports, ["getNodePool","getNodePoolOutput"], () => require("./getNodePool"));
+
+export { GetNodePoolsResult } from "./getNodePools";
+export const getNodePools: typeof import("./getNodePools").getNodePools = null as any;
+export const getNodePoolsOutput: typeof import("./getNodePools").getNodePoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getNodePools","getNodePoolsOutput"], () => require("./getNodePools"));
+
 export { GetPermissionArgs, GetPermissionResult, GetPermissionOutputArgs } from "./getPermission";
 export const getPermission: typeof import("./getPermission").getPermission = null as any;
 export const getPermissionOutput: typeof import("./getPermission").getPermissionOutput = null as any;
@@ -29,6 +54,11 @@ export { GetPermissionsResult } from "./getPermissions";
 export const getPermissions: typeof import("./getPermissions").getPermissions = null as any;
 export const getPermissionsOutput: typeof import("./getPermissions").getPermissionsOutput = null as any;
 utilities.lazyLoad(exports, ["getPermissions","getPermissionsOutput"], () => require("./getPermissions"));
+
+export { NodePoolArgs, NodePoolState } from "./nodePool";
+export type NodePool = import("./nodePool").NodePool;
+export const NodePool: typeof import("./nodePool").NodePool = null as any;
+utilities.lazyLoad(exports, ["NodePool"], () => require("./nodePool"));
 
 export { PermissionArgs, PermissionState } from "./permission";
 export type Permission = import("./permission").Permission;
@@ -40,8 +70,12 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vke/addon:Addon":
+                return new Addon(name, <any>undefined, { urn })
             case "bytepluscc:vke/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
+            case "bytepluscc:vke/nodePool:NodePool":
+                return new NodePool(name, <any>undefined, { urn })
             case "bytepluscc:vke/permission:Permission":
                 return new Permission(name, <any>undefined, { urn })
             default:
@@ -49,5 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vke/addon", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/cluster", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vke/nodePool", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/permission", _module)
