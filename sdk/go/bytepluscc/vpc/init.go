@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Eni{}
 	case "bytepluscc:vpc/securityGroup:SecurityGroup":
 		r = &SecurityGroup{}
+	case "bytepluscc:vpc/subnet:Subnet":
+		r = &Subnet{}
 	case "bytepluscc:vpc/vpc:Vpc":
 		r = &Vpc{}
 	default:
@@ -48,6 +50,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vpc/securityGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/subnet",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

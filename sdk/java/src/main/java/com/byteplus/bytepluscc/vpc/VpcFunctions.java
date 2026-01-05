@@ -8,12 +8,16 @@ import com.byteplus.bytepluscc.vpc.inputs.GetEniArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetSubnetArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetSubnetPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcPlainArgs;
 import com.byteplus.bytepluscc.vpc.outputs.GetEniResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEnisResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetSubnetResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetSubnetsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetVpcResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetVpcsResult;
 import com.pulumi.core.Output;
@@ -192,6 +196,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetSecurityGroupsResult> getSecurityGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getSecurityGroups:getSecurityGroups", TypeShape.of(GetSecurityGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args) {
+        return getSubnet(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static CompletableFuture<GetSubnetResult> getSubnetPlain(GetSubnetPlainArgs args) {
+        return getSubnetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSubnet:getSubnet", TypeShape.of(GetSubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSubnet:getSubnet", TypeShape.of(GetSubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static CompletableFuture<GetSubnetResult> getSubnetPlain(GetSubnetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getSubnet:getSubnet", TypeShape.of(GetSubnetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static Output<GetSubnetsResult> getSubnets() {
+        return getSubnets(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static CompletableFuture<GetSubnetsResult> getSubnetsPlain() {
+        return getSubnetsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static Output<GetSubnetsResult> getSubnets(InvokeArgs args) {
+        return getSubnets(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(InvokeArgs args) {
+        return getSubnetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static Output<GetSubnetsResult> getSubnets(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSubnets:getSubnets", TypeShape.of(GetSubnetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static Output<GetSubnetsResult> getSubnets(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getSubnets:getSubnets", TypeShape.of(GetSubnetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Subnet
+     * 
+     */
+    public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getSubnets:getSubnets", TypeShape.of(GetSubnetsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::VPC

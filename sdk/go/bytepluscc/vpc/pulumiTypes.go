@@ -1174,6 +1174,268 @@ func (o SecurityGroupTagArrayOutput) Index(i pulumi.IntInput) SecurityGroupTagOu
 	}).(SecurityGroupTagOutput)
 }
 
+type SubnetRouteTable struct {
+	// 子网关联的路由表ID。
+	RouteTableId *string `pulumi:"routeTableId"`
+	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	RouteTableType *string `pulumi:"routeTableType"`
+}
+
+// SubnetRouteTableInput is an input type that accepts SubnetRouteTableArgs and SubnetRouteTableOutput values.
+// You can construct a concrete instance of `SubnetRouteTableInput` via:
+//
+//	SubnetRouteTableArgs{...}
+type SubnetRouteTableInput interface {
+	pulumi.Input
+
+	ToSubnetRouteTableOutput() SubnetRouteTableOutput
+	ToSubnetRouteTableOutputWithContext(context.Context) SubnetRouteTableOutput
+}
+
+type SubnetRouteTableArgs struct {
+	// 子网关联的路由表ID。
+	RouteTableId pulumi.StringPtrInput `pulumi:"routeTableId"`
+	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	RouteTableType pulumi.StringPtrInput `pulumi:"routeTableType"`
+}
+
+func (SubnetRouteTableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SubnetRouteTable)(nil)).Elem()
+}
+
+func (i SubnetRouteTableArgs) ToSubnetRouteTableOutput() SubnetRouteTableOutput {
+	return i.ToSubnetRouteTableOutputWithContext(context.Background())
+}
+
+func (i SubnetRouteTableArgs) ToSubnetRouteTableOutputWithContext(ctx context.Context) SubnetRouteTableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SubnetRouteTableOutput)
+}
+
+func (i SubnetRouteTableArgs) ToSubnetRouteTablePtrOutput() SubnetRouteTablePtrOutput {
+	return i.ToSubnetRouteTablePtrOutputWithContext(context.Background())
+}
+
+func (i SubnetRouteTableArgs) ToSubnetRouteTablePtrOutputWithContext(ctx context.Context) SubnetRouteTablePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SubnetRouteTableOutput).ToSubnetRouteTablePtrOutputWithContext(ctx)
+}
+
+// SubnetRouteTablePtrInput is an input type that accepts SubnetRouteTableArgs, SubnetRouteTablePtr and SubnetRouteTablePtrOutput values.
+// You can construct a concrete instance of `SubnetRouteTablePtrInput` via:
+//
+//	        SubnetRouteTableArgs{...}
+//
+//	or:
+//
+//	        nil
+type SubnetRouteTablePtrInput interface {
+	pulumi.Input
+
+	ToSubnetRouteTablePtrOutput() SubnetRouteTablePtrOutput
+	ToSubnetRouteTablePtrOutputWithContext(context.Context) SubnetRouteTablePtrOutput
+}
+
+type subnetRouteTablePtrType SubnetRouteTableArgs
+
+func SubnetRouteTablePtr(v *SubnetRouteTableArgs) SubnetRouteTablePtrInput {
+	return (*subnetRouteTablePtrType)(v)
+}
+
+func (*subnetRouteTablePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SubnetRouteTable)(nil)).Elem()
+}
+
+func (i *subnetRouteTablePtrType) ToSubnetRouteTablePtrOutput() SubnetRouteTablePtrOutput {
+	return i.ToSubnetRouteTablePtrOutputWithContext(context.Background())
+}
+
+func (i *subnetRouteTablePtrType) ToSubnetRouteTablePtrOutputWithContext(ctx context.Context) SubnetRouteTablePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SubnetRouteTablePtrOutput)
+}
+
+type SubnetRouteTableOutput struct{ *pulumi.OutputState }
+
+func (SubnetRouteTableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SubnetRouteTable)(nil)).Elem()
+}
+
+func (o SubnetRouteTableOutput) ToSubnetRouteTableOutput() SubnetRouteTableOutput {
+	return o
+}
+
+func (o SubnetRouteTableOutput) ToSubnetRouteTableOutputWithContext(ctx context.Context) SubnetRouteTableOutput {
+	return o
+}
+
+func (o SubnetRouteTableOutput) ToSubnetRouteTablePtrOutput() SubnetRouteTablePtrOutput {
+	return o.ToSubnetRouteTablePtrOutputWithContext(context.Background())
+}
+
+func (o SubnetRouteTableOutput) ToSubnetRouteTablePtrOutputWithContext(ctx context.Context) SubnetRouteTablePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SubnetRouteTable) *SubnetRouteTable {
+		return &v
+	}).(SubnetRouteTablePtrOutput)
+}
+
+// 子网关联的路由表ID。
+func (o SubnetRouteTableOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SubnetRouteTable) *string { return v.RouteTableId }).(pulumi.StringPtrOutput)
+}
+
+// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+func (o SubnetRouteTableOutput) RouteTableType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SubnetRouteTable) *string { return v.RouteTableType }).(pulumi.StringPtrOutput)
+}
+
+type SubnetRouteTablePtrOutput struct{ *pulumi.OutputState }
+
+func (SubnetRouteTablePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SubnetRouteTable)(nil)).Elem()
+}
+
+func (o SubnetRouteTablePtrOutput) ToSubnetRouteTablePtrOutput() SubnetRouteTablePtrOutput {
+	return o
+}
+
+func (o SubnetRouteTablePtrOutput) ToSubnetRouteTablePtrOutputWithContext(ctx context.Context) SubnetRouteTablePtrOutput {
+	return o
+}
+
+func (o SubnetRouteTablePtrOutput) Elem() SubnetRouteTableOutput {
+	return o.ApplyT(func(v *SubnetRouteTable) SubnetRouteTable {
+		if v != nil {
+			return *v
+		}
+		var ret SubnetRouteTable
+		return ret
+	}).(SubnetRouteTableOutput)
+}
+
+// 子网关联的路由表ID。
+func (o SubnetRouteTablePtrOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SubnetRouteTable) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RouteTableId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+func (o SubnetRouteTablePtrOutput) RouteTableType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SubnetRouteTable) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RouteTableType
+	}).(pulumi.StringPtrOutput)
+}
+
+type SubnetTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// SubnetTagInput is an input type that accepts SubnetTagArgs and SubnetTagOutput values.
+// You can construct a concrete instance of `SubnetTagInput` via:
+//
+//	SubnetTagArgs{...}
+type SubnetTagInput interface {
+	pulumi.Input
+
+	ToSubnetTagOutput() SubnetTagOutput
+	ToSubnetTagOutputWithContext(context.Context) SubnetTagOutput
+}
+
+type SubnetTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SubnetTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SubnetTag)(nil)).Elem()
+}
+
+func (i SubnetTagArgs) ToSubnetTagOutput() SubnetTagOutput {
+	return i.ToSubnetTagOutputWithContext(context.Background())
+}
+
+func (i SubnetTagArgs) ToSubnetTagOutputWithContext(ctx context.Context) SubnetTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SubnetTagOutput)
+}
+
+// SubnetTagArrayInput is an input type that accepts SubnetTagArray and SubnetTagArrayOutput values.
+// You can construct a concrete instance of `SubnetTagArrayInput` via:
+//
+//	SubnetTagArray{ SubnetTagArgs{...} }
+type SubnetTagArrayInput interface {
+	pulumi.Input
+
+	ToSubnetTagArrayOutput() SubnetTagArrayOutput
+	ToSubnetTagArrayOutputWithContext(context.Context) SubnetTagArrayOutput
+}
+
+type SubnetTagArray []SubnetTagInput
+
+func (SubnetTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SubnetTag)(nil)).Elem()
+}
+
+func (i SubnetTagArray) ToSubnetTagArrayOutput() SubnetTagArrayOutput {
+	return i.ToSubnetTagArrayOutputWithContext(context.Background())
+}
+
+func (i SubnetTagArray) ToSubnetTagArrayOutputWithContext(ctx context.Context) SubnetTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SubnetTagArrayOutput)
+}
+
+type SubnetTagOutput struct{ *pulumi.OutputState }
+
+func (SubnetTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SubnetTag)(nil)).Elem()
+}
+
+func (o SubnetTagOutput) ToSubnetTagOutput() SubnetTagOutput {
+	return o
+}
+
+func (o SubnetTagOutput) ToSubnetTagOutputWithContext(ctx context.Context) SubnetTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o SubnetTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SubnetTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o SubnetTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SubnetTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SubnetTagArrayOutput struct{ *pulumi.OutputState }
+
+func (SubnetTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SubnetTag)(nil)).Elem()
+}
+
+func (o SubnetTagArrayOutput) ToSubnetTagArrayOutput() SubnetTagArrayOutput {
+	return o
+}
+
+func (o SubnetTagArrayOutput) ToSubnetTagArrayOutputWithContext(ctx context.Context) SubnetTagArrayOutput {
+	return o
+}
+
+func (o SubnetTagArrayOutput) Index(i pulumi.IntInput) SubnetTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SubnetTag {
+		return vs[0].([]SubnetTag)[vs[1].(int)]
+	}).(SubnetTagOutput)
+}
+
 type VpcAssociateCen struct {
 	// CEN的ID。
 	CenId *string `pulumi:"cenId"`
@@ -2342,6 +2604,173 @@ func (o GetSecurityGroupTagArrayOutput) Index(i pulumi.IntInput) GetSecurityGrou
 	}).(GetSecurityGroupTagOutput)
 }
 
+type GetSubnetRouteTable struct {
+	// 子网关联的路由表ID。
+	RouteTableId string `pulumi:"routeTableId"`
+	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	RouteTableType string `pulumi:"routeTableType"`
+}
+
+// GetSubnetRouteTableInput is an input type that accepts GetSubnetRouteTableArgs and GetSubnetRouteTableOutput values.
+// You can construct a concrete instance of `GetSubnetRouteTableInput` via:
+//
+//	GetSubnetRouteTableArgs{...}
+type GetSubnetRouteTableInput interface {
+	pulumi.Input
+
+	ToGetSubnetRouteTableOutput() GetSubnetRouteTableOutput
+	ToGetSubnetRouteTableOutputWithContext(context.Context) GetSubnetRouteTableOutput
+}
+
+type GetSubnetRouteTableArgs struct {
+	// 子网关联的路由表ID。
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+	RouteTableType pulumi.StringInput `pulumi:"routeTableType"`
+}
+
+func (GetSubnetRouteTableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetRouteTable)(nil)).Elem()
+}
+
+func (i GetSubnetRouteTableArgs) ToGetSubnetRouteTableOutput() GetSubnetRouteTableOutput {
+	return i.ToGetSubnetRouteTableOutputWithContext(context.Background())
+}
+
+func (i GetSubnetRouteTableArgs) ToGetSubnetRouteTableOutputWithContext(ctx context.Context) GetSubnetRouteTableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetRouteTableOutput)
+}
+
+type GetSubnetRouteTableOutput struct{ *pulumi.OutputState }
+
+func (GetSubnetRouteTableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetRouteTable)(nil)).Elem()
+}
+
+func (o GetSubnetRouteTableOutput) ToGetSubnetRouteTableOutput() GetSubnetRouteTableOutput {
+	return o
+}
+
+func (o GetSubnetRouteTableOutput) ToGetSubnetRouteTableOutputWithContext(ctx context.Context) GetSubnetRouteTableOutput {
+	return o
+}
+
+// 子网关联的路由表ID。
+func (o GetSubnetRouteTableOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetRouteTable) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+func (o GetSubnetRouteTableOutput) RouteTableType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetRouteTable) string { return v.RouteTableType }).(pulumi.StringOutput)
+}
+
+type GetSubnetTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetSubnetTagInput is an input type that accepts GetSubnetTagArgs and GetSubnetTagOutput values.
+// You can construct a concrete instance of `GetSubnetTagInput` via:
+//
+//	GetSubnetTagArgs{...}
+type GetSubnetTagInput interface {
+	pulumi.Input
+
+	ToGetSubnetTagOutput() GetSubnetTagOutput
+	ToGetSubnetTagOutputWithContext(context.Context) GetSubnetTagOutput
+}
+
+type GetSubnetTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetSubnetTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetTag)(nil)).Elem()
+}
+
+func (i GetSubnetTagArgs) ToGetSubnetTagOutput() GetSubnetTagOutput {
+	return i.ToGetSubnetTagOutputWithContext(context.Background())
+}
+
+func (i GetSubnetTagArgs) ToGetSubnetTagOutputWithContext(ctx context.Context) GetSubnetTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetTagOutput)
+}
+
+// GetSubnetTagArrayInput is an input type that accepts GetSubnetTagArray and GetSubnetTagArrayOutput values.
+// You can construct a concrete instance of `GetSubnetTagArrayInput` via:
+//
+//	GetSubnetTagArray{ GetSubnetTagArgs{...} }
+type GetSubnetTagArrayInput interface {
+	pulumi.Input
+
+	ToGetSubnetTagArrayOutput() GetSubnetTagArrayOutput
+	ToGetSubnetTagArrayOutputWithContext(context.Context) GetSubnetTagArrayOutput
+}
+
+type GetSubnetTagArray []GetSubnetTagInput
+
+func (GetSubnetTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubnetTag)(nil)).Elem()
+}
+
+func (i GetSubnetTagArray) ToGetSubnetTagArrayOutput() GetSubnetTagArrayOutput {
+	return i.ToGetSubnetTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetSubnetTagArray) ToGetSubnetTagArrayOutputWithContext(ctx context.Context) GetSubnetTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSubnetTagArrayOutput)
+}
+
+type GetSubnetTagOutput struct{ *pulumi.OutputState }
+
+func (GetSubnetTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSubnetTag)(nil)).Elem()
+}
+
+func (o GetSubnetTagOutput) ToGetSubnetTagOutput() GetSubnetTagOutput {
+	return o
+}
+
+func (o GetSubnetTagOutput) ToGetSubnetTagOutputWithContext(ctx context.Context) GetSubnetTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetSubnetTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetSubnetTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSubnetTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetSubnetTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSubnetTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSubnetTag)(nil)).Elem()
+}
+
+func (o GetSubnetTagArrayOutput) ToGetSubnetTagArrayOutput() GetSubnetTagArrayOutput {
+	return o
+}
+
+func (o GetSubnetTagArrayOutput) ToGetSubnetTagArrayOutputWithContext(ctx context.Context) GetSubnetTagArrayOutput {
+	return o
+}
+
+func (o GetSubnetTagArrayOutput) Index(i pulumi.IntInput) GetSubnetTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSubnetTag {
+		return vs[0].([]GetSubnetTag)[vs[1].(int)]
+	}).(GetSubnetTagOutput)
+}
+
 type GetVpcAssociateCen struct {
 	// CEN的ID。
 	CenId string `pulumi:"cenId"`
@@ -2580,6 +3009,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityGroupIngressPermissionArrayInput)(nil)).Elem(), SecurityGroupIngressPermissionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityGroupTagInput)(nil)).Elem(), SecurityGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityGroupTagArrayInput)(nil)).Elem(), SecurityGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SubnetRouteTableInput)(nil)).Elem(), SubnetRouteTableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SubnetRouteTablePtrInput)(nil)).Elem(), SubnetRouteTableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SubnetTagInput)(nil)).Elem(), SubnetTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SubnetTagArrayInput)(nil)).Elem(), SubnetTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcAssociateCenInput)(nil)).Elem(), VpcAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcAssociateCenArrayInput)(nil)).Elem(), VpcAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcTagInput)(nil)).Elem(), VpcTagArgs{})
@@ -2597,6 +3030,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityGroupIngressPermissionArrayInput)(nil)).Elem(), GetSecurityGroupIngressPermissionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityGroupTagInput)(nil)).Elem(), GetSecurityGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityGroupTagArrayInput)(nil)).Elem(), GetSecurityGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetRouteTableInput)(nil)).Elem(), GetSubnetRouteTableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetTagInput)(nil)).Elem(), GetSubnetTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetTagArrayInput)(nil)).Elem(), GetSubnetTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAssociateCenInput)(nil)).Elem(), GetVpcAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAssociateCenArrayInput)(nil)).Elem(), GetVpcAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcTagInput)(nil)).Elem(), GetVpcTagArgs{})
@@ -2617,6 +3053,10 @@ func init() {
 	pulumi.RegisterOutputType(SecurityGroupIngressPermissionArrayOutput{})
 	pulumi.RegisterOutputType(SecurityGroupTagOutput{})
 	pulumi.RegisterOutputType(SecurityGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(SubnetRouteTableOutput{})
+	pulumi.RegisterOutputType(SubnetRouteTablePtrOutput{})
+	pulumi.RegisterOutputType(SubnetTagOutput{})
+	pulumi.RegisterOutputType(SubnetTagArrayOutput{})
 	pulumi.RegisterOutputType(VpcAssociateCenOutput{})
 	pulumi.RegisterOutputType(VpcAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(VpcTagOutput{})
@@ -2634,6 +3074,9 @@ func init() {
 	pulumi.RegisterOutputType(GetSecurityGroupIngressPermissionArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityGroupTagOutput{})
 	pulumi.RegisterOutputType(GetSecurityGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSubnetRouteTableOutput{})
+	pulumi.RegisterOutputType(GetSubnetTagOutput{})
+	pulumi.RegisterOutputType(GetSubnetTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcAssociateCenOutput{})
 	pulumi.RegisterOutputType(GetVpcAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcTagOutput{})

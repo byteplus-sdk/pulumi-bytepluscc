@@ -195,7 +195,6 @@ func (VpcState) ElementType() reflect.Type {
 }
 
 type vpcArgs struct {
-	AssociateCens []VpcAssociateCen `pulumi:"associateCens"`
 	// VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
 	CidrBlock *string `pulumi:"cidrBlock"`
 	// VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
@@ -210,26 +209,19 @@ type vpcArgs struct {
 	NatGatewayIds []string `pulumi:"natGatewayIds"`
 	// VPC所属项目的名称。不填默认加入default项目。
 	ProjectName *string `pulumi:"projectName"`
-	// VPC关联的路由表ID。
-	RouteTableIds []string `pulumi:"routeTableIds"`
 	// VPC的辅助网段。
 	SecondaryCidrBlocks []string `pulumi:"secondaryCidrBlocks"`
-	// VPC中安全组的列表。
-	SecurityGroupIds []string `pulumi:"securityGroupIds"`
 	// VPC中子网的列表。
 	SubnetIds []string `pulumi:"subnetIds"`
 	// VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
 	SupportIpv4Gateway *bool    `pulumi:"supportIpv4Gateway"`
 	Tags               []VpcTag `pulumi:"tags"`
-	// VPC的用户网段。
-	UserCidrBlocks []string `pulumi:"userCidrBlocks"`
 	// VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
 	VpcName *string `pulumi:"vpcName"`
 }
 
 // The set of arguments for constructing a Vpc resource.
 type VpcArgs struct {
-	AssociateCens VpcAssociateCenArrayInput
 	// VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
 	CidrBlock pulumi.StringPtrInput
 	// VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
@@ -244,19 +236,13 @@ type VpcArgs struct {
 	NatGatewayIds pulumi.StringArrayInput
 	// VPC所属项目的名称。不填默认加入default项目。
 	ProjectName pulumi.StringPtrInput
-	// VPC关联的路由表ID。
-	RouteTableIds pulumi.StringArrayInput
 	// VPC的辅助网段。
 	SecondaryCidrBlocks pulumi.StringArrayInput
-	// VPC中安全组的列表。
-	SecurityGroupIds pulumi.StringArrayInput
 	// VPC中子网的列表。
 	SubnetIds pulumi.StringArrayInput
 	// VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
 	SupportIpv4Gateway pulumi.BoolPtrInput
 	Tags               VpcTagArrayInput
-	// VPC的用户网段。
-	UserCidrBlocks pulumi.StringArrayInput
 	// VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
 	VpcName pulumi.StringPtrInput
 }

@@ -121,7 +121,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         public readonly string Kernel;
         /// <summary>
-        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
         /// </summary>
         public readonly string LicenseType;
         /// <summary>

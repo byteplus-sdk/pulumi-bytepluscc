@@ -287,6 +287,14 @@
                     }
                 }
             },
+            "bytepluscc_clb_rule": {
+                "current": "bytepluscc:clb/rule:Rule",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudidentity_user": {
                 "current": "bytepluscc:cloudidentity/user:User"
             },
@@ -911,6 +919,14 @@
                     }
                 }
             },
+            "bytepluscc_vpc_subnet": {
+                "current": "bytepluscc:vpc/subnet:Subnet",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vpc_vpc": {
                 "current": "bytepluscc:vpc/vpc:Vpc",
                 "fields": {
@@ -1329,6 +1345,22 @@
             },
             "bytepluscc_clb_listeners": {
                 "current": "bytepluscc:clb/getListeners:getListeners",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_rule": {
+                "current": "bytepluscc:clb/getRule:getRule",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_rules": {
+                "current": "bytepluscc:clb/getRules:getRules",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -2242,6 +2274,22 @@
             },
             "bytepluscc_vpc_security_groups": {
                 "current": "bytepluscc:vpc/getSecurityGroups:getSecurityGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_subnet": {
+                "current": "bytepluscc:vpc/getSubnet:getSubnet",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_subnets": {
+                "current": "bytepluscc:vpc/getSubnets:getSubnets",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

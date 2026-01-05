@@ -25,6 +25,8 @@ __all__ = [
     'SecurityGroupEgressPermission',
     'SecurityGroupIngressPermission',
     'SecurityGroupTag',
+    'SubnetRouteTable',
+    'SubnetTag',
     'VpcAssociateCen',
     'VpcTag',
     'GetEniPrimaryIpAddressResult',
@@ -35,6 +37,8 @@ __all__ = [
     'GetSecurityGroupEgressPermissionResult',
     'GetSecurityGroupIngressPermissionResult',
     'GetSecurityGroupTagResult',
+    'GetSubnetRouteTableResult',
+    'GetSubnetTagResult',
     'GetVpcAssociateCenResult',
     'GetVpcTagResult',
 ]
@@ -588,6 +592,87 @@ class SecurityGroupIngressPermission(dict):
 
 @pulumi.output_type
 class SecurityGroupTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class SubnetRouteTable(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "routeTableId":
+            suggest = "route_table_id"
+        elif key == "routeTableType":
+            suggest = "route_table_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubnetRouteTable. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubnetRouteTable.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubnetRouteTable.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 route_table_id: Optional[builtins.str] = None,
+                 route_table_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str route_table_id: 子网关联的路由表ID。
+        :param builtins.str route_table_type: 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        """
+        if route_table_id is not None:
+            pulumi.set(__self__, "route_table_id", route_table_id)
+        if route_table_type is not None:
+            pulumi.set(__self__, "route_table_type", route_table_type)
+
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> Optional[builtins.str]:
+        """
+        子网关联的路由表ID。
+        """
+        return pulumi.get(self, "route_table_id")
+
+    @property
+    @pulumi.getter(name="routeTableType")
+    def route_table_type(self) -> Optional[builtins.str]:
+        """
+        子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        """
+        return pulumi.get(self, "route_table_type")
+
+
+@pulumi.output_type
+class SubnetTag(dict):
     def __init__(__self__, *,
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
@@ -1203,6 +1288,64 @@ class GetSecurityGroupIngressPermissionResult(dict):
 
 @pulumi.output_type
 class GetSecurityGroupTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetSubnetRouteTableResult(dict):
+    def __init__(__self__, *,
+                 route_table_id: builtins.str,
+                 route_table_type: builtins.str):
+        """
+        :param builtins.str route_table_id: 子网关联的路由表ID。
+        :param builtins.str route_table_type: 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        """
+        pulumi.set(__self__, "route_table_id", route_table_id)
+        pulumi.set(__self__, "route_table_type", route_table_type)
+
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> builtins.str:
+        """
+        子网关联的路由表ID。
+        """
+        return pulumi.get(self, "route_table_id")
+
+    @property
+    @pulumi.getter(name="routeTableType")
+    def route_table_type(self) -> builtins.str:
+        """
+        子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        """
+        return pulumi.get(self, "route_table_type")
+
+
+@pulumi.output_type
+class GetSubnetTagResult(dict):
     def __init__(__self__, *,
                  key: builtins.str,
                  value: builtins.str):

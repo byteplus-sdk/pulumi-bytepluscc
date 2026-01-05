@@ -14,6 +14,44 @@ import (
 
 // 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/ecs"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ecs.NewImage(ctx, "ImageDemo", &ecs.ImageArgs{
+//				Description: pulumi.String("ImageDemo Example"),
+//				ImageName:   pulumi.String("image-demo"),
+//				InstanceId:  pulumi.String("i-ydzhj1el8gr9cxxdnxxxx"),
+//				ProjectName: pulumi.String("default"),
+//				SharePermissions: pulumi.StringArray{
+//					pulumi.String("2000000***"),
+//				},
+//				Tags: ecs.ImageTagArray{
+//					&ecs.ImageTagArgs{
+//						Key:   pulumi.String("env"),
+//						Value: pulumi.String("test"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ```sh
@@ -48,7 +86,7 @@ type Image struct {
 	IsSupportCloudInit pulumi.BoolOutput `pulumi:"isSupportCloudInit"`
 	// 镜像的内核版本。
 	Kernel pulumi.StringOutput `pulumi:"kernel"`
-	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
 	LicenseType pulumi.StringOutput `pulumi:"licenseType"`
 	// 镜像操作系统的名称。
 	OsName pulumi.StringOutput `pulumi:"osName"`
@@ -141,7 +179,7 @@ type imageState struct {
 	IsSupportCloudInit *bool `pulumi:"isSupportCloudInit"`
 	// 镜像的内核版本。
 	Kernel *string `pulumi:"kernel"`
-	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
 	LicenseType *string `pulumi:"licenseType"`
 	// 镜像操作系统的名称。
 	OsName *string `pulumi:"osName"`
@@ -202,7 +240,7 @@ type ImageState struct {
 	IsSupportCloudInit pulumi.BoolPtrInput
 	// 镜像的内核版本。
 	Kernel pulumi.StringPtrInput
-	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
 	LicenseType pulumi.StringPtrInput
 	// 镜像操作系统的名称。
 	OsName pulumi.StringPtrInput
@@ -243,24 +281,10 @@ func (ImageState) ElementType() reflect.Type {
 type imageArgs struct {
 	// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
 	Description *string `pulumi:"description"`
-	// 镜像的检测结果。
-	DetectionResults *ImageDetectionResults `pulumi:"detectionResults"`
 	// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
 	ImageName string `pulumi:"imageName"`
 	// 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
 	InstanceId *string `pulumi:"instanceId"`
-	// 镜像的内核版本。
-	Kernel *string `pulumi:"kernel"`
-	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-	LicenseType *string `pulumi:"licenseType"`
-	// 镜像操作系统的名称。
-	OsName *string `pulumi:"osName"`
-	// 操作系统类型。
-	OsType *string `pulumi:"osType"`
-	// 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-	Platform *string `pulumi:"platform"`
-	// 镜像的发行版本。
-	PlatformVersion *string `pulumi:"platformVersion"`
 	// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
 	ProjectName *string `pulumi:"projectName"`
 	// 镜像共享的账户
@@ -276,24 +300,10 @@ type imageArgs struct {
 type ImageArgs struct {
 	// 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
 	Description pulumi.StringPtrInput
-	// 镜像的检测结果。
-	DetectionResults ImageDetectionResultsPtrInput
 	// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
 	ImageName pulumi.StringInput
 	// 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
 	InstanceId pulumi.StringPtrInput
-	// 镜像的内核版本。
-	Kernel pulumi.StringPtrInput
-	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-	LicenseType pulumi.StringPtrInput
-	// 镜像操作系统的名称。
-	OsName pulumi.StringPtrInput
-	// 操作系统类型。
-	OsType pulumi.StringPtrInput
-	// 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-	Platform pulumi.StringPtrInput
-	// 镜像的发行版本。
-	PlatformVersion pulumi.StringPtrInput
 	// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
 	ProjectName pulumi.StringPtrInput
 	// 镜像共享的账户
@@ -457,7 +467,7 @@ func (o ImageOutput) Kernel() pulumi.StringOutput {
 	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.Kernel }).(pulumi.StringOutput)
 }
 
-// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
 func (o ImageOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Image) pulumi.StringOutput { return v.LicenseType }).(pulumi.StringOutput)
 }

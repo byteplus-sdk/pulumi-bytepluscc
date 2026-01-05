@@ -465,6 +465,325 @@ func (o ListenerTagArrayOutput) Index(i pulumi.IntInput) ListenerTagOutput {
 	}).(ListenerTagOutput)
 }
 
+type RuleRedirectConfig struct {
+	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	Host *string `pulumi:"host"`
+	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	Path *string `pulumi:"path"`
+	// 转发规则重定向的端口，取值范围为 1~65535。
+	Port *string `pulumi:"port"`
+	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	Protocol *string `pulumi:"protocol"`
+	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	StatusCode *string `pulumi:"statusCode"`
+}
+
+// RuleRedirectConfigInput is an input type that accepts RuleRedirectConfigArgs and RuleRedirectConfigOutput values.
+// You can construct a concrete instance of `RuleRedirectConfigInput` via:
+//
+//	RuleRedirectConfigArgs{...}
+type RuleRedirectConfigInput interface {
+	pulumi.Input
+
+	ToRuleRedirectConfigOutput() RuleRedirectConfigOutput
+	ToRuleRedirectConfigOutputWithContext(context.Context) RuleRedirectConfigOutput
+}
+
+type RuleRedirectConfigArgs struct {
+	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	Path pulumi.StringPtrInput `pulumi:"path"`
+	// 转发规则重定向的端口，取值范围为 1~65535。
+	Port pulumi.StringPtrInput `pulumi:"port"`
+	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	StatusCode pulumi.StringPtrInput `pulumi:"statusCode"`
+}
+
+func (RuleRedirectConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRedirectConfig)(nil)).Elem()
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigOutput() RuleRedirectConfigOutput {
+	return i.ToRuleRedirectConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigOutputWithContext(ctx context.Context) RuleRedirectConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRedirectConfigOutput)
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return i.ToRuleRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRedirectConfigOutput).ToRuleRedirectConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRedirectConfigPtrInput is an input type that accepts RuleRedirectConfigArgs, RuleRedirectConfigPtr and RuleRedirectConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRedirectConfigPtrInput` via:
+//
+//	        RuleRedirectConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRedirectConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput
+	ToRuleRedirectConfigPtrOutputWithContext(context.Context) RuleRedirectConfigPtrOutput
+}
+
+type ruleRedirectConfigPtrType RuleRedirectConfigArgs
+
+func RuleRedirectConfigPtr(v *RuleRedirectConfigArgs) RuleRedirectConfigPtrInput {
+	return (*ruleRedirectConfigPtrType)(v)
+}
+
+func (*ruleRedirectConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRedirectConfig)(nil)).Elem()
+}
+
+func (i *ruleRedirectConfigPtrType) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return i.ToRuleRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRedirectConfigPtrType) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRedirectConfigPtrOutput)
+}
+
+type RuleRedirectConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRedirectConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRedirectConfig)(nil)).Elem()
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigOutput() RuleRedirectConfigOutput {
+	return o
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigOutputWithContext(ctx context.Context) RuleRedirectConfigOutput {
+	return o
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return o.ToRuleRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRedirectConfig) *RuleRedirectConfig {
+		return &v
+	}).(RuleRedirectConfigPtrOutput)
+}
+
+// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+func (o RuleRedirectConfigOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+func (o RuleRedirectConfigOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的端口，取值范围为 1~65535。
+func (o RuleRedirectConfigOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+func (o RuleRedirectConfigOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+func (o RuleRedirectConfigOutput) StatusCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.StatusCode }).(pulumi.StringPtrOutput)
+}
+
+type RuleRedirectConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRedirectConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRedirectConfig)(nil)).Elem()
+}
+
+func (o RuleRedirectConfigPtrOutput) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return o
+}
+
+func (o RuleRedirectConfigPtrOutput) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return o
+}
+
+func (o RuleRedirectConfigPtrOutput) Elem() RuleRedirectConfigOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) RuleRedirectConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRedirectConfig
+		return ret
+	}).(RuleRedirectConfigOutput)
+}
+
+// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+func (o RuleRedirectConfigPtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+func (o RuleRedirectConfigPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的端口，取值范围为 1~65535。
+func (o RuleRedirectConfigPtrOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+func (o RuleRedirectConfigPtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+func (o RuleRedirectConfigPtrOutput) StatusCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StatusCode
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuleTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// RuleTagInput is an input type that accepts RuleTagArgs and RuleTagOutput values.
+// You can construct a concrete instance of `RuleTagInput` via:
+//
+//	RuleTagArgs{...}
+type RuleTagInput interface {
+	pulumi.Input
+
+	ToRuleTagOutput() RuleTagOutput
+	ToRuleTagOutputWithContext(context.Context) RuleTagOutput
+}
+
+type RuleTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (RuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleTag)(nil)).Elem()
+}
+
+func (i RuleTagArgs) ToRuleTagOutput() RuleTagOutput {
+	return i.ToRuleTagOutputWithContext(context.Background())
+}
+
+func (i RuleTagArgs) ToRuleTagOutputWithContext(ctx context.Context) RuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleTagOutput)
+}
+
+// RuleTagArrayInput is an input type that accepts RuleTagArray and RuleTagArrayOutput values.
+// You can construct a concrete instance of `RuleTagArrayInput` via:
+//
+//	RuleTagArray{ RuleTagArgs{...} }
+type RuleTagArrayInput interface {
+	pulumi.Input
+
+	ToRuleTagArrayOutput() RuleTagArrayOutput
+	ToRuleTagArrayOutputWithContext(context.Context) RuleTagArrayOutput
+}
+
+type RuleTagArray []RuleTagInput
+
+func (RuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleTag)(nil)).Elem()
+}
+
+func (i RuleTagArray) ToRuleTagArrayOutput() RuleTagArrayOutput {
+	return i.ToRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i RuleTagArray) ToRuleTagArrayOutputWithContext(ctx context.Context) RuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleTagArrayOutput)
+}
+
+type RuleTagOutput struct{ *pulumi.OutputState }
+
+func (RuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleTag)(nil)).Elem()
+}
+
+func (o RuleTagOutput) ToRuleTagOutput() RuleTagOutput {
+	return o
+}
+
+func (o RuleTagOutput) ToRuleTagOutputWithContext(ctx context.Context) RuleTagOutput {
+	return o
+}
+
+// 标签键。
+func (o RuleTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o RuleTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type RuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleTag)(nil)).Elem()
+}
+
+func (o RuleTagArrayOutput) ToRuleTagArrayOutput() RuleTagArrayOutput {
+	return o
+}
+
+func (o RuleTagArrayOutput) ToRuleTagArrayOutputWithContext(ctx context.Context) RuleTagArrayOutput {
+	return o
+}
+
+func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleTag {
+		return vs[0].([]RuleTag)[vs[1].(int)]
+	}).(RuleTagOutput)
+}
+
 type GetListenerHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
 	Domain string `pulumi:"domain"`
@@ -722,19 +1041,227 @@ func (o GetListenerTagArrayOutput) Index(i pulumi.IntInput) GetListenerTagOutput
 	}).(GetListenerTagOutput)
 }
 
+type GetRuleRedirectConfig struct {
+	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	Host string `pulumi:"host"`
+	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	Path string `pulumi:"path"`
+	// 转发规则重定向的端口，取值范围为 1~65535。
+	Port string `pulumi:"port"`
+	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	Protocol string `pulumi:"protocol"`
+	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	StatusCode string `pulumi:"statusCode"`
+}
+
+// GetRuleRedirectConfigInput is an input type that accepts GetRuleRedirectConfigArgs and GetRuleRedirectConfigOutput values.
+// You can construct a concrete instance of `GetRuleRedirectConfigInput` via:
+//
+//	GetRuleRedirectConfigArgs{...}
+type GetRuleRedirectConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRedirectConfigOutput() GetRuleRedirectConfigOutput
+	ToGetRuleRedirectConfigOutputWithContext(context.Context) GetRuleRedirectConfigOutput
+}
+
+type GetRuleRedirectConfigArgs struct {
+	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	Host pulumi.StringInput `pulumi:"host"`
+	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	Path pulumi.StringInput `pulumi:"path"`
+	// 转发规则重定向的端口，取值范围为 1~65535。
+	Port pulumi.StringInput `pulumi:"port"`
+	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	StatusCode pulumi.StringInput `pulumi:"statusCode"`
+}
+
+func (GetRuleRedirectConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRedirectConfig)(nil)).Elem()
+}
+
+func (i GetRuleRedirectConfigArgs) ToGetRuleRedirectConfigOutput() GetRuleRedirectConfigOutput {
+	return i.ToGetRuleRedirectConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRedirectConfigArgs) ToGetRuleRedirectConfigOutputWithContext(ctx context.Context) GetRuleRedirectConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRedirectConfigOutput)
+}
+
+type GetRuleRedirectConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRedirectConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRedirectConfig)(nil)).Elem()
+}
+
+func (o GetRuleRedirectConfigOutput) ToGetRuleRedirectConfigOutput() GetRuleRedirectConfigOutput {
+	return o
+}
+
+func (o GetRuleRedirectConfigOutput) ToGetRuleRedirectConfigOutputWithContext(ctx context.Context) GetRuleRedirectConfigOutput {
+	return o
+}
+
+// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+func (o GetRuleRedirectConfigOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+func (o GetRuleRedirectConfigOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Path }).(pulumi.StringOutput)
+}
+
+// 转发规则重定向的端口，取值范围为 1~65535。
+func (o GetRuleRedirectConfigOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+func (o GetRuleRedirectConfigOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+func (o GetRuleRedirectConfigOutput) StatusCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.StatusCode }).(pulumi.StringOutput)
+}
+
+type GetRuleTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetRuleTagInput is an input type that accepts GetRuleTagArgs and GetRuleTagOutput values.
+// You can construct a concrete instance of `GetRuleTagInput` via:
+//
+//	GetRuleTagArgs{...}
+type GetRuleTagInput interface {
+	pulumi.Input
+
+	ToGetRuleTagOutput() GetRuleTagOutput
+	ToGetRuleTagOutputWithContext(context.Context) GetRuleTagOutput
+}
+
+type GetRuleTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetRuleTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleTag)(nil)).Elem()
+}
+
+func (i GetRuleTagArgs) ToGetRuleTagOutput() GetRuleTagOutput {
+	return i.ToGetRuleTagOutputWithContext(context.Background())
+}
+
+func (i GetRuleTagArgs) ToGetRuleTagOutputWithContext(ctx context.Context) GetRuleTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleTagOutput)
+}
+
+// GetRuleTagArrayInput is an input type that accepts GetRuleTagArray and GetRuleTagArrayOutput values.
+// You can construct a concrete instance of `GetRuleTagArrayInput` via:
+//
+//	GetRuleTagArray{ GetRuleTagArgs{...} }
+type GetRuleTagArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleTagArrayOutput() GetRuleTagArrayOutput
+	ToGetRuleTagArrayOutputWithContext(context.Context) GetRuleTagArrayOutput
+}
+
+type GetRuleTagArray []GetRuleTagInput
+
+func (GetRuleTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleTag)(nil)).Elem()
+}
+
+func (i GetRuleTagArray) ToGetRuleTagArrayOutput() GetRuleTagArrayOutput {
+	return i.ToGetRuleTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleTagArray) ToGetRuleTagArrayOutputWithContext(ctx context.Context) GetRuleTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleTagArrayOutput)
+}
+
+type GetRuleTagOutput struct{ *pulumi.OutputState }
+
+func (GetRuleTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleTag)(nil)).Elem()
+}
+
+func (o GetRuleTagOutput) ToGetRuleTagOutput() GetRuleTagOutput {
+	return o
+}
+
+func (o GetRuleTagOutput) ToGetRuleTagOutputWithContext(ctx context.Context) GetRuleTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetRuleTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetRuleTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetRuleTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleTag)(nil)).Elem()
+}
+
+func (o GetRuleTagArrayOutput) ToGetRuleTagArrayOutput() GetRuleTagArrayOutput {
+	return o
+}
+
+func (o GetRuleTagArrayOutput) ToGetRuleTagArrayOutputWithContext(ctx context.Context) GetRuleTagArrayOutput {
+	return o
+}
+
+func (o GetRuleTagArrayOutput) Index(i pulumi.IntInput) GetRuleTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleTag {
+		return vs[0].([]GetRuleTag)[vs[1].(int)]
+	}).(GetRuleTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckPtrInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagArrayInput)(nil)).Elem(), ListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigInput)(nil)).Elem(), RuleRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigPtrInput)(nil)).Elem(), RuleRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagInput)(nil)).Elem(), RuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagArrayInput)(nil)).Elem(), RuleTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerHealthCheckInput)(nil)).Elem(), GetListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRedirectConfigInput)(nil)).Elem(), GetRuleRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagInput)(nil)).Elem(), GetRuleTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagArrayInput)(nil)).Elem(), GetRuleTagArray{})
 	pulumi.RegisterOutputType(ListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
 	pulumi.RegisterOutputType(ListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(RuleRedirectConfigOutput{})
+	pulumi.RegisterOutputType(RuleRedirectConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleTagOutput{})
+	pulumi.RegisterOutputType(RuleTagArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetListenerTagOutput{})
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleRedirectConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleTagOutput{})
+	pulumi.RegisterOutputType(GetRuleTagArrayOutput{})
 }

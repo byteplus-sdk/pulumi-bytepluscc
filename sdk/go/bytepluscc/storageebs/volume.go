@@ -93,7 +93,7 @@ type Volume struct {
 	SnapshotCount pulumi.Float64Output `pulumi:"snapshotCount"`
 	// 源快照。
 	SourceSnapshotId pulumi.StringOutput `pulumi:"sourceSnapshotId"`
-	// 云盘状态
+	// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
 	Status pulumi.StringOutput  `pulumi:"status"`
 	Tags   VolumeTagArrayOutput `pulumi:"tags"`
 	// 总性能。
@@ -196,7 +196,7 @@ type volumeState struct {
 	SnapshotCount *float64 `pulumi:"snapshotCount"`
 	// 源快照。
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
-	// 云盘状态
+	// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
 	Status *string     `pulumi:"status"`
 	Tags   []VolumeTag `pulumi:"tags"`
 	// 总性能。
@@ -258,7 +258,7 @@ type VolumeState struct {
 	SnapshotCount pulumi.Float64PtrInput
 	// 源快照。
 	SourceSnapshotId pulumi.StringPtrInput
-	// 云盘状态
+	// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
 	Status pulumi.StringPtrInput
 	Tags   VolumeTagArrayInput
 	// 总性能。
@@ -534,7 +534,7 @@ func (o VolumeOutput) SourceSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.SourceSnapshotId }).(pulumi.StringOutput)
 }
 
-// 云盘状态
+// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
 func (o VolumeOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

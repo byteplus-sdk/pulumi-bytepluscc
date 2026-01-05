@@ -47,7 +47,7 @@ export class Vpc extends pulumi.CustomResource {
      * VPC所属账号的ID。
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
-    public readonly associateCens!: pulumi.Output<outputs.vpc.VpcAssociateCen[]>;
+    public /*out*/ readonly associateCens!: pulumi.Output<outputs.vpc.VpcAssociateCen[]>;
     /**
      * VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
      */
@@ -91,7 +91,7 @@ export class Vpc extends pulumi.CustomResource {
     /**
      * VPC关联的路由表ID。
      */
-    public readonly routeTableIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly routeTableIds!: pulumi.Output<string[]>;
     /**
      * VPC的辅助网段。
      */
@@ -99,7 +99,7 @@ export class Vpc extends pulumi.CustomResource {
     /**
      * VPC中安全组的列表。
      */
-    public readonly securityGroupIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly securityGroupIds!: pulumi.Output<string[]>;
     /**
      * VPC的状态。Creating：创建中。Pending：已创建。Available：可用。
      */
@@ -120,7 +120,7 @@ export class Vpc extends pulumi.CustomResource {
     /**
      * VPC的用户网段。
      */
-    public readonly userCidrBlocks!: pulumi.Output<string[]>;
+    public /*out*/ readonly userCidrBlocks!: pulumi.Output<string[]>;
     /**
      * VPC的ID。
      */
@@ -168,7 +168,6 @@ export class Vpc extends pulumi.CustomResource {
             resourceInputs["vpcName"] = state ? state.vpcName : undefined;
         } else {
             const args = argsOrState as VpcArgs | undefined;
-            resourceInputs["associateCens"] = args ? args.associateCens : undefined;
             resourceInputs["cidrBlock"] = args ? args.cidrBlock : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["dnsServers"] = args ? args.dnsServers : undefined;
@@ -176,20 +175,21 @@ export class Vpc extends pulumi.CustomResource {
             resourceInputs["ipv6CidrBlock"] = args ? args.ipv6CidrBlock : undefined;
             resourceInputs["natGatewayIds"] = args ? args.natGatewayIds : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
-            resourceInputs["routeTableIds"] = args ? args.routeTableIds : undefined;
             resourceInputs["secondaryCidrBlocks"] = args ? args.secondaryCidrBlocks : undefined;
-            resourceInputs["securityGroupIds"] = args ? args.securityGroupIds : undefined;
             resourceInputs["subnetIds"] = args ? args.subnetIds : undefined;
             resourceInputs["supportIpv4Gateway"] = args ? args.supportIpv4Gateway : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["userCidrBlocks"] = args ? args.userCidrBlocks : undefined;
             resourceInputs["vpcName"] = args ? args.vpcName : undefined;
             resourceInputs["accountId"] = undefined /*out*/;
+            resourceInputs["associateCens"] = undefined /*out*/;
             resourceInputs["creationTime"] = undefined /*out*/;
             resourceInputs["isDefault"] = undefined /*out*/;
             resourceInputs["networkAclNum"] = undefined /*out*/;
+            resourceInputs["routeTableIds"] = undefined /*out*/;
+            resourceInputs["securityGroupIds"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["updateTime"] = undefined /*out*/;
+            resourceInputs["userCidrBlocks"] = undefined /*out*/;
             resourceInputs["vpcId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -293,7 +293,6 @@ export interface VpcState {
  * The set of arguments for constructing a Vpc resource.
  */
 export interface VpcArgs {
-    associateCens?: pulumi.Input<pulumi.Input<inputs.vpc.VpcAssociateCen>[]>;
     /**
      * VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
      */
@@ -323,17 +322,9 @@ export interface VpcArgs {
      */
     projectName?: pulumi.Input<string>;
     /**
-     * VPC关联的路由表ID。
-     */
-    routeTableIds?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
      * VPC的辅助网段。
      */
     secondaryCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * VPC中安全组的列表。
-     */
-    securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * VPC中子网的列表。
      */
@@ -343,10 +334,6 @@ export interface VpcArgs {
      */
     supportIpv4Gateway?: pulumi.Input<boolean>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.VpcTag>[]>;
-    /**
-     * VPC的用户网段。
-     */
-    userCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
      */

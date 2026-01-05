@@ -11,9 +11,12 @@ from .get_eni import *
 from .get_enis import *
 from .get_security_group import *
 from .get_security_groups import *
+from .get_subnet import *
+from .get_subnets import *
 from .get_vpc import *
 from .get_vpcs import *
 from .security_group import *
+from .subnet import *
 from .vpc import *
 from ._inputs import *
 from . import outputs

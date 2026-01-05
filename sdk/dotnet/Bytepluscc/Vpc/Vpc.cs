@@ -201,14 +201,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 
     public sealed class VpcArgs : global::Pulumi.ResourceArgs
     {
-        [Input("associateCens")]
-        private InputList<Inputs.VpcAssociateCenArgs>? _associateCens;
-        public InputList<Inputs.VpcAssociateCenArgs> AssociateCens
-        {
-            get => _associateCens ?? (_associateCens = new InputList<Inputs.VpcAssociateCenArgs>());
-            set => _associateCens = value;
-        }
-
         /// <summary>
         /// VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
         /// </summary>
@@ -263,18 +255,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
-        [Input("routeTableIds")]
-        private InputList<string>? _routeTableIds;
-
-        /// <summary>
-        /// VPC关联的路由表ID。
-        /// </summary>
-        public InputList<string> RouteTableIds
-        {
-            get => _routeTableIds ?? (_routeTableIds = new InputList<string>());
-            set => _routeTableIds = value;
-        }
-
         [Input("secondaryCidrBlocks")]
         private InputList<string>? _secondaryCidrBlocks;
 
@@ -285,18 +265,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         {
             get => _secondaryCidrBlocks ?? (_secondaryCidrBlocks = new InputList<string>());
             set => _secondaryCidrBlocks = value;
-        }
-
-        [Input("securityGroupIds")]
-        private InputList<string>? _securityGroupIds;
-
-        /// <summary>
-        /// VPC中安全组的列表。
-        /// </summary>
-        public InputList<string> SecurityGroupIds
-        {
-            get => _securityGroupIds ?? (_securityGroupIds = new InputList<string>());
-            set => _securityGroupIds = value;
         }
 
         [Input("subnetIds")]
@@ -323,18 +291,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         {
             get => _tags ?? (_tags = new InputList<Inputs.VpcTagArgs>());
             set => _tags = value;
-        }
-
-        [Input("userCidrBlocks")]
-        private InputList<string>? _userCidrBlocks;
-
-        /// <summary>
-        /// VPC的用户网段。
-        /// </summary>
-        public InputList<string> UserCidrBlocks
-        {
-            get => _userCidrBlocks ?? (_userCidrBlocks = new InputList<string>());
-            set => _userCidrBlocks = value;
         }
 
         /// <summary>

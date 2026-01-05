@@ -58,7 +58,7 @@ type LookupImageResult struct {
 	IsSupportCloudInit bool `pulumi:"isSupportCloudInit"`
 	// 镜像的内核版本。
 	Kernel string `pulumi:"kernel"`
-	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+	// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
 	LicenseType string `pulumi:"licenseType"`
 	// 镜像操作系统的名称。
 	OsName string `pulumi:"osName"`
@@ -198,7 +198,7 @@ func (o LookupImageResultOutput) Kernel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.Kernel }).(pulumi.StringOutput)
 }
 
-// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
 func (o LookupImageResultOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImageResult) string { return v.LicenseType }).(pulumi.StringOutput)
 }

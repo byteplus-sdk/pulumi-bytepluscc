@@ -30,6 +30,16 @@ export const getSecurityGroups: typeof import("./getSecurityGroups").getSecurity
 export const getSecurityGroupsOutput: typeof import("./getSecurityGroups").getSecurityGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getSecurityGroups","getSecurityGroupsOutput"], () => require("./getSecurityGroups"));
 
+export { GetSubnetArgs, GetSubnetResult, GetSubnetOutputArgs } from "./getSubnet";
+export const getSubnet: typeof import("./getSubnet").getSubnet = null as any;
+export const getSubnetOutput: typeof import("./getSubnet").getSubnetOutput = null as any;
+utilities.lazyLoad(exports, ["getSubnet","getSubnetOutput"], () => require("./getSubnet"));
+
+export { GetSubnetsResult } from "./getSubnets";
+export const getSubnets: typeof import("./getSubnets").getSubnets = null as any;
+export const getSubnetsOutput: typeof import("./getSubnets").getSubnetsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubnets","getSubnetsOutput"], () => require("./getSubnets"));
+
 export { GetVpcArgs, GetVpcResult, GetVpcOutputArgs } from "./getVpc";
 export const getVpc: typeof import("./getVpc").getVpc = null as any;
 export const getVpcOutput: typeof import("./getVpc").getVpcOutput = null as any;
@@ -45,6 +55,11 @@ export type SecurityGroup = import("./securityGroup").SecurityGroup;
 export const SecurityGroup: typeof import("./securityGroup").SecurityGroup = null as any;
 utilities.lazyLoad(exports, ["SecurityGroup"], () => require("./securityGroup"));
 
+export { SubnetArgs, SubnetState } from "./subnet";
+export type Subnet = import("./subnet").Subnet;
+export const Subnet: typeof import("./subnet").Subnet = null as any;
+utilities.lazyLoad(exports, ["Subnet"], () => require("./subnet"));
+
 export { VpcArgs, VpcState } from "./vpc";
 export type Vpc = import("./vpc").Vpc;
 export const Vpc: typeof import("./vpc").Vpc = null as any;
@@ -59,6 +74,8 @@ const _module = {
                 return new Eni(name, <any>undefined, { urn })
             case "bytepluscc:vpc/securityGroup:SecurityGroup":
                 return new SecurityGroup(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/subnet:Subnet":
+                return new Subnet(name, <any>undefined, { urn })
             case "bytepluscc:vpc/vpc:Vpc":
                 return new Vpc(name, <any>undefined, { urn })
             default:
@@ -68,4 +85,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eni", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/securityGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/subnet", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/vpc", _module)

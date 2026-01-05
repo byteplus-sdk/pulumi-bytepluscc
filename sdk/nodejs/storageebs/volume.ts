@@ -142,7 +142,7 @@ export class Volume extends pulumi.CustomResource {
      */
     public readonly sourceSnapshotId!: pulumi.Output<string>;
     /**
-     * 云盘状态
+     * 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.storageebs.VolumeTag[]>;
@@ -357,7 +357,7 @@ export interface VolumeState {
      */
     sourceSnapshotId?: pulumi.Input<string>;
     /**
-     * 云盘状态
+     * 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.storageebs.VolumeTag>[]>;

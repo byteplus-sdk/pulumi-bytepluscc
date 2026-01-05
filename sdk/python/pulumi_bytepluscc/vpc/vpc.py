@@ -22,7 +22,6 @@ __all__ = ['VpcArgs', 'Vpc']
 @pulumi.input_type
 class VpcArgs:
     def __init__(__self__, *,
-                 associate_cens: Optional[pulumi.Input[Sequence[pulumi.Input['VpcAssociateCenArgs']]]] = None,
                  cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -30,13 +29,10 @@ class VpcArgs:
                  ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  nat_gateway_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
-                 route_table_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  secondary_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  support_ipv4_gateway: Optional[pulumi.Input[builtins.bool]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['VpcTagArgs']]]] = None,
-                 user_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Vpc resource.
@@ -47,16 +43,11 @@ class VpcArgs:
         :param pulumi.Input[builtins.str] ipv6_cidr_block: VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nat_gateway_ids: VPC中创建的NAT网关的ID。
         :param pulumi.Input[builtins.str] project_name: VPC所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] route_table_ids: VPC关联的路由表ID。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] secondary_cidr_blocks: VPC的辅助网段。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: VPC中安全组的列表。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: VPC中子网的列表。
         :param pulumi.Input[builtins.bool] support_ipv4_gateway: VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_cidr_blocks: VPC的用户网段。
         :param pulumi.Input[builtins.str] vpc_name: VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
         """
-        if associate_cens is not None:
-            pulumi.set(__self__, "associate_cens", associate_cens)
         if cidr_block is not None:
             pulumi.set(__self__, "cidr_block", cidr_block)
         if description is not None:
@@ -71,31 +62,16 @@ class VpcArgs:
             pulumi.set(__self__, "nat_gateway_ids", nat_gateway_ids)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
-        if route_table_ids is not None:
-            pulumi.set(__self__, "route_table_ids", route_table_ids)
         if secondary_cidr_blocks is not None:
             pulumi.set(__self__, "secondary_cidr_blocks", secondary_cidr_blocks)
-        if security_group_ids is not None:
-            pulumi.set(__self__, "security_group_ids", security_group_ids)
         if subnet_ids is not None:
             pulumi.set(__self__, "subnet_ids", subnet_ids)
         if support_ipv4_gateway is not None:
             pulumi.set(__self__, "support_ipv4_gateway", support_ipv4_gateway)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
-        if user_cidr_blocks is not None:
-            pulumi.set(__self__, "user_cidr_blocks", user_cidr_blocks)
         if vpc_name is not None:
             pulumi.set(__self__, "vpc_name", vpc_name)
-
-    @property
-    @pulumi.getter(name="associateCens")
-    def associate_cens(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VpcAssociateCenArgs']]]]:
-        return pulumi.get(self, "associate_cens")
-
-    @associate_cens.setter
-    def associate_cens(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcAssociateCenArgs']]]]):
-        pulumi.set(self, "associate_cens", value)
 
     @property
     @pulumi.getter(name="cidrBlock")
@@ -182,18 +158,6 @@ class VpcArgs:
         pulumi.set(self, "project_name", value)
 
     @property
-    @pulumi.getter(name="routeTableIds")
-    def route_table_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
-        """
-        VPC关联的路由表ID。
-        """
-        return pulumi.get(self, "route_table_ids")
-
-    @route_table_ids.setter
-    def route_table_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
-        pulumi.set(self, "route_table_ids", value)
-
-    @property
     @pulumi.getter(name="secondaryCidrBlocks")
     def secondary_cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
@@ -204,18 +168,6 @@ class VpcArgs:
     @secondary_cidr_blocks.setter
     def secondary_cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "secondary_cidr_blocks", value)
-
-    @property
-    @pulumi.getter(name="securityGroupIds")
-    def security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
-        """
-        VPC中安全组的列表。
-        """
-        return pulumi.get(self, "security_group_ids")
-
-    @security_group_ids.setter
-    def security_group_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
-        pulumi.set(self, "security_group_ids", value)
 
     @property
     @pulumi.getter(name="subnetIds")
@@ -249,18 +201,6 @@ class VpcArgs:
     @tags.setter
     def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VpcTagArgs']]]]):
         pulumi.set(self, "tags", value)
-
-    @property
-    @pulumi.getter(name="userCidrBlocks")
-    def user_cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
-        """
-        VPC的用户网段。
-        """
-        return pulumi.get(self, "user_cidr_blocks")
-
-    @user_cidr_blocks.setter
-    def user_cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
-        pulumi.set(self, "user_cidr_blocks", value)
 
     @property
     @pulumi.getter(name="vpcName")
@@ -649,7 +589,6 @@ class Vpc(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associate_cens: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcAssociateCenArgs', 'VpcAssociateCenArgsDict']]]]] = None,
                  cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -657,13 +596,10 @@ class Vpc(pulumi.CustomResource):
                  ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  nat_gateway_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
-                 route_table_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  secondary_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  support_ipv4_gateway: Optional[pulumi.Input[builtins.bool]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcTagArgs', 'VpcTagArgsDict']]]]] = None,
-                 user_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -684,12 +620,9 @@ class Vpc(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] ipv6_cidr_block: VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nat_gateway_ids: VPC中创建的NAT网关的ID。
         :param pulumi.Input[builtins.str] project_name: VPC所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] route_table_ids: VPC关联的路由表ID。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] secondary_cidr_blocks: VPC的辅助网段。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: VPC中安全组的列表。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: VPC中子网的列表。
         :param pulumi.Input[builtins.bool] support_ipv4_gateway: VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_cidr_blocks: VPC的用户网段。
         :param pulumi.Input[builtins.str] vpc_name: VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
         """
         ...
@@ -722,7 +655,6 @@ class Vpc(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associate_cens: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcAssociateCenArgs', 'VpcAssociateCenArgsDict']]]]] = None,
                  cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -730,13 +662,10 @@ class Vpc(pulumi.CustomResource):
                  ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  nat_gateway_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
-                 route_table_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  secondary_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
-                 security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  support_ipv4_gateway: Optional[pulumi.Input[builtins.bool]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcTagArgs', 'VpcTagArgsDict']]]]] = None,
-                 user_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  vpc_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -747,7 +676,6 @@ class Vpc(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = VpcArgs.__new__(VpcArgs)
 
-            __props__.__dict__["associate_cens"] = associate_cens
             __props__.__dict__["cidr_block"] = cidr_block
             __props__.__dict__["description"] = description
             __props__.__dict__["dns_servers"] = dns_servers
@@ -755,20 +683,21 @@ class Vpc(pulumi.CustomResource):
             __props__.__dict__["ipv6_cidr_block"] = ipv6_cidr_block
             __props__.__dict__["nat_gateway_ids"] = nat_gateway_ids
             __props__.__dict__["project_name"] = project_name
-            __props__.__dict__["route_table_ids"] = route_table_ids
             __props__.__dict__["secondary_cidr_blocks"] = secondary_cidr_blocks
-            __props__.__dict__["security_group_ids"] = security_group_ids
             __props__.__dict__["subnet_ids"] = subnet_ids
             __props__.__dict__["support_ipv4_gateway"] = support_ipv4_gateway
             __props__.__dict__["tags"] = tags
-            __props__.__dict__["user_cidr_blocks"] = user_cidr_blocks
             __props__.__dict__["vpc_name"] = vpc_name
             __props__.__dict__["account_id"] = None
+            __props__.__dict__["associate_cens"] = None
             __props__.__dict__["creation_time"] = None
             __props__.__dict__["is_default"] = None
             __props__.__dict__["network_acl_num"] = None
+            __props__.__dict__["route_table_ids"] = None
+            __props__.__dict__["security_group_ids"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["update_time"] = None
+            __props__.__dict__["user_cidr_blocks"] = None
             __props__.__dict__["vpc_id"] = None
         super(Vpc, __self__).__init__(
             'bytepluscc:vpc/vpc:Vpc',

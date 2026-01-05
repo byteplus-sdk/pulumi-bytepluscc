@@ -3919,6 +3919,63 @@
                 }
             }
         },
+        "bytepluscc:clb/RuleRedirectConfig:RuleRedirectConfig": {
+            "properties": {
+                "host": {
+                    "type": "string",
+                    "description": "转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘\u0026’、‘＝’等字符。长度限制为1 ～ 128个字符。\n"
+                },
+                "port": {
+                    "type": "string",
+                    "description": "转发规则重定向的端口，取值范围为 1~65535。\n"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。\n"
+                },
+                "statusCode": {
+                    "type": "string",
+                    "description": "转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "host",
+                        "path",
+                        "port",
+                        "protocol",
+                        "statusCode"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:clb/RuleTag:RuleTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "标签值。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:clb/getListenerHealthCheck:getListenerHealthCheck": {
             "properties": {
                 "domain": {
@@ -4000,6 +4057,65 @@
                 "value": {
                     "type": "string",
                     "description": "用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:clb/getRuleRedirectConfig:getRuleRedirectConfig": {
+            "properties": {
+                "host": {
+                    "type": "string",
+                    "description": "转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。\n"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘\u0026’、‘＝’等字符。长度限制为1 ～ 128个字符。\n"
+                },
+                "port": {
+                    "type": "string",
+                    "description": "转发规则重定向的端口，取值范围为 1~65535。\n"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。\n"
+                },
+                "statusCode": {
+                    "type": "string",
+                    "description": "转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "host",
+                "path",
+                "port",
+                "protocol",
+                "statusCode"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:clb/getRuleTag:getRuleTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "标签值。\n"
                 }
             },
             "type": "object",
@@ -13550,6 +13666,48 @@
                 }
             }
         },
+        "bytepluscc:vpc/SubnetRouteTable:SubnetRouteTable": {
+            "properties": {
+                "routeTableId": {
+                    "type": "string",
+                    "description": "子网关联的路由表ID。\n"
+                },
+                "routeTableType": {
+                    "type": "string",
+                    "description": "子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "routeTableId",
+                        "routeTableType"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:vpc/SubnetTag:SubnetTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:vpc/VpcAssociateCen:VpcAssociateCen": {
             "properties": {
                 "cenId": {
@@ -13888,6 +14046,50 @@
             }
         },
         "bytepluscc:vpc/getSecurityGroupTag:getSecurityGroupTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:vpc/getSubnetRouteTable:getSubnetRouteTable": {
+            "properties": {
+                "routeTableId": {
+                    "type": "string",
+                    "description": "子网关联的路由表ID。\n"
+                },
+                "routeTableType": {
+                    "type": "string",
+                    "description": "子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "routeTableId",
+                "routeTableType"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:vpc/getSubnetTag:getSubnetTag": {
             "properties": {
                 "key": {
                     "type": "string",
@@ -17562,6 +17764,143 @@
                 "type": "object"
             }
         },
+        "bytepluscc:clb/rule:Rule": {
+            "description": "转发规则用于将指定域名和URL的请求引流至指定的后端服务器组。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst ruleDemo = new bytepluscc.clb.Rule(\"RuleDemo\", {\n    listenerId: \"lsn-13****\",\n    description: \"RuleDemo Example\",\n    domain: \"www.***.com\",\n    actionType: \"Forward\",\n    serverGroupId: \"rsp-mj***\",\n    url: \"/co3cee\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nrule_demo = bytepluscc.clb.Rule(\"RuleDemo\",\n    listener_id=\"lsn-13****\",\n    description=\"RuleDemo Example\",\n    domain=\"www.***.com\",\n    action_type=\"Forward\",\n    server_group_id=\"rsp-mj***\",\n    url=\"/co3cee\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var ruleDemo = new Bytepluscc.Clb.Rule(\"RuleDemo\", new()\n    {\n        ListenerId = \"lsn-13****\",\n        Description = \"RuleDemo Example\",\n        Domain = \"www.***.com\",\n        ActionType = \"Forward\",\n        ServerGroupId = \"rsp-mj***\",\n        Url = \"/co3cee\",\n        Tags = new[]\n        {\n            new Bytepluscc.Clb.Inputs.RuleTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/clb\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := clb.NewRule(ctx, \"RuleDemo\", \u0026clb.RuleArgs{\n\t\t\tListenerId:    pulumi.String(\"lsn-13****\"),\n\t\t\tDescription:   pulumi.String(\"RuleDemo Example\"),\n\t\t\tDomain:        pulumi.String(\"www.***.com\"),\n\t\t\tActionType:    pulumi.String(\"Forward\"),\n\t\t\tServerGroupId: pulumi.String(\"rsp-mj***\"),\n\t\t\tUrl:           pulumi.String(\"/co3cee\"),\n\t\t\tTags: clb.RuleTagArray{\n\t\t\t\t\u0026clb.RuleTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.clb.Rule;\nimport com.byteplus.bytepluscc.clb.RuleArgs;\nimport com.pulumi.bytepluscc.clb.inputs.RuleTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var ruleDemo = new Rule(\"ruleDemo\", RuleArgs.builder()\n            .listenerId(\"lsn-13****\")\n            .description(\"RuleDemo Example\")\n            .domain(\"www.***.com\")\n            .actionType(\"Forward\")\n            .serverGroupId(\"rsp-mj***\")\n            .url(\"/co3cee\")\n            .tags(RuleTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  ruleDemo:\n    type: bytepluscc:clb:Rule\n    name: RuleDemo\n    properties:\n      listenerId: lsn-13****\n      description: RuleDemo Example\n      domain: www.***.com\n      actionType: Forward\n      serverGroupId: rsp-mj***\n      url: /co3cee\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:clb/rule:Rule example \"listener_id|rule_id\"\n```\n\n",
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "description": "转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "转发规则的域名。\n"
+                },
+                "listenerId": {
+                    "type": "string",
+                    "description": "监听器ID。\n"
+                },
+                "redirectConfig": {
+                    "$ref": "#/types/bytepluscc:clb/RuleRedirectConfig:RuleRedirectConfig",
+                    "description": "重定向相关配置信息。\n"
+                },
+                "ruleId": {
+                    "type": "string",
+                    "description": "转发规则ID。\n"
+                },
+                "serverGroupId": {
+                    "type": "string",
+                    "description": "转发规则关联的后端服务器组的ID。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/RuleTag:RuleTag"
+                    }
+                },
+                "url": {
+                    "type": "string",
+                    "description": "转发规则的URL。\n"
+                }
+            },
+            "required": [
+                "actionType",
+                "description",
+                "domain",
+                "listenerId",
+                "redirectConfig",
+                "ruleId",
+                "serverGroupId",
+                "tags",
+                "url"
+            ],
+            "inputProperties": {
+                "actionType": {
+                    "type": "string",
+                    "description": "转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "转发规则的域名。\n"
+                },
+                "listenerId": {
+                    "type": "string",
+                    "description": "监听器ID。\n"
+                },
+                "redirectConfig": {
+                    "$ref": "#/types/bytepluscc:clb/RuleRedirectConfig:RuleRedirectConfig",
+                    "description": "重定向相关配置信息。\n"
+                },
+                "serverGroupId": {
+                    "type": "string",
+                    "description": "转发规则关联的后端服务器组的ID。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/RuleTag:RuleTag"
+                    }
+                },
+                "url": {
+                    "type": "string",
+                    "description": "转发规则的URL。\n"
+                }
+            },
+            "requiredInputs": [
+                "listenerId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Rule resources.\n",
+                "properties": {
+                    "actionType": {
+                        "type": "string",
+                        "description": "转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                    },
+                    "domain": {
+                        "type": "string",
+                        "description": "转发规则的域名。\n"
+                    },
+                    "listenerId": {
+                        "type": "string",
+                        "description": "监听器ID。\n"
+                    },
+                    "redirectConfig": {
+                        "$ref": "#/types/bytepluscc:clb/RuleRedirectConfig:RuleRedirectConfig",
+                        "description": "重定向相关配置信息。\n"
+                    },
+                    "ruleId": {
+                        "type": "string",
+                        "description": "转发规则ID。\n"
+                    },
+                    "serverGroupId": {
+                        "type": "string",
+                        "description": "转发规则关联的后端服务器组的ID。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/RuleTag:RuleTag"
+                        }
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "转发规则的URL。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:cloudidentity/user:User": {
             "description": "云身份中心用户，与企业员工身份一一映射。云身份中心用户是一种身份类型，可与某个账号下的IAM用户身份进行唯一关联并单点登录。云身份中心提供企业员工身份全生命周期管理、权限管理能力，推荐您在本产品内统一管理员工身份。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst cloudIdentityUserDemo = new bytepluscc.cloudidentity.User(\"CloudIdentityUserDemo\", {\n    userName: \"CloudIdentityUserDemo\",\n    displayName: \"CloudIdentityUserDemo\",\n    description: \"CloudIdentityUserDemo description\",\n    email: \"xxx@163.com\",\n    phone: \"***********\",\n    password: \"********\",\n    passwordResetRequired: true,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\ncloud_identity_user_demo = bytepluscc.cloudidentity.User(\"CloudIdentityUserDemo\",\n    user_name=\"CloudIdentityUserDemo\",\n    display_name=\"CloudIdentityUserDemo\",\n    description=\"CloudIdentityUserDemo description\",\n    email=\"xxx@163.com\",\n    phone=\"***********\",\n    password=\"********\",\n    password_reset_required=True)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var cloudIdentityUserDemo = new Bytepluscc.Cloudidentity.User(\"CloudIdentityUserDemo\", new()\n    {\n        UserName = \"CloudIdentityUserDemo\",\n        DisplayName = \"CloudIdentityUserDemo\",\n        Description = \"CloudIdentityUserDemo description\",\n        Email = \"xxx@163.com\",\n        Phone = \"***********\",\n        Password = \"********\",\n        PasswordResetRequired = true,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/cloudidentity\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := cloudidentity.NewUser(ctx, \"CloudIdentityUserDemo\", \u0026cloudidentity.UserArgs{\n\t\t\tUserName:              pulumi.String(\"CloudIdentityUserDemo\"),\n\t\t\tDisplayName:           pulumi.String(\"CloudIdentityUserDemo\"),\n\t\t\tDescription:           pulumi.String(\"CloudIdentityUserDemo description\"),\n\t\t\tEmail:                 pulumi.String(\"xxx@163.com\"),\n\t\t\tPhone:                 pulumi.String(\"***********\"),\n\t\t\tPassword:              pulumi.String(\"********\"),\n\t\t\tPasswordResetRequired: pulumi.Bool(true),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.cloudidentity.User;\nimport com.byteplus.bytepluscc.cloudidentity.UserArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var cloudIdentityUserDemo = new User(\"cloudIdentityUserDemo\", UserArgs.builder()\n            .userName(\"CloudIdentityUserDemo\")\n            .displayName(\"CloudIdentityUserDemo\")\n            .description(\"CloudIdentityUserDemo description\")\n            .email(\"xxx@163.com\")\n            .phone(\"***********\")\n            .password(\"********\")\n            .passwordResetRequired(true)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  cloudIdentityUserDemo:\n    type: bytepluscc:cloudidentity:User\n    name: CloudIdentityUserDemo\n    properties:\n      userName: CloudIdentityUserDemo\n      displayName: CloudIdentityUserDemo\n      description: CloudIdentityUserDemo description\n      email: xxx@163.com\n      phone: '***********'\n      password: '********'\n      passwordResetRequired: true\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cloudidentity/user:User example \"user_id\"\n```\n\n",
             "properties": {
@@ -18067,7 +18406,7 @@
             }
         },
         "bytepluscc:ecs/image:Image": {
-            "description": "镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  imageDemo:\n    type: bytepluscc:ecs:Image\n    name: ImageDemo\n    properties:\n      bootMode: UEFI\n      description: ImageDemo Example\n      imageName: image-demo\n      instanceId: i-ydzhj1el8gr9cxxdnxxxx\n      kernel: Linux\n      licenseType: BYOL\n      osName: CentOS\n      osType: Linux\n      platform: CentOS\n      platformVersion: '8.3'\n      projectName: default\n      sharePermissions:\n        - 2000000***\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:ecs/image:Image example \"image_id\"\n```\n\n",
+            "description": "镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst imageDemo = new bytepluscc.ecs.Image(\"ImageDemo\", {\n    description: \"ImageDemo Example\",\n    imageName: \"image-demo\",\n    instanceId: \"i-ydzhj1el8gr9cxxdnxxxx\",\n    projectName: \"default\",\n    sharePermissions: [\"2000000***\"],\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nimage_demo = bytepluscc.ecs.Image(\"ImageDemo\",\n    description=\"ImageDemo Example\",\n    image_name=\"image-demo\",\n    instance_id=\"i-ydzhj1el8gr9cxxdnxxxx\",\n    project_name=\"default\",\n    share_permissions=[\"2000000***\"],\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var imageDemo = new Bytepluscc.Ecs.Image(\"ImageDemo\", new()\n    {\n        Description = \"ImageDemo Example\",\n        ImageName = \"image-demo\",\n        InstanceId = \"i-ydzhj1el8gr9cxxdnxxxx\",\n        ProjectName = \"default\",\n        SharePermissions = new[]\n        {\n            \"2000000***\",\n        },\n        Tags = new[]\n        {\n            new Bytepluscc.Ecs.Inputs.ImageTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/ecs\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := ecs.NewImage(ctx, \"ImageDemo\", \u0026ecs.ImageArgs{\n\t\t\tDescription: pulumi.String(\"ImageDemo Example\"),\n\t\t\tImageName:   pulumi.String(\"image-demo\"),\n\t\t\tInstanceId:  pulumi.String(\"i-ydzhj1el8gr9cxxdnxxxx\"),\n\t\t\tProjectName: pulumi.String(\"default\"),\n\t\t\tSharePermissions: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"2000000***\"),\n\t\t\t},\n\t\t\tTags: ecs.ImageTagArray{\n\t\t\t\t\u0026ecs.ImageTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.ecs.Image;\nimport com.byteplus.bytepluscc.ecs.ImageArgs;\nimport com.pulumi.bytepluscc.ecs.inputs.ImageTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var imageDemo = new Image(\"imageDemo\", ImageArgs.builder()\n            .description(\"ImageDemo Example\")\n            .imageName(\"image-demo\")\n            .instanceId(\"i-ydzhj1el8gr9cxxdnxxxx\")\n            .projectName(\"default\")\n            .sharePermissions(\"2000000***\")\n            .tags(ImageTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  imageDemo:\n    type: bytepluscc:ecs:Image\n    name: ImageDemo\n    properties:\n      description: ImageDemo Example\n      imageName: image-demo\n      instanceId: i-ydzhj1el8gr9cxxdnxxxx\n      projectName: default\n      sharePermissions:\n        - 2000000***\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:ecs/image:Image example \"image_id\"\n```\n\n",
             "properties": {
                 "architecture": {
                     "type": "string",
@@ -18123,7 +18462,7 @@
                 },
                 "licenseType": {
                     "type": "string",
-                    "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
+                    "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
                 },
                 "osName": {
                     "type": "string",
@@ -18234,10 +18573,6 @@
                     "type": "string",
                     "description": "镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。\n"
                 },
-                "detectionResults": {
-                    "$ref": "#/types/bytepluscc:ecs/ImageDetectionResults:ImageDetectionResults",
-                    "description": "镜像的检测结果。\n"
-                },
                 "imageName": {
                     "type": "string",
                     "description": "镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。\n"
@@ -18245,30 +18580,6 @@
                 "instanceId": {
                     "type": "string",
                     "description": "实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。\n"
-                },
-                "kernel": {
-                    "type": "string",
-                    "description": "镜像的内核版本。\n"
-                },
-                "licenseType": {
-                    "type": "string",
-                    "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
-                },
-                "osName": {
-                    "type": "string",
-                    "description": "镜像操作系统的名称。\n"
-                },
-                "osType": {
-                    "type": "string",
-                    "description": "操作系统类型。\n"
-                },
-                "platform": {
-                    "type": "string",
-                    "description": "镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。\n"
-                },
-                "platformVersion": {
-                    "type": "string",
-                    "description": "镜像的发行版本。\n"
                 },
                 "projectName": {
                     "type": "string",
@@ -18356,7 +18667,7 @@
                     },
                     "licenseType": {
                         "type": "string",
-                        "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
+                        "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。\n"
                     },
                     "osName": {
                         "type": "string",
@@ -24307,7 +24618,7 @@
                 },
                 "status": {
                     "type": "string",
-                    "description": "云盘状态\n"
+                    "description": "云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。\n"
                 },
                 "tags": {
                     "type": "array",
@@ -24531,7 +24842,7 @@
                     },
                     "status": {
                         "type": "string",
-                        "description": "云盘状态\n"
+                        "description": "云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。\n"
                     },
                     "tags": {
                         "type": "array",
@@ -26665,6 +26976,244 @@
                 "type": "object"
             }
         },
+        "bytepluscc:vpc/subnet:Subnet": {
+            "description": "子网是在指定可用区内分配的一段VPC网段内的网段，它为云上资源（如云服务器、负载均衡等）提供私网IP地址。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst subnetDemo = new bytepluscc.vpc.Subnet(\"SubnetDemo\", {\n    vpcId: \"vpc-xxxx\",\n    zoneId: \"cn-beijing\",\n    subnetName: \"subnetDemo\",\n    description: \"subnetDemo description\",\n    cidrBlock: \"192.168.xx.0/24\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nsubnet_demo = bytepluscc.vpc.Subnet(\"SubnetDemo\",\n    vpc_id=\"vpc-xxxx\",\n    zone_id=\"cn-beijing\",\n    subnet_name=\"subnetDemo\",\n    description=\"subnetDemo description\",\n    cidr_block=\"192.168.xx.0/24\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var subnetDemo = new Bytepluscc.Vpc.Subnet(\"SubnetDemo\", new()\n    {\n        VpcId = \"vpc-xxxx\",\n        ZoneId = \"cn-beijing\",\n        SubnetName = \"subnetDemo\",\n        Description = \"subnetDemo description\",\n        CidrBlock = \"192.168.xx.0/24\",\n        Tags = new[]\n        {\n            new Bytepluscc.Vpc.Inputs.SubnetTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/vpc\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := vpc.NewSubnet(ctx, \"SubnetDemo\", \u0026vpc.SubnetArgs{\n\t\t\tVpcId:       pulumi.String(\"vpc-xxxx\"),\n\t\t\tZoneId:      pulumi.String(\"cn-beijing\"),\n\t\t\tSubnetName:  pulumi.String(\"subnetDemo\"),\n\t\t\tDescription: pulumi.String(\"subnetDemo description\"),\n\t\t\tCidrBlock:   pulumi.String(\"192.168.xx.0/24\"),\n\t\t\tTags: vpc.SubnetTagArray{\n\t\t\t\t\u0026vpc.SubnetTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.vpc.Subnet;\nimport com.byteplus.bytepluscc.vpc.SubnetArgs;\nimport com.pulumi.bytepluscc.vpc.inputs.SubnetTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var subnetDemo = new Subnet(\"subnetDemo\", SubnetArgs.builder()\n            .vpcId(\"vpc-xxxx\")\n            .zoneId(\"cn-beijing\")\n            .subnetName(\"subnetDemo\")\n            .description(\"subnetDemo description\")\n            .cidrBlock(\"192.168.xx.0/24\")\n            .tags(SubnetTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  subnetDemo:\n    type: bytepluscc:vpc:Subnet\n    name: SubnetDemo\n    properties:\n      vpcId: vpc-xxxx\n      zoneId: cn-beijing\n      subnetName: subnetDemo\n      description: subnetDemo description\n      cidrBlock: 192.168.xx.0/24\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:vpc/subnet:Subnet example \"subnet_id\"\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "子网所属账户的ID。\n"
+                },
+                "availableIpAddressCount": {
+                    "type": "integer",
+                    "description": "子网中可用的IP地址数量。\n"
+                },
+                "cidrBlock": {
+                    "type": "string",
+                    "description": "子网的IPv4网段。\n"
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "子网的创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。\n"
+                },
+                "enableIpv6": {
+                    "type": "boolean",
+                    "description": "开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。\n"
+                },
+                "ipv6CidrBlock": {
+                    "type": "string",
+                    "description": "子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。\n"
+                },
+                "isDefault": {
+                    "type": "boolean",
+                    "description": "该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。\n"
+                },
+                "networkAclId": {
+                    "type": "string",
+                    "description": "子网关联的网络ACL的ID。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "子网所在VPC实例所属项目的名称。\n"
+                },
+                "readIpv6CidrBlock": {
+                    "type": "string",
+                    "description": "只读字段，子网IPv6网段。\n"
+                },
+                "routeTable": {
+                    "$ref": "#/types/bytepluscc:vpc/SubnetRouteTable:SubnetRouteTable",
+                    "description": "路由表信息。\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "子网的状态。1、Pending：表示配置中。2、Available：表示可用。\n"
+                },
+                "subnetId": {
+                    "type": "string",
+                    "description": "待修改信息的子网的ID。\n"
+                },
+                "subnetName": {
+                    "type": "string",
+                    "description": "子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/SubnetTag:SubnetTag"
+                    }
+                },
+                "totalIpv4Count": {
+                    "type": "integer",
+                    "description": "子网下可用IP总数。\n"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "子网的更新时间。\n"
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "子网所属VPC的ID。\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "availableIpAddressCount",
+                "cidrBlock",
+                "createdTime",
+                "description",
+                "enableIpv6",
+                "ipv6CidrBlock",
+                "isDefault",
+                "networkAclId",
+                "projectName",
+                "readIpv6CidrBlock",
+                "routeTable",
+                "status",
+                "subnetId",
+                "subnetName",
+                "tags",
+                "totalIpv4Count",
+                "updatedTime",
+                "vpcId",
+                "zoneId"
+            ],
+            "inputProperties": {
+                "cidrBlock": {
+                    "type": "string",
+                    "description": "子网的IPv4网段。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。\n"
+                },
+                "enableIpv6": {
+                    "type": "boolean",
+                    "description": "开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。\n"
+                },
+                "ipv6CidrBlock": {
+                    "type": "string",
+                    "description": "子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。\n"
+                },
+                "subnetName": {
+                    "type": "string",
+                    "description": "子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/SubnetTag:SubnetTag"
+                    }
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "子网所属VPC的ID。\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。\n"
+                }
+            },
+            "requiredInputs": [
+                "cidrBlock",
+                "vpcId",
+                "zoneId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Subnet resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "子网所属账户的ID。\n"
+                    },
+                    "availableIpAddressCount": {
+                        "type": "integer",
+                        "description": "子网中可用的IP地址数量。\n"
+                    },
+                    "cidrBlock": {
+                        "type": "string",
+                        "description": "子网的IPv4网段。\n"
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "子网的创建时间。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。\n"
+                    },
+                    "enableIpv6": {
+                        "type": "boolean",
+                        "description": "开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。\n"
+                    },
+                    "ipv6CidrBlock": {
+                        "type": "string",
+                        "description": "子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。\n"
+                    },
+                    "isDefault": {
+                        "type": "boolean",
+                        "description": "该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。\n"
+                    },
+                    "networkAclId": {
+                        "type": "string",
+                        "description": "子网关联的网络ACL的ID。\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "子网所在VPC实例所属项目的名称。\n"
+                    },
+                    "readIpv6CidrBlock": {
+                        "type": "string",
+                        "description": "只读字段，子网IPv6网段。\n"
+                    },
+                    "routeTable": {
+                        "$ref": "#/types/bytepluscc:vpc/SubnetRouteTable:SubnetRouteTable",
+                        "description": "路由表信息。\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "子网的状态。1、Pending：表示配置中。2、Available：表示可用。\n"
+                    },
+                    "subnetId": {
+                        "type": "string",
+                        "description": "待修改信息的子网的ID。\n"
+                    },
+                    "subnetName": {
+                        "type": "string",
+                        "description": "子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/SubnetTag:SubnetTag"
+                        }
+                    },
+                    "totalIpv4Count": {
+                        "type": "integer",
+                        "description": "子网下可用IP总数。\n"
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "子网的更新时间。\n"
+                    },
+                    "vpcId": {
+                        "type": "string",
+                        "description": "子网所属VPC的ID。\n"
+                    },
+                    "zoneId": {
+                        "type": "string",
+                        "description": "要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:vpc/vpc:Vpc": {
             "description": "私有网络为云上资源构建隔离的、自主配置的虚拟网络环境。可以在私有网络中自定义IP地址段、安全组、路由策略等网络特性，简单高效安全地管理云上资源。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  vPCDemo:\n    type: bytepluscc:vpc:Vpc\n    name: VPCDemo\n    properties:\n      cidrBlock: 192.168.0.0/24\n      supportIpv4Gateway: true\n      vpcName: vpc-demo\n      description: VpcDemo Example\n      dnsServers:\n        - 12.3.x.x\n      associateCens:\n        - cen_id: cen-3re8cx4vwdibk5zsk2xxxx\n          cen_owner_id: 200000xxx\n          cen_status: Attaching\n      natGatewayIds:\n        - ngw-2d6tp1y8zq41s58ozfdxxx\n      routeTableIds:\n        - vtb-29mkf8ft83l6o1e1hgixxx\n      securityGroupIds:\n        - sg-29mkx39jb80741e1hgj2bxxx\n      projectName: default\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:vpc/vpc:Vpc example \"vpc_id\"\n```\n\n",
             "properties": {
@@ -26812,12 +27361,6 @@
                 "vpcName"
             ],
             "inputProperties": {
-                "associateCens": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/types/bytepluscc:vpc/VpcAssociateCen:VpcAssociateCen"
-                    }
-                },
                 "cidrBlock": {
                     "type": "string",
                     "description": "VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。\n"
@@ -26852,26 +27395,12 @@
                     "type": "string",
                     "description": "VPC所属项目的名称。不填默认加入default项目。\n"
                 },
-                "routeTableIds": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "VPC关联的路由表ID。\n"
-                },
                 "secondaryCidrBlocks": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     },
                     "description": "VPC的辅助网段。\n"
-                },
-                "securityGroupIds": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "VPC中安全组的列表。\n"
                 },
                 "subnetIds": {
                     "type": "array",
@@ -26889,13 +27418,6 @@
                     "items": {
                         "$ref": "#/types/bytepluscc:vpc/VpcTag:VpcTag"
                     }
-                },
-                "userCidrBlocks": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "VPC的用户网段。\n"
                 },
                 "vpcName": {
                     "type": "string",
@@ -29101,6 +29623,107 @@
                 "type": "object"
             }
         },
+        "bytepluscc:clb/getRule:getRule": {
+            "description": "Data Source schema for Byteplus::CLB::Rule\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getRule.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getRule.\n",
+                "properties": {
+                    "actionType": {
+                        "description": "转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n",
+                        "type": "string"
+                    },
+                    "domain": {
+                        "description": "转发规则的域名。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "listenerId": {
+                        "description": "监听器ID。\n",
+                        "type": "string"
+                    },
+                    "redirectConfig": {
+                        "$ref": "#/types/bytepluscc:clb/getRuleRedirectConfig:getRuleRedirectConfig",
+                        "description": "重定向相关配置信息。\n"
+                    },
+                    "ruleId": {
+                        "description": "转发规则ID。\n",
+                        "type": "string"
+                    },
+                    "serverGroupId": {
+                        "description": "转发规则关联的后端服务器组的ID。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "标签列表。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/getRuleTag:getRuleTag"
+                        },
+                        "type": "array"
+                    },
+                    "url": {
+                        "description": "转发规则的URL。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "actionType",
+                    "description",
+                    "domain",
+                    "id",
+                    "listenerId",
+                    "redirectConfig",
+                    "ruleId",
+                    "serverGroupId",
+                    "tags",
+                    "url"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:clb/getRules:getRules": {
+            "description": "Plural Data Source schema for Byteplus::CLB::Rule\n",
+            "outputs": {
+                "description": "A collection of values returned by getRules.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:cloudidentity/getUser:getUser": {
             "description": "Data Source schema for Byteplus::CloudIdentity::User\n",
             "inputs": {
@@ -29549,7 +30172,7 @@
                         "type": "string"
                     },
                     "licenseType": {
-                        "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。\n",
+                        "description": "镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。\n",
                         "type": "string"
                     },
                     "osName": {
@@ -33258,7 +33881,7 @@
                         "type": "string"
                     },
                     "status": {
-                        "description": "云盘状态\n",
+                        "description": "云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。\n",
                         "type": "string"
                     },
                     "tags": {
@@ -34673,6 +35296,162 @@
             "description": "Plural Data Source schema for Byteplus::VPC::SecurityGroup\n",
             "outputs": {
                 "description": "A collection of values returned by getSecurityGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:vpc/getSubnet:getSubnet": {
+            "description": "Data Source schema for Byteplus::VPC::Subnet\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getSubnet.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getSubnet.\n",
+                "properties": {
+                    "accountId": {
+                        "description": "子网所属账户的ID。\n",
+                        "type": "string"
+                    },
+                    "availableIpAddressCount": {
+                        "description": "子网中可用的IP地址数量。\n",
+                        "type": "integer"
+                    },
+                    "cidrBlock": {
+                        "description": "子网的IPv4网段。\n",
+                        "type": "string"
+                    },
+                    "createdTime": {
+                        "description": "子网的创建时间。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。\n",
+                        "type": "string"
+                    },
+                    "enableIpv6": {
+                        "description": "开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。\n",
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "ipv6CidrBlock": {
+                        "description": "子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。\n",
+                        "type": "string"
+                    },
+                    "isDefault": {
+                        "description": "该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。\n",
+                        "type": "boolean"
+                    },
+                    "networkAclId": {
+                        "description": "子网关联的网络ACL的ID。\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "子网所在VPC实例所属项目的名称。\n",
+                        "type": "string"
+                    },
+                    "readIpv6CidrBlock": {
+                        "description": "只读字段，子网IPv6网段。\n",
+                        "type": "string"
+                    },
+                    "routeTable": {
+                        "$ref": "#/types/bytepluscc:vpc/getSubnetRouteTable:getSubnetRouteTable",
+                        "description": "路由表信息。\n"
+                    },
+                    "status": {
+                        "description": "子网的状态。1、Pending：表示配置中。2、Available：表示可用。\n",
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "description": "待修改信息的子网的ID。\n",
+                        "type": "string"
+                    },
+                    "subnetName": {
+                        "description": "子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "子网的标签信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/getSubnetTag:getSubnetTag"
+                        },
+                        "type": "array"
+                    },
+                    "totalIpv4Count": {
+                        "description": "子网下可用IP总数。\n",
+                        "type": "integer"
+                    },
+                    "updatedTime": {
+                        "description": "子网的更新时间。\n",
+                        "type": "string"
+                    },
+                    "vpcId": {
+                        "description": "子网所属VPC的ID。\n",
+                        "type": "string"
+                    },
+                    "zoneId": {
+                        "description": "要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "availableIpAddressCount",
+                    "cidrBlock",
+                    "createdTime",
+                    "description",
+                    "enableIpv6",
+                    "id",
+                    "ipv6CidrBlock",
+                    "isDefault",
+                    "networkAclId",
+                    "projectName",
+                    "readIpv6CidrBlock",
+                    "routeTable",
+                    "status",
+                    "subnetId",
+                    "subnetName",
+                    "tags",
+                    "totalIpv4Count",
+                    "updatedTime",
+                    "vpcId",
+                    "zoneId"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:vpc/getSubnets:getSubnets": {
+            "description": "Plural Data Source schema for Byteplus::VPC::Subnet\n",
+            "outputs": {
+                "description": "A collection of values returned by getSubnets.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
