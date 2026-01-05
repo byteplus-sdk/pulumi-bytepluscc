@@ -74,7 +74,7 @@ type LookupVolumeResult struct {
 	SnapshotCount float64 `pulumi:"snapshotCount"`
 	// 源快照。
 	SourceSnapshotId string `pulumi:"sourceSnapshotId"`
-	// 云盘状态
+	// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
 	Status string `pulumi:"status"`
 	// 云盘的标签信息
 	Tags []GetVolumeTag `pulumi:"tags"`
@@ -238,7 +238,7 @@ func (o LookupVolumeResultOutput) SourceSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.SourceSnapshotId }).(pulumi.StringOutput)
 }
 
-// 云盘状态
+// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
 func (o LookupVolumeResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.Status }).(pulumi.StringOutput)
 }

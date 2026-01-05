@@ -2103,6 +2103,40 @@ export namespace clb {
         value: string;
     }
 
+    export interface GetRuleRedirectConfig {
+        /**
+         * 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+         */
+        host: string;
+        /**
+         * 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+         */
+        path: string;
+        /**
+         * 转发规则重定向的端口，取值范围为 1~65535。
+         */
+        port: string;
+        /**
+         * 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+         */
+        protocol: string;
+        /**
+         * 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+         */
+        statusCode: string;
+    }
+
+    export interface GetRuleTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
     export interface ListenerHealthCheck {
         /**
          * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
@@ -2161,6 +2195,40 @@ export namespace clb {
         key: string;
         /**
          * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value: string;
+    }
+
+    export interface RuleRedirectConfig {
+        /**
+         * 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+         */
+        host: string;
+        /**
+         * 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+         */
+        path: string;
+        /**
+         * 转发规则重定向的端口，取值范围为 1~65535。
+         */
+        port: string;
+        /**
+         * 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+         */
+        protocol: string;
+        /**
+         * 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+         */
+        statusCode: string;
+    }
+
+    export interface RuleTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
          */
         value: string;
     }
@@ -7874,6 +7942,28 @@ export namespace vpc {
         value: string;
     }
 
+    export interface GetSubnetRouteTable {
+        /**
+         * 子网关联的路由表ID。
+         */
+        routeTableId: string;
+        /**
+         * 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+         */
+        routeTableType: string;
+    }
+
+    export interface GetSubnetTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
     export interface GetVpcAssociateCen {
         /**
          * CEN的ID。
@@ -7987,6 +8077,28 @@ export namespace vpc {
     }
 
     export interface SecurityGroupTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface SubnetRouteTable {
+        /**
+         * 子网关联的路由表ID。
+         */
+        routeTableId: string;
+        /**
+         * 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+         */
+        routeTableType: string;
+    }
+
+    export interface SubnetTag {
         /**
          * 用户标签的标签键。
          */

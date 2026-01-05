@@ -3,7 +3,6 @@
 
 package com.byteplus.bytepluscc.vpc;
 
-import com.byteplus.bytepluscc.vpc.inputs.VpcAssociateCenArgs;
 import com.byteplus.bytepluscc.vpc.inputs.VpcTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -18,13 +17,6 @@ import javax.annotation.Nullable;
 public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final VpcArgs Empty = new VpcArgs();
-
-    @Import(name="associateCens")
-    private @Nullable Output<List<VpcAssociateCenArgs>> associateCens;
-
-    public Optional<Output<List<VpcAssociateCenArgs>>> associateCens() {
-        return Optional.ofNullable(this.associateCens);
-    }
 
     /**
      * VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
@@ -132,21 +124,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC关联的路由表ID。
-     * 
-     */
-    @Import(name="routeTableIds")
-    private @Nullable Output<List<String>> routeTableIds;
-
-    /**
-     * @return VPC关联的路由表ID。
-     * 
-     */
-    public Optional<Output<List<String>>> routeTableIds() {
-        return Optional.ofNullable(this.routeTableIds);
-    }
-
-    /**
      * VPC的辅助网段。
      * 
      */
@@ -159,21 +136,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<String>>> secondaryCidrBlocks() {
         return Optional.ofNullable(this.secondaryCidrBlocks);
-    }
-
-    /**
-     * VPC中安全组的列表。
-     * 
-     */
-    @Import(name="securityGroupIds")
-    private @Nullable Output<List<String>> securityGroupIds;
-
-    /**
-     * @return VPC中安全组的列表。
-     * 
-     */
-    public Optional<Output<List<String>>> securityGroupIds() {
-        return Optional.ofNullable(this.securityGroupIds);
     }
 
     /**
@@ -214,21 +176,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的用户网段。
-     * 
-     */
-    @Import(name="userCidrBlocks")
-    private @Nullable Output<List<String>> userCidrBlocks;
-
-    /**
-     * @return VPC的用户网段。
-     * 
-     */
-    public Optional<Output<List<String>>> userCidrBlocks() {
-        return Optional.ofNullable(this.userCidrBlocks);
-    }
-
-    /**
      * VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
      * 
      */
@@ -246,7 +193,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
     private VpcArgs() {}
 
     private VpcArgs(VpcArgs $) {
-        this.associateCens = $.associateCens;
         this.cidrBlock = $.cidrBlock;
         this.description = $.description;
         this.dnsServers = $.dnsServers;
@@ -254,13 +200,10 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
         this.ipv6CidrBlock = $.ipv6CidrBlock;
         this.natGatewayIds = $.natGatewayIds;
         this.projectName = $.projectName;
-        this.routeTableIds = $.routeTableIds;
         this.secondaryCidrBlocks = $.secondaryCidrBlocks;
-        this.securityGroupIds = $.securityGroupIds;
         this.subnetIds = $.subnetIds;
         this.supportIpv4Gateway = $.supportIpv4Gateway;
         this.tags = $.tags;
-        this.userCidrBlocks = $.userCidrBlocks;
         this.vpcName = $.vpcName;
     }
 
@@ -280,19 +223,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(VpcArgs defaults) {
             $ = new VpcArgs(Objects.requireNonNull(defaults));
-        }
-
-        public Builder associateCens(@Nullable Output<List<VpcAssociateCenArgs>> associateCens) {
-            $.associateCens = associateCens;
-            return this;
-        }
-
-        public Builder associateCens(List<VpcAssociateCenArgs> associateCens) {
-            return associateCens(Output.of(associateCens));
-        }
-
-        public Builder associateCens(VpcAssociateCenArgs... associateCens) {
-            return associateCens(List.of(associateCens));
         }
 
         /**
@@ -463,37 +393,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableIds VPC关联的路由表ID。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder routeTableIds(@Nullable Output<List<String>> routeTableIds) {
-            $.routeTableIds = routeTableIds;
-            return this;
-        }
-
-        /**
-         * @param routeTableIds VPC关联的路由表ID。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder routeTableIds(List<String> routeTableIds) {
-            return routeTableIds(Output.of(routeTableIds));
-        }
-
-        /**
-         * @param routeTableIds VPC关联的路由表ID。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder routeTableIds(String... routeTableIds) {
-            return routeTableIds(List.of(routeTableIds));
-        }
-
-        /**
          * @param secondaryCidrBlocks VPC的辅助网段。
          * 
          * @return builder
@@ -522,37 +421,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secondaryCidrBlocks(String... secondaryCidrBlocks) {
             return secondaryCidrBlocks(List.of(secondaryCidrBlocks));
-        }
-
-        /**
-         * @param securityGroupIds VPC中安全组的列表。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder securityGroupIds(@Nullable Output<List<String>> securityGroupIds) {
-            $.securityGroupIds = securityGroupIds;
-            return this;
-        }
-
-        /**
-         * @param securityGroupIds VPC中安全组的列表。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder securityGroupIds(List<String> securityGroupIds) {
-            return securityGroupIds(Output.of(securityGroupIds));
-        }
-
-        /**
-         * @param securityGroupIds VPC中安全组的列表。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder securityGroupIds(String... securityGroupIds) {
-            return securityGroupIds(List.of(securityGroupIds));
         }
 
         /**
@@ -618,37 +486,6 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder tags(VpcTagArgs... tags) {
             return tags(List.of(tags));
-        }
-
-        /**
-         * @param userCidrBlocks VPC的用户网段。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder userCidrBlocks(@Nullable Output<List<String>> userCidrBlocks) {
-            $.userCidrBlocks = userCidrBlocks;
-            return this;
-        }
-
-        /**
-         * @param userCidrBlocks VPC的用户网段。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder userCidrBlocks(List<String> userCidrBlocks) {
-            return userCidrBlocks(Output.of(userCidrBlocks));
-        }
-
-        /**
-         * @param userCidrBlocks VPC的用户网段。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder userCidrBlocks(String... userCidrBlocks) {
-            return userCidrBlocks(List.of(userCidrBlocks));
         }
 
         /**

@@ -170,7 +170,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
         public Output<string> SourceSnapshotId { get; private set; } = null!;
 
         /// <summary>
-        /// 云盘状态
+        /// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -488,7 +488,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
         public Input<string>? SourceSnapshotId { get; set; }
 
         /// <summary>
-        /// 云盘状态
+        /// 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

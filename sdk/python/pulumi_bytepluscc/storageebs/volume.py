@@ -299,7 +299,7 @@ class _VolumeState:
         :param pulumi.Input[builtins.float] size: Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
         :param pulumi.Input[builtins.float] snapshot_count: 快照计数
         :param pulumi.Input[builtins.str] source_snapshot_id: 源快照。
-        :param pulumi.Input[builtins.str] status: 云盘状态
+        :param pulumi.Input[builtins.str] status: 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
         :param pulumi.Input['VolumeTotalPerformanceArgs'] total_performance: 总性能。
         :param pulumi.Input[builtins.float] trade_status: 交易状态 0：创建中 1：运行中 2：创建失败
         :param pulumi.Input[builtins.str] updated_at: 云盘更新时间。
@@ -625,7 +625,7 @@ class _VolumeState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        云盘状态
+        云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
         """
         return pulumi.get(self, "status")
 
@@ -958,7 +958,7 @@ class Volume(pulumi.CustomResource):
         :param pulumi.Input[builtins.float] size: Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
         :param pulumi.Input[builtins.float] snapshot_count: 快照计数
         :param pulumi.Input[builtins.str] source_snapshot_id: 源快照。
-        :param pulumi.Input[builtins.str] status: 云盘状态
+        :param pulumi.Input[builtins.str] status: 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
         :param pulumi.Input[Union['VolumeTotalPerformanceArgs', 'VolumeTotalPerformanceArgsDict']] total_performance: 总性能。
         :param pulumi.Input[builtins.float] trade_status: 交易状态 0：创建中 1：运行中 2：创建失败
         :param pulumi.Input[builtins.str] updated_at: 云盘更新时间。
@@ -1175,7 +1175,7 @@ class Volume(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        云盘状态
+        云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
         """
         return pulumi.get(self, "status")
 

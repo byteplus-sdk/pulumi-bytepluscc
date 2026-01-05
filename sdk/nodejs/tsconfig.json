@@ -57,8 +57,11 @@
         "cen/index.ts",
         "clb/getListener.ts",
         "clb/getListeners.ts",
+        "clb/getRule.ts",
+        "clb/getRules.ts",
         "clb/index.ts",
         "clb/listener.ts",
+        "clb/rule.ts",
         "cloudidentity/getUser.ts",
         "cloudidentity/getUsers.ts",
         "cloudidentity/index.ts",
@@ -187,10 +190,13 @@
         "vpc/getEnis.ts",
         "vpc/getSecurityGroup.ts",
         "vpc/getSecurityGroups.ts",
+        "vpc/getSubnet.ts",
+        "vpc/getSubnets.ts",
         "vpc/getVpc.ts",
         "vpc/getVpcs.ts",
         "vpc/index.ts",
         "vpc/securityGroup.ts",
+        "vpc/subnet.ts",
         "vpc/vpc.ts"
     ]
 }

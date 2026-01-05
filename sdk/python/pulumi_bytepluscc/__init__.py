@@ -206,6 +206,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "clb/rule",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cloudidentity/user",
   "fqn": "pulumi_bytepluscc.cloudidentity",
   "classes": {
@@ -474,6 +482,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/securityGroup:SecurityGroup": "SecurityGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/subnet",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/subnet:Subnet": "Subnet"
   }
  },
  {

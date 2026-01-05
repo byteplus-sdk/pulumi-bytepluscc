@@ -9,6 +9,25 @@ import * as utilities from "../utilities";
 /**
  * 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
+ *
+ * const imageDemo = new bytepluscc.ecs.Image("ImageDemo", {
+ *     description: "ImageDemo Example",
+ *     imageName: "image-demo",
+ *     instanceId: "i-ydzhj1el8gr9cxxdnxxxx",
+ *     projectName: "default",
+ *     sharePermissions: ["2000000***"],
+ *     tags: [{
+ *         key: "env",
+ *         value: "test",
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * ```sh
@@ -62,7 +81,7 @@ export class Image extends pulumi.CustomResource {
     /**
      * 镜像的检测结果。
      */
-    public readonly detectionResults!: pulumi.Output<outputs.ecs.ImageDetectionResults>;
+    public /*out*/ readonly detectionResults!: pulumi.Output<outputs.ecs.ImageDetectionResults>;
     /**
      * 镜像ID。
      */
@@ -94,27 +113,27 @@ export class Image extends pulumi.CustomResource {
     /**
      * 镜像的内核版本。
      */
-    public readonly kernel!: pulumi.Output<string>;
+    public /*out*/ readonly kernel!: pulumi.Output<string>;
     /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
      */
-    public readonly licenseType!: pulumi.Output<string>;
+    public /*out*/ readonly licenseType!: pulumi.Output<string>;
     /**
      * 镜像操作系统的名称。
      */
-    public readonly osName!: pulumi.Output<string>;
+    public /*out*/ readonly osName!: pulumi.Output<string>;
     /**
      * 操作系统类型。
      */
-    public readonly osType!: pulumi.Output<string>;
+    public /*out*/ readonly osType!: pulumi.Output<string>;
     /**
      * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
      */
-    public readonly platform!: pulumi.Output<string>;
+    public /*out*/ readonly platform!: pulumi.Output<string>;
     /**
      * 镜像的发行版本。
      */
-    public readonly platformVersion!: pulumi.Output<string>;
+    public /*out*/ readonly platformVersion!: pulumi.Output<string>;
     /**
      * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
      */
@@ -207,15 +226,8 @@ export class Image extends pulumi.CustomResource {
                 throw new Error("Missing required property 'imageName'");
             }
             resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["detectionResults"] = args ? args.detectionResults : undefined;
             resourceInputs["imageName"] = args ? args.imageName : undefined;
             resourceInputs["instanceId"] = args ? args.instanceId : undefined;
-            resourceInputs["kernel"] = args ? args.kernel : undefined;
-            resourceInputs["licenseType"] = args ? args.licenseType : undefined;
-            resourceInputs["osName"] = args ? args.osName : undefined;
-            resourceInputs["osType"] = args ? args.osType : undefined;
-            resourceInputs["platform"] = args ? args.platform : undefined;
-            resourceInputs["platformVersion"] = args ? args.platformVersion : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["sharePermissions"] = args ? args.sharePermissions : undefined;
             resourceInputs["snapshotGroupId"] = args ? args.snapshotGroupId : undefined;
@@ -224,11 +236,18 @@ export class Image extends pulumi.CustomResource {
             resourceInputs["architecture"] = undefined /*out*/;
             resourceInputs["bootMode"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
+            resourceInputs["detectionResults"] = undefined /*out*/;
             resourceInputs["imageId"] = undefined /*out*/;
             resourceInputs["imageOwnerId"] = undefined /*out*/;
             resourceInputs["isInstallRunCommandAgent"] = undefined /*out*/;
             resourceInputs["isLts"] = undefined /*out*/;
             resourceInputs["isSupportCloudInit"] = undefined /*out*/;
+            resourceInputs["kernel"] = undefined /*out*/;
+            resourceInputs["licenseType"] = undefined /*out*/;
+            resourceInputs["osName"] = undefined /*out*/;
+            resourceInputs["osType"] = undefined /*out*/;
+            resourceInputs["platform"] = undefined /*out*/;
+            resourceInputs["platformVersion"] = undefined /*out*/;
             resourceInputs["shareStatus"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
             resourceInputs["snapshots"] = undefined /*out*/;
@@ -299,7 +318,7 @@ export interface ImageState {
      */
     kernel?: pulumi.Input<string>;
     /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
      */
     licenseType?: pulumi.Input<string>;
     /**
@@ -371,10 +390,6 @@ export interface ImageArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * 镜像的检测结果。
-     */
-    detectionResults?: pulumi.Input<inputs.ecs.ImageDetectionResults>;
-    /**
      * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
      */
     imageName: pulumi.Input<string>;
@@ -382,30 +397,6 @@ export interface ImageArgs {
      * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
      */
     instanceId?: pulumi.Input<string>;
-    /**
-     * 镜像的内核版本。
-     */
-    kernel?: pulumi.Input<string>;
-    /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-     */
-    licenseType?: pulumi.Input<string>;
-    /**
-     * 镜像操作系统的名称。
-     */
-    osName?: pulumi.Input<string>;
-    /**
-     * 操作系统类型。
-     */
-    osType?: pulumi.Input<string>;
-    /**
-     * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-     */
-    platform?: pulumi.Input<string>;
-    /**
-     * 镜像的发行版本。
-     */
-    platformVersion?: pulumi.Input<string>;
     /**
      * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
      */

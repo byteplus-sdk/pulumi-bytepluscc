@@ -128,7 +128,7 @@ public final class GetVolumeResult {
      */
     private String sourceSnapshotId;
     /**
-     * @return 云盘状态
+     * @return 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
      * 
      */
     private String status;
@@ -329,7 +329,7 @@ public final class GetVolumeResult {
         return this.sourceSnapshotId;
     }
     /**
-     * @return 云盘状态
+     * @return 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
      * 
      */
     public String status() {

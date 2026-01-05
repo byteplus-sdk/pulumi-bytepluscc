@@ -3,7 +3,6 @@
 
 package com.byteplus.bytepluscc.ecs;
 
-import com.byteplus.bytepluscc.ecs.inputs.ImageDetectionResultsArgs;
 import com.byteplus.bytepluscc.ecs.inputs.ImageTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -35,21 +34,6 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像的检测结果。
-     * 
-     */
-    @Import(name="detectionResults")
-    private @Nullable Output<ImageDetectionResultsArgs> detectionResults;
-
-    /**
-     * @return 镜像的检测结果。
-     * 
-     */
-    public Optional<Output<ImageDetectionResultsArgs>> detectionResults() {
-        return Optional.ofNullable(this.detectionResults);
-    }
-
-    /**
      * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
      * 
      */
@@ -77,96 +61,6 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
-    }
-
-    /**
-     * 镜像的内核版本。
-     * 
-     */
-    @Import(name="kernel")
-    private @Nullable Output<String> kernel;
-
-    /**
-     * @return 镜像的内核版本。
-     * 
-     */
-    public Optional<Output<String>> kernel() {
-        return Optional.ofNullable(this.kernel);
-    }
-
-    /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-     * 
-     */
-    @Import(name="licenseType")
-    private @Nullable Output<String> licenseType;
-
-    /**
-     * @return 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-     * 
-     */
-    public Optional<Output<String>> licenseType() {
-        return Optional.ofNullable(this.licenseType);
-    }
-
-    /**
-     * 镜像操作系统的名称。
-     * 
-     */
-    @Import(name="osName")
-    private @Nullable Output<String> osName;
-
-    /**
-     * @return 镜像操作系统的名称。
-     * 
-     */
-    public Optional<Output<String>> osName() {
-        return Optional.ofNullable(this.osName);
-    }
-
-    /**
-     * 操作系统类型。
-     * 
-     */
-    @Import(name="osType")
-    private @Nullable Output<String> osType;
-
-    /**
-     * @return 操作系统类型。
-     * 
-     */
-    public Optional<Output<String>> osType() {
-        return Optional.ofNullable(this.osType);
-    }
-
-    /**
-     * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-     * 
-     */
-    @Import(name="platform")
-    private @Nullable Output<String> platform;
-
-    /**
-     * @return 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-     * 
-     */
-    public Optional<Output<String>> platform() {
-        return Optional.ofNullable(this.platform);
-    }
-
-    /**
-     * 镜像的发行版本。
-     * 
-     */
-    @Import(name="platformVersion")
-    private @Nullable Output<String> platformVersion;
-
-    /**
-     * @return 镜像的发行版本。
-     * 
-     */
-    public Optional<Output<String>> platformVersion() {
-        return Optional.ofNullable(this.platformVersion);
     }
 
     /**
@@ -240,15 +134,8 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     private ImageArgs(ImageArgs $) {
         this.description = $.description;
-        this.detectionResults = $.detectionResults;
         this.imageName = $.imageName;
         this.instanceId = $.instanceId;
-        this.kernel = $.kernel;
-        this.licenseType = $.licenseType;
-        this.osName = $.osName;
-        this.osType = $.osType;
-        this.platform = $.platform;
-        this.platformVersion = $.platformVersion;
         this.projectName = $.projectName;
         this.sharePermissions = $.sharePermissions;
         this.snapshotGroupId = $.snapshotGroupId;
@@ -296,27 +183,6 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param detectionResults 镜像的检测结果。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder detectionResults(@Nullable Output<ImageDetectionResultsArgs> detectionResults) {
-            $.detectionResults = detectionResults;
-            return this;
-        }
-
-        /**
-         * @param detectionResults 镜像的检测结果。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder detectionResults(ImageDetectionResultsArgs detectionResults) {
-            return detectionResults(Output.of(detectionResults));
-        }
-
-        /**
          * @param imageName 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
          * 
          * @return builder
@@ -356,132 +222,6 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
-        }
-
-        /**
-         * @param kernel 镜像的内核版本。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder kernel(@Nullable Output<String> kernel) {
-            $.kernel = kernel;
-            return this;
-        }
-
-        /**
-         * @param kernel 镜像的内核版本。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder kernel(String kernel) {
-            return kernel(Output.of(kernel));
-        }
-
-        /**
-         * @param licenseType 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder licenseType(@Nullable Output<String> licenseType) {
-            $.licenseType = licenseType;
-            return this;
-        }
-
-        /**
-         * @param licenseType 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder licenseType(String licenseType) {
-            return licenseType(Output.of(licenseType));
-        }
-
-        /**
-         * @param osName 镜像操作系统的名称。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder osName(@Nullable Output<String> osName) {
-            $.osName = osName;
-            return this;
-        }
-
-        /**
-         * @param osName 镜像操作系统的名称。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder osName(String osName) {
-            return osName(Output.of(osName));
-        }
-
-        /**
-         * @param osType 操作系统类型。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder osType(@Nullable Output<String> osType) {
-            $.osType = osType;
-            return this;
-        }
-
-        /**
-         * @param osType 操作系统类型。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder osType(String osType) {
-            return osType(Output.of(osType));
-        }
-
-        /**
-         * @param platform 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder platform(@Nullable Output<String> platform) {
-            $.platform = platform;
-            return this;
-        }
-
-        /**
-         * @param platform 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder platform(String platform) {
-            return platform(Output.of(platform));
-        }
-
-        /**
-         * @param platformVersion 镜像的发行版本。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder platformVersion(@Nullable Output<String> platformVersion) {
-            $.platformVersion = platformVersion;
-            return this;
-        }
-
-        /**
-         * @param platformVersion 镜像的发行版本。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder platformVersion(String platformVersion) {
-            return platformVersion(Output.of(platformVersion));
         }
 
         /**

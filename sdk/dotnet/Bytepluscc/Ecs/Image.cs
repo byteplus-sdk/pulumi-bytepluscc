@@ -13,6 +13,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     /// <summary>
     /// 镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var imageDemo = new Bytepluscc.Ecs.Image("ImageDemo", new()
+    ///     {
+    ///         Description = "ImageDemo Example",
+    ///         ImageName = "image-demo",
+    ///         InstanceId = "i-ydzhj1el8gr9cxxdnxxxx",
+    ///         ProjectName = "default",
+    ///         SharePermissions = new[]
+    ///         {
+    ///             "2000000***",
+    ///         },
+    ///         Tags = new[]
+    ///         {
+    ///             new Bytepluscc.Ecs.Inputs.ImageTagArgs
+    ///             {
+    ///                 Key = "env",
+    ///                 Value = "test",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ```sh
@@ -101,7 +134,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<string> Kernel { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
         /// </summary>
         [Output("licenseType")]
         public Output<string> LicenseType { get; private set; } = null!;
@@ -250,12 +283,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 镜像的检测结果。
-        /// </summary>
-        [Input("detectionResults")]
-        public Input<Inputs.ImageDetectionResultsArgs>? DetectionResults { get; set; }
-
-        /// <summary>
         /// 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
         /// </summary>
         [Input("imageName", required: true)]
@@ -266,42 +293,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
-
-        /// <summary>
-        /// 镜像的内核版本。
-        /// </summary>
-        [Input("kernel")]
-        public Input<string>? Kernel { get; set; }
-
-        /// <summary>
-        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-        /// </summary>
-        [Input("licenseType")]
-        public Input<string>? LicenseType { get; set; }
-
-        /// <summary>
-        /// 镜像操作系统的名称。
-        /// </summary>
-        [Input("osName")]
-        public Input<string>? OsName { get; set; }
-
-        /// <summary>
-        /// 操作系统类型。
-        /// </summary>
-        [Input("osType")]
-        public Input<string>? OsType { get; set; }
-
-        /// <summary>
-        /// 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-        /// </summary>
-        [Input("platform")]
-        public Input<string>? Platform { get; set; }
-
-        /// <summary>
-        /// 镜像的发行版本。
-        /// </summary>
-        [Input("platformVersion")]
-        public Input<string>? PlatformVersion { get; set; }
 
         /// <summary>
         /// 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
@@ -428,7 +419,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<string>? Kernel { get; set; }
 
         /// <summary>
-        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        /// 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
         /// </summary>
         [Input("licenseType")]
         public Input<string>? LicenseType { get; set; }

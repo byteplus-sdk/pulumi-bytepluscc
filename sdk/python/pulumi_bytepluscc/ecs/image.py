@@ -24,14 +24,7 @@ class ImageArgs:
     def __init__(__self__, *,
                  image_name: pulumi.Input[builtins.str],
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 detection_results: Optional[pulumi.Input['ImageDetectionResultsArgs']] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
-                 kernel: Optional[pulumi.Input[builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[builtins.str]] = None,
-                 os_name: Optional[pulumi.Input[builtins.str]] = None,
-                 os_type: Optional[pulumi.Input[builtins.str]] = None,
-                 platform: Optional[pulumi.Input[builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  snapshot_group_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -41,14 +34,7 @@ class ImageArgs:
         The set of arguments for constructing a Image resource.
         :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
         :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
-        :param pulumi.Input['ImageDetectionResultsArgs'] detection_results: 镜像的检测结果。
         :param pulumi.Input[builtins.str] instance_id: 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.str] kernel: 镜像的内核版本。
-        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-        :param pulumi.Input[builtins.str] os_name: 镜像操作系统的名称。
-        :param pulumi.Input[builtins.str] os_type: 操作系统类型。
-        :param pulumi.Input[builtins.str] platform: 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-        :param pulumi.Input[builtins.str] platform_version: 镜像的发行版本。
         :param pulumi.Input[builtins.str] project_name: 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: 镜像共享的账户
         :param pulumi.Input[builtins.str] snapshot_group_id: 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
@@ -57,22 +43,8 @@ class ImageArgs:
         pulumi.set(__self__, "image_name", image_name)
         if description is not None:
             pulumi.set(__self__, "description", description)
-        if detection_results is not None:
-            pulumi.set(__self__, "detection_results", detection_results)
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
-        if kernel is not None:
-            pulumi.set(__self__, "kernel", kernel)
-        if license_type is not None:
-            pulumi.set(__self__, "license_type", license_type)
-        if os_name is not None:
-            pulumi.set(__self__, "os_name", os_name)
-        if os_type is not None:
-            pulumi.set(__self__, "os_type", os_type)
-        if platform is not None:
-            pulumi.set(__self__, "platform", platform)
-        if platform_version is not None:
-            pulumi.set(__self__, "platform_version", platform_version)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if share_permissions is not None:
@@ -109,18 +81,6 @@ class ImageArgs:
         pulumi.set(self, "description", value)
 
     @property
-    @pulumi.getter(name="detectionResults")
-    def detection_results(self) -> Optional[pulumi.Input['ImageDetectionResultsArgs']]:
-        """
-        镜像的检测结果。
-        """
-        return pulumi.get(self, "detection_results")
-
-    @detection_results.setter
-    def detection_results(self, value: Optional[pulumi.Input['ImageDetectionResultsArgs']]):
-        pulumi.set(self, "detection_results", value)
-
-    @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -131,78 +91,6 @@ class ImageArgs:
     @instance_id.setter
     def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "instance_id", value)
-
-    @property
-    @pulumi.getter
-    def kernel(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        镜像的内核版本。
-        """
-        return pulumi.get(self, "kernel")
-
-    @kernel.setter
-    def kernel(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "kernel", value)
-
-    @property
-    @pulumi.getter(name="licenseType")
-    def license_type(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-        """
-        return pulumi.get(self, "license_type")
-
-    @license_type.setter
-    def license_type(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "license_type", value)
-
-    @property
-    @pulumi.getter(name="osName")
-    def os_name(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        镜像操作系统的名称。
-        """
-        return pulumi.get(self, "os_name")
-
-    @os_name.setter
-    def os_name(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "os_name", value)
-
-    @property
-    @pulumi.getter(name="osType")
-    def os_type(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        操作系统类型。
-        """
-        return pulumi.get(self, "os_type")
-
-    @os_type.setter
-    def os_type(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "os_type", value)
-
-    @property
-    @pulumi.getter
-    def platform(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-        """
-        return pulumi.get(self, "platform")
-
-    @platform.setter
-    def platform(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "platform", value)
-
-    @property
-    @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        镜像的发行版本。
-        """
-        return pulumi.get(self, "platform_version")
-
-    @platform_version.setter
-    def platform_version(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "platform_version", value)
 
     @property
     @pulumi.getter(name="projectName")
@@ -310,7 +198,7 @@ class _ImageState:
         :param pulumi.Input[builtins.bool] is_lts: 公共镜像是否长期维护。
         :param pulumi.Input[builtins.bool] is_support_cloud_init: 镜像是否支持Cloud-init。
         :param pulumi.Input[builtins.str] kernel: 镜像的内核版本。
-        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
         :param pulumi.Input[builtins.str] os_name: 镜像操作系统的名称。
         :param pulumi.Input[builtins.str] os_type: 操作系统类型。
         :param pulumi.Input[builtins.str] platform: 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
@@ -547,7 +435,7 @@ class _ImageState:
     @pulumi.getter(name="licenseType")
     def license_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
         """
         return pulumi.get(self, "license_type")
 
@@ -749,15 +637,8 @@ class Image(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 detection_results: Optional[pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']]] = None,
                  image_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
-                 kernel: Optional[pulumi.Input[builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[builtins.str]] = None,
-                 os_name: Optional[pulumi.Input[builtins.str]] = None,
-                 os_type: Optional[pulumi.Input[builtins.str]] = None,
-                 platform: Optional[pulumi.Input[builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  snapshot_group_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -766,6 +647,24 @@ class Image(pulumi.CustomResource):
                  __props__=None):
         """
         镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_bytepluscc as bytepluscc
+
+        image_demo = bytepluscc.ecs.Image("ImageDemo",
+            description="ImageDemo Example",
+            image_name="image-demo",
+            instance_id="i-ydzhj1el8gr9cxxdnxxxx",
+            project_name="default",
+            share_permissions=["2000000***"],
+            tags=[{
+                "key": "env",
+                "value": "test",
+            }])
+        ```
 
         ## Import
 
@@ -776,15 +675,8 @@ class Image(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
-        :param pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']] detection_results: 镜像的检测结果。
         :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
         :param pulumi.Input[builtins.str] instance_id: 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.str] kernel: 镜像的内核版本。
-        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
-        :param pulumi.Input[builtins.str] os_name: 镜像操作系统的名称。
-        :param pulumi.Input[builtins.str] os_type: 操作系统类型。
-        :param pulumi.Input[builtins.str] platform: 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-        :param pulumi.Input[builtins.str] platform_version: 镜像的发行版本。
         :param pulumi.Input[builtins.str] project_name: 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: 镜像共享的账户
         :param pulumi.Input[builtins.str] snapshot_group_id: 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
@@ -798,6 +690,24 @@ class Image(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_bytepluscc as bytepluscc
+
+        image_demo = bytepluscc.ecs.Image("ImageDemo",
+            description="ImageDemo Example",
+            image_name="image-demo",
+            instance_id="i-ydzhj1el8gr9cxxdnxxxx",
+            project_name="default",
+            share_permissions=["2000000***"],
+            tags=[{
+                "key": "env",
+                "value": "test",
+            }])
+        ```
 
         ## Import
 
@@ -821,15 +731,8 @@ class Image(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 detection_results: Optional[pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']]] = None,
                  image_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
-                 kernel: Optional[pulumi.Input[builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[builtins.str]] = None,
-                 os_name: Optional[pulumi.Input[builtins.str]] = None,
-                 os_type: Optional[pulumi.Input[builtins.str]] = None,
-                 platform: Optional[pulumi.Input[builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  snapshot_group_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -845,17 +748,10 @@ class Image(pulumi.CustomResource):
             __props__ = ImageArgs.__new__(ImageArgs)
 
             __props__.__dict__["description"] = description
-            __props__.__dict__["detection_results"] = detection_results
             if image_name is None and not opts.urn:
                 raise TypeError("Missing required property 'image_name'")
             __props__.__dict__["image_name"] = image_name
             __props__.__dict__["instance_id"] = instance_id
-            __props__.__dict__["kernel"] = kernel
-            __props__.__dict__["license_type"] = license_type
-            __props__.__dict__["os_name"] = os_name
-            __props__.__dict__["os_type"] = os_type
-            __props__.__dict__["platform"] = platform
-            __props__.__dict__["platform_version"] = platform_version
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["share_permissions"] = share_permissions
             __props__.__dict__["snapshot_group_id"] = snapshot_group_id
@@ -864,11 +760,18 @@ class Image(pulumi.CustomResource):
             __props__.__dict__["architecture"] = None
             __props__.__dict__["boot_mode"] = None
             __props__.__dict__["created_at"] = None
+            __props__.__dict__["detection_results"] = None
             __props__.__dict__["image_id"] = None
             __props__.__dict__["image_owner_id"] = None
             __props__.__dict__["is_install_run_command_agent"] = None
             __props__.__dict__["is_lts"] = None
             __props__.__dict__["is_support_cloud_init"] = None
+            __props__.__dict__["kernel"] = None
+            __props__.__dict__["license_type"] = None
+            __props__.__dict__["os_name"] = None
+            __props__.__dict__["os_type"] = None
+            __props__.__dict__["platform"] = None
+            __props__.__dict__["platform_version"] = None
             __props__.__dict__["share_status"] = None
             __props__.__dict__["size"] = None
             __props__.__dict__["snapshots"] = None
@@ -936,7 +839,7 @@ class Image(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] is_lts: 公共镜像是否长期维护。
         :param pulumi.Input[builtins.bool] is_support_cloud_init: 镜像是否支持Cloud-init。
         :param pulumi.Input[builtins.str] kernel: 镜像的内核版本。
-        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
         :param pulumi.Input[builtins.str] os_name: 镜像操作系统的名称。
         :param pulumi.Input[builtins.str] os_type: 操作系统类型。
         :param pulumi.Input[builtins.str] platform: 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
@@ -1096,7 +999,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="licenseType")
     def license_type(self) -> pulumi.Output[builtins.str]:
         """
-        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用火山引擎官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
         """
         return pulumi.get(self, "license_type")
 
