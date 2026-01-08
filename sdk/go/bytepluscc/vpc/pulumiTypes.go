@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type EipTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// EipTagInput is an input type that accepts EipTagArgs and EipTagOutput values.
+// You can construct a concrete instance of `EipTagInput` via:
+//
+//	EipTagArgs{...}
+type EipTagInput interface {
+	pulumi.Input
+
+	ToEipTagOutput() EipTagOutput
+	ToEipTagOutputWithContext(context.Context) EipTagOutput
+}
+
+type EipTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (EipTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EipTag)(nil)).Elem()
+}
+
+func (i EipTagArgs) ToEipTagOutput() EipTagOutput {
+	return i.ToEipTagOutputWithContext(context.Background())
+}
+
+func (i EipTagArgs) ToEipTagOutputWithContext(ctx context.Context) EipTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EipTagOutput)
+}
+
+// EipTagArrayInput is an input type that accepts EipTagArray and EipTagArrayOutput values.
+// You can construct a concrete instance of `EipTagArrayInput` via:
+//
+//	EipTagArray{ EipTagArgs{...} }
+type EipTagArrayInput interface {
+	pulumi.Input
+
+	ToEipTagArrayOutput() EipTagArrayOutput
+	ToEipTagArrayOutputWithContext(context.Context) EipTagArrayOutput
+}
+
+type EipTagArray []EipTagInput
+
+func (EipTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EipTag)(nil)).Elem()
+}
+
+func (i EipTagArray) ToEipTagArrayOutput() EipTagArrayOutput {
+	return i.ToEipTagArrayOutputWithContext(context.Background())
+}
+
+func (i EipTagArray) ToEipTagArrayOutputWithContext(ctx context.Context) EipTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EipTagArrayOutput)
+}
+
+type EipTagOutput struct{ *pulumi.OutputState }
+
+func (EipTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EipTag)(nil)).Elem()
+}
+
+func (o EipTagOutput) ToEipTagOutput() EipTagOutput {
+	return o
+}
+
+func (o EipTagOutput) ToEipTagOutputWithContext(ctx context.Context) EipTagOutput {
+	return o
+}
+
+// 标签键。
+func (o EipTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EipTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o EipTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EipTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type EipTagArrayOutput struct{ *pulumi.OutputState }
+
+func (EipTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EipTag)(nil)).Elem()
+}
+
+func (o EipTagArrayOutput) ToEipTagArrayOutput() EipTagArrayOutput {
+	return o
+}
+
+func (o EipTagArrayOutput) ToEipTagArrayOutputWithContext(ctx context.Context) EipTagArrayOutput {
+	return o
+}
+
+func (o EipTagArrayOutput) Index(i pulumi.IntInput) EipTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EipTag {
+		return vs[0].([]EipTag)[vs[1].(int)]
+	}).(EipTagOutput)
+}
+
 type EniPrimaryIpAddress struct {
 	// 网卡主私网IPv4关联的公网IP的信息。
 	AssociatedElasticIp *EniPrimaryIpAddressAssociatedElasticIp `pulumi:"associatedElasticIp"`
@@ -710,6 +816,468 @@ func (o EniTagArrayOutput) Index(i pulumi.IntInput) EniTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EniTag {
 		return vs[0].([]EniTag)[vs[1].(int)]
 	}).(EniTagOutput)
+}
+
+type RouteTableCustomRouteEntry struct {
+	// 路由条目描述。
+	Description *string `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId *string `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId *string `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName *string `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType *string `pulumi:"nextHopType"`
+	// 路由条目名称。
+	RouteEntryName *string `pulumi:"routeEntryName"`
+}
+
+// RouteTableCustomRouteEntryInput is an input type that accepts RouteTableCustomRouteEntryArgs and RouteTableCustomRouteEntryOutput values.
+// You can construct a concrete instance of `RouteTableCustomRouteEntryInput` via:
+//
+//	RouteTableCustomRouteEntryArgs{...}
+type RouteTableCustomRouteEntryInput interface {
+	pulumi.Input
+
+	ToRouteTableCustomRouteEntryOutput() RouteTableCustomRouteEntryOutput
+	ToRouteTableCustomRouteEntryOutputWithContext(context.Context) RouteTableCustomRouteEntryOutput
+}
+
+type RouteTableCustomRouteEntryArgs struct {
+	// 路由条目描述。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId pulumi.StringPtrInput `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId pulumi.StringPtrInput `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName pulumi.StringPtrInput `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType pulumi.StringPtrInput `pulumi:"nextHopType"`
+	// 路由条目名称。
+	RouteEntryName pulumi.StringPtrInput `pulumi:"routeEntryName"`
+}
+
+func (RouteTableCustomRouteEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (i RouteTableCustomRouteEntryArgs) ToRouteTableCustomRouteEntryOutput() RouteTableCustomRouteEntryOutput {
+	return i.ToRouteTableCustomRouteEntryOutputWithContext(context.Background())
+}
+
+func (i RouteTableCustomRouteEntryArgs) ToRouteTableCustomRouteEntryOutputWithContext(ctx context.Context) RouteTableCustomRouteEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RouteTableCustomRouteEntryOutput)
+}
+
+// RouteTableCustomRouteEntryArrayInput is an input type that accepts RouteTableCustomRouteEntryArray and RouteTableCustomRouteEntryArrayOutput values.
+// You can construct a concrete instance of `RouteTableCustomRouteEntryArrayInput` via:
+//
+//	RouteTableCustomRouteEntryArray{ RouteTableCustomRouteEntryArgs{...} }
+type RouteTableCustomRouteEntryArrayInput interface {
+	pulumi.Input
+
+	ToRouteTableCustomRouteEntryArrayOutput() RouteTableCustomRouteEntryArrayOutput
+	ToRouteTableCustomRouteEntryArrayOutputWithContext(context.Context) RouteTableCustomRouteEntryArrayOutput
+}
+
+type RouteTableCustomRouteEntryArray []RouteTableCustomRouteEntryInput
+
+func (RouteTableCustomRouteEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (i RouteTableCustomRouteEntryArray) ToRouteTableCustomRouteEntryArrayOutput() RouteTableCustomRouteEntryArrayOutput {
+	return i.ToRouteTableCustomRouteEntryArrayOutputWithContext(context.Background())
+}
+
+func (i RouteTableCustomRouteEntryArray) ToRouteTableCustomRouteEntryArrayOutputWithContext(ctx context.Context) RouteTableCustomRouteEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RouteTableCustomRouteEntryArrayOutput)
+}
+
+type RouteTableCustomRouteEntryOutput struct{ *pulumi.OutputState }
+
+func (RouteTableCustomRouteEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (o RouteTableCustomRouteEntryOutput) ToRouteTableCustomRouteEntryOutput() RouteTableCustomRouteEntryOutput {
+	return o
+}
+
+func (o RouteTableCustomRouteEntryOutput) ToRouteTableCustomRouteEntryOutputWithContext(ctx context.Context) RouteTableCustomRouteEntryOutput {
+	return o
+}
+
+// 路由条目描述。
+func (o RouteTableCustomRouteEntryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目的目标网段。
+func (o RouteTableCustomRouteEntryOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
+}
+
+// 前缀列表ID。
+func (o RouteTableCustomRouteEntryOutput) DestinationPrefixListId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.DestinationPrefixListId }).(pulumi.StringPtrOutput)
+}
+
+// 下一跳资源ID。
+func (o RouteTableCustomRouteEntryOutput) NextHopId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.NextHopId }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目下一跳资源的名称。
+func (o RouteTableCustomRouteEntryOutput) NextHopName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.NextHopName }).(pulumi.StringPtrOutput)
+}
+
+// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+func (o RouteTableCustomRouteEntryOutput) NextHopType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.NextHopType }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目名称。
+func (o RouteTableCustomRouteEntryOutput) RouteEntryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableCustomRouteEntry) *string { return v.RouteEntryName }).(pulumi.StringPtrOutput)
+}
+
+type RouteTableCustomRouteEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (RouteTableCustomRouteEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (o RouteTableCustomRouteEntryArrayOutput) ToRouteTableCustomRouteEntryArrayOutput() RouteTableCustomRouteEntryArrayOutput {
+	return o
+}
+
+func (o RouteTableCustomRouteEntryArrayOutput) ToRouteTableCustomRouteEntryArrayOutputWithContext(ctx context.Context) RouteTableCustomRouteEntryArrayOutput {
+	return o
+}
+
+func (o RouteTableCustomRouteEntryArrayOutput) Index(i pulumi.IntInput) RouteTableCustomRouteEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RouteTableCustomRouteEntry {
+		return vs[0].([]RouteTableCustomRouteEntry)[vs[1].(int)]
+	}).(RouteTableCustomRouteEntryOutput)
+}
+
+type RouteTableSystemRouteEntry struct {
+	// 路由条目描述。
+	Description *string `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId *string `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId *string `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName *string `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType *string `pulumi:"nextHopType"`
+	// 前缀列表的CIDR。
+	PrefixListCidrBlocks []string `pulumi:"prefixListCidrBlocks"`
+	// 路由条目ID。
+	RouteEntryId *string `pulumi:"routeEntryId"`
+	// 路由条目名称。
+	RouteEntryName *string `pulumi:"routeEntryName"`
+	// 路由表ID。
+	RouteTableId *string `pulumi:"routeTableId"`
+	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	Status *string `pulumi:"status"`
+	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	Type *string `pulumi:"type"`
+	// 路由条目所属私有网络的ID。
+	VpcId *string `pulumi:"vpcId"`
+}
+
+// RouteTableSystemRouteEntryInput is an input type that accepts RouteTableSystemRouteEntryArgs and RouteTableSystemRouteEntryOutput values.
+// You can construct a concrete instance of `RouteTableSystemRouteEntryInput` via:
+//
+//	RouteTableSystemRouteEntryArgs{...}
+type RouteTableSystemRouteEntryInput interface {
+	pulumi.Input
+
+	ToRouteTableSystemRouteEntryOutput() RouteTableSystemRouteEntryOutput
+	ToRouteTableSystemRouteEntryOutputWithContext(context.Context) RouteTableSystemRouteEntryOutput
+}
+
+type RouteTableSystemRouteEntryArgs struct {
+	// 路由条目描述。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId pulumi.StringPtrInput `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId pulumi.StringPtrInput `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName pulumi.StringPtrInput `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType pulumi.StringPtrInput `pulumi:"nextHopType"`
+	// 前缀列表的CIDR。
+	PrefixListCidrBlocks pulumi.StringArrayInput `pulumi:"prefixListCidrBlocks"`
+	// 路由条目ID。
+	RouteEntryId pulumi.StringPtrInput `pulumi:"routeEntryId"`
+	// 路由条目名称。
+	RouteEntryName pulumi.StringPtrInput `pulumi:"routeEntryName"`
+	// 路由表ID。
+	RouteTableId pulumi.StringPtrInput `pulumi:"routeTableId"`
+	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// 路由条目所属私有网络的ID。
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+}
+
+func (RouteTableSystemRouteEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (i RouteTableSystemRouteEntryArgs) ToRouteTableSystemRouteEntryOutput() RouteTableSystemRouteEntryOutput {
+	return i.ToRouteTableSystemRouteEntryOutputWithContext(context.Background())
+}
+
+func (i RouteTableSystemRouteEntryArgs) ToRouteTableSystemRouteEntryOutputWithContext(ctx context.Context) RouteTableSystemRouteEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RouteTableSystemRouteEntryOutput)
+}
+
+// RouteTableSystemRouteEntryArrayInput is an input type that accepts RouteTableSystemRouteEntryArray and RouteTableSystemRouteEntryArrayOutput values.
+// You can construct a concrete instance of `RouteTableSystemRouteEntryArrayInput` via:
+//
+//	RouteTableSystemRouteEntryArray{ RouteTableSystemRouteEntryArgs{...} }
+type RouteTableSystemRouteEntryArrayInput interface {
+	pulumi.Input
+
+	ToRouteTableSystemRouteEntryArrayOutput() RouteTableSystemRouteEntryArrayOutput
+	ToRouteTableSystemRouteEntryArrayOutputWithContext(context.Context) RouteTableSystemRouteEntryArrayOutput
+}
+
+type RouteTableSystemRouteEntryArray []RouteTableSystemRouteEntryInput
+
+func (RouteTableSystemRouteEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (i RouteTableSystemRouteEntryArray) ToRouteTableSystemRouteEntryArrayOutput() RouteTableSystemRouteEntryArrayOutput {
+	return i.ToRouteTableSystemRouteEntryArrayOutputWithContext(context.Background())
+}
+
+func (i RouteTableSystemRouteEntryArray) ToRouteTableSystemRouteEntryArrayOutputWithContext(ctx context.Context) RouteTableSystemRouteEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RouteTableSystemRouteEntryArrayOutput)
+}
+
+type RouteTableSystemRouteEntryOutput struct{ *pulumi.OutputState }
+
+func (RouteTableSystemRouteEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (o RouteTableSystemRouteEntryOutput) ToRouteTableSystemRouteEntryOutput() RouteTableSystemRouteEntryOutput {
+	return o
+}
+
+func (o RouteTableSystemRouteEntryOutput) ToRouteTableSystemRouteEntryOutputWithContext(ctx context.Context) RouteTableSystemRouteEntryOutput {
+	return o
+}
+
+// 路由条目描述。
+func (o RouteTableSystemRouteEntryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目的目标网段。
+func (o RouteTableSystemRouteEntryOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
+}
+
+// 前缀列表ID。
+func (o RouteTableSystemRouteEntryOutput) DestinationPrefixListId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.DestinationPrefixListId }).(pulumi.StringPtrOutput)
+}
+
+// 下一跳资源ID。
+func (o RouteTableSystemRouteEntryOutput) NextHopId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.NextHopId }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目下一跳资源的名称。
+func (o RouteTableSystemRouteEntryOutput) NextHopName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.NextHopName }).(pulumi.StringPtrOutput)
+}
+
+// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+func (o RouteTableSystemRouteEntryOutput) NextHopType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.NextHopType }).(pulumi.StringPtrOutput)
+}
+
+// 前缀列表的CIDR。
+func (o RouteTableSystemRouteEntryOutput) PrefixListCidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) []string { return v.PrefixListCidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// 路由条目ID。
+func (o RouteTableSystemRouteEntryOutput) RouteEntryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.RouteEntryId }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目名称。
+func (o RouteTableSystemRouteEntryOutput) RouteEntryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.RouteEntryName }).(pulumi.StringPtrOutput)
+}
+
+// 路由表ID。
+func (o RouteTableSystemRouteEntryOutput) RouteTableId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.RouteTableId }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目状态。1、Pending：待创建。2、Available：可用。
+func (o RouteTableSystemRouteEntryOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+func (o RouteTableSystemRouteEntryOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// 路由条目所属私有网络的ID。
+func (o RouteTableSystemRouteEntryOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableSystemRouteEntry) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+type RouteTableSystemRouteEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (RouteTableSystemRouteEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (o RouteTableSystemRouteEntryArrayOutput) ToRouteTableSystemRouteEntryArrayOutput() RouteTableSystemRouteEntryArrayOutput {
+	return o
+}
+
+func (o RouteTableSystemRouteEntryArrayOutput) ToRouteTableSystemRouteEntryArrayOutputWithContext(ctx context.Context) RouteTableSystemRouteEntryArrayOutput {
+	return o
+}
+
+func (o RouteTableSystemRouteEntryArrayOutput) Index(i pulumi.IntInput) RouteTableSystemRouteEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RouteTableSystemRouteEntry {
+		return vs[0].([]RouteTableSystemRouteEntry)[vs[1].(int)]
+	}).(RouteTableSystemRouteEntryOutput)
+}
+
+type RouteTableTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// RouteTableTagInput is an input type that accepts RouteTableTagArgs and RouteTableTagOutput values.
+// You can construct a concrete instance of `RouteTableTagInput` via:
+//
+//	RouteTableTagArgs{...}
+type RouteTableTagInput interface {
+	pulumi.Input
+
+	ToRouteTableTagOutput() RouteTableTagOutput
+	ToRouteTableTagOutputWithContext(context.Context) RouteTableTagOutput
+}
+
+type RouteTableTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (RouteTableTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RouteTableTag)(nil)).Elem()
+}
+
+func (i RouteTableTagArgs) ToRouteTableTagOutput() RouteTableTagOutput {
+	return i.ToRouteTableTagOutputWithContext(context.Background())
+}
+
+func (i RouteTableTagArgs) ToRouteTableTagOutputWithContext(ctx context.Context) RouteTableTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RouteTableTagOutput)
+}
+
+// RouteTableTagArrayInput is an input type that accepts RouteTableTagArray and RouteTableTagArrayOutput values.
+// You can construct a concrete instance of `RouteTableTagArrayInput` via:
+//
+//	RouteTableTagArray{ RouteTableTagArgs{...} }
+type RouteTableTagArrayInput interface {
+	pulumi.Input
+
+	ToRouteTableTagArrayOutput() RouteTableTagArrayOutput
+	ToRouteTableTagArrayOutputWithContext(context.Context) RouteTableTagArrayOutput
+}
+
+type RouteTableTagArray []RouteTableTagInput
+
+func (RouteTableTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RouteTableTag)(nil)).Elem()
+}
+
+func (i RouteTableTagArray) ToRouteTableTagArrayOutput() RouteTableTagArrayOutput {
+	return i.ToRouteTableTagArrayOutputWithContext(context.Background())
+}
+
+func (i RouteTableTagArray) ToRouteTableTagArrayOutputWithContext(ctx context.Context) RouteTableTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RouteTableTagArrayOutput)
+}
+
+type RouteTableTagOutput struct{ *pulumi.OutputState }
+
+func (RouteTableTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RouteTableTag)(nil)).Elem()
+}
+
+func (o RouteTableTagOutput) ToRouteTableTagOutput() RouteTableTagOutput {
+	return o
+}
+
+func (o RouteTableTagOutput) ToRouteTableTagOutputWithContext(ctx context.Context) RouteTableTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o RouteTableTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o RouteTableTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RouteTableTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type RouteTableTagArrayOutput struct{ *pulumi.OutputState }
+
+func (RouteTableTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RouteTableTag)(nil)).Elem()
+}
+
+func (o RouteTableTagArrayOutput) ToRouteTableTagArrayOutput() RouteTableTagArrayOutput {
+	return o
+}
+
+func (o RouteTableTagArrayOutput) ToRouteTableTagArrayOutputWithContext(ctx context.Context) RouteTableTagArrayOutput {
+	return o
+}
+
+func (o RouteTableTagArrayOutput) Index(i pulumi.IntInput) RouteTableTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RouteTableTag {
+		return vs[0].([]RouteTableTag)[vs[1].(int)]
+	}).(RouteTableTagOutput)
 }
 
 type SecurityGroupEgressPermission struct {
@@ -1657,6 +2225,112 @@ func (o VpcTagArrayOutput) Index(i pulumi.IntInput) VpcTagOutput {
 	}).(VpcTagOutput)
 }
 
+type GetEipTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetEipTagInput is an input type that accepts GetEipTagArgs and GetEipTagOutput values.
+// You can construct a concrete instance of `GetEipTagInput` via:
+//
+//	GetEipTagArgs{...}
+type GetEipTagInput interface {
+	pulumi.Input
+
+	ToGetEipTagOutput() GetEipTagOutput
+	ToGetEipTagOutputWithContext(context.Context) GetEipTagOutput
+}
+
+type GetEipTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetEipTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEipTag)(nil)).Elem()
+}
+
+func (i GetEipTagArgs) ToGetEipTagOutput() GetEipTagOutput {
+	return i.ToGetEipTagOutputWithContext(context.Background())
+}
+
+func (i GetEipTagArgs) ToGetEipTagOutputWithContext(ctx context.Context) GetEipTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEipTagOutput)
+}
+
+// GetEipTagArrayInput is an input type that accepts GetEipTagArray and GetEipTagArrayOutput values.
+// You can construct a concrete instance of `GetEipTagArrayInput` via:
+//
+//	GetEipTagArray{ GetEipTagArgs{...} }
+type GetEipTagArrayInput interface {
+	pulumi.Input
+
+	ToGetEipTagArrayOutput() GetEipTagArrayOutput
+	ToGetEipTagArrayOutputWithContext(context.Context) GetEipTagArrayOutput
+}
+
+type GetEipTagArray []GetEipTagInput
+
+func (GetEipTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEipTag)(nil)).Elem()
+}
+
+func (i GetEipTagArray) ToGetEipTagArrayOutput() GetEipTagArrayOutput {
+	return i.ToGetEipTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetEipTagArray) ToGetEipTagArrayOutputWithContext(ctx context.Context) GetEipTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEipTagArrayOutput)
+}
+
+type GetEipTagOutput struct{ *pulumi.OutputState }
+
+func (GetEipTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEipTag)(nil)).Elem()
+}
+
+func (o GetEipTagOutput) ToGetEipTagOutput() GetEipTagOutput {
+	return o
+}
+
+func (o GetEipTagOutput) ToGetEipTagOutputWithContext(ctx context.Context) GetEipTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetEipTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEipTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetEipTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEipTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetEipTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEipTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEipTag)(nil)).Elem()
+}
+
+func (o GetEipTagArrayOutput) ToGetEipTagArrayOutput() GetEipTagArrayOutput {
+	return o
+}
+
+func (o GetEipTagArrayOutput) ToGetEipTagArrayOutputWithContext(ctx context.Context) GetEipTagArrayOutput {
+	return o
+}
+
+func (o GetEipTagArrayOutput) Index(i pulumi.IntInput) GetEipTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEipTag {
+		return vs[0].([]GetEipTag)[vs[1].(int)]
+	}).(GetEipTagOutput)
+}
+
 type GetEniPrimaryIpAddress struct {
 	// 网卡主私网IPv4关联的公网IP的信息。
 	AssociatedElasticIp GetEniPrimaryIpAddressAssociatedElasticIp `pulumi:"associatedElasticIp"`
@@ -2086,6 +2760,522 @@ func (o GetEniTagArrayOutput) Index(i pulumi.IntInput) GetEniTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEniTag {
 		return vs[0].([]GetEniTag)[vs[1].(int)]
 	}).(GetEniTagOutput)
+}
+
+type GetRouteTableCustomRouteEntry struct {
+	// 路由条目描述。
+	Description string `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId string `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId string `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName string `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType string `pulumi:"nextHopType"`
+	// 前缀列表的CIDR。
+	PrefixListCidrBlocks []string `pulumi:"prefixListCidrBlocks"`
+	// 路由条目ID。
+	RouteEntryId string `pulumi:"routeEntryId"`
+	// 路由条目名称。
+	RouteEntryName string `pulumi:"routeEntryName"`
+	// 路由表ID。
+	RouteTableId string `pulumi:"routeTableId"`
+	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	Status string `pulumi:"status"`
+	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	Type string `pulumi:"type"`
+	// 路由条目所属私有网络的ID。
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetRouteTableCustomRouteEntryInput is an input type that accepts GetRouteTableCustomRouteEntryArgs and GetRouteTableCustomRouteEntryOutput values.
+// You can construct a concrete instance of `GetRouteTableCustomRouteEntryInput` via:
+//
+//	GetRouteTableCustomRouteEntryArgs{...}
+type GetRouteTableCustomRouteEntryInput interface {
+	pulumi.Input
+
+	ToGetRouteTableCustomRouteEntryOutput() GetRouteTableCustomRouteEntryOutput
+	ToGetRouteTableCustomRouteEntryOutputWithContext(context.Context) GetRouteTableCustomRouteEntryOutput
+}
+
+type GetRouteTableCustomRouteEntryArgs struct {
+	// 路由条目描述。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId pulumi.StringInput `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId pulumi.StringInput `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName pulumi.StringInput `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType pulumi.StringInput `pulumi:"nextHopType"`
+	// 前缀列表的CIDR。
+	PrefixListCidrBlocks pulumi.StringArrayInput `pulumi:"prefixListCidrBlocks"`
+	// 路由条目ID。
+	RouteEntryId pulumi.StringInput `pulumi:"routeEntryId"`
+	// 路由条目名称。
+	RouteEntryName pulumi.StringInput `pulumi:"routeEntryName"`
+	// 路由表ID。
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	Status pulumi.StringInput `pulumi:"status"`
+	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	Type pulumi.StringInput `pulumi:"type"`
+	// 路由条目所属私有网络的ID。
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetRouteTableCustomRouteEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (i GetRouteTableCustomRouteEntryArgs) ToGetRouteTableCustomRouteEntryOutput() GetRouteTableCustomRouteEntryOutput {
+	return i.ToGetRouteTableCustomRouteEntryOutputWithContext(context.Background())
+}
+
+func (i GetRouteTableCustomRouteEntryArgs) ToGetRouteTableCustomRouteEntryOutputWithContext(ctx context.Context) GetRouteTableCustomRouteEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTableCustomRouteEntryOutput)
+}
+
+// GetRouteTableCustomRouteEntryArrayInput is an input type that accepts GetRouteTableCustomRouteEntryArray and GetRouteTableCustomRouteEntryArrayOutput values.
+// You can construct a concrete instance of `GetRouteTableCustomRouteEntryArrayInput` via:
+//
+//	GetRouteTableCustomRouteEntryArray{ GetRouteTableCustomRouteEntryArgs{...} }
+type GetRouteTableCustomRouteEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetRouteTableCustomRouteEntryArrayOutput() GetRouteTableCustomRouteEntryArrayOutput
+	ToGetRouteTableCustomRouteEntryArrayOutputWithContext(context.Context) GetRouteTableCustomRouteEntryArrayOutput
+}
+
+type GetRouteTableCustomRouteEntryArray []GetRouteTableCustomRouteEntryInput
+
+func (GetRouteTableCustomRouteEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (i GetRouteTableCustomRouteEntryArray) ToGetRouteTableCustomRouteEntryArrayOutput() GetRouteTableCustomRouteEntryArrayOutput {
+	return i.ToGetRouteTableCustomRouteEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetRouteTableCustomRouteEntryArray) ToGetRouteTableCustomRouteEntryArrayOutputWithContext(ctx context.Context) GetRouteTableCustomRouteEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTableCustomRouteEntryArrayOutput)
+}
+
+type GetRouteTableCustomRouteEntryOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTableCustomRouteEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (o GetRouteTableCustomRouteEntryOutput) ToGetRouteTableCustomRouteEntryOutput() GetRouteTableCustomRouteEntryOutput {
+	return o
+}
+
+func (o GetRouteTableCustomRouteEntryOutput) ToGetRouteTableCustomRouteEntryOutputWithContext(ctx context.Context) GetRouteTableCustomRouteEntryOutput {
+	return o
+}
+
+// 路由条目描述。
+func (o GetRouteTableCustomRouteEntryOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 路由条目的目标网段。
+func (o GetRouteTableCustomRouteEntryOutput) DestinationCidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
+}
+
+// 前缀列表ID。
+func (o GetRouteTableCustomRouteEntryOutput) DestinationPrefixListId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.DestinationPrefixListId }).(pulumi.StringOutput)
+}
+
+// 下一跳资源ID。
+func (o GetRouteTableCustomRouteEntryOutput) NextHopId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.NextHopId }).(pulumi.StringOutput)
+}
+
+// 路由条目下一跳资源的名称。
+func (o GetRouteTableCustomRouteEntryOutput) NextHopName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.NextHopName }).(pulumi.StringOutput)
+}
+
+// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+func (o GetRouteTableCustomRouteEntryOutput) NextHopType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.NextHopType }).(pulumi.StringOutput)
+}
+
+// 前缀列表的CIDR。
+func (o GetRouteTableCustomRouteEntryOutput) PrefixListCidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) []string { return v.PrefixListCidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// 路由条目ID。
+func (o GetRouteTableCustomRouteEntryOutput) RouteEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.RouteEntryId }).(pulumi.StringOutput)
+}
+
+// 路由条目名称。
+func (o GetRouteTableCustomRouteEntryOutput) RouteEntryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.RouteEntryName }).(pulumi.StringOutput)
+}
+
+// 路由表ID。
+func (o GetRouteTableCustomRouteEntryOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// 路由条目状态。1、Pending：待创建。2、Available：可用。
+func (o GetRouteTableCustomRouteEntryOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+func (o GetRouteTableCustomRouteEntryOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// 路由条目所属私有网络的ID。
+func (o GetRouteTableCustomRouteEntryOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableCustomRouteEntry) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetRouteTableCustomRouteEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTableCustomRouteEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTableCustomRouteEntry)(nil)).Elem()
+}
+
+func (o GetRouteTableCustomRouteEntryArrayOutput) ToGetRouteTableCustomRouteEntryArrayOutput() GetRouteTableCustomRouteEntryArrayOutput {
+	return o
+}
+
+func (o GetRouteTableCustomRouteEntryArrayOutput) ToGetRouteTableCustomRouteEntryArrayOutputWithContext(ctx context.Context) GetRouteTableCustomRouteEntryArrayOutput {
+	return o
+}
+
+func (o GetRouteTableCustomRouteEntryArrayOutput) Index(i pulumi.IntInput) GetRouteTableCustomRouteEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRouteTableCustomRouteEntry {
+		return vs[0].([]GetRouteTableCustomRouteEntry)[vs[1].(int)]
+	}).(GetRouteTableCustomRouteEntryOutput)
+}
+
+type GetRouteTableSystemRouteEntry struct {
+	// 路由条目描述。
+	Description string `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId string `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId string `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName string `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType string `pulumi:"nextHopType"`
+	// 前缀列表的CIDR。
+	PrefixListCidrBlocks []string `pulumi:"prefixListCidrBlocks"`
+	// 路由条目ID。
+	RouteEntryId string `pulumi:"routeEntryId"`
+	// 路由条目名称。
+	RouteEntryName string `pulumi:"routeEntryName"`
+	// 路由表ID。
+	RouteTableId string `pulumi:"routeTableId"`
+	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	Status string `pulumi:"status"`
+	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	Type string `pulumi:"type"`
+	// 路由条目所属私有网络的ID。
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetRouteTableSystemRouteEntryInput is an input type that accepts GetRouteTableSystemRouteEntryArgs and GetRouteTableSystemRouteEntryOutput values.
+// You can construct a concrete instance of `GetRouteTableSystemRouteEntryInput` via:
+//
+//	GetRouteTableSystemRouteEntryArgs{...}
+type GetRouteTableSystemRouteEntryInput interface {
+	pulumi.Input
+
+	ToGetRouteTableSystemRouteEntryOutput() GetRouteTableSystemRouteEntryOutput
+	ToGetRouteTableSystemRouteEntryOutputWithContext(context.Context) GetRouteTableSystemRouteEntryOutput
+}
+
+type GetRouteTableSystemRouteEntryArgs struct {
+	// 路由条目描述。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 路由条目的目标网段。
+	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
+	// 前缀列表ID。
+	DestinationPrefixListId pulumi.StringInput `pulumi:"destinationPrefixListId"`
+	// 下一跳资源ID。
+	NextHopId pulumi.StringInput `pulumi:"nextHopId"`
+	// 路由条目下一跳资源的名称。
+	NextHopName pulumi.StringInput `pulumi:"nextHopName"`
+	// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+	NextHopType pulumi.StringInput `pulumi:"nextHopType"`
+	// 前缀列表的CIDR。
+	PrefixListCidrBlocks pulumi.StringArrayInput `pulumi:"prefixListCidrBlocks"`
+	// 路由条目ID。
+	RouteEntryId pulumi.StringInput `pulumi:"routeEntryId"`
+	// 路由条目名称。
+	RouteEntryName pulumi.StringInput `pulumi:"routeEntryName"`
+	// 路由表ID。
+	RouteTableId pulumi.StringInput `pulumi:"routeTableId"`
+	// 路由条目状态。1、Pending：待创建。2、Available：可用。
+	Status pulumi.StringInput `pulumi:"status"`
+	// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+	Type pulumi.StringInput `pulumi:"type"`
+	// 路由条目所属私有网络的ID。
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetRouteTableSystemRouteEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (i GetRouteTableSystemRouteEntryArgs) ToGetRouteTableSystemRouteEntryOutput() GetRouteTableSystemRouteEntryOutput {
+	return i.ToGetRouteTableSystemRouteEntryOutputWithContext(context.Background())
+}
+
+func (i GetRouteTableSystemRouteEntryArgs) ToGetRouteTableSystemRouteEntryOutputWithContext(ctx context.Context) GetRouteTableSystemRouteEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTableSystemRouteEntryOutput)
+}
+
+// GetRouteTableSystemRouteEntryArrayInput is an input type that accepts GetRouteTableSystemRouteEntryArray and GetRouteTableSystemRouteEntryArrayOutput values.
+// You can construct a concrete instance of `GetRouteTableSystemRouteEntryArrayInput` via:
+//
+//	GetRouteTableSystemRouteEntryArray{ GetRouteTableSystemRouteEntryArgs{...} }
+type GetRouteTableSystemRouteEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetRouteTableSystemRouteEntryArrayOutput() GetRouteTableSystemRouteEntryArrayOutput
+	ToGetRouteTableSystemRouteEntryArrayOutputWithContext(context.Context) GetRouteTableSystemRouteEntryArrayOutput
+}
+
+type GetRouteTableSystemRouteEntryArray []GetRouteTableSystemRouteEntryInput
+
+func (GetRouteTableSystemRouteEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (i GetRouteTableSystemRouteEntryArray) ToGetRouteTableSystemRouteEntryArrayOutput() GetRouteTableSystemRouteEntryArrayOutput {
+	return i.ToGetRouteTableSystemRouteEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetRouteTableSystemRouteEntryArray) ToGetRouteTableSystemRouteEntryArrayOutputWithContext(ctx context.Context) GetRouteTableSystemRouteEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTableSystemRouteEntryArrayOutput)
+}
+
+type GetRouteTableSystemRouteEntryOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTableSystemRouteEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (o GetRouteTableSystemRouteEntryOutput) ToGetRouteTableSystemRouteEntryOutput() GetRouteTableSystemRouteEntryOutput {
+	return o
+}
+
+func (o GetRouteTableSystemRouteEntryOutput) ToGetRouteTableSystemRouteEntryOutputWithContext(ctx context.Context) GetRouteTableSystemRouteEntryOutput {
+	return o
+}
+
+// 路由条目描述。
+func (o GetRouteTableSystemRouteEntryOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 路由条目的目标网段。
+func (o GetRouteTableSystemRouteEntryOutput) DestinationCidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
+}
+
+// 前缀列表ID。
+func (o GetRouteTableSystemRouteEntryOutput) DestinationPrefixListId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.DestinationPrefixListId }).(pulumi.StringOutput)
+}
+
+// 下一跳资源ID。
+func (o GetRouteTableSystemRouteEntryOutput) NextHopId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.NextHopId }).(pulumi.StringOutput)
+}
+
+// 路由条目下一跳资源的名称。
+func (o GetRouteTableSystemRouteEntryOutput) NextHopName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.NextHopName }).(pulumi.StringOutput)
+}
+
+// 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+func (o GetRouteTableSystemRouteEntryOutput) NextHopType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.NextHopType }).(pulumi.StringOutput)
+}
+
+// 前缀列表的CIDR。
+func (o GetRouteTableSystemRouteEntryOutput) PrefixListCidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) []string { return v.PrefixListCidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// 路由条目ID。
+func (o GetRouteTableSystemRouteEntryOutput) RouteEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.RouteEntryId }).(pulumi.StringOutput)
+}
+
+// 路由条目名称。
+func (o GetRouteTableSystemRouteEntryOutput) RouteEntryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.RouteEntryName }).(pulumi.StringOutput)
+}
+
+// 路由表ID。
+func (o GetRouteTableSystemRouteEntryOutput) RouteTableId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.RouteTableId }).(pulumi.StringOutput)
+}
+
+// 路由条目状态。1、Pending：待创建。2、Available：可用。
+func (o GetRouteTableSystemRouteEntryOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+func (o GetRouteTableSystemRouteEntryOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// 路由条目所属私有网络的ID。
+func (o GetRouteTableSystemRouteEntryOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableSystemRouteEntry) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetRouteTableSystemRouteEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTableSystemRouteEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTableSystemRouteEntry)(nil)).Elem()
+}
+
+func (o GetRouteTableSystemRouteEntryArrayOutput) ToGetRouteTableSystemRouteEntryArrayOutput() GetRouteTableSystemRouteEntryArrayOutput {
+	return o
+}
+
+func (o GetRouteTableSystemRouteEntryArrayOutput) ToGetRouteTableSystemRouteEntryArrayOutputWithContext(ctx context.Context) GetRouteTableSystemRouteEntryArrayOutput {
+	return o
+}
+
+func (o GetRouteTableSystemRouteEntryArrayOutput) Index(i pulumi.IntInput) GetRouteTableSystemRouteEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRouteTableSystemRouteEntry {
+		return vs[0].([]GetRouteTableSystemRouteEntry)[vs[1].(int)]
+	}).(GetRouteTableSystemRouteEntryOutput)
+}
+
+type GetRouteTableTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetRouteTableTagInput is an input type that accepts GetRouteTableTagArgs and GetRouteTableTagOutput values.
+// You can construct a concrete instance of `GetRouteTableTagInput` via:
+//
+//	GetRouteTableTagArgs{...}
+type GetRouteTableTagInput interface {
+	pulumi.Input
+
+	ToGetRouteTableTagOutput() GetRouteTableTagOutput
+	ToGetRouteTableTagOutputWithContext(context.Context) GetRouteTableTagOutput
+}
+
+type GetRouteTableTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetRouteTableTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTableTag)(nil)).Elem()
+}
+
+func (i GetRouteTableTagArgs) ToGetRouteTableTagOutput() GetRouteTableTagOutput {
+	return i.ToGetRouteTableTagOutputWithContext(context.Background())
+}
+
+func (i GetRouteTableTagArgs) ToGetRouteTableTagOutputWithContext(ctx context.Context) GetRouteTableTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTableTagOutput)
+}
+
+// GetRouteTableTagArrayInput is an input type that accepts GetRouteTableTagArray and GetRouteTableTagArrayOutput values.
+// You can construct a concrete instance of `GetRouteTableTagArrayInput` via:
+//
+//	GetRouteTableTagArray{ GetRouteTableTagArgs{...} }
+type GetRouteTableTagArrayInput interface {
+	pulumi.Input
+
+	ToGetRouteTableTagArrayOutput() GetRouteTableTagArrayOutput
+	ToGetRouteTableTagArrayOutputWithContext(context.Context) GetRouteTableTagArrayOutput
+}
+
+type GetRouteTableTagArray []GetRouteTableTagInput
+
+func (GetRouteTableTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTableTag)(nil)).Elem()
+}
+
+func (i GetRouteTableTagArray) ToGetRouteTableTagArrayOutput() GetRouteTableTagArrayOutput {
+	return i.ToGetRouteTableTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetRouteTableTagArray) ToGetRouteTableTagArrayOutputWithContext(ctx context.Context) GetRouteTableTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRouteTableTagArrayOutput)
+}
+
+type GetRouteTableTagOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTableTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRouteTableTag)(nil)).Elem()
+}
+
+func (o GetRouteTableTagOutput) ToGetRouteTableTagOutput() GetRouteTableTagOutput {
+	return o
+}
+
+func (o GetRouteTableTagOutput) ToGetRouteTableTagOutputWithContext(ctx context.Context) GetRouteTableTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetRouteTableTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetRouteTableTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRouteTableTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetRouteTableTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRouteTableTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRouteTableTag)(nil)).Elem()
+}
+
+func (o GetRouteTableTagArrayOutput) ToGetRouteTableTagArrayOutput() GetRouteTableTagArrayOutput {
+	return o
+}
+
+func (o GetRouteTableTagArrayOutput) ToGetRouteTableTagArrayOutputWithContext(ctx context.Context) GetRouteTableTagArrayOutput {
+	return o
+}
+
+func (o GetRouteTableTagArrayOutput) Index(i pulumi.IntInput) GetRouteTableTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRouteTableTag {
+		return vs[0].([]GetRouteTableTag)[vs[1].(int)]
+	}).(GetRouteTableTagOutput)
 }
 
 type GetSecurityGroupEgressPermission struct {
@@ -2993,6 +4183,8 @@ func (o GetVpcTagArrayOutput) Index(i pulumi.IntInput) GetVpcTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*EipTagInput)(nil)).Elem(), EipTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EipTagArrayInput)(nil)).Elem(), EipTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EniPrimaryIpAddressInput)(nil)).Elem(), EniPrimaryIpAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EniPrimaryIpAddressPtrInput)(nil)).Elem(), EniPrimaryIpAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EniPrimaryIpAddressAssociatedElasticIpInput)(nil)).Elem(), EniPrimaryIpAddressAssociatedElasticIpArgs{})
@@ -3003,6 +4195,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EniPrivateIpSetAssociatedElasticIpPtrInput)(nil)).Elem(), EniPrivateIpSetAssociatedElasticIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EniTagInput)(nil)).Elem(), EniTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EniTagArrayInput)(nil)).Elem(), EniTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableCustomRouteEntryInput)(nil)).Elem(), RouteTableCustomRouteEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableCustomRouteEntryArrayInput)(nil)).Elem(), RouteTableCustomRouteEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableSystemRouteEntryInput)(nil)).Elem(), RouteTableSystemRouteEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableSystemRouteEntryArrayInput)(nil)).Elem(), RouteTableSystemRouteEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableTagInput)(nil)).Elem(), RouteTableTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableTagArrayInput)(nil)).Elem(), RouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityGroupEgressPermissionInput)(nil)).Elem(), SecurityGroupEgressPermissionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityGroupEgressPermissionArrayInput)(nil)).Elem(), SecurityGroupEgressPermissionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecurityGroupIngressPermissionInput)(nil)).Elem(), SecurityGroupIngressPermissionArgs{})
@@ -3017,6 +4215,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcAssociateCenArrayInput)(nil)).Elem(), VpcAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcTagInput)(nil)).Elem(), VpcTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcTagArrayInput)(nil)).Elem(), VpcTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEipTagInput)(nil)).Elem(), GetEipTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEipTagArrayInput)(nil)).Elem(), GetEipTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniPrimaryIpAddressInput)(nil)).Elem(), GetEniPrimaryIpAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniPrimaryIpAddressAssociatedElasticIpInput)(nil)).Elem(), GetEniPrimaryIpAddressAssociatedElasticIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniPrivateIpSetInput)(nil)).Elem(), GetEniPrivateIpSetArgs{})
@@ -3024,6 +4224,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniPrivateIpSetAssociatedElasticIpInput)(nil)).Elem(), GetEniPrivateIpSetAssociatedElasticIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniTagInput)(nil)).Elem(), GetEniTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniTagArrayInput)(nil)).Elem(), GetEniTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableCustomRouteEntryInput)(nil)).Elem(), GetRouteTableCustomRouteEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableCustomRouteEntryArrayInput)(nil)).Elem(), GetRouteTableCustomRouteEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableSystemRouteEntryInput)(nil)).Elem(), GetRouteTableSystemRouteEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableSystemRouteEntryArrayInput)(nil)).Elem(), GetRouteTableSystemRouteEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableTagInput)(nil)).Elem(), GetRouteTableTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableTagArrayInput)(nil)).Elem(), GetRouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityGroupEgressPermissionInput)(nil)).Elem(), GetSecurityGroupEgressPermissionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityGroupEgressPermissionArrayInput)(nil)).Elem(), GetSecurityGroupEgressPermissionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecurityGroupIngressPermissionInput)(nil)).Elem(), GetSecurityGroupIngressPermissionArgs{})
@@ -3037,6 +4243,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAssociateCenArrayInput)(nil)).Elem(), GetVpcAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcTagInput)(nil)).Elem(), GetVpcTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcTagArrayInput)(nil)).Elem(), GetVpcTagArray{})
+	pulumi.RegisterOutputType(EipTagOutput{})
+	pulumi.RegisterOutputType(EipTagArrayOutput{})
 	pulumi.RegisterOutputType(EniPrimaryIpAddressOutput{})
 	pulumi.RegisterOutputType(EniPrimaryIpAddressPtrOutput{})
 	pulumi.RegisterOutputType(EniPrimaryIpAddressAssociatedElasticIpOutput{})
@@ -3047,6 +4255,12 @@ func init() {
 	pulumi.RegisterOutputType(EniPrivateIpSetAssociatedElasticIpPtrOutput{})
 	pulumi.RegisterOutputType(EniTagOutput{})
 	pulumi.RegisterOutputType(EniTagArrayOutput{})
+	pulumi.RegisterOutputType(RouteTableCustomRouteEntryOutput{})
+	pulumi.RegisterOutputType(RouteTableCustomRouteEntryArrayOutput{})
+	pulumi.RegisterOutputType(RouteTableSystemRouteEntryOutput{})
+	pulumi.RegisterOutputType(RouteTableSystemRouteEntryArrayOutput{})
+	pulumi.RegisterOutputType(RouteTableTagOutput{})
+	pulumi.RegisterOutputType(RouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(SecurityGroupEgressPermissionOutput{})
 	pulumi.RegisterOutputType(SecurityGroupEgressPermissionArrayOutput{})
 	pulumi.RegisterOutputType(SecurityGroupIngressPermissionOutput{})
@@ -3061,6 +4275,8 @@ func init() {
 	pulumi.RegisterOutputType(VpcAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(VpcTagOutput{})
 	pulumi.RegisterOutputType(VpcTagArrayOutput{})
+	pulumi.RegisterOutputType(GetEipTagOutput{})
+	pulumi.RegisterOutputType(GetEipTagArrayOutput{})
 	pulumi.RegisterOutputType(GetEniPrimaryIpAddressOutput{})
 	pulumi.RegisterOutputType(GetEniPrimaryIpAddressAssociatedElasticIpOutput{})
 	pulumi.RegisterOutputType(GetEniPrivateIpSetOutput{})
@@ -3068,6 +4284,12 @@ func init() {
 	pulumi.RegisterOutputType(GetEniPrivateIpSetAssociatedElasticIpOutput{})
 	pulumi.RegisterOutputType(GetEniTagOutput{})
 	pulumi.RegisterOutputType(GetEniTagArrayOutput{})
+	pulumi.RegisterOutputType(GetRouteTableCustomRouteEntryOutput{})
+	pulumi.RegisterOutputType(GetRouteTableCustomRouteEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetRouteTableSystemRouteEntryOutput{})
+	pulumi.RegisterOutputType(GetRouteTableSystemRouteEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetRouteTableTagOutput{})
+	pulumi.RegisterOutputType(GetRouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityGroupEgressPermissionOutput{})
 	pulumi.RegisterOutputType(GetSecurityGroupEgressPermissionArrayOutput{})
 	pulumi.RegisterOutputType(GetSecurityGroupIngressPermissionOutput{})

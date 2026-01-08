@@ -17,6 +17,9 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'GroupResetInfo',
+    'GroupTopicInfo',
+    'GroupTopicInfoPartitionInfo',
     'InstanceEndpoints',
     'InstanceEndpointsOverlay',
     'InstanceEndpointsPublic',
@@ -25,6 +28,9 @@ __all__ = [
     'InstanceResources',
     'InstanceResourcesStorage',
     'InstanceTag',
+    'GetGroupResetInfoResult',
+    'GetGroupTopicInfoResult',
+    'GetGroupTopicInfoPartitionInfoResult',
     'GetInstanceEndpointsResult',
     'GetInstanceEndpointsOverlayResult',
     'GetInstanceEndpointsPublicResult',
@@ -34,6 +40,336 @@ __all__ = [
     'GetInstanceResourcesStorageResult',
     'GetInstanceTagResult',
 ]
+
+@pulumi.output_type
+class GroupResetInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "offsetType":
+            suggest = "offset_type"
+        elif key == "partitionId":
+            suggest = "partition_id"
+        elif key == "resetBy":
+            suggest = "reset_by"
+        elif key == "resetValue":
+            suggest = "reset_value"
+        elif key == "topicId":
+            suggest = "topic_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupResetInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupResetInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupResetInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 offset_type: Optional[builtins.str] = None,
+                 partition_id: Optional[builtins.int] = None,
+                 reset_by: Optional[builtins.str] = None,
+                 reset_value: Optional[builtins.int] = None,
+                 topic_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str offset_type: 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+        :param builtins.int partition_id: 分区序号。
+        :param builtins.str reset_by: 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+        :param builtins.int reset_value: 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        :param builtins.str topic_id: Topic ID。
+        """
+        if offset_type is not None:
+            pulumi.set(__self__, "offset_type", offset_type)
+        if partition_id is not None:
+            pulumi.set(__self__, "partition_id", partition_id)
+        if reset_by is not None:
+            pulumi.set(__self__, "reset_by", reset_by)
+        if reset_value is not None:
+            pulumi.set(__self__, "reset_value", reset_value)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter(name="offsetType")
+    def offset_type(self) -> Optional[builtins.str]:
+        """
+        重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+        """
+        return pulumi.get(self, "offset_type")
+
+    @property
+    @pulumi.getter(name="partitionId")
+    def partition_id(self) -> Optional[builtins.int]:
+        """
+        分区序号。
+        """
+        return pulumi.get(self, "partition_id")
+
+    @property
+    @pulumi.getter(name="resetBy")
+    def reset_by(self) -> Optional[builtins.str]:
+        """
+        重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+        """
+        return pulumi.get(self, "reset_by")
+
+    @property
+    @pulumi.getter(name="resetValue")
+    def reset_value(self) -> Optional[builtins.int]:
+        """
+        重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        """
+        return pulumi.get(self, "reset_value")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        Topic ID。
+        """
+        return pulumi.get(self, "topic_id")
+
+
+@pulumi.output_type
+class GroupTopicInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "createTime":
+            suggest = "create_time"
+        elif key == "partitionInfos":
+            suggest = "partition_infos"
+        elif key == "topicId":
+            suggest = "topic_id"
+        elif key == "topicName":
+            suggest = "topic_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupTopicInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupTopicInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupTopicInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 create_time: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 lag: Optional[builtins.int] = None,
+                 partition_infos: Optional[Sequence['outputs.GroupTopicInfoPartitionInfo']] = None,
+                 partitions: Optional[builtins.int] = None,
+                 retention: Optional[builtins.int] = None,
+                 status: Optional[builtins.str] = None,
+                 topic_id: Optional[builtins.str] = None,
+                 topic_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str create_time: Topic 的创建时间。
+        :param builtins.str description: Topic 的描述语句。
+        :param builtins.int lag: Topic 中未被消费的消息条数。
+        :param builtins.int partitions: Topic 分区数。
+        :param builtins.int retention: 数据在 Topic 中的保留时长，单位为小时。
+        :param builtins.str status: Topic 的状态。
+        :param builtins.str topic_id: Topic ID。
+        :param builtins.str topic_name: Topic 的名称。
+        """
+        if create_time is not None:
+            pulumi.set(__self__, "create_time", create_time)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if lag is not None:
+            pulumi.set(__self__, "lag", lag)
+        if partition_infos is not None:
+            pulumi.set(__self__, "partition_infos", partition_infos)
+        if partitions is not None:
+            pulumi.set(__self__, "partitions", partitions)
+        if retention is not None:
+            pulumi.set(__self__, "retention", retention)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+        if topic_name is not None:
+            pulumi.set(__self__, "topic_name", topic_name)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> Optional[builtins.str]:
+        """
+        Topic 的创建时间。
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        Topic 的描述语句。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def lag(self) -> Optional[builtins.int]:
+        """
+        Topic 中未被消费的消息条数。
+        """
+        return pulumi.get(self, "lag")
+
+    @property
+    @pulumi.getter(name="partitionInfos")
+    def partition_infos(self) -> Optional[Sequence['outputs.GroupTopicInfoPartitionInfo']]:
+        return pulumi.get(self, "partition_infos")
+
+    @property
+    @pulumi.getter
+    def partitions(self) -> Optional[builtins.int]:
+        """
+        Topic 分区数。
+        """
+        return pulumi.get(self, "partitions")
+
+    @property
+    @pulumi.getter
+    def retention(self) -> Optional[builtins.int]:
+        """
+        数据在 Topic 中的保留时长，单位为小时。
+        """
+        return pulumi.get(self, "retention")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        Topic 的状态。
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        Topic ID。
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> Optional[builtins.str]:
+        """
+        Topic 的名称。
+        """
+        return pulumi.get(self, "topic_name")
+
+
+@pulumi.output_type
+class GroupTopicInfoPartitionInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "currentOffset":
+            suggest = "current_offset"
+        elif key == "groupName":
+            suggest = "group_name"
+        elif key == "latestOffset":
+            suggest = "latest_offset"
+        elif key == "partitionId":
+            suggest = "partition_id"
+        elif key == "topicName":
+            suggest = "topic_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupTopicInfoPartitionInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupTopicInfoPartitionInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupTopicInfoPartitionInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 current_offset: Optional[builtins.int] = None,
+                 group_name: Optional[builtins.str] = None,
+                 lag: Optional[builtins.int] = None,
+                 latest_offset: Optional[builtins.int] = None,
+                 partition_id: Optional[builtins.int] = None,
+                 topic_name: Optional[builtins.str] = None):
+        """
+        :param builtins.int current_offset: 当前消费位点。
+        :param builtins.str group_name: Consumer Group 的名称。
+        :param builtins.int lag: 分区中未被消费的消息条数。
+        :param builtins.int latest_offset: 最新消费位点。
+        :param builtins.int partition_id: 分区序号。
+        :param builtins.str topic_name: Consumer Group 订阅的 Topic 名称。
+        """
+        if current_offset is not None:
+            pulumi.set(__self__, "current_offset", current_offset)
+        if group_name is not None:
+            pulumi.set(__self__, "group_name", group_name)
+        if lag is not None:
+            pulumi.set(__self__, "lag", lag)
+        if latest_offset is not None:
+            pulumi.set(__self__, "latest_offset", latest_offset)
+        if partition_id is not None:
+            pulumi.set(__self__, "partition_id", partition_id)
+        if topic_name is not None:
+            pulumi.set(__self__, "topic_name", topic_name)
+
+    @property
+    @pulumi.getter(name="currentOffset")
+    def current_offset(self) -> Optional[builtins.int]:
+        """
+        当前消费位点。
+        """
+        return pulumi.get(self, "current_offset")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> Optional[builtins.str]:
+        """
+        Consumer Group 的名称。
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def lag(self) -> Optional[builtins.int]:
+        """
+        分区中未被消费的消息条数。
+        """
+        return pulumi.get(self, "lag")
+
+    @property
+    @pulumi.getter(name="latestOffset")
+    def latest_offset(self) -> Optional[builtins.int]:
+        """
+        最新消费位点。
+        """
+        return pulumi.get(self, "latest_offset")
+
+    @property
+    @pulumi.getter(name="partitionId")
+    def partition_id(self) -> Optional[builtins.int]:
+        """
+        分区序号。
+        """
+        return pulumi.get(self, "partition_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> Optional[builtins.str]:
+        """
+        Consumer Group 订阅的 Topic 名称。
+        """
+        return pulumi.get(self, "topic_name")
+
 
 @pulumi.output_type
 class InstanceEndpoints(dict):
@@ -548,6 +884,247 @@ class InstanceTag(dict):
         标签值。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGroupResetInfoResult(dict):
+    def __init__(__self__, *,
+                 offset_type: builtins.str,
+                 partition_id: builtins.int,
+                 reset_by: builtins.str,
+                 reset_value: builtins.int,
+                 topic_id: builtins.str):
+        """
+        :param builtins.str offset_type: 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+        :param builtins.int partition_id: 分区序号。
+        :param builtins.str reset_by: 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+        :param builtins.int reset_value: 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        :param builtins.str topic_id: Topic ID。
+        """
+        pulumi.set(__self__, "offset_type", offset_type)
+        pulumi.set(__self__, "partition_id", partition_id)
+        pulumi.set(__self__, "reset_by", reset_by)
+        pulumi.set(__self__, "reset_value", reset_value)
+        pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter(name="offsetType")
+    def offset_type(self) -> builtins.str:
+        """
+        重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+        """
+        return pulumi.get(self, "offset_type")
+
+    @property
+    @pulumi.getter(name="partitionId")
+    def partition_id(self) -> builtins.int:
+        """
+        分区序号。
+        """
+        return pulumi.get(self, "partition_id")
+
+    @property
+    @pulumi.getter(name="resetBy")
+    def reset_by(self) -> builtins.str:
+        """
+        重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+        """
+        return pulumi.get(self, "reset_by")
+
+    @property
+    @pulumi.getter(name="resetValue")
+    def reset_value(self) -> builtins.int:
+        """
+        重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        """
+        return pulumi.get(self, "reset_value")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        Topic ID。
+        """
+        return pulumi.get(self, "topic_id")
+
+
+@pulumi.output_type
+class GetGroupTopicInfoResult(dict):
+    def __init__(__self__, *,
+                 create_time: builtins.str,
+                 description: builtins.str,
+                 lag: builtins.int,
+                 partition_infos: Sequence['outputs.GetGroupTopicInfoPartitionInfoResult'],
+                 partitions: builtins.int,
+                 retention: builtins.int,
+                 status: builtins.str,
+                 topic_id: builtins.str,
+                 topic_name: builtins.str):
+        """
+        :param builtins.str create_time: Topic 的创建时间。
+        :param builtins.str description: Topic 的描述语句。
+        :param builtins.int lag: Topic 中未被消费的消息条数。
+        :param Sequence['GetGroupTopicInfoPartitionInfoArgs'] partition_infos: 分区列表。
+        :param builtins.int partitions: Topic 分区数。
+        :param builtins.int retention: 数据在 Topic 中的保留时长，单位为小时。
+        :param builtins.str status: Topic 的状态。
+        :param builtins.str topic_id: Topic ID。
+        :param builtins.str topic_name: Topic 的名称。
+        """
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "lag", lag)
+        pulumi.set(__self__, "partition_infos", partition_infos)
+        pulumi.set(__self__, "partitions", partitions)
+        pulumi.set(__self__, "retention", retention)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "topic_id", topic_id)
+        pulumi.set(__self__, "topic_name", topic_name)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> builtins.str:
+        """
+        Topic 的创建时间。
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Topic 的描述语句。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def lag(self) -> builtins.int:
+        """
+        Topic 中未被消费的消息条数。
+        """
+        return pulumi.get(self, "lag")
+
+    @property
+    @pulumi.getter(name="partitionInfos")
+    def partition_infos(self) -> Sequence['outputs.GetGroupTopicInfoPartitionInfoResult']:
+        """
+        分区列表。
+        """
+        return pulumi.get(self, "partition_infos")
+
+    @property
+    @pulumi.getter
+    def partitions(self) -> builtins.int:
+        """
+        Topic 分区数。
+        """
+        return pulumi.get(self, "partitions")
+
+    @property
+    @pulumi.getter
+    def retention(self) -> builtins.int:
+        """
+        数据在 Topic 中的保留时长，单位为小时。
+        """
+        return pulumi.get(self, "retention")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        Topic 的状态。
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        Topic ID。
+        """
+        return pulumi.get(self, "topic_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> builtins.str:
+        """
+        Topic 的名称。
+        """
+        return pulumi.get(self, "topic_name")
+
+
+@pulumi.output_type
+class GetGroupTopicInfoPartitionInfoResult(dict):
+    def __init__(__self__, *,
+                 current_offset: builtins.int,
+                 group_name: builtins.str,
+                 lag: builtins.int,
+                 latest_offset: builtins.int,
+                 partition_id: builtins.int,
+                 topic_name: builtins.str):
+        """
+        :param builtins.int current_offset: 当前消费位点。
+        :param builtins.str group_name: Consumer Group 的名称。
+        :param builtins.int lag: 分区中未被消费的消息条数。
+        :param builtins.int latest_offset: 最新消费位点。
+        :param builtins.int partition_id: 分区序号。
+        :param builtins.str topic_name: Consumer Group 订阅的 Topic 名称。
+        """
+        pulumi.set(__self__, "current_offset", current_offset)
+        pulumi.set(__self__, "group_name", group_name)
+        pulumi.set(__self__, "lag", lag)
+        pulumi.set(__self__, "latest_offset", latest_offset)
+        pulumi.set(__self__, "partition_id", partition_id)
+        pulumi.set(__self__, "topic_name", topic_name)
+
+    @property
+    @pulumi.getter(name="currentOffset")
+    def current_offset(self) -> builtins.int:
+        """
+        当前消费位点。
+        """
+        return pulumi.get(self, "current_offset")
+
+    @property
+    @pulumi.getter(name="groupName")
+    def group_name(self) -> builtins.str:
+        """
+        Consumer Group 的名称。
+        """
+        return pulumi.get(self, "group_name")
+
+    @property
+    @pulumi.getter
+    def lag(self) -> builtins.int:
+        """
+        分区中未被消费的消息条数。
+        """
+        return pulumi.get(self, "lag")
+
+    @property
+    @pulumi.getter(name="latestOffset")
+    def latest_offset(self) -> builtins.int:
+        """
+        最新消费位点。
+        """
+        return pulumi.get(self, "latest_offset")
+
+    @property
+    @pulumi.getter(name="partitionId")
+    def partition_id(self) -> builtins.int:
+        """
+        分区序号。
+        """
+        return pulumi.get(self, "partition_id")
+
+    @property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> builtins.str:
+        """
+        Consumer Group 订阅的 Topic 名称。
+        """
+        return pulumi.get(self, "topic_name")
 
 
 @pulumi.output_type

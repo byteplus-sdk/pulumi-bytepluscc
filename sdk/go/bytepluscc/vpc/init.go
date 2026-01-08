@@ -21,8 +21,12 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:vpc/eip:Eip":
+		r = &Eip{}
 	case "bytepluscc:vpc/eni:Eni":
 		r = &Eni{}
+	case "bytepluscc:vpc/routeTable:RouteTable":
+		r = &RouteTable{}
 	case "bytepluscc:vpc/securityGroup:SecurityGroup":
 		r = &SecurityGroup{}
 	case "bytepluscc:vpc/subnet:Subnet":
@@ -44,7 +48,17 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"vpc/eip",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"vpc/eni",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/routeTable",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

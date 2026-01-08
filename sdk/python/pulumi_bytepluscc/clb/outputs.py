@@ -18,12 +18,28 @@ from .. import _utilities
 __all__ = [
     'ListenerHealthCheck',
     'ListenerTag',
+    'NlbListenerHealth',
+    'NlbListenerTag',
+    'NlbServerGroupHealthCheck',
+    'NlbServerGroupServer',
+    'NlbServerGroupTag',
     'RuleRedirectConfig',
     'RuleTag',
+    'ServerGroupListener',
+    'ServerGroupServer',
+    'ServerGroupTag',
     'GetListenerHealthCheckResult',
     'GetListenerTagResult',
+    'GetNlbListenerHealthResult',
+    'GetNlbListenerTagResult',
+    'GetNlbServerGroupHealthCheckResult',
+    'GetNlbServerGroupServerResult',
+    'GetNlbServerGroupTagResult',
     'GetRuleRedirectConfigResult',
     'GetRuleTagResult',
+    'GetServerGroupListenerResult',
+    'GetServerGroupServerResult',
+    'GetServerGroupTagResult',
 ]
 
 @pulumi.output_type
@@ -234,6 +250,508 @@ class ListenerTag(dict):
 
 
 @pulumi.output_type
+class NlbListenerHealth(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "serverId":
+            suggest = "server_id"
+        elif key == "serverType":
+            suggest = "server_type"
+        elif key == "updatedTime":
+            suggest = "updated_time"
+        elif key == "zoneId":
+            suggest = "zone_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NlbListenerHealth. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NlbListenerHealth.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NlbListenerHealth.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: Optional[builtins.str] = None,
+                 ip: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None,
+                 server_id: Optional[builtins.str] = None,
+                 server_type: Optional[builtins.str] = None,
+                 status: Optional[builtins.str] = None,
+                 updated_time: Optional[builtins.str] = None,
+                 zone_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str instance_id: 后端服务器的实例 ID或IP地址。
+        :param builtins.str ip: 后端服务器的IP地址。
+        :param builtins.int port: 后端服务器提供服务的端口。
+        :param builtins.str server_id: 后端服务器ID。
+        :param builtins.str server_type: 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+        :param builtins.str status: 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+        :param builtins.str updated_time: 健康状态最后更新时间。
+        :param builtins.str zone_id: 后端服务器接收访问流量的可用区ID。
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip is not None:
+            pulumi.set(__self__, "ip", ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if server_id is not None:
+            pulumi.set(__self__, "server_id", server_id)
+        if server_type is not None:
+            pulumi.set(__self__, "server_type", server_type)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if updated_time is not None:
+            pulumi.set(__self__, "updated_time", updated_time)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        后端服务器的实例 ID或IP地址。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> Optional[builtins.str]:
+        """
+        后端服务器的IP地址。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        后端服务器提供服务的端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="serverId")
+    def server_id(self) -> Optional[builtins.str]:
+        """
+        后端服务器ID。
+        """
+        return pulumi.get(self, "server_id")
+
+    @property
+    @pulumi.getter(name="serverType")
+    def server_type(self) -> Optional[builtins.str]:
+        """
+        后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+        """
+        return pulumi.get(self, "server_type")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="updatedTime")
+    def updated_time(self) -> Optional[builtins.str]:
+        """
+        健康状态最后更新时间。
+        """
+        return pulumi.get(self, "updated_time")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[builtins.str]:
+        """
+        后端服务器接收访问流量的可用区ID。
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class NlbListenerTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class NlbServerGroupHealthCheck(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "healthyThreshold":
+            suggest = "healthy_threshold"
+        elif key == "httpCode":
+            suggest = "http_code"
+        elif key == "udpExpect":
+            suggest = "udp_expect"
+        elif key == "udpRequest":
+            suggest = "udp_request"
+        elif key == "unhealthyThreshold":
+            suggest = "unhealthy_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NlbServerGroupHealthCheck. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NlbServerGroupHealthCheck.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NlbServerGroupHealthCheck.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain: Optional[builtins.str] = None,
+                 enabled: Optional[builtins.bool] = None,
+                 healthy_threshold: Optional[builtins.int] = None,
+                 http_code: Optional[builtins.str] = None,
+                 interval: Optional[builtins.int] = None,
+                 method: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None,
+                 timeout: Optional[builtins.int] = None,
+                 type: Optional[builtins.str] = None,
+                 udp_expect: Optional[builtins.str] = None,
+                 udp_request: Optional[builtins.str] = None,
+                 unhealthy_threshold: Optional[builtins.int] = None,
+                 uri: Optional[builtins.str] = None):
+        """
+        :param builtins.str domain: 健康检查的域名。
+        :param builtins.bool enabled: 是否开启健康检查。
+        :param builtins.int healthy_threshold: 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+        :param builtins.str http_code: 健康检查正常的HTTP状态码。
+        :param builtins.int interval: 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+        :param builtins.str method: 健康检查的请求方法。
+        :param builtins.int port: 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+        :param builtins.int timeout: 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+        :param builtins.str type: 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+        :param builtins.str udp_expect: UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+        :param builtins.str udp_request: UDP健康检查的预期响应字符串。
+        :param builtins.int unhealthy_threshold: 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+        :param builtins.str uri: 健康检查的路径。
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if healthy_threshold is not None:
+            pulumi.set(__self__, "healthy_threshold", healthy_threshold)
+        if http_code is not None:
+            pulumi.set(__self__, "http_code", http_code)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if method is not None:
+            pulumi.set(__self__, "method", method)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if timeout is not None:
+            pulumi.set(__self__, "timeout", timeout)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if udp_expect is not None:
+            pulumi.set(__self__, "udp_expect", udp_expect)
+        if udp_request is not None:
+            pulumi.set(__self__, "udp_request", udp_request)
+        if unhealthy_threshold is not None:
+            pulumi.set(__self__, "unhealthy_threshold", unhealthy_threshold)
+        if uri is not None:
+            pulumi.set(__self__, "uri", uri)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        健康检查的域名。
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[builtins.bool]:
+        """
+        是否开启健康检查。
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="healthyThreshold")
+    def healthy_threshold(self) -> Optional[builtins.int]:
+        """
+        健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+        """
+        return pulumi.get(self, "healthy_threshold")
+
+    @property
+    @pulumi.getter(name="httpCode")
+    def http_code(self) -> Optional[builtins.str]:
+        """
+        健康检查正常的HTTP状态码。
+        """
+        return pulumi.get(self, "http_code")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[builtins.int]:
+        """
+        健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter
+    def method(self) -> Optional[builtins.str]:
+        """
+        健康检查的请求方法。
+        """
+        return pulumi.get(self, "method")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> Optional[builtins.int]:
+        """
+        健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+        """
+        return pulumi.get(self, "timeout")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="udpExpect")
+    def udp_expect(self) -> Optional[builtins.str]:
+        """
+        UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+        """
+        return pulumi.get(self, "udp_expect")
+
+    @property
+    @pulumi.getter(name="udpRequest")
+    def udp_request(self) -> Optional[builtins.str]:
+        """
+        UDP健康检查的预期响应字符串。
+        """
+        return pulumi.get(self, "udp_request")
+
+    @property
+    @pulumi.getter(name="unhealthyThreshold")
+    def unhealthy_threshold(self) -> Optional[builtins.int]:
+        """
+        健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+        """
+        return pulumi.get(self, "unhealthy_threshold")
+
+    @property
+    @pulumi.getter
+    def uri(self) -> Optional[builtins.str]:
+        """
+        健康检查的路径。
+        """
+        return pulumi.get(self, "uri")
+
+
+@pulumi.output_type
+class NlbServerGroupServer(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "serverId":
+            suggest = "server_id"
+        elif key == "zoneId":
+            suggest = "zone_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NlbServerGroupServer. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NlbServerGroupServer.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NlbServerGroupServer.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[builtins.str] = None,
+                 instance_id: Optional[builtins.str] = None,
+                 ip: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None,
+                 server_id: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 weight: Optional[builtins.int] = None,
+                 zone_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str description: 后端服务器的描述，默认值为空字符串。
+        :param builtins.str instance_id: 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+        :param builtins.str ip: 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+        :param builtins.int port: 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+        :param builtins.str server_id: 后端服务器 ID。
+        :param builtins.str type: 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+        :param builtins.int weight: 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+        :param builtins.str zone_id: 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip is not None:
+            pulumi.set(__self__, "ip", ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if server_id is not None:
+            pulumi.set(__self__, "server_id", server_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        后端服务器的描述，默认值为空字符串。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> Optional[builtins.str]:
+        """
+        后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="serverId")
+    def server_id(self) -> Optional[builtins.str]:
+        """
+        后端服务器 ID。
+        """
+        return pulumi.get(self, "server_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.int]:
+        """
+        后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+        """
+        return pulumi.get(self, "weight")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[builtins.str]:
+        """
+        指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class NlbServerGroupTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class RuleRedirectConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -344,6 +862,169 @@ class RuleTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServerGroupListener(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "listenerId":
+            suggest = "listener_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerGroupListener. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerGroupListener.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerGroupListener.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 listener_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str listener_id: 监听器的ID。
+        """
+        if listener_id is not None:
+            pulumi.set(__self__, "listener_id", listener_id)
+
+    @property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> Optional[builtins.str]:
+        """
+        监听器的ID。
+        """
+        return pulumi.get(self, "listener_id")
+
+
+@pulumi.output_type
+class ServerGroupServer(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServerGroupServer. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServerGroupServer.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServerGroupServer.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[builtins.str] = None,
+                 instance_id: Optional[builtins.str] = None,
+                 ip: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None,
+                 type: Optional[builtins.str] = None,
+                 weight: Optional[builtins.int] = None):
+        """
+        :param builtins.str description: 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+        :param builtins.str instance_id: 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+        :param builtins.str ip: 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+        :param builtins.int port: 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+        :param builtins.str type: 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+        :param builtins.int weight: 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if ip is not None:
+            pulumi.set(__self__, "ip", ip)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> Optional[builtins.str]:
+        """
+        后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.int]:
+        """
+        后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class ServerGroupTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 绑定的标签键信息。
+        :param builtins.str value: 绑定的标签值信息。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        绑定的标签键信息。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        绑定的标签值信息。
         """
         return pulumi.get(self, "value")
 
@@ -517,6 +1198,404 @@ class GetListenerTagResult(dict):
 
 
 @pulumi.output_type
+class GetNlbListenerHealthResult(dict):
+    def __init__(__self__, *,
+                 instance_id: builtins.str,
+                 ip: builtins.str,
+                 port: builtins.int,
+                 server_id: builtins.str,
+                 server_type: builtins.str,
+                 status: builtins.str,
+                 updated_time: builtins.str,
+                 zone_id: builtins.str):
+        """
+        :param builtins.str instance_id: 后端服务器的实例 ID或IP地址。
+        :param builtins.str ip: 后端服务器的IP地址。
+        :param builtins.int port: 后端服务器提供服务的端口。
+        :param builtins.str server_id: 后端服务器ID。
+        :param builtins.str server_type: 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+        :param builtins.str status: 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+        :param builtins.str updated_time: 健康状态最后更新时间。
+        :param builtins.str zone_id: 后端服务器接收访问流量的可用区ID。
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "server_id", server_id)
+        pulumi.set(__self__, "server_type", server_type)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "updated_time", updated_time)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        后端服务器的实例 ID或IP地址。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> builtins.str:
+        """
+        后端服务器的IP地址。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        后端服务器提供服务的端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="serverId")
+    def server_id(self) -> builtins.str:
+        """
+        后端服务器ID。
+        """
+        return pulumi.get(self, "server_id")
+
+    @property
+    @pulumi.getter(name="serverType")
+    def server_type(self) -> builtins.str:
+        """
+        后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+        """
+        return pulumi.get(self, "server_type")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="updatedTime")
+    def updated_time(self) -> builtins.str:
+        """
+        健康状态最后更新时间。
+        """
+        return pulumi.get(self, "updated_time")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        后端服务器接收访问流量的可用区ID。
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetNlbListenerTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetNlbServerGroupHealthCheckResult(dict):
+    def __init__(__self__, *,
+                 domain: builtins.str,
+                 enabled: builtins.bool,
+                 healthy_threshold: builtins.int,
+                 http_code: builtins.str,
+                 interval: builtins.int,
+                 method: builtins.str,
+                 port: builtins.int,
+                 timeout: builtins.int,
+                 type: builtins.str,
+                 udp_expect: builtins.str,
+                 udp_request: builtins.str,
+                 unhealthy_threshold: builtins.int,
+                 uri: builtins.str):
+        """
+        :param builtins.str domain: 健康检查的域名。
+        :param builtins.bool enabled: 是否开启健康检查。
+        :param builtins.int healthy_threshold: 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+        :param builtins.str http_code: 健康检查正常的HTTP状态码。
+        :param builtins.int interval: 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+        :param builtins.str method: 健康检查的请求方法。
+        :param builtins.int port: 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+        :param builtins.int timeout: 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+        :param builtins.str type: 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+        :param builtins.str udp_expect: UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+        :param builtins.str udp_request: UDP健康检查的预期响应字符串。
+        :param builtins.int unhealthy_threshold: 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+        :param builtins.str uri: 健康检查的路径。
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "healthy_threshold", healthy_threshold)
+        pulumi.set(__self__, "http_code", http_code)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "method", method)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "timeout", timeout)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "udp_expect", udp_expect)
+        pulumi.set(__self__, "udp_request", udp_request)
+        pulumi.set(__self__, "unhealthy_threshold", unhealthy_threshold)
+        pulumi.set(__self__, "uri", uri)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        健康检查的域名。
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> builtins.bool:
+        """
+        是否开启健康检查。
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="healthyThreshold")
+    def healthy_threshold(self) -> builtins.int:
+        """
+        健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+        """
+        return pulumi.get(self, "healthy_threshold")
+
+    @property
+    @pulumi.getter(name="httpCode")
+    def http_code(self) -> builtins.str:
+        """
+        健康检查正常的HTTP状态码。
+        """
+        return pulumi.get(self, "http_code")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> builtins.int:
+        """
+        健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter
+    def method(self) -> builtins.str:
+        """
+        健康检查的请求方法。
+        """
+        return pulumi.get(self, "method")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> builtins.int:
+        """
+        健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+        """
+        return pulumi.get(self, "timeout")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="udpExpect")
+    def udp_expect(self) -> builtins.str:
+        """
+        UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+        """
+        return pulumi.get(self, "udp_expect")
+
+    @property
+    @pulumi.getter(name="udpRequest")
+    def udp_request(self) -> builtins.str:
+        """
+        UDP健康检查的预期响应字符串。
+        """
+        return pulumi.get(self, "udp_request")
+
+    @property
+    @pulumi.getter(name="unhealthyThreshold")
+    def unhealthy_threshold(self) -> builtins.int:
+        """
+        健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+        """
+        return pulumi.get(self, "unhealthy_threshold")
+
+    @property
+    @pulumi.getter
+    def uri(self) -> builtins.str:
+        """
+        健康检查的路径。
+        """
+        return pulumi.get(self, "uri")
+
+
+@pulumi.output_type
+class GetNlbServerGroupServerResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 instance_id: builtins.str,
+                 ip: builtins.str,
+                 port: builtins.int,
+                 server_id: builtins.str,
+                 type: builtins.str,
+                 weight: builtins.int,
+                 zone_id: builtins.str):
+        """
+        :param builtins.str description: 后端服务器的描述，默认值为空字符串。
+        :param builtins.str instance_id: 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+        :param builtins.str ip: 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+        :param builtins.int port: 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+        :param builtins.str server_id: 后端服务器 ID。
+        :param builtins.str type: 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+        :param builtins.int weight: 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+        :param builtins.str zone_id: 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "server_id", server_id)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "weight", weight)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        后端服务器的描述，默认值为空字符串。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> builtins.str:
+        """
+        后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="serverId")
+    def server_id(self) -> builtins.str:
+        """
+        后端服务器 ID。
+        """
+        return pulumi.get(self, "server_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.int:
+        """
+        后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+        """
+        return pulumi.get(self, "weight")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetNlbServerGroupTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetRuleRedirectConfigResult(dict):
     def __init__(__self__, *,
                  host: builtins.str,
@@ -603,6 +1682,148 @@ class GetRuleTagResult(dict):
     def value(self) -> builtins.str:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetServerGroupListenerResult(dict):
+    def __init__(__self__, *,
+                 listener_id: builtins.str):
+        """
+        :param builtins.str listener_id: 监听器的ID。
+        """
+        pulumi.set(__self__, "listener_id", listener_id)
+
+    @property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> builtins.str:
+        """
+        监听器的ID。
+        """
+        return pulumi.get(self, "listener_id")
+
+
+@pulumi.output_type
+class GetServerGroupServerResult(dict):
+    def __init__(__self__, *,
+                 any_port_enabled: builtins.str,
+                 description: builtins.str,
+                 instance_id: builtins.str,
+                 ip: builtins.str,
+                 port: builtins.int,
+                 server_id: builtins.str,
+                 type: builtins.str,
+                 weight: builtins.int):
+        """
+        :param builtins.str any_port_enabled: 是否开启全端口转发。on：开启。off（默认值）：关闭。
+        :param builtins.str description: 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+        :param builtins.str instance_id: 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+        :param builtins.str ip: 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+        :param builtins.int port: 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+        :param builtins.str server_id: 后端服务器ID。
+        :param builtins.str type: 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+        :param builtins.int weight: 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+        """
+        pulumi.set(__self__, "any_port_enabled", any_port_enabled)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "server_id", server_id)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="anyPortEnabled")
+    def any_port_enabled(self) -> builtins.str:
+        """
+        是否开启全端口转发。on：开启。off（默认值）：关闭。
+        """
+        return pulumi.get(self, "any_port_enabled")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> builtins.str:
+        """
+        后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="serverId")
+    def server_id(self) -> builtins.str:
+        """
+        后端服务器ID。
+        """
+        return pulumi.get(self, "server_id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.int:
+        """
+        后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetServerGroupTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 绑定的标签键信息。
+        :param builtins.str value: 绑定的标签值信息。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        绑定的标签键信息。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        绑定的标签值信息。
         """
         return pulumi.get(self, "value")
 

@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'EipTagArgs',
+    'EipTagArgsDict',
     'EniPrimaryIpAddressArgs',
     'EniPrimaryIpAddressArgsDict',
     'EniPrimaryIpAddressAssociatedElasticIpArgs',
@@ -26,6 +28,12 @@ __all__ = [
     'EniPrivateIpSetAssociatedElasticIpArgsDict',
     'EniTagArgs',
     'EniTagArgsDict',
+    'RouteTableCustomRouteEntryArgs',
+    'RouteTableCustomRouteEntryArgsDict',
+    'RouteTableSystemRouteEntryArgs',
+    'RouteTableSystemRouteEntryArgsDict',
+    'RouteTableTagArgs',
+    'RouteTableTagArgsDict',
     'SecurityGroupEgressPermissionArgs',
     'SecurityGroupEgressPermissionArgsDict',
     'SecurityGroupIngressPermissionArgs',
@@ -43,6 +51,58 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class EipTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签值。
+        """
+elif False:
+    EipTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EipTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签键。
+        :param pulumi.Input[builtins.str] value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class EniPrimaryIpAddressArgsDict(TypedDict):
@@ -287,6 +347,482 @@ elif False:
 
 @pulumi.input_type
 class EniTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class RouteTableCustomRouteEntryArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目描述。
+        """
+        destination_cidr_block: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目的目标网段。
+        """
+        destination_prefix_list_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        前缀列表ID。
+        """
+        next_hop_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        下一跳资源ID。
+        """
+        next_hop_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目下一跳资源的名称。
+        """
+        next_hop_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        """
+        route_entry_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目名称。
+        """
+elif False:
+    RouteTableCustomRouteEntryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RouteTableCustomRouteEntryArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_prefix_list_id: Optional[pulumi.Input[builtins.str]] = None,
+                 next_hop_id: Optional[pulumi.Input[builtins.str]] = None,
+                 next_hop_name: Optional[pulumi.Input[builtins.str]] = None,
+                 next_hop_type: Optional[pulumi.Input[builtins.str]] = None,
+                 route_entry_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] description: 路由条目描述。
+        :param pulumi.Input[builtins.str] destination_cidr_block: 路由条目的目标网段。
+        :param pulumi.Input[builtins.str] destination_prefix_list_id: 前缀列表ID。
+        :param pulumi.Input[builtins.str] next_hop_id: 下一跳资源ID。
+        :param pulumi.Input[builtins.str] next_hop_name: 路由条目下一跳资源的名称。
+        :param pulumi.Input[builtins.str] next_hop_type: 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        :param pulumi.Input[builtins.str] route_entry_name: 路由条目名称。
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if destination_cidr_block is not None:
+            pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
+        if destination_prefix_list_id is not None:
+            pulumi.set(__self__, "destination_prefix_list_id", destination_prefix_list_id)
+        if next_hop_id is not None:
+            pulumi.set(__self__, "next_hop_id", next_hop_id)
+        if next_hop_name is not None:
+            pulumi.set(__self__, "next_hop_name", next_hop_name)
+        if next_hop_type is not None:
+            pulumi.set(__self__, "next_hop_type", next_hop_type)
+        if route_entry_name is not None:
+            pulumi.set(__self__, "route_entry_name", route_entry_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目描述。
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="destinationCidrBlock")
+    def destination_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目的目标网段。
+        """
+        return pulumi.get(self, "destination_cidr_block")
+
+    @destination_cidr_block.setter
+    def destination_cidr_block(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_cidr_block", value)
+
+    @property
+    @pulumi.getter(name="destinationPrefixListId")
+    def destination_prefix_list_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        前缀列表ID。
+        """
+        return pulumi.get(self, "destination_prefix_list_id")
+
+    @destination_prefix_list_id.setter
+    def destination_prefix_list_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_prefix_list_id", value)
+
+    @property
+    @pulumi.getter(name="nextHopId")
+    def next_hop_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        下一跳资源ID。
+        """
+        return pulumi.get(self, "next_hop_id")
+
+    @next_hop_id.setter
+    def next_hop_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "next_hop_id", value)
+
+    @property
+    @pulumi.getter(name="nextHopName")
+    def next_hop_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目下一跳资源的名称。
+        """
+        return pulumi.get(self, "next_hop_name")
+
+    @next_hop_name.setter
+    def next_hop_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "next_hop_name", value)
+
+    @property
+    @pulumi.getter(name="nextHopType")
+    def next_hop_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        """
+        return pulumi.get(self, "next_hop_type")
+
+    @next_hop_type.setter
+    def next_hop_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "next_hop_type", value)
+
+    @property
+    @pulumi.getter(name="routeEntryName")
+    def route_entry_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目名称。
+        """
+        return pulumi.get(self, "route_entry_name")
+
+    @route_entry_name.setter
+    def route_entry_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "route_entry_name", value)
+
+
+if not MYPY:
+    class RouteTableSystemRouteEntryArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目描述。
+        """
+        destination_cidr_block: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目的目标网段。
+        """
+        destination_prefix_list_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        前缀列表ID。
+        """
+        next_hop_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        下一跳资源ID。
+        """
+        next_hop_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目下一跳资源的名称。
+        """
+        next_hop_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        """
+        prefix_list_cidr_blocks: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        前缀列表的CIDR。
+        """
+        route_entry_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目ID。
+        """
+        route_entry_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目名称。
+        """
+        route_table_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由表ID。
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目状态。1、Pending：待创建。2、Available：可用。
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+        """
+        vpc_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        路由条目所属私有网络的ID。
+        """
+elif False:
+    RouteTableSystemRouteEntryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RouteTableSystemRouteEntryArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_prefix_list_id: Optional[pulumi.Input[builtins.str]] = None,
+                 next_hop_id: Optional[pulumi.Input[builtins.str]] = None,
+                 next_hop_name: Optional[pulumi.Input[builtins.str]] = None,
+                 next_hop_type: Optional[pulumi.Input[builtins.str]] = None,
+                 prefix_list_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 route_entry_id: Optional[pulumi.Input[builtins.str]] = None,
+                 route_entry_name: Optional[pulumi.Input[builtins.str]] = None,
+                 route_table_id: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None,
+                 vpc_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] description: 路由条目描述。
+        :param pulumi.Input[builtins.str] destination_cidr_block: 路由条目的目标网段。
+        :param pulumi.Input[builtins.str] destination_prefix_list_id: 前缀列表ID。
+        :param pulumi.Input[builtins.str] next_hop_id: 下一跳资源ID。
+        :param pulumi.Input[builtins.str] next_hop_name: 路由条目下一跳资源的名称。
+        :param pulumi.Input[builtins.str] next_hop_type: 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] prefix_list_cidr_blocks: 前缀列表的CIDR。
+        :param pulumi.Input[builtins.str] route_entry_id: 路由条目ID。
+        :param pulumi.Input[builtins.str] route_entry_name: 路由条目名称。
+        :param pulumi.Input[builtins.str] route_table_id: 路由表ID。
+        :param pulumi.Input[builtins.str] status: 路由条目状态。1、Pending：待创建。2、Available：可用。
+        :param pulumi.Input[builtins.str] type: 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+        :param pulumi.Input[builtins.str] vpc_id: 路由条目所属私有网络的ID。
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if destination_cidr_block is not None:
+            pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
+        if destination_prefix_list_id is not None:
+            pulumi.set(__self__, "destination_prefix_list_id", destination_prefix_list_id)
+        if next_hop_id is not None:
+            pulumi.set(__self__, "next_hop_id", next_hop_id)
+        if next_hop_name is not None:
+            pulumi.set(__self__, "next_hop_name", next_hop_name)
+        if next_hop_type is not None:
+            pulumi.set(__self__, "next_hop_type", next_hop_type)
+        if prefix_list_cidr_blocks is not None:
+            pulumi.set(__self__, "prefix_list_cidr_blocks", prefix_list_cidr_blocks)
+        if route_entry_id is not None:
+            pulumi.set(__self__, "route_entry_id", route_entry_id)
+        if route_entry_name is not None:
+            pulumi.set(__self__, "route_entry_name", route_entry_name)
+        if route_table_id is not None:
+            pulumi.set(__self__, "route_table_id", route_table_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目描述。
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="destinationCidrBlock")
+    def destination_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目的目标网段。
+        """
+        return pulumi.get(self, "destination_cidr_block")
+
+    @destination_cidr_block.setter
+    def destination_cidr_block(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_cidr_block", value)
+
+    @property
+    @pulumi.getter(name="destinationPrefixListId")
+    def destination_prefix_list_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        前缀列表ID。
+        """
+        return pulumi.get(self, "destination_prefix_list_id")
+
+    @destination_prefix_list_id.setter
+    def destination_prefix_list_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_prefix_list_id", value)
+
+    @property
+    @pulumi.getter(name="nextHopId")
+    def next_hop_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        下一跳资源ID。
+        """
+        return pulumi.get(self, "next_hop_id")
+
+    @next_hop_id.setter
+    def next_hop_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "next_hop_id", value)
+
+    @property
+    @pulumi.getter(name="nextHopName")
+    def next_hop_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目下一跳资源的名称。
+        """
+        return pulumi.get(self, "next_hop_name")
+
+    @next_hop_name.setter
+    def next_hop_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "next_hop_name", value)
+
+    @property
+    @pulumi.getter(name="nextHopType")
+    def next_hop_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        """
+        return pulumi.get(self, "next_hop_type")
+
+    @next_hop_type.setter
+    def next_hop_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "next_hop_type", value)
+
+    @property
+    @pulumi.getter(name="prefixListCidrBlocks")
+    def prefix_list_cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        前缀列表的CIDR。
+        """
+        return pulumi.get(self, "prefix_list_cidr_blocks")
+
+    @prefix_list_cidr_blocks.setter
+    def prefix_list_cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "prefix_list_cidr_blocks", value)
+
+    @property
+    @pulumi.getter(name="routeEntryId")
+    def route_entry_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目ID。
+        """
+        return pulumi.get(self, "route_entry_id")
+
+    @route_entry_id.setter
+    def route_entry_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "route_entry_id", value)
+
+    @property
+    @pulumi.getter(name="routeEntryName")
+    def route_entry_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目名称。
+        """
+        return pulumi.get(self, "route_entry_name")
+
+    @route_entry_name.setter
+    def route_entry_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "route_entry_name", value)
+
+    @property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由表ID。
+        """
+        return pulumi.get(self, "route_table_id")
+
+    @route_table_id.setter
+    def route_table_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "route_table_id", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目状态。1、Pending：待创建。2、Available：可用。
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目所属私有网络的ID。
+        """
+        return pulumi.get(self, "vpc_id")
+
+    @vpc_id.setter
+    def vpc_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc_id", value)
+
+
+if not MYPY:
+    class RouteTableTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。
+        """
+elif False:
+    RouteTableTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class RouteTableTagArgs:
     def __init__(__self__, *,
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):

@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.bmq;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.bmq.inputs.GetGroupArgs;
+import com.byteplus.bytepluscc.bmq.inputs.GetGroupPlainArgs;
 import com.byteplus.bytepluscc.bmq.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.bmq.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.bmq.outputs.GetGroupResult;
+import com.byteplus.bytepluscc.bmq.outputs.GetGroupsResult;
 import com.byteplus.bytepluscc.bmq.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.bmq.outputs.GetInstancesResult;
 import com.pulumi.core.Output;
@@ -17,6 +21,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class BmqFunctions {
+    /**
+     * Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args) {
+        return getGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args) {
+        return getGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:bmq/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:bmq/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:bmq/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups() {
+        return getGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain() {
+        return getGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args) {
+        return getGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args) {
+        return getGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:bmq/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:bmq/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::BMQ::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:bmq/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::BMQ::Instance
      * 

@@ -465,6 +465,903 @@ func (o ListenerTagArrayOutput) Index(i pulumi.IntInput) ListenerTagOutput {
 	}).(ListenerTagOutput)
 }
 
+type NlbListenerHealth struct {
+	// 后端服务器的实例 ID或IP地址。
+	InstanceId *string `pulumi:"instanceId"`
+	// 后端服务器的IP地址。
+	Ip *string `pulumi:"ip"`
+	// 后端服务器提供服务的端口。
+	Port *int `pulumi:"port"`
+	// 后端服务器ID。
+	ServerId *string `pulumi:"serverId"`
+	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	ServerType *string `pulumi:"serverType"`
+	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	Status *string `pulumi:"status"`
+	// 健康状态最后更新时间。
+	UpdatedTime *string `pulumi:"updatedTime"`
+	// 后端服务器接收访问流量的可用区ID。
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// NlbListenerHealthInput is an input type that accepts NlbListenerHealthArgs and NlbListenerHealthOutput values.
+// You can construct a concrete instance of `NlbListenerHealthInput` via:
+//
+//	NlbListenerHealthArgs{...}
+type NlbListenerHealthInput interface {
+	pulumi.Input
+
+	ToNlbListenerHealthOutput() NlbListenerHealthOutput
+	ToNlbListenerHealthOutputWithContext(context.Context) NlbListenerHealthOutput
+}
+
+type NlbListenerHealthArgs struct {
+	// 后端服务器的实例 ID或IP地址。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 后端服务器的IP地址。
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
+	// 后端服务器提供服务的端口。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 后端服务器ID。
+	ServerId pulumi.StringPtrInput `pulumi:"serverId"`
+	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	ServerType pulumi.StringPtrInput `pulumi:"serverType"`
+	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// 健康状态最后更新时间。
+	UpdatedTime pulumi.StringPtrInput `pulumi:"updatedTime"`
+	// 后端服务器接收访问流量的可用区ID。
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (NlbListenerHealthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbListenerHealth)(nil)).Elem()
+}
+
+func (i NlbListenerHealthArgs) ToNlbListenerHealthOutput() NlbListenerHealthOutput {
+	return i.ToNlbListenerHealthOutputWithContext(context.Background())
+}
+
+func (i NlbListenerHealthArgs) ToNlbListenerHealthOutputWithContext(ctx context.Context) NlbListenerHealthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbListenerHealthOutput)
+}
+
+// NlbListenerHealthArrayInput is an input type that accepts NlbListenerHealthArray and NlbListenerHealthArrayOutput values.
+// You can construct a concrete instance of `NlbListenerHealthArrayInput` via:
+//
+//	NlbListenerHealthArray{ NlbListenerHealthArgs{...} }
+type NlbListenerHealthArrayInput interface {
+	pulumi.Input
+
+	ToNlbListenerHealthArrayOutput() NlbListenerHealthArrayOutput
+	ToNlbListenerHealthArrayOutputWithContext(context.Context) NlbListenerHealthArrayOutput
+}
+
+type NlbListenerHealthArray []NlbListenerHealthInput
+
+func (NlbListenerHealthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbListenerHealth)(nil)).Elem()
+}
+
+func (i NlbListenerHealthArray) ToNlbListenerHealthArrayOutput() NlbListenerHealthArrayOutput {
+	return i.ToNlbListenerHealthArrayOutputWithContext(context.Background())
+}
+
+func (i NlbListenerHealthArray) ToNlbListenerHealthArrayOutputWithContext(ctx context.Context) NlbListenerHealthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbListenerHealthArrayOutput)
+}
+
+type NlbListenerHealthOutput struct{ *pulumi.OutputState }
+
+func (NlbListenerHealthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbListenerHealth)(nil)).Elem()
+}
+
+func (o NlbListenerHealthOutput) ToNlbListenerHealthOutput() NlbListenerHealthOutput {
+	return o
+}
+
+func (o NlbListenerHealthOutput) ToNlbListenerHealthOutputWithContext(ctx context.Context) NlbListenerHealthOutput {
+	return o
+}
+
+// 后端服务器的实例 ID或IP地址。
+func (o NlbListenerHealthOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的IP地址。
+func (o NlbListenerHealthOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *string { return v.Ip }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器提供服务的端口。
+func (o NlbListenerHealthOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 后端服务器ID。
+func (o NlbListenerHealthOutput) ServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *string { return v.ServerId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+func (o NlbListenerHealthOutput) ServerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *string { return v.ServerType }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+func (o NlbListenerHealthOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// 健康状态最后更新时间。
+func (o NlbListenerHealthOutput) UpdatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *string { return v.UpdatedTime }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器接收访问流量的可用区ID。
+func (o NlbListenerHealthOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerHealth) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type NlbListenerHealthArrayOutput struct{ *pulumi.OutputState }
+
+func (NlbListenerHealthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbListenerHealth)(nil)).Elem()
+}
+
+func (o NlbListenerHealthArrayOutput) ToNlbListenerHealthArrayOutput() NlbListenerHealthArrayOutput {
+	return o
+}
+
+func (o NlbListenerHealthArrayOutput) ToNlbListenerHealthArrayOutputWithContext(ctx context.Context) NlbListenerHealthArrayOutput {
+	return o
+}
+
+func (o NlbListenerHealthArrayOutput) Index(i pulumi.IntInput) NlbListenerHealthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NlbListenerHealth {
+		return vs[0].([]NlbListenerHealth)[vs[1].(int)]
+	}).(NlbListenerHealthOutput)
+}
+
+type NlbListenerTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// NlbListenerTagInput is an input type that accepts NlbListenerTagArgs and NlbListenerTagOutput values.
+// You can construct a concrete instance of `NlbListenerTagInput` via:
+//
+//	NlbListenerTagArgs{...}
+type NlbListenerTagInput interface {
+	pulumi.Input
+
+	ToNlbListenerTagOutput() NlbListenerTagOutput
+	ToNlbListenerTagOutputWithContext(context.Context) NlbListenerTagOutput
+}
+
+type NlbListenerTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NlbListenerTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbListenerTag)(nil)).Elem()
+}
+
+func (i NlbListenerTagArgs) ToNlbListenerTagOutput() NlbListenerTagOutput {
+	return i.ToNlbListenerTagOutputWithContext(context.Background())
+}
+
+func (i NlbListenerTagArgs) ToNlbListenerTagOutputWithContext(ctx context.Context) NlbListenerTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbListenerTagOutput)
+}
+
+// NlbListenerTagArrayInput is an input type that accepts NlbListenerTagArray and NlbListenerTagArrayOutput values.
+// You can construct a concrete instance of `NlbListenerTagArrayInput` via:
+//
+//	NlbListenerTagArray{ NlbListenerTagArgs{...} }
+type NlbListenerTagArrayInput interface {
+	pulumi.Input
+
+	ToNlbListenerTagArrayOutput() NlbListenerTagArrayOutput
+	ToNlbListenerTagArrayOutputWithContext(context.Context) NlbListenerTagArrayOutput
+}
+
+type NlbListenerTagArray []NlbListenerTagInput
+
+func (NlbListenerTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbListenerTag)(nil)).Elem()
+}
+
+func (i NlbListenerTagArray) ToNlbListenerTagArrayOutput() NlbListenerTagArrayOutput {
+	return i.ToNlbListenerTagArrayOutputWithContext(context.Background())
+}
+
+func (i NlbListenerTagArray) ToNlbListenerTagArrayOutputWithContext(ctx context.Context) NlbListenerTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbListenerTagArrayOutput)
+}
+
+type NlbListenerTagOutput struct{ *pulumi.OutputState }
+
+func (NlbListenerTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbListenerTag)(nil)).Elem()
+}
+
+func (o NlbListenerTagOutput) ToNlbListenerTagOutput() NlbListenerTagOutput {
+	return o
+}
+
+func (o NlbListenerTagOutput) ToNlbListenerTagOutputWithContext(ctx context.Context) NlbListenerTagOutput {
+	return o
+}
+
+// 标签键。
+func (o NlbListenerTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o NlbListenerTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbListenerTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NlbListenerTagArrayOutput struct{ *pulumi.OutputState }
+
+func (NlbListenerTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbListenerTag)(nil)).Elem()
+}
+
+func (o NlbListenerTagArrayOutput) ToNlbListenerTagArrayOutput() NlbListenerTagArrayOutput {
+	return o
+}
+
+func (o NlbListenerTagArrayOutput) ToNlbListenerTagArrayOutputWithContext(ctx context.Context) NlbListenerTagArrayOutput {
+	return o
+}
+
+func (o NlbListenerTagArrayOutput) Index(i pulumi.IntInput) NlbListenerTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NlbListenerTag {
+		return vs[0].([]NlbListenerTag)[vs[1].(int)]
+	}).(NlbListenerTagOutput)
+}
+
+type NlbServerGroupHealthCheck struct {
+	// 健康检查的域名。
+	Domain *string `pulumi:"domain"`
+	// 是否开启健康检查。
+	Enabled *bool `pulumi:"enabled"`
+	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	HealthyThreshold *int `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码。
+	HttpCode *string `pulumi:"httpCode"`
+	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	Interval *int `pulumi:"interval"`
+	// 健康检查的请求方法。
+	Method *string `pulumi:"method"`
+	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	Port *int `pulumi:"port"`
+	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	Timeout *int `pulumi:"timeout"`
+	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	Type *string `pulumi:"type"`
+	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	UdpExpect *string `pulumi:"udpExpect"`
+	// UDP健康检查的预期响应字符串。
+	UdpRequest *string `pulumi:"udpRequest"`
+	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径。
+	Uri *string `pulumi:"uri"`
+}
+
+// NlbServerGroupHealthCheckInput is an input type that accepts NlbServerGroupHealthCheckArgs and NlbServerGroupHealthCheckOutput values.
+// You can construct a concrete instance of `NlbServerGroupHealthCheckInput` via:
+//
+//	NlbServerGroupHealthCheckArgs{...}
+type NlbServerGroupHealthCheckInput interface {
+	pulumi.Input
+
+	ToNlbServerGroupHealthCheckOutput() NlbServerGroupHealthCheckOutput
+	ToNlbServerGroupHealthCheckOutputWithContext(context.Context) NlbServerGroupHealthCheckOutput
+}
+
+type NlbServerGroupHealthCheckArgs struct {
+	// 健康检查的域名。
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// 是否开启健康检查。
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码。
+	HttpCode pulumi.StringPtrInput `pulumi:"httpCode"`
+	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	Interval pulumi.IntPtrInput `pulumi:"interval"`
+	// 健康检查的请求方法。
+	Method pulumi.StringPtrInput `pulumi:"method"`
+	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
+	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	UdpExpect pulumi.StringPtrInput `pulumi:"udpExpect"`
+	// UDP健康检查的预期响应字符串。
+	UdpRequest pulumi.StringPtrInput `pulumi:"udpRequest"`
+	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	UnhealthyThreshold pulumi.IntPtrInput `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径。
+	Uri pulumi.StringPtrInput `pulumi:"uri"`
+}
+
+func (NlbServerGroupHealthCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (i NlbServerGroupHealthCheckArgs) ToNlbServerGroupHealthCheckOutput() NlbServerGroupHealthCheckOutput {
+	return i.ToNlbServerGroupHealthCheckOutputWithContext(context.Background())
+}
+
+func (i NlbServerGroupHealthCheckArgs) ToNlbServerGroupHealthCheckOutputWithContext(ctx context.Context) NlbServerGroupHealthCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbServerGroupHealthCheckOutput)
+}
+
+func (i NlbServerGroupHealthCheckArgs) ToNlbServerGroupHealthCheckPtrOutput() NlbServerGroupHealthCheckPtrOutput {
+	return i.ToNlbServerGroupHealthCheckPtrOutputWithContext(context.Background())
+}
+
+func (i NlbServerGroupHealthCheckArgs) ToNlbServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) NlbServerGroupHealthCheckPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbServerGroupHealthCheckOutput).ToNlbServerGroupHealthCheckPtrOutputWithContext(ctx)
+}
+
+// NlbServerGroupHealthCheckPtrInput is an input type that accepts NlbServerGroupHealthCheckArgs, NlbServerGroupHealthCheckPtr and NlbServerGroupHealthCheckPtrOutput values.
+// You can construct a concrete instance of `NlbServerGroupHealthCheckPtrInput` via:
+//
+//	        NlbServerGroupHealthCheckArgs{...}
+//
+//	or:
+//
+//	        nil
+type NlbServerGroupHealthCheckPtrInput interface {
+	pulumi.Input
+
+	ToNlbServerGroupHealthCheckPtrOutput() NlbServerGroupHealthCheckPtrOutput
+	ToNlbServerGroupHealthCheckPtrOutputWithContext(context.Context) NlbServerGroupHealthCheckPtrOutput
+}
+
+type nlbServerGroupHealthCheckPtrType NlbServerGroupHealthCheckArgs
+
+func NlbServerGroupHealthCheckPtr(v *NlbServerGroupHealthCheckArgs) NlbServerGroupHealthCheckPtrInput {
+	return (*nlbServerGroupHealthCheckPtrType)(v)
+}
+
+func (*nlbServerGroupHealthCheckPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NlbServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (i *nlbServerGroupHealthCheckPtrType) ToNlbServerGroupHealthCheckPtrOutput() NlbServerGroupHealthCheckPtrOutput {
+	return i.ToNlbServerGroupHealthCheckPtrOutputWithContext(context.Background())
+}
+
+func (i *nlbServerGroupHealthCheckPtrType) ToNlbServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) NlbServerGroupHealthCheckPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbServerGroupHealthCheckPtrOutput)
+}
+
+type NlbServerGroupHealthCheckOutput struct{ *pulumi.OutputState }
+
+func (NlbServerGroupHealthCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (o NlbServerGroupHealthCheckOutput) ToNlbServerGroupHealthCheckOutput() NlbServerGroupHealthCheckOutput {
+	return o
+}
+
+func (o NlbServerGroupHealthCheckOutput) ToNlbServerGroupHealthCheckOutputWithContext(ctx context.Context) NlbServerGroupHealthCheckOutput {
+	return o
+}
+
+func (o NlbServerGroupHealthCheckOutput) ToNlbServerGroupHealthCheckPtrOutput() NlbServerGroupHealthCheckPtrOutput {
+	return o.ToNlbServerGroupHealthCheckPtrOutputWithContext(context.Background())
+}
+
+func (o NlbServerGroupHealthCheckOutput) ToNlbServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) NlbServerGroupHealthCheckPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NlbServerGroupHealthCheck) *NlbServerGroupHealthCheck {
+		return &v
+	}).(NlbServerGroupHealthCheckPtrOutput)
+}
+
+// 健康检查的域名。
+func (o NlbServerGroupHealthCheckOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// 是否开启健康检查。
+func (o NlbServerGroupHealthCheckOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+func (o NlbServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.HealthyThreshold }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查正常的HTTP状态码。
+func (o NlbServerGroupHealthCheckOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.HttpCode }).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+func (o NlbServerGroupHealthCheckOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.Interval }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的请求方法。
+func (o NlbServerGroupHealthCheckOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Method }).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+func (o NlbServerGroupHealthCheckOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+func (o NlbServerGroupHealthCheckOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.Timeout }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+func (o NlbServerGroupHealthCheckOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+func (o NlbServerGroupHealthCheckOutput) UdpExpect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.UdpExpect }).(pulumi.StringPtrOutput)
+}
+
+// UDP健康检查的预期响应字符串。
+func (o NlbServerGroupHealthCheckOutput) UdpRequest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.UdpRequest }).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+func (o NlbServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.UnhealthyThreshold }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的路径。
+func (o NlbServerGroupHealthCheckOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Uri }).(pulumi.StringPtrOutput)
+}
+
+type NlbServerGroupHealthCheckPtrOutput struct{ *pulumi.OutputState }
+
+func (NlbServerGroupHealthCheckPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NlbServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (o NlbServerGroupHealthCheckPtrOutput) ToNlbServerGroupHealthCheckPtrOutput() NlbServerGroupHealthCheckPtrOutput {
+	return o
+}
+
+func (o NlbServerGroupHealthCheckPtrOutput) ToNlbServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) NlbServerGroupHealthCheckPtrOutput {
+	return o
+}
+
+func (o NlbServerGroupHealthCheckPtrOutput) Elem() NlbServerGroupHealthCheckOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) NlbServerGroupHealthCheck {
+		if v != nil {
+			return *v
+		}
+		var ret NlbServerGroupHealthCheck
+		return ret
+	}).(NlbServerGroupHealthCheckOutput)
+}
+
+// 健康检查的域名。
+func (o NlbServerGroupHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// 是否开启健康检查。
+func (o NlbServerGroupHealthCheckPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+func (o NlbServerGroupHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HealthyThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查正常的HTTP状态码。
+func (o NlbServerGroupHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+func (o NlbServerGroupHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Interval
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的请求方法。
+func (o NlbServerGroupHealthCheckPtrOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Method
+	}).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+func (o NlbServerGroupHealthCheckPtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+func (o NlbServerGroupHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Timeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+func (o NlbServerGroupHealthCheckPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+func (o NlbServerGroupHealthCheckPtrOutput) UdpExpect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UdpExpect
+	}).(pulumi.StringPtrOutput)
+}
+
+// UDP健康检查的预期响应字符串。
+func (o NlbServerGroupHealthCheckPtrOutput) UdpRequest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UdpRequest
+	}).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+func (o NlbServerGroupHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.UnhealthyThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的路径。
+func (o NlbServerGroupHealthCheckPtrOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Uri
+	}).(pulumi.StringPtrOutput)
+}
+
+type NlbServerGroupServer struct {
+	// 后端服务器的描述，默认值为空字符串。
+	Description *string `pulumi:"description"`
+	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	InstanceId *string `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	Ip *string `pulumi:"ip"`
+	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	Port *int `pulumi:"port"`
+	// 后端服务器 ID。
+	ServerId *string `pulumi:"serverId"`
+	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	Type *string `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	Weight *int `pulumi:"weight"`
+	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// NlbServerGroupServerInput is an input type that accepts NlbServerGroupServerArgs and NlbServerGroupServerOutput values.
+// You can construct a concrete instance of `NlbServerGroupServerInput` via:
+//
+//	NlbServerGroupServerArgs{...}
+type NlbServerGroupServerInput interface {
+	pulumi.Input
+
+	ToNlbServerGroupServerOutput() NlbServerGroupServerOutput
+	ToNlbServerGroupServerOutputWithContext(context.Context) NlbServerGroupServerOutput
+}
+
+type NlbServerGroupServerArgs struct {
+	// 后端服务器的描述，默认值为空字符串。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
+	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 后端服务器 ID。
+	ServerId pulumi.StringPtrInput `pulumi:"serverId"`
+	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (NlbServerGroupServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbServerGroupServer)(nil)).Elem()
+}
+
+func (i NlbServerGroupServerArgs) ToNlbServerGroupServerOutput() NlbServerGroupServerOutput {
+	return i.ToNlbServerGroupServerOutputWithContext(context.Background())
+}
+
+func (i NlbServerGroupServerArgs) ToNlbServerGroupServerOutputWithContext(ctx context.Context) NlbServerGroupServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbServerGroupServerOutput)
+}
+
+// NlbServerGroupServerArrayInput is an input type that accepts NlbServerGroupServerArray and NlbServerGroupServerArrayOutput values.
+// You can construct a concrete instance of `NlbServerGroupServerArrayInput` via:
+//
+//	NlbServerGroupServerArray{ NlbServerGroupServerArgs{...} }
+type NlbServerGroupServerArrayInput interface {
+	pulumi.Input
+
+	ToNlbServerGroupServerArrayOutput() NlbServerGroupServerArrayOutput
+	ToNlbServerGroupServerArrayOutputWithContext(context.Context) NlbServerGroupServerArrayOutput
+}
+
+type NlbServerGroupServerArray []NlbServerGroupServerInput
+
+func (NlbServerGroupServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbServerGroupServer)(nil)).Elem()
+}
+
+func (i NlbServerGroupServerArray) ToNlbServerGroupServerArrayOutput() NlbServerGroupServerArrayOutput {
+	return i.ToNlbServerGroupServerArrayOutputWithContext(context.Background())
+}
+
+func (i NlbServerGroupServerArray) ToNlbServerGroupServerArrayOutputWithContext(ctx context.Context) NlbServerGroupServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbServerGroupServerArrayOutput)
+}
+
+type NlbServerGroupServerOutput struct{ *pulumi.OutputState }
+
+func (NlbServerGroupServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbServerGroupServer)(nil)).Elem()
+}
+
+func (o NlbServerGroupServerOutput) ToNlbServerGroupServerOutput() NlbServerGroupServerOutput {
+	return o
+}
+
+func (o NlbServerGroupServerOutput) ToNlbServerGroupServerOutputWithContext(ctx context.Context) NlbServerGroupServerOutput {
+	return o
+}
+
+// 后端服务器的描述，默认值为空字符串。
+func (o NlbServerGroupServerOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+func (o NlbServerGroupServerOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+func (o NlbServerGroupServerOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.Ip }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+func (o NlbServerGroupServerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 后端服务器 ID。
+func (o NlbServerGroupServerOutput) ServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.ServerId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+func (o NlbServerGroupServerOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+func (o NlbServerGroupServerOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+func (o NlbServerGroupServerOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type NlbServerGroupServerArrayOutput struct{ *pulumi.OutputState }
+
+func (NlbServerGroupServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbServerGroupServer)(nil)).Elem()
+}
+
+func (o NlbServerGroupServerArrayOutput) ToNlbServerGroupServerArrayOutput() NlbServerGroupServerArrayOutput {
+	return o
+}
+
+func (o NlbServerGroupServerArrayOutput) ToNlbServerGroupServerArrayOutputWithContext(ctx context.Context) NlbServerGroupServerArrayOutput {
+	return o
+}
+
+func (o NlbServerGroupServerArrayOutput) Index(i pulumi.IntInput) NlbServerGroupServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NlbServerGroupServer {
+		return vs[0].([]NlbServerGroupServer)[vs[1].(int)]
+	}).(NlbServerGroupServerOutput)
+}
+
+type NlbServerGroupTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// NlbServerGroupTagInput is an input type that accepts NlbServerGroupTagArgs and NlbServerGroupTagOutput values.
+// You can construct a concrete instance of `NlbServerGroupTagInput` via:
+//
+//	NlbServerGroupTagArgs{...}
+type NlbServerGroupTagInput interface {
+	pulumi.Input
+
+	ToNlbServerGroupTagOutput() NlbServerGroupTagOutput
+	ToNlbServerGroupTagOutputWithContext(context.Context) NlbServerGroupTagOutput
+}
+
+type NlbServerGroupTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NlbServerGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbServerGroupTag)(nil)).Elem()
+}
+
+func (i NlbServerGroupTagArgs) ToNlbServerGroupTagOutput() NlbServerGroupTagOutput {
+	return i.ToNlbServerGroupTagOutputWithContext(context.Background())
+}
+
+func (i NlbServerGroupTagArgs) ToNlbServerGroupTagOutputWithContext(ctx context.Context) NlbServerGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbServerGroupTagOutput)
+}
+
+// NlbServerGroupTagArrayInput is an input type that accepts NlbServerGroupTagArray and NlbServerGroupTagArrayOutput values.
+// You can construct a concrete instance of `NlbServerGroupTagArrayInput` via:
+//
+//	NlbServerGroupTagArray{ NlbServerGroupTagArgs{...} }
+type NlbServerGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToNlbServerGroupTagArrayOutput() NlbServerGroupTagArrayOutput
+	ToNlbServerGroupTagArrayOutputWithContext(context.Context) NlbServerGroupTagArrayOutput
+}
+
+type NlbServerGroupTagArray []NlbServerGroupTagInput
+
+func (NlbServerGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbServerGroupTag)(nil)).Elem()
+}
+
+func (i NlbServerGroupTagArray) ToNlbServerGroupTagArrayOutput() NlbServerGroupTagArrayOutput {
+	return i.ToNlbServerGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i NlbServerGroupTagArray) ToNlbServerGroupTagArrayOutputWithContext(ctx context.Context) NlbServerGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbServerGroupTagArrayOutput)
+}
+
+type NlbServerGroupTagOutput struct{ *pulumi.OutputState }
+
+func (NlbServerGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbServerGroupTag)(nil)).Elem()
+}
+
+func (o NlbServerGroupTagOutput) ToNlbServerGroupTagOutput() NlbServerGroupTagOutput {
+	return o
+}
+
+func (o NlbServerGroupTagOutput) ToNlbServerGroupTagOutputWithContext(ctx context.Context) NlbServerGroupTagOutput {
+	return o
+}
+
+// 标签键。
+func (o NlbServerGroupTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o NlbServerGroupTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbServerGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NlbServerGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (NlbServerGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbServerGroupTag)(nil)).Elem()
+}
+
+func (o NlbServerGroupTagArrayOutput) ToNlbServerGroupTagArrayOutput() NlbServerGroupTagArrayOutput {
+	return o
+}
+
+func (o NlbServerGroupTagArrayOutput) ToNlbServerGroupTagArrayOutputWithContext(ctx context.Context) NlbServerGroupTagArrayOutput {
+	return o
+}
+
+func (o NlbServerGroupTagArrayOutput) Index(i pulumi.IntInput) NlbServerGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NlbServerGroupTag {
+		return vs[0].([]NlbServerGroupTag)[vs[1].(int)]
+	}).(NlbServerGroupTagOutput)
+}
+
 type RuleRedirectConfig struct {
 	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
 	Host *string `pulumi:"host"`
@@ -784,6 +1681,351 @@ func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
 	}).(RuleTagOutput)
 }
 
+type ServerGroupListener struct {
+	// 监听器的ID。
+	ListenerId *string `pulumi:"listenerId"`
+}
+
+// ServerGroupListenerInput is an input type that accepts ServerGroupListenerArgs and ServerGroupListenerOutput values.
+// You can construct a concrete instance of `ServerGroupListenerInput` via:
+//
+//	ServerGroupListenerArgs{...}
+type ServerGroupListenerInput interface {
+	pulumi.Input
+
+	ToServerGroupListenerOutput() ServerGroupListenerOutput
+	ToServerGroupListenerOutputWithContext(context.Context) ServerGroupListenerOutput
+}
+
+type ServerGroupListenerArgs struct {
+	// 监听器的ID。
+	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
+}
+
+func (ServerGroupListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupListener)(nil)).Elem()
+}
+
+func (i ServerGroupListenerArgs) ToServerGroupListenerOutput() ServerGroupListenerOutput {
+	return i.ToServerGroupListenerOutputWithContext(context.Background())
+}
+
+func (i ServerGroupListenerArgs) ToServerGroupListenerOutputWithContext(ctx context.Context) ServerGroupListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupListenerOutput)
+}
+
+// ServerGroupListenerArrayInput is an input type that accepts ServerGroupListenerArray and ServerGroupListenerArrayOutput values.
+// You can construct a concrete instance of `ServerGroupListenerArrayInput` via:
+//
+//	ServerGroupListenerArray{ ServerGroupListenerArgs{...} }
+type ServerGroupListenerArrayInput interface {
+	pulumi.Input
+
+	ToServerGroupListenerArrayOutput() ServerGroupListenerArrayOutput
+	ToServerGroupListenerArrayOutputWithContext(context.Context) ServerGroupListenerArrayOutput
+}
+
+type ServerGroupListenerArray []ServerGroupListenerInput
+
+func (ServerGroupListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupListener)(nil)).Elem()
+}
+
+func (i ServerGroupListenerArray) ToServerGroupListenerArrayOutput() ServerGroupListenerArrayOutput {
+	return i.ToServerGroupListenerArrayOutputWithContext(context.Background())
+}
+
+func (i ServerGroupListenerArray) ToServerGroupListenerArrayOutputWithContext(ctx context.Context) ServerGroupListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupListenerArrayOutput)
+}
+
+type ServerGroupListenerOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupListener)(nil)).Elem()
+}
+
+func (o ServerGroupListenerOutput) ToServerGroupListenerOutput() ServerGroupListenerOutput {
+	return o
+}
+
+func (o ServerGroupListenerOutput) ToServerGroupListenerOutputWithContext(ctx context.Context) ServerGroupListenerOutput {
+	return o
+}
+
+// 监听器的ID。
+func (o ServerGroupListenerOutput) ListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupListener)(nil)).Elem()
+}
+
+func (o ServerGroupListenerArrayOutput) ToServerGroupListenerArrayOutput() ServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o ServerGroupListenerArrayOutput) ToServerGroupListenerArrayOutputWithContext(ctx context.Context) ServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o ServerGroupListenerArrayOutput) Index(i pulumi.IntInput) ServerGroupListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerGroupListener {
+		return vs[0].([]ServerGroupListener)[vs[1].(int)]
+	}).(ServerGroupListenerOutput)
+}
+
+type ServerGroupServer struct {
+	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	Description *string `pulumi:"description"`
+	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	InstanceId *string `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	Ip *string `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	Port *int `pulumi:"port"`
+	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	Type *string `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	Weight *int `pulumi:"weight"`
+}
+
+// ServerGroupServerInput is an input type that accepts ServerGroupServerArgs and ServerGroupServerOutput values.
+// You can construct a concrete instance of `ServerGroupServerInput` via:
+//
+//	ServerGroupServerArgs{...}
+type ServerGroupServerInput interface {
+	pulumi.Input
+
+	ToServerGroupServerOutput() ServerGroupServerOutput
+	ToServerGroupServerOutputWithContext(context.Context) ServerGroupServerOutput
+}
+
+type ServerGroupServerArgs struct {
+	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (ServerGroupServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupServer)(nil)).Elem()
+}
+
+func (i ServerGroupServerArgs) ToServerGroupServerOutput() ServerGroupServerOutput {
+	return i.ToServerGroupServerOutputWithContext(context.Background())
+}
+
+func (i ServerGroupServerArgs) ToServerGroupServerOutputWithContext(ctx context.Context) ServerGroupServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupServerOutput)
+}
+
+// ServerGroupServerArrayInput is an input type that accepts ServerGroupServerArray and ServerGroupServerArrayOutput values.
+// You can construct a concrete instance of `ServerGroupServerArrayInput` via:
+//
+//	ServerGroupServerArray{ ServerGroupServerArgs{...} }
+type ServerGroupServerArrayInput interface {
+	pulumi.Input
+
+	ToServerGroupServerArrayOutput() ServerGroupServerArrayOutput
+	ToServerGroupServerArrayOutputWithContext(context.Context) ServerGroupServerArrayOutput
+}
+
+type ServerGroupServerArray []ServerGroupServerInput
+
+func (ServerGroupServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupServer)(nil)).Elem()
+}
+
+func (i ServerGroupServerArray) ToServerGroupServerArrayOutput() ServerGroupServerArrayOutput {
+	return i.ToServerGroupServerArrayOutputWithContext(context.Background())
+}
+
+func (i ServerGroupServerArray) ToServerGroupServerArrayOutputWithContext(ctx context.Context) ServerGroupServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupServerArrayOutput)
+}
+
+type ServerGroupServerOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupServer)(nil)).Elem()
+}
+
+func (o ServerGroupServerOutput) ToServerGroupServerOutput() ServerGroupServerOutput {
+	return o
+}
+
+func (o ServerGroupServerOutput) ToServerGroupServerOutputWithContext(ctx context.Context) ServerGroupServerOutput {
+	return o
+}
+
+// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+func (o ServerGroupServerOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+func (o ServerGroupServerOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+func (o ServerGroupServerOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.Ip }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+func (o ServerGroupServerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+func (o ServerGroupServerOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+func (o ServerGroupServerOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type ServerGroupServerArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupServer)(nil)).Elem()
+}
+
+func (o ServerGroupServerArrayOutput) ToServerGroupServerArrayOutput() ServerGroupServerArrayOutput {
+	return o
+}
+
+func (o ServerGroupServerArrayOutput) ToServerGroupServerArrayOutputWithContext(ctx context.Context) ServerGroupServerArrayOutput {
+	return o
+}
+
+func (o ServerGroupServerArrayOutput) Index(i pulumi.IntInput) ServerGroupServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerGroupServer {
+		return vs[0].([]ServerGroupServer)[vs[1].(int)]
+	}).(ServerGroupServerOutput)
+}
+
+type ServerGroupTag struct {
+	// 绑定的标签键信息。
+	Key *string `pulumi:"key"`
+	// 绑定的标签值信息。
+	Value *string `pulumi:"value"`
+}
+
+// ServerGroupTagInput is an input type that accepts ServerGroupTagArgs and ServerGroupTagOutput values.
+// You can construct a concrete instance of `ServerGroupTagInput` via:
+//
+//	ServerGroupTagArgs{...}
+type ServerGroupTagInput interface {
+	pulumi.Input
+
+	ToServerGroupTagOutput() ServerGroupTagOutput
+	ToServerGroupTagOutputWithContext(context.Context) ServerGroupTagOutput
+}
+
+type ServerGroupTagArgs struct {
+	// 绑定的标签键信息。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 绑定的标签值信息。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ServerGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupTag)(nil)).Elem()
+}
+
+func (i ServerGroupTagArgs) ToServerGroupTagOutput() ServerGroupTagOutput {
+	return i.ToServerGroupTagOutputWithContext(context.Background())
+}
+
+func (i ServerGroupTagArgs) ToServerGroupTagOutputWithContext(ctx context.Context) ServerGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupTagOutput)
+}
+
+// ServerGroupTagArrayInput is an input type that accepts ServerGroupTagArray and ServerGroupTagArrayOutput values.
+// You can construct a concrete instance of `ServerGroupTagArrayInput` via:
+//
+//	ServerGroupTagArray{ ServerGroupTagArgs{...} }
+type ServerGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToServerGroupTagArrayOutput() ServerGroupTagArrayOutput
+	ToServerGroupTagArrayOutputWithContext(context.Context) ServerGroupTagArrayOutput
+}
+
+type ServerGroupTagArray []ServerGroupTagInput
+
+func (ServerGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupTag)(nil)).Elem()
+}
+
+func (i ServerGroupTagArray) ToServerGroupTagArrayOutput() ServerGroupTagArrayOutput {
+	return i.ToServerGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i ServerGroupTagArray) ToServerGroupTagArrayOutputWithContext(ctx context.Context) ServerGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupTagArrayOutput)
+}
+
+type ServerGroupTagOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupTag)(nil)).Elem()
+}
+
+func (o ServerGroupTagOutput) ToServerGroupTagOutput() ServerGroupTagOutput {
+	return o
+}
+
+func (o ServerGroupTagOutput) ToServerGroupTagOutputWithContext(ctx context.Context) ServerGroupTagOutput {
+	return o
+}
+
+// 绑定的标签键信息。
+func (o ServerGroupTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 绑定的标签值信息。
+func (o ServerGroupTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupTag)(nil)).Elem()
+}
+
+func (o ServerGroupTagArrayOutput) ToServerGroupTagArrayOutput() ServerGroupTagArrayOutput {
+	return o
+}
+
+func (o ServerGroupTagArrayOutput) ToServerGroupTagArrayOutputWithContext(ctx context.Context) ServerGroupTagArrayOutput {
+	return o
+}
+
+func (o ServerGroupTagArrayOutput) Index(i pulumi.IntInput) ServerGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerGroupTag {
+		return vs[0].([]ServerGroupTag)[vs[1].(int)]
+	}).(ServerGroupTagOutput)
+}
+
 type GetListenerHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
 	Domain string `pulumi:"domain"`
@@ -1041,6 +2283,698 @@ func (o GetListenerTagArrayOutput) Index(i pulumi.IntInput) GetListenerTagOutput
 	}).(GetListenerTagOutput)
 }
 
+type GetNlbListenerHealth struct {
+	// 后端服务器的实例 ID或IP地址。
+	InstanceId string `pulumi:"instanceId"`
+	// 后端服务器的IP地址。
+	Ip string `pulumi:"ip"`
+	// 后端服务器提供服务的端口。
+	Port int `pulumi:"port"`
+	// 后端服务器ID。
+	ServerId string `pulumi:"serverId"`
+	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	ServerType string `pulumi:"serverType"`
+	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	Status string `pulumi:"status"`
+	// 健康状态最后更新时间。
+	UpdatedTime string `pulumi:"updatedTime"`
+	// 后端服务器接收访问流量的可用区ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetNlbListenerHealthInput is an input type that accepts GetNlbListenerHealthArgs and GetNlbListenerHealthOutput values.
+// You can construct a concrete instance of `GetNlbListenerHealthInput` via:
+//
+//	GetNlbListenerHealthArgs{...}
+type GetNlbListenerHealthInput interface {
+	pulumi.Input
+
+	ToGetNlbListenerHealthOutput() GetNlbListenerHealthOutput
+	ToGetNlbListenerHealthOutputWithContext(context.Context) GetNlbListenerHealthOutput
+}
+
+type GetNlbListenerHealthArgs struct {
+	// 后端服务器的实例 ID或IP地址。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 后端服务器的IP地址。
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// 后端服务器提供服务的端口。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 后端服务器ID。
+	ServerId pulumi.StringInput `pulumi:"serverId"`
+	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	ServerType pulumi.StringInput `pulumi:"serverType"`
+	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	Status pulumi.StringInput `pulumi:"status"`
+	// 健康状态最后更新时间。
+	UpdatedTime pulumi.StringInput `pulumi:"updatedTime"`
+	// 后端服务器接收访问流量的可用区ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetNlbListenerHealthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbListenerHealth)(nil)).Elem()
+}
+
+func (i GetNlbListenerHealthArgs) ToGetNlbListenerHealthOutput() GetNlbListenerHealthOutput {
+	return i.ToGetNlbListenerHealthOutputWithContext(context.Background())
+}
+
+func (i GetNlbListenerHealthArgs) ToGetNlbListenerHealthOutputWithContext(ctx context.Context) GetNlbListenerHealthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbListenerHealthOutput)
+}
+
+// GetNlbListenerHealthArrayInput is an input type that accepts GetNlbListenerHealthArray and GetNlbListenerHealthArrayOutput values.
+// You can construct a concrete instance of `GetNlbListenerHealthArrayInput` via:
+//
+//	GetNlbListenerHealthArray{ GetNlbListenerHealthArgs{...} }
+type GetNlbListenerHealthArrayInput interface {
+	pulumi.Input
+
+	ToGetNlbListenerHealthArrayOutput() GetNlbListenerHealthArrayOutput
+	ToGetNlbListenerHealthArrayOutputWithContext(context.Context) GetNlbListenerHealthArrayOutput
+}
+
+type GetNlbListenerHealthArray []GetNlbListenerHealthInput
+
+func (GetNlbListenerHealthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbListenerHealth)(nil)).Elem()
+}
+
+func (i GetNlbListenerHealthArray) ToGetNlbListenerHealthArrayOutput() GetNlbListenerHealthArrayOutput {
+	return i.ToGetNlbListenerHealthArrayOutputWithContext(context.Background())
+}
+
+func (i GetNlbListenerHealthArray) ToGetNlbListenerHealthArrayOutputWithContext(ctx context.Context) GetNlbListenerHealthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbListenerHealthArrayOutput)
+}
+
+type GetNlbListenerHealthOutput struct{ *pulumi.OutputState }
+
+func (GetNlbListenerHealthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbListenerHealth)(nil)).Elem()
+}
+
+func (o GetNlbListenerHealthOutput) ToGetNlbListenerHealthOutput() GetNlbListenerHealthOutput {
+	return o
+}
+
+func (o GetNlbListenerHealthOutput) ToGetNlbListenerHealthOutputWithContext(ctx context.Context) GetNlbListenerHealthOutput {
+	return o
+}
+
+// 后端服务器的实例 ID或IP地址。
+func (o GetNlbListenerHealthOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 后端服务器的IP地址。
+func (o GetNlbListenerHealthOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// 后端服务器提供服务的端口。
+func (o GetNlbListenerHealthOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 后端服务器ID。
+func (o GetNlbListenerHealthOutput) ServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.ServerId }).(pulumi.StringOutput)
+}
+
+// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+func (o GetNlbListenerHealthOutput) ServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.ServerType }).(pulumi.StringOutput)
+}
+
+// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+func (o GetNlbListenerHealthOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// 健康状态最后更新时间。
+func (o GetNlbListenerHealthOutput) UpdatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.UpdatedTime }).(pulumi.StringOutput)
+}
+
+// 后端服务器接收访问流量的可用区ID。
+func (o GetNlbListenerHealthOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetNlbListenerHealthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNlbListenerHealthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbListenerHealth)(nil)).Elem()
+}
+
+func (o GetNlbListenerHealthArrayOutput) ToGetNlbListenerHealthArrayOutput() GetNlbListenerHealthArrayOutput {
+	return o
+}
+
+func (o GetNlbListenerHealthArrayOutput) ToGetNlbListenerHealthArrayOutputWithContext(ctx context.Context) GetNlbListenerHealthArrayOutput {
+	return o
+}
+
+func (o GetNlbListenerHealthArrayOutput) Index(i pulumi.IntInput) GetNlbListenerHealthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNlbListenerHealth {
+		return vs[0].([]GetNlbListenerHealth)[vs[1].(int)]
+	}).(GetNlbListenerHealthOutput)
+}
+
+type GetNlbListenerTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetNlbListenerTagInput is an input type that accepts GetNlbListenerTagArgs and GetNlbListenerTagOutput values.
+// You can construct a concrete instance of `GetNlbListenerTagInput` via:
+//
+//	GetNlbListenerTagArgs{...}
+type GetNlbListenerTagInput interface {
+	pulumi.Input
+
+	ToGetNlbListenerTagOutput() GetNlbListenerTagOutput
+	ToGetNlbListenerTagOutputWithContext(context.Context) GetNlbListenerTagOutput
+}
+
+type GetNlbListenerTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNlbListenerTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbListenerTag)(nil)).Elem()
+}
+
+func (i GetNlbListenerTagArgs) ToGetNlbListenerTagOutput() GetNlbListenerTagOutput {
+	return i.ToGetNlbListenerTagOutputWithContext(context.Background())
+}
+
+func (i GetNlbListenerTagArgs) ToGetNlbListenerTagOutputWithContext(ctx context.Context) GetNlbListenerTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbListenerTagOutput)
+}
+
+// GetNlbListenerTagArrayInput is an input type that accepts GetNlbListenerTagArray and GetNlbListenerTagArrayOutput values.
+// You can construct a concrete instance of `GetNlbListenerTagArrayInput` via:
+//
+//	GetNlbListenerTagArray{ GetNlbListenerTagArgs{...} }
+type GetNlbListenerTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNlbListenerTagArrayOutput() GetNlbListenerTagArrayOutput
+	ToGetNlbListenerTagArrayOutputWithContext(context.Context) GetNlbListenerTagArrayOutput
+}
+
+type GetNlbListenerTagArray []GetNlbListenerTagInput
+
+func (GetNlbListenerTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbListenerTag)(nil)).Elem()
+}
+
+func (i GetNlbListenerTagArray) ToGetNlbListenerTagArrayOutput() GetNlbListenerTagArrayOutput {
+	return i.ToGetNlbListenerTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNlbListenerTagArray) ToGetNlbListenerTagArrayOutputWithContext(ctx context.Context) GetNlbListenerTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbListenerTagArrayOutput)
+}
+
+type GetNlbListenerTagOutput struct{ *pulumi.OutputState }
+
+func (GetNlbListenerTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbListenerTag)(nil)).Elem()
+}
+
+func (o GetNlbListenerTagOutput) ToGetNlbListenerTagOutput() GetNlbListenerTagOutput {
+	return o
+}
+
+func (o GetNlbListenerTagOutput) ToGetNlbListenerTagOutputWithContext(ctx context.Context) GetNlbListenerTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetNlbListenerTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetNlbListenerTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbListenerTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNlbListenerTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNlbListenerTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbListenerTag)(nil)).Elem()
+}
+
+func (o GetNlbListenerTagArrayOutput) ToGetNlbListenerTagArrayOutput() GetNlbListenerTagArrayOutput {
+	return o
+}
+
+func (o GetNlbListenerTagArrayOutput) ToGetNlbListenerTagArrayOutputWithContext(ctx context.Context) GetNlbListenerTagArrayOutput {
+	return o
+}
+
+func (o GetNlbListenerTagArrayOutput) Index(i pulumi.IntInput) GetNlbListenerTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNlbListenerTag {
+		return vs[0].([]GetNlbListenerTag)[vs[1].(int)]
+	}).(GetNlbListenerTagOutput)
+}
+
+type GetNlbServerGroupHealthCheck struct {
+	// 健康检查的域名。
+	Domain string `pulumi:"domain"`
+	// 是否开启健康检查。
+	Enabled bool `pulumi:"enabled"`
+	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	HealthyThreshold int `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码。
+	HttpCode string `pulumi:"httpCode"`
+	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	Interval int `pulumi:"interval"`
+	// 健康检查的请求方法。
+	Method string `pulumi:"method"`
+	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	Port int `pulumi:"port"`
+	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	Timeout int `pulumi:"timeout"`
+	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	Type string `pulumi:"type"`
+	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	UdpExpect string `pulumi:"udpExpect"`
+	// UDP健康检查的预期响应字符串。
+	UdpRequest string `pulumi:"udpRequest"`
+	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	UnhealthyThreshold int `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径。
+	Uri string `pulumi:"uri"`
+}
+
+// GetNlbServerGroupHealthCheckInput is an input type that accepts GetNlbServerGroupHealthCheckArgs and GetNlbServerGroupHealthCheckOutput values.
+// You can construct a concrete instance of `GetNlbServerGroupHealthCheckInput` via:
+//
+//	GetNlbServerGroupHealthCheckArgs{...}
+type GetNlbServerGroupHealthCheckInput interface {
+	pulumi.Input
+
+	ToGetNlbServerGroupHealthCheckOutput() GetNlbServerGroupHealthCheckOutput
+	ToGetNlbServerGroupHealthCheckOutputWithContext(context.Context) GetNlbServerGroupHealthCheckOutput
+}
+
+type GetNlbServerGroupHealthCheckArgs struct {
+	// 健康检查的域名。
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// 是否开启健康检查。
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码。
+	HttpCode pulumi.StringInput `pulumi:"httpCode"`
+	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// 健康检查的请求方法。
+	Method pulumi.StringInput `pulumi:"method"`
+	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	Type pulumi.StringInput `pulumi:"type"`
+	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	UdpExpect pulumi.StringInput `pulumi:"udpExpect"`
+	// UDP健康检查的预期响应字符串。
+	UdpRequest pulumi.StringInput `pulumi:"udpRequest"`
+	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	UnhealthyThreshold pulumi.IntInput `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径。
+	Uri pulumi.StringInput `pulumi:"uri"`
+}
+
+func (GetNlbServerGroupHealthCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (i GetNlbServerGroupHealthCheckArgs) ToGetNlbServerGroupHealthCheckOutput() GetNlbServerGroupHealthCheckOutput {
+	return i.ToGetNlbServerGroupHealthCheckOutputWithContext(context.Background())
+}
+
+func (i GetNlbServerGroupHealthCheckArgs) ToGetNlbServerGroupHealthCheckOutputWithContext(ctx context.Context) GetNlbServerGroupHealthCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbServerGroupHealthCheckOutput)
+}
+
+type GetNlbServerGroupHealthCheckOutput struct{ *pulumi.OutputState }
+
+func (GetNlbServerGroupHealthCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (o GetNlbServerGroupHealthCheckOutput) ToGetNlbServerGroupHealthCheckOutput() GetNlbServerGroupHealthCheckOutput {
+	return o
+}
+
+func (o GetNlbServerGroupHealthCheckOutput) ToGetNlbServerGroupHealthCheckOutputWithContext(ctx context.Context) GetNlbServerGroupHealthCheckOutput {
+	return o
+}
+
+// 健康检查的域名。
+func (o GetNlbServerGroupHealthCheckOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// 是否开启健康检查。
+func (o GetNlbServerGroupHealthCheckOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+func (o GetNlbServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.HealthyThreshold }).(pulumi.IntOutput)
+}
+
+// 健康检查正常的HTTP状态码。
+func (o GetNlbServerGroupHealthCheckOutput) HttpCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.HttpCode }).(pulumi.StringOutput)
+}
+
+// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+func (o GetNlbServerGroupHealthCheckOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.Interval }).(pulumi.IntOutput)
+}
+
+// 健康检查的请求方法。
+func (o GetNlbServerGroupHealthCheckOutput) Method() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Method }).(pulumi.StringOutput)
+}
+
+// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+func (o GetNlbServerGroupHealthCheckOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+func (o GetNlbServerGroupHealthCheckOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.Timeout }).(pulumi.IntOutput)
+}
+
+// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+func (o GetNlbServerGroupHealthCheckOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+func (o GetNlbServerGroupHealthCheckOutput) UdpExpect() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.UdpExpect }).(pulumi.StringOutput)
+}
+
+// UDP健康检查的预期响应字符串。
+func (o GetNlbServerGroupHealthCheckOutput) UdpRequest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.UdpRequest }).(pulumi.StringOutput)
+}
+
+// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+func (o GetNlbServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.UnhealthyThreshold }).(pulumi.IntOutput)
+}
+
+// 健康检查的路径。
+func (o GetNlbServerGroupHealthCheckOutput) Uri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Uri }).(pulumi.StringOutput)
+}
+
+type GetNlbServerGroupServer struct {
+	// 后端服务器的描述，默认值为空字符串。
+	Description string `pulumi:"description"`
+	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	InstanceId string `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	Ip string `pulumi:"ip"`
+	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	Port int `pulumi:"port"`
+	// 后端服务器 ID。
+	ServerId string `pulumi:"serverId"`
+	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	Type string `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	Weight int `pulumi:"weight"`
+	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetNlbServerGroupServerInput is an input type that accepts GetNlbServerGroupServerArgs and GetNlbServerGroupServerOutput values.
+// You can construct a concrete instance of `GetNlbServerGroupServerInput` via:
+//
+//	GetNlbServerGroupServerArgs{...}
+type GetNlbServerGroupServerInput interface {
+	pulumi.Input
+
+	ToGetNlbServerGroupServerOutput() GetNlbServerGroupServerOutput
+	ToGetNlbServerGroupServerOutputWithContext(context.Context) GetNlbServerGroupServerOutput
+}
+
+type GetNlbServerGroupServerArgs struct {
+	// 后端服务器的描述，默认值为空字符串。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 后端服务器 ID。
+	ServerId pulumi.StringInput `pulumi:"serverId"`
+	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	Type pulumi.StringInput `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	Weight pulumi.IntInput `pulumi:"weight"`
+	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetNlbServerGroupServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbServerGroupServer)(nil)).Elem()
+}
+
+func (i GetNlbServerGroupServerArgs) ToGetNlbServerGroupServerOutput() GetNlbServerGroupServerOutput {
+	return i.ToGetNlbServerGroupServerOutputWithContext(context.Background())
+}
+
+func (i GetNlbServerGroupServerArgs) ToGetNlbServerGroupServerOutputWithContext(ctx context.Context) GetNlbServerGroupServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbServerGroupServerOutput)
+}
+
+// GetNlbServerGroupServerArrayInput is an input type that accepts GetNlbServerGroupServerArray and GetNlbServerGroupServerArrayOutput values.
+// You can construct a concrete instance of `GetNlbServerGroupServerArrayInput` via:
+//
+//	GetNlbServerGroupServerArray{ GetNlbServerGroupServerArgs{...} }
+type GetNlbServerGroupServerArrayInput interface {
+	pulumi.Input
+
+	ToGetNlbServerGroupServerArrayOutput() GetNlbServerGroupServerArrayOutput
+	ToGetNlbServerGroupServerArrayOutputWithContext(context.Context) GetNlbServerGroupServerArrayOutput
+}
+
+type GetNlbServerGroupServerArray []GetNlbServerGroupServerInput
+
+func (GetNlbServerGroupServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbServerGroupServer)(nil)).Elem()
+}
+
+func (i GetNlbServerGroupServerArray) ToGetNlbServerGroupServerArrayOutput() GetNlbServerGroupServerArrayOutput {
+	return i.ToGetNlbServerGroupServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetNlbServerGroupServerArray) ToGetNlbServerGroupServerArrayOutputWithContext(ctx context.Context) GetNlbServerGroupServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbServerGroupServerArrayOutput)
+}
+
+type GetNlbServerGroupServerOutput struct{ *pulumi.OutputState }
+
+func (GetNlbServerGroupServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbServerGroupServer)(nil)).Elem()
+}
+
+func (o GetNlbServerGroupServerOutput) ToGetNlbServerGroupServerOutput() GetNlbServerGroupServerOutput {
+	return o
+}
+
+func (o GetNlbServerGroupServerOutput) ToGetNlbServerGroupServerOutputWithContext(ctx context.Context) GetNlbServerGroupServerOutput {
+	return o
+}
+
+// 后端服务器的描述，默认值为空字符串。
+func (o GetNlbServerGroupServerOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+func (o GetNlbServerGroupServerOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+func (o GetNlbServerGroupServerOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+func (o GetNlbServerGroupServerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 后端服务器 ID。
+func (o GetNlbServerGroupServerOutput) ServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.ServerId }).(pulumi.StringOutput)
+}
+
+// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+func (o GetNlbServerGroupServerOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+func (o GetNlbServerGroupServerOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+func (o GetNlbServerGroupServerOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetNlbServerGroupServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNlbServerGroupServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbServerGroupServer)(nil)).Elem()
+}
+
+func (o GetNlbServerGroupServerArrayOutput) ToGetNlbServerGroupServerArrayOutput() GetNlbServerGroupServerArrayOutput {
+	return o
+}
+
+func (o GetNlbServerGroupServerArrayOutput) ToGetNlbServerGroupServerArrayOutputWithContext(ctx context.Context) GetNlbServerGroupServerArrayOutput {
+	return o
+}
+
+func (o GetNlbServerGroupServerArrayOutput) Index(i pulumi.IntInput) GetNlbServerGroupServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNlbServerGroupServer {
+		return vs[0].([]GetNlbServerGroupServer)[vs[1].(int)]
+	}).(GetNlbServerGroupServerOutput)
+}
+
+type GetNlbServerGroupTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetNlbServerGroupTagInput is an input type that accepts GetNlbServerGroupTagArgs and GetNlbServerGroupTagOutput values.
+// You can construct a concrete instance of `GetNlbServerGroupTagInput` via:
+//
+//	GetNlbServerGroupTagArgs{...}
+type GetNlbServerGroupTagInput interface {
+	pulumi.Input
+
+	ToGetNlbServerGroupTagOutput() GetNlbServerGroupTagOutput
+	ToGetNlbServerGroupTagOutputWithContext(context.Context) GetNlbServerGroupTagOutput
+}
+
+type GetNlbServerGroupTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNlbServerGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbServerGroupTag)(nil)).Elem()
+}
+
+func (i GetNlbServerGroupTagArgs) ToGetNlbServerGroupTagOutput() GetNlbServerGroupTagOutput {
+	return i.ToGetNlbServerGroupTagOutputWithContext(context.Background())
+}
+
+func (i GetNlbServerGroupTagArgs) ToGetNlbServerGroupTagOutputWithContext(ctx context.Context) GetNlbServerGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbServerGroupTagOutput)
+}
+
+// GetNlbServerGroupTagArrayInput is an input type that accepts GetNlbServerGroupTagArray and GetNlbServerGroupTagArrayOutput values.
+// You can construct a concrete instance of `GetNlbServerGroupTagArrayInput` via:
+//
+//	GetNlbServerGroupTagArray{ GetNlbServerGroupTagArgs{...} }
+type GetNlbServerGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNlbServerGroupTagArrayOutput() GetNlbServerGroupTagArrayOutput
+	ToGetNlbServerGroupTagArrayOutputWithContext(context.Context) GetNlbServerGroupTagArrayOutput
+}
+
+type GetNlbServerGroupTagArray []GetNlbServerGroupTagInput
+
+func (GetNlbServerGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbServerGroupTag)(nil)).Elem()
+}
+
+func (i GetNlbServerGroupTagArray) ToGetNlbServerGroupTagArrayOutput() GetNlbServerGroupTagArrayOutput {
+	return i.ToGetNlbServerGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNlbServerGroupTagArray) ToGetNlbServerGroupTagArrayOutputWithContext(ctx context.Context) GetNlbServerGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbServerGroupTagArrayOutput)
+}
+
+type GetNlbServerGroupTagOutput struct{ *pulumi.OutputState }
+
+func (GetNlbServerGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbServerGroupTag)(nil)).Elem()
+}
+
+func (o GetNlbServerGroupTagOutput) ToGetNlbServerGroupTagOutput() GetNlbServerGroupTagOutput {
+	return o
+}
+
+func (o GetNlbServerGroupTagOutput) ToGetNlbServerGroupTagOutputWithContext(ctx context.Context) GetNlbServerGroupTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetNlbServerGroupTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetNlbServerGroupTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbServerGroupTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNlbServerGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNlbServerGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbServerGroupTag)(nil)).Elem()
+}
+
+func (o GetNlbServerGroupTagArrayOutput) ToGetNlbServerGroupTagArrayOutput() GetNlbServerGroupTagArrayOutput {
+	return o
+}
+
+func (o GetNlbServerGroupTagArrayOutput) ToGetNlbServerGroupTagArrayOutputWithContext(ctx context.Context) GetNlbServerGroupTagArrayOutput {
+	return o
+}
+
+func (o GetNlbServerGroupTagArrayOutput) Index(i pulumi.IntInput) GetNlbServerGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNlbServerGroupTag {
+		return vs[0].([]GetNlbServerGroupTag)[vs[1].(int)]
+	}).(GetNlbServerGroupTagOutput)
+}
+
 type GetRuleRedirectConfig struct {
 	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
 	Host string `pulumi:"host"`
@@ -1235,33 +3169,458 @@ func (o GetRuleTagArrayOutput) Index(i pulumi.IntInput) GetRuleTagOutput {
 	}).(GetRuleTagOutput)
 }
 
+type GetServerGroupListener struct {
+	// 监听器的ID。
+	ListenerId string `pulumi:"listenerId"`
+}
+
+// GetServerGroupListenerInput is an input type that accepts GetServerGroupListenerArgs and GetServerGroupListenerOutput values.
+// You can construct a concrete instance of `GetServerGroupListenerInput` via:
+//
+//	GetServerGroupListenerArgs{...}
+type GetServerGroupListenerInput interface {
+	pulumi.Input
+
+	ToGetServerGroupListenerOutput() GetServerGroupListenerOutput
+	ToGetServerGroupListenerOutputWithContext(context.Context) GetServerGroupListenerOutput
+}
+
+type GetServerGroupListenerArgs struct {
+	// 监听器的ID。
+	ListenerId pulumi.StringInput `pulumi:"listenerId"`
+}
+
+func (GetServerGroupListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupListener)(nil)).Elem()
+}
+
+func (i GetServerGroupListenerArgs) ToGetServerGroupListenerOutput() GetServerGroupListenerOutput {
+	return i.ToGetServerGroupListenerOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupListenerArgs) ToGetServerGroupListenerOutputWithContext(ctx context.Context) GetServerGroupListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupListenerOutput)
+}
+
+// GetServerGroupListenerArrayInput is an input type that accepts GetServerGroupListenerArray and GetServerGroupListenerArrayOutput values.
+// You can construct a concrete instance of `GetServerGroupListenerArrayInput` via:
+//
+//	GetServerGroupListenerArray{ GetServerGroupListenerArgs{...} }
+type GetServerGroupListenerArrayInput interface {
+	pulumi.Input
+
+	ToGetServerGroupListenerArrayOutput() GetServerGroupListenerArrayOutput
+	ToGetServerGroupListenerArrayOutputWithContext(context.Context) GetServerGroupListenerArrayOutput
+}
+
+type GetServerGroupListenerArray []GetServerGroupListenerInput
+
+func (GetServerGroupListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupListener)(nil)).Elem()
+}
+
+func (i GetServerGroupListenerArray) ToGetServerGroupListenerArrayOutput() GetServerGroupListenerArrayOutput {
+	return i.ToGetServerGroupListenerArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupListenerArray) ToGetServerGroupListenerArrayOutputWithContext(ctx context.Context) GetServerGroupListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupListenerArrayOutput)
+}
+
+type GetServerGroupListenerOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupListener)(nil)).Elem()
+}
+
+func (o GetServerGroupListenerOutput) ToGetServerGroupListenerOutput() GetServerGroupListenerOutput {
+	return o
+}
+
+func (o GetServerGroupListenerOutput) ToGetServerGroupListenerOutputWithContext(ctx context.Context) GetServerGroupListenerOutput {
+	return o
+}
+
+// 监听器的ID。
+func (o GetServerGroupListenerOutput) ListenerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupListener) string { return v.ListenerId }).(pulumi.StringOutput)
+}
+
+type GetServerGroupListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupListener)(nil)).Elem()
+}
+
+func (o GetServerGroupListenerArrayOutput) ToGetServerGroupListenerArrayOutput() GetServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupListenerArrayOutput) ToGetServerGroupListenerArrayOutputWithContext(ctx context.Context) GetServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupListenerArrayOutput) Index(i pulumi.IntInput) GetServerGroupListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerGroupListener {
+		return vs[0].([]GetServerGroupListener)[vs[1].(int)]
+	}).(GetServerGroupListenerOutput)
+}
+
+type GetServerGroupServer struct {
+	// 是否开启全端口转发。on：开启。off（默认值）：关闭。
+	AnyPortEnabled string `pulumi:"anyPortEnabled"`
+	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	Description string `pulumi:"description"`
+	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	InstanceId string `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	Ip string `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	Port int `pulumi:"port"`
+	// 后端服务器ID。
+	ServerId string `pulumi:"serverId"`
+	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	Type string `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	Weight int `pulumi:"weight"`
+}
+
+// GetServerGroupServerInput is an input type that accepts GetServerGroupServerArgs and GetServerGroupServerOutput values.
+// You can construct a concrete instance of `GetServerGroupServerInput` via:
+//
+//	GetServerGroupServerArgs{...}
+type GetServerGroupServerInput interface {
+	pulumi.Input
+
+	ToGetServerGroupServerOutput() GetServerGroupServerOutput
+	ToGetServerGroupServerOutputWithContext(context.Context) GetServerGroupServerOutput
+}
+
+type GetServerGroupServerArgs struct {
+	// 是否开启全端口转发。on：开启。off（默认值）：关闭。
+	AnyPortEnabled pulumi.StringInput `pulumi:"anyPortEnabled"`
+	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 后端服务器ID。
+	ServerId pulumi.StringInput `pulumi:"serverId"`
+	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	Type pulumi.StringInput `pulumi:"type"`
+	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetServerGroupServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupServer)(nil)).Elem()
+}
+
+func (i GetServerGroupServerArgs) ToGetServerGroupServerOutput() GetServerGroupServerOutput {
+	return i.ToGetServerGroupServerOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupServerArgs) ToGetServerGroupServerOutputWithContext(ctx context.Context) GetServerGroupServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupServerOutput)
+}
+
+// GetServerGroupServerArrayInput is an input type that accepts GetServerGroupServerArray and GetServerGroupServerArrayOutput values.
+// You can construct a concrete instance of `GetServerGroupServerArrayInput` via:
+//
+//	GetServerGroupServerArray{ GetServerGroupServerArgs{...} }
+type GetServerGroupServerArrayInput interface {
+	pulumi.Input
+
+	ToGetServerGroupServerArrayOutput() GetServerGroupServerArrayOutput
+	ToGetServerGroupServerArrayOutputWithContext(context.Context) GetServerGroupServerArrayOutput
+}
+
+type GetServerGroupServerArray []GetServerGroupServerInput
+
+func (GetServerGroupServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupServer)(nil)).Elem()
+}
+
+func (i GetServerGroupServerArray) ToGetServerGroupServerArrayOutput() GetServerGroupServerArrayOutput {
+	return i.ToGetServerGroupServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupServerArray) ToGetServerGroupServerArrayOutputWithContext(ctx context.Context) GetServerGroupServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupServerArrayOutput)
+}
+
+type GetServerGroupServerOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupServer)(nil)).Elem()
+}
+
+func (o GetServerGroupServerOutput) ToGetServerGroupServerOutput() GetServerGroupServerOutput {
+	return o
+}
+
+func (o GetServerGroupServerOutput) ToGetServerGroupServerOutputWithContext(ctx context.Context) GetServerGroupServerOutput {
+	return o
+}
+
+// 是否开启全端口转发。on：开启。off（默认值）：关闭。
+func (o GetServerGroupServerOutput) AnyPortEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.AnyPortEnabled }).(pulumi.StringOutput)
+}
+
+// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+func (o GetServerGroupServerOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+func (o GetServerGroupServerOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+func (o GetServerGroupServerOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+func (o GetServerGroupServerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupServer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 后端服务器ID。
+func (o GetServerGroupServerOutput) ServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.ServerId }).(pulumi.StringOutput)
+}
+
+// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+func (o GetServerGroupServerOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+func (o GetServerGroupServerOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupServer) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetServerGroupServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupServer)(nil)).Elem()
+}
+
+func (o GetServerGroupServerArrayOutput) ToGetServerGroupServerArrayOutput() GetServerGroupServerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupServerArrayOutput) ToGetServerGroupServerArrayOutputWithContext(ctx context.Context) GetServerGroupServerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupServerArrayOutput) Index(i pulumi.IntInput) GetServerGroupServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerGroupServer {
+		return vs[0].([]GetServerGroupServer)[vs[1].(int)]
+	}).(GetServerGroupServerOutput)
+}
+
+type GetServerGroupTag struct {
+	// 绑定的标签键信息。
+	Key string `pulumi:"key"`
+	// 绑定的标签值信息。
+	Value string `pulumi:"value"`
+}
+
+// GetServerGroupTagInput is an input type that accepts GetServerGroupTagArgs and GetServerGroupTagOutput values.
+// You can construct a concrete instance of `GetServerGroupTagInput` via:
+//
+//	GetServerGroupTagArgs{...}
+type GetServerGroupTagInput interface {
+	pulumi.Input
+
+	ToGetServerGroupTagOutput() GetServerGroupTagOutput
+	ToGetServerGroupTagOutputWithContext(context.Context) GetServerGroupTagOutput
+}
+
+type GetServerGroupTagArgs struct {
+	// 绑定的标签键信息。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 绑定的标签值信息。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetServerGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupTag)(nil)).Elem()
+}
+
+func (i GetServerGroupTagArgs) ToGetServerGroupTagOutput() GetServerGroupTagOutput {
+	return i.ToGetServerGroupTagOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupTagArgs) ToGetServerGroupTagOutputWithContext(ctx context.Context) GetServerGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupTagOutput)
+}
+
+// GetServerGroupTagArrayInput is an input type that accepts GetServerGroupTagArray and GetServerGroupTagArrayOutput values.
+// You can construct a concrete instance of `GetServerGroupTagArrayInput` via:
+//
+//	GetServerGroupTagArray{ GetServerGroupTagArgs{...} }
+type GetServerGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToGetServerGroupTagArrayOutput() GetServerGroupTagArrayOutput
+	ToGetServerGroupTagArrayOutputWithContext(context.Context) GetServerGroupTagArrayOutput
+}
+
+type GetServerGroupTagArray []GetServerGroupTagInput
+
+func (GetServerGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupTag)(nil)).Elem()
+}
+
+func (i GetServerGroupTagArray) ToGetServerGroupTagArrayOutput() GetServerGroupTagArrayOutput {
+	return i.ToGetServerGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupTagArray) ToGetServerGroupTagArrayOutputWithContext(ctx context.Context) GetServerGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupTagArrayOutput)
+}
+
+type GetServerGroupTagOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupTag)(nil)).Elem()
+}
+
+func (o GetServerGroupTagOutput) ToGetServerGroupTagOutput() GetServerGroupTagOutput {
+	return o
+}
+
+func (o GetServerGroupTagOutput) ToGetServerGroupTagOutputWithContext(ctx context.Context) GetServerGroupTagOutput {
+	return o
+}
+
+// 绑定的标签键信息。
+func (o GetServerGroupTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 绑定的标签值信息。
+func (o GetServerGroupTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetServerGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupTag)(nil)).Elem()
+}
+
+func (o GetServerGroupTagArrayOutput) ToGetServerGroupTagArrayOutput() GetServerGroupTagArrayOutput {
+	return o
+}
+
+func (o GetServerGroupTagArrayOutput) ToGetServerGroupTagArrayOutputWithContext(ctx context.Context) GetServerGroupTagArrayOutput {
+	return o
+}
+
+func (o GetServerGroupTagArrayOutput) Index(i pulumi.IntInput) GetServerGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerGroupTag {
+		return vs[0].([]GetServerGroupTag)[vs[1].(int)]
+	}).(GetServerGroupTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckPtrInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagArrayInput)(nil)).Elem(), ListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerHealthInput)(nil)).Elem(), NlbListenerHealthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerHealthArrayInput)(nil)).Elem(), NlbListenerHealthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerTagInput)(nil)).Elem(), NlbListenerTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerTagArrayInput)(nil)).Elem(), NlbListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupHealthCheckInput)(nil)).Elem(), NlbServerGroupHealthCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupHealthCheckPtrInput)(nil)).Elem(), NlbServerGroupHealthCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupServerInput)(nil)).Elem(), NlbServerGroupServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupServerArrayInput)(nil)).Elem(), NlbServerGroupServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupTagInput)(nil)).Elem(), NlbServerGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupTagArrayInput)(nil)).Elem(), NlbServerGroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigInput)(nil)).Elem(), RuleRedirectConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigPtrInput)(nil)).Elem(), RuleRedirectConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagInput)(nil)).Elem(), RuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagArrayInput)(nil)).Elem(), RuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupListenerInput)(nil)).Elem(), ServerGroupListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupListenerArrayInput)(nil)).Elem(), ServerGroupListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupServerInput)(nil)).Elem(), ServerGroupServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupServerArrayInput)(nil)).Elem(), ServerGroupServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupTagInput)(nil)).Elem(), ServerGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupTagArrayInput)(nil)).Elem(), ServerGroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerHealthCheckInput)(nil)).Elem(), GetListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerHealthInput)(nil)).Elem(), GetNlbListenerHealthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerHealthArrayInput)(nil)).Elem(), GetNlbListenerHealthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerTagInput)(nil)).Elem(), GetNlbListenerTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerTagArrayInput)(nil)).Elem(), GetNlbListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupHealthCheckInput)(nil)).Elem(), GetNlbServerGroupHealthCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupServerInput)(nil)).Elem(), GetNlbServerGroupServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupServerArrayInput)(nil)).Elem(), GetNlbServerGroupServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupTagInput)(nil)).Elem(), GetNlbServerGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupTagArrayInput)(nil)).Elem(), GetNlbServerGroupTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRedirectConfigInput)(nil)).Elem(), GetRuleRedirectConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagInput)(nil)).Elem(), GetRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagArrayInput)(nil)).Elem(), GetRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupListenerInput)(nil)).Elem(), GetServerGroupListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupListenerArrayInput)(nil)).Elem(), GetServerGroupListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupServerInput)(nil)).Elem(), GetServerGroupServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupServerArrayInput)(nil)).Elem(), GetServerGroupServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupTagInput)(nil)).Elem(), GetServerGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupTagArrayInput)(nil)).Elem(), GetServerGroupTagArray{})
 	pulumi.RegisterOutputType(ListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
 	pulumi.RegisterOutputType(ListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(NlbListenerHealthOutput{})
+	pulumi.RegisterOutputType(NlbListenerHealthArrayOutput{})
+	pulumi.RegisterOutputType(NlbListenerTagOutput{})
+	pulumi.RegisterOutputType(NlbListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(NlbServerGroupHealthCheckOutput{})
+	pulumi.RegisterOutputType(NlbServerGroupHealthCheckPtrOutput{})
+	pulumi.RegisterOutputType(NlbServerGroupServerOutput{})
+	pulumi.RegisterOutputType(NlbServerGroupServerArrayOutput{})
+	pulumi.RegisterOutputType(NlbServerGroupTagOutput{})
+	pulumi.RegisterOutputType(NlbServerGroupTagArrayOutput{})
 	pulumi.RegisterOutputType(RuleRedirectConfigOutput{})
 	pulumi.RegisterOutputType(RuleRedirectConfigPtrOutput{})
 	pulumi.RegisterOutputType(RuleTagOutput{})
 	pulumi.RegisterOutputType(RuleTagArrayOutput{})
+	pulumi.RegisterOutputType(ServerGroupListenerOutput{})
+	pulumi.RegisterOutputType(ServerGroupListenerArrayOutput{})
+	pulumi.RegisterOutputType(ServerGroupServerOutput{})
+	pulumi.RegisterOutputType(ServerGroupServerArrayOutput{})
+	pulumi.RegisterOutputType(ServerGroupTagOutput{})
+	pulumi.RegisterOutputType(ServerGroupTagArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetListenerTagOutput{})
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbListenerHealthOutput{})
+	pulumi.RegisterOutputType(GetNlbListenerHealthArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbListenerTagOutput{})
+	pulumi.RegisterOutputType(GetNlbListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbServerGroupHealthCheckOutput{})
+	pulumi.RegisterOutputType(GetNlbServerGroupServerOutput{})
+	pulumi.RegisterOutputType(GetNlbServerGroupServerArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbServerGroupTagOutput{})
+	pulumi.RegisterOutputType(GetNlbServerGroupTagArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleRedirectConfigOutput{})
 	pulumi.RegisterOutputType(GetRuleTagOutput{})
 	pulumi.RegisterOutputType(GetRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetServerGroupListenerOutput{})
+	pulumi.RegisterOutputType(GetServerGroupListenerArrayOutput{})
+	pulumi.RegisterOutputType(GetServerGroupServerOutput{})
+	pulumi.RegisterOutputType(GetServerGroupServerArrayOutput{})
+	pulumi.RegisterOutputType(GetServerGroupTagOutput{})
+	pulumi.RegisterOutputType(GetServerGroupTagArrayOutput{})
 }
