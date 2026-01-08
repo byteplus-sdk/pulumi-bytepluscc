@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { EipArgs, EipState } from "./eip";
+export type Eip = import("./eip").Eip;
+export const Eip: typeof import("./eip").Eip = null as any;
+utilities.lazyLoad(exports, ["Eip"], () => require("./eip"));
+
 export { EniArgs, EniState } from "./eni";
 export type Eni = import("./eni").Eni;
 export const Eni: typeof import("./eni").Eni = null as any;
 utilities.lazyLoad(exports, ["Eni"], () => require("./eni"));
+
+export { GetEipArgs, GetEipResult, GetEipOutputArgs } from "./getEip";
+export const getEip: typeof import("./getEip").getEip = null as any;
+export const getEipOutput: typeof import("./getEip").getEipOutput = null as any;
+utilities.lazyLoad(exports, ["getEip","getEipOutput"], () => require("./getEip"));
+
+export { GetEipsResult } from "./getEips";
+export const getEips: typeof import("./getEips").getEips = null as any;
+export const getEipsOutput: typeof import("./getEips").getEipsOutput = null as any;
+utilities.lazyLoad(exports, ["getEips","getEipsOutput"], () => require("./getEips"));
 
 export { GetEniArgs, GetEniResult, GetEniOutputArgs } from "./getEni";
 export const getEni: typeof import("./getEni").getEni = null as any;
@@ -19,6 +34,16 @@ export { GetEnisResult } from "./getEnis";
 export const getEnis: typeof import("./getEnis").getEnis = null as any;
 export const getEnisOutput: typeof import("./getEnis").getEnisOutput = null as any;
 utilities.lazyLoad(exports, ["getEnis","getEnisOutput"], () => require("./getEnis"));
+
+export { GetRouteTableArgs, GetRouteTableResult, GetRouteTableOutputArgs } from "./getRouteTable";
+export const getRouteTable: typeof import("./getRouteTable").getRouteTable = null as any;
+export const getRouteTableOutput: typeof import("./getRouteTable").getRouteTableOutput = null as any;
+utilities.lazyLoad(exports, ["getRouteTable","getRouteTableOutput"], () => require("./getRouteTable"));
+
+export { GetRouteTablesResult } from "./getRouteTables";
+export const getRouteTables: typeof import("./getRouteTables").getRouteTables = null as any;
+export const getRouteTablesOutput: typeof import("./getRouteTables").getRouteTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getRouteTables","getRouteTablesOutput"], () => require("./getRouteTables"));
 
 export { GetSecurityGroupArgs, GetSecurityGroupResult, GetSecurityGroupOutputArgs } from "./getSecurityGroup";
 export const getSecurityGroup: typeof import("./getSecurityGroup").getSecurityGroup = null as any;
@@ -50,6 +75,11 @@ export const getVpcs: typeof import("./getVpcs").getVpcs = null as any;
 export const getVpcsOutput: typeof import("./getVpcs").getVpcsOutput = null as any;
 utilities.lazyLoad(exports, ["getVpcs","getVpcsOutput"], () => require("./getVpcs"));
 
+export { RouteTableArgs, RouteTableState } from "./routeTable";
+export type RouteTable = import("./routeTable").RouteTable;
+export const RouteTable: typeof import("./routeTable").RouteTable = null as any;
+utilities.lazyLoad(exports, ["RouteTable"], () => require("./routeTable"));
+
 export { SecurityGroupArgs, SecurityGroupState } from "./securityGroup";
 export type SecurityGroup = import("./securityGroup").SecurityGroup;
 export const SecurityGroup: typeof import("./securityGroup").SecurityGroup = null as any;
@@ -70,8 +100,12 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vpc/eip:Eip":
+                return new Eip(name, <any>undefined, { urn })
             case "bytepluscc:vpc/eni:Eni":
                 return new Eni(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/routeTable:RouteTable":
+                return new RouteTable(name, <any>undefined, { urn })
             case "bytepluscc:vpc/securityGroup:SecurityGroup":
                 return new SecurityGroup(name, <any>undefined, { urn })
             case "bytepluscc:vpc/subnet:Subnet":
@@ -83,7 +117,9 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eip", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eni", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/routeTable", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/securityGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/subnet", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/vpc", _module)
