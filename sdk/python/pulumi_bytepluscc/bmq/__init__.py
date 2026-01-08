@@ -6,8 +6,11 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_group import *
+from .get_groups import *
 from .get_instance import *
 from .get_instances import *
+from .group import *
 from .instance import *
 from ._inputs import *
 from . import outputs

@@ -23,8 +23,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:clb/listener:Listener":
 		r = &Listener{}
+	case "bytepluscc:clb/nlbListener:NlbListener":
+		r = &NlbListener{}
+	case "bytepluscc:clb/nlbServerGroup:NlbServerGroup":
+		r = &NlbServerGroup{}
 	case "bytepluscc:clb/rule:Rule":
 		r = &Rule{}
+	case "bytepluscc:clb/serverGroup:ServerGroup":
+		r = &ServerGroup{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -45,7 +51,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"clb/nlbListener",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"clb/nlbServerGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"clb/rule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"clb/serverGroup",
 		&module{version},
 	)
 }

@@ -6,12 +6,24 @@ package com.byteplus.bytepluscc.clb;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.clb.inputs.GetListenerArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetListenerPlainArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetNlbListenerArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetNlbListenerPlainArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetNlbServerGroupArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetNlbServerGroupPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetRulePlainArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetServerGroupArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetServerGroupPlainArgs;
 import com.byteplus.bytepluscc.clb.outputs.GetListenerResult;
 import com.byteplus.bytepluscc.clb.outputs.GetListenersResult;
+import com.byteplus.bytepluscc.clb.outputs.GetNlbListenerResult;
+import com.byteplus.bytepluscc.clb.outputs.GetNlbListenersResult;
+import com.byteplus.bytepluscc.clb.outputs.GetNlbServerGroupResult;
+import com.byteplus.bytepluscc.clb.outputs.GetNlbServerGroupsResult;
 import com.byteplus.bytepluscc.clb.outputs.GetRuleResult;
 import com.byteplus.bytepluscc.clb.outputs.GetRulesResult;
+import com.byteplus.bytepluscc.clb.outputs.GetServerGroupResult;
+import com.byteplus.bytepluscc.clb.outputs.GetServerGroupsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -106,6 +118,174 @@ public final class ClbFunctions {
         return Deployment.getInstance().invokeAsync("bytepluscc:clb/getListeners:getListeners", TypeShape.of(GetListenersResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static Output<GetNlbListenerResult> getNlbListener(GetNlbListenerArgs args) {
+        return getNlbListener(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static CompletableFuture<GetNlbListenerResult> getNlbListenerPlain(GetNlbListenerPlainArgs args) {
+        return getNlbListenerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static Output<GetNlbListenerResult> getNlbListener(GetNlbListenerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbListener:getNlbListener", TypeShape.of(GetNlbListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static Output<GetNlbListenerResult> getNlbListener(GetNlbListenerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbListener:getNlbListener", TypeShape.of(GetNlbListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static CompletableFuture<GetNlbListenerResult> getNlbListenerPlain(GetNlbListenerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getNlbListener:getNlbListener", TypeShape.of(GetNlbListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static Output<GetNlbListenersResult> getNlbListeners() {
+        return getNlbListeners(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static CompletableFuture<GetNlbListenersResult> getNlbListenersPlain() {
+        return getNlbListenersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static Output<GetNlbListenersResult> getNlbListeners(InvokeArgs args) {
+        return getNlbListeners(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static CompletableFuture<GetNlbListenersResult> getNlbListenersPlain(InvokeArgs args) {
+        return getNlbListenersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static Output<GetNlbListenersResult> getNlbListeners(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbListeners:getNlbListeners", TypeShape.of(GetNlbListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static Output<GetNlbListenersResult> getNlbListeners(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbListeners:getNlbListeners", TypeShape.of(GetNlbListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBListener
+     * 
+     */
+    public static CompletableFuture<GetNlbListenersResult> getNlbListenersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getNlbListeners:getNlbListeners", TypeShape.of(GetNlbListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static Output<GetNlbServerGroupResult> getNlbServerGroup(GetNlbServerGroupArgs args) {
+        return getNlbServerGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static CompletableFuture<GetNlbServerGroupResult> getNlbServerGroupPlain(GetNlbServerGroupPlainArgs args) {
+        return getNlbServerGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static Output<GetNlbServerGroupResult> getNlbServerGroup(GetNlbServerGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbServerGroup:getNlbServerGroup", TypeShape.of(GetNlbServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static Output<GetNlbServerGroupResult> getNlbServerGroup(GetNlbServerGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbServerGroup:getNlbServerGroup", TypeShape.of(GetNlbServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static CompletableFuture<GetNlbServerGroupResult> getNlbServerGroupPlain(GetNlbServerGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getNlbServerGroup:getNlbServerGroup", TypeShape.of(GetNlbServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static Output<GetNlbServerGroupsResult> getNlbServerGroups() {
+        return getNlbServerGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static CompletableFuture<GetNlbServerGroupsResult> getNlbServerGroupsPlain() {
+        return getNlbServerGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static Output<GetNlbServerGroupsResult> getNlbServerGroups(InvokeArgs args) {
+        return getNlbServerGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static CompletableFuture<GetNlbServerGroupsResult> getNlbServerGroupsPlain(InvokeArgs args) {
+        return getNlbServerGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static Output<GetNlbServerGroupsResult> getNlbServerGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbServerGroups:getNlbServerGroups", TypeShape.of(GetNlbServerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static Output<GetNlbServerGroupsResult> getNlbServerGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbServerGroups:getNlbServerGroups", TypeShape.of(GetNlbServerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBServerGroup
+     * 
+     */
+    public static CompletableFuture<GetNlbServerGroupsResult> getNlbServerGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getNlbServerGroups:getNlbServerGroups", TypeShape.of(GetNlbServerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * Data Source schema for Byteplus::CLB::Rule
      * 
      */
@@ -188,5 +368,89 @@ public final class ClbFunctions {
      */
     public static CompletableFuture<GetRulesResult> getRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:clb/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupResult> getServerGroup(GetServerGroupArgs args) {
+        return getServerGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupResult> getServerGroupPlain(GetServerGroupPlainArgs args) {
+        return getServerGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupResult> getServerGroup(GetServerGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getServerGroup:getServerGroup", TypeShape.of(GetServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupResult> getServerGroup(GetServerGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getServerGroup:getServerGroup", TypeShape.of(GetServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupResult> getServerGroupPlain(GetServerGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getServerGroup:getServerGroup", TypeShape.of(GetServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups() {
+        return getServerGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupsResult> getServerGroupsPlain() {
+        return getServerGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups(InvokeArgs args) {
+        return getServerGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupsResult> getServerGroupsPlain(InvokeArgs args) {
+        return getServerGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getServerGroups:getServerGroups", TypeShape.of(GetServerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getServerGroups:getServerGroups", TypeShape.of(GetServerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupsResult> getServerGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getServerGroups:getServerGroups", TypeShape.of(GetServerGroupsResult.class), args, Utilities.withVersion(options));
     }
 }

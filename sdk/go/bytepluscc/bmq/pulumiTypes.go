@@ -13,6 +13,527 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GroupResetInfo struct {
+	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	OffsetType *string `pulumi:"offsetType"`
+	// 分区序号。
+	PartitionId *int `pulumi:"partitionId"`
+	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	ResetBy *string `pulumi:"resetBy"`
+	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	ResetValue *int `pulumi:"resetValue"`
+	// Topic ID。
+	TopicId *string `pulumi:"topicId"`
+}
+
+// GroupResetInfoInput is an input type that accepts GroupResetInfoArgs and GroupResetInfoOutput values.
+// You can construct a concrete instance of `GroupResetInfoInput` via:
+//
+//	GroupResetInfoArgs{...}
+type GroupResetInfoInput interface {
+	pulumi.Input
+
+	ToGroupResetInfoOutput() GroupResetInfoOutput
+	ToGroupResetInfoOutputWithContext(context.Context) GroupResetInfoOutput
+}
+
+type GroupResetInfoArgs struct {
+	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	OffsetType pulumi.StringPtrInput `pulumi:"offsetType"`
+	// 分区序号。
+	PartitionId pulumi.IntPtrInput `pulumi:"partitionId"`
+	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	ResetBy pulumi.StringPtrInput `pulumi:"resetBy"`
+	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	ResetValue pulumi.IntPtrInput `pulumi:"resetValue"`
+	// Topic ID。
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+}
+
+func (GroupResetInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupResetInfo)(nil)).Elem()
+}
+
+func (i GroupResetInfoArgs) ToGroupResetInfoOutput() GroupResetInfoOutput {
+	return i.ToGroupResetInfoOutputWithContext(context.Background())
+}
+
+func (i GroupResetInfoArgs) ToGroupResetInfoOutputWithContext(ctx context.Context) GroupResetInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupResetInfoOutput)
+}
+
+func (i GroupResetInfoArgs) ToGroupResetInfoPtrOutput() GroupResetInfoPtrOutput {
+	return i.ToGroupResetInfoPtrOutputWithContext(context.Background())
+}
+
+func (i GroupResetInfoArgs) ToGroupResetInfoPtrOutputWithContext(ctx context.Context) GroupResetInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupResetInfoOutput).ToGroupResetInfoPtrOutputWithContext(ctx)
+}
+
+// GroupResetInfoPtrInput is an input type that accepts GroupResetInfoArgs, GroupResetInfoPtr and GroupResetInfoPtrOutput values.
+// You can construct a concrete instance of `GroupResetInfoPtrInput` via:
+//
+//	        GroupResetInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type GroupResetInfoPtrInput interface {
+	pulumi.Input
+
+	ToGroupResetInfoPtrOutput() GroupResetInfoPtrOutput
+	ToGroupResetInfoPtrOutputWithContext(context.Context) GroupResetInfoPtrOutput
+}
+
+type groupResetInfoPtrType GroupResetInfoArgs
+
+func GroupResetInfoPtr(v *GroupResetInfoArgs) GroupResetInfoPtrInput {
+	return (*groupResetInfoPtrType)(v)
+}
+
+func (*groupResetInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupResetInfo)(nil)).Elem()
+}
+
+func (i *groupResetInfoPtrType) ToGroupResetInfoPtrOutput() GroupResetInfoPtrOutput {
+	return i.ToGroupResetInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *groupResetInfoPtrType) ToGroupResetInfoPtrOutputWithContext(ctx context.Context) GroupResetInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupResetInfoPtrOutput)
+}
+
+type GroupResetInfoOutput struct{ *pulumi.OutputState }
+
+func (GroupResetInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupResetInfo)(nil)).Elem()
+}
+
+func (o GroupResetInfoOutput) ToGroupResetInfoOutput() GroupResetInfoOutput {
+	return o
+}
+
+func (o GroupResetInfoOutput) ToGroupResetInfoOutputWithContext(ctx context.Context) GroupResetInfoOutput {
+	return o
+}
+
+func (o GroupResetInfoOutput) ToGroupResetInfoPtrOutput() GroupResetInfoPtrOutput {
+	return o.ToGroupResetInfoPtrOutputWithContext(context.Background())
+}
+
+func (o GroupResetInfoOutput) ToGroupResetInfoPtrOutputWithContext(ctx context.Context) GroupResetInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GroupResetInfo) *GroupResetInfo {
+		return &v
+	}).(GroupResetInfoPtrOutput)
+}
+
+// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+func (o GroupResetInfoOutput) OffsetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupResetInfo) *string { return v.OffsetType }).(pulumi.StringPtrOutput)
+}
+
+// 分区序号。
+func (o GroupResetInfoOutput) PartitionId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupResetInfo) *int { return v.PartitionId }).(pulumi.IntPtrOutput)
+}
+
+// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+func (o GroupResetInfoOutput) ResetBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupResetInfo) *string { return v.ResetBy }).(pulumi.StringPtrOutput)
+}
+
+// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+func (o GroupResetInfoOutput) ResetValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupResetInfo) *int { return v.ResetValue }).(pulumi.IntPtrOutput)
+}
+
+// Topic ID。
+func (o GroupResetInfoOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupResetInfo) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+type GroupResetInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (GroupResetInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupResetInfo)(nil)).Elem()
+}
+
+func (o GroupResetInfoPtrOutput) ToGroupResetInfoPtrOutput() GroupResetInfoPtrOutput {
+	return o
+}
+
+func (o GroupResetInfoPtrOutput) ToGroupResetInfoPtrOutputWithContext(ctx context.Context) GroupResetInfoPtrOutput {
+	return o
+}
+
+func (o GroupResetInfoPtrOutput) Elem() GroupResetInfoOutput {
+	return o.ApplyT(func(v *GroupResetInfo) GroupResetInfo {
+		if v != nil {
+			return *v
+		}
+		var ret GroupResetInfo
+		return ret
+	}).(GroupResetInfoOutput)
+}
+
+// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+func (o GroupResetInfoPtrOutput) OffsetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GroupResetInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OffsetType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 分区序号。
+func (o GroupResetInfoPtrOutput) PartitionId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GroupResetInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PartitionId
+	}).(pulumi.IntPtrOutput)
+}
+
+// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+func (o GroupResetInfoPtrOutput) ResetBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GroupResetInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResetBy
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+func (o GroupResetInfoPtrOutput) ResetValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *GroupResetInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ResetValue
+	}).(pulumi.IntPtrOutput)
+}
+
+// Topic ID。
+func (o GroupResetInfoPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *GroupResetInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
+	}).(pulumi.StringPtrOutput)
+}
+
+type GroupTopicInfo struct {
+	// Topic 的创建时间。
+	CreateTime *string `pulumi:"createTime"`
+	// Topic 的描述语句。
+	Description *string `pulumi:"description"`
+	// Topic 中未被消费的消息条数。
+	Lag            *int                          `pulumi:"lag"`
+	PartitionInfos []GroupTopicInfoPartitionInfo `pulumi:"partitionInfos"`
+	// Topic 分区数。
+	Partitions *int `pulumi:"partitions"`
+	// 数据在 Topic 中的保留时长，单位为小时。
+	Retention *int `pulumi:"retention"`
+	// Topic 的状态。
+	Status *string `pulumi:"status"`
+	// Topic ID。
+	TopicId *string `pulumi:"topicId"`
+	// Topic 的名称。
+	TopicName *string `pulumi:"topicName"`
+}
+
+// GroupTopicInfoInput is an input type that accepts GroupTopicInfoArgs and GroupTopicInfoOutput values.
+// You can construct a concrete instance of `GroupTopicInfoInput` via:
+//
+//	GroupTopicInfoArgs{...}
+type GroupTopicInfoInput interface {
+	pulumi.Input
+
+	ToGroupTopicInfoOutput() GroupTopicInfoOutput
+	ToGroupTopicInfoOutputWithContext(context.Context) GroupTopicInfoOutput
+}
+
+type GroupTopicInfoArgs struct {
+	// Topic 的创建时间。
+	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
+	// Topic 的描述语句。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Topic 中未被消费的消息条数。
+	Lag            pulumi.IntPtrInput                    `pulumi:"lag"`
+	PartitionInfos GroupTopicInfoPartitionInfoArrayInput `pulumi:"partitionInfos"`
+	// Topic 分区数。
+	Partitions pulumi.IntPtrInput `pulumi:"partitions"`
+	// 数据在 Topic 中的保留时长，单位为小时。
+	Retention pulumi.IntPtrInput `pulumi:"retention"`
+	// Topic 的状态。
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Topic ID。
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+	// Topic 的名称。
+	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
+}
+
+func (GroupTopicInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupTopicInfo)(nil)).Elem()
+}
+
+func (i GroupTopicInfoArgs) ToGroupTopicInfoOutput() GroupTopicInfoOutput {
+	return i.ToGroupTopicInfoOutputWithContext(context.Background())
+}
+
+func (i GroupTopicInfoArgs) ToGroupTopicInfoOutputWithContext(ctx context.Context) GroupTopicInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupTopicInfoOutput)
+}
+
+// GroupTopicInfoArrayInput is an input type that accepts GroupTopicInfoArray and GroupTopicInfoArrayOutput values.
+// You can construct a concrete instance of `GroupTopicInfoArrayInput` via:
+//
+//	GroupTopicInfoArray{ GroupTopicInfoArgs{...} }
+type GroupTopicInfoArrayInput interface {
+	pulumi.Input
+
+	ToGroupTopicInfoArrayOutput() GroupTopicInfoArrayOutput
+	ToGroupTopicInfoArrayOutputWithContext(context.Context) GroupTopicInfoArrayOutput
+}
+
+type GroupTopicInfoArray []GroupTopicInfoInput
+
+func (GroupTopicInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupTopicInfo)(nil)).Elem()
+}
+
+func (i GroupTopicInfoArray) ToGroupTopicInfoArrayOutput() GroupTopicInfoArrayOutput {
+	return i.ToGroupTopicInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GroupTopicInfoArray) ToGroupTopicInfoArrayOutputWithContext(ctx context.Context) GroupTopicInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupTopicInfoArrayOutput)
+}
+
+type GroupTopicInfoOutput struct{ *pulumi.OutputState }
+
+func (GroupTopicInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupTopicInfo)(nil)).Elem()
+}
+
+func (o GroupTopicInfoOutput) ToGroupTopicInfoOutput() GroupTopicInfoOutput {
+	return o
+}
+
+func (o GroupTopicInfoOutput) ToGroupTopicInfoOutputWithContext(ctx context.Context) GroupTopicInfoOutput {
+	return o
+}
+
+// Topic 的创建时间。
+func (o GroupTopicInfoOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
+}
+
+// Topic 的描述语句。
+func (o GroupTopicInfoOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Topic 中未被消费的消息条数。
+func (o GroupTopicInfoOutput) Lag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Lag }).(pulumi.IntPtrOutput)
+}
+
+func (o GroupTopicInfoOutput) PartitionInfos() GroupTopicInfoPartitionInfoArrayOutput {
+	return o.ApplyT(func(v GroupTopicInfo) []GroupTopicInfoPartitionInfo { return v.PartitionInfos }).(GroupTopicInfoPartitionInfoArrayOutput)
+}
+
+// Topic 分区数。
+func (o GroupTopicInfoOutput) Partitions() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Partitions }).(pulumi.IntPtrOutput)
+}
+
+// 数据在 Topic 中的保留时长，单位为小时。
+func (o GroupTopicInfoOutput) Retention() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *int { return v.Retention }).(pulumi.IntPtrOutput)
+}
+
+// Topic 的状态。
+func (o GroupTopicInfoOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Topic ID。
+func (o GroupTopicInfoOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+// Topic 的名称。
+func (o GroupTopicInfoOutput) TopicName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfo) *string { return v.TopicName }).(pulumi.StringPtrOutput)
+}
+
+type GroupTopicInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GroupTopicInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupTopicInfo)(nil)).Elem()
+}
+
+func (o GroupTopicInfoArrayOutput) ToGroupTopicInfoArrayOutput() GroupTopicInfoArrayOutput {
+	return o
+}
+
+func (o GroupTopicInfoArrayOutput) ToGroupTopicInfoArrayOutputWithContext(ctx context.Context) GroupTopicInfoArrayOutput {
+	return o
+}
+
+func (o GroupTopicInfoArrayOutput) Index(i pulumi.IntInput) GroupTopicInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GroupTopicInfo {
+		return vs[0].([]GroupTopicInfo)[vs[1].(int)]
+	}).(GroupTopicInfoOutput)
+}
+
+type GroupTopicInfoPartitionInfo struct {
+	// 当前消费位点。
+	CurrentOffset *int `pulumi:"currentOffset"`
+	// Consumer Group 的名称。
+	GroupName *string `pulumi:"groupName"`
+	// 分区中未被消费的消息条数。
+	Lag *int `pulumi:"lag"`
+	// 最新消费位点。
+	LatestOffset *int `pulumi:"latestOffset"`
+	// 分区序号。
+	PartitionId *int `pulumi:"partitionId"`
+	// Consumer Group 订阅的 Topic 名称。
+	TopicName *string `pulumi:"topicName"`
+}
+
+// GroupTopicInfoPartitionInfoInput is an input type that accepts GroupTopicInfoPartitionInfoArgs and GroupTopicInfoPartitionInfoOutput values.
+// You can construct a concrete instance of `GroupTopicInfoPartitionInfoInput` via:
+//
+//	GroupTopicInfoPartitionInfoArgs{...}
+type GroupTopicInfoPartitionInfoInput interface {
+	pulumi.Input
+
+	ToGroupTopicInfoPartitionInfoOutput() GroupTopicInfoPartitionInfoOutput
+	ToGroupTopicInfoPartitionInfoOutputWithContext(context.Context) GroupTopicInfoPartitionInfoOutput
+}
+
+type GroupTopicInfoPartitionInfoArgs struct {
+	// 当前消费位点。
+	CurrentOffset pulumi.IntPtrInput `pulumi:"currentOffset"`
+	// Consumer Group 的名称。
+	GroupName pulumi.StringPtrInput `pulumi:"groupName"`
+	// 分区中未被消费的消息条数。
+	Lag pulumi.IntPtrInput `pulumi:"lag"`
+	// 最新消费位点。
+	LatestOffset pulumi.IntPtrInput `pulumi:"latestOffset"`
+	// 分区序号。
+	PartitionId pulumi.IntPtrInput `pulumi:"partitionId"`
+	// Consumer Group 订阅的 Topic 名称。
+	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
+}
+
+func (GroupTopicInfoPartitionInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (i GroupTopicInfoPartitionInfoArgs) ToGroupTopicInfoPartitionInfoOutput() GroupTopicInfoPartitionInfoOutput {
+	return i.ToGroupTopicInfoPartitionInfoOutputWithContext(context.Background())
+}
+
+func (i GroupTopicInfoPartitionInfoArgs) ToGroupTopicInfoPartitionInfoOutputWithContext(ctx context.Context) GroupTopicInfoPartitionInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupTopicInfoPartitionInfoOutput)
+}
+
+// GroupTopicInfoPartitionInfoArrayInput is an input type that accepts GroupTopicInfoPartitionInfoArray and GroupTopicInfoPartitionInfoArrayOutput values.
+// You can construct a concrete instance of `GroupTopicInfoPartitionInfoArrayInput` via:
+//
+//	GroupTopicInfoPartitionInfoArray{ GroupTopicInfoPartitionInfoArgs{...} }
+type GroupTopicInfoPartitionInfoArrayInput interface {
+	pulumi.Input
+
+	ToGroupTopicInfoPartitionInfoArrayOutput() GroupTopicInfoPartitionInfoArrayOutput
+	ToGroupTopicInfoPartitionInfoArrayOutputWithContext(context.Context) GroupTopicInfoPartitionInfoArrayOutput
+}
+
+type GroupTopicInfoPartitionInfoArray []GroupTopicInfoPartitionInfoInput
+
+func (GroupTopicInfoPartitionInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (i GroupTopicInfoPartitionInfoArray) ToGroupTopicInfoPartitionInfoArrayOutput() GroupTopicInfoPartitionInfoArrayOutput {
+	return i.ToGroupTopicInfoPartitionInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GroupTopicInfoPartitionInfoArray) ToGroupTopicInfoPartitionInfoArrayOutputWithContext(ctx context.Context) GroupTopicInfoPartitionInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupTopicInfoPartitionInfoArrayOutput)
+}
+
+type GroupTopicInfoPartitionInfoOutput struct{ *pulumi.OutputState }
+
+func (GroupTopicInfoPartitionInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (o GroupTopicInfoPartitionInfoOutput) ToGroupTopicInfoPartitionInfoOutput() GroupTopicInfoPartitionInfoOutput {
+	return o
+}
+
+func (o GroupTopicInfoPartitionInfoOutput) ToGroupTopicInfoPartitionInfoOutputWithContext(ctx context.Context) GroupTopicInfoPartitionInfoOutput {
+	return o
+}
+
+// 当前消费位点。
+func (o GroupTopicInfoPartitionInfoOutput) CurrentOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.CurrentOffset }).(pulumi.IntPtrOutput)
+}
+
+// Consumer Group 的名称。
+func (o GroupTopicInfoPartitionInfoOutput) GroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *string { return v.GroupName }).(pulumi.StringPtrOutput)
+}
+
+// 分区中未被消费的消息条数。
+func (o GroupTopicInfoPartitionInfoOutput) Lag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.Lag }).(pulumi.IntPtrOutput)
+}
+
+// 最新消费位点。
+func (o GroupTopicInfoPartitionInfoOutput) LatestOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.LatestOffset }).(pulumi.IntPtrOutput)
+}
+
+// 分区序号。
+func (o GroupTopicInfoPartitionInfoOutput) PartitionId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *int { return v.PartitionId }).(pulumi.IntPtrOutput)
+}
+
+// Consumer Group 订阅的 Topic 名称。
+func (o GroupTopicInfoPartitionInfoOutput) TopicName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupTopicInfoPartitionInfo) *string { return v.TopicName }).(pulumi.StringPtrOutput)
+}
+
+type GroupTopicInfoPartitionInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GroupTopicInfoPartitionInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (o GroupTopicInfoPartitionInfoArrayOutput) ToGroupTopicInfoPartitionInfoArrayOutput() GroupTopicInfoPartitionInfoArrayOutput {
+	return o
+}
+
+func (o GroupTopicInfoPartitionInfoArrayOutput) ToGroupTopicInfoPartitionInfoArrayOutputWithContext(ctx context.Context) GroupTopicInfoPartitionInfoArrayOutput {
+	return o
+}
+
+func (o GroupTopicInfoPartitionInfoArrayOutput) Index(i pulumi.IntInput) GroupTopicInfoPartitionInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GroupTopicInfoPartitionInfo {
+		return vs[0].([]GroupTopicInfoPartitionInfo)[vs[1].(int)]
+	}).(GroupTopicInfoPartitionInfoOutput)
+}
+
 type InstanceEndpoints struct {
 	// 实例私网访问接入点响应数据。
 	Overlay *InstanceEndpointsOverlay `pulumi:"overlay"`
@@ -1411,6 +1932,405 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type GetGroupResetInfo struct {
+	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	OffsetType string `pulumi:"offsetType"`
+	// 分区序号。
+	PartitionId int `pulumi:"partitionId"`
+	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	ResetBy string `pulumi:"resetBy"`
+	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	ResetValue int `pulumi:"resetValue"`
+	// Topic ID。
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetGroupResetInfoInput is an input type that accepts GetGroupResetInfoArgs and GetGroupResetInfoOutput values.
+// You can construct a concrete instance of `GetGroupResetInfoInput` via:
+//
+//	GetGroupResetInfoArgs{...}
+type GetGroupResetInfoInput interface {
+	pulumi.Input
+
+	ToGetGroupResetInfoOutput() GetGroupResetInfoOutput
+	ToGetGroupResetInfoOutputWithContext(context.Context) GetGroupResetInfoOutput
+}
+
+type GetGroupResetInfoArgs struct {
+	// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+	OffsetType pulumi.StringInput `pulumi:"offsetType"`
+	// 分区序号。
+	PartitionId pulumi.IntInput `pulumi:"partitionId"`
+	// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+	ResetBy pulumi.StringInput `pulumi:"resetBy"`
+	// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+	ResetValue pulumi.IntInput `pulumi:"resetValue"`
+	// Topic ID。
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetGroupResetInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupResetInfo)(nil)).Elem()
+}
+
+func (i GetGroupResetInfoArgs) ToGetGroupResetInfoOutput() GetGroupResetInfoOutput {
+	return i.ToGetGroupResetInfoOutputWithContext(context.Background())
+}
+
+func (i GetGroupResetInfoArgs) ToGetGroupResetInfoOutputWithContext(ctx context.Context) GetGroupResetInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupResetInfoOutput)
+}
+
+type GetGroupResetInfoOutput struct{ *pulumi.OutputState }
+
+func (GetGroupResetInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupResetInfo)(nil)).Elem()
+}
+
+func (o GetGroupResetInfoOutput) ToGetGroupResetInfoOutput() GetGroupResetInfoOutput {
+	return o
+}
+
+func (o GetGroupResetInfoOutput) ToGetGroupResetInfoOutputWithContext(ctx context.Context) GetGroupResetInfoOutput {
+	return o
+}
+
+// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+func (o GetGroupResetInfoOutput) OffsetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResetInfo) string { return v.OffsetType }).(pulumi.StringOutput)
+}
+
+// 分区序号。
+func (o GetGroupResetInfoOutput) PartitionId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupResetInfo) int { return v.PartitionId }).(pulumi.IntOutput)
+}
+
+// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+func (o GetGroupResetInfoOutput) ResetBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResetInfo) string { return v.ResetBy }).(pulumi.StringOutput)
+}
+
+// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+func (o GetGroupResetInfoOutput) ResetValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupResetInfo) int { return v.ResetValue }).(pulumi.IntOutput)
+}
+
+// Topic ID。
+func (o GetGroupResetInfoOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupResetInfo) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+type GetGroupTopicInfo struct {
+	// Topic 的创建时间。
+	CreateTime string `pulumi:"createTime"`
+	// Topic 的描述语句。
+	Description string `pulumi:"description"`
+	// Topic 中未被消费的消息条数。
+	Lag int `pulumi:"lag"`
+	// 分区列表。
+	PartitionInfos []GetGroupTopicInfoPartitionInfo `pulumi:"partitionInfos"`
+	// Topic 分区数。
+	Partitions int `pulumi:"partitions"`
+	// 数据在 Topic 中的保留时长，单位为小时。
+	Retention int `pulumi:"retention"`
+	// Topic 的状态。
+	Status string `pulumi:"status"`
+	// Topic ID。
+	TopicId string `pulumi:"topicId"`
+	// Topic 的名称。
+	TopicName string `pulumi:"topicName"`
+}
+
+// GetGroupTopicInfoInput is an input type that accepts GetGroupTopicInfoArgs and GetGroupTopicInfoOutput values.
+// You can construct a concrete instance of `GetGroupTopicInfoInput` via:
+//
+//	GetGroupTopicInfoArgs{...}
+type GetGroupTopicInfoInput interface {
+	pulumi.Input
+
+	ToGetGroupTopicInfoOutput() GetGroupTopicInfoOutput
+	ToGetGroupTopicInfoOutputWithContext(context.Context) GetGroupTopicInfoOutput
+}
+
+type GetGroupTopicInfoArgs struct {
+	// Topic 的创建时间。
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// Topic 的描述语句。
+	Description pulumi.StringInput `pulumi:"description"`
+	// Topic 中未被消费的消息条数。
+	Lag pulumi.IntInput `pulumi:"lag"`
+	// 分区列表。
+	PartitionInfos GetGroupTopicInfoPartitionInfoArrayInput `pulumi:"partitionInfos"`
+	// Topic 分区数。
+	Partitions pulumi.IntInput `pulumi:"partitions"`
+	// 数据在 Topic 中的保留时长，单位为小时。
+	Retention pulumi.IntInput `pulumi:"retention"`
+	// Topic 的状态。
+	Status pulumi.StringInput `pulumi:"status"`
+	// Topic ID。
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+	// Topic 的名称。
+	TopicName pulumi.StringInput `pulumi:"topicName"`
+}
+
+func (GetGroupTopicInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupTopicInfo)(nil)).Elem()
+}
+
+func (i GetGroupTopicInfoArgs) ToGetGroupTopicInfoOutput() GetGroupTopicInfoOutput {
+	return i.ToGetGroupTopicInfoOutputWithContext(context.Background())
+}
+
+func (i GetGroupTopicInfoArgs) ToGetGroupTopicInfoOutputWithContext(ctx context.Context) GetGroupTopicInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupTopicInfoOutput)
+}
+
+// GetGroupTopicInfoArrayInput is an input type that accepts GetGroupTopicInfoArray and GetGroupTopicInfoArrayOutput values.
+// You can construct a concrete instance of `GetGroupTopicInfoArrayInput` via:
+//
+//	GetGroupTopicInfoArray{ GetGroupTopicInfoArgs{...} }
+type GetGroupTopicInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupTopicInfoArrayOutput() GetGroupTopicInfoArrayOutput
+	ToGetGroupTopicInfoArrayOutputWithContext(context.Context) GetGroupTopicInfoArrayOutput
+}
+
+type GetGroupTopicInfoArray []GetGroupTopicInfoInput
+
+func (GetGroupTopicInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupTopicInfo)(nil)).Elem()
+}
+
+func (i GetGroupTopicInfoArray) ToGetGroupTopicInfoArrayOutput() GetGroupTopicInfoArrayOutput {
+	return i.ToGetGroupTopicInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupTopicInfoArray) ToGetGroupTopicInfoArrayOutputWithContext(ctx context.Context) GetGroupTopicInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupTopicInfoArrayOutput)
+}
+
+type GetGroupTopicInfoOutput struct{ *pulumi.OutputState }
+
+func (GetGroupTopicInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupTopicInfo)(nil)).Elem()
+}
+
+func (o GetGroupTopicInfoOutput) ToGetGroupTopicInfoOutput() GetGroupTopicInfoOutput {
+	return o
+}
+
+func (o GetGroupTopicInfoOutput) ToGetGroupTopicInfoOutputWithContext(ctx context.Context) GetGroupTopicInfoOutput {
+	return o
+}
+
+// Topic 的创建时间。
+func (o GetGroupTopicInfoOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// Topic 的描述语句。
+func (o GetGroupTopicInfoOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Topic 中未被消费的消息条数。
+func (o GetGroupTopicInfoOutput) Lag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Lag }).(pulumi.IntOutput)
+}
+
+// 分区列表。
+func (o GetGroupTopicInfoOutput) PartitionInfos() GetGroupTopicInfoPartitionInfoArrayOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) []GetGroupTopicInfoPartitionInfo { return v.PartitionInfos }).(GetGroupTopicInfoPartitionInfoArrayOutput)
+}
+
+// Topic 分区数。
+func (o GetGroupTopicInfoOutput) Partitions() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Partitions }).(pulumi.IntOutput)
+}
+
+// 数据在 Topic 中的保留时长，单位为小时。
+func (o GetGroupTopicInfoOutput) Retention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) int { return v.Retention }).(pulumi.IntOutput)
+}
+
+// Topic 的状态。
+func (o GetGroupTopicInfoOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Topic ID。
+func (o GetGroupTopicInfoOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+// Topic 的名称。
+func (o GetGroupTopicInfoOutput) TopicName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTopicInfo) string { return v.TopicName }).(pulumi.StringOutput)
+}
+
+type GetGroupTopicInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupTopicInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupTopicInfo)(nil)).Elem()
+}
+
+func (o GetGroupTopicInfoArrayOutput) ToGetGroupTopicInfoArrayOutput() GetGroupTopicInfoArrayOutput {
+	return o
+}
+
+func (o GetGroupTopicInfoArrayOutput) ToGetGroupTopicInfoArrayOutputWithContext(ctx context.Context) GetGroupTopicInfoArrayOutput {
+	return o
+}
+
+func (o GetGroupTopicInfoArrayOutput) Index(i pulumi.IntInput) GetGroupTopicInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupTopicInfo {
+		return vs[0].([]GetGroupTopicInfo)[vs[1].(int)]
+	}).(GetGroupTopicInfoOutput)
+}
+
+type GetGroupTopicInfoPartitionInfo struct {
+	// 当前消费位点。
+	CurrentOffset int `pulumi:"currentOffset"`
+	// Consumer Group 的名称。
+	GroupName string `pulumi:"groupName"`
+	// 分区中未被消费的消息条数。
+	Lag int `pulumi:"lag"`
+	// 最新消费位点。
+	LatestOffset int `pulumi:"latestOffset"`
+	// 分区序号。
+	PartitionId int `pulumi:"partitionId"`
+	// Consumer Group 订阅的 Topic 名称。
+	TopicName string `pulumi:"topicName"`
+}
+
+// GetGroupTopicInfoPartitionInfoInput is an input type that accepts GetGroupTopicInfoPartitionInfoArgs and GetGroupTopicInfoPartitionInfoOutput values.
+// You can construct a concrete instance of `GetGroupTopicInfoPartitionInfoInput` via:
+//
+//	GetGroupTopicInfoPartitionInfoArgs{...}
+type GetGroupTopicInfoPartitionInfoInput interface {
+	pulumi.Input
+
+	ToGetGroupTopicInfoPartitionInfoOutput() GetGroupTopicInfoPartitionInfoOutput
+	ToGetGroupTopicInfoPartitionInfoOutputWithContext(context.Context) GetGroupTopicInfoPartitionInfoOutput
+}
+
+type GetGroupTopicInfoPartitionInfoArgs struct {
+	// 当前消费位点。
+	CurrentOffset pulumi.IntInput `pulumi:"currentOffset"`
+	// Consumer Group 的名称。
+	GroupName pulumi.StringInput `pulumi:"groupName"`
+	// 分区中未被消费的消息条数。
+	Lag pulumi.IntInput `pulumi:"lag"`
+	// 最新消费位点。
+	LatestOffset pulumi.IntInput `pulumi:"latestOffset"`
+	// 分区序号。
+	PartitionId pulumi.IntInput `pulumi:"partitionId"`
+	// Consumer Group 订阅的 Topic 名称。
+	TopicName pulumi.StringInput `pulumi:"topicName"`
+}
+
+func (GetGroupTopicInfoPartitionInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (i GetGroupTopicInfoPartitionInfoArgs) ToGetGroupTopicInfoPartitionInfoOutput() GetGroupTopicInfoPartitionInfoOutput {
+	return i.ToGetGroupTopicInfoPartitionInfoOutputWithContext(context.Background())
+}
+
+func (i GetGroupTopicInfoPartitionInfoArgs) ToGetGroupTopicInfoPartitionInfoOutputWithContext(ctx context.Context) GetGroupTopicInfoPartitionInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupTopicInfoPartitionInfoOutput)
+}
+
+// GetGroupTopicInfoPartitionInfoArrayInput is an input type that accepts GetGroupTopicInfoPartitionInfoArray and GetGroupTopicInfoPartitionInfoArrayOutput values.
+// You can construct a concrete instance of `GetGroupTopicInfoPartitionInfoArrayInput` via:
+//
+//	GetGroupTopicInfoPartitionInfoArray{ GetGroupTopicInfoPartitionInfoArgs{...} }
+type GetGroupTopicInfoPartitionInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupTopicInfoPartitionInfoArrayOutput() GetGroupTopicInfoPartitionInfoArrayOutput
+	ToGetGroupTopicInfoPartitionInfoArrayOutputWithContext(context.Context) GetGroupTopicInfoPartitionInfoArrayOutput
+}
+
+type GetGroupTopicInfoPartitionInfoArray []GetGroupTopicInfoPartitionInfoInput
+
+func (GetGroupTopicInfoPartitionInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (i GetGroupTopicInfoPartitionInfoArray) ToGetGroupTopicInfoPartitionInfoArrayOutput() GetGroupTopicInfoPartitionInfoArrayOutput {
+	return i.ToGetGroupTopicInfoPartitionInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupTopicInfoPartitionInfoArray) ToGetGroupTopicInfoPartitionInfoArrayOutputWithContext(ctx context.Context) GetGroupTopicInfoPartitionInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupTopicInfoPartitionInfoArrayOutput)
+}
+
+type GetGroupTopicInfoPartitionInfoOutput struct{ *pulumi.OutputState }
+
+func (GetGroupTopicInfoPartitionInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (o GetGroupTopicInfoPartitionInfoOutput) ToGetGroupTopicInfoPartitionInfoOutput() GetGroupTopicInfoPartitionInfoOutput {
+	return o
+}
+
+func (o GetGroupTopicInfoPartitionInfoOutput) ToGetGroupTopicInfoPartitionInfoOutputWithContext(ctx context.Context) GetGroupTopicInfoPartitionInfoOutput {
+	return o
+}
+
+// 当前消费位点。
+func (o GetGroupTopicInfoPartitionInfoOutput) CurrentOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.CurrentOffset }).(pulumi.IntOutput)
+}
+
+// Consumer Group 的名称。
+func (o GetGroupTopicInfoPartitionInfoOutput) GroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) string { return v.GroupName }).(pulumi.StringOutput)
+}
+
+// 分区中未被消费的消息条数。
+func (o GetGroupTopicInfoPartitionInfoOutput) Lag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.Lag }).(pulumi.IntOutput)
+}
+
+// 最新消费位点。
+func (o GetGroupTopicInfoPartitionInfoOutput) LatestOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.LatestOffset }).(pulumi.IntOutput)
+}
+
+// 分区序号。
+func (o GetGroupTopicInfoPartitionInfoOutput) PartitionId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) int { return v.PartitionId }).(pulumi.IntOutput)
+}
+
+// Consumer Group 订阅的 Topic 名称。
+func (o GetGroupTopicInfoPartitionInfoOutput) TopicName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupTopicInfoPartitionInfo) string { return v.TopicName }).(pulumi.StringOutput)
+}
+
+type GetGroupTopicInfoPartitionInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupTopicInfoPartitionInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupTopicInfoPartitionInfo)(nil)).Elem()
+}
+
+func (o GetGroupTopicInfoPartitionInfoArrayOutput) ToGetGroupTopicInfoPartitionInfoArrayOutput() GetGroupTopicInfoPartitionInfoArrayOutput {
+	return o
+}
+
+func (o GetGroupTopicInfoPartitionInfoArrayOutput) ToGetGroupTopicInfoPartitionInfoArrayOutputWithContext(ctx context.Context) GetGroupTopicInfoPartitionInfoArrayOutput {
+	return o
+}
+
+func (o GetGroupTopicInfoPartitionInfoArrayOutput) Index(i pulumi.IntInput) GetGroupTopicInfoPartitionInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupTopicInfoPartitionInfo {
+		return vs[0].([]GetGroupTopicInfoPartitionInfo)[vs[1].(int)]
+	}).(GetGroupTopicInfoPartitionInfoOutput)
+}
+
 type GetInstanceEndpoints struct {
 	// 实例私网访问接入点响应数据。
 	Overlay GetInstanceEndpointsOverlay `pulumi:"overlay"`
@@ -2188,6 +3108,12 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupResetInfoInput)(nil)).Elem(), GroupResetInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupResetInfoPtrInput)(nil)).Elem(), GroupResetInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupTopicInfoInput)(nil)).Elem(), GroupTopicInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupTopicInfoArrayInput)(nil)).Elem(), GroupTopicInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupTopicInfoPartitionInfoInput)(nil)).Elem(), GroupTopicInfoPartitionInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupTopicInfoPartitionInfoArrayInput)(nil)).Elem(), GroupTopicInfoPartitionInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointsInput)(nil)).Elem(), InstanceEndpointsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointsPtrInput)(nil)).Elem(), InstanceEndpointsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointsOverlayInput)(nil)).Elem(), InstanceEndpointsOverlayArgs{})
@@ -2204,6 +3130,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceResourcesStoragePtrInput)(nil)).Elem(), InstanceResourcesStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupResetInfoInput)(nil)).Elem(), GetGroupResetInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupTopicInfoInput)(nil)).Elem(), GetGroupTopicInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupTopicInfoArrayInput)(nil)).Elem(), GetGroupTopicInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupTopicInfoPartitionInfoInput)(nil)).Elem(), GetGroupTopicInfoPartitionInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupTopicInfoPartitionInfoArrayInput)(nil)).Elem(), GetGroupTopicInfoPartitionInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointsInput)(nil)).Elem(), GetInstanceEndpointsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointsOverlayInput)(nil)).Elem(), GetInstanceEndpointsOverlayArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointsPublicInput)(nil)).Elem(), GetInstanceEndpointsPublicArgs{})
@@ -2215,6 +3146,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceResourcesStorageInput)(nil)).Elem(), GetInstanceResourcesStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterOutputType(GroupResetInfoOutput{})
+	pulumi.RegisterOutputType(GroupResetInfoPtrOutput{})
+	pulumi.RegisterOutputType(GroupTopicInfoOutput{})
+	pulumi.RegisterOutputType(GroupTopicInfoArrayOutput{})
+	pulumi.RegisterOutputType(GroupTopicInfoPartitionInfoOutput{})
+	pulumi.RegisterOutputType(GroupTopicInfoPartitionInfoArrayOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointsOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointsPtrOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointsOverlayOutput{})
@@ -2231,6 +3168,11 @@ func init() {
 	pulumi.RegisterOutputType(InstanceResourcesStoragePtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupResetInfoOutput{})
+	pulumi.RegisterOutputType(GetGroupTopicInfoOutput{})
+	pulumi.RegisterOutputType(GetGroupTopicInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupTopicInfoPartitionInfoOutput{})
+	pulumi.RegisterOutputType(GetGroupTopicInfoPartitionInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointsOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointsOverlayOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointsPublicOutput{})

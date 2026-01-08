@@ -27,18 +27,24 @@ if typing.TYPE_CHECKING:
     clb = __clb
     import pulumi_bytepluscc.cloudidentity as __cloudidentity
     cloudidentity = __cloudidentity
+    import pulumi_bytepluscc.cloudmonitor as __cloudmonitor
+    cloudmonitor = __cloudmonitor
     import pulumi_bytepluscc.config as __config
     config = __config
     import pulumi_bytepluscc.cr as __cr
     cr = __cr
+    import pulumi_bytepluscc.directconnect as __directconnect
+    directconnect = __directconnect
     import pulumi_bytepluscc.dns as __dns
     dns = __dns
     import pulumi_bytepluscc.ecs as __ecs
     ecs = __ecs
     import pulumi_bytepluscc.escloud as __escloud
     escloud = __escloud
-    import pulumi_bytepluscc.firewallcenter as __firewallcenter
-    firewallcenter = __firewallcenter
+    import pulumi_bytepluscc.filenas as __filenas
+    filenas = __filenas
+    import pulumi_bytepluscc.fwcenter as __fwcenter
+    fwcenter = __fwcenter
     import pulumi_bytepluscc.hbase as __hbase
     hbase = __hbase
     import pulumi_bytepluscc.iam as __iam
@@ -76,12 +82,15 @@ else:
     cen = _utilities.lazy_import('pulumi_bytepluscc.cen')
     clb = _utilities.lazy_import('pulumi_bytepluscc.clb')
     cloudidentity = _utilities.lazy_import('pulumi_bytepluscc.cloudidentity')
+    cloudmonitor = _utilities.lazy_import('pulumi_bytepluscc.cloudmonitor')
     config = _utilities.lazy_import('pulumi_bytepluscc.config')
     cr = _utilities.lazy_import('pulumi_bytepluscc.cr')
+    directconnect = _utilities.lazy_import('pulumi_bytepluscc.directconnect')
     dns = _utilities.lazy_import('pulumi_bytepluscc.dns')
     ecs = _utilities.lazy_import('pulumi_bytepluscc.ecs')
     escloud = _utilities.lazy_import('pulumi_bytepluscc.escloud')
-    firewallcenter = _utilities.lazy_import('pulumi_bytepluscc.firewallcenter')
+    filenas = _utilities.lazy_import('pulumi_bytepluscc.filenas')
+    fwcenter = _utilities.lazy_import('pulumi_bytepluscc.fwcenter')
     hbase = _utilities.lazy_import('pulumi_bytepluscc.hbase')
     iam = _utilities.lazy_import('pulumi_bytepluscc.iam')
     kafka = _utilities.lazy_import('pulumi_bytepluscc.kafka')
@@ -174,6 +183,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "bmq/group",
+  "fqn": "pulumi_bytepluscc.bmq",
+  "classes": {
+   "bytepluscc:bmq/group:Group": "Group"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "bmq/instance",
   "fqn": "pulumi_bytepluscc.bmq",
   "classes": {
@@ -206,10 +223,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "clb/nlbListener",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/nlbListener:NlbListener": "NlbListener"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "clb/nlbServerGroup",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/nlbServerGroup:NlbServerGroup": "NlbServerGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/rule",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
    "bytepluscc:clb/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "clb/serverGroup",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/serverGroup:ServerGroup": "ServerGroup"
   }
  },
  {
@@ -222,10 +263,26 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudmonitor/rule",
+  "fqn": "pulumi_bytepluscc.cloudmonitor",
+  "classes": {
+   "bytepluscc:cloudmonitor/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cr/repository",
   "fqn": "pulumi_bytepluscc.cr",
   "classes": {
    "bytepluscc:cr/repository:Repository": "Repository"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "directconnect/directConnectGateway",
+  "fqn": "pulumi_bytepluscc.directconnect",
+  "classes": {
+   "bytepluscc:directconnect/directConnectGateway:DirectConnectGateway": "DirectConnectGateway"
   }
  },
  {
@@ -262,10 +319,18 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
-  "mod": "firewallcenter/dnsControlPolicy",
-  "fqn": "pulumi_bytepluscc.firewallcenter",
+  "mod": "filenas/instance",
+  "fqn": "pulumi_bytepluscc.filenas",
   "classes": {
-   "bytepluscc:firewallcenter/dnsControlPolicy:DnsControlPolicy": "DnsControlPolicy"
+   "bytepluscc:filenas/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "fwcenter/dnsControlPolicy",
+  "fqn": "pulumi_bytepluscc.fwcenter",
+  "classes": {
+   "bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy": "DnsControlPolicy"
   }
  },
  {
@@ -470,10 +535,26 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vpc/eip",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/eip:Eip": "Eip"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vpc/eni",
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/eni:Eni": "Eni"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/routeTable",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/routeTable:RouteTable": "RouteTable"
   }
  },
  {

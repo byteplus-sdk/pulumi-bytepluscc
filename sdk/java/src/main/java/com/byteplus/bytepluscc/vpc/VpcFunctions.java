@@ -4,16 +4,24 @@
 package com.byteplus.bytepluscc.vpc;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vpc.inputs.GetEipArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetEipPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetRouteTableArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetRouteTablePlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSubnetArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSubnetPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcPlainArgs;
+import com.byteplus.bytepluscc.vpc.outputs.GetEipResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetEipsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEniResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEnisResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetRouteTableResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetRouteTablesResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSubnetResult;
@@ -29,6 +37,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VpcFunctions {
+    /**
+     * Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static Output<GetEipResult> getEip(GetEipArgs args) {
+        return getEip(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static CompletableFuture<GetEipResult> getEipPlain(GetEipPlainArgs args) {
+        return getEipPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static Output<GetEipResult> getEip(GetEipArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEip:getEip", TypeShape.of(GetEipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static Output<GetEipResult> getEip(GetEipArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEip:getEip", TypeShape.of(GetEipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static CompletableFuture<GetEipResult> getEipPlain(GetEipPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getEip:getEip", TypeShape.of(GetEipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static Output<GetEipsResult> getEips() {
+        return getEips(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static CompletableFuture<GetEipsResult> getEipsPlain() {
+        return getEipsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static Output<GetEipsResult> getEips(InvokeArgs args) {
+        return getEips(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static CompletableFuture<GetEipsResult> getEipsPlain(InvokeArgs args) {
+        return getEipsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static Output<GetEipsResult> getEips(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEips:getEips", TypeShape.of(GetEipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static Output<GetEipsResult> getEips(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getEips:getEips", TypeShape.of(GetEipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::EIP
+     * 
+     */
+    public static CompletableFuture<GetEipsResult> getEipsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getEips:getEips", TypeShape.of(GetEipsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VPC::ENI
      * 
@@ -112,6 +204,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetEnisResult> getEnisPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getEnis:getEnis", TypeShape.of(GetEnisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static Output<GetRouteTableResult> getRouteTable(GetRouteTableArgs args) {
+        return getRouteTable(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static CompletableFuture<GetRouteTableResult> getRouteTablePlain(GetRouteTablePlainArgs args) {
+        return getRouteTablePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static Output<GetRouteTableResult> getRouteTable(GetRouteTableArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getRouteTable:getRouteTable", TypeShape.of(GetRouteTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static Output<GetRouteTableResult> getRouteTable(GetRouteTableArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getRouteTable:getRouteTable", TypeShape.of(GetRouteTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static CompletableFuture<GetRouteTableResult> getRouteTablePlain(GetRouteTablePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getRouteTable:getRouteTable", TypeShape.of(GetRouteTableResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static Output<GetRouteTablesResult> getRouteTables() {
+        return getRouteTables(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain() {
+        return getRouteTablesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static Output<GetRouteTablesResult> getRouteTables(InvokeArgs args) {
+        return getRouteTables(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain(InvokeArgs args) {
+        return getRouteTablesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static Output<GetRouteTablesResult> getRouteTables(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getRouteTables:getRouteTables", TypeShape.of(GetRouteTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static Output<GetRouteTablesResult> getRouteTables(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getRouteTables:getRouteTables", TypeShape.of(GetRouteTablesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::RouteTable
+     * 
+     */
+    public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getRouteTables:getRouteTables", TypeShape.of(GetRouteTablesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::SecurityGroup
