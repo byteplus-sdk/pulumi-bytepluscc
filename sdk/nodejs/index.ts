@@ -18,12 +18,15 @@ import * as cdn from "./cdn";
 import * as cen from "./cen";
 import * as clb from "./clb";
 import * as cloudidentity from "./cloudidentity";
+import * as cloudmonitor from "./cloudmonitor";
 import * as config from "./config";
 import * as cr from "./cr";
+import * as directconnect from "./directconnect";
 import * as dns from "./dns";
 import * as ecs from "./ecs";
 import * as escloud from "./escloud";
-import * as firewallcenter from "./firewallcenter";
+import * as filenas from "./filenas";
+import * as fwcenter from "./fwcenter";
 import * as hbase from "./hbase";
 import * as iam from "./iam";
 import * as kafka from "./kafka";
@@ -49,12 +52,15 @@ export {
     cen,
     clb,
     cloudidentity,
+    cloudmonitor,
     config,
     cr,
+    directconnect,
     dns,
     ecs,
     escloud,
-    firewallcenter,
+    filenas,
+    fwcenter,
     hbase,
     iam,
     kafka,

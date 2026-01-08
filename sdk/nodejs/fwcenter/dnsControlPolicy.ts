@@ -12,7 +12,7 @@ import * as utilities from "../utilities";
  * ## Import
  *
  * ```sh
- * $ pulumi import bytepluscc:firewallcenter/dnsControlPolicy:DnsControlPolicy example "rule_id"
+ * $ pulumi import bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy example "rule_id"
  * ```
  */
 export class DnsControlPolicy extends pulumi.CustomResource {
@@ -30,7 +30,7 @@ export class DnsControlPolicy extends pulumi.CustomResource {
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'bytepluscc:firewallcenter/dnsControlPolicy:DnsControlPolicy';
+    public static readonly __pulumiType = 'bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy';
 
     /**
      * Returns true if the given object is an instance of DnsControlPolicy.  This is designed to work even
@@ -63,7 +63,7 @@ export class DnsControlPolicy extends pulumi.CustomResource {
      * 访问目的的类型。domain：域名；group：域名地址簿。
      */
     public readonly destinationType!: pulumi.Output<string>;
-    public /*out*/ readonly domainListV1s!: pulumi.Output<outputs.firewallcenter.DnsControlPolicyDomainListV1[]>;
+    public /*out*/ readonly domainListV1s!: pulumi.Output<outputs.fwcenter.DnsControlPolicyDomainListV1[]>;
     /**
      * 域名列表。
      */
@@ -84,7 +84,7 @@ export class DnsControlPolicy extends pulumi.CustomResource {
      * 访问控制策略的唯一标识ID。
      */
     public /*out*/ readonly ruleId!: pulumi.Output<string>;
-    public readonly sources!: pulumi.Output<outputs.firewallcenter.DnsControlPolicySource[]>;
+    public readonly sources!: pulumi.Output<outputs.fwcenter.DnsControlPolicySource[]>;
     /**
      * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
      */
@@ -173,7 +173,7 @@ export interface DnsControlPolicyState {
      * 访问目的的类型。domain：域名；group：域名地址簿。
      */
     destinationType?: pulumi.Input<string>;
-    domainListV1s?: pulumi.Input<pulumi.Input<inputs.firewallcenter.DnsControlPolicyDomainListV1>[]>;
+    domainListV1s?: pulumi.Input<pulumi.Input<inputs.fwcenter.DnsControlPolicyDomainListV1>[]>;
     /**
      * 域名列表。
      */
@@ -194,7 +194,7 @@ export interface DnsControlPolicyState {
      * 访问控制策略的唯一标识ID。
      */
     ruleId?: pulumi.Input<string>;
-    sources?: pulumi.Input<pulumi.Input<inputs.firewallcenter.DnsControlPolicySource>[]>;
+    sources?: pulumi.Input<pulumi.Input<inputs.fwcenter.DnsControlPolicySource>[]>;
     /**
      * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
      */
@@ -225,7 +225,7 @@ export interface DnsControlPolicyArgs {
      * 互联网边界防火墙实例ID。
      */
     internetFirewallId?: pulumi.Input<string>;
-    sources?: pulumi.Input<pulumi.Input<inputs.firewallcenter.DnsControlPolicySource>[]>;
+    sources?: pulumi.Input<pulumi.Input<inputs.fwcenter.DnsControlPolicySource>[]>;
     /**
      * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
      */

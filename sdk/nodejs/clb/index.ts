@@ -15,6 +15,26 @@ export const getListeners: typeof import("./getListeners").getListeners = null a
 export const getListenersOutput: typeof import("./getListeners").getListenersOutput = null as any;
 utilities.lazyLoad(exports, ["getListeners","getListenersOutput"], () => require("./getListeners"));
 
+export { GetNlbListenerArgs, GetNlbListenerResult, GetNlbListenerOutputArgs } from "./getNlbListener";
+export const getNlbListener: typeof import("./getNlbListener").getNlbListener = null as any;
+export const getNlbListenerOutput: typeof import("./getNlbListener").getNlbListenerOutput = null as any;
+utilities.lazyLoad(exports, ["getNlbListener","getNlbListenerOutput"], () => require("./getNlbListener"));
+
+export { GetNlbListenersResult } from "./getNlbListeners";
+export const getNlbListeners: typeof import("./getNlbListeners").getNlbListeners = null as any;
+export const getNlbListenersOutput: typeof import("./getNlbListeners").getNlbListenersOutput = null as any;
+utilities.lazyLoad(exports, ["getNlbListeners","getNlbListenersOutput"], () => require("./getNlbListeners"));
+
+export { GetNlbServerGroupArgs, GetNlbServerGroupResult, GetNlbServerGroupOutputArgs } from "./getNlbServerGroup";
+export const getNlbServerGroup: typeof import("./getNlbServerGroup").getNlbServerGroup = null as any;
+export const getNlbServerGroupOutput: typeof import("./getNlbServerGroup").getNlbServerGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getNlbServerGroup","getNlbServerGroupOutput"], () => require("./getNlbServerGroup"));
+
+export { GetNlbServerGroupsResult } from "./getNlbServerGroups";
+export const getNlbServerGroups: typeof import("./getNlbServerGroups").getNlbServerGroups = null as any;
+export const getNlbServerGroupsOutput: typeof import("./getNlbServerGroups").getNlbServerGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getNlbServerGroups","getNlbServerGroupsOutput"], () => require("./getNlbServerGroups"));
+
 export { GetRuleArgs, GetRuleResult, GetRuleOutputArgs } from "./getRule";
 export const getRule: typeof import("./getRule").getRule = null as any;
 export const getRuleOutput: typeof import("./getRule").getRuleOutput = null as any;
@@ -25,15 +45,40 @@ export const getRules: typeof import("./getRules").getRules = null as any;
 export const getRulesOutput: typeof import("./getRules").getRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getRules","getRulesOutput"], () => require("./getRules"));
 
+export { GetServerGroupArgs, GetServerGroupResult, GetServerGroupOutputArgs } from "./getServerGroup";
+export const getServerGroup: typeof import("./getServerGroup").getServerGroup = null as any;
+export const getServerGroupOutput: typeof import("./getServerGroup").getServerGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getServerGroup","getServerGroupOutput"], () => require("./getServerGroup"));
+
+export { GetServerGroupsResult } from "./getServerGroups";
+export const getServerGroups: typeof import("./getServerGroups").getServerGroups = null as any;
+export const getServerGroupsOutput: typeof import("./getServerGroups").getServerGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getServerGroups","getServerGroupsOutput"], () => require("./getServerGroups"));
+
 export { ListenerArgs, ListenerState } from "./listener";
 export type Listener = import("./listener").Listener;
 export const Listener: typeof import("./listener").Listener = null as any;
 utilities.lazyLoad(exports, ["Listener"], () => require("./listener"));
 
+export { NlbListenerArgs, NlbListenerState } from "./nlbListener";
+export type NlbListener = import("./nlbListener").NlbListener;
+export const NlbListener: typeof import("./nlbListener").NlbListener = null as any;
+utilities.lazyLoad(exports, ["NlbListener"], () => require("./nlbListener"));
+
+export { NlbServerGroupArgs, NlbServerGroupState } from "./nlbServerGroup";
+export type NlbServerGroup = import("./nlbServerGroup").NlbServerGroup;
+export const NlbServerGroup: typeof import("./nlbServerGroup").NlbServerGroup = null as any;
+utilities.lazyLoad(exports, ["NlbServerGroup"], () => require("./nlbServerGroup"));
+
 export { RuleArgs, RuleState } from "./rule";
 export type Rule = import("./rule").Rule;
 export const Rule: typeof import("./rule").Rule = null as any;
 utilities.lazyLoad(exports, ["Rule"], () => require("./rule"));
+
+export { ServerGroupArgs, ServerGroupState } from "./serverGroup";
+export type ServerGroup = import("./serverGroup").ServerGroup;
+export const ServerGroup: typeof import("./serverGroup").ServerGroup = null as any;
+utilities.lazyLoad(exports, ["ServerGroup"], () => require("./serverGroup"));
 
 
 const _module = {
@@ -42,12 +87,21 @@ const _module = {
         switch (type) {
             case "bytepluscc:clb/listener:Listener":
                 return new Listener(name, <any>undefined, { urn })
+            case "bytepluscc:clb/nlbListener:NlbListener":
+                return new NlbListener(name, <any>undefined, { urn })
+            case "bytepluscc:clb/nlbServerGroup:NlbServerGroup":
+                return new NlbServerGroup(name, <any>undefined, { urn })
             case "bytepluscc:clb/rule:Rule":
                 return new Rule(name, <any>undefined, { urn })
+            case "bytepluscc:clb/serverGroup:ServerGroup":
+                return new ServerGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/listener", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlbListener", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlbServerGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/rule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/serverGroup", _module)

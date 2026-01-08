@@ -7,11 +7,11 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Data Source schema for Byteplus::FireWallCenter::DnsControlPolicy
+ * Data Source schema for Byteplus::FWCenter::DnsControlPolicy
  */
 export function getDnsControlPolicy(args: GetDnsControlPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetDnsControlPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
-    return pulumi.runtime.invoke("bytepluscc:firewallcenter/getDnsControlPolicy:getDnsControlPolicy", {
+    return pulumi.runtime.invoke("bytepluscc:fwcenter/getDnsControlPolicy:getDnsControlPolicy", {
         "id": args.id,
     }, opts);
 }
@@ -53,7 +53,7 @@ export interface GetDnsControlPolicyResult {
     /**
      * 域名地址簿的域名列表。
      */
-    readonly domainListV1s: outputs.firewallcenter.GetDnsControlPolicyDomainListV1[];
+    readonly domainListV1s: outputs.fwcenter.GetDnsControlPolicyDomainListV1[];
     /**
      * 域名列表。
      */
@@ -81,7 +81,7 @@ export interface GetDnsControlPolicyResult {
     /**
      * 访问源信息，包含VPC列表。
      */
-    readonly sources: outputs.firewallcenter.GetDnsControlPolicySource[];
+    readonly sources: outputs.fwcenter.GetDnsControlPolicySource[];
     /**
      * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
      */
@@ -92,11 +92,11 @@ export interface GetDnsControlPolicyResult {
     readonly useCount: number;
 }
 /**
- * Data Source schema for Byteplus::FireWallCenter::DnsControlPolicy
+ * Data Source schema for Byteplus::FWCenter::DnsControlPolicy
  */
 export function getDnsControlPolicyOutput(args: GetDnsControlPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDnsControlPolicyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
-    return pulumi.runtime.invokeOutput("bytepluscc:firewallcenter/getDnsControlPolicy:getDnsControlPolicy", {
+    return pulumi.runtime.invokeOutput("bytepluscc:fwcenter/getDnsControlPolicy:getDnsControlPolicy", {
         "id": args.id,
     }, opts);
 }

@@ -5,11 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * Plural Data Source schema for Byteplus::FireWallCenter::DnsControlPolicy
+ * Plural Data Source schema for Byteplus::FWCenter::DnsControlPolicy
  */
 export function getDnsControlPolicies(opts?: pulumi.InvokeOptions): Promise<GetDnsControlPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
-    return pulumi.runtime.invoke("bytepluscc:firewallcenter/getDnsControlPolicies:getDnsControlPolicies", {
+    return pulumi.runtime.invoke("bytepluscc:fwcenter/getDnsControlPolicies:getDnsControlPolicies", {
     }, opts);
 }
 
@@ -27,10 +27,10 @@ export interface GetDnsControlPoliciesResult {
     readonly ids: string[];
 }
 /**
- * Plural Data Source schema for Byteplus::FireWallCenter::DnsControlPolicy
+ * Plural Data Source schema for Byteplus::FWCenter::DnsControlPolicy
  */
 export function getDnsControlPoliciesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDnsControlPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
-    return pulumi.runtime.invokeOutput("bytepluscc:firewallcenter/getDnsControlPolicies:getDnsControlPolicies", {
+    return pulumi.runtime.invokeOutput("bytepluscc:fwcenter/getDnsControlPolicies:getDnsControlPolicies", {
     }, opts);
 }

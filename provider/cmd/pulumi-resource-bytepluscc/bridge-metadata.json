@@ -168,6 +168,21 @@
                     }
                 }
             },
+            "bytepluscc_bmq_group": {
+                "current": "bytepluscc:bmq/group:Group",
+                "fields": {
+                    "topic_infos": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "partition_infos": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_bmq_instance": {
                 "current": "bytepluscc:bmq/instance:Instance",
                 "fields": {
@@ -287,6 +302,31 @@
                     }
                 }
             },
+            "bytepluscc_clb_nlb_listener": {
+                "current": "bytepluscc:clb/nlbListener:NlbListener",
+                "fields": {
+                    "health": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_nlb_server_group": {
+                "current": "bytepluscc:clb/nlbServerGroup:NlbServerGroup",
+                "fields": {
+                    "related_load_balancer_ids": {
+                        "maxItemsOne": false
+                    },
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_rule": {
                 "current": "bytepluscc:clb/rule:Rule",
                 "fields": {
@@ -295,11 +335,118 @@
                     }
                 }
             },
+            "bytepluscc_clb_server_group": {
+                "current": "bytepluscc:clb/serverGroup:ServerGroup",
+                "fields": {
+                    "listeners": {
+                        "maxItemsOne": false
+                    },
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudidentity_user": {
                 "current": "bytepluscc:cloudidentity/user:User"
             },
+            "bytepluscc_cloudmonitor_rule": {
+                "current": "bytepluscc:cloudmonitor/rule:Rule",
+                "fields": {
+                    "alert_methods": {
+                        "maxItemsOne": false
+                    },
+                    "conditions": {
+                        "maxItemsOne": false
+                    },
+                    "contact_group_ids": {
+                        "maxItemsOne": false
+                    },
+                    "dimension_conditions": {
+                        "fields": {
+                            "meta_condition": {
+                                "fields": {
+                                    "metas": {
+                                        "maxItemsOne": false,
+                                        "elem": {
+                                            "fields": {
+                                                "values": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "project_condition": {
+                                "fields": {
+                                    "projects": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            },
+                            "tag_condition": {
+                                "fields": {
+                                    "tags": {
+                                        "maxItemsOne": false,
+                                        "elem": {
+                                            "fields": {
+                                                "values": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "level_conditions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "conditions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "notify_templates": {
+                        "maxItemsOne": false
+                    },
+                    "original_dimensions": {
+                        "fields": {
+                            "values": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "regions": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "webhook_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cr_repository": {
                 "current": "bytepluscc:cr/repository:Repository"
+            },
+            "bytepluscc_directconnect_direct_connect_gateway": {
+                "current": "bytepluscc:directconnect/directConnectGateway:DirectConnectGateway",
+                "fields": {
+                    "associate_cens": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_dns_zone": {
                 "current": "bytepluscc:dns/zone:Zone",
@@ -394,8 +541,16 @@
                     }
                 }
             },
-            "bytepluscc_firewallcenter_dns_control_policy": {
-                "current": "bytepluscc:firewallcenter/dnsControlPolicy:DnsControlPolicy",
+            "bytepluscc_filenas_instance": {
+                "current": "bytepluscc:filenas/instance:Instance",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_fwcenter_dns_control_policy": {
+                "current": "bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy",
                 "fields": {
                     "destination_group_list": {
                         "maxItemsOne": false
@@ -888,6 +1043,17 @@
             "bytepluscc_vke_permission": {
                 "current": "bytepluscc:vke/permission:Permission"
             },
+            "bytepluscc_vpc_eip": {
+                "current": "bytepluscc:vpc/eip:Eip",
+                "fields": {
+                    "security_protection_types": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vpc_eni": {
                 "current": "bytepluscc:vpc/eni:Eni",
                 "fields": {
@@ -899,6 +1065,30 @@
                     },
                     "security_group_ids": {
                         "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_route_table": {
+                "current": "bytepluscc:vpc/routeTable:RouteTable",
+                "fields": {
+                    "custom_route_entries": {
+                        "maxItemsOne": false
+                    },
+                    "subnet_ids": {
+                        "maxItemsOne": false
+                    },
+                    "system_route_entries": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "prefix_list_cidr_blocks": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     },
                     "tags": {
                         "maxItemsOne": false
@@ -1200,6 +1390,29 @@
                     }
                 }
             },
+            "bytepluscc_bmq_group": {
+                "current": "bytepluscc:bmq/getGroup:getGroup",
+                "fields": {
+                    "topic_infos": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "partition_infos": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_bmq_groups": {
+                "current": "bytepluscc:bmq/getGroups:getGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_bmq_instance": {
                 "current": "bytepluscc:bmq/getInstance:getInstance",
                 "fields": {
@@ -1351,6 +1564,47 @@
                     }
                 }
             },
+            "bytepluscc_clb_nlb_listener": {
+                "current": "bytepluscc:clb/getNlbListener:getNlbListener",
+                "fields": {
+                    "health": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_nlb_listeners": {
+                "current": "bytepluscc:clb/getNlbListeners:getNlbListeners",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_nlb_server_group": {
+                "current": "bytepluscc:clb/getNlbServerGroup:getNlbServerGroup",
+                "fields": {
+                    "related_load_balancer_ids": {
+                        "maxItemsOne": false
+                    },
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_nlb_server_groups": {
+                "current": "bytepluscc:clb/getNlbServerGroups:getNlbServerGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_rule": {
                 "current": "bytepluscc:clb/getRule:getRule",
                 "fields": {
@@ -1361,6 +1615,28 @@
             },
             "bytepluscc_clb_rules": {
                 "current": "bytepluscc:clb/getRules:getRules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_server_group": {
+                "current": "bytepluscc:clb/getServerGroup:getServerGroup",
+                "fields": {
+                    "listeners": {
+                        "maxItemsOne": false
+                    },
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_server_groups": {
+                "current": "bytepluscc:clb/getServerGroups:getServerGroups",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -1378,6 +1654,96 @@
                     }
                 }
             },
+            "bytepluscc_cloudmonitor_rule": {
+                "current": "bytepluscc:cloudmonitor/getRule:getRule",
+                "fields": {
+                    "alert_methods": {
+                        "maxItemsOne": false
+                    },
+                    "conditions": {
+                        "maxItemsOne": false
+                    },
+                    "contact_group_ids": {
+                        "maxItemsOne": false
+                    },
+                    "dimension_conditions": {
+                        "fields": {
+                            "meta_condition": {
+                                "fields": {
+                                    "metas": {
+                                        "maxItemsOne": false,
+                                        "elem": {
+                                            "fields": {
+                                                "values": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "project_condition": {
+                                "fields": {
+                                    "projects": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            },
+                            "tag_condition": {
+                                "fields": {
+                                    "tags": {
+                                        "maxItemsOne": false,
+                                        "elem": {
+                                            "fields": {
+                                                "values": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "level_conditions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "conditions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "notify_templates": {
+                        "maxItemsOne": false
+                    },
+                    "original_dimensions": {
+                        "fields": {
+                            "values": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "regions": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "webhook_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudmonitor_rules": {
+                "current": "bytepluscc:cloudmonitor/getRules:getRules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cr_repositories": {
                 "current": "bytepluscc:cr/getRepositories:getRepositories",
                 "fields": {
@@ -1388,6 +1754,25 @@
             },
             "bytepluscc_cr_repository": {
                 "current": "bytepluscc:cr/getRepository:getRepository"
+            },
+            "bytepluscc_directconnect_direct_connect_gateway": {
+                "current": "bytepluscc:directconnect/getDirectConnectGateway:getDirectConnectGateway",
+                "fields": {
+                    "associate_cens": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_directconnect_direct_connect_gateways": {
+                "current": "bytepluscc:directconnect/getDirectConnectGateways:getDirectConnectGateways",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_dns_zone": {
                 "current": "bytepluscc:dns/getZone:getZone",
@@ -1517,16 +1902,32 @@
                     }
                 }
             },
-            "bytepluscc_firewallcenter_dns_control_policies": {
-                "current": "bytepluscc:firewallcenter/getDnsControlPolicies:getDnsControlPolicies",
+            "bytepluscc_filenas_instance": {
+                "current": "bytepluscc:filenas/getInstance:getInstance",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_filenas_instances": {
+                "current": "bytepluscc:filenas/getInstances:getInstances",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
                     }
                 }
             },
-            "bytepluscc_firewallcenter_dns_control_policy": {
-                "current": "bytepluscc:firewallcenter/getDnsControlPolicy:getDnsControlPolicy",
+            "bytepluscc_fwcenter_dns_control_policies": {
+                "current": "bytepluscc:fwcenter/getDnsControlPolicies:getDnsControlPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_fwcenter_dns_control_policy": {
+                "current": "bytepluscc:fwcenter/getDnsControlPolicy:getDnsControlPolicy",
                 "fields": {
                     "destination_group_list": {
                         "maxItemsOne": false
@@ -2219,6 +2620,25 @@
                     }
                 }
             },
+            "bytepluscc_vpc_eip": {
+                "current": "bytepluscc:vpc/getEip:getEip",
+                "fields": {
+                    "security_protection_types": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_eips": {
+                "current": "bytepluscc:vpc/getEips:getEips",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vpc_eni": {
                 "current": "bytepluscc:vpc/getEni:getEni",
                 "fields": {
@@ -2238,6 +2658,45 @@
             },
             "bytepluscc_vpc_enis": {
                 "current": "bytepluscc:vpc/getEnis:getEnis",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_route_table": {
+                "current": "bytepluscc:vpc/getRouteTable:getRouteTable",
+                "fields": {
+                    "custom_route_entries": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "prefix_list_cidr_blocks": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "subnet_ids": {
+                        "maxItemsOne": false
+                    },
+                    "system_route_entries": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "prefix_list_cidr_blocks": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_route_tables": {
+                "current": "bytepluscc:vpc/getRouteTables:getRouteTables",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
