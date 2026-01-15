@@ -1362,6 +1362,308 @@ func (o NlbServerGroupTagArrayOutput) Index(i pulumi.IntInput) NlbServerGroupTag
 	}).(NlbServerGroupTagOutput)
 }
 
+type NlbTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// NlbTagInput is an input type that accepts NlbTagArgs and NlbTagOutput values.
+// You can construct a concrete instance of `NlbTagInput` via:
+//
+//	NlbTagArgs{...}
+type NlbTagInput interface {
+	pulumi.Input
+
+	ToNlbTagOutput() NlbTagOutput
+	ToNlbTagOutputWithContext(context.Context) NlbTagOutput
+}
+
+type NlbTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NlbTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbTag)(nil)).Elem()
+}
+
+func (i NlbTagArgs) ToNlbTagOutput() NlbTagOutput {
+	return i.ToNlbTagOutputWithContext(context.Background())
+}
+
+func (i NlbTagArgs) ToNlbTagOutputWithContext(ctx context.Context) NlbTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbTagOutput)
+}
+
+// NlbTagArrayInput is an input type that accepts NlbTagArray and NlbTagArrayOutput values.
+// You can construct a concrete instance of `NlbTagArrayInput` via:
+//
+//	NlbTagArray{ NlbTagArgs{...} }
+type NlbTagArrayInput interface {
+	pulumi.Input
+
+	ToNlbTagArrayOutput() NlbTagArrayOutput
+	ToNlbTagArrayOutputWithContext(context.Context) NlbTagArrayOutput
+}
+
+type NlbTagArray []NlbTagInput
+
+func (NlbTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbTag)(nil)).Elem()
+}
+
+func (i NlbTagArray) ToNlbTagArrayOutput() NlbTagArrayOutput {
+	return i.ToNlbTagArrayOutputWithContext(context.Background())
+}
+
+func (i NlbTagArray) ToNlbTagArrayOutputWithContext(ctx context.Context) NlbTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbTagArrayOutput)
+}
+
+type NlbTagOutput struct{ *pulumi.OutputState }
+
+func (NlbTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbTag)(nil)).Elem()
+}
+
+func (o NlbTagOutput) ToNlbTagOutput() NlbTagOutput {
+	return o
+}
+
+func (o NlbTagOutput) ToNlbTagOutputWithContext(ctx context.Context) NlbTagOutput {
+	return o
+}
+
+// 标签键。
+func (o NlbTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o NlbTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NlbTagArrayOutput struct{ *pulumi.OutputState }
+
+func (NlbTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbTag)(nil)).Elem()
+}
+
+func (o NlbTagArrayOutput) ToNlbTagArrayOutput() NlbTagArrayOutput {
+	return o
+}
+
+func (o NlbTagArrayOutput) ToNlbTagArrayOutputWithContext(ctx context.Context) NlbTagArrayOutput {
+	return o
+}
+
+func (o NlbTagArrayOutput) Index(i pulumi.IntInput) NlbTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NlbTag {
+		return vs[0].([]NlbTag)[vs[1].(int)]
+	}).(NlbTagOutput)
+}
+
+type NlbZoneMapping struct {
+	// 网卡ID。
+	EniId *string `pulumi:"eniId"`
+	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	Ipv4Address *string `pulumi:"ipv4Address"`
+	// NLB实例的公网IPv4 EIP地址。
+	Ipv4EipAddress *string `pulumi:"ipv4EipAddress"`
+	// NLB实例的公网IPv4 EIP ID。
+	Ipv4EipId *string `pulumi:"ipv4EipId"`
+	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv4HcStatus *string `pulumi:"ipv4HcStatus"`
+	// NLB实例的私网IPv4 LIP地址。
+	Ipv4LocalAddresses []string `pulumi:"ipv4LocalAddresses"`
+	// NLB实例的私网IPv6 VIP地址。
+	Ipv6Address *string `pulumi:"ipv6Address"`
+	// NLB实例关联的IPv6公网带宽的ID。
+	Ipv6EipId *string `pulumi:"ipv6EipId"`
+	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv6HcStatus *string `pulumi:"ipv6HcStatus"`
+	// NLB实例的私网IPv6 LIP地址。
+	Ipv6LocalAddresses []string `pulumi:"ipv6LocalAddresses"`
+	// NLB实例所属的子网ID。
+	SubnetId *string `pulumi:"subnetId"`
+	// NLB实例所属的可用区ID。
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// NlbZoneMappingInput is an input type that accepts NlbZoneMappingArgs and NlbZoneMappingOutput values.
+// You can construct a concrete instance of `NlbZoneMappingInput` via:
+//
+//	NlbZoneMappingArgs{...}
+type NlbZoneMappingInput interface {
+	pulumi.Input
+
+	ToNlbZoneMappingOutput() NlbZoneMappingOutput
+	ToNlbZoneMappingOutputWithContext(context.Context) NlbZoneMappingOutput
+}
+
+type NlbZoneMappingArgs struct {
+	// 网卡ID。
+	EniId pulumi.StringPtrInput `pulumi:"eniId"`
+	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	Ipv4Address pulumi.StringPtrInput `pulumi:"ipv4Address"`
+	// NLB实例的公网IPv4 EIP地址。
+	Ipv4EipAddress pulumi.StringPtrInput `pulumi:"ipv4EipAddress"`
+	// NLB实例的公网IPv4 EIP ID。
+	Ipv4EipId pulumi.StringPtrInput `pulumi:"ipv4EipId"`
+	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv4HcStatus pulumi.StringPtrInput `pulumi:"ipv4HcStatus"`
+	// NLB实例的私网IPv4 LIP地址。
+	Ipv4LocalAddresses pulumi.StringArrayInput `pulumi:"ipv4LocalAddresses"`
+	// NLB实例的私网IPv6 VIP地址。
+	Ipv6Address pulumi.StringPtrInput `pulumi:"ipv6Address"`
+	// NLB实例关联的IPv6公网带宽的ID。
+	Ipv6EipId pulumi.StringPtrInput `pulumi:"ipv6EipId"`
+	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv6HcStatus pulumi.StringPtrInput `pulumi:"ipv6HcStatus"`
+	// NLB实例的私网IPv6 LIP地址。
+	Ipv6LocalAddresses pulumi.StringArrayInput `pulumi:"ipv6LocalAddresses"`
+	// NLB实例所属的子网ID。
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// NLB实例所属的可用区ID。
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (NlbZoneMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbZoneMapping)(nil)).Elem()
+}
+
+func (i NlbZoneMappingArgs) ToNlbZoneMappingOutput() NlbZoneMappingOutput {
+	return i.ToNlbZoneMappingOutputWithContext(context.Background())
+}
+
+func (i NlbZoneMappingArgs) ToNlbZoneMappingOutputWithContext(ctx context.Context) NlbZoneMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbZoneMappingOutput)
+}
+
+// NlbZoneMappingArrayInput is an input type that accepts NlbZoneMappingArray and NlbZoneMappingArrayOutput values.
+// You can construct a concrete instance of `NlbZoneMappingArrayInput` via:
+//
+//	NlbZoneMappingArray{ NlbZoneMappingArgs{...} }
+type NlbZoneMappingArrayInput interface {
+	pulumi.Input
+
+	ToNlbZoneMappingArrayOutput() NlbZoneMappingArrayOutput
+	ToNlbZoneMappingArrayOutputWithContext(context.Context) NlbZoneMappingArrayOutput
+}
+
+type NlbZoneMappingArray []NlbZoneMappingInput
+
+func (NlbZoneMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbZoneMapping)(nil)).Elem()
+}
+
+func (i NlbZoneMappingArray) ToNlbZoneMappingArrayOutput() NlbZoneMappingArrayOutput {
+	return i.ToNlbZoneMappingArrayOutputWithContext(context.Background())
+}
+
+func (i NlbZoneMappingArray) ToNlbZoneMappingArrayOutputWithContext(ctx context.Context) NlbZoneMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbZoneMappingArrayOutput)
+}
+
+type NlbZoneMappingOutput struct{ *pulumi.OutputState }
+
+func (NlbZoneMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbZoneMapping)(nil)).Elem()
+}
+
+func (o NlbZoneMappingOutput) ToNlbZoneMappingOutput() NlbZoneMappingOutput {
+	return o
+}
+
+func (o NlbZoneMappingOutput) ToNlbZoneMappingOutputWithContext(ctx context.Context) NlbZoneMappingOutput {
+	return o
+}
+
+// 网卡ID。
+func (o NlbZoneMappingOutput) EniId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.EniId }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+func (o NlbZoneMappingOutput) Ipv4Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4Address }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例的公网IPv4 EIP地址。
+func (o NlbZoneMappingOutput) Ipv4EipAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4EipAddress }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例的公网IPv4 EIP ID。
+func (o NlbZoneMappingOutput) Ipv4EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4EipId }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+func (o NlbZoneMappingOutput) Ipv4HcStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4HcStatus }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例的私网IPv4 LIP地址。
+func (o NlbZoneMappingOutput) Ipv4LocalAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NlbZoneMapping) []string { return v.Ipv4LocalAddresses }).(pulumi.StringArrayOutput)
+}
+
+// NLB实例的私网IPv6 VIP地址。
+func (o NlbZoneMappingOutput) Ipv6Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv6Address }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例关联的IPv6公网带宽的ID。
+func (o NlbZoneMappingOutput) Ipv6EipId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv6EipId }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+func (o NlbZoneMappingOutput) Ipv6HcStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv6HcStatus }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例的私网IPv6 LIP地址。
+func (o NlbZoneMappingOutput) Ipv6LocalAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NlbZoneMapping) []string { return v.Ipv6LocalAddresses }).(pulumi.StringArrayOutput)
+}
+
+// NLB实例所属的子网ID。
+func (o NlbZoneMappingOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// NLB实例所属的可用区ID。
+func (o NlbZoneMappingOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbZoneMapping) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type NlbZoneMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (NlbZoneMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbZoneMapping)(nil)).Elem()
+}
+
+func (o NlbZoneMappingArrayOutput) ToNlbZoneMappingArrayOutput() NlbZoneMappingArrayOutput {
+	return o
+}
+
+func (o NlbZoneMappingArrayOutput) ToNlbZoneMappingArrayOutputWithContext(ctx context.Context) NlbZoneMappingArrayOutput {
+	return o
+}
+
+func (o NlbZoneMappingArrayOutput) Index(i pulumi.IntInput) NlbZoneMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NlbZoneMapping {
+		return vs[0].([]NlbZoneMapping)[vs[1].(int)]
+	}).(NlbZoneMappingOutput)
+}
+
 type RuleRedirectConfig struct {
 	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
 	Host *string `pulumi:"host"`
@@ -2975,6 +3277,308 @@ func (o GetNlbServerGroupTagArrayOutput) Index(i pulumi.IntInput) GetNlbServerGr
 	}).(GetNlbServerGroupTagOutput)
 }
 
+type GetNlbTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetNlbTagInput is an input type that accepts GetNlbTagArgs and GetNlbTagOutput values.
+// You can construct a concrete instance of `GetNlbTagInput` via:
+//
+//	GetNlbTagArgs{...}
+type GetNlbTagInput interface {
+	pulumi.Input
+
+	ToGetNlbTagOutput() GetNlbTagOutput
+	ToGetNlbTagOutputWithContext(context.Context) GetNlbTagOutput
+}
+
+type GetNlbTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNlbTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbTag)(nil)).Elem()
+}
+
+func (i GetNlbTagArgs) ToGetNlbTagOutput() GetNlbTagOutput {
+	return i.ToGetNlbTagOutputWithContext(context.Background())
+}
+
+func (i GetNlbTagArgs) ToGetNlbTagOutputWithContext(ctx context.Context) GetNlbTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbTagOutput)
+}
+
+// GetNlbTagArrayInput is an input type that accepts GetNlbTagArray and GetNlbTagArrayOutput values.
+// You can construct a concrete instance of `GetNlbTagArrayInput` via:
+//
+//	GetNlbTagArray{ GetNlbTagArgs{...} }
+type GetNlbTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNlbTagArrayOutput() GetNlbTagArrayOutput
+	ToGetNlbTagArrayOutputWithContext(context.Context) GetNlbTagArrayOutput
+}
+
+type GetNlbTagArray []GetNlbTagInput
+
+func (GetNlbTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbTag)(nil)).Elem()
+}
+
+func (i GetNlbTagArray) ToGetNlbTagArrayOutput() GetNlbTagArrayOutput {
+	return i.ToGetNlbTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNlbTagArray) ToGetNlbTagArrayOutputWithContext(ctx context.Context) GetNlbTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbTagArrayOutput)
+}
+
+type GetNlbTagOutput struct{ *pulumi.OutputState }
+
+func (GetNlbTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbTag)(nil)).Elem()
+}
+
+func (o GetNlbTagOutput) ToGetNlbTagOutput() GetNlbTagOutput {
+	return o
+}
+
+func (o GetNlbTagOutput) ToGetNlbTagOutputWithContext(ctx context.Context) GetNlbTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetNlbTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetNlbTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNlbTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNlbTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbTag)(nil)).Elem()
+}
+
+func (o GetNlbTagArrayOutput) ToGetNlbTagArrayOutput() GetNlbTagArrayOutput {
+	return o
+}
+
+func (o GetNlbTagArrayOutput) ToGetNlbTagArrayOutputWithContext(ctx context.Context) GetNlbTagArrayOutput {
+	return o
+}
+
+func (o GetNlbTagArrayOutput) Index(i pulumi.IntInput) GetNlbTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNlbTag {
+		return vs[0].([]GetNlbTag)[vs[1].(int)]
+	}).(GetNlbTagOutput)
+}
+
+type GetNlbZoneMapping struct {
+	// 网卡ID。
+	EniId string `pulumi:"eniId"`
+	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	Ipv4Address string `pulumi:"ipv4Address"`
+	// NLB实例的公网IPv4 EIP地址。
+	Ipv4EipAddress string `pulumi:"ipv4EipAddress"`
+	// NLB实例的公网IPv4 EIP ID。
+	Ipv4EipId string `pulumi:"ipv4EipId"`
+	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv4HcStatus string `pulumi:"ipv4HcStatus"`
+	// NLB实例的私网IPv4 LIP地址。
+	Ipv4LocalAddresses []string `pulumi:"ipv4LocalAddresses"`
+	// NLB实例的私网IPv6 VIP地址。
+	Ipv6Address string `pulumi:"ipv6Address"`
+	// NLB实例关联的IPv6公网带宽的ID。
+	Ipv6EipId string `pulumi:"ipv6EipId"`
+	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv6HcStatus string `pulumi:"ipv6HcStatus"`
+	// NLB实例的私网IPv6 LIP地址。
+	Ipv6LocalAddresses []string `pulumi:"ipv6LocalAddresses"`
+	// NLB实例所属的子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// NLB实例所属的可用区ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetNlbZoneMappingInput is an input type that accepts GetNlbZoneMappingArgs and GetNlbZoneMappingOutput values.
+// You can construct a concrete instance of `GetNlbZoneMappingInput` via:
+//
+//	GetNlbZoneMappingArgs{...}
+type GetNlbZoneMappingInput interface {
+	pulumi.Input
+
+	ToGetNlbZoneMappingOutput() GetNlbZoneMappingOutput
+	ToGetNlbZoneMappingOutputWithContext(context.Context) GetNlbZoneMappingOutput
+}
+
+type GetNlbZoneMappingArgs struct {
+	// 网卡ID。
+	EniId pulumi.StringInput `pulumi:"eniId"`
+	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	Ipv4Address pulumi.StringInput `pulumi:"ipv4Address"`
+	// NLB实例的公网IPv4 EIP地址。
+	Ipv4EipAddress pulumi.StringInput `pulumi:"ipv4EipAddress"`
+	// NLB实例的公网IPv4 EIP ID。
+	Ipv4EipId pulumi.StringInput `pulumi:"ipv4EipId"`
+	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv4HcStatus pulumi.StringInput `pulumi:"ipv4HcStatus"`
+	// NLB实例的私网IPv4 LIP地址。
+	Ipv4LocalAddresses pulumi.StringArrayInput `pulumi:"ipv4LocalAddresses"`
+	// NLB实例的私网IPv6 VIP地址。
+	Ipv6Address pulumi.StringInput `pulumi:"ipv6Address"`
+	// NLB实例关联的IPv6公网带宽的ID。
+	Ipv6EipId pulumi.StringInput `pulumi:"ipv6EipId"`
+	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	Ipv6HcStatus pulumi.StringInput `pulumi:"ipv6HcStatus"`
+	// NLB实例的私网IPv6 LIP地址。
+	Ipv6LocalAddresses pulumi.StringArrayInput `pulumi:"ipv6LocalAddresses"`
+	// NLB实例所属的子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// NLB实例所属的可用区ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetNlbZoneMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbZoneMapping)(nil)).Elem()
+}
+
+func (i GetNlbZoneMappingArgs) ToGetNlbZoneMappingOutput() GetNlbZoneMappingOutput {
+	return i.ToGetNlbZoneMappingOutputWithContext(context.Background())
+}
+
+func (i GetNlbZoneMappingArgs) ToGetNlbZoneMappingOutputWithContext(ctx context.Context) GetNlbZoneMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbZoneMappingOutput)
+}
+
+// GetNlbZoneMappingArrayInput is an input type that accepts GetNlbZoneMappingArray and GetNlbZoneMappingArrayOutput values.
+// You can construct a concrete instance of `GetNlbZoneMappingArrayInput` via:
+//
+//	GetNlbZoneMappingArray{ GetNlbZoneMappingArgs{...} }
+type GetNlbZoneMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetNlbZoneMappingArrayOutput() GetNlbZoneMappingArrayOutput
+	ToGetNlbZoneMappingArrayOutputWithContext(context.Context) GetNlbZoneMappingArrayOutput
+}
+
+type GetNlbZoneMappingArray []GetNlbZoneMappingInput
+
+func (GetNlbZoneMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbZoneMapping)(nil)).Elem()
+}
+
+func (i GetNlbZoneMappingArray) ToGetNlbZoneMappingArrayOutput() GetNlbZoneMappingArrayOutput {
+	return i.ToGetNlbZoneMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetNlbZoneMappingArray) ToGetNlbZoneMappingArrayOutputWithContext(ctx context.Context) GetNlbZoneMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbZoneMappingArrayOutput)
+}
+
+type GetNlbZoneMappingOutput struct{ *pulumi.OutputState }
+
+func (GetNlbZoneMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbZoneMapping)(nil)).Elem()
+}
+
+func (o GetNlbZoneMappingOutput) ToGetNlbZoneMappingOutput() GetNlbZoneMappingOutput {
+	return o
+}
+
+func (o GetNlbZoneMappingOutput) ToGetNlbZoneMappingOutputWithContext(ctx context.Context) GetNlbZoneMappingOutput {
+	return o
+}
+
+// 网卡ID。
+func (o GetNlbZoneMappingOutput) EniId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.EniId }).(pulumi.StringOutput)
+}
+
+// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+func (o GetNlbZoneMappingOutput) Ipv4Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4Address }).(pulumi.StringOutput)
+}
+
+// NLB实例的公网IPv4 EIP地址。
+func (o GetNlbZoneMappingOutput) Ipv4EipAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4EipAddress }).(pulumi.StringOutput)
+}
+
+// NLB实例的公网IPv4 EIP ID。
+func (o GetNlbZoneMappingOutput) Ipv4EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4EipId }).(pulumi.StringOutput)
+}
+
+// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+func (o GetNlbZoneMappingOutput) Ipv4HcStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4HcStatus }).(pulumi.StringOutput)
+}
+
+// NLB实例的私网IPv4 LIP地址。
+func (o GetNlbZoneMappingOutput) Ipv4LocalAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) []string { return v.Ipv4LocalAddresses }).(pulumi.StringArrayOutput)
+}
+
+// NLB实例的私网IPv6 VIP地址。
+func (o GetNlbZoneMappingOutput) Ipv6Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv6Address }).(pulumi.StringOutput)
+}
+
+// NLB实例关联的IPv6公网带宽的ID。
+func (o GetNlbZoneMappingOutput) Ipv6EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv6EipId }).(pulumi.StringOutput)
+}
+
+// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+func (o GetNlbZoneMappingOutput) Ipv6HcStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv6HcStatus }).(pulumi.StringOutput)
+}
+
+// NLB实例的私网IPv6 LIP地址。
+func (o GetNlbZoneMappingOutput) Ipv6LocalAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) []string { return v.Ipv6LocalAddresses }).(pulumi.StringArrayOutput)
+}
+
+// NLB实例所属的子网ID。
+func (o GetNlbZoneMappingOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// NLB实例所属的可用区ID。
+func (o GetNlbZoneMappingOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetNlbZoneMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNlbZoneMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbZoneMapping)(nil)).Elem()
+}
+
+func (o GetNlbZoneMappingArrayOutput) ToGetNlbZoneMappingArrayOutput() GetNlbZoneMappingArrayOutput {
+	return o
+}
+
+func (o GetNlbZoneMappingArrayOutput) ToGetNlbZoneMappingArrayOutputWithContext(ctx context.Context) GetNlbZoneMappingArrayOutput {
+	return o
+}
+
+func (o GetNlbZoneMappingArrayOutput) Index(i pulumi.IntInput) GetNlbZoneMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNlbZoneMapping {
+		return vs[0].([]GetNlbZoneMapping)[vs[1].(int)]
+	}).(GetNlbZoneMappingOutput)
+}
+
 type GetRuleRedirectConfig struct {
 	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
 	Host string `pulumi:"host"`
@@ -3547,6 +4151,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupServerArrayInput)(nil)).Elem(), NlbServerGroupServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupTagInput)(nil)).Elem(), NlbServerGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupTagArrayInput)(nil)).Elem(), NlbServerGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbTagInput)(nil)).Elem(), NlbTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbTagArrayInput)(nil)).Elem(), NlbTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbZoneMappingInput)(nil)).Elem(), NlbZoneMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbZoneMappingArrayInput)(nil)).Elem(), NlbZoneMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigInput)(nil)).Elem(), RuleRedirectConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigPtrInput)(nil)).Elem(), RuleRedirectConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleTagInput)(nil)).Elem(), RuleTagArgs{})
@@ -3569,6 +4177,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupServerArrayInput)(nil)).Elem(), GetNlbServerGroupServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupTagInput)(nil)).Elem(), GetNlbServerGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupTagArrayInput)(nil)).Elem(), GetNlbServerGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbTagInput)(nil)).Elem(), GetNlbTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbTagArrayInput)(nil)).Elem(), GetNlbTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbZoneMappingInput)(nil)).Elem(), GetNlbZoneMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbZoneMappingArrayInput)(nil)).Elem(), GetNlbZoneMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRedirectConfigInput)(nil)).Elem(), GetRuleRedirectConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagInput)(nil)).Elem(), GetRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTagArrayInput)(nil)).Elem(), GetRuleTagArray{})
@@ -3592,6 +4204,10 @@ func init() {
 	pulumi.RegisterOutputType(NlbServerGroupServerArrayOutput{})
 	pulumi.RegisterOutputType(NlbServerGroupTagOutput{})
 	pulumi.RegisterOutputType(NlbServerGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(NlbTagOutput{})
+	pulumi.RegisterOutputType(NlbTagArrayOutput{})
+	pulumi.RegisterOutputType(NlbZoneMappingOutput{})
+	pulumi.RegisterOutputType(NlbZoneMappingArrayOutput{})
 	pulumi.RegisterOutputType(RuleRedirectConfigOutput{})
 	pulumi.RegisterOutputType(RuleRedirectConfigPtrOutput{})
 	pulumi.RegisterOutputType(RuleTagOutput{})
@@ -3614,6 +4230,10 @@ func init() {
 	pulumi.RegisterOutputType(GetNlbServerGroupServerArrayOutput{})
 	pulumi.RegisterOutputType(GetNlbServerGroupTagOutput{})
 	pulumi.RegisterOutputType(GetNlbServerGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbTagOutput{})
+	pulumi.RegisterOutputType(GetNlbTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbZoneMappingOutput{})
+	pulumi.RegisterOutputType(GetNlbZoneMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetRuleRedirectConfigOutput{})
 	pulumi.RegisterOutputType(GetRuleTagOutput{})
 	pulumi.RegisterOutputType(GetRuleTagArrayOutput{})

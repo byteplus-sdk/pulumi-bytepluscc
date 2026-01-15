@@ -21,10 +21,16 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:alb/acl:Acl":
+		r = &Acl{}
 	case "bytepluscc:alb/certificate:Certificate":
 		r = &Certificate{}
 	case "bytepluscc:alb/listener:Listener":
 		r = &Listener{}
+	case "bytepluscc:alb/loadBalancer:LoadBalancer":
+		r = &LoadBalancer{}
+	case "bytepluscc:alb/serverGroup:ServerGroup":
+		r = &ServerGroup{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -40,12 +46,27 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"alb/acl",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"alb/certificate",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"alb/listener",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"alb/loadBalancer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"alb/serverGroup",
 		&module{version},
 	)
 }

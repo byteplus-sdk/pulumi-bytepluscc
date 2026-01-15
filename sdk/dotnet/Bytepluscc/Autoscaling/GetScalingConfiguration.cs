@@ -100,6 +100,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         /// 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
         /// </summary>
         public readonly string InstanceName;
+        /// <summary>
+        /// 抢占式实例的规格信息。
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetScalingConfigurationInstanceTypeOverrideResult> InstanceTypeOverrides;
         /// <summary>
         /// 实例的计算规格列表。
@@ -110,7 +113,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         /// </summary>
         public readonly int Ipv6AddressCount;
         /// <summary>
-        /// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        /// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         /// </summary>
         public readonly string KeyPairName;
         /// <summary>

@@ -21,21 +21,6 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     public static final PolicyArgs Empty = new PolicyArgs();
 
     /**
-     * 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-     * 
-     */
-    @Import(name="category")
-    private @Nullable Output<String> category;
-
-    /**
-     * @return 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-     * 
-     */
-    public Optional<Output<String>> category() {
-        return Optional.ofNullable(this.category);
-    }
-
-    /**
      * 策略描述，长度不超过128。
      * 
      */
@@ -119,7 +104,6 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     private PolicyArgs() {}
 
     private PolicyArgs(PolicyArgs $) {
-        this.category = $.category;
         this.description = $.description;
         this.policyDocument = $.policyDocument;
         this.policyName = $.policyName;
@@ -145,27 +129,6 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(PolicyArgs defaults) {
             $ = new PolicyArgs(Objects.requireNonNull(defaults));
-        }
-
-        /**
-         * @param category 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder category(@Nullable Output<String> category) {
-            $.category = category;
-            return this;
-        }
-
-        /**
-         * @param category 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder category(String category) {
-            return category(Output.of(category));
         }
 
         /**

@@ -28,7 +28,7 @@ class GetListenerResult:
     """
     A collection of values returned by getListener.
     """
-    def __init__(__self__, acl_ids=None, acl_status=None, acl_type=None, bandwidth=None, ca_certificate_id=None, ca_enabled=None, cert_center_certificate_id=None, certificate_id=None, certificate_source=None, client_body_timeout=None, client_header_timeout=None, connection_drain_enabled=None, connection_drain_timeout=None, cookie=None, cps=None, created_time=None, description=None, enabled=None, end_port=None, established_timeout=None, health_check=None, http2_enabled=None, id=None, keepalive_timeout=None, listener_id=None, listener_name=None, load_balancer_id=None, max_connections=None, persistence_timeout=None, persistence_type=None, port=None, protocol=None, proxy_connect_timeout=None, proxy_protocol_type=None, proxy_read_timeout=None, proxy_send_timeout=None, scheduler=None, security_policy_id=None, send_timeout=None, server_group_id=None, start_port=None, status=None, tags=None, updated_time=None, waf_protection_enabled=None):
+    def __init__(__self__, acl_ids=None, acl_status=None, acl_type=None, bandwidth=None, ca_certificate_id=None, ca_enabled=None, cert_center_certificate_id=None, certificate_id=None, certificate_source=None, client_body_timeout=None, client_header_timeout=None, connection_drain_enabled=None, connection_drain_timeout=None, cookie=None, cps=None, created_time=None, description=None, enabled=None, end_port=None, established_timeout=None, health_check=None, http2_enabled=None, id=None, keepalive_timeout=None, listener_id=None, listener_name=None, load_balancer_id=None, max_connections=None, persistence_timeout=None, persistence_type=None, port=None, protocol=None, proxy_connect_timeout=None, proxy_protocol_type=None, proxy_read_timeout=None, proxy_send_timeout=None, rule_ids=None, scheduler=None, security_policy_id=None, send_timeout=None, server_group_id=None, start_port=None, status=None, tags=None, updated_time=None, waf_protection_enabled=None):
         if acl_ids and not isinstance(acl_ids, list):
             raise TypeError("Expected argument 'acl_ids' to be a list")
         pulumi.set(__self__, "acl_ids", acl_ids)
@@ -137,6 +137,9 @@ class GetListenerResult:
         if proxy_send_timeout and not isinstance(proxy_send_timeout, int):
             raise TypeError("Expected argument 'proxy_send_timeout' to be a int")
         pulumi.set(__self__, "proxy_send_timeout", proxy_send_timeout)
+        if rule_ids and not isinstance(rule_ids, list):
+            raise TypeError("Expected argument 'rule_ids' to be a list")
+        pulumi.set(__self__, "rule_ids", rule_ids)
         if scheduler and not isinstance(scheduler, str):
             raise TypeError("Expected argument 'scheduler' to be a str")
         pulumi.set(__self__, "scheduler", scheduler)
@@ -417,7 +420,7 @@ class GetListenerResult:
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        监听器的协议。
+        监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
         """
         return pulumi.get(self, "protocol")
 
@@ -452,6 +455,14 @@ class GetListenerResult:
         CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
         """
         return pulumi.get(self, "proxy_send_timeout")
+
+    @property
+    @pulumi.getter(name="ruleIds")
+    def rule_ids(self) -> Sequence[builtins.str]:
+        """
+        监听器绑定的规则ID列表。
+        """
+        return pulumi.get(self, "rule_ids")
 
     @property
     @pulumi.getter
@@ -568,6 +579,7 @@ class AwaitableGetListenerResult(GetListenerResult):
             proxy_protocol_type=self.proxy_protocol_type,
             proxy_read_timeout=self.proxy_read_timeout,
             proxy_send_timeout=self.proxy_send_timeout,
+            rule_ids=self.rule_ids,
             scheduler=self.scheduler,
             security_policy_id=self.security_policy_id,
             send_timeout=self.send_timeout,
@@ -629,6 +641,7 @@ def get_listener(id: Optional[builtins.str] = None,
         proxy_protocol_type=pulumi.get(__ret__, 'proxy_protocol_type'),
         proxy_read_timeout=pulumi.get(__ret__, 'proxy_read_timeout'),
         proxy_send_timeout=pulumi.get(__ret__, 'proxy_send_timeout'),
+        rule_ids=pulumi.get(__ret__, 'rule_ids'),
         scheduler=pulumi.get(__ret__, 'scheduler'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         send_timeout=pulumi.get(__ret__, 'send_timeout'),
@@ -687,6 +700,7 @@ def get_listener_output(id: Optional[pulumi.Input[builtins.str]] = None,
         proxy_protocol_type=pulumi.get(__response__, 'proxy_protocol_type'),
         proxy_read_timeout=pulumi.get(__response__, 'proxy_read_timeout'),
         proxy_send_timeout=pulumi.get(__response__, 'proxy_send_timeout'),
+        rule_ids=pulumi.get(__response__, 'rule_ids'),
         scheduler=pulumi.get(__response__, 'scheduler'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),
         send_timeout=pulumi.get(__response__, 'send_timeout'),

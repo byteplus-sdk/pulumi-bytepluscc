@@ -15,11 +15,11 @@ var _ = internal.GetEnvOrDefault
 
 type KafkaTriggerKafkaCredentials struct {
 	// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
-	Mechanism *string `pulumi:"mechanism"`
+	Mechanism string `pulumi:"mechanism"`
 	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
-	Password *string `pulumi:"password"`
+	Password string `pulumi:"password"`
 	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
-	Username *string `pulumi:"username"`
+	Username string `pulumi:"username"`
 }
 
 // KafkaTriggerKafkaCredentialsInput is an input type that accepts KafkaTriggerKafkaCredentialsArgs and KafkaTriggerKafkaCredentialsOutput values.
@@ -35,11 +35,11 @@ type KafkaTriggerKafkaCredentialsInput interface {
 
 type KafkaTriggerKafkaCredentialsArgs struct {
 	// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
-	Mechanism pulumi.StringPtrInput `pulumi:"mechanism"`
+	Mechanism pulumi.StringInput `pulumi:"mechanism"`
 	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
-	Password pulumi.StringPtrInput `pulumi:"password"`
+	Password pulumi.StringInput `pulumi:"password"`
 	// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
-	Username pulumi.StringPtrInput `pulumi:"username"`
+	Username pulumi.StringInput `pulumi:"username"`
 }
 
 func (KafkaTriggerKafkaCredentialsArgs) ElementType() reflect.Type {
@@ -120,18 +120,18 @@ func (o KafkaTriggerKafkaCredentialsOutput) ToKafkaTriggerKafkaCredentialsPtrOut
 }
 
 // Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
-func (o KafkaTriggerKafkaCredentialsOutput) Mechanism() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) *string { return v.Mechanism }).(pulumi.StringPtrOutput)
+func (o KafkaTriggerKafkaCredentialsOutput) Mechanism() pulumi.StringOutput {
+	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) string { return v.Mechanism }).(pulumi.StringOutput)
 }
 
 // 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
-func (o KafkaTriggerKafkaCredentialsOutput) Password() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) *string { return v.Password }).(pulumi.StringPtrOutput)
+func (o KafkaTriggerKafkaCredentialsOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) string { return v.Password }).(pulumi.StringOutput)
 }
 
 // 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
-func (o KafkaTriggerKafkaCredentialsOutput) Username() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) *string { return v.Username }).(pulumi.StringPtrOutput)
+func (o KafkaTriggerKafkaCredentialsOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v KafkaTriggerKafkaCredentials) string { return v.Username }).(pulumi.StringOutput)
 }
 
 type KafkaTriggerKafkaCredentialsPtrOutput struct{ *pulumi.OutputState }
@@ -164,7 +164,7 @@ func (o KafkaTriggerKafkaCredentialsPtrOutput) Mechanism() pulumi.StringPtrOutpu
 		if v == nil {
 			return nil
 		}
-		return v.Mechanism
+		return &v.Mechanism
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -174,7 +174,7 @@ func (o KafkaTriggerKafkaCredentialsPtrOutput) Password() pulumi.StringPtrOutput
 		if v == nil {
 			return nil
 		}
-		return v.Password
+		return &v.Password
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -184,7 +184,7 @@ func (o KafkaTriggerKafkaCredentialsPtrOutput) Username() pulumi.StringPtrOutput
 		if v == nil {
 			return nil
 		}
-		return v.Username
+		return &v.Username
 	}).(pulumi.StringPtrOutput)
 }
 

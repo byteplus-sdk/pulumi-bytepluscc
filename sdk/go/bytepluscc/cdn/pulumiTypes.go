@@ -464,282 +464,282 @@ func (o ShareConfigAllowRefererAccessRuleCommonTypePtrOutput) Rules() pulumi.Str
 	}).(pulumi.StringArrayOutput)
 }
 
-type ShareConfigCommonMatchs struct {
+type ShareConfigCommonMatchList struct {
 	// 表示该通用列表的内容。
-	CommonType *ShareConfigCommonMatchsCommonType `pulumi:"commonType"`
+	CommonType *ShareConfigCommonMatchListCommonType `pulumi:"commonType"`
 }
 
-// ShareConfigCommonMatchsInput is an input type that accepts ShareConfigCommonMatchsArgs and ShareConfigCommonMatchsOutput values.
-// You can construct a concrete instance of `ShareConfigCommonMatchsInput` via:
+// ShareConfigCommonMatchListInput is an input type that accepts ShareConfigCommonMatchListArgs and ShareConfigCommonMatchListOutput values.
+// You can construct a concrete instance of `ShareConfigCommonMatchListInput` via:
 //
-//	ShareConfigCommonMatchsArgs{...}
-type ShareConfigCommonMatchsInput interface {
+//	ShareConfigCommonMatchListArgs{...}
+type ShareConfigCommonMatchListInput interface {
 	pulumi.Input
 
-	ToShareConfigCommonMatchsOutput() ShareConfigCommonMatchsOutput
-	ToShareConfigCommonMatchsOutputWithContext(context.Context) ShareConfigCommonMatchsOutput
+	ToShareConfigCommonMatchListOutput() ShareConfigCommonMatchListOutput
+	ToShareConfigCommonMatchListOutputWithContext(context.Context) ShareConfigCommonMatchListOutput
 }
 
-type ShareConfigCommonMatchsArgs struct {
+type ShareConfigCommonMatchListArgs struct {
 	// 表示该通用列表的内容。
-	CommonType ShareConfigCommonMatchsCommonTypePtrInput `pulumi:"commonType"`
+	CommonType ShareConfigCommonMatchListCommonTypePtrInput `pulumi:"commonType"`
 }
 
-func (ShareConfigCommonMatchsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ShareConfigCommonMatchs)(nil)).Elem()
+func (ShareConfigCommonMatchListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ShareConfigCommonMatchList)(nil)).Elem()
 }
 
-func (i ShareConfigCommonMatchsArgs) ToShareConfigCommonMatchsOutput() ShareConfigCommonMatchsOutput {
-	return i.ToShareConfigCommonMatchsOutputWithContext(context.Background())
+func (i ShareConfigCommonMatchListArgs) ToShareConfigCommonMatchListOutput() ShareConfigCommonMatchListOutput {
+	return i.ToShareConfigCommonMatchListOutputWithContext(context.Background())
 }
 
-func (i ShareConfigCommonMatchsArgs) ToShareConfigCommonMatchsOutputWithContext(ctx context.Context) ShareConfigCommonMatchsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchsOutput)
+func (i ShareConfigCommonMatchListArgs) ToShareConfigCommonMatchListOutputWithContext(ctx context.Context) ShareConfigCommonMatchListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchListOutput)
 }
 
-func (i ShareConfigCommonMatchsArgs) ToShareConfigCommonMatchsPtrOutput() ShareConfigCommonMatchsPtrOutput {
-	return i.ToShareConfigCommonMatchsPtrOutputWithContext(context.Background())
+func (i ShareConfigCommonMatchListArgs) ToShareConfigCommonMatchListPtrOutput() ShareConfigCommonMatchListPtrOutput {
+	return i.ToShareConfigCommonMatchListPtrOutputWithContext(context.Background())
 }
 
-func (i ShareConfigCommonMatchsArgs) ToShareConfigCommonMatchsPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchsOutput).ToShareConfigCommonMatchsPtrOutputWithContext(ctx)
+func (i ShareConfigCommonMatchListArgs) ToShareConfigCommonMatchListPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchListOutput).ToShareConfigCommonMatchListPtrOutputWithContext(ctx)
 }
 
-// ShareConfigCommonMatchsPtrInput is an input type that accepts ShareConfigCommonMatchsArgs, ShareConfigCommonMatchsPtr and ShareConfigCommonMatchsPtrOutput values.
-// You can construct a concrete instance of `ShareConfigCommonMatchsPtrInput` via:
+// ShareConfigCommonMatchListPtrInput is an input type that accepts ShareConfigCommonMatchListArgs, ShareConfigCommonMatchListPtr and ShareConfigCommonMatchListPtrOutput values.
+// You can construct a concrete instance of `ShareConfigCommonMatchListPtrInput` via:
 //
-//	        ShareConfigCommonMatchsArgs{...}
+//	        ShareConfigCommonMatchListArgs{...}
 //
 //	or:
 //
 //	        nil
-type ShareConfigCommonMatchsPtrInput interface {
+type ShareConfigCommonMatchListPtrInput interface {
 	pulumi.Input
 
-	ToShareConfigCommonMatchsPtrOutput() ShareConfigCommonMatchsPtrOutput
-	ToShareConfigCommonMatchsPtrOutputWithContext(context.Context) ShareConfigCommonMatchsPtrOutput
+	ToShareConfigCommonMatchListPtrOutput() ShareConfigCommonMatchListPtrOutput
+	ToShareConfigCommonMatchListPtrOutputWithContext(context.Context) ShareConfigCommonMatchListPtrOutput
 }
 
-type shareConfigCommonMatchsPtrType ShareConfigCommonMatchsArgs
+type shareConfigCommonMatchListPtrType ShareConfigCommonMatchListArgs
 
-func ShareConfigCommonMatchsPtr(v *ShareConfigCommonMatchsArgs) ShareConfigCommonMatchsPtrInput {
-	return (*shareConfigCommonMatchsPtrType)(v)
+func ShareConfigCommonMatchListPtr(v *ShareConfigCommonMatchListArgs) ShareConfigCommonMatchListPtrInput {
+	return (*shareConfigCommonMatchListPtrType)(v)
 }
 
-func (*shareConfigCommonMatchsPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ShareConfigCommonMatchs)(nil)).Elem()
+func (*shareConfigCommonMatchListPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ShareConfigCommonMatchList)(nil)).Elem()
 }
 
-func (i *shareConfigCommonMatchsPtrType) ToShareConfigCommonMatchsPtrOutput() ShareConfigCommonMatchsPtrOutput {
-	return i.ToShareConfigCommonMatchsPtrOutputWithContext(context.Background())
+func (i *shareConfigCommonMatchListPtrType) ToShareConfigCommonMatchListPtrOutput() ShareConfigCommonMatchListPtrOutput {
+	return i.ToShareConfigCommonMatchListPtrOutputWithContext(context.Background())
 }
 
-func (i *shareConfigCommonMatchsPtrType) ToShareConfigCommonMatchsPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchsPtrOutput)
+func (i *shareConfigCommonMatchListPtrType) ToShareConfigCommonMatchListPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchListPtrOutput)
 }
 
-type ShareConfigCommonMatchsOutput struct{ *pulumi.OutputState }
+type ShareConfigCommonMatchListOutput struct{ *pulumi.OutputState }
 
-func (ShareConfigCommonMatchsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ShareConfigCommonMatchs)(nil)).Elem()
+func (ShareConfigCommonMatchListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ShareConfigCommonMatchList)(nil)).Elem()
 }
 
-func (o ShareConfigCommonMatchsOutput) ToShareConfigCommonMatchsOutput() ShareConfigCommonMatchsOutput {
+func (o ShareConfigCommonMatchListOutput) ToShareConfigCommonMatchListOutput() ShareConfigCommonMatchListOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsOutput) ToShareConfigCommonMatchsOutputWithContext(ctx context.Context) ShareConfigCommonMatchsOutput {
+func (o ShareConfigCommonMatchListOutput) ToShareConfigCommonMatchListOutputWithContext(ctx context.Context) ShareConfigCommonMatchListOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsOutput) ToShareConfigCommonMatchsPtrOutput() ShareConfigCommonMatchsPtrOutput {
-	return o.ToShareConfigCommonMatchsPtrOutputWithContext(context.Background())
+func (o ShareConfigCommonMatchListOutput) ToShareConfigCommonMatchListPtrOutput() ShareConfigCommonMatchListPtrOutput {
+	return o.ToShareConfigCommonMatchListPtrOutputWithContext(context.Background())
 }
 
-func (o ShareConfigCommonMatchsOutput) ToShareConfigCommonMatchsPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShareConfigCommonMatchs) *ShareConfigCommonMatchs {
+func (o ShareConfigCommonMatchListOutput) ToShareConfigCommonMatchListPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShareConfigCommonMatchList) *ShareConfigCommonMatchList {
 		return &v
-	}).(ShareConfigCommonMatchsPtrOutput)
+	}).(ShareConfigCommonMatchListPtrOutput)
 }
 
 // 表示该通用列表的内容。
-func (o ShareConfigCommonMatchsOutput) CommonType() ShareConfigCommonMatchsCommonTypePtrOutput {
-	return o.ApplyT(func(v ShareConfigCommonMatchs) *ShareConfigCommonMatchsCommonType { return v.CommonType }).(ShareConfigCommonMatchsCommonTypePtrOutput)
+func (o ShareConfigCommonMatchListOutput) CommonType() ShareConfigCommonMatchListCommonTypePtrOutput {
+	return o.ApplyT(func(v ShareConfigCommonMatchList) *ShareConfigCommonMatchListCommonType { return v.CommonType }).(ShareConfigCommonMatchListCommonTypePtrOutput)
 }
 
-type ShareConfigCommonMatchsPtrOutput struct{ *pulumi.OutputState }
+type ShareConfigCommonMatchListPtrOutput struct{ *pulumi.OutputState }
 
-func (ShareConfigCommonMatchsPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ShareConfigCommonMatchs)(nil)).Elem()
+func (ShareConfigCommonMatchListPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ShareConfigCommonMatchList)(nil)).Elem()
 }
 
-func (o ShareConfigCommonMatchsPtrOutput) ToShareConfigCommonMatchsPtrOutput() ShareConfigCommonMatchsPtrOutput {
+func (o ShareConfigCommonMatchListPtrOutput) ToShareConfigCommonMatchListPtrOutput() ShareConfigCommonMatchListPtrOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsPtrOutput) ToShareConfigCommonMatchsPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsPtrOutput {
+func (o ShareConfigCommonMatchListPtrOutput) ToShareConfigCommonMatchListPtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListPtrOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsPtrOutput) Elem() ShareConfigCommonMatchsOutput {
-	return o.ApplyT(func(v *ShareConfigCommonMatchs) ShareConfigCommonMatchs {
+func (o ShareConfigCommonMatchListPtrOutput) Elem() ShareConfigCommonMatchListOutput {
+	return o.ApplyT(func(v *ShareConfigCommonMatchList) ShareConfigCommonMatchList {
 		if v != nil {
 			return *v
 		}
-		var ret ShareConfigCommonMatchs
+		var ret ShareConfigCommonMatchList
 		return ret
-	}).(ShareConfigCommonMatchsOutput)
+	}).(ShareConfigCommonMatchListOutput)
 }
 
 // 表示该通用列表的内容。
-func (o ShareConfigCommonMatchsPtrOutput) CommonType() ShareConfigCommonMatchsCommonTypePtrOutput {
-	return o.ApplyT(func(v *ShareConfigCommonMatchs) *ShareConfigCommonMatchsCommonType {
+func (o ShareConfigCommonMatchListPtrOutput) CommonType() ShareConfigCommonMatchListCommonTypePtrOutput {
+	return o.ApplyT(func(v *ShareConfigCommonMatchList) *ShareConfigCommonMatchListCommonType {
 		if v == nil {
 			return nil
 		}
 		return v.CommonType
-	}).(ShareConfigCommonMatchsCommonTypePtrOutput)
+	}).(ShareConfigCommonMatchListCommonTypePtrOutput)
 }
 
-type ShareConfigCommonMatchsCommonType struct {
+type ShareConfigCommonMatchListCommonType struct {
 	// 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
 	IgnoreCase *bool `pulumi:"ignoreCase"`
 	// 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
 	Rules []string `pulumi:"rules"`
 }
 
-// ShareConfigCommonMatchsCommonTypeInput is an input type that accepts ShareConfigCommonMatchsCommonTypeArgs and ShareConfigCommonMatchsCommonTypeOutput values.
-// You can construct a concrete instance of `ShareConfigCommonMatchsCommonTypeInput` via:
+// ShareConfigCommonMatchListCommonTypeInput is an input type that accepts ShareConfigCommonMatchListCommonTypeArgs and ShareConfigCommonMatchListCommonTypeOutput values.
+// You can construct a concrete instance of `ShareConfigCommonMatchListCommonTypeInput` via:
 //
-//	ShareConfigCommonMatchsCommonTypeArgs{...}
-type ShareConfigCommonMatchsCommonTypeInput interface {
+//	ShareConfigCommonMatchListCommonTypeArgs{...}
+type ShareConfigCommonMatchListCommonTypeInput interface {
 	pulumi.Input
 
-	ToShareConfigCommonMatchsCommonTypeOutput() ShareConfigCommonMatchsCommonTypeOutput
-	ToShareConfigCommonMatchsCommonTypeOutputWithContext(context.Context) ShareConfigCommonMatchsCommonTypeOutput
+	ToShareConfigCommonMatchListCommonTypeOutput() ShareConfigCommonMatchListCommonTypeOutput
+	ToShareConfigCommonMatchListCommonTypeOutputWithContext(context.Context) ShareConfigCommonMatchListCommonTypeOutput
 }
 
-type ShareConfigCommonMatchsCommonTypeArgs struct {
+type ShareConfigCommonMatchListCommonTypeArgs struct {
 	// 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
 	IgnoreCase pulumi.BoolPtrInput `pulumi:"ignoreCase"`
 	// 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
 	Rules pulumi.StringArrayInput `pulumi:"rules"`
 }
 
-func (ShareConfigCommonMatchsCommonTypeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ShareConfigCommonMatchsCommonType)(nil)).Elem()
+func (ShareConfigCommonMatchListCommonTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ShareConfigCommonMatchListCommonType)(nil)).Elem()
 }
 
-func (i ShareConfigCommonMatchsCommonTypeArgs) ToShareConfigCommonMatchsCommonTypeOutput() ShareConfigCommonMatchsCommonTypeOutput {
-	return i.ToShareConfigCommonMatchsCommonTypeOutputWithContext(context.Background())
+func (i ShareConfigCommonMatchListCommonTypeArgs) ToShareConfigCommonMatchListCommonTypeOutput() ShareConfigCommonMatchListCommonTypeOutput {
+	return i.ToShareConfigCommonMatchListCommonTypeOutputWithContext(context.Background())
 }
 
-func (i ShareConfigCommonMatchsCommonTypeArgs) ToShareConfigCommonMatchsCommonTypeOutputWithContext(ctx context.Context) ShareConfigCommonMatchsCommonTypeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchsCommonTypeOutput)
+func (i ShareConfigCommonMatchListCommonTypeArgs) ToShareConfigCommonMatchListCommonTypeOutputWithContext(ctx context.Context) ShareConfigCommonMatchListCommonTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchListCommonTypeOutput)
 }
 
-func (i ShareConfigCommonMatchsCommonTypeArgs) ToShareConfigCommonMatchsCommonTypePtrOutput() ShareConfigCommonMatchsCommonTypePtrOutput {
-	return i.ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(context.Background())
+func (i ShareConfigCommonMatchListCommonTypeArgs) ToShareConfigCommonMatchListCommonTypePtrOutput() ShareConfigCommonMatchListCommonTypePtrOutput {
+	return i.ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(context.Background())
 }
 
-func (i ShareConfigCommonMatchsCommonTypeArgs) ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsCommonTypePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchsCommonTypeOutput).ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(ctx)
+func (i ShareConfigCommonMatchListCommonTypeArgs) ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListCommonTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchListCommonTypeOutput).ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(ctx)
 }
 
-// ShareConfigCommonMatchsCommonTypePtrInput is an input type that accepts ShareConfigCommonMatchsCommonTypeArgs, ShareConfigCommonMatchsCommonTypePtr and ShareConfigCommonMatchsCommonTypePtrOutput values.
-// You can construct a concrete instance of `ShareConfigCommonMatchsCommonTypePtrInput` via:
+// ShareConfigCommonMatchListCommonTypePtrInput is an input type that accepts ShareConfigCommonMatchListCommonTypeArgs, ShareConfigCommonMatchListCommonTypePtr and ShareConfigCommonMatchListCommonTypePtrOutput values.
+// You can construct a concrete instance of `ShareConfigCommonMatchListCommonTypePtrInput` via:
 //
-//	        ShareConfigCommonMatchsCommonTypeArgs{...}
+//	        ShareConfigCommonMatchListCommonTypeArgs{...}
 //
 //	or:
 //
 //	        nil
-type ShareConfigCommonMatchsCommonTypePtrInput interface {
+type ShareConfigCommonMatchListCommonTypePtrInput interface {
 	pulumi.Input
 
-	ToShareConfigCommonMatchsCommonTypePtrOutput() ShareConfigCommonMatchsCommonTypePtrOutput
-	ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(context.Context) ShareConfigCommonMatchsCommonTypePtrOutput
+	ToShareConfigCommonMatchListCommonTypePtrOutput() ShareConfigCommonMatchListCommonTypePtrOutput
+	ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(context.Context) ShareConfigCommonMatchListCommonTypePtrOutput
 }
 
-type shareConfigCommonMatchsCommonTypePtrType ShareConfigCommonMatchsCommonTypeArgs
+type shareConfigCommonMatchListCommonTypePtrType ShareConfigCommonMatchListCommonTypeArgs
 
-func ShareConfigCommonMatchsCommonTypePtr(v *ShareConfigCommonMatchsCommonTypeArgs) ShareConfigCommonMatchsCommonTypePtrInput {
-	return (*shareConfigCommonMatchsCommonTypePtrType)(v)
+func ShareConfigCommonMatchListCommonTypePtr(v *ShareConfigCommonMatchListCommonTypeArgs) ShareConfigCommonMatchListCommonTypePtrInput {
+	return (*shareConfigCommonMatchListCommonTypePtrType)(v)
 }
 
-func (*shareConfigCommonMatchsCommonTypePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ShareConfigCommonMatchsCommonType)(nil)).Elem()
+func (*shareConfigCommonMatchListCommonTypePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ShareConfigCommonMatchListCommonType)(nil)).Elem()
 }
 
-func (i *shareConfigCommonMatchsCommonTypePtrType) ToShareConfigCommonMatchsCommonTypePtrOutput() ShareConfigCommonMatchsCommonTypePtrOutput {
-	return i.ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(context.Background())
+func (i *shareConfigCommonMatchListCommonTypePtrType) ToShareConfigCommonMatchListCommonTypePtrOutput() ShareConfigCommonMatchListCommonTypePtrOutput {
+	return i.ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(context.Background())
 }
 
-func (i *shareConfigCommonMatchsCommonTypePtrType) ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsCommonTypePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchsCommonTypePtrOutput)
+func (i *shareConfigCommonMatchListCommonTypePtrType) ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListCommonTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ShareConfigCommonMatchListCommonTypePtrOutput)
 }
 
-type ShareConfigCommonMatchsCommonTypeOutput struct{ *pulumi.OutputState }
+type ShareConfigCommonMatchListCommonTypeOutput struct{ *pulumi.OutputState }
 
-func (ShareConfigCommonMatchsCommonTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ShareConfigCommonMatchsCommonType)(nil)).Elem()
+func (ShareConfigCommonMatchListCommonTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ShareConfigCommonMatchListCommonType)(nil)).Elem()
 }
 
-func (o ShareConfigCommonMatchsCommonTypeOutput) ToShareConfigCommonMatchsCommonTypeOutput() ShareConfigCommonMatchsCommonTypeOutput {
+func (o ShareConfigCommonMatchListCommonTypeOutput) ToShareConfigCommonMatchListCommonTypeOutput() ShareConfigCommonMatchListCommonTypeOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsCommonTypeOutput) ToShareConfigCommonMatchsCommonTypeOutputWithContext(ctx context.Context) ShareConfigCommonMatchsCommonTypeOutput {
+func (o ShareConfigCommonMatchListCommonTypeOutput) ToShareConfigCommonMatchListCommonTypeOutputWithContext(ctx context.Context) ShareConfigCommonMatchListCommonTypeOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsCommonTypeOutput) ToShareConfigCommonMatchsCommonTypePtrOutput() ShareConfigCommonMatchsCommonTypePtrOutput {
-	return o.ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(context.Background())
+func (o ShareConfigCommonMatchListCommonTypeOutput) ToShareConfigCommonMatchListCommonTypePtrOutput() ShareConfigCommonMatchListCommonTypePtrOutput {
+	return o.ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(context.Background())
 }
 
-func (o ShareConfigCommonMatchsCommonTypeOutput) ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsCommonTypePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShareConfigCommonMatchsCommonType) *ShareConfigCommonMatchsCommonType {
+func (o ShareConfigCommonMatchListCommonTypeOutput) ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListCommonTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ShareConfigCommonMatchListCommonType) *ShareConfigCommonMatchListCommonType {
 		return &v
-	}).(ShareConfigCommonMatchsCommonTypePtrOutput)
+	}).(ShareConfigCommonMatchListCommonTypePtrOutput)
 }
 
 // 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
-func (o ShareConfigCommonMatchsCommonTypeOutput) IgnoreCase() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ShareConfigCommonMatchsCommonType) *bool { return v.IgnoreCase }).(pulumi.BoolPtrOutput)
+func (o ShareConfigCommonMatchListCommonTypeOutput) IgnoreCase() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ShareConfigCommonMatchListCommonType) *bool { return v.IgnoreCase }).(pulumi.BoolPtrOutput)
 }
 
 // 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
-func (o ShareConfigCommonMatchsCommonTypeOutput) Rules() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ShareConfigCommonMatchsCommonType) []string { return v.Rules }).(pulumi.StringArrayOutput)
+func (o ShareConfigCommonMatchListCommonTypeOutput) Rules() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ShareConfigCommonMatchListCommonType) []string { return v.Rules }).(pulumi.StringArrayOutput)
 }
 
-type ShareConfigCommonMatchsCommonTypePtrOutput struct{ *pulumi.OutputState }
+type ShareConfigCommonMatchListCommonTypePtrOutput struct{ *pulumi.OutputState }
 
-func (ShareConfigCommonMatchsCommonTypePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ShareConfigCommonMatchsCommonType)(nil)).Elem()
+func (ShareConfigCommonMatchListCommonTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ShareConfigCommonMatchListCommonType)(nil)).Elem()
 }
 
-func (o ShareConfigCommonMatchsCommonTypePtrOutput) ToShareConfigCommonMatchsCommonTypePtrOutput() ShareConfigCommonMatchsCommonTypePtrOutput {
+func (o ShareConfigCommonMatchListCommonTypePtrOutput) ToShareConfigCommonMatchListCommonTypePtrOutput() ShareConfigCommonMatchListCommonTypePtrOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsCommonTypePtrOutput) ToShareConfigCommonMatchsCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchsCommonTypePtrOutput {
+func (o ShareConfigCommonMatchListCommonTypePtrOutput) ToShareConfigCommonMatchListCommonTypePtrOutputWithContext(ctx context.Context) ShareConfigCommonMatchListCommonTypePtrOutput {
 	return o
 }
 
-func (o ShareConfigCommonMatchsCommonTypePtrOutput) Elem() ShareConfigCommonMatchsCommonTypeOutput {
-	return o.ApplyT(func(v *ShareConfigCommonMatchsCommonType) ShareConfigCommonMatchsCommonType {
+func (o ShareConfigCommonMatchListCommonTypePtrOutput) Elem() ShareConfigCommonMatchListCommonTypeOutput {
+	return o.ApplyT(func(v *ShareConfigCommonMatchListCommonType) ShareConfigCommonMatchListCommonType {
 		if v != nil {
 			return *v
 		}
-		var ret ShareConfigCommonMatchsCommonType
+		var ret ShareConfigCommonMatchListCommonType
 		return ret
-	}).(ShareConfigCommonMatchsCommonTypeOutput)
+	}).(ShareConfigCommonMatchListCommonTypeOutput)
 }
 
 // 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
-func (o ShareConfigCommonMatchsCommonTypePtrOutput) IgnoreCase() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *ShareConfigCommonMatchsCommonType) *bool {
+func (o ShareConfigCommonMatchListCommonTypePtrOutput) IgnoreCase() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ShareConfigCommonMatchListCommonType) *bool {
 		if v == nil {
 			return nil
 		}
@@ -748,8 +748,8 @@ func (o ShareConfigCommonMatchsCommonTypePtrOutput) IgnoreCase() pulumi.BoolPtrO
 }
 
 // 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
-func (o ShareConfigCommonMatchsCommonTypePtrOutput) Rules() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *ShareConfigCommonMatchsCommonType) []string {
+func (o ShareConfigCommonMatchListCommonTypePtrOutput) Rules() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ShareConfigCommonMatchListCommonType) []string {
 		if v == nil {
 			return nil
 		}
@@ -1384,117 +1384,117 @@ func (o GetShareConfigAllowRefererAccessRuleCommonTypeOutput) Rules() pulumi.Str
 	return o.ApplyT(func(v GetShareConfigAllowRefererAccessRuleCommonType) []string { return v.Rules }).(pulumi.StringArrayOutput)
 }
 
-type GetShareConfigCommonMatchs struct {
+type GetShareConfigCommonMatchList struct {
 	// 表示该通用列表的内容。
-	CommonType GetShareConfigCommonMatchsCommonType `pulumi:"commonType"`
+	CommonType GetShareConfigCommonMatchListCommonType `pulumi:"commonType"`
 }
 
-// GetShareConfigCommonMatchsInput is an input type that accepts GetShareConfigCommonMatchsArgs and GetShareConfigCommonMatchsOutput values.
-// You can construct a concrete instance of `GetShareConfigCommonMatchsInput` via:
+// GetShareConfigCommonMatchListInput is an input type that accepts GetShareConfigCommonMatchListArgs and GetShareConfigCommonMatchListOutput values.
+// You can construct a concrete instance of `GetShareConfigCommonMatchListInput` via:
 //
-//	GetShareConfigCommonMatchsArgs{...}
-type GetShareConfigCommonMatchsInput interface {
+//	GetShareConfigCommonMatchListArgs{...}
+type GetShareConfigCommonMatchListInput interface {
 	pulumi.Input
 
-	ToGetShareConfigCommonMatchsOutput() GetShareConfigCommonMatchsOutput
-	ToGetShareConfigCommonMatchsOutputWithContext(context.Context) GetShareConfigCommonMatchsOutput
+	ToGetShareConfigCommonMatchListOutput() GetShareConfigCommonMatchListOutput
+	ToGetShareConfigCommonMatchListOutputWithContext(context.Context) GetShareConfigCommonMatchListOutput
 }
 
-type GetShareConfigCommonMatchsArgs struct {
+type GetShareConfigCommonMatchListArgs struct {
 	// 表示该通用列表的内容。
-	CommonType GetShareConfigCommonMatchsCommonTypeInput `pulumi:"commonType"`
+	CommonType GetShareConfigCommonMatchListCommonTypeInput `pulumi:"commonType"`
 }
 
-func (GetShareConfigCommonMatchsArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetShareConfigCommonMatchs)(nil)).Elem()
+func (GetShareConfigCommonMatchListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShareConfigCommonMatchList)(nil)).Elem()
 }
 
-func (i GetShareConfigCommonMatchsArgs) ToGetShareConfigCommonMatchsOutput() GetShareConfigCommonMatchsOutput {
-	return i.ToGetShareConfigCommonMatchsOutputWithContext(context.Background())
+func (i GetShareConfigCommonMatchListArgs) ToGetShareConfigCommonMatchListOutput() GetShareConfigCommonMatchListOutput {
+	return i.ToGetShareConfigCommonMatchListOutputWithContext(context.Background())
 }
 
-func (i GetShareConfigCommonMatchsArgs) ToGetShareConfigCommonMatchsOutputWithContext(ctx context.Context) GetShareConfigCommonMatchsOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetShareConfigCommonMatchsOutput)
+func (i GetShareConfigCommonMatchListArgs) ToGetShareConfigCommonMatchListOutputWithContext(ctx context.Context) GetShareConfigCommonMatchListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShareConfigCommonMatchListOutput)
 }
 
-type GetShareConfigCommonMatchsOutput struct{ *pulumi.OutputState }
+type GetShareConfigCommonMatchListOutput struct{ *pulumi.OutputState }
 
-func (GetShareConfigCommonMatchsOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetShareConfigCommonMatchs)(nil)).Elem()
+func (GetShareConfigCommonMatchListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShareConfigCommonMatchList)(nil)).Elem()
 }
 
-func (o GetShareConfigCommonMatchsOutput) ToGetShareConfigCommonMatchsOutput() GetShareConfigCommonMatchsOutput {
+func (o GetShareConfigCommonMatchListOutput) ToGetShareConfigCommonMatchListOutput() GetShareConfigCommonMatchListOutput {
 	return o
 }
 
-func (o GetShareConfigCommonMatchsOutput) ToGetShareConfigCommonMatchsOutputWithContext(ctx context.Context) GetShareConfigCommonMatchsOutput {
+func (o GetShareConfigCommonMatchListOutput) ToGetShareConfigCommonMatchListOutputWithContext(ctx context.Context) GetShareConfigCommonMatchListOutput {
 	return o
 }
 
 // 表示该通用列表的内容。
-func (o GetShareConfigCommonMatchsOutput) CommonType() GetShareConfigCommonMatchsCommonTypeOutput {
-	return o.ApplyT(func(v GetShareConfigCommonMatchs) GetShareConfigCommonMatchsCommonType { return v.CommonType }).(GetShareConfigCommonMatchsCommonTypeOutput)
+func (o GetShareConfigCommonMatchListOutput) CommonType() GetShareConfigCommonMatchListCommonTypeOutput {
+	return o.ApplyT(func(v GetShareConfigCommonMatchList) GetShareConfigCommonMatchListCommonType { return v.CommonType }).(GetShareConfigCommonMatchListCommonTypeOutput)
 }
 
-type GetShareConfigCommonMatchsCommonType struct {
+type GetShareConfigCommonMatchListCommonType struct {
 	// 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
 	IgnoreCase bool `pulumi:"ignoreCase"`
 	// 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
 	Rules []string `pulumi:"rules"`
 }
 
-// GetShareConfigCommonMatchsCommonTypeInput is an input type that accepts GetShareConfigCommonMatchsCommonTypeArgs and GetShareConfigCommonMatchsCommonTypeOutput values.
-// You can construct a concrete instance of `GetShareConfigCommonMatchsCommonTypeInput` via:
+// GetShareConfigCommonMatchListCommonTypeInput is an input type that accepts GetShareConfigCommonMatchListCommonTypeArgs and GetShareConfigCommonMatchListCommonTypeOutput values.
+// You can construct a concrete instance of `GetShareConfigCommonMatchListCommonTypeInput` via:
 //
-//	GetShareConfigCommonMatchsCommonTypeArgs{...}
-type GetShareConfigCommonMatchsCommonTypeInput interface {
+//	GetShareConfigCommonMatchListCommonTypeArgs{...}
+type GetShareConfigCommonMatchListCommonTypeInput interface {
 	pulumi.Input
 
-	ToGetShareConfigCommonMatchsCommonTypeOutput() GetShareConfigCommonMatchsCommonTypeOutput
-	ToGetShareConfigCommonMatchsCommonTypeOutputWithContext(context.Context) GetShareConfigCommonMatchsCommonTypeOutput
+	ToGetShareConfigCommonMatchListCommonTypeOutput() GetShareConfigCommonMatchListCommonTypeOutput
+	ToGetShareConfigCommonMatchListCommonTypeOutputWithContext(context.Context) GetShareConfigCommonMatchListCommonTypeOutput
 }
 
-type GetShareConfigCommonMatchsCommonTypeArgs struct {
+type GetShareConfigCommonMatchListCommonTypeArgs struct {
 	// 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
 	IgnoreCase pulumi.BoolInput `pulumi:"ignoreCase"`
 	// 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
 	Rules pulumi.StringArrayInput `pulumi:"rules"`
 }
 
-func (GetShareConfigCommonMatchsCommonTypeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetShareConfigCommonMatchsCommonType)(nil)).Elem()
+func (GetShareConfigCommonMatchListCommonTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShareConfigCommonMatchListCommonType)(nil)).Elem()
 }
 
-func (i GetShareConfigCommonMatchsCommonTypeArgs) ToGetShareConfigCommonMatchsCommonTypeOutput() GetShareConfigCommonMatchsCommonTypeOutput {
-	return i.ToGetShareConfigCommonMatchsCommonTypeOutputWithContext(context.Background())
+func (i GetShareConfigCommonMatchListCommonTypeArgs) ToGetShareConfigCommonMatchListCommonTypeOutput() GetShareConfigCommonMatchListCommonTypeOutput {
+	return i.ToGetShareConfigCommonMatchListCommonTypeOutputWithContext(context.Background())
 }
 
-func (i GetShareConfigCommonMatchsCommonTypeArgs) ToGetShareConfigCommonMatchsCommonTypeOutputWithContext(ctx context.Context) GetShareConfigCommonMatchsCommonTypeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetShareConfigCommonMatchsCommonTypeOutput)
+func (i GetShareConfigCommonMatchListCommonTypeArgs) ToGetShareConfigCommonMatchListCommonTypeOutputWithContext(ctx context.Context) GetShareConfigCommonMatchListCommonTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetShareConfigCommonMatchListCommonTypeOutput)
 }
 
-type GetShareConfigCommonMatchsCommonTypeOutput struct{ *pulumi.OutputState }
+type GetShareConfigCommonMatchListCommonTypeOutput struct{ *pulumi.OutputState }
 
-func (GetShareConfigCommonMatchsCommonTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetShareConfigCommonMatchsCommonType)(nil)).Elem()
+func (GetShareConfigCommonMatchListCommonTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetShareConfigCommonMatchListCommonType)(nil)).Elem()
 }
 
-func (o GetShareConfigCommonMatchsCommonTypeOutput) ToGetShareConfigCommonMatchsCommonTypeOutput() GetShareConfigCommonMatchsCommonTypeOutput {
+func (o GetShareConfigCommonMatchListCommonTypeOutput) ToGetShareConfigCommonMatchListCommonTypeOutput() GetShareConfigCommonMatchListCommonTypeOutput {
 	return o
 }
 
-func (o GetShareConfigCommonMatchsCommonTypeOutput) ToGetShareConfigCommonMatchsCommonTypeOutputWithContext(ctx context.Context) GetShareConfigCommonMatchsCommonTypeOutput {
+func (o GetShareConfigCommonMatchListCommonTypeOutput) ToGetShareConfigCommonMatchListCommonTypeOutputWithContext(ctx context.Context) GetShareConfigCommonMatchListCommonTypeOutput {
 	return o
 }
 
 // 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
-func (o GetShareConfigCommonMatchsCommonTypeOutput) IgnoreCase() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetShareConfigCommonMatchsCommonType) bool { return v.IgnoreCase }).(pulumi.BoolOutput)
+func (o GetShareConfigCommonMatchListCommonTypeOutput) IgnoreCase() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetShareConfigCommonMatchListCommonType) bool { return v.IgnoreCase }).(pulumi.BoolOutput)
 }
 
 // 表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
-func (o GetShareConfigCommonMatchsCommonTypeOutput) Rules() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetShareConfigCommonMatchsCommonType) []string { return v.Rules }).(pulumi.StringArrayOutput)
+func (o GetShareConfigCommonMatchListCommonTypeOutput) Rules() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShareConfigCommonMatchListCommonType) []string { return v.Rules }).(pulumi.StringArrayOutput)
 }
 
 type GetShareConfigDenyIpAccessRule struct {
@@ -1680,10 +1680,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigAllowRefererAccessRulePtrInput)(nil)).Elem(), ShareConfigAllowRefererAccessRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigAllowRefererAccessRuleCommonTypeInput)(nil)).Elem(), ShareConfigAllowRefererAccessRuleCommonTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigAllowRefererAccessRuleCommonTypePtrInput)(nil)).Elem(), ShareConfigAllowRefererAccessRuleCommonTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchsInput)(nil)).Elem(), ShareConfigCommonMatchsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchsPtrInput)(nil)).Elem(), ShareConfigCommonMatchsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchsCommonTypeInput)(nil)).Elem(), ShareConfigCommonMatchsCommonTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchsCommonTypePtrInput)(nil)).Elem(), ShareConfigCommonMatchsCommonTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchListInput)(nil)).Elem(), ShareConfigCommonMatchListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchListPtrInput)(nil)).Elem(), ShareConfigCommonMatchListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchListCommonTypeInput)(nil)).Elem(), ShareConfigCommonMatchListCommonTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigCommonMatchListCommonTypePtrInput)(nil)).Elem(), ShareConfigCommonMatchListCommonTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigDenyIpAccessRuleInput)(nil)).Elem(), ShareConfigDenyIpAccessRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigDenyIpAccessRulePtrInput)(nil)).Elem(), ShareConfigDenyIpAccessRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShareConfigDenyRefererAccessRuleInput)(nil)).Elem(), ShareConfigDenyRefererAccessRuleArgs{})
@@ -1693,8 +1693,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigAllowIpAccessRuleInput)(nil)).Elem(), GetShareConfigAllowIpAccessRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigAllowRefererAccessRuleInput)(nil)).Elem(), GetShareConfigAllowRefererAccessRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigAllowRefererAccessRuleCommonTypeInput)(nil)).Elem(), GetShareConfigAllowRefererAccessRuleCommonTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigCommonMatchsInput)(nil)).Elem(), GetShareConfigCommonMatchsArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigCommonMatchsCommonTypeInput)(nil)).Elem(), GetShareConfigCommonMatchsCommonTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigCommonMatchListInput)(nil)).Elem(), GetShareConfigCommonMatchListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigCommonMatchListCommonTypeInput)(nil)).Elem(), GetShareConfigCommonMatchListCommonTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigDenyIpAccessRuleInput)(nil)).Elem(), GetShareConfigDenyIpAccessRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigDenyRefererAccessRuleInput)(nil)).Elem(), GetShareConfigDenyRefererAccessRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShareConfigDenyRefererAccessRuleCommonTypeInput)(nil)).Elem(), GetShareConfigDenyRefererAccessRuleCommonTypeArgs{})
@@ -1704,10 +1704,10 @@ func init() {
 	pulumi.RegisterOutputType(ShareConfigAllowRefererAccessRulePtrOutput{})
 	pulumi.RegisterOutputType(ShareConfigAllowRefererAccessRuleCommonTypeOutput{})
 	pulumi.RegisterOutputType(ShareConfigAllowRefererAccessRuleCommonTypePtrOutput{})
-	pulumi.RegisterOutputType(ShareConfigCommonMatchsOutput{})
-	pulumi.RegisterOutputType(ShareConfigCommonMatchsPtrOutput{})
-	pulumi.RegisterOutputType(ShareConfigCommonMatchsCommonTypeOutput{})
-	pulumi.RegisterOutputType(ShareConfigCommonMatchsCommonTypePtrOutput{})
+	pulumi.RegisterOutputType(ShareConfigCommonMatchListOutput{})
+	pulumi.RegisterOutputType(ShareConfigCommonMatchListPtrOutput{})
+	pulumi.RegisterOutputType(ShareConfigCommonMatchListCommonTypeOutput{})
+	pulumi.RegisterOutputType(ShareConfigCommonMatchListCommonTypePtrOutput{})
 	pulumi.RegisterOutputType(ShareConfigDenyIpAccessRuleOutput{})
 	pulumi.RegisterOutputType(ShareConfigDenyIpAccessRulePtrOutput{})
 	pulumi.RegisterOutputType(ShareConfigDenyRefererAccessRuleOutput{})
@@ -1717,8 +1717,8 @@ func init() {
 	pulumi.RegisterOutputType(GetShareConfigAllowIpAccessRuleOutput{})
 	pulumi.RegisterOutputType(GetShareConfigAllowRefererAccessRuleOutput{})
 	pulumi.RegisterOutputType(GetShareConfigAllowRefererAccessRuleCommonTypeOutput{})
-	pulumi.RegisterOutputType(GetShareConfigCommonMatchsOutput{})
-	pulumi.RegisterOutputType(GetShareConfigCommonMatchsCommonTypeOutput{})
+	pulumi.RegisterOutputType(GetShareConfigCommonMatchListOutput{})
+	pulumi.RegisterOutputType(GetShareConfigCommonMatchListCommonTypeOutput{})
 	pulumi.RegisterOutputType(GetShareConfigDenyIpAccessRuleOutput{})
 	pulumi.RegisterOutputType(GetShareConfigDenyRefererAccessRuleOutput{})
 	pulumi.RegisterOutputType(GetShareConfigDenyRefererAccessRuleCommonTypeOutput{})

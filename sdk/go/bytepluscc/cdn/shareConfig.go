@@ -26,7 +26,7 @@ type ShareConfig struct {
 	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
 	AllowRefererAccessRule ShareConfigAllowRefererAccessRuleOutput `pulumi:"allowRefererAccessRule"`
 	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-	CommonMatchs ShareConfigCommonMatchsOutput `pulumi:"commonMatchs"`
+	CommonMatchList ShareConfigCommonMatchListOutput `pulumi:"commonMatchList"`
 	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
 	ConfigName pulumi.StringOutput `pulumi:"configName"`
 	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
@@ -80,7 +80,7 @@ type shareConfigState struct {
 	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
 	AllowRefererAccessRule *ShareConfigAllowRefererAccessRule `pulumi:"allowRefererAccessRule"`
 	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-	CommonMatchs *ShareConfigCommonMatchs `pulumi:"commonMatchs"`
+	CommonMatchList *ShareConfigCommonMatchList `pulumi:"commonMatchList"`
 	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
 	ConfigName *string `pulumi:"configName"`
 	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
@@ -105,7 +105,7 @@ type ShareConfigState struct {
 	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
 	AllowRefererAccessRule ShareConfigAllowRefererAccessRulePtrInput
 	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-	CommonMatchs ShareConfigCommonMatchsPtrInput
+	CommonMatchList ShareConfigCommonMatchListPtrInput
 	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
 	ConfigName pulumi.StringPtrInput
 	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
@@ -134,7 +134,7 @@ type shareConfigArgs struct {
 	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
 	AllowRefererAccessRule *ShareConfigAllowRefererAccessRule `pulumi:"allowRefererAccessRule"`
 	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-	CommonMatchs *ShareConfigCommonMatchs `pulumi:"commonMatchs"`
+	CommonMatchList *ShareConfigCommonMatchList `pulumi:"commonMatchList"`
 	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
 	ConfigName *string `pulumi:"configName"`
 	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
@@ -154,7 +154,7 @@ type ShareConfigArgs struct {
 	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
 	AllowRefererAccessRule ShareConfigAllowRefererAccessRulePtrInput
 	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-	CommonMatchs ShareConfigCommonMatchsPtrInput
+	CommonMatchList ShareConfigCommonMatchListPtrInput
 	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
 	ConfigName pulumi.StringPtrInput
 	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
@@ -265,8 +265,8 @@ func (o ShareConfigOutput) AllowRefererAccessRule() ShareConfigAllowRefererAcces
 }
 
 // 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-func (o ShareConfigOutput) CommonMatchs() ShareConfigCommonMatchsOutput {
-	return o.ApplyT(func(v *ShareConfig) ShareConfigCommonMatchsOutput { return v.CommonMatchs }).(ShareConfigCommonMatchsOutput)
+func (o ShareConfigOutput) CommonMatchList() ShareConfigCommonMatchListOutput {
+	return o.ApplyT(func(v *ShareConfig) ShareConfigCommonMatchListOutput { return v.CommonMatchList }).(ShareConfigCommonMatchListOutput)
 }
 
 // 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。

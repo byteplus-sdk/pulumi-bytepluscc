@@ -4,14 +4,26 @@
 package com.byteplus.bytepluscc.alb;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.alb.inputs.GetAclArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetAclPlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetCertificateArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetCertificatePlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetListenerArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetListenerPlainArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetLoadBalancerArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetLoadBalancerPlainArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetServerGroupArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetServerGroupPlainArgs;
+import com.byteplus.bytepluscc.alb.outputs.GetAclResult;
+import com.byteplus.bytepluscc.alb.outputs.GetAclsResult;
 import com.byteplus.bytepluscc.alb.outputs.GetCertificateResult;
 import com.byteplus.bytepluscc.alb.outputs.GetCertificatesResult;
 import com.byteplus.bytepluscc.alb.outputs.GetListenerResult;
 import com.byteplus.bytepluscc.alb.outputs.GetListenersResult;
+import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerResult;
+import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancersResult;
+import com.byteplus.bytepluscc.alb.outputs.GetServerGroupResult;
+import com.byteplus.bytepluscc.alb.outputs.GetServerGroupsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -21,6 +33,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class AlbFunctions {
+    /**
+     * Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args) {
+        return getAcl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args) {
+        return getAclPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls() {
+        return getAcls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain() {
+        return getAclsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args) {
+        return getAcls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args) {
+        return getAclsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::ALB::Certificate
      * 
@@ -188,5 +284,173 @@ public final class AlbFunctions {
      */
     public static CompletableFuture<GetListenersResult> getListenersPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:alb/getListeners:getListeners", TypeShape.of(GetListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static Output<GetLoadBalancerResult> getLoadBalancer(GetLoadBalancerArgs args) {
+        return getLoadBalancer(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static CompletableFuture<GetLoadBalancerResult> getLoadBalancerPlain(GetLoadBalancerPlainArgs args) {
+        return getLoadBalancerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static Output<GetLoadBalancerResult> getLoadBalancer(GetLoadBalancerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getLoadBalancer:getLoadBalancer", TypeShape.of(GetLoadBalancerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static Output<GetLoadBalancerResult> getLoadBalancer(GetLoadBalancerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getLoadBalancer:getLoadBalancer", TypeShape.of(GetLoadBalancerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static CompletableFuture<GetLoadBalancerResult> getLoadBalancerPlain(GetLoadBalancerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getLoadBalancer:getLoadBalancer", TypeShape.of(GetLoadBalancerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static Output<GetLoadBalancersResult> getLoadBalancers() {
+        return getLoadBalancers(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain() {
+        return getLoadBalancersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static Output<GetLoadBalancersResult> getLoadBalancers(InvokeArgs args) {
+        return getLoadBalancers(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(InvokeArgs args) {
+        return getLoadBalancersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static Output<GetLoadBalancersResult> getLoadBalancers(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getLoadBalancers:getLoadBalancers", TypeShape.of(GetLoadBalancersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static Output<GetLoadBalancersResult> getLoadBalancers(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getLoadBalancers:getLoadBalancers", TypeShape.of(GetLoadBalancersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::LoadBalancer
+     * 
+     */
+    public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getLoadBalancers:getLoadBalancers", TypeShape.of(GetLoadBalancersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupResult> getServerGroup(GetServerGroupArgs args) {
+        return getServerGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupResult> getServerGroupPlain(GetServerGroupPlainArgs args) {
+        return getServerGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupResult> getServerGroup(GetServerGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getServerGroup:getServerGroup", TypeShape.of(GetServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupResult> getServerGroup(GetServerGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getServerGroup:getServerGroup", TypeShape.of(GetServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupResult> getServerGroupPlain(GetServerGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getServerGroup:getServerGroup", TypeShape.of(GetServerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups() {
+        return getServerGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupsResult> getServerGroupsPlain() {
+        return getServerGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups(InvokeArgs args) {
+        return getServerGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupsResult> getServerGroupsPlain(InvokeArgs args) {
+        return getServerGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getServerGroups:getServerGroups", TypeShape.of(GetServerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static Output<GetServerGroupsResult> getServerGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getServerGroups:getServerGroups", TypeShape.of(GetServerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::ServerGroup
+     * 
+     */
+    public static CompletableFuture<GetServerGroupsResult> getServerGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getServerGroups:getServerGroups", TypeShape.of(GetServerGroupsResult.class), args, Utilities.withVersion(options));
     }
 }

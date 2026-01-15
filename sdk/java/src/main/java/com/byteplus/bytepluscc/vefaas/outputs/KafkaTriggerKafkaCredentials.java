@@ -4,10 +4,9 @@
 package com.byteplus.bytepluscc.vefaas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class KafkaTriggerKafkaCredentials {
@@ -15,39 +14,39 @@ public final class KafkaTriggerKafkaCredentials {
      * @return Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
      * 
      */
-    private @Nullable String mechanism;
+    private String mechanism;
     /**
      * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
      * 
      */
-    private @Nullable String password;
+    private String password;
     /**
      * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
      * 
      */
-    private @Nullable String username;
+    private String username;
 
     private KafkaTriggerKafkaCredentials() {}
     /**
      * @return Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
      * 
      */
-    public Optional<String> mechanism() {
-        return Optional.ofNullable(this.mechanism);
+    public String mechanism() {
+        return this.mechanism;
     }
     /**
      * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
      * 
      */
-    public Optional<String> password() {
-        return Optional.ofNullable(this.password);
+    public String password() {
+        return this.password;
     }
     /**
      * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
      * 
      */
-    public Optional<String> username() {
-        return Optional.ofNullable(this.username);
+    public String username() {
+        return this.username;
     }
 
     public static Builder builder() {
@@ -59,9 +58,9 @@ public final class KafkaTriggerKafkaCredentials {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String mechanism;
-        private @Nullable String password;
-        private @Nullable String username;
+        private String mechanism;
+        private String password;
+        private String username;
         public Builder() {}
         public Builder(KafkaTriggerKafkaCredentials defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,20 +70,26 @@ public final class KafkaTriggerKafkaCredentials {
         }
 
         @CustomType.Setter
-        public Builder mechanism(@Nullable String mechanism) {
-
+        public Builder mechanism(String mechanism) {
+            if (mechanism == null) {
+              throw new MissingRequiredPropertyException("KafkaTriggerKafkaCredentials", "mechanism");
+            }
             this.mechanism = mechanism;
             return this;
         }
         @CustomType.Setter
-        public Builder password(@Nullable String password) {
-
+        public Builder password(String password) {
+            if (password == null) {
+              throw new MissingRequiredPropertyException("KafkaTriggerKafkaCredentials", "password");
+            }
             this.password = password;
             return this;
         }
         @CustomType.Setter
-        public Builder username(@Nullable String username) {
-
+        public Builder username(String username) {
+            if (username == null) {
+              throw new MissingRequiredPropertyException("KafkaTriggerKafkaCredentials", "username");
+            }
             this.username = username;
             return this;
         }

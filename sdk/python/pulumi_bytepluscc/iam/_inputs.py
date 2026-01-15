@@ -16,6 +16,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'GroupAttachedPolicyArgs',
+    'GroupAttachedPolicyArgsDict',
+    'GroupAttachedPolicyPolicyScopeArgs',
+    'GroupAttachedPolicyPolicyScopeArgsDict',
+    'GroupUserArgs',
+    'GroupUserArgsDict',
     'PolicyPolicyRoleArgs',
     'PolicyPolicyRoleArgsDict',
     'PolicyPolicyRolePolicyScopeArgs',
@@ -45,6 +51,195 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class GroupAttachedPolicyArgsDict(TypedDict):
+        policy_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        策略名。
+        """
+        policy_scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input['GroupAttachedPolicyPolicyScopeArgsDict']]]]
+        policy_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        """
+elif False:
+    GroupAttachedPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GroupAttachedPolicyArgs:
+    def __init__(__self__, *,
+                 policy_name: Optional[pulumi.Input[builtins.str]] = None,
+                 policy_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['GroupAttachedPolicyPolicyScopeArgs']]]] = None,
+                 policy_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] policy_name: 策略名。
+        :param pulumi.Input[builtins.str] policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
+        """
+        if policy_name is not None:
+            pulumi.set(__self__, "policy_name", policy_name)
+        if policy_scopes is not None:
+            pulumi.set(__self__, "policy_scopes", policy_scopes)
+        if policy_type is not None:
+            pulumi.set(__self__, "policy_type", policy_type)
+
+    @property
+    @pulumi.getter(name="policyName")
+    def policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        策略名。
+        """
+        return pulumi.get(self, "policy_name")
+
+    @policy_name.setter
+    def policy_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "policy_name", value)
+
+    @property
+    @pulumi.getter(name="policyScopes")
+    def policy_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GroupAttachedPolicyPolicyScopeArgs']]]]:
+        return pulumi.get(self, "policy_scopes")
+
+    @policy_scopes.setter
+    def policy_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GroupAttachedPolicyPolicyScopeArgs']]]]):
+        pulumi.set(self, "policy_scopes", value)
+
+    @property
+    @pulumi.getter(name="policyType")
+    def policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        """
+        return pulumi.get(self, "policy_type")
+
+    @policy_type.setter
+    def policy_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "policy_type", value)
+
+
+if not MYPY:
+    class GroupAttachedPolicyPolicyScopeArgsDict(TypedDict):
+        attach_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        项目授权时间。
+        """
+        policy_scope_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        """
+        project_display_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        按项目授权时的项目显示名。
+        """
+        project_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        按项目授权时的项目名。
+        """
+elif False:
+    GroupAttachedPolicyPolicyScopeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GroupAttachedPolicyPolicyScopeArgs:
+    def __init__(__self__, *,
+                 attach_time: Optional[pulumi.Input[builtins.str]] = None,
+                 policy_scope_type: Optional[pulumi.Input[builtins.str]] = None,
+                 project_display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 project_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] attach_time: 项目授权时间。
+        :param pulumi.Input[builtins.str] policy_scope_type: 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        :param pulumi.Input[builtins.str] project_display_name: 按项目授权时的项目显示名。
+        :param pulumi.Input[builtins.str] project_name: 按项目授权时的项目名。
+        """
+        if attach_time is not None:
+            pulumi.set(__self__, "attach_time", attach_time)
+        if policy_scope_type is not None:
+            pulumi.set(__self__, "policy_scope_type", policy_scope_type)
+        if project_display_name is not None:
+            pulumi.set(__self__, "project_display_name", project_display_name)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+
+    @property
+    @pulumi.getter(name="attachTime")
+    def attach_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        项目授权时间。
+        """
+        return pulumi.get(self, "attach_time")
+
+    @attach_time.setter
+    def attach_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "attach_time", value)
+
+    @property
+    @pulumi.getter(name="policyScopeType")
+    def policy_scope_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        """
+        return pulumi.get(self, "policy_scope_type")
+
+    @policy_scope_type.setter
+    def policy_scope_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "policy_scope_type", value)
+
+    @property
+    @pulumi.getter(name="projectDisplayName")
+    def project_display_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        按项目授权时的项目显示名。
+        """
+        return pulumi.get(self, "project_display_name")
+
+    @project_display_name.setter
+    def project_display_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_display_name", value)
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        按项目授权时的项目名。
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+
+if not MYPY:
+    class GroupUserArgsDict(TypedDict):
+        user_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户名。
+        """
+elif False:
+    GroupUserArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GroupUserArgs:
+    def __init__(__self__, *,
+                 user_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] user_name: 用户名。
+        """
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户名。
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "user_name", value)
+
 
 if not MYPY:
     class PolicyPolicyRoleArgsDict(TypedDict):

@@ -22,10 +22,10 @@ __all__ = [
     'ShareConfigAllowRefererAccessRuleArgsDict',
     'ShareConfigAllowRefererAccessRuleCommonTypeArgs',
     'ShareConfigAllowRefererAccessRuleCommonTypeArgsDict',
-    'ShareConfigCommonMatchsArgs',
-    'ShareConfigCommonMatchsArgsDict',
-    'ShareConfigCommonMatchsCommonTypeArgs',
-    'ShareConfigCommonMatchsCommonTypeArgsDict',
+    'ShareConfigCommonMatchListArgs',
+    'ShareConfigCommonMatchListArgsDict',
+    'ShareConfigCommonMatchListCommonTypeArgs',
+    'ShareConfigCommonMatchListCommonTypeArgsDict',
     'ShareConfigDenyIpAccessRuleArgs',
     'ShareConfigDenyIpAccessRuleArgsDict',
     'ShareConfigDenyRefererAccessRuleArgs',
@@ -173,39 +173,39 @@ class ShareConfigAllowRefererAccessRuleCommonTypeArgs:
 
 
 if not MYPY:
-    class ShareConfigCommonMatchsArgsDict(TypedDict):
-        common_type: NotRequired[pulumi.Input['ShareConfigCommonMatchsCommonTypeArgsDict']]
+    class ShareConfigCommonMatchListArgsDict(TypedDict):
+        common_type: NotRequired[pulumi.Input['ShareConfigCommonMatchListCommonTypeArgsDict']]
         """
         表示该通用列表的内容。
         """
 elif False:
-    ShareConfigCommonMatchsArgsDict: TypeAlias = Mapping[str, Any]
+    ShareConfigCommonMatchListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class ShareConfigCommonMatchsArgs:
+class ShareConfigCommonMatchListArgs:
     def __init__(__self__, *,
-                 common_type: Optional[pulumi.Input['ShareConfigCommonMatchsCommonTypeArgs']] = None):
+                 common_type: Optional[pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs']] = None):
         """
-        :param pulumi.Input['ShareConfigCommonMatchsCommonTypeArgs'] common_type: 表示该通用列表的内容。
+        :param pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs'] common_type: 表示该通用列表的内容。
         """
         if common_type is not None:
             pulumi.set(__self__, "common_type", common_type)
 
     @property
     @pulumi.getter(name="commonType")
-    def common_type(self) -> Optional[pulumi.Input['ShareConfigCommonMatchsCommonTypeArgs']]:
+    def common_type(self) -> Optional[pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs']]:
         """
         表示该通用列表的内容。
         """
         return pulumi.get(self, "common_type")
 
     @common_type.setter
-    def common_type(self, value: Optional[pulumi.Input['ShareConfigCommonMatchsCommonTypeArgs']]):
+    def common_type(self, value: Optional[pulumi.Input['ShareConfigCommonMatchListCommonTypeArgs']]):
         pulumi.set(self, "common_type", value)
 
 
 if not MYPY:
-    class ShareConfigCommonMatchsCommonTypeArgsDict(TypedDict):
+    class ShareConfigCommonMatchListCommonTypeArgsDict(TypedDict):
         ignore_case: NotRequired[pulumi.Input[builtins.bool]]
         """
         表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
@@ -215,10 +215,10 @@ if not MYPY:
         表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
         """
 elif False:
-    ShareConfigCommonMatchsCommonTypeArgsDict: TypeAlias = Mapping[str, Any]
+    ShareConfigCommonMatchListCommonTypeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class ShareConfigCommonMatchsCommonTypeArgs:
+class ShareConfigCommonMatchListCommonTypeArgs:
     def __init__(__self__, *,
                  ignore_case: Optional[pulumi.Input[builtins.bool]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):

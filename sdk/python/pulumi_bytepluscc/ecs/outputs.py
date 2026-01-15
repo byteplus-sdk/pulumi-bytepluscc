@@ -31,6 +31,10 @@ __all__ = [
     'InstanceSecondaryNetworkInterface',
     'InstanceSystemVolume',
     'InstanceTag',
+    'InvocationInvocationResult',
+    'InvocationParameterDefinition',
+    'InvocationTag',
+    'KeypairTag',
     'GetImageDetectionResultsResult',
     'GetImageDetectionResultsItemResult',
     'GetImageSnapshotResult',
@@ -45,6 +49,10 @@ __all__ = [
     'GetInstanceSecondaryNetworkInterfaceResult',
     'GetInstanceSystemVolumeResult',
     'GetInstanceTagResult',
+    'GetInvocationInvocationResultResult',
+    'GetInvocationParameterDefinitionResult',
+    'GetInvocationTagResult',
+    'GetKeypairTagResult',
 ]
 
 @pulumi.output_type
@@ -1144,6 +1152,396 @@ class InstanceTag(dict):
 
 
 @pulumi.output_type
+class InvocationInvocationResult(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandId":
+            suggest = "command_id"
+        elif key == "endTime":
+            suggest = "end_time"
+        elif key == "errorCode":
+            suggest = "error_code"
+        elif key == "errorMessage":
+            suggest = "error_message"
+        elif key == "exitCode":
+            suggest = "exit_code"
+        elif key == "instanceId":
+            suggest = "instance_id"
+        elif key == "invocationId":
+            suggest = "invocation_id"
+        elif key == "invocationResultId":
+            suggest = "invocation_result_id"
+        elif key == "invocationResultStatus":
+            suggest = "invocation_result_status"
+        elif key == "startTime":
+            suggest = "start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InvocationInvocationResult. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InvocationInvocationResult.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InvocationInvocationResult.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 command_id: Optional[builtins.str] = None,
+                 end_time: Optional[builtins.str] = None,
+                 error_code: Optional[builtins.str] = None,
+                 error_message: Optional[builtins.str] = None,
+                 exit_code: Optional[builtins.int] = None,
+                 instance_id: Optional[builtins.str] = None,
+                 invocation_id: Optional[builtins.str] = None,
+                 invocation_result_id: Optional[builtins.str] = None,
+                 invocation_result_status: Optional[builtins.str] = None,
+                 output: Optional[builtins.str] = None,
+                 start_time: Optional[builtins.str] = None,
+                 username: Optional[builtins.str] = None):
+        """
+        :param builtins.str command_id: 命令ID。
+        :param builtins.str end_time: 命令执行的完成时间。
+        :param builtins.str error_code: 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        :param builtins.str error_message: 命令执行失败的错误信息。
+        :param builtins.int exit_code: 脚本执行后的退出状态码。
+        :param builtins.str instance_id: 实例ID。
+        :param builtins.str invocation_id: 任务执行ID。
+        :param builtins.str invocation_result_id: 任务执行结果ID。
+        :param builtins.str invocation_result_status: 单台实例的命令进度状态。
+        :param builtins.str output: 经过Base64编码的命令执行后输出信息。
+        :param builtins.str start_time: 命令在实例中开始执行的时间。
+        :param builtins.str username: 在实例中执行命令的用户名称。
+        """
+        if command_id is not None:
+            pulumi.set(__self__, "command_id", command_id)
+        if end_time is not None:
+            pulumi.set(__self__, "end_time", end_time)
+        if error_code is not None:
+            pulumi.set(__self__, "error_code", error_code)
+        if error_message is not None:
+            pulumi.set(__self__, "error_message", error_message)
+        if exit_code is not None:
+            pulumi.set(__self__, "exit_code", exit_code)
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if invocation_id is not None:
+            pulumi.set(__self__, "invocation_id", invocation_id)
+        if invocation_result_id is not None:
+            pulumi.set(__self__, "invocation_result_id", invocation_result_id)
+        if invocation_result_status is not None:
+            pulumi.set(__self__, "invocation_result_status", invocation_result_status)
+        if output is not None:
+            pulumi.set(__self__, "output", output)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="commandId")
+    def command_id(self) -> Optional[builtins.str]:
+        """
+        命令ID。
+        """
+        return pulumi.get(self, "command_id")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> Optional[builtins.str]:
+        """
+        命令执行的完成时间。
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="errorCode")
+    def error_code(self) -> Optional[builtins.str]:
+        """
+        命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        """
+        return pulumi.get(self, "error_code")
+
+    @property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> Optional[builtins.str]:
+        """
+        命令执行失败的错误信息。
+        """
+        return pulumi.get(self, "error_message")
+
+    @property
+    @pulumi.getter(name="exitCode")
+    def exit_code(self) -> Optional[builtins.int]:
+        """
+        脚本执行后的退出状态码。
+        """
+        return pulumi.get(self, "exit_code")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        实例ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="invocationId")
+    def invocation_id(self) -> Optional[builtins.str]:
+        """
+        任务执行ID。
+        """
+        return pulumi.get(self, "invocation_id")
+
+    @property
+    @pulumi.getter(name="invocationResultId")
+    def invocation_result_id(self) -> Optional[builtins.str]:
+        """
+        任务执行结果ID。
+        """
+        return pulumi.get(self, "invocation_result_id")
+
+    @property
+    @pulumi.getter(name="invocationResultStatus")
+    def invocation_result_status(self) -> Optional[builtins.str]:
+        """
+        单台实例的命令进度状态。
+        """
+        return pulumi.get(self, "invocation_result_status")
+
+    @property
+    @pulumi.getter
+    def output(self) -> Optional[builtins.str]:
+        """
+        经过Base64编码的命令执行后输出信息。
+        """
+        return pulumi.get(self, "output")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> Optional[builtins.str]:
+        """
+        命令在实例中开始执行的时间。
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[builtins.str]:
+        """
+        在实例中执行命令的用户名称。
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class InvocationParameterDefinition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "decimalPrecision":
+            suggest = "decimal_precision"
+        elif key == "defaultValue":
+            suggest = "default_value"
+        elif key == "maxLength":
+            suggest = "max_length"
+        elif key == "maxValue":
+            suggest = "max_value"
+        elif key == "minLength":
+            suggest = "min_length"
+        elif key == "minValue":
+            suggest = "min_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InvocationParameterDefinition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InvocationParameterDefinition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InvocationParameterDefinition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 decimal_precision: Optional[builtins.int] = None,
+                 default_value: Optional[builtins.str] = None,
+                 max_length: Optional[builtins.int] = None,
+                 max_value: Optional[builtins.str] = None,
+                 min_length: Optional[builtins.int] = None,
+                 min_value: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 required: Optional[builtins.bool] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
+        :param builtins.str default_value: 自定义参数默认值。
+        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
+        :param builtins.str max_value: 自定义参数值（数字）的最大值。
+        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
+        :param builtins.str min_value: 自定义参数值（数字）的最小值。
+        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+        :param builtins.bool required: 是否必填。true：必填。false：非必填。
+        :param builtins.str type: 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        """
+        if decimal_precision is not None:
+            pulumi.set(__self__, "decimal_precision", decimal_precision)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if max_length is not None:
+            pulumi.set(__self__, "max_length", max_length)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_length is not None:
+            pulumi.set(__self__, "min_length", min_length)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if required is not None:
+            pulumi.set(__self__, "required", required)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="decimalPrecision")
+    def decimal_precision(self) -> Optional[builtins.int]:
+        """
+        自定义参数值（数字）允许的小数点后位数。
+        """
+        return pulumi.get(self, "decimal_precision")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> Optional[builtins.str]:
+        """
+        自定义参数默认值。
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> Optional[builtins.int]:
+        """
+        自定义参数值（字符串）的最大长度。
+        """
+        return pulumi.get(self, "max_length")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> Optional[builtins.str]:
+        """
+        自定义参数值（数字）的最大值。
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> Optional[builtins.int]:
+        """
+        自定义参数值（字符串）的最小长度。
+        """
+        return pulumi.get(self, "min_length")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> Optional[builtins.str]:
+        """
+        自定义参数值（数字）的最小值。
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        自定义参数名称，需要在脚本中通过{{Param}}定义 。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def required(self) -> Optional[builtins.bool]:
+        """
+        是否必填。true：必填。false：非必填。
+        """
+        return pulumi.get(self, "required")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class InvocationTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class KeypairTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetImageDetectionResultsResult(dict):
     def __init__(__self__, *,
                  detection_status: builtins.str,
@@ -1961,6 +2359,309 @@ class GetInstanceTagResult(dict):
     def value(self) -> builtins.str:
         """
         实例的值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetInvocationInvocationResultResult(dict):
+    def __init__(__self__, *,
+                 command_id: builtins.str,
+                 end_time: builtins.str,
+                 error_code: builtins.str,
+                 error_message: builtins.str,
+                 exit_code: builtins.int,
+                 instance_id: builtins.str,
+                 invocation_id: builtins.str,
+                 invocation_result_id: builtins.str,
+                 invocation_result_status: builtins.str,
+                 output: builtins.str,
+                 start_time: builtins.str,
+                 username: builtins.str):
+        """
+        :param builtins.str command_id: 命令ID。
+        :param builtins.str end_time: 命令执行的完成时间。
+        :param builtins.str error_code: 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        :param builtins.str error_message: 命令执行失败的错误信息。
+        :param builtins.int exit_code: 脚本执行后的退出状态码。
+        :param builtins.str instance_id: 实例ID。
+        :param builtins.str invocation_id: 任务执行ID。
+        :param builtins.str invocation_result_id: 任务执行结果ID。
+        :param builtins.str invocation_result_status: 单台实例的命令进度状态。
+        :param builtins.str output: 经过Base64编码的命令执行后输出信息。
+        :param builtins.str start_time: 命令在实例中开始执行的时间。
+        :param builtins.str username: 在实例中执行命令的用户名称。
+        """
+        pulumi.set(__self__, "command_id", command_id)
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "error_code", error_code)
+        pulumi.set(__self__, "error_message", error_message)
+        pulumi.set(__self__, "exit_code", exit_code)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "invocation_id", invocation_id)
+        pulumi.set(__self__, "invocation_result_id", invocation_result_id)
+        pulumi.set(__self__, "invocation_result_status", invocation_result_status)
+        pulumi.set(__self__, "output", output)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="commandId")
+    def command_id(self) -> builtins.str:
+        """
+        命令ID。
+        """
+        return pulumi.get(self, "command_id")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> builtins.str:
+        """
+        命令执行的完成时间。
+        """
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="errorCode")
+    def error_code(self) -> builtins.str:
+        """
+        命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        """
+        return pulumi.get(self, "error_code")
+
+    @property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> builtins.str:
+        """
+        命令执行失败的错误信息。
+        """
+        return pulumi.get(self, "error_message")
+
+    @property
+    @pulumi.getter(name="exitCode")
+    def exit_code(self) -> builtins.int:
+        """
+        脚本执行后的退出状态码。
+        """
+        return pulumi.get(self, "exit_code")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        实例ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="invocationId")
+    def invocation_id(self) -> builtins.str:
+        """
+        任务执行ID。
+        """
+        return pulumi.get(self, "invocation_id")
+
+    @property
+    @pulumi.getter(name="invocationResultId")
+    def invocation_result_id(self) -> builtins.str:
+        """
+        任务执行结果ID。
+        """
+        return pulumi.get(self, "invocation_result_id")
+
+    @property
+    @pulumi.getter(name="invocationResultStatus")
+    def invocation_result_status(self) -> builtins.str:
+        """
+        单台实例的命令进度状态。
+        """
+        return pulumi.get(self, "invocation_result_status")
+
+    @property
+    @pulumi.getter
+    def output(self) -> builtins.str:
+        """
+        经过Base64编码的命令执行后输出信息。
+        """
+        return pulumi.get(self, "output")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> builtins.str:
+        """
+        命令在实例中开始执行的时间。
+        """
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter
+    def username(self) -> builtins.str:
+        """
+        在实例中执行命令的用户名称。
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetInvocationParameterDefinitionResult(dict):
+    def __init__(__self__, *,
+                 decimal_precision: builtins.int,
+                 default_value: builtins.str,
+                 max_length: builtins.int,
+                 max_value: builtins.str,
+                 min_length: builtins.int,
+                 min_value: builtins.str,
+                 name: builtins.str,
+                 required: builtins.bool,
+                 type: builtins.str):
+        """
+        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
+        :param builtins.str default_value: 自定义参数默认值。
+        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
+        :param builtins.str max_value: 自定义参数值（数字）的最大值。
+        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
+        :param builtins.str min_value: 自定义参数值（数字）的最小值。
+        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+        :param builtins.bool required: 是否必填。true：必填。false：非必填。
+        :param builtins.str type: 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        """
+        pulumi.set(__self__, "decimal_precision", decimal_precision)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "max_value", max_value)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "min_value", min_value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "required", required)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="decimalPrecision")
+    def decimal_precision(self) -> builtins.int:
+        """
+        自定义参数值（数字）允许的小数点后位数。
+        """
+        return pulumi.get(self, "decimal_precision")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> builtins.str:
+        """
+        自定义参数默认值。
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> builtins.int:
+        """
+        自定义参数值（字符串）的最大长度。
+        """
+        return pulumi.get(self, "max_length")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> builtins.str:
+        """
+        自定义参数值（数字）的最大值。
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> builtins.int:
+        """
+        自定义参数值（字符串）的最小长度。
+        """
+        return pulumi.get(self, "min_length")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> builtins.str:
+        """
+        自定义参数值（数字）的最小值。
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        自定义参数名称，需要在脚本中通过{{Param}}定义 。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def required(self) -> builtins.bool:
+        """
+        是否必填。true：必填。false：非必填。
+        """
+        return pulumi.get(self, "required")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetInvocationTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetKeypairTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        标签值。
         """
         return pulumi.get(self, "value")
 

@@ -17,6 +17,9 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'GroupAttachedPolicy',
+    'GroupAttachedPolicyPolicyScope',
+    'GroupUser',
     'PolicyPolicyRole',
     'PolicyPolicyRolePolicyScope',
     'PolicyPolicyUser',
@@ -30,6 +33,9 @@ __all__ = [
     'UserPolicy',
     'UserSecurityConfig',
     'UserTag',
+    'GetGroupAttachedPolicyResult',
+    'GetGroupAttachedPolicyPolicyScopeResult',
+    'GetGroupUserResult',
     'GetPolicyPolicyRoleResult',
     'GetPolicyPolicyRolePolicyScopeResult',
     'GetPolicyPolicyUserResult',
@@ -44,6 +50,180 @@ __all__ = [
     'GetUserSecurityConfigResult',
     'GetUserTagResult',
 ]
+
+@pulumi.output_type
+class GroupAttachedPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "policyName":
+            suggest = "policy_name"
+        elif key == "policyScopes":
+            suggest = "policy_scopes"
+        elif key == "policyType":
+            suggest = "policy_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupAttachedPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupAttachedPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupAttachedPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 policy_name: Optional[builtins.str] = None,
+                 policy_scopes: Optional[Sequence['outputs.GroupAttachedPolicyPolicyScope']] = None,
+                 policy_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str policy_name: 策略名。
+        :param builtins.str policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
+        """
+        if policy_name is not None:
+            pulumi.set(__self__, "policy_name", policy_name)
+        if policy_scopes is not None:
+            pulumi.set(__self__, "policy_scopes", policy_scopes)
+        if policy_type is not None:
+            pulumi.set(__self__, "policy_type", policy_type)
+
+    @property
+    @pulumi.getter(name="policyName")
+    def policy_name(self) -> Optional[builtins.str]:
+        """
+        策略名。
+        """
+        return pulumi.get(self, "policy_name")
+
+    @property
+    @pulumi.getter(name="policyScopes")
+    def policy_scopes(self) -> Optional[Sequence['outputs.GroupAttachedPolicyPolicyScope']]:
+        return pulumi.get(self, "policy_scopes")
+
+    @property
+    @pulumi.getter(name="policyType")
+    def policy_type(self) -> Optional[builtins.str]:
+        """
+        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        """
+        return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GroupAttachedPolicyPolicyScope(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attachTime":
+            suggest = "attach_time"
+        elif key == "policyScopeType":
+            suggest = "policy_scope_type"
+        elif key == "projectDisplayName":
+            suggest = "project_display_name"
+        elif key == "projectName":
+            suggest = "project_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupAttachedPolicyPolicyScope. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupAttachedPolicyPolicyScope.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupAttachedPolicyPolicyScope.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attach_time: Optional[builtins.str] = None,
+                 policy_scope_type: Optional[builtins.str] = None,
+                 project_display_name: Optional[builtins.str] = None,
+                 project_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str attach_time: 项目授权时间。
+        :param builtins.str policy_scope_type: 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        :param builtins.str project_display_name: 按项目授权时的项目显示名。
+        :param builtins.str project_name: 按项目授权时的项目名。
+        """
+        if attach_time is not None:
+            pulumi.set(__self__, "attach_time", attach_time)
+        if policy_scope_type is not None:
+            pulumi.set(__self__, "policy_scope_type", policy_scope_type)
+        if project_display_name is not None:
+            pulumi.set(__self__, "project_display_name", project_display_name)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+
+    @property
+    @pulumi.getter(name="attachTime")
+    def attach_time(self) -> Optional[builtins.str]:
+        """
+        项目授权时间。
+        """
+        return pulumi.get(self, "attach_time")
+
+    @property
+    @pulumi.getter(name="policyScopeType")
+    def policy_scope_type(self) -> Optional[builtins.str]:
+        """
+        授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        """
+        return pulumi.get(self, "policy_scope_type")
+
+    @property
+    @pulumi.getter(name="projectDisplayName")
+    def project_display_name(self) -> Optional[builtins.str]:
+        """
+        按项目授权时的项目显示名。
+        """
+        return pulumi.get(self, "project_display_name")
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[builtins.str]:
+        """
+        按项目授权时的项目名。
+        """
+        return pulumi.get(self, "project_name")
+
+
+@pulumi.output_type
+class GroupUser(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupUser. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupUser.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupUser.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 user_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str user_name: 用户名。
+        """
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[builtins.str]:
+        """
+        用户名。
+        """
+        return pulumi.get(self, "user_name")
+
 
 @pulumi.output_type
 class PolicyPolicyRole(dict):
@@ -867,6 +1047,192 @@ class UserTag(dict):
         标签值。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGroupAttachedPolicyResult(dict):
+    def __init__(__self__, *,
+                 attach_time: builtins.str,
+                 description: builtins.str,
+                 policy_name: builtins.str,
+                 policy_scopes: Sequence['outputs.GetGroupAttachedPolicyPolicyScopeResult'],
+                 policy_trn: builtins.str,
+                 policy_type: builtins.str):
+        """
+        :param builtins.str attach_time: 策略绑定时间。
+        :param builtins.str description: 策略描述。
+        :param builtins.str policy_name: 策略名。
+        :param Sequence['GetGroupAttachedPolicyPolicyScopeArgs'] policy_scopes: 策略授权的作用范围，特指项目范围。
+        :param builtins.str policy_trn: 策略TRN。
+        :param builtins.str policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
+        """
+        pulumi.set(__self__, "attach_time", attach_time)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "policy_name", policy_name)
+        pulumi.set(__self__, "policy_scopes", policy_scopes)
+        pulumi.set(__self__, "policy_trn", policy_trn)
+        pulumi.set(__self__, "policy_type", policy_type)
+
+    @property
+    @pulumi.getter(name="attachTime")
+    def attach_time(self) -> builtins.str:
+        """
+        策略绑定时间。
+        """
+        return pulumi.get(self, "attach_time")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        策略描述。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="policyName")
+    def policy_name(self) -> builtins.str:
+        """
+        策略名。
+        """
+        return pulumi.get(self, "policy_name")
+
+    @property
+    @pulumi.getter(name="policyScopes")
+    def policy_scopes(self) -> Sequence['outputs.GetGroupAttachedPolicyPolicyScopeResult']:
+        """
+        策略授权的作用范围，特指项目范围。
+        """
+        return pulumi.get(self, "policy_scopes")
+
+    @property
+    @pulumi.getter(name="policyTrn")
+    def policy_trn(self) -> builtins.str:
+        """
+        策略TRN。
+        """
+        return pulumi.get(self, "policy_trn")
+
+    @property
+    @pulumi.getter(name="policyType")
+    def policy_type(self) -> builtins.str:
+        """
+        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        """
+        return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GetGroupAttachedPolicyPolicyScopeResult(dict):
+    def __init__(__self__, *,
+                 attach_time: builtins.str,
+                 policy_scope_type: builtins.str,
+                 project_display_name: builtins.str,
+                 project_name: builtins.str):
+        """
+        :param builtins.str attach_time: 项目授权时间。
+        :param builtins.str policy_scope_type: 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        :param builtins.str project_display_name: 按项目授权时的项目显示名。
+        :param builtins.str project_name: 按项目授权时的项目名。
+        """
+        pulumi.set(__self__, "attach_time", attach_time)
+        pulumi.set(__self__, "policy_scope_type", policy_scope_type)
+        pulumi.set(__self__, "project_display_name", project_display_name)
+        pulumi.set(__self__, "project_name", project_name)
+
+    @property
+    @pulumi.getter(name="attachTime")
+    def attach_time(self) -> builtins.str:
+        """
+        项目授权时间。
+        """
+        return pulumi.get(self, "attach_time")
+
+    @property
+    @pulumi.getter(name="policyScopeType")
+    def policy_scope_type(self) -> builtins.str:
+        """
+        授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        """
+        return pulumi.get(self, "policy_scope_type")
+
+    @property
+    @pulumi.getter(name="projectDisplayName")
+    def project_display_name(self) -> builtins.str:
+        """
+        按项目授权时的项目显示名。
+        """
+        return pulumi.get(self, "project_display_name")
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> builtins.str:
+        """
+        按项目授权时的项目名。
+        """
+        return pulumi.get(self, "project_name")
+
+
+@pulumi.output_type
+class GetGroupUserResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 display_name: builtins.str,
+                 join_time: builtins.str,
+                 user_id: builtins.int,
+                 user_name: builtins.str):
+        """
+        :param builtins.str description: 用户描述。
+        :param builtins.str display_name: 用户显示名。
+        :param builtins.str join_time: 用户加入用户组的时间。
+        :param builtins.int user_id: 用户ID。
+        :param builtins.str user_name: 用户名。
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "join_time", join_time)
+        pulumi.set(__self__, "user_id", user_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        用户描述。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        用户显示名。
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="joinTime")
+    def join_time(self) -> builtins.str:
+        """
+        用户加入用户组的时间。
+        """
+        return pulumi.get(self, "join_time")
+
+    @property
+    @pulumi.getter(name="userId")
+    def user_id(self) -> builtins.int:
+        """
+        用户ID。
+        """
+        return pulumi.get(self, "user_id")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> builtins.str:
+        """
+        用户名。
+        """
+        return pulumi.get(self, "user_name")
 
 
 @pulumi.output_type

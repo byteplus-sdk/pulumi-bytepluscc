@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.filenas;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.filenas.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.filenas.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.filenas.inputs.GetSnapshotArgs;
+import com.byteplus.bytepluscc.filenas.inputs.GetSnapshotPlainArgs;
 import com.byteplus.bytepluscc.filenas.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.filenas.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.filenas.outputs.GetSnapshotResult;
+import com.byteplus.bytepluscc.filenas.outputs.GetSnapshotsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +104,89 @@ public final class FilenasFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:filenas/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args) {
+        return getSnapshot(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args) {
+        return getSnapshotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:filenas/getSnapshot:getSnapshot", TypeShape.of(GetSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots() {
+        return getSnapshots(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain() {
+        return getSnapshotsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots(InvokeArgs args) {
+        return getSnapshots(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(InvokeArgs args) {
+        return getSnapshotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static Output<GetSnapshotsResult> getSnapshots(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::Snapshot
+     * 
+     */
+    public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:filenas/getSnapshots:getSnapshots", TypeShape.of(GetSnapshotsResult.class), args, Utilities.withVersion(options));
     }
 }

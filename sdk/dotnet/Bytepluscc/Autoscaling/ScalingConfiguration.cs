@@ -86,7 +86,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         public Output<int> Ipv6AddressCount { get; private set; } = null!;
 
         /// <summary>
-        /// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        /// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         /// </summary>
         [Output("keyPairName")]
         public Output<string> KeyPairName { get; private set; } = null!;
@@ -269,7 +269,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         public Input<int>? Ipv6AddressCount { get; set; }
 
         /// <summary>
-        /// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        /// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         /// </summary>
         [Input("keyPairName")]
         public Input<string>? KeyPairName { get; set; }
@@ -441,7 +441,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         public Input<int>? Ipv6AddressCount { get; set; }
 
         /// <summary>
-        /// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        /// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         /// </summary>
         [Input("keyPairName")]
         public Input<string>? KeyPairName { get; set; }

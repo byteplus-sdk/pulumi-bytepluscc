@@ -470,14 +470,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的协议。
+     * 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 监听器的协议。
+     * @return 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -542,6 +542,21 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> proxySendTimeout() {
         return Optional.ofNullable(this.proxySendTimeout);
+    }
+
+    /**
+     * 监听器绑定的规则ID列表。
+     * 
+     */
+    @Import(name="ruleIds")
+    private @Nullable Output<List<String>> ruleIds;
+
+    /**
+     * @return 监听器绑定的规则ID列表。
+     * 
+     */
+    public Optional<Output<List<String>>> ruleIds() {
+        return Optional.ofNullable(this.ruleIds);
     }
 
     /**
@@ -709,6 +724,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         this.proxyProtocolType = $.proxyProtocolType;
         this.proxyReadTimeout = $.proxyReadTimeout;
         this.proxySendTimeout = $.proxySendTimeout;
+        this.ruleIds = $.ruleIds;
         this.scheduler = $.scheduler;
         this.securityPolicyId = $.securityPolicyId;
         this.sendTimeout = $.sendTimeout;
@@ -1379,7 +1395,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议。
+         * @param protocol 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
          * 
          * @return builder
          * 
@@ -1390,7 +1406,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议。
+         * @param protocol 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
          * 
          * @return builder
          * 
@@ -1481,6 +1497,37 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder proxySendTimeout(Integer proxySendTimeout) {
             return proxySendTimeout(Output.of(proxySendTimeout));
+        }
+
+        /**
+         * @param ruleIds 监听器绑定的规则ID列表。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleIds(@Nullable Output<List<String>> ruleIds) {
+            $.ruleIds = ruleIds;
+            return this;
+        }
+
+        /**
+         * @param ruleIds 监听器绑定的规则ID列表。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleIds(List<String> ruleIds) {
+            return ruleIds(Output.of(ruleIds));
+        }
+
+        /**
+         * @param ruleIds 监听器绑定的规则ID列表。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleIds(String... ruleIds) {
+            return ruleIds(List.of(ruleIds));
         }
 
         /**

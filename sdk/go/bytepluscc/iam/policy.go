@@ -142,8 +142,6 @@ func (PolicyState) ElementType() reflect.Type {
 }
 
 type policyArgs struct {
-	// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-	Category *string `pulumi:"category"`
 	// 策略描述，长度不超过128。
 	Description *string `pulumi:"description"`
 	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
@@ -159,8 +157,6 @@ type policyArgs struct {
 
 // The set of arguments for constructing a Policy resource.
 type PolicyArgs struct {
-	// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-	Category pulumi.StringPtrInput
 	// 策略描述，长度不超过128。
 	Description pulumi.StringPtrInput
 	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}

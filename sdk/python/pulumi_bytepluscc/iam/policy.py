@@ -25,7 +25,6 @@ class PolicyArgs:
                  policy_document: pulumi.Input[builtins.str],
                  policy_name: pulumi.Input[builtins.str],
                  policy_type: pulumi.Input[builtins.str],
-                 category: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  policy_roles: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyRoleArgs']]]] = None,
                  policy_user_groups: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyUserGroupArgs']]]] = None,
@@ -35,14 +34,11 @@ class PolicyArgs:
         :param pulumi.Input[builtins.str] policy_document: 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
         :param pulumi.Input[builtins.str] policy_name: 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
         :param pulumi.Input[builtins.str] policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
-        :param pulumi.Input[builtins.str] category: 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
         :param pulumi.Input[builtins.str] description: 策略描述，长度不超过128。
         """
         pulumi.set(__self__, "policy_document", policy_document)
         pulumi.set(__self__, "policy_name", policy_name)
         pulumi.set(__self__, "policy_type", policy_type)
-        if category is not None:
-            pulumi.set(__self__, "category", category)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if policy_roles is not None:
@@ -87,18 +83,6 @@ class PolicyArgs:
     @policy_type.setter
     def policy_type(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "policy_type", value)
-
-    @property
-    @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-        """
-        return pulumi.get(self, "category")
-
-    @category.setter
-    def category(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "category", value)
 
     @property
     @pulumi.getter
@@ -350,7 +334,6 @@ class Policy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  policy_document: Optional[pulumi.Input[builtins.str]] = None,
                  policy_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -370,7 +353,6 @@ class Policy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] category: 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
         :param pulumi.Input[builtins.str] description: 策略描述，长度不超过128。
         :param pulumi.Input[builtins.str] policy_document: 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
         :param pulumi.Input[builtins.str] policy_name: 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
@@ -406,7 +388,6 @@ class Policy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  policy_document: Optional[pulumi.Input[builtins.str]] = None,
                  policy_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -423,7 +404,6 @@ class Policy(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = PolicyArgs.__new__(PolicyArgs)
 
-            __props__.__dict__["category"] = category
             __props__.__dict__["description"] = description
             if policy_document is None and not opts.urn:
                 raise TypeError("Missing required property 'policy_document'")
@@ -438,6 +418,7 @@ class Policy(pulumi.CustomResource):
             __props__.__dict__["policy_user_groups"] = policy_user_groups
             __props__.__dict__["policy_users"] = policy_users
             __props__.__dict__["attachment_count"] = None
+            __props__.__dict__["category"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["is_service_role_policy"] = None
             __props__.__dict__["policy_trn"] = None

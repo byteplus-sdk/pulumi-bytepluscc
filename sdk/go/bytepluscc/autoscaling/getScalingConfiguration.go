@@ -47,13 +47,14 @@ type LookupScalingConfigurationResult struct {
 	// 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
 	InstanceDescription string `pulumi:"instanceDescription"`
 	// 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
-	InstanceName          string                                        `pulumi:"instanceName"`
+	InstanceName string `pulumi:"instanceName"`
+	// 抢占式实例的规格信息。
 	InstanceTypeOverrides []GetScalingConfigurationInstanceTypeOverride `pulumi:"instanceTypeOverrides"`
 	// 实例的计算规格列表。
 	InstanceTypes []string `pulumi:"instanceTypes"`
 	// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
 	Ipv6AddressCount int `pulumi:"ipv6AddressCount"`
-	// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+	// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 	KeyPairName string `pulumi:"keyPairName"`
 	// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
 	LifecycleState string `pulumi:"lifecycleState"`
@@ -166,6 +167,7 @@ func (o LookupScalingConfigurationResultOutput) InstanceName() pulumi.StringOutp
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
+// 抢占式实例的规格信息。
 func (o LookupScalingConfigurationResultOutput) InstanceTypeOverrides() GetScalingConfigurationInstanceTypeOverrideArrayOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) []GetScalingConfigurationInstanceTypeOverride {
 		return v.InstanceTypeOverrides
@@ -182,7 +184,7 @@ func (o LookupScalingConfigurationResultOutput) Ipv6AddressCount() pulumi.IntOut
 	return o.ApplyT(func(v LookupScalingConfigurationResult) int { return v.Ipv6AddressCount }).(pulumi.IntOutput)
 }
 
-// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 func (o LookupScalingConfigurationResultOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.KeyPairName }).(pulumi.StringOutput)
 }

@@ -66,6 +66,9 @@ export interface GetScalingConfigurationResult {
      * 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
      */
     readonly instanceName: string;
+    /**
+     * 抢占式实例的规格信息。
+     */
     readonly instanceTypeOverrides: outputs.autoscaling.GetScalingConfigurationInstanceTypeOverride[];
     /**
      * 实例的计算规格列表。
@@ -76,7 +79,7 @@ export interface GetScalingConfigurationResult {
      */
     readonly ipv6AddressCount: number;
     /**
-     * KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      */
     readonly keyPairName: string;
     /**

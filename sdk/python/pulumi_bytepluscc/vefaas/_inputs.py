@@ -34,15 +34,15 @@ MYPY = False
 
 if not MYPY:
     class KafkaTriggerKafkaCredentialsArgsDict(TypedDict):
-        mechanism: NotRequired[pulumi.Input[builtins.str]]
+        mechanism: pulumi.Input[builtins.str]
         """
         Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
         """
-        password: NotRequired[pulumi.Input[builtins.str]]
+        password: pulumi.Input[builtins.str]
         """
         创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
         """
-        username: NotRequired[pulumi.Input[builtins.str]]
+        username: pulumi.Input[builtins.str]
         """
         创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
         """
@@ -52,55 +52,52 @@ elif False:
 @pulumi.input_type
 class KafkaTriggerKafkaCredentialsArgs:
     def __init__(__self__, *,
-                 mechanism: Optional[pulumi.Input[builtins.str]] = None,
-                 password: Optional[pulumi.Input[builtins.str]] = None,
-                 username: Optional[pulumi.Input[builtins.str]] = None):
+                 mechanism: pulumi.Input[builtins.str],
+                 password: pulumi.Input[builtins.str],
+                 username: pulumi.Input[builtins.str]):
         """
         :param pulumi.Input[builtins.str] mechanism: Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
         :param pulumi.Input[builtins.str] password: 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
         :param pulumi.Input[builtins.str] username: 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
         """
-        if mechanism is not None:
-            pulumi.set(__self__, "mechanism", mechanism)
-        if password is not None:
-            pulumi.set(__self__, "password", password)
-        if username is not None:
-            pulumi.set(__self__, "username", username)
+        pulumi.set(__self__, "mechanism", mechanism)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
-    def mechanism(self) -> Optional[pulumi.Input[builtins.str]]:
+    def mechanism(self) -> pulumi.Input[builtins.str]:
         """
         Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
         """
         return pulumi.get(self, "mechanism")
 
     @mechanism.setter
-    def mechanism(self, value: Optional[pulumi.Input[builtins.str]]):
+    def mechanism(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "mechanism", value)
 
     @property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[builtins.str]]:
+    def password(self) -> pulumi.Input[builtins.str]:
         """
         创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[builtins.str]]):
+    def password(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "password", value)
 
     @property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[builtins.str]]:
+    def username(self) -> pulumi.Input[builtins.str]:
         """
         创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[builtins.str]]):
+    def username(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "username", value)
 
 

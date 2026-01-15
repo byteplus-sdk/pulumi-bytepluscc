@@ -17,23 +17,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Outputs
         /// <summary>
         /// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
         /// </summary>
-        public readonly string? Mechanism;
+        public readonly string Mechanism;
         /// <summary>
         /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
         /// </summary>
-        public readonly string? Password;
+        public readonly string Password;
         /// <summary>
         /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
         /// </summary>
-        public readonly string? Username;
+        public readonly string Username;
 
         [OutputConstructor]
         private KafkaTriggerKafkaCredentials(
-            string? mechanism,
+            string mechanism,
 
-            string? password,
+            string password,
 
-            string? username)
+            string username)
         {
             Mechanism = mechanism;
             Password = password;

@@ -20,16 +20,16 @@ __all__ = [
     'ShareConfigAllowIpAccessRule',
     'ShareConfigAllowRefererAccessRule',
     'ShareConfigAllowRefererAccessRuleCommonType',
-    'ShareConfigCommonMatchs',
-    'ShareConfigCommonMatchsCommonType',
+    'ShareConfigCommonMatchList',
+    'ShareConfigCommonMatchListCommonType',
     'ShareConfigDenyIpAccessRule',
     'ShareConfigDenyRefererAccessRule',
     'ShareConfigDenyRefererAccessRuleCommonType',
     'GetShareConfigAllowIpAccessRuleResult',
     'GetShareConfigAllowRefererAccessRuleResult',
     'GetShareConfigAllowRefererAccessRuleCommonTypeResult',
-    'GetShareConfigCommonMatchsResult',
-    'GetShareConfigCommonMatchsCommonTypeResult',
+    'GetShareConfigCommonMatchListResult',
+    'GetShareConfigCommonMatchListCommonTypeResult',
     'GetShareConfigDenyIpAccessRuleResult',
     'GetShareConfigDenyRefererAccessRuleResult',
     'GetShareConfigDenyRefererAccessRuleCommonTypeResult',
@@ -153,7 +153,7 @@ class ShareConfigAllowRefererAccessRuleCommonType(dict):
 
 
 @pulumi.output_type
-class ShareConfigCommonMatchs(dict):
+class ShareConfigCommonMatchList(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -161,27 +161,27 @@ class ShareConfigCommonMatchs(dict):
             suggest = "common_type"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ShareConfigCommonMatchs. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in ShareConfigCommonMatchList. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        ShareConfigCommonMatchs.__key_warning(key)
+        ShareConfigCommonMatchList.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        ShareConfigCommonMatchs.__key_warning(key)
+        ShareConfigCommonMatchList.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 common_type: Optional['outputs.ShareConfigCommonMatchsCommonType'] = None):
+                 common_type: Optional['outputs.ShareConfigCommonMatchListCommonType'] = None):
         """
-        :param 'ShareConfigCommonMatchsCommonTypeArgs' common_type: 表示该通用列表的内容。
+        :param 'ShareConfigCommonMatchListCommonTypeArgs' common_type: 表示该通用列表的内容。
         """
         if common_type is not None:
             pulumi.set(__self__, "common_type", common_type)
 
     @property
     @pulumi.getter(name="commonType")
-    def common_type(self) -> Optional['outputs.ShareConfigCommonMatchsCommonType']:
+    def common_type(self) -> Optional['outputs.ShareConfigCommonMatchListCommonType']:
         """
         表示该通用列表的内容。
         """
@@ -189,7 +189,7 @@ class ShareConfigCommonMatchs(dict):
 
 
 @pulumi.output_type
-class ShareConfigCommonMatchsCommonType(dict):
+class ShareConfigCommonMatchListCommonType(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -197,14 +197,14 @@ class ShareConfigCommonMatchsCommonType(dict):
             suggest = "ignore_case"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ShareConfigCommonMatchsCommonType. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in ShareConfigCommonMatchListCommonType. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        ShareConfigCommonMatchsCommonType.__key_warning(key)
+        ShareConfigCommonMatchListCommonType.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        ShareConfigCommonMatchsCommonType.__key_warning(key)
+        ShareConfigCommonMatchListCommonType.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -430,17 +430,17 @@ class GetShareConfigAllowRefererAccessRuleCommonTypeResult(dict):
 
 
 @pulumi.output_type
-class GetShareConfigCommonMatchsResult(dict):
+class GetShareConfigCommonMatchListResult(dict):
     def __init__(__self__, *,
-                 common_type: 'outputs.GetShareConfigCommonMatchsCommonTypeResult'):
+                 common_type: 'outputs.GetShareConfigCommonMatchListCommonTypeResult'):
         """
-        :param 'GetShareConfigCommonMatchsCommonTypeArgs' common_type: 表示该通用列表的内容。
+        :param 'GetShareConfigCommonMatchListCommonTypeArgs' common_type: 表示该通用列表的内容。
         """
         pulumi.set(__self__, "common_type", common_type)
 
     @property
     @pulumi.getter(name="commonType")
-    def common_type(self) -> 'outputs.GetShareConfigCommonMatchsCommonTypeResult':
+    def common_type(self) -> 'outputs.GetShareConfigCommonMatchListCommonTypeResult':
         """
         表示该通用列表的内容。
         """
@@ -448,7 +448,7 @@ class GetShareConfigCommonMatchsResult(dict):
 
 
 @pulumi.output_type
-class GetShareConfigCommonMatchsCommonTypeResult(dict):
+class GetShareConfigCommonMatchListCommonTypeResult(dict):
     def __init__(__self__, *,
                  ignore_case: builtins.bool,
                  rules: Sequence[builtins.str]):

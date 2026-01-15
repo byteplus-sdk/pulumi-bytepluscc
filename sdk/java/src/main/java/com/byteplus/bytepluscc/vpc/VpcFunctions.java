@@ -4,10 +4,14 @@
 package com.byteplus.bytepluscc.vpc;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vpc.inputs.GetBandwidthPackageArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetBandwidthPackagePlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEipArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEipPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetNetworkAclArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetNetworkAclPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetRouteTableArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetRouteTablePlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupArgs;
@@ -16,10 +20,14 @@ import com.byteplus.bytepluscc.vpc.inputs.GetSubnetArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSubnetPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcPlainArgs;
+import com.byteplus.bytepluscc.vpc.outputs.GetBandwidthPackageResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetBandwidthPackagesResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEipResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEipsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEniResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEnisResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetNetworkAclResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetNetworkAclsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetRouteTableResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetRouteTablesResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupResult;
@@ -37,6 +45,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VpcFunctions {
+    /**
+     * Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackageResult> getBandwidthPackage(GetBandwidthPackageArgs args) {
+        return getBandwidthPackage(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackageResult> getBandwidthPackagePlain(GetBandwidthPackagePlainArgs args) {
+        return getBandwidthPackagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackageResult> getBandwidthPackage(GetBandwidthPackageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getBandwidthPackage:getBandwidthPackage", TypeShape.of(GetBandwidthPackageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackageResult> getBandwidthPackage(GetBandwidthPackageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getBandwidthPackage:getBandwidthPackage", TypeShape.of(GetBandwidthPackageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackageResult> getBandwidthPackagePlain(GetBandwidthPackagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getBandwidthPackage:getBandwidthPackage", TypeShape.of(GetBandwidthPackageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages() {
+        return getBandwidthPackages(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackagesResult> getBandwidthPackagesPlain() {
+        return getBandwidthPackagesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages(InvokeArgs args) {
+        return getBandwidthPackages(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackagesResult> getBandwidthPackagesPlain(InvokeArgs args) {
+        return getBandwidthPackagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getBandwidthPackages:getBandwidthPackages", TypeShape.of(GetBandwidthPackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static Output<GetBandwidthPackagesResult> getBandwidthPackages(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getBandwidthPackages:getBandwidthPackages", TypeShape.of(GetBandwidthPackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::BandwidthPackage
+     * 
+     */
+    public static CompletableFuture<GetBandwidthPackagesResult> getBandwidthPackagesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getBandwidthPackages:getBandwidthPackages", TypeShape.of(GetBandwidthPackagesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VPC::EIP
      * 
@@ -204,6 +296,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetEnisResult> getEnisPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getEnis:getEnis", TypeShape.of(GetEnisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static Output<GetNetworkAclResult> getNetworkAcl(GetNetworkAclArgs args) {
+        return getNetworkAcl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static CompletableFuture<GetNetworkAclResult> getNetworkAclPlain(GetNetworkAclPlainArgs args) {
+        return getNetworkAclPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static Output<GetNetworkAclResult> getNetworkAcl(GetNetworkAclArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getNetworkAcl:getNetworkAcl", TypeShape.of(GetNetworkAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static Output<GetNetworkAclResult> getNetworkAcl(GetNetworkAclArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getNetworkAcl:getNetworkAcl", TypeShape.of(GetNetworkAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static CompletableFuture<GetNetworkAclResult> getNetworkAclPlain(GetNetworkAclPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getNetworkAcl:getNetworkAcl", TypeShape.of(GetNetworkAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static Output<GetNetworkAclsResult> getNetworkAcls() {
+        return getNetworkAcls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static CompletableFuture<GetNetworkAclsResult> getNetworkAclsPlain() {
+        return getNetworkAclsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static Output<GetNetworkAclsResult> getNetworkAcls(InvokeArgs args) {
+        return getNetworkAcls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static CompletableFuture<GetNetworkAclsResult> getNetworkAclsPlain(InvokeArgs args) {
+        return getNetworkAclsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static Output<GetNetworkAclsResult> getNetworkAcls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getNetworkAcls:getNetworkAcls", TypeShape.of(GetNetworkAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static Output<GetNetworkAclsResult> getNetworkAcls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getNetworkAcls:getNetworkAcls", TypeShape.of(GetNetworkAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::NetworkAcl
+     * 
+     */
+    public static CompletableFuture<GetNetworkAclsResult> getNetworkAclsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getNetworkAcls:getNetworkAcls", TypeShape.of(GetNetworkAclsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::RouteTable

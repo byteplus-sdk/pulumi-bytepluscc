@@ -52,7 +52,7 @@ class ScalingConfigurationArgs:
         :param pulumi.Input[builtins.str] instance_description: 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
         :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
         :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
         :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
         :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
@@ -206,7 +206,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -396,7 +396,7 @@ class _ScalingConfigurationState:
         :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_types: 实例的计算规格列表。
         :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
         :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
         :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
@@ -598,7 +598,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -817,7 +817,7 @@ class ScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] instance_description: 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
         :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
         :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
         :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
         :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
@@ -970,7 +970,7 @@ class ScalingConfiguration(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_types: 实例的计算规格列表。
         :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
         :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
         :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
@@ -1107,7 +1107,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> pulumi.Output[builtins.str]:
         """
-        KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         """
         return pulumi.get(self, "key_pair_name")
 

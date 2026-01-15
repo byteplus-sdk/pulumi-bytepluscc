@@ -8,10 +8,18 @@ import com.byteplus.bytepluscc.ecs.inputs.GetImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImagePlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetInvocationArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetInvocationPlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetKeypairArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetKeypairPlainArgs;
 import com.byteplus.bytepluscc.ecs.outputs.GetImageResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImagesResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetInvocationResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetInvocationsResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetKeypairResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetKeypairsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -188,5 +196,173 @@ public final class EcsFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static Output<GetInvocationResult> getInvocation(GetInvocationArgs args) {
+        return getInvocation(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static CompletableFuture<GetInvocationResult> getInvocationPlain(GetInvocationPlainArgs args) {
+        return getInvocationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static Output<GetInvocationResult> getInvocation(GetInvocationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInvocation:getInvocation", TypeShape.of(GetInvocationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static Output<GetInvocationResult> getInvocation(GetInvocationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInvocation:getInvocation", TypeShape.of(GetInvocationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static CompletableFuture<GetInvocationResult> getInvocationPlain(GetInvocationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getInvocation:getInvocation", TypeShape.of(GetInvocationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static Output<GetInvocationsResult> getInvocations() {
+        return getInvocations(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static CompletableFuture<GetInvocationsResult> getInvocationsPlain() {
+        return getInvocationsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static Output<GetInvocationsResult> getInvocations(InvokeArgs args) {
+        return getInvocations(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static CompletableFuture<GetInvocationsResult> getInvocationsPlain(InvokeArgs args) {
+        return getInvocationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static Output<GetInvocationsResult> getInvocations(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInvocations:getInvocations", TypeShape.of(GetInvocationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static Output<GetInvocationsResult> getInvocations(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getInvocations:getInvocations", TypeShape.of(GetInvocationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Invocation
+     * 
+     */
+    public static CompletableFuture<GetInvocationsResult> getInvocationsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getInvocations:getInvocations", TypeShape.of(GetInvocationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static Output<GetKeypairResult> getKeypair(GetKeypairArgs args) {
+        return getKeypair(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static CompletableFuture<GetKeypairResult> getKeypairPlain(GetKeypairPlainArgs args) {
+        return getKeypairPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static Output<GetKeypairResult> getKeypair(GetKeypairArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getKeypair:getKeypair", TypeShape.of(GetKeypairResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static Output<GetKeypairResult> getKeypair(GetKeypairArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getKeypair:getKeypair", TypeShape.of(GetKeypairResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static CompletableFuture<GetKeypairResult> getKeypairPlain(GetKeypairPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getKeypair:getKeypair", TypeShape.of(GetKeypairResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static Output<GetKeypairsResult> getKeypairs() {
+        return getKeypairs(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static CompletableFuture<GetKeypairsResult> getKeypairsPlain() {
+        return getKeypairsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static Output<GetKeypairsResult> getKeypairs(InvokeArgs args) {
+        return getKeypairs(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static CompletableFuture<GetKeypairsResult> getKeypairsPlain(InvokeArgs args) {
+        return getKeypairsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static Output<GetKeypairsResult> getKeypairs(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getKeypairs:getKeypairs", TypeShape.of(GetKeypairsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static Output<GetKeypairsResult> getKeypairs(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getKeypairs:getKeypairs", TypeShape.of(GetKeypairsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Keypair
+     * 
+     */
+    public static CompletableFuture<GetKeypairsResult> getKeypairsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getKeypairs:getKeypairs", TypeShape.of(GetKeypairsResult.class), args, Utilities.withVersion(options));
     }
 }

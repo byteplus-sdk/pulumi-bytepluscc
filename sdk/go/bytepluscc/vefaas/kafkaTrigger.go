@@ -106,6 +106,9 @@ func NewKafkaTrigger(ctx *pulumi.Context,
 	if args.FunctionId == nil {
 		return nil, errors.New("invalid value for required argument 'FunctionId'")
 	}
+	if args.KafkaCredentials == nil {
+		return nil, errors.New("invalid value for required argument 'KafkaCredentials'")
+	}
 	if args.MqInstanceId == nil {
 		return nil, errors.New("invalid value for required argument 'MqInstanceId'")
 	}
@@ -223,7 +226,7 @@ type kafkaTriggerArgs struct {
 	// 函数 ID。
 	FunctionId string `pulumi:"functionId"`
 	// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
-	KafkaCredentials *KafkaTriggerKafkaCredentials `pulumi:"kafkaCredentials"`
+	KafkaCredentials KafkaTriggerKafkaCredentials `pulumi:"kafkaCredentials"`
 	// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
 	MaximumRetryAttempts *int `pulumi:"maximumRetryAttempts"`
 	// 消息队列 Kafka 实例 ID。
@@ -249,7 +252,7 @@ type KafkaTriggerArgs struct {
 	// 函数 ID。
 	FunctionId pulumi.StringInput
 	// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
-	KafkaCredentials KafkaTriggerKafkaCredentialsPtrInput
+	KafkaCredentials KafkaTriggerKafkaCredentialsInput
 	// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
 	MaximumRetryAttempts pulumi.IntPtrInput
 	// 消息队列 Kafka 实例 ID。

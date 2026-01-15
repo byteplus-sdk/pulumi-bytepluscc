@@ -61,6 +61,10 @@ public final class GetScalingConfigurationResult {
      * 
      */
     private String instanceName;
+    /**
+     * @return 抢占式实例的规格信息。
+     * 
+     */
     private List<GetScalingConfigurationInstanceTypeOverride> instanceTypeOverrides;
     /**
      * @return 实例的计算规格列表。
@@ -73,7 +77,7 @@ public final class GetScalingConfigurationResult {
      */
     private Integer ipv6AddressCount;
     /**
-     * @return KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * @return 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      * 
      */
     private String keyPairName;
@@ -214,6 +218,10 @@ public final class GetScalingConfigurationResult {
     public String instanceName() {
         return this.instanceName;
     }
+    /**
+     * @return 抢占式实例的规格信息。
+     * 
+     */
     public List<GetScalingConfigurationInstanceTypeOverride> instanceTypeOverrides() {
         return this.instanceTypeOverrides;
     }
@@ -232,7 +240,7 @@ public final class GetScalingConfigurationResult {
         return this.ipv6AddressCount;
     }
     /**
-     * @return KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * @return 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      * 
      */
     public String keyPairName() {

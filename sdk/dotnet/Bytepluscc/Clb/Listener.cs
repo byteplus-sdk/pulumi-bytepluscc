@@ -203,7 +203,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// 监听器的协议。
+        /// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
@@ -231,6 +231,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         [Output("proxySendTimeout")]
         public Output<int> ProxySendTimeout { get; private set; } = null!;
+
+        /// <summary>
+        /// 监听器绑定的规则ID列表。
+        /// </summary>
+        [Output("ruleIds")]
+        public Output<ImmutableArray<string>> RuleIds { get; private set; } = null!;
 
         /// <summary>
         /// 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
@@ -505,7 +511,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Input<int> Port { get; set; } = null!;
 
         /// <summary>
-        /// 监听器的协议。
+        /// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
@@ -767,7 +773,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 监听器的协议。
+        /// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
@@ -795,6 +801,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         [Input("proxySendTimeout")]
         public Input<int>? ProxySendTimeout { get; set; }
+
+        [Input("ruleIds")]
+        private InputList<string>? _ruleIds;
+
+        /// <summary>
+        /// 监听器绑定的规则ID列表。
+        /// </summary>
+        public InputList<string> RuleIds
+        {
+            get => _ruleIds ?? (_ruleIds = new InputList<string>());
+            set => _ruleIds = value;
+        }
 
         /// <summary>
         /// 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。

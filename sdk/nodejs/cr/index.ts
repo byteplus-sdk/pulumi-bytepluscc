@@ -5,6 +5,26 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetNameSpaceArgs, GetNameSpaceResult, GetNameSpaceOutputArgs } from "./getNameSpace";
+export const getNameSpace: typeof import("./getNameSpace").getNameSpace = null as any;
+export const getNameSpaceOutput: typeof import("./getNameSpace").getNameSpaceOutput = null as any;
+utilities.lazyLoad(exports, ["getNameSpace","getNameSpaceOutput"], () => require("./getNameSpace"));
+
+export { GetNameSpacesResult } from "./getNameSpaces";
+export const getNameSpaces: typeof import("./getNameSpaces").getNameSpaces = null as any;
+export const getNameSpacesOutput: typeof import("./getNameSpaces").getNameSpacesOutput = null as any;
+utilities.lazyLoad(exports, ["getNameSpaces","getNameSpacesOutput"], () => require("./getNameSpaces"));
+
+export { GetRegistriesResult } from "./getRegistries";
+export const getRegistries: typeof import("./getRegistries").getRegistries = null as any;
+export const getRegistriesOutput: typeof import("./getRegistries").getRegistriesOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistries","getRegistriesOutput"], () => require("./getRegistries"));
+
+export { GetRegistryArgs, GetRegistryResult, GetRegistryOutputArgs } from "./getRegistry";
+export const getRegistry: typeof import("./getRegistry").getRegistry = null as any;
+export const getRegistryOutput: typeof import("./getRegistry").getRegistryOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistry","getRegistryOutput"], () => require("./getRegistry"));
+
 export { GetRepositoriesResult } from "./getRepositories";
 export const getRepositories: typeof import("./getRepositories").getRepositories = null as any;
 export const getRepositoriesOutput: typeof import("./getRepositories").getRepositoriesOutput = null as any;
@@ -14,6 +34,16 @@ export { GetRepositoryArgs, GetRepositoryResult, GetRepositoryOutputArgs } from 
 export const getRepository: typeof import("./getRepository").getRepository = null as any;
 export const getRepositoryOutput: typeof import("./getRepository").getRepositoryOutput = null as any;
 utilities.lazyLoad(exports, ["getRepository","getRepositoryOutput"], () => require("./getRepository"));
+
+export { NameSpaceArgs, NameSpaceState } from "./nameSpace";
+export type NameSpace = import("./nameSpace").NameSpace;
+export const NameSpace: typeof import("./nameSpace").NameSpace = null as any;
+utilities.lazyLoad(exports, ["NameSpace"], () => require("./nameSpace"));
+
+export { RegistryArgs, RegistryState } from "./registry";
+export type Registry = import("./registry").Registry;
+export const Registry: typeof import("./registry").Registry = null as any;
+utilities.lazyLoad(exports, ["Registry"], () => require("./registry"));
 
 export { RepositoryArgs, RepositoryState } from "./repository";
 export type Repository = import("./repository").Repository;
@@ -25,6 +55,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:cr/nameSpace:NameSpace":
+                return new NameSpace(name, <any>undefined, { urn })
+            case "bytepluscc:cr/registry:Registry":
+                return new Registry(name, <any>undefined, { urn })
             case "bytepluscc:cr/repository:Repository":
                 return new Repository(name, <any>undefined, { urn })
             default:
@@ -32,4 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "cr/nameSpace", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cr/registry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/repository", _module)

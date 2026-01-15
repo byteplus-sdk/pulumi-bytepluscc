@@ -30,6 +30,10 @@ __all__ = [
     'NlbServerGroupServerArgsDict',
     'NlbServerGroupTagArgs',
     'NlbServerGroupTagArgsDict',
+    'NlbTagArgs',
+    'NlbTagArgsDict',
+    'NlbZoneMappingArgs',
+    'NlbZoneMappingArgsDict',
     'RuleRedirectConfigArgs',
     'RuleRedirectConfigArgsDict',
     'RuleTagArgs',
@@ -1066,6 +1070,310 @@ class NlbServerGroupTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class NlbTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签值。
+        """
+elif False:
+    NlbTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NlbTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签键。
+        :param pulumi.Input[builtins.str] value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class NlbZoneMappingArgsDict(TypedDict):
+        eni_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        网卡ID。
+        """
+        ipv4_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+        """
+        ipv4_eip_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例的公网IPv4 EIP地址。
+        """
+        ipv4_eip_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例的公网IPv4 EIP ID。
+        """
+        ipv4_hc_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+        """
+        ipv4_local_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        NLB实例的私网IPv4 LIP地址。
+        """
+        ipv6_address: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例的私网IPv6 VIP地址。
+        """
+        ipv6_eip_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例关联的IPv6公网带宽的ID。
+        """
+        ipv6_hc_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+        """
+        ipv6_local_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        NLB实例的私网IPv6 LIP地址。
+        """
+        subnet_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例所属的子网ID。
+        """
+        zone_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        NLB实例所属的可用区ID。
+        """
+elif False:
+    NlbZoneMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NlbZoneMappingArgs:
+    def __init__(__self__, *,
+                 eni_id: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv4_address: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv4_eip_address: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv4_eip_id: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv4_hc_status: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv4_local_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 ipv6_address: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6_eip_id: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6_hc_status: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6_local_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+                 zone_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] eni_id: 网卡ID。
+        :param pulumi.Input[builtins.str] ipv4_address: NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+        :param pulumi.Input[builtins.str] ipv4_eip_address: NLB实例的公网IPv4 EIP地址。
+        :param pulumi.Input[builtins.str] ipv4_eip_id: NLB实例的公网IPv4 EIP ID。
+        :param pulumi.Input[builtins.str] ipv4_hc_status: NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv4_local_addresses: NLB实例的私网IPv4 LIP地址。
+        :param pulumi.Input[builtins.str] ipv6_address: NLB实例的私网IPv6 VIP地址。
+        :param pulumi.Input[builtins.str] ipv6_eip_id: NLB实例关联的IPv6公网带宽的ID。
+        :param pulumi.Input[builtins.str] ipv6_hc_status: NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_local_addresses: NLB实例的私网IPv6 LIP地址。
+        :param pulumi.Input[builtins.str] subnet_id: NLB实例所属的子网ID。
+        :param pulumi.Input[builtins.str] zone_id: NLB实例所属的可用区ID。
+        """
+        if eni_id is not None:
+            pulumi.set(__self__, "eni_id", eni_id)
+        if ipv4_address is not None:
+            pulumi.set(__self__, "ipv4_address", ipv4_address)
+        if ipv4_eip_address is not None:
+            pulumi.set(__self__, "ipv4_eip_address", ipv4_eip_address)
+        if ipv4_eip_id is not None:
+            pulumi.set(__self__, "ipv4_eip_id", ipv4_eip_id)
+        if ipv4_hc_status is not None:
+            pulumi.set(__self__, "ipv4_hc_status", ipv4_hc_status)
+        if ipv4_local_addresses is not None:
+            pulumi.set(__self__, "ipv4_local_addresses", ipv4_local_addresses)
+        if ipv6_address is not None:
+            pulumi.set(__self__, "ipv6_address", ipv6_address)
+        if ipv6_eip_id is not None:
+            pulumi.set(__self__, "ipv6_eip_id", ipv6_eip_id)
+        if ipv6_hc_status is not None:
+            pulumi.set(__self__, "ipv6_hc_status", ipv6_hc_status)
+        if ipv6_local_addresses is not None:
+            pulumi.set(__self__, "ipv6_local_addresses", ipv6_local_addresses)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="eniId")
+    def eni_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        网卡ID。
+        """
+        return pulumi.get(self, "eni_id")
+
+    @eni_id.setter
+    def eni_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eni_id", value)
+
+    @property
+    @pulumi.getter(name="ipv4Address")
+    def ipv4_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+        """
+        return pulumi.get(self, "ipv4_address")
+
+    @ipv4_address.setter
+    def ipv4_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv4_address", value)
+
+    @property
+    @pulumi.getter(name="ipv4EipAddress")
+    def ipv4_eip_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例的公网IPv4 EIP地址。
+        """
+        return pulumi.get(self, "ipv4_eip_address")
+
+    @ipv4_eip_address.setter
+    def ipv4_eip_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv4_eip_address", value)
+
+    @property
+    @pulumi.getter(name="ipv4EipId")
+    def ipv4_eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例的公网IPv4 EIP ID。
+        """
+        return pulumi.get(self, "ipv4_eip_id")
+
+    @ipv4_eip_id.setter
+    def ipv4_eip_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv4_eip_id", value)
+
+    @property
+    @pulumi.getter(name="ipv4HcStatus")
+    def ipv4_hc_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+        """
+        return pulumi.get(self, "ipv4_hc_status")
+
+    @ipv4_hc_status.setter
+    def ipv4_hc_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv4_hc_status", value)
+
+    @property
+    @pulumi.getter(name="ipv4LocalAddresses")
+    def ipv4_local_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        NLB实例的私网IPv4 LIP地址。
+        """
+        return pulumi.get(self, "ipv4_local_addresses")
+
+    @ipv4_local_addresses.setter
+    def ipv4_local_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "ipv4_local_addresses", value)
+
+    @property
+    @pulumi.getter(name="ipv6Address")
+    def ipv6_address(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例的私网IPv6 VIP地址。
+        """
+        return pulumi.get(self, "ipv6_address")
+
+    @ipv6_address.setter
+    def ipv6_address(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv6_address", value)
+
+    @property
+    @pulumi.getter(name="ipv6EipId")
+    def ipv6_eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例关联的IPv6公网带宽的ID。
+        """
+        return pulumi.get(self, "ipv6_eip_id")
+
+    @ipv6_eip_id.setter
+    def ipv6_eip_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv6_eip_id", value)
+
+    @property
+    @pulumi.getter(name="ipv6HcStatus")
+    def ipv6_hc_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+        """
+        return pulumi.get(self, "ipv6_hc_status")
+
+    @ipv6_hc_status.setter
+    def ipv6_hc_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv6_hc_status", value)
+
+    @property
+    @pulumi.getter(name="ipv6LocalAddresses")
+    def ipv6_local_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        NLB实例的私网IPv6 LIP地址。
+        """
+        return pulumi.get(self, "ipv6_local_addresses")
+
+    @ipv6_local_addresses.setter
+    def ipv6_local_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "ipv6_local_addresses", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例所属的子网ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        NLB实例所属的可用区ID。
+        """
+        return pulumi.get(self, "zone_id")
+
+    @zone_id.setter
+    def zone_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "zone_id", value)
 
 
 if not MYPY:
