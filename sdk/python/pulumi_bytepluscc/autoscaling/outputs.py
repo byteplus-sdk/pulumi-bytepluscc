@@ -215,9 +215,9 @@ class ScalingConfigurationVolume(dict):
                  size: Optional[builtins.int] = None,
                  volume_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
-        :param builtins.int size: 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
-        :param builtins.str volume_type: 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        :param builtins.bool delete_with_instance: 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        :param builtins.int size: 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+        :param builtins.str volume_type: 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
         """
         if delete_with_instance is not None:
             pulumi.set(__self__, "delete_with_instance", delete_with_instance)
@@ -230,7 +230,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> Optional[builtins.bool]:
         """
-        云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -238,7 +238,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[builtins.int]:
         """
-        云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
+        云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
         """
         return pulumi.get(self, "size")
 
@@ -246,7 +246,7 @@ class ScalingConfigurationVolume(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[builtins.str]:
         """
-        云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
         """
         return pulumi.get(self, "volume_type")
 
@@ -598,9 +598,9 @@ class GetScalingConfigurationVolumeResult(dict):
                  size: builtins.int,
                  volume_type: builtins.str):
         """
-        :param builtins.bool delete_with_instance: 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
-        :param builtins.int size: 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
-        :param builtins.str volume_type: 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        :param builtins.bool delete_with_instance: 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        :param builtins.int size: 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+        :param builtins.str volume_type: 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
         """
         pulumi.set(__self__, "delete_with_instance", delete_with_instance)
         pulumi.set(__self__, "size", size)
@@ -610,7 +610,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="deleteWithInstance")
     def delete_with_instance(self) -> builtins.bool:
         """
-        云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+        云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
         """
         return pulumi.get(self, "delete_with_instance")
 
@@ -618,7 +618,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
+        云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
         """
         return pulumi.get(self, "size")
 
@@ -626,7 +626,7 @@ class GetScalingConfigurationVolumeResult(dict):
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+        云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
         """
         return pulumi.get(self, "volume_type")
 

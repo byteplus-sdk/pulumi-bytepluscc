@@ -4,8 +4,16 @@
 package com.byteplus.bytepluscc.cr;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cr.inputs.GetNameSpaceArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetNameSpacePlainArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetRegistryArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetRegistryPlainArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryPlainArgs;
+import com.byteplus.bytepluscc.cr.outputs.GetNameSpaceResult;
+import com.byteplus.bytepluscc.cr.outputs.GetNameSpacesResult;
+import com.byteplus.bytepluscc.cr.outputs.GetRegistriesResult;
+import com.byteplus.bytepluscc.cr.outputs.GetRegistryResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRepositoriesResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRepositoryResult;
 import com.pulumi.core.Output;
@@ -17,6 +25,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CrFunctions {
+    /**
+     * Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static Output<GetNameSpaceResult> getNameSpace(GetNameSpaceArgs args) {
+        return getNameSpace(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static CompletableFuture<GetNameSpaceResult> getNameSpacePlain(GetNameSpacePlainArgs args) {
+        return getNameSpacePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static Output<GetNameSpaceResult> getNameSpace(GetNameSpaceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getNameSpace:getNameSpace", TypeShape.of(GetNameSpaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static Output<GetNameSpaceResult> getNameSpace(GetNameSpaceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getNameSpace:getNameSpace", TypeShape.of(GetNameSpaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static CompletableFuture<GetNameSpaceResult> getNameSpacePlain(GetNameSpacePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getNameSpace:getNameSpace", TypeShape.of(GetNameSpaceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static Output<GetNameSpacesResult> getNameSpaces() {
+        return getNameSpaces(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static CompletableFuture<GetNameSpacesResult> getNameSpacesPlain() {
+        return getNameSpacesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static Output<GetNameSpacesResult> getNameSpaces(InvokeArgs args) {
+        return getNameSpaces(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static CompletableFuture<GetNameSpacesResult> getNameSpacesPlain(InvokeArgs args) {
+        return getNameSpacesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static Output<GetNameSpacesResult> getNameSpaces(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getNameSpaces:getNameSpaces", TypeShape.of(GetNameSpacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static Output<GetNameSpacesResult> getNameSpaces(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getNameSpaces:getNameSpaces", TypeShape.of(GetNameSpacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::NameSpace
+     * 
+     */
+    public static CompletableFuture<GetNameSpacesResult> getNameSpacesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getNameSpaces:getNameSpaces", TypeShape.of(GetNameSpacesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static Output<GetRegistriesResult> getRegistries() {
+        return getRegistries(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static CompletableFuture<GetRegistriesResult> getRegistriesPlain() {
+        return getRegistriesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static Output<GetRegistriesResult> getRegistries(InvokeArgs args) {
+        return getRegistries(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static CompletableFuture<GetRegistriesResult> getRegistriesPlain(InvokeArgs args) {
+        return getRegistriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static Output<GetRegistriesResult> getRegistries(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRegistries:getRegistries", TypeShape.of(GetRegistriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static Output<GetRegistriesResult> getRegistries(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRegistries:getRegistries", TypeShape.of(GetRegistriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static CompletableFuture<GetRegistriesResult> getRegistriesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getRegistries:getRegistries", TypeShape.of(GetRegistriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static Output<GetRegistryResult> getRegistry(GetRegistryArgs args) {
+        return getRegistry(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static CompletableFuture<GetRegistryResult> getRegistryPlain(GetRegistryPlainArgs args) {
+        return getRegistryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static Output<GetRegistryResult> getRegistry(GetRegistryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRegistry:getRegistry", TypeShape.of(GetRegistryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static Output<GetRegistryResult> getRegistry(GetRegistryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRegistry:getRegistry", TypeShape.of(GetRegistryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::Registry
+     * 
+     */
+    public static CompletableFuture<GetRegistryResult> getRegistryPlain(GetRegistryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getRegistry:getRegistry", TypeShape.of(GetRegistryResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Plural Data Source schema for Byteplus::CR::Repository
      * 

@@ -8,6 +8,9 @@ import typing
 # Export this package's modules as members:
 from .get_instance import *
 from .get_instances import *
+from .get_snapshot import *
+from .get_snapshots import *
 from .instance import *
+from .snapshot import *
 from ._inputs import *
 from . import outputs

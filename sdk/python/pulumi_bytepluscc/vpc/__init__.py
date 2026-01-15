@@ -6,12 +6,17 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .bandwidth_package import *
 from .eip import *
 from .eni import *
+from .get_bandwidth_package import *
+from .get_bandwidth_packages import *
 from .get_eip import *
 from .get_eips import *
 from .get_eni import *
 from .get_enis import *
+from .get_network_acl import *
+from .get_network_acls import *
 from .get_route_table import *
 from .get_route_tables import *
 from .get_security_group import *
@@ -20,6 +25,7 @@ from .get_subnet import *
 from .get_subnets import *
 from .get_vpc import *
 from .get_vpcs import *
+from .network_acl import *
 from .route_table import *
 from .security_group import *
 from .subnet import *

@@ -10,7 +10,13 @@ from .get_image import *
 from .get_images import *
 from .get_instance import *
 from .get_instances import *
+from .get_invocation import *
+from .get_invocations import *
+from .get_keypair import *
+from .get_keypairs import *
 from .image import *
 from .instance import *
+from .invocation import *
+from .keypair import *
 from ._inputs import *
 from . import outputs

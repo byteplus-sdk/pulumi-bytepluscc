@@ -85,7 +85,7 @@ export class ScalingConfiguration extends pulumi.CustomResource {
      */
     public readonly ipv6AddressCount!: pulumi.Output<number>;
     /**
-     * KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      */
     public readonly keyPairName!: pulumi.Output<string>;
     /**
@@ -260,7 +260,7 @@ export interface ScalingConfigurationState {
      */
     ipv6AddressCount?: pulumi.Input<number>;
     /**
-     * KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      */
     keyPairName?: pulumi.Input<string>;
     /**
@@ -351,7 +351,7 @@ export interface ScalingConfigurationArgs {
      */
     ipv6AddressCount?: pulumi.Input<number>;
     /**
-     * KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      */
     keyPairName?: pulumi.Input<string>;
     /**

@@ -167,6 +167,9 @@ export class KafkaTrigger extends pulumi.CustomResource {
             if ((!args || args.functionId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'functionId'");
             }
+            if ((!args || args.kafkaCredentials === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'kafkaCredentials'");
+            }
             if ((!args || args.mqInstanceId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'mqInstanceId'");
             }
@@ -295,7 +298,7 @@ export interface KafkaTriggerArgs {
     /**
      * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
      */
-    kafkaCredentials?: pulumi.Input<inputs.vefaas.KafkaTriggerKafkaCredentials>;
+    kafkaCredentials: pulumi.Input<inputs.vefaas.KafkaTriggerKafkaCredentials>;
     /**
      * 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
      */

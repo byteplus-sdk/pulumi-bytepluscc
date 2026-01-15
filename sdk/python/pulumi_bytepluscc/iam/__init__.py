@@ -6,6 +6,8 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_group import *
+from .get_groups import *
 from .get_policies import *
 from .get_policy import *
 from .get_project import *
@@ -14,6 +16,7 @@ from .get_role import *
 from .get_roles import *
 from .get_user import *
 from .get_users import *
+from .group import *
 from .policy import *
 from .project import *
 from .role import *

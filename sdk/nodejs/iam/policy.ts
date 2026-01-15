@@ -50,7 +50,7 @@ export class Policy extends pulumi.CustomResource {
     /**
      * 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
      */
-    public readonly category!: pulumi.Output<string>;
+    public /*out*/ readonly category!: pulumi.Output<string>;
     /**
      * 策略创建时间。
      */
@@ -124,7 +124,6 @@ export class Policy extends pulumi.CustomResource {
             if ((!args || args.policyType === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'policyType'");
             }
-            resourceInputs["category"] = args ? args.category : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["policyDocument"] = args ? args.policyDocument : undefined;
             resourceInputs["policyName"] = args ? args.policyName : undefined;
@@ -133,6 +132,7 @@ export class Policy extends pulumi.CustomResource {
             resourceInputs["policyUserGroups"] = args ? args.policyUserGroups : undefined;
             resourceInputs["policyUsers"] = args ? args.policyUsers : undefined;
             resourceInputs["attachmentCount"] = undefined /*out*/;
+            resourceInputs["category"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["isServiceRolePolicy"] = undefined /*out*/;
             resourceInputs["policyTrn"] = undefined /*out*/;
@@ -196,10 +196,6 @@ export interface PolicyState {
  * The set of arguments for constructing a Policy resource.
  */
 export interface PolicyArgs {
-    /**
-     * 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-     */
-    category?: pulumi.Input<string>;
     /**
      * 策略描述，长度不超过128。
      */

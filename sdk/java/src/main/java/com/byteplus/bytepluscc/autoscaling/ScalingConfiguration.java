@@ -183,14 +183,14 @@ public class ScalingConfiguration extends com.pulumi.resources.CustomResource {
         return this.ipv6AddressCount;
     }
     /**
-     * KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      * 
      */
     @Export(name="keyPairName", refs={String.class}, tree="[0]")
     private Output<String> keyPairName;
 
     /**
-     * @return KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * @return 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      * 
      */
     public Output<String> keyPairName() {

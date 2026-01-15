@@ -231,8 +231,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         /// <summary>
         /// Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
         /// </summary>
-        [Input("kafkaCredentials")]
-        public Input<Inputs.KafkaTriggerKafkaCredentialsArgs>? KafkaCredentials { get; set; }
+        [Input("kafkaCredentials", required: true)]
+        public Input<Inputs.KafkaTriggerKafkaCredentialsArgs> KafkaCredentials { get; set; } = null!;
 
         /// <summary>
         /// 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。

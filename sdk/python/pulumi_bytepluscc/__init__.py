@@ -65,14 +65,20 @@ if typing.TYPE_CHECKING:
     redis = __redis
     import pulumi_bytepluscc.storageebs as __storageebs
     storageebs = __storageebs
+    import pulumi_bytepluscc.transitrouter as __transitrouter
+    transitrouter = __transitrouter
     import pulumi_bytepluscc.vefaas as __vefaas
     vefaas = __vefaas
     import pulumi_bytepluscc.vepfs as __vepfs
     vepfs = __vepfs
     import pulumi_bytepluscc.vke as __vke
     vke = __vke
+    import pulumi_bytepluscc.vmp as __vmp
+    vmp = __vmp
     import pulumi_bytepluscc.vpc as __vpc
     vpc = __vpc
+    import pulumi_bytepluscc.vpn as __vpn
+    vpn = __vpn
 else:
     alb = _utilities.lazy_import('pulumi_bytepluscc.alb')
     apig = _utilities.lazy_import('pulumi_bytepluscc.apig')
@@ -101,14 +107,25 @@ else:
     rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
     redis = _utilities.lazy_import('pulumi_bytepluscc.redis')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
+    transitrouter = _utilities.lazy_import('pulumi_bytepluscc.transitrouter')
     vefaas = _utilities.lazy_import('pulumi_bytepluscc.vefaas')
     vepfs = _utilities.lazy_import('pulumi_bytepluscc.vepfs')
     vke = _utilities.lazy_import('pulumi_bytepluscc.vke')
+    vmp = _utilities.lazy_import('pulumi_bytepluscc.vmp')
     vpc = _utilities.lazy_import('pulumi_bytepluscc.vpc')
+    vpn = _utilities.lazy_import('pulumi_bytepluscc.vpn')
 
 _utilities.register(
     resource_modules="""
 [
+ {
+  "pkg": "bytepluscc",
+  "mod": "alb/acl",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/acl:Acl": "Acl"
+  }
+ },
  {
   "pkg": "bytepluscc",
   "mod": "alb/certificate",
@@ -123,6 +140,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.alb",
   "classes": {
    "bytepluscc:alb/listener:Listener": "Listener"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "alb/loadBalancer",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/loadBalancer:LoadBalancer": "LoadBalancer"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "alb/serverGroup",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/serverGroup:ServerGroup": "ServerGroup"
   }
  },
  {
@@ -223,6 +256,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "clb/nlb",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/nlb:Nlb": "Nlb"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/nlbListener",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -271,6 +312,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cr/nameSpace",
+  "fqn": "pulumi_bytepluscc.cr",
+  "classes": {
+   "bytepluscc:cr/nameSpace:NameSpace": "NameSpace"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cr/registry",
+  "fqn": "pulumi_bytepluscc.cr",
+  "classes": {
+   "bytepluscc:cr/registry:Registry": "Registry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cr/repository",
   "fqn": "pulumi_bytepluscc.cr",
   "classes": {
@@ -311,6 +368,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "ecs/invocation",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/invocation:Invocation": "Invocation"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ecs/keypair",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/keypair:Keypair": "Keypair"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "escloud/instance",
   "fqn": "pulumi_bytepluscc.escloud",
   "classes": {
@@ -327,6 +400,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "filenas/snapshot",
+  "fqn": "pulumi_bytepluscc.filenas",
+  "classes": {
+   "bytepluscc:filenas/snapshot:Snapshot": "Snapshot"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "fwcenter/dnsControlPolicy",
   "fqn": "pulumi_bytepluscc.fwcenter",
   "classes": {
@@ -339,6 +420,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.hbase",
   "classes": {
    "bytepluscc:hbase/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "iam/group",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/group:Group": "Group"
   }
  },
  {
@@ -479,6 +568,30 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouter",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouter:TransitRouter": "TransitRouter"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterRouteEntry",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry": "TransitRouterRouteEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterRouteTable",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable": "TransitRouterRouteTable"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vefaas/kafkaTrigger",
   "fqn": "pulumi_bytepluscc.vefaas",
   "classes": {
@@ -535,6 +648,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vmp/workspace",
+  "fqn": "pulumi_bytepluscc.vmp",
+  "classes": {
+   "bytepluscc:vmp/workspace:Workspace": "Workspace"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/bandwidthPackage",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/bandwidthPackage:BandwidthPackage": "BandwidthPackage"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vpc/eip",
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
@@ -547,6 +676,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/eni:Eni": "Eni"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/networkAcl",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/networkAcl:NetworkAcl": "NetworkAcl"
   }
  },
  {
@@ -579,6 +716,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/vpc:Vpc": "Vpc"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpn/vpnGateway",
+  "fqn": "pulumi_bytepluscc.vpn",
+  "classes": {
+   "bytepluscc:vpn/vpnGateway:VpnGateway": "VpnGateway"
   }
  }
 ]

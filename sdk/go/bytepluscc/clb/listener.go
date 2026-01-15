@@ -82,7 +82,7 @@ type Listener struct {
 	PersistenceType pulumi.StringOutput `pulumi:"persistenceType"`
 	// 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
 	Port pulumi.IntOutput `pulumi:"port"`
-	// 监听器的协议。
+	// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
 	// CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxyConnectTimeout pulumi.IntOutput `pulumi:"proxyConnectTimeout"`
@@ -92,6 +92,8 @@ type Listener struct {
 	ProxyReadTimeout pulumi.IntOutput `pulumi:"proxyReadTimeout"`
 	// CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxySendTimeout pulumi.IntOutput `pulumi:"proxySendTimeout"`
+	// 监听器绑定的规则ID列表。
+	RuleIds pulumi.StringArrayOutput `pulumi:"ruleIds"`
 	// 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
 	Scheduler pulumi.StringOutput `pulumi:"scheduler"`
 	// HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
@@ -213,7 +215,7 @@ type listenerState struct {
 	PersistenceType *string `pulumi:"persistenceType"`
 	// 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
 	Port *int `pulumi:"port"`
-	// 监听器的协议。
+	// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
 	Protocol *string `pulumi:"protocol"`
 	// CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxyConnectTimeout *int `pulumi:"proxyConnectTimeout"`
@@ -223,6 +225,8 @@ type listenerState struct {
 	ProxyReadTimeout *int `pulumi:"proxyReadTimeout"`
 	// CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxySendTimeout *int `pulumi:"proxySendTimeout"`
+	// 监听器绑定的规则ID列表。
+	RuleIds []string `pulumi:"ruleIds"`
 	// 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
 	Scheduler *string `pulumi:"scheduler"`
 	// HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
@@ -303,7 +307,7 @@ type ListenerState struct {
 	PersistenceType pulumi.StringPtrInput
 	// 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
 	Port pulumi.IntPtrInput
-	// 监听器的协议。
+	// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
 	Protocol pulumi.StringPtrInput
 	// CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxyConnectTimeout pulumi.IntPtrInput
@@ -313,6 +317,8 @@ type ListenerState struct {
 	ProxyReadTimeout pulumi.IntPtrInput
 	// CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxySendTimeout pulumi.IntPtrInput
+	// 监听器绑定的规则ID列表。
+	RuleIds pulumi.StringArrayInput
 	// 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
 	Scheduler pulumi.StringPtrInput
 	// HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
@@ -393,7 +399,7 @@ type listenerArgs struct {
 	PersistenceType *string `pulumi:"persistenceType"`
 	// 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
 	Port int `pulumi:"port"`
-	// 监听器的协议。
+	// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
 	Protocol string `pulumi:"protocol"`
 	// CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxyConnectTimeout *int `pulumi:"proxyConnectTimeout"`
@@ -474,7 +480,7 @@ type ListenerArgs struct {
 	PersistenceType pulumi.StringPtrInput
 	// 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
 	Port pulumi.IntInput
-	// 监听器的协议。
+	// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
 	Protocol pulumi.StringInput
 	// CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 	ProxyConnectTimeout pulumi.IntPtrInput
@@ -734,7 +740,7 @@ func (o ListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// 监听器的协议。
+// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
 func (o ListenerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -757,6 +763,11 @@ func (o ListenerOutput) ProxyReadTimeout() pulumi.IntOutput {
 // CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
 func (o ListenerOutput) ProxySendTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.ProxySendTimeout }).(pulumi.IntOutput)
+}
+
+// 监听器绑定的规则ID列表。
+func (o ListenerOutput) RuleIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringArrayOutput { return v.RuleIds }).(pulumi.StringArrayOutput)
 }
 
 // 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。

@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:clb/listener:Listener":
 		r = &Listener{}
+	case "bytepluscc:clb/nlb:Nlb":
+		r = &Nlb{}
 	case "bytepluscc:clb/nlbListener:NlbListener":
 		r = &NlbListener{}
 	case "bytepluscc:clb/nlbServerGroup:NlbServerGroup":
@@ -47,6 +49,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"clb/listener",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"clb/nlb",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

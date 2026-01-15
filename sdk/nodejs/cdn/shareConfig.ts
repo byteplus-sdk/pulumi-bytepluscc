@@ -54,7 +54,7 @@ export class ShareConfig extends pulumi.CustomResource {
     /**
      * 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
      */
-    public readonly commonMatchs!: pulumi.Output<outputs.cdn.ShareConfigCommonMatchs>;
+    public readonly commonMatchList!: pulumi.Output<outputs.cdn.ShareConfigCommonMatchList>;
     /**
      * 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
      */
@@ -103,7 +103,7 @@ export class ShareConfig extends pulumi.CustomResource {
             const state = argsOrState as ShareConfigState | undefined;
             resourceInputs["allowIpAccessRule"] = state ? state.allowIpAccessRule : undefined;
             resourceInputs["allowRefererAccessRule"] = state ? state.allowRefererAccessRule : undefined;
-            resourceInputs["commonMatchs"] = state ? state.commonMatchs : undefined;
+            resourceInputs["commonMatchList"] = state ? state.commonMatchList : undefined;
             resourceInputs["configName"] = state ? state.configName : undefined;
             resourceInputs["configType"] = state ? state.configType : undefined;
             resourceInputs["denyIpAccessRule"] = state ? state.denyIpAccessRule : undefined;
@@ -116,7 +116,7 @@ export class ShareConfig extends pulumi.CustomResource {
             const args = argsOrState as ShareConfigArgs | undefined;
             resourceInputs["allowIpAccessRule"] = args ? args.allowIpAccessRule : undefined;
             resourceInputs["allowRefererAccessRule"] = args ? args.allowRefererAccessRule : undefined;
-            resourceInputs["commonMatchs"] = args ? args.commonMatchs : undefined;
+            resourceInputs["commonMatchList"] = args ? args.commonMatchList : undefined;
             resourceInputs["configName"] = args ? args.configName : undefined;
             resourceInputs["configType"] = args ? args.configType : undefined;
             resourceInputs["denyIpAccessRule"] = args ? args.denyIpAccessRule : undefined;
@@ -146,7 +146,7 @@ export interface ShareConfigState {
     /**
      * 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
      */
-    commonMatchs?: pulumi.Input<inputs.cdn.ShareConfigCommonMatchs>;
+    commonMatchList?: pulumi.Input<inputs.cdn.ShareConfigCommonMatchList>;
     /**
      * 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
      */
@@ -196,7 +196,7 @@ export interface ShareConfigArgs {
     /**
      * 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
      */
-    commonMatchs?: pulumi.Input<inputs.cdn.ShareConfigCommonMatchs>;
+    commonMatchList?: pulumi.Input<inputs.cdn.ShareConfigCommonMatchList>;
     /**
      * 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
      */

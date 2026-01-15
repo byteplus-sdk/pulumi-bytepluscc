@@ -24,7 +24,7 @@ class ShareConfigArgs:
     def __init__(__self__, *,
                  allow_ip_access_rule: Optional[pulumi.Input['ShareConfigAllowIpAccessRuleArgs']] = None,
                  allow_referer_access_rule: Optional[pulumi.Input['ShareConfigAllowRefererAccessRuleArgs']] = None,
-                 common_matchs: Optional[pulumi.Input['ShareConfigCommonMatchsArgs']] = None,
+                 common_match_list: Optional[pulumi.Input['ShareConfigCommonMatchListArgs']] = None,
                  config_name: Optional[pulumi.Input[builtins.str]] = None,
                  config_type: Optional[pulumi.Input[builtins.str]] = None,
                  deny_ip_access_rule: Optional[pulumi.Input['ShareConfigDenyIpAccessRuleArgs']] = None,
@@ -34,7 +34,7 @@ class ShareConfigArgs:
         The set of arguments for constructing a ShareConfig resource.
         :param pulumi.Input['ShareConfigAllowIpAccessRuleArgs'] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
         :param pulumi.Input['ShareConfigAllowRefererAccessRuleArgs'] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input['ShareConfigCommonMatchsArgs'] common_matchs: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        :param pulumi.Input['ShareConfigCommonMatchListArgs'] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
         :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
         :param pulumi.Input['ShareConfigDenyIpAccessRuleArgs'] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
@@ -45,8 +45,8 @@ class ShareConfigArgs:
             pulumi.set(__self__, "allow_ip_access_rule", allow_ip_access_rule)
         if allow_referer_access_rule is not None:
             pulumi.set(__self__, "allow_referer_access_rule", allow_referer_access_rule)
-        if common_matchs is not None:
-            pulumi.set(__self__, "common_matchs", common_matchs)
+        if common_match_list is not None:
+            pulumi.set(__self__, "common_match_list", common_match_list)
         if config_name is not None:
             pulumi.set(__self__, "config_name", config_name)
         if config_type is not None:
@@ -83,16 +83,16 @@ class ShareConfigArgs:
         pulumi.set(self, "allow_referer_access_rule", value)
 
     @property
-    @pulumi.getter(name="commonMatchs")
-    def common_matchs(self) -> Optional[pulumi.Input['ShareConfigCommonMatchsArgs']]:
+    @pulumi.getter(name="commonMatchList")
+    def common_match_list(self) -> Optional[pulumi.Input['ShareConfigCommonMatchListArgs']]:
         """
         表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         """
-        return pulumi.get(self, "common_matchs")
+        return pulumi.get(self, "common_match_list")
 
-    @common_matchs.setter
-    def common_matchs(self, value: Optional[pulumi.Input['ShareConfigCommonMatchsArgs']]):
-        pulumi.set(self, "common_matchs", value)
+    @common_match_list.setter
+    def common_match_list(self, value: Optional[pulumi.Input['ShareConfigCommonMatchListArgs']]):
+        pulumi.set(self, "common_match_list", value)
 
     @property
     @pulumi.getter(name="configName")
@@ -160,7 +160,7 @@ class _ShareConfigState:
     def __init__(__self__, *,
                  allow_ip_access_rule: Optional[pulumi.Input['ShareConfigAllowIpAccessRuleArgs']] = None,
                  allow_referer_access_rule: Optional[pulumi.Input['ShareConfigAllowRefererAccessRuleArgs']] = None,
-                 common_matchs: Optional[pulumi.Input['ShareConfigCommonMatchsArgs']] = None,
+                 common_match_list: Optional[pulumi.Input['ShareConfigCommonMatchListArgs']] = None,
                  config_name: Optional[pulumi.Input[builtins.str]] = None,
                  config_type: Optional[pulumi.Input[builtins.str]] = None,
                  deny_ip_access_rule: Optional[pulumi.Input['ShareConfigDenyIpAccessRuleArgs']] = None,
@@ -173,7 +173,7 @@ class _ShareConfigState:
         Input properties used for looking up and filtering ShareConfig resources.
         :param pulumi.Input['ShareConfigAllowIpAccessRuleArgs'] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
         :param pulumi.Input['ShareConfigAllowRefererAccessRuleArgs'] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input['ShareConfigCommonMatchsArgs'] common_matchs: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        :param pulumi.Input['ShareConfigCommonMatchListArgs'] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
         :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
         :param pulumi.Input['ShareConfigDenyIpAccessRuleArgs'] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
@@ -187,8 +187,8 @@ class _ShareConfigState:
             pulumi.set(__self__, "allow_ip_access_rule", allow_ip_access_rule)
         if allow_referer_access_rule is not None:
             pulumi.set(__self__, "allow_referer_access_rule", allow_referer_access_rule)
-        if common_matchs is not None:
-            pulumi.set(__self__, "common_matchs", common_matchs)
+        if common_match_list is not None:
+            pulumi.set(__self__, "common_match_list", common_match_list)
         if config_name is not None:
             pulumi.set(__self__, "config_name", config_name)
         if config_type is not None:
@@ -231,16 +231,16 @@ class _ShareConfigState:
         pulumi.set(self, "allow_referer_access_rule", value)
 
     @property
-    @pulumi.getter(name="commonMatchs")
-    def common_matchs(self) -> Optional[pulumi.Input['ShareConfigCommonMatchsArgs']]:
+    @pulumi.getter(name="commonMatchList")
+    def common_match_list(self) -> Optional[pulumi.Input['ShareConfigCommonMatchListArgs']]:
         """
         表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         """
-        return pulumi.get(self, "common_matchs")
+        return pulumi.get(self, "common_match_list")
 
-    @common_matchs.setter
-    def common_matchs(self, value: Optional[pulumi.Input['ShareConfigCommonMatchsArgs']]):
-        pulumi.set(self, "common_matchs", value)
+    @common_match_list.setter
+    def common_match_list(self, value: Optional[pulumi.Input['ShareConfigCommonMatchListArgs']]):
+        pulumi.set(self, "common_match_list", value)
 
     @property
     @pulumi.getter(name="configName")
@@ -347,7 +347,7 @@ class ShareConfig(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_ip_access_rule: Optional[pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']]] = None,
                  allow_referer_access_rule: Optional[pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']]] = None,
-                 common_matchs: Optional[pulumi.Input[Union['ShareConfigCommonMatchsArgs', 'ShareConfigCommonMatchsArgsDict']]] = None,
+                 common_match_list: Optional[pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']]] = None,
                  config_name: Optional[pulumi.Input[builtins.str]] = None,
                  config_type: Optional[pulumi.Input[builtins.str]] = None,
                  deny_ip_access_rule: Optional[pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']]] = None,
@@ -367,7 +367,7 @@ class ShareConfig(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
         :param pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input[Union['ShareConfigCommonMatchsArgs', 'ShareConfigCommonMatchsArgsDict']] common_matchs: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        :param pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
         :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
         :param pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
@@ -406,7 +406,7 @@ class ShareConfig(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_ip_access_rule: Optional[pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']]] = None,
                  allow_referer_access_rule: Optional[pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']]] = None,
-                 common_matchs: Optional[pulumi.Input[Union['ShareConfigCommonMatchsArgs', 'ShareConfigCommonMatchsArgsDict']]] = None,
+                 common_match_list: Optional[pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']]] = None,
                  config_name: Optional[pulumi.Input[builtins.str]] = None,
                  config_type: Optional[pulumi.Input[builtins.str]] = None,
                  deny_ip_access_rule: Optional[pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']]] = None,
@@ -423,7 +423,7 @@ class ShareConfig(pulumi.CustomResource):
 
             __props__.__dict__["allow_ip_access_rule"] = allow_ip_access_rule
             __props__.__dict__["allow_referer_access_rule"] = allow_referer_access_rule
-            __props__.__dict__["common_matchs"] = common_matchs
+            __props__.__dict__["common_match_list"] = common_match_list
             __props__.__dict__["config_name"] = config_name
             __props__.__dict__["config_type"] = config_type
             __props__.__dict__["deny_ip_access_rule"] = deny_ip_access_rule
@@ -444,7 +444,7 @@ class ShareConfig(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             allow_ip_access_rule: Optional[pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']]] = None,
             allow_referer_access_rule: Optional[pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']]] = None,
-            common_matchs: Optional[pulumi.Input[Union['ShareConfigCommonMatchsArgs', 'ShareConfigCommonMatchsArgsDict']]] = None,
+            common_match_list: Optional[pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']]] = None,
             config_name: Optional[pulumi.Input[builtins.str]] = None,
             config_type: Optional[pulumi.Input[builtins.str]] = None,
             deny_ip_access_rule: Optional[pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']]] = None,
@@ -462,7 +462,7 @@ class ShareConfig(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['ShareConfigAllowIpAccessRuleArgs', 'ShareConfigAllowIpAccessRuleArgsDict']] allow_ip_access_rule: 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
         :param pulumi.Input[Union['ShareConfigAllowRefererAccessRuleArgs', 'ShareConfigAllowRefererAccessRuleArgsDict']] allow_referer_access_rule: 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
-        :param pulumi.Input[Union['ShareConfigCommonMatchsArgs', 'ShareConfigCommonMatchsArgsDict']] common_matchs: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        :param pulumi.Input[Union['ShareConfigCommonMatchListArgs', 'ShareConfigCommonMatchListArgsDict']] common_match_list: 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         :param pulumi.Input[builtins.str] config_name: 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
         :param pulumi.Input[builtins.str] config_type: 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
         :param pulumi.Input[Union['ShareConfigDenyIpAccessRuleArgs', 'ShareConfigDenyIpAccessRuleArgsDict']] deny_ip_access_rule: 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
@@ -478,7 +478,7 @@ class ShareConfig(pulumi.CustomResource):
 
         __props__.__dict__["allow_ip_access_rule"] = allow_ip_access_rule
         __props__.__dict__["allow_referer_access_rule"] = allow_referer_access_rule
-        __props__.__dict__["common_matchs"] = common_matchs
+        __props__.__dict__["common_match_list"] = common_match_list
         __props__.__dict__["config_name"] = config_name
         __props__.__dict__["config_type"] = config_type
         __props__.__dict__["deny_ip_access_rule"] = deny_ip_access_rule
@@ -506,12 +506,12 @@ class ShareConfig(pulumi.CustomResource):
         return pulumi.get(self, "allow_referer_access_rule")
 
     @property
-    @pulumi.getter(name="commonMatchs")
-    def common_matchs(self) -> pulumi.Output['outputs.ShareConfigCommonMatchs']:
+    @pulumi.getter(name="commonMatchList")
+    def common_match_list(self) -> pulumi.Output['outputs.ShareConfigCommonMatchList']:
         """
         表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         """
-        return pulumi.get(self, "common_matchs")
+        return pulumi.get(self, "common_match_list")
 
     @property
     @pulumi.getter(name="configName")

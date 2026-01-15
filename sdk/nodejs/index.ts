@@ -37,11 +37,14 @@ import * as privatelink from "./privatelink";
 import * as rdsmysql from "./rdsmysql";
 import * as redis from "./redis";
 import * as storageebs from "./storageebs";
+import * as transitrouter from "./transitrouter";
 import * as types from "./types";
 import * as vefaas from "./vefaas";
 import * as vepfs from "./vepfs";
 import * as vke from "./vke";
+import * as vmp from "./vmp";
 import * as vpc from "./vpc";
+import * as vpn from "./vpn";
 
 export {
     alb,
@@ -71,11 +74,14 @@ export {
     rdsmysql,
     redis,
     storageebs,
+    transitrouter,
     types,
     vefaas,
     vepfs,
     vke,
+    vmp,
     vpc,
+    vpn,
 };
 pulumi.runtime.registerResourcePackage("bytepluscc", {
     version: utilities.getVersion(),

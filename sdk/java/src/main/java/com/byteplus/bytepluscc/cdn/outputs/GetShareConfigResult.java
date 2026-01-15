@@ -5,7 +5,7 @@ package com.byteplus.bytepluscc.cdn.outputs;
 
 import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigAllowIpAccessRule;
 import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigAllowRefererAccessRule;
-import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigCommonMatchs;
+import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigCommonMatchList;
 import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigDenyIpAccessRule;
 import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigDenyRefererAccessRule;
 import com.pulumi.core.annotations.CustomType;
@@ -30,7 +30,7 @@ public final class GetShareConfigResult {
      * @return 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
      * 
      */
-    private GetShareConfigCommonMatchs commonMatchs;
+    private GetShareConfigCommonMatchList commonMatchList;
     /**
      * @return 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
      * 
@@ -96,8 +96,8 @@ public final class GetShareConfigResult {
      * @return 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
      * 
      */
-    public GetShareConfigCommonMatchs commonMatchs() {
-        return this.commonMatchs;
+    public GetShareConfigCommonMatchList commonMatchList() {
+        return this.commonMatchList;
     }
     /**
      * @return 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
@@ -174,7 +174,7 @@ public final class GetShareConfigResult {
     public static final class Builder {
         private GetShareConfigAllowIpAccessRule allowIpAccessRule;
         private GetShareConfigAllowRefererAccessRule allowRefererAccessRule;
-        private GetShareConfigCommonMatchs commonMatchs;
+        private GetShareConfigCommonMatchList commonMatchList;
         private String configName;
         private String configType;
         private GetShareConfigDenyIpAccessRule denyIpAccessRule;
@@ -189,7 +189,7 @@ public final class GetShareConfigResult {
     	      Objects.requireNonNull(defaults);
     	      this.allowIpAccessRule = defaults.allowIpAccessRule;
     	      this.allowRefererAccessRule = defaults.allowRefererAccessRule;
-    	      this.commonMatchs = defaults.commonMatchs;
+    	      this.commonMatchList = defaults.commonMatchList;
     	      this.configName = defaults.configName;
     	      this.configType = defaults.configType;
     	      this.denyIpAccessRule = defaults.denyIpAccessRule;
@@ -218,11 +218,11 @@ public final class GetShareConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder commonMatchs(GetShareConfigCommonMatchs commonMatchs) {
-            if (commonMatchs == null) {
-              throw new MissingRequiredPropertyException("GetShareConfigResult", "commonMatchs");
+        public Builder commonMatchList(GetShareConfigCommonMatchList commonMatchList) {
+            if (commonMatchList == null) {
+              throw new MissingRequiredPropertyException("GetShareConfigResult", "commonMatchList");
             }
-            this.commonMatchs = commonMatchs;
+            this.commonMatchList = commonMatchList;
             return this;
         }
         @CustomType.Setter
@@ -301,7 +301,7 @@ public final class GetShareConfigResult {
             final var _resultValue = new GetShareConfigResult();
             _resultValue.allowIpAccessRule = allowIpAccessRule;
             _resultValue.allowRefererAccessRule = allowRefererAccessRule;
-            _resultValue.commonMatchs = commonMatchs;
+            _resultValue.commonMatchList = commonMatchList;
             _resultValue.configName = configName;
             _resultValue.configType = configType;
             _resultValue.denyIpAccessRule = denyIpAccessRule;

@@ -98,15 +98,15 @@ public final class KafkaTriggerArgs extends com.pulumi.resources.ResourceArgs {
      * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
      * 
      */
-    @Import(name="kafkaCredentials")
-    private @Nullable Output<KafkaTriggerKafkaCredentialsArgs> kafkaCredentials;
+    @Import(name="kafkaCredentials", required=true)
+    private Output<KafkaTriggerKafkaCredentialsArgs> kafkaCredentials;
 
     /**
      * @return Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
      * 
      */
-    public Optional<Output<KafkaTriggerKafkaCredentialsArgs>> kafkaCredentials() {
-        return Optional.ofNullable(this.kafkaCredentials);
+    public Output<KafkaTriggerKafkaCredentialsArgs> kafkaCredentials() {
+        return this.kafkaCredentials;
     }
 
     /**
@@ -329,7 +329,7 @@ public final class KafkaTriggerArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder kafkaCredentials(@Nullable Output<KafkaTriggerKafkaCredentialsArgs> kafkaCredentials) {
+        public Builder kafkaCredentials(Output<KafkaTriggerKafkaCredentialsArgs> kafkaCredentials) {
             $.kafkaCredentials = kafkaCredentials;
             return this;
         }
@@ -452,6 +452,9 @@ public final class KafkaTriggerArgs extends com.pulumi.resources.ResourceArgs {
         public KafkaTriggerArgs build() {
             if ($.functionId == null) {
                 throw new MissingRequiredPropertyException("KafkaTriggerArgs", "functionId");
+            }
+            if ($.kafkaCredentials == null) {
+                throw new MissingRequiredPropertyException("KafkaTriggerArgs", "kafkaCredentials");
             }
             if ($.mqInstanceId == null) {
                 throw new MissingRequiredPropertyException("KafkaTriggerArgs", "mqInstanceId");

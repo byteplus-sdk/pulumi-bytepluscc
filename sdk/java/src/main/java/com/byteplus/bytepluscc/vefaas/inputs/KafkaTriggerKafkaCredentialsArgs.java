@@ -5,10 +5,9 @@ package com.byteplus.bytepluscc.vefaas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,45 +18,45 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
      * Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
      * 
      */
-    @Import(name="mechanism")
-    private @Nullable Output<String> mechanism;
+    @Import(name="mechanism", required=true)
+    private Output<String> mechanism;
 
     /**
      * @return Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
      * 
      */
-    public Optional<Output<String>> mechanism() {
-        return Optional.ofNullable(this.mechanism);
+    public Output<String> mechanism() {
+        return this.mechanism;
     }
 
     /**
      * 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
      * 
      */
-    @Import(name="password")
-    private @Nullable Output<String> password;
+    @Import(name="password", required=true)
+    private Output<String> password;
 
     /**
      * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
      * 
      */
-    public Optional<Output<String>> password() {
-        return Optional.ofNullable(this.password);
+    public Output<String> password() {
+        return this.password;
     }
 
     /**
      * 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
      * 
      */
-    @Import(name="username")
-    private @Nullable Output<String> username;
+    @Import(name="username", required=true)
+    private Output<String> username;
 
     /**
      * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
      * 
      */
-    public Optional<Output<String>> username() {
-        return Optional.ofNullable(this.username);
+    public Output<String> username() {
+        return this.username;
     }
 
     private KafkaTriggerKafkaCredentialsArgs() {}
@@ -92,7 +91,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
          * @return builder
          * 
          */
-        public Builder mechanism(@Nullable Output<String> mechanism) {
+        public Builder mechanism(Output<String> mechanism) {
             $.mechanism = mechanism;
             return this;
         }
@@ -113,7 +112,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
          * @return builder
          * 
          */
-        public Builder password(@Nullable Output<String> password) {
+        public Builder password(Output<String> password) {
             $.password = password;
             return this;
         }
@@ -134,7 +133,7 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
          * @return builder
          * 
          */
-        public Builder username(@Nullable Output<String> username) {
+        public Builder username(Output<String> username) {
             $.username = username;
             return this;
         }
@@ -150,6 +149,15 @@ public final class KafkaTriggerKafkaCredentialsArgs extends com.pulumi.resources
         }
 
         public KafkaTriggerKafkaCredentialsArgs build() {
+            if ($.mechanism == null) {
+                throw new MissingRequiredPropertyException("KafkaTriggerKafkaCredentialsArgs", "mechanism");
+            }
+            if ($.password == null) {
+                throw new MissingRequiredPropertyException("KafkaTriggerKafkaCredentialsArgs", "password");
+            }
+            if ($.username == null) {
+                throw new MissingRequiredPropertyException("KafkaTriggerKafkaCredentialsArgs", "username");
+            }
             return $;
         }
     }

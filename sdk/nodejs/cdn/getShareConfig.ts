@@ -41,7 +41,7 @@ export interface GetShareConfigResult {
     /**
      * 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
      */
-    readonly commonMatchs: outputs.cdn.GetShareConfigCommonMatchs;
+    readonly commonMatchList: outputs.cdn.GetShareConfigCommonMatchList;
     /**
      * 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
      */

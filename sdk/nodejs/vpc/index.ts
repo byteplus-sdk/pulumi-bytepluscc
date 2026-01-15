@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { BandwidthPackageArgs, BandwidthPackageState } from "./bandwidthPackage";
+export type BandwidthPackage = import("./bandwidthPackage").BandwidthPackage;
+export const BandwidthPackage: typeof import("./bandwidthPackage").BandwidthPackage = null as any;
+utilities.lazyLoad(exports, ["BandwidthPackage"], () => require("./bandwidthPackage"));
+
 export { EipArgs, EipState } from "./eip";
 export type Eip = import("./eip").Eip;
 export const Eip: typeof import("./eip").Eip = null as any;
@@ -14,6 +19,16 @@ export { EniArgs, EniState } from "./eni";
 export type Eni = import("./eni").Eni;
 export const Eni: typeof import("./eni").Eni = null as any;
 utilities.lazyLoad(exports, ["Eni"], () => require("./eni"));
+
+export { GetBandwidthPackageArgs, GetBandwidthPackageResult, GetBandwidthPackageOutputArgs } from "./getBandwidthPackage";
+export const getBandwidthPackage: typeof import("./getBandwidthPackage").getBandwidthPackage = null as any;
+export const getBandwidthPackageOutput: typeof import("./getBandwidthPackage").getBandwidthPackageOutput = null as any;
+utilities.lazyLoad(exports, ["getBandwidthPackage","getBandwidthPackageOutput"], () => require("./getBandwidthPackage"));
+
+export { GetBandwidthPackagesResult } from "./getBandwidthPackages";
+export const getBandwidthPackages: typeof import("./getBandwidthPackages").getBandwidthPackages = null as any;
+export const getBandwidthPackagesOutput: typeof import("./getBandwidthPackages").getBandwidthPackagesOutput = null as any;
+utilities.lazyLoad(exports, ["getBandwidthPackages","getBandwidthPackagesOutput"], () => require("./getBandwidthPackages"));
 
 export { GetEipArgs, GetEipResult, GetEipOutputArgs } from "./getEip";
 export const getEip: typeof import("./getEip").getEip = null as any;
@@ -34,6 +49,16 @@ export { GetEnisResult } from "./getEnis";
 export const getEnis: typeof import("./getEnis").getEnis = null as any;
 export const getEnisOutput: typeof import("./getEnis").getEnisOutput = null as any;
 utilities.lazyLoad(exports, ["getEnis","getEnisOutput"], () => require("./getEnis"));
+
+export { GetNetworkAclArgs, GetNetworkAclResult, GetNetworkAclOutputArgs } from "./getNetworkAcl";
+export const getNetworkAcl: typeof import("./getNetworkAcl").getNetworkAcl = null as any;
+export const getNetworkAclOutput: typeof import("./getNetworkAcl").getNetworkAclOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkAcl","getNetworkAclOutput"], () => require("./getNetworkAcl"));
+
+export { GetNetworkAclsResult } from "./getNetworkAcls";
+export const getNetworkAcls: typeof import("./getNetworkAcls").getNetworkAcls = null as any;
+export const getNetworkAclsOutput: typeof import("./getNetworkAcls").getNetworkAclsOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkAcls","getNetworkAclsOutput"], () => require("./getNetworkAcls"));
 
 export { GetRouteTableArgs, GetRouteTableResult, GetRouteTableOutputArgs } from "./getRouteTable";
 export const getRouteTable: typeof import("./getRouteTable").getRouteTable = null as any;
@@ -75,6 +100,11 @@ export const getVpcs: typeof import("./getVpcs").getVpcs = null as any;
 export const getVpcsOutput: typeof import("./getVpcs").getVpcsOutput = null as any;
 utilities.lazyLoad(exports, ["getVpcs","getVpcsOutput"], () => require("./getVpcs"));
 
+export { NetworkAclArgs, NetworkAclState } from "./networkAcl";
+export type NetworkAcl = import("./networkAcl").NetworkAcl;
+export const NetworkAcl: typeof import("./networkAcl").NetworkAcl = null as any;
+utilities.lazyLoad(exports, ["NetworkAcl"], () => require("./networkAcl"));
+
 export { RouteTableArgs, RouteTableState } from "./routeTable";
 export type RouteTable = import("./routeTable").RouteTable;
 export const RouteTable: typeof import("./routeTable").RouteTable = null as any;
@@ -100,10 +130,14 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vpc/bandwidthPackage:BandwidthPackage":
+                return new BandwidthPackage(name, <any>undefined, { urn })
             case "bytepluscc:vpc/eip:Eip":
                 return new Eip(name, <any>undefined, { urn })
             case "bytepluscc:vpc/eni:Eni":
                 return new Eni(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/networkAcl:NetworkAcl":
+                return new NetworkAcl(name, <any>undefined, { urn })
             case "bytepluscc:vpc/routeTable:RouteTable":
                 return new RouteTable(name, <any>undefined, { urn })
             case "bytepluscc:vpc/securityGroup:SecurityGroup":
@@ -117,8 +151,10 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/bandwidthPackage", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eip", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eni", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/networkAcl", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/routeTable", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/securityGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/subnet", _module)

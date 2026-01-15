@@ -23,6 +23,7 @@ __all__ = ['KafkaTriggerArgs', 'KafkaTrigger']
 class KafkaTriggerArgs:
     def __init__(__self__, *,
                  function_id: pulumi.Input[builtins.str],
+                 kafka_credentials: pulumi.Input['KafkaTriggerKafkaCredentialsArgs'],
                  mq_instance_id: pulumi.Input[builtins.str],
                  name: pulumi.Input[builtins.str],
                  topic_name: pulumi.Input[builtins.str],
@@ -30,12 +31,12 @@ class KafkaTriggerArgs:
                  batch_size: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  enabled: Optional[pulumi.Input[builtins.bool]] = None,
-                 kafka_credentials: Optional[pulumi.Input['KafkaTriggerKafkaCredentialsArgs']] = None,
                  maximum_retry_attempts: Optional[pulumi.Input[builtins.int]] = None,
                  starting_position: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a KafkaTrigger resource.
         :param pulumi.Input[builtins.str] function_id: 函数 ID。
+        :param pulumi.Input['KafkaTriggerKafkaCredentialsArgs'] kafka_credentials: Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
         :param pulumi.Input[builtins.str] mq_instance_id: 消息队列 Kafka 实例 ID。
         :param pulumi.Input[builtins.str] name: Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
         :param pulumi.Input[builtins.str] topic_name: 消息队列 Kafka 实例的 Topic 名称。
@@ -43,11 +44,11 @@ class KafkaTriggerArgs:
         :param pulumi.Input[builtins.int] batch_size: 触发器批量消费的每批次消息数。
         :param pulumi.Input[builtins.str] description: Kafka 触发器描述。长度限制为 200 个字符以内。
         :param pulumi.Input[builtins.bool] enabled: 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
-        :param pulumi.Input['KafkaTriggerKafkaCredentialsArgs'] kafka_credentials: Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
         :param pulumi.Input[builtins.int] maximum_retry_attempts: 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
         :param pulumi.Input[builtins.str] starting_position: 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
         """
         pulumi.set(__self__, "function_id", function_id)
+        pulumi.set(__self__, "kafka_credentials", kafka_credentials)
         pulumi.set(__self__, "mq_instance_id", mq_instance_id)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "topic_name", topic_name)
@@ -59,8 +60,6 @@ class KafkaTriggerArgs:
             pulumi.set(__self__, "description", description)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
-        if kafka_credentials is not None:
-            pulumi.set(__self__, "kafka_credentials", kafka_credentials)
         if maximum_retry_attempts is not None:
             pulumi.set(__self__, "maximum_retry_attempts", maximum_retry_attempts)
         if starting_position is not None:
@@ -77,6 +76,18 @@ class KafkaTriggerArgs:
     @function_id.setter
     def function_id(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "function_id", value)
+
+    @property
+    @pulumi.getter(name="kafkaCredentials")
+    def kafka_credentials(self) -> pulumi.Input['KafkaTriggerKafkaCredentialsArgs']:
+        """
+        Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+        """
+        return pulumi.get(self, "kafka_credentials")
+
+    @kafka_credentials.setter
+    def kafka_credentials(self, value: pulumi.Input['KafkaTriggerKafkaCredentialsArgs']):
+        pulumi.set(self, "kafka_credentials", value)
 
     @property
     @pulumi.getter(name="mqInstanceId")
@@ -161,18 +172,6 @@ class KafkaTriggerArgs:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "enabled", value)
-
-    @property
-    @pulumi.getter(name="kafkaCredentials")
-    def kafka_credentials(self) -> Optional[pulumi.Input['KafkaTriggerKafkaCredentialsArgs']]:
-        """
-        Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
-        """
-        return pulumi.get(self, "kafka_credentials")
-
-    @kafka_credentials.setter
-    def kafka_credentials(self, value: Optional[pulumi.Input['KafkaTriggerKafkaCredentialsArgs']]):
-        pulumi.set(self, "kafka_credentials", value)
 
     @property
     @pulumi.getter(name="maximumRetryAttempts")
@@ -609,6 +608,8 @@ class KafkaTrigger(pulumi.CustomResource):
             if function_id is None and not opts.urn:
                 raise TypeError("Missing required property 'function_id'")
             __props__.__dict__["function_id"] = function_id
+            if kafka_credentials is None and not opts.urn:
+                raise TypeError("Missing required property 'kafka_credentials'")
             __props__.__dict__["kafka_credentials"] = kafka_credentials
             __props__.__dict__["maximum_retry_attempts"] = maximum_retry_attempts
             if mq_instance_id is None and not opts.urn:

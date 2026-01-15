@@ -134,14 +134,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      * 
      */
     @Import(name="keyPairName")
     private @Nullable Output<String> keyPairName;
 
     /**
-     * @return KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * @return 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
      * 
      */
     public Optional<Output<String>> keyPairName() {
@@ -521,7 +521,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param keyPairName KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+         * @param keyPairName 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
          * 
          * @return builder
          * 
@@ -532,7 +532,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param keyPairName KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+         * @param keyPairName 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
          * 
          * @return builder
          * 

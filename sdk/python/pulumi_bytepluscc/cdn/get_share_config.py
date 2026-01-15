@@ -28,16 +28,16 @@ class GetShareConfigResult:
     """
     A collection of values returned by getShareConfig.
     """
-    def __init__(__self__, allow_ip_access_rule=None, allow_referer_access_rule=None, common_matchs=None, config_name=None, config_type=None, deny_ip_access_rule=None, deny_referer_access_rule=None, domain_count=None, id=None, project=None, rule_content=None, updated_time=None):
+    def __init__(__self__, allow_ip_access_rule=None, allow_referer_access_rule=None, common_match_list=None, config_name=None, config_type=None, deny_ip_access_rule=None, deny_referer_access_rule=None, domain_count=None, id=None, project=None, rule_content=None, updated_time=None):
         if allow_ip_access_rule and not isinstance(allow_ip_access_rule, dict):
             raise TypeError("Expected argument 'allow_ip_access_rule' to be a dict")
         pulumi.set(__self__, "allow_ip_access_rule", allow_ip_access_rule)
         if allow_referer_access_rule and not isinstance(allow_referer_access_rule, dict):
             raise TypeError("Expected argument 'allow_referer_access_rule' to be a dict")
         pulumi.set(__self__, "allow_referer_access_rule", allow_referer_access_rule)
-        if common_matchs and not isinstance(common_matchs, dict):
-            raise TypeError("Expected argument 'common_matchs' to be a dict")
-        pulumi.set(__self__, "common_matchs", common_matchs)
+        if common_match_list and not isinstance(common_match_list, dict):
+            raise TypeError("Expected argument 'common_match_list' to be a dict")
+        pulumi.set(__self__, "common_match_list", common_match_list)
         if config_name and not isinstance(config_name, str):
             raise TypeError("Expected argument 'config_name' to be a str")
         pulumi.set(__self__, "config_name", config_name)
@@ -83,12 +83,12 @@ class GetShareConfigResult:
         return pulumi.get(self, "allow_referer_access_rule")
 
     @property
-    @pulumi.getter(name="commonMatchs")
-    def common_matchs(self) -> 'outputs.GetShareConfigCommonMatchsResult':
+    @pulumi.getter(name="commonMatchList")
+    def common_match_list(self) -> 'outputs.GetShareConfigCommonMatchListResult':
         """
         表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
         """
-        return pulumi.get(self, "common_matchs")
+        return pulumi.get(self, "common_match_list")
 
     @property
     @pulumi.getter(name="configName")
@@ -171,7 +171,7 @@ class AwaitableGetShareConfigResult(GetShareConfigResult):
         return GetShareConfigResult(
             allow_ip_access_rule=self.allow_ip_access_rule,
             allow_referer_access_rule=self.allow_referer_access_rule,
-            common_matchs=self.common_matchs,
+            common_match_list=self.common_match_list,
             config_name=self.config_name,
             config_type=self.config_type,
             deny_ip_access_rule=self.deny_ip_access_rule,
@@ -199,7 +199,7 @@ def get_share_config(id: Optional[builtins.str] = None,
     return AwaitableGetShareConfigResult(
         allow_ip_access_rule=pulumi.get(__ret__, 'allow_ip_access_rule'),
         allow_referer_access_rule=pulumi.get(__ret__, 'allow_referer_access_rule'),
-        common_matchs=pulumi.get(__ret__, 'common_matchs'),
+        common_match_list=pulumi.get(__ret__, 'common_match_list'),
         config_name=pulumi.get(__ret__, 'config_name'),
         config_type=pulumi.get(__ret__, 'config_type'),
         deny_ip_access_rule=pulumi.get(__ret__, 'deny_ip_access_rule'),
@@ -224,7 +224,7 @@ def get_share_config_output(id: Optional[pulumi.Input[builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetShareConfigResult(
         allow_ip_access_rule=pulumi.get(__response__, 'allow_ip_access_rule'),
         allow_referer_access_rule=pulumi.get(__response__, 'allow_referer_access_rule'),
-        common_matchs=pulumi.get(__response__, 'common_matchs'),
+        common_match_list=pulumi.get(__response__, 'common_match_list'),
         config_name=pulumi.get(__response__, 'config_name'),
         config_type=pulumi.get(__response__, 'config_type'),
         deny_ip_access_rule=pulumi.get(__response__, 'deny_ip_access_rule'),

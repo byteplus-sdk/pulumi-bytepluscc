@@ -170,7 +170,7 @@ public final class GetListenerResult {
      */
     private Integer port;
     /**
-     * @return 监听器的协议。
+     * @return 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
      * 
      */
     private String protocol;
@@ -194,6 +194,11 @@ public final class GetListenerResult {
      * 
      */
     private Integer proxySendTimeout;
+    /**
+     * @return 监听器绑定的规则ID列表。
+     * 
+     */
+    private List<String> ruleIds;
     /**
      * @return 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
      * 
@@ -459,7 +464,7 @@ public final class GetListenerResult {
         return this.port;
     }
     /**
-     * @return 监听器的协议。
+     * @return 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
      * 
      */
     public String protocol() {
@@ -492,6 +497,13 @@ public final class GetListenerResult {
      */
     public Integer proxySendTimeout() {
         return this.proxySendTimeout;
+    }
+    /**
+     * @return 监听器绑定的规则ID列表。
+     * 
+     */
+    public List<String> ruleIds() {
+        return this.ruleIds;
     }
     /**
      * @return 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
@@ -602,6 +614,7 @@ public final class GetListenerResult {
         private String proxyProtocolType;
         private Integer proxyReadTimeout;
         private Integer proxySendTimeout;
+        private List<String> ruleIds;
         private String scheduler;
         private String securityPolicyId;
         private Integer sendTimeout;
@@ -650,6 +663,7 @@ public final class GetListenerResult {
     	      this.proxyProtocolType = defaults.proxyProtocolType;
     	      this.proxyReadTimeout = defaults.proxyReadTimeout;
     	      this.proxySendTimeout = defaults.proxySendTimeout;
+    	      this.ruleIds = defaults.ruleIds;
     	      this.scheduler = defaults.scheduler;
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.sendTimeout = defaults.sendTimeout;
@@ -953,6 +967,17 @@ public final class GetListenerResult {
             return this;
         }
         @CustomType.Setter
+        public Builder ruleIds(List<String> ruleIds) {
+            if (ruleIds == null) {
+              throw new MissingRequiredPropertyException("GetListenerResult", "ruleIds");
+            }
+            this.ruleIds = ruleIds;
+            return this;
+        }
+        public Builder ruleIds(String... ruleIds) {
+            return ruleIds(List.of(ruleIds));
+        }
+        @CustomType.Setter
         public Builder scheduler(String scheduler) {
             if (scheduler == null) {
               throw new MissingRequiredPropertyException("GetListenerResult", "scheduler");
@@ -1065,6 +1090,7 @@ public final class GetListenerResult {
             _resultValue.proxyProtocolType = proxyProtocolType;
             _resultValue.proxyReadTimeout = proxyReadTimeout;
             _resultValue.proxySendTimeout = proxySendTimeout;
+            _resultValue.ruleIds = ruleIds;
             _resultValue.scheduler = scheduler;
             _resultValue.securityPolicyId = securityPolicyId;
             _resultValue.sendTimeout = sendTimeout;

@@ -35,7 +35,7 @@ type LookupShareConfigResult struct {
 	// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
 	AllowRefererAccessRule GetShareConfigAllowRefererAccessRule `pulumi:"allowRefererAccessRule"`
 	// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-	CommonMatchs GetShareConfigCommonMatchs `pulumi:"commonMatchs"`
+	CommonMatchList GetShareConfigCommonMatchList `pulumi:"commonMatchList"`
 	// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
 	ConfigName string `pulumi:"configName"`
 	// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
@@ -101,8 +101,8 @@ func (o LookupShareConfigResultOutput) AllowRefererAccessRule() GetShareConfigAl
 }
 
 // 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
-func (o LookupShareConfigResultOutput) CommonMatchs() GetShareConfigCommonMatchsOutput {
-	return o.ApplyT(func(v LookupShareConfigResult) GetShareConfigCommonMatchs { return v.CommonMatchs }).(GetShareConfigCommonMatchsOutput)
+func (o LookupShareConfigResultOutput) CommonMatchList() GetShareConfigCommonMatchListOutput {
+	return o.ApplyT(func(v LookupShareConfigResult) GetShareConfigCommonMatchList { return v.CommonMatchList }).(GetShareConfigCommonMatchListOutput)
 }
 
 // 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。

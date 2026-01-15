@@ -2552,6 +2552,583 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type InvocationInvocationResult struct {
+	// 命令ID。
+	CommandId *string `pulumi:"commandId"`
+	// 命令执行的完成时间。
+	EndTime *string `pulumi:"endTime"`
+	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	ErrorCode *string `pulumi:"errorCode"`
+	// 命令执行失败的错误信息。
+	ErrorMessage *string `pulumi:"errorMessage"`
+	// 脚本执行后的退出状态码。
+	ExitCode *int `pulumi:"exitCode"`
+	// 实例ID。
+	InstanceId *string `pulumi:"instanceId"`
+	// 任务执行ID。
+	InvocationId *string `pulumi:"invocationId"`
+	// 任务执行结果ID。
+	InvocationResultId *string `pulumi:"invocationResultId"`
+	// 单台实例的命令进度状态。
+	InvocationResultStatus *string `pulumi:"invocationResultStatus"`
+	// 经过Base64编码的命令执行后输出信息。
+	Output *string `pulumi:"output"`
+	// 命令在实例中开始执行的时间。
+	StartTime *string `pulumi:"startTime"`
+	// 在实例中执行命令的用户名称。
+	Username *string `pulumi:"username"`
+}
+
+// InvocationInvocationResultInput is an input type that accepts InvocationInvocationResultArgs and InvocationInvocationResultOutput values.
+// You can construct a concrete instance of `InvocationInvocationResultInput` via:
+//
+//	InvocationInvocationResultArgs{...}
+type InvocationInvocationResultInput interface {
+	pulumi.Input
+
+	ToInvocationInvocationResultOutput() InvocationInvocationResultOutput
+	ToInvocationInvocationResultOutputWithContext(context.Context) InvocationInvocationResultOutput
+}
+
+type InvocationInvocationResultArgs struct {
+	// 命令ID。
+	CommandId pulumi.StringPtrInput `pulumi:"commandId"`
+	// 命令执行的完成时间。
+	EndTime pulumi.StringPtrInput `pulumi:"endTime"`
+	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	ErrorCode pulumi.StringPtrInput `pulumi:"errorCode"`
+	// 命令执行失败的错误信息。
+	ErrorMessage pulumi.StringPtrInput `pulumi:"errorMessage"`
+	// 脚本执行后的退出状态码。
+	ExitCode pulumi.IntPtrInput `pulumi:"exitCode"`
+	// 实例ID。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 任务执行ID。
+	InvocationId pulumi.StringPtrInput `pulumi:"invocationId"`
+	// 任务执行结果ID。
+	InvocationResultId pulumi.StringPtrInput `pulumi:"invocationResultId"`
+	// 单台实例的命令进度状态。
+	InvocationResultStatus pulumi.StringPtrInput `pulumi:"invocationResultStatus"`
+	// 经过Base64编码的命令执行后输出信息。
+	Output pulumi.StringPtrInput `pulumi:"output"`
+	// 命令在实例中开始执行的时间。
+	StartTime pulumi.StringPtrInput `pulumi:"startTime"`
+	// 在实例中执行命令的用户名称。
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (InvocationInvocationResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvocationInvocationResult)(nil)).Elem()
+}
+
+func (i InvocationInvocationResultArgs) ToInvocationInvocationResultOutput() InvocationInvocationResultOutput {
+	return i.ToInvocationInvocationResultOutputWithContext(context.Background())
+}
+
+func (i InvocationInvocationResultArgs) ToInvocationInvocationResultOutputWithContext(ctx context.Context) InvocationInvocationResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvocationInvocationResultOutput)
+}
+
+// InvocationInvocationResultArrayInput is an input type that accepts InvocationInvocationResultArray and InvocationInvocationResultArrayOutput values.
+// You can construct a concrete instance of `InvocationInvocationResultArrayInput` via:
+//
+//	InvocationInvocationResultArray{ InvocationInvocationResultArgs{...} }
+type InvocationInvocationResultArrayInput interface {
+	pulumi.Input
+
+	ToInvocationInvocationResultArrayOutput() InvocationInvocationResultArrayOutput
+	ToInvocationInvocationResultArrayOutputWithContext(context.Context) InvocationInvocationResultArrayOutput
+}
+
+type InvocationInvocationResultArray []InvocationInvocationResultInput
+
+func (InvocationInvocationResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InvocationInvocationResult)(nil)).Elem()
+}
+
+func (i InvocationInvocationResultArray) ToInvocationInvocationResultArrayOutput() InvocationInvocationResultArrayOutput {
+	return i.ToInvocationInvocationResultArrayOutputWithContext(context.Background())
+}
+
+func (i InvocationInvocationResultArray) ToInvocationInvocationResultArrayOutputWithContext(ctx context.Context) InvocationInvocationResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvocationInvocationResultArrayOutput)
+}
+
+type InvocationInvocationResultOutput struct{ *pulumi.OutputState }
+
+func (InvocationInvocationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvocationInvocationResult)(nil)).Elem()
+}
+
+func (o InvocationInvocationResultOutput) ToInvocationInvocationResultOutput() InvocationInvocationResultOutput {
+	return o
+}
+
+func (o InvocationInvocationResultOutput) ToInvocationInvocationResultOutputWithContext(ctx context.Context) InvocationInvocationResultOutput {
+	return o
+}
+
+// 命令ID。
+func (o InvocationInvocationResultOutput) CommandId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.CommandId }).(pulumi.StringPtrOutput)
+}
+
+// 命令执行的完成时间。
+func (o InvocationInvocationResultOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.EndTime }).(pulumi.StringPtrOutput)
+}
+
+// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+func (o InvocationInvocationResultOutput) ErrorCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.ErrorCode }).(pulumi.StringPtrOutput)
+}
+
+// 命令执行失败的错误信息。
+func (o InvocationInvocationResultOutput) ErrorMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.ErrorMessage }).(pulumi.StringPtrOutput)
+}
+
+// 脚本执行后的退出状态码。
+func (o InvocationInvocationResultOutput) ExitCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *int { return v.ExitCode }).(pulumi.IntPtrOutput)
+}
+
+// 实例ID。
+func (o InvocationInvocationResultOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 任务执行ID。
+func (o InvocationInvocationResultOutput) InvocationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InvocationId }).(pulumi.StringPtrOutput)
+}
+
+// 任务执行结果ID。
+func (o InvocationInvocationResultOutput) InvocationResultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InvocationResultId }).(pulumi.StringPtrOutput)
+}
+
+// 单台实例的命令进度状态。
+func (o InvocationInvocationResultOutput) InvocationResultStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InvocationResultStatus }).(pulumi.StringPtrOutput)
+}
+
+// 经过Base64编码的命令执行后输出信息。
+func (o InvocationInvocationResultOutput) Output() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.Output }).(pulumi.StringPtrOutput)
+}
+
+// 命令在实例中开始执行的时间。
+func (o InvocationInvocationResultOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.StartTime }).(pulumi.StringPtrOutput)
+}
+
+// 在实例中执行命令的用户名称。
+func (o InvocationInvocationResultOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type InvocationInvocationResultArrayOutput struct{ *pulumi.OutputState }
+
+func (InvocationInvocationResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InvocationInvocationResult)(nil)).Elem()
+}
+
+func (o InvocationInvocationResultArrayOutput) ToInvocationInvocationResultArrayOutput() InvocationInvocationResultArrayOutput {
+	return o
+}
+
+func (o InvocationInvocationResultArrayOutput) ToInvocationInvocationResultArrayOutputWithContext(ctx context.Context) InvocationInvocationResultArrayOutput {
+	return o
+}
+
+func (o InvocationInvocationResultArrayOutput) Index(i pulumi.IntInput) InvocationInvocationResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InvocationInvocationResult {
+		return vs[0].([]InvocationInvocationResult)[vs[1].(int)]
+	}).(InvocationInvocationResultOutput)
+}
+
+type InvocationParameterDefinition struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision *int `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue *string `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength *int `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue *string `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength *int `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue *string `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	Name *string `pulumi:"name"`
+	// 是否必填。true：必填。false：非必填。
+	Required *bool `pulumi:"required"`
+	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	Type *string `pulumi:"type"`
+}
+
+// InvocationParameterDefinitionInput is an input type that accepts InvocationParameterDefinitionArgs and InvocationParameterDefinitionOutput values.
+// You can construct a concrete instance of `InvocationParameterDefinitionInput` via:
+//
+//	InvocationParameterDefinitionArgs{...}
+type InvocationParameterDefinitionInput interface {
+	pulumi.Input
+
+	ToInvocationParameterDefinitionOutput() InvocationParameterDefinitionOutput
+	ToInvocationParameterDefinitionOutputWithContext(context.Context) InvocationParameterDefinitionOutput
+}
+
+type InvocationParameterDefinitionArgs struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision pulumi.IntPtrInput `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength pulumi.IntPtrInput `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength pulumi.IntPtrInput `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// 是否必填。true：必填。false：非必填。
+	Required pulumi.BoolPtrInput `pulumi:"required"`
+	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (InvocationParameterDefinitionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvocationParameterDefinition)(nil)).Elem()
+}
+
+func (i InvocationParameterDefinitionArgs) ToInvocationParameterDefinitionOutput() InvocationParameterDefinitionOutput {
+	return i.ToInvocationParameterDefinitionOutputWithContext(context.Background())
+}
+
+func (i InvocationParameterDefinitionArgs) ToInvocationParameterDefinitionOutputWithContext(ctx context.Context) InvocationParameterDefinitionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvocationParameterDefinitionOutput)
+}
+
+// InvocationParameterDefinitionArrayInput is an input type that accepts InvocationParameterDefinitionArray and InvocationParameterDefinitionArrayOutput values.
+// You can construct a concrete instance of `InvocationParameterDefinitionArrayInput` via:
+//
+//	InvocationParameterDefinitionArray{ InvocationParameterDefinitionArgs{...} }
+type InvocationParameterDefinitionArrayInput interface {
+	pulumi.Input
+
+	ToInvocationParameterDefinitionArrayOutput() InvocationParameterDefinitionArrayOutput
+	ToInvocationParameterDefinitionArrayOutputWithContext(context.Context) InvocationParameterDefinitionArrayOutput
+}
+
+type InvocationParameterDefinitionArray []InvocationParameterDefinitionInput
+
+func (InvocationParameterDefinitionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InvocationParameterDefinition)(nil)).Elem()
+}
+
+func (i InvocationParameterDefinitionArray) ToInvocationParameterDefinitionArrayOutput() InvocationParameterDefinitionArrayOutput {
+	return i.ToInvocationParameterDefinitionArrayOutputWithContext(context.Background())
+}
+
+func (i InvocationParameterDefinitionArray) ToInvocationParameterDefinitionArrayOutputWithContext(ctx context.Context) InvocationParameterDefinitionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvocationParameterDefinitionArrayOutput)
+}
+
+type InvocationParameterDefinitionOutput struct{ *pulumi.OutputState }
+
+func (InvocationParameterDefinitionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvocationParameterDefinition)(nil)).Elem()
+}
+
+func (o InvocationParameterDefinitionOutput) ToInvocationParameterDefinitionOutput() InvocationParameterDefinitionOutput {
+	return o
+}
+
+func (o InvocationParameterDefinitionOutput) ToInvocationParameterDefinitionOutputWithContext(ctx context.Context) InvocationParameterDefinitionOutput {
+	return o
+}
+
+// 自定义参数值（数字）允许的小数点后位数。
+func (o InvocationParameterDefinitionOutput) DecimalPrecision() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *int { return v.DecimalPrecision }).(pulumi.IntPtrOutput)
+}
+
+// 自定义参数默认值。
+func (o InvocationParameterDefinitionOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
+}
+
+// 自定义参数值（字符串）的最大长度。
+func (o InvocationParameterDefinitionOutput) MaxLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *int { return v.MaxLength }).(pulumi.IntPtrOutput)
+}
+
+// 自定义参数值（数字）的最大值。
+func (o InvocationParameterDefinitionOutput) MaxValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.MaxValue }).(pulumi.StringPtrOutput)
+}
+
+// 自定义参数值（字符串）的最小长度。
+func (o InvocationParameterDefinitionOutput) MinLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *int { return v.MinLength }).(pulumi.IntPtrOutput)
+}
+
+// 自定义参数值（数字）的最小值。
+func (o InvocationParameterDefinitionOutput) MinValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.MinValue }).(pulumi.StringPtrOutput)
+}
+
+// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+func (o InvocationParameterDefinitionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// 是否必填。true：必填。false：非必填。
+func (o InvocationParameterDefinitionOutput) Required() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *bool { return v.Required }).(pulumi.BoolPtrOutput)
+}
+
+// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+func (o InvocationParameterDefinitionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type InvocationParameterDefinitionArrayOutput struct{ *pulumi.OutputState }
+
+func (InvocationParameterDefinitionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InvocationParameterDefinition)(nil)).Elem()
+}
+
+func (o InvocationParameterDefinitionArrayOutput) ToInvocationParameterDefinitionArrayOutput() InvocationParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o InvocationParameterDefinitionArrayOutput) ToInvocationParameterDefinitionArrayOutputWithContext(ctx context.Context) InvocationParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o InvocationParameterDefinitionArrayOutput) Index(i pulumi.IntInput) InvocationParameterDefinitionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InvocationParameterDefinition {
+		return vs[0].([]InvocationParameterDefinition)[vs[1].(int)]
+	}).(InvocationParameterDefinitionOutput)
+}
+
+type InvocationTag struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value *string `pulumi:"value"`
+}
+
+// InvocationTagInput is an input type that accepts InvocationTagArgs and InvocationTagOutput values.
+// You can construct a concrete instance of `InvocationTagInput` via:
+//
+//	InvocationTagArgs{...}
+type InvocationTagInput interface {
+	pulumi.Input
+
+	ToInvocationTagOutput() InvocationTagOutput
+	ToInvocationTagOutputWithContext(context.Context) InvocationTagOutput
+}
+
+type InvocationTagArgs struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (InvocationTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvocationTag)(nil)).Elem()
+}
+
+func (i InvocationTagArgs) ToInvocationTagOutput() InvocationTagOutput {
+	return i.ToInvocationTagOutputWithContext(context.Background())
+}
+
+func (i InvocationTagArgs) ToInvocationTagOutputWithContext(ctx context.Context) InvocationTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvocationTagOutput)
+}
+
+// InvocationTagArrayInput is an input type that accepts InvocationTagArray and InvocationTagArrayOutput values.
+// You can construct a concrete instance of `InvocationTagArrayInput` via:
+//
+//	InvocationTagArray{ InvocationTagArgs{...} }
+type InvocationTagArrayInput interface {
+	pulumi.Input
+
+	ToInvocationTagArrayOutput() InvocationTagArrayOutput
+	ToInvocationTagArrayOutputWithContext(context.Context) InvocationTagArrayOutput
+}
+
+type InvocationTagArray []InvocationTagInput
+
+func (InvocationTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InvocationTag)(nil)).Elem()
+}
+
+func (i InvocationTagArray) ToInvocationTagArrayOutput() InvocationTagArrayOutput {
+	return i.ToInvocationTagArrayOutputWithContext(context.Background())
+}
+
+func (i InvocationTagArray) ToInvocationTagArrayOutputWithContext(ctx context.Context) InvocationTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InvocationTagArrayOutput)
+}
+
+type InvocationTagOutput struct{ *pulumi.OutputState }
+
+func (InvocationTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InvocationTag)(nil)).Elem()
+}
+
+func (o InvocationTagOutput) ToInvocationTagOutput() InvocationTagOutput {
+	return o
+}
+
+func (o InvocationTagOutput) ToInvocationTagOutputWithContext(ctx context.Context) InvocationTagOutput {
+	return o
+}
+
+// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+func (o InvocationTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+func (o InvocationTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InvocationTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type InvocationTagArrayOutput struct{ *pulumi.OutputState }
+
+func (InvocationTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InvocationTag)(nil)).Elem()
+}
+
+func (o InvocationTagArrayOutput) ToInvocationTagArrayOutput() InvocationTagArrayOutput {
+	return o
+}
+
+func (o InvocationTagArrayOutput) ToInvocationTagArrayOutputWithContext(ctx context.Context) InvocationTagArrayOutput {
+	return o
+}
+
+func (o InvocationTagArrayOutput) Index(i pulumi.IntInput) InvocationTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InvocationTag {
+		return vs[0].([]InvocationTag)[vs[1].(int)]
+	}).(InvocationTagOutput)
+}
+
+type KeypairTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// KeypairTagInput is an input type that accepts KeypairTagArgs and KeypairTagOutput values.
+// You can construct a concrete instance of `KeypairTagInput` via:
+//
+//	KeypairTagArgs{...}
+type KeypairTagInput interface {
+	pulumi.Input
+
+	ToKeypairTagOutput() KeypairTagOutput
+	ToKeypairTagOutputWithContext(context.Context) KeypairTagOutput
+}
+
+type KeypairTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (KeypairTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeypairTag)(nil)).Elem()
+}
+
+func (i KeypairTagArgs) ToKeypairTagOutput() KeypairTagOutput {
+	return i.ToKeypairTagOutputWithContext(context.Background())
+}
+
+func (i KeypairTagArgs) ToKeypairTagOutputWithContext(ctx context.Context) KeypairTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeypairTagOutput)
+}
+
+// KeypairTagArrayInput is an input type that accepts KeypairTagArray and KeypairTagArrayOutput values.
+// You can construct a concrete instance of `KeypairTagArrayInput` via:
+//
+//	KeypairTagArray{ KeypairTagArgs{...} }
+type KeypairTagArrayInput interface {
+	pulumi.Input
+
+	ToKeypairTagArrayOutput() KeypairTagArrayOutput
+	ToKeypairTagArrayOutputWithContext(context.Context) KeypairTagArrayOutput
+}
+
+type KeypairTagArray []KeypairTagInput
+
+func (KeypairTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeypairTag)(nil)).Elem()
+}
+
+func (i KeypairTagArray) ToKeypairTagArrayOutput() KeypairTagArrayOutput {
+	return i.ToKeypairTagArrayOutputWithContext(context.Background())
+}
+
+func (i KeypairTagArray) ToKeypairTagArrayOutputWithContext(ctx context.Context) KeypairTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeypairTagArrayOutput)
+}
+
+type KeypairTagOutput struct{ *pulumi.OutputState }
+
+func (KeypairTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeypairTag)(nil)).Elem()
+}
+
+func (o KeypairTagOutput) ToKeypairTagOutput() KeypairTagOutput {
+	return o
+}
+
+func (o KeypairTagOutput) ToKeypairTagOutputWithContext(ctx context.Context) KeypairTagOutput {
+	return o
+}
+
+// 标签键。
+func (o KeypairTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeypairTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o KeypairTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeypairTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type KeypairTagArrayOutput struct{ *pulumi.OutputState }
+
+func (KeypairTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeypairTag)(nil)).Elem()
+}
+
+func (o KeypairTagArrayOutput) ToKeypairTagArrayOutput() KeypairTagArrayOutput {
+	return o
+}
+
+func (o KeypairTagArrayOutput) ToKeypairTagArrayOutputWithContext(ctx context.Context) KeypairTagArrayOutput {
+	return o
+}
+
+func (o KeypairTagArrayOutput) Index(i pulumi.IntInput) KeypairTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeypairTag {
+		return vs[0].([]KeypairTag)[vs[1].(int)]
+	}).(KeypairTagOutput)
+}
+
 type GetImageDetectionResults struct {
 	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
 	DetectionStatus string `pulumi:"detectionStatus"`
@@ -4003,6 +4580,583 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 	}).(GetInstanceTagOutput)
 }
 
+type GetInvocationInvocationResult struct {
+	// 命令ID。
+	CommandId string `pulumi:"commandId"`
+	// 命令执行的完成时间。
+	EndTime string `pulumi:"endTime"`
+	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	ErrorCode string `pulumi:"errorCode"`
+	// 命令执行失败的错误信息。
+	ErrorMessage string `pulumi:"errorMessage"`
+	// 脚本执行后的退出状态码。
+	ExitCode int `pulumi:"exitCode"`
+	// 实例ID。
+	InstanceId string `pulumi:"instanceId"`
+	// 任务执行ID。
+	InvocationId string `pulumi:"invocationId"`
+	// 任务执行结果ID。
+	InvocationResultId string `pulumi:"invocationResultId"`
+	// 单台实例的命令进度状态。
+	InvocationResultStatus string `pulumi:"invocationResultStatus"`
+	// 经过Base64编码的命令执行后输出信息。
+	Output string `pulumi:"output"`
+	// 命令在实例中开始执行的时间。
+	StartTime string `pulumi:"startTime"`
+	// 在实例中执行命令的用户名称。
+	Username string `pulumi:"username"`
+}
+
+// GetInvocationInvocationResultInput is an input type that accepts GetInvocationInvocationResultArgs and GetInvocationInvocationResultOutput values.
+// You can construct a concrete instance of `GetInvocationInvocationResultInput` via:
+//
+//	GetInvocationInvocationResultArgs{...}
+type GetInvocationInvocationResultInput interface {
+	pulumi.Input
+
+	ToGetInvocationInvocationResultOutput() GetInvocationInvocationResultOutput
+	ToGetInvocationInvocationResultOutputWithContext(context.Context) GetInvocationInvocationResultOutput
+}
+
+type GetInvocationInvocationResultArgs struct {
+	// 命令ID。
+	CommandId pulumi.StringInput `pulumi:"commandId"`
+	// 命令执行的完成时间。
+	EndTime pulumi.StringInput `pulumi:"endTime"`
+	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	ErrorCode pulumi.StringInput `pulumi:"errorCode"`
+	// 命令执行失败的错误信息。
+	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
+	// 脚本执行后的退出状态码。
+	ExitCode pulumi.IntInput `pulumi:"exitCode"`
+	// 实例ID。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 任务执行ID。
+	InvocationId pulumi.StringInput `pulumi:"invocationId"`
+	// 任务执行结果ID。
+	InvocationResultId pulumi.StringInput `pulumi:"invocationResultId"`
+	// 单台实例的命令进度状态。
+	InvocationResultStatus pulumi.StringInput `pulumi:"invocationResultStatus"`
+	// 经过Base64编码的命令执行后输出信息。
+	Output pulumi.StringInput `pulumi:"output"`
+	// 命令在实例中开始执行的时间。
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	// 在实例中执行命令的用户名称。
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetInvocationInvocationResultArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvocationInvocationResult)(nil)).Elem()
+}
+
+func (i GetInvocationInvocationResultArgs) ToGetInvocationInvocationResultOutput() GetInvocationInvocationResultOutput {
+	return i.ToGetInvocationInvocationResultOutputWithContext(context.Background())
+}
+
+func (i GetInvocationInvocationResultArgs) ToGetInvocationInvocationResultOutputWithContext(ctx context.Context) GetInvocationInvocationResultOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvocationInvocationResultOutput)
+}
+
+// GetInvocationInvocationResultArrayInput is an input type that accepts GetInvocationInvocationResultArray and GetInvocationInvocationResultArrayOutput values.
+// You can construct a concrete instance of `GetInvocationInvocationResultArrayInput` via:
+//
+//	GetInvocationInvocationResultArray{ GetInvocationInvocationResultArgs{...} }
+type GetInvocationInvocationResultArrayInput interface {
+	pulumi.Input
+
+	ToGetInvocationInvocationResultArrayOutput() GetInvocationInvocationResultArrayOutput
+	ToGetInvocationInvocationResultArrayOutputWithContext(context.Context) GetInvocationInvocationResultArrayOutput
+}
+
+type GetInvocationInvocationResultArray []GetInvocationInvocationResultInput
+
+func (GetInvocationInvocationResultArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvocationInvocationResult)(nil)).Elem()
+}
+
+func (i GetInvocationInvocationResultArray) ToGetInvocationInvocationResultArrayOutput() GetInvocationInvocationResultArrayOutput {
+	return i.ToGetInvocationInvocationResultArrayOutputWithContext(context.Background())
+}
+
+func (i GetInvocationInvocationResultArray) ToGetInvocationInvocationResultArrayOutputWithContext(ctx context.Context) GetInvocationInvocationResultArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvocationInvocationResultArrayOutput)
+}
+
+type GetInvocationInvocationResultOutput struct{ *pulumi.OutputState }
+
+func (GetInvocationInvocationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvocationInvocationResult)(nil)).Elem()
+}
+
+func (o GetInvocationInvocationResultOutput) ToGetInvocationInvocationResultOutput() GetInvocationInvocationResultOutput {
+	return o
+}
+
+func (o GetInvocationInvocationResultOutput) ToGetInvocationInvocationResultOutputWithContext(ctx context.Context) GetInvocationInvocationResultOutput {
+	return o
+}
+
+// 命令ID。
+func (o GetInvocationInvocationResultOutput) CommandId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.CommandId }).(pulumi.StringOutput)
+}
+
+// 命令执行的完成时间。
+func (o GetInvocationInvocationResultOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+func (o GetInvocationInvocationResultOutput) ErrorCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.ErrorCode }).(pulumi.StringOutput)
+}
+
+// 命令执行失败的错误信息。
+func (o GetInvocationInvocationResultOutput) ErrorMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.ErrorMessage }).(pulumi.StringOutput)
+}
+
+// 脚本执行后的退出状态码。
+func (o GetInvocationInvocationResultOutput) ExitCode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) int { return v.ExitCode }).(pulumi.IntOutput)
+}
+
+// 实例ID。
+func (o GetInvocationInvocationResultOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 任务执行ID。
+func (o GetInvocationInvocationResultOutput) InvocationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InvocationId }).(pulumi.StringOutput)
+}
+
+// 任务执行结果ID。
+func (o GetInvocationInvocationResultOutput) InvocationResultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InvocationResultId }).(pulumi.StringOutput)
+}
+
+// 单台实例的命令进度状态。
+func (o GetInvocationInvocationResultOutput) InvocationResultStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InvocationResultStatus }).(pulumi.StringOutput)
+}
+
+// 经过Base64编码的命令执行后输出信息。
+func (o GetInvocationInvocationResultOutput) Output() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.Output }).(pulumi.StringOutput)
+}
+
+// 命令在实例中开始执行的时间。
+func (o GetInvocationInvocationResultOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+// 在实例中执行命令的用户名称。
+func (o GetInvocationInvocationResultOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetInvocationInvocationResultArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInvocationInvocationResultArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvocationInvocationResult)(nil)).Elem()
+}
+
+func (o GetInvocationInvocationResultArrayOutput) ToGetInvocationInvocationResultArrayOutput() GetInvocationInvocationResultArrayOutput {
+	return o
+}
+
+func (o GetInvocationInvocationResultArrayOutput) ToGetInvocationInvocationResultArrayOutputWithContext(ctx context.Context) GetInvocationInvocationResultArrayOutput {
+	return o
+}
+
+func (o GetInvocationInvocationResultArrayOutput) Index(i pulumi.IntInput) GetInvocationInvocationResultOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvocationInvocationResult {
+		return vs[0].([]GetInvocationInvocationResult)[vs[1].(int)]
+	}).(GetInvocationInvocationResultOutput)
+}
+
+type GetInvocationParameterDefinition struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision int `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue string `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength int `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue string `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength int `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue string `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	Name string `pulumi:"name"`
+	// 是否必填。true：必填。false：非必填。
+	Required bool `pulumi:"required"`
+	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	Type string `pulumi:"type"`
+}
+
+// GetInvocationParameterDefinitionInput is an input type that accepts GetInvocationParameterDefinitionArgs and GetInvocationParameterDefinitionOutput values.
+// You can construct a concrete instance of `GetInvocationParameterDefinitionInput` via:
+//
+//	GetInvocationParameterDefinitionArgs{...}
+type GetInvocationParameterDefinitionInput interface {
+	pulumi.Input
+
+	ToGetInvocationParameterDefinitionOutput() GetInvocationParameterDefinitionOutput
+	ToGetInvocationParameterDefinitionOutputWithContext(context.Context) GetInvocationParameterDefinitionOutput
+}
+
+type GetInvocationParameterDefinitionArgs struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision pulumi.IntInput `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue pulumi.StringInput `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	Name pulumi.StringInput `pulumi:"name"`
+	// 是否必填。true：必填。false：非必填。
+	Required pulumi.BoolInput `pulumi:"required"`
+	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInvocationParameterDefinitionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvocationParameterDefinition)(nil)).Elem()
+}
+
+func (i GetInvocationParameterDefinitionArgs) ToGetInvocationParameterDefinitionOutput() GetInvocationParameterDefinitionOutput {
+	return i.ToGetInvocationParameterDefinitionOutputWithContext(context.Background())
+}
+
+func (i GetInvocationParameterDefinitionArgs) ToGetInvocationParameterDefinitionOutputWithContext(ctx context.Context) GetInvocationParameterDefinitionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvocationParameterDefinitionOutput)
+}
+
+// GetInvocationParameterDefinitionArrayInput is an input type that accepts GetInvocationParameterDefinitionArray and GetInvocationParameterDefinitionArrayOutput values.
+// You can construct a concrete instance of `GetInvocationParameterDefinitionArrayInput` via:
+//
+//	GetInvocationParameterDefinitionArray{ GetInvocationParameterDefinitionArgs{...} }
+type GetInvocationParameterDefinitionArrayInput interface {
+	pulumi.Input
+
+	ToGetInvocationParameterDefinitionArrayOutput() GetInvocationParameterDefinitionArrayOutput
+	ToGetInvocationParameterDefinitionArrayOutputWithContext(context.Context) GetInvocationParameterDefinitionArrayOutput
+}
+
+type GetInvocationParameterDefinitionArray []GetInvocationParameterDefinitionInput
+
+func (GetInvocationParameterDefinitionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvocationParameterDefinition)(nil)).Elem()
+}
+
+func (i GetInvocationParameterDefinitionArray) ToGetInvocationParameterDefinitionArrayOutput() GetInvocationParameterDefinitionArrayOutput {
+	return i.ToGetInvocationParameterDefinitionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInvocationParameterDefinitionArray) ToGetInvocationParameterDefinitionArrayOutputWithContext(ctx context.Context) GetInvocationParameterDefinitionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvocationParameterDefinitionArrayOutput)
+}
+
+type GetInvocationParameterDefinitionOutput struct{ *pulumi.OutputState }
+
+func (GetInvocationParameterDefinitionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvocationParameterDefinition)(nil)).Elem()
+}
+
+func (o GetInvocationParameterDefinitionOutput) ToGetInvocationParameterDefinitionOutput() GetInvocationParameterDefinitionOutput {
+	return o
+}
+
+func (o GetInvocationParameterDefinitionOutput) ToGetInvocationParameterDefinitionOutputWithContext(ctx context.Context) GetInvocationParameterDefinitionOutput {
+	return o
+}
+
+// 自定义参数值（数字）允许的小数点后位数。
+func (o GetInvocationParameterDefinitionOutput) DecimalPrecision() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) int { return v.DecimalPrecision }).(pulumi.IntOutput)
+}
+
+// 自定义参数默认值。
+func (o GetInvocationParameterDefinitionOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// 自定义参数值（字符串）的最大长度。
+func (o GetInvocationParameterDefinitionOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) int { return v.MaxLength }).(pulumi.IntOutput)
+}
+
+// 自定义参数值（数字）的最大值。
+func (o GetInvocationParameterDefinitionOutput) MaxValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.MaxValue }).(pulumi.StringOutput)
+}
+
+// 自定义参数值（字符串）的最小长度。
+func (o GetInvocationParameterDefinitionOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) int { return v.MinLength }).(pulumi.IntOutput)
+}
+
+// 自定义参数值（数字）的最小值。
+func (o GetInvocationParameterDefinitionOutput) MinValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.MinValue }).(pulumi.StringOutput)
+}
+
+// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+func (o GetInvocationParameterDefinitionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// 是否必填。true：必填。false：非必填。
+func (o GetInvocationParameterDefinitionOutput) Required() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) bool { return v.Required }).(pulumi.BoolOutput)
+}
+
+// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+func (o GetInvocationParameterDefinitionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetInvocationParameterDefinitionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInvocationParameterDefinitionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvocationParameterDefinition)(nil)).Elem()
+}
+
+func (o GetInvocationParameterDefinitionArrayOutput) ToGetInvocationParameterDefinitionArrayOutput() GetInvocationParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o GetInvocationParameterDefinitionArrayOutput) ToGetInvocationParameterDefinitionArrayOutputWithContext(ctx context.Context) GetInvocationParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o GetInvocationParameterDefinitionArrayOutput) Index(i pulumi.IntInput) GetInvocationParameterDefinitionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvocationParameterDefinition {
+		return vs[0].([]GetInvocationParameterDefinition)[vs[1].(int)]
+	}).(GetInvocationParameterDefinitionOutput)
+}
+
+type GetInvocationTag struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value string `pulumi:"value"`
+}
+
+// GetInvocationTagInput is an input type that accepts GetInvocationTagArgs and GetInvocationTagOutput values.
+// You can construct a concrete instance of `GetInvocationTagInput` via:
+//
+//	GetInvocationTagArgs{...}
+type GetInvocationTagInput interface {
+	pulumi.Input
+
+	ToGetInvocationTagOutput() GetInvocationTagOutput
+	ToGetInvocationTagOutputWithContext(context.Context) GetInvocationTagOutput
+}
+
+type GetInvocationTagArgs struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetInvocationTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvocationTag)(nil)).Elem()
+}
+
+func (i GetInvocationTagArgs) ToGetInvocationTagOutput() GetInvocationTagOutput {
+	return i.ToGetInvocationTagOutputWithContext(context.Background())
+}
+
+func (i GetInvocationTagArgs) ToGetInvocationTagOutputWithContext(ctx context.Context) GetInvocationTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvocationTagOutput)
+}
+
+// GetInvocationTagArrayInput is an input type that accepts GetInvocationTagArray and GetInvocationTagArrayOutput values.
+// You can construct a concrete instance of `GetInvocationTagArrayInput` via:
+//
+//	GetInvocationTagArray{ GetInvocationTagArgs{...} }
+type GetInvocationTagArrayInput interface {
+	pulumi.Input
+
+	ToGetInvocationTagArrayOutput() GetInvocationTagArrayOutput
+	ToGetInvocationTagArrayOutputWithContext(context.Context) GetInvocationTagArrayOutput
+}
+
+type GetInvocationTagArray []GetInvocationTagInput
+
+func (GetInvocationTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvocationTag)(nil)).Elem()
+}
+
+func (i GetInvocationTagArray) ToGetInvocationTagArrayOutput() GetInvocationTagArrayOutput {
+	return i.ToGetInvocationTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetInvocationTagArray) ToGetInvocationTagArrayOutputWithContext(ctx context.Context) GetInvocationTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInvocationTagArrayOutput)
+}
+
+type GetInvocationTagOutput struct{ *pulumi.OutputState }
+
+func (GetInvocationTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInvocationTag)(nil)).Elem()
+}
+
+func (o GetInvocationTagOutput) ToGetInvocationTagOutput() GetInvocationTagOutput {
+	return o
+}
+
+func (o GetInvocationTagOutput) ToGetInvocationTagOutputWithContext(ctx context.Context) GetInvocationTagOutput {
+	return o
+}
+
+// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+func (o GetInvocationTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+func (o GetInvocationTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvocationTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetInvocationTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInvocationTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInvocationTag)(nil)).Elem()
+}
+
+func (o GetInvocationTagArrayOutput) ToGetInvocationTagArrayOutput() GetInvocationTagArrayOutput {
+	return o
+}
+
+func (o GetInvocationTagArrayOutput) ToGetInvocationTagArrayOutputWithContext(ctx context.Context) GetInvocationTagArrayOutput {
+	return o
+}
+
+func (o GetInvocationTagArrayOutput) Index(i pulumi.IntInput) GetInvocationTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInvocationTag {
+		return vs[0].([]GetInvocationTag)[vs[1].(int)]
+	}).(GetInvocationTagOutput)
+}
+
+type GetKeypairTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetKeypairTagInput is an input type that accepts GetKeypairTagArgs and GetKeypairTagOutput values.
+// You can construct a concrete instance of `GetKeypairTagInput` via:
+//
+//	GetKeypairTagArgs{...}
+type GetKeypairTagInput interface {
+	pulumi.Input
+
+	ToGetKeypairTagOutput() GetKeypairTagOutput
+	ToGetKeypairTagOutputWithContext(context.Context) GetKeypairTagOutput
+}
+
+type GetKeypairTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetKeypairTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeypairTag)(nil)).Elem()
+}
+
+func (i GetKeypairTagArgs) ToGetKeypairTagOutput() GetKeypairTagOutput {
+	return i.ToGetKeypairTagOutputWithContext(context.Background())
+}
+
+func (i GetKeypairTagArgs) ToGetKeypairTagOutputWithContext(ctx context.Context) GetKeypairTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeypairTagOutput)
+}
+
+// GetKeypairTagArrayInput is an input type that accepts GetKeypairTagArray and GetKeypairTagArrayOutput values.
+// You can construct a concrete instance of `GetKeypairTagArrayInput` via:
+//
+//	GetKeypairTagArray{ GetKeypairTagArgs{...} }
+type GetKeypairTagArrayInput interface {
+	pulumi.Input
+
+	ToGetKeypairTagArrayOutput() GetKeypairTagArrayOutput
+	ToGetKeypairTagArrayOutputWithContext(context.Context) GetKeypairTagArrayOutput
+}
+
+type GetKeypairTagArray []GetKeypairTagInput
+
+func (GetKeypairTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeypairTag)(nil)).Elem()
+}
+
+func (i GetKeypairTagArray) ToGetKeypairTagArrayOutput() GetKeypairTagArrayOutput {
+	return i.ToGetKeypairTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeypairTagArray) ToGetKeypairTagArrayOutputWithContext(ctx context.Context) GetKeypairTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeypairTagArrayOutput)
+}
+
+type GetKeypairTagOutput struct{ *pulumi.OutputState }
+
+func (GetKeypairTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeypairTag)(nil)).Elem()
+}
+
+func (o GetKeypairTagOutput) ToGetKeypairTagOutput() GetKeypairTagOutput {
+	return o
+}
+
+func (o GetKeypairTagOutput) ToGetKeypairTagOutputWithContext(ctx context.Context) GetKeypairTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetKeypairTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeypairTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetKeypairTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeypairTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetKeypairTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeypairTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeypairTag)(nil)).Elem()
+}
+
+func (o GetKeypairTagArrayOutput) ToGetKeypairTagArrayOutput() GetKeypairTagArrayOutput {
+	return o
+}
+
+func (o GetKeypairTagArrayOutput) ToGetKeypairTagArrayOutputWithContext(ctx context.Context) GetKeypairTagArrayOutput {
+	return o
+}
+
+func (o GetKeypairTagArrayOutput) Index(i pulumi.IntInput) GetKeypairTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeypairTag {
+		return vs[0].([]GetKeypairTag)[vs[1].(int)]
+	}).(GetKeypairTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsPtrInput)(nil)).Elem(), ImageDetectionResultsArgs{})
@@ -4032,6 +5186,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSystemVolumePtrInput)(nil)).Elem(), InstanceSystemVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvocationInvocationResultInput)(nil)).Elem(), InvocationInvocationResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvocationInvocationResultArrayInput)(nil)).Elem(), InvocationInvocationResultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvocationParameterDefinitionInput)(nil)).Elem(), InvocationParameterDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvocationParameterDefinitionArrayInput)(nil)).Elem(), InvocationParameterDefinitionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvocationTagInput)(nil)).Elem(), InvocationTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InvocationTagArrayInput)(nil)).Elem(), InvocationTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeypairTagInput)(nil)).Elem(), KeypairTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeypairTagArrayInput)(nil)).Elem(), KeypairTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsInput)(nil)).Elem(), GetImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemInput)(nil)).Elem(), GetImageDetectionResultsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemArrayInput)(nil)).Elem(), GetImageDetectionResultsItemArray{})
@@ -4051,6 +5213,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSystemVolumeInput)(nil)).Elem(), GetInstanceSystemVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationInvocationResultInput)(nil)).Elem(), GetInvocationInvocationResultArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationInvocationResultArrayInput)(nil)).Elem(), GetInvocationInvocationResultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationParameterDefinitionInput)(nil)).Elem(), GetInvocationParameterDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationParameterDefinitionArrayInput)(nil)).Elem(), GetInvocationParameterDefinitionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationTagInput)(nil)).Elem(), GetInvocationTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationTagArrayInput)(nil)).Elem(), GetInvocationTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeypairTagInput)(nil)).Elem(), GetKeypairTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeypairTagArrayInput)(nil)).Elem(), GetKeypairTagArray{})
 	pulumi.RegisterOutputType(ImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsPtrOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsItemOutput{})
@@ -4079,6 +5249,14 @@ func init() {
 	pulumi.RegisterOutputType(InstanceSystemVolumePtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(InvocationInvocationResultOutput{})
+	pulumi.RegisterOutputType(InvocationInvocationResultArrayOutput{})
+	pulumi.RegisterOutputType(InvocationParameterDefinitionOutput{})
+	pulumi.RegisterOutputType(InvocationParameterDefinitionArrayOutput{})
+	pulumi.RegisterOutputType(InvocationTagOutput{})
+	pulumi.RegisterOutputType(InvocationTagArrayOutput{})
+	pulumi.RegisterOutputType(KeypairTagOutput{})
+	pulumi.RegisterOutputType(KeypairTagArrayOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemArrayOutput{})
@@ -4098,4 +5276,12 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceSystemVolumeOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetInvocationInvocationResultOutput{})
+	pulumi.RegisterOutputType(GetInvocationInvocationResultArrayOutput{})
+	pulumi.RegisterOutputType(GetInvocationParameterDefinitionOutput{})
+	pulumi.RegisterOutputType(GetInvocationParameterDefinitionArrayOutput{})
+	pulumi.RegisterOutputType(GetInvocationTagOutput{})
+	pulumi.RegisterOutputType(GetInvocationTagArrayOutput{})
+	pulumi.RegisterOutputType(GetKeypairTagOutput{})
+	pulumi.RegisterOutputType(GetKeypairTagArrayOutput{})
 }

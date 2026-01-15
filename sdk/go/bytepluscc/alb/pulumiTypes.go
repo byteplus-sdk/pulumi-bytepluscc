@@ -13,6 +13,315 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AclAclEntry struct {
+	// IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	Description *string `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。
+	Entry *string `pulumi:"entry"`
+}
+
+// AclAclEntryInput is an input type that accepts AclAclEntryArgs and AclAclEntryOutput values.
+// You can construct a concrete instance of `AclAclEntryInput` via:
+//
+//	AclAclEntryArgs{...}
+type AclAclEntryInput interface {
+	pulumi.Input
+
+	ToAclAclEntryOutput() AclAclEntryOutput
+	ToAclAclEntryOutputWithContext(context.Context) AclAclEntryOutput
+}
+
+type AclAclEntryArgs struct {
+	// IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。
+	Entry pulumi.StringPtrInput `pulumi:"entry"`
+}
+
+func (AclAclEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclAclEntry)(nil)).Elem()
+}
+
+func (i AclAclEntryArgs) ToAclAclEntryOutput() AclAclEntryOutput {
+	return i.ToAclAclEntryOutputWithContext(context.Background())
+}
+
+func (i AclAclEntryArgs) ToAclAclEntryOutputWithContext(ctx context.Context) AclAclEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclAclEntryOutput)
+}
+
+// AclAclEntryArrayInput is an input type that accepts AclAclEntryArray and AclAclEntryArrayOutput values.
+// You can construct a concrete instance of `AclAclEntryArrayInput` via:
+//
+//	AclAclEntryArray{ AclAclEntryArgs{...} }
+type AclAclEntryArrayInput interface {
+	pulumi.Input
+
+	ToAclAclEntryArrayOutput() AclAclEntryArrayOutput
+	ToAclAclEntryArrayOutputWithContext(context.Context) AclAclEntryArrayOutput
+}
+
+type AclAclEntryArray []AclAclEntryInput
+
+func (AclAclEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclAclEntry)(nil)).Elem()
+}
+
+func (i AclAclEntryArray) ToAclAclEntryArrayOutput() AclAclEntryArrayOutput {
+	return i.ToAclAclEntryArrayOutputWithContext(context.Background())
+}
+
+func (i AclAclEntryArray) ToAclAclEntryArrayOutputWithContext(ctx context.Context) AclAclEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclAclEntryArrayOutput)
+}
+
+type AclAclEntryOutput struct{ *pulumi.OutputState }
+
+func (AclAclEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclAclEntry)(nil)).Elem()
+}
+
+func (o AclAclEntryOutput) ToAclAclEntryOutput() AclAclEntryOutput {
+	return o
+}
+
+func (o AclAclEntryOutput) ToAclAclEntryOutputWithContext(ctx context.Context) AclAclEntryOutput {
+	return o
+}
+
+// IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+func (o AclAclEntryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// IP条目的地址段，只支持CIDR地址。
+func (o AclAclEntryOutput) Entry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclAclEntry) *string { return v.Entry }).(pulumi.StringPtrOutput)
+}
+
+type AclAclEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (AclAclEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclAclEntry)(nil)).Elem()
+}
+
+func (o AclAclEntryArrayOutput) ToAclAclEntryArrayOutput() AclAclEntryArrayOutput {
+	return o
+}
+
+func (o AclAclEntryArrayOutput) ToAclAclEntryArrayOutputWithContext(ctx context.Context) AclAclEntryArrayOutput {
+	return o
+}
+
+func (o AclAclEntryArrayOutput) Index(i pulumi.IntInput) AclAclEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AclAclEntry {
+		return vs[0].([]AclAclEntry)[vs[1].(int)]
+	}).(AclAclEntryOutput)
+}
+
+type AclListener struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+	AclType *string `pulumi:"aclType"`
+}
+
+// AclListenerInput is an input type that accepts AclListenerArgs and AclListenerOutput values.
+// You can construct a concrete instance of `AclListenerInput` via:
+//
+//	AclListenerArgs{...}
+type AclListenerInput interface {
+	pulumi.Input
+
+	ToAclListenerOutput() AclListenerOutput
+	ToAclListenerOutputWithContext(context.Context) AclListenerOutput
+}
+
+type AclListenerArgs struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+	AclType pulumi.StringPtrInput `pulumi:"aclType"`
+}
+
+func (AclListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclListener)(nil)).Elem()
+}
+
+func (i AclListenerArgs) ToAclListenerOutput() AclListenerOutput {
+	return i.ToAclListenerOutputWithContext(context.Background())
+}
+
+func (i AclListenerArgs) ToAclListenerOutputWithContext(ctx context.Context) AclListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclListenerOutput)
+}
+
+// AclListenerArrayInput is an input type that accepts AclListenerArray and AclListenerArrayOutput values.
+// You can construct a concrete instance of `AclListenerArrayInput` via:
+//
+//	AclListenerArray{ AclListenerArgs{...} }
+type AclListenerArrayInput interface {
+	pulumi.Input
+
+	ToAclListenerArrayOutput() AclListenerArrayOutput
+	ToAclListenerArrayOutputWithContext(context.Context) AclListenerArrayOutput
+}
+
+type AclListenerArray []AclListenerInput
+
+func (AclListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclListener)(nil)).Elem()
+}
+
+func (i AclListenerArray) ToAclListenerArrayOutput() AclListenerArrayOutput {
+	return i.ToAclListenerArrayOutputWithContext(context.Background())
+}
+
+func (i AclListenerArray) ToAclListenerArrayOutputWithContext(ctx context.Context) AclListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclListenerArrayOutput)
+}
+
+type AclListenerOutput struct{ *pulumi.OutputState }
+
+func (AclListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclListener)(nil)).Elem()
+}
+
+func (o AclListenerOutput) ToAclListenerOutput() AclListenerOutput {
+	return o
+}
+
+func (o AclListenerOutput) ToAclListenerOutputWithContext(ctx context.Context) AclListenerOutput {
+	return o
+}
+
+// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+func (o AclListenerOutput) AclType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.AclType }).(pulumi.StringPtrOutput)
+}
+
+type AclListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (AclListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclListener)(nil)).Elem()
+}
+
+func (o AclListenerArrayOutput) ToAclListenerArrayOutput() AclListenerArrayOutput {
+	return o
+}
+
+func (o AclListenerArrayOutput) ToAclListenerArrayOutputWithContext(ctx context.Context) AclListenerArrayOutput {
+	return o
+}
+
+func (o AclListenerArrayOutput) Index(i pulumi.IntInput) AclListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AclListener {
+		return vs[0].([]AclListener)[vs[1].(int)]
+	}).(AclListenerOutput)
+}
+
+type AclTag struct {
+	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value *string `pulumi:"value"`
+}
+
+// AclTagInput is an input type that accepts AclTagArgs and AclTagOutput values.
+// You can construct a concrete instance of `AclTagInput` via:
+//
+//	AclTagArgs{...}
+type AclTagInput interface {
+	pulumi.Input
+
+	ToAclTagOutput() AclTagOutput
+	ToAclTagOutputWithContext(context.Context) AclTagOutput
+}
+
+type AclTagArgs struct {
+	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AclTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclTag)(nil)).Elem()
+}
+
+func (i AclTagArgs) ToAclTagOutput() AclTagOutput {
+	return i.ToAclTagOutputWithContext(context.Background())
+}
+
+func (i AclTagArgs) ToAclTagOutputWithContext(ctx context.Context) AclTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclTagOutput)
+}
+
+// AclTagArrayInput is an input type that accepts AclTagArray and AclTagArrayOutput values.
+// You can construct a concrete instance of `AclTagArrayInput` via:
+//
+//	AclTagArray{ AclTagArgs{...} }
+type AclTagArrayInput interface {
+	pulumi.Input
+
+	ToAclTagArrayOutput() AclTagArrayOutput
+	ToAclTagArrayOutputWithContext(context.Context) AclTagArrayOutput
+}
+
+type AclTagArray []AclTagInput
+
+func (AclTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclTag)(nil)).Elem()
+}
+
+func (i AclTagArray) ToAclTagArrayOutput() AclTagArrayOutput {
+	return i.ToAclTagArrayOutputWithContext(context.Background())
+}
+
+func (i AclTagArray) ToAclTagArrayOutputWithContext(ctx context.Context) AclTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclTagArrayOutput)
+}
+
+type AclTagOutput struct{ *pulumi.OutputState }
+
+func (AclTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclTag)(nil)).Elem()
+}
+
+func (o AclTagOutput) ToAclTagOutput() AclTagOutput {
+	return o
+}
+
+func (o AclTagOutput) ToAclTagOutputWithContext(ctx context.Context) AclTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+func (o AclTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+func (o AclTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AclTagArrayOutput struct{ *pulumi.OutputState }
+
+func (AclTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclTag)(nil)).Elem()
+}
+
+func (o AclTagArrayOutput) ToAclTagArrayOutput() AclTagArrayOutput {
+	return o
+}
+
+func (o AclTagArrayOutput) ToAclTagArrayOutputWithContext(ctx context.Context) AclTagArrayOutput {
+	return o
+}
+
+func (o AclTagArrayOutput) Index(i pulumi.IntInput) AclTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AclTag {
+		return vs[0].([]AclTag)[vs[1].(int)]
+	}).(AclTagOutput)
+}
+
 type CertificateTag struct {
 	// 用户标签的标签键。
 	Key *string `pulumi:"key"`
@@ -471,6 +780,2010 @@ func (o ListenerTagArrayOutput) Index(i pulumi.IntInput) ListenerTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ListenerTag {
 		return vs[0].([]ListenerTag)[vs[1].(int)]
 	}).(ListenerTagOutput)
+}
+
+type LoadBalancerEipBillingConfig struct {
+	// EIP的带宽峰值，单位为Mbps。
+	Bandwidth *int `pulumi:"bandwidth"`
+	// EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType *int `pulumi:"billingType"`
+	// 公网IP的线路类型，BGP表示多线。
+	Isp *string `pulumi:"isp"`
+}
+
+// LoadBalancerEipBillingConfigInput is an input type that accepts LoadBalancerEipBillingConfigArgs and LoadBalancerEipBillingConfigOutput values.
+// You can construct a concrete instance of `LoadBalancerEipBillingConfigInput` via:
+//
+//	LoadBalancerEipBillingConfigArgs{...}
+type LoadBalancerEipBillingConfigInput interface {
+	pulumi.Input
+
+	ToLoadBalancerEipBillingConfigOutput() LoadBalancerEipBillingConfigOutput
+	ToLoadBalancerEipBillingConfigOutputWithContext(context.Context) LoadBalancerEipBillingConfigOutput
+}
+
+type LoadBalancerEipBillingConfigArgs struct {
+	// EIP的带宽峰值，单位为Mbps。
+	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
+	// EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
+	// 公网IP的线路类型，BGP表示多线。
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+}
+
+func (LoadBalancerEipBillingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerEipBillingConfig)(nil)).Elem()
+}
+
+func (i LoadBalancerEipBillingConfigArgs) ToLoadBalancerEipBillingConfigOutput() LoadBalancerEipBillingConfigOutput {
+	return i.ToLoadBalancerEipBillingConfigOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerEipBillingConfigArgs) ToLoadBalancerEipBillingConfigOutputWithContext(ctx context.Context) LoadBalancerEipBillingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerEipBillingConfigOutput)
+}
+
+func (i LoadBalancerEipBillingConfigArgs) ToLoadBalancerEipBillingConfigPtrOutput() LoadBalancerEipBillingConfigPtrOutput {
+	return i.ToLoadBalancerEipBillingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerEipBillingConfigArgs) ToLoadBalancerEipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerEipBillingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerEipBillingConfigOutput).ToLoadBalancerEipBillingConfigPtrOutputWithContext(ctx)
+}
+
+// LoadBalancerEipBillingConfigPtrInput is an input type that accepts LoadBalancerEipBillingConfigArgs, LoadBalancerEipBillingConfigPtr and LoadBalancerEipBillingConfigPtrOutput values.
+// You can construct a concrete instance of `LoadBalancerEipBillingConfigPtrInput` via:
+//
+//	        LoadBalancerEipBillingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type LoadBalancerEipBillingConfigPtrInput interface {
+	pulumi.Input
+
+	ToLoadBalancerEipBillingConfigPtrOutput() LoadBalancerEipBillingConfigPtrOutput
+	ToLoadBalancerEipBillingConfigPtrOutputWithContext(context.Context) LoadBalancerEipBillingConfigPtrOutput
+}
+
+type loadBalancerEipBillingConfigPtrType LoadBalancerEipBillingConfigArgs
+
+func LoadBalancerEipBillingConfigPtr(v *LoadBalancerEipBillingConfigArgs) LoadBalancerEipBillingConfigPtrInput {
+	return (*loadBalancerEipBillingConfigPtrType)(v)
+}
+
+func (*loadBalancerEipBillingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerEipBillingConfig)(nil)).Elem()
+}
+
+func (i *loadBalancerEipBillingConfigPtrType) ToLoadBalancerEipBillingConfigPtrOutput() LoadBalancerEipBillingConfigPtrOutput {
+	return i.ToLoadBalancerEipBillingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *loadBalancerEipBillingConfigPtrType) ToLoadBalancerEipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerEipBillingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerEipBillingConfigPtrOutput)
+}
+
+type LoadBalancerEipBillingConfigOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerEipBillingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerEipBillingConfig)(nil)).Elem()
+}
+
+func (o LoadBalancerEipBillingConfigOutput) ToLoadBalancerEipBillingConfigOutput() LoadBalancerEipBillingConfigOutput {
+	return o
+}
+
+func (o LoadBalancerEipBillingConfigOutput) ToLoadBalancerEipBillingConfigOutputWithContext(ctx context.Context) LoadBalancerEipBillingConfigOutput {
+	return o
+}
+
+func (o LoadBalancerEipBillingConfigOutput) ToLoadBalancerEipBillingConfigPtrOutput() LoadBalancerEipBillingConfigPtrOutput {
+	return o.ToLoadBalancerEipBillingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o LoadBalancerEipBillingConfigOutput) ToLoadBalancerEipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerEipBillingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LoadBalancerEipBillingConfig) *LoadBalancerEipBillingConfig {
+		return &v
+	}).(LoadBalancerEipBillingConfigPtrOutput)
+}
+
+// EIP的带宽峰值，单位为Mbps。
+func (o LoadBalancerEipBillingConfigOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LoadBalancerEipBillingConfig) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
+}
+
+// EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o LoadBalancerEipBillingConfigOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LoadBalancerEipBillingConfig) *int { return v.BillingType }).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的线路类型，BGP表示多线。
+func (o LoadBalancerEipBillingConfigOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerEipBillingConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerEipBillingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerEipBillingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerEipBillingConfig)(nil)).Elem()
+}
+
+func (o LoadBalancerEipBillingConfigPtrOutput) ToLoadBalancerEipBillingConfigPtrOutput() LoadBalancerEipBillingConfigPtrOutput {
+	return o
+}
+
+func (o LoadBalancerEipBillingConfigPtrOutput) ToLoadBalancerEipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerEipBillingConfigPtrOutput {
+	return o
+}
+
+func (o LoadBalancerEipBillingConfigPtrOutput) Elem() LoadBalancerEipBillingConfigOutput {
+	return o.ApplyT(func(v *LoadBalancerEipBillingConfig) LoadBalancerEipBillingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret LoadBalancerEipBillingConfig
+		return ret
+	}).(LoadBalancerEipBillingConfigOutput)
+}
+
+// EIP的带宽峰值，单位为Mbps。
+func (o LoadBalancerEipBillingConfigPtrOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerEipBillingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Bandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o LoadBalancerEipBillingConfigPtrOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerEipBillingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BillingType
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的线路类型，BGP表示多线。
+func (o LoadBalancerEipBillingConfigPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerEipBillingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerGlobalAccelerator struct {
+	// 绑定的全球加速实例的ID。
+	AcceleratorId *string `pulumi:"acceleratorId"`
+	// 绑定的全球加速监听器的ID。
+	AcceleratorListenerId *string `pulumi:"acceleratorListenerId"`
+	// 绑定的终端节点组的ID。
+	EndpointGroupId *string `pulumi:"endpointGroupId"`
+	// 后端服务器的权重，决定流量分发比例。
+	Weight *int `pulumi:"weight"`
+}
+
+// LoadBalancerGlobalAcceleratorInput is an input type that accepts LoadBalancerGlobalAcceleratorArgs and LoadBalancerGlobalAcceleratorOutput values.
+// You can construct a concrete instance of `LoadBalancerGlobalAcceleratorInput` via:
+//
+//	LoadBalancerGlobalAcceleratorArgs{...}
+type LoadBalancerGlobalAcceleratorInput interface {
+	pulumi.Input
+
+	ToLoadBalancerGlobalAcceleratorOutput() LoadBalancerGlobalAcceleratorOutput
+	ToLoadBalancerGlobalAcceleratorOutputWithContext(context.Context) LoadBalancerGlobalAcceleratorOutput
+}
+
+type LoadBalancerGlobalAcceleratorArgs struct {
+	// 绑定的全球加速实例的ID。
+	AcceleratorId pulumi.StringPtrInput `pulumi:"acceleratorId"`
+	// 绑定的全球加速监听器的ID。
+	AcceleratorListenerId pulumi.StringPtrInput `pulumi:"acceleratorListenerId"`
+	// 绑定的终端节点组的ID。
+	EndpointGroupId pulumi.StringPtrInput `pulumi:"endpointGroupId"`
+	// 后端服务器的权重，决定流量分发比例。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (LoadBalancerGlobalAcceleratorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerGlobalAccelerator)(nil)).Elem()
+}
+
+func (i LoadBalancerGlobalAcceleratorArgs) ToLoadBalancerGlobalAcceleratorOutput() LoadBalancerGlobalAcceleratorOutput {
+	return i.ToLoadBalancerGlobalAcceleratorOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerGlobalAcceleratorArgs) ToLoadBalancerGlobalAcceleratorOutputWithContext(ctx context.Context) LoadBalancerGlobalAcceleratorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerGlobalAcceleratorOutput)
+}
+
+func (i LoadBalancerGlobalAcceleratorArgs) ToLoadBalancerGlobalAcceleratorPtrOutput() LoadBalancerGlobalAcceleratorPtrOutput {
+	return i.ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerGlobalAcceleratorArgs) ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(ctx context.Context) LoadBalancerGlobalAcceleratorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerGlobalAcceleratorOutput).ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(ctx)
+}
+
+// LoadBalancerGlobalAcceleratorPtrInput is an input type that accepts LoadBalancerGlobalAcceleratorArgs, LoadBalancerGlobalAcceleratorPtr and LoadBalancerGlobalAcceleratorPtrOutput values.
+// You can construct a concrete instance of `LoadBalancerGlobalAcceleratorPtrInput` via:
+//
+//	        LoadBalancerGlobalAcceleratorArgs{...}
+//
+//	or:
+//
+//	        nil
+type LoadBalancerGlobalAcceleratorPtrInput interface {
+	pulumi.Input
+
+	ToLoadBalancerGlobalAcceleratorPtrOutput() LoadBalancerGlobalAcceleratorPtrOutput
+	ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(context.Context) LoadBalancerGlobalAcceleratorPtrOutput
+}
+
+type loadBalancerGlobalAcceleratorPtrType LoadBalancerGlobalAcceleratorArgs
+
+func LoadBalancerGlobalAcceleratorPtr(v *LoadBalancerGlobalAcceleratorArgs) LoadBalancerGlobalAcceleratorPtrInput {
+	return (*loadBalancerGlobalAcceleratorPtrType)(v)
+}
+
+func (*loadBalancerGlobalAcceleratorPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerGlobalAccelerator)(nil)).Elem()
+}
+
+func (i *loadBalancerGlobalAcceleratorPtrType) ToLoadBalancerGlobalAcceleratorPtrOutput() LoadBalancerGlobalAcceleratorPtrOutput {
+	return i.ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(context.Background())
+}
+
+func (i *loadBalancerGlobalAcceleratorPtrType) ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(ctx context.Context) LoadBalancerGlobalAcceleratorPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerGlobalAcceleratorPtrOutput)
+}
+
+type LoadBalancerGlobalAcceleratorOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerGlobalAcceleratorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerGlobalAccelerator)(nil)).Elem()
+}
+
+func (o LoadBalancerGlobalAcceleratorOutput) ToLoadBalancerGlobalAcceleratorOutput() LoadBalancerGlobalAcceleratorOutput {
+	return o
+}
+
+func (o LoadBalancerGlobalAcceleratorOutput) ToLoadBalancerGlobalAcceleratorOutputWithContext(ctx context.Context) LoadBalancerGlobalAcceleratorOutput {
+	return o
+}
+
+func (o LoadBalancerGlobalAcceleratorOutput) ToLoadBalancerGlobalAcceleratorPtrOutput() LoadBalancerGlobalAcceleratorPtrOutput {
+	return o.ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(context.Background())
+}
+
+func (o LoadBalancerGlobalAcceleratorOutput) ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(ctx context.Context) LoadBalancerGlobalAcceleratorPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LoadBalancerGlobalAccelerator) *LoadBalancerGlobalAccelerator {
+		return &v
+	}).(LoadBalancerGlobalAcceleratorPtrOutput)
+}
+
+// 绑定的全球加速实例的ID。
+func (o LoadBalancerGlobalAcceleratorOutput) AcceleratorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerGlobalAccelerator) *string { return v.AcceleratorId }).(pulumi.StringPtrOutput)
+}
+
+// 绑定的全球加速监听器的ID。
+func (o LoadBalancerGlobalAcceleratorOutput) AcceleratorListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerGlobalAccelerator) *string { return v.AcceleratorListenerId }).(pulumi.StringPtrOutput)
+}
+
+// 绑定的终端节点组的ID。
+func (o LoadBalancerGlobalAcceleratorOutput) EndpointGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerGlobalAccelerator) *string { return v.EndpointGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的权重，决定流量分发比例。
+func (o LoadBalancerGlobalAcceleratorOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LoadBalancerGlobalAccelerator) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type LoadBalancerGlobalAcceleratorPtrOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerGlobalAcceleratorPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerGlobalAccelerator)(nil)).Elem()
+}
+
+func (o LoadBalancerGlobalAcceleratorPtrOutput) ToLoadBalancerGlobalAcceleratorPtrOutput() LoadBalancerGlobalAcceleratorPtrOutput {
+	return o
+}
+
+func (o LoadBalancerGlobalAcceleratorPtrOutput) ToLoadBalancerGlobalAcceleratorPtrOutputWithContext(ctx context.Context) LoadBalancerGlobalAcceleratorPtrOutput {
+	return o
+}
+
+func (o LoadBalancerGlobalAcceleratorPtrOutput) Elem() LoadBalancerGlobalAcceleratorOutput {
+	return o.ApplyT(func(v *LoadBalancerGlobalAccelerator) LoadBalancerGlobalAccelerator {
+		if v != nil {
+			return *v
+		}
+		var ret LoadBalancerGlobalAccelerator
+		return ret
+	}).(LoadBalancerGlobalAcceleratorOutput)
+}
+
+// 绑定的全球加速实例的ID。
+func (o LoadBalancerGlobalAcceleratorPtrOutput) AcceleratorId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerGlobalAccelerator) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AcceleratorId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 绑定的全球加速监听器的ID。
+func (o LoadBalancerGlobalAcceleratorPtrOutput) AcceleratorListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerGlobalAccelerator) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AcceleratorListenerId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 绑定的终端节点组的ID。
+func (o LoadBalancerGlobalAcceleratorPtrOutput) EndpointGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerGlobalAccelerator) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EndpointGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的权重，决定流量分发比例。
+func (o LoadBalancerGlobalAcceleratorPtrOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerGlobalAccelerator) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Weight
+	}).(pulumi.IntPtrOutput)
+}
+
+type LoadBalancerIpv6EipBillingConfig struct {
+	// IPv6 EIP的带宽峰值，单位为Mbps。
+	Bandwidth *int `pulumi:"bandwidth"`
+	// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType *int `pulumi:"billingType"`
+	// IPv6公网IP的线路类型，BGP表示多线。
+	Isp *string `pulumi:"isp"`
+}
+
+// LoadBalancerIpv6EipBillingConfigInput is an input type that accepts LoadBalancerIpv6EipBillingConfigArgs and LoadBalancerIpv6EipBillingConfigOutput values.
+// You can construct a concrete instance of `LoadBalancerIpv6EipBillingConfigInput` via:
+//
+//	LoadBalancerIpv6EipBillingConfigArgs{...}
+type LoadBalancerIpv6EipBillingConfigInput interface {
+	pulumi.Input
+
+	ToLoadBalancerIpv6EipBillingConfigOutput() LoadBalancerIpv6EipBillingConfigOutput
+	ToLoadBalancerIpv6EipBillingConfigOutputWithContext(context.Context) LoadBalancerIpv6EipBillingConfigOutput
+}
+
+type LoadBalancerIpv6EipBillingConfigArgs struct {
+	// IPv6 EIP的带宽峰值，单位为Mbps。
+	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
+	// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
+	// IPv6公网IP的线路类型，BGP表示多线。
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+}
+
+func (LoadBalancerIpv6EipBillingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerIpv6EipBillingConfig)(nil)).Elem()
+}
+
+func (i LoadBalancerIpv6EipBillingConfigArgs) ToLoadBalancerIpv6EipBillingConfigOutput() LoadBalancerIpv6EipBillingConfigOutput {
+	return i.ToLoadBalancerIpv6EipBillingConfigOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerIpv6EipBillingConfigArgs) ToLoadBalancerIpv6EipBillingConfigOutputWithContext(ctx context.Context) LoadBalancerIpv6EipBillingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerIpv6EipBillingConfigOutput)
+}
+
+func (i LoadBalancerIpv6EipBillingConfigArgs) ToLoadBalancerIpv6EipBillingConfigPtrOutput() LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return i.ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerIpv6EipBillingConfigArgs) ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerIpv6EipBillingConfigOutput).ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(ctx)
+}
+
+// LoadBalancerIpv6EipBillingConfigPtrInput is an input type that accepts LoadBalancerIpv6EipBillingConfigArgs, LoadBalancerIpv6EipBillingConfigPtr and LoadBalancerIpv6EipBillingConfigPtrOutput values.
+// You can construct a concrete instance of `LoadBalancerIpv6EipBillingConfigPtrInput` via:
+//
+//	        LoadBalancerIpv6EipBillingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type LoadBalancerIpv6EipBillingConfigPtrInput interface {
+	pulumi.Input
+
+	ToLoadBalancerIpv6EipBillingConfigPtrOutput() LoadBalancerIpv6EipBillingConfigPtrOutput
+	ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(context.Context) LoadBalancerIpv6EipBillingConfigPtrOutput
+}
+
+type loadBalancerIpv6EipBillingConfigPtrType LoadBalancerIpv6EipBillingConfigArgs
+
+func LoadBalancerIpv6EipBillingConfigPtr(v *LoadBalancerIpv6EipBillingConfigArgs) LoadBalancerIpv6EipBillingConfigPtrInput {
+	return (*loadBalancerIpv6EipBillingConfigPtrType)(v)
+}
+
+func (*loadBalancerIpv6EipBillingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerIpv6EipBillingConfig)(nil)).Elem()
+}
+
+func (i *loadBalancerIpv6EipBillingConfigPtrType) ToLoadBalancerIpv6EipBillingConfigPtrOutput() LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return i.ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *loadBalancerIpv6EipBillingConfigPtrType) ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerIpv6EipBillingConfigPtrOutput)
+}
+
+type LoadBalancerIpv6EipBillingConfigOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerIpv6EipBillingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerIpv6EipBillingConfig)(nil)).Elem()
+}
+
+func (o LoadBalancerIpv6EipBillingConfigOutput) ToLoadBalancerIpv6EipBillingConfigOutput() LoadBalancerIpv6EipBillingConfigOutput {
+	return o
+}
+
+func (o LoadBalancerIpv6EipBillingConfigOutput) ToLoadBalancerIpv6EipBillingConfigOutputWithContext(ctx context.Context) LoadBalancerIpv6EipBillingConfigOutput {
+	return o
+}
+
+func (o LoadBalancerIpv6EipBillingConfigOutput) ToLoadBalancerIpv6EipBillingConfigPtrOutput() LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return o.ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o LoadBalancerIpv6EipBillingConfigOutput) ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LoadBalancerIpv6EipBillingConfig) *LoadBalancerIpv6EipBillingConfig {
+		return &v
+	}).(LoadBalancerIpv6EipBillingConfigPtrOutput)
+}
+
+// IPv6 EIP的带宽峰值，单位为Mbps。
+func (o LoadBalancerIpv6EipBillingConfigOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LoadBalancerIpv6EipBillingConfig) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
+}
+
+// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o LoadBalancerIpv6EipBillingConfigOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LoadBalancerIpv6EipBillingConfig) *int { return v.BillingType }).(pulumi.IntPtrOutput)
+}
+
+// IPv6公网IP的线路类型，BGP表示多线。
+func (o LoadBalancerIpv6EipBillingConfigOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerIpv6EipBillingConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerIpv6EipBillingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerIpv6EipBillingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LoadBalancerIpv6EipBillingConfig)(nil)).Elem()
+}
+
+func (o LoadBalancerIpv6EipBillingConfigPtrOutput) ToLoadBalancerIpv6EipBillingConfigPtrOutput() LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return o
+}
+
+func (o LoadBalancerIpv6EipBillingConfigPtrOutput) ToLoadBalancerIpv6EipBillingConfigPtrOutputWithContext(ctx context.Context) LoadBalancerIpv6EipBillingConfigPtrOutput {
+	return o
+}
+
+func (o LoadBalancerIpv6EipBillingConfigPtrOutput) Elem() LoadBalancerIpv6EipBillingConfigOutput {
+	return o.ApplyT(func(v *LoadBalancerIpv6EipBillingConfig) LoadBalancerIpv6EipBillingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret LoadBalancerIpv6EipBillingConfig
+		return ret
+	}).(LoadBalancerIpv6EipBillingConfigOutput)
+}
+
+// IPv6 EIP的带宽峰值，单位为Mbps。
+func (o LoadBalancerIpv6EipBillingConfigPtrOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerIpv6EipBillingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Bandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o LoadBalancerIpv6EipBillingConfigPtrOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerIpv6EipBillingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BillingType
+	}).(pulumi.IntPtrOutput)
+}
+
+// IPv6公网IP的线路类型，BGP表示多线。
+func (o LoadBalancerIpv6EipBillingConfigPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerIpv6EipBillingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerTag struct {
+	// 标签的键，用于标识标签的类别。
+	Key *string `pulumi:"key"`
+	// 标签的值，用于标识具体的标签内容。
+	Value *string `pulumi:"value"`
+}
+
+// LoadBalancerTagInput is an input type that accepts LoadBalancerTagArgs and LoadBalancerTagOutput values.
+// You can construct a concrete instance of `LoadBalancerTagInput` via:
+//
+//	LoadBalancerTagArgs{...}
+type LoadBalancerTagInput interface {
+	pulumi.Input
+
+	ToLoadBalancerTagOutput() LoadBalancerTagOutput
+	ToLoadBalancerTagOutputWithContext(context.Context) LoadBalancerTagOutput
+}
+
+type LoadBalancerTagArgs struct {
+	// 标签的键，用于标识标签的类别。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签的值，用于标识具体的标签内容。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (LoadBalancerTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerTag)(nil)).Elem()
+}
+
+func (i LoadBalancerTagArgs) ToLoadBalancerTagOutput() LoadBalancerTagOutput {
+	return i.ToLoadBalancerTagOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerTagArgs) ToLoadBalancerTagOutputWithContext(ctx context.Context) LoadBalancerTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerTagOutput)
+}
+
+// LoadBalancerTagArrayInput is an input type that accepts LoadBalancerTagArray and LoadBalancerTagArrayOutput values.
+// You can construct a concrete instance of `LoadBalancerTagArrayInput` via:
+//
+//	LoadBalancerTagArray{ LoadBalancerTagArgs{...} }
+type LoadBalancerTagArrayInput interface {
+	pulumi.Input
+
+	ToLoadBalancerTagArrayOutput() LoadBalancerTagArrayOutput
+	ToLoadBalancerTagArrayOutputWithContext(context.Context) LoadBalancerTagArrayOutput
+}
+
+type LoadBalancerTagArray []LoadBalancerTagInput
+
+func (LoadBalancerTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LoadBalancerTag)(nil)).Elem()
+}
+
+func (i LoadBalancerTagArray) ToLoadBalancerTagArrayOutput() LoadBalancerTagArrayOutput {
+	return i.ToLoadBalancerTagArrayOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerTagArray) ToLoadBalancerTagArrayOutputWithContext(ctx context.Context) LoadBalancerTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerTagArrayOutput)
+}
+
+type LoadBalancerTagOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerTag)(nil)).Elem()
+}
+
+func (o LoadBalancerTagOutput) ToLoadBalancerTagOutput() LoadBalancerTagOutput {
+	return o
+}
+
+func (o LoadBalancerTagOutput) ToLoadBalancerTagOutputWithContext(ctx context.Context) LoadBalancerTagOutput {
+	return o
+}
+
+// 标签的键，用于标识标签的类别。
+func (o LoadBalancerTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签的值，用于标识具体的标签内容。
+func (o LoadBalancerTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerTagArrayOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LoadBalancerTag)(nil)).Elem()
+}
+
+func (o LoadBalancerTagArrayOutput) ToLoadBalancerTagArrayOutput() LoadBalancerTagArrayOutput {
+	return o
+}
+
+func (o LoadBalancerTagArrayOutput) ToLoadBalancerTagArrayOutputWithContext(ctx context.Context) LoadBalancerTagArrayOutput {
+	return o
+}
+
+func (o LoadBalancerTagArrayOutput) Index(i pulumi.IntInput) LoadBalancerTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LoadBalancerTag {
+		return vs[0].([]LoadBalancerTag)[vs[1].(int)]
+	}).(LoadBalancerTagOutput)
+}
+
+type LoadBalancerZoneMapping struct {
+	// 可用区内提供服务的子网ID。
+	SubnetId *string `pulumi:"subnetId"`
+	// 可用区的唯一标识符。
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// LoadBalancerZoneMappingInput is an input type that accepts LoadBalancerZoneMappingArgs and LoadBalancerZoneMappingOutput values.
+// You can construct a concrete instance of `LoadBalancerZoneMappingInput` via:
+//
+//	LoadBalancerZoneMappingArgs{...}
+type LoadBalancerZoneMappingInput interface {
+	pulumi.Input
+
+	ToLoadBalancerZoneMappingOutput() LoadBalancerZoneMappingOutput
+	ToLoadBalancerZoneMappingOutputWithContext(context.Context) LoadBalancerZoneMappingOutput
+}
+
+type LoadBalancerZoneMappingArgs struct {
+	// 可用区内提供服务的子网ID。
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// 可用区的唯一标识符。
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (LoadBalancerZoneMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (i LoadBalancerZoneMappingArgs) ToLoadBalancerZoneMappingOutput() LoadBalancerZoneMappingOutput {
+	return i.ToLoadBalancerZoneMappingOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerZoneMappingArgs) ToLoadBalancerZoneMappingOutputWithContext(ctx context.Context) LoadBalancerZoneMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerZoneMappingOutput)
+}
+
+// LoadBalancerZoneMappingArrayInput is an input type that accepts LoadBalancerZoneMappingArray and LoadBalancerZoneMappingArrayOutput values.
+// You can construct a concrete instance of `LoadBalancerZoneMappingArrayInput` via:
+//
+//	LoadBalancerZoneMappingArray{ LoadBalancerZoneMappingArgs{...} }
+type LoadBalancerZoneMappingArrayInput interface {
+	pulumi.Input
+
+	ToLoadBalancerZoneMappingArrayOutput() LoadBalancerZoneMappingArrayOutput
+	ToLoadBalancerZoneMappingArrayOutputWithContext(context.Context) LoadBalancerZoneMappingArrayOutput
+}
+
+type LoadBalancerZoneMappingArray []LoadBalancerZoneMappingInput
+
+func (LoadBalancerZoneMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (i LoadBalancerZoneMappingArray) ToLoadBalancerZoneMappingArrayOutput() LoadBalancerZoneMappingArrayOutput {
+	return i.ToLoadBalancerZoneMappingArrayOutputWithContext(context.Background())
+}
+
+func (i LoadBalancerZoneMappingArray) ToLoadBalancerZoneMappingArrayOutputWithContext(ctx context.Context) LoadBalancerZoneMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerZoneMappingArrayOutput)
+}
+
+type LoadBalancerZoneMappingOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerZoneMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (o LoadBalancerZoneMappingOutput) ToLoadBalancerZoneMappingOutput() LoadBalancerZoneMappingOutput {
+	return o
+}
+
+func (o LoadBalancerZoneMappingOutput) ToLoadBalancerZoneMappingOutputWithContext(ctx context.Context) LoadBalancerZoneMappingOutput {
+	return o
+}
+
+// 可用区内提供服务的子网ID。
+func (o LoadBalancerZoneMappingOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerZoneMapping) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// 可用区的唯一标识符。
+func (o LoadBalancerZoneMappingOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerZoneMapping) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type LoadBalancerZoneMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (LoadBalancerZoneMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (o LoadBalancerZoneMappingArrayOutput) ToLoadBalancerZoneMappingArrayOutput() LoadBalancerZoneMappingArrayOutput {
+	return o
+}
+
+func (o LoadBalancerZoneMappingArrayOutput) ToLoadBalancerZoneMappingArrayOutputWithContext(ctx context.Context) LoadBalancerZoneMappingArrayOutput {
+	return o
+}
+
+func (o LoadBalancerZoneMappingArrayOutput) Index(i pulumi.IntInput) LoadBalancerZoneMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LoadBalancerZoneMapping {
+		return vs[0].([]LoadBalancerZoneMapping)[vs[1].(int)]
+	}).(LoadBalancerZoneMappingOutput)
+}
+
+type ServerGroupHealthCheck struct {
+	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+	Domain *string `pulumi:"domain"`
+	// 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+	Enabled *string `pulumi:"enabled"`
+	// 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+	HealthyThreshold *int `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+	HttpCode *string `pulumi:"httpCode"`
+	// 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+	HttpVersion *string `pulumi:"httpVersion"`
+	// 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+	Interval *int `pulumi:"interval"`
+	// 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+	Method *string `pulumi:"method"`
+	// 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	Port *int `pulumi:"port"`
+	// 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+	Protocol *string `pulumi:"protocol"`
+	// 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+	Timeout *int `pulumi:"timeout"`
+	// 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	Uri *string `pulumi:"uri"`
+}
+
+// ServerGroupHealthCheckInput is an input type that accepts ServerGroupHealthCheckArgs and ServerGroupHealthCheckOutput values.
+// You can construct a concrete instance of `ServerGroupHealthCheckInput` via:
+//
+//	ServerGroupHealthCheckArgs{...}
+type ServerGroupHealthCheckInput interface {
+	pulumi.Input
+
+	ToServerGroupHealthCheckOutput() ServerGroupHealthCheckOutput
+	ToServerGroupHealthCheckOutputWithContext(context.Context) ServerGroupHealthCheckOutput
+}
+
+type ServerGroupHealthCheckArgs struct {
+	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+	Enabled pulumi.StringPtrInput `pulumi:"enabled"`
+	// 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+	HttpCode pulumi.StringPtrInput `pulumi:"httpCode"`
+	// 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+	HttpVersion pulumi.StringPtrInput `pulumi:"httpVersion"`
+	// 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+	Interval pulumi.IntPtrInput `pulumi:"interval"`
+	// 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+	Method pulumi.StringPtrInput `pulumi:"method"`
+	// 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
+	// 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+	UnhealthyThreshold pulumi.IntPtrInput `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	Uri pulumi.StringPtrInput `pulumi:"uri"`
+}
+
+func (ServerGroupHealthCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (i ServerGroupHealthCheckArgs) ToServerGroupHealthCheckOutput() ServerGroupHealthCheckOutput {
+	return i.ToServerGroupHealthCheckOutputWithContext(context.Background())
+}
+
+func (i ServerGroupHealthCheckArgs) ToServerGroupHealthCheckOutputWithContext(ctx context.Context) ServerGroupHealthCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupHealthCheckOutput)
+}
+
+func (i ServerGroupHealthCheckArgs) ToServerGroupHealthCheckPtrOutput() ServerGroupHealthCheckPtrOutput {
+	return i.ToServerGroupHealthCheckPtrOutputWithContext(context.Background())
+}
+
+func (i ServerGroupHealthCheckArgs) ToServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) ServerGroupHealthCheckPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupHealthCheckOutput).ToServerGroupHealthCheckPtrOutputWithContext(ctx)
+}
+
+// ServerGroupHealthCheckPtrInput is an input type that accepts ServerGroupHealthCheckArgs, ServerGroupHealthCheckPtr and ServerGroupHealthCheckPtrOutput values.
+// You can construct a concrete instance of `ServerGroupHealthCheckPtrInput` via:
+//
+//	        ServerGroupHealthCheckArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerGroupHealthCheckPtrInput interface {
+	pulumi.Input
+
+	ToServerGroupHealthCheckPtrOutput() ServerGroupHealthCheckPtrOutput
+	ToServerGroupHealthCheckPtrOutputWithContext(context.Context) ServerGroupHealthCheckPtrOutput
+}
+
+type serverGroupHealthCheckPtrType ServerGroupHealthCheckArgs
+
+func ServerGroupHealthCheckPtr(v *ServerGroupHealthCheckArgs) ServerGroupHealthCheckPtrInput {
+	return (*serverGroupHealthCheckPtrType)(v)
+}
+
+func (*serverGroupHealthCheckPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (i *serverGroupHealthCheckPtrType) ToServerGroupHealthCheckPtrOutput() ServerGroupHealthCheckPtrOutput {
+	return i.ToServerGroupHealthCheckPtrOutputWithContext(context.Background())
+}
+
+func (i *serverGroupHealthCheckPtrType) ToServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) ServerGroupHealthCheckPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupHealthCheckPtrOutput)
+}
+
+type ServerGroupHealthCheckOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupHealthCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (o ServerGroupHealthCheckOutput) ToServerGroupHealthCheckOutput() ServerGroupHealthCheckOutput {
+	return o
+}
+
+func (o ServerGroupHealthCheckOutput) ToServerGroupHealthCheckOutputWithContext(ctx context.Context) ServerGroupHealthCheckOutput {
+	return o
+}
+
+func (o ServerGroupHealthCheckOutput) ToServerGroupHealthCheckPtrOutput() ServerGroupHealthCheckPtrOutput {
+	return o.ToServerGroupHealthCheckPtrOutputWithContext(context.Background())
+}
+
+func (o ServerGroupHealthCheckOutput) ToServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) ServerGroupHealthCheckPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerGroupHealthCheck) *ServerGroupHealthCheck {
+		return &v
+	}).(ServerGroupHealthCheckPtrOutput)
+}
+
+// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+func (o ServerGroupHealthCheckOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+func (o ServerGroupHealthCheckOutput) Enabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Enabled }).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+func (o ServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.HealthyThreshold }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+func (o ServerGroupHealthCheckOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.HttpCode }).(pulumi.StringPtrOutput)
+}
+
+// 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+func (o ServerGroupHealthCheckOutput) HttpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.HttpVersion }).(pulumi.StringPtrOutput)
+}
+
+// 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+func (o ServerGroupHealthCheckOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.Interval }).(pulumi.IntPtrOutput)
+}
+
+// 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+func (o ServerGroupHealthCheckOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Method }).(pulumi.StringPtrOutput)
+}
+
+// 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+func (o ServerGroupHealthCheckOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+func (o ServerGroupHealthCheckOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+func (o ServerGroupHealthCheckOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.Timeout }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+func (o ServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *int { return v.UnhealthyThreshold }).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+func (o ServerGroupHealthCheckOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupHealthCheck) *string { return v.Uri }).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupHealthCheckPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupHealthCheckPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (o ServerGroupHealthCheckPtrOutput) ToServerGroupHealthCheckPtrOutput() ServerGroupHealthCheckPtrOutput {
+	return o
+}
+
+func (o ServerGroupHealthCheckPtrOutput) ToServerGroupHealthCheckPtrOutputWithContext(ctx context.Context) ServerGroupHealthCheckPtrOutput {
+	return o
+}
+
+func (o ServerGroupHealthCheckPtrOutput) Elem() ServerGroupHealthCheckOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) ServerGroupHealthCheck {
+		if v != nil {
+			return *v
+		}
+		var ret ServerGroupHealthCheck
+		return ret
+	}).(ServerGroupHealthCheckOutput)
+}
+
+// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+func (o ServerGroupHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(pulumi.StringPtrOutput)
+}
+
+// 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+func (o ServerGroupHealthCheckPtrOutput) Enabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+func (o ServerGroupHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HealthyThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+func (o ServerGroupHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+func (o ServerGroupHealthCheckPtrOutput) HttpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+func (o ServerGroupHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Interval
+	}).(pulumi.IntPtrOutput)
+}
+
+// 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+func (o ServerGroupHealthCheckPtrOutput) Method() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Method
+	}).(pulumi.StringPtrOutput)
+}
+
+// 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+func (o ServerGroupHealthCheckPtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+func (o ServerGroupHealthCheckPtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+func (o ServerGroupHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Timeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+func (o ServerGroupHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *int {
+		if v == nil {
+			return nil
+		}
+		return v.UnhealthyThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+func (o ServerGroupHealthCheckPtrOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupHealthCheck) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Uri
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupListener struct {
+	// 监听器的ID。
+	ListenerId *string `pulumi:"listenerId"`
+}
+
+// ServerGroupListenerInput is an input type that accepts ServerGroupListenerArgs and ServerGroupListenerOutput values.
+// You can construct a concrete instance of `ServerGroupListenerInput` via:
+//
+//	ServerGroupListenerArgs{...}
+type ServerGroupListenerInput interface {
+	pulumi.Input
+
+	ToServerGroupListenerOutput() ServerGroupListenerOutput
+	ToServerGroupListenerOutputWithContext(context.Context) ServerGroupListenerOutput
+}
+
+type ServerGroupListenerArgs struct {
+	// 监听器的ID。
+	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
+}
+
+func (ServerGroupListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupListener)(nil)).Elem()
+}
+
+func (i ServerGroupListenerArgs) ToServerGroupListenerOutput() ServerGroupListenerOutput {
+	return i.ToServerGroupListenerOutputWithContext(context.Background())
+}
+
+func (i ServerGroupListenerArgs) ToServerGroupListenerOutputWithContext(ctx context.Context) ServerGroupListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupListenerOutput)
+}
+
+// ServerGroupListenerArrayInput is an input type that accepts ServerGroupListenerArray and ServerGroupListenerArrayOutput values.
+// You can construct a concrete instance of `ServerGroupListenerArrayInput` via:
+//
+//	ServerGroupListenerArray{ ServerGroupListenerArgs{...} }
+type ServerGroupListenerArrayInput interface {
+	pulumi.Input
+
+	ToServerGroupListenerArrayOutput() ServerGroupListenerArrayOutput
+	ToServerGroupListenerArrayOutputWithContext(context.Context) ServerGroupListenerArrayOutput
+}
+
+type ServerGroupListenerArray []ServerGroupListenerInput
+
+func (ServerGroupListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupListener)(nil)).Elem()
+}
+
+func (i ServerGroupListenerArray) ToServerGroupListenerArrayOutput() ServerGroupListenerArrayOutput {
+	return i.ToServerGroupListenerArrayOutputWithContext(context.Background())
+}
+
+func (i ServerGroupListenerArray) ToServerGroupListenerArrayOutputWithContext(ctx context.Context) ServerGroupListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupListenerArrayOutput)
+}
+
+type ServerGroupListenerOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupListener)(nil)).Elem()
+}
+
+func (o ServerGroupListenerOutput) ToServerGroupListenerOutput() ServerGroupListenerOutput {
+	return o
+}
+
+func (o ServerGroupListenerOutput) ToServerGroupListenerOutputWithContext(ctx context.Context) ServerGroupListenerOutput {
+	return o
+}
+
+// 监听器的ID。
+func (o ServerGroupListenerOutput) ListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupListener)(nil)).Elem()
+}
+
+func (o ServerGroupListenerArrayOutput) ToServerGroupListenerArrayOutput() ServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o ServerGroupListenerArrayOutput) ToServerGroupListenerArrayOutputWithContext(ctx context.Context) ServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o ServerGroupListenerArrayOutput) Index(i pulumi.IntInput) ServerGroupListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerGroupListener {
+		return vs[0].([]ServerGroupListener)[vs[1].(int)]
+	}).(ServerGroupListenerOutput)
+}
+
+type ServerGroupServer struct {
+	// 后端服务器的描述。
+	Description *string `pulumi:"description"`
+	// 云服务器实例或网卡的ID。
+	InstanceId *string `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。
+	Ip *string `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。
+	Port *int `pulumi:"port"`
+	// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+	RemoteEnabled *string `pulumi:"remoteEnabled"`
+	// 后端服务器ID。
+	ServerId *string `pulumi:"serverId"`
+	// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+	Type *string `pulumi:"type"`
+	// 后端服务器的权重。
+	Weight *int `pulumi:"weight"`
+}
+
+// ServerGroupServerInput is an input type that accepts ServerGroupServerArgs and ServerGroupServerOutput values.
+// You can construct a concrete instance of `ServerGroupServerInput` via:
+//
+//	ServerGroupServerArgs{...}
+type ServerGroupServerInput interface {
+	pulumi.Input
+
+	ToServerGroupServerOutput() ServerGroupServerOutput
+	ToServerGroupServerOutputWithContext(context.Context) ServerGroupServerOutput
+}
+
+type ServerGroupServerArgs struct {
+	// 后端服务器的描述。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 云服务器实例或网卡的ID。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+	RemoteEnabled pulumi.StringPtrInput `pulumi:"remoteEnabled"`
+	// 后端服务器ID。
+	ServerId pulumi.StringPtrInput `pulumi:"serverId"`
+	// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// 后端服务器的权重。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (ServerGroupServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupServer)(nil)).Elem()
+}
+
+func (i ServerGroupServerArgs) ToServerGroupServerOutput() ServerGroupServerOutput {
+	return i.ToServerGroupServerOutputWithContext(context.Background())
+}
+
+func (i ServerGroupServerArgs) ToServerGroupServerOutputWithContext(ctx context.Context) ServerGroupServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupServerOutput)
+}
+
+// ServerGroupServerArrayInput is an input type that accepts ServerGroupServerArray and ServerGroupServerArrayOutput values.
+// You can construct a concrete instance of `ServerGroupServerArrayInput` via:
+//
+//	ServerGroupServerArray{ ServerGroupServerArgs{...} }
+type ServerGroupServerArrayInput interface {
+	pulumi.Input
+
+	ToServerGroupServerArrayOutput() ServerGroupServerArrayOutput
+	ToServerGroupServerArrayOutputWithContext(context.Context) ServerGroupServerArrayOutput
+}
+
+type ServerGroupServerArray []ServerGroupServerInput
+
+func (ServerGroupServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupServer)(nil)).Elem()
+}
+
+func (i ServerGroupServerArray) ToServerGroupServerArrayOutput() ServerGroupServerArrayOutput {
+	return i.ToServerGroupServerArrayOutputWithContext(context.Background())
+}
+
+func (i ServerGroupServerArray) ToServerGroupServerArrayOutputWithContext(ctx context.Context) ServerGroupServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupServerArrayOutput)
+}
+
+type ServerGroupServerOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupServer)(nil)).Elem()
+}
+
+func (o ServerGroupServerOutput) ToServerGroupServerOutput() ServerGroupServerOutput {
+	return o
+}
+
+func (o ServerGroupServerOutput) ToServerGroupServerOutputWithContext(ctx context.Context) ServerGroupServerOutput {
+	return o
+}
+
+// 后端服务器的描述。
+func (o ServerGroupServerOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 云服务器实例或网卡的ID。
+func (o ServerGroupServerOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的私网IP地址。
+func (o ServerGroupServerOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.Ip }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器接收请求的端口号。
+func (o ServerGroupServerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+func (o ServerGroupServerOutput) RemoteEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.RemoteEnabled }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器ID。
+func (o ServerGroupServerOutput) ServerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.ServerId }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+func (o ServerGroupServerOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// 后端服务器的权重。
+func (o ServerGroupServerOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupServer) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type ServerGroupServerArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupServer)(nil)).Elem()
+}
+
+func (o ServerGroupServerArrayOutput) ToServerGroupServerArrayOutput() ServerGroupServerArrayOutput {
+	return o
+}
+
+func (o ServerGroupServerArrayOutput) ToServerGroupServerArrayOutputWithContext(ctx context.Context) ServerGroupServerArrayOutput {
+	return o
+}
+
+func (o ServerGroupServerArrayOutput) Index(i pulumi.IntInput) ServerGroupServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerGroupServer {
+		return vs[0].([]ServerGroupServer)[vs[1].(int)]
+	}).(ServerGroupServerOutput)
+}
+
+type ServerGroupStickySessionConfig struct {
+	// 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+	Cookie *string `pulumi:"cookie"`
+	// 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+	CookieTimeout *int `pulumi:"cookieTimeout"`
+	// 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+	StickySessionEnabled *string `pulumi:"stickySessionEnabled"`
+	// 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+	StickySessionType *string `pulumi:"stickySessionType"`
+}
+
+// ServerGroupStickySessionConfigInput is an input type that accepts ServerGroupStickySessionConfigArgs and ServerGroupStickySessionConfigOutput values.
+// You can construct a concrete instance of `ServerGroupStickySessionConfigInput` via:
+//
+//	ServerGroupStickySessionConfigArgs{...}
+type ServerGroupStickySessionConfigInput interface {
+	pulumi.Input
+
+	ToServerGroupStickySessionConfigOutput() ServerGroupStickySessionConfigOutput
+	ToServerGroupStickySessionConfigOutputWithContext(context.Context) ServerGroupStickySessionConfigOutput
+}
+
+type ServerGroupStickySessionConfigArgs struct {
+	// 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+	Cookie pulumi.StringPtrInput `pulumi:"cookie"`
+	// 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+	CookieTimeout pulumi.IntPtrInput `pulumi:"cookieTimeout"`
+	// 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+	StickySessionEnabled pulumi.StringPtrInput `pulumi:"stickySessionEnabled"`
+	// 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+	StickySessionType pulumi.StringPtrInput `pulumi:"stickySessionType"`
+}
+
+func (ServerGroupStickySessionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupStickySessionConfig)(nil)).Elem()
+}
+
+func (i ServerGroupStickySessionConfigArgs) ToServerGroupStickySessionConfigOutput() ServerGroupStickySessionConfigOutput {
+	return i.ToServerGroupStickySessionConfigOutputWithContext(context.Background())
+}
+
+func (i ServerGroupStickySessionConfigArgs) ToServerGroupStickySessionConfigOutputWithContext(ctx context.Context) ServerGroupStickySessionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupStickySessionConfigOutput)
+}
+
+func (i ServerGroupStickySessionConfigArgs) ToServerGroupStickySessionConfigPtrOutput() ServerGroupStickySessionConfigPtrOutput {
+	return i.ToServerGroupStickySessionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ServerGroupStickySessionConfigArgs) ToServerGroupStickySessionConfigPtrOutputWithContext(ctx context.Context) ServerGroupStickySessionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupStickySessionConfigOutput).ToServerGroupStickySessionConfigPtrOutputWithContext(ctx)
+}
+
+// ServerGroupStickySessionConfigPtrInput is an input type that accepts ServerGroupStickySessionConfigArgs, ServerGroupStickySessionConfigPtr and ServerGroupStickySessionConfigPtrOutput values.
+// You can construct a concrete instance of `ServerGroupStickySessionConfigPtrInput` via:
+//
+//	        ServerGroupStickySessionConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ServerGroupStickySessionConfigPtrInput interface {
+	pulumi.Input
+
+	ToServerGroupStickySessionConfigPtrOutput() ServerGroupStickySessionConfigPtrOutput
+	ToServerGroupStickySessionConfigPtrOutputWithContext(context.Context) ServerGroupStickySessionConfigPtrOutput
+}
+
+type serverGroupStickySessionConfigPtrType ServerGroupStickySessionConfigArgs
+
+func ServerGroupStickySessionConfigPtr(v *ServerGroupStickySessionConfigArgs) ServerGroupStickySessionConfigPtrInput {
+	return (*serverGroupStickySessionConfigPtrType)(v)
+}
+
+func (*serverGroupStickySessionConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerGroupStickySessionConfig)(nil)).Elem()
+}
+
+func (i *serverGroupStickySessionConfigPtrType) ToServerGroupStickySessionConfigPtrOutput() ServerGroupStickySessionConfigPtrOutput {
+	return i.ToServerGroupStickySessionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *serverGroupStickySessionConfigPtrType) ToServerGroupStickySessionConfigPtrOutputWithContext(ctx context.Context) ServerGroupStickySessionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupStickySessionConfigPtrOutput)
+}
+
+type ServerGroupStickySessionConfigOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupStickySessionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupStickySessionConfig)(nil)).Elem()
+}
+
+func (o ServerGroupStickySessionConfigOutput) ToServerGroupStickySessionConfigOutput() ServerGroupStickySessionConfigOutput {
+	return o
+}
+
+func (o ServerGroupStickySessionConfigOutput) ToServerGroupStickySessionConfigOutputWithContext(ctx context.Context) ServerGroupStickySessionConfigOutput {
+	return o
+}
+
+func (o ServerGroupStickySessionConfigOutput) ToServerGroupStickySessionConfigPtrOutput() ServerGroupStickySessionConfigPtrOutput {
+	return o.ToServerGroupStickySessionConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ServerGroupStickySessionConfigOutput) ToServerGroupStickySessionConfigPtrOutputWithContext(ctx context.Context) ServerGroupStickySessionConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ServerGroupStickySessionConfig) *ServerGroupStickySessionConfig {
+		return &v
+	}).(ServerGroupStickySessionConfigPtrOutput)
+}
+
+// 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+func (o ServerGroupStickySessionConfigOutput) Cookie() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupStickySessionConfig) *string { return v.Cookie }).(pulumi.StringPtrOutput)
+}
+
+// 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+func (o ServerGroupStickySessionConfigOutput) CookieTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServerGroupStickySessionConfig) *int { return v.CookieTimeout }).(pulumi.IntPtrOutput)
+}
+
+// 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+func (o ServerGroupStickySessionConfigOutput) StickySessionEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupStickySessionConfig) *string { return v.StickySessionEnabled }).(pulumi.StringPtrOutput)
+}
+
+// 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+func (o ServerGroupStickySessionConfigOutput) StickySessionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupStickySessionConfig) *string { return v.StickySessionType }).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupStickySessionConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupStickySessionConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ServerGroupStickySessionConfig)(nil)).Elem()
+}
+
+func (o ServerGroupStickySessionConfigPtrOutput) ToServerGroupStickySessionConfigPtrOutput() ServerGroupStickySessionConfigPtrOutput {
+	return o
+}
+
+func (o ServerGroupStickySessionConfigPtrOutput) ToServerGroupStickySessionConfigPtrOutputWithContext(ctx context.Context) ServerGroupStickySessionConfigPtrOutput {
+	return o
+}
+
+func (o ServerGroupStickySessionConfigPtrOutput) Elem() ServerGroupStickySessionConfigOutput {
+	return o.ApplyT(func(v *ServerGroupStickySessionConfig) ServerGroupStickySessionConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ServerGroupStickySessionConfig
+		return ret
+	}).(ServerGroupStickySessionConfigOutput)
+}
+
+// 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+func (o ServerGroupStickySessionConfigPtrOutput) Cookie() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupStickySessionConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Cookie
+	}).(pulumi.StringPtrOutput)
+}
+
+// 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+func (o ServerGroupStickySessionConfigPtrOutput) CookieTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ServerGroupStickySessionConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CookieTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+func (o ServerGroupStickySessionConfigPtrOutput) StickySessionEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupStickySessionConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StickySessionEnabled
+	}).(pulumi.StringPtrOutput)
+}
+
+// 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+func (o ServerGroupStickySessionConfigPtrOutput) StickySessionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServerGroupStickySessionConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StickySessionType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupTag struct {
+	// 标签的标签键。同一资源的标签键不允许重复。
+	Key *string `pulumi:"key"`
+	// 标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// ServerGroupTagInput is an input type that accepts ServerGroupTagArgs and ServerGroupTagOutput values.
+// You can construct a concrete instance of `ServerGroupTagInput` via:
+//
+//	ServerGroupTagArgs{...}
+type ServerGroupTagInput interface {
+	pulumi.Input
+
+	ToServerGroupTagOutput() ServerGroupTagOutput
+	ToServerGroupTagOutputWithContext(context.Context) ServerGroupTagOutput
+}
+
+type ServerGroupTagArgs struct {
+	// 标签的标签键。同一资源的标签键不允许重复。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ServerGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupTag)(nil)).Elem()
+}
+
+func (i ServerGroupTagArgs) ToServerGroupTagOutput() ServerGroupTagOutput {
+	return i.ToServerGroupTagOutputWithContext(context.Background())
+}
+
+func (i ServerGroupTagArgs) ToServerGroupTagOutputWithContext(ctx context.Context) ServerGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupTagOutput)
+}
+
+// ServerGroupTagArrayInput is an input type that accepts ServerGroupTagArray and ServerGroupTagArrayOutput values.
+// You can construct a concrete instance of `ServerGroupTagArrayInput` via:
+//
+//	ServerGroupTagArray{ ServerGroupTagArgs{...} }
+type ServerGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToServerGroupTagArrayOutput() ServerGroupTagArrayOutput
+	ToServerGroupTagArrayOutputWithContext(context.Context) ServerGroupTagArrayOutput
+}
+
+type ServerGroupTagArray []ServerGroupTagInput
+
+func (ServerGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupTag)(nil)).Elem()
+}
+
+func (i ServerGroupTagArray) ToServerGroupTagArrayOutput() ServerGroupTagArrayOutput {
+	return i.ToServerGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i ServerGroupTagArray) ToServerGroupTagArrayOutputWithContext(ctx context.Context) ServerGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServerGroupTagArrayOutput)
+}
+
+type ServerGroupTagOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServerGroupTag)(nil)).Elem()
+}
+
+func (o ServerGroupTagOutput) ToServerGroupTagOutput() ServerGroupTagOutput {
+	return o
+}
+
+func (o ServerGroupTagOutput) ToServerGroupTagOutputWithContext(ctx context.Context) ServerGroupTagOutput {
+	return o
+}
+
+// 标签的标签键。同一资源的标签键不允许重复。
+func (o ServerGroupTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签的标签值。
+func (o ServerGroupTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServerGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ServerGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ServerGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServerGroupTag)(nil)).Elem()
+}
+
+func (o ServerGroupTagArrayOutput) ToServerGroupTagArrayOutput() ServerGroupTagArrayOutput {
+	return o
+}
+
+func (o ServerGroupTagArrayOutput) ToServerGroupTagArrayOutputWithContext(ctx context.Context) ServerGroupTagArrayOutput {
+	return o
+}
+
+func (o ServerGroupTagArrayOutput) Index(i pulumi.IntInput) ServerGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServerGroupTag {
+		return vs[0].([]ServerGroupTag)[vs[1].(int)]
+	}).(ServerGroupTagOutput)
+}
+
+type GetAclAclEntry struct {
+	// IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	Description string `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。
+	Entry string `pulumi:"entry"`
+}
+
+// GetAclAclEntryInput is an input type that accepts GetAclAclEntryArgs and GetAclAclEntryOutput values.
+// You can construct a concrete instance of `GetAclAclEntryInput` via:
+//
+//	GetAclAclEntryArgs{...}
+type GetAclAclEntryInput interface {
+	pulumi.Input
+
+	ToGetAclAclEntryOutput() GetAclAclEntryOutput
+	ToGetAclAclEntryOutputWithContext(context.Context) GetAclAclEntryOutput
+}
+
+type GetAclAclEntryArgs struct {
+	// IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+	Description pulumi.StringInput `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。
+	Entry pulumi.StringInput `pulumi:"entry"`
+}
+
+func (GetAclAclEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclAclEntry)(nil)).Elem()
+}
+
+func (i GetAclAclEntryArgs) ToGetAclAclEntryOutput() GetAclAclEntryOutput {
+	return i.ToGetAclAclEntryOutputWithContext(context.Background())
+}
+
+func (i GetAclAclEntryArgs) ToGetAclAclEntryOutputWithContext(ctx context.Context) GetAclAclEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclAclEntryOutput)
+}
+
+// GetAclAclEntryArrayInput is an input type that accepts GetAclAclEntryArray and GetAclAclEntryArrayOutput values.
+// You can construct a concrete instance of `GetAclAclEntryArrayInput` via:
+//
+//	GetAclAclEntryArray{ GetAclAclEntryArgs{...} }
+type GetAclAclEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetAclAclEntryArrayOutput() GetAclAclEntryArrayOutput
+	ToGetAclAclEntryArrayOutputWithContext(context.Context) GetAclAclEntryArrayOutput
+}
+
+type GetAclAclEntryArray []GetAclAclEntryInput
+
+func (GetAclAclEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclAclEntry)(nil)).Elem()
+}
+
+func (i GetAclAclEntryArray) ToGetAclAclEntryArrayOutput() GetAclAclEntryArrayOutput {
+	return i.ToGetAclAclEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetAclAclEntryArray) ToGetAclAclEntryArrayOutputWithContext(ctx context.Context) GetAclAclEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclAclEntryArrayOutput)
+}
+
+type GetAclAclEntryOutput struct{ *pulumi.OutputState }
+
+func (GetAclAclEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclAclEntry)(nil)).Elem()
+}
+
+func (o GetAclAclEntryOutput) ToGetAclAclEntryOutput() GetAclAclEntryOutput {
+	return o
+}
+
+func (o GetAclAclEntryOutput) ToGetAclAclEntryOutputWithContext(ctx context.Context) GetAclAclEntryOutput {
+	return o
+}
+
+// IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+func (o GetAclAclEntryOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclAclEntry) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// IP条目的地址段，只支持CIDR地址。
+func (o GetAclAclEntryOutput) Entry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclAclEntry) string { return v.Entry }).(pulumi.StringOutput)
+}
+
+type GetAclAclEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAclAclEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclAclEntry)(nil)).Elem()
+}
+
+func (o GetAclAclEntryArrayOutput) ToGetAclAclEntryArrayOutput() GetAclAclEntryArrayOutput {
+	return o
+}
+
+func (o GetAclAclEntryArrayOutput) ToGetAclAclEntryArrayOutputWithContext(ctx context.Context) GetAclAclEntryArrayOutput {
+	return o
+}
+
+func (o GetAclAclEntryArrayOutput) Index(i pulumi.IntInput) GetAclAclEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAclAclEntry {
+		return vs[0].([]GetAclAclEntry)[vs[1].(int)]
+	}).(GetAclAclEntryOutput)
+}
+
+type GetAclListener struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+	AclType string `pulumi:"aclType"`
+	// 监听器的ID
+	ListenerId string `pulumi:"listenerId"`
+	// 监听器的名称
+	ListenerName string `pulumi:"listenerName"`
+	// 监听器的端口
+	Port int `pulumi:"port"`
+	// 监听器的协议
+	Protocol string `pulumi:"protocol"`
+}
+
+// GetAclListenerInput is an input type that accepts GetAclListenerArgs and GetAclListenerOutput values.
+// You can construct a concrete instance of `GetAclListenerInput` via:
+//
+//	GetAclListenerArgs{...}
+type GetAclListenerInput interface {
+	pulumi.Input
+
+	ToGetAclListenerOutput() GetAclListenerOutput
+	ToGetAclListenerOutputWithContext(context.Context) GetAclListenerOutput
+}
+
+type GetAclListenerArgs struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+	AclType pulumi.StringInput `pulumi:"aclType"`
+	// 监听器的ID
+	ListenerId pulumi.StringInput `pulumi:"listenerId"`
+	// 监听器的名称
+	ListenerName pulumi.StringInput `pulumi:"listenerName"`
+	// 监听器的端口
+	Port pulumi.IntInput `pulumi:"port"`
+	// 监听器的协议
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+}
+
+func (GetAclListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclListener)(nil)).Elem()
+}
+
+func (i GetAclListenerArgs) ToGetAclListenerOutput() GetAclListenerOutput {
+	return i.ToGetAclListenerOutputWithContext(context.Background())
+}
+
+func (i GetAclListenerArgs) ToGetAclListenerOutputWithContext(ctx context.Context) GetAclListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclListenerOutput)
+}
+
+// GetAclListenerArrayInput is an input type that accepts GetAclListenerArray and GetAclListenerArrayOutput values.
+// You can construct a concrete instance of `GetAclListenerArrayInput` via:
+//
+//	GetAclListenerArray{ GetAclListenerArgs{...} }
+type GetAclListenerArrayInput interface {
+	pulumi.Input
+
+	ToGetAclListenerArrayOutput() GetAclListenerArrayOutput
+	ToGetAclListenerArrayOutputWithContext(context.Context) GetAclListenerArrayOutput
+}
+
+type GetAclListenerArray []GetAclListenerInput
+
+func (GetAclListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclListener)(nil)).Elem()
+}
+
+func (i GetAclListenerArray) ToGetAclListenerArrayOutput() GetAclListenerArrayOutput {
+	return i.ToGetAclListenerArrayOutputWithContext(context.Background())
+}
+
+func (i GetAclListenerArray) ToGetAclListenerArrayOutputWithContext(ctx context.Context) GetAclListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclListenerArrayOutput)
+}
+
+type GetAclListenerOutput struct{ *pulumi.OutputState }
+
+func (GetAclListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclListener)(nil)).Elem()
+}
+
+func (o GetAclListenerOutput) ToGetAclListenerOutput() GetAclListenerOutput {
+	return o
+}
+
+func (o GetAclListenerOutput) ToGetAclListenerOutputWithContext(ctx context.Context) GetAclListenerOutput {
+	return o
+}
+
+// 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+func (o GetAclListenerOutput) AclType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.AclType }).(pulumi.StringOutput)
+}
+
+// 监听器的ID
+func (o GetAclListenerOutput) ListenerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.ListenerId }).(pulumi.StringOutput)
+}
+
+// 监听器的名称
+func (o GetAclListenerOutput) ListenerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.ListenerName }).(pulumi.StringOutput)
+}
+
+// 监听器的端口
+func (o GetAclListenerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAclListener) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 监听器的协议
+func (o GetAclListenerOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+type GetAclListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAclListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclListener)(nil)).Elem()
+}
+
+func (o GetAclListenerArrayOutput) ToGetAclListenerArrayOutput() GetAclListenerArrayOutput {
+	return o
+}
+
+func (o GetAclListenerArrayOutput) ToGetAclListenerArrayOutputWithContext(ctx context.Context) GetAclListenerArrayOutput {
+	return o
+}
+
+func (o GetAclListenerArrayOutput) Index(i pulumi.IntInput) GetAclListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAclListener {
+		return vs[0].([]GetAclListener)[vs[1].(int)]
+	}).(GetAclListenerOutput)
+}
+
+type GetAclTag struct {
+	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value string `pulumi:"value"`
+}
+
+// GetAclTagInput is an input type that accepts GetAclTagArgs and GetAclTagOutput values.
+// You can construct a concrete instance of `GetAclTagInput` via:
+//
+//	GetAclTagArgs{...}
+type GetAclTagInput interface {
+	pulumi.Input
+
+	ToGetAclTagOutput() GetAclTagOutput
+	ToGetAclTagOutputWithContext(context.Context) GetAclTagOutput
+}
+
+type GetAclTagArgs struct {
+	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAclTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclTag)(nil)).Elem()
+}
+
+func (i GetAclTagArgs) ToGetAclTagOutput() GetAclTagOutput {
+	return i.ToGetAclTagOutputWithContext(context.Background())
+}
+
+func (i GetAclTagArgs) ToGetAclTagOutputWithContext(ctx context.Context) GetAclTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclTagOutput)
+}
+
+// GetAclTagArrayInput is an input type that accepts GetAclTagArray and GetAclTagArrayOutput values.
+// You can construct a concrete instance of `GetAclTagArrayInput` via:
+//
+//	GetAclTagArray{ GetAclTagArgs{...} }
+type GetAclTagArrayInput interface {
+	pulumi.Input
+
+	ToGetAclTagArrayOutput() GetAclTagArrayOutput
+	ToGetAclTagArrayOutputWithContext(context.Context) GetAclTagArrayOutput
+}
+
+type GetAclTagArray []GetAclTagInput
+
+func (GetAclTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclTag)(nil)).Elem()
+}
+
+func (i GetAclTagArray) ToGetAclTagArrayOutput() GetAclTagArrayOutput {
+	return i.ToGetAclTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAclTagArray) ToGetAclTagArrayOutputWithContext(ctx context.Context) GetAclTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclTagArrayOutput)
+}
+
+type GetAclTagOutput struct{ *pulumi.OutputState }
+
+func (GetAclTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclTag)(nil)).Elem()
+}
+
+func (o GetAclTagOutput) ToGetAclTagOutput() GetAclTagOutput {
+	return o
+}
+
+func (o GetAclTagOutput) ToGetAclTagOutputWithContext(ctx context.Context) GetAclTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+func (o GetAclTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+func (o GetAclTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAclTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAclTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclTag)(nil)).Elem()
+}
+
+func (o GetAclTagArrayOutput) ToGetAclTagArrayOutput() GetAclTagArrayOutput {
+	return o
+}
+
+func (o GetAclTagArrayOutput) ToGetAclTagArrayOutputWithContext(ctx context.Context) GetAclTagArrayOutput {
+	return o
+}
+
+func (o GetAclTagArrayOutput) Index(i pulumi.IntInput) GetAclTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAclTag {
+		return vs[0].([]GetAclTag)[vs[1].(int)]
+	}).(GetAclTagOutput)
 }
 
 type GetCertificateTag struct {
@@ -951,7 +3264,1496 @@ func (o GetListenerTagArrayOutput) Index(i pulumi.IntInput) GetListenerTagOutput
 	}).(GetListenerTagOutput)
 }
 
+type GetLoadBalancerEipBillingConfig struct {
+	// EIP的带宽峰值，单位为Mbps。
+	Bandwidth int `pulumi:"bandwidth"`
+	// EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType int `pulumi:"billingType"`
+	// 公网IP的线路类型，BGP表示多线。
+	Isp string `pulumi:"isp"`
+}
+
+// GetLoadBalancerEipBillingConfigInput is an input type that accepts GetLoadBalancerEipBillingConfigArgs and GetLoadBalancerEipBillingConfigOutput values.
+// You can construct a concrete instance of `GetLoadBalancerEipBillingConfigInput` via:
+//
+//	GetLoadBalancerEipBillingConfigArgs{...}
+type GetLoadBalancerEipBillingConfigInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerEipBillingConfigOutput() GetLoadBalancerEipBillingConfigOutput
+	ToGetLoadBalancerEipBillingConfigOutputWithContext(context.Context) GetLoadBalancerEipBillingConfigOutput
+}
+
+type GetLoadBalancerEipBillingConfigArgs struct {
+	// EIP的带宽峰值，单位为Mbps。
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType pulumi.IntInput `pulumi:"billingType"`
+	// 公网IP的线路类型，BGP表示多线。
+	Isp pulumi.StringInput `pulumi:"isp"`
+}
+
+func (GetLoadBalancerEipBillingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerEipBillingConfig)(nil)).Elem()
+}
+
+func (i GetLoadBalancerEipBillingConfigArgs) ToGetLoadBalancerEipBillingConfigOutput() GetLoadBalancerEipBillingConfigOutput {
+	return i.ToGetLoadBalancerEipBillingConfigOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerEipBillingConfigArgs) ToGetLoadBalancerEipBillingConfigOutputWithContext(ctx context.Context) GetLoadBalancerEipBillingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerEipBillingConfigOutput)
+}
+
+type GetLoadBalancerEipBillingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerEipBillingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerEipBillingConfig)(nil)).Elem()
+}
+
+func (o GetLoadBalancerEipBillingConfigOutput) ToGetLoadBalancerEipBillingConfigOutput() GetLoadBalancerEipBillingConfigOutput {
+	return o
+}
+
+func (o GetLoadBalancerEipBillingConfigOutput) ToGetLoadBalancerEipBillingConfigOutputWithContext(ctx context.Context) GetLoadBalancerEipBillingConfigOutput {
+	return o
+}
+
+// EIP的带宽峰值，单位为Mbps。
+func (o GetLoadBalancerEipBillingConfigOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerEipBillingConfig) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o GetLoadBalancerEipBillingConfigOutput) BillingType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerEipBillingConfig) int { return v.BillingType }).(pulumi.IntOutput)
+}
+
+// 公网IP的线路类型，BGP表示多线。
+func (o GetLoadBalancerEipBillingConfigOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerEipBillingConfig) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+type GetLoadBalancerGlobalAccelerator struct {
+	// 绑定的全球加速实例的ID。
+	AcceleratorId string `pulumi:"acceleratorId"`
+	// 绑定的全球加速监听器的ID。
+	AcceleratorListenerId string `pulumi:"acceleratorListenerId"`
+	// 绑定的终端节点组的ID。
+	EndpointGroupId string `pulumi:"endpointGroupId"`
+	// 后端服务器的权重，决定流量分发比例。
+	Weight int `pulumi:"weight"`
+}
+
+// GetLoadBalancerGlobalAcceleratorInput is an input type that accepts GetLoadBalancerGlobalAcceleratorArgs and GetLoadBalancerGlobalAcceleratorOutput values.
+// You can construct a concrete instance of `GetLoadBalancerGlobalAcceleratorInput` via:
+//
+//	GetLoadBalancerGlobalAcceleratorArgs{...}
+type GetLoadBalancerGlobalAcceleratorInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerGlobalAcceleratorOutput() GetLoadBalancerGlobalAcceleratorOutput
+	ToGetLoadBalancerGlobalAcceleratorOutputWithContext(context.Context) GetLoadBalancerGlobalAcceleratorOutput
+}
+
+type GetLoadBalancerGlobalAcceleratorArgs struct {
+	// 绑定的全球加速实例的ID。
+	AcceleratorId pulumi.StringInput `pulumi:"acceleratorId"`
+	// 绑定的全球加速监听器的ID。
+	AcceleratorListenerId pulumi.StringInput `pulumi:"acceleratorListenerId"`
+	// 绑定的终端节点组的ID。
+	EndpointGroupId pulumi.StringInput `pulumi:"endpointGroupId"`
+	// 后端服务器的权重，决定流量分发比例。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetLoadBalancerGlobalAcceleratorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerGlobalAccelerator)(nil)).Elem()
+}
+
+func (i GetLoadBalancerGlobalAcceleratorArgs) ToGetLoadBalancerGlobalAcceleratorOutput() GetLoadBalancerGlobalAcceleratorOutput {
+	return i.ToGetLoadBalancerGlobalAcceleratorOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerGlobalAcceleratorArgs) ToGetLoadBalancerGlobalAcceleratorOutputWithContext(ctx context.Context) GetLoadBalancerGlobalAcceleratorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerGlobalAcceleratorOutput)
+}
+
+type GetLoadBalancerGlobalAcceleratorOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerGlobalAcceleratorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerGlobalAccelerator)(nil)).Elem()
+}
+
+func (o GetLoadBalancerGlobalAcceleratorOutput) ToGetLoadBalancerGlobalAcceleratorOutput() GetLoadBalancerGlobalAcceleratorOutput {
+	return o
+}
+
+func (o GetLoadBalancerGlobalAcceleratorOutput) ToGetLoadBalancerGlobalAcceleratorOutputWithContext(ctx context.Context) GetLoadBalancerGlobalAcceleratorOutput {
+	return o
+}
+
+// 绑定的全球加速实例的ID。
+func (o GetLoadBalancerGlobalAcceleratorOutput) AcceleratorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerGlobalAccelerator) string { return v.AcceleratorId }).(pulumi.StringOutput)
+}
+
+// 绑定的全球加速监听器的ID。
+func (o GetLoadBalancerGlobalAcceleratorOutput) AcceleratorListenerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerGlobalAccelerator) string { return v.AcceleratorListenerId }).(pulumi.StringOutput)
+}
+
+// 绑定的终端节点组的ID。
+func (o GetLoadBalancerGlobalAcceleratorOutput) EndpointGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerGlobalAccelerator) string { return v.EndpointGroupId }).(pulumi.StringOutput)
+}
+
+// 后端服务器的权重，决定流量分发比例。
+func (o GetLoadBalancerGlobalAcceleratorOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerGlobalAccelerator) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetLoadBalancerIpv6EipBillingConfig struct {
+	// IPv6 EIP的带宽峰值，单位为Mbps。
+	Bandwidth int `pulumi:"bandwidth"`
+	// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType int `pulumi:"billingType"`
+	// IPv6公网IP的线路类型，BGP表示多线。
+	Isp string `pulumi:"isp"`
+}
+
+// GetLoadBalancerIpv6EipBillingConfigInput is an input type that accepts GetLoadBalancerIpv6EipBillingConfigArgs and GetLoadBalancerIpv6EipBillingConfigOutput values.
+// You can construct a concrete instance of `GetLoadBalancerIpv6EipBillingConfigInput` via:
+//
+//	GetLoadBalancerIpv6EipBillingConfigArgs{...}
+type GetLoadBalancerIpv6EipBillingConfigInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerIpv6EipBillingConfigOutput() GetLoadBalancerIpv6EipBillingConfigOutput
+	ToGetLoadBalancerIpv6EipBillingConfigOutputWithContext(context.Context) GetLoadBalancerIpv6EipBillingConfigOutput
+}
+
+type GetLoadBalancerIpv6EipBillingConfigArgs struct {
+	// IPv6 EIP的带宽峰值，单位为Mbps。
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType pulumi.IntInput `pulumi:"billingType"`
+	// IPv6公网IP的线路类型，BGP表示多线。
+	Isp pulumi.StringInput `pulumi:"isp"`
+}
+
+func (GetLoadBalancerIpv6EipBillingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerIpv6EipBillingConfig)(nil)).Elem()
+}
+
+func (i GetLoadBalancerIpv6EipBillingConfigArgs) ToGetLoadBalancerIpv6EipBillingConfigOutput() GetLoadBalancerIpv6EipBillingConfigOutput {
+	return i.ToGetLoadBalancerIpv6EipBillingConfigOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerIpv6EipBillingConfigArgs) ToGetLoadBalancerIpv6EipBillingConfigOutputWithContext(ctx context.Context) GetLoadBalancerIpv6EipBillingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerIpv6EipBillingConfigOutput)
+}
+
+type GetLoadBalancerIpv6EipBillingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerIpv6EipBillingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerIpv6EipBillingConfig)(nil)).Elem()
+}
+
+func (o GetLoadBalancerIpv6EipBillingConfigOutput) ToGetLoadBalancerIpv6EipBillingConfigOutput() GetLoadBalancerIpv6EipBillingConfigOutput {
+	return o
+}
+
+func (o GetLoadBalancerIpv6EipBillingConfigOutput) ToGetLoadBalancerIpv6EipBillingConfigOutputWithContext(ctx context.Context) GetLoadBalancerIpv6EipBillingConfigOutput {
+	return o
+}
+
+// IPv6 EIP的带宽峰值，单位为Mbps。
+func (o GetLoadBalancerIpv6EipBillingConfigOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerIpv6EipBillingConfig) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o GetLoadBalancerIpv6EipBillingConfigOutput) BillingType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerIpv6EipBillingConfig) int { return v.BillingType }).(pulumi.IntOutput)
+}
+
+// IPv6公网IP的线路类型，BGP表示多线。
+func (o GetLoadBalancerIpv6EipBillingConfigOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerIpv6EipBillingConfig) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+type GetLoadBalancerTag struct {
+	// 标签的键，用于标识标签的类别。
+	Key string `pulumi:"key"`
+	// 标签的值，用于标识具体的标签内容。
+	Value string `pulumi:"value"`
+}
+
+// GetLoadBalancerTagInput is an input type that accepts GetLoadBalancerTagArgs and GetLoadBalancerTagOutput values.
+// You can construct a concrete instance of `GetLoadBalancerTagInput` via:
+//
+//	GetLoadBalancerTagArgs{...}
+type GetLoadBalancerTagInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerTagOutput() GetLoadBalancerTagOutput
+	ToGetLoadBalancerTagOutputWithContext(context.Context) GetLoadBalancerTagOutput
+}
+
+type GetLoadBalancerTagArgs struct {
+	// 标签的键，用于标识标签的类别。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签的值，用于标识具体的标签内容。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetLoadBalancerTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerTag)(nil)).Elem()
+}
+
+func (i GetLoadBalancerTagArgs) ToGetLoadBalancerTagOutput() GetLoadBalancerTagOutput {
+	return i.ToGetLoadBalancerTagOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerTagArgs) ToGetLoadBalancerTagOutputWithContext(ctx context.Context) GetLoadBalancerTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerTagOutput)
+}
+
+// GetLoadBalancerTagArrayInput is an input type that accepts GetLoadBalancerTagArray and GetLoadBalancerTagArrayOutput values.
+// You can construct a concrete instance of `GetLoadBalancerTagArrayInput` via:
+//
+//	GetLoadBalancerTagArray{ GetLoadBalancerTagArgs{...} }
+type GetLoadBalancerTagArrayInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerTagArrayOutput() GetLoadBalancerTagArrayOutput
+	ToGetLoadBalancerTagArrayOutputWithContext(context.Context) GetLoadBalancerTagArrayOutput
+}
+
+type GetLoadBalancerTagArray []GetLoadBalancerTagInput
+
+func (GetLoadBalancerTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerTag)(nil)).Elem()
+}
+
+func (i GetLoadBalancerTagArray) ToGetLoadBalancerTagArrayOutput() GetLoadBalancerTagArrayOutput {
+	return i.ToGetLoadBalancerTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerTagArray) ToGetLoadBalancerTagArrayOutputWithContext(ctx context.Context) GetLoadBalancerTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerTagArrayOutput)
+}
+
+type GetLoadBalancerTagOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerTag)(nil)).Elem()
+}
+
+func (o GetLoadBalancerTagOutput) ToGetLoadBalancerTagOutput() GetLoadBalancerTagOutput {
+	return o
+}
+
+func (o GetLoadBalancerTagOutput) ToGetLoadBalancerTagOutputWithContext(ctx context.Context) GetLoadBalancerTagOutput {
+	return o
+}
+
+// 标签的键，用于标识标签的类别。
+func (o GetLoadBalancerTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签的值，用于标识具体的标签内容。
+func (o GetLoadBalancerTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetLoadBalancerTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerTag)(nil)).Elem()
+}
+
+func (o GetLoadBalancerTagArrayOutput) ToGetLoadBalancerTagArrayOutput() GetLoadBalancerTagArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerTagArrayOutput) ToGetLoadBalancerTagArrayOutputWithContext(ctx context.Context) GetLoadBalancerTagArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerTagArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerTag {
+		return vs[0].([]GetLoadBalancerTag)[vs[1].(int)]
+	}).(GetLoadBalancerTagOutput)
+}
+
+type GetLoadBalancerZoneMapping struct {
+	// 该可用区下负载均衡提供的IP地址列表。
+	LoadBalancerAddresses []GetLoadBalancerZoneMappingLoadBalancerAddress `pulumi:"loadBalancerAddresses"`
+	// 可用区内提供服务的子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// 可用区的唯一标识符。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetLoadBalancerZoneMappingInput is an input type that accepts GetLoadBalancerZoneMappingArgs and GetLoadBalancerZoneMappingOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingInput` via:
+//
+//	GetLoadBalancerZoneMappingArgs{...}
+type GetLoadBalancerZoneMappingInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingOutput() GetLoadBalancerZoneMappingOutput
+	ToGetLoadBalancerZoneMappingOutputWithContext(context.Context) GetLoadBalancerZoneMappingOutput
+}
+
+type GetLoadBalancerZoneMappingArgs struct {
+	// 该可用区下负载均衡提供的IP地址列表。
+	LoadBalancerAddresses GetLoadBalancerZoneMappingLoadBalancerAddressArrayInput `pulumi:"loadBalancerAddresses"`
+	// 可用区内提供服务的子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// 可用区的唯一标识符。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetLoadBalancerZoneMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingArgs) ToGetLoadBalancerZoneMappingOutput() GetLoadBalancerZoneMappingOutput {
+	return i.ToGetLoadBalancerZoneMappingOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingArgs) ToGetLoadBalancerZoneMappingOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingOutput)
+}
+
+// GetLoadBalancerZoneMappingArrayInput is an input type that accepts GetLoadBalancerZoneMappingArray and GetLoadBalancerZoneMappingArrayOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingArrayInput` via:
+//
+//	GetLoadBalancerZoneMappingArray{ GetLoadBalancerZoneMappingArgs{...} }
+type GetLoadBalancerZoneMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingArrayOutput() GetLoadBalancerZoneMappingArrayOutput
+	ToGetLoadBalancerZoneMappingArrayOutputWithContext(context.Context) GetLoadBalancerZoneMappingArrayOutput
+}
+
+type GetLoadBalancerZoneMappingArray []GetLoadBalancerZoneMappingInput
+
+func (GetLoadBalancerZoneMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingArray) ToGetLoadBalancerZoneMappingArrayOutput() GetLoadBalancerZoneMappingArrayOutput {
+	return i.ToGetLoadBalancerZoneMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingArray) ToGetLoadBalancerZoneMappingArrayOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingArrayOutput)
+}
+
+type GetLoadBalancerZoneMappingOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingOutput) ToGetLoadBalancerZoneMappingOutput() GetLoadBalancerZoneMappingOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingOutput) ToGetLoadBalancerZoneMappingOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingOutput {
+	return o
+}
+
+// 该可用区下负载均衡提供的IP地址列表。
+func (o GetLoadBalancerZoneMappingOutput) LoadBalancerAddresses() GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMapping) []GetLoadBalancerZoneMappingLoadBalancerAddress {
+		return v.LoadBalancerAddresses
+	}).(GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput)
+}
+
+// 可用区内提供服务的子网ID。
+func (o GetLoadBalancerZoneMappingOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMapping) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// 可用区的唯一标识符。
+func (o GetLoadBalancerZoneMappingOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMapping) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetLoadBalancerZoneMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerZoneMapping)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingArrayOutput) ToGetLoadBalancerZoneMappingArrayOutput() GetLoadBalancerZoneMappingArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingArrayOutput) ToGetLoadBalancerZoneMappingArrayOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerZoneMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerZoneMapping {
+		return vs[0].([]GetLoadBalancerZoneMapping)[vs[1].(int)]
+	}).(GetLoadBalancerZoneMappingOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddress struct {
+	// 弹性公网IP（EIP）的详细信息。
+	Eip GetLoadBalancerZoneMappingLoadBalancerAddressEip `pulumi:"eip"`
+	// 绑定的弹性公网IP（EIP）的地址。
+	EipAddress string `pulumi:"eipAddress"`
+	// 绑定的弹性公网IP（EIP）的ID。
+	EipId string `pulumi:"eipId"`
+	// 弹性网卡（ENI）上的私网IP地址。
+	EniAddress string `pulumi:"eniAddress"`
+	// IP地址所属的弹性网卡（ENI）的ID。
+	EniId string `pulumi:"eniId"`
+	// 弹性网卡（ENI）上的IPv6私网地址。
+	EniIpv6Address string `pulumi:"eniIpv6Address"`
+	// IPv6弹性公网IP的详细信息。
+	Ipv6Eip GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip `pulumi:"ipv6Eip"`
+	// 绑定的IPv6 EIP的ID。
+	Ipv6EipId string `pulumi:"ipv6EipId"`
+}
+
+// GetLoadBalancerZoneMappingLoadBalancerAddressInput is an input type that accepts GetLoadBalancerZoneMappingLoadBalancerAddressArgs and GetLoadBalancerZoneMappingLoadBalancerAddressOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingLoadBalancerAddressInput` via:
+//
+//	GetLoadBalancerZoneMappingLoadBalancerAddressArgs{...}
+type GetLoadBalancerZoneMappingLoadBalancerAddressInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressOutput() GetLoadBalancerZoneMappingLoadBalancerAddressOutput
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressOutputWithContext(context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressOutput
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressArgs struct {
+	// 弹性公网IP（EIP）的详细信息。
+	Eip GetLoadBalancerZoneMappingLoadBalancerAddressEipInput `pulumi:"eip"`
+	// 绑定的弹性公网IP（EIP）的地址。
+	EipAddress pulumi.StringInput `pulumi:"eipAddress"`
+	// 绑定的弹性公网IP（EIP）的ID。
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// 弹性网卡（ENI）上的私网IP地址。
+	EniAddress pulumi.StringInput `pulumi:"eniAddress"`
+	// IP地址所属的弹性网卡（ENI）的ID。
+	EniId pulumi.StringInput `pulumi:"eniId"`
+	// 弹性网卡（ENI）上的IPv6私网地址。
+	EniIpv6Address pulumi.StringInput `pulumi:"eniIpv6Address"`
+	// IPv6弹性公网IP的详细信息。
+	Ipv6Eip GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipInput `pulumi:"ipv6Eip"`
+	// 绑定的IPv6 EIP的ID。
+	Ipv6EipId pulumi.StringInput `pulumi:"ipv6EipId"`
+}
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddress)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressOutput() GetLoadBalancerZoneMappingLoadBalancerAddressOutput {
+	return i.ToGetLoadBalancerZoneMappingLoadBalancerAddressOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingLoadBalancerAddressOutput)
+}
+
+// GetLoadBalancerZoneMappingLoadBalancerAddressArrayInput is an input type that accepts GetLoadBalancerZoneMappingLoadBalancerAddressArray and GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingLoadBalancerAddressArrayInput` via:
+//
+//	GetLoadBalancerZoneMappingLoadBalancerAddressArray{ GetLoadBalancerZoneMappingLoadBalancerAddressArgs{...} }
+type GetLoadBalancerZoneMappingLoadBalancerAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput() GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressArrayOutputWithContext(context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressArray []GetLoadBalancerZoneMappingLoadBalancerAddressInput
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerZoneMappingLoadBalancerAddress)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressArray) ToGetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput() GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput {
+	return i.ToGetLoadBalancerZoneMappingLoadBalancerAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressArray) ToGetLoadBalancerZoneMappingLoadBalancerAddressArrayOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddress)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressOutput() GetLoadBalancerZoneMappingLoadBalancerAddressOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressOutput {
+	return o
+}
+
+// 弹性公网IP（EIP）的详细信息。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) Eip() GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) GetLoadBalancerZoneMappingLoadBalancerAddressEip {
+		return v.Eip
+	}).(GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput)
+}
+
+// 绑定的弹性公网IP（EIP）的地址。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) EipAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) string { return v.EipAddress }).(pulumi.StringOutput)
+}
+
+// 绑定的弹性公网IP（EIP）的ID。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// 弹性网卡（ENI）上的私网IP地址。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) EniAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) string { return v.EniAddress }).(pulumi.StringOutput)
+}
+
+// IP地址所属的弹性网卡（ENI）的ID。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) EniId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) string { return v.EniId }).(pulumi.StringOutput)
+}
+
+// 弹性网卡（ENI）上的IPv6私网地址。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) EniIpv6Address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) string { return v.EniIpv6Address }).(pulumi.StringOutput)
+}
+
+// IPv6弹性公网IP的详细信息。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) Ipv6Eip() GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip {
+		return v.Ipv6Eip
+	}).(GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput)
+}
+
+// 绑定的IPv6 EIP的ID。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressOutput) Ipv6EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddress) string { return v.Ipv6EipId }).(pulumi.StringOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerZoneMappingLoadBalancerAddress)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput() GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressArrayOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerZoneMappingLoadBalancerAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerZoneMappingLoadBalancerAddress {
+		return vs[0].([]GetLoadBalancerZoneMappingLoadBalancerAddress)[vs[1].(int)]
+	}).(GetLoadBalancerZoneMappingLoadBalancerAddressOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEip struct {
+	// EIP的绑定模式，例如Default或Normal。
+	AssociationMode string `pulumi:"associationMode"`
+	// EIP的带宽峰值，单位为Mbps。
+	Bandwidth int `pulumi:"bandwidth"`
+	// 弹性公网IP（EIP）的地址。
+	EipAddress string `pulumi:"eipAddress"`
+	// EIP的计费方式，2为按带宽计费，3为按流量计费。
+	EipBillingType int `pulumi:"eipBillingType"`
+	// EIP的类型，例如静态BGP。
+	EipType string `pulumi:"eipType"`
+	// 公网IP的线路类型，BGP表示多线。
+	Isp string `pulumi:"isp"`
+	// EIP的接入点位置信息列表。
+	PopLocations []GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation `pulumi:"popLocations"`
+}
+
+// GetLoadBalancerZoneMappingLoadBalancerAddressEipInput is an input type that accepts GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs and GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingLoadBalancerAddressEipInput` via:
+//
+//	GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs{...}
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressEipOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressEipOutputWithContext(context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs struct {
+	// EIP的绑定模式，例如Default或Normal。
+	AssociationMode pulumi.StringInput `pulumi:"associationMode"`
+	// EIP的带宽峰值，单位为Mbps。
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// 弹性公网IP（EIP）的地址。
+	EipAddress pulumi.StringInput `pulumi:"eipAddress"`
+	// EIP的计费方式，2为按带宽计费，3为按流量计费。
+	EipBillingType pulumi.IntInput `pulumi:"eipBillingType"`
+	// EIP的类型，例如静态BGP。
+	EipType pulumi.StringInput `pulumi:"eipType"`
+	// 公网IP的线路类型，BGP表示多线。
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// EIP的接入点位置信息列表。
+	PopLocations GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayInput `pulumi:"popLocations"`
+}
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEip)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput {
+	return i.ToGetLoadBalancerZoneMappingLoadBalancerAddressEipOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEip)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput {
+	return o
+}
+
+// EIP的绑定模式，例如Default或Normal。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) AssociationMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEip) string { return v.AssociationMode }).(pulumi.StringOutput)
+}
+
+// EIP的带宽峰值，单位为Mbps。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEip) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// 弹性公网IP（EIP）的地址。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) EipAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEip) string { return v.EipAddress }).(pulumi.StringOutput)
+}
+
+// EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) EipBillingType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEip) int { return v.EipBillingType }).(pulumi.IntOutput)
+}
+
+// EIP的类型，例如静态BGP。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) EipType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEip) string { return v.EipType }).(pulumi.StringOutput)
+}
+
+// 公网IP的线路类型，BGP表示多线。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEip) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// EIP的接入点位置信息列表。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput) PopLocations() GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEip) []GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation {
+		return v.PopLocations
+	}).(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation struct {
+	// 接入点（PoP）的唯一ID。
+	PopId string `pulumi:"popId"`
+	// 接入点（PoP）的名称。
+	PopName string `pulumi:"popName"`
+}
+
+// GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationInput is an input type that accepts GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs and GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationInput` via:
+//
+//	GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs{...}
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutputWithContext(context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs struct {
+	// 接入点（PoP）的唯一ID。
+	PopId pulumi.StringInput `pulumi:"popId"`
+	// 接入点（PoP）的名称。
+	PopName pulumi.StringInput `pulumi:"popName"`
+}
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput {
+	return i.ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput)
+}
+
+// GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayInput is an input type that accepts GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray and GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayInput` via:
+//
+//	GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray{ GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs{...} }
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutputWithContext(context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray []GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationInput
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput {
+	return i.ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput {
+	return o
+}
+
+// 接入点（PoP）的唯一ID。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput) PopId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation) string { return v.PopId }).(pulumi.StringOutput)
+}
+
+// 接入点（PoP）的名称。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput) PopName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation) string { return v.PopName }).(pulumi.StringOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput() GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput) Index(i pulumi.IntInput) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation {
+		return vs[0].([]GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation)[vs[1].(int)]
+	}).(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip struct {
+	// IPv6 EIP的带宽峰值，单位为Mbps。
+	Bandwidth int `pulumi:"bandwidth"`
+	// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType int `pulumi:"billingType"`
+	// IPv6公网IP的线路类型，BGP表示多线。
+	Isp string `pulumi:"isp"`
+}
+
+// GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipInput is an input type that accepts GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs and GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput values.
+// You can construct a concrete instance of `GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipInput` via:
+//
+//	GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs{...}
+type GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipInput interface {
+	pulumi.Input
+
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput() GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput
+	ToGetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutputWithContext(context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs struct {
+	// IPv6 EIP的带宽峰值，单位为Mbps。
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+	BillingType pulumi.IntInput `pulumi:"billingType"`
+	// IPv6公网IP的线路类型，BGP表示多线。
+	Isp pulumi.StringInput `pulumi:"isp"`
+}
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip)(nil)).Elem()
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput() GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput {
+	return i.ToGetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutputWithContext(context.Background())
+}
+
+func (i GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs) ToGetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput)
+}
+
+type GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput struct{ *pulumi.OutputState }
+
+func (GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip)(nil)).Elem()
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput() GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput {
+	return o
+}
+
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput) ToGetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutputWithContext(ctx context.Context) GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput {
+	return o
+}
+
+// IPv6 EIP的带宽峰值，单位为Mbps。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput) BillingType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip) int { return v.BillingType }).(pulumi.IntOutput)
+}
+
+// IPv6公网IP的线路类型，BGP表示多线。
+func (o GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+type GetServerGroupHealthCheck struct {
+	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+	Domain string `pulumi:"domain"`
+	// 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+	Enabled string `pulumi:"enabled"`
+	// 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+	HealthyThreshold int `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+	HttpCode string `pulumi:"httpCode"`
+	// 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+	HttpVersion string `pulumi:"httpVersion"`
+	// 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+	Interval int `pulumi:"interval"`
+	// 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+	Method string `pulumi:"method"`
+	// 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	Port int `pulumi:"port"`
+	// 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+	Protocol string `pulumi:"protocol"`
+	// 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+	Timeout int `pulumi:"timeout"`
+	// 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+	UnhealthyThreshold int `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	Uri string `pulumi:"uri"`
+}
+
+// GetServerGroupHealthCheckInput is an input type that accepts GetServerGroupHealthCheckArgs and GetServerGroupHealthCheckOutput values.
+// You can construct a concrete instance of `GetServerGroupHealthCheckInput` via:
+//
+//	GetServerGroupHealthCheckArgs{...}
+type GetServerGroupHealthCheckInput interface {
+	pulumi.Input
+
+	ToGetServerGroupHealthCheckOutput() GetServerGroupHealthCheckOutput
+	ToGetServerGroupHealthCheckOutputWithContext(context.Context) GetServerGroupHealthCheckOutput
+}
+
+type GetServerGroupHealthCheckArgs struct {
+	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+	Enabled pulumi.StringInput `pulumi:"enabled"`
+	// 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
+	// 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+	HttpCode pulumi.StringInput `pulumi:"httpCode"`
+	// 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+	HttpVersion pulumi.StringInput `pulumi:"httpVersion"`
+	// 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+	Interval pulumi.IntInput `pulumi:"interval"`
+	// 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+	Method pulumi.StringInput `pulumi:"method"`
+	// 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+	// 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+	UnhealthyThreshold pulumi.IntInput `pulumi:"unhealthyThreshold"`
+	// 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	Uri pulumi.StringInput `pulumi:"uri"`
+}
+
+func (GetServerGroupHealthCheckArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (i GetServerGroupHealthCheckArgs) ToGetServerGroupHealthCheckOutput() GetServerGroupHealthCheckOutput {
+	return i.ToGetServerGroupHealthCheckOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupHealthCheckArgs) ToGetServerGroupHealthCheckOutputWithContext(ctx context.Context) GetServerGroupHealthCheckOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupHealthCheckOutput)
+}
+
+type GetServerGroupHealthCheckOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupHealthCheckOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupHealthCheck)(nil)).Elem()
+}
+
+func (o GetServerGroupHealthCheckOutput) ToGetServerGroupHealthCheckOutput() GetServerGroupHealthCheckOutput {
+	return o
+}
+
+func (o GetServerGroupHealthCheckOutput) ToGetServerGroupHealthCheckOutputWithContext(ctx context.Context) GetServerGroupHealthCheckOutput {
+	return o
+}
+
+// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+func (o GetServerGroupHealthCheckOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+func (o GetServerGroupHealthCheckOutput) Enabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Enabled }).(pulumi.StringOutput)
+}
+
+// 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+func (o GetServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.HealthyThreshold }).(pulumi.IntOutput)
+}
+
+// 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+func (o GetServerGroupHealthCheckOutput) HttpCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.HttpCode }).(pulumi.StringOutput)
+}
+
+// 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+func (o GetServerGroupHealthCheckOutput) HttpVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.HttpVersion }).(pulumi.StringOutput)
+}
+
+// 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+func (o GetServerGroupHealthCheckOutput) Interval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.Interval }).(pulumi.IntOutput)
+}
+
+// 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+func (o GetServerGroupHealthCheckOutput) Method() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Method }).(pulumi.StringOutput)
+}
+
+// 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+func (o GetServerGroupHealthCheckOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+func (o GetServerGroupHealthCheckOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+func (o GetServerGroupHealthCheckOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.Timeout }).(pulumi.IntOutput)
+}
+
+// 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+func (o GetServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) int { return v.UnhealthyThreshold }).(pulumi.IntOutput)
+}
+
+// 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+func (o GetServerGroupHealthCheckOutput) Uri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupHealthCheck) string { return v.Uri }).(pulumi.StringOutput)
+}
+
+type GetServerGroupListener struct {
+	// 监听器的ID。
+	ListenerId string `pulumi:"listenerId"`
+}
+
+// GetServerGroupListenerInput is an input type that accepts GetServerGroupListenerArgs and GetServerGroupListenerOutput values.
+// You can construct a concrete instance of `GetServerGroupListenerInput` via:
+//
+//	GetServerGroupListenerArgs{...}
+type GetServerGroupListenerInput interface {
+	pulumi.Input
+
+	ToGetServerGroupListenerOutput() GetServerGroupListenerOutput
+	ToGetServerGroupListenerOutputWithContext(context.Context) GetServerGroupListenerOutput
+}
+
+type GetServerGroupListenerArgs struct {
+	// 监听器的ID。
+	ListenerId pulumi.StringInput `pulumi:"listenerId"`
+}
+
+func (GetServerGroupListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupListener)(nil)).Elem()
+}
+
+func (i GetServerGroupListenerArgs) ToGetServerGroupListenerOutput() GetServerGroupListenerOutput {
+	return i.ToGetServerGroupListenerOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupListenerArgs) ToGetServerGroupListenerOutputWithContext(ctx context.Context) GetServerGroupListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupListenerOutput)
+}
+
+// GetServerGroupListenerArrayInput is an input type that accepts GetServerGroupListenerArray and GetServerGroupListenerArrayOutput values.
+// You can construct a concrete instance of `GetServerGroupListenerArrayInput` via:
+//
+//	GetServerGroupListenerArray{ GetServerGroupListenerArgs{...} }
+type GetServerGroupListenerArrayInput interface {
+	pulumi.Input
+
+	ToGetServerGroupListenerArrayOutput() GetServerGroupListenerArrayOutput
+	ToGetServerGroupListenerArrayOutputWithContext(context.Context) GetServerGroupListenerArrayOutput
+}
+
+type GetServerGroupListenerArray []GetServerGroupListenerInput
+
+func (GetServerGroupListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupListener)(nil)).Elem()
+}
+
+func (i GetServerGroupListenerArray) ToGetServerGroupListenerArrayOutput() GetServerGroupListenerArrayOutput {
+	return i.ToGetServerGroupListenerArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupListenerArray) ToGetServerGroupListenerArrayOutputWithContext(ctx context.Context) GetServerGroupListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupListenerArrayOutput)
+}
+
+type GetServerGroupListenerOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupListener)(nil)).Elem()
+}
+
+func (o GetServerGroupListenerOutput) ToGetServerGroupListenerOutput() GetServerGroupListenerOutput {
+	return o
+}
+
+func (o GetServerGroupListenerOutput) ToGetServerGroupListenerOutputWithContext(ctx context.Context) GetServerGroupListenerOutput {
+	return o
+}
+
+// 监听器的ID。
+func (o GetServerGroupListenerOutput) ListenerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupListener) string { return v.ListenerId }).(pulumi.StringOutput)
+}
+
+type GetServerGroupListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupListener)(nil)).Elem()
+}
+
+func (o GetServerGroupListenerArrayOutput) ToGetServerGroupListenerArrayOutput() GetServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupListenerArrayOutput) ToGetServerGroupListenerArrayOutputWithContext(ctx context.Context) GetServerGroupListenerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupListenerArrayOutput) Index(i pulumi.IntInput) GetServerGroupListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerGroupListener {
+		return vs[0].([]GetServerGroupListener)[vs[1].(int)]
+	}).(GetServerGroupListenerOutput)
+}
+
+type GetServerGroupServer struct {
+	// 后端服务器的描述。
+	Description string `pulumi:"description"`
+	// 云服务器实例或网卡的ID。
+	InstanceId string `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。
+	Ip string `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。
+	Port int `pulumi:"port"`
+	// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+	RemoteEnabled string `pulumi:"remoteEnabled"`
+	// 后端服务器ID。
+	ServerId string `pulumi:"serverId"`
+	// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+	Type string `pulumi:"type"`
+	// 后端服务器的权重。
+	Weight int `pulumi:"weight"`
+}
+
+// GetServerGroupServerInput is an input type that accepts GetServerGroupServerArgs and GetServerGroupServerOutput values.
+// You can construct a concrete instance of `GetServerGroupServerInput` via:
+//
+//	GetServerGroupServerArgs{...}
+type GetServerGroupServerInput interface {
+	pulumi.Input
+
+	ToGetServerGroupServerOutput() GetServerGroupServerOutput
+	ToGetServerGroupServerOutputWithContext(context.Context) GetServerGroupServerOutput
+}
+
+type GetServerGroupServerArgs struct {
+	// 后端服务器的描述。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 云服务器实例或网卡的ID。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 后端服务器的私网IP地址。
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// 后端服务器接收请求的端口号。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+	RemoteEnabled pulumi.StringInput `pulumi:"remoteEnabled"`
+	// 后端服务器ID。
+	ServerId pulumi.StringInput `pulumi:"serverId"`
+	// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+	Type pulumi.StringInput `pulumi:"type"`
+	// 后端服务器的权重。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetServerGroupServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupServer)(nil)).Elem()
+}
+
+func (i GetServerGroupServerArgs) ToGetServerGroupServerOutput() GetServerGroupServerOutput {
+	return i.ToGetServerGroupServerOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupServerArgs) ToGetServerGroupServerOutputWithContext(ctx context.Context) GetServerGroupServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupServerOutput)
+}
+
+// GetServerGroupServerArrayInput is an input type that accepts GetServerGroupServerArray and GetServerGroupServerArrayOutput values.
+// You can construct a concrete instance of `GetServerGroupServerArrayInput` via:
+//
+//	GetServerGroupServerArray{ GetServerGroupServerArgs{...} }
+type GetServerGroupServerArrayInput interface {
+	pulumi.Input
+
+	ToGetServerGroupServerArrayOutput() GetServerGroupServerArrayOutput
+	ToGetServerGroupServerArrayOutputWithContext(context.Context) GetServerGroupServerArrayOutput
+}
+
+type GetServerGroupServerArray []GetServerGroupServerInput
+
+func (GetServerGroupServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupServer)(nil)).Elem()
+}
+
+func (i GetServerGroupServerArray) ToGetServerGroupServerArrayOutput() GetServerGroupServerArrayOutput {
+	return i.ToGetServerGroupServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupServerArray) ToGetServerGroupServerArrayOutputWithContext(ctx context.Context) GetServerGroupServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupServerArrayOutput)
+}
+
+type GetServerGroupServerOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupServer)(nil)).Elem()
+}
+
+func (o GetServerGroupServerOutput) ToGetServerGroupServerOutput() GetServerGroupServerOutput {
+	return o
+}
+
+func (o GetServerGroupServerOutput) ToGetServerGroupServerOutputWithContext(ctx context.Context) GetServerGroupServerOutput {
+	return o
+}
+
+// 后端服务器的描述。
+func (o GetServerGroupServerOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 云服务器实例或网卡的ID。
+func (o GetServerGroupServerOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 后端服务器的私网IP地址。
+func (o GetServerGroupServerOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// 后端服务器接收请求的端口号。
+func (o GetServerGroupServerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupServer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+func (o GetServerGroupServerOutput) RemoteEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.RemoteEnabled }).(pulumi.StringOutput)
+}
+
+// 后端服务器ID。
+func (o GetServerGroupServerOutput) ServerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.ServerId }).(pulumi.StringOutput)
+}
+
+// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+func (o GetServerGroupServerOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupServer) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// 后端服务器的权重。
+func (o GetServerGroupServerOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupServer) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetServerGroupServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupServer)(nil)).Elem()
+}
+
+func (o GetServerGroupServerArrayOutput) ToGetServerGroupServerArrayOutput() GetServerGroupServerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupServerArrayOutput) ToGetServerGroupServerArrayOutputWithContext(ctx context.Context) GetServerGroupServerArrayOutput {
+	return o
+}
+
+func (o GetServerGroupServerArrayOutput) Index(i pulumi.IntInput) GetServerGroupServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerGroupServer {
+		return vs[0].([]GetServerGroupServer)[vs[1].(int)]
+	}).(GetServerGroupServerOutput)
+}
+
+type GetServerGroupStickySessionConfig struct {
+	// 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+	Cookie string `pulumi:"cookie"`
+	// 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+	CookieTimeout int `pulumi:"cookieTimeout"`
+	// 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+	StickySessionEnabled string `pulumi:"stickySessionEnabled"`
+	// 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+	StickySessionType string `pulumi:"stickySessionType"`
+}
+
+// GetServerGroupStickySessionConfigInput is an input type that accepts GetServerGroupStickySessionConfigArgs and GetServerGroupStickySessionConfigOutput values.
+// You can construct a concrete instance of `GetServerGroupStickySessionConfigInput` via:
+//
+//	GetServerGroupStickySessionConfigArgs{...}
+type GetServerGroupStickySessionConfigInput interface {
+	pulumi.Input
+
+	ToGetServerGroupStickySessionConfigOutput() GetServerGroupStickySessionConfigOutput
+	ToGetServerGroupStickySessionConfigOutputWithContext(context.Context) GetServerGroupStickySessionConfigOutput
+}
+
+type GetServerGroupStickySessionConfigArgs struct {
+	// 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+	Cookie pulumi.StringInput `pulumi:"cookie"`
+	// 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+	CookieTimeout pulumi.IntInput `pulumi:"cookieTimeout"`
+	// 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+	StickySessionEnabled pulumi.StringInput `pulumi:"stickySessionEnabled"`
+	// 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+	StickySessionType pulumi.StringInput `pulumi:"stickySessionType"`
+}
+
+func (GetServerGroupStickySessionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupStickySessionConfig)(nil)).Elem()
+}
+
+func (i GetServerGroupStickySessionConfigArgs) ToGetServerGroupStickySessionConfigOutput() GetServerGroupStickySessionConfigOutput {
+	return i.ToGetServerGroupStickySessionConfigOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupStickySessionConfigArgs) ToGetServerGroupStickySessionConfigOutputWithContext(ctx context.Context) GetServerGroupStickySessionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupStickySessionConfigOutput)
+}
+
+type GetServerGroupStickySessionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupStickySessionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupStickySessionConfig)(nil)).Elem()
+}
+
+func (o GetServerGroupStickySessionConfigOutput) ToGetServerGroupStickySessionConfigOutput() GetServerGroupStickySessionConfigOutput {
+	return o
+}
+
+func (o GetServerGroupStickySessionConfigOutput) ToGetServerGroupStickySessionConfigOutputWithContext(ctx context.Context) GetServerGroupStickySessionConfigOutput {
+	return o
+}
+
+// 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+func (o GetServerGroupStickySessionConfigOutput) Cookie() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupStickySessionConfig) string { return v.Cookie }).(pulumi.StringOutput)
+}
+
+// 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+func (o GetServerGroupStickySessionConfigOutput) CookieTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetServerGroupStickySessionConfig) int { return v.CookieTimeout }).(pulumi.IntOutput)
+}
+
+// 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+func (o GetServerGroupStickySessionConfigOutput) StickySessionEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupStickySessionConfig) string { return v.StickySessionEnabled }).(pulumi.StringOutput)
+}
+
+// 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+func (o GetServerGroupStickySessionConfigOutput) StickySessionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupStickySessionConfig) string { return v.StickySessionType }).(pulumi.StringOutput)
+}
+
+type GetServerGroupTag struct {
+	// 标签的标签键。同一资源的标签键不允许重复。
+	Key string `pulumi:"key"`
+	// 标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetServerGroupTagInput is an input type that accepts GetServerGroupTagArgs and GetServerGroupTagOutput values.
+// You can construct a concrete instance of `GetServerGroupTagInput` via:
+//
+//	GetServerGroupTagArgs{...}
+type GetServerGroupTagInput interface {
+	pulumi.Input
+
+	ToGetServerGroupTagOutput() GetServerGroupTagOutput
+	ToGetServerGroupTagOutputWithContext(context.Context) GetServerGroupTagOutput
+}
+
+type GetServerGroupTagArgs struct {
+	// 标签的标签键。同一资源的标签键不允许重复。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetServerGroupTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupTag)(nil)).Elem()
+}
+
+func (i GetServerGroupTagArgs) ToGetServerGroupTagOutput() GetServerGroupTagOutput {
+	return i.ToGetServerGroupTagOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupTagArgs) ToGetServerGroupTagOutputWithContext(ctx context.Context) GetServerGroupTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupTagOutput)
+}
+
+// GetServerGroupTagArrayInput is an input type that accepts GetServerGroupTagArray and GetServerGroupTagArrayOutput values.
+// You can construct a concrete instance of `GetServerGroupTagArrayInput` via:
+//
+//	GetServerGroupTagArray{ GetServerGroupTagArgs{...} }
+type GetServerGroupTagArrayInput interface {
+	pulumi.Input
+
+	ToGetServerGroupTagArrayOutput() GetServerGroupTagArrayOutput
+	ToGetServerGroupTagArrayOutputWithContext(context.Context) GetServerGroupTagArrayOutput
+}
+
+type GetServerGroupTagArray []GetServerGroupTagInput
+
+func (GetServerGroupTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupTag)(nil)).Elem()
+}
+
+func (i GetServerGroupTagArray) ToGetServerGroupTagArrayOutput() GetServerGroupTagArrayOutput {
+	return i.ToGetServerGroupTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetServerGroupTagArray) ToGetServerGroupTagArrayOutputWithContext(ctx context.Context) GetServerGroupTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetServerGroupTagArrayOutput)
+}
+
+type GetServerGroupTagOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetServerGroupTag)(nil)).Elem()
+}
+
+func (o GetServerGroupTagOutput) ToGetServerGroupTagOutput() GetServerGroupTagOutput {
+	return o
+}
+
+func (o GetServerGroupTagOutput) ToGetServerGroupTagOutputWithContext(ctx context.Context) GetServerGroupTagOutput {
+	return o
+}
+
+// 标签的标签键。同一资源的标签键不允许重复。
+func (o GetServerGroupTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签的标签值。
+func (o GetServerGroupTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServerGroupTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetServerGroupTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetServerGroupTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetServerGroupTag)(nil)).Elem()
+}
+
+func (o GetServerGroupTagArrayOutput) ToGetServerGroupTagArrayOutput() GetServerGroupTagArrayOutput {
+	return o
+}
+
+func (o GetServerGroupTagArrayOutput) ToGetServerGroupTagArrayOutputWithContext(ctx context.Context) GetServerGroupTagArrayOutput {
+	return o
+}
+
+func (o GetServerGroupTagArrayOutput) Index(i pulumi.IntInput) GetServerGroupTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServerGroupTag {
+		return vs[0].([]GetServerGroupTag)[vs[1].(int)]
+	}).(GetServerGroupTagOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AclAclEntryInput)(nil)).Elem(), AclAclEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclAclEntryArrayInput)(nil)).Elem(), AclAclEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclListenerInput)(nil)).Elem(), AclListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclListenerArrayInput)(nil)).Elem(), AclListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclTagInput)(nil)).Elem(), AclTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclTagArrayInput)(nil)).Elem(), AclTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagInput)(nil)).Elem(), CertificateTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagArrayInput)(nil)).Elem(), CertificateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerDomainExtensionInput)(nil)).Elem(), ListenerDomainExtensionArgs{})
@@ -960,6 +4762,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerServerGroupArrayInput)(nil)).Elem(), ListenerServerGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagArrayInput)(nil)).Elem(), ListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerEipBillingConfigInput)(nil)).Elem(), LoadBalancerEipBillingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerEipBillingConfigPtrInput)(nil)).Elem(), LoadBalancerEipBillingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerGlobalAcceleratorInput)(nil)).Elem(), LoadBalancerGlobalAcceleratorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerGlobalAcceleratorPtrInput)(nil)).Elem(), LoadBalancerGlobalAcceleratorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerIpv6EipBillingConfigInput)(nil)).Elem(), LoadBalancerIpv6EipBillingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerIpv6EipBillingConfigPtrInput)(nil)).Elem(), LoadBalancerIpv6EipBillingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerTagInput)(nil)).Elem(), LoadBalancerTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerTagArrayInput)(nil)).Elem(), LoadBalancerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerZoneMappingInput)(nil)).Elem(), LoadBalancerZoneMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerZoneMappingArrayInput)(nil)).Elem(), LoadBalancerZoneMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupHealthCheckInput)(nil)).Elem(), ServerGroupHealthCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupHealthCheckPtrInput)(nil)).Elem(), ServerGroupHealthCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupListenerInput)(nil)).Elem(), ServerGroupListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupListenerArrayInput)(nil)).Elem(), ServerGroupListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupServerInput)(nil)).Elem(), ServerGroupServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupServerArrayInput)(nil)).Elem(), ServerGroupServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupStickySessionConfigInput)(nil)).Elem(), ServerGroupStickySessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupStickySessionConfigPtrInput)(nil)).Elem(), ServerGroupStickySessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupTagInput)(nil)).Elem(), ServerGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupTagArrayInput)(nil)).Elem(), ServerGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclAclEntryInput)(nil)).Elem(), GetAclAclEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclAclEntryArrayInput)(nil)).Elem(), GetAclAclEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclListenerInput)(nil)).Elem(), GetAclListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclListenerArrayInput)(nil)).Elem(), GetAclListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclTagInput)(nil)).Elem(), GetAclTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclTagArrayInput)(nil)).Elem(), GetAclTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagInput)(nil)).Elem(), GetCertificateTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagArrayInput)(nil)).Elem(), GetCertificateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerDomainExtensionInput)(nil)).Elem(), GetListenerDomainExtensionArgs{})
@@ -968,6 +4796,33 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerServerGroupArrayInput)(nil)).Elem(), GetListenerServerGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerEipBillingConfigInput)(nil)).Elem(), GetLoadBalancerEipBillingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerGlobalAcceleratorInput)(nil)).Elem(), GetLoadBalancerGlobalAcceleratorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerIpv6EipBillingConfigInput)(nil)).Elem(), GetLoadBalancerIpv6EipBillingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerTagInput)(nil)).Elem(), GetLoadBalancerTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerTagArrayInput)(nil)).Elem(), GetLoadBalancerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingInput)(nil)).Elem(), GetLoadBalancerZoneMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingArrayInput)(nil)).Elem(), GetLoadBalancerZoneMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressArrayInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEipInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupHealthCheckInput)(nil)).Elem(), GetServerGroupHealthCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupListenerInput)(nil)).Elem(), GetServerGroupListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupListenerArrayInput)(nil)).Elem(), GetServerGroupListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupServerInput)(nil)).Elem(), GetServerGroupServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupServerArrayInput)(nil)).Elem(), GetServerGroupServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupStickySessionConfigInput)(nil)).Elem(), GetServerGroupStickySessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupTagInput)(nil)).Elem(), GetServerGroupTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupTagArrayInput)(nil)).Elem(), GetServerGroupTagArray{})
+	pulumi.RegisterOutputType(AclAclEntryOutput{})
+	pulumi.RegisterOutputType(AclAclEntryArrayOutput{})
+	pulumi.RegisterOutputType(AclListenerOutput{})
+	pulumi.RegisterOutputType(AclListenerArrayOutput{})
+	pulumi.RegisterOutputType(AclTagOutput{})
+	pulumi.RegisterOutputType(AclTagArrayOutput{})
 	pulumi.RegisterOutputType(CertificateTagOutput{})
 	pulumi.RegisterOutputType(CertificateTagArrayOutput{})
 	pulumi.RegisterOutputType(ListenerDomainExtensionOutput{})
@@ -976,6 +4831,32 @@ func init() {
 	pulumi.RegisterOutputType(ListenerServerGroupArrayOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
 	pulumi.RegisterOutputType(ListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(LoadBalancerEipBillingConfigOutput{})
+	pulumi.RegisterOutputType(LoadBalancerEipBillingConfigPtrOutput{})
+	pulumi.RegisterOutputType(LoadBalancerGlobalAcceleratorOutput{})
+	pulumi.RegisterOutputType(LoadBalancerGlobalAcceleratorPtrOutput{})
+	pulumi.RegisterOutputType(LoadBalancerIpv6EipBillingConfigOutput{})
+	pulumi.RegisterOutputType(LoadBalancerIpv6EipBillingConfigPtrOutput{})
+	pulumi.RegisterOutputType(LoadBalancerTagOutput{})
+	pulumi.RegisterOutputType(LoadBalancerTagArrayOutput{})
+	pulumi.RegisterOutputType(LoadBalancerZoneMappingOutput{})
+	pulumi.RegisterOutputType(LoadBalancerZoneMappingArrayOutput{})
+	pulumi.RegisterOutputType(ServerGroupHealthCheckOutput{})
+	pulumi.RegisterOutputType(ServerGroupHealthCheckPtrOutput{})
+	pulumi.RegisterOutputType(ServerGroupListenerOutput{})
+	pulumi.RegisterOutputType(ServerGroupListenerArrayOutput{})
+	pulumi.RegisterOutputType(ServerGroupServerOutput{})
+	pulumi.RegisterOutputType(ServerGroupServerArrayOutput{})
+	pulumi.RegisterOutputType(ServerGroupStickySessionConfigOutput{})
+	pulumi.RegisterOutputType(ServerGroupStickySessionConfigPtrOutput{})
+	pulumi.RegisterOutputType(ServerGroupTagOutput{})
+	pulumi.RegisterOutputType(ServerGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAclAclEntryOutput{})
+	pulumi.RegisterOutputType(GetAclAclEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetAclListenerOutput{})
+	pulumi.RegisterOutputType(GetAclListenerArrayOutput{})
+	pulumi.RegisterOutputType(GetAclTagOutput{})
+	pulumi.RegisterOutputType(GetAclTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateTagOutput{})
 	pulumi.RegisterOutputType(GetCertificateTagArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerDomainExtensionOutput{})
@@ -984,4 +4865,25 @@ func init() {
 	pulumi.RegisterOutputType(GetListenerServerGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerTagOutput{})
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerEipBillingConfigOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerGlobalAcceleratorOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerIpv6EipBillingConfigOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerTagOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressEipOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput{})
+	pulumi.RegisterOutputType(GetServerGroupHealthCheckOutput{})
+	pulumi.RegisterOutputType(GetServerGroupListenerOutput{})
+	pulumi.RegisterOutputType(GetServerGroupListenerArrayOutput{})
+	pulumi.RegisterOutputType(GetServerGroupServerOutput{})
+	pulumi.RegisterOutputType(GetServerGroupServerArrayOutput{})
+	pulumi.RegisterOutputType(GetServerGroupStickySessionConfigOutput{})
+	pulumi.RegisterOutputType(GetServerGroupTagOutput{})
+	pulumi.RegisterOutputType(GetServerGroupTagArrayOutput{})
 }

@@ -139,12 +139,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class PolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-        /// </summary>
-        [Input("category")]
-        public Input<string>? Category { get; set; }
-
-        /// <summary>
         /// 策略描述，长度不超过128。
         /// </summary>
         [Input("description")]

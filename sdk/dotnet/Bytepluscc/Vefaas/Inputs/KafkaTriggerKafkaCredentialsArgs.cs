@@ -16,20 +16,20 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Inputs
         /// <summary>
         /// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
         /// </summary>
-        [Input("mechanism")]
-        public Input<string>? Mechanism { get; set; }
+        [Input("mechanism", required: true)]
+        public Input<string> Mechanism { get; set; } = null!;
 
         /// <summary>
         /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
         /// </summary>
-        [Input("password")]
-        public Input<string>? Password { get; set; }
+        [Input("password", required: true)]
+        public Input<string> Password { get; set; } = null!;
 
         /// <summary>
         /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
         /// </summary>
-        [Input("username")]
-        public Input<string>? Username { get; set; }
+        [Input("username", required: true)]
+        public Input<string> Username { get; set; } = null!;
 
         public KafkaTriggerKafkaCredentialsArgs()
         {

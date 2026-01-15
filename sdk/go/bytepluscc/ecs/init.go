@@ -25,6 +25,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Image{}
 	case "bytepluscc:ecs/instance:Instance":
 		r = &Instance{}
+	case "bytepluscc:ecs/invocation:Invocation":
+		r = &Invocation{}
+	case "bytepluscc:ecs/keypair:Keypair":
+		r = &Keypair{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +50,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"ecs/instance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/invocation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/keypair",
 		&module{version},
 	)
 }

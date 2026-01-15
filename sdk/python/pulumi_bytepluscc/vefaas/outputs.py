@@ -34,24 +34,21 @@ __all__ = [
 @pulumi.output_type
 class KafkaTriggerKafkaCredentials(dict):
     def __init__(__self__, *,
-                 mechanism: Optional[builtins.str] = None,
-                 password: Optional[builtins.str] = None,
-                 username: Optional[builtins.str] = None):
+                 mechanism: builtins.str,
+                 password: builtins.str,
+                 username: builtins.str):
         """
         :param builtins.str mechanism: Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
         :param builtins.str password: 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
         :param builtins.str username: 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
         """
-        if mechanism is not None:
-            pulumi.set(__self__, "mechanism", mechanism)
-        if password is not None:
-            pulumi.set(__self__, "password", password)
-        if username is not None:
-            pulumi.set(__self__, "username", username)
+        pulumi.set(__self__, "mechanism", mechanism)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
 
     @property
     @pulumi.getter
-    def mechanism(self) -> Optional[builtins.str]:
+    def mechanism(self) -> builtins.str:
         """
         Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
         """
@@ -59,7 +56,7 @@ class KafkaTriggerKafkaCredentials(dict):
 
     @property
     @pulumi.getter
-    def password(self) -> Optional[builtins.str]:
+    def password(self) -> builtins.str:
         """
         创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
         """
@@ -67,7 +64,7 @@ class KafkaTriggerKafkaCredentials(dict):
 
     @property
     @pulumi.getter
-    def username(self) -> Optional[builtins.str]:
+    def username(self) -> builtins.str:
         """
         创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
         """

@@ -25,6 +25,26 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetInvocationArgs, GetInvocationResult, GetInvocationOutputArgs } from "./getInvocation";
+export const getInvocation: typeof import("./getInvocation").getInvocation = null as any;
+export const getInvocationOutput: typeof import("./getInvocation").getInvocationOutput = null as any;
+utilities.lazyLoad(exports, ["getInvocation","getInvocationOutput"], () => require("./getInvocation"));
+
+export { GetInvocationsResult } from "./getInvocations";
+export const getInvocations: typeof import("./getInvocations").getInvocations = null as any;
+export const getInvocationsOutput: typeof import("./getInvocations").getInvocationsOutput = null as any;
+utilities.lazyLoad(exports, ["getInvocations","getInvocationsOutput"], () => require("./getInvocations"));
+
+export { GetKeypairArgs, GetKeypairResult, GetKeypairOutputArgs } from "./getKeypair";
+export const getKeypair: typeof import("./getKeypair").getKeypair = null as any;
+export const getKeypairOutput: typeof import("./getKeypair").getKeypairOutput = null as any;
+utilities.lazyLoad(exports, ["getKeypair","getKeypairOutput"], () => require("./getKeypair"));
+
+export { GetKeypairsResult } from "./getKeypairs";
+export const getKeypairs: typeof import("./getKeypairs").getKeypairs = null as any;
+export const getKeypairsOutput: typeof import("./getKeypairs").getKeypairsOutput = null as any;
+utilities.lazyLoad(exports, ["getKeypairs","getKeypairsOutput"], () => require("./getKeypairs"));
+
 export { ImageArgs, ImageState } from "./image";
 export type Image = import("./image").Image;
 export const Image: typeof import("./image").Image = null as any;
@@ -35,6 +55,16 @@ export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
 
+export { InvocationArgs, InvocationState } from "./invocation";
+export type Invocation = import("./invocation").Invocation;
+export const Invocation: typeof import("./invocation").Invocation = null as any;
+utilities.lazyLoad(exports, ["Invocation"], () => require("./invocation"));
+
+export { KeypairArgs, KeypairState } from "./keypair";
+export type Keypair = import("./keypair").Keypair;
+export const Keypair: typeof import("./keypair").Keypair = null as any;
+utilities.lazyLoad(exports, ["Keypair"], () => require("./keypair"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +74,10 @@ const _module = {
                 return new Image(name, <any>undefined, { urn })
             case "bytepluscc:ecs/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:ecs/invocation:Invocation":
+                return new Invocation(name, <any>undefined, { urn })
+            case "bytepluscc:ecs/keypair:Keypair":
+                return new Keypair(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +85,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/image", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "ecs/invocation", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "ecs/keypair", _module)

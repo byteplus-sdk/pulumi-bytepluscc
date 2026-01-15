@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AclArgs, AclState } from "./acl";
+export type Acl = import("./acl").Acl;
+export const Acl: typeof import("./acl").Acl = null as any;
+utilities.lazyLoad(exports, ["Acl"], () => require("./acl"));
+
 export { CertificateArgs, CertificateState } from "./certificate";
 export type Certificate = import("./certificate").Certificate;
 export const Certificate: typeof import("./certificate").Certificate = null as any;
 utilities.lazyLoad(exports, ["Certificate"], () => require("./certificate"));
+
+export { GetAclArgs, GetAclResult, GetAclOutputArgs } from "./getAcl";
+export const getAcl: typeof import("./getAcl").getAcl = null as any;
+export const getAclOutput: typeof import("./getAcl").getAclOutput = null as any;
+utilities.lazyLoad(exports, ["getAcl","getAclOutput"], () => require("./getAcl"));
+
+export { GetAclsResult } from "./getAcls";
+export const getAcls: typeof import("./getAcls").getAcls = null as any;
+export const getAclsOutput: typeof import("./getAcls").getAclsOutput = null as any;
+utilities.lazyLoad(exports, ["getAcls","getAclsOutput"], () => require("./getAcls"));
 
 export { GetCertificateArgs, GetCertificateResult, GetCertificateOutputArgs } from "./getCertificate";
 export const getCertificate: typeof import("./getCertificate").getCertificate = null as any;
@@ -30,24 +45,63 @@ export const getListeners: typeof import("./getListeners").getListeners = null a
 export const getListenersOutput: typeof import("./getListeners").getListenersOutput = null as any;
 utilities.lazyLoad(exports, ["getListeners","getListenersOutput"], () => require("./getListeners"));
 
+export { GetLoadBalancerArgs, GetLoadBalancerResult, GetLoadBalancerOutputArgs } from "./getLoadBalancer";
+export const getLoadBalancer: typeof import("./getLoadBalancer").getLoadBalancer = null as any;
+export const getLoadBalancerOutput: typeof import("./getLoadBalancer").getLoadBalancerOutput = null as any;
+utilities.lazyLoad(exports, ["getLoadBalancer","getLoadBalancerOutput"], () => require("./getLoadBalancer"));
+
+export { GetLoadBalancersResult } from "./getLoadBalancers";
+export const getLoadBalancers: typeof import("./getLoadBalancers").getLoadBalancers = null as any;
+export const getLoadBalancersOutput: typeof import("./getLoadBalancers").getLoadBalancersOutput = null as any;
+utilities.lazyLoad(exports, ["getLoadBalancers","getLoadBalancersOutput"], () => require("./getLoadBalancers"));
+
+export { GetServerGroupArgs, GetServerGroupResult, GetServerGroupOutputArgs } from "./getServerGroup";
+export const getServerGroup: typeof import("./getServerGroup").getServerGroup = null as any;
+export const getServerGroupOutput: typeof import("./getServerGroup").getServerGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getServerGroup","getServerGroupOutput"], () => require("./getServerGroup"));
+
+export { GetServerGroupsResult } from "./getServerGroups";
+export const getServerGroups: typeof import("./getServerGroups").getServerGroups = null as any;
+export const getServerGroupsOutput: typeof import("./getServerGroups").getServerGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getServerGroups","getServerGroupsOutput"], () => require("./getServerGroups"));
+
 export { ListenerArgs, ListenerState } from "./listener";
 export type Listener = import("./listener").Listener;
 export const Listener: typeof import("./listener").Listener = null as any;
 utilities.lazyLoad(exports, ["Listener"], () => require("./listener"));
+
+export { LoadBalancerArgs, LoadBalancerState } from "./loadBalancer";
+export type LoadBalancer = import("./loadBalancer").LoadBalancer;
+export const LoadBalancer: typeof import("./loadBalancer").LoadBalancer = null as any;
+utilities.lazyLoad(exports, ["LoadBalancer"], () => require("./loadBalancer"));
+
+export { ServerGroupArgs, ServerGroupState } from "./serverGroup";
+export type ServerGroup = import("./serverGroup").ServerGroup;
+export const ServerGroup: typeof import("./serverGroup").ServerGroup = null as any;
+utilities.lazyLoad(exports, ["ServerGroup"], () => require("./serverGroup"));
 
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:alb/acl:Acl":
+                return new Acl(name, <any>undefined, { urn })
             case "bytepluscc:alb/certificate:Certificate":
                 return new Certificate(name, <any>undefined, { urn })
             case "bytepluscc:alb/listener:Listener":
                 return new Listener(name, <any>undefined, { urn })
+            case "bytepluscc:alb/loadBalancer:LoadBalancer":
+                return new LoadBalancer(name, <any>undefined, { urn })
+            case "bytepluscc:alb/serverGroup:ServerGroup":
+                return new ServerGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "alb/acl", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/certificate", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/listener", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "alb/loadBalancer", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "alb/serverGroup", _module)

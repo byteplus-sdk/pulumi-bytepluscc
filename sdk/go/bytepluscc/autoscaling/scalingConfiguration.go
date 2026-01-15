@@ -42,7 +42,7 @@ type ScalingConfiguration struct {
 	InstanceTypes pulumi.StringArrayOutput `pulumi:"instanceTypes"`
 	// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
 	Ipv6AddressCount pulumi.IntOutput `pulumi:"ipv6AddressCount"`
-	// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+	// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 	KeyPairName pulumi.StringOutput `pulumi:"keyPairName"`
 	// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
 	LifecycleState pulumi.StringOutput `pulumi:"lifecycleState"`
@@ -125,7 +125,7 @@ type scalingConfigurationState struct {
 	InstanceTypes []string `pulumi:"instanceTypes"`
 	// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
 	Ipv6AddressCount *int `pulumi:"ipv6AddressCount"`
-	// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+	// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 	KeyPairName *string `pulumi:"keyPairName"`
 	// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
 	LifecycleState *string `pulumi:"lifecycleState"`
@@ -179,7 +179,7 @@ type ScalingConfigurationState struct {
 	InstanceTypes pulumi.StringArrayInput
 	// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
 	Ipv6AddressCount pulumi.IntPtrInput
-	// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+	// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 	KeyPairName pulumi.StringPtrInput
 	// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
 	LifecycleState pulumi.StringPtrInput
@@ -231,7 +231,7 @@ type scalingConfigurationArgs struct {
 	InstanceTypeOverrides []ScalingConfigurationInstanceTypeOverride `pulumi:"instanceTypeOverrides"`
 	// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
 	Ipv6AddressCount *int `pulumi:"ipv6AddressCount"`
-	// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+	// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 	KeyPairName *string `pulumi:"keyPairName"`
 	// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
 	LifecycleState *string `pulumi:"lifecycleState"`
@@ -276,7 +276,7 @@ type ScalingConfigurationArgs struct {
 	InstanceTypeOverrides ScalingConfigurationInstanceTypeOverrideArrayInput
 	// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
 	Ipv6AddressCount pulumi.IntPtrInput
-	// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+	// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 	KeyPairName pulumi.StringPtrInput
 	// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
 	LifecycleState pulumi.StringPtrInput
@@ -447,7 +447,7 @@ func (o ScalingConfigurationOutput) Ipv6AddressCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingConfiguration) pulumi.IntOutput { return v.Ipv6AddressCount }).(pulumi.IntOutput)
 }
 
-// KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
 func (o ScalingConfigurationOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingConfiguration) pulumi.StringOutput { return v.KeyPairName }).(pulumi.StringOutput)
 }

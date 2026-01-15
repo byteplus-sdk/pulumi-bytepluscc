@@ -186,6 +186,9 @@ class GetScalingConfigurationResult:
     @property
     @pulumi.getter(name="instanceTypeOverrides")
     def instance_type_overrides(self) -> Sequence['outputs.GetScalingConfigurationInstanceTypeOverrideResult']:
+        """
+        抢占式实例的规格信息。
+        """
         return pulumi.get(self, "instance_type_overrides")
 
     @property
@@ -208,7 +211,7 @@ class GetScalingConfigurationResult:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> builtins.str:
         """
-        KeyPairName string 可选 示例值：kp-test-123，使用“SSH密钥对”登录实例时，请输入密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
         """
         return pulumi.get(self, "key_pair_name")
 

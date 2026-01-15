@@ -31,6 +31,35 @@ export interface ProviderEndpoints {
     sts?: pulumi.Input<string>;
 }
 export namespace alb {
+    export interface AclAclEntry {
+        /**
+         * IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * IP条目的地址段，只支持CIDR地址。
+         */
+        entry?: pulumi.Input<string>;
+    }
+
+    export interface AclListener {
+        /**
+         * 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+         */
+        aclType?: pulumi.Input<string>;
+    }
+
+    export interface AclTag {
+        /**
+         * 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface CertificateTag {
         /**
          * 用户标签的标签键。
@@ -87,6 +116,200 @@ export namespace alb {
         key?: pulumi.Input<string>;
         /**
          * 用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface LoadBalancerEipBillingConfig {
+        /**
+         * EIP的带宽峰值，单位为Mbps。
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * EIP的计费方式，2为按带宽计费，3为按流量计费。
+         */
+        billingType?: pulumi.Input<number>;
+        /**
+         * 公网IP的线路类型，BGP表示多线。
+         */
+        isp?: pulumi.Input<string>;
+    }
+
+    export interface LoadBalancerGlobalAccelerator {
+        /**
+         * 绑定的全球加速实例的ID。
+         */
+        acceleratorId?: pulumi.Input<string>;
+        /**
+         * 绑定的全球加速监听器的ID。
+         */
+        acceleratorListenerId?: pulumi.Input<string>;
+        /**
+         * 绑定的终端节点组的ID。
+         */
+        endpointGroupId?: pulumi.Input<string>;
+        /**
+         * 后端服务器的权重，决定流量分发比例。
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface LoadBalancerIpv6EipBillingConfig {
+        /**
+         * IPv6 EIP的带宽峰值，单位为Mbps。
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+         */
+        billingType?: pulumi.Input<number>;
+        /**
+         * IPv6公网IP的线路类型，BGP表示多线。
+         */
+        isp?: pulumi.Input<string>;
+    }
+
+    export interface LoadBalancerTag {
+        /**
+         * 标签的键，用于标识标签的类别。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签的值，用于标识具体的标签内容。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface LoadBalancerZoneMapping {
+        /**
+         * 可用区内提供服务的子网ID。
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * 可用区的唯一标识符。
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
+    export interface ServerGroupHealthCheck {
+        /**
+         * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+         */
+        enabled?: pulumi.Input<string>;
+        /**
+         * 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+         */
+        healthyThreshold?: pulumi.Input<number>;
+        /**
+         * 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+         */
+        httpCode?: pulumi.Input<string>;
+        /**
+         * 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+         */
+        httpVersion?: pulumi.Input<string>;
+        /**
+         * 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+         */
+        interval?: pulumi.Input<number>;
+        /**
+         * 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+         */
+        method?: pulumi.Input<string>;
+        /**
+         * 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+         */
+        timeout?: pulumi.Input<number>;
+        /**
+         * 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+         */
+        unhealthyThreshold?: pulumi.Input<number>;
+        /**
+         * 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+         */
+        uri?: pulumi.Input<string>;
+    }
+
+    export interface ServerGroupListener {
+        /**
+         * 监听器的ID。
+         */
+        listenerId?: pulumi.Input<string>;
+    }
+
+    export interface ServerGroupServer {
+        /**
+         * 后端服务器的描述。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 云服务器实例或网卡的ID。
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * 后端服务器的私网IP地址。
+         */
+        ip?: pulumi.Input<string>;
+        /**
+         * 后端服务器接收请求的端口号。
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+         */
+        remoteEnabled?: pulumi.Input<string>;
+        /**
+         * 后端服务器ID。
+         */
+        serverId?: pulumi.Input<string>;
+        /**
+         * 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * 后端服务器的权重。
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface ServerGroupStickySessionConfig {
+        /**
+         * 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+         */
+        cookie?: pulumi.Input<string>;
+        /**
+         * 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+         */
+        cookieTimeout?: pulumi.Input<number>;
+        /**
+         * 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+         */
+        stickySessionEnabled?: pulumi.Input<string>;
+        /**
+         * 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+         */
+        stickySessionType?: pulumi.Input<string>;
+    }
+
+    export interface ServerGroupTag {
+        /**
+         * 标签的标签键。同一资源的标签键不允许重复。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签的标签值。
          */
         value?: pulumi.Input<string>;
     }
@@ -712,15 +935,15 @@ export namespace autoscaling {
 
     export interface ScalingConfigurationVolume {
         /**
-         * 云盘是否随实例释放：参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1   - 15。参数   - DeleteWithInstance：云盘是否随实例释放。true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+         * 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
          */
         deleteWithInstance?: pulumi.Input<boolean>;
         /**
-         * 云盘的容量，单位为GiB。参数   - N：表示云盘的序号，序号为“1”表示系统盘；序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。取值   - Size：表述第N个云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。多个云盘之间用&分隔。
+         * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
          */
         size?: pulumi.Input<number>;
         /**
-         * 云盘的类型：参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘。取值：1 ～ 15。参数   - VolumeType：表示第N个云盘的类型，取值：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。多个云盘之间用&分隔。
+         * 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
          */
         volumeType?: pulumi.Input<string>;
     }
@@ -1057,14 +1280,14 @@ export namespace cdn {
         rules?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface ShareConfigCommonMatchs {
+    export interface ShareConfigCommonMatchList {
         /**
          * 表示该通用列表的内容。
          */
-        commonType?: pulumi.Input<inputs.cdn.ShareConfigCommonMatchsCommonType>;
+        commonType?: pulumi.Input<inputs.cdn.ShareConfigCommonMatchListCommonType>;
     }
 
-    export interface ShareConfigCommonMatchsCommonType {
+    export interface ShareConfigCommonMatchListCommonType {
         /**
          * 表示 Rules 中的条目是否区分大小写。该参数有以下取值：true：表示不区分大小写。false：表示区分大小写。该参数的默认值是 true。
          */
@@ -1327,6 +1550,68 @@ export namespace clb {
          * 标签值。
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface NlbTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface NlbZoneMapping {
+        /**
+         * 网卡ID。
+         */
+        eniId?: pulumi.Input<string>;
+        /**
+         * NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+         */
+        ipv4Address?: pulumi.Input<string>;
+        /**
+         * NLB实例的公网IPv4 EIP地址。
+         */
+        ipv4EipAddress?: pulumi.Input<string>;
+        /**
+         * NLB实例的公网IPv4 EIP ID。
+         */
+        ipv4EipId?: pulumi.Input<string>;
+        /**
+         * NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+         */
+        ipv4HcStatus?: pulumi.Input<string>;
+        /**
+         * NLB实例的私网IPv4 LIP地址。
+         */
+        ipv4LocalAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * NLB实例的私网IPv6 VIP地址。
+         */
+        ipv6Address?: pulumi.Input<string>;
+        /**
+         * NLB实例关联的IPv6公网带宽的ID。
+         */
+        ipv6EipId?: pulumi.Input<string>;
+        /**
+         * NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+         */
+        ipv6HcStatus?: pulumi.Input<string>;
+        /**
+         * NLB实例的私网IPv6 LIP地址。
+         */
+        ipv6LocalAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * NLB实例所属的子网ID。
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
+         * NLB实例所属的可用区ID。
+         */
+        zoneId?: pulumi.Input<string>;
     }
 
     export interface RuleRedirectConfig {
@@ -1601,6 +1886,37 @@ export namespace cloudmonitor {
 }
 
 export namespace config {
+}
+
+export namespace cr {
+    export interface RegistryProxyCache {
+        /**
+         * ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface RegistryStatus {
+        /**
+         * Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         */
+        conditions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         */
+        phase?: pulumi.Input<string>;
+    }
+
+    export interface RegistryTag {
+        /**
+         * 标签的 Key 值。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签的 Value 值列表。
+         */
+        value?: pulumi.Input<string>;
+    }
 }
 
 export namespace directconnect {
@@ -1938,6 +2254,118 @@ export namespace ecs {
         key?: pulumi.Input<string>;
         /**
          * 实例的值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface InvocationInvocationResult {
+        /**
+         * 命令ID。
+         */
+        commandId?: pulumi.Input<string>;
+        /**
+         * 命令执行的完成时间。
+         */
+        endTime?: pulumi.Input<string>;
+        /**
+         * 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+         */
+        errorCode?: pulumi.Input<string>;
+        /**
+         * 命令执行失败的错误信息。
+         */
+        errorMessage?: pulumi.Input<string>;
+        /**
+         * 脚本执行后的退出状态码。
+         */
+        exitCode?: pulumi.Input<number>;
+        /**
+         * 实例ID。
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * 任务执行ID。
+         */
+        invocationId?: pulumi.Input<string>;
+        /**
+         * 任务执行结果ID。
+         */
+        invocationResultId?: pulumi.Input<string>;
+        /**
+         * 单台实例的命令进度状态。
+         */
+        invocationResultStatus?: pulumi.Input<string>;
+        /**
+         * 经过Base64编码的命令执行后输出信息。
+         */
+        output?: pulumi.Input<string>;
+        /**
+         * 命令在实例中开始执行的时间。
+         */
+        startTime?: pulumi.Input<string>;
+        /**
+         * 在实例中执行命令的用户名称。
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface InvocationParameterDefinition {
+        /**
+         * 自定义参数值（数字）允许的小数点后位数。
+         */
+        decimalPrecision?: pulumi.Input<number>;
+        /**
+         * 自定义参数默认值。
+         */
+        defaultValue?: pulumi.Input<string>;
+        /**
+         * 自定义参数值（字符串）的最大长度。
+         */
+        maxLength?: pulumi.Input<number>;
+        /**
+         * 自定义参数值（数字）的最大值。
+         */
+        maxValue?: pulumi.Input<string>;
+        /**
+         * 自定义参数值（字符串）的最小长度。
+         */
+        minLength?: pulumi.Input<number>;
+        /**
+         * 自定义参数值（数字）的最小值。
+         */
+        minValue?: pulumi.Input<string>;
+        /**
+         * 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * 是否必填。true：必填。false：非必填。
+         */
+        required?: pulumi.Input<boolean>;
+        /**
+         * 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface InvocationTag {
+        /**
+         * 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface KeypairTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
          */
         value?: pulumi.Input<string>;
     }
@@ -2627,6 +3055,44 @@ export namespace hbase {
 }
 
 export namespace iam {
+    export interface GroupAttachedPolicy {
+        /**
+         * 策略名。
+         */
+        policyName?: pulumi.Input<string>;
+        policyScopes?: pulumi.Input<pulumi.Input<inputs.iam.GroupAttachedPolicyPolicyScope>[]>;
+        /**
+         * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+         */
+        policyType?: pulumi.Input<string>;
+    }
+
+    export interface GroupAttachedPolicyPolicyScope {
+        /**
+         * 项目授权时间。
+         */
+        attachTime?: pulumi.Input<string>;
+        /**
+         * 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+         */
+        policyScopeType?: pulumi.Input<string>;
+        /**
+         * 按项目授权时的项目显示名。
+         */
+        projectDisplayName?: pulumi.Input<string>;
+        /**
+         * 按项目授权时的项目名。
+         */
+        projectName?: pulumi.Input<string>;
+    }
+
+    export interface GroupUser {
+        /**
+         * 用户名。
+         */
+        userName?: pulumi.Input<string>;
+    }
+
     export interface PolicyPolicyRole {
         /**
          * 对应用户、角色、用户组的名称。
@@ -3484,20 +3950,131 @@ export namespace storageebs {
     }
 }
 
+export namespace transitrouter {
+    export interface TransitRouterAttachment {
+        /**
+         * 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+         */
+        autoPublishRouteEnabled?: pulumi.Input<boolean>;
+        /**
+         * 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+         */
+        businessStatus?: pulumi.Input<string>;
+        /**
+         * 网络实例连接的创建时间。
+         */
+        creationTime?: pulumi.Input<string>;
+        /**
+         * 网络实例连接的删除时间。
+         */
+        deletedTime?: pulumi.Input<string>;
+        /**
+         * 网络实例连接的描述信息。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 是否开启IPv6功能。true：是。false：否。
+         */
+        ipv6Enabled?: pulumi.Input<boolean>;
+        /**
+         * 网络实例连接的欠费关停时间。
+         */
+        overdueTime?: pulumi.Input<string>;
+        /**
+         * 网络实例的ID。
+         */
+        resourceId?: pulumi.Input<string>;
+        /**
+         * 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+         */
+        status?: pulumi.Input<string>;
+        tags?: pulumi.Input<pulumi.Input<inputs.transitrouter.TransitRouterAttachmentTag>[]>;
+        /**
+         * 网络实例连接的ID。
+         */
+        transitRouterAttachmentId?: pulumi.Input<string>;
+        /**
+         * 网络实例连接的名称。
+         */
+        transitRouterAttachmentName?: pulumi.Input<string>;
+        /**
+         * 跨地域连接关联的转发策略的ID。
+         */
+        transitRouterForwardPolicyTableId?: pulumi.Input<string>;
+        /**
+         * 中转路由器实例的ID。
+         */
+        transitRouterId?: pulumi.Input<string>;
+        /**
+         * 网络实例连接关联转发的路由表ID。
+         */
+        transitRouterRouteTableId?: pulumi.Input<string>;
+        /**
+         * 跨地域连接关联的流标记策略的ID。
+         */
+        transitRouterTrafficQosMarkingPolicyId?: pulumi.Input<string>;
+        /**
+         * 跨地域连接关联的流队列策略的ID。
+         */
+        transitRouterTrafficQosQueuePolicyId?: pulumi.Input<string>;
+        /**
+         * 网络实例连接的最近操作时间。
+         */
+        updateTime?: pulumi.Input<string>;
+    }
+
+    export interface TransitRouterAttachmentTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface TransitRouterRouteTableTag {
+        /**
+         * 标签键
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface TransitRouterTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+}
+
 export namespace vefaas {
     export interface KafkaTriggerKafkaCredentials {
         /**
          * Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
          */
-        mechanism?: pulumi.Input<string>;
+        mechanism: pulumi.Input<string>;
         /**
          * 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
          */
-        password?: pulumi.Input<string>;
+        password: pulumi.Input<string>;
         /**
          * 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
          */
-        username?: pulumi.Input<string>;
+        username: pulumi.Input<string>;
     }
 
     export interface SandboxEnv {
@@ -4284,7 +4861,115 @@ export namespace vke {
     }
 }
 
+export namespace vmp {
+    export interface WorkspaceInstanceType {
+        /**
+         * 最大活跃时序数。
+         */
+        activeSeries?: pulumi.Input<number>;
+        /**
+         * 可用区（az）数。
+         */
+        availabilityZoneReplicas?: pulumi.Input<number>;
+        /**
+         * 降采样策略。
+         */
+        downsamplingPeriods?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 最大每秒写入样本数。
+         */
+        ingestSamplesPerSecond?: pulumi.Input<number>;
+        /**
+         * 最大查询并发数。
+         */
+        queryConcurrency?: pulumi.Input<number>;
+        /**
+         * 最大查询 QPS。
+         */
+        queryPerSecond?: pulumi.Input<number>;
+        /**
+         * 每个可用区（az）的数据副本数。
+         */
+        replicasPerZone?: pulumi.Input<number>;
+        /**
+         * 最长数据保留时间。
+         */
+        retentionPeriod?: pulumi.Input<string>;
+        /**
+         * 最大每秒扫描样本数。
+         */
+        scanSamplesPerSecond?: pulumi.Input<number>;
+        /**
+         * 最大每秒扫描时序数。
+         */
+        scanSeriesPerSecond?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceQuota {
+        /**
+         * 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+         */
+        activeSeries?: pulumi.Input<number>;
+        /**
+         * 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+         */
+        ingestSamplesPerSecond?: pulumi.Input<number>;
+        /**
+         * 最大查询 QPS。整数形式，默认取值范围为 1～500。
+         */
+        queryPerSecond?: pulumi.Input<number>;
+        /**
+         * 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+         */
+        scanSamplesPerSecond?: pulumi.Input<number>;
+        /**
+         * 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+         */
+        scanSeriesPerSecond?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceUsage {
+        /**
+         * 活跃时序数。
+         */
+        activeSeries?: pulumi.Input<number>;
+        /**
+         * 每秒写入样本数。
+         */
+        ingestedSamplesPerSecond?: pulumi.Input<number>;
+    }
+}
+
 export namespace vpc {
+    export interface BandwidthPackageEipAddress {
+        /**
+         * 分配ID
+         */
+        allocationId?: pulumi.Input<string>;
+    }
+
+    export interface BandwidthPackageTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface EipTag {
         /**
          * 标签键。
@@ -4345,6 +5030,148 @@ export namespace vpc {
     }
 
     export interface EniTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface NetworkAclDefaultEgressAclEntry {
+        /**
+         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         */
+        cidrIp?: pulumi.Input<string>;
+        /**
+         * 规则的描述信息。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 规则的ID。
+         */
+        networkAclEntryId?: pulumi.Input<string>;
+        /**
+         * 规则的名称。
+         */
+        networkAclEntryName?: pulumi.Input<string>;
+        /**
+         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         */
+        policy?: pulumi.Input<string>;
+        /**
+         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         */
+        protocol?: pulumi.Input<string>;
+    }
+
+    export interface NetworkAclDefaultIngressAclEntry {
+        /**
+         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         */
+        cidrIp?: pulumi.Input<string>;
+        /**
+         * 规则的描述信息。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 规则的ID。
+         */
+        networkAclEntryId?: pulumi.Input<string>;
+        /**
+         * 规则的名称。
+         */
+        networkAclEntryName?: pulumi.Input<string>;
+        /**
+         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         */
+        policy?: pulumi.Input<string>;
+        /**
+         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         */
+        protocol?: pulumi.Input<string>;
+    }
+
+    export interface NetworkAclEgressAclEntry {
+        /**
+         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         */
+        cidrIp?: pulumi.Input<string>;
+        /**
+         * 规则的描述信息。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 规则的名称。
+         */
+        networkAclEntryName?: pulumi.Input<string>;
+        /**
+         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         */
+        policy?: pulumi.Input<string>;
+        /**
+         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         */
+        protocol?: pulumi.Input<string>;
+    }
+
+    export interface NetworkAclIngressAclEntry {
+        /**
+         * 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+         */
+        cidrIp?: pulumi.Input<string>;
+        /**
+         * 规则的描述信息。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 规则的名称。
+         */
+        networkAclEntryName?: pulumi.Input<string>;
+        /**
+         * 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+         */
+        policy?: pulumi.Input<string>;
+        /**
+         * 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+         */
+        protocol?: pulumi.Input<string>;
+    }
+
+    export interface NetworkAclResource {
+        /**
+         * 关联资源的ID。
+         */
+        resourceId?: pulumi.Input<string>;
+    }
+
+    export interface NetworkAclTag {
         /**
          * 用户标签的标签键。
          */
@@ -4593,6 +5420,19 @@ export namespace vpc {
         key?: pulumi.Input<string>;
         /**
          * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+}
+
+export namespace vpn {
+    export interface VpnGatewayTag {
+        /**
+         * VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
          */
         value?: pulumi.Input<string>;
     }
