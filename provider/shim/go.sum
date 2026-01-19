@@ -7,8 +7,8 @@ github.com/agext/levenshtein v1.2.2/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki
 github.com/apparentlymart/go-textseg/v15 v15.0.0 h1:uYvfpb3DyLSCGWnctWKGj857c6ew1u1fNQOlOtuGxQY=
 github.com/apparentlymart/go-textseg/v15 v15.0.0/go.mod h1:K8XmNZdhEBkdlyDdvbmmsvpAG721bKi0joRfFdHIWJ4=
 github.com/avast/retry-go v3.0.0+incompatible/go.mod h1:XtSnn+n/sHqQIpZ10K1qAevBhOOCWBLXXy3hyiqqBrY=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.13 h1:FlxfsuBdmfnCF6Ktj9nHZyXpkRwRv+Bp0n09aB1K0WY=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.13/go.mod h1:KkfhkF4WIszO/+475COG11gN5HcijimaWYcN63OOwLk=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.14 h1:yD5W+N7yPuXec+P59vurljH728ZZmWB4BQFbK5mg6BE=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.14/go.mod h1:KkfhkF4WIszO/+475COG11gN5HcijimaWYcN63OOwLk=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cloudflare/circl v1.6.0 h1:cr5JKic4HI+LkINy2lg3W2jF8sHCVTBncJr5gIIq7qk=
