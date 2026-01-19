@@ -289,8 +289,8 @@ github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdn
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/bufbuild/protocompile v0.4.0 h1:LbFKd2XowZvQ/kajzguUp2DC9UEIQhIq77fZZlaQsNA=
 github.com/bufbuild/protocompile v0.4.0/go.mod h1:3v93+mbWn/v3xzN+31nwkJfrEpAUwp+BagBSZWx+TP8=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.13 h1:FlxfsuBdmfnCF6Ktj9nHZyXpkRwRv+Bp0n09aB1K0WY=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.13/go.mod h1:KkfhkF4WIszO/+475COG11gN5HcijimaWYcN63OOwLk=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.14 h1:yD5W+N7yPuXec+P59vurljH728ZZmWB4BQFbK5mg6BE=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.14/go.mod h1:KkfhkF4WIszO/+475COG11gN5HcijimaWYcN63OOwLk=
 github.com/cenkalti/backoff/v3 v3.2.2 h1:cfUAAO3yvKMYKPrvhDuHSwQnhZNk/RMHKdZqKTxfm6M=
 github.com/cenkalti/backoff/v3 v3.2.2/go.mod h1:cIeZDE3IrqwwJl6VUwCN6trj1oXrTS4rc0ij+ULvLYs=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
