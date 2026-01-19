@@ -12,6 +12,8 @@ import com.byteplus.bytepluscc.vpc.inputs.GetEniArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetNetworkAclArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetNetworkAclPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetPrefixListArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetPrefixListPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetRouteTableArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetRouteTablePlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupArgs;
@@ -28,6 +30,8 @@ import com.byteplus.bytepluscc.vpc.outputs.GetEniResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEnisResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetNetworkAclResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetNetworkAclsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetPrefixListResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetPrefixListsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetRouteTableResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetRouteTablesResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupResult;
@@ -380,6 +384,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetNetworkAclsResult> getNetworkAclsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getNetworkAcls:getNetworkAcls", TypeShape.of(GetNetworkAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static Output<GetPrefixListResult> getPrefixList(GetPrefixListArgs args) {
+        return getPrefixList(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static CompletableFuture<GetPrefixListResult> getPrefixListPlain(GetPrefixListPlainArgs args) {
+        return getPrefixListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static Output<GetPrefixListResult> getPrefixList(GetPrefixListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getPrefixList:getPrefixList", TypeShape.of(GetPrefixListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static Output<GetPrefixListResult> getPrefixList(GetPrefixListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getPrefixList:getPrefixList", TypeShape.of(GetPrefixListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static CompletableFuture<GetPrefixListResult> getPrefixListPlain(GetPrefixListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getPrefixList:getPrefixList", TypeShape.of(GetPrefixListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static Output<GetPrefixListsResult> getPrefixLists() {
+        return getPrefixLists(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static CompletableFuture<GetPrefixListsResult> getPrefixListsPlain() {
+        return getPrefixListsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static Output<GetPrefixListsResult> getPrefixLists(InvokeArgs args) {
+        return getPrefixLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static CompletableFuture<GetPrefixListsResult> getPrefixListsPlain(InvokeArgs args) {
+        return getPrefixListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static Output<GetPrefixListsResult> getPrefixLists(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getPrefixLists:getPrefixLists", TypeShape.of(GetPrefixListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static Output<GetPrefixListsResult> getPrefixLists(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getPrefixLists:getPrefixLists", TypeShape.of(GetPrefixListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::PrefixList
+     * 
+     */
+    public static CompletableFuture<GetPrefixListsResult> getPrefixListsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getPrefixLists:getPrefixLists", TypeShape.of(GetPrefixListsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::RouteTable

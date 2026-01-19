@@ -4,6 +4,10 @@
 package com.byteplus.bytepluscc.clb;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.clb.inputs.GetAclArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetAclPlainArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetCertificateArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetCertificatePlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetListenerArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetListenerPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetNlbArgs;
@@ -16,6 +20,10 @@ import com.byteplus.bytepluscc.clb.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetRulePlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetServerGroupArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetServerGroupPlainArgs;
+import com.byteplus.bytepluscc.clb.outputs.GetAclResult;
+import com.byteplus.bytepluscc.clb.outputs.GetAclsResult;
+import com.byteplus.bytepluscc.clb.outputs.GetCertificateResult;
+import com.byteplus.bytepluscc.clb.outputs.GetCertificatesResult;
 import com.byteplus.bytepluscc.clb.outputs.GetListenerResult;
 import com.byteplus.bytepluscc.clb.outputs.GetListenersResult;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbListenerResult;
@@ -37,6 +45,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class ClbFunctions {
+    /**
+     * Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args) {
+        return getAcl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args) {
+        return getAclPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls() {
+        return getAcls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain() {
+        return getAclsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args) {
+        return getAcls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args) {
+        return getAclsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
+        return getCertificate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
+        return getCertificatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getCertificate:getCertificate", TypeShape.of(GetCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates() {
+        return getCertificates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificatesResult> getCertificatesPlain() {
+        return getCertificatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates(InvokeArgs args) {
+        return getCertificates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(InvokeArgs args) {
+        return getCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static Output<GetCertificatesResult> getCertificates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::Certificate
+     * 
+     */
+    public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CLB::Listener
      * 

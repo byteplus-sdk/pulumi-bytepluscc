@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { CommandArgs, CommandState } from "./command";
+export type Command = import("./command").Command;
+export const Command: typeof import("./command").Command = null as any;
+utilities.lazyLoad(exports, ["Command"], () => require("./command"));
+
+export { GetCommandArgs, GetCommandResult, GetCommandOutputArgs } from "./getCommand";
+export const getCommand: typeof import("./getCommand").getCommand = null as any;
+export const getCommandOutput: typeof import("./getCommand").getCommandOutput = null as any;
+utilities.lazyLoad(exports, ["getCommand","getCommandOutput"], () => require("./getCommand"));
+
+export { GetCommandsResult } from "./getCommands";
+export const getCommands: typeof import("./getCommands").getCommands = null as any;
+export const getCommandsOutput: typeof import("./getCommands").getCommandsOutput = null as any;
+utilities.lazyLoad(exports, ["getCommands","getCommandsOutput"], () => require("./getCommands"));
+
 export { GetImageArgs, GetImageResult, GetImageOutputArgs } from "./getImage";
 export const getImage: typeof import("./getImage").getImage = null as any;
 export const getImageOutput: typeof import("./getImage").getImageOutput = null as any;
@@ -70,6 +85,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:ecs/command:Command":
+                return new Command(name, <any>undefined, { urn })
             case "bytepluscc:ecs/image:Image":
                 return new Image(name, <any>undefined, { urn })
             case "bytepluscc:ecs/instance:Instance":
@@ -83,6 +100,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "ecs/command", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/image", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/invocation", _module)

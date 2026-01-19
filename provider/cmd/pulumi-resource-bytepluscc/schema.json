@@ -5039,6 +5039,105 @@
                 }
             }
         },
+        "bytepluscc:clb/AclAclEntry:AclAclEntry": {
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                },
+                "entry": {
+                    "type": "string",
+                    "description": "IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "description",
+                        "entry"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:clb/AclListener:AclListener": {
+            "properties": {
+                "aclType": {
+                    "type": "string",
+                    "description": "监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。\n"
+                },
+                "listenerId": {
+                    "type": "string",
+                    "description": "监听器的ID。\n"
+                },
+                "listenerName": {
+                    "type": "string",
+                    "description": "监听器的名称。\n"
+                },
+                "port": {
+                    "type": "integer",
+                    "description": "监听器的端口。\n"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "监听器的协议。包括 TCP、UDP、HTTP、HTTPS。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "aclType",
+                        "listenerId",
+                        "listenerName",
+                        "port",
+                        "protocol"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:clb/AclTag:AclTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:clb/CertificateTag:CertificateTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:clb/ListenerHealthCheck:ListenerHealthCheck": {
             "properties": {
                 "domain": {
@@ -5581,6 +5680,109 @@
                         "key",
                         "value"
                     ]
+                }
+            }
+        },
+        "bytepluscc:clb/getAclAclEntry:getAclAclEntry": {
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                },
+                "entry": {
+                    "type": "string",
+                    "description": "IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "description",
+                "entry"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:clb/getAclListener:getAclListener": {
+            "properties": {
+                "aclType": {
+                    "type": "string",
+                    "description": "监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。\n"
+                },
+                "listenerId": {
+                    "type": "string",
+                    "description": "监听器的ID。\n"
+                },
+                "listenerName": {
+                    "type": "string",
+                    "description": "监听器的名称。\n"
+                },
+                "port": {
+                    "type": "integer",
+                    "description": "监听器的端口。\n"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "监听器的协议。包括 TCP、UDP、HTTP、HTTPS。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "aclType",
+                "listenerId",
+                "listenerName",
+                "port",
+                "protocol"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:clb/getAclTag:getAclTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:clb/getCertificateTag:getCertificateTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
                 }
             }
         },
@@ -7216,6 +7418,83 @@
                 }
             }
         },
+        "bytepluscc:ecs/CommandParameterDefinition:CommandParameterDefinition": {
+            "properties": {
+                "decimalPrecision": {
+                    "type": "integer",
+                    "description": "自定义参数值（数字）允许的小数点后位数。\n"
+                },
+                "defaultValue": {
+                    "type": "string",
+                    "description": "自定义参数默认值。\n"
+                },
+                "maxLength": {
+                    "type": "integer",
+                    "description": "自定义参数值（字符串）的最大长度。\n"
+                },
+                "maxValue": {
+                    "type": "string",
+                    "description": "自定义参数值（数字）的最大值。\n"
+                },
+                "minLength": {
+                    "type": "integer",
+                    "description": "自定义参数值（字符串）的最小长度。\n"
+                },
+                "minValue": {
+                    "type": "string",
+                    "description": "自定义参数值（数字）的最小值。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。\n"
+                },
+                "required": {
+                    "type": "boolean",
+                    "description": "是否必填。\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "decimalPrecision",
+                        "defaultValue",
+                        "maxLength",
+                        "maxValue",
+                        "minLength",
+                        "minValue",
+                        "name",
+                        "required",
+                        "type"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/CommandTag:CommandTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:ecs/ImageDetectionResults:ImageDetectionResults": {
             "properties": {
                 "detectionStatus": {
@@ -7855,6 +8134,85 @@
                         "key",
                         "value"
                     ]
+                }
+            }
+        },
+        "bytepluscc:ecs/getCommandParameterDefinition:getCommandParameterDefinition": {
+            "properties": {
+                "decimalPrecision": {
+                    "type": "integer",
+                    "description": "自定义参数值（数字）允许的小数点后位数。\n"
+                },
+                "defaultValue": {
+                    "type": "string",
+                    "description": "自定义参数默认值。\n"
+                },
+                "maxLength": {
+                    "type": "integer",
+                    "description": "自定义参数值（字符串）的最大长度。\n"
+                },
+                "maxValue": {
+                    "type": "string",
+                    "description": "自定义参数值（数字）的最大值。\n"
+                },
+                "minLength": {
+                    "type": "integer",
+                    "description": "自定义参数值（字符串）的最小长度。\n"
+                },
+                "minValue": {
+                    "type": "string",
+                    "description": "自定义参数值（数字）的最小值。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。\n"
+                },
+                "required": {
+                    "type": "boolean",
+                    "description": "是否必填。\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "decimalPrecision",
+                "defaultValue",
+                "maxLength",
+                "maxValue",
+                "minLength",
+                "minValue",
+                "name",
+                "required",
+                "type"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getCommandTag:getCommandTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
                 }
             }
         },
@@ -12355,6 +12713,32 @@
                 }
             }
         },
+        "bytepluscc:rdsmysql/DatabaseDatabasePrivilege:DatabaseDatabasePrivilege": {
+            "properties": {
+                "accountName": {
+                    "type": "string",
+                    "description": "数据库账号名称。\n"
+                },
+                "accountPrivilege": {
+                    "type": "string",
+                    "description": "授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。\n"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "accountName",
+                        "accountPrivilege",
+                        "host"
+                    ]
+                }
+            }
+        },
         "bytepluscc:rdsmysql/DbAccountAccountPrivilege:DbAccountAccountPrivilege": {
             "properties": {
                 "accountPrivilege": {
@@ -12922,6 +13306,38 @@
                         "key",
                         "value"
                     ]
+                }
+            }
+        },
+        "bytepluscc:rdsmysql/getDatabaseDatabasePrivilege:getDatabaseDatabasePrivilege": {
+            "properties": {
+                "accountName": {
+                    "type": "string",
+                    "description": "数据库账号名称。\n"
+                },
+                "accountPrivilege": {
+                    "type": "string",
+                    "description": "授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。\n"
+                },
+                "accountPrivilegeDetail": {
+                    "type": "string",
+                    "description": "数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。\n"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accountName",
+                "accountPrivilege",
+                "accountPrivilegeDetail",
+                "host"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
                 }
             }
         },
@@ -18099,6 +18515,90 @@
                 }
             }
         },
+        "bytepluscc:vpc/PrefixListAssociationsRouteTable:PrefixListAssociationsRouteTable": {
+            "properties": {
+                "resourceId": {
+                    "type": "string",
+                    "description": "关联资源的ID。\n"
+                },
+                "resourceType": {
+                    "type": "string",
+                    "description": "关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "resourceId",
+                        "resourceType"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:vpc/PrefixListAssociationsSecurityGroup:PrefixListAssociationsSecurityGroup": {
+            "properties": {
+                "resourceId": {
+                    "type": "string",
+                    "description": "关联资源的ID。\n"
+                },
+                "resourceType": {
+                    "type": "string",
+                    "description": "关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "resourceId",
+                        "resourceType"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:vpc/PrefixListPrefixListEntry:PrefixListPrefixListEntry": {
+            "properties": {
+                "cidr": {
+                    "type": "string",
+                    "description": "前缀列表条目的CIDR。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "cidr",
+                        "description"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:vpc/PrefixListTag:PrefixListTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:vpc/RouteTableCustomRouteEntry:RouteTableCustomRouteEntry": {
             "properties": {
                 "description": {
@@ -18904,6 +19404,94 @@
             }
         },
         "bytepluscc:vpc/getNetworkAclTag:getNetworkAclTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:vpc/getPrefixListAssociationsRouteTable:getPrefixListAssociationsRouteTable": {
+            "properties": {
+                "resourceId": {
+                    "type": "string",
+                    "description": "关联资源的ID。\n"
+                },
+                "resourceType": {
+                    "type": "string",
+                    "description": "关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "resourceId",
+                "resourceType"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:vpc/getPrefixListAssociationsSecurityGroup:getPrefixListAssociationsSecurityGroup": {
+            "properties": {
+                "resourceId": {
+                    "type": "string",
+                    "description": "关联资源的ID。\n"
+                },
+                "resourceType": {
+                    "type": "string",
+                    "description": "关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "resourceId",
+                "resourceType"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:vpc/getPrefixListPrefixListEntry:getPrefixListPrefixListEntry": {
+            "properties": {
+                "cidr": {
+                    "type": "string",
+                    "description": "前缀列表条目的CIDR。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "cidr",
+                "description"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:vpc/getPrefixListTag:getPrefixListTag": {
             "properties": {
                 "key": {
                     "type": "string",
@@ -23342,6 +23930,343 @@
                 "type": "object"
             }
         },
+        "bytepluscc:clb/acl:Acl": {
+            "description": "CLB提供监听级别的访问控制，如果您希望仅允许某些IP、或仅拒绝某些IP通过监听端口访问CLB实例，可以对该监听器设置访问控制策略。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst aclDemo = new bytepluscc.clb.Acl(\"AclDemo\", {\n    aclName: \"AclDemo\",\n    description: \"AclDemo Example\",\n    projectName: \"default\",\n    aclEntries: [\n        {\n            description: \"AclDemo description\",\n            entry: \"1.1.2.2/32\",\n        },\n        {\n            description: \"AclDemo description\",\n            entry: \"2.2.2.2/32\",\n        },\n    ],\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nacl_demo = bytepluscc.clb.Acl(\"AclDemo\",\n    acl_name=\"AclDemo\",\n    description=\"AclDemo Example\",\n    project_name=\"default\",\n    acl_entries=[\n        {\n            \"description\": \"AclDemo description\",\n            \"entry\": \"1.1.2.2/32\",\n        },\n        {\n            \"description\": \"AclDemo description\",\n            \"entry\": \"2.2.2.2/32\",\n        },\n    ],\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var aclDemo = new Bytepluscc.Clb.Acl(\"AclDemo\", new()\n    {\n        AclName = \"AclDemo\",\n        Description = \"AclDemo Example\",\n        ProjectName = \"default\",\n        AclEntries = new[]\n        {\n            new Bytepluscc.Clb.Inputs.AclAclEntryArgs\n            {\n                Description = \"AclDemo description\",\n                Entry = \"1.1.2.2/32\",\n            },\n            new Bytepluscc.Clb.Inputs.AclAclEntryArgs\n            {\n                Description = \"AclDemo description\",\n                Entry = \"2.2.2.2/32\",\n            },\n        },\n        Tags = new[]\n        {\n            new Bytepluscc.Clb.Inputs.AclTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/clb\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := clb.NewAcl(ctx, \"AclDemo\", \u0026clb.AclArgs{\n\t\t\tAclName:     pulumi.String(\"AclDemo\"),\n\t\t\tDescription: pulumi.String(\"AclDemo Example\"),\n\t\t\tProjectName: pulumi.String(\"default\"),\n\t\t\tAclEntries: clb.AclAclEntryArray{\n\t\t\t\t\u0026clb.AclAclEntryArgs{\n\t\t\t\t\tDescription: pulumi.String(\"AclDemo description\"),\n\t\t\t\t\tEntry:       pulumi.String(\"1.1.2.2/32\"),\n\t\t\t\t},\n\t\t\t\t\u0026clb.AclAclEntryArgs{\n\t\t\t\t\tDescription: pulumi.String(\"AclDemo description\"),\n\t\t\t\t\tEntry:       pulumi.String(\"2.2.2.2/32\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tTags: clb.AclTagArray{\n\t\t\t\t\u0026clb.AclTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.clb.Acl;\nimport com.byteplus.bytepluscc.clb.AclArgs;\nimport com.pulumi.bytepluscc.clb.inputs.AclAclEntryArgs;\nimport com.pulumi.bytepluscc.clb.inputs.AclTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var aclDemo = new Acl(\"aclDemo\", AclArgs.builder()\n            .aclName(\"AclDemo\")\n            .description(\"AclDemo Example\")\n            .projectName(\"default\")\n            .aclEntries(            \n                AclAclEntryArgs.builder()\n                    .description(\"AclDemo description\")\n                    .entry(\"1.1.2.2/32\")\n                    .build(),\n                AclAclEntryArgs.builder()\n                    .description(\"AclDemo description\")\n                    .entry(\"2.2.2.2/32\")\n                    .build())\n            .tags(AclTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  aclDemo:\n    type: bytepluscc:clb:Acl\n    name: AclDemo\n    properties:\n      aclName: AclDemo\n      description: AclDemo Example\n      projectName: default\n      aclEntries:\n        - description: AclDemo description\n          entry: 1.1.2.2/32\n        - description: AclDemo description\n          entry: 2.2.2.2/32\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:clb/acl:Acl example \"acl_id\"\n```\n\n",
+            "properties": {
+                "aclEntries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/AclAclEntry:AclAclEntry"
+                    }
+                },
+                "aclEntryCount": {
+                    "type": "integer",
+                    "description": "访问控制策略组包含的IP条目数量。\n"
+                },
+                "aclId": {
+                    "type": "string",
+                    "description": "访问控制策略组的ID。\n"
+                },
+                "aclName": {
+                    "type": "string",
+                    "description": "访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "访问控制策略组的创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。\n"
+                },
+                "listeners": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/AclListener:AclListener"
+                    }
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "访问控制策略组所属项目的名称。不填默认为default。\n"
+                },
+                "serviceManaged": {
+                    "type": "boolean",
+                    "description": "是否为托管资源。true：是。false：否。\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/AclTag:AclTag"
+                    }
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "访问控制策略组的最近操作时间。\n"
+                }
+            },
+            "required": [
+                "aclEntries",
+                "aclEntryCount",
+                "aclId",
+                "aclName",
+                "createTime",
+                "description",
+                "listeners",
+                "projectName",
+                "serviceManaged",
+                "status",
+                "tags",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "aclEntries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/AclAclEntry:AclAclEntry"
+                    }
+                },
+                "aclName": {
+                    "type": "string",
+                    "description": "访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "访问控制策略组所属项目的名称。不填默认为default。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/AclTag:AclTag"
+                    }
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Acl resources.\n",
+                "properties": {
+                    "aclEntries": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/AclAclEntry:AclAclEntry"
+                        }
+                    },
+                    "aclEntryCount": {
+                        "type": "integer",
+                        "description": "访问控制策略组包含的IP条目数量。\n"
+                    },
+                    "aclId": {
+                        "type": "string",
+                        "description": "访问控制策略组的ID。\n"
+                    },
+                    "aclName": {
+                        "type": "string",
+                        "description": "访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。\n"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "访问控制策略组的创建时间。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。\n"
+                    },
+                    "listeners": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/AclListener:AclListener"
+                        }
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "访问控制策略组所属项目的名称。不填默认为default。\n"
+                    },
+                    "serviceManaged": {
+                        "type": "boolean",
+                        "description": "是否为托管资源。true：是。false：否。\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/AclTag:AclTag"
+                        }
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "访问控制策略组的最近操作时间。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:clb/certificate:Certificate": {
+            "description": "针对HTTPS协议，提供统一的证书管理服务，证书无需上传到后端服务器，支持在CLB实例上解密处理，降低了后端服务器的CPU开销。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst certificatDemo = new bytepluscc.clb.Certificate(\"CertificatDemo\", {\n    certificateName: \"CertificatDemo\",\n    privateKey: \"-----BEGIN RSA PRIVATE KEY-----***----END RSA PRIVATE KEY-----\",\n    publicKey: `-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----`,\n    description: \"CertificateDemo Example\",\n    projectName: \"default\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\ncertificat_demo = bytepluscc.clb.Certificate(\"CertificatDemo\",\n    certificate_name=\"CertificatDemo\",\n    private_key=\"-----BEGIN RSA PRIVATE KEY-----***----END RSA PRIVATE KEY-----\",\n    public_key=\"\"\"-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\"\"\",\n    description=\"CertificateDemo Example\",\n    project_name=\"default\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var certificatDemo = new Bytepluscc.Clb.Certificate(\"CertificatDemo\", new()\n    {\n        CertificateName = \"CertificatDemo\",\n        PrivateKey = \"-----BEGIN RSA PRIVATE KEY-----***----END RSA PRIVATE KEY-----\",\n        PublicKey = @\"-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\",\n        Description = \"CertificateDemo Example\",\n        ProjectName = \"default\",\n        Tags = new[]\n        {\n            new Bytepluscc.Clb.Inputs.CertificateTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/clb\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := clb.NewCertificate(ctx, \"CertificatDemo\", \u0026clb.CertificateArgs{\n\t\t\tCertificateName: pulumi.String(\"CertificatDemo\"),\n\t\t\tPrivateKey:      pulumi.String(\"-----BEGIN RSA PRIVATE KEY-----***----END RSA PRIVATE KEY-----\"),\n\t\t\tPublicKey:       pulumi.String(\"-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\"),\n\t\t\tDescription:     pulumi.String(\"CertificateDemo Example\"),\n\t\t\tProjectName:     pulumi.String(\"default\"),\n\t\t\tTags: clb.CertificateTagArray{\n\t\t\t\t\u0026clb.CertificateTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.clb.Certificate;\nimport com.byteplus.bytepluscc.clb.CertificateArgs;\nimport com.pulumi.bytepluscc.clb.inputs.CertificateTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var certificatDemo = new Certificate(\"certificatDemo\", CertificateArgs.builder()\n            .certificateName(\"CertificatDemo\")\n            .privateKey(\"-----BEGIN RSA PRIVATE KEY-----***----END RSA PRIVATE KEY-----\")\n            .publicKey(\"\"\"\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----            \"\"\")\n            .description(\"CertificateDemo Example\")\n            .projectName(\"default\")\n            .tags(CertificateTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  certificatDemo:\n    type: bytepluscc:clb:Certificate\n    name: CertificatDemo\n    properties:\n      certificateName: CertificatDemo\n      privateKey: '-----BEGIN RSA PRIVATE KEY-----***----END RSA PRIVATE KEY-----'\n      publicKey: |-\n        -----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n        -----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n        -----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----\n      description: CertificateDemo Example\n      projectName: default\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:clb/certificate:Certificate example \"certificate_id\"\n```\n\n",
+            "properties": {
+                "certificateId": {
+                    "type": "string",
+                    "description": "证书的ID。\n"
+                },
+                "certificateName": {
+                    "type": "string",
+                    "description": "证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。\n"
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "证书的创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                },
+                "domainName": {
+                    "type": "string",
+                    "description": "证书的主域名。\n"
+                },
+                "expiredAt": {
+                    "type": "string",
+                    "description": "证书的过期时间。\n"
+                },
+                "listeners": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "证书关联的监听器的ID。\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "证书的私钥。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "证书所属项目的名称。不填默认为default。\n"
+                },
+                "publicKey": {
+                    "type": "string",
+                    "description": "证书的公钥。\n"
+                },
+                "serviceManaged": {
+                    "type": "boolean",
+                    "description": "是否为托管资源。true：托管资源。false：非托管资源。\n"
+                },
+                "subjectAlternativeNames": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "证书的备用域名列表。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/CertificateTag:CertificateTag"
+                    }
+                }
+            },
+            "required": [
+                "certificateId",
+                "certificateName",
+                "createdTime",
+                "description",
+                "domainName",
+                "expiredAt",
+                "listeners",
+                "privateKey",
+                "projectName",
+                "publicKey",
+                "serviceManaged",
+                "subjectAlternativeNames",
+                "tags"
+            ],
+            "inputProperties": {
+                "certificateName": {
+                    "type": "string",
+                    "description": "证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "证书的私钥。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "证书所属项目的名称。不填默认为default。\n"
+                },
+                "publicKey": {
+                    "type": "string",
+                    "description": "证书的公钥。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/CertificateTag:CertificateTag"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "privateKey",
+                "publicKey"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Certificate resources.\n",
+                "properties": {
+                    "certificateId": {
+                        "type": "string",
+                        "description": "证书的ID。\n"
+                    },
+                    "certificateName": {
+                        "type": "string",
+                        "description": "证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。\n"
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "证书的创建时间。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n"
+                    },
+                    "domainName": {
+                        "type": "string",
+                        "description": "证书的主域名。\n"
+                    },
+                    "expiredAt": {
+                        "type": "string",
+                        "description": "证书的过期时间。\n"
+                    },
+                    "listeners": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "证书关联的监听器的ID。\n"
+                    },
+                    "privateKey": {
+                        "type": "string",
+                        "description": "证书的私钥。\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "证书所属项目的名称。不填默认为default。\n"
+                    },
+                    "publicKey": {
+                        "type": "string",
+                        "description": "证书的公钥。\n"
+                    },
+                    "serviceManaged": {
+                        "type": "boolean",
+                        "description": "是否为托管资源。true：托管资源。false：非托管资源。\n"
+                    },
+                    "subjectAlternativeNames": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "证书的备用域名列表。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/CertificateTag:CertificateTag"
+                        }
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:clb/listener:Listener": {
             "description": "监听器负责根据指定的协议和端口，监听CLB实例接收到的用户访问请求。CLB将按照该监听器配置的调度算法，将访问请求转发至该后端服务器组内健康的后端服务器。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  clbListenerDemo:\n    type: bytepluscc:clb:Listener\n    name: ClbListenerDemo\n    properties:\n      aclIds:\n        - acl-mjd01crvppts5smt1bsxxxxx\n      aclStatus: on\n      aclType: black\n      connectionDrainEnabled: on\n      connectionDrainTimeout: 900\n      description: ClbListenerDemo description\n      enabled: on\n      establishedTimeout: 300\n      serverGroupId: rsp-rs11ie8u6neov0x58bxxxxx\n      healthCheck:\n        enabled: on\n        healthy_threshold: 3\n        interval: 5\n        timeout: 2\n        unhealthy_threshold: 3\n        port: 0\n        udp_request: test\n        udp_expect: test\n      listenerName: ClbListenerDemo\n      loadBalancerId: clb-rs1187938g00v0x58nxxxxx\n      persistenceTimeout: 1000\n      persistenceType: source_ip\n      protocol: UDP\n      port: 5001\n      scheduler: wrr\n      bandwidth: 1\n      proxyProtocolType: standard\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:clb/listener:Listener example \"listener_id\"\n```\n\n",
             "properties": {
@@ -26597,6 +27522,239 @@
                     "zoneName": {
                         "type": "string",
                         "description": "域名。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:ecs/command:Command": {
+            "description": "自定义命令是云助手提供的满足您个性化运维需求的功能，您可以在预置的公共命令不满足需求时创建自定义命令，并通过运维任务在实例中批量执行您编写的自定义命令。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  commandDemo:\n    type: bytepluscc:ecs:Command\n    name: CommandDemo\n    properties:\n      commandContent: IyEvYmluL2Jhc2gKCm1rZGlyIHt7ZGxxxxx\n      description: CommandDemo Example\n      enableParameter: true\n      name: commandtest\n      parameterDefinitions:\n        - type: Digit\n          name: dirname\n          required: true\n          default_value: '10'\n          min_length: 0\n          max_length: 0\n          min_value: '5'\n          max_value: '100'\n          decimal_precision: 0\n      projectName: default\n      tags:\n        - key: env\n          value: test\n      timeout: 60\n      type: Shell\n      username: rxxxx\n      workingDir: /home\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:ecs/command:Command example \"command_id\"\n```\n\n",
+            "properties": {
+                "commandContent": {
+                    "type": "string",
+                    "description": "命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。\n"
+                },
+                "commandId": {
+                    "type": "string",
+                    "description": "自定义命令ID。\n"
+                },
+                "contentEncoding": {
+                    "type": "string",
+                    "description": "命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。\n"
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。\n"
+                },
+                "enableParameter": {
+                    "type": "boolean",
+                    "description": "创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。\n"
+                },
+                "invocationTimes": {
+                    "type": "integer",
+                    "description": "命令被调用次数。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "命令名称。字符长度1~32。不限制特殊字符。\n"
+                },
+                "parameterDefinitions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/CommandParameterDefinition:CommandParameterDefinition"
+                    }
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "资源所属项目，一个资源只能归属于一个项目。\n"
+                },
+                "providerName": {
+                    "type": "string",
+                    "description": "命令的提供方。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/CommandTag:CommandTag"
+                    }
+                },
+                "timeout": {
+                    "type": "integer",
+                    "description": "创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。\n"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "更新时间。\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "执行命令时的用户名。\n"
+                },
+                "workingDir": {
+                    "type": "string",
+                    "description": "创建的命令在ECS实例中运行的目录。\n"
+                }
+            },
+            "required": [
+                "commandContent",
+                "commandId",
+                "contentEncoding",
+                "createdTime",
+                "description",
+                "enableParameter",
+                "invocationTimes",
+                "name",
+                "parameterDefinitions",
+                "projectName",
+                "providerName",
+                "tags",
+                "timeout",
+                "type",
+                "updatedTime",
+                "username",
+                "workingDir"
+            ],
+            "inputProperties": {
+                "commandContent": {
+                    "type": "string",
+                    "description": "命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。\n"
+                },
+                "contentEncoding": {
+                    "type": "string",
+                    "description": "命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。\n"
+                },
+                "enableParameter": {
+                    "type": "boolean",
+                    "description": "创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "命令名称。字符长度1~32。不限制特殊字符。\n"
+                },
+                "parameterDefinitions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/CommandParameterDefinition:CommandParameterDefinition"
+                    }
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "资源所属项目，一个资源只能归属于一个项目。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/CommandTag:CommandTag"
+                    }
+                },
+                "timeout": {
+                    "type": "integer",
+                    "description": "创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "执行命令时的用户名。\n"
+                },
+                "workingDir": {
+                    "type": "string",
+                    "description": "创建的命令在ECS实例中运行的目录。\n"
+                }
+            },
+            "requiredInputs": [
+                "commandContent",
+                "name",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Command resources.\n",
+                "properties": {
+                    "commandContent": {
+                        "type": "string",
+                        "description": "命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。\n"
+                    },
+                    "commandId": {
+                        "type": "string",
+                        "description": "自定义命令ID。\n"
+                    },
+                    "contentEncoding": {
+                        "type": "string",
+                        "description": "命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。\n"
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "创建时间。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。\n"
+                    },
+                    "enableParameter": {
+                        "type": "boolean",
+                        "description": "创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。\n"
+                    },
+                    "invocationTimes": {
+                        "type": "integer",
+                        "description": "命令被调用次数。\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "命令名称。字符长度1~32。不限制特殊字符。\n"
+                    },
+                    "parameterDefinitions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/CommandParameterDefinition:CommandParameterDefinition"
+                        }
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "资源所属项目，一个资源只能归属于一个项目。\n"
+                    },
+                    "providerName": {
+                        "type": "string",
+                        "description": "命令的提供方。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/CommandTag:CommandTag"
+                        }
+                    },
+                    "timeout": {
+                        "type": "integer",
+                        "description": "创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。\n"
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "更新时间。\n"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "执行命令时的用户名。\n"
+                    },
+                    "workingDir": {
+                        "type": "string",
+                        "description": "创建的命令在ECS实例中运行的目录。\n"
                     }
                 },
                 "type": "object"
@@ -31994,6 +33152,105 @@
                             "type": "string"
                         },
                         "description": "终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/database:Database": {
+            "description": "数据库\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  databaseDemo:\n    type: bytepluscc:rdsmysql:Database\n    name: DatabaseDemo\n    properties:\n      characterSetName: utf8\n      databasePrivileges:\n        - account_name: a***\n          account_privilege: ReadOnly\n          host: '%'\n      description: Demo Example\n      instanceId: mysql-779***\n      name: rdstest\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:rdsmysql/database:Database example \"instance_id|name\"\n```\n\n",
+            "properties": {
+                "characterSetName": {
+                    "type": "string",
+                    "description": "数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。\n"
+                },
+                "databasePrivileges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/DatabaseDatabasePrivilege:DatabaseDatabasePrivilege"
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "description": "数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "数据库实例 ID。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "数据库状态。取值为：Unavailable：不可用。Available：可用。\n"
+                }
+            },
+            "required": [
+                "characterSetName",
+                "databasePrivileges",
+                "description",
+                "instanceId",
+                "name",
+                "status"
+            ],
+            "inputProperties": {
+                "characterSetName": {
+                    "type": "string",
+                    "description": "数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。\n"
+                },
+                "databasePrivileges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:rdsmysql/DatabaseDatabasePrivilege:DatabaseDatabasePrivilege"
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "description": "数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "数据库实例 ID。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。\n"
+                }
+            },
+            "requiredInputs": [
+                "instanceId",
+                "name"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Database resources.\n",
+                "properties": {
+                    "characterSetName": {
+                        "type": "string",
+                        "description": "数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。\n"
+                    },
+                    "databasePrivileges": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/DatabaseDatabasePrivilege:DatabaseDatabasePrivilege"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "数据库实例 ID。\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "数据库状态。取值为：Unavailable：不可用。Available：可用。\n"
                     }
                 },
                 "type": "object"
@@ -37620,6 +38877,198 @@
                 "type": "object"
             }
         },
+        "bytepluscc:vpc/prefixList:PrefixList": {
+            "description": "前缀列表是一组CIDR地址块的集合，用于简化安全组规则、路由表条目的配置。当前缀列表修改时，所有关联它的资源均会同步修改。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst prefixlistDemo = new bytepluscc.vpc.PrefixList(\"PrefixlistDemo\", {\n    description: \"PrefixlistDemo Example\",\n    ipVersion: \"IPv4\",\n    maxEntries: 20,\n    prefixListName: \"my-prefix-list\",\n    projectName: \"default\",\n    prefixListEntries: [{\n        cidr: \"192.168.0.0/*\",\n        description: \"privite description\",\n    }],\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nprefixlist_demo = bytepluscc.vpc.PrefixList(\"PrefixlistDemo\",\n    description=\"PrefixlistDemo Example\",\n    ip_version=\"IPv4\",\n    max_entries=20,\n    prefix_list_name=\"my-prefix-list\",\n    project_name=\"default\",\n    prefix_list_entries=[{\n        \"cidr\": \"192.168.0.0/*\",\n        \"description\": \"privite description\",\n    }],\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var prefixlistDemo = new Bytepluscc.Vpc.PrefixList(\"PrefixlistDemo\", new()\n    {\n        Description = \"PrefixlistDemo Example\",\n        IpVersion = \"IPv4\",\n        MaxEntries = 20,\n        PrefixListName = \"my-prefix-list\",\n        ProjectName = \"default\",\n        PrefixListEntries = new[]\n        {\n            new Bytepluscc.Vpc.Inputs.PrefixListPrefixListEntryArgs\n            {\n                Cidr = \"192.168.0.0/*\",\n                Description = \"privite description\",\n            },\n        },\n        Tags = new[]\n        {\n            new Bytepluscc.Vpc.Inputs.PrefixListTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/vpc\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := vpc.NewPrefixList(ctx, \"PrefixlistDemo\", \u0026vpc.PrefixListArgs{\n\t\t\tDescription:    pulumi.String(\"PrefixlistDemo Example\"),\n\t\t\tIpVersion:      pulumi.String(\"IPv4\"),\n\t\t\tMaxEntries:     pulumi.Int(20),\n\t\t\tPrefixListName: pulumi.String(\"my-prefix-list\"),\n\t\t\tProjectName:    pulumi.String(\"default\"),\n\t\t\tPrefixListEntries: vpc.PrefixListPrefixListEntryArray{\n\t\t\t\t\u0026vpc.PrefixListPrefixListEntryArgs{\n\t\t\t\t\tCidr:        pulumi.String(\"192.168.0.0/*\"),\n\t\t\t\t\tDescription: pulumi.String(\"privite description\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tTags: vpc.PrefixListTagArray{\n\t\t\t\t\u0026vpc.PrefixListTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.vpc.PrefixList;\nimport com.byteplus.bytepluscc.vpc.PrefixListArgs;\nimport com.pulumi.bytepluscc.vpc.inputs.PrefixListPrefixListEntryArgs;\nimport com.pulumi.bytepluscc.vpc.inputs.PrefixListTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var prefixlistDemo = new PrefixList(\"prefixlistDemo\", PrefixListArgs.builder()\n            .description(\"PrefixlistDemo Example\")\n            .ipVersion(\"IPv4\")\n            .maxEntries(20)\n            .prefixListName(\"my-prefix-list\")\n            .projectName(\"default\")\n            .prefixListEntries(PrefixListPrefixListEntryArgs.builder()\n                .cidr(\"192.168.0.0/*\")\n                .description(\"privite description\")\n                .build())\n            .tags(PrefixListTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  prefixlistDemo:\n    type: bytepluscc:vpc:PrefixList\n    name: PrefixlistDemo\n    properties:\n      description: PrefixlistDemo Example\n      ipVersion: IPv4\n      maxEntries: 20\n      prefixListName: my-prefix-list\n      projectName: default\n      prefixListEntries:\n        - cidr: 192.168.0.0/*\n          description: privite description\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:vpc/prefixList:PrefixList example \"prefix_list_id\"\n```\n\n",
+            "properties": {
+                "associationCount": {
+                    "type": "integer",
+                    "description": "前缀列表关联的资源数量。\n"
+                },
+                "associationsRouteTables": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/PrefixListAssociationsRouteTable:PrefixListAssociationsRouteTable"
+                    }
+                },
+                "associationsSecurityGroups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/PrefixListAssociationsSecurityGroup:PrefixListAssociationsSecurityGroup"
+                    }
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "前缀列表的创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。\n"
+                },
+                "ipVersion": {
+                    "type": "string",
+                    "description": "IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。\n"
+                },
+                "maxEntries": {
+                    "type": "integer",
+                    "description": "最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。\n"
+                },
+                "prefixListEntries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/PrefixListPrefixListEntry:PrefixListPrefixListEntry"
+                    }
+                },
+                "prefixListId": {
+                    "type": "string",
+                    "description": "前缀列表的ID。\n"
+                },
+                "prefixListName": {
+                    "type": "string",
+                    "description": "前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "前缀列表所属项目的名称，不填默认加入default项目。\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/PrefixListTag:PrefixListTag"
+                    }
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "前缀列表的最近一次修改时间。\n"
+                }
+            },
+            "required": [
+                "associationCount",
+                "associationsRouteTables",
+                "associationsSecurityGroups",
+                "createdTime",
+                "description",
+                "ipVersion",
+                "maxEntries",
+                "prefixListEntries",
+                "prefixListId",
+                "prefixListName",
+                "projectName",
+                "status",
+                "tags",
+                "updatedTime"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。\n"
+                },
+                "ipVersion": {
+                    "type": "string",
+                    "description": "IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。\n"
+                },
+                "maxEntries": {
+                    "type": "integer",
+                    "description": "最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。\n"
+                },
+                "prefixListEntries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/PrefixListPrefixListEntry:PrefixListPrefixListEntry"
+                    }
+                },
+                "prefixListName": {
+                    "type": "string",
+                    "description": "前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "前缀列表所属项目的名称，不填默认加入default项目。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vpc/PrefixListTag:PrefixListTag"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "maxEntries"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PrefixList resources.\n",
+                "properties": {
+                    "associationCount": {
+                        "type": "integer",
+                        "description": "前缀列表关联的资源数量。\n"
+                    },
+                    "associationsRouteTables": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/PrefixListAssociationsRouteTable:PrefixListAssociationsRouteTable"
+                        }
+                    },
+                    "associationsSecurityGroups": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/PrefixListAssociationsSecurityGroup:PrefixListAssociationsSecurityGroup"
+                        }
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "前缀列表的创建时间。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。\n"
+                    },
+                    "ipVersion": {
+                        "type": "string",
+                        "description": "IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。\n"
+                    },
+                    "maxEntries": {
+                        "type": "integer",
+                        "description": "最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。\n"
+                    },
+                    "prefixListEntries": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/PrefixListPrefixListEntry:PrefixListPrefixListEntry"
+                        }
+                    },
+                    "prefixListId": {
+                        "type": "string",
+                        "description": "前缀列表的ID。\n"
+                    },
+                    "prefixListName": {
+                        "type": "string",
+                        "description": "前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "前缀列表所属项目的名称，不填默认加入default项目。\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/PrefixListTag:PrefixListTag"
+                        }
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "前缀列表的最近一次修改时间。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:vpc/routeTable:RouteTable": {
             "description": "路由表由一系列路由条目组成，为私有网络的流量指定下一跳的云资源，每个子网必须且仅支持关联一个路由表，使子网内的资源通过路由表转发流量。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  routeTableDemo:\n    type: bytepluscc:vpc:RouteTable\n    name: RouteTableDemo\n    properties:\n      vpcId: vpc-xxxxx\n      routeTableName: routeTableDemo\n      description: routeTableDemo description\n      projectName: default\n      subnetIds:\n        - subnet-rrxxxxxx\n      customRouteEntries:\n        - destination_cidr_block: 192.168.x.0/30\n          next_hop_type: Instance\n          next_hop_id: i-xxxx\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:vpc/routeTable:RouteTable example \"route_table_id\"\n```\n\n",
             "properties": {
@@ -41362,6 +42811,255 @@
                 "type": "object"
             }
         },
+        "bytepluscc:clb/getAcl:getAcl": {
+            "description": "Data Source schema for Byteplus::CLB::ACL\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAcl.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAcl.\n",
+                "properties": {
+                    "aclEntries": {
+                        "description": "访问控制策略组中IP条目的详细信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/getAclAclEntry:getAclAclEntry"
+                        },
+                        "type": "array"
+                    },
+                    "aclEntryCount": {
+                        "description": "访问控制策略组包含的IP条目数量。\n",
+                        "type": "integer"
+                    },
+                    "aclId": {
+                        "description": "访问控制策略组的ID。\n",
+                        "type": "string"
+                    },
+                    "aclName": {
+                        "description": "访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。\n",
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "description": "访问控制策略组的创建时间。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "listeners": {
+                        "description": "访问控制策略组关联的监听器的详细信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/getAclListener:getAclListener"
+                        },
+                        "type": "array"
+                    },
+                    "projectName": {
+                        "description": "访问控制策略组所属项目的名称。不填默认为default。\n",
+                        "type": "string"
+                    },
+                    "serviceManaged": {
+                        "description": "是否为托管资源。true：是。false：否。\n",
+                        "type": "boolean"
+                    },
+                    "status": {
+                        "description": "访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "访问控制策略组标签的详细信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/getAclTag:getAclTag"
+                        },
+                        "type": "array"
+                    },
+                    "updateTime": {
+                        "description": "访问控制策略组的最近操作时间。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "aclEntries",
+                    "aclEntryCount",
+                    "aclId",
+                    "aclName",
+                    "createTime",
+                    "description",
+                    "id",
+                    "listeners",
+                    "projectName",
+                    "serviceManaged",
+                    "status",
+                    "tags",
+                    "updateTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:clb/getAcls:getAcls": {
+            "description": "Plural Data Source schema for Byteplus::CLB::ACL\n",
+            "outputs": {
+                "description": "A collection of values returned by getAcls.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:clb/getCertificate:getCertificate": {
+            "description": "Data Source schema for Byteplus::CLB::Certificate\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getCertificate.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCertificate.\n",
+                "properties": {
+                    "certificateId": {
+                        "description": "证书的ID。\n",
+                        "type": "string"
+                    },
+                    "certificateName": {
+                        "description": "证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。\n",
+                        "type": "string"
+                    },
+                    "createdTime": {
+                        "description": "证书的创建时间。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。\n",
+                        "type": "string"
+                    },
+                    "domainName": {
+                        "description": "证书的主域名。\n",
+                        "type": "string"
+                    },
+                    "expiredAt": {
+                        "description": "证书的过期时间。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "listeners": {
+                        "description": "证书关联的监听器的ID。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "privateKey": {
+                        "description": "证书的私钥。\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "证书所属项目的名称。不填默认为default。\n",
+                        "type": "string"
+                    },
+                    "publicKey": {
+                        "description": "证书的公钥。\n",
+                        "type": "string"
+                    },
+                    "serviceManaged": {
+                        "description": "是否为托管资源。true：托管资源。false：非托管资源。\n",
+                        "type": "boolean"
+                    },
+                    "subjectAlternativeNames": {
+                        "description": "证书的备用域名列表。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "tags": {
+                        "description": "标签列表。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/getCertificateTag:getCertificateTag"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "certificateId",
+                    "certificateName",
+                    "createdTime",
+                    "description",
+                    "domainName",
+                    "expiredAt",
+                    "id",
+                    "listeners",
+                    "privateKey",
+                    "projectName",
+                    "publicKey",
+                    "serviceManaged",
+                    "subjectAlternativeNames",
+                    "tags"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:clb/getCertificates:getCertificates": {
+            "description": "Plural Data Source schema for Byteplus::CLB::Certificate\n",
+            "outputs": {
+                "description": "A collection of values returned by getCertificates.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:clb/getListener:getListener": {
             "description": "Data Source schema for Byteplus::CLB::Listener\n",
             "inputs": {
@@ -43328,6 +45026,150 @@
             "description": "Plural Data Source schema for Byteplus::DNS::Zone\n",
             "outputs": {
                 "description": "A collection of values returned by getZones.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:ecs/getCommand:getCommand": {
+            "description": "Data Source schema for Byteplus::ECS::Command\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getCommand.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCommand.\n",
+                "properties": {
+                    "commandContent": {
+                        "description": "命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。\n",
+                        "type": "string"
+                    },
+                    "commandId": {
+                        "description": "自定义命令ID。\n",
+                        "type": "string"
+                    },
+                    "contentEncoding": {
+                        "description": "命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。\n",
+                        "type": "string"
+                    },
+                    "createdTime": {
+                        "description": "创建时间。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。\n",
+                        "type": "string"
+                    },
+                    "enableParameter": {
+                        "description": "创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。\n",
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "invocationTimes": {
+                        "description": "命令被调用次数。\n",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "命令名称。字符长度1~32。不限制特殊字符。\n",
+                        "type": "string"
+                    },
+                    "parameterDefinitions": {
+                        "description": "自定义参数定义信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/getCommandParameterDefinition:getCommandParameterDefinition"
+                        },
+                        "type": "array"
+                    },
+                    "projectName": {
+                        "description": "资源所属项目，一个资源只能归属于一个项目。\n",
+                        "type": "string"
+                    },
+                    "providerName": {
+                        "description": "命令的提供方。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "标签键值对。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/getCommandTag:getCommandTag"
+                        },
+                        "type": "array"
+                    },
+                    "timeout": {
+                        "description": "创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。\n",
+                        "type": "integer"
+                    },
+                    "type": {
+                        "description": "命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。\n",
+                        "type": "string"
+                    },
+                    "updatedTime": {
+                        "description": "更新时间。\n",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "执行命令时的用户名。\n",
+                        "type": "string"
+                    },
+                    "workingDir": {
+                        "description": "创建的命令在ECS实例中运行的目录。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "commandContent",
+                    "commandId",
+                    "contentEncoding",
+                    "createdTime",
+                    "description",
+                    "enableParameter",
+                    "id",
+                    "invocationTimes",
+                    "name",
+                    "parameterDefinitions",
+                    "projectName",
+                    "providerName",
+                    "tags",
+                    "timeout",
+                    "type",
+                    "updatedTime",
+                    "username",
+                    "workingDir"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:ecs/getCommands:getCommands": {
+            "description": "Plural Data Source schema for Byteplus::ECS::Command\n",
+            "outputs": {
+                "description": "A collection of values returned by getCommands.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -46703,6 +48545,92 @@
             "description": "Plural Data Source schema for Byteplus::PrivateLink::EndpointService\n",
             "outputs": {
                 "description": "A collection of values returned by getEndpointServices.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/getDatabase:getDatabase": {
+            "description": "Data Source schema for Byteplus::RDSMySQL::Database\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getDatabase.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getDatabase.\n",
+                "properties": {
+                    "characterSetName": {
+                        "description": "数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。\n",
+                        "type": "string"
+                    },
+                    "databasePrivileges": {
+                        "description": "授权数据库权限信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:rdsmysql/getDatabaseDatabasePrivilege:getDatabaseDatabasePrivilege"
+                        },
+                        "type": "array"
+                    },
+                    "description": {
+                        "description": "数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "description": "数据库实例 ID。\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "数据库状态。取值为：Unavailable：不可用。Available：可用。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "characterSetName",
+                    "databasePrivileges",
+                    "description",
+                    "id",
+                    "instanceId",
+                    "name",
+                    "status"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdsmysql/getDatabases:getDatabases": {
+            "description": "Plural Data Source schema for Byteplus::RDSMySQL::Database\n",
+            "outputs": {
+                "description": "A collection of values returned by getDatabases.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -50151,6 +52079,141 @@
             "description": "Plural Data Source schema for Byteplus::VPC::NetworkAcl\n",
             "outputs": {
                 "description": "A collection of values returned by getNetworkAcls.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:vpc/getPrefixList:getPrefixList": {
+            "description": "Data Source schema for Byteplus::VPC::PrefixList\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getPrefixList.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPrefixList.\n",
+                "properties": {
+                    "associationCount": {
+                        "description": "前缀列表关联的资源数量。\n",
+                        "type": "integer"
+                    },
+                    "associationsRouteTables": {
+                        "description": "前缀列表关联的路由表信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/getPrefixListAssociationsRouteTable:getPrefixListAssociationsRouteTable"
+                        },
+                        "type": "array"
+                    },
+                    "associationsSecurityGroups": {
+                        "description": "前缀列表关联的安全组信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/getPrefixListAssociationsSecurityGroup:getPrefixListAssociationsSecurityGroup"
+                        },
+                        "type": "array"
+                    },
+                    "createdTime": {
+                        "description": "前缀列表的创建时间。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "ipVersion": {
+                        "description": "IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。\n",
+                        "type": "string"
+                    },
+                    "maxEntries": {
+                        "description": "最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。\n",
+                        "type": "integer"
+                    },
+                    "prefixListEntries": {
+                        "description": "前缀列表条目的CIDR。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/getPrefixListPrefixListEntry:getPrefixListPrefixListEntry"
+                        },
+                        "type": "array"
+                    },
+                    "prefixListId": {
+                        "description": "前缀列表的ID。\n",
+                        "type": "string"
+                    },
+                    "prefixListName": {
+                        "description": "前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "前缀列表所属项目的名称，不填默认加入default项目。\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "标签列表。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vpc/getPrefixListTag:getPrefixListTag"
+                        },
+                        "type": "array"
+                    },
+                    "updatedTime": {
+                        "description": "前缀列表的最近一次修改时间。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "associationCount",
+                    "associationsRouteTables",
+                    "associationsSecurityGroups",
+                    "createdTime",
+                    "description",
+                    "id",
+                    "ipVersion",
+                    "maxEntries",
+                    "prefixListEntries",
+                    "prefixListId",
+                    "prefixListName",
+                    "projectName",
+                    "status",
+                    "tags",
+                    "updatedTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:vpc/getPrefixLists:getPrefixLists": {
+            "description": "Plural Data Source schema for Byteplus::VPC::PrefixList\n",
+            "outputs": {
+                "description": "A collection of values returned by getPrefixLists.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",

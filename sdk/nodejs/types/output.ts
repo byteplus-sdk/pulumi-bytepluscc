@@ -2774,6 +2774,118 @@ export namespace cen {
 }
 
 export namespace clb {
+    export interface AclAclEntry {
+        /**
+         * IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+         */
+        description: string;
+        /**
+         * IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+         */
+        entry: string;
+    }
+
+    export interface AclListener {
+        /**
+         * 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+         */
+        aclType: string;
+        /**
+         * 监听器的ID。
+         */
+        listenerId: string;
+        /**
+         * 监听器的名称。
+         */
+        listenerName: string;
+        /**
+         * 监听器的端口。
+         */
+        port: number;
+        /**
+         * 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+         */
+        protocol: string;
+    }
+
+    export interface AclTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value: string;
+    }
+
+    export interface CertificateTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface GetAclAclEntry {
+        /**
+         * IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+         */
+        description: string;
+        /**
+         * IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+         */
+        entry: string;
+    }
+
+    export interface GetAclListener {
+        /**
+         * 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+         */
+        aclType: string;
+        /**
+         * 监听器的ID。
+         */
+        listenerId: string;
+        /**
+         * 监听器的名称。
+         */
+        listenerName: string;
+        /**
+         * 监听器的端口。
+         */
+        port: number;
+        /**
+         * 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+         */
+        protocol: string;
+    }
+
+    export interface GetAclTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value: string;
+    }
+
+    export interface GetCertificateTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
     export interface GetListenerHealthCheck {
         /**
          * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
@@ -4053,6 +4165,106 @@ export namespace dns {
 }
 
 export namespace ecs {
+    export interface CommandParameterDefinition {
+        /**
+         * 自定义参数值（数字）允许的小数点后位数。
+         */
+        decimalPrecision: number;
+        /**
+         * 自定义参数默认值。
+         */
+        defaultValue: string;
+        /**
+         * 自定义参数值（字符串）的最大长度。
+         */
+        maxLength: number;
+        /**
+         * 自定义参数值（数字）的最大值。
+         */
+        maxValue: string;
+        /**
+         * 自定义参数值（字符串）的最小长度。
+         */
+        minLength: number;
+        /**
+         * 自定义参数值（数字）的最小值。
+         */
+        minValue: string;
+        /**
+         * 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+         */
+        name: string;
+        /**
+         * 是否必填。
+         */
+        required: boolean;
+        /**
+         * 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+         */
+        type: string;
+    }
+
+    export interface CommandTag {
+        /**
+         * 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         */
+        value: string;
+    }
+
+    export interface GetCommandParameterDefinition {
+        /**
+         * 自定义参数值（数字）允许的小数点后位数。
+         */
+        decimalPrecision: number;
+        /**
+         * 自定义参数默认值。
+         */
+        defaultValue: string;
+        /**
+         * 自定义参数值（字符串）的最大长度。
+         */
+        maxLength: number;
+        /**
+         * 自定义参数值（数字）的最大值。
+         */
+        maxValue: string;
+        /**
+         * 自定义参数值（字符串）的最小长度。
+         */
+        minLength: number;
+        /**
+         * 自定义参数值（数字）的最小值。
+         */
+        minValue: string;
+        /**
+         * 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+         */
+        name: string;
+        /**
+         * 是否必填。
+         */
+        required: boolean;
+        /**
+         * 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+         */
+        type: string;
+    }
+
+    export interface GetCommandTag {
+        /**
+         * 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+         */
+        value: string;
+    }
+
     export interface GetImageDetectionResults {
         /**
          * 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
@@ -7176,6 +7388,21 @@ export namespace privatelink {
 }
 
 export namespace rdsmysql {
+    export interface DatabaseDatabasePrivilege {
+        /**
+         * 数据库账号名称。
+         */
+        accountName: string;
+        /**
+         * 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+         */
+        accountPrivilege: string;
+        /**
+         * 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+         */
+        host: string;
+    }
+
     export interface DbAccountAccountPrivilege {
         /**
          * 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
@@ -7224,6 +7451,25 @@ export namespace rdsmysql {
          * 对账号进行权限设置的表的名称。
          */
         tableName: string;
+    }
+
+    export interface GetDatabaseDatabasePrivilege {
+        /**
+         * 数据库账号名称。
+         */
+        accountName: string;
+        /**
+         * 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+         */
+        accountPrivilege: string;
+        /**
+         * 数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。
+         */
+        accountPrivilegeDetail: string;
+        /**
+         * 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+         */
+        host: string;
     }
 
     export interface GetDbAccountAccountPrivilege {
@@ -10611,6 +10857,50 @@ export namespace vpc {
         value: string;
     }
 
+    export interface GetPrefixListAssociationsRouteTable {
+        /**
+         * 关联资源的ID。
+         */
+        resourceId: string;
+        /**
+         * 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         */
+        resourceType: string;
+    }
+
+    export interface GetPrefixListAssociationsSecurityGroup {
+        /**
+         * 关联资源的ID。
+         */
+        resourceId: string;
+        /**
+         * 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         */
+        resourceType: string;
+    }
+
+    export interface GetPrefixListPrefixListEntry {
+        /**
+         * 前缀列表条目的CIDR。
+         */
+        cidr: string;
+        /**
+         * 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         */
+        description: string;
+    }
+
+    export interface GetPrefixListTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
     export interface GetRouteTableCustomRouteEntry {
         /**
          * 路由条目描述。
@@ -11033,6 +11323,50 @@ export namespace vpc {
     }
 
     export interface NetworkAclTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface PrefixListAssociationsRouteTable {
+        /**
+         * 关联资源的ID。
+         */
+        resourceId: string;
+        /**
+         * 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         */
+        resourceType: string;
+    }
+
+    export interface PrefixListAssociationsSecurityGroup {
+        /**
+         * 关联资源的ID。
+         */
+        resourceId: string;
+        /**
+         * 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         */
+        resourceType: string;
+    }
+
+    export interface PrefixListPrefixListEntry {
+        /**
+         * 前缀列表条目的CIDR。
+         */
+        cidr: string;
+        /**
+         * 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         */
+        description: string;
+    }
+
+    export interface PrefixListTag {
         /**
          * 用户标签的标签键。
          */

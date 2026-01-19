@@ -13,6 +13,457 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AclAclEntry struct {
+	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	Description *string `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	Entry *string `pulumi:"entry"`
+}
+
+// AclAclEntryInput is an input type that accepts AclAclEntryArgs and AclAclEntryOutput values.
+// You can construct a concrete instance of `AclAclEntryInput` via:
+//
+//	AclAclEntryArgs{...}
+type AclAclEntryInput interface {
+	pulumi.Input
+
+	ToAclAclEntryOutput() AclAclEntryOutput
+	ToAclAclEntryOutputWithContext(context.Context) AclAclEntryOutput
+}
+
+type AclAclEntryArgs struct {
+	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	Entry pulumi.StringPtrInput `pulumi:"entry"`
+}
+
+func (AclAclEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclAclEntry)(nil)).Elem()
+}
+
+func (i AclAclEntryArgs) ToAclAclEntryOutput() AclAclEntryOutput {
+	return i.ToAclAclEntryOutputWithContext(context.Background())
+}
+
+func (i AclAclEntryArgs) ToAclAclEntryOutputWithContext(ctx context.Context) AclAclEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclAclEntryOutput)
+}
+
+// AclAclEntryArrayInput is an input type that accepts AclAclEntryArray and AclAclEntryArrayOutput values.
+// You can construct a concrete instance of `AclAclEntryArrayInput` via:
+//
+//	AclAclEntryArray{ AclAclEntryArgs{...} }
+type AclAclEntryArrayInput interface {
+	pulumi.Input
+
+	ToAclAclEntryArrayOutput() AclAclEntryArrayOutput
+	ToAclAclEntryArrayOutputWithContext(context.Context) AclAclEntryArrayOutput
+}
+
+type AclAclEntryArray []AclAclEntryInput
+
+func (AclAclEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclAclEntry)(nil)).Elem()
+}
+
+func (i AclAclEntryArray) ToAclAclEntryArrayOutput() AclAclEntryArrayOutput {
+	return i.ToAclAclEntryArrayOutputWithContext(context.Background())
+}
+
+func (i AclAclEntryArray) ToAclAclEntryArrayOutputWithContext(ctx context.Context) AclAclEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclAclEntryArrayOutput)
+}
+
+type AclAclEntryOutput struct{ *pulumi.OutputState }
+
+func (AclAclEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclAclEntry)(nil)).Elem()
+}
+
+func (o AclAclEntryOutput) ToAclAclEntryOutput() AclAclEntryOutput {
+	return o
+}
+
+func (o AclAclEntryOutput) ToAclAclEntryOutputWithContext(ctx context.Context) AclAclEntryOutput {
+	return o
+}
+
+// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+func (o AclAclEntryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+func (o AclAclEntryOutput) Entry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclAclEntry) *string { return v.Entry }).(pulumi.StringPtrOutput)
+}
+
+type AclAclEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (AclAclEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclAclEntry)(nil)).Elem()
+}
+
+func (o AclAclEntryArrayOutput) ToAclAclEntryArrayOutput() AclAclEntryArrayOutput {
+	return o
+}
+
+func (o AclAclEntryArrayOutput) ToAclAclEntryArrayOutputWithContext(ctx context.Context) AclAclEntryArrayOutput {
+	return o
+}
+
+func (o AclAclEntryArrayOutput) Index(i pulumi.IntInput) AclAclEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AclAclEntry {
+		return vs[0].([]AclAclEntry)[vs[1].(int)]
+	}).(AclAclEntryOutput)
+}
+
+type AclListener struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	AclType *string `pulumi:"aclType"`
+	// 监听器的ID。
+	ListenerId *string `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName *string `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port *int `pulumi:"port"`
+	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	Protocol *string `pulumi:"protocol"`
+}
+
+// AclListenerInput is an input type that accepts AclListenerArgs and AclListenerOutput values.
+// You can construct a concrete instance of `AclListenerInput` via:
+//
+//	AclListenerArgs{...}
+type AclListenerInput interface {
+	pulumi.Input
+
+	ToAclListenerOutput() AclListenerOutput
+	ToAclListenerOutputWithContext(context.Context) AclListenerOutput
+}
+
+type AclListenerArgs struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	AclType pulumi.StringPtrInput `pulumi:"aclType"`
+	// 监听器的ID。
+	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName pulumi.StringPtrInput `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+}
+
+func (AclListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclListener)(nil)).Elem()
+}
+
+func (i AclListenerArgs) ToAclListenerOutput() AclListenerOutput {
+	return i.ToAclListenerOutputWithContext(context.Background())
+}
+
+func (i AclListenerArgs) ToAclListenerOutputWithContext(ctx context.Context) AclListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclListenerOutput)
+}
+
+// AclListenerArrayInput is an input type that accepts AclListenerArray and AclListenerArrayOutput values.
+// You can construct a concrete instance of `AclListenerArrayInput` via:
+//
+//	AclListenerArray{ AclListenerArgs{...} }
+type AclListenerArrayInput interface {
+	pulumi.Input
+
+	ToAclListenerArrayOutput() AclListenerArrayOutput
+	ToAclListenerArrayOutputWithContext(context.Context) AclListenerArrayOutput
+}
+
+type AclListenerArray []AclListenerInput
+
+func (AclListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclListener)(nil)).Elem()
+}
+
+func (i AclListenerArray) ToAclListenerArrayOutput() AclListenerArrayOutput {
+	return i.ToAclListenerArrayOutputWithContext(context.Background())
+}
+
+func (i AclListenerArray) ToAclListenerArrayOutputWithContext(ctx context.Context) AclListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclListenerArrayOutput)
+}
+
+type AclListenerOutput struct{ *pulumi.OutputState }
+
+func (AclListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclListener)(nil)).Elem()
+}
+
+func (o AclListenerOutput) ToAclListenerOutput() AclListenerOutput {
+	return o
+}
+
+func (o AclListenerOutput) ToAclListenerOutputWithContext(ctx context.Context) AclListenerOutput {
+	return o
+}
+
+// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+func (o AclListenerOutput) AclType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.AclType }).(pulumi.StringPtrOutput)
+}
+
+// 监听器的ID。
+func (o AclListenerOutput) ListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
+}
+
+// 监听器的名称。
+func (o AclListenerOutput) ListenerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.ListenerName }).(pulumi.StringPtrOutput)
+}
+
+// 监听器的端口。
+func (o AclListenerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AclListener) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+func (o AclListenerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+type AclListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (AclListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclListener)(nil)).Elem()
+}
+
+func (o AclListenerArrayOutput) ToAclListenerArrayOutput() AclListenerArrayOutput {
+	return o
+}
+
+func (o AclListenerArrayOutput) ToAclListenerArrayOutputWithContext(ctx context.Context) AclListenerArrayOutput {
+	return o
+}
+
+func (o AclListenerArrayOutput) Index(i pulumi.IntInput) AclListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AclListener {
+		return vs[0].([]AclListener)[vs[1].(int)]
+	}).(AclListenerOutput)
+}
+
+type AclTag struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value *string `pulumi:"value"`
+}
+
+// AclTagInput is an input type that accepts AclTagArgs and AclTagOutput values.
+// You can construct a concrete instance of `AclTagInput` via:
+//
+//	AclTagArgs{...}
+type AclTagInput interface {
+	pulumi.Input
+
+	ToAclTagOutput() AclTagOutput
+	ToAclTagOutputWithContext(context.Context) AclTagOutput
+}
+
+type AclTagArgs struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (AclTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclTag)(nil)).Elem()
+}
+
+func (i AclTagArgs) ToAclTagOutput() AclTagOutput {
+	return i.ToAclTagOutputWithContext(context.Background())
+}
+
+func (i AclTagArgs) ToAclTagOutputWithContext(ctx context.Context) AclTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclTagOutput)
+}
+
+// AclTagArrayInput is an input type that accepts AclTagArray and AclTagArrayOutput values.
+// You can construct a concrete instance of `AclTagArrayInput` via:
+//
+//	AclTagArray{ AclTagArgs{...} }
+type AclTagArrayInput interface {
+	pulumi.Input
+
+	ToAclTagArrayOutput() AclTagArrayOutput
+	ToAclTagArrayOutputWithContext(context.Context) AclTagArrayOutput
+}
+
+type AclTagArray []AclTagInput
+
+func (AclTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclTag)(nil)).Elem()
+}
+
+func (i AclTagArray) ToAclTagArrayOutput() AclTagArrayOutput {
+	return i.ToAclTagArrayOutputWithContext(context.Background())
+}
+
+func (i AclTagArray) ToAclTagArrayOutputWithContext(ctx context.Context) AclTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AclTagArrayOutput)
+}
+
+type AclTagOutput struct{ *pulumi.OutputState }
+
+func (AclTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AclTag)(nil)).Elem()
+}
+
+func (o AclTagOutput) ToAclTagOutput() AclTagOutput {
+	return o
+}
+
+func (o AclTagOutput) ToAclTagOutputWithContext(ctx context.Context) AclTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o AclTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o AclTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AclTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type AclTagArrayOutput struct{ *pulumi.OutputState }
+
+func (AclTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AclTag)(nil)).Elem()
+}
+
+func (o AclTagArrayOutput) ToAclTagArrayOutput() AclTagArrayOutput {
+	return o
+}
+
+func (o AclTagArrayOutput) ToAclTagArrayOutputWithContext(ctx context.Context) AclTagArrayOutput {
+	return o
+}
+
+func (o AclTagArrayOutput) Index(i pulumi.IntInput) AclTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AclTag {
+		return vs[0].([]AclTag)[vs[1].(int)]
+	}).(AclTagOutput)
+}
+
+type CertificateTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// CertificateTagInput is an input type that accepts CertificateTagArgs and CertificateTagOutput values.
+// You can construct a concrete instance of `CertificateTagInput` via:
+//
+//	CertificateTagArgs{...}
+type CertificateTagInput interface {
+	pulumi.Input
+
+	ToCertificateTagOutput() CertificateTagOutput
+	ToCertificateTagOutputWithContext(context.Context) CertificateTagOutput
+}
+
+type CertificateTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (CertificateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateTag)(nil)).Elem()
+}
+
+func (i CertificateTagArgs) ToCertificateTagOutput() CertificateTagOutput {
+	return i.ToCertificateTagOutputWithContext(context.Background())
+}
+
+func (i CertificateTagArgs) ToCertificateTagOutputWithContext(ctx context.Context) CertificateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateTagOutput)
+}
+
+// CertificateTagArrayInput is an input type that accepts CertificateTagArray and CertificateTagArrayOutput values.
+// You can construct a concrete instance of `CertificateTagArrayInput` via:
+//
+//	CertificateTagArray{ CertificateTagArgs{...} }
+type CertificateTagArrayInput interface {
+	pulumi.Input
+
+	ToCertificateTagArrayOutput() CertificateTagArrayOutput
+	ToCertificateTagArrayOutputWithContext(context.Context) CertificateTagArrayOutput
+}
+
+type CertificateTagArray []CertificateTagInput
+
+func (CertificateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateTag)(nil)).Elem()
+}
+
+func (i CertificateTagArray) ToCertificateTagArrayOutput() CertificateTagArrayOutput {
+	return i.ToCertificateTagArrayOutputWithContext(context.Background())
+}
+
+func (i CertificateTagArray) ToCertificateTagArrayOutputWithContext(ctx context.Context) CertificateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateTagArrayOutput)
+}
+
+type CertificateTagOutput struct{ *pulumi.OutputState }
+
+func (CertificateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateTag)(nil)).Elem()
+}
+
+func (o CertificateTagOutput) ToCertificateTagOutput() CertificateTagOutput {
+	return o
+}
+
+func (o CertificateTagOutput) ToCertificateTagOutputWithContext(ctx context.Context) CertificateTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o CertificateTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o CertificateTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type CertificateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (CertificateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateTag)(nil)).Elem()
+}
+
+func (o CertificateTagArrayOutput) ToCertificateTagArrayOutput() CertificateTagArrayOutput {
+	return o
+}
+
+func (o CertificateTagArrayOutput) ToCertificateTagArrayOutputWithContext(ctx context.Context) CertificateTagArrayOutput {
+	return o
+}
+
+func (o CertificateTagArrayOutput) Index(i pulumi.IntInput) CertificateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateTag {
+		return vs[0].([]CertificateTag)[vs[1].(int)]
+	}).(CertificateTagOutput)
+}
+
 type ListenerHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
 	Domain *string `pulumi:"domain"`
@@ -2328,6 +2779,457 @@ func (o ServerGroupTagArrayOutput) Index(i pulumi.IntInput) ServerGroupTagOutput
 	}).(ServerGroupTagOutput)
 }
 
+type GetAclAclEntry struct {
+	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	Description string `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	Entry string `pulumi:"entry"`
+}
+
+// GetAclAclEntryInput is an input type that accepts GetAclAclEntryArgs and GetAclAclEntryOutput values.
+// You can construct a concrete instance of `GetAclAclEntryInput` via:
+//
+//	GetAclAclEntryArgs{...}
+type GetAclAclEntryInput interface {
+	pulumi.Input
+
+	ToGetAclAclEntryOutput() GetAclAclEntryOutput
+	ToGetAclAclEntryOutputWithContext(context.Context) GetAclAclEntryOutput
+}
+
+type GetAclAclEntryArgs struct {
+	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	Description pulumi.StringInput `pulumi:"description"`
+	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	Entry pulumi.StringInput `pulumi:"entry"`
+}
+
+func (GetAclAclEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclAclEntry)(nil)).Elem()
+}
+
+func (i GetAclAclEntryArgs) ToGetAclAclEntryOutput() GetAclAclEntryOutput {
+	return i.ToGetAclAclEntryOutputWithContext(context.Background())
+}
+
+func (i GetAclAclEntryArgs) ToGetAclAclEntryOutputWithContext(ctx context.Context) GetAclAclEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclAclEntryOutput)
+}
+
+// GetAclAclEntryArrayInput is an input type that accepts GetAclAclEntryArray and GetAclAclEntryArrayOutput values.
+// You can construct a concrete instance of `GetAclAclEntryArrayInput` via:
+//
+//	GetAclAclEntryArray{ GetAclAclEntryArgs{...} }
+type GetAclAclEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetAclAclEntryArrayOutput() GetAclAclEntryArrayOutput
+	ToGetAclAclEntryArrayOutputWithContext(context.Context) GetAclAclEntryArrayOutput
+}
+
+type GetAclAclEntryArray []GetAclAclEntryInput
+
+func (GetAclAclEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclAclEntry)(nil)).Elem()
+}
+
+func (i GetAclAclEntryArray) ToGetAclAclEntryArrayOutput() GetAclAclEntryArrayOutput {
+	return i.ToGetAclAclEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetAclAclEntryArray) ToGetAclAclEntryArrayOutputWithContext(ctx context.Context) GetAclAclEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclAclEntryArrayOutput)
+}
+
+type GetAclAclEntryOutput struct{ *pulumi.OutputState }
+
+func (GetAclAclEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclAclEntry)(nil)).Elem()
+}
+
+func (o GetAclAclEntryOutput) ToGetAclAclEntryOutput() GetAclAclEntryOutput {
+	return o
+}
+
+func (o GetAclAclEntryOutput) ToGetAclAclEntryOutputWithContext(ctx context.Context) GetAclAclEntryOutput {
+	return o
+}
+
+// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+func (o GetAclAclEntryOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclAclEntry) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+func (o GetAclAclEntryOutput) Entry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclAclEntry) string { return v.Entry }).(pulumi.StringOutput)
+}
+
+type GetAclAclEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAclAclEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclAclEntry)(nil)).Elem()
+}
+
+func (o GetAclAclEntryArrayOutput) ToGetAclAclEntryArrayOutput() GetAclAclEntryArrayOutput {
+	return o
+}
+
+func (o GetAclAclEntryArrayOutput) ToGetAclAclEntryArrayOutputWithContext(ctx context.Context) GetAclAclEntryArrayOutput {
+	return o
+}
+
+func (o GetAclAclEntryArrayOutput) Index(i pulumi.IntInput) GetAclAclEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAclAclEntry {
+		return vs[0].([]GetAclAclEntry)[vs[1].(int)]
+	}).(GetAclAclEntryOutput)
+}
+
+type GetAclListener struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	AclType string `pulumi:"aclType"`
+	// 监听器的ID。
+	ListenerId string `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName string `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port int `pulumi:"port"`
+	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	Protocol string `pulumi:"protocol"`
+}
+
+// GetAclListenerInput is an input type that accepts GetAclListenerArgs and GetAclListenerOutput values.
+// You can construct a concrete instance of `GetAclListenerInput` via:
+//
+//	GetAclListenerArgs{...}
+type GetAclListenerInput interface {
+	pulumi.Input
+
+	ToGetAclListenerOutput() GetAclListenerOutput
+	ToGetAclListenerOutputWithContext(context.Context) GetAclListenerOutput
+}
+
+type GetAclListenerArgs struct {
+	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	AclType pulumi.StringInput `pulumi:"aclType"`
+	// 监听器的ID。
+	ListenerId pulumi.StringInput `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName pulumi.StringInput `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+}
+
+func (GetAclListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclListener)(nil)).Elem()
+}
+
+func (i GetAclListenerArgs) ToGetAclListenerOutput() GetAclListenerOutput {
+	return i.ToGetAclListenerOutputWithContext(context.Background())
+}
+
+func (i GetAclListenerArgs) ToGetAclListenerOutputWithContext(ctx context.Context) GetAclListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclListenerOutput)
+}
+
+// GetAclListenerArrayInput is an input type that accepts GetAclListenerArray and GetAclListenerArrayOutput values.
+// You can construct a concrete instance of `GetAclListenerArrayInput` via:
+//
+//	GetAclListenerArray{ GetAclListenerArgs{...} }
+type GetAclListenerArrayInput interface {
+	pulumi.Input
+
+	ToGetAclListenerArrayOutput() GetAclListenerArrayOutput
+	ToGetAclListenerArrayOutputWithContext(context.Context) GetAclListenerArrayOutput
+}
+
+type GetAclListenerArray []GetAclListenerInput
+
+func (GetAclListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclListener)(nil)).Elem()
+}
+
+func (i GetAclListenerArray) ToGetAclListenerArrayOutput() GetAclListenerArrayOutput {
+	return i.ToGetAclListenerArrayOutputWithContext(context.Background())
+}
+
+func (i GetAclListenerArray) ToGetAclListenerArrayOutputWithContext(ctx context.Context) GetAclListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclListenerArrayOutput)
+}
+
+type GetAclListenerOutput struct{ *pulumi.OutputState }
+
+func (GetAclListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclListener)(nil)).Elem()
+}
+
+func (o GetAclListenerOutput) ToGetAclListenerOutput() GetAclListenerOutput {
+	return o
+}
+
+func (o GetAclListenerOutput) ToGetAclListenerOutputWithContext(ctx context.Context) GetAclListenerOutput {
+	return o
+}
+
+// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+func (o GetAclListenerOutput) AclType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.AclType }).(pulumi.StringOutput)
+}
+
+// 监听器的ID。
+func (o GetAclListenerOutput) ListenerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.ListenerId }).(pulumi.StringOutput)
+}
+
+// 监听器的名称。
+func (o GetAclListenerOutput) ListenerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.ListenerName }).(pulumi.StringOutput)
+}
+
+// 监听器的端口。
+func (o GetAclListenerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAclListener) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+func (o GetAclListenerOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclListener) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+type GetAclListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAclListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclListener)(nil)).Elem()
+}
+
+func (o GetAclListenerArrayOutput) ToGetAclListenerArrayOutput() GetAclListenerArrayOutput {
+	return o
+}
+
+func (o GetAclListenerArrayOutput) ToGetAclListenerArrayOutputWithContext(ctx context.Context) GetAclListenerArrayOutput {
+	return o
+}
+
+func (o GetAclListenerArrayOutput) Index(i pulumi.IntInput) GetAclListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAclListener {
+		return vs[0].([]GetAclListener)[vs[1].(int)]
+	}).(GetAclListenerOutput)
+}
+
+type GetAclTag struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value string `pulumi:"value"`
+}
+
+// GetAclTagInput is an input type that accepts GetAclTagArgs and GetAclTagOutput values.
+// You can construct a concrete instance of `GetAclTagInput` via:
+//
+//	GetAclTagArgs{...}
+type GetAclTagInput interface {
+	pulumi.Input
+
+	ToGetAclTagOutput() GetAclTagOutput
+	ToGetAclTagOutputWithContext(context.Context) GetAclTagOutput
+}
+
+type GetAclTagArgs struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetAclTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclTag)(nil)).Elem()
+}
+
+func (i GetAclTagArgs) ToGetAclTagOutput() GetAclTagOutput {
+	return i.ToGetAclTagOutputWithContext(context.Background())
+}
+
+func (i GetAclTagArgs) ToGetAclTagOutputWithContext(ctx context.Context) GetAclTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclTagOutput)
+}
+
+// GetAclTagArrayInput is an input type that accepts GetAclTagArray and GetAclTagArrayOutput values.
+// You can construct a concrete instance of `GetAclTagArrayInput` via:
+//
+//	GetAclTagArray{ GetAclTagArgs{...} }
+type GetAclTagArrayInput interface {
+	pulumi.Input
+
+	ToGetAclTagArrayOutput() GetAclTagArrayOutput
+	ToGetAclTagArrayOutputWithContext(context.Context) GetAclTagArrayOutput
+}
+
+type GetAclTagArray []GetAclTagInput
+
+func (GetAclTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclTag)(nil)).Elem()
+}
+
+func (i GetAclTagArray) ToGetAclTagArrayOutput() GetAclTagArrayOutput {
+	return i.ToGetAclTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetAclTagArray) ToGetAclTagArrayOutputWithContext(ctx context.Context) GetAclTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAclTagArrayOutput)
+}
+
+type GetAclTagOutput struct{ *pulumi.OutputState }
+
+func (GetAclTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAclTag)(nil)).Elem()
+}
+
+func (o GetAclTagOutput) ToGetAclTagOutput() GetAclTagOutput {
+	return o
+}
+
+func (o GetAclTagOutput) ToGetAclTagOutputWithContext(ctx context.Context) GetAclTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o GetAclTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o GetAclTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAclTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetAclTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAclTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAclTag)(nil)).Elem()
+}
+
+func (o GetAclTagArrayOutput) ToGetAclTagArrayOutput() GetAclTagArrayOutput {
+	return o
+}
+
+func (o GetAclTagArrayOutput) ToGetAclTagArrayOutputWithContext(ctx context.Context) GetAclTagArrayOutput {
+	return o
+}
+
+func (o GetAclTagArrayOutput) Index(i pulumi.IntInput) GetAclTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAclTag {
+		return vs[0].([]GetAclTag)[vs[1].(int)]
+	}).(GetAclTagOutput)
+}
+
+type GetCertificateTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetCertificateTagInput is an input type that accepts GetCertificateTagArgs and GetCertificateTagOutput values.
+// You can construct a concrete instance of `GetCertificateTagInput` via:
+//
+//	GetCertificateTagArgs{...}
+type GetCertificateTagInput interface {
+	pulumi.Input
+
+	ToGetCertificateTagOutput() GetCertificateTagOutput
+	ToGetCertificateTagOutputWithContext(context.Context) GetCertificateTagOutput
+}
+
+type GetCertificateTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateTag)(nil)).Elem()
+}
+
+func (i GetCertificateTagArgs) ToGetCertificateTagOutput() GetCertificateTagOutput {
+	return i.ToGetCertificateTagOutputWithContext(context.Background())
+}
+
+func (i GetCertificateTagArgs) ToGetCertificateTagOutputWithContext(ctx context.Context) GetCertificateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateTagOutput)
+}
+
+// GetCertificateTagArrayInput is an input type that accepts GetCertificateTagArray and GetCertificateTagArrayOutput values.
+// You can construct a concrete instance of `GetCertificateTagArrayInput` via:
+//
+//	GetCertificateTagArray{ GetCertificateTagArgs{...} }
+type GetCertificateTagArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateTagArrayOutput() GetCertificateTagArrayOutput
+	ToGetCertificateTagArrayOutputWithContext(context.Context) GetCertificateTagArrayOutput
+}
+
+type GetCertificateTagArray []GetCertificateTagInput
+
+func (GetCertificateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateTag)(nil)).Elem()
+}
+
+func (i GetCertificateTagArray) ToGetCertificateTagArrayOutput() GetCertificateTagArrayOutput {
+	return i.ToGetCertificateTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateTagArray) ToGetCertificateTagArrayOutputWithContext(ctx context.Context) GetCertificateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateTagArrayOutput)
+}
+
+type GetCertificateTagOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateTag)(nil)).Elem()
+}
+
+func (o GetCertificateTagOutput) ToGetCertificateTagOutput() GetCertificateTagOutput {
+	return o
+}
+
+func (o GetCertificateTagOutput) ToGetCertificateTagOutputWithContext(ctx context.Context) GetCertificateTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetCertificateTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetCertificateTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCertificateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateTag)(nil)).Elem()
+}
+
+func (o GetCertificateTagArrayOutput) ToGetCertificateTagArrayOutput() GetCertificateTagArrayOutput {
+	return o
+}
+
+func (o GetCertificateTagArrayOutput) ToGetCertificateTagArrayOutputWithContext(ctx context.Context) GetCertificateTagArrayOutput {
+	return o
+}
+
+func (o GetCertificateTagArrayOutput) Index(i pulumi.IntInput) GetCertificateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateTag {
+		return vs[0].([]GetCertificateTag)[vs[1].(int)]
+	}).(GetCertificateTagOutput)
+}
+
 type GetListenerHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
 	Domain string `pulumi:"domain"`
@@ -4137,6 +5039,14 @@ func (o GetServerGroupTagArrayOutput) Index(i pulumi.IntInput) GetServerGroupTag
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AclAclEntryInput)(nil)).Elem(), AclAclEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclAclEntryArrayInput)(nil)).Elem(), AclAclEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclListenerInput)(nil)).Elem(), AclListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclListenerArrayInput)(nil)).Elem(), AclListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclTagInput)(nil)).Elem(), AclTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AclTagArrayInput)(nil)).Elem(), AclTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagInput)(nil)).Elem(), CertificateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagArrayInput)(nil)).Elem(), CertificateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckPtrInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
@@ -4165,6 +5075,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupServerArrayInput)(nil)).Elem(), ServerGroupServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupTagInput)(nil)).Elem(), ServerGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupTagArrayInput)(nil)).Elem(), ServerGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclAclEntryInput)(nil)).Elem(), GetAclAclEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclAclEntryArrayInput)(nil)).Elem(), GetAclAclEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclListenerInput)(nil)).Elem(), GetAclListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclListenerArrayInput)(nil)).Elem(), GetAclListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclTagInput)(nil)).Elem(), GetAclTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAclTagArrayInput)(nil)).Elem(), GetAclTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagInput)(nil)).Elem(), GetCertificateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagArrayInput)(nil)).Elem(), GetCertificateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerHealthCheckInput)(nil)).Elem(), GetListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
@@ -4190,6 +5108,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupServerArrayInput)(nil)).Elem(), GetServerGroupServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupTagInput)(nil)).Elem(), GetServerGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupTagArrayInput)(nil)).Elem(), GetServerGroupTagArray{})
+	pulumi.RegisterOutputType(AclAclEntryOutput{})
+	pulumi.RegisterOutputType(AclAclEntryArrayOutput{})
+	pulumi.RegisterOutputType(AclListenerOutput{})
+	pulumi.RegisterOutputType(AclListenerArrayOutput{})
+	pulumi.RegisterOutputType(AclTagOutput{})
+	pulumi.RegisterOutputType(AclTagArrayOutput{})
+	pulumi.RegisterOutputType(CertificateTagOutput{})
+	pulumi.RegisterOutputType(CertificateTagArrayOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
@@ -4218,6 +5144,14 @@ func init() {
 	pulumi.RegisterOutputType(ServerGroupServerArrayOutput{})
 	pulumi.RegisterOutputType(ServerGroupTagOutput{})
 	pulumi.RegisterOutputType(ServerGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAclAclEntryOutput{})
+	pulumi.RegisterOutputType(GetAclAclEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetAclListenerOutput{})
+	pulumi.RegisterOutputType(GetAclListenerArrayOutput{})
+	pulumi.RegisterOutputType(GetAclTagOutput{})
+	pulumi.RegisterOutputType(GetAclTagArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateTagOutput{})
+	pulumi.RegisterOutputType(GetCertificateTagArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetListenerTagOutput{})
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})

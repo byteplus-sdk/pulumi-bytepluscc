@@ -13,6 +13,121 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type DatabaseDatabasePrivilege struct {
+	// 数据库账号名称。
+	AccountName *string `pulumi:"accountName"`
+	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	AccountPrivilege *string `pulumi:"accountPrivilege"`
+	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	Host *string `pulumi:"host"`
+}
+
+// DatabaseDatabasePrivilegeInput is an input type that accepts DatabaseDatabasePrivilegeArgs and DatabaseDatabasePrivilegeOutput values.
+// You can construct a concrete instance of `DatabaseDatabasePrivilegeInput` via:
+//
+//	DatabaseDatabasePrivilegeArgs{...}
+type DatabaseDatabasePrivilegeInput interface {
+	pulumi.Input
+
+	ToDatabaseDatabasePrivilegeOutput() DatabaseDatabasePrivilegeOutput
+	ToDatabaseDatabasePrivilegeOutputWithContext(context.Context) DatabaseDatabasePrivilegeOutput
+}
+
+type DatabaseDatabasePrivilegeArgs struct {
+	// 数据库账号名称。
+	AccountName pulumi.StringPtrInput `pulumi:"accountName"`
+	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	AccountPrivilege pulumi.StringPtrInput `pulumi:"accountPrivilege"`
+	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	Host pulumi.StringPtrInput `pulumi:"host"`
+}
+
+func (DatabaseDatabasePrivilegeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (i DatabaseDatabasePrivilegeArgs) ToDatabaseDatabasePrivilegeOutput() DatabaseDatabasePrivilegeOutput {
+	return i.ToDatabaseDatabasePrivilegeOutputWithContext(context.Background())
+}
+
+func (i DatabaseDatabasePrivilegeArgs) ToDatabaseDatabasePrivilegeOutputWithContext(ctx context.Context) DatabaseDatabasePrivilegeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseDatabasePrivilegeOutput)
+}
+
+// DatabaseDatabasePrivilegeArrayInput is an input type that accepts DatabaseDatabasePrivilegeArray and DatabaseDatabasePrivilegeArrayOutput values.
+// You can construct a concrete instance of `DatabaseDatabasePrivilegeArrayInput` via:
+//
+//	DatabaseDatabasePrivilegeArray{ DatabaseDatabasePrivilegeArgs{...} }
+type DatabaseDatabasePrivilegeArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseDatabasePrivilegeArrayOutput() DatabaseDatabasePrivilegeArrayOutput
+	ToDatabaseDatabasePrivilegeArrayOutputWithContext(context.Context) DatabaseDatabasePrivilegeArrayOutput
+}
+
+type DatabaseDatabasePrivilegeArray []DatabaseDatabasePrivilegeInput
+
+func (DatabaseDatabasePrivilegeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (i DatabaseDatabasePrivilegeArray) ToDatabaseDatabasePrivilegeArrayOutput() DatabaseDatabasePrivilegeArrayOutput {
+	return i.ToDatabaseDatabasePrivilegeArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseDatabasePrivilegeArray) ToDatabaseDatabasePrivilegeArrayOutputWithContext(ctx context.Context) DatabaseDatabasePrivilegeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseDatabasePrivilegeArrayOutput)
+}
+
+type DatabaseDatabasePrivilegeOutput struct{ *pulumi.OutputState }
+
+func (DatabaseDatabasePrivilegeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (o DatabaseDatabasePrivilegeOutput) ToDatabaseDatabasePrivilegeOutput() DatabaseDatabasePrivilegeOutput {
+	return o
+}
+
+func (o DatabaseDatabasePrivilegeOutput) ToDatabaseDatabasePrivilegeOutputWithContext(ctx context.Context) DatabaseDatabasePrivilegeOutput {
+	return o
+}
+
+// 数据库账号名称。
+func (o DatabaseDatabasePrivilegeOutput) AccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabasePrivilege) *string { return v.AccountName }).(pulumi.StringPtrOutput)
+}
+
+// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+func (o DatabaseDatabasePrivilegeOutput) AccountPrivilege() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabasePrivilege) *string { return v.AccountPrivilege }).(pulumi.StringPtrOutput)
+}
+
+// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+func (o DatabaseDatabasePrivilegeOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabasePrivilege) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+type DatabaseDatabasePrivilegeArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseDatabasePrivilegeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (o DatabaseDatabasePrivilegeArrayOutput) ToDatabaseDatabasePrivilegeArrayOutput() DatabaseDatabasePrivilegeArrayOutput {
+	return o
+}
+
+func (o DatabaseDatabasePrivilegeArrayOutput) ToDatabaseDatabasePrivilegeArrayOutputWithContext(ctx context.Context) DatabaseDatabasePrivilegeArrayOutput {
+	return o
+}
+
+func (o DatabaseDatabasePrivilegeArrayOutput) Index(i pulumi.IntInput) DatabaseDatabasePrivilegeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseDatabasePrivilege {
+		return vs[0].([]DatabaseDatabasePrivilege)[vs[1].(int)]
+	}).(DatabaseDatabasePrivilegeOutput)
+}
+
 type DbAccountAccountPrivilege struct {
 	// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
 	AccountPrivilege *string `pulumi:"accountPrivilege"`
@@ -2401,6 +2516,130 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type GetDatabaseDatabasePrivilege struct {
+	// 数据库账号名称。
+	AccountName string `pulumi:"accountName"`
+	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	AccountPrivilege string `pulumi:"accountPrivilege"`
+	// 数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。
+	AccountPrivilegeDetail string `pulumi:"accountPrivilegeDetail"`
+	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	Host string `pulumi:"host"`
+}
+
+// GetDatabaseDatabasePrivilegeInput is an input type that accepts GetDatabaseDatabasePrivilegeArgs and GetDatabaseDatabasePrivilegeOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabasePrivilegeInput` via:
+//
+//	GetDatabaseDatabasePrivilegeArgs{...}
+type GetDatabaseDatabasePrivilegeInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabasePrivilegeOutput() GetDatabaseDatabasePrivilegeOutput
+	ToGetDatabaseDatabasePrivilegeOutputWithContext(context.Context) GetDatabaseDatabasePrivilegeOutput
+}
+
+type GetDatabaseDatabasePrivilegeArgs struct {
+	// 数据库账号名称。
+	AccountName pulumi.StringInput `pulumi:"accountName"`
+	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	AccountPrivilege pulumi.StringInput `pulumi:"accountPrivilege"`
+	// 数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。
+	AccountPrivilegeDetail pulumi.StringInput `pulumi:"accountPrivilegeDetail"`
+	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	Host pulumi.StringInput `pulumi:"host"`
+}
+
+func (GetDatabaseDatabasePrivilegeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabasePrivilegeArgs) ToGetDatabaseDatabasePrivilegeOutput() GetDatabaseDatabasePrivilegeOutput {
+	return i.ToGetDatabaseDatabasePrivilegeOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabasePrivilegeArgs) ToGetDatabaseDatabasePrivilegeOutputWithContext(ctx context.Context) GetDatabaseDatabasePrivilegeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabasePrivilegeOutput)
+}
+
+// GetDatabaseDatabasePrivilegeArrayInput is an input type that accepts GetDatabaseDatabasePrivilegeArray and GetDatabaseDatabasePrivilegeArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabasePrivilegeArrayInput` via:
+//
+//	GetDatabaseDatabasePrivilegeArray{ GetDatabaseDatabasePrivilegeArgs{...} }
+type GetDatabaseDatabasePrivilegeArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabasePrivilegeArrayOutput() GetDatabaseDatabasePrivilegeArrayOutput
+	ToGetDatabaseDatabasePrivilegeArrayOutputWithContext(context.Context) GetDatabaseDatabasePrivilegeArrayOutput
+}
+
+type GetDatabaseDatabasePrivilegeArray []GetDatabaseDatabasePrivilegeInput
+
+func (GetDatabaseDatabasePrivilegeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabasePrivilegeArray) ToGetDatabaseDatabasePrivilegeArrayOutput() GetDatabaseDatabasePrivilegeArrayOutput {
+	return i.ToGetDatabaseDatabasePrivilegeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabasePrivilegeArray) ToGetDatabaseDatabasePrivilegeArrayOutputWithContext(ctx context.Context) GetDatabaseDatabasePrivilegeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabasePrivilegeArrayOutput)
+}
+
+type GetDatabaseDatabasePrivilegeOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabasePrivilegeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabasePrivilegeOutput) ToGetDatabaseDatabasePrivilegeOutput() GetDatabaseDatabasePrivilegeOutput {
+	return o
+}
+
+func (o GetDatabaseDatabasePrivilegeOutput) ToGetDatabaseDatabasePrivilegeOutputWithContext(ctx context.Context) GetDatabaseDatabasePrivilegeOutput {
+	return o
+}
+
+// 数据库账号名称。
+func (o GetDatabaseDatabasePrivilegeOutput) AccountName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.AccountName }).(pulumi.StringOutput)
+}
+
+// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+func (o GetDatabaseDatabasePrivilegeOutput) AccountPrivilege() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.AccountPrivilege }).(pulumi.StringOutput)
+}
+
+// 数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。
+func (o GetDatabaseDatabasePrivilegeOutput) AccountPrivilegeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.AccountPrivilegeDetail }).(pulumi.StringOutput)
+}
+
+// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+func (o GetDatabaseDatabasePrivilegeOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.Host }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabasePrivilegeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabasePrivilegeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabasePrivilege)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabasePrivilegeArrayOutput) ToGetDatabaseDatabasePrivilegeArrayOutput() GetDatabaseDatabasePrivilegeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabasePrivilegeArrayOutput) ToGetDatabaseDatabasePrivilegeArrayOutputWithContext(ctx context.Context) GetDatabaseDatabasePrivilegeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabasePrivilegeArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabasePrivilegeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabasePrivilege {
+		return vs[0].([]GetDatabaseDatabasePrivilege)[vs[1].(int)]
+	}).(GetDatabaseDatabasePrivilegeOutput)
+}
+
 type GetDbAccountAccountPrivilege struct {
 	// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
 	AccountPrivilege string `pulumi:"accountPrivilege"`
@@ -4266,6 +4505,8 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasePrivilegeInput)(nil)).Elem(), DatabaseDatabasePrivilegeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasePrivilegeArrayInput)(nil)).Elem(), DatabaseDatabasePrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountAccountPrivilegeInput)(nil)).Elem(), DbAccountAccountPrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountAccountPrivilegeArrayInput)(nil)).Elem(), DbAccountAccountPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountTableColumnPrivilegeInput)(nil)).Elem(), DbAccountTableColumnPrivilegeArgs{})
@@ -4296,6 +4537,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailProxyResourceInfoPtrInput)(nil)).Elem(), InstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasePrivilegeInput)(nil)).Elem(), GetDatabaseDatabasePrivilegeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasePrivilegeArrayInput)(nil)).Elem(), GetDatabaseDatabasePrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountAccountPrivilegeInput)(nil)).Elem(), GetDbAccountAccountPrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountAccountPrivilegeArrayInput)(nil)).Elem(), GetDbAccountAccountPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeArgs{})
@@ -4321,6 +4564,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceProxyDetailProxyResourceInfoInput)(nil)).Elem(), GetInstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterOutputType(DatabaseDatabasePrivilegeOutput{})
+	pulumi.RegisterOutputType(DatabaseDatabasePrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(DbAccountAccountPrivilegeOutput{})
 	pulumi.RegisterOutputType(DbAccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeOutput{})
@@ -4351,6 +4596,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceProxyDetailProxyResourceInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabasePrivilegeOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabasePrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbAccountAccountPrivilegeOutput{})
 	pulumi.RegisterOutputType(GetDbAccountAccountPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeOutput{})

@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Eni{}
 	case "bytepluscc:vpc/networkAcl:NetworkAcl":
 		r = &NetworkAcl{}
+	case "bytepluscc:vpc/prefixList:PrefixList":
+		r = &PrefixList{}
 	case "bytepluscc:vpc/routeTable:RouteTable":
 		r = &RouteTable{}
 	case "bytepluscc:vpc/securityGroup:SecurityGroup":
@@ -68,6 +70,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vpc/networkAcl",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/prefixList",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

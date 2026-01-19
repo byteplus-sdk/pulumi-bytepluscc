@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { DatabaseArgs, DatabaseState } from "./database";
+export type Database = import("./database").Database;
+export const Database: typeof import("./database").Database = null as any;
+utilities.lazyLoad(exports, ["Database"], () => require("./database"));
+
 export { DbAccountArgs, DbAccountState } from "./dbAccount";
 export type DbAccount = import("./dbAccount").DbAccount;
 export const DbAccount: typeof import("./dbAccount").DbAccount = null as any;
 utilities.lazyLoad(exports, ["DbAccount"], () => require("./dbAccount"));
+
+export { GetDatabaseArgs, GetDatabaseResult, GetDatabaseOutputArgs } from "./getDatabase";
+export const getDatabase: typeof import("./getDatabase").getDatabase = null as any;
+export const getDatabaseOutput: typeof import("./getDatabase").getDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabase","getDatabaseOutput"], () => require("./getDatabase"));
+
+export { GetDatabasesResult } from "./getDatabases";
+export const getDatabases: typeof import("./getDatabases").getDatabases = null as any;
+export const getDatabasesOutput: typeof import("./getDatabases").getDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabases","getDatabasesOutput"], () => require("./getDatabases"));
 
 export { GetDbAccountArgs, GetDbAccountResult, GetDbAccountOutputArgs } from "./getDbAccount";
 export const getDbAccount: typeof import("./getDbAccount").getDbAccount = null as any;
@@ -40,6 +55,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:rdsmysql/database:Database":
+                return new Database(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/dbAccount:DbAccount":
                 return new DbAccount(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/instance:Instance":
@@ -49,5 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/database", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/dbAccount", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instance", _module)

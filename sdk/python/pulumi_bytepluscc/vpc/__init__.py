@@ -17,6 +17,8 @@ from .get_eni import *
 from .get_enis import *
 from .get_network_acl import *
 from .get_network_acls import *
+from .get_prefix_list import *
+from .get_prefix_lists import *
 from .get_route_table import *
 from .get_route_tables import *
 from .get_security_group import *
@@ -26,6 +28,7 @@ from .get_subnets import *
 from .get_vpc import *
 from .get_vpcs import *
 from .network_acl import *
+from .prefix_list import *
 from .route_table import *
 from .security_group import *
 from .subnet import *

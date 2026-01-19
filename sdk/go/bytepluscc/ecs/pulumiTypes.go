@@ -13,6 +13,281 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type CommandParameterDefinition struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision *int `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue *string `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength *int `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue *string `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength *int `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue *string `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	Name *string `pulumi:"name"`
+	// 是否必填。
+	Required *bool `pulumi:"required"`
+	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	Type *string `pulumi:"type"`
+}
+
+// CommandParameterDefinitionInput is an input type that accepts CommandParameterDefinitionArgs and CommandParameterDefinitionOutput values.
+// You can construct a concrete instance of `CommandParameterDefinitionInput` via:
+//
+//	CommandParameterDefinitionArgs{...}
+type CommandParameterDefinitionInput interface {
+	pulumi.Input
+
+	ToCommandParameterDefinitionOutput() CommandParameterDefinitionOutput
+	ToCommandParameterDefinitionOutputWithContext(context.Context) CommandParameterDefinitionOutput
+}
+
+type CommandParameterDefinitionArgs struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision pulumi.IntPtrInput `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength pulumi.IntPtrInput `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength pulumi.IntPtrInput `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// 是否必填。
+	Required pulumi.BoolPtrInput `pulumi:"required"`
+	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (CommandParameterDefinitionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CommandParameterDefinition)(nil)).Elem()
+}
+
+func (i CommandParameterDefinitionArgs) ToCommandParameterDefinitionOutput() CommandParameterDefinitionOutput {
+	return i.ToCommandParameterDefinitionOutputWithContext(context.Background())
+}
+
+func (i CommandParameterDefinitionArgs) ToCommandParameterDefinitionOutputWithContext(ctx context.Context) CommandParameterDefinitionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CommandParameterDefinitionOutput)
+}
+
+// CommandParameterDefinitionArrayInput is an input type that accepts CommandParameterDefinitionArray and CommandParameterDefinitionArrayOutput values.
+// You can construct a concrete instance of `CommandParameterDefinitionArrayInput` via:
+//
+//	CommandParameterDefinitionArray{ CommandParameterDefinitionArgs{...} }
+type CommandParameterDefinitionArrayInput interface {
+	pulumi.Input
+
+	ToCommandParameterDefinitionArrayOutput() CommandParameterDefinitionArrayOutput
+	ToCommandParameterDefinitionArrayOutputWithContext(context.Context) CommandParameterDefinitionArrayOutput
+}
+
+type CommandParameterDefinitionArray []CommandParameterDefinitionInput
+
+func (CommandParameterDefinitionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CommandParameterDefinition)(nil)).Elem()
+}
+
+func (i CommandParameterDefinitionArray) ToCommandParameterDefinitionArrayOutput() CommandParameterDefinitionArrayOutput {
+	return i.ToCommandParameterDefinitionArrayOutputWithContext(context.Background())
+}
+
+func (i CommandParameterDefinitionArray) ToCommandParameterDefinitionArrayOutputWithContext(ctx context.Context) CommandParameterDefinitionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CommandParameterDefinitionArrayOutput)
+}
+
+type CommandParameterDefinitionOutput struct{ *pulumi.OutputState }
+
+func (CommandParameterDefinitionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CommandParameterDefinition)(nil)).Elem()
+}
+
+func (o CommandParameterDefinitionOutput) ToCommandParameterDefinitionOutput() CommandParameterDefinitionOutput {
+	return o
+}
+
+func (o CommandParameterDefinitionOutput) ToCommandParameterDefinitionOutputWithContext(ctx context.Context) CommandParameterDefinitionOutput {
+	return o
+}
+
+// 自定义参数值（数字）允许的小数点后位数。
+func (o CommandParameterDefinitionOutput) DecimalPrecision() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *int { return v.DecimalPrecision }).(pulumi.IntPtrOutput)
+}
+
+// 自定义参数默认值。
+func (o CommandParameterDefinitionOutput) DefaultValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
+}
+
+// 自定义参数值（字符串）的最大长度。
+func (o CommandParameterDefinitionOutput) MaxLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *int { return v.MaxLength }).(pulumi.IntPtrOutput)
+}
+
+// 自定义参数值（数字）的最大值。
+func (o CommandParameterDefinitionOutput) MaxValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.MaxValue }).(pulumi.StringPtrOutput)
+}
+
+// 自定义参数值（字符串）的最小长度。
+func (o CommandParameterDefinitionOutput) MinLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *int { return v.MinLength }).(pulumi.IntPtrOutput)
+}
+
+// 自定义参数值（数字）的最小值。
+func (o CommandParameterDefinitionOutput) MinValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.MinValue }).(pulumi.StringPtrOutput)
+}
+
+// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+func (o CommandParameterDefinitionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// 是否必填。
+func (o CommandParameterDefinitionOutput) Required() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *bool { return v.Required }).(pulumi.BoolPtrOutput)
+}
+
+// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+func (o CommandParameterDefinitionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type CommandParameterDefinitionArrayOutput struct{ *pulumi.OutputState }
+
+func (CommandParameterDefinitionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CommandParameterDefinition)(nil)).Elem()
+}
+
+func (o CommandParameterDefinitionArrayOutput) ToCommandParameterDefinitionArrayOutput() CommandParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o CommandParameterDefinitionArrayOutput) ToCommandParameterDefinitionArrayOutputWithContext(ctx context.Context) CommandParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o CommandParameterDefinitionArrayOutput) Index(i pulumi.IntInput) CommandParameterDefinitionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CommandParameterDefinition {
+		return vs[0].([]CommandParameterDefinition)[vs[1].(int)]
+	}).(CommandParameterDefinitionOutput)
+}
+
+type CommandTag struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value *string `pulumi:"value"`
+}
+
+// CommandTagInput is an input type that accepts CommandTagArgs and CommandTagOutput values.
+// You can construct a concrete instance of `CommandTagInput` via:
+//
+//	CommandTagArgs{...}
+type CommandTagInput interface {
+	pulumi.Input
+
+	ToCommandTagOutput() CommandTagOutput
+	ToCommandTagOutputWithContext(context.Context) CommandTagOutput
+}
+
+type CommandTagArgs struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (CommandTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CommandTag)(nil)).Elem()
+}
+
+func (i CommandTagArgs) ToCommandTagOutput() CommandTagOutput {
+	return i.ToCommandTagOutputWithContext(context.Background())
+}
+
+func (i CommandTagArgs) ToCommandTagOutputWithContext(ctx context.Context) CommandTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CommandTagOutput)
+}
+
+// CommandTagArrayInput is an input type that accepts CommandTagArray and CommandTagArrayOutput values.
+// You can construct a concrete instance of `CommandTagArrayInput` via:
+//
+//	CommandTagArray{ CommandTagArgs{...} }
+type CommandTagArrayInput interface {
+	pulumi.Input
+
+	ToCommandTagArrayOutput() CommandTagArrayOutput
+	ToCommandTagArrayOutputWithContext(context.Context) CommandTagArrayOutput
+}
+
+type CommandTagArray []CommandTagInput
+
+func (CommandTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CommandTag)(nil)).Elem()
+}
+
+func (i CommandTagArray) ToCommandTagArrayOutput() CommandTagArrayOutput {
+	return i.ToCommandTagArrayOutputWithContext(context.Background())
+}
+
+func (i CommandTagArray) ToCommandTagArrayOutputWithContext(ctx context.Context) CommandTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CommandTagArrayOutput)
+}
+
+type CommandTagOutput struct{ *pulumi.OutputState }
+
+func (CommandTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CommandTag)(nil)).Elem()
+}
+
+func (o CommandTagOutput) ToCommandTagOutput() CommandTagOutput {
+	return o
+}
+
+func (o CommandTagOutput) ToCommandTagOutputWithContext(ctx context.Context) CommandTagOutput {
+	return o
+}
+
+// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+func (o CommandTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CommandTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+func (o CommandTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CommandTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type CommandTagArrayOutput struct{ *pulumi.OutputState }
+
+func (CommandTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CommandTag)(nil)).Elem()
+}
+
+func (o CommandTagArrayOutput) ToCommandTagArrayOutput() CommandTagArrayOutput {
+	return o
+}
+
+func (o CommandTagArrayOutput) ToCommandTagArrayOutputWithContext(ctx context.Context) CommandTagArrayOutput {
+	return o
+}
+
+func (o CommandTagArrayOutput) Index(i pulumi.IntInput) CommandTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CommandTag {
+		return vs[0].([]CommandTag)[vs[1].(int)]
+	}).(CommandTagOutput)
+}
+
 type ImageDetectionResults struct {
 	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
 	DetectionStatus *string                     `pulumi:"detectionStatus"`
@@ -3129,6 +3404,281 @@ func (o KeypairTagArrayOutput) Index(i pulumi.IntInput) KeypairTagOutput {
 	}).(KeypairTagOutput)
 }
 
+type GetCommandParameterDefinition struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision int `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue string `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength int `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue string `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength int `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue string `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	Name string `pulumi:"name"`
+	// 是否必填。
+	Required bool `pulumi:"required"`
+	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	Type string `pulumi:"type"`
+}
+
+// GetCommandParameterDefinitionInput is an input type that accepts GetCommandParameterDefinitionArgs and GetCommandParameterDefinitionOutput values.
+// You can construct a concrete instance of `GetCommandParameterDefinitionInput` via:
+//
+//	GetCommandParameterDefinitionArgs{...}
+type GetCommandParameterDefinitionInput interface {
+	pulumi.Input
+
+	ToGetCommandParameterDefinitionOutput() GetCommandParameterDefinitionOutput
+	ToGetCommandParameterDefinitionOutputWithContext(context.Context) GetCommandParameterDefinitionOutput
+}
+
+type GetCommandParameterDefinitionArgs struct {
+	// 自定义参数值（数字）允许的小数点后位数。
+	DecimalPrecision pulumi.IntInput `pulumi:"decimalPrecision"`
+	// 自定义参数默认值。
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// 自定义参数值（字符串）的最大长度。
+	MaxLength pulumi.IntInput `pulumi:"maxLength"`
+	// 自定义参数值（数字）的最大值。
+	MaxValue pulumi.StringInput `pulumi:"maxValue"`
+	// 自定义参数值（字符串）的最小长度。
+	MinLength pulumi.IntInput `pulumi:"minLength"`
+	// 自定义参数值（数字）的最小值。
+	MinValue pulumi.StringInput `pulumi:"minValue"`
+	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	Name pulumi.StringInput `pulumi:"name"`
+	// 是否必填。
+	Required pulumi.BoolInput `pulumi:"required"`
+	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCommandParameterDefinitionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCommandParameterDefinition)(nil)).Elem()
+}
+
+func (i GetCommandParameterDefinitionArgs) ToGetCommandParameterDefinitionOutput() GetCommandParameterDefinitionOutput {
+	return i.ToGetCommandParameterDefinitionOutputWithContext(context.Background())
+}
+
+func (i GetCommandParameterDefinitionArgs) ToGetCommandParameterDefinitionOutputWithContext(ctx context.Context) GetCommandParameterDefinitionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCommandParameterDefinitionOutput)
+}
+
+// GetCommandParameterDefinitionArrayInput is an input type that accepts GetCommandParameterDefinitionArray and GetCommandParameterDefinitionArrayOutput values.
+// You can construct a concrete instance of `GetCommandParameterDefinitionArrayInput` via:
+//
+//	GetCommandParameterDefinitionArray{ GetCommandParameterDefinitionArgs{...} }
+type GetCommandParameterDefinitionArrayInput interface {
+	pulumi.Input
+
+	ToGetCommandParameterDefinitionArrayOutput() GetCommandParameterDefinitionArrayOutput
+	ToGetCommandParameterDefinitionArrayOutputWithContext(context.Context) GetCommandParameterDefinitionArrayOutput
+}
+
+type GetCommandParameterDefinitionArray []GetCommandParameterDefinitionInput
+
+func (GetCommandParameterDefinitionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCommandParameterDefinition)(nil)).Elem()
+}
+
+func (i GetCommandParameterDefinitionArray) ToGetCommandParameterDefinitionArrayOutput() GetCommandParameterDefinitionArrayOutput {
+	return i.ToGetCommandParameterDefinitionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCommandParameterDefinitionArray) ToGetCommandParameterDefinitionArrayOutputWithContext(ctx context.Context) GetCommandParameterDefinitionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCommandParameterDefinitionArrayOutput)
+}
+
+type GetCommandParameterDefinitionOutput struct{ *pulumi.OutputState }
+
+func (GetCommandParameterDefinitionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCommandParameterDefinition)(nil)).Elem()
+}
+
+func (o GetCommandParameterDefinitionOutput) ToGetCommandParameterDefinitionOutput() GetCommandParameterDefinitionOutput {
+	return o
+}
+
+func (o GetCommandParameterDefinitionOutput) ToGetCommandParameterDefinitionOutputWithContext(ctx context.Context) GetCommandParameterDefinitionOutput {
+	return o
+}
+
+// 自定义参数值（数字）允许的小数点后位数。
+func (o GetCommandParameterDefinitionOutput) DecimalPrecision() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) int { return v.DecimalPrecision }).(pulumi.IntOutput)
+}
+
+// 自定义参数默认值。
+func (o GetCommandParameterDefinitionOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// 自定义参数值（字符串）的最大长度。
+func (o GetCommandParameterDefinitionOutput) MaxLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) int { return v.MaxLength }).(pulumi.IntOutput)
+}
+
+// 自定义参数值（数字）的最大值。
+func (o GetCommandParameterDefinitionOutput) MaxValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.MaxValue }).(pulumi.StringOutput)
+}
+
+// 自定义参数值（字符串）的最小长度。
+func (o GetCommandParameterDefinitionOutput) MinLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) int { return v.MinLength }).(pulumi.IntOutput)
+}
+
+// 自定义参数值（数字）的最小值。
+func (o GetCommandParameterDefinitionOutput) MinValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.MinValue }).(pulumi.StringOutput)
+}
+
+// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+func (o GetCommandParameterDefinitionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// 是否必填。
+func (o GetCommandParameterDefinitionOutput) Required() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) bool { return v.Required }).(pulumi.BoolOutput)
+}
+
+// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+func (o GetCommandParameterDefinitionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCommandParameterDefinitionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCommandParameterDefinitionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCommandParameterDefinition)(nil)).Elem()
+}
+
+func (o GetCommandParameterDefinitionArrayOutput) ToGetCommandParameterDefinitionArrayOutput() GetCommandParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o GetCommandParameterDefinitionArrayOutput) ToGetCommandParameterDefinitionArrayOutputWithContext(ctx context.Context) GetCommandParameterDefinitionArrayOutput {
+	return o
+}
+
+func (o GetCommandParameterDefinitionArrayOutput) Index(i pulumi.IntInput) GetCommandParameterDefinitionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommandParameterDefinition {
+		return vs[0].([]GetCommandParameterDefinition)[vs[1].(int)]
+	}).(GetCommandParameterDefinitionOutput)
+}
+
+type GetCommandTag struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value string `pulumi:"value"`
+}
+
+// GetCommandTagInput is an input type that accepts GetCommandTagArgs and GetCommandTagOutput values.
+// You can construct a concrete instance of `GetCommandTagInput` via:
+//
+//	GetCommandTagArgs{...}
+type GetCommandTagInput interface {
+	pulumi.Input
+
+	ToGetCommandTagOutput() GetCommandTagOutput
+	ToGetCommandTagOutputWithContext(context.Context) GetCommandTagOutput
+}
+
+type GetCommandTagArgs struct {
+	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCommandTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCommandTag)(nil)).Elem()
+}
+
+func (i GetCommandTagArgs) ToGetCommandTagOutput() GetCommandTagOutput {
+	return i.ToGetCommandTagOutputWithContext(context.Background())
+}
+
+func (i GetCommandTagArgs) ToGetCommandTagOutputWithContext(ctx context.Context) GetCommandTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCommandTagOutput)
+}
+
+// GetCommandTagArrayInput is an input type that accepts GetCommandTagArray and GetCommandTagArrayOutput values.
+// You can construct a concrete instance of `GetCommandTagArrayInput` via:
+//
+//	GetCommandTagArray{ GetCommandTagArgs{...} }
+type GetCommandTagArrayInput interface {
+	pulumi.Input
+
+	ToGetCommandTagArrayOutput() GetCommandTagArrayOutput
+	ToGetCommandTagArrayOutputWithContext(context.Context) GetCommandTagArrayOutput
+}
+
+type GetCommandTagArray []GetCommandTagInput
+
+func (GetCommandTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCommandTag)(nil)).Elem()
+}
+
+func (i GetCommandTagArray) ToGetCommandTagArrayOutput() GetCommandTagArrayOutput {
+	return i.ToGetCommandTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetCommandTagArray) ToGetCommandTagArrayOutputWithContext(ctx context.Context) GetCommandTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCommandTagArrayOutput)
+}
+
+type GetCommandTagOutput struct{ *pulumi.OutputState }
+
+func (GetCommandTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCommandTag)(nil)).Elem()
+}
+
+func (o GetCommandTagOutput) ToGetCommandTagOutput() GetCommandTagOutput {
+	return o
+}
+
+func (o GetCommandTagOutput) ToGetCommandTagOutputWithContext(ctx context.Context) GetCommandTagOutput {
+	return o
+}
+
+// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+func (o GetCommandTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCommandTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+func (o GetCommandTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCommandTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCommandTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCommandTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCommandTag)(nil)).Elem()
+}
+
+func (o GetCommandTagArrayOutput) ToGetCommandTagArrayOutput() GetCommandTagArrayOutput {
+	return o
+}
+
+func (o GetCommandTagArrayOutput) ToGetCommandTagArrayOutputWithContext(ctx context.Context) GetCommandTagArrayOutput {
+	return o
+}
+
+func (o GetCommandTagArrayOutput) Index(i pulumi.IntInput) GetCommandTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommandTag {
+		return vs[0].([]GetCommandTag)[vs[1].(int)]
+	}).(GetCommandTagOutput)
+}
+
 type GetImageDetectionResults struct {
 	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
 	DetectionStatus string `pulumi:"detectionStatus"`
@@ -5158,6 +5708,10 @@ func (o GetKeypairTagArrayOutput) Index(i pulumi.IntInput) GetKeypairTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CommandParameterDefinitionInput)(nil)).Elem(), CommandParameterDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CommandParameterDefinitionArrayInput)(nil)).Elem(), CommandParameterDefinitionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CommandTagInput)(nil)).Elem(), CommandTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CommandTagArrayInput)(nil)).Elem(), CommandTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsPtrInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsItemInput)(nil)).Elem(), ImageDetectionResultsItemArgs{})
@@ -5194,6 +5748,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InvocationTagArrayInput)(nil)).Elem(), InvocationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeypairTagInput)(nil)).Elem(), KeypairTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeypairTagArrayInput)(nil)).Elem(), KeypairTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandParameterDefinitionInput)(nil)).Elem(), GetCommandParameterDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandParameterDefinitionArrayInput)(nil)).Elem(), GetCommandParameterDefinitionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagInput)(nil)).Elem(), GetCommandTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagArrayInput)(nil)).Elem(), GetCommandTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsInput)(nil)).Elem(), GetImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemInput)(nil)).Elem(), GetImageDetectionResultsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemArrayInput)(nil)).Elem(), GetImageDetectionResultsItemArray{})
@@ -5221,6 +5779,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationTagArrayInput)(nil)).Elem(), GetInvocationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeypairTagInput)(nil)).Elem(), GetKeypairTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeypairTagArrayInput)(nil)).Elem(), GetKeypairTagArray{})
+	pulumi.RegisterOutputType(CommandParameterDefinitionOutput{})
+	pulumi.RegisterOutputType(CommandParameterDefinitionArrayOutput{})
+	pulumi.RegisterOutputType(CommandTagOutput{})
+	pulumi.RegisterOutputType(CommandTagArrayOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsPtrOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsItemOutput{})
@@ -5257,6 +5819,10 @@ func init() {
 	pulumi.RegisterOutputType(InvocationTagArrayOutput{})
 	pulumi.RegisterOutputType(KeypairTagOutput{})
 	pulumi.RegisterOutputType(KeypairTagArrayOutput{})
+	pulumi.RegisterOutputType(GetCommandParameterDefinitionOutput{})
+	pulumi.RegisterOutputType(GetCommandParameterDefinitionArrayOutput{})
+	pulumi.RegisterOutputType(GetCommandTagOutput{})
+	pulumi.RegisterOutputType(GetCommandTagArrayOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemArrayOutput{})

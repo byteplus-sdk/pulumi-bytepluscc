@@ -16,6 +16,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AclAclEntry',
+    'AclListener',
+    'AclTag',
+    'CertificateTag',
     'ListenerHealthCheck',
     'ListenerTag',
     'NlbListenerHealth',
@@ -30,6 +34,10 @@ __all__ = [
     'ServerGroupListener',
     'ServerGroupServer',
     'ServerGroupTag',
+    'GetAclAclEntryResult',
+    'GetAclListenerResult',
+    'GetAclTagResult',
+    'GetCertificateTagResult',
     'GetListenerHealthCheckResult',
     'GetListenerTagResult',
     'GetNlbListenerHealthResult',
@@ -45,6 +53,187 @@ __all__ = [
     'GetServerGroupServerResult',
     'GetServerGroupTagResult',
 ]
+
+@pulumi.output_type
+class AclAclEntry(dict):
+    def __init__(__self__, *,
+                 description: Optional[builtins.str] = None,
+                 entry: Optional[builtins.str] = None):
+        """
+        :param builtins.str description: IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        :param builtins.str entry: IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if entry is not None:
+            pulumi.set(__self__, "entry", entry)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def entry(self) -> Optional[builtins.str]:
+        """
+        IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+        """
+        return pulumi.get(self, "entry")
+
+
+@pulumi.output_type
+class AclListener(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aclType":
+            suggest = "acl_type"
+        elif key == "listenerId":
+            suggest = "listener_id"
+        elif key == "listenerName":
+            suggest = "listener_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AclListener. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AclListener.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AclListener.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 acl_type: Optional[builtins.str] = None,
+                 listener_id: Optional[builtins.str] = None,
+                 listener_name: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None,
+                 protocol: Optional[builtins.str] = None):
+        """
+        :param builtins.str acl_type: 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+        :param builtins.str listener_id: 监听器的ID。
+        :param builtins.str listener_name: 监听器的名称。
+        :param builtins.int port: 监听器的端口。
+        :param builtins.str protocol: 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+        """
+        if acl_type is not None:
+            pulumi.set(__self__, "acl_type", acl_type)
+        if listener_id is not None:
+            pulumi.set(__self__, "listener_id", listener_id)
+        if listener_name is not None:
+            pulumi.set(__self__, "listener_name", listener_name)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+
+    @property
+    @pulumi.getter(name="aclType")
+    def acl_type(self) -> Optional[builtins.str]:
+        """
+        监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+        """
+        return pulumi.get(self, "acl_type")
+
+    @property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> Optional[builtins.str]:
+        """
+        监听器的ID。
+        """
+        return pulumi.get(self, "listener_id")
+
+    @property
+    @pulumi.getter(name="listenerName")
+    def listener_name(self) -> Optional[builtins.str]:
+        """
+        监听器的名称。
+        """
+        return pulumi.get(self, "listener_name")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        监听器的端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[builtins.str]:
+        """
+        监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class AclTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class CertificateTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class ListenerHealthCheck(dict):
@@ -1250,6 +1439,155 @@ class ServerGroupTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         绑定的标签值信息。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAclAclEntryResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 entry: builtins.str):
+        """
+        :param builtins.str description: IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        :param builtins.str entry: IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "entry", entry)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def entry(self) -> builtins.str:
+        """
+        IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+        """
+        return pulumi.get(self, "entry")
+
+
+@pulumi.output_type
+class GetAclListenerResult(dict):
+    def __init__(__self__, *,
+                 acl_type: builtins.str,
+                 listener_id: builtins.str,
+                 listener_name: builtins.str,
+                 port: builtins.int,
+                 protocol: builtins.str):
+        """
+        :param builtins.str acl_type: 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+        :param builtins.str listener_id: 监听器的ID。
+        :param builtins.str listener_name: 监听器的名称。
+        :param builtins.int port: 监听器的端口。
+        :param builtins.str protocol: 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+        """
+        pulumi.set(__self__, "acl_type", acl_type)
+        pulumi.set(__self__, "listener_id", listener_id)
+        pulumi.set(__self__, "listener_name", listener_name)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+
+    @property
+    @pulumi.getter(name="aclType")
+    def acl_type(self) -> builtins.str:
+        """
+        监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+        """
+        return pulumi.get(self, "acl_type")
+
+    @property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> builtins.str:
+        """
+        监听器的ID。
+        """
+        return pulumi.get(self, "listener_id")
+
+    @property
+    @pulumi.getter(name="listenerName")
+    def listener_name(self) -> builtins.str:
+        """
+        监听器的名称。
+        """
+        return pulumi.get(self, "listener_name")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        监听器的端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> builtins.str:
+        """
+        监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class GetAclTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCertificateTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。
         """
         return pulumi.get(self, "value")
 
