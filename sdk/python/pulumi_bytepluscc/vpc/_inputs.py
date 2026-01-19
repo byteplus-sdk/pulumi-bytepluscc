@@ -44,6 +44,14 @@ __all__ = [
     'NetworkAclResourceArgsDict',
     'NetworkAclTagArgs',
     'NetworkAclTagArgsDict',
+    'PrefixListAssociationsRouteTableArgs',
+    'PrefixListAssociationsRouteTableArgsDict',
+    'PrefixListAssociationsSecurityGroupArgs',
+    'PrefixListAssociationsSecurityGroupArgsDict',
+    'PrefixListPrefixListEntryArgs',
+    'PrefixListPrefixListEntryArgsDict',
+    'PrefixListTagArgs',
+    'PrefixListTagArgsDict',
     'RouteTableCustomRouteEntryArgs',
     'RouteTableCustomRouteEntryArgsDict',
     'RouteTableSystemRouteEntryArgs',
@@ -1139,6 +1147,214 @@ elif False:
 
 @pulumi.input_type
 class NetworkAclTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class PrefixListAssociationsRouteTableArgsDict(TypedDict):
+        resource_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        关联资源的ID。
+        """
+        resource_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        """
+elif False:
+    PrefixListAssociationsRouteTableArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PrefixListAssociationsRouteTableArgs:
+    def __init__(__self__, *,
+                 resource_id: Optional[pulumi.Input[builtins.str]] = None,
+                 resource_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] resource_id: 关联资源的ID。
+        :param pulumi.Input[builtins.str] resource_type: 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        """
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        关联资源的ID。
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "resource_type", value)
+
+
+if not MYPY:
+    class PrefixListAssociationsSecurityGroupArgsDict(TypedDict):
+        resource_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        关联资源的ID。
+        """
+        resource_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        """
+elif False:
+    PrefixListAssociationsSecurityGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PrefixListAssociationsSecurityGroupArgs:
+    def __init__(__self__, *,
+                 resource_id: Optional[pulumi.Input[builtins.str]] = None,
+                 resource_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] resource_id: 关联资源的ID。
+        :param pulumi.Input[builtins.str] resource_type: 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        """
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        关联资源的ID。
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "resource_type", value)
+
+
+if not MYPY:
+    class PrefixListPrefixListEntryArgsDict(TypedDict):
+        cidr: NotRequired[pulumi.Input[builtins.str]]
+        """
+        前缀列表条目的CIDR。
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        """
+elif False:
+    PrefixListPrefixListEntryArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PrefixListPrefixListEntryArgs:
+    def __init__(__self__, *,
+                 cidr: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] cidr: 前缀列表条目的CIDR。
+        :param pulumi.Input[builtins.str] description: 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        """
+        if cidr is not None:
+            pulumi.set(__self__, "cidr", cidr)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def cidr(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        前缀列表条目的CIDR。
+        """
+        return pulumi.get(self, "cidr")
+
+    @cidr.setter
+    def cidr(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cidr", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
+if not MYPY:
+    class PrefixListTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。
+        """
+elif False:
+    PrefixListTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PrefixListTagArgs:
     def __init__(__self__, *,
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):

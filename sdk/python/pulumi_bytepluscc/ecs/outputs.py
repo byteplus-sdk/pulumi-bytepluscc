@@ -17,6 +17,8 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'CommandParameterDefinition',
+    'CommandTag',
     'ImageDetectionResults',
     'ImageDetectionResultsItem',
     'ImageSnapshot',
@@ -35,6 +37,8 @@ __all__ = [
     'InvocationParameterDefinition',
     'InvocationTag',
     'KeypairTag',
+    'GetCommandParameterDefinitionResult',
+    'GetCommandTagResult',
     'GetImageDetectionResultsResult',
     'GetImageDetectionResultsItemResult',
     'GetImageSnapshotResult',
@@ -54,6 +58,179 @@ __all__ = [
     'GetInvocationTagResult',
     'GetKeypairTagResult',
 ]
+
+@pulumi.output_type
+class CommandParameterDefinition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "decimalPrecision":
+            suggest = "decimal_precision"
+        elif key == "defaultValue":
+            suggest = "default_value"
+        elif key == "maxLength":
+            suggest = "max_length"
+        elif key == "maxValue":
+            suggest = "max_value"
+        elif key == "minLength":
+            suggest = "min_length"
+        elif key == "minValue":
+            suggest = "min_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CommandParameterDefinition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CommandParameterDefinition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CommandParameterDefinition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 decimal_precision: Optional[builtins.int] = None,
+                 default_value: Optional[builtins.str] = None,
+                 max_length: Optional[builtins.int] = None,
+                 max_value: Optional[builtins.str] = None,
+                 min_length: Optional[builtins.int] = None,
+                 min_value: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 required: Optional[builtins.bool] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
+        :param builtins.str default_value: 自定义参数默认值。
+        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
+        :param builtins.str max_value: 自定义参数值（数字）的最大值。
+        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
+        :param builtins.str min_value: 自定义参数值（数字）的最小值。
+        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+        :param builtins.bool required: 是否必填。
+        :param builtins.str type: 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        """
+        if decimal_precision is not None:
+            pulumi.set(__self__, "decimal_precision", decimal_precision)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if max_length is not None:
+            pulumi.set(__self__, "max_length", max_length)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_length is not None:
+            pulumi.set(__self__, "min_length", min_length)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if required is not None:
+            pulumi.set(__self__, "required", required)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="decimalPrecision")
+    def decimal_precision(self) -> Optional[builtins.int]:
+        """
+        自定义参数值（数字）允许的小数点后位数。
+        """
+        return pulumi.get(self, "decimal_precision")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> Optional[builtins.str]:
+        """
+        自定义参数默认值。
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> Optional[builtins.int]:
+        """
+        自定义参数值（字符串）的最大长度。
+        """
+        return pulumi.get(self, "max_length")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> Optional[builtins.str]:
+        """
+        自定义参数值（数字）的最大值。
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> Optional[builtins.int]:
+        """
+        自定义参数值（字符串）的最小长度。
+        """
+        return pulumi.get(self, "min_length")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> Optional[builtins.str]:
+        """
+        自定义参数值（数字）的最小值。
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def required(self) -> Optional[builtins.bool]:
+        """
+        是否必填。
+        """
+        return pulumi.get(self, "required")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class CommandTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        return pulumi.get(self, "value")
+
 
 @pulumi.output_type
 class ImageDetectionResults(dict):
@@ -1537,6 +1714,141 @@ class KeypairTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCommandParameterDefinitionResult(dict):
+    def __init__(__self__, *,
+                 decimal_precision: builtins.int,
+                 default_value: builtins.str,
+                 max_length: builtins.int,
+                 max_value: builtins.str,
+                 min_length: builtins.int,
+                 min_value: builtins.str,
+                 name: builtins.str,
+                 required: builtins.bool,
+                 type: builtins.str):
+        """
+        :param builtins.int decimal_precision: 自定义参数值（数字）允许的小数点后位数。
+        :param builtins.str default_value: 自定义参数默认值。
+        :param builtins.int max_length: 自定义参数值（字符串）的最大长度。
+        :param builtins.str max_value: 自定义参数值（数字）的最大值。
+        :param builtins.int min_length: 自定义参数值（字符串）的最小长度。
+        :param builtins.str min_value: 自定义参数值（数字）的最小值。
+        :param builtins.str name: 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+        :param builtins.bool required: 是否必填。
+        :param builtins.str type: 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        """
+        pulumi.set(__self__, "decimal_precision", decimal_precision)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "max_length", max_length)
+        pulumi.set(__self__, "max_value", max_value)
+        pulumi.set(__self__, "min_length", min_length)
+        pulumi.set(__self__, "min_value", min_value)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "required", required)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="decimalPrecision")
+    def decimal_precision(self) -> builtins.int:
+        """
+        自定义参数值（数字）允许的小数点后位数。
+        """
+        return pulumi.get(self, "decimal_precision")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> builtins.str:
+        """
+        自定义参数默认值。
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter(name="maxLength")
+    def max_length(self) -> builtins.int:
+        """
+        自定义参数值（字符串）的最大长度。
+        """
+        return pulumi.get(self, "max_length")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> builtins.str:
+        """
+        自定义参数值（数字）的最大值。
+        """
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minLength")
+    def min_length(self) -> builtins.int:
+        """
+        自定义参数值（字符串）的最小长度。
+        """
+        return pulumi.get(self, "min_length")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> builtins.str:
+        """
+        自定义参数值（数字）的最小值。
+        """
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def required(self) -> builtins.bool:
+        """
+        是否必填。
+        """
+        return pulumi.get(self, "required")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetCommandTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        :param builtins.str value: 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
         """
         return pulumi.get(self, "value")
 

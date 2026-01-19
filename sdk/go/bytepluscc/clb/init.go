@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:clb/acl:Acl":
+		r = &Acl{}
+	case "bytepluscc:clb/certificate:Certificate":
+		r = &Certificate{}
 	case "bytepluscc:clb/listener:Listener":
 		r = &Listener{}
 	case "bytepluscc:clb/nlb:Nlb":
@@ -46,6 +50,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"clb/acl",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"clb/certificate",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"clb/listener",

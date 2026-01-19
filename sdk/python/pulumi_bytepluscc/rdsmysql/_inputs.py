@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'DatabaseDatabasePrivilegeArgs',
+    'DatabaseDatabasePrivilegeArgsDict',
     'DbAccountAccountPrivilegeArgs',
     'DbAccountAccountPrivilegeArgsDict',
     'DbAccountTableColumnPrivilegeArgs',
@@ -49,6 +51,78 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class DatabaseDatabasePrivilegeArgsDict(TypedDict):
+        account_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        数据库账号名称。
+        """
+        account_privilege: NotRequired[pulumi.Input[builtins.str]]
+        """
+        授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+        """
+        host: NotRequired[pulumi.Input[builtins.str]]
+        """
+        指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+        """
+elif False:
+    DatabaseDatabasePrivilegeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDatabasePrivilegeArgs:
+    def __init__(__self__, *,
+                 account_name: Optional[pulumi.Input[builtins.str]] = None,
+                 account_privilege: Optional[pulumi.Input[builtins.str]] = None,
+                 host: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。
+        :param pulumi.Input[builtins.str] account_privilege: 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+        :param pulumi.Input[builtins.str] host: 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+        """
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if account_privilege is not None:
+            pulumi.set(__self__, "account_privilege", account_privilege)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        数据库账号名称。
+        """
+        return pulumi.get(self, "account_name")
+
+    @account_name.setter
+    def account_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "account_name", value)
+
+    @property
+    @pulumi.getter(name="accountPrivilege")
+    def account_privilege(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+        """
+        return pulumi.get(self, "account_privilege")
+
+    @account_privilege.setter
+    def account_privilege(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "account_privilege", value)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "host", value)
+
 
 if not MYPY:
     class DbAccountAccountPrivilegeArgsDict(TypedDict):

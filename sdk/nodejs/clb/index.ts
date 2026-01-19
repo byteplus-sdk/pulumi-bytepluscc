@@ -5,6 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AclArgs, AclState } from "./acl";
+export type Acl = import("./acl").Acl;
+export const Acl: typeof import("./acl").Acl = null as any;
+utilities.lazyLoad(exports, ["Acl"], () => require("./acl"));
+
+export { CertificateArgs, CertificateState } from "./certificate";
+export type Certificate = import("./certificate").Certificate;
+export const Certificate: typeof import("./certificate").Certificate = null as any;
+utilities.lazyLoad(exports, ["Certificate"], () => require("./certificate"));
+
+export { GetAclArgs, GetAclResult, GetAclOutputArgs } from "./getAcl";
+export const getAcl: typeof import("./getAcl").getAcl = null as any;
+export const getAclOutput: typeof import("./getAcl").getAclOutput = null as any;
+utilities.lazyLoad(exports, ["getAcl","getAclOutput"], () => require("./getAcl"));
+
+export { GetAclsResult } from "./getAcls";
+export const getAcls: typeof import("./getAcls").getAcls = null as any;
+export const getAclsOutput: typeof import("./getAcls").getAclsOutput = null as any;
+utilities.lazyLoad(exports, ["getAcls","getAclsOutput"], () => require("./getAcls"));
+
+export { GetCertificateArgs, GetCertificateResult, GetCertificateOutputArgs } from "./getCertificate";
+export const getCertificate: typeof import("./getCertificate").getCertificate = null as any;
+export const getCertificateOutput: typeof import("./getCertificate").getCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificate","getCertificateOutput"], () => require("./getCertificate"));
+
+export { GetCertificatesResult } from "./getCertificates";
+export const getCertificates: typeof import("./getCertificates").getCertificates = null as any;
+export const getCertificatesOutput: typeof import("./getCertificates").getCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getCertificates","getCertificatesOutput"], () => require("./getCertificates"));
+
 export { GetListenerArgs, GetListenerResult, GetListenerOutputArgs } from "./getListener";
 export const getListener: typeof import("./getListener").getListener = null as any;
 export const getListenerOutput: typeof import("./getListener").getListenerOutput = null as any;
@@ -100,6 +130,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:clb/acl:Acl":
+                return new Acl(name, <any>undefined, { urn })
+            case "bytepluscc:clb/certificate:Certificate":
+                return new Certificate(name, <any>undefined, { urn })
             case "bytepluscc:clb/listener:Listener":
                 return new Listener(name, <any>undefined, { urn })
             case "bytepluscc:clb/nlb:Nlb":
@@ -117,6 +151,8 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/acl", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/certificate", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/listener", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlb", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlbListener", _module)

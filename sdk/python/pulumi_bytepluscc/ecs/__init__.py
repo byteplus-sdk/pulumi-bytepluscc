@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .command import *
+from .get_command import *
+from .get_commands import *
 from .get_image import *
 from .get_images import *
 from .get_instance import *

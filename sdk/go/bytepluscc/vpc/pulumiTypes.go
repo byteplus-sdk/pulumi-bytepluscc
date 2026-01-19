@@ -1828,6 +1828,430 @@ func (o NetworkAclTagArrayOutput) Index(i pulumi.IntInput) NetworkAclTagOutput {
 	}).(NetworkAclTagOutput)
 }
 
+type PrefixListAssociationsRouteTable struct {
+	// 关联资源的ID。
+	ResourceId *string `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType *string `pulumi:"resourceType"`
+}
+
+// PrefixListAssociationsRouteTableInput is an input type that accepts PrefixListAssociationsRouteTableArgs and PrefixListAssociationsRouteTableOutput values.
+// You can construct a concrete instance of `PrefixListAssociationsRouteTableInput` via:
+//
+//	PrefixListAssociationsRouteTableArgs{...}
+type PrefixListAssociationsRouteTableInput interface {
+	pulumi.Input
+
+	ToPrefixListAssociationsRouteTableOutput() PrefixListAssociationsRouteTableOutput
+	ToPrefixListAssociationsRouteTableOutputWithContext(context.Context) PrefixListAssociationsRouteTableOutput
+}
+
+type PrefixListAssociationsRouteTableArgs struct {
+	// 关联资源的ID。
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+}
+
+func (PrefixListAssociationsRouteTableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (i PrefixListAssociationsRouteTableArgs) ToPrefixListAssociationsRouteTableOutput() PrefixListAssociationsRouteTableOutput {
+	return i.ToPrefixListAssociationsRouteTableOutputWithContext(context.Background())
+}
+
+func (i PrefixListAssociationsRouteTableArgs) ToPrefixListAssociationsRouteTableOutputWithContext(ctx context.Context) PrefixListAssociationsRouteTableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListAssociationsRouteTableOutput)
+}
+
+// PrefixListAssociationsRouteTableArrayInput is an input type that accepts PrefixListAssociationsRouteTableArray and PrefixListAssociationsRouteTableArrayOutput values.
+// You can construct a concrete instance of `PrefixListAssociationsRouteTableArrayInput` via:
+//
+//	PrefixListAssociationsRouteTableArray{ PrefixListAssociationsRouteTableArgs{...} }
+type PrefixListAssociationsRouteTableArrayInput interface {
+	pulumi.Input
+
+	ToPrefixListAssociationsRouteTableArrayOutput() PrefixListAssociationsRouteTableArrayOutput
+	ToPrefixListAssociationsRouteTableArrayOutputWithContext(context.Context) PrefixListAssociationsRouteTableArrayOutput
+}
+
+type PrefixListAssociationsRouteTableArray []PrefixListAssociationsRouteTableInput
+
+func (PrefixListAssociationsRouteTableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (i PrefixListAssociationsRouteTableArray) ToPrefixListAssociationsRouteTableArrayOutput() PrefixListAssociationsRouteTableArrayOutput {
+	return i.ToPrefixListAssociationsRouteTableArrayOutputWithContext(context.Background())
+}
+
+func (i PrefixListAssociationsRouteTableArray) ToPrefixListAssociationsRouteTableArrayOutputWithContext(ctx context.Context) PrefixListAssociationsRouteTableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListAssociationsRouteTableArrayOutput)
+}
+
+type PrefixListAssociationsRouteTableOutput struct{ *pulumi.OutputState }
+
+func (PrefixListAssociationsRouteTableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (o PrefixListAssociationsRouteTableOutput) ToPrefixListAssociationsRouteTableOutput() PrefixListAssociationsRouteTableOutput {
+	return o
+}
+
+func (o PrefixListAssociationsRouteTableOutput) ToPrefixListAssociationsRouteTableOutputWithContext(ctx context.Context) PrefixListAssociationsRouteTableOutput {
+	return o
+}
+
+// 关联资源的ID。
+func (o PrefixListAssociationsRouteTableOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListAssociationsRouteTable) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+func (o PrefixListAssociationsRouteTableOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListAssociationsRouteTable) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+type PrefixListAssociationsRouteTableArrayOutput struct{ *pulumi.OutputState }
+
+func (PrefixListAssociationsRouteTableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (o PrefixListAssociationsRouteTableArrayOutput) ToPrefixListAssociationsRouteTableArrayOutput() PrefixListAssociationsRouteTableArrayOutput {
+	return o
+}
+
+func (o PrefixListAssociationsRouteTableArrayOutput) ToPrefixListAssociationsRouteTableArrayOutputWithContext(ctx context.Context) PrefixListAssociationsRouteTableArrayOutput {
+	return o
+}
+
+func (o PrefixListAssociationsRouteTableArrayOutput) Index(i pulumi.IntInput) PrefixListAssociationsRouteTableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrefixListAssociationsRouteTable {
+		return vs[0].([]PrefixListAssociationsRouteTable)[vs[1].(int)]
+	}).(PrefixListAssociationsRouteTableOutput)
+}
+
+type PrefixListAssociationsSecurityGroup struct {
+	// 关联资源的ID。
+	ResourceId *string `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType *string `pulumi:"resourceType"`
+}
+
+// PrefixListAssociationsSecurityGroupInput is an input type that accepts PrefixListAssociationsSecurityGroupArgs and PrefixListAssociationsSecurityGroupOutput values.
+// You can construct a concrete instance of `PrefixListAssociationsSecurityGroupInput` via:
+//
+//	PrefixListAssociationsSecurityGroupArgs{...}
+type PrefixListAssociationsSecurityGroupInput interface {
+	pulumi.Input
+
+	ToPrefixListAssociationsSecurityGroupOutput() PrefixListAssociationsSecurityGroupOutput
+	ToPrefixListAssociationsSecurityGroupOutputWithContext(context.Context) PrefixListAssociationsSecurityGroupOutput
+}
+
+type PrefixListAssociationsSecurityGroupArgs struct {
+	// 关联资源的ID。
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+}
+
+func (PrefixListAssociationsSecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (i PrefixListAssociationsSecurityGroupArgs) ToPrefixListAssociationsSecurityGroupOutput() PrefixListAssociationsSecurityGroupOutput {
+	return i.ToPrefixListAssociationsSecurityGroupOutputWithContext(context.Background())
+}
+
+func (i PrefixListAssociationsSecurityGroupArgs) ToPrefixListAssociationsSecurityGroupOutputWithContext(ctx context.Context) PrefixListAssociationsSecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListAssociationsSecurityGroupOutput)
+}
+
+// PrefixListAssociationsSecurityGroupArrayInput is an input type that accepts PrefixListAssociationsSecurityGroupArray and PrefixListAssociationsSecurityGroupArrayOutput values.
+// You can construct a concrete instance of `PrefixListAssociationsSecurityGroupArrayInput` via:
+//
+//	PrefixListAssociationsSecurityGroupArray{ PrefixListAssociationsSecurityGroupArgs{...} }
+type PrefixListAssociationsSecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToPrefixListAssociationsSecurityGroupArrayOutput() PrefixListAssociationsSecurityGroupArrayOutput
+	ToPrefixListAssociationsSecurityGroupArrayOutputWithContext(context.Context) PrefixListAssociationsSecurityGroupArrayOutput
+}
+
+type PrefixListAssociationsSecurityGroupArray []PrefixListAssociationsSecurityGroupInput
+
+func (PrefixListAssociationsSecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (i PrefixListAssociationsSecurityGroupArray) ToPrefixListAssociationsSecurityGroupArrayOutput() PrefixListAssociationsSecurityGroupArrayOutput {
+	return i.ToPrefixListAssociationsSecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i PrefixListAssociationsSecurityGroupArray) ToPrefixListAssociationsSecurityGroupArrayOutputWithContext(ctx context.Context) PrefixListAssociationsSecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListAssociationsSecurityGroupArrayOutput)
+}
+
+type PrefixListAssociationsSecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (PrefixListAssociationsSecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (o PrefixListAssociationsSecurityGroupOutput) ToPrefixListAssociationsSecurityGroupOutput() PrefixListAssociationsSecurityGroupOutput {
+	return o
+}
+
+func (o PrefixListAssociationsSecurityGroupOutput) ToPrefixListAssociationsSecurityGroupOutputWithContext(ctx context.Context) PrefixListAssociationsSecurityGroupOutput {
+	return o
+}
+
+// 关联资源的ID。
+func (o PrefixListAssociationsSecurityGroupOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListAssociationsSecurityGroup) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+func (o PrefixListAssociationsSecurityGroupOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListAssociationsSecurityGroup) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+type PrefixListAssociationsSecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (PrefixListAssociationsSecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (o PrefixListAssociationsSecurityGroupArrayOutput) ToPrefixListAssociationsSecurityGroupArrayOutput() PrefixListAssociationsSecurityGroupArrayOutput {
+	return o
+}
+
+func (o PrefixListAssociationsSecurityGroupArrayOutput) ToPrefixListAssociationsSecurityGroupArrayOutputWithContext(ctx context.Context) PrefixListAssociationsSecurityGroupArrayOutput {
+	return o
+}
+
+func (o PrefixListAssociationsSecurityGroupArrayOutput) Index(i pulumi.IntInput) PrefixListAssociationsSecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrefixListAssociationsSecurityGroup {
+		return vs[0].([]PrefixListAssociationsSecurityGroup)[vs[1].(int)]
+	}).(PrefixListAssociationsSecurityGroupOutput)
+}
+
+type PrefixListPrefixListEntry struct {
+	// 前缀列表条目的CIDR。
+	Cidr *string `pulumi:"cidr"`
+	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	Description *string `pulumi:"description"`
+}
+
+// PrefixListPrefixListEntryInput is an input type that accepts PrefixListPrefixListEntryArgs and PrefixListPrefixListEntryOutput values.
+// You can construct a concrete instance of `PrefixListPrefixListEntryInput` via:
+//
+//	PrefixListPrefixListEntryArgs{...}
+type PrefixListPrefixListEntryInput interface {
+	pulumi.Input
+
+	ToPrefixListPrefixListEntryOutput() PrefixListPrefixListEntryOutput
+	ToPrefixListPrefixListEntryOutputWithContext(context.Context) PrefixListPrefixListEntryOutput
+}
+
+type PrefixListPrefixListEntryArgs struct {
+	// 前缀列表条目的CIDR。
+	Cidr pulumi.StringPtrInput `pulumi:"cidr"`
+	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+}
+
+func (PrefixListPrefixListEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (i PrefixListPrefixListEntryArgs) ToPrefixListPrefixListEntryOutput() PrefixListPrefixListEntryOutput {
+	return i.ToPrefixListPrefixListEntryOutputWithContext(context.Background())
+}
+
+func (i PrefixListPrefixListEntryArgs) ToPrefixListPrefixListEntryOutputWithContext(ctx context.Context) PrefixListPrefixListEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListPrefixListEntryOutput)
+}
+
+// PrefixListPrefixListEntryArrayInput is an input type that accepts PrefixListPrefixListEntryArray and PrefixListPrefixListEntryArrayOutput values.
+// You can construct a concrete instance of `PrefixListPrefixListEntryArrayInput` via:
+//
+//	PrefixListPrefixListEntryArray{ PrefixListPrefixListEntryArgs{...} }
+type PrefixListPrefixListEntryArrayInput interface {
+	pulumi.Input
+
+	ToPrefixListPrefixListEntryArrayOutput() PrefixListPrefixListEntryArrayOutput
+	ToPrefixListPrefixListEntryArrayOutputWithContext(context.Context) PrefixListPrefixListEntryArrayOutput
+}
+
+type PrefixListPrefixListEntryArray []PrefixListPrefixListEntryInput
+
+func (PrefixListPrefixListEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (i PrefixListPrefixListEntryArray) ToPrefixListPrefixListEntryArrayOutput() PrefixListPrefixListEntryArrayOutput {
+	return i.ToPrefixListPrefixListEntryArrayOutputWithContext(context.Background())
+}
+
+func (i PrefixListPrefixListEntryArray) ToPrefixListPrefixListEntryArrayOutputWithContext(ctx context.Context) PrefixListPrefixListEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListPrefixListEntryArrayOutput)
+}
+
+type PrefixListPrefixListEntryOutput struct{ *pulumi.OutputState }
+
+func (PrefixListPrefixListEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (o PrefixListPrefixListEntryOutput) ToPrefixListPrefixListEntryOutput() PrefixListPrefixListEntryOutput {
+	return o
+}
+
+func (o PrefixListPrefixListEntryOutput) ToPrefixListPrefixListEntryOutputWithContext(ctx context.Context) PrefixListPrefixListEntryOutput {
+	return o
+}
+
+// 前缀列表条目的CIDR。
+func (o PrefixListPrefixListEntryOutput) Cidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListPrefixListEntry) *string { return v.Cidr }).(pulumi.StringPtrOutput)
+}
+
+// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+func (o PrefixListPrefixListEntryOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListPrefixListEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+type PrefixListPrefixListEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (PrefixListPrefixListEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (o PrefixListPrefixListEntryArrayOutput) ToPrefixListPrefixListEntryArrayOutput() PrefixListPrefixListEntryArrayOutput {
+	return o
+}
+
+func (o PrefixListPrefixListEntryArrayOutput) ToPrefixListPrefixListEntryArrayOutputWithContext(ctx context.Context) PrefixListPrefixListEntryArrayOutput {
+	return o
+}
+
+func (o PrefixListPrefixListEntryArrayOutput) Index(i pulumi.IntInput) PrefixListPrefixListEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrefixListPrefixListEntry {
+		return vs[0].([]PrefixListPrefixListEntry)[vs[1].(int)]
+	}).(PrefixListPrefixListEntryOutput)
+}
+
+type PrefixListTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// PrefixListTagInput is an input type that accepts PrefixListTagArgs and PrefixListTagOutput values.
+// You can construct a concrete instance of `PrefixListTagInput` via:
+//
+//	PrefixListTagArgs{...}
+type PrefixListTagInput interface {
+	pulumi.Input
+
+	ToPrefixListTagOutput() PrefixListTagOutput
+	ToPrefixListTagOutputWithContext(context.Context) PrefixListTagOutput
+}
+
+type PrefixListTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (PrefixListTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListTag)(nil)).Elem()
+}
+
+func (i PrefixListTagArgs) ToPrefixListTagOutput() PrefixListTagOutput {
+	return i.ToPrefixListTagOutputWithContext(context.Background())
+}
+
+func (i PrefixListTagArgs) ToPrefixListTagOutputWithContext(ctx context.Context) PrefixListTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListTagOutput)
+}
+
+// PrefixListTagArrayInput is an input type that accepts PrefixListTagArray and PrefixListTagArrayOutput values.
+// You can construct a concrete instance of `PrefixListTagArrayInput` via:
+//
+//	PrefixListTagArray{ PrefixListTagArgs{...} }
+type PrefixListTagArrayInput interface {
+	pulumi.Input
+
+	ToPrefixListTagArrayOutput() PrefixListTagArrayOutput
+	ToPrefixListTagArrayOutputWithContext(context.Context) PrefixListTagArrayOutput
+}
+
+type PrefixListTagArray []PrefixListTagInput
+
+func (PrefixListTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListTag)(nil)).Elem()
+}
+
+func (i PrefixListTagArray) ToPrefixListTagArrayOutput() PrefixListTagArrayOutput {
+	return i.ToPrefixListTagArrayOutputWithContext(context.Background())
+}
+
+func (i PrefixListTagArray) ToPrefixListTagArrayOutputWithContext(ctx context.Context) PrefixListTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrefixListTagArrayOutput)
+}
+
+type PrefixListTagOutput struct{ *pulumi.OutputState }
+
+func (PrefixListTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrefixListTag)(nil)).Elem()
+}
+
+func (o PrefixListTagOutput) ToPrefixListTagOutput() PrefixListTagOutput {
+	return o
+}
+
+func (o PrefixListTagOutput) ToPrefixListTagOutputWithContext(ctx context.Context) PrefixListTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o PrefixListTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o PrefixListTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrefixListTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type PrefixListTagArrayOutput struct{ *pulumi.OutputState }
+
+func (PrefixListTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrefixListTag)(nil)).Elem()
+}
+
+func (o PrefixListTagArrayOutput) ToPrefixListTagArrayOutput() PrefixListTagArrayOutput {
+	return o
+}
+
+func (o PrefixListTagArrayOutput) ToPrefixListTagArrayOutputWithContext(ctx context.Context) PrefixListTagArrayOutput {
+	return o
+}
+
+func (o PrefixListTagArrayOutput) Index(i pulumi.IntInput) PrefixListTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrefixListTag {
+		return vs[0].([]PrefixListTag)[vs[1].(int)]
+	}).(PrefixListTagOutput)
+}
+
 type RouteTableCustomRouteEntry struct {
 	// 路由条目描述。
 	Description *string `pulumi:"description"`
@@ -4836,6 +5260,430 @@ func (o GetNetworkAclTagArrayOutput) Index(i pulumi.IntInput) GetNetworkAclTagOu
 	}).(GetNetworkAclTagOutput)
 }
 
+type GetPrefixListAssociationsRouteTable struct {
+	// 关联资源的ID。
+	ResourceId string `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetPrefixListAssociationsRouteTableInput is an input type that accepts GetPrefixListAssociationsRouteTableArgs and GetPrefixListAssociationsRouteTableOutput values.
+// You can construct a concrete instance of `GetPrefixListAssociationsRouteTableInput` via:
+//
+//	GetPrefixListAssociationsRouteTableArgs{...}
+type GetPrefixListAssociationsRouteTableInput interface {
+	pulumi.Input
+
+	ToGetPrefixListAssociationsRouteTableOutput() GetPrefixListAssociationsRouteTableOutput
+	ToGetPrefixListAssociationsRouteTableOutputWithContext(context.Context) GetPrefixListAssociationsRouteTableOutput
+}
+
+type GetPrefixListAssociationsRouteTableArgs struct {
+	// 关联资源的ID。
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetPrefixListAssociationsRouteTableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (i GetPrefixListAssociationsRouteTableArgs) ToGetPrefixListAssociationsRouteTableOutput() GetPrefixListAssociationsRouteTableOutput {
+	return i.ToGetPrefixListAssociationsRouteTableOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListAssociationsRouteTableArgs) ToGetPrefixListAssociationsRouteTableOutputWithContext(ctx context.Context) GetPrefixListAssociationsRouteTableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListAssociationsRouteTableOutput)
+}
+
+// GetPrefixListAssociationsRouteTableArrayInput is an input type that accepts GetPrefixListAssociationsRouteTableArray and GetPrefixListAssociationsRouteTableArrayOutput values.
+// You can construct a concrete instance of `GetPrefixListAssociationsRouteTableArrayInput` via:
+//
+//	GetPrefixListAssociationsRouteTableArray{ GetPrefixListAssociationsRouteTableArgs{...} }
+type GetPrefixListAssociationsRouteTableArrayInput interface {
+	pulumi.Input
+
+	ToGetPrefixListAssociationsRouteTableArrayOutput() GetPrefixListAssociationsRouteTableArrayOutput
+	ToGetPrefixListAssociationsRouteTableArrayOutputWithContext(context.Context) GetPrefixListAssociationsRouteTableArrayOutput
+}
+
+type GetPrefixListAssociationsRouteTableArray []GetPrefixListAssociationsRouteTableInput
+
+func (GetPrefixListAssociationsRouteTableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (i GetPrefixListAssociationsRouteTableArray) ToGetPrefixListAssociationsRouteTableArrayOutput() GetPrefixListAssociationsRouteTableArrayOutput {
+	return i.ToGetPrefixListAssociationsRouteTableArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListAssociationsRouteTableArray) ToGetPrefixListAssociationsRouteTableArrayOutputWithContext(ctx context.Context) GetPrefixListAssociationsRouteTableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListAssociationsRouteTableArrayOutput)
+}
+
+type GetPrefixListAssociationsRouteTableOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListAssociationsRouteTableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (o GetPrefixListAssociationsRouteTableOutput) ToGetPrefixListAssociationsRouteTableOutput() GetPrefixListAssociationsRouteTableOutput {
+	return o
+}
+
+func (o GetPrefixListAssociationsRouteTableOutput) ToGetPrefixListAssociationsRouteTableOutputWithContext(ctx context.Context) GetPrefixListAssociationsRouteTableOutput {
+	return o
+}
+
+// 关联资源的ID。
+func (o GetPrefixListAssociationsRouteTableOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListAssociationsRouteTable) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+func (o GetPrefixListAssociationsRouteTableOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListAssociationsRouteTable) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetPrefixListAssociationsRouteTableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListAssociationsRouteTableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListAssociationsRouteTable)(nil)).Elem()
+}
+
+func (o GetPrefixListAssociationsRouteTableArrayOutput) ToGetPrefixListAssociationsRouteTableArrayOutput() GetPrefixListAssociationsRouteTableArrayOutput {
+	return o
+}
+
+func (o GetPrefixListAssociationsRouteTableArrayOutput) ToGetPrefixListAssociationsRouteTableArrayOutputWithContext(ctx context.Context) GetPrefixListAssociationsRouteTableArrayOutput {
+	return o
+}
+
+func (o GetPrefixListAssociationsRouteTableArrayOutput) Index(i pulumi.IntInput) GetPrefixListAssociationsRouteTableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrefixListAssociationsRouteTable {
+		return vs[0].([]GetPrefixListAssociationsRouteTable)[vs[1].(int)]
+	}).(GetPrefixListAssociationsRouteTableOutput)
+}
+
+type GetPrefixListAssociationsSecurityGroup struct {
+	// 关联资源的ID。
+	ResourceId string `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType string `pulumi:"resourceType"`
+}
+
+// GetPrefixListAssociationsSecurityGroupInput is an input type that accepts GetPrefixListAssociationsSecurityGroupArgs and GetPrefixListAssociationsSecurityGroupOutput values.
+// You can construct a concrete instance of `GetPrefixListAssociationsSecurityGroupInput` via:
+//
+//	GetPrefixListAssociationsSecurityGroupArgs{...}
+type GetPrefixListAssociationsSecurityGroupInput interface {
+	pulumi.Input
+
+	ToGetPrefixListAssociationsSecurityGroupOutput() GetPrefixListAssociationsSecurityGroupOutput
+	ToGetPrefixListAssociationsSecurityGroupOutputWithContext(context.Context) GetPrefixListAssociationsSecurityGroupOutput
+}
+
+type GetPrefixListAssociationsSecurityGroupArgs struct {
+	// 关联资源的ID。
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+}
+
+func (GetPrefixListAssociationsSecurityGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (i GetPrefixListAssociationsSecurityGroupArgs) ToGetPrefixListAssociationsSecurityGroupOutput() GetPrefixListAssociationsSecurityGroupOutput {
+	return i.ToGetPrefixListAssociationsSecurityGroupOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListAssociationsSecurityGroupArgs) ToGetPrefixListAssociationsSecurityGroupOutputWithContext(ctx context.Context) GetPrefixListAssociationsSecurityGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListAssociationsSecurityGroupOutput)
+}
+
+// GetPrefixListAssociationsSecurityGroupArrayInput is an input type that accepts GetPrefixListAssociationsSecurityGroupArray and GetPrefixListAssociationsSecurityGroupArrayOutput values.
+// You can construct a concrete instance of `GetPrefixListAssociationsSecurityGroupArrayInput` via:
+//
+//	GetPrefixListAssociationsSecurityGroupArray{ GetPrefixListAssociationsSecurityGroupArgs{...} }
+type GetPrefixListAssociationsSecurityGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetPrefixListAssociationsSecurityGroupArrayOutput() GetPrefixListAssociationsSecurityGroupArrayOutput
+	ToGetPrefixListAssociationsSecurityGroupArrayOutputWithContext(context.Context) GetPrefixListAssociationsSecurityGroupArrayOutput
+}
+
+type GetPrefixListAssociationsSecurityGroupArray []GetPrefixListAssociationsSecurityGroupInput
+
+func (GetPrefixListAssociationsSecurityGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (i GetPrefixListAssociationsSecurityGroupArray) ToGetPrefixListAssociationsSecurityGroupArrayOutput() GetPrefixListAssociationsSecurityGroupArrayOutput {
+	return i.ToGetPrefixListAssociationsSecurityGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListAssociationsSecurityGroupArray) ToGetPrefixListAssociationsSecurityGroupArrayOutputWithContext(ctx context.Context) GetPrefixListAssociationsSecurityGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListAssociationsSecurityGroupArrayOutput)
+}
+
+type GetPrefixListAssociationsSecurityGroupOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListAssociationsSecurityGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (o GetPrefixListAssociationsSecurityGroupOutput) ToGetPrefixListAssociationsSecurityGroupOutput() GetPrefixListAssociationsSecurityGroupOutput {
+	return o
+}
+
+func (o GetPrefixListAssociationsSecurityGroupOutput) ToGetPrefixListAssociationsSecurityGroupOutputWithContext(ctx context.Context) GetPrefixListAssociationsSecurityGroupOutput {
+	return o
+}
+
+// 关联资源的ID。
+func (o GetPrefixListAssociationsSecurityGroupOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListAssociationsSecurityGroup) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+func (o GetPrefixListAssociationsSecurityGroupOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListAssociationsSecurityGroup) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+type GetPrefixListAssociationsSecurityGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListAssociationsSecurityGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListAssociationsSecurityGroup)(nil)).Elem()
+}
+
+func (o GetPrefixListAssociationsSecurityGroupArrayOutput) ToGetPrefixListAssociationsSecurityGroupArrayOutput() GetPrefixListAssociationsSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetPrefixListAssociationsSecurityGroupArrayOutput) ToGetPrefixListAssociationsSecurityGroupArrayOutputWithContext(ctx context.Context) GetPrefixListAssociationsSecurityGroupArrayOutput {
+	return o
+}
+
+func (o GetPrefixListAssociationsSecurityGroupArrayOutput) Index(i pulumi.IntInput) GetPrefixListAssociationsSecurityGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrefixListAssociationsSecurityGroup {
+		return vs[0].([]GetPrefixListAssociationsSecurityGroup)[vs[1].(int)]
+	}).(GetPrefixListAssociationsSecurityGroupOutput)
+}
+
+type GetPrefixListPrefixListEntry struct {
+	// 前缀列表条目的CIDR。
+	Cidr string `pulumi:"cidr"`
+	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	Description string `pulumi:"description"`
+}
+
+// GetPrefixListPrefixListEntryInput is an input type that accepts GetPrefixListPrefixListEntryArgs and GetPrefixListPrefixListEntryOutput values.
+// You can construct a concrete instance of `GetPrefixListPrefixListEntryInput` via:
+//
+//	GetPrefixListPrefixListEntryArgs{...}
+type GetPrefixListPrefixListEntryInput interface {
+	pulumi.Input
+
+	ToGetPrefixListPrefixListEntryOutput() GetPrefixListPrefixListEntryOutput
+	ToGetPrefixListPrefixListEntryOutputWithContext(context.Context) GetPrefixListPrefixListEntryOutput
+}
+
+type GetPrefixListPrefixListEntryArgs struct {
+	// 前缀列表条目的CIDR。
+	Cidr pulumi.StringInput `pulumi:"cidr"`
+	// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	Description pulumi.StringInput `pulumi:"description"`
+}
+
+func (GetPrefixListPrefixListEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (i GetPrefixListPrefixListEntryArgs) ToGetPrefixListPrefixListEntryOutput() GetPrefixListPrefixListEntryOutput {
+	return i.ToGetPrefixListPrefixListEntryOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListPrefixListEntryArgs) ToGetPrefixListPrefixListEntryOutputWithContext(ctx context.Context) GetPrefixListPrefixListEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListPrefixListEntryOutput)
+}
+
+// GetPrefixListPrefixListEntryArrayInput is an input type that accepts GetPrefixListPrefixListEntryArray and GetPrefixListPrefixListEntryArrayOutput values.
+// You can construct a concrete instance of `GetPrefixListPrefixListEntryArrayInput` via:
+//
+//	GetPrefixListPrefixListEntryArray{ GetPrefixListPrefixListEntryArgs{...} }
+type GetPrefixListPrefixListEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetPrefixListPrefixListEntryArrayOutput() GetPrefixListPrefixListEntryArrayOutput
+	ToGetPrefixListPrefixListEntryArrayOutputWithContext(context.Context) GetPrefixListPrefixListEntryArrayOutput
+}
+
+type GetPrefixListPrefixListEntryArray []GetPrefixListPrefixListEntryInput
+
+func (GetPrefixListPrefixListEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (i GetPrefixListPrefixListEntryArray) ToGetPrefixListPrefixListEntryArrayOutput() GetPrefixListPrefixListEntryArrayOutput {
+	return i.ToGetPrefixListPrefixListEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListPrefixListEntryArray) ToGetPrefixListPrefixListEntryArrayOutputWithContext(ctx context.Context) GetPrefixListPrefixListEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListPrefixListEntryArrayOutput)
+}
+
+type GetPrefixListPrefixListEntryOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListPrefixListEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (o GetPrefixListPrefixListEntryOutput) ToGetPrefixListPrefixListEntryOutput() GetPrefixListPrefixListEntryOutput {
+	return o
+}
+
+func (o GetPrefixListPrefixListEntryOutput) ToGetPrefixListPrefixListEntryOutputWithContext(ctx context.Context) GetPrefixListPrefixListEntryOutput {
+	return o
+}
+
+// 前缀列表条目的CIDR。
+func (o GetPrefixListPrefixListEntryOutput) Cidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListPrefixListEntry) string { return v.Cidr }).(pulumi.StringOutput)
+}
+
+// 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+func (o GetPrefixListPrefixListEntryOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListPrefixListEntry) string { return v.Description }).(pulumi.StringOutput)
+}
+
+type GetPrefixListPrefixListEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListPrefixListEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListPrefixListEntry)(nil)).Elem()
+}
+
+func (o GetPrefixListPrefixListEntryArrayOutput) ToGetPrefixListPrefixListEntryArrayOutput() GetPrefixListPrefixListEntryArrayOutput {
+	return o
+}
+
+func (o GetPrefixListPrefixListEntryArrayOutput) ToGetPrefixListPrefixListEntryArrayOutputWithContext(ctx context.Context) GetPrefixListPrefixListEntryArrayOutput {
+	return o
+}
+
+func (o GetPrefixListPrefixListEntryArrayOutput) Index(i pulumi.IntInput) GetPrefixListPrefixListEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrefixListPrefixListEntry {
+		return vs[0].([]GetPrefixListPrefixListEntry)[vs[1].(int)]
+	}).(GetPrefixListPrefixListEntryOutput)
+}
+
+type GetPrefixListTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetPrefixListTagInput is an input type that accepts GetPrefixListTagArgs and GetPrefixListTagOutput values.
+// You can construct a concrete instance of `GetPrefixListTagInput` via:
+//
+//	GetPrefixListTagArgs{...}
+type GetPrefixListTagInput interface {
+	pulumi.Input
+
+	ToGetPrefixListTagOutput() GetPrefixListTagOutput
+	ToGetPrefixListTagOutputWithContext(context.Context) GetPrefixListTagOutput
+}
+
+type GetPrefixListTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetPrefixListTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListTag)(nil)).Elem()
+}
+
+func (i GetPrefixListTagArgs) ToGetPrefixListTagOutput() GetPrefixListTagOutput {
+	return i.ToGetPrefixListTagOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListTagArgs) ToGetPrefixListTagOutputWithContext(ctx context.Context) GetPrefixListTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListTagOutput)
+}
+
+// GetPrefixListTagArrayInput is an input type that accepts GetPrefixListTagArray and GetPrefixListTagArrayOutput values.
+// You can construct a concrete instance of `GetPrefixListTagArrayInput` via:
+//
+//	GetPrefixListTagArray{ GetPrefixListTagArgs{...} }
+type GetPrefixListTagArrayInput interface {
+	pulumi.Input
+
+	ToGetPrefixListTagArrayOutput() GetPrefixListTagArrayOutput
+	ToGetPrefixListTagArrayOutputWithContext(context.Context) GetPrefixListTagArrayOutput
+}
+
+type GetPrefixListTagArray []GetPrefixListTagInput
+
+func (GetPrefixListTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListTag)(nil)).Elem()
+}
+
+func (i GetPrefixListTagArray) ToGetPrefixListTagArrayOutput() GetPrefixListTagArrayOutput {
+	return i.ToGetPrefixListTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrefixListTagArray) ToGetPrefixListTagArrayOutputWithContext(ctx context.Context) GetPrefixListTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrefixListTagArrayOutput)
+}
+
+type GetPrefixListTagOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrefixListTag)(nil)).Elem()
+}
+
+func (o GetPrefixListTagOutput) ToGetPrefixListTagOutput() GetPrefixListTagOutput {
+	return o
+}
+
+func (o GetPrefixListTagOutput) ToGetPrefixListTagOutputWithContext(ctx context.Context) GetPrefixListTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetPrefixListTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetPrefixListTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrefixListTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetPrefixListTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrefixListTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrefixListTag)(nil)).Elem()
+}
+
+func (o GetPrefixListTagArrayOutput) ToGetPrefixListTagArrayOutput() GetPrefixListTagArrayOutput {
+	return o
+}
+
+func (o GetPrefixListTagArrayOutput) ToGetPrefixListTagArrayOutputWithContext(ctx context.Context) GetPrefixListTagArrayOutput {
+	return o
+}
+
+func (o GetPrefixListTagArrayOutput) Index(i pulumi.IntInput) GetPrefixListTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrefixListTag {
+		return vs[0].([]GetPrefixListTag)[vs[1].(int)]
+	}).(GetPrefixListTagOutput)
+}
+
 type GetRouteTableCustomRouteEntry struct {
 	// 路由条目描述。
 	Description string `pulumi:"description"`
@@ -6285,6 +7133,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkAclResourceArrayInput)(nil)).Elem(), NetworkAclResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkAclTagInput)(nil)).Elem(), NetworkAclTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkAclTagArrayInput)(nil)).Elem(), NetworkAclTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListAssociationsRouteTableInput)(nil)).Elem(), PrefixListAssociationsRouteTableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListAssociationsRouteTableArrayInput)(nil)).Elem(), PrefixListAssociationsRouteTableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListAssociationsSecurityGroupInput)(nil)).Elem(), PrefixListAssociationsSecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListAssociationsSecurityGroupArrayInput)(nil)).Elem(), PrefixListAssociationsSecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListPrefixListEntryInput)(nil)).Elem(), PrefixListPrefixListEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListPrefixListEntryArrayInput)(nil)).Elem(), PrefixListPrefixListEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListTagInput)(nil)).Elem(), PrefixListTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrefixListTagArrayInput)(nil)).Elem(), PrefixListTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableCustomRouteEntryInput)(nil)).Elem(), RouteTableCustomRouteEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableCustomRouteEntryArrayInput)(nil)).Elem(), RouteTableCustomRouteEntryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RouteTableSystemRouteEntryInput)(nil)).Elem(), RouteTableSystemRouteEntryArgs{})
@@ -6330,6 +7186,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAclResourceArrayInput)(nil)).Elem(), GetNetworkAclResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAclTagInput)(nil)).Elem(), GetNetworkAclTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAclTagArrayInput)(nil)).Elem(), GetNetworkAclTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListAssociationsRouteTableInput)(nil)).Elem(), GetPrefixListAssociationsRouteTableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListAssociationsRouteTableArrayInput)(nil)).Elem(), GetPrefixListAssociationsRouteTableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListAssociationsSecurityGroupInput)(nil)).Elem(), GetPrefixListAssociationsSecurityGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListAssociationsSecurityGroupArrayInput)(nil)).Elem(), GetPrefixListAssociationsSecurityGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListPrefixListEntryInput)(nil)).Elem(), GetPrefixListPrefixListEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListPrefixListEntryArrayInput)(nil)).Elem(), GetPrefixListPrefixListEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListTagInput)(nil)).Elem(), GetPrefixListTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrefixListTagArrayInput)(nil)).Elem(), GetPrefixListTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableCustomRouteEntryInput)(nil)).Elem(), GetRouteTableCustomRouteEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableCustomRouteEntryArrayInput)(nil)).Elem(), GetRouteTableCustomRouteEntryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRouteTableSystemRouteEntryInput)(nil)).Elem(), GetRouteTableSystemRouteEntryArgs{})
@@ -6377,6 +7241,14 @@ func init() {
 	pulumi.RegisterOutputType(NetworkAclResourceArrayOutput{})
 	pulumi.RegisterOutputType(NetworkAclTagOutput{})
 	pulumi.RegisterOutputType(NetworkAclTagArrayOutput{})
+	pulumi.RegisterOutputType(PrefixListAssociationsRouteTableOutput{})
+	pulumi.RegisterOutputType(PrefixListAssociationsRouteTableArrayOutput{})
+	pulumi.RegisterOutputType(PrefixListAssociationsSecurityGroupOutput{})
+	pulumi.RegisterOutputType(PrefixListAssociationsSecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(PrefixListPrefixListEntryOutput{})
+	pulumi.RegisterOutputType(PrefixListPrefixListEntryArrayOutput{})
+	pulumi.RegisterOutputType(PrefixListTagOutput{})
+	pulumi.RegisterOutputType(PrefixListTagArrayOutput{})
 	pulumi.RegisterOutputType(RouteTableCustomRouteEntryOutput{})
 	pulumi.RegisterOutputType(RouteTableCustomRouteEntryArrayOutput{})
 	pulumi.RegisterOutputType(RouteTableSystemRouteEntryOutput{})
@@ -6422,6 +7294,14 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkAclResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkAclTagOutput{})
 	pulumi.RegisterOutputType(GetNetworkAclTagArrayOutput{})
+	pulumi.RegisterOutputType(GetPrefixListAssociationsRouteTableOutput{})
+	pulumi.RegisterOutputType(GetPrefixListAssociationsRouteTableArrayOutput{})
+	pulumi.RegisterOutputType(GetPrefixListAssociationsSecurityGroupOutput{})
+	pulumi.RegisterOutputType(GetPrefixListAssociationsSecurityGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetPrefixListPrefixListEntryOutput{})
+	pulumi.RegisterOutputType(GetPrefixListPrefixListEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetPrefixListTagOutput{})
+	pulumi.RegisterOutputType(GetPrefixListTagArrayOutput{})
 	pulumi.RegisterOutputType(GetRouteTableCustomRouteEntryOutput{})
 	pulumi.RegisterOutputType(GetRouteTableCustomRouteEntryArrayOutput{})
 	pulumi.RegisterOutputType(GetRouteTableSystemRouteEntryOutput{})

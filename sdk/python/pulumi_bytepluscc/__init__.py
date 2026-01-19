@@ -248,6 +248,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "clb/acl",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/acl:Acl": "Acl"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "clb/certificate",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/certificate:Certificate": "Certificate"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/listener",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -348,6 +364,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.dns",
   "classes": {
    "bytepluscc:dns/zone:Zone": "Zone"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ecs/command",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/command:Command": "Command"
   }
  },
  {
@@ -528,6 +552,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdsmysql/database",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/database:Database": "Database"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdsmysql/dbAccount",
   "fqn": "pulumi_bytepluscc.rdsmysql",
   "classes": {
@@ -684,6 +716,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/networkAcl:NetworkAcl": "NetworkAcl"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/prefixList",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/prefixList:PrefixList": "PrefixList"
   }
  },
  {

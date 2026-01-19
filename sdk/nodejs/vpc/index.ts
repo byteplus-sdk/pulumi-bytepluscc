@@ -60,6 +60,16 @@ export const getNetworkAcls: typeof import("./getNetworkAcls").getNetworkAcls = 
 export const getNetworkAclsOutput: typeof import("./getNetworkAcls").getNetworkAclsOutput = null as any;
 utilities.lazyLoad(exports, ["getNetworkAcls","getNetworkAclsOutput"], () => require("./getNetworkAcls"));
 
+export { GetPrefixListArgs, GetPrefixListResult, GetPrefixListOutputArgs } from "./getPrefixList";
+export const getPrefixList: typeof import("./getPrefixList").getPrefixList = null as any;
+export const getPrefixListOutput: typeof import("./getPrefixList").getPrefixListOutput = null as any;
+utilities.lazyLoad(exports, ["getPrefixList","getPrefixListOutput"], () => require("./getPrefixList"));
+
+export { GetPrefixListsResult } from "./getPrefixLists";
+export const getPrefixLists: typeof import("./getPrefixLists").getPrefixLists = null as any;
+export const getPrefixListsOutput: typeof import("./getPrefixLists").getPrefixListsOutput = null as any;
+utilities.lazyLoad(exports, ["getPrefixLists","getPrefixListsOutput"], () => require("./getPrefixLists"));
+
 export { GetRouteTableArgs, GetRouteTableResult, GetRouteTableOutputArgs } from "./getRouteTable";
 export const getRouteTable: typeof import("./getRouteTable").getRouteTable = null as any;
 export const getRouteTableOutput: typeof import("./getRouteTable").getRouteTableOutput = null as any;
@@ -105,6 +115,11 @@ export type NetworkAcl = import("./networkAcl").NetworkAcl;
 export const NetworkAcl: typeof import("./networkAcl").NetworkAcl = null as any;
 utilities.lazyLoad(exports, ["NetworkAcl"], () => require("./networkAcl"));
 
+export { PrefixListArgs, PrefixListState } from "./prefixList";
+export type PrefixList = import("./prefixList").PrefixList;
+export const PrefixList: typeof import("./prefixList").PrefixList = null as any;
+utilities.lazyLoad(exports, ["PrefixList"], () => require("./prefixList"));
+
 export { RouteTableArgs, RouteTableState } from "./routeTable";
 export type RouteTable = import("./routeTable").RouteTable;
 export const RouteTable: typeof import("./routeTable").RouteTable = null as any;
@@ -138,6 +153,8 @@ const _module = {
                 return new Eni(name, <any>undefined, { urn })
             case "bytepluscc:vpc/networkAcl:NetworkAcl":
                 return new NetworkAcl(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/prefixList:PrefixList":
+                return new PrefixList(name, <any>undefined, { urn })
             case "bytepluscc:vpc/routeTable:RouteTable":
                 return new RouteTable(name, <any>undefined, { urn })
             case "bytepluscc:vpc/securityGroup:SecurityGroup":
@@ -155,6 +172,7 @@ pulumi.runtime.registerResourceModule("bytepluscc", "vpc/bandwidthPackage", _mod
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eip", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eni", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/networkAcl", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/prefixList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/routeTable", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/securityGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/subnet", _module)

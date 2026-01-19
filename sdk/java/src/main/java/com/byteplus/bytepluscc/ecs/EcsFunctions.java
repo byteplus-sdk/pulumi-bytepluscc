@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.ecs;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.ecs.inputs.GetCommandArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetCommandPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImagePlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetInstanceArgs;
@@ -12,6 +14,8 @@ import com.byteplus.bytepluscc.ecs.inputs.GetInvocationArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetInvocationPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetKeypairArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetKeypairPlainArgs;
+import com.byteplus.bytepluscc.ecs.outputs.GetCommandResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetCommandsResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImageResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImagesResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceResult;
@@ -29,6 +33,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class EcsFunctions {
+    /**
+     * Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static Output<GetCommandResult> getCommand(GetCommandArgs args) {
+        return getCommand(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static CompletableFuture<GetCommandResult> getCommandPlain(GetCommandPlainArgs args) {
+        return getCommandPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static Output<GetCommandResult> getCommand(GetCommandArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getCommand:getCommand", TypeShape.of(GetCommandResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static Output<GetCommandResult> getCommand(GetCommandArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getCommand:getCommand", TypeShape.of(GetCommandResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static CompletableFuture<GetCommandResult> getCommandPlain(GetCommandPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getCommand:getCommand", TypeShape.of(GetCommandResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static Output<GetCommandsResult> getCommands() {
+        return getCommands(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static CompletableFuture<GetCommandsResult> getCommandsPlain() {
+        return getCommandsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static Output<GetCommandsResult> getCommands(InvokeArgs args) {
+        return getCommands(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static CompletableFuture<GetCommandsResult> getCommandsPlain(InvokeArgs args) {
+        return getCommandsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static Output<GetCommandsResult> getCommands(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getCommands:getCommands", TypeShape.of(GetCommandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static Output<GetCommandsResult> getCommands(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getCommands:getCommands", TypeShape.of(GetCommandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Command
+     * 
+     */
+    public static CompletableFuture<GetCommandsResult> getCommandsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getCommands:getCommands", TypeShape.of(GetCommandsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::ECS::Image
      * 
