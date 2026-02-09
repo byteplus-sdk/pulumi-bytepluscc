@@ -99,6 +99,36 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * 
+     */
+    @Import(name="filePath")
+    private @Nullable Output<String> filePath;
+
+    /**
+     * @return The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * 
+     */
+    public Optional<Output<String>> filePath() {
+        return Optional.ofNullable(this.filePath);
+    }
+
+    /**
+     * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * 
+     */
+    @Import(name="profile")
+    private @Nullable Output<String> profile;
+
+    /**
+     * @return The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * 
+     */
+    public Optional<Output<String>> profile() {
+        return Optional.ofNullable(this.profile);
+    }
+
+    /**
      * PROXY URL for Byteplus Provider
      * 
      */
@@ -155,6 +185,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.customerHeaders = $.customerHeaders;
         this.disableSsl = $.disableSsl;
         this.endpoints = $.endpoints;
+        this.filePath = $.filePath;
+        this.profile = $.profile;
         this.proxyUrl = $.proxyUrl;
         this.region = $.region;
         this.secretKey = $.secretKey;
@@ -288,6 +320,48 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param filePath The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filePath(@Nullable Output<String> filePath) {
+            $.filePath = filePath;
+            return this;
+        }
+
+        /**
+         * @param filePath The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filePath(String filePath) {
+            return filePath(Output.of(filePath));
+        }
+
+        /**
+         * @param profile The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+         * 
+         * @return builder
+         * 
+         */
+        public Builder profile(@Nullable Output<String> profile) {
+            $.profile = profile;
+            return this;
+        }
+
+        /**
+         * @param profile The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+         * 
+         * @return builder
+         * 
+         */
+        public Builder profile(String profile) {
+            return profile(Output.of(profile));
+        }
+
+        /**
          * @param proxyUrl PROXY URL for Byteplus Provider
          * 
          * @return builder
@@ -358,6 +432,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
             $.accessKey = Codegen.stringProp("accessKey").output().arg($.accessKey).env("BYTEPLUS_ACCESS_KEY").getNullable();
             $.customerHeaders = Codegen.stringProp("customerHeaders").output().arg($.customerHeaders).env("BYTEPLUS_CUSTOMER_HEADERS").getNullable();
             $.disableSsl = Codegen.booleanProp("disableSsl").output().arg($.disableSsl).env("BYTEPLUS_DISABLE_SSL").getNullable();
+            $.filePath = Codegen.stringProp("filePath").output().arg($.filePath).env("BYTEPLUS_FILE_PATH").getNullable();
+            $.profile = Codegen.stringProp("profile").output().arg($.profile).env("BYTEPLUS_PROFILE").getNullable();
             $.proxyUrl = Codegen.stringProp("proxyUrl").output().arg($.proxyUrl).env("BYTEPLUS_PROXY_URL").getNullable();
             $.region = Codegen.stringProp("region").output().arg($.region).env("BYTEPLUS_REGION").getNullable();
             $.secretKey = Codegen.stringProp("secretKey").output().arg($.secretKey).env("BYTEPLUS_SECRET_KEY").getNullable();

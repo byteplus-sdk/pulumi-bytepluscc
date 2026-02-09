@@ -91,6 +91,24 @@
                 "$ref": "#/types/bytepluscc:config/endpoints:endpoints",
                 "description": "An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.\n"
             },
+            "filePath": {
+                "type": "string",
+                "description": "The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_FILE_PATH"
+                    ]
+                }
+            },
+            "profile": {
+                "type": "string",
+                "description": "The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_PROFILE"
+                    ]
+                }
+            },
             "proxyUrl": {
                 "type": "string",
                 "description": "PROXY URL for Byteplus Provider\n",
@@ -20037,6 +20055,14 @@
                 "$ref": "#/types/bytepluscc:index/ProviderEndpoints:ProviderEndpoints",
                 "description": "An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.\n"
             },
+            "filePath": {
+                "type": "string",
+                "description": "The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable\n"
+            },
+            "profile": {
+                "type": "string",
+                "description": "The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable\n"
+            },
             "proxyUrl": {
                 "type": "string",
                 "description": "PROXY URL for Byteplus Provider\n"
@@ -20085,6 +20111,24 @@
             "endpoints": {
                 "$ref": "#/types/bytepluscc:index/ProviderEndpoints:ProviderEndpoints",
                 "description": "An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.\n"
+            },
+            "filePath": {
+                "type": "string",
+                "description": "The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_FILE_PATH"
+                    ]
+                }
+            },
+            "profile": {
+                "type": "string",
+                "description": "The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable\n",
+                "defaultInfo": {
+                    "environment": [
+                        "BYTEPLUS_PROFILE"
+                    ]
+                }
             },
             "proxyUrl": {
                 "type": "string",

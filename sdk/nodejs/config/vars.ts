@@ -67,6 +67,28 @@ Object.defineProperty(exports, "endpoints", {
 });
 
 /**
+ * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+ */
+export declare const filePath: string | undefined;
+Object.defineProperty(exports, "filePath", {
+    get() {
+        return __config.get("filePath") ?? utilities.getEnv("BYTEPLUS_FILE_PATH");
+    },
+    enumerable: true,
+});
+
+/**
+ * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+ */
+export declare const profile: string | undefined;
+Object.defineProperty(exports, "profile", {
+    get() {
+        return __config.get("profile") ?? utilities.getEnv("BYTEPLUS_PROFILE");
+    },
+    enumerable: true,
+});
+
+/**
  * PROXY URL for Byteplus Provider
  */
 export declare const proxyUrl: string | undefined;

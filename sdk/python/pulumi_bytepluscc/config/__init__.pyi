@@ -43,6 +43,16 @@ endpoints: Optional[str]
 An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
 """
 
+filePath: Optional[str]
+"""
+The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+"""
+
+profile: Optional[str]
+"""
+The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+"""
+
 proxyUrl: Optional[str]
 """
 PROXY URL for Byteplus Provider

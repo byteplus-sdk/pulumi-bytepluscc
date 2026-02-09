@@ -38,6 +38,14 @@ export class Provider extends pulumi.ProviderResource {
      */
     public readonly customerHeaders!: pulumi.Output<string | undefined>;
     /**
+     * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     */
+    public readonly filePath!: pulumi.Output<string | undefined>;
+    /**
+     * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     */
+    public readonly profile!: pulumi.Output<string | undefined>;
+    /**
      * PROXY URL for Byteplus Provider
      */
     public readonly proxyUrl!: pulumi.Output<string | undefined>;
@@ -68,6 +76,8 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["customerHeaders"] = (args ? args.customerHeaders : undefined) ?? utilities.getEnv("BYTEPLUS_CUSTOMER_HEADERS");
             resourceInputs["disableSsl"] = pulumi.output((args ? args.disableSsl : undefined) ?? utilities.getEnvBoolean("BYTEPLUS_DISABLE_SSL")).apply(JSON.stringify);
             resourceInputs["endpoints"] = pulumi.output(args ? args.endpoints : undefined).apply(JSON.stringify);
+            resourceInputs["filePath"] = (args ? args.filePath : undefined) ?? utilities.getEnv("BYTEPLUS_FILE_PATH");
+            resourceInputs["profile"] = (args ? args.profile : undefined) ?? utilities.getEnv("BYTEPLUS_PROFILE");
             resourceInputs["proxyUrl"] = (args ? args.proxyUrl : undefined) ?? utilities.getEnv("BYTEPLUS_PROXY_URL");
             resourceInputs["region"] = (args ? args.region : undefined) ?? utilities.getEnv("BYTEPLUS_REGION");
             resourceInputs["secretKey"] = (args ? args.secretKey : undefined) ?? utilities.getEnv("BYTEPLUS_SECRET_KEY");
@@ -112,6 +122,14 @@ export interface ProviderArgs {
      * An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
      */
     endpoints?: pulumi.Input<inputs.ProviderEndpoints>;
+    /**
+     * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     */
+    filePath?: pulumi.Input<string>;
+    /**
+     * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     */
+    profile?: pulumi.Input<string>;
     /**
      * PROXY URL for Byteplus Provider
      */

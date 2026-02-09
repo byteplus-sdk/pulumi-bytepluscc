@@ -51,6 +51,20 @@ public final class Config {
         return Codegen.objectProp("endpoints", Endpoints.class).config(config).get();
     }
 /**
+ * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+ * 
+ */
+    public Optional<String> filePath() {
+        return Codegen.stringProp("filePath").config(config).env("BYTEPLUS_FILE_PATH").get();
+    }
+/**
+ * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+ * 
+ */
+    public Optional<String> profile() {
+        return Codegen.stringProp("profile").config(config).env("BYTEPLUS_PROFILE").get();
+    }
+/**
  * PROXY URL for Byteplus Provider
  * 
  */

@@ -34,6 +34,18 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Output<string?> CustomerHeaders { get; private set; } = null!;
 
         /// <summary>
+        /// The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        /// </summary>
+        [Output("filePath")]
+        public Output<string?> FilePath { get; private set; } = null!;
+
+        /// <summary>
+        /// The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        /// </summary>
+        [Output("profile")]
+        public Output<string?> Profile { get; private set; } = null!;
+
+        /// <summary>
         /// PROXY URL for Byteplus Provider
         /// </summary>
         [Output("proxyUrl")]
@@ -121,6 +133,18 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Input<Inputs.ProviderEndpointsArgs>? Endpoints { get; set; }
 
         /// <summary>
+        /// The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        /// </summary>
+        [Input("filePath")]
+        public Input<string>? FilePath { get; set; }
+
+        /// <summary>
+        /// The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        /// </summary>
+        [Input("profile")]
+        public Input<string>? Profile { get; set; }
+
+        /// <summary>
         /// PROXY URL for Byteplus Provider
         /// </summary>
         [Input("proxyUrl")]
@@ -145,6 +169,8 @@ namespace Byteplus.Pulumi.Bytepluscc
             AccessKey = Utilities.GetEnv("BYTEPLUS_ACCESS_KEY");
             CustomerHeaders = Utilities.GetEnv("BYTEPLUS_CUSTOMER_HEADERS");
             DisableSsl = Utilities.GetEnvBoolean("BYTEPLUS_DISABLE_SSL");
+            FilePath = Utilities.GetEnv("BYTEPLUS_FILE_PATH");
+            Profile = Utilities.GetEnv("BYTEPLUS_PROFILE");
             ProxyUrl = Utilities.GetEnv("BYTEPLUS_PROXY_URL");
             Region = Utilities.GetEnv("BYTEPLUS_REGION");
             SecretKey = Utilities.GetEnv("BYTEPLUS_SECRET_KEY");

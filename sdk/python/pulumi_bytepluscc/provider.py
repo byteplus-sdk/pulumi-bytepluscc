@@ -26,6 +26,8 @@ class ProviderArgs:
                  customer_headers: Optional[pulumi.Input[builtins.str]] = None,
                  disable_ssl: Optional[pulumi.Input[builtins.bool]] = None,
                  endpoints: Optional[pulumi.Input['ProviderEndpointsArgs']] = None,
+                 file_path: Optional[pulumi.Input[builtins.str]] = None,
+                 profile: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_url: Optional[pulumi.Input[builtins.str]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  secret_key: Optional[pulumi.Input[builtins.str]] = None):
@@ -38,6 +40,8 @@ class ProviderArgs:
                colons (:) to separate each header key from its corresponding value.
         :param pulumi.Input[builtins.bool] disable_ssl: Disable SSL for Byteplus Provider
         :param pulumi.Input['ProviderEndpointsArgs'] endpoints: An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
+        :param pulumi.Input[builtins.str] file_path: The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        :param pulumi.Input[builtins.str] profile: The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
         :param pulumi.Input[builtins.str] proxy_url: PROXY URL for Byteplus Provider
         :param pulumi.Input[builtins.str] region: The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
                variable
@@ -60,6 +64,14 @@ class ProviderArgs:
             pulumi.set(__self__, "disable_ssl", disable_ssl)
         if endpoints is not None:
             pulumi.set(__self__, "endpoints", endpoints)
+        if file_path is None:
+            file_path = _utilities.get_env('BYTEPLUS_FILE_PATH')
+        if file_path is not None:
+            pulumi.set(__self__, "file_path", file_path)
+        if profile is None:
+            profile = _utilities.get_env('BYTEPLUS_PROFILE')
+        if profile is not None:
+            pulumi.set(__self__, "profile", profile)
         if proxy_url is None:
             proxy_url = _utilities.get_env('BYTEPLUS_PROXY_URL')
         if proxy_url is not None:
@@ -136,6 +148,30 @@ class ProviderArgs:
         pulumi.set(self, "endpoints", value)
 
     @property
+    @pulumi.getter(name="filePath")
+    def file_path(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        """
+        return pulumi.get(self, "file_path")
+
+    @file_path.setter
+    def file_path(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "file_path", value)
+
+    @property
+    @pulumi.getter
+    def profile(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        """
+        return pulumi.get(self, "profile")
+
+    @profile.setter
+    def profile(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "profile", value)
+
+    @property
     @pulumi.getter(name="proxyUrl")
     def proxy_url(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -185,6 +221,8 @@ class Provider(pulumi.ProviderResource):
                  customer_headers: Optional[pulumi.Input[builtins.str]] = None,
                  disable_ssl: Optional[pulumi.Input[builtins.bool]] = None,
                  endpoints: Optional[pulumi.Input[Union['ProviderEndpointsArgs', 'ProviderEndpointsArgsDict']]] = None,
+                 file_path: Optional[pulumi.Input[builtins.str]] = None,
+                 profile: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_url: Optional[pulumi.Input[builtins.str]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  secret_key: Optional[pulumi.Input[builtins.str]] = None,
@@ -204,6 +242,8 @@ class Provider(pulumi.ProviderResource):
                colons (:) to separate each header key from its corresponding value.
         :param pulumi.Input[builtins.bool] disable_ssl: Disable SSL for Byteplus Provider
         :param pulumi.Input[Union['ProviderEndpointsArgs', 'ProviderEndpointsArgsDict']] endpoints: An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
+        :param pulumi.Input[builtins.str] file_path: The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        :param pulumi.Input[builtins.str] profile: The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
         :param pulumi.Input[builtins.str] proxy_url: PROXY URL for Byteplus Provider
         :param pulumi.Input[builtins.str] region: The Region for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_REGION` environment
                variable
@@ -242,6 +282,8 @@ class Provider(pulumi.ProviderResource):
                  customer_headers: Optional[pulumi.Input[builtins.str]] = None,
                  disable_ssl: Optional[pulumi.Input[builtins.bool]] = None,
                  endpoints: Optional[pulumi.Input[Union['ProviderEndpointsArgs', 'ProviderEndpointsArgsDict']]] = None,
+                 file_path: Optional[pulumi.Input[builtins.str]] = None,
+                 profile: Optional[pulumi.Input[builtins.str]] = None,
                  proxy_url: Optional[pulumi.Input[builtins.str]] = None,
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  secret_key: Optional[pulumi.Input[builtins.str]] = None,
@@ -265,6 +307,12 @@ class Provider(pulumi.ProviderResource):
                 disable_ssl = _utilities.get_env_bool('BYTEPLUS_DISABLE_SSL')
             __props__.__dict__["disable_ssl"] = pulumi.Output.from_input(disable_ssl).apply(pulumi.runtime.to_json) if disable_ssl is not None else None
             __props__.__dict__["endpoints"] = pulumi.Output.from_input(endpoints).apply(pulumi.runtime.to_json) if endpoints is not None else None
+            if file_path is None:
+                file_path = _utilities.get_env('BYTEPLUS_FILE_PATH')
+            __props__.__dict__["file_path"] = file_path
+            if profile is None:
+                profile = _utilities.get_env('BYTEPLUS_PROFILE')
+            __props__.__dict__["profile"] = profile
             if proxy_url is None:
                 proxy_url = _utilities.get_env('BYTEPLUS_PROXY_URL')
             __props__.__dict__["proxy_url"] = proxy_url
@@ -297,6 +345,22 @@ class Provider(pulumi.ProviderResource):
         colons (:) to separate each header key from its corresponding value.
         """
         return pulumi.get(self, "customer_headers")
+
+    @property
+    @pulumi.getter(name="filePath")
+    def file_path(self) -> pulumi.Output[Optional[builtins.str]]:
+        """
+        The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        """
+        return pulumi.get(self, "file_path")
+
+    @property
+    @pulumi.getter
+    def profile(self) -> pulumi.Output[Optional[builtins.str]]:
+        """
+        The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        """
+        return pulumi.get(self, "profile")
 
     @property
     @pulumi.getter(name="proxyUrl")

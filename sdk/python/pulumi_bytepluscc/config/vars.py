@@ -60,6 +60,20 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('endpoints')
 
     @property
+    def file_path(self) -> Optional[str]:
+        """
+        The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        """
+        return __config__.get('filePath') or _utilities.get_env('BYTEPLUS_FILE_PATH')
+
+    @property
+    def profile(self) -> Optional[str]:
+        """
+        The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        """
+        return __config__.get('profile') or _utilities.get_env('BYTEPLUS_PROFILE')
+
+    @property
     def proxy_url(self) -> Optional[str]:
         """
         PROXY URL for Byteplus Provider

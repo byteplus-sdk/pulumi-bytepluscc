@@ -84,6 +84,26 @@ namespace Byteplus.Pulumi.Bytepluscc
             set => _endpoints.Set(value);
         }
 
+        private static readonly __Value<string?> _filePath = new __Value<string?>(() => __config.Get("filePath") ?? Utilities.GetEnv("BYTEPLUS_FILE_PATH"));
+        /// <summary>
+        /// The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        /// </summary>
+        public static string? FilePath
+        {
+            get => _filePath.Get();
+            set => _filePath.Set(value);
+        }
+
+        private static readonly __Value<string?> _profile = new __Value<string?>(() => __config.Get("profile") ?? Utilities.GetEnv("BYTEPLUS_PROFILE"));
+        /// <summary>
+        /// The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        /// </summary>
+        public static string? Profile
+        {
+            get => _profile.Get();
+            set => _profile.Set(value);
+        }
+
         private static readonly __Value<string?> _proxyUrl = new __Value<string?>(() => __config.Get("proxyUrl") ?? Utilities.GetEnv("BYTEPLUS_PROXY_URL"));
         /// <summary>
         /// PROXY URL for Byteplus Provider

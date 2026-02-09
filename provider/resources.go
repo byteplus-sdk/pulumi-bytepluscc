@@ -78,6 +78,16 @@ func Provider() tfbridge.ProviderInfo {
 					EnvVars: []string{"BYTEPLUS_SECRET_KEY"},
 				},
 			},
+			"file_path": {
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"BYTEPLUS_FILE_PATH"},
+				},
+			},
+			"profile": {
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"BYTEPLUS_PROFILE"},
+				},
+			},
 			"disable_ssl": {
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"BYTEPLUS_DISABLE_SSL"},
