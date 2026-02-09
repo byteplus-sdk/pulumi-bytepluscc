@@ -62,6 +62,32 @@ func GetEndpoints(ctx *pulumi.Context) string {
 	return config.Get(ctx, "bytepluscc:endpoints")
 }
 
+// The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+func GetFilePath(ctx *pulumi.Context) string {
+	v, err := config.Try(ctx, "bytepluscc:filePath")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "BYTEPLUS_FILE_PATH"); d != nil {
+		value = d.(string)
+	}
+	return value
+}
+
+// The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+func GetProfile(ctx *pulumi.Context) string {
+	v, err := config.Try(ctx, "bytepluscc:profile")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "BYTEPLUS_PROFILE"); d != nil {
+		value = d.(string)
+	}
+	return value
+}
+
 // PROXY URL for Byteplus Provider
 func GetProxyUrl(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "bytepluscc:proxyUrl")

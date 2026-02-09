@@ -3,11 +3,13 @@ module github.com/byteplus-sdk/terraform-provider-bytepluscc/shim
 go 1.23.0
 
 require (
-	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.15
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.16
 	github.com/hashicorp/terraform-plugin-framework v1.15.0
 )
 
 require (
+	github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.51 // indirect
+	github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/hashicorp/go-hclog v1.6.3 // indirect
@@ -24,7 +26,7 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/volcengine/volc-sdk-golang v1.0.23 // indirect
-	github.com/volcengine/volcengine-go-sdk v1.1.18 // indirect
+	github.com/volcengine/volcengine-go-sdk v1.2.12 // indirect
 	golang.org/x/sys v0.33.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250218202821-56aae31c358a // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect

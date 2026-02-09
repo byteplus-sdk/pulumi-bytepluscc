@@ -39,7 +39,9 @@ require (
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
 	github.com/bgentry/speakeasy v0.1.0 // indirect
 	github.com/blang/semver v3.5.1+incompatible // indirect
-	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.15 // indirect
+	github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.51 // indirect
+	github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 // indirect
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.16 // indirect
 	github.com/charmbracelet/bubbles v0.16.1 // indirect
 	github.com/charmbracelet/bubbletea v0.25.0 // indirect
 	github.com/charmbracelet/lipgloss v0.7.1 // indirect
@@ -163,7 +165,7 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/volcengine/volc-sdk-golang v1.0.23 // indirect
-	github.com/volcengine/volcengine-go-sdk v1.1.18 // indirect
+	github.com/volcengine/volcengine-go-sdk v1.2.12 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/yuin/goldmark v1.7.4 // indirect
 	github.com/zclconf/go-cty v1.16.2 // indirect
