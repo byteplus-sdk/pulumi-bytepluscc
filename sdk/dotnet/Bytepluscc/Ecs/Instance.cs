@@ -23,11 +23,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// 亲和组ID。
+        /// </summary>
+        [Output("affinityGroupId")]
+        public Output<string> AffinityGroupId { get; private set; } = null!;
+
+        /// <summary>
         /// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
         /// - 该功能正在邀测中，如需试用，请联系客户经理申请。
         /// </summary>
         [Output("affinityGroupSize")]
         public Output<int> AffinityGroupSize { get; private set; } = null!;
+
+        /// <summary>
+        /// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+        /// </summary>
+        [Output("autoPay")]
+        public Output<bool> AutoPay { get; private set; } = null!;
 
         /// <summary>
         /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
@@ -109,6 +121,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<Outputs.InstanceEipAddress> EipAddress { get; private set; } = null!;
 
         /// <summary>
+        /// 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+        /// </summary>
+        [Output("elasticScheduledInstanceType")]
+        public Output<string> ElasticScheduledInstanceType { get; private set; } = null!;
+
+        /// <summary>
+        /// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+        /// </summary>
+        [Output("enableJumboFrame")]
+        public Output<bool> EnableJumboFrame { get; private set; } = null!;
+
+        /// <summary>
         /// 实例的过期时间。
         /// </summary>
         [Output("expiredAt")]
@@ -138,6 +162,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Output("image")]
         public Output<Outputs.InstanceImage> Image { get; private set; } = null!;
+
+        /// <summary>
+        /// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+        /// （默认）：不转换。
+        /// </summary>
+        [Output("includeDataVolumes")]
+        public Output<bool> IncludeDataVolumes { get; private set; } = null!;
+
+        /// <summary>
+        /// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+        /// </summary>
+        [Output("installRunCommandAgent")]
+        public Output<bool> InstallRunCommandAgent { get; private set; } = null!;
 
         /// <summary>
         /// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
@@ -174,6 +211,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Output("keyPair")]
         public Output<Outputs.InstanceKeyPair> KeyPair { get; private set; } = null!;
+
+        [Output("localVolumes")]
+        public Output<ImmutableArray<Outputs.InstanceLocalVolume>> LocalVolumes { get; private set; } = null!;
 
         /// <summary>
         /// 实例的操作系统类型。
@@ -221,6 +261,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
+        /// <summary>
+        /// 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+        /// </summary>
+        [Output("rdmaIpAddresses")]
+        public Output<ImmutableArray<string>> RdmaIpAddresses { get; private set; } = null!;
+
+        [Output("rdmaNetworkInterfaceDetails")]
+        public Output<ImmutableArray<Outputs.InstanceRdmaNetworkInterfaceDetail>> RdmaNetworkInterfaceDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// 续费信息。
+        /// </summary>
+        [Output("renewInfo")]
+        public Output<Outputs.InstanceRenewInfo> RenewInfo { get; private set; } = null!;
+
+        /// <summary>
+        /// 实例绑定的IAM角色名称。
+        /// </summary>
+        [Output("roleNames")]
+        public Output<ImmutableArray<string>> RoleNames { get; private set; } = null!;
+
         [Output("secondaryNetworkInterfaces")]
         public Output<ImmutableArray<Outputs.InstanceSecondaryNetworkInterface>> SecondaryNetworkInterfaces { get; private set; } = null!;
 
@@ -253,7 +314,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
         /// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
         /// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-        /// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        /// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         /// </summary>
         [Output("stoppedMode")]
         public Output<string> StoppedMode { get; private set; } = null!;
@@ -348,6 +409,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<int>? AffinityGroupSize { get; set; }
 
         /// <summary>
+        /// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+        /// </summary>
+        [Input("autoPay")]
+        public Input<bool>? AutoPay { get; set; }
+
+        /// <summary>
         /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
         /// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         /// </summary>
@@ -415,6 +482,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<Inputs.InstanceEipAddressArgs>? EipAddress { get; set; }
 
         /// <summary>
+        /// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+        /// </summary>
+        [Input("enableJumboFrame")]
+        public Input<bool>? EnableJumboFrame { get; set; }
+
+        /// <summary>
         /// 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
         /// 允许使用字母、数字、点号“.”或中划线“-”。 -
         /// 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -438,6 +511,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Input("image", required: true)]
         public Input<Inputs.InstanceImageArgs> Image { get; set; } = null!;
+
+        /// <summary>
+        /// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+        /// （默认）：不转换。
+        /// </summary>
+        [Input("includeDataVolumes")]
+        public Input<bool>? IncludeDataVolumes { get; set; }
+
+        /// <summary>
+        /// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+        /// </summary>
+        [Input("installRunCommandAgent")]
+        public Input<bool>? InstallRunCommandAgent { get; set; }
 
         /// <summary>
         /// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
@@ -468,12 +554,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Input("keyPair")]
         public Input<Inputs.InstanceKeyPairArgs>? KeyPair { get; set; }
-
-        /// <summary>
-        /// 实例的操作系统类型。
-        /// </summary>
-        [Input("operationSystem")]
-        public Input<Inputs.InstanceOperationSystemArgs>? OperationSystem { get; set; }
 
         /// <summary>
         /// 实例的密码。
@@ -515,6 +595,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
+        /// <summary>
+        /// 续费信息。
+        /// </summary>
+        [Input("renewInfo")]
+        public Input<Inputs.InstanceRenewInfoArgs>? RenewInfo { get; set; }
+
+        [Input("roleNames")]
+        private InputList<string>? _roleNames;
+
+        /// <summary>
+        /// 实例绑定的IAM角色名称。
+        /// </summary>
+        public InputList<string> RoleNames
+        {
+            get => _roleNames ?? (_roleNames = new InputList<string>());
+            set => _roleNames = value;
+        }
+
         [Input("secondaryNetworkInterfaces")]
         private InputList<Inputs.InstanceSecondaryNetworkInterfaceArgs>? _secondaryNetworkInterfaces;
         public InputList<Inputs.InstanceSecondaryNetworkInterfaceArgs> SecondaryNetworkInterfaces
@@ -552,7 +650,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
         /// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
         /// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-        /// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        /// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         /// </summary>
         [Input("stoppedMode")]
         public Input<string>? StoppedMode { get; set; }
@@ -580,12 +678,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<string>? UserData { get; set; }
 
         /// <summary>
-        /// 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-        /// </summary>
-        [Input("vpcId")]
-        public Input<string>? VpcId { get; set; }
-
-        /// <summary>
         /// 实例所在的可用区ID。
         /// </summary>
         [Input("zoneId", required: true)]
@@ -600,11 +692,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// 亲和组ID。
+        /// </summary>
+        [Input("affinityGroupId")]
+        public Input<string>? AffinityGroupId { get; set; }
+
+        /// <summary>
         /// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
         /// - 该功能正在邀测中，如需试用，请联系客户经理申请。
         /// </summary>
         [Input("affinityGroupSize")]
         public Input<int>? AffinityGroupSize { get; set; }
+
+        /// <summary>
+        /// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+        /// </summary>
+        [Input("autoPay")]
+        public Input<bool>? AutoPay { get; set; }
 
         /// <summary>
         /// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
@@ -686,6 +790,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<Inputs.InstanceEipAddressGetArgs>? EipAddress { get; set; }
 
         /// <summary>
+        /// 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+        /// </summary>
+        [Input("elasticScheduledInstanceType")]
+        public Input<string>? ElasticScheduledInstanceType { get; set; }
+
+        /// <summary>
+        /// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+        /// </summary>
+        [Input("enableJumboFrame")]
+        public Input<bool>? EnableJumboFrame { get; set; }
+
+        /// <summary>
         /// 实例的过期时间。
         /// </summary>
         [Input("expiredAt")]
@@ -715,6 +831,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Input("image")]
         public Input<Inputs.InstanceImageGetArgs>? Image { get; set; }
+
+        /// <summary>
+        /// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+        /// （默认）：不转换。
+        /// </summary>
+        [Input("includeDataVolumes")]
+        public Input<bool>? IncludeDataVolumes { get; set; }
+
+        /// <summary>
+        /// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+        /// </summary>
+        [Input("installRunCommandAgent")]
+        public Input<bool>? InstallRunCommandAgent { get; set; }
 
         /// <summary>
         /// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
@@ -751,6 +880,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Input("keyPair")]
         public Input<Inputs.InstanceKeyPairGetArgs>? KeyPair { get; set; }
+
+        [Input("localVolumes")]
+        private InputList<Inputs.InstanceLocalVolumeGetArgs>? _localVolumes;
+        public InputList<Inputs.InstanceLocalVolumeGetArgs> LocalVolumes
+        {
+            get => _localVolumes ?? (_localVolumes = new InputList<Inputs.InstanceLocalVolumeGetArgs>());
+            set => _localVolumes = value;
+        }
 
         /// <summary>
         /// 实例的操作系统类型。
@@ -798,6 +935,44 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
+        [Input("rdmaIpAddresses")]
+        private InputList<string>? _rdmaIpAddresses;
+
+        /// <summary>
+        /// 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+        /// </summary>
+        public InputList<string> RdmaIpAddresses
+        {
+            get => _rdmaIpAddresses ?? (_rdmaIpAddresses = new InputList<string>());
+            set => _rdmaIpAddresses = value;
+        }
+
+        [Input("rdmaNetworkInterfaceDetails")]
+        private InputList<Inputs.InstanceRdmaNetworkInterfaceDetailGetArgs>? _rdmaNetworkInterfaceDetails;
+        public InputList<Inputs.InstanceRdmaNetworkInterfaceDetailGetArgs> RdmaNetworkInterfaceDetails
+        {
+            get => _rdmaNetworkInterfaceDetails ?? (_rdmaNetworkInterfaceDetails = new InputList<Inputs.InstanceRdmaNetworkInterfaceDetailGetArgs>());
+            set => _rdmaNetworkInterfaceDetails = value;
+        }
+
+        /// <summary>
+        /// 续费信息。
+        /// </summary>
+        [Input("renewInfo")]
+        public Input<Inputs.InstanceRenewInfoGetArgs>? RenewInfo { get; set; }
+
+        [Input("roleNames")]
+        private InputList<string>? _roleNames;
+
+        /// <summary>
+        /// 实例绑定的IAM角色名称。
+        /// </summary>
+        public InputList<string> RoleNames
+        {
+            get => _roleNames ?? (_roleNames = new InputList<string>());
+            set => _roleNames = value;
+        }
+
         [Input("secondaryNetworkInterfaces")]
         private InputList<Inputs.InstanceSecondaryNetworkInterfaceGetArgs>? _secondaryNetworkInterfaces;
         public InputList<Inputs.InstanceSecondaryNetworkInterfaceGetArgs> SecondaryNetworkInterfaces
@@ -835,7 +1010,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
         /// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
         /// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-        /// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        /// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         /// </summary>
         [Input("stoppedMode")]
         public Input<string>? StoppedMode { get; set; }

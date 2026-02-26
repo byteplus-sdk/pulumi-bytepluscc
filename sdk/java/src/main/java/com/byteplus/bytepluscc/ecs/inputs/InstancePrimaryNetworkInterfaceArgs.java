@@ -5,7 +5,6 @@ package com.byteplus.bytepluscc.ecs.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -112,30 +111,30 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
      * 实例的安全组ID。
      * 
      */
-    @Import(name="securityGroupIds", required=true)
-    private Output<List<String>> securityGroupIds;
+    @Import(name="securityGroupIds")
+    private @Nullable Output<List<String>> securityGroupIds;
 
     /**
      * @return 实例的安全组ID。
      * 
      */
-    public Output<List<String>> securityGroupIds() {
-        return this.securityGroupIds;
+    public Optional<Output<List<String>>> securityGroupIds() {
+        return Optional.ofNullable(this.securityGroupIds);
     }
 
     /**
      * 实例的子网ID。
      * 
      */
-    @Import(name="subnetId", required=true)
-    private Output<String> subnetId;
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
 
     /**
      * @return 实例的子网ID。
      * 
      */
-    public Output<String> subnetId() {
-        return this.subnetId;
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     /**
@@ -337,7 +336,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder securityGroupIds(Output<List<String>> securityGroupIds) {
+        public Builder securityGroupIds(@Nullable Output<List<String>> securityGroupIds) {
             $.securityGroupIds = securityGroupIds;
             return this;
         }
@@ -368,7 +367,7 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder subnetId(Output<String> subnetId) {
+        public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
             return this;
         }
@@ -405,12 +404,6 @@ public final class InstancePrimaryNetworkInterfaceArgs extends com.pulumi.resour
         }
 
         public InstancePrimaryNetworkInterfaceArgs build() {
-            if ($.securityGroupIds == null) {
-                throw new MissingRequiredPropertyException("InstancePrimaryNetworkInterfaceArgs", "securityGroupIds");
-            }
-            if ($.subnetId == null) {
-                throw new MissingRequiredPropertyException("InstancePrimaryNetworkInterfaceArgs", "subnetId");
-            }
             return $;
         }
     }

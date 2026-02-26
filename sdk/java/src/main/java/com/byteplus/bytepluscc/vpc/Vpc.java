@@ -111,6 +111,20 @@ public class Vpc extends com.pulumi.resources.CustomResource {
         return this.dnsServers;
     }
     /**
+     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * 
+     */
+    @Export(name="enableIpv6", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> enableIpv6;
+
+    /**
+     * @return 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * 
+     */
+    public Output<Boolean> enableIpv6() {
+        return this.enableIpv6;
+    }
+    /**
      * VPC 绑定的 IPv4 网关的 ID。
      * 
      */

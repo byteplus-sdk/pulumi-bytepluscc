@@ -20,7 +20,7 @@ public final class UserAccessKey {
      * @return 访问密钥创建时间。
      * 
      */
-    private @Nullable String createdTime;
+    private @Nullable String createDate;
     /**
      * @return 最近一次使用的服务区域。
      * 
@@ -45,7 +45,7 @@ public final class UserAccessKey {
      * @return 访问密钥更新时间。
      * 
      */
-    private @Nullable String updatedTime;
+    private @Nullable String updateDate;
     /**
      * @return 访问密钥Secret。
      * 
@@ -64,8 +64,8 @@ public final class UserAccessKey {
      * @return 访问密钥创建时间。
      * 
      */
-    public Optional<String> createdTime() {
-        return Optional.ofNullable(this.createdTime);
+    public Optional<String> createDate() {
+        return Optional.ofNullable(this.createDate);
     }
     /**
      * @return 最近一次使用的服务区域。
@@ -99,8 +99,8 @@ public final class UserAccessKey {
      * @return 访问密钥更新时间。
      * 
      */
-    public Optional<String> updatedTime() {
-        return Optional.ofNullable(this.updatedTime);
+    public Optional<String> updateDate() {
+        return Optional.ofNullable(this.updateDate);
     }
     /**
      * @return 访问密钥Secret。
@@ -120,23 +120,23 @@ public final class UserAccessKey {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String accessKeyId;
-        private @Nullable String createdTime;
+        private @Nullable String createDate;
         private @Nullable String region;
         private @Nullable String requestTime;
         private @Nullable String service;
         private @Nullable String status;
-        private @Nullable String updatedTime;
+        private @Nullable String updateDate;
         private @Nullable String userName;
         public Builder() {}
         public Builder(UserAccessKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeyId = defaults.accessKeyId;
-    	      this.createdTime = defaults.createdTime;
+    	      this.createDate = defaults.createDate;
     	      this.region = defaults.region;
     	      this.requestTime = defaults.requestTime;
     	      this.service = defaults.service;
     	      this.status = defaults.status;
-    	      this.updatedTime = defaults.updatedTime;
+    	      this.updateDate = defaults.updateDate;
     	      this.userName = defaults.userName;
         }
 
@@ -147,9 +147,9 @@ public final class UserAccessKey {
             return this;
         }
         @CustomType.Setter
-        public Builder createdTime(@Nullable String createdTime) {
+        public Builder createDate(@Nullable String createDate) {
 
-            this.createdTime = createdTime;
+            this.createDate = createDate;
             return this;
         }
         @CustomType.Setter
@@ -177,9 +177,9 @@ public final class UserAccessKey {
             return this;
         }
         @CustomType.Setter
-        public Builder updatedTime(@Nullable String updatedTime) {
+        public Builder updateDate(@Nullable String updateDate) {
 
-            this.updatedTime = updatedTime;
+            this.updateDate = updateDate;
             return this;
         }
         @CustomType.Setter
@@ -191,12 +191,12 @@ public final class UserAccessKey {
         public UserAccessKey build() {
             final var _resultValue = new UserAccessKey();
             _resultValue.accessKeyId = accessKeyId;
-            _resultValue.createdTime = createdTime;
+            _resultValue.createDate = createDate;
             _resultValue.region = region;
             _resultValue.requestTime = requestTime;
             _resultValue.service = service;
             _resultValue.status = status;
-            _resultValue.updatedTime = updatedTime;
+            _resultValue.updateDate = updateDate;
             _resultValue.userName = userName;
             return _resultValue;
         }

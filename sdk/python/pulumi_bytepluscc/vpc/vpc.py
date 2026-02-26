@@ -25,6 +25,7 @@ class VpcArgs:
                  cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 enable_ipv6: Optional[pulumi.Input[builtins.bool]] = None,
                  ipv4_gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  nat_gateway_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -39,6 +40,7 @@ class VpcArgs:
         :param pulumi.Input[builtins.str] cidr_block: VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
         :param pulumi.Input[builtins.str] description: VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dns_servers: VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
+        :param pulumi.Input[builtins.bool] enable_ipv6: 是否开启IPv6网段。false（默认值）：不开启。true：开启。
         :param pulumi.Input[builtins.str] ipv4_gateway_id: VPC 绑定的 IPv4 网关的 ID。
         :param pulumi.Input[builtins.str] ipv6_cidr_block: VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nat_gateway_ids: VPC中创建的NAT网关的ID。
@@ -54,6 +56,8 @@ class VpcArgs:
             pulumi.set(__self__, "description", description)
         if dns_servers is not None:
             pulumi.set(__self__, "dns_servers", dns_servers)
+        if enable_ipv6 is not None:
+            pulumi.set(__self__, "enable_ipv6", enable_ipv6)
         if ipv4_gateway_id is not None:
             pulumi.set(__self__, "ipv4_gateway_id", ipv4_gateway_id)
         if ipv6_cidr_block is not None:
@@ -108,6 +112,18 @@ class VpcArgs:
     @dns_servers.setter
     def dns_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "dns_servers", value)
+
+    @property
+    @pulumi.getter(name="enableIpv6")
+    def enable_ipv6(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否开启IPv6网段。false（默认值）：不开启。true：开启。
+        """
+        return pulumi.get(self, "enable_ipv6")
+
+    @enable_ipv6.setter
+    def enable_ipv6(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_ipv6", value)
 
     @property
     @pulumi.getter(name="ipv4GatewayId")
@@ -224,6 +240,7 @@ class _VpcState:
                  creation_time: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 enable_ipv6: Optional[pulumi.Input[builtins.bool]] = None,
                  ipv4_gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  is_default: Optional[pulumi.Input[builtins.bool]] = None,
@@ -248,6 +265,7 @@ class _VpcState:
         :param pulumi.Input[builtins.str] creation_time: 创建VPC的时间。
         :param pulumi.Input[builtins.str] description: VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dns_servers: VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
+        :param pulumi.Input[builtins.bool] enable_ipv6: 是否开启IPv6网段。false（默认值）：不开启。true：开启。
         :param pulumi.Input[builtins.str] ipv4_gateway_id: VPC 绑定的 IPv4 网关的 ID。
         :param pulumi.Input[builtins.str] ipv6_cidr_block: VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
         :param pulumi.Input[builtins.bool] is_default: 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
@@ -277,6 +295,8 @@ class _VpcState:
             pulumi.set(__self__, "description", description)
         if dns_servers is not None:
             pulumi.set(__self__, "dns_servers", dns_servers)
+        if enable_ipv6 is not None:
+            pulumi.set(__self__, "enable_ipv6", enable_ipv6)
         if ipv4_gateway_id is not None:
             pulumi.set(__self__, "ipv4_gateway_id", ipv4_gateway_id)
         if ipv6_cidr_block is not None:
@@ -380,6 +400,18 @@ class _VpcState:
     @dns_servers.setter
     def dns_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "dns_servers", value)
+
+    @property
+    @pulumi.getter(name="enableIpv6")
+    def enable_ipv6(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否开启IPv6网段。false（默认值）：不开启。true：开启。
+        """
+        return pulumi.get(self, "enable_ipv6")
+
+    @enable_ipv6.setter
+    def enable_ipv6(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_ipv6", value)
 
     @property
     @pulumi.getter(name="ipv4GatewayId")
@@ -592,6 +624,7 @@ class Vpc(pulumi.CustomResource):
                  cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 enable_ipv6: Optional[pulumi.Input[builtins.bool]] = None,
                  ipv4_gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  nat_gateway_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -616,6 +649,7 @@ class Vpc(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] cidr_block: VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
         :param pulumi.Input[builtins.str] description: VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dns_servers: VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
+        :param pulumi.Input[builtins.bool] enable_ipv6: 是否开启IPv6网段。false（默认值）：不开启。true：开启。
         :param pulumi.Input[builtins.str] ipv4_gateway_id: VPC 绑定的 IPv4 网关的 ID。
         :param pulumi.Input[builtins.str] ipv6_cidr_block: VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nat_gateway_ids: VPC中创建的NAT网关的ID。
@@ -658,6 +692,7 @@ class Vpc(pulumi.CustomResource):
                  cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 enable_ipv6: Optional[pulumi.Input[builtins.bool]] = None,
                  ipv4_gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
                  nat_gateway_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -679,6 +714,7 @@ class Vpc(pulumi.CustomResource):
             __props__.__dict__["cidr_block"] = cidr_block
             __props__.__dict__["description"] = description
             __props__.__dict__["dns_servers"] = dns_servers
+            __props__.__dict__["enable_ipv6"] = enable_ipv6
             __props__.__dict__["ipv4_gateway_id"] = ipv4_gateway_id
             __props__.__dict__["ipv6_cidr_block"] = ipv6_cidr_block
             __props__.__dict__["nat_gateway_ids"] = nat_gateway_ids
@@ -715,6 +751,7 @@ class Vpc(pulumi.CustomResource):
             creation_time: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+            enable_ipv6: Optional[pulumi.Input[builtins.bool]] = None,
             ipv4_gateway_id: Optional[pulumi.Input[builtins.str]] = None,
             ipv6_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
             is_default: Optional[pulumi.Input[builtins.bool]] = None,
@@ -744,6 +781,7 @@ class Vpc(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] creation_time: 创建VPC的时间。
         :param pulumi.Input[builtins.str] description: VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] dns_servers: VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
+        :param pulumi.Input[builtins.bool] enable_ipv6: 是否开启IPv6网段。false（默认值）：不开启。true：开启。
         :param pulumi.Input[builtins.str] ipv4_gateway_id: VPC 绑定的 IPv4 网关的 ID。
         :param pulumi.Input[builtins.str] ipv6_cidr_block: VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
         :param pulumi.Input[builtins.bool] is_default: 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
@@ -771,6 +809,7 @@ class Vpc(pulumi.CustomResource):
         __props__.__dict__["creation_time"] = creation_time
         __props__.__dict__["description"] = description
         __props__.__dict__["dns_servers"] = dns_servers
+        __props__.__dict__["enable_ipv6"] = enable_ipv6
         __props__.__dict__["ipv4_gateway_id"] = ipv4_gateway_id
         __props__.__dict__["ipv6_cidr_block"] = ipv6_cidr_block
         __props__.__dict__["is_default"] = is_default
@@ -834,6 +873,14 @@ class Vpc(pulumi.CustomResource):
         VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
         """
         return pulumi.get(self, "dns_servers")
+
+    @property
+    @pulumi.getter(name="enableIpv6")
+    def enable_ipv6(self) -> pulumi.Output[builtins.bool]:
+        """
+        是否开启IPv6网段。false（默认值）：不开启。true：开启。
+        """
+        return pulumi.get(self, "enable_ipv6")
 
     @property
     @pulumi.getter(name="ipv4GatewayId")

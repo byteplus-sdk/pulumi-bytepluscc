@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { CustomerGatewayArgs, CustomerGatewayState } from "./customerGateway";
+export type CustomerGateway = import("./customerGateway").CustomerGateway;
+export const CustomerGateway: typeof import("./customerGateway").CustomerGateway = null as any;
+utilities.lazyLoad(exports, ["CustomerGateway"], () => require("./customerGateway"));
+
+export { GetCustomerGatewayArgs, GetCustomerGatewayResult, GetCustomerGatewayOutputArgs } from "./getCustomerGateway";
+export const getCustomerGateway: typeof import("./getCustomerGateway").getCustomerGateway = null as any;
+export const getCustomerGatewayOutput: typeof import("./getCustomerGateway").getCustomerGatewayOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomerGateway","getCustomerGatewayOutput"], () => require("./getCustomerGateway"));
+
+export { GetCustomerGatewaysResult } from "./getCustomerGateways";
+export const getCustomerGateways: typeof import("./getCustomerGateways").getCustomerGateways = null as any;
+export const getCustomerGatewaysOutput: typeof import("./getCustomerGateways").getCustomerGatewaysOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomerGateways","getCustomerGatewaysOutput"], () => require("./getCustomerGateways"));
+
 export { GetVpnGatewayArgs, GetVpnGatewayResult, GetVpnGatewayOutputArgs } from "./getVpnGateway";
 export const getVpnGateway: typeof import("./getVpnGateway").getVpnGateway = null as any;
 export const getVpnGatewayOutput: typeof import("./getVpnGateway").getVpnGatewayOutput = null as any;
@@ -25,6 +40,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vpn/customerGateway:CustomerGateway":
+                return new CustomerGateway(name, <any>undefined, { urn })
             case "bytepluscc:vpn/vpnGateway:VpnGateway":
                 return new VpnGateway(name, <any>undefined, { urn })
             default:
@@ -32,4 +49,5 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vpn/customerGateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpn/vpnGateway", _module)

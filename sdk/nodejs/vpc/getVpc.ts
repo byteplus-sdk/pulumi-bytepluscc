@@ -55,6 +55,10 @@ export interface GetVpcResult {
      */
     readonly dnsServers: string[];
     /**
+     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     */
+    readonly enableIpv6: boolean;
+    /**
      * Uniquely identifies the resource.
      */
     readonly id: string;

@@ -6,9 +6,9 @@ package com.byteplus.bytepluscc.ecs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceEipAddressArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceKeyPairArgs;
-import com.byteplus.bytepluscc.ecs.inputs.InstanceOperationSystemArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstancePlacementArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstancePrimaryNetworkInterfaceArgs;
+import com.byteplus.bytepluscc.ecs.inputs.InstanceRenewInfoArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceSecondaryNetworkInterfaceArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceSystemVolumeArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceTagArgs;
@@ -44,6 +44,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> affinityGroupSize() {
         return Optional.ofNullable(this.affinityGroupSize);
+    }
+
+    /**
+     * 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     * 
+     */
+    @Import(name="autoPay")
+    private @Nullable Output<Boolean> autoPay;
+
+    /**
+     * @return 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     * 
+     */
+    public Optional<Output<Boolean>> autoPay() {
+        return Optional.ofNullable(this.autoPay);
     }
 
     /**
@@ -208,6 +223,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     * 
+     */
+    @Import(name="enableJumboFrame")
+    private @Nullable Output<Boolean> enableJumboFrame;
+
+    /**
+     * @return 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     * 
+     */
+    public Optional<Output<Boolean>> enableJumboFrame() {
+        return Optional.ofNullable(this.enableJumboFrame);
+    }
+
+    /**
      * 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
      * 允许使用字母、数字、点号“.”或中划线“-”。 -
      * 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -264,6 +294,38 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<InstanceImageArgs> image() {
         return this.image;
+    }
+
+    /**
+     * 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+     * （默认）：不转换。
+     * 
+     */
+    @Import(name="includeDataVolumes")
+    private @Nullable Output<Boolean> includeDataVolumes;
+
+    /**
+     * @return 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+     * （默认）：不转换。
+     * 
+     */
+    public Optional<Output<Boolean>> includeDataVolumes() {
+        return Optional.ofNullable(this.includeDataVolumes);
+    }
+
+    /**
+     * 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     * 
+     */
+    @Import(name="installRunCommandAgent")
+    private @Nullable Output<Boolean> installRunCommandAgent;
+
+    /**
+     * @return 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     * 
+     */
+    public Optional<Output<Boolean>> installRunCommandAgent() {
+        return Optional.ofNullable(this.installRunCommandAgent);
     }
 
     /**
@@ -336,21 +398,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<InstanceKeyPairArgs>> keyPair() {
         return Optional.ofNullable(this.keyPair);
-    }
-
-    /**
-     * 实例的操作系统类型。
-     * 
-     */
-    @Import(name="operationSystem")
-    private @Nullable Output<InstanceOperationSystemArgs> operationSystem;
-
-    /**
-     * @return 实例的操作系统类型。
-     * 
-     */
-    public Optional<Output<InstanceOperationSystemArgs>> operationSystem() {
-        return Optional.ofNullable(this.operationSystem);
     }
 
     /**
@@ -451,6 +498,36 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * 续费信息。
+     * 
+     */
+    @Import(name="renewInfo")
+    private @Nullable Output<InstanceRenewInfoArgs> renewInfo;
+
+    /**
+     * @return 续费信息。
+     * 
+     */
+    public Optional<Output<InstanceRenewInfoArgs>> renewInfo() {
+        return Optional.ofNullable(this.renewInfo);
+    }
+
+    /**
+     * 实例绑定的IAM角色名称。
+     * 
+     */
+    @Import(name="roleNames")
+    private @Nullable Output<List<String>> roleNames;
+
+    /**
+     * @return 实例绑定的IAM角色名称。
+     * 
+     */
+    public Optional<Output<List<String>>> roleNames() {
+        return Optional.ofNullable(this.roleNames);
+    }
+
     @Import(name="secondaryNetworkInterfaces")
     private @Nullable Output<List<InstanceSecondaryNetworkInterfaceArgs>> secondaryNetworkInterfaces;
 
@@ -520,7 +597,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
      * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
      * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
      * 
      */
     @Import(name="stoppedMode")
@@ -531,7 +608,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
      * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
      * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
      * 
      */
     public Optional<Output<String>> stoppedMode() {
@@ -580,21 +657,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-     * 
-     */
-    @Import(name="vpcId")
-    private @Nullable Output<String> vpcId;
-
-    /**
-     * @return 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-     * 
-     */
-    public Optional<Output<String>> vpcId() {
-        return Optional.ofNullable(this.vpcId);
-    }
-
-    /**
      * 实例所在的可用区ID。
      * 
      */
@@ -613,6 +675,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     private InstanceArgs(InstanceArgs $) {
         this.affinityGroupSize = $.affinityGroupSize;
+        this.autoPay = $.autoPay;
         this.autoRenew = $.autoRenew;
         this.autoRenewPeriod = $.autoRenewPeriod;
         this.cpuMaxFrequency = $.cpuMaxFrequency;
@@ -622,20 +685,24 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.deploymentSetId = $.deploymentSetId;
         this.description = $.description;
         this.eipAddress = $.eipAddress;
+        this.enableJumboFrame = $.enableJumboFrame;
         this.hostname = $.hostname;
         this.hpcClusterId = $.hpcClusterId;
         this.image = $.image;
+        this.includeDataVolumes = $.includeDataVolumes;
+        this.installRunCommandAgent = $.installRunCommandAgent;
         this.instanceChargeType = $.instanceChargeType;
         this.instanceName = $.instanceName;
         this.instanceType = $.instanceType;
         this.keyPair = $.keyPair;
-        this.operationSystem = $.operationSystem;
         this.password = $.password;
         this.period = $.period;
         this.periodUnit = $.periodUnit;
         this.placement = $.placement;
         this.primaryNetworkInterface = $.primaryNetworkInterface;
         this.projectName = $.projectName;
+        this.renewInfo = $.renewInfo;
+        this.roleNames = $.roleNames;
         this.secondaryNetworkInterfaces = $.secondaryNetworkInterfaces;
         this.spotPriceLimit = $.spotPriceLimit;
         this.spotStrategy = $.spotStrategy;
@@ -644,7 +711,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.systemVolume = $.systemVolume;
         this.tags = $.tags;
         this.userData = $.userData;
-        this.vpcId = $.vpcId;
         this.zoneId = $.zoneId;
     }
 
@@ -687,6 +753,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder affinityGroupSize(Integer affinityGroupSize) {
             return affinityGroupSize(Output.of(affinityGroupSize));
+        }
+
+        /**
+         * @param autoPay 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoPay(@Nullable Output<Boolean> autoPay) {
+            $.autoPay = autoPay;
+            return this;
+        }
+
+        /**
+         * @param autoPay 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoPay(Boolean autoPay) {
+            return autoPay(Output.of(autoPay));
         }
 
         /**
@@ -905,6 +992,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param enableJumboFrame 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableJumboFrame(@Nullable Output<Boolean> enableJumboFrame) {
+            $.enableJumboFrame = enableJumboFrame;
+            return this;
+        }
+
+        /**
+         * @param enableJumboFrame 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableJumboFrame(Boolean enableJumboFrame) {
+            return enableJumboFrame(Output.of(enableJumboFrame));
+        }
+
+        /**
          * @param hostname 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
          * 允许使用字母、数字、点号“.”或中划线“-”。 -
          * 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -979,6 +1087,50 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder image(InstanceImageArgs image) {
             return image(Output.of(image));
+        }
+
+        /**
+         * @param includeDataVolumes 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+         * （默认）：不转换。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeDataVolumes(@Nullable Output<Boolean> includeDataVolumes) {
+            $.includeDataVolumes = includeDataVolumes;
+            return this;
+        }
+
+        /**
+         * @param includeDataVolumes 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+         * （默认）：不转换。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeDataVolumes(Boolean includeDataVolumes) {
+            return includeDataVolumes(Output.of(includeDataVolumes));
+        }
+
+        /**
+         * @param installRunCommandAgent 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder installRunCommandAgent(@Nullable Output<Boolean> installRunCommandAgent) {
+            $.installRunCommandAgent = installRunCommandAgent;
+            return this;
+        }
+
+        /**
+         * @param installRunCommandAgent 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder installRunCommandAgent(Boolean installRunCommandAgent) {
+            return installRunCommandAgent(Output.of(installRunCommandAgent));
         }
 
         /**
@@ -1075,27 +1227,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder keyPair(InstanceKeyPairArgs keyPair) {
             return keyPair(Output.of(keyPair));
-        }
-
-        /**
-         * @param operationSystem 实例的操作系统类型。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder operationSystem(@Nullable Output<InstanceOperationSystemArgs> operationSystem) {
-            $.operationSystem = operationSystem;
-            return this;
-        }
-
-        /**
-         * @param operationSystem 实例的操作系统类型。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder operationSystem(InstanceOperationSystemArgs operationSystem) {
-            return operationSystem(Output.of(operationSystem));
         }
 
         /**
@@ -1232,6 +1363,58 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param renewInfo 续费信息。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewInfo(@Nullable Output<InstanceRenewInfoArgs> renewInfo) {
+            $.renewInfo = renewInfo;
+            return this;
+        }
+
+        /**
+         * @param renewInfo 续费信息。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder renewInfo(InstanceRenewInfoArgs renewInfo) {
+            return renewInfo(Output.of(renewInfo));
+        }
+
+        /**
+         * @param roleNames 实例绑定的IAM角色名称。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder roleNames(@Nullable Output<List<String>> roleNames) {
+            $.roleNames = roleNames;
+            return this;
+        }
+
+        /**
+         * @param roleNames 实例绑定的IAM角色名称。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder roleNames(List<String> roleNames) {
+            return roleNames(Output.of(roleNames));
+        }
+
+        /**
+         * @param roleNames 实例绑定的IAM角色名称。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder roleNames(String... roleNames) {
+            return roleNames(List.of(roleNames));
+        }
+
         public Builder secondaryNetworkInterfaces(@Nullable Output<List<InstanceSecondaryNetworkInterfaceArgs>> secondaryNetworkInterfaces) {
             $.secondaryNetworkInterfaces = secondaryNetworkInterfaces;
             return this;
@@ -1325,7 +1508,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
          * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
          * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-         * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+         * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
          * 
          * @return builder
          * 
@@ -1340,7 +1523,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
          * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
          * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-         * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+         * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
          * 
          * @return builder
          * 
@@ -1406,27 +1589,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder userData(String userData) {
             return userData(Output.of(userData));
-        }
-
-        /**
-         * @param vpcId 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpcId(@Nullable Output<String> vpcId) {
-            $.vpcId = vpcId;
-            return this;
-        }
-
-        /**
-         * @param vpcId 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpcId(String vpcId) {
-            return vpcId(Output.of(vpcId));
         }
 
         /**

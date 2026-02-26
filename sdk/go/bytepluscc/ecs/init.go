@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:ecs/command:Command":
 		r = &Command{}
+	case "bytepluscc:ecs/deploymentSet:DeploymentSet":
+		r = &DeploymentSet{}
 	case "bytepluscc:ecs/image:Image":
 		r = &Image{}
 	case "bytepluscc:ecs/instance:Instance":
@@ -31,6 +33,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Invocation{}
 	case "bytepluscc:ecs/keypair:Keypair":
 		r = &Keypair{}
+	case "bytepluscc:ecs/launchTemplate:LaunchTemplate":
+		r = &LaunchTemplate{}
+	case "bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion":
+		r = &LaunchTemplateVersion{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -51,6 +57,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"ecs/deploymentSet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"ecs/image",
 		&module{version},
 	)
@@ -67,6 +78,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"ecs/keypair",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/launchTemplate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/launchTemplateVersion",
 		&module{version},
 	)
 }

@@ -22,8 +22,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Inputs
         /// <summary>
         /// 访问密钥创建时间。
         /// </summary>
-        [Input("createdTime")]
-        public Input<string>? CreatedTime { get; set; }
+        [Input("createDate")]
+        public Input<string>? CreateDate { get; set; }
 
         /// <summary>
         /// 最近一次使用的服务区域。
@@ -52,8 +52,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Inputs
         /// <summary>
         /// 访问密钥更新时间。
         /// </summary>
-        [Input("updatedTime")]
-        public Input<string>? UpdatedTime { get; set; }
+        [Input("updateDate")]
+        public Input<string>? UpdateDate { get; set; }
 
         /// <summary>
         /// 访问密钥Secret。

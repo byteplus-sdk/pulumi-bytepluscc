@@ -24,6 +24,12 @@ __all__ = [
     'TransitRouterRouteTableTagArgsDict',
     'TransitRouterTagArgs',
     'TransitRouterTagArgsDict',
+    'VpcAttachmentAttachPointArgs',
+    'VpcAttachmentAttachPointArgsDict',
+    'VpcAttachmentTagArgs',
+    'VpcAttachmentTagArgsDict',
+    'VpnAttachmentTagArgs',
+    'VpnAttachmentTagArgsDict',
 ]
 
 MYPY = False
@@ -561,6 +567,160 @@ class TransitRouterTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class VpcAttachmentAttachPointArgsDict(TypedDict):
+        subnet_id: pulumi.Input[builtins.str]
+        """
+        连接点的子网ID。
+        """
+        zone_id: pulumi.Input[builtins.str]
+        """
+        连接点的可用区ID。
+        """
+elif False:
+    VpcAttachmentAttachPointArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpcAttachmentAttachPointArgs:
+    def __init__(__self__, *,
+                 subnet_id: pulumi.Input[builtins.str],
+                 zone_id: pulumi.Input[builtins.str]):
+        """
+        :param pulumi.Input[builtins.str] subnet_id: 连接点的子网ID。
+        :param pulumi.Input[builtins.str] zone_id: 连接点的可用区ID。
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[builtins.str]:
+        """
+        连接点的子网ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> pulumi.Input[builtins.str]:
+        """
+        连接点的可用区ID。
+        """
+        return pulumi.get(self, "zone_id")
+
+    @zone_id.setter
+    def zone_id(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "zone_id", value)
+
+
+if not MYPY:
+    class VpcAttachmentTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。
+        """
+elif False:
+    VpcAttachmentTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpcAttachmentTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class VpnAttachmentTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。
+        """
+elif False:
+    VpnAttachmentTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class VpnAttachmentTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。
         """
         return pulumi.get(self, "value")
 

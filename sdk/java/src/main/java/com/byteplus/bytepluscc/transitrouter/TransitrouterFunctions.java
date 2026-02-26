@@ -10,12 +10,20 @@ import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteEntryAr
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteEntryPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteTableArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.GetTransitRouterRouteTablePlainArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetVpcAttachmentArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetVpcAttachmentPlainArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetVpnAttachmentArgs;
+import com.byteplus.bytepluscc.transitrouter.inputs.GetVpnAttachmentPlainArgs;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntriesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteEntryResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteTableResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterRouteTablesResult;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRoutersResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetVpcAttachmentResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetVpcAttachmentsResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetVpnAttachmentResult;
+import com.byteplus.bytepluscc.transitrouter.outputs.GetVpnAttachmentsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -276,5 +284,173 @@ public final class TransitrouterFunctions {
      */
     public static CompletableFuture<GetTransitRoutersResult> getTransitRoutersPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getTransitRouters:getTransitRouters", TypeShape.of(GetTransitRoutersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static Output<GetVpcAttachmentResult> getVpcAttachment(GetVpcAttachmentArgs args) {
+        return getVpcAttachment(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpcAttachmentResult> getVpcAttachmentPlain(GetVpcAttachmentPlainArgs args) {
+        return getVpcAttachmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static Output<GetVpcAttachmentResult> getVpcAttachment(GetVpcAttachmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpcAttachment:getVpcAttachment", TypeShape.of(GetVpcAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static Output<GetVpcAttachmentResult> getVpcAttachment(GetVpcAttachmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpcAttachment:getVpcAttachment", TypeShape.of(GetVpcAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpcAttachmentResult> getVpcAttachmentPlain(GetVpcAttachmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getVpcAttachment:getVpcAttachment", TypeShape.of(GetVpcAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static Output<GetVpcAttachmentsResult> getVpcAttachments() {
+        return getVpcAttachments(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpcAttachmentsResult> getVpcAttachmentsPlain() {
+        return getVpcAttachmentsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static Output<GetVpcAttachmentsResult> getVpcAttachments(InvokeArgs args) {
+        return getVpcAttachments(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpcAttachmentsResult> getVpcAttachmentsPlain(InvokeArgs args) {
+        return getVpcAttachmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static Output<GetVpcAttachmentsResult> getVpcAttachments(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpcAttachments:getVpcAttachments", TypeShape.of(GetVpcAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static Output<GetVpcAttachmentsResult> getVpcAttachments(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpcAttachments:getVpcAttachments", TypeShape.of(GetVpcAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpcAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpcAttachmentsResult> getVpcAttachmentsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getVpcAttachments:getVpcAttachments", TypeShape.of(GetVpcAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static Output<GetVpnAttachmentResult> getVpnAttachment(GetVpnAttachmentArgs args) {
+        return getVpnAttachment(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpnAttachmentResult> getVpnAttachmentPlain(GetVpnAttachmentPlainArgs args) {
+        return getVpnAttachmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static Output<GetVpnAttachmentResult> getVpnAttachment(GetVpnAttachmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpnAttachment:getVpnAttachment", TypeShape.of(GetVpnAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static Output<GetVpnAttachmentResult> getVpnAttachment(GetVpnAttachmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpnAttachment:getVpnAttachment", TypeShape.of(GetVpnAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpnAttachmentResult> getVpnAttachmentPlain(GetVpnAttachmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getVpnAttachment:getVpnAttachment", TypeShape.of(GetVpnAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static Output<GetVpnAttachmentsResult> getVpnAttachments() {
+        return getVpnAttachments(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpnAttachmentsResult> getVpnAttachmentsPlain() {
+        return getVpnAttachmentsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static Output<GetVpnAttachmentsResult> getVpnAttachments(InvokeArgs args) {
+        return getVpnAttachments(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpnAttachmentsResult> getVpnAttachmentsPlain(InvokeArgs args) {
+        return getVpnAttachmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static Output<GetVpnAttachmentsResult> getVpnAttachments(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpnAttachments:getVpnAttachments", TypeShape.of(GetVpnAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static Output<GetVpnAttachmentsResult> getVpnAttachments(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:transitrouter/getVpnAttachments:getVpnAttachments", TypeShape.of(GetVpnAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TransitRouter::VpnAttachment
+     * 
+     */
+    public static CompletableFuture<GetVpnAttachmentsResult> getVpnAttachmentsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:transitrouter/getVpnAttachments:getVpnAttachments", TypeShape.of(GetVpnAttachmentsResult.class), args, Utilities.withVersion(options));
     }
 }

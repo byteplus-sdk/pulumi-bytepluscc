@@ -4,8 +4,16 @@
 package com.byteplus.bytepluscc.redis;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.redis.inputs.GetAccountArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetAccountPlainArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressPlainArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.redis.outputs.GetAccountResult;
+import com.byteplus.bytepluscc.redis.outputs.GetAccountsResult;
+import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressResult;
+import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressesResult;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.redis.outputs.GetInstancesResult;
 import com.pulumi.core.Output;
@@ -17,6 +25,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class RedisFunctions {
+    /**
+     * Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args) {
+        return getAccount(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountResult> getAccountPlain(GetAccountPlainArgs args) {
+        return getAccountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountResult> getAccountPlain(GetAccountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts() {
+        return getAccounts(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain() {
+        return getAccountsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args) {
+        return getAccounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args) {
+        return getAccountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressResult> getEndpointPublicAddress(GetEndpointPublicAddressArgs args) {
+        return getEndpointPublicAddress(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressResult> getEndpointPublicAddressPlain(GetEndpointPublicAddressPlainArgs args) {
+        return getEndpointPublicAddressPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressResult> getEndpointPublicAddress(GetEndpointPublicAddressArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getEndpointPublicAddress:getEndpointPublicAddress", TypeShape.of(GetEndpointPublicAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressResult> getEndpointPublicAddress(GetEndpointPublicAddressArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getEndpointPublicAddress:getEndpointPublicAddress", TypeShape.of(GetEndpointPublicAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressResult> getEndpointPublicAddressPlain(GetEndpointPublicAddressPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getEndpointPublicAddress:getEndpointPublicAddress", TypeShape.of(GetEndpointPublicAddressResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses() {
+        return getEndpointPublicAddresses(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressesResult> getEndpointPublicAddressesPlain() {
+        return getEndpointPublicAddressesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses(InvokeArgs args) {
+        return getEndpointPublicAddresses(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressesResult> getEndpointPublicAddressesPlain(InvokeArgs args) {
+        return getEndpointPublicAddressesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getEndpointPublicAddresses:getEndpointPublicAddresses", TypeShape.of(GetEndpointPublicAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static Output<GetEndpointPublicAddressesResult> getEndpointPublicAddresses(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getEndpointPublicAddresses:getEndpointPublicAddresses", TypeShape.of(GetEndpointPublicAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::EndpointPublicAddress
+     * 
+     */
+    public static CompletableFuture<GetEndpointPublicAddressesResult> getEndpointPublicAddressesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getEndpointPublicAddresses:getEndpointPublicAddresses", TypeShape.of(GetEndpointPublicAddressesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::Redis::Instance
      * 

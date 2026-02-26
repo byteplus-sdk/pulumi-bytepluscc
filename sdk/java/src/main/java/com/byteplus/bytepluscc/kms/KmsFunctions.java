@@ -6,7 +6,11 @@ package com.byteplus.bytepluscc.kms;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyArgs;
 import com.byteplus.bytepluscc.kms.inputs.GetKeyPlainArgs;
+import com.byteplus.bytepluscc.kms.inputs.GetKeyRingArgs;
+import com.byteplus.bytepluscc.kms.inputs.GetKeyRingPlainArgs;
 import com.byteplus.bytepluscc.kms.outputs.GetKeyResult;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyRingResult;
+import com.byteplus.bytepluscc.kms.outputs.GetKeyRingsResult;
 import com.byteplus.bytepluscc.kms.outputs.GetKeysResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
@@ -51,6 +55,90 @@ public final class KmsFunctions {
      */
     public static CompletableFuture<GetKeyResult> getKeyPlain(GetKeyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:kms/getKey:getKey", TypeShape.of(GetKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static Output<GetKeyRingResult> getKeyRing(GetKeyRingArgs args) {
+        return getKeyRing(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static CompletableFuture<GetKeyRingResult> getKeyRingPlain(GetKeyRingPlainArgs args) {
+        return getKeyRingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static Output<GetKeyRingResult> getKeyRing(GetKeyRingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyRing:getKeyRing", TypeShape.of(GetKeyRingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static Output<GetKeyRingResult> getKeyRing(GetKeyRingArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyRing:getKeyRing", TypeShape.of(GetKeyRingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static CompletableFuture<GetKeyRingResult> getKeyRingPlain(GetKeyRingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kms/getKeyRing:getKeyRing", TypeShape.of(GetKeyRingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static Output<GetKeyRingsResult> getKeyRings() {
+        return getKeyRings(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static CompletableFuture<GetKeyRingsResult> getKeyRingsPlain() {
+        return getKeyRingsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static Output<GetKeyRingsResult> getKeyRings(InvokeArgs args) {
+        return getKeyRings(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static CompletableFuture<GetKeyRingsResult> getKeyRingsPlain(InvokeArgs args) {
+        return getKeyRingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static Output<GetKeyRingsResult> getKeyRings(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyRings:getKeyRings", TypeShape.of(GetKeyRingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static Output<GetKeyRingsResult> getKeyRings(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kms/getKeyRings:getKeyRings", TypeShape.of(GetKeyRingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::KMS::KeyRing
+     * 
+     */
+    public static CompletableFuture<GetKeyRingsResult> getKeyRingsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kms/getKeyRings:getKeyRings", TypeShape.of(GetKeyRingsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::KMS::Key

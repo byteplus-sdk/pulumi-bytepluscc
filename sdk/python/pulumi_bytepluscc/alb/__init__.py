@@ -8,16 +8,22 @@ import typing
 # Export this package's modules as members:
 from .acl import *
 from .certificate import *
+from .customized_cfg import *
 from .get_acl import *
 from .get_acls import *
 from .get_certificate import *
 from .get_certificates import *
+from .get_customized_cfg import *
+from .get_customized_cfgs import *
+from .get_health_check_template import *
+from .get_health_check_templates import *
 from .get_listener import *
 from .get_listeners import *
 from .get_load_balancer import *
 from .get_load_balancers import *
 from .get_server_group import *
 from .get_server_groups import *
+from .health_check_template import *
 from .listener import *
 from .load_balancer import *
 from .server_group import *

@@ -16,6 +16,14 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AllowListAssociatedInstanceArgs',
+    'AllowListAssociatedInstanceArgsDict',
+    'AllowListSecurityGroupBindInfoArgs',
+    'AllowListSecurityGroupBindInfoArgsDict',
+    'BackupBackupMetaArgs',
+    'BackupBackupMetaArgsDict',
+    'BackupDbTableInfoArgs',
+    'BackupDbTableInfoArgsDict',
     'DatabaseDatabasePrivilegeArgs',
     'DatabaseDatabasePrivilegeArgsDict',
     'DbAccountAccountPrivilegeArgs',
@@ -26,6 +34,14 @@ __all__ = [
     'DbAccountTableColumnPrivilegeColumnPrivilegeArgsDict',
     'DbAccountTableColumnPrivilegeTablePrivilegeArgs',
     'DbAccountTableColumnPrivilegeTablePrivilegeArgsDict',
+    'EndpointAddressArgs',
+    'EndpointAddressArgsDict',
+    'EndpointCustomRouteStrategyArgs',
+    'EndpointCustomRouteStrategyArgsDict',
+    'EndpointCustomRouteStrategyKeywordRouteStrategyArgs',
+    'EndpointCustomRouteStrategyKeywordRouteStrategyArgsDict',
+    'EndpointReadOnlyNodeWeightArgs',
+    'EndpointReadOnlyNodeWeightArgsDict',
     'InstanceAddressObjectArgs',
     'InstanceAddressObjectArgsDict',
     'InstanceAutoStorageScalingConfigArgs',
@@ -51,6 +67,314 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AllowListAssociatedInstanceArgsDict(TypedDict):
+        instance_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        已绑定当前白名单的实例 ID。
+        """
+        instance_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        已绑定当前白名单的实例名称。
+        """
+        instance_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例状态。
+        """
+        is_latest: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+        """
+        vpc: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例所属的私有网络 ID。
+        """
+elif False:
+    AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AllowListAssociatedInstanceArgs:
+    def __init__(__self__, *,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_name: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_status: Optional[pulumi.Input[builtins.str]] = None,
+                 is_latest: Optional[pulumi.Input[builtins.bool]] = None,
+                 vpc: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] instance_id: 已绑定当前白名单的实例 ID。
+        :param pulumi.Input[builtins.str] instance_name: 已绑定当前白名单的实例名称。
+        :param pulumi.Input[builtins.str] instance_status: 实例状态。
+        :param pulumi.Input[builtins.bool] is_latest: 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+        :param pulumi.Input[builtins.str] vpc: 实例所属的私有网络 ID。
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if instance_status is not None:
+            pulumi.set(__self__, "instance_status", instance_status)
+        if is_latest is not None:
+            pulumi.set(__self__, "is_latest", is_latest)
+        if vpc is not None:
+            pulumi.set(__self__, "vpc", vpc)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        已绑定当前白名单的实例 ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        已绑定当前白名单的实例名称。
+        """
+        return pulumi.get(self, "instance_name")
+
+    @instance_name.setter
+    def instance_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_name", value)
+
+    @property
+    @pulumi.getter(name="instanceStatus")
+    def instance_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例状态。
+        """
+        return pulumi.get(self, "instance_status")
+
+    @instance_status.setter
+    def instance_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_status", value)
+
+    @property
+    @pulumi.getter(name="isLatest")
+    def is_latest(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+        """
+        return pulumi.get(self, "is_latest")
+
+    @is_latest.setter
+    def is_latest(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_latest", value)
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例所属的私有网络 ID。
+        """
+        return pulumi.get(self, "vpc")
+
+    @vpc.setter
+    def vpc(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "vpc", value)
+
+
+if not MYPY:
+    class AllowListSecurityGroupBindInfoArgsDict(TypedDict):
+        bind_mode: NotRequired[pulumi.Input[builtins.str]]
+        """
+        关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+        """
+        ip_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        安全组的 IP 地址列表。
+        """
+        security_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        安全组 ID。
+        """
+        security_group_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        安全组名称。
+        """
+elif False:
+    AllowListSecurityGroupBindInfoArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AllowListSecurityGroupBindInfoArgs:
+    def __init__(__self__, *,
+                 bind_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 security_group_id: Optional[pulumi.Input[builtins.str]] = None,
+                 security_group_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] bind_mode: 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_lists: 安全组的 IP 地址列表。
+        :param pulumi.Input[builtins.str] security_group_id: 安全组 ID。
+        :param pulumi.Input[builtins.str] security_group_name: 安全组名称。
+        """
+        if bind_mode is not None:
+            pulumi.set(__self__, "bind_mode", bind_mode)
+        if ip_lists is not None:
+            pulumi.set(__self__, "ip_lists", ip_lists)
+        if security_group_id is not None:
+            pulumi.set(__self__, "security_group_id", security_group_id)
+        if security_group_name is not None:
+            pulumi.set(__self__, "security_group_name", security_group_name)
+
+    @property
+    @pulumi.getter(name="bindMode")
+    def bind_mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+        """
+        return pulumi.get(self, "bind_mode")
+
+    @bind_mode.setter
+    def bind_mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "bind_mode", value)
+
+    @property
+    @pulumi.getter(name="ipLists")
+    def ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        安全组的 IP 地址列表。
+        """
+        return pulumi.get(self, "ip_lists")
+
+    @ip_lists.setter
+    def ip_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "ip_lists", value)
+
+    @property
+    @pulumi.getter(name="securityGroupId")
+    def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        安全组 ID。
+        """
+        return pulumi.get(self, "security_group_id")
+
+    @security_group_id.setter
+    def security_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "security_group_id", value)
+
+    @property
+    @pulumi.getter(name="securityGroupName")
+    def security_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        安全组名称。
+        """
+        return pulumi.get(self, "security_group_name")
+
+    @security_group_name.setter
+    def security_group_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "security_group_name", value)
+
+
+if not MYPY:
+    class BackupBackupMetaArgsDict(TypedDict):
+        database: NotRequired[pulumi.Input[builtins.str]]
+        """
+        数据库名。
+        """
+        tables: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        表名列表。
+        """
+elif False:
+    BackupBackupMetaArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BackupBackupMetaArgs:
+    def __init__(__self__, *,
+                 database: Optional[pulumi.Input[builtins.str]] = None,
+                 tables: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.str] database: 数据库名。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tables: 表名列表。
+        """
+        if database is not None:
+            pulumi.set(__self__, "database", database)
+        if tables is not None:
+            pulumi.set(__self__, "tables", tables)
+
+    @property
+    @pulumi.getter
+    def database(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        数据库名。
+        """
+        return pulumi.get(self, "database")
+
+    @database.setter
+    def database(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "database", value)
+
+    @property
+    @pulumi.getter
+    def tables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        表名列表。
+        """
+        return pulumi.get(self, "tables")
+
+    @tables.setter
+    def tables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "tables", value)
+
+
+if not MYPY:
+    class BackupDbTableInfoArgsDict(TypedDict):
+        database: NotRequired[pulumi.Input[builtins.str]]
+        """
+        数据库名。
+        """
+        tables: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        表名列表。
+        """
+elif False:
+    BackupDbTableInfoArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BackupDbTableInfoArgs:
+    def __init__(__self__, *,
+                 database: Optional[pulumi.Input[builtins.str]] = None,
+                 tables: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.str] database: 数据库名。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tables: 表名列表。
+        """
+        if database is not None:
+            pulumi.set(__self__, "database", database)
+        if tables is not None:
+            pulumi.set(__self__, "tables", tables)
+
+    @property
+    @pulumi.getter
+    def database(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        数据库名。
+        """
+        return pulumi.get(self, "database")
+
+    @database.setter
+    def database(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "database", value)
+
+    @property
+    @pulumi.getter
+    def tables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        表名列表。
+        """
+        return pulumi.get(self, "tables")
+
+    @tables.setter
+    def tables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "tables", value)
+
 
 if not MYPY:
     class DatabaseDatabasePrivilegeArgsDict(TypedDict):
@@ -376,6 +700,225 @@ class DbAccountTableColumnPrivilegeTablePrivilegeArgs:
     @table_name.setter
     def table_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "table_name", value)
+
+
+if not MYPY:
+    class EndpointAddressArgsDict(TypedDict):
+        dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+        """
+        domain_prefix: NotRequired[pulumi.Input[builtins.str]]
+        """
+        连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+        """
+        port: NotRequired[pulumi.Input[builtins.str]]
+        """
+        端口。
+        """
+elif False:
+    EndpointAddressArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EndpointAddressArgs:
+    def __init__(__self__, *,
+                 dns_visibility: Optional[pulumi.Input[builtins.bool]] = None,
+                 domain_prefix: Optional[pulumi.Input[builtins.str]] = None,
+                 port: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] dns_visibility: false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+        :param pulumi.Input[builtins.str] domain_prefix: 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+        :param pulumi.Input[builtins.str] port: 端口。
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain_prefix is not None:
+            pulumi.set(__self__, "domain_prefix", domain_prefix)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @dns_visibility.setter
+    def dns_visibility(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "dns_visibility", value)
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @domain_prefix.setter
+    def domain_prefix(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain_prefix", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        端口。
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "port", value)
+
+
+if not MYPY:
+    class EndpointCustomRouteStrategyArgsDict(TypedDict):
+        keyword_route_strategies: NotRequired[pulumi.Input[Sequence[pulumi.Input['EndpointCustomRouteStrategyKeywordRouteStrategyArgsDict']]]]
+elif False:
+    EndpointCustomRouteStrategyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EndpointCustomRouteStrategyArgs:
+    def __init__(__self__, *,
+                 keyword_route_strategies: Optional[pulumi.Input[Sequence[pulumi.Input['EndpointCustomRouteStrategyKeywordRouteStrategyArgs']]]] = None):
+        if keyword_route_strategies is not None:
+            pulumi.set(__self__, "keyword_route_strategies", keyword_route_strategies)
+
+    @property
+    @pulumi.getter(name="keywordRouteStrategies")
+    def keyword_route_strategies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EndpointCustomRouteStrategyKeywordRouteStrategyArgs']]]]:
+        return pulumi.get(self, "keyword_route_strategies")
+
+    @keyword_route_strategies.setter
+    def keyword_route_strategies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EndpointCustomRouteStrategyKeywordRouteStrategyArgs']]]]):
+        pulumi.set(self, "keyword_route_strategies", value)
+
+
+if not MYPY:
+    class EndpointCustomRouteStrategyKeywordRouteStrategyArgsDict(TypedDict):
+        node_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+        """
+        sql_keyword: NotRequired[pulumi.Input[builtins.str]]
+        """
+        转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+        """
+elif False:
+    EndpointCustomRouteStrategyKeywordRouteStrategyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EndpointCustomRouteStrategyKeywordRouteStrategyArgs:
+    def __init__(__self__, *,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None,
+                 sql_keyword: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] node_type: SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+        :param pulumi.Input[builtins.str] sql_keyword: 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+        """
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if sql_keyword is not None:
+            pulumi.set(__self__, "sql_keyword", sql_keyword)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+    @property
+    @pulumi.getter(name="sqlKeyword")
+    def sql_keyword(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+        """
+        return pulumi.get(self, "sql_keyword")
+
+    @sql_keyword.setter
+    def sql_keyword(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "sql_keyword", value)
+
+
+if not MYPY:
+    class EndpointReadOnlyNodeWeightArgsDict(TypedDict):
+        node_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        只读节点需要传入 NodeId，主节点无需传入。
+        """
+        node_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        节点类型。Primary：主节点。ReadOnly：只读节点。
+        """
+        weight: NotRequired[pulumi.Input[builtins.int]]
+        """
+        节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+        """
+elif False:
+    EndpointReadOnlyNodeWeightArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EndpointReadOnlyNodeWeightArgs:
+    def __init__(__self__, *,
+                 node_id: Optional[pulumi.Input[builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None,
+                 weight: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] node_id: 只读节点需要传入 NodeId，主节点无需传入。
+        :param pulumi.Input[builtins.str] node_type: 节点类型。Primary：主节点。ReadOnly：只读节点。
+        :param pulumi.Input[builtins.int] weight: 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+        """
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        只读节点需要传入 NodeId，主节点无需传入。
+        """
+        return pulumi.get(self, "node_id")
+
+    @node_id.setter
+    def node_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_id", value)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        节点类型。Primary：主节点。ReadOnly：只读节点。
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+        """
+        return pulumi.get(self, "weight")
+
+    @weight.setter
+    def weight(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "weight", value)
 
 
 if not MYPY:

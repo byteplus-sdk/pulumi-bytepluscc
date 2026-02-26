@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .customer_gateway import *
+from .get_customer_gateway import *
+from .get_customer_gateways import *
 from .get_vpn_gateway import *
 from .get_vpn_gateways import *
 from .vpn_gateway import *

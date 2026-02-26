@@ -10,9 +10,12 @@ import com.byteplus.bytepluscc.ecs.outputs.InstanceCpuMemory;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceEipAddress;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceImage;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceKeyPair;
+import com.byteplus.bytepluscc.ecs.outputs.InstanceLocalVolume;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceOperationSystem;
 import com.byteplus.bytepluscc.ecs.outputs.InstancePlacement;
 import com.byteplus.bytepluscc.ecs.outputs.InstancePrimaryNetworkInterface;
+import com.byteplus.bytepluscc.ecs.outputs.InstanceRdmaNetworkInterfaceDetail;
+import com.byteplus.bytepluscc.ecs.outputs.InstanceRenewInfo;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceSecondaryNetworkInterface;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceSystemVolume;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceTag;
@@ -45,6 +48,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
+     * 亲和组ID。
+     * 
+     */
+    @Export(name="affinityGroupId", refs={String.class}, tree="[0]")
+    private Output<String> affinityGroupId;
+
+    /**
+     * @return 亲和组ID。
+     * 
+     */
+    public Output<String> affinityGroupId() {
+        return this.affinityGroupId;
+    }
+    /**
      * 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
      * - 该功能正在邀测中，如需试用，请联系客户经理申请。
      * 
@@ -59,6 +76,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> affinityGroupSize() {
         return this.affinityGroupSize;
+    }
+    /**
+     * 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     * 
+     */
+    @Export(name="autoPay", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> autoPay;
+
+    /**
+     * @return 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     * 
+     */
+    public Output<Boolean> autoPay() {
+        return this.autoPay;
     }
     /**
      * 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
@@ -241,6 +272,34 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.eipAddress;
     }
     /**
+     * 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+     * 
+     */
+    @Export(name="elasticScheduledInstanceType", refs={String.class}, tree="[0]")
+    private Output<String> elasticScheduledInstanceType;
+
+    /**
+     * @return 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+     * 
+     */
+    public Output<String> elasticScheduledInstanceType() {
+        return this.elasticScheduledInstanceType;
+    }
+    /**
+     * 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     * 
+     */
+    @Export(name="enableJumboFrame", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> enableJumboFrame;
+
+    /**
+     * @return 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     * 
+     */
+    public Output<Boolean> enableJumboFrame() {
+        return this.enableJumboFrame;
+    }
+    /**
      * 实例的过期时间。
      * 
      */
@@ -309,6 +368,36 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<InstanceImage> image() {
         return this.image;
+    }
+    /**
+     * 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+     * （默认）：不转换。
+     * 
+     */
+    @Export(name="includeDataVolumes", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> includeDataVolumes;
+
+    /**
+     * @return 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+     * （默认）：不转换。
+     * 
+     */
+    public Output<Boolean> includeDataVolumes() {
+        return this.includeDataVolumes;
+    }
+    /**
+     * 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     * 
+     */
+    @Export(name="installRunCommandAgent", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> installRunCommandAgent;
+
+    /**
+     * @return 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     * 
+     */
+    public Output<Boolean> installRunCommandAgent() {
+        return this.installRunCommandAgent;
     }
     /**
      * 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
@@ -391,6 +480,12 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<InstanceKeyPair> keyPair() {
         return this.keyPair;
+    }
+    @Export(name="localVolumes", refs={List.class,InstanceLocalVolume.class}, tree="[0,1]")
+    private Output<List<InstanceLocalVolume>> localVolumes;
+
+    public Output<List<InstanceLocalVolume>> localVolumes() {
+        return this.localVolumes;
     }
     /**
      * 实例的操作系统类型。
@@ -498,6 +593,54 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+     * 
+     */
+    @Export(name="rdmaIpAddresses", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> rdmaIpAddresses;
+
+    /**
+     * @return 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+     * 
+     */
+    public Output<List<String>> rdmaIpAddresses() {
+        return this.rdmaIpAddresses;
+    }
+    @Export(name="rdmaNetworkInterfaceDetails", refs={List.class,InstanceRdmaNetworkInterfaceDetail.class}, tree="[0,1]")
+    private Output<List<InstanceRdmaNetworkInterfaceDetail>> rdmaNetworkInterfaceDetails;
+
+    public Output<List<InstanceRdmaNetworkInterfaceDetail>> rdmaNetworkInterfaceDetails() {
+        return this.rdmaNetworkInterfaceDetails;
+    }
+    /**
+     * 续费信息。
+     * 
+     */
+    @Export(name="renewInfo", refs={InstanceRenewInfo.class}, tree="[0]")
+    private Output<InstanceRenewInfo> renewInfo;
+
+    /**
+     * @return 续费信息。
+     * 
+     */
+    public Output<InstanceRenewInfo> renewInfo() {
+        return this.renewInfo;
+    }
+    /**
+     * 实例绑定的IAM角色名称。
+     * 
+     */
+    @Export(name="roleNames", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> roleNames;
+
+    /**
+     * @return 实例绑定的IAM角色名称。
+     * 
+     */
+    public Output<List<String>> roleNames() {
+        return this.roleNames;
+    }
     @Export(name="secondaryNetworkInterfaces", refs={List.class,InstanceSecondaryNetworkInterface.class}, tree="[0,1]")
     private Output<List<InstanceSecondaryNetworkInterface>> secondaryNetworkInterfaces;
 
@@ -563,7 +706,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
      * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
      * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
      * 
      */
     @Export(name="stoppedMode", refs={String.class}, tree="[0]")
@@ -574,7 +717,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
      * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
      * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
      * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
      * 
      */
     public Output<String> stoppedMode() {

@@ -19,7 +19,7 @@ public final class GetUserAccessKey {
      * @return 访问密钥创建时间。
      * 
      */
-    private String createdTime;
+    private String createDate;
     /**
      * @return 最近一次使用的服务区域。
      * 
@@ -44,7 +44,7 @@ public final class GetUserAccessKey {
      * @return 访问密钥更新时间。
      * 
      */
-    private String updatedTime;
+    private String updateDate;
     /**
      * @return 访问密钥Secret。
      * 
@@ -63,8 +63,8 @@ public final class GetUserAccessKey {
      * @return 访问密钥创建时间。
      * 
      */
-    public String createdTime() {
-        return this.createdTime;
+    public String createDate() {
+        return this.createDate;
     }
     /**
      * @return 最近一次使用的服务区域。
@@ -98,8 +98,8 @@ public final class GetUserAccessKey {
      * @return 访问密钥更新时间。
      * 
      */
-    public String updatedTime() {
-        return this.updatedTime;
+    public String updateDate() {
+        return this.updateDate;
     }
     /**
      * @return 访问密钥Secret。
@@ -119,23 +119,23 @@ public final class GetUserAccessKey {
     @CustomType.Builder
     public static final class Builder {
         private String accessKeyId;
-        private String createdTime;
+        private String createDate;
         private String region;
         private String requestTime;
         private String service;
         private String status;
-        private String updatedTime;
+        private String updateDate;
         private String userName;
         public Builder() {}
         public Builder(GetUserAccessKey defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accessKeyId = defaults.accessKeyId;
-    	      this.createdTime = defaults.createdTime;
+    	      this.createDate = defaults.createDate;
     	      this.region = defaults.region;
     	      this.requestTime = defaults.requestTime;
     	      this.service = defaults.service;
     	      this.status = defaults.status;
-    	      this.updatedTime = defaults.updatedTime;
+    	      this.updateDate = defaults.updateDate;
     	      this.userName = defaults.userName;
         }
 
@@ -148,11 +148,11 @@ public final class GetUserAccessKey {
             return this;
         }
         @CustomType.Setter
-        public Builder createdTime(String createdTime) {
-            if (createdTime == null) {
-              throw new MissingRequiredPropertyException("GetUserAccessKey", "createdTime");
+        public Builder createDate(String createDate) {
+            if (createDate == null) {
+              throw new MissingRequiredPropertyException("GetUserAccessKey", "createDate");
             }
-            this.createdTime = createdTime;
+            this.createDate = createDate;
             return this;
         }
         @CustomType.Setter
@@ -188,11 +188,11 @@ public final class GetUserAccessKey {
             return this;
         }
         @CustomType.Setter
-        public Builder updatedTime(String updatedTime) {
-            if (updatedTime == null) {
-              throw new MissingRequiredPropertyException("GetUserAccessKey", "updatedTime");
+        public Builder updateDate(String updateDate) {
+            if (updateDate == null) {
+              throw new MissingRequiredPropertyException("GetUserAccessKey", "updateDate");
             }
-            this.updatedTime = updatedTime;
+            this.updateDate = updateDate;
             return this;
         }
         @CustomType.Setter
@@ -206,12 +206,12 @@ public final class GetUserAccessKey {
         public GetUserAccessKey build() {
             final var _resultValue = new GetUserAccessKey();
             _resultValue.accessKeyId = accessKeyId;
-            _resultValue.createdTime = createdTime;
+            _resultValue.createDate = createDate;
             _resultValue.region = region;
             _resultValue.requestTime = requestTime;
             _resultValue.service = service;
             _resultValue.status = status;
-            _resultValue.updatedTime = updatedTime;
+            _resultValue.updateDate = updateDate;
             _resultValue.userName = userName;
             return _resultValue;
         }

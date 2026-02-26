@@ -120,6 +120,9 @@ class GetRoleResult:
     @property
     @pulumi.getter
     def policies(self) -> Sequence['outputs.GetRolePolicyResult']:
+        """
+        角色策略。
+        """
         return pulumi.get(self, "policies")
 
     @property
@@ -141,6 +144,9 @@ class GetRoleResult:
     @property
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetRoleTagResult']:
+        """
+        标签。
+        """
         return pulumi.get(self, "tags")
 
     @property

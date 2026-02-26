@@ -34,7 +34,9 @@ import * as kms from "./kms";
 import * as natgateway from "./natgateway";
 import * as organization from "./organization";
 import * as privatelink from "./privatelink";
+import * as rabbitmq from "./rabbitmq";
 import * as rdsmysql from "./rdsmysql";
+import * as rdspostgresql from "./rdspostgresql";
 import * as redis from "./redis";
 import * as storageebs from "./storageebs";
 import * as transitrouter from "./transitrouter";
@@ -71,7 +73,9 @@ export {
     natgateway,
     organization,
     privatelink,
+    rabbitmq,
     rdsmysql,
+    rdspostgresql,
     redis,
     storageebs,
     transitrouter,

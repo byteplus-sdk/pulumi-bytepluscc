@@ -92,21 +92,6 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         return Optional.ofNullable(this.subnetId);
     }
 
-    /**
-     * 实例的VPC ID。
-     * 
-     */
-    @Import(name="vpcId")
-    private @Nullable Output<String> vpcId;
-
-    /**
-     * @return 实例的VPC ID。
-     * 
-     */
-    public Optional<Output<String>> vpcId() {
-        return Optional.ofNullable(this.vpcId);
-    }
-
     private InstanceSecondaryNetworkInterfaceArgs() {}
 
     private InstanceSecondaryNetworkInterfaceArgs(InstanceSecondaryNetworkInterfaceArgs $) {
@@ -115,7 +100,6 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         this.privateIpAddresses = $.privateIpAddresses;
         this.securityGroupIds = $.securityGroupIds;
         this.subnetId = $.subnetId;
-        this.vpcId = $.vpcId;
     }
 
     public static Builder builder() {
@@ -259,27 +243,6 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
-        }
-
-        /**
-         * @param vpcId 实例的VPC ID。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpcId(@Nullable Output<String> vpcId) {
-            $.vpcId = vpcId;
-            return this;
-        }
-
-        /**
-         * @param vpcId 实例的VPC ID。
-         * 
-         * @return builder
-         * 
-         */
-        public Builder vpcId(String vpcId) {
-            return vpcId(Output.of(vpcId));
         }
 
         public InstanceSecondaryNetworkInterfaceArgs build() {

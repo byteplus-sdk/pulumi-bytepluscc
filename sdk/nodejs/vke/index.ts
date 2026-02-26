@@ -15,6 +15,11 @@ export type Cluster = import("./cluster").Cluster;
 export const Cluster: typeof import("./cluster").Cluster = null as any;
 utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
 
+export { DefaultNodePoolArgs, DefaultNodePoolState } from "./defaultNodePool";
+export type DefaultNodePool = import("./defaultNodePool").DefaultNodePool;
+export const DefaultNodePool: typeof import("./defaultNodePool").DefaultNodePool = null as any;
+utilities.lazyLoad(exports, ["DefaultNodePool"], () => require("./defaultNodePool"));
+
 export { GetAddonArgs, GetAddonResult, GetAddonOutputArgs } from "./getAddon";
 export const getAddon: typeof import("./getAddon").getAddon = null as any;
 export const getAddonOutput: typeof import("./getAddon").getAddonOutput = null as any;
@@ -35,6 +40,21 @@ export const getClusters: typeof import("./getClusters").getClusters = null as a
 export const getClustersOutput: typeof import("./getClusters").getClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getClusters","getClustersOutput"], () => require("./getClusters"));
 
+export { GetDefaultNodePoolArgs, GetDefaultNodePoolResult, GetDefaultNodePoolOutputArgs } from "./getDefaultNodePool";
+export const getDefaultNodePool: typeof import("./getDefaultNodePool").getDefaultNodePool = null as any;
+export const getDefaultNodePoolOutput: typeof import("./getDefaultNodePool").getDefaultNodePoolOutput = null as any;
+utilities.lazyLoad(exports, ["getDefaultNodePool","getDefaultNodePoolOutput"], () => require("./getDefaultNodePool"));
+
+export { GetDefaultNodePoolsResult } from "./getDefaultNodePools";
+export const getDefaultNodePools: typeof import("./getDefaultNodePools").getDefaultNodePools = null as any;
+export const getDefaultNodePoolsOutput: typeof import("./getDefaultNodePools").getDefaultNodePoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getDefaultNodePools","getDefaultNodePoolsOutput"], () => require("./getDefaultNodePools"));
+
+export { GetNodeArgs, GetNodeResult, GetNodeOutputArgs } from "./getNode";
+export const getNode: typeof import("./getNode").getNode = null as any;
+export const getNodeOutput: typeof import("./getNode").getNodeOutput = null as any;
+utilities.lazyLoad(exports, ["getNode","getNodeOutput"], () => require("./getNode"));
+
 export { GetNodePoolArgs, GetNodePoolResult, GetNodePoolOutputArgs } from "./getNodePool";
 export const getNodePool: typeof import("./getNodePool").getNodePool = null as any;
 export const getNodePoolOutput: typeof import("./getNodePool").getNodePoolOutput = null as any;
@@ -45,6 +65,11 @@ export const getNodePools: typeof import("./getNodePools").getNodePools = null a
 export const getNodePoolsOutput: typeof import("./getNodePools").getNodePoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getNodePools","getNodePoolsOutput"], () => require("./getNodePools"));
 
+export { GetNodesResult } from "./getNodes";
+export const getNodes: typeof import("./getNodes").getNodes = null as any;
+export const getNodesOutput: typeof import("./getNodes").getNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getNodes","getNodesOutput"], () => require("./getNodes"));
+
 export { GetPermissionArgs, GetPermissionResult, GetPermissionOutputArgs } from "./getPermission";
 export const getPermission: typeof import("./getPermission").getPermission = null as any;
 export const getPermissionOutput: typeof import("./getPermission").getPermissionOutput = null as any;
@@ -54,6 +79,11 @@ export { GetPermissionsResult } from "./getPermissions";
 export const getPermissions: typeof import("./getPermissions").getPermissions = null as any;
 export const getPermissionsOutput: typeof import("./getPermissions").getPermissionsOutput = null as any;
 utilities.lazyLoad(exports, ["getPermissions","getPermissionsOutput"], () => require("./getPermissions"));
+
+export { NodeArgs, NodeState } from "./node";
+export type Node = import("./node").Node;
+export const Node: typeof import("./node").Node = null as any;
+utilities.lazyLoad(exports, ["Node"], () => require("./node"));
 
 export { NodePoolArgs, NodePoolState } from "./nodePool";
 export type NodePool = import("./nodePool").NodePool;
@@ -74,6 +104,10 @@ const _module = {
                 return new Addon(name, <any>undefined, { urn })
             case "bytepluscc:vke/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
+            case "bytepluscc:vke/defaultNodePool:DefaultNodePool":
+                return new DefaultNodePool(name, <any>undefined, { urn })
+            case "bytepluscc:vke/node:Node":
+                return new Node(name, <any>undefined, { urn })
             case "bytepluscc:vke/nodePool:NodePool":
                 return new NodePool(name, <any>undefined, { urn })
             case "bytepluscc:vke/permission:Permission":
@@ -85,5 +119,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/addon", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/cluster", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vke/defaultNodePool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vke/node", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/nodePool", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vke/permission", _module)

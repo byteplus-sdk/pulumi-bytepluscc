@@ -288,6 +288,121 @@ func (o CommandTagArrayOutput) Index(i pulumi.IntInput) CommandTagOutput {
 	}).(CommandTagOutput)
 }
 
+type DeploymentSetCapacity struct {
+	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	AvailableCount *int `pulumi:"availableCount"`
+	// 部署集内属于该可用区的ECS实例数量。
+	UsedCount *int `pulumi:"usedCount"`
+	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// DeploymentSetCapacityInput is an input type that accepts DeploymentSetCapacityArgs and DeploymentSetCapacityOutput values.
+// You can construct a concrete instance of `DeploymentSetCapacityInput` via:
+//
+//	DeploymentSetCapacityArgs{...}
+type DeploymentSetCapacityInput interface {
+	pulumi.Input
+
+	ToDeploymentSetCapacityOutput() DeploymentSetCapacityOutput
+	ToDeploymentSetCapacityOutputWithContext(context.Context) DeploymentSetCapacityOutput
+}
+
+type DeploymentSetCapacityArgs struct {
+	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	AvailableCount pulumi.IntPtrInput `pulumi:"availableCount"`
+	// 部署集内属于该可用区的ECS实例数量。
+	UsedCount pulumi.IntPtrInput `pulumi:"usedCount"`
+	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (DeploymentSetCapacityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentSetCapacity)(nil)).Elem()
+}
+
+func (i DeploymentSetCapacityArgs) ToDeploymentSetCapacityOutput() DeploymentSetCapacityOutput {
+	return i.ToDeploymentSetCapacityOutputWithContext(context.Background())
+}
+
+func (i DeploymentSetCapacityArgs) ToDeploymentSetCapacityOutputWithContext(ctx context.Context) DeploymentSetCapacityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentSetCapacityOutput)
+}
+
+// DeploymentSetCapacityArrayInput is an input type that accepts DeploymentSetCapacityArray and DeploymentSetCapacityArrayOutput values.
+// You can construct a concrete instance of `DeploymentSetCapacityArrayInput` via:
+//
+//	DeploymentSetCapacityArray{ DeploymentSetCapacityArgs{...} }
+type DeploymentSetCapacityArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentSetCapacityArrayOutput() DeploymentSetCapacityArrayOutput
+	ToDeploymentSetCapacityArrayOutputWithContext(context.Context) DeploymentSetCapacityArrayOutput
+}
+
+type DeploymentSetCapacityArray []DeploymentSetCapacityInput
+
+func (DeploymentSetCapacityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentSetCapacity)(nil)).Elem()
+}
+
+func (i DeploymentSetCapacityArray) ToDeploymentSetCapacityArrayOutput() DeploymentSetCapacityArrayOutput {
+	return i.ToDeploymentSetCapacityArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentSetCapacityArray) ToDeploymentSetCapacityArrayOutputWithContext(ctx context.Context) DeploymentSetCapacityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentSetCapacityArrayOutput)
+}
+
+type DeploymentSetCapacityOutput struct{ *pulumi.OutputState }
+
+func (DeploymentSetCapacityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentSetCapacity)(nil)).Elem()
+}
+
+func (o DeploymentSetCapacityOutput) ToDeploymentSetCapacityOutput() DeploymentSetCapacityOutput {
+	return o
+}
+
+func (o DeploymentSetCapacityOutput) ToDeploymentSetCapacityOutputWithContext(ctx context.Context) DeploymentSetCapacityOutput {
+	return o
+}
+
+// 该可用区内，还可以加入当前部署集的ECS实例数量。
+func (o DeploymentSetCapacityOutput) AvailableCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DeploymentSetCapacity) *int { return v.AvailableCount }).(pulumi.IntPtrOutput)
+}
+
+// 部署集内属于该可用区的ECS实例数量。
+func (o DeploymentSetCapacityOutput) UsedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DeploymentSetCapacity) *int { return v.UsedCount }).(pulumi.IntPtrOutput)
+}
+
+// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+func (o DeploymentSetCapacityOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentSetCapacity) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type DeploymentSetCapacityArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentSetCapacityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentSetCapacity)(nil)).Elem()
+}
+
+func (o DeploymentSetCapacityArrayOutput) ToDeploymentSetCapacityArrayOutput() DeploymentSetCapacityArrayOutput {
+	return o
+}
+
+func (o DeploymentSetCapacityArrayOutput) ToDeploymentSetCapacityArrayOutputWithContext(ctx context.Context) DeploymentSetCapacityArrayOutput {
+	return o
+}
+
+func (o DeploymentSetCapacityArrayOutput) Index(i pulumi.IntInput) DeploymentSetCapacityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentSetCapacity {
+		return vs[0].([]DeploymentSetCapacity)[vs[1].(int)]
+	}).(DeploymentSetCapacityOutput)
+}
+
 type ImageDetectionResults struct {
 	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
 	DetectionStatus *string                     `pulumi:"detectionStatus"`
@@ -1015,6 +1130,10 @@ type InstanceEipAddress struct {
 	Isp *string `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
+	// DDoS原生防护（企业版）ID。
+	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
 // InstanceEipAddressInput is an input type that accepts InstanceEipAddressArgs and InstanceEipAddressOutput values.
@@ -1064,6 +1183,10 @@ type InstanceEipAddressArgs struct {
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
+	// DDoS原生防护（企业版）ID。
+	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
 func (InstanceEipAddressArgs) ElementType() reflect.Type {
@@ -1202,6 +1325,16 @@ func (o InstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
 }
 
+// DDoS原生防护（企业版）ID。
+func (o InstanceEipAddressOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceEipAddress) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的安全防护类型。
+func (o InstanceEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v InstanceEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
 type InstanceEipAddressPtrOutput struct{ *pulumi.OutputState }
 
 func (InstanceEipAddressPtrOutput) ElementType() reflect.Type {
@@ -1318,6 +1451,26 @@ func (o InstanceEipAddressPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput 
 		}
 		return v.ReleaseWithInstance
 	}).(pulumi.BoolPtrOutput)
+}
+
+// DDoS原生防护（企业版）ID。
+func (o InstanceEipAddressPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionInstanceId
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的安全防护类型。
+func (o InstanceEipAddressPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *InstanceEipAddress) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionTypes
+	}).(pulumi.StringArrayOutput)
 }
 
 type InstanceImage struct {
@@ -1668,6 +1821,121 @@ func (o InstanceKeyPairPtrOutput) KeyPairName() pulumi.StringPtrOutput {
 		}
 		return v.KeyPairName
 	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceLocalVolume struct {
+	// 实例挂载的本地盘数量。
+	Count *int `pulumi:"count"`
+	// 实例挂载的本地盘的单盘容量，单位GiB。
+	Size *int `pulumi:"size"`
+	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// InstanceLocalVolumeInput is an input type that accepts InstanceLocalVolumeArgs and InstanceLocalVolumeOutput values.
+// You can construct a concrete instance of `InstanceLocalVolumeInput` via:
+//
+//	InstanceLocalVolumeArgs{...}
+type InstanceLocalVolumeInput interface {
+	pulumi.Input
+
+	ToInstanceLocalVolumeOutput() InstanceLocalVolumeOutput
+	ToInstanceLocalVolumeOutputWithContext(context.Context) InstanceLocalVolumeOutput
+}
+
+type InstanceLocalVolumeArgs struct {
+	// 实例挂载的本地盘数量。
+	Count pulumi.IntPtrInput `pulumi:"count"`
+	// 实例挂载的本地盘的单盘容量，单位GiB。
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (InstanceLocalVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceLocalVolume)(nil)).Elem()
+}
+
+func (i InstanceLocalVolumeArgs) ToInstanceLocalVolumeOutput() InstanceLocalVolumeOutput {
+	return i.ToInstanceLocalVolumeOutputWithContext(context.Background())
+}
+
+func (i InstanceLocalVolumeArgs) ToInstanceLocalVolumeOutputWithContext(ctx context.Context) InstanceLocalVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceLocalVolumeOutput)
+}
+
+// InstanceLocalVolumeArrayInput is an input type that accepts InstanceLocalVolumeArray and InstanceLocalVolumeArrayOutput values.
+// You can construct a concrete instance of `InstanceLocalVolumeArrayInput` via:
+//
+//	InstanceLocalVolumeArray{ InstanceLocalVolumeArgs{...} }
+type InstanceLocalVolumeArrayInput interface {
+	pulumi.Input
+
+	ToInstanceLocalVolumeArrayOutput() InstanceLocalVolumeArrayOutput
+	ToInstanceLocalVolumeArrayOutputWithContext(context.Context) InstanceLocalVolumeArrayOutput
+}
+
+type InstanceLocalVolumeArray []InstanceLocalVolumeInput
+
+func (InstanceLocalVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceLocalVolume)(nil)).Elem()
+}
+
+func (i InstanceLocalVolumeArray) ToInstanceLocalVolumeArrayOutput() InstanceLocalVolumeArrayOutput {
+	return i.ToInstanceLocalVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceLocalVolumeArray) ToInstanceLocalVolumeArrayOutputWithContext(ctx context.Context) InstanceLocalVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceLocalVolumeArrayOutput)
+}
+
+type InstanceLocalVolumeOutput struct{ *pulumi.OutputState }
+
+func (InstanceLocalVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceLocalVolume)(nil)).Elem()
+}
+
+func (o InstanceLocalVolumeOutput) ToInstanceLocalVolumeOutput() InstanceLocalVolumeOutput {
+	return o
+}
+
+func (o InstanceLocalVolumeOutput) ToInstanceLocalVolumeOutputWithContext(ctx context.Context) InstanceLocalVolumeOutput {
+	return o
+}
+
+// 实例挂载的本地盘数量。
+func (o InstanceLocalVolumeOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceLocalVolume) *int { return v.Count }).(pulumi.IntPtrOutput)
+}
+
+// 实例挂载的本地盘的单盘容量，单位GiB。
+func (o InstanceLocalVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceLocalVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+func (o InstanceLocalVolumeOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceLocalVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type InstanceLocalVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceLocalVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceLocalVolume)(nil)).Elem()
+}
+
+func (o InstanceLocalVolumeArrayOutput) ToInstanceLocalVolumeArrayOutput() InstanceLocalVolumeArrayOutput {
+	return o
+}
+
+func (o InstanceLocalVolumeArrayOutput) ToInstanceLocalVolumeArrayOutputWithContext(ctx context.Context) InstanceLocalVolumeArrayOutput {
+	return o
+}
+
+func (o InstanceLocalVolumeArrayOutput) Index(i pulumi.IntInput) InstanceLocalVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceLocalVolume {
+		return vs[0].([]InstanceLocalVolume)[vs[1].(int)]
+	}).(InstanceLocalVolumeOutput)
 }
 
 type InstanceOperationSystem struct {
@@ -2036,7 +2304,7 @@ type InstancePrimaryNetworkInterface struct {
 	// 实例的安全组ID。
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
 	// 实例的子网ID。
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// 实例的VPC ID。
 	VpcId *string `pulumi:"vpcId"`
 }
@@ -2068,7 +2336,7 @@ type InstancePrimaryNetworkInterfaceArgs struct {
 	// 实例的安全组ID。
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
 	// 实例的子网ID。
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// 实例的VPC ID。
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
 }
@@ -2186,8 +2454,8 @@ func (o InstancePrimaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringA
 }
 
 // 实例的子网ID。
-func (o InstancePrimaryNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v InstancePrimaryNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o InstancePrimaryNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // 实例的VPC ID。
@@ -2295,7 +2563,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) SubnetId() pulumi.StringPtrOut
 		if v == nil {
 			return nil
 		}
-		return &v.SubnetId
+		return v.SubnetId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2306,6 +2574,295 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) VpcId() pulumi.StringPtrOutput
 			return nil
 		}
 		return v.VpcId
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceRdmaNetworkInterfaceDetail struct {
+	// 网关地址。
+	Gateway *string `pulumi:"gateway"`
+	// IP地址。
+	Ip *string `pulumi:"ip"`
+	// 子网掩码。
+	Mask *string `pulumi:"mask"`
+	// 交换机名称。
+	SwitchName *string `pulumi:"switchName"`
+	// 交换机端口。
+	SwitchPort *string `pulumi:"switchPort"`
+}
+
+// InstanceRdmaNetworkInterfaceDetailInput is an input type that accepts InstanceRdmaNetworkInterfaceDetailArgs and InstanceRdmaNetworkInterfaceDetailOutput values.
+// You can construct a concrete instance of `InstanceRdmaNetworkInterfaceDetailInput` via:
+//
+//	InstanceRdmaNetworkInterfaceDetailArgs{...}
+type InstanceRdmaNetworkInterfaceDetailInput interface {
+	pulumi.Input
+
+	ToInstanceRdmaNetworkInterfaceDetailOutput() InstanceRdmaNetworkInterfaceDetailOutput
+	ToInstanceRdmaNetworkInterfaceDetailOutputWithContext(context.Context) InstanceRdmaNetworkInterfaceDetailOutput
+}
+
+type InstanceRdmaNetworkInterfaceDetailArgs struct {
+	// 网关地址。
+	Gateway pulumi.StringPtrInput `pulumi:"gateway"`
+	// IP地址。
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
+	// 子网掩码。
+	Mask pulumi.StringPtrInput `pulumi:"mask"`
+	// 交换机名称。
+	SwitchName pulumi.StringPtrInput `pulumi:"switchName"`
+	// 交换机端口。
+	SwitchPort pulumi.StringPtrInput `pulumi:"switchPort"`
+}
+
+func (InstanceRdmaNetworkInterfaceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (i InstanceRdmaNetworkInterfaceDetailArgs) ToInstanceRdmaNetworkInterfaceDetailOutput() InstanceRdmaNetworkInterfaceDetailOutput {
+	return i.ToInstanceRdmaNetworkInterfaceDetailOutputWithContext(context.Background())
+}
+
+func (i InstanceRdmaNetworkInterfaceDetailArgs) ToInstanceRdmaNetworkInterfaceDetailOutputWithContext(ctx context.Context) InstanceRdmaNetworkInterfaceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRdmaNetworkInterfaceDetailOutput)
+}
+
+// InstanceRdmaNetworkInterfaceDetailArrayInput is an input type that accepts InstanceRdmaNetworkInterfaceDetailArray and InstanceRdmaNetworkInterfaceDetailArrayOutput values.
+// You can construct a concrete instance of `InstanceRdmaNetworkInterfaceDetailArrayInput` via:
+//
+//	InstanceRdmaNetworkInterfaceDetailArray{ InstanceRdmaNetworkInterfaceDetailArgs{...} }
+type InstanceRdmaNetworkInterfaceDetailArrayInput interface {
+	pulumi.Input
+
+	ToInstanceRdmaNetworkInterfaceDetailArrayOutput() InstanceRdmaNetworkInterfaceDetailArrayOutput
+	ToInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(context.Context) InstanceRdmaNetworkInterfaceDetailArrayOutput
+}
+
+type InstanceRdmaNetworkInterfaceDetailArray []InstanceRdmaNetworkInterfaceDetailInput
+
+func (InstanceRdmaNetworkInterfaceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (i InstanceRdmaNetworkInterfaceDetailArray) ToInstanceRdmaNetworkInterfaceDetailArrayOutput() InstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return i.ToInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceRdmaNetworkInterfaceDetailArray) ToInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(ctx context.Context) InstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRdmaNetworkInterfaceDetailArrayOutput)
+}
+
+type InstanceRdmaNetworkInterfaceDetailOutput struct{ *pulumi.OutputState }
+
+func (InstanceRdmaNetworkInterfaceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (o InstanceRdmaNetworkInterfaceDetailOutput) ToInstanceRdmaNetworkInterfaceDetailOutput() InstanceRdmaNetworkInterfaceDetailOutput {
+	return o
+}
+
+func (o InstanceRdmaNetworkInterfaceDetailOutput) ToInstanceRdmaNetworkInterfaceDetailOutputWithContext(ctx context.Context) InstanceRdmaNetworkInterfaceDetailOutput {
+	return o
+}
+
+// 网关地址。
+func (o InstanceRdmaNetworkInterfaceDetailOutput) Gateway() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.Gateway }).(pulumi.StringPtrOutput)
+}
+
+// IP地址。
+func (o InstanceRdmaNetworkInterfaceDetailOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.Ip }).(pulumi.StringPtrOutput)
+}
+
+// 子网掩码。
+func (o InstanceRdmaNetworkInterfaceDetailOutput) Mask() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.Mask }).(pulumi.StringPtrOutput)
+}
+
+// 交换机名称。
+func (o InstanceRdmaNetworkInterfaceDetailOutput) SwitchName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.SwitchName }).(pulumi.StringPtrOutput)
+}
+
+// 交换机端口。
+func (o InstanceRdmaNetworkInterfaceDetailOutput) SwitchPort() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.SwitchPort }).(pulumi.StringPtrOutput)
+}
+
+type InstanceRdmaNetworkInterfaceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceRdmaNetworkInterfaceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (o InstanceRdmaNetworkInterfaceDetailArrayOutput) ToInstanceRdmaNetworkInterfaceDetailArrayOutput() InstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return o
+}
+
+func (o InstanceRdmaNetworkInterfaceDetailArrayOutput) ToInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(ctx context.Context) InstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return o
+}
+
+func (o InstanceRdmaNetworkInterfaceDetailArrayOutput) Index(i pulumi.IntInput) InstanceRdmaNetworkInterfaceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceRdmaNetworkInterfaceDetail {
+		return vs[0].([]InstanceRdmaNetworkInterfaceDetail)[vs[1].(int)]
+	}).(InstanceRdmaNetworkInterfaceDetailOutput)
+}
+
+type InstanceRenewInfo struct {
+	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	Period *int `pulumi:"period"`
+	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	PeriodUnit *string `pulumi:"periodUnit"`
+}
+
+// InstanceRenewInfoInput is an input type that accepts InstanceRenewInfoArgs and InstanceRenewInfoOutput values.
+// You can construct a concrete instance of `InstanceRenewInfoInput` via:
+//
+//	InstanceRenewInfoArgs{...}
+type InstanceRenewInfoInput interface {
+	pulumi.Input
+
+	ToInstanceRenewInfoOutput() InstanceRenewInfoOutput
+	ToInstanceRenewInfoOutputWithContext(context.Context) InstanceRenewInfoOutput
+}
+
+type InstanceRenewInfoArgs struct {
+	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	Period pulumi.IntPtrInput `pulumi:"period"`
+	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
+}
+
+func (InstanceRenewInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRenewInfo)(nil)).Elem()
+}
+
+func (i InstanceRenewInfoArgs) ToInstanceRenewInfoOutput() InstanceRenewInfoOutput {
+	return i.ToInstanceRenewInfoOutputWithContext(context.Background())
+}
+
+func (i InstanceRenewInfoArgs) ToInstanceRenewInfoOutputWithContext(ctx context.Context) InstanceRenewInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRenewInfoOutput)
+}
+
+func (i InstanceRenewInfoArgs) ToInstanceRenewInfoPtrOutput() InstanceRenewInfoPtrOutput {
+	return i.ToInstanceRenewInfoPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceRenewInfoArgs) ToInstanceRenewInfoPtrOutputWithContext(ctx context.Context) InstanceRenewInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRenewInfoOutput).ToInstanceRenewInfoPtrOutputWithContext(ctx)
+}
+
+// InstanceRenewInfoPtrInput is an input type that accepts InstanceRenewInfoArgs, InstanceRenewInfoPtr and InstanceRenewInfoPtrOutput values.
+// You can construct a concrete instance of `InstanceRenewInfoPtrInput` via:
+//
+//	        InstanceRenewInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceRenewInfoPtrInput interface {
+	pulumi.Input
+
+	ToInstanceRenewInfoPtrOutput() InstanceRenewInfoPtrOutput
+	ToInstanceRenewInfoPtrOutputWithContext(context.Context) InstanceRenewInfoPtrOutput
+}
+
+type instanceRenewInfoPtrType InstanceRenewInfoArgs
+
+func InstanceRenewInfoPtr(v *InstanceRenewInfoArgs) InstanceRenewInfoPtrInput {
+	return (*instanceRenewInfoPtrType)(v)
+}
+
+func (*instanceRenewInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceRenewInfo)(nil)).Elem()
+}
+
+func (i *instanceRenewInfoPtrType) ToInstanceRenewInfoPtrOutput() InstanceRenewInfoPtrOutput {
+	return i.ToInstanceRenewInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceRenewInfoPtrType) ToInstanceRenewInfoPtrOutputWithContext(ctx context.Context) InstanceRenewInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceRenewInfoPtrOutput)
+}
+
+type InstanceRenewInfoOutput struct{ *pulumi.OutputState }
+
+func (InstanceRenewInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceRenewInfo)(nil)).Elem()
+}
+
+func (o InstanceRenewInfoOutput) ToInstanceRenewInfoOutput() InstanceRenewInfoOutput {
+	return o
+}
+
+func (o InstanceRenewInfoOutput) ToInstanceRenewInfoOutputWithContext(ctx context.Context) InstanceRenewInfoOutput {
+	return o
+}
+
+func (o InstanceRenewInfoOutput) ToInstanceRenewInfoPtrOutput() InstanceRenewInfoPtrOutput {
+	return o.ToInstanceRenewInfoPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceRenewInfoOutput) ToInstanceRenewInfoPtrOutputWithContext(ctx context.Context) InstanceRenewInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceRenewInfo) *InstanceRenewInfo {
+		return &v
+	}).(InstanceRenewInfoPtrOutput)
+}
+
+// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+func (o InstanceRenewInfoOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceRenewInfo) *int { return v.Period }).(pulumi.IntPtrOutput)
+}
+
+// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+func (o InstanceRenewInfoOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceRenewInfo) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
+}
+
+type InstanceRenewInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceRenewInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceRenewInfo)(nil)).Elem()
+}
+
+func (o InstanceRenewInfoPtrOutput) ToInstanceRenewInfoPtrOutput() InstanceRenewInfoPtrOutput {
+	return o
+}
+
+func (o InstanceRenewInfoPtrOutput) ToInstanceRenewInfoPtrOutputWithContext(ctx context.Context) InstanceRenewInfoPtrOutput {
+	return o
+}
+
+func (o InstanceRenewInfoPtrOutput) Elem() InstanceRenewInfoOutput {
+	return o.ApplyT(func(v *InstanceRenewInfo) InstanceRenewInfo {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceRenewInfo
+		return ret
+	}).(InstanceRenewInfoOutput)
+}
+
+// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+func (o InstanceRenewInfoPtrOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceRenewInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Period
+	}).(pulumi.IntPtrOutput)
+}
+
+// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+func (o InstanceRenewInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceRenewInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeriodUnit
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2320,8 +2877,6 @@ type InstanceSecondaryNetworkInterface struct {
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
 	// 实例的子网ID。
 	SubnetId *string `pulumi:"subnetId"`
-	// 实例的VPC ID。
-	VpcId *string `pulumi:"vpcId"`
 }
 
 // InstanceSecondaryNetworkInterfaceInput is an input type that accepts InstanceSecondaryNetworkInterfaceArgs and InstanceSecondaryNetworkInterfaceOutput values.
@@ -2346,8 +2901,6 @@ type InstanceSecondaryNetworkInterfaceArgs struct {
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
 	// 实例的子网ID。
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
-	// 实例的VPC ID。
-	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
 }
 
 func (InstanceSecondaryNetworkInterfaceArgs) ElementType() reflect.Type {
@@ -2424,11 +2977,6 @@ func (o InstanceSecondaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.Strin
 // 实例的子网ID。
 func (o InstanceSecondaryNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
-}
-
-// 实例的VPC ID。
-func (o InstanceSecondaryNetworkInterfaceOutput) VpcId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
 
 type InstanceSecondaryNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
@@ -3404,6 +3952,2279 @@ func (o KeypairTagArrayOutput) Index(i pulumi.IntInput) KeypairTagOutput {
 	}).(KeypairTagOutput)
 }
 
+type LaunchTemplateLaunchTemplateTag struct {
+	// 给资源添加的用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// LaunchTemplateLaunchTemplateTagInput is an input type that accepts LaunchTemplateLaunchTemplateTagArgs and LaunchTemplateLaunchTemplateTagOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateTagInput` via:
+//
+//	LaunchTemplateLaunchTemplateTagArgs{...}
+type LaunchTemplateLaunchTemplateTagInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateTagOutput() LaunchTemplateLaunchTemplateTagOutput
+	ToLaunchTemplateLaunchTemplateTagOutputWithContext(context.Context) LaunchTemplateLaunchTemplateTagOutput
+}
+
+type LaunchTemplateLaunchTemplateTagArgs struct {
+	// 给资源添加的用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (LaunchTemplateLaunchTemplateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateTagArgs) ToLaunchTemplateLaunchTemplateTagOutput() LaunchTemplateLaunchTemplateTagOutput {
+	return i.ToLaunchTemplateLaunchTemplateTagOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateTagArgs) ToLaunchTemplateLaunchTemplateTagOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateTagOutput)
+}
+
+// LaunchTemplateLaunchTemplateTagArrayInput is an input type that accepts LaunchTemplateLaunchTemplateTagArray and LaunchTemplateLaunchTemplateTagArrayOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateTagArrayInput` via:
+//
+//	LaunchTemplateLaunchTemplateTagArray{ LaunchTemplateLaunchTemplateTagArgs{...} }
+type LaunchTemplateLaunchTemplateTagArrayInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateTagArrayOutput() LaunchTemplateLaunchTemplateTagArrayOutput
+	ToLaunchTemplateLaunchTemplateTagArrayOutputWithContext(context.Context) LaunchTemplateLaunchTemplateTagArrayOutput
+}
+
+type LaunchTemplateLaunchTemplateTagArray []LaunchTemplateLaunchTemplateTagInput
+
+func (LaunchTemplateLaunchTemplateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateTagArray) ToLaunchTemplateLaunchTemplateTagArrayOutput() LaunchTemplateLaunchTemplateTagArrayOutput {
+	return i.ToLaunchTemplateLaunchTemplateTagArrayOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateTagArray) ToLaunchTemplateLaunchTemplateTagArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateTagArrayOutput)
+}
+
+type LaunchTemplateLaunchTemplateTagOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateTagOutput) ToLaunchTemplateLaunchTemplateTagOutput() LaunchTemplateLaunchTemplateTagOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateTagOutput) ToLaunchTemplateLaunchTemplateTagOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateTagOutput {
+	return o
+}
+
+// 给资源添加的用户标签的标签键。
+func (o LaunchTemplateLaunchTemplateTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 给资源添加的用户标签的标签值。
+func (o LaunchTemplateLaunchTemplateTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateTagArrayOutput) ToLaunchTemplateLaunchTemplateTagArrayOutput() LaunchTemplateLaunchTemplateTagArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateTagArrayOutput) ToLaunchTemplateLaunchTemplateTagArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateTagArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateTagArrayOutput) Index(i pulumi.IntInput) LaunchTemplateLaunchTemplateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LaunchTemplateLaunchTemplateTag {
+		return vs[0].([]LaunchTemplateLaunchTemplateTag)[vs[1].(int)]
+	}).(LaunchTemplateLaunchTemplateTagOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersion struct {
+	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID。
+	DeploymentSetId *string `pulumi:"deploymentSetId"`
+	// 实例的描述。
+	Description *string `pulumi:"description"`
+	// 实例绑定的公网IP信息。
+	Eip *LaunchTemplateLaunchTemplateVersionEip `pulumi:"eip"`
+	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	HostName *string `pulumi:"hostName"`
+	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	HpcClusterId *string `pulumi:"hpcClusterId"`
+	// 镜像ID。
+	ImageId *string `pulumi:"imageId"`
+	// 镜像名称。
+	ImageName *string `pulumi:"imageName"`
+	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	InstanceChargeType *string `pulumi:"instanceChargeType"`
+	// 实例的名称。
+	InstanceName *string `pulumi:"instanceName"`
+	// 实例的规格。
+	InstanceTypeId *string `pulumi:"instanceTypeId"`
+	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	KeepImageCredential *bool `pulumi:"keepImageCredential"`
+	// 实例绑定的密钥对。
+	KeyPairName       *string                                               `pulumi:"keyPairName"`
+	NetworkInterfaces []LaunchTemplateLaunchTemplateVersionNetworkInterface `pulumi:"networkInterfaces"`
+	// 实例所属项目。
+	ProjectName *string `pulumi:"projectName"`
+	// 弹性预约单信息。
+	ScheduledInstance *LaunchTemplateLaunchTemplateVersionScheduledInstance `pulumi:"scheduledInstance"`
+	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy *string `pulumi:"securityEnhancementStrategy"`
+	// 抢占式实例的每小时最高价格。
+	SpotPriceLimit *float64 `pulumi:"spotPriceLimit"`
+	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	SpotStrategy *string `pulumi:"spotStrategy"`
+	// 有序后缀的起始序号。
+	SuffixIndex *int                                     `pulumi:"suffixIndex"`
+	Tags        []LaunchTemplateLaunchTemplateVersionTag `pulumi:"tags"`
+	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	UniqueSuffix *bool `pulumi:"uniqueSuffix"`
+	// 实例的自定义数据。
+	UserData *string `pulumi:"userData"`
+	// 模版版本描述。
+	VersionDescription *string                                     `pulumi:"versionDescription"`
+	Volumes            []LaunchTemplateLaunchTemplateVersionVolume `pulumi:"volumes"`
+	// 私有网络ID。
+	VpcId *string `pulumi:"vpcId"`
+	// 实例所属可用区ID。
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// LaunchTemplateLaunchTemplateVersionInput is an input type that accepts LaunchTemplateLaunchTemplateVersionArgs and LaunchTemplateLaunchTemplateVersionOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionArgs{...}
+type LaunchTemplateLaunchTemplateVersionInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionOutput() LaunchTemplateLaunchTemplateVersionOutput
+	ToLaunchTemplateLaunchTemplateVersionOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionArgs struct {
+	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	DeploymentSetGroupNumber pulumi.IntPtrInput `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID。
+	DeploymentSetId pulumi.StringPtrInput `pulumi:"deploymentSetId"`
+	// 实例的描述。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 实例绑定的公网IP信息。
+	Eip LaunchTemplateLaunchTemplateVersionEipPtrInput `pulumi:"eip"`
+	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
+	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	HpcClusterId pulumi.StringPtrInput `pulumi:"hpcClusterId"`
+	// 镜像ID。
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
+	// 镜像名称。
+	ImageName pulumi.StringPtrInput `pulumi:"imageName"`
+	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	InstanceChargeType pulumi.StringPtrInput `pulumi:"instanceChargeType"`
+	// 实例的名称。
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// 实例的规格。
+	InstanceTypeId pulumi.StringPtrInput `pulumi:"instanceTypeId"`
+	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	KeepImageCredential pulumi.BoolPtrInput `pulumi:"keepImageCredential"`
+	// 实例绑定的密钥对。
+	KeyPairName       pulumi.StringPtrInput                                         `pulumi:"keyPairName"`
+	NetworkInterfaces LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
+	// 实例所属项目。
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// 弹性预约单信息。
+	ScheduledInstance LaunchTemplateLaunchTemplateVersionScheduledInstancePtrInput `pulumi:"scheduledInstance"`
+	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy pulumi.StringPtrInput `pulumi:"securityEnhancementStrategy"`
+	// 抢占式实例的每小时最高价格。
+	SpotPriceLimit pulumi.Float64PtrInput `pulumi:"spotPriceLimit"`
+	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	SpotStrategy pulumi.StringPtrInput `pulumi:"spotStrategy"`
+	// 有序后缀的起始序号。
+	SuffixIndex pulumi.IntPtrInput                               `pulumi:"suffixIndex"`
+	Tags        LaunchTemplateLaunchTemplateVersionTagArrayInput `pulumi:"tags"`
+	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	UniqueSuffix pulumi.BoolPtrInput `pulumi:"uniqueSuffix"`
+	// 实例的自定义数据。
+	UserData pulumi.StringPtrInput `pulumi:"userData"`
+	// 模版版本描述。
+	VersionDescription pulumi.StringPtrInput                               `pulumi:"versionDescription"`
+	Volumes            LaunchTemplateLaunchTemplateVersionVolumeArrayInput `pulumi:"volumes"`
+	// 私有网络ID。
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+	// 实例所属可用区ID。
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (LaunchTemplateLaunchTemplateVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersion)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionArgs) ToLaunchTemplateLaunchTemplateVersionOutput() LaunchTemplateLaunchTemplateVersionOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionArgs) ToLaunchTemplateLaunchTemplateVersionOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionOutput)
+}
+
+func (i LaunchTemplateLaunchTemplateVersionArgs) ToLaunchTemplateLaunchTemplateVersionPtrOutput() LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionArgs) ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionOutput).ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(ctx)
+}
+
+// LaunchTemplateLaunchTemplateVersionPtrInput is an input type that accepts LaunchTemplateLaunchTemplateVersionArgs, LaunchTemplateLaunchTemplateVersionPtr and LaunchTemplateLaunchTemplateVersionPtrOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionPtrInput` via:
+//
+//	        LaunchTemplateLaunchTemplateVersionArgs{...}
+//
+//	or:
+//
+//	        nil
+type LaunchTemplateLaunchTemplateVersionPtrInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionPtrOutput() LaunchTemplateLaunchTemplateVersionPtrOutput
+	ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionPtrOutput
+}
+
+type launchTemplateLaunchTemplateVersionPtrType LaunchTemplateLaunchTemplateVersionArgs
+
+func LaunchTemplateLaunchTemplateVersionPtr(v *LaunchTemplateLaunchTemplateVersionArgs) LaunchTemplateLaunchTemplateVersionPtrInput {
+	return (*launchTemplateLaunchTemplateVersionPtrType)(v)
+}
+
+func (*launchTemplateLaunchTemplateVersionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateLaunchTemplateVersion)(nil)).Elem()
+}
+
+func (i *launchTemplateLaunchTemplateVersionPtrType) ToLaunchTemplateLaunchTemplateVersionPtrOutput() LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(context.Background())
+}
+
+func (i *launchTemplateLaunchTemplateVersionPtrType) ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersion)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionOutput) ToLaunchTemplateLaunchTemplateVersionOutput() LaunchTemplateLaunchTemplateVersionOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionOutput) ToLaunchTemplateLaunchTemplateVersionOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionOutput) ToLaunchTemplateLaunchTemplateVersionPtrOutput() LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return o.ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(context.Background())
+}
+
+func (o LaunchTemplateLaunchTemplateVersionOutput) ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersion {
+		return &v
+	}).(LaunchTemplateLaunchTemplateVersionPtrOutput)
+}
+
+// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+func (o LaunchTemplateLaunchTemplateVersionOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *int { return v.DeploymentSetGroupNumber }).(pulumi.IntPtrOutput)
+}
+
+// 实例需要加入的部署集ID。
+func (o LaunchTemplateLaunchTemplateVersionOutput) DeploymentSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.DeploymentSetId }).(pulumi.StringPtrOutput)
+}
+
+// 实例的描述。
+func (o LaunchTemplateLaunchTemplateVersionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 实例绑定的公网IP信息。
+func (o LaunchTemplateLaunchTemplateVersionOutput) Eip() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionEip { return v.Eip }).(LaunchTemplateLaunchTemplateVersionEipPtrOutput)
+}
+
+// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+func (o LaunchTemplateLaunchTemplateVersionOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.HostName }).(pulumi.StringPtrOutput)
+}
+
+// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+func (o LaunchTemplateLaunchTemplateVersionOutput) HpcClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.HpcClusterId }).(pulumi.StringPtrOutput)
+}
+
+// 镜像ID。
+func (o LaunchTemplateLaunchTemplateVersionOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ImageId }).(pulumi.StringPtrOutput)
+}
+
+// 镜像名称。
+func (o LaunchTemplateLaunchTemplateVersionOutput) ImageName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ImageName }).(pulumi.StringPtrOutput)
+}
+
+// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+func (o LaunchTemplateLaunchTemplateVersionOutput) InstanceChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.InstanceChargeType }).(pulumi.StringPtrOutput)
+}
+
+// 实例的名称。
+func (o LaunchTemplateLaunchTemplateVersionOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// 实例的规格。
+func (o LaunchTemplateLaunchTemplateVersionOutput) InstanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.InstanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+func (o LaunchTemplateLaunchTemplateVersionOutput) KeepImageCredential() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *bool { return v.KeepImageCredential }).(pulumi.BoolPtrOutput)
+}
+
+// 实例绑定的密钥对。
+func (o LaunchTemplateLaunchTemplateVersionOutput) KeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.KeyPairName }).(pulumi.StringPtrOutput)
+}
+
+func (o LaunchTemplateLaunchTemplateVersionOutput) NetworkInterfaces() LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) []LaunchTemplateLaunchTemplateVersionNetworkInterface {
+		return v.NetworkInterfaces
+	}).(LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
+}
+
+// 实例所属项目。
+func (o LaunchTemplateLaunchTemplateVersionOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// 弹性预约单信息。
+func (o LaunchTemplateLaunchTemplateVersionOutput) ScheduledInstance() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionScheduledInstance {
+		return v.ScheduledInstance
+	}).(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput)
+}
+
+// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+func (o LaunchTemplateLaunchTemplateVersionOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.SecurityEnhancementStrategy }).(pulumi.StringPtrOutput)
+}
+
+// 抢占式实例的每小时最高价格。
+func (o LaunchTemplateLaunchTemplateVersionOutput) SpotPriceLimit() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *float64 { return v.SpotPriceLimit }).(pulumi.Float64PtrOutput)
+}
+
+// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+func (o LaunchTemplateLaunchTemplateVersionOutput) SpotStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.SpotStrategy }).(pulumi.StringPtrOutput)
+}
+
+// 有序后缀的起始序号。
+func (o LaunchTemplateLaunchTemplateVersionOutput) SuffixIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *int { return v.SuffixIndex }).(pulumi.IntPtrOutput)
+}
+
+func (o LaunchTemplateLaunchTemplateVersionOutput) Tags() LaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) []LaunchTemplateLaunchTemplateVersionTag { return v.Tags }).(LaunchTemplateLaunchTemplateVersionTagArrayOutput)
+}
+
+// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+func (o LaunchTemplateLaunchTemplateVersionOutput) UniqueSuffix() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *bool { return v.UniqueSuffix }).(pulumi.BoolPtrOutput)
+}
+
+// 实例的自定义数据。
+func (o LaunchTemplateLaunchTemplateVersionOutput) UserData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.UserData }).(pulumi.StringPtrOutput)
+}
+
+// 模版版本描述。
+func (o LaunchTemplateLaunchTemplateVersionOutput) VersionDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.VersionDescription }).(pulumi.StringPtrOutput)
+}
+
+func (o LaunchTemplateLaunchTemplateVersionOutput) Volumes() LaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) []LaunchTemplateLaunchTemplateVersionVolume {
+		return v.Volumes
+	}).(LaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
+}
+
+// 私有网络ID。
+func (o LaunchTemplateLaunchTemplateVersionOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+// 实例所属可用区ID。
+func (o LaunchTemplateLaunchTemplateVersionOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionPtrOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateLaunchTemplateVersion)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ToLaunchTemplateLaunchTemplateVersionPtrOutput() LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ToLaunchTemplateLaunchTemplateVersionPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionPtrOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Elem() LaunchTemplateLaunchTemplateVersionOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) LaunchTemplateLaunchTemplateVersion {
+		if v != nil {
+			return *v
+		}
+		var ret LaunchTemplateLaunchTemplateVersion
+		return ret
+	}).(LaunchTemplateLaunchTemplateVersionOutput)
+}
+
+// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DeploymentSetGroupNumber
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例需要加入的部署集ID。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DeploymentSetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的描述。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例绑定的公网IP信息。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Eip() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionEip {
+		if v == nil {
+			return nil
+		}
+		return v.Eip
+	}).(LaunchTemplateLaunchTemplateVersionEipPtrOutput)
+}
+
+// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) HpcClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HpcClusterId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 镜像ID。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 镜像名称。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ImageName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的名称。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的规格。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceTypeId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) KeepImageCredential() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.KeepImageCredential
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 实例绑定的密钥对。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) KeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyPairName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) NetworkInterfaces() LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) []LaunchTemplateLaunchTemplateVersionNetworkInterface {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkInterfaces
+	}).(LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
+}
+
+// 实例所属项目。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 弹性预约单信息。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ScheduledInstance() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionScheduledInstance {
+		if v == nil {
+			return nil
+		}
+		return v.ScheduledInstance
+	}).(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput)
+}
+
+// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityEnhancementStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
+// 抢占式实例的每小时最高价格。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SpotPriceLimit() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.SpotPriceLimit
+	}).(pulumi.Float64PtrOutput)
+}
+
+// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SpotStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
+// 有序后缀的起始序号。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SuffixIndex() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SuffixIndex
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Tags() LaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) []LaunchTemplateLaunchTemplateVersionTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(LaunchTemplateLaunchTemplateVersionTagArrayOutput)
+}
+
+// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) UniqueSuffix() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UniqueSuffix
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 实例的自定义数据。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) UserData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UserData
+	}).(pulumi.StringPtrOutput)
+}
+
+// 模版版本描述。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) VersionDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VersionDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Volumes() LaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) []LaunchTemplateLaunchTemplateVersionVolume {
+		if v == nil {
+			return nil
+		}
+		return v.Volumes
+	}).(LaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
+}
+
+// 私有网络ID。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VpcId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例所属可用区ID。
+func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ZoneId
+	}).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionEip struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth *int `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType *int `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp *string `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// LaunchTemplateLaunchTemplateVersionEipInput is an input type that accepts LaunchTemplateLaunchTemplateVersionEipArgs and LaunchTemplateLaunchTemplateVersionEipOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionEipInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionEipArgs{...}
+type LaunchTemplateLaunchTemplateVersionEipInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionEipOutput() LaunchTemplateLaunchTemplateVersionEipOutput
+	ToLaunchTemplateLaunchTemplateVersionEipOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionEipOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionEipArgs struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (LaunchTemplateLaunchTemplateVersionEipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionEipArgs) ToLaunchTemplateLaunchTemplateVersionEipOutput() LaunchTemplateLaunchTemplateVersionEipOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionEipOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionEipArgs) ToLaunchTemplateLaunchTemplateVersionEipOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionEipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionEipOutput)
+}
+
+func (i LaunchTemplateLaunchTemplateVersionEipArgs) ToLaunchTemplateLaunchTemplateVersionEipPtrOutput() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionEipArgs) ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionEipOutput).ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(ctx)
+}
+
+// LaunchTemplateLaunchTemplateVersionEipPtrInput is an input type that accepts LaunchTemplateLaunchTemplateVersionEipArgs, LaunchTemplateLaunchTemplateVersionEipPtr and LaunchTemplateLaunchTemplateVersionEipPtrOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionEipPtrInput` via:
+//
+//	        LaunchTemplateLaunchTemplateVersionEipArgs{...}
+//
+//	or:
+//
+//	        nil
+type LaunchTemplateLaunchTemplateVersionEipPtrInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionEipPtrOutput() LaunchTemplateLaunchTemplateVersionEipPtrOutput
+	ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionEipPtrOutput
+}
+
+type launchTemplateLaunchTemplateVersionEipPtrType LaunchTemplateLaunchTemplateVersionEipArgs
+
+func LaunchTemplateLaunchTemplateVersionEipPtr(v *LaunchTemplateLaunchTemplateVersionEipArgs) LaunchTemplateLaunchTemplateVersionEipPtrInput {
+	return (*launchTemplateLaunchTemplateVersionEipPtrType)(v)
+}
+
+func (*launchTemplateLaunchTemplateVersionEipPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (i *launchTemplateLaunchTemplateVersionEipPtrType) ToLaunchTemplateLaunchTemplateVersionEipPtrOutput() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(context.Background())
+}
+
+func (i *launchTemplateLaunchTemplateVersionEipPtrType) ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionEipPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionEipOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionEipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) ToLaunchTemplateLaunchTemplateVersionEipOutput() LaunchTemplateLaunchTemplateVersionEipOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) ToLaunchTemplateLaunchTemplateVersionEipOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionEipOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) ToLaunchTemplateLaunchTemplateVersionEipPtrOutput() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return o.ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(context.Background())
+}
+
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LaunchTemplateLaunchTemplateVersionEip) *LaunchTemplateLaunchTemplateVersionEip {
+		return &v
+	}).(LaunchTemplateLaunchTemplateVersionEipPtrOutput)
+}
+
+// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *int { return v.BillingType }).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP是否随实例删除，仅按量计费公网IP生效。
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// 安全防护包ID。
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+func (o LaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionEipPtrOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionEipPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) ToLaunchTemplateLaunchTemplateVersionEipPtrOutput() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) ToLaunchTemplateLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionEipPtrOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Elem() LaunchTemplateLaunchTemplateVersionEipOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) LaunchTemplateLaunchTemplateVersionEip {
+		if v != nil {
+			return *v
+		}
+		var ret LaunchTemplateLaunchTemplateVersionEip
+		return ret
+	}).(LaunchTemplateLaunchTemplateVersionEipOutput)
+}
+
+// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Bandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthPackageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BillingType
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP是否随实例删除，仅按量计费公网IP生效。
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ReleaseWithInstance
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 安全防护包ID。
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionInstanceId
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionNetworkInterface struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// LaunchTemplateLaunchTemplateVersionNetworkInterfaceInput is an input type that accepts LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs and LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionNetworkInterfaceInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs{...}
+type LaunchTemplateLaunchTemplateVersionNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput() LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput
+	ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput() LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+// LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput is an input type that accepts LaunchTemplateLaunchTemplateVersionNetworkInterfaceArray and LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionNetworkInterfaceArray{ LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs{...} }
+type LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput() LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput
+	ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionNetworkInterfaceArray []LaunchTemplateLaunchTemplateVersionNetworkInterfaceInput
+
+func (LaunchTemplateLaunchTemplateVersionNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionNetworkInterfaceArray) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput() LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionNetworkInterfaceArray) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput() LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+// 网卡关联的安全组ID。
+func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的私有网络子网ID。
+func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput() LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) ToLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LaunchTemplateLaunchTemplateVersionNetworkInterface {
+		return vs[0].([]LaunchTemplateLaunchTemplateVersionNetworkInterface)[vs[1].(int)]
+	}).(LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionScheduledInstance struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription *string `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName *string `pulumi:"scheduledInstanceName"`
+}
+
+// LaunchTemplateLaunchTemplateVersionScheduledInstanceInput is an input type that accepts LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs and LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionScheduledInstanceInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs{...}
+type LaunchTemplateLaunchTemplateVersionScheduledInstanceInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput() LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput
+	ToLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription pulumi.StringPtrInput `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName pulumi.StringPtrInput `pulumi:"scheduledInstanceName"`
+}
+
+func (LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput() LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput)
+}
+
+func (i LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput).ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx)
+}
+
+// LaunchTemplateLaunchTemplateVersionScheduledInstancePtrInput is an input type that accepts LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs, LaunchTemplateLaunchTemplateVersionScheduledInstancePtr and LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionScheduledInstancePtrInput` via:
+//
+//	        LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs{...}
+//
+//	or:
+//
+//	        nil
+type LaunchTemplateLaunchTemplateVersionScheduledInstancePtrInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput
+	ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput
+}
+
+type launchTemplateLaunchTemplateVersionScheduledInstancePtrType LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs
+
+func LaunchTemplateLaunchTemplateVersionScheduledInstancePtr(v *LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) LaunchTemplateLaunchTemplateVersionScheduledInstancePtrInput {
+	return (*launchTemplateLaunchTemplateVersionScheduledInstancePtrType)(v)
+}
+
+func (*launchTemplateLaunchTemplateVersionScheduledInstancePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (i *launchTemplateLaunchTemplateVersionScheduledInstancePtrType) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Background())
+}
+
+func (i *launchTemplateLaunchTemplateVersionScheduledInstancePtrType) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput() LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return o.ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Background())
+}
+
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LaunchTemplateLaunchTemplateVersionScheduledInstance) *LaunchTemplateLaunchTemplateVersionScheduledInstance {
+		return &v
+	}).(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput)
+}
+
+// 弹性预约单的描述。
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionScheduledInstance) *string {
+		return v.ScheduledInstanceDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+// 弹性预约单的名称。
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionScheduledInstance) *string { return v.ScheduledInstanceName }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) ToLaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) Elem() LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionScheduledInstance) LaunchTemplateLaunchTemplateVersionScheduledInstance {
+		if v != nil {
+			return *v
+		}
+		var ret LaunchTemplateLaunchTemplateVersionScheduledInstance
+		return ret
+	}).(LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput)
+}
+
+// 弹性预约单的描述。
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionScheduledInstance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScheduledInstanceDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+// 弹性预约单的名称。
+func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionScheduledInstance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScheduledInstanceName
+	}).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionTag struct {
+	// 给资源添加的用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// LaunchTemplateLaunchTemplateVersionTagInput is an input type that accepts LaunchTemplateLaunchTemplateVersionTagArgs and LaunchTemplateLaunchTemplateVersionTagOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionTagInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionTagArgs{...}
+type LaunchTemplateLaunchTemplateVersionTagInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionTagOutput() LaunchTemplateLaunchTemplateVersionTagOutput
+	ToLaunchTemplateLaunchTemplateVersionTagOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionTagOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionTagArgs struct {
+	// 给资源添加的用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (LaunchTemplateLaunchTemplateVersionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionTagArgs) ToLaunchTemplateLaunchTemplateVersionTagOutput() LaunchTemplateLaunchTemplateVersionTagOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionTagOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionTagArgs) ToLaunchTemplateLaunchTemplateVersionTagOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionTagOutput)
+}
+
+// LaunchTemplateLaunchTemplateVersionTagArrayInput is an input type that accepts LaunchTemplateLaunchTemplateVersionTagArray and LaunchTemplateLaunchTemplateVersionTagArrayOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionTagArrayInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionTagArray{ LaunchTemplateLaunchTemplateVersionTagArgs{...} }
+type LaunchTemplateLaunchTemplateVersionTagArrayInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionTagArrayOutput() LaunchTemplateLaunchTemplateVersionTagArrayOutput
+	ToLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionTagArrayOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionTagArray []LaunchTemplateLaunchTemplateVersionTagInput
+
+func (LaunchTemplateLaunchTemplateVersionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionTagArray) ToLaunchTemplateLaunchTemplateVersionTagArrayOutput() LaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionTagArray) ToLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionTagArrayOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionTagOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionTagOutput) ToLaunchTemplateLaunchTemplateVersionTagOutput() LaunchTemplateLaunchTemplateVersionTagOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionTagOutput) ToLaunchTemplateLaunchTemplateVersionTagOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionTagOutput {
+	return o
+}
+
+// 给资源添加的用户标签的标签键。
+func (o LaunchTemplateLaunchTemplateVersionTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 给资源添加的用户标签的标签值。
+func (o LaunchTemplateLaunchTemplateVersionTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionTagArrayOutput) ToLaunchTemplateLaunchTemplateVersionTagArrayOutput() LaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionTagArrayOutput) ToLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionTagArrayOutput) Index(i pulumi.IntInput) LaunchTemplateLaunchTemplateVersionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LaunchTemplateLaunchTemplateVersionTag {
+		return vs[0].([]LaunchTemplateLaunchTemplateVersionTag)[vs[1].(int)]
+	}).(LaunchTemplateLaunchTemplateVersionTagOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionVolume struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size *int `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId *string `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// LaunchTemplateLaunchTemplateVersionVolumeInput is an input type that accepts LaunchTemplateLaunchTemplateVersionVolumeArgs and LaunchTemplateLaunchTemplateVersionVolumeOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionVolumeInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionVolumeArgs{...}
+type LaunchTemplateLaunchTemplateVersionVolumeInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionVolumeOutput() LaunchTemplateLaunchTemplateVersionVolumeOutput
+	ToLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionVolumeOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionVolumeArgs struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (LaunchTemplateLaunchTemplateVersionVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionVolumeArgs) ToLaunchTemplateLaunchTemplateVersionVolumeOutput() LaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionVolumeArgs) ToLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionVolumeOutput)
+}
+
+// LaunchTemplateLaunchTemplateVersionVolumeArrayInput is an input type that accepts LaunchTemplateLaunchTemplateVersionVolumeArray and LaunchTemplateLaunchTemplateVersionVolumeArrayOutput values.
+// You can construct a concrete instance of `LaunchTemplateLaunchTemplateVersionVolumeArrayInput` via:
+//
+//	LaunchTemplateLaunchTemplateVersionVolumeArray{ LaunchTemplateLaunchTemplateVersionVolumeArgs{...} }
+type LaunchTemplateLaunchTemplateVersionVolumeArrayInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateLaunchTemplateVersionVolumeArrayOutput() LaunchTemplateLaunchTemplateVersionVolumeArrayOutput
+	ToLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(context.Context) LaunchTemplateLaunchTemplateVersionVolumeArrayOutput
+}
+
+type LaunchTemplateLaunchTemplateVersionVolumeArray []LaunchTemplateLaunchTemplateVersionVolumeInput
+
+func (LaunchTemplateLaunchTemplateVersionVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i LaunchTemplateLaunchTemplateVersionVolumeArray) ToLaunchTemplateLaunchTemplateVersionVolumeArrayOutput() LaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return i.ToLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateLaunchTemplateVersionVolumeArray) ToLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionVolumeOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ToLaunchTemplateLaunchTemplateVersionVolumeOutput() LaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ToLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+// 云盘是否随实例释放。
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
+}
+
+// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
+}
+
+// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateLaunchTemplateVersionVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateLaunchTemplateVersionVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o LaunchTemplateLaunchTemplateVersionVolumeArrayOutput) ToLaunchTemplateLaunchTemplateVersionVolumeArrayOutput() LaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionVolumeArrayOutput) ToLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) LaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateLaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.IntInput) LaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LaunchTemplateLaunchTemplateVersionVolume {
+		return vs[0].([]LaunchTemplateLaunchTemplateVersionVolume)[vs[1].(int)]
+	}).(LaunchTemplateLaunchTemplateVersionVolumeOutput)
+}
+
+type LaunchTemplateVersionEip struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth *int `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType *int `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp *string `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// LaunchTemplateVersionEipInput is an input type that accepts LaunchTemplateVersionEipArgs and LaunchTemplateVersionEipOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionEipInput` via:
+//
+//	LaunchTemplateVersionEipArgs{...}
+type LaunchTemplateVersionEipInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionEipOutput() LaunchTemplateVersionEipOutput
+	ToLaunchTemplateVersionEipOutputWithContext(context.Context) LaunchTemplateVersionEipOutput
+}
+
+type LaunchTemplateVersionEipArgs struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (LaunchTemplateVersionEipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionEipArgs) ToLaunchTemplateVersionEipOutput() LaunchTemplateVersionEipOutput {
+	return i.ToLaunchTemplateVersionEipOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionEipArgs) ToLaunchTemplateVersionEipOutputWithContext(ctx context.Context) LaunchTemplateVersionEipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionEipOutput)
+}
+
+func (i LaunchTemplateVersionEipArgs) ToLaunchTemplateVersionEipPtrOutput() LaunchTemplateVersionEipPtrOutput {
+	return i.ToLaunchTemplateVersionEipPtrOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionEipArgs) ToLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateVersionEipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionEipOutput).ToLaunchTemplateVersionEipPtrOutputWithContext(ctx)
+}
+
+// LaunchTemplateVersionEipPtrInput is an input type that accepts LaunchTemplateVersionEipArgs, LaunchTemplateVersionEipPtr and LaunchTemplateVersionEipPtrOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionEipPtrInput` via:
+//
+//	        LaunchTemplateVersionEipArgs{...}
+//
+//	or:
+//
+//	        nil
+type LaunchTemplateVersionEipPtrInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionEipPtrOutput() LaunchTemplateVersionEipPtrOutput
+	ToLaunchTemplateVersionEipPtrOutputWithContext(context.Context) LaunchTemplateVersionEipPtrOutput
+}
+
+type launchTemplateVersionEipPtrType LaunchTemplateVersionEipArgs
+
+func LaunchTemplateVersionEipPtr(v *LaunchTemplateVersionEipArgs) LaunchTemplateVersionEipPtrInput {
+	return (*launchTemplateVersionEipPtrType)(v)
+}
+
+func (*launchTemplateVersionEipPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (i *launchTemplateVersionEipPtrType) ToLaunchTemplateVersionEipPtrOutput() LaunchTemplateVersionEipPtrOutput {
+	return i.ToLaunchTemplateVersionEipPtrOutputWithContext(context.Background())
+}
+
+func (i *launchTemplateVersionEipPtrType) ToLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateVersionEipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionEipPtrOutput)
+}
+
+type LaunchTemplateVersionEipOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionEipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionEipOutput) ToLaunchTemplateVersionEipOutput() LaunchTemplateVersionEipOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionEipOutput) ToLaunchTemplateVersionEipOutputWithContext(ctx context.Context) LaunchTemplateVersionEipOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionEipOutput) ToLaunchTemplateVersionEipPtrOutput() LaunchTemplateVersionEipPtrOutput {
+	return o.ToLaunchTemplateVersionEipPtrOutputWithContext(context.Background())
+}
+
+func (o LaunchTemplateVersionEipOutput) ToLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateVersionEipPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LaunchTemplateVersionEip) *LaunchTemplateVersionEip {
+		return &v
+	}).(LaunchTemplateVersionEipPtrOutput)
+}
+
+// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+func (o LaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionEip) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+func (o LaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionEip) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+func (o LaunchTemplateVersionEipOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionEip) *int { return v.BillingType }).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+func (o LaunchTemplateVersionEipOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP是否随实例删除，仅按量计费公网IP生效。
+func (o LaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionEip) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// 安全防护包ID。
+func (o LaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionEip) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+func (o LaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type LaunchTemplateVersionEipPtrOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionEipPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionEipPtrOutput) ToLaunchTemplateVersionEipPtrOutput() LaunchTemplateVersionEipPtrOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionEipPtrOutput) ToLaunchTemplateVersionEipPtrOutputWithContext(ctx context.Context) LaunchTemplateVersionEipPtrOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionEipPtrOutput) Elem() LaunchTemplateVersionEipOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) LaunchTemplateVersionEip {
+		if v != nil {
+			return *v
+		}
+		var ret LaunchTemplateVersionEip
+		return ret
+	}).(LaunchTemplateVersionEipOutput)
+}
+
+// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+func (o LaunchTemplateVersionEipPtrOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Bandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+func (o LaunchTemplateVersionEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthPackageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+func (o LaunchTemplateVersionEipPtrOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BillingType
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+func (o LaunchTemplateVersionEipPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP是否随实例删除，仅按量计费公网IP生效。
+func (o LaunchTemplateVersionEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ReleaseWithInstance
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 安全防护包ID。
+func (o LaunchTemplateVersionEipPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionInstanceId
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+func (o LaunchTemplateVersionEipPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionEip) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+type LaunchTemplateVersionNetworkInterface struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// LaunchTemplateVersionNetworkInterfaceInput is an input type that accepts LaunchTemplateVersionNetworkInterfaceArgs and LaunchTemplateVersionNetworkInterfaceOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionNetworkInterfaceInput` via:
+//
+//	LaunchTemplateVersionNetworkInterfaceArgs{...}
+type LaunchTemplateVersionNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionNetworkInterfaceOutput() LaunchTemplateVersionNetworkInterfaceOutput
+	ToLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Context) LaunchTemplateVersionNetworkInterfaceOutput
+}
+
+type LaunchTemplateVersionNetworkInterfaceArgs struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (LaunchTemplateVersionNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionNetworkInterfaceArgs) ToLaunchTemplateVersionNetworkInterfaceOutput() LaunchTemplateVersionNetworkInterfaceOutput {
+	return i.ToLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionNetworkInterfaceArgs) ToLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) LaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+// LaunchTemplateVersionNetworkInterfaceArrayInput is an input type that accepts LaunchTemplateVersionNetworkInterfaceArray and LaunchTemplateVersionNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionNetworkInterfaceArrayInput` via:
+//
+//	LaunchTemplateVersionNetworkInterfaceArray{ LaunchTemplateVersionNetworkInterfaceArgs{...} }
+type LaunchTemplateVersionNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionNetworkInterfaceArrayOutput() LaunchTemplateVersionNetworkInterfaceArrayOutput
+	ToLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Context) LaunchTemplateVersionNetworkInterfaceArrayOutput
+}
+
+type LaunchTemplateVersionNetworkInterfaceArray []LaunchTemplateVersionNetworkInterfaceInput
+
+func (LaunchTemplateVersionNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionNetworkInterfaceArray) ToLaunchTemplateVersionNetworkInterfaceArrayOutput() LaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return i.ToLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionNetworkInterfaceArray) ToLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) LaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionNetworkInterfaceArrayOutput)
+}
+
+type LaunchTemplateVersionNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionNetworkInterfaceOutput) ToLaunchTemplateVersionNetworkInterfaceOutput() LaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionNetworkInterfaceOutput) ToLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) LaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+// 网卡关联的安全组ID。
+func (o LaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的私有网络子网ID。
+func (o LaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateVersionNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionNetworkInterfaceArrayOutput) ToLaunchTemplateVersionNetworkInterfaceArrayOutput() LaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionNetworkInterfaceArrayOutput) ToLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) LaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) LaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LaunchTemplateVersionNetworkInterface {
+		return vs[0].([]LaunchTemplateVersionNetworkInterface)[vs[1].(int)]
+	}).(LaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+type LaunchTemplateVersionScheduledInstance struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription *string `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName *string `pulumi:"scheduledInstanceName"`
+}
+
+// LaunchTemplateVersionScheduledInstanceInput is an input type that accepts LaunchTemplateVersionScheduledInstanceArgs and LaunchTemplateVersionScheduledInstanceOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionScheduledInstanceInput` via:
+//
+//	LaunchTemplateVersionScheduledInstanceArgs{...}
+type LaunchTemplateVersionScheduledInstanceInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionScheduledInstanceOutput() LaunchTemplateVersionScheduledInstanceOutput
+	ToLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Context) LaunchTemplateVersionScheduledInstanceOutput
+}
+
+type LaunchTemplateVersionScheduledInstanceArgs struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription pulumi.StringPtrInput `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName pulumi.StringPtrInput `pulumi:"scheduledInstanceName"`
+}
+
+func (LaunchTemplateVersionScheduledInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateVersionScheduledInstanceOutput() LaunchTemplateVersionScheduledInstanceOutput {
+	return i.ToLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) LaunchTemplateVersionScheduledInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionScheduledInstanceOutput)
+}
+
+func (i LaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateVersionScheduledInstancePtrOutput {
+	return i.ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionScheduledInstanceArgs) ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateVersionScheduledInstancePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionScheduledInstanceOutput).ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx)
+}
+
+// LaunchTemplateVersionScheduledInstancePtrInput is an input type that accepts LaunchTemplateVersionScheduledInstanceArgs, LaunchTemplateVersionScheduledInstancePtr and LaunchTemplateVersionScheduledInstancePtrOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionScheduledInstancePtrInput` via:
+//
+//	        LaunchTemplateVersionScheduledInstanceArgs{...}
+//
+//	or:
+//
+//	        nil
+type LaunchTemplateVersionScheduledInstancePtrInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateVersionScheduledInstancePtrOutput
+	ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Context) LaunchTemplateVersionScheduledInstancePtrOutput
+}
+
+type launchTemplateVersionScheduledInstancePtrType LaunchTemplateVersionScheduledInstanceArgs
+
+func LaunchTemplateVersionScheduledInstancePtr(v *LaunchTemplateVersionScheduledInstanceArgs) LaunchTemplateVersionScheduledInstancePtrInput {
+	return (*launchTemplateVersionScheduledInstancePtrType)(v)
+}
+
+func (*launchTemplateVersionScheduledInstancePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (i *launchTemplateVersionScheduledInstancePtrType) ToLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateVersionScheduledInstancePtrOutput {
+	return i.ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Background())
+}
+
+func (i *launchTemplateVersionScheduledInstancePtrType) ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateVersionScheduledInstancePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionScheduledInstancePtrOutput)
+}
+
+type LaunchTemplateVersionScheduledInstanceOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionScheduledInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateVersionScheduledInstanceOutput() LaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) LaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateVersionScheduledInstancePtrOutput {
+	return o.ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(context.Background())
+}
+
+func (o LaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateVersionScheduledInstancePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LaunchTemplateVersionScheduledInstance) *LaunchTemplateVersionScheduledInstance {
+		return &v
+	}).(LaunchTemplateVersionScheduledInstancePtrOutput)
+}
+
+// 弹性预约单的描述。
+func (o LaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionScheduledInstance) *string { return v.ScheduledInstanceDescription }).(pulumi.StringPtrOutput)
+}
+
+// 弹性预约单的名称。
+func (o LaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionScheduledInstance) *string { return v.ScheduledInstanceName }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateVersionScheduledInstancePtrOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionScheduledInstancePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionScheduledInstancePtrOutput) ToLaunchTemplateVersionScheduledInstancePtrOutput() LaunchTemplateVersionScheduledInstancePtrOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionScheduledInstancePtrOutput) ToLaunchTemplateVersionScheduledInstancePtrOutputWithContext(ctx context.Context) LaunchTemplateVersionScheduledInstancePtrOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionScheduledInstancePtrOutput) Elem() LaunchTemplateVersionScheduledInstanceOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionScheduledInstance) LaunchTemplateVersionScheduledInstance {
+		if v != nil {
+			return *v
+		}
+		var ret LaunchTemplateVersionScheduledInstance
+		return ret
+	}).(LaunchTemplateVersionScheduledInstanceOutput)
+}
+
+// 弹性预约单的描述。
+func (o LaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionScheduledInstance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScheduledInstanceDescription
+	}).(pulumi.StringPtrOutput)
+}
+
+// 弹性预约单的名称。
+func (o LaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LaunchTemplateVersionScheduledInstance) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScheduledInstanceName
+	}).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateVersionTag struct {
+	// 给资源添加的用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// LaunchTemplateVersionTagInput is an input type that accepts LaunchTemplateVersionTagArgs and LaunchTemplateVersionTagOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionTagInput` via:
+//
+//	LaunchTemplateVersionTagArgs{...}
+type LaunchTemplateVersionTagInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionTagOutput() LaunchTemplateVersionTagOutput
+	ToLaunchTemplateVersionTagOutputWithContext(context.Context) LaunchTemplateVersionTagOutput
+}
+
+type LaunchTemplateVersionTagArgs struct {
+	// 给资源添加的用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (LaunchTemplateVersionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionTagArgs) ToLaunchTemplateVersionTagOutput() LaunchTemplateVersionTagOutput {
+	return i.ToLaunchTemplateVersionTagOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionTagArgs) ToLaunchTemplateVersionTagOutputWithContext(ctx context.Context) LaunchTemplateVersionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionTagOutput)
+}
+
+// LaunchTemplateVersionTagArrayInput is an input type that accepts LaunchTemplateVersionTagArray and LaunchTemplateVersionTagArrayOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionTagArrayInput` via:
+//
+//	LaunchTemplateVersionTagArray{ LaunchTemplateVersionTagArgs{...} }
+type LaunchTemplateVersionTagArrayInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionTagArrayOutput() LaunchTemplateVersionTagArrayOutput
+	ToLaunchTemplateVersionTagArrayOutputWithContext(context.Context) LaunchTemplateVersionTagArrayOutput
+}
+
+type LaunchTemplateVersionTagArray []LaunchTemplateVersionTagInput
+
+func (LaunchTemplateVersionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionTagArray) ToLaunchTemplateVersionTagArrayOutput() LaunchTemplateVersionTagArrayOutput {
+	return i.ToLaunchTemplateVersionTagArrayOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionTagArray) ToLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) LaunchTemplateVersionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionTagArrayOutput)
+}
+
+type LaunchTemplateVersionTagOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionTagOutput) ToLaunchTemplateVersionTagOutput() LaunchTemplateVersionTagOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionTagOutput) ToLaunchTemplateVersionTagOutputWithContext(ctx context.Context) LaunchTemplateVersionTagOutput {
+	return o
+}
+
+// 给资源添加的用户标签的标签键。
+func (o LaunchTemplateVersionTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 给资源添加的用户标签的标签值。
+func (o LaunchTemplateVersionTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateVersionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionTagArrayOutput) ToLaunchTemplateVersionTagArrayOutput() LaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionTagArrayOutput) ToLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) LaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionTagArrayOutput) Index(i pulumi.IntInput) LaunchTemplateVersionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LaunchTemplateVersionTag {
+		return vs[0].([]LaunchTemplateVersionTag)[vs[1].(int)]
+	}).(LaunchTemplateVersionTagOutput)
+}
+
+type LaunchTemplateVersionVolume struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size *int `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId *string `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// LaunchTemplateVersionVolumeInput is an input type that accepts LaunchTemplateVersionVolumeArgs and LaunchTemplateVersionVolumeOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionVolumeInput` via:
+//
+//	LaunchTemplateVersionVolumeArgs{...}
+type LaunchTemplateVersionVolumeInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionVolumeOutput() LaunchTemplateVersionVolumeOutput
+	ToLaunchTemplateVersionVolumeOutputWithContext(context.Context) LaunchTemplateVersionVolumeOutput
+}
+
+type LaunchTemplateVersionVolumeArgs struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (LaunchTemplateVersionVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionVolumeArgs) ToLaunchTemplateVersionVolumeOutput() LaunchTemplateVersionVolumeOutput {
+	return i.ToLaunchTemplateVersionVolumeOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionVolumeArgs) ToLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) LaunchTemplateVersionVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionVolumeOutput)
+}
+
+// LaunchTemplateVersionVolumeArrayInput is an input type that accepts LaunchTemplateVersionVolumeArray and LaunchTemplateVersionVolumeArrayOutput values.
+// You can construct a concrete instance of `LaunchTemplateVersionVolumeArrayInput` via:
+//
+//	LaunchTemplateVersionVolumeArray{ LaunchTemplateVersionVolumeArgs{...} }
+type LaunchTemplateVersionVolumeArrayInput interface {
+	pulumi.Input
+
+	ToLaunchTemplateVersionVolumeArrayOutput() LaunchTemplateVersionVolumeArrayOutput
+	ToLaunchTemplateVersionVolumeArrayOutputWithContext(context.Context) LaunchTemplateVersionVolumeArrayOutput
+}
+
+type LaunchTemplateVersionVolumeArray []LaunchTemplateVersionVolumeInput
+
+func (LaunchTemplateVersionVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i LaunchTemplateVersionVolumeArray) ToLaunchTemplateVersionVolumeArrayOutput() LaunchTemplateVersionVolumeArrayOutput {
+	return i.ToLaunchTemplateVersionVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i LaunchTemplateVersionVolumeArray) ToLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) LaunchTemplateVersionVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LaunchTemplateVersionVolumeArrayOutput)
+}
+
+type LaunchTemplateVersionVolumeOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionVolumeOutput) ToLaunchTemplateVersionVolumeOutput() LaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionVolumeOutput) ToLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) LaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+// 云盘是否随实例释放。
+func (o LaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+func (o LaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
+}
+
+// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+func (o LaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
+}
+
+// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+func (o LaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+func (o LaunchTemplateVersionVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+func (o LaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+func (o LaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LaunchTemplateVersionVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type LaunchTemplateVersionVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (LaunchTemplateVersionVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o LaunchTemplateVersionVolumeArrayOutput) ToLaunchTemplateVersionVolumeArrayOutput() LaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionVolumeArrayOutput) ToLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) LaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o LaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.IntInput) LaunchTemplateVersionVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LaunchTemplateVersionVolume {
+		return vs[0].([]LaunchTemplateVersionVolume)[vs[1].(int)]
+	}).(LaunchTemplateVersionVolumeOutput)
+}
+
 type GetCommandParameterDefinition struct {
 	// 自定义参数值（数字）允许的小数点后位数。
 	DecimalPrecision int `pulumi:"decimalPrecision"`
@@ -3677,6 +6498,121 @@ func (o GetCommandTagArrayOutput) Index(i pulumi.IntInput) GetCommandTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCommandTag {
 		return vs[0].([]GetCommandTag)[vs[1].(int)]
 	}).(GetCommandTagOutput)
+}
+
+type GetDeploymentSetCapacity struct {
+	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	AvailableCount int `pulumi:"availableCount"`
+	// 部署集内属于该可用区的ECS实例数量。
+	UsedCount int `pulumi:"usedCount"`
+	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetDeploymentSetCapacityInput is an input type that accepts GetDeploymentSetCapacityArgs and GetDeploymentSetCapacityOutput values.
+// You can construct a concrete instance of `GetDeploymentSetCapacityInput` via:
+//
+//	GetDeploymentSetCapacityArgs{...}
+type GetDeploymentSetCapacityInput interface {
+	pulumi.Input
+
+	ToGetDeploymentSetCapacityOutput() GetDeploymentSetCapacityOutput
+	ToGetDeploymentSetCapacityOutputWithContext(context.Context) GetDeploymentSetCapacityOutput
+}
+
+type GetDeploymentSetCapacityArgs struct {
+	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	AvailableCount pulumi.IntInput `pulumi:"availableCount"`
+	// 部署集内属于该可用区的ECS实例数量。
+	UsedCount pulumi.IntInput `pulumi:"usedCount"`
+	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetDeploymentSetCapacityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentSetCapacity)(nil)).Elem()
+}
+
+func (i GetDeploymentSetCapacityArgs) ToGetDeploymentSetCapacityOutput() GetDeploymentSetCapacityOutput {
+	return i.ToGetDeploymentSetCapacityOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentSetCapacityArgs) ToGetDeploymentSetCapacityOutputWithContext(ctx context.Context) GetDeploymentSetCapacityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentSetCapacityOutput)
+}
+
+// GetDeploymentSetCapacityArrayInput is an input type that accepts GetDeploymentSetCapacityArray and GetDeploymentSetCapacityArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentSetCapacityArrayInput` via:
+//
+//	GetDeploymentSetCapacityArray{ GetDeploymentSetCapacityArgs{...} }
+type GetDeploymentSetCapacityArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentSetCapacityArrayOutput() GetDeploymentSetCapacityArrayOutput
+	ToGetDeploymentSetCapacityArrayOutputWithContext(context.Context) GetDeploymentSetCapacityArrayOutput
+}
+
+type GetDeploymentSetCapacityArray []GetDeploymentSetCapacityInput
+
+func (GetDeploymentSetCapacityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentSetCapacity)(nil)).Elem()
+}
+
+func (i GetDeploymentSetCapacityArray) ToGetDeploymentSetCapacityArrayOutput() GetDeploymentSetCapacityArrayOutput {
+	return i.ToGetDeploymentSetCapacityArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentSetCapacityArray) ToGetDeploymentSetCapacityArrayOutputWithContext(ctx context.Context) GetDeploymentSetCapacityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentSetCapacityArrayOutput)
+}
+
+type GetDeploymentSetCapacityOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentSetCapacityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentSetCapacity)(nil)).Elem()
+}
+
+func (o GetDeploymentSetCapacityOutput) ToGetDeploymentSetCapacityOutput() GetDeploymentSetCapacityOutput {
+	return o
+}
+
+func (o GetDeploymentSetCapacityOutput) ToGetDeploymentSetCapacityOutputWithContext(ctx context.Context) GetDeploymentSetCapacityOutput {
+	return o
+}
+
+// 该可用区内，还可以加入当前部署集的ECS实例数量。
+func (o GetDeploymentSetCapacityOutput) AvailableCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentSetCapacity) int { return v.AvailableCount }).(pulumi.IntOutput)
+}
+
+// 部署集内属于该可用区的ECS实例数量。
+func (o GetDeploymentSetCapacityOutput) UsedCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentSetCapacity) int { return v.UsedCount }).(pulumi.IntOutput)
+}
+
+// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+func (o GetDeploymentSetCapacityOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentSetCapacity) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetDeploymentSetCapacityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentSetCapacityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentSetCapacity)(nil)).Elem()
+}
+
+func (o GetDeploymentSetCapacityArrayOutput) ToGetDeploymentSetCapacityArrayOutput() GetDeploymentSetCapacityArrayOutput {
+	return o
+}
+
+func (o GetDeploymentSetCapacityArrayOutput) ToGetDeploymentSetCapacityArrayOutputWithContext(ctx context.Context) GetDeploymentSetCapacityArrayOutput {
+	return o
+}
+
+func (o GetDeploymentSetCapacityArrayOutput) Index(i pulumi.IntInput) GetDeploymentSetCapacityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentSetCapacity {
+		return vs[0].([]GetDeploymentSetCapacity)[vs[1].(int)]
+	}).(GetDeploymentSetCapacityOutput)
 }
 
 type GetImageDetectionResults struct {
@@ -4200,6 +7136,10 @@ type GetInstanceEipAddress struct {
 	Isp string `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
+	// DDoS原生防护（企业版）ID。
+	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
 // GetInstanceEipAddressInput is an input type that accepts GetInstanceEipAddressArgs and GetInstanceEipAddressOutput values.
@@ -4249,6 +7189,10 @@ type GetInstanceEipAddressArgs struct {
 	Isp pulumi.StringInput `pulumi:"isp"`
 	// 实例是否随实例释放。
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
+	// DDoS原生防护（企业版）ID。
+	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
 func (GetInstanceEipAddressArgs) ElementType() reflect.Type {
@@ -4334,6 +7278,16 @@ func (o GetInstanceEipAddressOutput) Isp() pulumi.StringOutput {
 // 实例是否随实例释放。
 func (o GetInstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
+}
+
+// DDoS原生防护（企业版）ID。
+func (o GetInstanceEipAddressOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
+}
+
+// 公网IP的安全防护类型。
+func (o GetInstanceEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
 
 type GetInstanceImage struct {
@@ -4474,6 +7428,121 @@ func (o GetInstanceKeyPairOutput) KeyPairId() pulumi.StringOutput {
 // 实例的密钥对名称。
 func (o GetInstanceKeyPairOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceKeyPair) string { return v.KeyPairName }).(pulumi.StringOutput)
+}
+
+type GetInstanceLocalVolume struct {
+	// 实例挂载的本地盘数量。
+	Count int `pulumi:"count"`
+	// 实例挂载的本地盘的单盘容量，单位GiB。
+	Size int `pulumi:"size"`
+	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetInstanceLocalVolumeInput is an input type that accepts GetInstanceLocalVolumeArgs and GetInstanceLocalVolumeOutput values.
+// You can construct a concrete instance of `GetInstanceLocalVolumeInput` via:
+//
+//	GetInstanceLocalVolumeArgs{...}
+type GetInstanceLocalVolumeInput interface {
+	pulumi.Input
+
+	ToGetInstanceLocalVolumeOutput() GetInstanceLocalVolumeOutput
+	ToGetInstanceLocalVolumeOutputWithContext(context.Context) GetInstanceLocalVolumeOutput
+}
+
+type GetInstanceLocalVolumeArgs struct {
+	// 实例挂载的本地盘数量。
+	Count pulumi.IntInput `pulumi:"count"`
+	// 实例挂载的本地盘的单盘容量，单位GiB。
+	Size pulumi.IntInput `pulumi:"size"`
+	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetInstanceLocalVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLocalVolume)(nil)).Elem()
+}
+
+func (i GetInstanceLocalVolumeArgs) ToGetInstanceLocalVolumeOutput() GetInstanceLocalVolumeOutput {
+	return i.ToGetInstanceLocalVolumeOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLocalVolumeArgs) ToGetInstanceLocalVolumeOutputWithContext(ctx context.Context) GetInstanceLocalVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLocalVolumeOutput)
+}
+
+// GetInstanceLocalVolumeArrayInput is an input type that accepts GetInstanceLocalVolumeArray and GetInstanceLocalVolumeArrayOutput values.
+// You can construct a concrete instance of `GetInstanceLocalVolumeArrayInput` via:
+//
+//	GetInstanceLocalVolumeArray{ GetInstanceLocalVolumeArgs{...} }
+type GetInstanceLocalVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceLocalVolumeArrayOutput() GetInstanceLocalVolumeArrayOutput
+	ToGetInstanceLocalVolumeArrayOutputWithContext(context.Context) GetInstanceLocalVolumeArrayOutput
+}
+
+type GetInstanceLocalVolumeArray []GetInstanceLocalVolumeInput
+
+func (GetInstanceLocalVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLocalVolume)(nil)).Elem()
+}
+
+func (i GetInstanceLocalVolumeArray) ToGetInstanceLocalVolumeArrayOutput() GetInstanceLocalVolumeArrayOutput {
+	return i.ToGetInstanceLocalVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceLocalVolumeArray) ToGetInstanceLocalVolumeArrayOutputWithContext(ctx context.Context) GetInstanceLocalVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceLocalVolumeArrayOutput)
+}
+
+type GetInstanceLocalVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLocalVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceLocalVolume)(nil)).Elem()
+}
+
+func (o GetInstanceLocalVolumeOutput) ToGetInstanceLocalVolumeOutput() GetInstanceLocalVolumeOutput {
+	return o
+}
+
+func (o GetInstanceLocalVolumeOutput) ToGetInstanceLocalVolumeOutputWithContext(ctx context.Context) GetInstanceLocalVolumeOutput {
+	return o
+}
+
+// 实例挂载的本地盘数量。
+func (o GetInstanceLocalVolumeOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceLocalVolume) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// 实例挂载的本地盘的单盘容量，单位GiB。
+func (o GetInstanceLocalVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceLocalVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+func (o GetInstanceLocalVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceLocalVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetInstanceLocalVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceLocalVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceLocalVolume)(nil)).Elem()
+}
+
+func (o GetInstanceLocalVolumeArrayOutput) ToGetInstanceLocalVolumeArrayOutput() GetInstanceLocalVolumeArrayOutput {
+	return o
+}
+
+func (o GetInstanceLocalVolumeArrayOutput) ToGetInstanceLocalVolumeArrayOutputWithContext(ctx context.Context) GetInstanceLocalVolumeArrayOutput {
+	return o
+}
+
+func (o GetInstanceLocalVolumeArrayOutput) Index(i pulumi.IntInput) GetInstanceLocalVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceLocalVolume {
+		return vs[0].([]GetInstanceLocalVolume)[vs[1].(int)]
+	}).(GetInstanceLocalVolumeOutput)
 }
 
 type GetInstanceOperationSystem struct {
@@ -4738,6 +7807,200 @@ func (o GetInstancePrimaryNetworkInterfaceOutput) SubnetId() pulumi.StringOutput
 // 实例的VPC ID。
 func (o GetInstancePrimaryNetworkInterfaceOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetInstanceRdmaNetworkInterfaceDetail struct {
+	// 网关地址。
+	Gateway string `pulumi:"gateway"`
+	// IP地址。
+	Ip string `pulumi:"ip"`
+	// 子网掩码。
+	Mask string `pulumi:"mask"`
+	// 交换机名称。
+	SwitchName string `pulumi:"switchName"`
+	// 交换机端口。
+	SwitchPort string `pulumi:"switchPort"`
+}
+
+// GetInstanceRdmaNetworkInterfaceDetailInput is an input type that accepts GetInstanceRdmaNetworkInterfaceDetailArgs and GetInstanceRdmaNetworkInterfaceDetailOutput values.
+// You can construct a concrete instance of `GetInstanceRdmaNetworkInterfaceDetailInput` via:
+//
+//	GetInstanceRdmaNetworkInterfaceDetailArgs{...}
+type GetInstanceRdmaNetworkInterfaceDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceRdmaNetworkInterfaceDetailOutput() GetInstanceRdmaNetworkInterfaceDetailOutput
+	ToGetInstanceRdmaNetworkInterfaceDetailOutputWithContext(context.Context) GetInstanceRdmaNetworkInterfaceDetailOutput
+}
+
+type GetInstanceRdmaNetworkInterfaceDetailArgs struct {
+	// 网关地址。
+	Gateway pulumi.StringInput `pulumi:"gateway"`
+	// IP地址。
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// 子网掩码。
+	Mask pulumi.StringInput `pulumi:"mask"`
+	// 交换机名称。
+	SwitchName pulumi.StringInput `pulumi:"switchName"`
+	// 交换机端口。
+	SwitchPort pulumi.StringInput `pulumi:"switchPort"`
+}
+
+func (GetInstanceRdmaNetworkInterfaceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (i GetInstanceRdmaNetworkInterfaceDetailArgs) ToGetInstanceRdmaNetworkInterfaceDetailOutput() GetInstanceRdmaNetworkInterfaceDetailOutput {
+	return i.ToGetInstanceRdmaNetworkInterfaceDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRdmaNetworkInterfaceDetailArgs) ToGetInstanceRdmaNetworkInterfaceDetailOutputWithContext(ctx context.Context) GetInstanceRdmaNetworkInterfaceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRdmaNetworkInterfaceDetailOutput)
+}
+
+// GetInstanceRdmaNetworkInterfaceDetailArrayInput is an input type that accepts GetInstanceRdmaNetworkInterfaceDetailArray and GetInstanceRdmaNetworkInterfaceDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceRdmaNetworkInterfaceDetailArrayInput` via:
+//
+//	GetInstanceRdmaNetworkInterfaceDetailArray{ GetInstanceRdmaNetworkInterfaceDetailArgs{...} }
+type GetInstanceRdmaNetworkInterfaceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceRdmaNetworkInterfaceDetailArrayOutput() GetInstanceRdmaNetworkInterfaceDetailArrayOutput
+	ToGetInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(context.Context) GetInstanceRdmaNetworkInterfaceDetailArrayOutput
+}
+
+type GetInstanceRdmaNetworkInterfaceDetailArray []GetInstanceRdmaNetworkInterfaceDetailInput
+
+func (GetInstanceRdmaNetworkInterfaceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (i GetInstanceRdmaNetworkInterfaceDetailArray) ToGetInstanceRdmaNetworkInterfaceDetailArrayOutput() GetInstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return i.ToGetInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRdmaNetworkInterfaceDetailArray) ToGetInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(ctx context.Context) GetInstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRdmaNetworkInterfaceDetailArrayOutput)
+}
+
+type GetInstanceRdmaNetworkInterfaceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRdmaNetworkInterfaceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (o GetInstanceRdmaNetworkInterfaceDetailOutput) ToGetInstanceRdmaNetworkInterfaceDetailOutput() GetInstanceRdmaNetworkInterfaceDetailOutput {
+	return o
+}
+
+func (o GetInstanceRdmaNetworkInterfaceDetailOutput) ToGetInstanceRdmaNetworkInterfaceDetailOutputWithContext(ctx context.Context) GetInstanceRdmaNetworkInterfaceDetailOutput {
+	return o
+}
+
+// 网关地址。
+func (o GetInstanceRdmaNetworkInterfaceDetailOutput) Gateway() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.Gateway }).(pulumi.StringOutput)
+}
+
+// IP地址。
+func (o GetInstanceRdmaNetworkInterfaceDetailOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// 子网掩码。
+func (o GetInstanceRdmaNetworkInterfaceDetailOutput) Mask() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.Mask }).(pulumi.StringOutput)
+}
+
+// 交换机名称。
+func (o GetInstanceRdmaNetworkInterfaceDetailOutput) SwitchName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.SwitchName }).(pulumi.StringOutput)
+}
+
+// 交换机端口。
+func (o GetInstanceRdmaNetworkInterfaceDetailOutput) SwitchPort() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.SwitchPort }).(pulumi.StringOutput)
+}
+
+type GetInstanceRdmaNetworkInterfaceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRdmaNetworkInterfaceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceRdmaNetworkInterfaceDetail)(nil)).Elem()
+}
+
+func (o GetInstanceRdmaNetworkInterfaceDetailArrayOutput) ToGetInstanceRdmaNetworkInterfaceDetailArrayOutput() GetInstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceRdmaNetworkInterfaceDetailArrayOutput) ToGetInstanceRdmaNetworkInterfaceDetailArrayOutputWithContext(ctx context.Context) GetInstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceRdmaNetworkInterfaceDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceRdmaNetworkInterfaceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceRdmaNetworkInterfaceDetail {
+		return vs[0].([]GetInstanceRdmaNetworkInterfaceDetail)[vs[1].(int)]
+	}).(GetInstanceRdmaNetworkInterfaceDetailOutput)
+}
+
+type GetInstanceRenewInfo struct {
+	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	Period int `pulumi:"period"`
+	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	PeriodUnit string `pulumi:"periodUnit"`
+}
+
+// GetInstanceRenewInfoInput is an input type that accepts GetInstanceRenewInfoArgs and GetInstanceRenewInfoOutput values.
+// You can construct a concrete instance of `GetInstanceRenewInfoInput` via:
+//
+//	GetInstanceRenewInfoArgs{...}
+type GetInstanceRenewInfoInput interface {
+	pulumi.Input
+
+	ToGetInstanceRenewInfoOutput() GetInstanceRenewInfoOutput
+	ToGetInstanceRenewInfoOutputWithContext(context.Context) GetInstanceRenewInfoOutput
+}
+
+type GetInstanceRenewInfoArgs struct {
+	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	Period pulumi.IntInput `pulumi:"period"`
+	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
+}
+
+func (GetInstanceRenewInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRenewInfo)(nil)).Elem()
+}
+
+func (i GetInstanceRenewInfoArgs) ToGetInstanceRenewInfoOutput() GetInstanceRenewInfoOutput {
+	return i.ToGetInstanceRenewInfoOutputWithContext(context.Background())
+}
+
+func (i GetInstanceRenewInfoArgs) ToGetInstanceRenewInfoOutputWithContext(ctx context.Context) GetInstanceRenewInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceRenewInfoOutput)
+}
+
+type GetInstanceRenewInfoOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceRenewInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceRenewInfo)(nil)).Elem()
+}
+
+func (o GetInstanceRenewInfoOutput) ToGetInstanceRenewInfoOutput() GetInstanceRenewInfoOutput {
+	return o
+}
+
+func (o GetInstanceRenewInfoOutput) ToGetInstanceRenewInfoOutputWithContext(ctx context.Context) GetInstanceRenewInfoOutput {
+	return o
+}
+
+// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+func (o GetInstanceRenewInfoOutput) Period() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceRenewInfo) int { return v.Period }).(pulumi.IntOutput)
+}
+
+// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+func (o GetInstanceRenewInfoOutput) PeriodUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceRenewInfo) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
 type GetInstanceSecondaryNetworkInterface struct {
@@ -5707,11 +8970,1475 @@ func (o GetKeypairTagArrayOutput) Index(i pulumi.IntInput) GetKeypairTagOutput {
 	}).(GetKeypairTagOutput)
 }
 
+type GetLaunchTemplateLaunchTemplateTag struct {
+	// 给资源添加的用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetLaunchTemplateLaunchTemplateTagInput is an input type that accepts GetLaunchTemplateLaunchTemplateTagArgs and GetLaunchTemplateLaunchTemplateTagOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateTagInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateTagArgs{...}
+type GetLaunchTemplateLaunchTemplateTagInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateTagOutput() GetLaunchTemplateLaunchTemplateTagOutput
+	ToGetLaunchTemplateLaunchTemplateTagOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateTagOutput
+}
+
+type GetLaunchTemplateLaunchTemplateTagArgs struct {
+	// 给资源添加的用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetLaunchTemplateLaunchTemplateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateTagArgs) ToGetLaunchTemplateLaunchTemplateTagOutput() GetLaunchTemplateLaunchTemplateTagOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateTagOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateTagArgs) ToGetLaunchTemplateLaunchTemplateTagOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateTagOutput)
+}
+
+// GetLaunchTemplateLaunchTemplateTagArrayInput is an input type that accepts GetLaunchTemplateLaunchTemplateTagArray and GetLaunchTemplateLaunchTemplateTagArrayOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateTagArrayInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateTagArray{ GetLaunchTemplateLaunchTemplateTagArgs{...} }
+type GetLaunchTemplateLaunchTemplateTagArrayInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateTagArrayOutput() GetLaunchTemplateLaunchTemplateTagArrayOutput
+	ToGetLaunchTemplateLaunchTemplateTagArrayOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateTagArrayOutput
+}
+
+type GetLaunchTemplateLaunchTemplateTagArray []GetLaunchTemplateLaunchTemplateTagInput
+
+func (GetLaunchTemplateLaunchTemplateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateTagArray) ToGetLaunchTemplateLaunchTemplateTagArrayOutput() GetLaunchTemplateLaunchTemplateTagArrayOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateTagArray) ToGetLaunchTemplateLaunchTemplateTagArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateTagArrayOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateTagOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateTagOutput) ToGetLaunchTemplateLaunchTemplateTagOutput() GetLaunchTemplateLaunchTemplateTagOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateTagOutput) ToGetLaunchTemplateLaunchTemplateTagOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateTagOutput {
+	return o
+}
+
+// 给资源添加的用户标签的标签键。
+func (o GetLaunchTemplateLaunchTemplateTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 给资源添加的用户标签的标签值。
+func (o GetLaunchTemplateLaunchTemplateTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateTag)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateTagArrayOutput) ToGetLaunchTemplateLaunchTemplateTagArrayOutput() GetLaunchTemplateLaunchTemplateTagArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateTagArrayOutput) ToGetLaunchTemplateLaunchTemplateTagArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateTagArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateTagArrayOutput) Index(i pulumi.IntInput) GetLaunchTemplateLaunchTemplateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLaunchTemplateLaunchTemplateTag {
+		return vs[0].([]GetLaunchTemplateLaunchTemplateTag)[vs[1].(int)]
+	}).(GetLaunchTemplateLaunchTemplateTagOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersion struct {
+	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID。
+	DeploymentSetId string `pulumi:"deploymentSetId"`
+	// 实例的描述。
+	Description string `pulumi:"description"`
+	// 实例绑定的公网IP信息。
+	Eip GetLaunchTemplateLaunchTemplateVersionEip `pulumi:"eip"`
+	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	HostName string `pulumi:"hostName"`
+	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	HpcClusterId string `pulumi:"hpcClusterId"`
+	// 镜像ID。
+	ImageId string `pulumi:"imageId"`
+	// 镜像名称。
+	ImageName string `pulumi:"imageName"`
+	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	InstanceChargeType string `pulumi:"instanceChargeType"`
+	// 实例的名称。
+	InstanceName string `pulumi:"instanceName"`
+	// 实例的规格。
+	InstanceTypeId string `pulumi:"instanceTypeId"`
+	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	KeepImageCredential bool `pulumi:"keepImageCredential"`
+	// 实例绑定的密钥对。
+	KeyPairName string `pulumi:"keyPairName"`
+	// 实例挂载的网卡信息。
+	NetworkInterfaces []GetLaunchTemplateLaunchTemplateVersionNetworkInterface `pulumi:"networkInterfaces"`
+	// 实例所属项目。
+	ProjectName string `pulumi:"projectName"`
+	// 弹性预约单信息。
+	ScheduledInstance GetLaunchTemplateLaunchTemplateVersionScheduledInstance `pulumi:"scheduledInstance"`
+	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy string `pulumi:"securityEnhancementStrategy"`
+	// 抢占式实例的每小时最高价格。
+	SpotPriceLimit float64 `pulumi:"spotPriceLimit"`
+	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	SpotStrategy string `pulumi:"spotStrategy"`
+	// 有序后缀的起始序号。
+	SuffixIndex int `pulumi:"suffixIndex"`
+	// 实例的标签信息。
+	Tags []GetLaunchTemplateLaunchTemplateVersionTag `pulumi:"tags"`
+	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	UniqueSuffix bool `pulumi:"uniqueSuffix"`
+	// 实例的自定义数据。
+	UserData string `pulumi:"userData"`
+	// 模版版本描述。
+	VersionDescription string `pulumi:"versionDescription"`
+	// 实例绑定的云盘信息。
+	Volumes []GetLaunchTemplateLaunchTemplateVersionVolume `pulumi:"volumes"`
+	// 私有网络ID。
+	VpcId string `pulumi:"vpcId"`
+	// 实例所属可用区ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetLaunchTemplateLaunchTemplateVersionInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionArgs and GetLaunchTemplateLaunchTemplateVersionOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionArgs{...}
+type GetLaunchTemplateLaunchTemplateVersionInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionOutput() GetLaunchTemplateLaunchTemplateVersionOutput
+	ToGetLaunchTemplateLaunchTemplateVersionOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionArgs struct {
+	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	DeploymentSetGroupNumber pulumi.IntInput `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID。
+	DeploymentSetId pulumi.StringInput `pulumi:"deploymentSetId"`
+	// 实例的描述。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 实例绑定的公网IP信息。
+	Eip GetLaunchTemplateLaunchTemplateVersionEipInput `pulumi:"eip"`
+	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	HpcClusterId pulumi.StringInput `pulumi:"hpcClusterId"`
+	// 镜像ID。
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// 镜像名称。
+	ImageName pulumi.StringInput `pulumi:"imageName"`
+	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	InstanceChargeType pulumi.StringInput `pulumi:"instanceChargeType"`
+	// 实例的名称。
+	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// 实例的规格。
+	InstanceTypeId pulumi.StringInput `pulumi:"instanceTypeId"`
+	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	KeepImageCredential pulumi.BoolInput `pulumi:"keepImageCredential"`
+	// 实例绑定的密钥对。
+	KeyPairName pulumi.StringInput `pulumi:"keyPairName"`
+	// 实例挂载的网卡信息。
+	NetworkInterfaces GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
+	// 实例所属项目。
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// 弹性预约单信息。
+	ScheduledInstance GetLaunchTemplateLaunchTemplateVersionScheduledInstanceInput `pulumi:"scheduledInstance"`
+	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	SecurityEnhancementStrategy pulumi.StringInput `pulumi:"securityEnhancementStrategy"`
+	// 抢占式实例的每小时最高价格。
+	SpotPriceLimit pulumi.Float64Input `pulumi:"spotPriceLimit"`
+	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	SpotStrategy pulumi.StringInput `pulumi:"spotStrategy"`
+	// 有序后缀的起始序号。
+	SuffixIndex pulumi.IntInput `pulumi:"suffixIndex"`
+	// 实例的标签信息。
+	Tags GetLaunchTemplateLaunchTemplateVersionTagArrayInput `pulumi:"tags"`
+	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	UniqueSuffix pulumi.BoolInput `pulumi:"uniqueSuffix"`
+	// 实例的自定义数据。
+	UserData pulumi.StringInput `pulumi:"userData"`
+	// 模版版本描述。
+	VersionDescription pulumi.StringInput `pulumi:"versionDescription"`
+	// 实例绑定的云盘信息。
+	Volumes GetLaunchTemplateLaunchTemplateVersionVolumeArrayInput `pulumi:"volumes"`
+	// 私有网络ID。
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+	// 实例所属可用区ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetLaunchTemplateLaunchTemplateVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersion)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionArgs) ToGetLaunchTemplateLaunchTemplateVersionOutput() GetLaunchTemplateLaunchTemplateVersionOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionArgs) ToGetLaunchTemplateLaunchTemplateVersionOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersion)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) ToGetLaunchTemplateLaunchTemplateVersionOutput() GetLaunchTemplateLaunchTemplateVersionOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) ToGetLaunchTemplateLaunchTemplateVersionOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionOutput {
+	return o
+}
+
+// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
+}
+
+// 实例需要加入的部署集ID。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) DeploymentSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.DeploymentSetId }).(pulumi.StringOutput)
+}
+
+// 实例的描述。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 实例绑定的公网IP信息。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) Eip() GetLaunchTemplateLaunchTemplateVersionEipOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) GetLaunchTemplateLaunchTemplateVersionEip { return v.Eip }).(GetLaunchTemplateLaunchTemplateVersionEipOutput)
+}
+
+// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) HpcClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.HpcClusterId }).(pulumi.StringOutput)
+}
+
+// 镜像ID。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// 镜像名称。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) ImageName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ImageName }).(pulumi.StringOutput)
+}
+
+// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) InstanceChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.InstanceChargeType }).(pulumi.StringOutput)
+}
+
+// 实例的名称。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) InstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// 实例的规格。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) InstanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.InstanceTypeId }).(pulumi.StringOutput)
+}
+
+// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) KeepImageCredential() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) bool { return v.KeepImageCredential }).(pulumi.BoolOutput)
+}
+
+// 实例绑定的密钥对。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) KeyPairName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.KeyPairName }).(pulumi.StringOutput)
+}
+
+// 实例挂载的网卡信息。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) NetworkInterfaces() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) []GetLaunchTemplateLaunchTemplateVersionNetworkInterface {
+		return v.NetworkInterfaces
+	}).(GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
+}
+
+// 实例所属项目。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// 弹性预约单信息。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) ScheduledInstance() GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) GetLaunchTemplateLaunchTemplateVersionScheduledInstance {
+		return v.ScheduledInstance
+	}).(GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput)
+}
+
+// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) SecurityEnhancementStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.SecurityEnhancementStrategy }).(pulumi.StringOutput)
+}
+
+// 抢占式实例的每小时最高价格。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) SpotPriceLimit() pulumi.Float64Output {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) float64 { return v.SpotPriceLimit }).(pulumi.Float64Output)
+}
+
+// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) SpotStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.SpotStrategy }).(pulumi.StringOutput)
+}
+
+// 有序后缀的起始序号。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) SuffixIndex() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) int { return v.SuffixIndex }).(pulumi.IntOutput)
+}
+
+// 实例的标签信息。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) Tags() GetLaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) []GetLaunchTemplateLaunchTemplateVersionTag {
+		return v.Tags
+	}).(GetLaunchTemplateLaunchTemplateVersionTagArrayOutput)
+}
+
+// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) UniqueSuffix() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) bool { return v.UniqueSuffix }).(pulumi.BoolOutput)
+}
+
+// 实例的自定义数据。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) UserData() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.UserData }).(pulumi.StringOutput)
+}
+
+// 模版版本描述。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) VersionDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.VersionDescription }).(pulumi.StringOutput)
+}
+
+// 实例绑定的云盘信息。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) Volumes() GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) []GetLaunchTemplateLaunchTemplateVersionVolume {
+		return v.Volumes
+	}).(GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
+}
+
+// 私有网络ID。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+// 实例所属可用区ID。
+func (o GetLaunchTemplateLaunchTemplateVersionOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionEip struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth int `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType int `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp string `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// GetLaunchTemplateLaunchTemplateVersionEipInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionEipArgs and GetLaunchTemplateLaunchTemplateVersionEipOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionEipInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionEipArgs{...}
+type GetLaunchTemplateLaunchTemplateVersionEipInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionEipOutput() GetLaunchTemplateLaunchTemplateVersionEipOutput
+	ToGetLaunchTemplateLaunchTemplateVersionEipOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionEipOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionEipArgs struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType pulumi.IntInput `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (GetLaunchTemplateLaunchTemplateVersionEipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionEipArgs) ToGetLaunchTemplateLaunchTemplateVersionEipOutput() GetLaunchTemplateLaunchTemplateVersionEipOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionEipOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionEipArgs) ToGetLaunchTemplateLaunchTemplateVersionEipOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionEipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionEipOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionEipOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionEipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) ToGetLaunchTemplateLaunchTemplateVersionEipOutput() GetLaunchTemplateLaunchTemplateVersionEipOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) ToGetLaunchTemplateLaunchTemplateVersionEipOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionEipOutput {
+	return o
+}
+
+// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
+}
+
+// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) BillingType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) int { return v.BillingType }).(pulumi.IntOutput)
+}
+
+// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// 公网IP是否随实例删除，仅按量计费公网IP生效。
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
+}
+
+// 安全防护包ID。
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
+}
+
+// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionNetworkInterface struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs and GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs{...}
+type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput
+	ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+// GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArray and GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArray{ GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs{...} }
+type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput
+	ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArray []GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceInput
+
+func (GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArray) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArray) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+// 网卡关联的安全组ID。
+func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的私有网络子网ID。
+func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) ToGetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLaunchTemplateLaunchTemplateVersionNetworkInterface {
+		return vs[0].([]GetLaunchTemplateLaunchTemplateVersionNetworkInterface)[vs[1].(int)]
+	}).(GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionScheduledInstance struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription string `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName string `pulumi:"scheduledInstanceName"`
+}
+
+// GetLaunchTemplateLaunchTemplateVersionScheduledInstanceInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs and GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionScheduledInstanceInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs{...}
+type GetLaunchTemplateLaunchTemplateVersionScheduledInstanceInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput() GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput
+	ToGetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription pulumi.StringInput `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName pulumi.StringInput `pulumi:"scheduledInstanceName"`
+}
+
+func (GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ToGetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput() GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs) ToGetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToGetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput() GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToGetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+// 弹性预约单的描述。
+func (o GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionScheduledInstance) string {
+		return v.ScheduledInstanceDescription
+	}).(pulumi.StringOutput)
+}
+
+// 弹性预约单的名称。
+func (o GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionScheduledInstance) string { return v.ScheduledInstanceName }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionTag struct {
+	// 给资源添加的用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetLaunchTemplateLaunchTemplateVersionTagInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionTagArgs and GetLaunchTemplateLaunchTemplateVersionTagOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionTagInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionTagArgs{...}
+type GetLaunchTemplateLaunchTemplateVersionTagInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionTagOutput() GetLaunchTemplateLaunchTemplateVersionTagOutput
+	ToGetLaunchTemplateLaunchTemplateVersionTagOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionTagOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionTagArgs struct {
+	// 给资源添加的用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetLaunchTemplateLaunchTemplateVersionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionTagArgs) ToGetLaunchTemplateLaunchTemplateVersionTagOutput() GetLaunchTemplateLaunchTemplateVersionTagOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionTagOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionTagArgs) ToGetLaunchTemplateLaunchTemplateVersionTagOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionTagOutput)
+}
+
+// GetLaunchTemplateLaunchTemplateVersionTagArrayInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionTagArray and GetLaunchTemplateLaunchTemplateVersionTagArrayOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionTagArrayInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionTagArray{ GetLaunchTemplateLaunchTemplateVersionTagArgs{...} }
+type GetLaunchTemplateLaunchTemplateVersionTagArrayInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionTagArrayOutput() GetLaunchTemplateLaunchTemplateVersionTagArrayOutput
+	ToGetLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionTagArrayOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionTagArray []GetLaunchTemplateLaunchTemplateVersionTagInput
+
+func (GetLaunchTemplateLaunchTemplateVersionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionTagArray) ToGetLaunchTemplateLaunchTemplateVersionTagArrayOutput() GetLaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionTagArray) ToGetLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionTagArrayOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionTagOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionTagOutput) ToGetLaunchTemplateLaunchTemplateVersionTagOutput() GetLaunchTemplateLaunchTemplateVersionTagOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionTagOutput) ToGetLaunchTemplateLaunchTemplateVersionTagOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionTagOutput {
+	return o
+}
+
+// 给资源添加的用户标签的标签键。
+func (o GetLaunchTemplateLaunchTemplateVersionTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 给资源添加的用户标签的标签值。
+func (o GetLaunchTemplateLaunchTemplateVersionTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionTagArrayOutput) ToGetLaunchTemplateLaunchTemplateVersionTagArrayOutput() GetLaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionTagArrayOutput) ToGetLaunchTemplateLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionTagArrayOutput) Index(i pulumi.IntInput) GetLaunchTemplateLaunchTemplateVersionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLaunchTemplateLaunchTemplateVersionTag {
+		return vs[0].([]GetLaunchTemplateLaunchTemplateVersionTag)[vs[1].(int)]
+	}).(GetLaunchTemplateLaunchTemplateVersionTagOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionVolume struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size int `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId string `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetLaunchTemplateLaunchTemplateVersionVolumeInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionVolumeArgs and GetLaunchTemplateLaunchTemplateVersionVolumeOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionVolumeInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionVolumeArgs{...}
+type GetLaunchTemplateLaunchTemplateVersionVolumeInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionVolumeOutput() GetLaunchTemplateLaunchTemplateVersionVolumeOutput
+	ToGetLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionVolumeOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionVolumeArgs struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size pulumi.IntInput `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetLaunchTemplateLaunchTemplateVersionVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionVolumeArgs) ToGetLaunchTemplateLaunchTemplateVersionVolumeOutput() GetLaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionVolumeArgs) ToGetLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionVolumeOutput)
+}
+
+// GetLaunchTemplateLaunchTemplateVersionVolumeArrayInput is an input type that accepts GetLaunchTemplateLaunchTemplateVersionVolumeArray and GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateLaunchTemplateVersionVolumeArrayInput` via:
+//
+//	GetLaunchTemplateLaunchTemplateVersionVolumeArray{ GetLaunchTemplateLaunchTemplateVersionVolumeArgs{...} }
+type GetLaunchTemplateLaunchTemplateVersionVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput() GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput
+	ToGetLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(context.Context) GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput
+}
+
+type GetLaunchTemplateLaunchTemplateVersionVolumeArray []GetLaunchTemplateLaunchTemplateVersionVolumeInput
+
+func (GetLaunchTemplateLaunchTemplateVersionVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionVolumeArray) ToGetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput() GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return i.ToGetLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateLaunchTemplateVersionVolumeArray) ToGetLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ToGetLaunchTemplateLaunchTemplateVersionVolumeOutput() GetLaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ToGetLaunchTemplateLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+// 云盘是否随实例释放。
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
+}
+
+// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
+}
+
+// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
+}
+
+// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
+}
+
+// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
+}
+
+// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput) ToGetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput() GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput) ToGetLaunchTemplateLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.IntInput) GetLaunchTemplateLaunchTemplateVersionVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLaunchTemplateLaunchTemplateVersionVolume {
+		return vs[0].([]GetLaunchTemplateLaunchTemplateVersionVolume)[vs[1].(int)]
+	}).(GetLaunchTemplateLaunchTemplateVersionVolumeOutput)
+}
+
+type GetLaunchTemplateVersionEip struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth int `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType int `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp string `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// GetLaunchTemplateVersionEipInput is an input type that accepts GetLaunchTemplateVersionEipArgs and GetLaunchTemplateVersionEipOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionEipInput` via:
+//
+//	GetLaunchTemplateVersionEipArgs{...}
+type GetLaunchTemplateVersionEipInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionEipOutput() GetLaunchTemplateVersionEipOutput
+	ToGetLaunchTemplateVersionEipOutputWithContext(context.Context) GetLaunchTemplateVersionEipOutput
+}
+
+type GetLaunchTemplateVersionEipArgs struct {
+	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
+	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	BillingType pulumi.IntInput `pulumi:"billingType"`
+	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
+	// 安全防护包ID。
+	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
+	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (GetLaunchTemplateVersionEipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionEipArgs) ToGetLaunchTemplateVersionEipOutput() GetLaunchTemplateVersionEipOutput {
+	return i.ToGetLaunchTemplateVersionEipOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionEipArgs) ToGetLaunchTemplateVersionEipOutputWithContext(ctx context.Context) GetLaunchTemplateVersionEipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionEipOutput)
+}
+
+type GetLaunchTemplateVersionEipOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionEipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionEip)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionEipOutput) ToGetLaunchTemplateVersionEipOutput() GetLaunchTemplateVersionEipOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionEipOutput) ToGetLaunchTemplateVersionEipOutputWithContext(ctx context.Context) GetLaunchTemplateVersionEipOutput {
+	return o
+}
+
+// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+func (o GetLaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionEip) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+func (o GetLaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionEip) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
+}
+
+// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+func (o GetLaunchTemplateVersionEipOutput) BillingType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionEip) int { return v.BillingType }).(pulumi.IntOutput)
+}
+
+// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+func (o GetLaunchTemplateVersionEipOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionEip) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// 公网IP是否随实例删除，仅按量计费公网IP生效。
+func (o GetLaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionEip) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
+}
+
+// 安全防护包ID。
+func (o GetLaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionEip) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
+}
+
+// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+func (o GetLaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetLaunchTemplateVersionNetworkInterface struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetLaunchTemplateVersionNetworkInterfaceInput is an input type that accepts GetLaunchTemplateVersionNetworkInterfaceArgs and GetLaunchTemplateVersionNetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionNetworkInterfaceInput` via:
+//
+//	GetLaunchTemplateVersionNetworkInterfaceArgs{...}
+type GetLaunchTemplateVersionNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionNetworkInterfaceOutput() GetLaunchTemplateVersionNetworkInterfaceOutput
+	ToGetLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Context) GetLaunchTemplateVersionNetworkInterfaceOutput
+}
+
+type GetLaunchTemplateVersionNetworkInterfaceArgs struct {
+	// 网卡关联的安全组ID。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 实例的私有网络子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetLaunchTemplateVersionNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionNetworkInterfaceArgs) ToGetLaunchTemplateVersionNetworkInterfaceOutput() GetLaunchTemplateVersionNetworkInterfaceOutput {
+	return i.ToGetLaunchTemplateVersionNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionNetworkInterfaceArgs) ToGetLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) GetLaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+// GetLaunchTemplateVersionNetworkInterfaceArrayInput is an input type that accepts GetLaunchTemplateVersionNetworkInterfaceArray and GetLaunchTemplateVersionNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionNetworkInterfaceArrayInput` via:
+//
+//	GetLaunchTemplateVersionNetworkInterfaceArray{ GetLaunchTemplateVersionNetworkInterfaceArgs{...} }
+type GetLaunchTemplateVersionNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionNetworkInterfaceArrayOutput() GetLaunchTemplateVersionNetworkInterfaceArrayOutput
+	ToGetLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Context) GetLaunchTemplateVersionNetworkInterfaceArrayOutput
+}
+
+type GetLaunchTemplateVersionNetworkInterfaceArray []GetLaunchTemplateVersionNetworkInterfaceInput
+
+func (GetLaunchTemplateVersionNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionNetworkInterfaceArray) ToGetLaunchTemplateVersionNetworkInterfaceArrayOutput() GetLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return i.ToGetLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionNetworkInterfaceArray) ToGetLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionNetworkInterfaceArrayOutput)
+}
+
+type GetLaunchTemplateVersionNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionNetworkInterfaceOutput) ToGetLaunchTemplateVersionNetworkInterfaceOutput() GetLaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionNetworkInterfaceOutput) ToGetLaunchTemplateVersionNetworkInterfaceOutputWithContext(ctx context.Context) GetLaunchTemplateVersionNetworkInterfaceOutput {
+	return o
+}
+
+// 网卡关联的安全组ID。
+func (o GetLaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 实例的私有网络子网ID。
+func (o GetLaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateVersionNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateVersionNetworkInterface)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionNetworkInterfaceArrayOutput) ToGetLaunchTemplateVersionNetworkInterfaceArrayOutput() GetLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionNetworkInterfaceArrayOutput) ToGetLaunchTemplateVersionNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetLaunchTemplateVersionNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetLaunchTemplateVersionNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLaunchTemplateVersionNetworkInterface {
+		return vs[0].([]GetLaunchTemplateVersionNetworkInterface)[vs[1].(int)]
+	}).(GetLaunchTemplateVersionNetworkInterfaceOutput)
+}
+
+type GetLaunchTemplateVersionScheduledInstance struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription string `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName string `pulumi:"scheduledInstanceName"`
+}
+
+// GetLaunchTemplateVersionScheduledInstanceInput is an input type that accepts GetLaunchTemplateVersionScheduledInstanceArgs and GetLaunchTemplateVersionScheduledInstanceOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionScheduledInstanceInput` via:
+//
+//	GetLaunchTemplateVersionScheduledInstanceArgs{...}
+type GetLaunchTemplateVersionScheduledInstanceInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionScheduledInstanceOutput() GetLaunchTemplateVersionScheduledInstanceOutput
+	ToGetLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Context) GetLaunchTemplateVersionScheduledInstanceOutput
+}
+
+type GetLaunchTemplateVersionScheduledInstanceArgs struct {
+	// 弹性预约单的描述。
+	ScheduledInstanceDescription pulumi.StringInput `pulumi:"scheduledInstanceDescription"`
+	// 弹性预约单的名称。
+	ScheduledInstanceName pulumi.StringInput `pulumi:"scheduledInstanceName"`
+}
+
+func (GetLaunchTemplateVersionScheduledInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionScheduledInstanceArgs) ToGetLaunchTemplateVersionScheduledInstanceOutput() GetLaunchTemplateVersionScheduledInstanceOutput {
+	return i.ToGetLaunchTemplateVersionScheduledInstanceOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionScheduledInstanceArgs) ToGetLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) GetLaunchTemplateVersionScheduledInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionScheduledInstanceOutput)
+}
+
+type GetLaunchTemplateVersionScheduledInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionScheduledInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionScheduledInstance)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionScheduledInstanceOutput) ToGetLaunchTemplateVersionScheduledInstanceOutput() GetLaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionScheduledInstanceOutput) ToGetLaunchTemplateVersionScheduledInstanceOutputWithContext(ctx context.Context) GetLaunchTemplateVersionScheduledInstanceOutput {
+	return o
+}
+
+// 弹性预约单的描述。
+func (o GetLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionScheduledInstance) string { return v.ScheduledInstanceDescription }).(pulumi.StringOutput)
+}
+
+// 弹性预约单的名称。
+func (o GetLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionScheduledInstance) string { return v.ScheduledInstanceName }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateVersionTag struct {
+	// 给资源添加的用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetLaunchTemplateVersionTagInput is an input type that accepts GetLaunchTemplateVersionTagArgs and GetLaunchTemplateVersionTagOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionTagInput` via:
+//
+//	GetLaunchTemplateVersionTagArgs{...}
+type GetLaunchTemplateVersionTagInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionTagOutput() GetLaunchTemplateVersionTagOutput
+	ToGetLaunchTemplateVersionTagOutputWithContext(context.Context) GetLaunchTemplateVersionTagOutput
+}
+
+type GetLaunchTemplateVersionTagArgs struct {
+	// 给资源添加的用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 给资源添加的用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetLaunchTemplateVersionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionTagArgs) ToGetLaunchTemplateVersionTagOutput() GetLaunchTemplateVersionTagOutput {
+	return i.ToGetLaunchTemplateVersionTagOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionTagArgs) ToGetLaunchTemplateVersionTagOutputWithContext(ctx context.Context) GetLaunchTemplateVersionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionTagOutput)
+}
+
+// GetLaunchTemplateVersionTagArrayInput is an input type that accepts GetLaunchTemplateVersionTagArray and GetLaunchTemplateVersionTagArrayOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionTagArrayInput` via:
+//
+//	GetLaunchTemplateVersionTagArray{ GetLaunchTemplateVersionTagArgs{...} }
+type GetLaunchTemplateVersionTagArrayInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionTagArrayOutput() GetLaunchTemplateVersionTagArrayOutput
+	ToGetLaunchTemplateVersionTagArrayOutputWithContext(context.Context) GetLaunchTemplateVersionTagArrayOutput
+}
+
+type GetLaunchTemplateVersionTagArray []GetLaunchTemplateVersionTagInput
+
+func (GetLaunchTemplateVersionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionTagArray) ToGetLaunchTemplateVersionTagArrayOutput() GetLaunchTemplateVersionTagArrayOutput {
+	return i.ToGetLaunchTemplateVersionTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionTagArray) ToGetLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) GetLaunchTemplateVersionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionTagArrayOutput)
+}
+
+type GetLaunchTemplateVersionTagOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionTagOutput) ToGetLaunchTemplateVersionTagOutput() GetLaunchTemplateVersionTagOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionTagOutput) ToGetLaunchTemplateVersionTagOutputWithContext(ctx context.Context) GetLaunchTemplateVersionTagOutput {
+	return o
+}
+
+// 给资源添加的用户标签的标签键。
+func (o GetLaunchTemplateVersionTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 给资源添加的用户标签的标签值。
+func (o GetLaunchTemplateVersionTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateVersionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateVersionTag)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionTagArrayOutput) ToGetLaunchTemplateVersionTagArrayOutput() GetLaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionTagArrayOutput) ToGetLaunchTemplateVersionTagArrayOutputWithContext(ctx context.Context) GetLaunchTemplateVersionTagArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionTagArrayOutput) Index(i pulumi.IntInput) GetLaunchTemplateVersionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLaunchTemplateVersionTag {
+		return vs[0].([]GetLaunchTemplateVersionTag)[vs[1].(int)]
+	}).(GetLaunchTemplateVersionTagOutput)
+}
+
+type GetLaunchTemplateVersionVolume struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size int `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId string `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetLaunchTemplateVersionVolumeInput is an input type that accepts GetLaunchTemplateVersionVolumeArgs and GetLaunchTemplateVersionVolumeOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionVolumeInput` via:
+//
+//	GetLaunchTemplateVersionVolumeArgs{...}
+type GetLaunchTemplateVersionVolumeInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionVolumeOutput() GetLaunchTemplateVersionVolumeOutput
+	ToGetLaunchTemplateVersionVolumeOutputWithContext(context.Context) GetLaunchTemplateVersionVolumeOutput
+}
+
+type GetLaunchTemplateVersionVolumeArgs struct {
+	// 云盘是否随实例释放。
+	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
+	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
+	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
+	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
+	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	Size pulumi.IntInput `pulumi:"size"`
+	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
+	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetLaunchTemplateVersionVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionVolumeArgs) ToGetLaunchTemplateVersionVolumeOutput() GetLaunchTemplateVersionVolumeOutput {
+	return i.ToGetLaunchTemplateVersionVolumeOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionVolumeArgs) ToGetLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) GetLaunchTemplateVersionVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionVolumeOutput)
+}
+
+// GetLaunchTemplateVersionVolumeArrayInput is an input type that accepts GetLaunchTemplateVersionVolumeArray and GetLaunchTemplateVersionVolumeArrayOutput values.
+// You can construct a concrete instance of `GetLaunchTemplateVersionVolumeArrayInput` via:
+//
+//	GetLaunchTemplateVersionVolumeArray{ GetLaunchTemplateVersionVolumeArgs{...} }
+type GetLaunchTemplateVersionVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetLaunchTemplateVersionVolumeArrayOutput() GetLaunchTemplateVersionVolumeArrayOutput
+	ToGetLaunchTemplateVersionVolumeArrayOutputWithContext(context.Context) GetLaunchTemplateVersionVolumeArrayOutput
+}
+
+type GetLaunchTemplateVersionVolumeArray []GetLaunchTemplateVersionVolumeInput
+
+func (GetLaunchTemplateVersionVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (i GetLaunchTemplateVersionVolumeArray) ToGetLaunchTemplateVersionVolumeArrayOutput() GetLaunchTemplateVersionVolumeArrayOutput {
+	return i.ToGetLaunchTemplateVersionVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetLaunchTemplateVersionVolumeArray) ToGetLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) GetLaunchTemplateVersionVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLaunchTemplateVersionVolumeArrayOutput)
+}
+
+type GetLaunchTemplateVersionVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionVolumeOutput) ToGetLaunchTemplateVersionVolumeOutput() GetLaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionVolumeOutput) ToGetLaunchTemplateVersionVolumeOutputWithContext(ctx context.Context) GetLaunchTemplateVersionVolumeOutput {
+	return o
+}
+
+// 云盘是否随实例释放。
+func (o GetLaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
+}
+
+// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+func (o GetLaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
+}
+
+// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+func (o GetLaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
+}
+
+// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+func (o GetLaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
+}
+
+// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+func (o GetLaunchTemplateVersionVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+func (o GetLaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
+}
+
+// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+func (o GetLaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetLaunchTemplateVersionVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLaunchTemplateVersionVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLaunchTemplateVersionVolume)(nil)).Elem()
+}
+
+func (o GetLaunchTemplateVersionVolumeArrayOutput) ToGetLaunchTemplateVersionVolumeArrayOutput() GetLaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionVolumeArrayOutput) ToGetLaunchTemplateVersionVolumeArrayOutputWithContext(ctx context.Context) GetLaunchTemplateVersionVolumeArrayOutput {
+	return o
+}
+
+func (o GetLaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.IntInput) GetLaunchTemplateVersionVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLaunchTemplateVersionVolume {
+		return vs[0].([]GetLaunchTemplateVersionVolume)[vs[1].(int)]
+	}).(GetLaunchTemplateVersionVolumeOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandParameterDefinitionInput)(nil)).Elem(), CommandParameterDefinitionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandParameterDefinitionArrayInput)(nil)).Elem(), CommandParameterDefinitionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandTagInput)(nil)).Elem(), CommandTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandTagArrayInput)(nil)).Elem(), CommandTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSetCapacityInput)(nil)).Elem(), DeploymentSetCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSetCapacityArrayInput)(nil)).Elem(), DeploymentSetCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsPtrInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsItemInput)(nil)).Elem(), ImageDetectionResultsItemArgs{})
@@ -5728,12 +10455,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceImagePtrInput)(nil)).Elem(), InstanceImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceKeyPairInput)(nil)).Elem(), InstanceKeyPairArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceKeyPairPtrInput)(nil)).Elem(), InstanceKeyPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceLocalVolumeInput)(nil)).Elem(), InstanceLocalVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceLocalVolumeArrayInput)(nil)).Elem(), InstanceLocalVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceOperationSystemInput)(nil)).Elem(), InstanceOperationSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceOperationSystemPtrInput)(nil)).Elem(), InstanceOperationSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePlacementInput)(nil)).Elem(), InstancePlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePlacementPtrInput)(nil)).Elem(), InstancePlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePrimaryNetworkInterfaceInput)(nil)).Elem(), InstancePrimaryNetworkInterfaceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstancePrimaryNetworkInterfacePtrInput)(nil)).Elem(), InstancePrimaryNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRdmaNetworkInterfaceDetailInput)(nil)).Elem(), InstanceRdmaNetworkInterfaceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRdmaNetworkInterfaceDetailArrayInput)(nil)).Elem(), InstanceRdmaNetworkInterfaceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRenewInfoInput)(nil)).Elem(), InstanceRenewInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceRenewInfoPtrInput)(nil)).Elem(), InstanceRenewInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSecondaryNetworkInterfaceInput)(nil)).Elem(), InstanceSecondaryNetworkInterfaceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSecondaryNetworkInterfaceArrayInput)(nil)).Elem(), InstanceSecondaryNetworkInterfaceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceSystemVolumeInput)(nil)).Elem(), InstanceSystemVolumeArgs{})
@@ -5748,10 +10481,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InvocationTagArrayInput)(nil)).Elem(), InvocationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeypairTagInput)(nil)).Elem(), KeypairTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeypairTagArrayInput)(nil)).Elem(), KeypairTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateTagInput)(nil)).Elem(), LaunchTemplateLaunchTemplateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateTagArrayInput)(nil)).Elem(), LaunchTemplateLaunchTemplateTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionPtrInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionEipInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionEipPtrInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionNetworkInterfaceInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionScheduledInstanceInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionScheduledInstancePtrInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionTagInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionTagArrayInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionVolumeInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateLaunchTemplateVersionVolumeArrayInput)(nil)).Elem(), LaunchTemplateLaunchTemplateVersionVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionEipInput)(nil)).Elem(), LaunchTemplateVersionEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionEipPtrInput)(nil)).Elem(), LaunchTemplateVersionEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionNetworkInterfaceInput)(nil)).Elem(), LaunchTemplateVersionNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionNetworkInterfaceArrayInput)(nil)).Elem(), LaunchTemplateVersionNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionScheduledInstanceInput)(nil)).Elem(), LaunchTemplateVersionScheduledInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionScheduledInstancePtrInput)(nil)).Elem(), LaunchTemplateVersionScheduledInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionTagInput)(nil)).Elem(), LaunchTemplateVersionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionTagArrayInput)(nil)).Elem(), LaunchTemplateVersionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionVolumeInput)(nil)).Elem(), LaunchTemplateVersionVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionVolumeArrayInput)(nil)).Elem(), LaunchTemplateVersionVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandParameterDefinitionInput)(nil)).Elem(), GetCommandParameterDefinitionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandParameterDefinitionArrayInput)(nil)).Elem(), GetCommandParameterDefinitionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagInput)(nil)).Elem(), GetCommandTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagArrayInput)(nil)).Elem(), GetCommandTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSetCapacityInput)(nil)).Elem(), GetDeploymentSetCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSetCapacityArrayInput)(nil)).Elem(), GetDeploymentSetCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsInput)(nil)).Elem(), GetImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemInput)(nil)).Elem(), GetImageDetectionResultsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemArrayInput)(nil)).Elem(), GetImageDetectionResultsItemArray{})
@@ -5763,9 +10522,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEipAddressInput)(nil)).Elem(), GetInstanceEipAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceImageInput)(nil)).Elem(), GetInstanceImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceKeyPairInput)(nil)).Elem(), GetInstanceKeyPairArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLocalVolumeInput)(nil)).Elem(), GetInstanceLocalVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceLocalVolumeArrayInput)(nil)).Elem(), GetInstanceLocalVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceOperationSystemInput)(nil)).Elem(), GetInstanceOperationSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePlacementInput)(nil)).Elem(), GetInstancePlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePrimaryNetworkInterfaceInput)(nil)).Elem(), GetInstancePrimaryNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRdmaNetworkInterfaceDetailInput)(nil)).Elem(), GetInstanceRdmaNetworkInterfaceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRdmaNetworkInterfaceDetailArrayInput)(nil)).Elem(), GetInstanceRdmaNetworkInterfaceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceRenewInfoInput)(nil)).Elem(), GetInstanceRenewInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSecondaryNetworkInterfaceInput)(nil)).Elem(), GetInstanceSecondaryNetworkInterfaceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSecondaryNetworkInterfaceArrayInput)(nil)).Elem(), GetInstanceSecondaryNetworkInterfaceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSystemVolumeInput)(nil)).Elem(), GetInstanceSystemVolumeArgs{})
@@ -5779,10 +10543,31 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvocationTagArrayInput)(nil)).Elem(), GetInvocationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeypairTagInput)(nil)).Elem(), GetKeypairTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeypairTagArrayInput)(nil)).Elem(), GetKeypairTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateTagInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateTagArrayInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionEipInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionScheduledInstanceInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionTagInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionTagArrayInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionVolumeInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateLaunchTemplateVersionVolumeArrayInput)(nil)).Elem(), GetLaunchTemplateLaunchTemplateVersionVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionEipInput)(nil)).Elem(), GetLaunchTemplateVersionEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionNetworkInterfaceInput)(nil)).Elem(), GetLaunchTemplateVersionNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionNetworkInterfaceArrayInput)(nil)).Elem(), GetLaunchTemplateVersionNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionScheduledInstanceInput)(nil)).Elem(), GetLaunchTemplateVersionScheduledInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionTagInput)(nil)).Elem(), GetLaunchTemplateVersionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionTagArrayInput)(nil)).Elem(), GetLaunchTemplateVersionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionVolumeInput)(nil)).Elem(), GetLaunchTemplateVersionVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionVolumeArrayInput)(nil)).Elem(), GetLaunchTemplateVersionVolumeArray{})
 	pulumi.RegisterOutputType(CommandParameterDefinitionOutput{})
 	pulumi.RegisterOutputType(CommandParameterDefinitionArrayOutput{})
 	pulumi.RegisterOutputType(CommandTagOutput{})
 	pulumi.RegisterOutputType(CommandTagArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentSetCapacityOutput{})
+	pulumi.RegisterOutputType(DeploymentSetCapacityArrayOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsPtrOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsItemOutput{})
@@ -5799,12 +10584,18 @@ func init() {
 	pulumi.RegisterOutputType(InstanceImagePtrOutput{})
 	pulumi.RegisterOutputType(InstanceKeyPairOutput{})
 	pulumi.RegisterOutputType(InstanceKeyPairPtrOutput{})
+	pulumi.RegisterOutputType(InstanceLocalVolumeOutput{})
+	pulumi.RegisterOutputType(InstanceLocalVolumeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceOperationSystemOutput{})
 	pulumi.RegisterOutputType(InstanceOperationSystemPtrOutput{})
 	pulumi.RegisterOutputType(InstancePlacementOutput{})
 	pulumi.RegisterOutputType(InstancePlacementPtrOutput{})
 	pulumi.RegisterOutputType(InstancePrimaryNetworkInterfaceOutput{})
 	pulumi.RegisterOutputType(InstancePrimaryNetworkInterfacePtrOutput{})
+	pulumi.RegisterOutputType(InstanceRdmaNetworkInterfaceDetailOutput{})
+	pulumi.RegisterOutputType(InstanceRdmaNetworkInterfaceDetailArrayOutput{})
+	pulumi.RegisterOutputType(InstanceRenewInfoOutput{})
+	pulumi.RegisterOutputType(InstanceRenewInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceSecondaryNetworkInterfaceOutput{})
 	pulumi.RegisterOutputType(InstanceSecondaryNetworkInterfaceArrayOutput{})
 	pulumi.RegisterOutputType(InstanceSystemVolumeOutput{})
@@ -5819,10 +10610,36 @@ func init() {
 	pulumi.RegisterOutputType(InvocationTagArrayOutput{})
 	pulumi.RegisterOutputType(KeypairTagOutput{})
 	pulumi.RegisterOutputType(KeypairTagArrayOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateTagOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateTagArrayOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionPtrOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionEipOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionEipPtrOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionTagOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionTagArrayOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionVolumeOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateLaunchTemplateVersionVolumeArrayOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionEipOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionEipPtrOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionScheduledInstanceOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionScheduledInstancePtrOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionTagOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionTagArrayOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionVolumeOutput{})
+	pulumi.RegisterOutputType(LaunchTemplateVersionVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetCommandParameterDefinitionOutput{})
 	pulumi.RegisterOutputType(GetCommandParameterDefinitionArrayOutput{})
 	pulumi.RegisterOutputType(GetCommandTagOutput{})
 	pulumi.RegisterOutputType(GetCommandTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentSetCapacityOutput{})
+	pulumi.RegisterOutputType(GetDeploymentSetCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemArrayOutput{})
@@ -5834,9 +10651,14 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceEipAddressOutput{})
 	pulumi.RegisterOutputType(GetInstanceImageOutput{})
 	pulumi.RegisterOutputType(GetInstanceKeyPairOutput{})
+	pulumi.RegisterOutputType(GetInstanceLocalVolumeOutput{})
+	pulumi.RegisterOutputType(GetInstanceLocalVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceOperationSystemOutput{})
 	pulumi.RegisterOutputType(GetInstancePlacementOutput{})
 	pulumi.RegisterOutputType(GetInstancePrimaryNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetInstanceRdmaNetworkInterfaceDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceRdmaNetworkInterfaceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceRenewInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceSecondaryNetworkInterfaceOutput{})
 	pulumi.RegisterOutputType(GetInstanceSecondaryNetworkInterfaceArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceSystemVolumeOutput{})
@@ -5850,4 +10672,23 @@ func init() {
 	pulumi.RegisterOutputType(GetInvocationTagArrayOutput{})
 	pulumi.RegisterOutputType(GetKeypairTagOutput{})
 	pulumi.RegisterOutputType(GetKeypairTagArrayOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateTagOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateTagArrayOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionEipOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionTagOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionTagArrayOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionVolumeOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionEipOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionScheduledInstanceOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionTagOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionTagArrayOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionVolumeOutput{})
+	pulumi.RegisterOutputType(GetLaunchTemplateVersionVolumeArrayOutput{})
 }

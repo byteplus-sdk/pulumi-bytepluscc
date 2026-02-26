@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -68,6 +69,16 @@ public final class GetInstanceEipAddress {
      * 
      */
     private Boolean releaseWithInstance;
+    /**
+     * @return DDoS原生防护（企业版）ID。
+     * 
+     */
+    private Integer securityProtectionInstanceId;
+    /**
+     * @return 公网IP的安全防护类型。
+     * 
+     */
+    private List<String> securityProtectionTypes;
 
     private GetInstanceEipAddress() {}
     /**
@@ -140,6 +151,20 @@ public final class GetInstanceEipAddress {
     public Boolean releaseWithInstance() {
         return this.releaseWithInstance;
     }
+    /**
+     * @return DDoS原生防护（企业版）ID。
+     * 
+     */
+    public Integer securityProtectionInstanceId() {
+        return this.securityProtectionInstanceId;
+    }
+    /**
+     * @return 公网IP的安全防护类型。
+     * 
+     */
+    public List<String> securityProtectionTypes() {
+        return this.securityProtectionTypes;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -157,6 +182,8 @@ public final class GetInstanceEipAddress {
         private String ipAddress;
         private String isp;
         private Boolean releaseWithInstance;
+        private Integer securityProtectionInstanceId;
+        private List<String> securityProtectionTypes;
         public Builder() {}
         public Builder(GetInstanceEipAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -167,6 +194,8 @@ public final class GetInstanceEipAddress {
     	      this.ipAddress = defaults.ipAddress;
     	      this.isp = defaults.isp;
     	      this.releaseWithInstance = defaults.releaseWithInstance;
+    	      this.securityProtectionInstanceId = defaults.securityProtectionInstanceId;
+    	      this.securityProtectionTypes = defaults.securityProtectionTypes;
         }
 
         @CustomType.Setter
@@ -225,6 +254,25 @@ public final class GetInstanceEipAddress {
             this.releaseWithInstance = releaseWithInstance;
             return this;
         }
+        @CustomType.Setter
+        public Builder securityProtectionInstanceId(Integer securityProtectionInstanceId) {
+            if (securityProtectionInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceEipAddress", "securityProtectionInstanceId");
+            }
+            this.securityProtectionInstanceId = securityProtectionInstanceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityProtectionTypes(List<String> securityProtectionTypes) {
+            if (securityProtectionTypes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceEipAddress", "securityProtectionTypes");
+            }
+            this.securityProtectionTypes = securityProtectionTypes;
+            return this;
+        }
+        public Builder securityProtectionTypes(String... securityProtectionTypes) {
+            return securityProtectionTypes(List.of(securityProtectionTypes));
+        }
         public GetInstanceEipAddress build() {
             final var _resultValue = new GetInstanceEipAddress();
             _resultValue.allocationId = allocationId;
@@ -234,6 +282,8 @@ public final class GetInstanceEipAddress {
             _resultValue.ipAddress = ipAddress;
             _resultValue.isp = isp;
             _resultValue.releaseWithInstance = releaseWithInstance;
+            _resultValue.securityProtectionInstanceId = securityProtectionInstanceId;
+            _resultValue.securityProtectionTypes = securityProtectionTypes;
             return _resultValue;
         }
     }

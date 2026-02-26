@@ -13,6 +13,475 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AllowListAssociatedInstance struct {
+	// 已绑定当前白名单的实例 ID。
+	InstanceId *string `pulumi:"instanceId"`
+	// 已绑定当前白名单的实例名称。
+	InstanceName *string `pulumi:"instanceName"`
+	// 实例状态。
+	InstanceStatus *string `pulumi:"instanceStatus"`
+	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	IsLatest *bool `pulumi:"isLatest"`
+	// 实例所属的私有网络 ID。
+	Vpc *string `pulumi:"vpc"`
+}
+
+// AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
+// You can construct a concrete instance of `AllowListAssociatedInstanceInput` via:
+//
+//	AllowListAssociatedInstanceArgs{...}
+type AllowListAssociatedInstanceInput interface {
+	pulumi.Input
+
+	ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput
+	ToAllowListAssociatedInstanceOutputWithContext(context.Context) AllowListAssociatedInstanceOutput
+}
+
+type AllowListAssociatedInstanceArgs struct {
+	// 已绑定当前白名单的实例 ID。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 已绑定当前白名单的实例名称。
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// 实例状态。
+	InstanceStatus pulumi.StringPtrInput `pulumi:"instanceStatus"`
+	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
+	// 实例所属的私有网络 ID。
+	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
+}
+
+func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i AllowListAssociatedInstanceArgs) ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput {
+	return i.ToAllowListAssociatedInstanceOutputWithContext(context.Background())
+}
+
+func (i AllowListAssociatedInstanceArgs) ToAllowListAssociatedInstanceOutputWithContext(ctx context.Context) AllowListAssociatedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListAssociatedInstanceOutput)
+}
+
+// AllowListAssociatedInstanceArrayInput is an input type that accepts AllowListAssociatedInstanceArray and AllowListAssociatedInstanceArrayOutput values.
+// You can construct a concrete instance of `AllowListAssociatedInstanceArrayInput` via:
+//
+//	AllowListAssociatedInstanceArray{ AllowListAssociatedInstanceArgs{...} }
+type AllowListAssociatedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput
+	ToAllowListAssociatedInstanceArrayOutputWithContext(context.Context) AllowListAssociatedInstanceArrayOutput
+}
+
+type AllowListAssociatedInstanceArray []AllowListAssociatedInstanceInput
+
+func (AllowListAssociatedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i AllowListAssociatedInstanceArray) ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput {
+	return i.ToAllowListAssociatedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i AllowListAssociatedInstanceArray) ToAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) AllowListAssociatedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListAssociatedInstanceArrayOutput)
+}
+
+type AllowListAssociatedInstanceOutput struct{ *pulumi.OutputState }
+
+func (AllowListAssociatedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWithContext(ctx context.Context) AllowListAssociatedInstanceOutput {
+	return o
+}
+
+// 已绑定当前白名单的实例 ID。
+func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 已绑定当前白名单的实例名称。
+func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// 实例状态。
+func (o AllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceStatus }).(pulumi.StringPtrOutput)
+}
+
+// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+func (o AllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
+}
+
+// 实例所属的私有网络 ID。
+func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
+}
+
+type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (AllowListAssociatedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) ToAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) AllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowListAssociatedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AllowListAssociatedInstance {
+		return vs[0].([]AllowListAssociatedInstance)[vs[1].(int)]
+	}).(AllowListAssociatedInstanceOutput)
+}
+
+type AllowListSecurityGroupBindInfo struct {
+	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	BindMode *string `pulumi:"bindMode"`
+	// 安全组的 IP 地址列表。
+	IpLists []string `pulumi:"ipLists"`
+	// 安全组 ID。
+	SecurityGroupId *string `pulumi:"securityGroupId"`
+	// 安全组名称。
+	SecurityGroupName *string `pulumi:"securityGroupName"`
+}
+
+// AllowListSecurityGroupBindInfoInput is an input type that accepts AllowListSecurityGroupBindInfoArgs and AllowListSecurityGroupBindInfoOutput values.
+// You can construct a concrete instance of `AllowListSecurityGroupBindInfoInput` via:
+//
+//	AllowListSecurityGroupBindInfoArgs{...}
+type AllowListSecurityGroupBindInfoInput interface {
+	pulumi.Input
+
+	ToAllowListSecurityGroupBindInfoOutput() AllowListSecurityGroupBindInfoOutput
+	ToAllowListSecurityGroupBindInfoOutputWithContext(context.Context) AllowListSecurityGroupBindInfoOutput
+}
+
+type AllowListSecurityGroupBindInfoArgs struct {
+	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	BindMode pulumi.StringPtrInput `pulumi:"bindMode"`
+	// 安全组的 IP 地址列表。
+	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
+	// 安全组 ID。
+	SecurityGroupId pulumi.StringPtrInput `pulumi:"securityGroupId"`
+	// 安全组名称。
+	SecurityGroupName pulumi.StringPtrInput `pulumi:"securityGroupName"`
+}
+
+func (AllowListSecurityGroupBindInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i AllowListSecurityGroupBindInfoArgs) ToAllowListSecurityGroupBindInfoOutput() AllowListSecurityGroupBindInfoOutput {
+	return i.ToAllowListSecurityGroupBindInfoOutputWithContext(context.Background())
+}
+
+func (i AllowListSecurityGroupBindInfoArgs) ToAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListSecurityGroupBindInfoOutput)
+}
+
+// AllowListSecurityGroupBindInfoArrayInput is an input type that accepts AllowListSecurityGroupBindInfoArray and AllowListSecurityGroupBindInfoArrayOutput values.
+// You can construct a concrete instance of `AllowListSecurityGroupBindInfoArrayInput` via:
+//
+//	AllowListSecurityGroupBindInfoArray{ AllowListSecurityGroupBindInfoArgs{...} }
+type AllowListSecurityGroupBindInfoArrayInput interface {
+	pulumi.Input
+
+	ToAllowListSecurityGroupBindInfoArrayOutput() AllowListSecurityGroupBindInfoArrayOutput
+	ToAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Context) AllowListSecurityGroupBindInfoArrayOutput
+}
+
+type AllowListSecurityGroupBindInfoArray []AllowListSecurityGroupBindInfoInput
+
+func (AllowListSecurityGroupBindInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i AllowListSecurityGroupBindInfoArray) ToAllowListSecurityGroupBindInfoArrayOutput() AllowListSecurityGroupBindInfoArrayOutput {
+	return i.ToAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Background())
+}
+
+func (i AllowListSecurityGroupBindInfoArray) ToAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListSecurityGroupBindInfoArrayOutput)
+}
+
+type AllowListSecurityGroupBindInfoOutput struct{ *pulumi.OutputState }
+
+func (AllowListSecurityGroupBindInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o AllowListSecurityGroupBindInfoOutput) ToAllowListSecurityGroupBindInfoOutput() AllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+func (o AllowListSecurityGroupBindInfoOutput) ToAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+func (o AllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.BindMode }).(pulumi.StringPtrOutput)
+}
+
+// 安全组的 IP 地址列表。
+func (o AllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
+}
+
+// 安全组 ID。
+func (o AllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.SecurityGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 安全组名称。
+func (o AllowListSecurityGroupBindInfoOutput) SecurityGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.SecurityGroupName }).(pulumi.StringPtrOutput)
+}
+
+type AllowListSecurityGroupBindInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (AllowListSecurityGroupBindInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o AllowListSecurityGroupBindInfoArrayOutput) ToAllowListSecurityGroupBindInfoArrayOutput() AllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o AllowListSecurityGroupBindInfoArrayOutput) ToAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) AllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o AllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) AllowListSecurityGroupBindInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AllowListSecurityGroupBindInfo {
+		return vs[0].([]AllowListSecurityGroupBindInfo)[vs[1].(int)]
+	}).(AllowListSecurityGroupBindInfoOutput)
+}
+
+type BackupBackupMeta struct {
+	// 数据库名。
+	Database *string `pulumi:"database"`
+	// 表名列表。
+	Tables []string `pulumi:"tables"`
+}
+
+// BackupBackupMetaInput is an input type that accepts BackupBackupMetaArgs and BackupBackupMetaOutput values.
+// You can construct a concrete instance of `BackupBackupMetaInput` via:
+//
+//	BackupBackupMetaArgs{...}
+type BackupBackupMetaInput interface {
+	pulumi.Input
+
+	ToBackupBackupMetaOutput() BackupBackupMetaOutput
+	ToBackupBackupMetaOutputWithContext(context.Context) BackupBackupMetaOutput
+}
+
+type BackupBackupMetaArgs struct {
+	// 数据库名。
+	Database pulumi.StringPtrInput `pulumi:"database"`
+	// 表名列表。
+	Tables pulumi.StringArrayInput `pulumi:"tables"`
+}
+
+func (BackupBackupMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupMeta)(nil)).Elem()
+}
+
+func (i BackupBackupMetaArgs) ToBackupBackupMetaOutput() BackupBackupMetaOutput {
+	return i.ToBackupBackupMetaOutputWithContext(context.Background())
+}
+
+func (i BackupBackupMetaArgs) ToBackupBackupMetaOutputWithContext(ctx context.Context) BackupBackupMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupMetaOutput)
+}
+
+// BackupBackupMetaArrayInput is an input type that accepts BackupBackupMetaArray and BackupBackupMetaArrayOutput values.
+// You can construct a concrete instance of `BackupBackupMetaArrayInput` via:
+//
+//	BackupBackupMetaArray{ BackupBackupMetaArgs{...} }
+type BackupBackupMetaArrayInput interface {
+	pulumi.Input
+
+	ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput
+	ToBackupBackupMetaArrayOutputWithContext(context.Context) BackupBackupMetaArrayOutput
+}
+
+type BackupBackupMetaArray []BackupBackupMetaInput
+
+func (BackupBackupMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupMeta)(nil)).Elem()
+}
+
+func (i BackupBackupMetaArray) ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput {
+	return i.ToBackupBackupMetaArrayOutputWithContext(context.Background())
+}
+
+func (i BackupBackupMetaArray) ToBackupBackupMetaArrayOutputWithContext(ctx context.Context) BackupBackupMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupBackupMetaArrayOutput)
+}
+
+type BackupBackupMetaOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupBackupMeta)(nil)).Elem()
+}
+
+func (o BackupBackupMetaOutput) ToBackupBackupMetaOutput() BackupBackupMetaOutput {
+	return o
+}
+
+func (o BackupBackupMetaOutput) ToBackupBackupMetaOutputWithContext(ctx context.Context) BackupBackupMetaOutput {
+	return o
+}
+
+// 数据库名。
+func (o BackupBackupMetaOutput) Database() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupBackupMeta) *string { return v.Database }).(pulumi.StringPtrOutput)
+}
+
+// 表名列表。
+func (o BackupBackupMetaOutput) Tables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BackupBackupMeta) []string { return v.Tables }).(pulumi.StringArrayOutput)
+}
+
+type BackupBackupMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (BackupBackupMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupBackupMeta)(nil)).Elem()
+}
+
+func (o BackupBackupMetaArrayOutput) ToBackupBackupMetaArrayOutput() BackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o BackupBackupMetaArrayOutput) ToBackupBackupMetaArrayOutputWithContext(ctx context.Context) BackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o BackupBackupMetaArrayOutput) Index(i pulumi.IntInput) BackupBackupMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BackupBackupMeta {
+		return vs[0].([]BackupBackupMeta)[vs[1].(int)]
+	}).(BackupBackupMetaOutput)
+}
+
+type BackupDbTableInfo struct {
+	// 数据库名。
+	Database *string `pulumi:"database"`
+	// 表名列表。
+	Tables []string `pulumi:"tables"`
+}
+
+// BackupDbTableInfoInput is an input type that accepts BackupDbTableInfoArgs and BackupDbTableInfoOutput values.
+// You can construct a concrete instance of `BackupDbTableInfoInput` via:
+//
+//	BackupDbTableInfoArgs{...}
+type BackupDbTableInfoInput interface {
+	pulumi.Input
+
+	ToBackupDbTableInfoOutput() BackupDbTableInfoOutput
+	ToBackupDbTableInfoOutputWithContext(context.Context) BackupDbTableInfoOutput
+}
+
+type BackupDbTableInfoArgs struct {
+	// 数据库名。
+	Database pulumi.StringPtrInput `pulumi:"database"`
+	// 表名列表。
+	Tables pulumi.StringArrayInput `pulumi:"tables"`
+}
+
+func (BackupDbTableInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupDbTableInfo)(nil)).Elem()
+}
+
+func (i BackupDbTableInfoArgs) ToBackupDbTableInfoOutput() BackupDbTableInfoOutput {
+	return i.ToBackupDbTableInfoOutputWithContext(context.Background())
+}
+
+func (i BackupDbTableInfoArgs) ToBackupDbTableInfoOutputWithContext(ctx context.Context) BackupDbTableInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupDbTableInfoOutput)
+}
+
+// BackupDbTableInfoArrayInput is an input type that accepts BackupDbTableInfoArray and BackupDbTableInfoArrayOutput values.
+// You can construct a concrete instance of `BackupDbTableInfoArrayInput` via:
+//
+//	BackupDbTableInfoArray{ BackupDbTableInfoArgs{...} }
+type BackupDbTableInfoArrayInput interface {
+	pulumi.Input
+
+	ToBackupDbTableInfoArrayOutput() BackupDbTableInfoArrayOutput
+	ToBackupDbTableInfoArrayOutputWithContext(context.Context) BackupDbTableInfoArrayOutput
+}
+
+type BackupDbTableInfoArray []BackupDbTableInfoInput
+
+func (BackupDbTableInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupDbTableInfo)(nil)).Elem()
+}
+
+func (i BackupDbTableInfoArray) ToBackupDbTableInfoArrayOutput() BackupDbTableInfoArrayOutput {
+	return i.ToBackupDbTableInfoArrayOutputWithContext(context.Background())
+}
+
+func (i BackupDbTableInfoArray) ToBackupDbTableInfoArrayOutputWithContext(ctx context.Context) BackupDbTableInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackupDbTableInfoArrayOutput)
+}
+
+type BackupDbTableInfoOutput struct{ *pulumi.OutputState }
+
+func (BackupDbTableInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackupDbTableInfo)(nil)).Elem()
+}
+
+func (o BackupDbTableInfoOutput) ToBackupDbTableInfoOutput() BackupDbTableInfoOutput {
+	return o
+}
+
+func (o BackupDbTableInfoOutput) ToBackupDbTableInfoOutputWithContext(ctx context.Context) BackupDbTableInfoOutput {
+	return o
+}
+
+// 数据库名。
+func (o BackupDbTableInfoOutput) Database() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupDbTableInfo) *string { return v.Database }).(pulumi.StringPtrOutput)
+}
+
+// 表名列表。
+func (o BackupDbTableInfoOutput) Tables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BackupDbTableInfo) []string { return v.Tables }).(pulumi.StringArrayOutput)
+}
+
+type BackupDbTableInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (BackupDbTableInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BackupDbTableInfo)(nil)).Elem()
+}
+
+func (o BackupDbTableInfoArrayOutput) ToBackupDbTableInfoArrayOutput() BackupDbTableInfoArrayOutput {
+	return o
+}
+
+func (o BackupDbTableInfoArrayOutput) ToBackupDbTableInfoArrayOutputWithContext(ctx context.Context) BackupDbTableInfoArrayOutput {
+	return o
+}
+
+func (o BackupDbTableInfoArrayOutput) Index(i pulumi.IntInput) BackupDbTableInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BackupDbTableInfo {
+		return vs[0].([]BackupDbTableInfo)[vs[1].(int)]
+	}).(BackupDbTableInfoOutput)
+}
+
 type DatabaseDatabasePrivilege struct {
 	// 数据库账号名称。
 	AccountName *string `pulumi:"accountName"`
@@ -575,6 +1044,477 @@ func (o DbAccountTableColumnPrivilegeTablePrivilegeArrayOutput) Index(i pulumi.I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbAccountTableColumnPrivilegeTablePrivilege {
 		return vs[0].([]DbAccountTableColumnPrivilegeTablePrivilege)[vs[1].(int)]
 	}).(DbAccountTableColumnPrivilegeTablePrivilegeOutput)
+}
+
+type EndpointAddress struct {
+	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	DomainPrefix *string `pulumi:"domainPrefix"`
+	// 端口。
+	Port *string `pulumi:"port"`
+}
+
+// EndpointAddressInput is an input type that accepts EndpointAddressArgs and EndpointAddressOutput values.
+// You can construct a concrete instance of `EndpointAddressInput` via:
+//
+//	EndpointAddressArgs{...}
+type EndpointAddressInput interface {
+	pulumi.Input
+
+	ToEndpointAddressOutput() EndpointAddressOutput
+	ToEndpointAddressOutputWithContext(context.Context) EndpointAddressOutput
+}
+
+type EndpointAddressArgs struct {
+	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	DomainPrefix pulumi.StringPtrInput `pulumi:"domainPrefix"`
+	// 端口。
+	Port pulumi.StringPtrInput `pulumi:"port"`
+}
+
+func (EndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointAddress)(nil)).Elem()
+}
+
+func (i EndpointAddressArgs) ToEndpointAddressOutput() EndpointAddressOutput {
+	return i.ToEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i EndpointAddressArgs) ToEndpointAddressOutputWithContext(ctx context.Context) EndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointAddressOutput)
+}
+
+// EndpointAddressArrayInput is an input type that accepts EndpointAddressArray and EndpointAddressArrayOutput values.
+// You can construct a concrete instance of `EndpointAddressArrayInput` via:
+//
+//	EndpointAddressArray{ EndpointAddressArgs{...} }
+type EndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToEndpointAddressArrayOutput() EndpointAddressArrayOutput
+	ToEndpointAddressArrayOutputWithContext(context.Context) EndpointAddressArrayOutput
+}
+
+type EndpointAddressArray []EndpointAddressInput
+
+func (EndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointAddress)(nil)).Elem()
+}
+
+func (i EndpointAddressArray) ToEndpointAddressArrayOutput() EndpointAddressArrayOutput {
+	return i.ToEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i EndpointAddressArray) ToEndpointAddressArrayOutputWithContext(ctx context.Context) EndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointAddressArrayOutput)
+}
+
+type EndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (EndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointAddress)(nil)).Elem()
+}
+
+func (o EndpointAddressOutput) ToEndpointAddressOutput() EndpointAddressOutput {
+	return o
+}
+
+func (o EndpointAddressOutput) ToEndpointAddressOutputWithContext(ctx context.Context) EndpointAddressOutput {
+	return o
+}
+
+// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+func (o EndpointAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v EndpointAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+func (o EndpointAddressOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointAddress) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
+}
+
+// 端口。
+func (o EndpointAddressOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+type EndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (EndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointAddress)(nil)).Elem()
+}
+
+func (o EndpointAddressArrayOutput) ToEndpointAddressArrayOutput() EndpointAddressArrayOutput {
+	return o
+}
+
+func (o EndpointAddressArrayOutput) ToEndpointAddressArrayOutputWithContext(ctx context.Context) EndpointAddressArrayOutput {
+	return o
+}
+
+func (o EndpointAddressArrayOutput) Index(i pulumi.IntInput) EndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EndpointAddress {
+		return vs[0].([]EndpointAddress)[vs[1].(int)]
+	}).(EndpointAddressOutput)
+}
+
+type EndpointCustomRouteStrategy struct {
+	KeywordRouteStrategies []EndpointCustomRouteStrategyKeywordRouteStrategy `pulumi:"keywordRouteStrategies"`
+}
+
+// EndpointCustomRouteStrategyInput is an input type that accepts EndpointCustomRouteStrategyArgs and EndpointCustomRouteStrategyOutput values.
+// You can construct a concrete instance of `EndpointCustomRouteStrategyInput` via:
+//
+//	EndpointCustomRouteStrategyArgs{...}
+type EndpointCustomRouteStrategyInput interface {
+	pulumi.Input
+
+	ToEndpointCustomRouteStrategyOutput() EndpointCustomRouteStrategyOutput
+	ToEndpointCustomRouteStrategyOutputWithContext(context.Context) EndpointCustomRouteStrategyOutput
+}
+
+type EndpointCustomRouteStrategyArgs struct {
+	KeywordRouteStrategies EndpointCustomRouteStrategyKeywordRouteStrategyArrayInput `pulumi:"keywordRouteStrategies"`
+}
+
+func (EndpointCustomRouteStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (i EndpointCustomRouteStrategyArgs) ToEndpointCustomRouteStrategyOutput() EndpointCustomRouteStrategyOutput {
+	return i.ToEndpointCustomRouteStrategyOutputWithContext(context.Background())
+}
+
+func (i EndpointCustomRouteStrategyArgs) ToEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointCustomRouteStrategyOutput)
+}
+
+func (i EndpointCustomRouteStrategyArgs) ToEndpointCustomRouteStrategyPtrOutput() EndpointCustomRouteStrategyPtrOutput {
+	return i.ToEndpointCustomRouteStrategyPtrOutputWithContext(context.Background())
+}
+
+func (i EndpointCustomRouteStrategyArgs) ToEndpointCustomRouteStrategyPtrOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointCustomRouteStrategyOutput).ToEndpointCustomRouteStrategyPtrOutputWithContext(ctx)
+}
+
+// EndpointCustomRouteStrategyPtrInput is an input type that accepts EndpointCustomRouteStrategyArgs, EndpointCustomRouteStrategyPtr and EndpointCustomRouteStrategyPtrOutput values.
+// You can construct a concrete instance of `EndpointCustomRouteStrategyPtrInput` via:
+//
+//	        EndpointCustomRouteStrategyArgs{...}
+//
+//	or:
+//
+//	        nil
+type EndpointCustomRouteStrategyPtrInput interface {
+	pulumi.Input
+
+	ToEndpointCustomRouteStrategyPtrOutput() EndpointCustomRouteStrategyPtrOutput
+	ToEndpointCustomRouteStrategyPtrOutputWithContext(context.Context) EndpointCustomRouteStrategyPtrOutput
+}
+
+type endpointCustomRouteStrategyPtrType EndpointCustomRouteStrategyArgs
+
+func EndpointCustomRouteStrategyPtr(v *EndpointCustomRouteStrategyArgs) EndpointCustomRouteStrategyPtrInput {
+	return (*endpointCustomRouteStrategyPtrType)(v)
+}
+
+func (*endpointCustomRouteStrategyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**EndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (i *endpointCustomRouteStrategyPtrType) ToEndpointCustomRouteStrategyPtrOutput() EndpointCustomRouteStrategyPtrOutput {
+	return i.ToEndpointCustomRouteStrategyPtrOutputWithContext(context.Background())
+}
+
+func (i *endpointCustomRouteStrategyPtrType) ToEndpointCustomRouteStrategyPtrOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointCustomRouteStrategyPtrOutput)
+}
+
+type EndpointCustomRouteStrategyOutput struct{ *pulumi.OutputState }
+
+func (EndpointCustomRouteStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (o EndpointCustomRouteStrategyOutput) ToEndpointCustomRouteStrategyOutput() EndpointCustomRouteStrategyOutput {
+	return o
+}
+
+func (o EndpointCustomRouteStrategyOutput) ToEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyOutput {
+	return o
+}
+
+func (o EndpointCustomRouteStrategyOutput) ToEndpointCustomRouteStrategyPtrOutput() EndpointCustomRouteStrategyPtrOutput {
+	return o.ToEndpointCustomRouteStrategyPtrOutputWithContext(context.Background())
+}
+
+func (o EndpointCustomRouteStrategyOutput) ToEndpointCustomRouteStrategyPtrOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v EndpointCustomRouteStrategy) *EndpointCustomRouteStrategy {
+		return &v
+	}).(EndpointCustomRouteStrategyPtrOutput)
+}
+
+func (o EndpointCustomRouteStrategyOutput) KeywordRouteStrategies() EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return o.ApplyT(func(v EndpointCustomRouteStrategy) []EndpointCustomRouteStrategyKeywordRouteStrategy {
+		return v.KeywordRouteStrategies
+	}).(EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput)
+}
+
+type EndpointCustomRouteStrategyPtrOutput struct{ *pulumi.OutputState }
+
+func (EndpointCustomRouteStrategyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**EndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (o EndpointCustomRouteStrategyPtrOutput) ToEndpointCustomRouteStrategyPtrOutput() EndpointCustomRouteStrategyPtrOutput {
+	return o
+}
+
+func (o EndpointCustomRouteStrategyPtrOutput) ToEndpointCustomRouteStrategyPtrOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyPtrOutput {
+	return o
+}
+
+func (o EndpointCustomRouteStrategyPtrOutput) Elem() EndpointCustomRouteStrategyOutput {
+	return o.ApplyT(func(v *EndpointCustomRouteStrategy) EndpointCustomRouteStrategy {
+		if v != nil {
+			return *v
+		}
+		var ret EndpointCustomRouteStrategy
+		return ret
+	}).(EndpointCustomRouteStrategyOutput)
+}
+
+func (o EndpointCustomRouteStrategyPtrOutput) KeywordRouteStrategies() EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return o.ApplyT(func(v *EndpointCustomRouteStrategy) []EndpointCustomRouteStrategyKeywordRouteStrategy {
+		if v == nil {
+			return nil
+		}
+		return v.KeywordRouteStrategies
+	}).(EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput)
+}
+
+type EndpointCustomRouteStrategyKeywordRouteStrategy struct {
+	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	NodeType *string `pulumi:"nodeType"`
+	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	SqlKeyword *string `pulumi:"sqlKeyword"`
+}
+
+// EndpointCustomRouteStrategyKeywordRouteStrategyInput is an input type that accepts EndpointCustomRouteStrategyKeywordRouteStrategyArgs and EndpointCustomRouteStrategyKeywordRouteStrategyOutput values.
+// You can construct a concrete instance of `EndpointCustomRouteStrategyKeywordRouteStrategyInput` via:
+//
+//	EndpointCustomRouteStrategyKeywordRouteStrategyArgs{...}
+type EndpointCustomRouteStrategyKeywordRouteStrategyInput interface {
+	pulumi.Input
+
+	ToEndpointCustomRouteStrategyKeywordRouteStrategyOutput() EndpointCustomRouteStrategyKeywordRouteStrategyOutput
+	ToEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(context.Context) EndpointCustomRouteStrategyKeywordRouteStrategyOutput
+}
+
+type EndpointCustomRouteStrategyKeywordRouteStrategyArgs struct {
+	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	SqlKeyword pulumi.StringPtrInput `pulumi:"sqlKeyword"`
+}
+
+func (EndpointCustomRouteStrategyKeywordRouteStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (i EndpointCustomRouteStrategyKeywordRouteStrategyArgs) ToEndpointCustomRouteStrategyKeywordRouteStrategyOutput() EndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return i.ToEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(context.Background())
+}
+
+func (i EndpointCustomRouteStrategyKeywordRouteStrategyArgs) ToEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointCustomRouteStrategyKeywordRouteStrategyOutput)
+}
+
+// EndpointCustomRouteStrategyKeywordRouteStrategyArrayInput is an input type that accepts EndpointCustomRouteStrategyKeywordRouteStrategyArray and EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput values.
+// You can construct a concrete instance of `EndpointCustomRouteStrategyKeywordRouteStrategyArrayInput` via:
+//
+//	EndpointCustomRouteStrategyKeywordRouteStrategyArray{ EndpointCustomRouteStrategyKeywordRouteStrategyArgs{...} }
+type EndpointCustomRouteStrategyKeywordRouteStrategyArrayInput interface {
+	pulumi.Input
+
+	ToEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput() EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput
+	ToEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(context.Context) EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput
+}
+
+type EndpointCustomRouteStrategyKeywordRouteStrategyArray []EndpointCustomRouteStrategyKeywordRouteStrategyInput
+
+func (EndpointCustomRouteStrategyKeywordRouteStrategyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (i EndpointCustomRouteStrategyKeywordRouteStrategyArray) ToEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput() EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return i.ToEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(context.Background())
+}
+
+func (i EndpointCustomRouteStrategyKeywordRouteStrategyArray) ToEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput)
+}
+
+type EndpointCustomRouteStrategyKeywordRouteStrategyOutput struct{ *pulumi.OutputState }
+
+func (EndpointCustomRouteStrategyKeywordRouteStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (o EndpointCustomRouteStrategyKeywordRouteStrategyOutput) ToEndpointCustomRouteStrategyKeywordRouteStrategyOutput() EndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return o
+}
+
+func (o EndpointCustomRouteStrategyKeywordRouteStrategyOutput) ToEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return o
+}
+
+// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+func (o EndpointCustomRouteStrategyKeywordRouteStrategyOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointCustomRouteStrategyKeywordRouteStrategy) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+func (o EndpointCustomRouteStrategyKeywordRouteStrategyOutput) SqlKeyword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointCustomRouteStrategyKeywordRouteStrategy) *string { return v.SqlKeyword }).(pulumi.StringPtrOutput)
+}
+
+type EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput struct{ *pulumi.OutputState }
+
+func (EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (o EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) ToEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput() EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return o
+}
+
+func (o EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) ToEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(ctx context.Context) EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return o
+}
+
+func (o EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) Index(i pulumi.IntInput) EndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EndpointCustomRouteStrategyKeywordRouteStrategy {
+		return vs[0].([]EndpointCustomRouteStrategyKeywordRouteStrategy)[vs[1].(int)]
+	}).(EndpointCustomRouteStrategyKeywordRouteStrategyOutput)
+}
+
+type EndpointReadOnlyNodeWeight struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId *string `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType *string `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	Weight *int `pulumi:"weight"`
+}
+
+// EndpointReadOnlyNodeWeightInput is an input type that accepts EndpointReadOnlyNodeWeightArgs and EndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `EndpointReadOnlyNodeWeightInput` via:
+//
+//	EndpointReadOnlyNodeWeightArgs{...}
+type EndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToEndpointReadOnlyNodeWeightOutput() EndpointReadOnlyNodeWeightOutput
+	ToEndpointReadOnlyNodeWeightOutputWithContext(context.Context) EndpointReadOnlyNodeWeightOutput
+}
+
+type EndpointReadOnlyNodeWeightArgs struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (EndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i EndpointReadOnlyNodeWeightArgs) ToEndpointReadOnlyNodeWeightOutput() EndpointReadOnlyNodeWeightOutput {
+	return i.ToEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i EndpointReadOnlyNodeWeightArgs) ToEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) EndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointReadOnlyNodeWeightOutput)
+}
+
+// EndpointReadOnlyNodeWeightArrayInput is an input type that accepts EndpointReadOnlyNodeWeightArray and EndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `EndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	EndpointReadOnlyNodeWeightArray{ EndpointReadOnlyNodeWeightArgs{...} }
+type EndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToEndpointReadOnlyNodeWeightArrayOutput() EndpointReadOnlyNodeWeightArrayOutput
+	ToEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) EndpointReadOnlyNodeWeightArrayOutput
+}
+
+type EndpointReadOnlyNodeWeightArray []EndpointReadOnlyNodeWeightInput
+
+func (EndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i EndpointReadOnlyNodeWeightArray) ToEndpointReadOnlyNodeWeightArrayOutput() EndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i EndpointReadOnlyNodeWeightArray) ToEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) EndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type EndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (EndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o EndpointReadOnlyNodeWeightOutput) ToEndpointReadOnlyNodeWeightOutput() EndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o EndpointReadOnlyNodeWeightOutput) ToEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) EndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// 只读节点需要传入 NodeId，主节点无需传入。
+func (o EndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointReadOnlyNodeWeight) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// 节点类型。Primary：主节点。ReadOnly：只读节点。
+func (o EndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EndpointReadOnlyNodeWeight) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+func (o EndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v EndpointReadOnlyNodeWeight) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type EndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (EndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o EndpointReadOnlyNodeWeightArrayOutput) ToEndpointReadOnlyNodeWeightArrayOutput() EndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o EndpointReadOnlyNodeWeightArrayOutput) ToEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) EndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o EndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) EndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EndpointReadOnlyNodeWeight {
+		return vs[0].([]EndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(EndpointReadOnlyNodeWeightOutput)
 }
 
 type InstanceAddressObject struct {
@@ -2516,6 +3456,475 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type GetAllowListAssociatedInstance struct {
+	// 已绑定当前白名单的实例 ID。
+	InstanceId string `pulumi:"instanceId"`
+	// 已绑定当前白名单的实例名称。
+	InstanceName string `pulumi:"instanceName"`
+	// 实例状态。
+	InstanceStatus string `pulumi:"instanceStatus"`
+	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	IsLatest bool `pulumi:"isLatest"`
+	// 实例所属的私有网络 ID。
+	Vpc string `pulumi:"vpc"`
+}
+
+// GetAllowListAssociatedInstanceInput is an input type that accepts GetAllowListAssociatedInstanceArgs and GetAllowListAssociatedInstanceOutput values.
+// You can construct a concrete instance of `GetAllowListAssociatedInstanceInput` via:
+//
+//	GetAllowListAssociatedInstanceArgs{...}
+type GetAllowListAssociatedInstanceInput interface {
+	pulumi.Input
+
+	ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput
+	ToGetAllowListAssociatedInstanceOutputWithContext(context.Context) GetAllowListAssociatedInstanceOutput
+}
+
+type GetAllowListAssociatedInstanceArgs struct {
+	// 已绑定当前白名单的实例 ID。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 已绑定当前白名单的实例名称。
+	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// 实例状态。
+	InstanceStatus pulumi.StringInput `pulumi:"instanceStatus"`
+	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	// 实例所属的私有网络 ID。
+	Vpc pulumi.StringInput `pulumi:"vpc"`
+}
+
+func (GetAllowListAssociatedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i GetAllowListAssociatedInstanceArgs) ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput {
+	return i.ToGetAllowListAssociatedInstanceOutputWithContext(context.Background())
+}
+
+func (i GetAllowListAssociatedInstanceArgs) ToGetAllowListAssociatedInstanceOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListAssociatedInstanceOutput)
+}
+
+// GetAllowListAssociatedInstanceArrayInput is an input type that accepts GetAllowListAssociatedInstanceArray and GetAllowListAssociatedInstanceArrayOutput values.
+// You can construct a concrete instance of `GetAllowListAssociatedInstanceArrayInput` via:
+//
+//	GetAllowListAssociatedInstanceArray{ GetAllowListAssociatedInstanceArgs{...} }
+type GetAllowListAssociatedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput
+	ToGetAllowListAssociatedInstanceArrayOutputWithContext(context.Context) GetAllowListAssociatedInstanceArrayOutput
+}
+
+type GetAllowListAssociatedInstanceArray []GetAllowListAssociatedInstanceInput
+
+func (GetAllowListAssociatedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i GetAllowListAssociatedInstanceArray) ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput {
+	return i.ToGetAllowListAssociatedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllowListAssociatedInstanceArray) ToGetAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListAssociatedInstanceArrayOutput)
+}
+
+type GetAllowListAssociatedInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListAssociatedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceOutput {
+	return o
+}
+
+// 已绑定当前白名单的实例 ID。
+func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 已绑定当前白名单的实例名称。
+func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// 实例状态。
+func (o GetAllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceStatus }).(pulumi.StringOutput)
+}
+
+// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+func (o GetAllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) bool { return v.IsLatest }).(pulumi.BoolOutput)
+}
+
+// 实例所属的私有网络 ID。
+func (o GetAllowListAssociatedInstanceOutput) Vpc() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.Vpc }).(pulumi.StringOutput)
+}
+
+type GetAllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListAssociatedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) ToGetAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetAllowListAssociatedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllowListAssociatedInstance {
+		return vs[0].([]GetAllowListAssociatedInstance)[vs[1].(int)]
+	}).(GetAllowListAssociatedInstanceOutput)
+}
+
+type GetAllowListSecurityGroupBindInfo struct {
+	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	BindMode string `pulumi:"bindMode"`
+	// 安全组的 IP 地址列表。
+	IpLists []string `pulumi:"ipLists"`
+	// 安全组 ID。
+	SecurityGroupId string `pulumi:"securityGroupId"`
+	// 安全组名称。
+	SecurityGroupName string `pulumi:"securityGroupName"`
+}
+
+// GetAllowListSecurityGroupBindInfoInput is an input type that accepts GetAllowListSecurityGroupBindInfoArgs and GetAllowListSecurityGroupBindInfoOutput values.
+// You can construct a concrete instance of `GetAllowListSecurityGroupBindInfoInput` via:
+//
+//	GetAllowListSecurityGroupBindInfoArgs{...}
+type GetAllowListSecurityGroupBindInfoInput interface {
+	pulumi.Input
+
+	ToGetAllowListSecurityGroupBindInfoOutput() GetAllowListSecurityGroupBindInfoOutput
+	ToGetAllowListSecurityGroupBindInfoOutputWithContext(context.Context) GetAllowListSecurityGroupBindInfoOutput
+}
+
+type GetAllowListSecurityGroupBindInfoArgs struct {
+	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	BindMode pulumi.StringInput `pulumi:"bindMode"`
+	// 安全组的 IP 地址列表。
+	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
+	// 安全组 ID。
+	SecurityGroupId pulumi.StringInput `pulumi:"securityGroupId"`
+	// 安全组名称。
+	SecurityGroupName pulumi.StringInput `pulumi:"securityGroupName"`
+}
+
+func (GetAllowListSecurityGroupBindInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i GetAllowListSecurityGroupBindInfoArgs) ToGetAllowListSecurityGroupBindInfoOutput() GetAllowListSecurityGroupBindInfoOutput {
+	return i.ToGetAllowListSecurityGroupBindInfoOutputWithContext(context.Background())
+}
+
+func (i GetAllowListSecurityGroupBindInfoArgs) ToGetAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListSecurityGroupBindInfoOutput)
+}
+
+// GetAllowListSecurityGroupBindInfoArrayInput is an input type that accepts GetAllowListSecurityGroupBindInfoArray and GetAllowListSecurityGroupBindInfoArrayOutput values.
+// You can construct a concrete instance of `GetAllowListSecurityGroupBindInfoArrayInput` via:
+//
+//	GetAllowListSecurityGroupBindInfoArray{ GetAllowListSecurityGroupBindInfoArgs{...} }
+type GetAllowListSecurityGroupBindInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetAllowListSecurityGroupBindInfoArrayOutput() GetAllowListSecurityGroupBindInfoArrayOutput
+	ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Context) GetAllowListSecurityGroupBindInfoArrayOutput
+}
+
+type GetAllowListSecurityGroupBindInfoArray []GetAllowListSecurityGroupBindInfoInput
+
+func (GetAllowListSecurityGroupBindInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (i GetAllowListSecurityGroupBindInfoArray) ToGetAllowListSecurityGroupBindInfoArrayOutput() GetAllowListSecurityGroupBindInfoArrayOutput {
+	return i.ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllowListSecurityGroupBindInfoArray) ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListSecurityGroupBindInfoArrayOutput)
+}
+
+type GetAllowListSecurityGroupBindInfoOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListSecurityGroupBindInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o GetAllowListSecurityGroupBindInfoOutput) ToGetAllowListSecurityGroupBindInfoOutput() GetAllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+func (o GetAllowListSecurityGroupBindInfoOutput) ToGetAllowListSecurityGroupBindInfoOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoOutput {
+	return o
+}
+
+// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+func (o GetAllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.BindMode }).(pulumi.StringOutput)
+}
+
+// 安全组的 IP 地址列表。
+func (o GetAllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
+}
+
+// 安全组 ID。
+func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupId }).(pulumi.StringOutput)
+}
+
+// 安全组名称。
+func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupName }).(pulumi.StringOutput)
+}
+
+type GetAllowListSecurityGroupBindInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListSecurityGroupBindInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListSecurityGroupBindInfo)(nil)).Elem()
+}
+
+func (o GetAllowListSecurityGroupBindInfoArrayOutput) ToGetAllowListSecurityGroupBindInfoArrayOutput() GetAllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o GetAllowListSecurityGroupBindInfoArrayOutput) ToGetAllowListSecurityGroupBindInfoArrayOutputWithContext(ctx context.Context) GetAllowListSecurityGroupBindInfoArrayOutput {
+	return o
+}
+
+func (o GetAllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) GetAllowListSecurityGroupBindInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllowListSecurityGroupBindInfo {
+		return vs[0].([]GetAllowListSecurityGroupBindInfo)[vs[1].(int)]
+	}).(GetAllowListSecurityGroupBindInfoOutput)
+}
+
+type GetBackupBackupMeta struct {
+	// 数据库名。
+	Database string `pulumi:"database"`
+	// 表名列表。
+	Tables []string `pulumi:"tables"`
+}
+
+// GetBackupBackupMetaInput is an input type that accepts GetBackupBackupMetaArgs and GetBackupBackupMetaOutput values.
+// You can construct a concrete instance of `GetBackupBackupMetaInput` via:
+//
+//	GetBackupBackupMetaArgs{...}
+type GetBackupBackupMetaInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput
+	ToGetBackupBackupMetaOutputWithContext(context.Context) GetBackupBackupMetaOutput
+}
+
+type GetBackupBackupMetaArgs struct {
+	// 数据库名。
+	Database pulumi.StringInput `pulumi:"database"`
+	// 表名列表。
+	Tables pulumi.StringArrayInput `pulumi:"tables"`
+}
+
+func (GetBackupBackupMetaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (i GetBackupBackupMetaArgs) ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput {
+	return i.ToGetBackupBackupMetaOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupMetaArgs) ToGetBackupBackupMetaOutputWithContext(ctx context.Context) GetBackupBackupMetaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupMetaOutput)
+}
+
+// GetBackupBackupMetaArrayInput is an input type that accepts GetBackupBackupMetaArray and GetBackupBackupMetaArrayOutput values.
+// You can construct a concrete instance of `GetBackupBackupMetaArrayInput` via:
+//
+//	GetBackupBackupMetaArray{ GetBackupBackupMetaArgs{...} }
+type GetBackupBackupMetaArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput
+	ToGetBackupBackupMetaArrayOutputWithContext(context.Context) GetBackupBackupMetaArrayOutput
+}
+
+type GetBackupBackupMetaArray []GetBackupBackupMetaInput
+
+func (GetBackupBackupMetaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (i GetBackupBackupMetaArray) ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput {
+	return i.ToGetBackupBackupMetaArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupBackupMetaArray) ToGetBackupBackupMetaArrayOutputWithContext(ctx context.Context) GetBackupBackupMetaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupBackupMetaArrayOutput)
+}
+
+type GetBackupBackupMetaOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupMetaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (o GetBackupBackupMetaOutput) ToGetBackupBackupMetaOutput() GetBackupBackupMetaOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaOutput) ToGetBackupBackupMetaOutputWithContext(ctx context.Context) GetBackupBackupMetaOutput {
+	return o
+}
+
+// 数据库名。
+func (o GetBackupBackupMetaOutput) Database() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupBackupMeta) string { return v.Database }).(pulumi.StringOutput)
+}
+
+// 表名列表。
+func (o GetBackupBackupMetaOutput) Tables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupBackupMeta) []string { return v.Tables }).(pulumi.StringArrayOutput)
+}
+
+type GetBackupBackupMetaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupBackupMetaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupBackupMeta)(nil)).Elem()
+}
+
+func (o GetBackupBackupMetaArrayOutput) ToGetBackupBackupMetaArrayOutput() GetBackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaArrayOutput) ToGetBackupBackupMetaArrayOutputWithContext(ctx context.Context) GetBackupBackupMetaArrayOutput {
+	return o
+}
+
+func (o GetBackupBackupMetaArrayOutput) Index(i pulumi.IntInput) GetBackupBackupMetaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupBackupMeta {
+		return vs[0].([]GetBackupBackupMeta)[vs[1].(int)]
+	}).(GetBackupBackupMetaOutput)
+}
+
+type GetBackupDbTableInfo struct {
+	// 数据库名。
+	Database string `pulumi:"database"`
+	// 表名列表。
+	Tables []string `pulumi:"tables"`
+}
+
+// GetBackupDbTableInfoInput is an input type that accepts GetBackupDbTableInfoArgs and GetBackupDbTableInfoOutput values.
+// You can construct a concrete instance of `GetBackupDbTableInfoInput` via:
+//
+//	GetBackupDbTableInfoArgs{...}
+type GetBackupDbTableInfoInput interface {
+	pulumi.Input
+
+	ToGetBackupDbTableInfoOutput() GetBackupDbTableInfoOutput
+	ToGetBackupDbTableInfoOutputWithContext(context.Context) GetBackupDbTableInfoOutput
+}
+
+type GetBackupDbTableInfoArgs struct {
+	// 数据库名。
+	Database pulumi.StringInput `pulumi:"database"`
+	// 表名列表。
+	Tables pulumi.StringArrayInput `pulumi:"tables"`
+}
+
+func (GetBackupDbTableInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDbTableInfo)(nil)).Elem()
+}
+
+func (i GetBackupDbTableInfoArgs) ToGetBackupDbTableInfoOutput() GetBackupDbTableInfoOutput {
+	return i.ToGetBackupDbTableInfoOutputWithContext(context.Background())
+}
+
+func (i GetBackupDbTableInfoArgs) ToGetBackupDbTableInfoOutputWithContext(ctx context.Context) GetBackupDbTableInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDbTableInfoOutput)
+}
+
+// GetBackupDbTableInfoArrayInput is an input type that accepts GetBackupDbTableInfoArray and GetBackupDbTableInfoArrayOutput values.
+// You can construct a concrete instance of `GetBackupDbTableInfoArrayInput` via:
+//
+//	GetBackupDbTableInfoArray{ GetBackupDbTableInfoArgs{...} }
+type GetBackupDbTableInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetBackupDbTableInfoArrayOutput() GetBackupDbTableInfoArrayOutput
+	ToGetBackupDbTableInfoArrayOutputWithContext(context.Context) GetBackupDbTableInfoArrayOutput
+}
+
+type GetBackupDbTableInfoArray []GetBackupDbTableInfoInput
+
+func (GetBackupDbTableInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDbTableInfo)(nil)).Elem()
+}
+
+func (i GetBackupDbTableInfoArray) ToGetBackupDbTableInfoArrayOutput() GetBackupDbTableInfoArrayOutput {
+	return i.ToGetBackupDbTableInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackupDbTableInfoArray) ToGetBackupDbTableInfoArrayOutputWithContext(ctx context.Context) GetBackupDbTableInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackupDbTableInfoArrayOutput)
+}
+
+type GetBackupDbTableInfoOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDbTableInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackupDbTableInfo)(nil)).Elem()
+}
+
+func (o GetBackupDbTableInfoOutput) ToGetBackupDbTableInfoOutput() GetBackupDbTableInfoOutput {
+	return o
+}
+
+func (o GetBackupDbTableInfoOutput) ToGetBackupDbTableInfoOutputWithContext(ctx context.Context) GetBackupDbTableInfoOutput {
+	return o
+}
+
+// 数据库名。
+func (o GetBackupDbTableInfoOutput) Database() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupDbTableInfo) string { return v.Database }).(pulumi.StringOutput)
+}
+
+// 表名列表。
+func (o GetBackupDbTableInfoOutput) Tables() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackupDbTableInfo) []string { return v.Tables }).(pulumi.StringArrayOutput)
+}
+
+type GetBackupDbTableInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackupDbTableInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackupDbTableInfo)(nil)).Elem()
+}
+
+func (o GetBackupDbTableInfoArrayOutput) ToGetBackupDbTableInfoArrayOutput() GetBackupDbTableInfoArrayOutput {
+	return o
+}
+
+func (o GetBackupDbTableInfoArrayOutput) ToGetBackupDbTableInfoArrayOutputWithContext(ctx context.Context) GetBackupDbTableInfoArrayOutput {
+	return o
+}
+
+func (o GetBackupDbTableInfoArrayOutput) Index(i pulumi.IntInput) GetBackupDbTableInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackupDbTableInfo {
+		return vs[0].([]GetBackupDbTableInfo)[vs[1].(int)]
+	}).(GetBackupDbTableInfoOutput)
+}
+
 type GetDatabaseDatabasePrivilege struct {
 	// 数据库账号名称。
 	AccountName string `pulumi:"accountName"`
@@ -3093,6 +4502,459 @@ func (o GetDbAccountTableColumnPrivilegeTablePrivilegeArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbAccountTableColumnPrivilegeTablePrivilege {
 		return vs[0].([]GetDbAccountTableColumnPrivilegeTablePrivilege)[vs[1].(int)]
 	}).(GetDbAccountTableColumnPrivilegeTablePrivilegeOutput)
+}
+
+type GetEndpointAddress struct {
+	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain string `pulumi:"domain"`
+	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	DomainPrefix string `pulumi:"domainPrefix"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId string `pulumi:"eipId"`
+	// 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+	EipLocked bool `pulumi:"eipLocked"`
+	// IP 协议版本。取值为 IPv4。
+	InternetProtocol string `pulumi:"internetProtocol"`
+	// IP 地址。
+	IpAddress string `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	NetworkType string `pulumi:"networkType"`
+	// 端口。
+	Port string `pulumi:"port"`
+	// 子网 ID，仅对 Private 地址有效。
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetEndpointAddressInput is an input type that accepts GetEndpointAddressArgs and GetEndpointAddressOutput values.
+// You can construct a concrete instance of `GetEndpointAddressInput` via:
+//
+//	GetEndpointAddressArgs{...}
+type GetEndpointAddressInput interface {
+	pulumi.Input
+
+	ToGetEndpointAddressOutput() GetEndpointAddressOutput
+	ToGetEndpointAddressOutputWithContext(context.Context) GetEndpointAddressOutput
+}
+
+type GetEndpointAddressArgs struct {
+	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	DomainPrefix pulumi.StringInput `pulumi:"domainPrefix"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+	EipLocked pulumi.BoolInput `pulumi:"eipLocked"`
+	// IP 协议版本。取值为 IPv4。
+	InternetProtocol pulumi.StringInput `pulumi:"internetProtocol"`
+	// IP 地址。
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// 端口。
+	Port pulumi.StringInput `pulumi:"port"`
+	// 子网 ID，仅对 Private 地址有效。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetEndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointAddress)(nil)).Elem()
+}
+
+func (i GetEndpointAddressArgs) ToGetEndpointAddressOutput() GetEndpointAddressOutput {
+	return i.ToGetEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i GetEndpointAddressArgs) ToGetEndpointAddressOutputWithContext(ctx context.Context) GetEndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointAddressOutput)
+}
+
+// GetEndpointAddressArrayInput is an input type that accepts GetEndpointAddressArray and GetEndpointAddressArrayOutput values.
+// You can construct a concrete instance of `GetEndpointAddressArrayInput` via:
+//
+//	GetEndpointAddressArray{ GetEndpointAddressArgs{...} }
+type GetEndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetEndpointAddressArrayOutput() GetEndpointAddressArrayOutput
+	ToGetEndpointAddressArrayOutputWithContext(context.Context) GetEndpointAddressArrayOutput
+}
+
+type GetEndpointAddressArray []GetEndpointAddressInput
+
+func (GetEndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointAddress)(nil)).Elem()
+}
+
+func (i GetEndpointAddressArray) ToGetEndpointAddressArrayOutput() GetEndpointAddressArrayOutput {
+	return i.ToGetEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetEndpointAddressArray) ToGetEndpointAddressArrayOutputWithContext(ctx context.Context) GetEndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointAddressArrayOutput)
+}
+
+type GetEndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointAddress)(nil)).Elem()
+}
+
+func (o GetEndpointAddressOutput) ToGetEndpointAddressOutput() GetEndpointAddressOutput {
+	return o
+}
+
+func (o GetEndpointAddressOutput) ToGetEndpointAddressOutputWithContext(ctx context.Context) GetEndpointAddressOutput {
+	return o
+}
+
+// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+func (o GetEndpointAddressOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetEndpointAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// 连接域名。
+func (o GetEndpointAddressOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+func (o GetEndpointAddressOutput) DomainPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.DomainPrefix }).(pulumi.StringOutput)
+}
+
+// EIP 的 ID，仅对 Public 地址有效。
+func (o GetEndpointAddressOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+func (o GetEndpointAddressOutput) EipLocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetEndpointAddress) bool { return v.EipLocked }).(pulumi.BoolOutput)
+}
+
+// IP 协议版本。取值为 IPv4。
+func (o GetEndpointAddressOutput) InternetProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.InternetProtocol }).(pulumi.StringOutput)
+}
+
+// IP 地址。
+func (o GetEndpointAddressOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+func (o GetEndpointAddressOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// 端口。
+func (o GetEndpointAddressOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// 子网 ID，仅对 Private 地址有效。
+func (o GetEndpointAddressOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointAddress) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetEndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointAddress)(nil)).Elem()
+}
+
+func (o GetEndpointAddressArrayOutput) ToGetEndpointAddressArrayOutput() GetEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetEndpointAddressArrayOutput) ToGetEndpointAddressArrayOutputWithContext(ctx context.Context) GetEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetEndpointAddressArrayOutput) Index(i pulumi.IntInput) GetEndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEndpointAddress {
+		return vs[0].([]GetEndpointAddress)[vs[1].(int)]
+	}).(GetEndpointAddressOutput)
+}
+
+type GetEndpointCustomRouteStrategy struct {
+	// 自定义路由策略列表。
+	KeywordRouteStrategies []GetEndpointCustomRouteStrategyKeywordRouteStrategy `pulumi:"keywordRouteStrategies"`
+}
+
+// GetEndpointCustomRouteStrategyInput is an input type that accepts GetEndpointCustomRouteStrategyArgs and GetEndpointCustomRouteStrategyOutput values.
+// You can construct a concrete instance of `GetEndpointCustomRouteStrategyInput` via:
+//
+//	GetEndpointCustomRouteStrategyArgs{...}
+type GetEndpointCustomRouteStrategyInput interface {
+	pulumi.Input
+
+	ToGetEndpointCustomRouteStrategyOutput() GetEndpointCustomRouteStrategyOutput
+	ToGetEndpointCustomRouteStrategyOutputWithContext(context.Context) GetEndpointCustomRouteStrategyOutput
+}
+
+type GetEndpointCustomRouteStrategyArgs struct {
+	// 自定义路由策略列表。
+	KeywordRouteStrategies GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayInput `pulumi:"keywordRouteStrategies"`
+}
+
+func (GetEndpointCustomRouteStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (i GetEndpointCustomRouteStrategyArgs) ToGetEndpointCustomRouteStrategyOutput() GetEndpointCustomRouteStrategyOutput {
+	return i.ToGetEndpointCustomRouteStrategyOutputWithContext(context.Background())
+}
+
+func (i GetEndpointCustomRouteStrategyArgs) ToGetEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) GetEndpointCustomRouteStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointCustomRouteStrategyOutput)
+}
+
+type GetEndpointCustomRouteStrategyOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointCustomRouteStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointCustomRouteStrategy)(nil)).Elem()
+}
+
+func (o GetEndpointCustomRouteStrategyOutput) ToGetEndpointCustomRouteStrategyOutput() GetEndpointCustomRouteStrategyOutput {
+	return o
+}
+
+func (o GetEndpointCustomRouteStrategyOutput) ToGetEndpointCustomRouteStrategyOutputWithContext(ctx context.Context) GetEndpointCustomRouteStrategyOutput {
+	return o
+}
+
+// 自定义路由策略列表。
+func (o GetEndpointCustomRouteStrategyOutput) KeywordRouteStrategies() GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return o.ApplyT(func(v GetEndpointCustomRouteStrategy) []GetEndpointCustomRouteStrategyKeywordRouteStrategy {
+		return v.KeywordRouteStrategies
+	}).(GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput)
+}
+
+type GetEndpointCustomRouteStrategyKeywordRouteStrategy struct {
+	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	NodeType string `pulumi:"nodeType"`
+	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	SqlKeyword string `pulumi:"sqlKeyword"`
+}
+
+// GetEndpointCustomRouteStrategyKeywordRouteStrategyInput is an input type that accepts GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs and GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput values.
+// You can construct a concrete instance of `GetEndpointCustomRouteStrategyKeywordRouteStrategyInput` via:
+//
+//	GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs{...}
+type GetEndpointCustomRouteStrategyKeywordRouteStrategyInput interface {
+	pulumi.Input
+
+	ToGetEndpointCustomRouteStrategyKeywordRouteStrategyOutput() GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput
+	ToGetEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(context.Context) GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput
+}
+
+type GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs struct {
+	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	SqlKeyword pulumi.StringInput `pulumi:"sqlKeyword"`
+}
+
+func (GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (i GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyOutput() GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return i.ToGetEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(context.Background())
+}
+
+func (i GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(ctx context.Context) GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput)
+}
+
+// GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayInput is an input type that accepts GetEndpointCustomRouteStrategyKeywordRouteStrategyArray and GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput values.
+// You can construct a concrete instance of `GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayInput` via:
+//
+//	GetEndpointCustomRouteStrategyKeywordRouteStrategyArray{ GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs{...} }
+type GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayInput interface {
+	pulumi.Input
+
+	ToGetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput() GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput
+	ToGetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(context.Context) GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput
+}
+
+type GetEndpointCustomRouteStrategyKeywordRouteStrategyArray []GetEndpointCustomRouteStrategyKeywordRouteStrategyInput
+
+func (GetEndpointCustomRouteStrategyKeywordRouteStrategyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (i GetEndpointCustomRouteStrategyKeywordRouteStrategyArray) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput() GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return i.ToGetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(context.Background())
+}
+
+func (i GetEndpointCustomRouteStrategyKeywordRouteStrategyArray) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(ctx context.Context) GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput)
+}
+
+type GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyOutput() GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return o
+}
+
+func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyOutputWithContext(ctx context.Context) GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return o
+}
+
+// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointCustomRouteStrategyKeywordRouteStrategy) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) SqlKeyword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointCustomRouteStrategyKeywordRouteStrategy) string { return v.SqlKeyword }).(pulumi.StringOutput)
+}
+
+type GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointCustomRouteStrategyKeywordRouteStrategy)(nil)).Elem()
+}
+
+func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput() GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return o
+}
+
+func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) ToGetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutputWithContext(ctx context.Context) GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
+	return o
+}
+
+func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) Index(i pulumi.IntInput) GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEndpointCustomRouteStrategyKeywordRouteStrategy {
+		return vs[0].([]GetEndpointCustomRouteStrategyKeywordRouteStrategy)[vs[1].(int)]
+	}).(GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput)
+}
+
+type GetEndpointReadOnlyNodeWeight struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId string `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType string `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	Weight int `pulumi:"weight"`
+}
+
+// GetEndpointReadOnlyNodeWeightInput is an input type that accepts GetEndpointReadOnlyNodeWeightArgs and GetEndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `GetEndpointReadOnlyNodeWeightInput` via:
+//
+//	GetEndpointReadOnlyNodeWeightArgs{...}
+type GetEndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToGetEndpointReadOnlyNodeWeightOutput() GetEndpointReadOnlyNodeWeightOutput
+	ToGetEndpointReadOnlyNodeWeightOutputWithContext(context.Context) GetEndpointReadOnlyNodeWeightOutput
+}
+
+type GetEndpointReadOnlyNodeWeightArgs struct {
+	// 只读节点需要传入 NodeId，主节点无需传入。
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetEndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetEndpointReadOnlyNodeWeightArgs) ToGetEndpointReadOnlyNodeWeightOutput() GetEndpointReadOnlyNodeWeightOutput {
+	return i.ToGetEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i GetEndpointReadOnlyNodeWeightArgs) ToGetEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetEndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointReadOnlyNodeWeightOutput)
+}
+
+// GetEndpointReadOnlyNodeWeightArrayInput is an input type that accepts GetEndpointReadOnlyNodeWeightArray and GetEndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `GetEndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	GetEndpointReadOnlyNodeWeightArray{ GetEndpointReadOnlyNodeWeightArgs{...} }
+type GetEndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToGetEndpointReadOnlyNodeWeightArrayOutput() GetEndpointReadOnlyNodeWeightArrayOutput
+	ToGetEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) GetEndpointReadOnlyNodeWeightArrayOutput
+}
+
+type GetEndpointReadOnlyNodeWeightArray []GetEndpointReadOnlyNodeWeightInput
+
+func (GetEndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetEndpointReadOnlyNodeWeightArray) ToGetEndpointReadOnlyNodeWeightArrayOutput() GetEndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToGetEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i GetEndpointReadOnlyNodeWeightArray) ToGetEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetEndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type GetEndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetEndpointReadOnlyNodeWeightOutput) ToGetEndpointReadOnlyNodeWeightOutput() GetEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o GetEndpointReadOnlyNodeWeightOutput) ToGetEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// 只读节点需要传入 NodeId，主节点无需传入。
+func (o GetEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointReadOnlyNodeWeight) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// 节点类型。Primary：主节点。ReadOnly：只读节点。
+func (o GetEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointReadOnlyNodeWeight) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+func (o GetEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetEndpointReadOnlyNodeWeight) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetEndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetEndpointReadOnlyNodeWeightArrayOutput) ToGetEndpointReadOnlyNodeWeightArrayOutput() GetEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetEndpointReadOnlyNodeWeightArrayOutput) ToGetEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) GetEndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEndpointReadOnlyNodeWeight {
+		return vs[0].([]GetEndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(GetEndpointReadOnlyNodeWeightOutput)
 }
 
 type GetInstanceAddressObject struct {
@@ -4505,6 +6367,14 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupMetaInput)(nil)).Elem(), BackupBackupMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupBackupMetaArrayInput)(nil)).Elem(), BackupBackupMetaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupDbTableInfoInput)(nil)).Elem(), BackupDbTableInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackupDbTableInfoArrayInput)(nil)).Elem(), BackupDbTableInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasePrivilegeInput)(nil)).Elem(), DatabaseDatabasePrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasePrivilegeArrayInput)(nil)).Elem(), DatabaseDatabasePrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountAccountPrivilegeInput)(nil)).Elem(), DbAccountAccountPrivilegeArgs{})
@@ -4515,6 +6385,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountTableColumnPrivilegeColumnPrivilegeArrayInput)(nil)).Elem(), DbAccountTableColumnPrivilegeColumnPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountTableColumnPrivilegeTablePrivilegeInput)(nil)).Elem(), DbAccountTableColumnPrivilegeTablePrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbAccountTableColumnPrivilegeTablePrivilegeArrayInput)(nil)).Elem(), DbAccountTableColumnPrivilegeTablePrivilegeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointAddressInput)(nil)).Elem(), EndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointAddressArrayInput)(nil)).Elem(), EndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointCustomRouteStrategyInput)(nil)).Elem(), EndpointCustomRouteStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointCustomRouteStrategyPtrInput)(nil)).Elem(), EndpointCustomRouteStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointCustomRouteStrategyKeywordRouteStrategyInput)(nil)).Elem(), EndpointCustomRouteStrategyKeywordRouteStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointCustomRouteStrategyKeywordRouteStrategyArrayInput)(nil)).Elem(), EndpointCustomRouteStrategyKeywordRouteStrategyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointReadOnlyNodeWeightInput)(nil)).Elem(), EndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), EndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAddressObjectInput)(nil)).Elem(), InstanceAddressObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAddressObjectArrayInput)(nil)).Elem(), InstanceAddressObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceAutoStorageScalingConfigInput)(nil)).Elem(), InstanceAutoStorageScalingConfigArgs{})
@@ -4537,6 +6415,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceProxyDetailProxyResourceInfoPtrInput)(nil)).Elem(), InstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaInput)(nil)).Elem(), GetBackupBackupMetaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupMetaArrayInput)(nil)).Elem(), GetBackupBackupMetaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDbTableInfoInput)(nil)).Elem(), GetBackupDbTableInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupDbTableInfoArrayInput)(nil)).Elem(), GetBackupDbTableInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasePrivilegeInput)(nil)).Elem(), GetDatabaseDatabasePrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasePrivilegeArrayInput)(nil)).Elem(), GetDatabaseDatabasePrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountAccountPrivilegeInput)(nil)).Elem(), GetDbAccountAccountPrivilegeArgs{})
@@ -4547,6 +6433,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeColumnPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeTablePrivilegeInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeTablePrivilegeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbAccountTableColumnPrivilegeTablePrivilegeArrayInput)(nil)).Elem(), GetDbAccountTableColumnPrivilegeTablePrivilegeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointAddressInput)(nil)).Elem(), GetEndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointAddressArrayInput)(nil)).Elem(), GetEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointCustomRouteStrategyInput)(nil)).Elem(), GetEndpointCustomRouteStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointCustomRouteStrategyKeywordRouteStrategyInput)(nil)).Elem(), GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayInput)(nil)).Elem(), GetEndpointCustomRouteStrategyKeywordRouteStrategyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetEndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), GetEndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAddressObjectInput)(nil)).Elem(), GetInstanceAddressObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAddressObjectArrayInput)(nil)).Elem(), GetInstanceAddressObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceAutoStorageScalingConfigInput)(nil)).Elem(), GetInstanceAutoStorageScalingConfigArgs{})
@@ -4564,6 +6457,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceProxyDetailProxyResourceInfoInput)(nil)).Elem(), GetInstanceProxyDetailProxyResourceInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
+	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
+	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(BackupBackupMetaOutput{})
+	pulumi.RegisterOutputType(BackupBackupMetaArrayOutput{})
+	pulumi.RegisterOutputType(BackupDbTableInfoOutput{})
+	pulumi.RegisterOutputType(BackupDbTableInfoArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseDatabasePrivilegeOutput{})
 	pulumi.RegisterOutputType(DatabaseDatabasePrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(DbAccountAccountPrivilegeOutput{})
@@ -4574,6 +6475,14 @@ func init() {
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeTablePrivilegeOutput{})
 	pulumi.RegisterOutputType(DbAccountTableColumnPrivilegeTablePrivilegeArrayOutput{})
+	pulumi.RegisterOutputType(EndpointAddressOutput{})
+	pulumi.RegisterOutputType(EndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(EndpointCustomRouteStrategyOutput{})
+	pulumi.RegisterOutputType(EndpointCustomRouteStrategyPtrOutput{})
+	pulumi.RegisterOutputType(EndpointCustomRouteStrategyKeywordRouteStrategyOutput{})
+	pulumi.RegisterOutputType(EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput{})
+	pulumi.RegisterOutputType(EndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(EndpointReadOnlyNodeWeightArrayOutput{})
 	pulumi.RegisterOutputType(InstanceAddressObjectOutput{})
 	pulumi.RegisterOutputType(InstanceAddressObjectArrayOutput{})
 	pulumi.RegisterOutputType(InstanceAutoStorageScalingConfigOutput{})
@@ -4596,6 +6505,14 @@ func init() {
 	pulumi.RegisterOutputType(InstanceProxyDetailProxyResourceInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
+	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
+	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupMetaOutput{})
+	pulumi.RegisterOutputType(GetBackupBackupMetaArrayOutput{})
+	pulumi.RegisterOutputType(GetBackupDbTableInfoOutput{})
+	pulumi.RegisterOutputType(GetBackupDbTableInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabasePrivilegeOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabasePrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbAccountAccountPrivilegeOutput{})
@@ -4606,6 +6523,13 @@ func init() {
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeTablePrivilegeOutput{})
 	pulumi.RegisterOutputType(GetDbAccountTableColumnPrivilegeTablePrivilegeArrayOutput{})
+	pulumi.RegisterOutputType(GetEndpointAddressOutput{})
+	pulumi.RegisterOutputType(GetEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetEndpointCustomRouteStrategyOutput{})
+	pulumi.RegisterOutputType(GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput{})
+	pulumi.RegisterOutputType(GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput{})
+	pulumi.RegisterOutputType(GetEndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(GetEndpointReadOnlyNodeWeightArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceAddressObjectOutput{})
 	pulumi.RegisterOutputType(GetInstanceAddressObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceAutoStorageScalingConfigOutput{})

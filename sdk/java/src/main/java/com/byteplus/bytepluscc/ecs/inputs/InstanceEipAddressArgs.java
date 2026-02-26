@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -164,6 +165,36 @@ public final class InstanceEipAddressArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.releaseWithInstance);
     }
 
+    /**
+     * DDoS原生防护（企业版）ID。
+     * 
+     */
+    @Import(name="securityProtectionInstanceId")
+    private @Nullable Output<Integer> securityProtectionInstanceId;
+
+    /**
+     * @return DDoS原生防护（企业版）ID。
+     * 
+     */
+    public Optional<Output<Integer>> securityProtectionInstanceId() {
+        return Optional.ofNullable(this.securityProtectionInstanceId);
+    }
+
+    /**
+     * 公网IP的安全防护类型。
+     * 
+     */
+    @Import(name="securityProtectionTypes")
+    private @Nullable Output<List<String>> securityProtectionTypes;
+
+    /**
+     * @return 公网IP的安全防护类型。
+     * 
+     */
+    public Optional<Output<List<String>>> securityProtectionTypes() {
+        return Optional.ofNullable(this.securityProtectionTypes);
+    }
+
     private InstanceEipAddressArgs() {}
 
     private InstanceEipAddressArgs(InstanceEipAddressArgs $) {
@@ -174,6 +205,8 @@ public final class InstanceEipAddressArgs extends com.pulumi.resources.ResourceA
         this.ipAddress = $.ipAddress;
         this.isp = $.isp;
         this.releaseWithInstance = $.releaseWithInstance;
+        this.securityProtectionInstanceId = $.securityProtectionInstanceId;
+        this.securityProtectionTypes = $.securityProtectionTypes;
     }
 
     public static Builder builder() {
@@ -381,6 +414,58 @@ public final class InstanceEipAddressArgs extends com.pulumi.resources.ResourceA
          */
         public Builder releaseWithInstance(Boolean releaseWithInstance) {
             return releaseWithInstance(Output.of(releaseWithInstance));
+        }
+
+        /**
+         * @param securityProtectionInstanceId DDoS原生防护（企业版）ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionInstanceId(@Nullable Output<Integer> securityProtectionInstanceId) {
+            $.securityProtectionInstanceId = securityProtectionInstanceId;
+            return this;
+        }
+
+        /**
+         * @param securityProtectionInstanceId DDoS原生防护（企业版）ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionInstanceId(Integer securityProtectionInstanceId) {
+            return securityProtectionInstanceId(Output.of(securityProtectionInstanceId));
+        }
+
+        /**
+         * @param securityProtectionTypes 公网IP的安全防护类型。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionTypes(@Nullable Output<List<String>> securityProtectionTypes) {
+            $.securityProtectionTypes = securityProtectionTypes;
+            return this;
+        }
+
+        /**
+         * @param securityProtectionTypes 公网IP的安全防护类型。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionTypes(List<String> securityProtectionTypes) {
+            return securityProtectionTypes(Output.of(securityProtectionTypes));
+        }
+
+        /**
+         * @param securityProtectionTypes 公网IP的安全防护类型。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionTypes(String... securityProtectionTypes) {
+            return securityProtectionTypes(List.of(securityProtectionTypes));
         }
 
         public InstanceEipAddressArgs build() {

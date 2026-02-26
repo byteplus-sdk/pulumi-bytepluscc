@@ -41,7 +41,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.51 // indirect
 	github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 // indirect
-	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.16 // indirect
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.17 // indirect
 	github.com/charmbracelet/bubbles v0.16.1 // indirect
 	github.com/charmbracelet/bubbletea v0.25.0 // indirect
 	github.com/charmbracelet/lipgloss v0.7.1 // indirect

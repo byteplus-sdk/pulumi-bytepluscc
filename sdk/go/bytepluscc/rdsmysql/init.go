@@ -21,10 +21,16 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:rdsmysql/allowList:AllowList":
+		r = &AllowList{}
+	case "bytepluscc:rdsmysql/backup:Backup":
+		r = &Backup{}
 	case "bytepluscc:rdsmysql/database:Database":
 		r = &Database{}
 	case "bytepluscc:rdsmysql/dbAccount:DbAccount":
 		r = &DbAccount{}
+	case "bytepluscc:rdsmysql/endpoint:Endpoint":
+		r = &Endpoint{}
 	case "bytepluscc:rdsmysql/instance:Instance":
 		r = &Instance{}
 	default:
@@ -42,12 +48,27 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"rdsmysql/allowList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdsmysql/backup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"rdsmysql/database",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rdsmysql/dbAccount",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdsmysql/endpoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -63,6 +63,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
         /// 实例是否随实例释放。
         /// </summary>
         public readonly bool ReleaseWithInstance;
+        /// <summary>
+        /// DDoS原生防护（企业版）ID。
+        /// </summary>
+        public readonly int SecurityProtectionInstanceId;
+        /// <summary>
+        /// 公网IP的安全防护类型。
+        /// </summary>
+        public readonly ImmutableArray<string> SecurityProtectionTypes;
 
         [OutputConstructor]
         private GetInstanceEipAddressResult(
@@ -78,7 +86,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
 
             string isp,
 
-            bool releaseWithInstance)
+            bool releaseWithInstance,
+
+            int securityProtectionInstanceId,
+
+            ImmutableArray<string> securityProtectionTypes)
         {
             AllocationId = allocationId;
             BandwidthMbps = bandwidthMbps;
@@ -87,6 +99,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
             IpAddress = ipAddress;
             Isp = isp;
             ReleaseWithInstance = releaseWithInstance;
+            SecurityProtectionInstanceId = securityProtectionInstanceId;
+            SecurityProtectionTypes = securityProtectionTypes;
         }
     }
 }

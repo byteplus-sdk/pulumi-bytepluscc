@@ -8,6 +8,10 @@ import com.byteplus.bytepluscc.alb.inputs.GetAclArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetAclPlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetCertificateArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetCertificatePlainArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetCustomizedCfgArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetCustomizedCfgPlainArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetHealthCheckTemplateArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetHealthCheckTemplatePlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetListenerArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetListenerPlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetLoadBalancerArgs;
@@ -18,6 +22,10 @@ import com.byteplus.bytepluscc.alb.outputs.GetAclResult;
 import com.byteplus.bytepluscc.alb.outputs.GetAclsResult;
 import com.byteplus.bytepluscc.alb.outputs.GetCertificateResult;
 import com.byteplus.bytepluscc.alb.outputs.GetCertificatesResult;
+import com.byteplus.bytepluscc.alb.outputs.GetCustomizedCfgResult;
+import com.byteplus.bytepluscc.alb.outputs.GetCustomizedCfgsResult;
+import com.byteplus.bytepluscc.alb.outputs.GetHealthCheckTemplateResult;
+import com.byteplus.bytepluscc.alb.outputs.GetHealthCheckTemplatesResult;
 import com.byteplus.bytepluscc.alb.outputs.GetListenerResult;
 import com.byteplus.bytepluscc.alb.outputs.GetListenersResult;
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerResult;
@@ -200,6 +208,174 @@ public final class AlbFunctions {
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:alb/getCertificates:getCertificates", TypeShape.of(GetCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static Output<GetCustomizedCfgResult> getCustomizedCfg(GetCustomizedCfgArgs args) {
+        return getCustomizedCfg(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static CompletableFuture<GetCustomizedCfgResult> getCustomizedCfgPlain(GetCustomizedCfgPlainArgs args) {
+        return getCustomizedCfgPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static Output<GetCustomizedCfgResult> getCustomizedCfg(GetCustomizedCfgArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCustomizedCfg:getCustomizedCfg", TypeShape.of(GetCustomizedCfgResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static Output<GetCustomizedCfgResult> getCustomizedCfg(GetCustomizedCfgArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCustomizedCfg:getCustomizedCfg", TypeShape.of(GetCustomizedCfgResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static CompletableFuture<GetCustomizedCfgResult> getCustomizedCfgPlain(GetCustomizedCfgPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getCustomizedCfg:getCustomizedCfg", TypeShape.of(GetCustomizedCfgResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static Output<GetCustomizedCfgsResult> getCustomizedCfgs() {
+        return getCustomizedCfgs(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static CompletableFuture<GetCustomizedCfgsResult> getCustomizedCfgsPlain() {
+        return getCustomizedCfgsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static Output<GetCustomizedCfgsResult> getCustomizedCfgs(InvokeArgs args) {
+        return getCustomizedCfgs(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static CompletableFuture<GetCustomizedCfgsResult> getCustomizedCfgsPlain(InvokeArgs args) {
+        return getCustomizedCfgsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static Output<GetCustomizedCfgsResult> getCustomizedCfgs(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCustomizedCfgs:getCustomizedCfgs", TypeShape.of(GetCustomizedCfgsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static Output<GetCustomizedCfgsResult> getCustomizedCfgs(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getCustomizedCfgs:getCustomizedCfgs", TypeShape.of(GetCustomizedCfgsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::CustomizedCfg
+     * 
+     */
+    public static CompletableFuture<GetCustomizedCfgsResult> getCustomizedCfgsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getCustomizedCfgs:getCustomizedCfgs", TypeShape.of(GetCustomizedCfgsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static Output<GetHealthCheckTemplateResult> getHealthCheckTemplate(GetHealthCheckTemplateArgs args) {
+        return getHealthCheckTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static CompletableFuture<GetHealthCheckTemplateResult> getHealthCheckTemplatePlain(GetHealthCheckTemplatePlainArgs args) {
+        return getHealthCheckTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static Output<GetHealthCheckTemplateResult> getHealthCheckTemplate(GetHealthCheckTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getHealthCheckTemplate:getHealthCheckTemplate", TypeShape.of(GetHealthCheckTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static Output<GetHealthCheckTemplateResult> getHealthCheckTemplate(GetHealthCheckTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getHealthCheckTemplate:getHealthCheckTemplate", TypeShape.of(GetHealthCheckTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static CompletableFuture<GetHealthCheckTemplateResult> getHealthCheckTemplatePlain(GetHealthCheckTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getHealthCheckTemplate:getHealthCheckTemplate", TypeShape.of(GetHealthCheckTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static Output<GetHealthCheckTemplatesResult> getHealthCheckTemplates() {
+        return getHealthCheckTemplates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static CompletableFuture<GetHealthCheckTemplatesResult> getHealthCheckTemplatesPlain() {
+        return getHealthCheckTemplatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static Output<GetHealthCheckTemplatesResult> getHealthCheckTemplates(InvokeArgs args) {
+        return getHealthCheckTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static CompletableFuture<GetHealthCheckTemplatesResult> getHealthCheckTemplatesPlain(InvokeArgs args) {
+        return getHealthCheckTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static Output<GetHealthCheckTemplatesResult> getHealthCheckTemplates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getHealthCheckTemplates:getHealthCheckTemplates", TypeShape.of(GetHealthCheckTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static Output<GetHealthCheckTemplatesResult> getHealthCheckTemplates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getHealthCheckTemplates:getHealthCheckTemplates", TypeShape.of(GetHealthCheckTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::HealthCheckTemplate
+     * 
+     */
+    public static CompletableFuture<GetHealthCheckTemplatesResult> getHealthCheckTemplatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getHealthCheckTemplates:getHealthCheckTemplates", TypeShape.of(GetHealthCheckTemplatesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::ALB::Listener

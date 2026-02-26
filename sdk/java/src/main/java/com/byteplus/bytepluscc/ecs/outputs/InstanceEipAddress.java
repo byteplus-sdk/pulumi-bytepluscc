@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -69,6 +70,16 @@ public final class InstanceEipAddress {
      * 
      */
     private @Nullable Boolean releaseWithInstance;
+    /**
+     * @return DDoS原生防护（企业版）ID。
+     * 
+     */
+    private @Nullable Integer securityProtectionInstanceId;
+    /**
+     * @return 公网IP的安全防护类型。
+     * 
+     */
+    private @Nullable List<String> securityProtectionTypes;
 
     private InstanceEipAddress() {}
     /**
@@ -141,6 +152,20 @@ public final class InstanceEipAddress {
     public Optional<Boolean> releaseWithInstance() {
         return Optional.ofNullable(this.releaseWithInstance);
     }
+    /**
+     * @return DDoS原生防护（企业版）ID。
+     * 
+     */
+    public Optional<Integer> securityProtectionInstanceId() {
+        return Optional.ofNullable(this.securityProtectionInstanceId);
+    }
+    /**
+     * @return 公网IP的安全防护类型。
+     * 
+     */
+    public List<String> securityProtectionTypes() {
+        return this.securityProtectionTypes == null ? List.of() : this.securityProtectionTypes;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -158,6 +183,8 @@ public final class InstanceEipAddress {
         private @Nullable String ipAddress;
         private @Nullable String isp;
         private @Nullable Boolean releaseWithInstance;
+        private @Nullable Integer securityProtectionInstanceId;
+        private @Nullable List<String> securityProtectionTypes;
         public Builder() {}
         public Builder(InstanceEipAddress defaults) {
     	      Objects.requireNonNull(defaults);
@@ -168,6 +195,8 @@ public final class InstanceEipAddress {
     	      this.ipAddress = defaults.ipAddress;
     	      this.isp = defaults.isp;
     	      this.releaseWithInstance = defaults.releaseWithInstance;
+    	      this.securityProtectionInstanceId = defaults.securityProtectionInstanceId;
+    	      this.securityProtectionTypes = defaults.securityProtectionTypes;
         }
 
         @CustomType.Setter
@@ -212,6 +241,21 @@ public final class InstanceEipAddress {
             this.releaseWithInstance = releaseWithInstance;
             return this;
         }
+        @CustomType.Setter
+        public Builder securityProtectionInstanceId(@Nullable Integer securityProtectionInstanceId) {
+
+            this.securityProtectionInstanceId = securityProtectionInstanceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityProtectionTypes(@Nullable List<String> securityProtectionTypes) {
+
+            this.securityProtectionTypes = securityProtectionTypes;
+            return this;
+        }
+        public Builder securityProtectionTypes(String... securityProtectionTypes) {
+            return securityProtectionTypes(List.of(securityProtectionTypes));
+        }
         public InstanceEipAddress build() {
             final var _resultValue = new InstanceEipAddress();
             _resultValue.allocationId = allocationId;
@@ -221,6 +265,8 @@ public final class InstanceEipAddress {
             _resultValue.ipAddress = ipAddress;
             _resultValue.isp = isp;
             _resultValue.releaseWithInstance = releaseWithInstance;
+            _resultValue.securityProtectionInstanceId = securityProtectionInstanceId;
+            _resultValue.securityProtectionTypes = securityProtectionTypes;
             return _resultValue;
         }
     }

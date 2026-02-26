@@ -56,6 +56,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<string>> DnsServers { get; private set; } = null!;
 
         /// <summary>
+        /// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+        /// </summary>
+        [Output("enableIpv6")]
+        public Output<bool> EnableIpv6 { get; private set; } = null!;
+
+        /// <summary>
         /// VPC 绑定的 IPv4 网关的 ID。
         /// </summary>
         [Output("ipv4GatewayId")]
@@ -226,6 +232,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
+        /// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+        /// </summary>
+        [Input("enableIpv6")]
+        public Input<bool>? EnableIpv6 { get; set; }
+
+        /// <summary>
         /// VPC 绑定的 IPv4 网关的 ID。
         /// </summary>
         [Input("ipv4GatewayId")]
@@ -350,6 +362,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
             get => _dnsServers ?? (_dnsServers = new InputList<string>());
             set => _dnsServers = value;
         }
+
+        /// <summary>
+        /// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+        /// </summary>
+        [Input("enableIpv6")]
+        public Input<bool>? EnableIpv6 { get; set; }
 
         /// <summary>
         /// VPC 绑定的 IPv4 网关的 ID。

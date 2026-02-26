@@ -27,6 +27,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Eip{}
 	case "bytepluscc:vpc/eni:Eni":
 		r = &Eni{}
+	case "bytepluscc:vpc/flowLog:FlowLog":
+		r = &FlowLog{}
+	case "bytepluscc:vpc/haVip:HaVip":
+		r = &HaVip{}
+	case "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth":
+		r = &Ipv6AddressBandwidth{}
+	case "bytepluscc:vpc/ipv6Gateway:Ipv6Gateway":
+		r = &Ipv6Gateway{}
 	case "bytepluscc:vpc/networkAcl:NetworkAcl":
 		r = &NetworkAcl{}
 	case "bytepluscc:vpc/prefixList:PrefixList":
@@ -37,6 +45,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SecurityGroup{}
 	case "bytepluscc:vpc/subnet:Subnet":
 		r = &Subnet{}
+	case "bytepluscc:vpc/trafficMirrorFilter:TrafficMirrorFilter":
+		r = &TrafficMirrorFilter{}
+	case "bytepluscc:vpc/trafficMirrorFilterRule:TrafficMirrorFilterRule":
+		r = &TrafficMirrorFilterRule{}
+	case "bytepluscc:vpc/trafficMirrorSession:TrafficMirrorSession":
+		r = &TrafficMirrorSession{}
+	case "bytepluscc:vpc/trafficMirrorTarget:TrafficMirrorTarget":
+		r = &TrafficMirrorTarget{}
 	case "bytepluscc:vpc/vpc:Vpc":
 		r = &Vpc{}
 	default:
@@ -69,6 +85,26 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"vpc/flowLog",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/haVip",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/ipv6AddressBandwidth",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/ipv6Gateway",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"vpc/networkAcl",
 		&module{version},
 	)
@@ -90,6 +126,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vpc/subnet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/trafficMirrorFilter",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/trafficMirrorFilterRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/trafficMirrorSession",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/trafficMirrorTarget",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

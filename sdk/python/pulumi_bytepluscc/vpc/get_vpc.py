@@ -28,7 +28,7 @@ class GetVpcResult:
     """
     A collection of values returned by getVpc.
     """
-    def __init__(__self__, account_id=None, associate_cens=None, cidr_block=None, creation_time=None, description=None, dns_servers=None, id=None, ipv4_gateway_id=None, ipv6_cidr_block=None, is_default=None, nat_gateway_ids=None, network_acl_num=None, project_name=None, route_table_ids=None, secondary_cidr_blocks=None, security_group_ids=None, status=None, subnet_ids=None, support_ipv4_gateway=None, tags=None, update_time=None, user_cidr_blocks=None, vpc_id=None, vpc_name=None):
+    def __init__(__self__, account_id=None, associate_cens=None, cidr_block=None, creation_time=None, description=None, dns_servers=None, enable_ipv6=None, id=None, ipv4_gateway_id=None, ipv6_cidr_block=None, is_default=None, nat_gateway_ids=None, network_acl_num=None, project_name=None, route_table_ids=None, secondary_cidr_blocks=None, security_group_ids=None, status=None, subnet_ids=None, support_ipv4_gateway=None, tags=None, update_time=None, user_cidr_blocks=None, vpc_id=None, vpc_name=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -47,6 +47,9 @@ class GetVpcResult:
         if dns_servers and not isinstance(dns_servers, list):
             raise TypeError("Expected argument 'dns_servers' to be a list")
         pulumi.set(__self__, "dns_servers", dns_servers)
+        if enable_ipv6 and not isinstance(enable_ipv6, bool):
+            raise TypeError("Expected argument 'enable_ipv6' to be a bool")
+        pulumi.set(__self__, "enable_ipv6", enable_ipv6)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -149,6 +152,14 @@ class GetVpcResult:
         VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
         """
         return pulumi.get(self, "dns_servers")
+
+    @property
+    @pulumi.getter(name="enableIpv6")
+    def enable_ipv6(self) -> builtins.bool:
+        """
+        是否开启IPv6网段。false（默认值）：不开启。true：开启。
+        """
+        return pulumi.get(self, "enable_ipv6")
 
     @property
     @pulumi.getter
@@ -307,6 +318,7 @@ class AwaitableGetVpcResult(GetVpcResult):
             creation_time=self.creation_time,
             description=self.description,
             dns_servers=self.dns_servers,
+            enable_ipv6=self.enable_ipv6,
             id=self.id,
             ipv4_gateway_id=self.ipv4_gateway_id,
             ipv6_cidr_block=self.ipv6_cidr_block,
@@ -347,6 +359,7 @@ def get_vpc(id: Optional[builtins.str] = None,
         creation_time=pulumi.get(__ret__, 'creation_time'),
         description=pulumi.get(__ret__, 'description'),
         dns_servers=pulumi.get(__ret__, 'dns_servers'),
+        enable_ipv6=pulumi.get(__ret__, 'enable_ipv6'),
         id=pulumi.get(__ret__, 'id'),
         ipv4_gateway_id=pulumi.get(__ret__, 'ipv4_gateway_id'),
         ipv6_cidr_block=pulumi.get(__ret__, 'ipv6_cidr_block'),
@@ -384,6 +397,7 @@ def get_vpc_output(id: Optional[pulumi.Input[builtins.str]] = None,
         creation_time=pulumi.get(__response__, 'creation_time'),
         description=pulumi.get(__response__, 'description'),
         dns_servers=pulumi.get(__response__, 'dns_servers'),
+        enable_ipv6=pulumi.get(__response__, 'enable_ipv6'),
         id=pulumi.get(__response__, 'id'),
         ipv4_gateway_id=pulumi.get(__response__, 'ipv4_gateway_id'),
         ipv6_cidr_block=pulumi.get(__response__, 'ipv6_cidr_block'),

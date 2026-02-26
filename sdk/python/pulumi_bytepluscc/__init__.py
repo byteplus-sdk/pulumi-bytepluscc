@@ -59,8 +59,12 @@ if typing.TYPE_CHECKING:
     organization = __organization
     import pulumi_bytepluscc.privatelink as __privatelink
     privatelink = __privatelink
+    import pulumi_bytepluscc.rabbitmq as __rabbitmq
+    rabbitmq = __rabbitmq
     import pulumi_bytepluscc.rdsmysql as __rdsmysql
     rdsmysql = __rdsmysql
+    import pulumi_bytepluscc.rdspostgresql as __rdspostgresql
+    rdspostgresql = __rdspostgresql
     import pulumi_bytepluscc.redis as __redis
     redis = __redis
     import pulumi_bytepluscc.storageebs as __storageebs
@@ -104,7 +108,9 @@ else:
     natgateway = _utilities.lazy_import('pulumi_bytepluscc.natgateway')
     organization = _utilities.lazy_import('pulumi_bytepluscc.organization')
     privatelink = _utilities.lazy_import('pulumi_bytepluscc.privatelink')
+    rabbitmq = _utilities.lazy_import('pulumi_bytepluscc.rabbitmq')
     rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
+    rdspostgresql = _utilities.lazy_import('pulumi_bytepluscc.rdspostgresql')
     redis = _utilities.lazy_import('pulumi_bytepluscc.redis')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
     transitrouter = _utilities.lazy_import('pulumi_bytepluscc.transitrouter')
@@ -132,6 +138,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.alb",
   "classes": {
    "bytepluscc:alb/certificate:Certificate": "Certificate"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "alb/customizedCfg",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/customizedCfg:CustomizedCfg": "CustomizedCfg"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "alb/healthCheckTemplate",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/healthCheckTemplate:HealthCheckTemplate": "HealthCheckTemplate"
   }
  },
  {
@@ -264,6 +286,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "clb/clb",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/clb:Clb": "Clb"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/listener",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -376,6 +406,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "ecs/deploymentSet",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/deploymentSet:DeploymentSet": "DeploymentSet"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "ecs/image",
   "fqn": "pulumi_bytepluscc.ecs",
   "classes": {
@@ -404,6 +442,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.ecs",
   "classes": {
    "bytepluscc:ecs/keypair:Keypair": "Keypair"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ecs/launchTemplate",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/launchTemplate:LaunchTemplate": "LaunchTemplate"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ecs/launchTemplateVersion",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion": "LaunchTemplateVersion"
   }
  },
  {
@@ -444,6 +498,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.hbase",
   "classes": {
    "bytepluscc:hbase/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "iam/accesskey",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/accesskey:Accesskey": "Accesskey"
   }
  },
  {
@@ -504,6 +566,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "kms/keyRing",
+  "fqn": "pulumi_bytepluscc.kms",
+  "classes": {
+   "bytepluscc:kms/keyRing:KeyRing": "KeyRing"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "natgateway/dnatentry",
   "fqn": "pulumi_bytepluscc.natgateway",
   "classes": {
@@ -536,6 +606,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "organization/account",
+  "fqn": "pulumi_bytepluscc.organization",
+  "classes": {
+   "bytepluscc:organization/account:Account": "Account"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "organization/unit",
   "fqn": "pulumi_bytepluscc.organization",
   "classes": {
@@ -548,6 +626,46 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.privatelink",
   "classes": {
    "bytepluscc:privatelink/endpointService:EndpointService": "EndpointService"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rabbitmq/instance",
+  "fqn": "pulumi_bytepluscc.rabbitmq",
+  "classes": {
+   "bytepluscc:rabbitmq/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rabbitmq/instancePlugin",
+  "fqn": "pulumi_bytepluscc.rabbitmq",
+  "classes": {
+   "bytepluscc:rabbitmq/instancePlugin:InstancePlugin": "InstancePlugin"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rabbitmq/publicAddress",
+  "fqn": "pulumi_bytepluscc.rabbitmq",
+  "classes": {
+   "bytepluscc:rabbitmq/publicAddress:PublicAddress": "PublicAddress"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdsmysql/allowList",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdsmysql/backup",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/backup:Backup": "Backup"
   }
  },
  {
@@ -568,10 +686,42 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdsmysql/endpoint",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/endpoint:Endpoint": "Endpoint"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdsmysql/instance",
   "fqn": "pulumi_bytepluscc.rdsmysql",
   "classes": {
    "bytepluscc:rdsmysql/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdspostgresql/allowList",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "redis/account",
+  "fqn": "pulumi_bytepluscc.redis",
+  "classes": {
+   "bytepluscc:redis/account:Account": "Account"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "redis/endpointPublicAddress",
+  "fqn": "pulumi_bytepluscc.redis",
+  "classes": {
+   "bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress": "EndpointPublicAddress"
   }
  },
  {
@@ -624,6 +774,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "transitrouter/vpcAttachment",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/vpcAttachment:VpcAttachment": "VpcAttachment"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/vpnAttachment",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/vpnAttachment:VpnAttachment": "VpnAttachment"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vefaas/kafkaTrigger",
   "fqn": "pulumi_bytepluscc.vefaas",
   "classes": {
@@ -660,6 +826,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vke",
   "classes": {
    "bytepluscc:vke/cluster:Cluster": "Cluster"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vke/defaultNodePool",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/defaultNodePool:DefaultNodePool": "DefaultNodePool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vke/node",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/node:Node": "Node"
   }
  },
  {
@@ -712,6 +894,38 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vpc/flowLog",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/flowLog:FlowLog": "FlowLog"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/haVip",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/haVip:HaVip": "HaVip"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipv6AddressBandwidth",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth": "Ipv6AddressBandwidth"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipv6Gateway",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipv6Gateway:Ipv6Gateway": "Ipv6Gateway"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vpc/networkAcl",
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
@@ -752,10 +966,50 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vpc/trafficMirrorFilter",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/trafficMirrorFilter:TrafficMirrorFilter": "TrafficMirrorFilter"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/trafficMirrorFilterRule",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/trafficMirrorFilterRule:TrafficMirrorFilterRule": "TrafficMirrorFilterRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/trafficMirrorSession",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/trafficMirrorSession:TrafficMirrorSession": "TrafficMirrorSession"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/trafficMirrorTarget",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/trafficMirrorTarget:TrafficMirrorTarget": "TrafficMirrorTarget"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vpc/vpc",
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/vpc:Vpc": "Vpc"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpn/customerGateway",
+  "fqn": "pulumi_bytepluscc.vpn",
+  "classes": {
+   "bytepluscc:vpn/customerGateway:CustomerGateway": "CustomerGateway"
   }
  },
  {

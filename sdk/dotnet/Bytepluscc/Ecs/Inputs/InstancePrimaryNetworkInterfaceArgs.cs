@@ -61,7 +61,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
             set => _privateIpAddresses = value;
         }
 
-        [Input("securityGroupIds", required: true)]
+        [Input("securityGroupIds")]
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         /// <summary>
         /// 实例的子网ID。
         /// </summary>
-        [Input("subnetId", required: true)]
-        public Input<string> SubnetId { get; set; } = null!;
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         /// <summary>
         /// 实例的VPC ID。

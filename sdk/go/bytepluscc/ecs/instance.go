@@ -22,9 +22,13 @@ import (
 type Instance struct {
 	pulumi.CustomResourceState
 
+	// 亲和组ID。
+	AffinityGroupId pulumi.StringOutput `pulumi:"affinityGroupId"`
 	// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
 	// - 该功能正在邀测中，如需试用，请联系客户经理申请。
 	AffinityGroupSize pulumi.IntOutput `pulumi:"affinityGroupSize"`
+	// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+	AutoPay pulumi.BoolOutput `pulumi:"autoPay"`
 	// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
 	// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
 	AutoRenew pulumi.BoolOutput `pulumi:"autoRenew"`
@@ -60,6 +64,10 @@ type Instance struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// 实例的EIP地址。
 	EipAddress InstanceEipAddressOutput `pulumi:"eipAddress"`
+	// 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+	ElasticScheduledInstanceType pulumi.StringOutput `pulumi:"elasticScheduledInstanceType"`
+	// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+	EnableJumboFrame pulumi.BoolOutput `pulumi:"enableJumboFrame"`
 	// 实例的过期时间。
 	ExpiredAt pulumi.StringOutput `pulumi:"expiredAt"`
 	// 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
@@ -75,6 +83,11 @@ type Instance struct {
 	HpcClusterId pulumi.StringOutput `pulumi:"hpcClusterId"`
 	// 实例的镜像。
 	Image InstanceImageOutput `pulumi:"image"`
+	// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+	// （默认）：不转换。
+	IncludeDataVolumes pulumi.BoolOutput `pulumi:"includeDataVolumes"`
+	// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+	InstallRunCommandAgent pulumi.BoolOutput `pulumi:"installRunCommandAgent"`
 	// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
 	// PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
 	InstanceChargeType pulumi.StringOutput `pulumi:"instanceChargeType"`
@@ -90,7 +103,8 @@ type Instance struct {
 	// 查询库存：您可以调用[DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279)查询可用区中计算资源的库存信息。
 	InstanceType pulumi.StringOutput `pulumi:"instanceType"`
 	// 实例的密钥对名称。
-	KeyPair InstanceKeyPairOutput `pulumi:"keyPair"`
+	KeyPair      InstanceKeyPairOutput          `pulumi:"keyPair"`
+	LocalVolumes InstanceLocalVolumeArrayOutput `pulumi:"localVolumes"`
 	// 实例的操作系统类型。
 	OperationSystem InstanceOperationSystemOutput `pulumi:"operationSystem"`
 	// 实例的密码。
@@ -108,7 +122,14 @@ type Instance struct {
 	// 实例的主网卡。
 	PrimaryNetworkInterface InstancePrimaryNetworkInterfaceOutput `pulumi:"primaryNetworkInterface"`
 	// 实例所属的项目名称。
-	ProjectName                pulumi.StringOutput                          `pulumi:"projectName"`
+	ProjectName pulumi.StringOutput `pulumi:"projectName"`
+	// 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+	RdmaIpAddresses             pulumi.StringArrayOutput                      `pulumi:"rdmaIpAddresses"`
+	RdmaNetworkInterfaceDetails InstanceRdmaNetworkInterfaceDetailArrayOutput `pulumi:"rdmaNetworkInterfaceDetails"`
+	// 续费信息。
+	RenewInfo InstanceRenewInfoOutput `pulumi:"renewInfo"`
+	// 实例绑定的IAM角色名称。
+	RoleNames                  pulumi.StringArrayOutput                     `pulumi:"roleNames"`
 	SecondaryNetworkInterfaces InstanceSecondaryNetworkInterfaceArrayOutput `pulumi:"secondaryNetworkInterfaces"`
 	// 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
 	// 仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
@@ -126,7 +147,7 @@ type Instance struct {
 	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
 	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
 	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
 	StoppedMode pulumi.StringOutput `pulumi:"stoppedMode"`
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolumeOutput `pulumi:"systemVolume"`
@@ -191,9 +212,13 @@ func GetInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Instance resources.
 type instanceState struct {
+	// 亲和组ID。
+	AffinityGroupId *string `pulumi:"affinityGroupId"`
 	// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
 	// - 该功能正在邀测中，如需试用，请联系客户经理申请。
 	AffinityGroupSize *int `pulumi:"affinityGroupSize"`
+	// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+	AutoPay *bool `pulumi:"autoPay"`
 	// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
 	// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
 	AutoRenew *bool `pulumi:"autoRenew"`
@@ -229,6 +254,10 @@ type instanceState struct {
 	Description *string `pulumi:"description"`
 	// 实例的EIP地址。
 	EipAddress *InstanceEipAddress `pulumi:"eipAddress"`
+	// 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+	ElasticScheduledInstanceType *string `pulumi:"elasticScheduledInstanceType"`
+	// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+	EnableJumboFrame *bool `pulumi:"enableJumboFrame"`
 	// 实例的过期时间。
 	ExpiredAt *string `pulumi:"expiredAt"`
 	// 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
@@ -244,6 +273,11 @@ type instanceState struct {
 	HpcClusterId *string `pulumi:"hpcClusterId"`
 	// 实例的镜像。
 	Image *InstanceImage `pulumi:"image"`
+	// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+	// （默认）：不转换。
+	IncludeDataVolumes *bool `pulumi:"includeDataVolumes"`
+	// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+	InstallRunCommandAgent *bool `pulumi:"installRunCommandAgent"`
 	// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
 	// PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
 	InstanceChargeType *string `pulumi:"instanceChargeType"`
@@ -259,7 +293,8 @@ type instanceState struct {
 	// 查询库存：您可以调用[DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279)查询可用区中计算资源的库存信息。
 	InstanceType *string `pulumi:"instanceType"`
 	// 实例的密钥对名称。
-	KeyPair *InstanceKeyPair `pulumi:"keyPair"`
+	KeyPair      *InstanceKeyPair      `pulumi:"keyPair"`
+	LocalVolumes []InstanceLocalVolume `pulumi:"localVolumes"`
 	// 实例的操作系统类型。
 	OperationSystem *InstanceOperationSystem `pulumi:"operationSystem"`
 	// 实例的密码。
@@ -277,7 +312,14 @@ type instanceState struct {
 	// 实例的主网卡。
 	PrimaryNetworkInterface *InstancePrimaryNetworkInterface `pulumi:"primaryNetworkInterface"`
 	// 实例所属的项目名称。
-	ProjectName                *string                             `pulumi:"projectName"`
+	ProjectName *string `pulumi:"projectName"`
+	// 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+	RdmaIpAddresses             []string                             `pulumi:"rdmaIpAddresses"`
+	RdmaNetworkInterfaceDetails []InstanceRdmaNetworkInterfaceDetail `pulumi:"rdmaNetworkInterfaceDetails"`
+	// 续费信息。
+	RenewInfo *InstanceRenewInfo `pulumi:"renewInfo"`
+	// 实例绑定的IAM角色名称。
+	RoleNames                  []string                            `pulumi:"roleNames"`
 	SecondaryNetworkInterfaces []InstanceSecondaryNetworkInterface `pulumi:"secondaryNetworkInterfaces"`
 	// 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
 	// 仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
@@ -295,7 +337,7 @@ type instanceState struct {
 	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
 	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
 	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
 	StoppedMode *string `pulumi:"stoppedMode"`
 	// 实例的系统卷。
 	SystemVolume *InstanceSystemVolume `pulumi:"systemVolume"`
@@ -313,9 +355,13 @@ type instanceState struct {
 }
 
 type InstanceState struct {
+	// 亲和组ID。
+	AffinityGroupId pulumi.StringPtrInput
 	// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
 	// - 该功能正在邀测中，如需试用，请联系客户经理申请。
 	AffinityGroupSize pulumi.IntPtrInput
+	// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+	AutoPay pulumi.BoolPtrInput
 	// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
 	// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
 	AutoRenew pulumi.BoolPtrInput
@@ -351,6 +397,10 @@ type InstanceState struct {
 	Description pulumi.StringPtrInput
 	// 实例的EIP地址。
 	EipAddress InstanceEipAddressPtrInput
+	// 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+	ElasticScheduledInstanceType pulumi.StringPtrInput
+	// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+	EnableJumboFrame pulumi.BoolPtrInput
 	// 实例的过期时间。
 	ExpiredAt pulumi.StringPtrInput
 	// 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
@@ -366,6 +416,11 @@ type InstanceState struct {
 	HpcClusterId pulumi.StringPtrInput
 	// 实例的镜像。
 	Image InstanceImagePtrInput
+	// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+	// （默认）：不转换。
+	IncludeDataVolumes pulumi.BoolPtrInput
+	// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+	InstallRunCommandAgent pulumi.BoolPtrInput
 	// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
 	// PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
 	InstanceChargeType pulumi.StringPtrInput
@@ -381,7 +436,8 @@ type InstanceState struct {
 	// 查询库存：您可以调用[DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279)查询可用区中计算资源的库存信息。
 	InstanceType pulumi.StringPtrInput
 	// 实例的密钥对名称。
-	KeyPair InstanceKeyPairPtrInput
+	KeyPair      InstanceKeyPairPtrInput
+	LocalVolumes InstanceLocalVolumeArrayInput
 	// 实例的操作系统类型。
 	OperationSystem InstanceOperationSystemPtrInput
 	// 实例的密码。
@@ -399,7 +455,14 @@ type InstanceState struct {
 	// 实例的主网卡。
 	PrimaryNetworkInterface InstancePrimaryNetworkInterfacePtrInput
 	// 实例所属的项目名称。
-	ProjectName                pulumi.StringPtrInput
+	ProjectName pulumi.StringPtrInput
+	// 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+	RdmaIpAddresses             pulumi.StringArrayInput
+	RdmaNetworkInterfaceDetails InstanceRdmaNetworkInterfaceDetailArrayInput
+	// 续费信息。
+	RenewInfo InstanceRenewInfoPtrInput
+	// 实例绑定的IAM角色名称。
+	RoleNames                  pulumi.StringArrayInput
 	SecondaryNetworkInterfaces InstanceSecondaryNetworkInterfaceArrayInput
 	// 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
 	// 仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
@@ -417,7 +480,7 @@ type InstanceState struct {
 	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
 	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
 	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
 	StoppedMode pulumi.StringPtrInput
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolumePtrInput
@@ -442,6 +505,8 @@ type instanceArgs struct {
 	// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
 	// - 该功能正在邀测中，如需试用，请联系客户经理申请。
 	AffinityGroupSize *int `pulumi:"affinityGroupSize"`
+	// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+	AutoPay *bool `pulumi:"autoPay"`
 	// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
 	// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
 	AutoRenew *bool `pulumi:"autoRenew"`
@@ -473,6 +538,8 @@ type instanceArgs struct {
 	Description *string `pulumi:"description"`
 	// 实例的EIP地址。
 	EipAddress *InstanceEipAddress `pulumi:"eipAddress"`
+	// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+	EnableJumboFrame *bool `pulumi:"enableJumboFrame"`
 	// 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
 	// 允许使用字母、数字、点号“.”或中划线“-”。 -
 	// 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -486,6 +553,11 @@ type instanceArgs struct {
 	HpcClusterId *string `pulumi:"hpcClusterId"`
 	// 实例的镜像。
 	Image InstanceImage `pulumi:"image"`
+	// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+	// （默认）：不转换。
+	IncludeDataVolumes *bool `pulumi:"includeDataVolumes"`
+	// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+	InstallRunCommandAgent *bool `pulumi:"installRunCommandAgent"`
 	// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
 	// PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
 	InstanceChargeType *string `pulumi:"instanceChargeType"`
@@ -500,8 +572,6 @@ type instanceArgs struct {
 	InstanceType string `pulumi:"instanceType"`
 	// 实例的密钥对名称。
 	KeyPair *InstanceKeyPair `pulumi:"keyPair"`
-	// 实例的操作系统类型。
-	OperationSystem *InstanceOperationSystem `pulumi:"operationSystem"`
 	// 实例的密码。
 	Password *string `pulumi:"password"`
 	// 购买资源的时长（N）。 -
@@ -517,7 +587,11 @@ type instanceArgs struct {
 	// 实例的主网卡。
 	PrimaryNetworkInterface InstancePrimaryNetworkInterface `pulumi:"primaryNetworkInterface"`
 	// 实例所属的项目名称。
-	ProjectName                *string                             `pulumi:"projectName"`
+	ProjectName *string `pulumi:"projectName"`
+	// 续费信息。
+	RenewInfo *InstanceRenewInfo `pulumi:"renewInfo"`
+	// 实例绑定的IAM角色名称。
+	RoleNames                  []string                            `pulumi:"roleNames"`
 	SecondaryNetworkInterfaces []InstanceSecondaryNetworkInterface `pulumi:"secondaryNetworkInterfaces"`
 	// 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
 	// 仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
@@ -535,7 +609,7 @@ type instanceArgs struct {
 	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
 	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
 	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
 	StoppedMode *string `pulumi:"stoppedMode"`
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolume `pulumi:"systemVolume"`
@@ -544,8 +618,6 @@ type instanceArgs struct {
 	// Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
 	// Windows实例：脚本内容不能超过8KB，且无需Base64编码。
 	UserData *string `pulumi:"userData"`
-	// 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-	VpcId *string `pulumi:"vpcId"`
 	// 实例所在的可用区ID。
 	ZoneId string `pulumi:"zoneId"`
 }
@@ -555,6 +627,8 @@ type InstanceArgs struct {
 	// 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
 	// - 该功能正在邀测中，如需试用，请联系客户经理申请。
 	AffinityGroupSize pulumi.IntPtrInput
+	// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+	AutoPay pulumi.BoolPtrInput
 	// 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
 	// **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
 	AutoRenew pulumi.BoolPtrInput
@@ -586,6 +660,8 @@ type InstanceArgs struct {
 	Description pulumi.StringPtrInput
 	// 实例的EIP地址。
 	EipAddress InstanceEipAddressPtrInput
+	// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+	EnableJumboFrame pulumi.BoolPtrInput
 	// 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
 	// 允许使用字母、数字、点号“.”或中划线“-”。 -
 	// 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -599,6 +675,11 @@ type InstanceArgs struct {
 	HpcClusterId pulumi.StringPtrInput
 	// 实例的镜像。
 	Image InstanceImageInput
+	// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+	// （默认）：不转换。
+	IncludeDataVolumes pulumi.BoolPtrInput
+	// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+	InstallRunCommandAgent pulumi.BoolPtrInput
 	// 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
 	// PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
 	InstanceChargeType pulumi.StringPtrInput
@@ -613,8 +694,6 @@ type InstanceArgs struct {
 	InstanceType pulumi.StringInput
 	// 实例的密钥对名称。
 	KeyPair InstanceKeyPairPtrInput
-	// 实例的操作系统类型。
-	OperationSystem InstanceOperationSystemPtrInput
 	// 实例的密码。
 	Password pulumi.StringPtrInput
 	// 购买资源的时长（N）。 -
@@ -630,7 +709,11 @@ type InstanceArgs struct {
 	// 实例的主网卡。
 	PrimaryNetworkInterface InstancePrimaryNetworkInterfaceInput
 	// 实例所属的项目名称。
-	ProjectName                pulumi.StringPtrInput
+	ProjectName pulumi.StringPtrInput
+	// 续费信息。
+	RenewInfo InstanceRenewInfoPtrInput
+	// 实例绑定的IAM角色名称。
+	RoleNames                  pulumi.StringArrayInput
 	SecondaryNetworkInterfaces InstanceSecondaryNetworkInterfaceArrayInput
 	// 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
 	// 仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
@@ -648,7 +731,7 @@ type InstanceArgs struct {
 	// KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
 	// StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
 	// 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+	// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
 	StoppedMode pulumi.StringPtrInput
 	// 实例的系统卷。
 	SystemVolume InstanceSystemVolumeInput
@@ -657,8 +740,6 @@ type InstanceArgs struct {
 	// Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
 	// Windows实例：脚本内容不能超过8KB，且无需Base64编码。
 	UserData pulumi.StringPtrInput
-	// 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-	VpcId pulumi.StringPtrInput
 	// 实例所在的可用区ID。
 	ZoneId pulumi.StringInput
 }
@@ -750,10 +831,20 @@ func (o InstanceOutput) ToInstanceOutputWithContext(ctx context.Context) Instanc
 	return o
 }
 
+// 亲和组ID。
+func (o InstanceOutput) AffinityGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.AffinityGroupId }).(pulumi.StringOutput)
+}
+
 // 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
 // - 该功能正在邀测中，如需试用，请联系客户经理申请。
 func (o InstanceOutput) AffinityGroupSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.AffinityGroupSize }).(pulumi.IntOutput)
+}
+
+// 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+func (o InstanceOutput) AutoPay() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.AutoPay }).(pulumi.BoolOutput)
 }
 
 // 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
@@ -824,6 +915,16 @@ func (o InstanceOutput) EipAddress() InstanceEipAddressOutput {
 	return o.ApplyT(func(v *Instance) InstanceEipAddressOutput { return v.EipAddress }).(InstanceEipAddressOutput)
 }
 
+// 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+func (o InstanceOutput) ElasticScheduledInstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ElasticScheduledInstanceType }).(pulumi.StringOutput)
+}
+
+// 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+func (o InstanceOutput) EnableJumboFrame() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.EnableJumboFrame }).(pulumi.BoolOutput)
+}
+
 // 实例的过期时间。
 func (o InstanceOutput) ExpiredAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ExpiredAt }).(pulumi.StringOutput)
@@ -849,6 +950,17 @@ func (o InstanceOutput) HpcClusterId() pulumi.StringOutput {
 // 实例的镜像。
 func (o InstanceOutput) Image() InstanceImageOutput {
 	return o.ApplyT(func(v *Instance) InstanceImageOutput { return v.Image }).(InstanceImageOutput)
+}
+
+// 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+// （默认）：不转换。
+func (o InstanceOutput) IncludeDataVolumes() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.IncludeDataVolumes }).(pulumi.BoolOutput)
+}
+
+// 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+func (o InstanceOutput) InstallRunCommandAgent() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.InstallRunCommandAgent }).(pulumi.BoolOutput)
 }
 
 // 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
@@ -880,6 +992,10 @@ func (o InstanceOutput) InstanceType() pulumi.StringOutput {
 // 实例的密钥对名称。
 func (o InstanceOutput) KeyPair() InstanceKeyPairOutput {
 	return o.ApplyT(func(v *Instance) InstanceKeyPairOutput { return v.KeyPair }).(InstanceKeyPairOutput)
+}
+
+func (o InstanceOutput) LocalVolumes() InstanceLocalVolumeArrayOutput {
+	return o.ApplyT(func(v *Instance) InstanceLocalVolumeArrayOutput { return v.LocalVolumes }).(InstanceLocalVolumeArrayOutput)
 }
 
 // 实例的操作系统类型。
@@ -921,6 +1037,25 @@ func (o InstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
+// 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+func (o InstanceOutput) RdmaIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.RdmaIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+func (o InstanceOutput) RdmaNetworkInterfaceDetails() InstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return o.ApplyT(func(v *Instance) InstanceRdmaNetworkInterfaceDetailArrayOutput { return v.RdmaNetworkInterfaceDetails }).(InstanceRdmaNetworkInterfaceDetailArrayOutput)
+}
+
+// 续费信息。
+func (o InstanceOutput) RenewInfo() InstanceRenewInfoOutput {
+	return o.ApplyT(func(v *Instance) InstanceRenewInfoOutput { return v.RenewInfo }).(InstanceRenewInfoOutput)
+}
+
+// 实例绑定的IAM角色名称。
+func (o InstanceOutput) RoleNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.RoleNames }).(pulumi.StringArrayOutput)
+}
+
 func (o InstanceOutput) SecondaryNetworkInterfaces() InstanceSecondaryNetworkInterfaceArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceSecondaryNetworkInterfaceArrayOutput { return v.SecondaryNetworkInterfaces }).(InstanceSecondaryNetworkInterfaceArrayOutput)
 }
@@ -950,7 +1085,7 @@ func (o InstanceOutput) Status() pulumi.StringOutput {
 // KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
 // StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
 // 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+// 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
 func (o InstanceOutput) StoppedMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StoppedMode }).(pulumi.StringOutput)
 }

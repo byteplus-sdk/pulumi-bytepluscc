@@ -21,7 +21,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
         /// <summary>
         /// 访问密钥创建时间。
         /// </summary>
-        public readonly string? CreatedTime;
+        public readonly string? CreateDate;
         /// <summary>
         /// 最近一次使用的服务区域。
         /// </summary>
@@ -41,7 +41,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
         /// <summary>
         /// 访问密钥更新时间。
         /// </summary>
-        public readonly string? UpdatedTime;
+        public readonly string? UpdateDate;
         /// <summary>
         /// 访问密钥Secret。
         /// </summary>
@@ -51,7 +51,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
         private UserAccessKey(
             string? accessKeyId,
 
-            string? createdTime,
+            string? createDate,
 
             string? region,
 
@@ -61,17 +61,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
 
             string? status,
 
-            string? updatedTime,
+            string? updateDate,
 
             string? userName)
         {
             AccessKeyId = accessKeyId;
-            CreatedTime = createdTime;
+            CreateDate = createDate;
             Region = region;
             RequestTime = requestTime;
             Service = service;
             Status = status;
-            UpdatedTime = updatedTime;
+            UpdateDate = updateDate;
             UserName = userName;
         }
     }

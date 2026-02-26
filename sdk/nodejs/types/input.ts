@@ -71,6 +71,47 @@ export namespace alb {
         value?: pulumi.Input<string>;
     }
 
+    export interface CustomizedCfgListener {
+        /**
+         * 监听器的 ID。
+         */
+        listenerId?: pulumi.Input<string>;
+        /**
+         * 监听器的名称。
+         */
+        listenerName?: pulumi.Input<string>;
+        /**
+         * 监听器的端口。
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * 监听器的协议。
+         */
+        protocol?: pulumi.Input<string>;
+    }
+
+    export interface CustomizedCfgTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface HealthCheckTemplateTag {
+        /**
+         * 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface ListenerDomainExtension {
         /**
          * 域名使用的服务器证书 ID 。当证书来源为 certCenter 时生效。
@@ -1399,6 +1440,111 @@ export namespace clb {
         value?: pulumi.Input<string>;
     }
 
+    export interface ClbAccessLog {
+        /**
+         * 存储七层访问日志的对象存储桶的名称。
+         */
+        bucketName?: pulumi.Input<string>;
+        /**
+         * 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+         */
+        deliveryType?: pulumi.Input<string>;
+        /**
+         * 是否开启访问日志（七层）投递至对象存储TOS的功能。
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * 日志项目。
+         */
+        tlsProjectId?: pulumi.Input<string>;
+        /**
+         * 日志主题。
+         */
+        tlsTopicId?: pulumi.Input<string>;
+    }
+
+    export interface ClbEip {
+        /**
+         * 带宽峰值。
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * 共享带宽包ID。
+         */
+        bandwidthPackageId?: pulumi.Input<string>;
+        /**
+         * 计费方式。
+         */
+        eipBillingType?: pulumi.Input<number>;
+        /**
+         * 线路类型。
+         */
+        isp?: pulumi.Input<string>;
+        /**
+         * 防护包ID。
+         */
+        securityProtectionInstanceId?: pulumi.Input<number>;
+        /**
+         * 安全防护类型。
+         */
+        securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ClbEni {
+        /**
+         * 负载均衡实例的私网IP地址。
+         */
+        eniAddress?: pulumi.Input<string>;
+        /**
+         * 负载均衡实例占用的网卡ID。
+         */
+        eniId?: pulumi.Input<string>;
+    }
+
+    export interface ClbEnis {
+        /**
+         * 负载均衡实例的私网IP地址。
+         */
+        eniAddress?: pulumi.Input<string>;
+        /**
+         * 负载均衡实例占用的网卡ID。
+         */
+        eniId?: pulumi.Input<string>;
+    }
+
+    export interface ClbListener {
+        /**
+         * 监听器的ID。
+         */
+        listenerId?: pulumi.Input<string>;
+        /**
+         * 监听器的名称。
+         */
+        listenerName?: pulumi.Input<string>;
+    }
+
+    export interface ClbServerGroup {
+        /**
+         * 负载均衡实例中后端服务器组的ID。
+         */
+        serverGroupId?: pulumi.Input<string>;
+        /**
+         * 负载均衡实例中后端服务器组的名称。
+         */
+        serverGroupName?: pulumi.Input<string>;
+    }
+
+    export interface ClbTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface ListenerHealthCheck {
         /**
          * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
@@ -2068,6 +2214,21 @@ export namespace ecs {
         value?: pulumi.Input<string>;
     }
 
+    export interface DeploymentSetCapacity {
+        /**
+         * 该可用区内，还可以加入当前部署集的ECS实例数量。
+         */
+        availableCount?: pulumi.Input<number>;
+        /**
+         * 部署集内属于该可用区的ECS实例数量。
+         */
+        usedCount?: pulumi.Input<number>;
+        /**
+         * 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
     export interface ImageDetectionResults {
         /**
          * 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
@@ -2190,6 +2351,14 @@ export namespace ecs {
          * 实例是否随实例释放。
          */
         releaseWithInstance?: pulumi.Input<boolean>;
+        /**
+         * DDoS原生防护（企业版）ID。
+         */
+        securityProtectionInstanceId?: pulumi.Input<number>;
+        /**
+         * 公网IP的安全防护类型。
+         */
+        securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface InstanceImage {
@@ -2220,6 +2389,21 @@ export namespace ecs {
          * 实例的密钥对名称。
          */
         keyPairName?: pulumi.Input<string>;
+    }
+
+    export interface InstanceLocalVolume {
+        /**
+         * 实例挂载的本地盘数量。
+         */
+        count?: pulumi.Input<number>;
+        /**
+         * 实例挂载的本地盘的单盘容量，单位GiB。
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+         */
+        volumeType?: pulumi.Input<string>;
     }
 
     export interface InstanceOperationSystem {
@@ -2280,15 +2464,49 @@ export namespace ecs {
         /**
          * 实例的安全组ID。
          */
-        securityGroupIds: pulumi.Input<pulumi.Input<string>[]>;
+        securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * 实例的子网ID。
          */
-        subnetId: pulumi.Input<string>;
+        subnetId?: pulumi.Input<string>;
         /**
          * 实例的VPC ID。
          */
         vpcId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceRdmaNetworkInterfaceDetail {
+        /**
+         * 网关地址。
+         */
+        gateway?: pulumi.Input<string>;
+        /**
+         * IP地址。
+         */
+        ip?: pulumi.Input<string>;
+        /**
+         * 子网掩码。
+         */
+        mask?: pulumi.Input<string>;
+        /**
+         * 交换机名称。
+         */
+        switchName?: pulumi.Input<string>;
+        /**
+         * 交换机端口。
+         */
+        switchPort?: pulumi.Input<string>;
+    }
+
+    export interface InstanceRenewInfo {
+        /**
+         * 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+         */
+        period?: pulumi.Input<number>;
+        /**
+         * 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+         */
+        periodUnit?: pulumi.Input<string>;
     }
 
     export interface InstanceSecondaryNetworkInterface {
@@ -2312,10 +2530,6 @@ export namespace ecs {
          * 实例的子网ID。
          */
         subnetId?: pulumi.Input<string>;
-        /**
-         * 实例的VPC ID。
-         */
-        vpcId?: pulumi.Input<string>;
     }
 
     export interface InstanceSystemVolume {
@@ -2474,6 +2688,309 @@ export namespace ecs {
          * 标签值。
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateLaunchTemplateTag {
+        /**
+         * 给资源添加的用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 给资源添加的用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateLaunchTemplateVersion {
+        /**
+         * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+         */
+        deploymentSetGroupNumber?: pulumi.Input<number>;
+        /**
+         * 实例需要加入的部署集ID。
+         */
+        deploymentSetId?: pulumi.Input<string>;
+        /**
+         * 实例的描述。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 实例绑定的公网IP信息。
+         */
+        eip?: pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionEip>;
+        /**
+         * 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+         */
+        hostName?: pulumi.Input<string>;
+        /**
+         * 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+         */
+        hpcClusterId?: pulumi.Input<string>;
+        /**
+         * 镜像ID。
+         */
+        imageId?: pulumi.Input<string>;
+        /**
+         * 镜像名称。
+         */
+        imageName?: pulumi.Input<string>;
+        /**
+         * 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+         */
+        instanceChargeType?: pulumi.Input<string>;
+        /**
+         * 实例的名称。
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * 实例的规格。
+         */
+        instanceTypeId?: pulumi.Input<string>;
+        /**
+         * 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+         */
+        keepImageCredential?: pulumi.Input<boolean>;
+        /**
+         * 实例绑定的密钥对。
+         */
+        keyPairName?: pulumi.Input<string>;
+        networkInterfaces?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionNetworkInterface>[]>;
+        /**
+         * 实例所属项目。
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * 弹性预约单信息。
+         */
+        scheduledInstance?: pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionScheduledInstance>;
+        /**
+         * 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+         */
+        securityEnhancementStrategy?: pulumi.Input<string>;
+        /**
+         * 抢占式实例的每小时最高价格。
+         */
+        spotPriceLimit?: pulumi.Input<number>;
+        /**
+         * 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+         */
+        spotStrategy?: pulumi.Input<string>;
+        /**
+         * 有序后缀的起始序号。
+         */
+        suffixIndex?: pulumi.Input<number>;
+        tags?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionTag>[]>;
+        /**
+         * 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+         */
+        uniqueSuffix?: pulumi.Input<boolean>;
+        /**
+         * 实例的自定义数据。
+         */
+        userData?: pulumi.Input<string>;
+        /**
+         * 模版版本描述。
+         */
+        versionDescription?: pulumi.Input<string>;
+        volumes?: pulumi.Input<pulumi.Input<inputs.ecs.LaunchTemplateLaunchTemplateVersionVolume>[]>;
+        /**
+         * 私有网络ID。
+         */
+        vpcId?: pulumi.Input<string>;
+        /**
+         * 实例所属可用区ID。
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateLaunchTemplateVersionEip {
+        /**
+         * 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         */
+        bandwidthPackageId?: pulumi.Input<string>;
+        /**
+         * 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         */
+        billingType?: pulumi.Input<number>;
+        /**
+         * 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+         */
+        isp?: pulumi.Input<string>;
+        /**
+         * 公网IP是否随实例删除，仅按量计费公网IP生效。
+         */
+        releaseWithInstance?: pulumi.Input<boolean>;
+        /**
+         * 安全防护包ID。
+         */
+        securityProtectionInstanceId?: pulumi.Input<number>;
+        /**
+         * 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+         */
+        securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface LaunchTemplateLaunchTemplateVersionNetworkInterface {
+        /**
+         * 网卡关联的安全组ID。
+         */
+        securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 实例的私有网络子网ID。
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateLaunchTemplateVersionScheduledInstance {
+        /**
+         * 弹性预约单的描述。
+         */
+        scheduledInstanceDescription?: pulumi.Input<string>;
+        /**
+         * 弹性预约单的名称。
+         */
+        scheduledInstanceName?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateLaunchTemplateVersionTag {
+        /**
+         * 给资源添加的用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 给资源添加的用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateLaunchTemplateVersionVolume {
+        /**
+         * 云盘是否随实例释放。
+         */
+        deleteWithInstance?: pulumi.Input<boolean>;
+        /**
+         * 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+         */
+        extraPerformanceIops?: pulumi.Input<number>;
+        /**
+         * 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+         */
+        extraPerformanceThroughputMb?: pulumi.Input<number>;
+        /**
+         * 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         */
+        extraPerformanceTypeId?: pulumi.Input<string>;
+        /**
+         * 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+         */
+        snapshotId?: pulumi.Input<string>;
+        /**
+         * 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+         */
+        volumeType?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateVersionEip {
+        /**
+         * 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         */
+        bandwidthPackageId?: pulumi.Input<string>;
+        /**
+         * 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         */
+        billingType?: pulumi.Input<number>;
+        /**
+         * 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+         */
+        isp?: pulumi.Input<string>;
+        /**
+         * 公网IP是否随实例删除，仅按量计费公网IP生效。
+         */
+        releaseWithInstance?: pulumi.Input<boolean>;
+        /**
+         * 安全防护包ID。
+         */
+        securityProtectionInstanceId?: pulumi.Input<number>;
+        /**
+         * 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+         */
+        securityProtectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface LaunchTemplateVersionNetworkInterface {
+        /**
+         * 网卡关联的安全组ID。
+         */
+        securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 实例的私有网络子网ID。
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateVersionScheduledInstance {
+        /**
+         * 弹性预约单的描述。
+         */
+        scheduledInstanceDescription?: pulumi.Input<string>;
+        /**
+         * 弹性预约单的名称。
+         */
+        scheduledInstanceName?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateVersionTag {
+        /**
+         * 给资源添加的用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 给资源添加的用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface LaunchTemplateVersionVolume {
+        /**
+         * 云盘是否随实例释放。
+         */
+        deleteWithInstance?: pulumi.Input<boolean>;
+        /**
+         * 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+         */
+        extraPerformanceIops?: pulumi.Input<number>;
+        /**
+         * 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+         */
+        extraPerformanceThroughputMb?: pulumi.Input<number>;
+        /**
+         * 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         */
+        extraPerformanceTypeId?: pulumi.Input<string>;
+        /**
+         * 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+         */
+        snapshotId?: pulumi.Input<string>;
+        /**
+         * 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+         */
+        volumeType?: pulumi.Input<string>;
     }
 }
 
@@ -3274,7 +3791,7 @@ export namespace iam {
         /**
          * 访问密钥创建时间。
          */
-        createdTime?: pulumi.Input<string>;
+        createDate?: pulumi.Input<string>;
         /**
          * 最近一次使用的服务区域。
          */
@@ -3294,7 +3811,7 @@ export namespace iam {
         /**
          * 访问密钥更新时间。
          */
-        updatedTime?: pulumi.Input<string>;
+        updateDate?: pulumi.Input<string>;
         /**
          * 访问密钥Secret。
          */
@@ -3512,6 +4029,47 @@ export namespace natgateway {
     }
 }
 
+export namespace organization {
+    export interface AccountSecureContactInfo {
+        /**
+         * 安全邮箱。
+         */
+        email?: pulumi.Input<string>;
+        /**
+         * 安全邮箱是否验证，1: 未验证，2: 已验证。
+         */
+        emailVerified?: pulumi.Input<number>;
+        /**
+         * 变更中的新邮箱。
+         */
+        newEmail?: pulumi.Input<string>;
+        /**
+         * 变更中的新手机号。
+         */
+        newPhone?: pulumi.Input<string>;
+        /**
+         * 安全手机号。
+         */
+        phone?: pulumi.Input<string>;
+        /**
+         * 安全手机号是否验证，1: 未验证，2: 已验证。
+         */
+        phoneVerified?: pulumi.Input<number>;
+    }
+
+    export interface AccountTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+}
+
 export namespace privatelink {
     export interface EndpointServicePrivateDnsNameConfiguration {
         /**
@@ -3560,7 +4118,219 @@ export namespace privatelink {
 
 }
 
+export namespace rabbitmq {
+    export interface InstanceChargeDetail {
+        /**
+         * 包年包月实例到期后是否自动续费。
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        chargeEndTime?: pulumi.Input<string>;
+        /**
+         * 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        chargeExpireTime?: pulumi.Input<string>;
+        /**
+         * 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        chargeStartTime?: pulumi.Input<string>;
+        /**
+         * 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+         */
+        chargeStatus?: pulumi.Input<string>;
+        /**
+         * 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+         */
+        chargeType?: pulumi.Input<string>;
+        /**
+         * 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        overdueReclaimTime?: pulumi.Input<string>;
+        /**
+         * 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        overdueTime?: pulumi.Input<string>;
+        /**
+         * 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+         */
+        period?: pulumi.Input<number>;
+        /**
+         * 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+         */
+        periodUnit?: pulumi.Input<string>;
+    }
+
+    export interface InstanceEndpoint {
+        /**
+         * 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+         */
+        endpointType?: pulumi.Input<string>;
+        /**
+         * 实例的私网访问域名。
+         */
+        internalEndpoint?: pulumi.Input<string>;
+        /**
+         * 公共服务区 IP 接入点。
+         */
+        internalIpEndpoint?: pulumi.Input<string>;
+        /**
+         * 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * 实例公网访问域名。仅在开启公网访问之后显示。
+         */
+        publicEndpoint?: pulumi.Input<string>;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 标签的键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签的值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface PublicAddressChargeDetail {
+        /**
+         * 包年包月实例到期后是否自动续费。
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        chargeEndTime?: pulumi.Input<string>;
+        /**
+         * 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        chargeExpireTime?: pulumi.Input<string>;
+        /**
+         * 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        chargeStartTime?: pulumi.Input<string>;
+        /**
+         * 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+         */
+        chargeStatus?: pulumi.Input<string>;
+        /**
+         * 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+         */
+        chargeType?: pulumi.Input<string>;
+        /**
+         * 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        overdueReclaimTime?: pulumi.Input<string>;
+        /**
+         * 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+         */
+        overdueTime?: pulumi.Input<string>;
+    }
+
+    export interface PublicAddressEndpoint {
+        /**
+         * 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+         */
+        endpointType?: pulumi.Input<string>;
+        /**
+         * 实例的私网访问域名。
+         */
+        internalEndpoint?: pulumi.Input<string>;
+        /**
+         * 公共服务区 IP 接入点。
+         */
+        internalIpEndpoint?: pulumi.Input<string>;
+        /**
+         * 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * 实例公网访问域名。仅在开启公网访问之后显示。
+         */
+        publicEndpoint?: pulumi.Input<string>;
+    }
+
+    export interface PublicAddressTag {
+        /**
+         * 标签的键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签的值。
+         */
+        value?: pulumi.Input<string>;
+    }
+}
+
 export namespace rdsmysql {
+    export interface AllowListAssociatedInstance {
+        /**
+         * 已绑定当前白名单的实例 ID。
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * 已绑定当前白名单的实例名称。
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * 实例状态。
+         */
+        instanceStatus?: pulumi.Input<string>;
+        /**
+         * 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+         */
+        isLatest?: pulumi.Input<boolean>;
+        /**
+         * 实例所属的私有网络 ID。
+         */
+        vpc?: pulumi.Input<string>;
+    }
+
+    export interface AllowListSecurityGroupBindInfo {
+        /**
+         * 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+         */
+        bindMode?: pulumi.Input<string>;
+        /**
+         * 安全组的 IP 地址列表。
+         */
+        ipLists?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 安全组 ID。
+         */
+        securityGroupId?: pulumi.Input<string>;
+        /**
+         * 安全组名称。
+         */
+        securityGroupName?: pulumi.Input<string>;
+    }
+
+    export interface BackupBackupMeta {
+        /**
+         * 数据库名。
+         */
+        database?: pulumi.Input<string>;
+        /**
+         * 表名列表。
+         */
+        tables?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface BackupDbTableInfo {
+        /**
+         * 数据库名。
+         */
+        database?: pulumi.Input<string>;
+        /**
+         * 表名列表。
+         */
+        tables?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface DatabaseDatabasePrivilege {
         /**
          * 数据库账号名称。
@@ -3624,6 +4394,51 @@ export namespace rdsmysql {
          * 对账号进行权限设置的表的名称。
          */
         tableName?: pulumi.Input<string>;
+    }
+
+    export interface EndpointAddress {
+        /**
+         * false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+         */
+        dnsVisibility?: pulumi.Input<boolean>;
+        /**
+         * 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+         */
+        domainPrefix?: pulumi.Input<string>;
+        /**
+         * 端口。
+         */
+        port?: pulumi.Input<string>;
+    }
+
+    export interface EndpointCustomRouteStrategy {
+        keywordRouteStrategies?: pulumi.Input<pulumi.Input<inputs.rdsmysql.EndpointCustomRouteStrategyKeywordRouteStrategy>[]>;
+    }
+
+    export interface EndpointCustomRouteStrategyKeywordRouteStrategy {
+        /**
+         * SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+         */
+        sqlKeyword?: pulumi.Input<string>;
+    }
+
+    export interface EndpointReadOnlyNodeWeight {
+        /**
+         * 只读节点需要传入 NodeId，主节点无需传入。
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * 节点类型。Primary：主节点。ReadOnly：只读节点。
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+         */
+        weight?: pulumi.Input<number>;
     }
 
     export interface InstanceAddressObject {
@@ -3921,6 +4736,43 @@ export namespace rdsmysql {
     }
 }
 
+export namespace rdspostgresql {
+    export interface AllowListAssociatedInstance {
+        /**
+         * 实例 ID。
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * 实例名称。
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * 实例所属的 VPC ID。
+         */
+        vpc?: pulumi.Input<string>;
+    }
+
+    export interface AllowListSecurityGroupBindInfo {
+        /**
+         * 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+         */
+        bindMode?: pulumi.Input<string>;
+        /**
+         * 安全组中的 IP 列表。
+         */
+        ipLists?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 安全组 ID。
+         */
+        securityGroupId?: pulumi.Input<string>;
+        /**
+         * 安全组名称。
+         */
+        securityGroupName?: pulumi.Input<string>;
+    }
+
+}
+
 export namespace redis {
     export interface InstanceCapacity {
         /**
@@ -4177,6 +5029,39 @@ export namespace transitrouter {
         key?: pulumi.Input<string>;
         /**
          * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface VpcAttachmentAttachPoint {
+        /**
+         * 连接点的子网ID。
+         */
+        subnetId: pulumi.Input<string>;
+        /**
+         * 连接点的可用区ID。
+         */
+        zoneId: pulumi.Input<string>;
+    }
+
+    export interface VpcAttachmentTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface VpnAttachmentTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
          */
         value?: pulumi.Input<string>;
     }
@@ -4508,6 +5393,510 @@ export namespace vke {
         key?: pulumi.Input<string>;
         /**
          * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolAutoScaling {
+        /**
+         * 配置节点池的期望节点数。
+         */
+        desiredReplicas?: pulumi.Input<number>;
+        /**
+         * 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * 配置节点池的最大节点数。
+         */
+        maxReplicas?: pulumi.Input<number>;
+        /**
+         * 配置节点池的最小节点数。
+         */
+        minReplicas?: pulumi.Input<number>;
+        /**
+         * 优先级。
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * 伸缩组ID。
+         */
+        scalingGroupId?: pulumi.Input<string>;
+        /**
+         * 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+         */
+        subnetPolicy?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolKubernetesConfig {
+        /**
+         * 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+         */
+        autoSyncDisabled?: pulumi.Input<boolean>;
+        /**
+         * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+         */
+        cordon?: pulumi.Input<boolean>;
+        /**
+         * Kubelet 组件的相关配置
+         */
+        kubeletConfig?: pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfig>;
+        labels?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigLabel>[]>;
+        /**
+         * Kubernetes 中节点对象的元数据名称前缀。
+         */
+        namePrefix?: pulumi.Input<string>;
+        /**
+         * Kubernetes 中节点对象的元数据名称后缀。
+         */
+        nameSuffix?: pulumi.Input<string>;
+        /**
+         * Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+         */
+        nameUseHostname?: pulumi.Input<boolean>;
+        taints?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigTaint>[]>;
+    }
+
+    export interface DefaultNodePoolKubernetesConfigKubeletConfig {
+        /**
+         * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+         */
+        cpuManagerPolicy?: pulumi.Input<string>;
+        /**
+         * 特性门控。
+         */
+        featureGates?: pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates>;
+        /**
+         * 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+         */
+        kubeApiBurst?: pulumi.Input<number>;
+        /**
+         * 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+         */
+        kubeApiQps?: pulumi.Input<number>;
+        kubeReserveds?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved>[]>;
+        /**
+         * 配置 kubelet 支持的最大 Pod 数量
+         */
+        maxPods?: pulumi.Input<number>;
+        /**
+         * 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+         */
+        registryBurst?: pulumi.Input<number>;
+        /**
+         * 可用来限制镜像仓库的 QPS 上限
+         */
+        registryPullQps?: pulumi.Input<number>;
+        /**
+         * 逐一拉取镜像。
+         */
+        serializeImagePulls?: pulumi.Input<boolean>;
+        systemReserveds?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved>[]>;
+        /**
+         * 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+         */
+        topologyManagerPolicy?: pulumi.Input<string>;
+        /**
+         * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+         */
+        topologyManagerScope?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
+        /**
+         * 是否开启特性开关本地垂直Pod伸缩
+         */
+        inPlacePodVerticalScaling?: pulumi.Input<boolean>;
+        /**
+         * 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+         */
+        qoSResourceManager?: pulumi.Input<boolean>;
+    }
+
+    export interface DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
+        /**
+         * 资源名称，取值为 cpu 或 memory。
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+         */
+        quantity?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
+        /**
+         * 资源名称，取值为 cpu 或 memory。
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+         */
+        quantity?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolKubernetesConfigLabel {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolKubernetesConfigTaint {
+        /**
+         * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         */
+        effect?: pulumi.Input<string>;
+        /**
+         * 污点键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 污点值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolManagement {
+        /**
+         * 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * 检查自愈配置。
+         */
+        remedyConfig?: pulumi.Input<inputs.vke.DefaultNodePoolManagementRemedyConfig>;
+    }
+
+    export interface DefaultNodePoolManagementRemedyConfig {
+        /**
+         * 是否开启检查自愈。
+         */
+        enabled?: pulumi.Input<boolean>;
+        /**
+         * 检查自愈规则ID。
+         */
+        remedyId?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolNodeConfig {
+        /**
+         * 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+         */
+        additionalContainerStorageEnabled?: pulumi.Input<boolean>;
+        /**
+         * 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+         */
+        autoRenewPeriod?: pulumi.Input<number>;
+        dataVolumes?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigDataVolume>[]>;
+        /**
+         * 实例在部署集中的分组号，0表示未设置
+         */
+        deploymentSetGroupNumber?: pulumi.Input<number>;
+        /**
+         * 实例需要加入的部署集ID
+         */
+        deploymentSetId?: pulumi.Input<string>;
+        /**
+         * 节点对应的主机名称。
+         */
+        hostname?: pulumi.Input<string>;
+        /**
+         * 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+         */
+        hpcClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点对应云服务器所使用的镜像 ID。
+         */
+        imageId?: pulumi.Input<string>;
+        /**
+         * 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+         */
+        initializeScript?: pulumi.Input<string>;
+        /**
+         * 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+         */
+        instanceChargeType?: pulumi.Input<string>;
+        /**
+         * 节点（实例）名称。
+         */
+        instanceName?: pulumi.Input<string>;
+        /**
+         * 节点对应的云服务器实例规格 ID 列表。
+         */
+        instanceTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+         */
+        instancesDistribution?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigInstancesDistribution>;
+        /**
+         * 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+         */
+        namePrefix?: pulumi.Input<string>;
+        /**
+         * 节点间的网络通讯模式。
+         */
+        networkTrafficMode?: pulumi.Input<string>;
+        /**
+         * 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+         */
+        period?: pulumi.Input<number>;
+        /**
+         * 部署节点前执行脚本。
+         */
+        preScript?: pulumi.Input<string>;
+        /**
+         * ECS所属项目，一个ECS只能归属于一个项目。
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * 节点自动开启公网访问的配置信息
+         */
+        publicAccessConfig?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigPublicAccessConfig>;
+        /**
+         * 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+         */
+        publicAccessEnabled?: pulumi.Input<boolean>;
+        /**
+         * 节点安全配置。
+         */
+        security?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigSecurity>;
+        /**
+         * 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+         */
+        spotStrategy?: pulumi.Input<string>;
+        /**
+         * 节点网络所属的子网 ID 列表。
+         */
+        subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点的系统盘配置。
+         */
+        systemVolume?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigSystemVolume>;
+        tags?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigTag>[]>;
+    }
+
+    export interface DefaultNodePoolNodeConfigDataVolume {
+        /**
+         * 文件系统，取值：  - Ext4 (默认值)  - Xfs
+         */
+        fileSystem?: pulumi.Input<string>;
+        /**
+         * 磁盘格式化后的目标挂载目录。
+         */
+        mountPoint?: pulumi.Input<string>;
+        /**
+         * 放置组Id
+         */
+        placementGroupId?: pulumi.Input<string>;
+        /**
+         * 磁盘容量，单位 GiB。
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+         */
+        snapshotId?: pulumi.Input<string>;
+        /**
+         * 放置子组
+         */
+        subgroupNumber?: pulumi.Input<number>;
+        /**
+         * 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolNodeConfigInstancesDistribution {
+        /**
+         * 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+         */
+        capacityRebalance?: pulumi.Input<boolean>;
+        /**
+         * 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+         */
+        compensateWithOnDemand?: pulumi.Input<boolean>;
+        /**
+         * 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+         */
+        onDemandBaseCapacity?: pulumi.Input<number>;
+        /**
+         * 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+         */
+        onDemandPercentageAboveBaseCapacity?: pulumi.Input<number>;
+    }
+
+    export interface DefaultNodePoolNodeConfigPublicAccessConfig {
+        /**
+         * 公网 IP 的带宽峰值，单位：Mbps。
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         */
+        billingType?: pulumi.Input<number>;
+        /**
+         * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         */
+        isp?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolNodeConfigSecurity {
+        /**
+         * 节点的访问方式配置。
+         */
+        login?: pulumi.Input<inputs.vke.DefaultNodePoolNodeConfigSecurityLogin>;
+        /**
+         * 节点网络所在的安全组 ID 列表。
+         */
+        securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点的安全策略，参数值说明：Hids：主机安全加固。
+         */
+        securityStrategies?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+         */
+        securityStrategyEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface DefaultNodePoolNodeConfigSecurityLogin {
+        /**
+         * Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+         */
+        sshKeyPairName?: pulumi.Input<string>;
+        /**
+         * 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolNodeConfigSystemVolume {
+        /**
+         * 放置组Id
+         */
+        placementGroupId?: pulumi.Input<string>;
+        /**
+         * 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 放置子组
+         */
+        subgroupNumber?: pulumi.Input<number>;
+        /**
+         * 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolNodeConfigTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolNodeStatistics {
+        /**
+         * Phase=Creating的节点总数量。
+         */
+        creatingCount?: pulumi.Input<number>;
+        /**
+         * Phase=Deleting的节点总数量。
+         */
+        deletingCount?: pulumi.Input<number>;
+        /**
+         * Phase=Failed的节点总数量。
+         */
+        failedCount?: pulumi.Input<number>;
+        /**
+         * Phase=Running的节点总数量。
+         */
+        runningCount?: pulumi.Input<number>;
+        /**
+         * 节点池中的节点总数量。
+         */
+        totalCount?: pulumi.Input<number>;
+        /**
+         * Phase=Updating的节点总数量。
+         */
+        updatingCount?: pulumi.Input<number>;
+    }
+
+    export interface DefaultNodePoolStatus {
+        conditions?: pulumi.Input<pulumi.Input<inputs.vke.DefaultNodePoolStatusCondition>[]>;
+        /**
+         * 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+         */
+        phase?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolStatusCondition {
+        /**
+         * 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface DefaultNodePoolTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface NodeKubernetesConfig {
+        /**
+         * 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+         */
+        cordon?: pulumi.Input<boolean>;
+        labels?: pulumi.Input<pulumi.Input<inputs.vke.NodeKubernetesConfigLabel>[]>;
+        taints?: pulumi.Input<pulumi.Input<inputs.vke.NodeKubernetesConfigTaint>[]>;
+    }
+
+    export interface NodeKubernetesConfigLabel {
+        /**
+         * 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface NodeKubernetesConfigTaint {
+        /**
+         * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         */
+        effect?: pulumi.Input<string>;
+        /**
+         * 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
          */
         value?: pulumi.Input<string>;
     }
@@ -4980,6 +6369,21 @@ export namespace vke {
          */
         value?: pulumi.Input<string>;
     }
+
+    export interface NodeStatus {
+        conditions?: pulumi.Input<pulumi.Input<inputs.vke.NodeStatusCondition>[]>;
+        /**
+         * 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+         */
+        phase?: pulumi.Input<string>;
+    }
+
+    export interface NodeStatusCondition {
+        /**
+         * 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+         */
+        type?: pulumi.Input<string>;
+    }
 }
 
 export namespace vmp {
@@ -5157,6 +6561,50 @@ export namespace vpc {
         key?: pulumi.Input<string>;
         /**
          * 用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface FlowLogTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface HaVipTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface Ipv6AddressBandwidthTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface Ipv6GatewayTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
          */
         value?: pulumi.Input<string>;
     }
@@ -5563,6 +7011,149 @@ export namespace vpc {
         value?: pulumi.Input<string>;
     }
 
+    export interface TrafficMirrorFilterEgressFilterRule {
+        /**
+         * 筛选规则实例描述。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 筛选规则目的地址。
+         */
+        destinationCidrBlock?: pulumi.Input<string>;
+        /**
+         * 筛选规则目的端口范围。
+         */
+        destinationPortRange?: pulumi.Input<string>;
+        /**
+         * 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+         */
+        policy?: pulumi.Input<string>;
+        /**
+         * 筛选规则优先级。
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * 所属项目的名称。
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * 筛选规则协议类型。
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * 筛选规则源地址。
+         */
+        sourceCidrBlock?: pulumi.Input<string>;
+        /**
+         * 筛选规则源端口范围。
+         */
+        sourcePortRange?: pulumi.Input<string>;
+        /**
+         * 筛选规则状态。
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * 筛选规则方向。egress：出方向。ingress：入方向。
+         */
+        trafficDirection?: pulumi.Input<string>;
+        /**
+         * 筛选条件实例ID。
+         */
+        trafficMirrorFilterId?: pulumi.Input<string>;
+        /**
+         * 筛选规则实例ID。
+         */
+        trafficMirrorFilterRuleId?: pulumi.Input<string>;
+    }
+
+    export interface TrafficMirrorFilterIngressFilterRule {
+        /**
+         * 筛选规则实例描述。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 筛选规则目的地址。
+         */
+        destinationCidrBlock?: pulumi.Input<string>;
+        /**
+         * 筛选规则目的端口范围。
+         */
+        destinationPortRange?: pulumi.Input<string>;
+        /**
+         * 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+         */
+        policy?: pulumi.Input<string>;
+        /**
+         * 筛选规则优先级。
+         */
+        priority?: pulumi.Input<number>;
+        /**
+         * 所属项目的名称。
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * 筛选规则协议类型。
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * 筛选规则源地址。
+         */
+        sourceCidrBlock?: pulumi.Input<string>;
+        /**
+         * 筛选规则源端口范围。
+         */
+        sourcePortRange?: pulumi.Input<string>;
+        /**
+         * 筛选规则状态。
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * 筛选规则方向。egress：出方向。ingress：入方向。
+         */
+        trafficDirection?: pulumi.Input<string>;
+        /**
+         * 筛选条件实例ID。
+         */
+        trafficMirrorFilterId?: pulumi.Input<string>;
+        /**
+         * 筛选规则实例ID。
+         */
+        trafficMirrorFilterRuleId?: pulumi.Input<string>;
+    }
+
+    export interface TrafficMirrorFilterTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface TrafficMirrorSessionTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface TrafficMirrorTargetTag {
+        /**
+         * 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface VpcAssociateCen {
         /**
          * CEN的ID。
@@ -5591,6 +7182,17 @@ export namespace vpc {
 }
 
 export namespace vpn {
+    export interface CustomerGatewayTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface VpnGatewayTag {
         /**
          * VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。

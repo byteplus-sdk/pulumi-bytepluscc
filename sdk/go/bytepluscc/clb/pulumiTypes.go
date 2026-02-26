@@ -464,6 +464,1081 @@ func (o CertificateTagArrayOutput) Index(i pulumi.IntInput) CertificateTagOutput
 	}).(CertificateTagOutput)
 }
 
+type ClbAccessLog struct {
+	// 存储七层访问日志的对象存储桶的名称。
+	BucketName *string `pulumi:"bucketName"`
+	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	DeliveryType *string `pulumi:"deliveryType"`
+	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	Enabled *bool `pulumi:"enabled"`
+	// 日志项目。
+	TlsProjectId *string `pulumi:"tlsProjectId"`
+	// 日志主题。
+	TlsTopicId *string `pulumi:"tlsTopicId"`
+}
+
+// ClbAccessLogInput is an input type that accepts ClbAccessLogArgs and ClbAccessLogOutput values.
+// You can construct a concrete instance of `ClbAccessLogInput` via:
+//
+//	ClbAccessLogArgs{...}
+type ClbAccessLogInput interface {
+	pulumi.Input
+
+	ToClbAccessLogOutput() ClbAccessLogOutput
+	ToClbAccessLogOutputWithContext(context.Context) ClbAccessLogOutput
+}
+
+type ClbAccessLogArgs struct {
+	// 存储七层访问日志的对象存储桶的名称。
+	BucketName pulumi.StringPtrInput `pulumi:"bucketName"`
+	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	DeliveryType pulumi.StringPtrInput `pulumi:"deliveryType"`
+	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// 日志项目。
+	TlsProjectId pulumi.StringPtrInput `pulumi:"tlsProjectId"`
+	// 日志主题。
+	TlsTopicId pulumi.StringPtrInput `pulumi:"tlsTopicId"`
+}
+
+func (ClbAccessLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbAccessLog)(nil)).Elem()
+}
+
+func (i ClbAccessLogArgs) ToClbAccessLogOutput() ClbAccessLogOutput {
+	return i.ToClbAccessLogOutputWithContext(context.Background())
+}
+
+func (i ClbAccessLogArgs) ToClbAccessLogOutputWithContext(ctx context.Context) ClbAccessLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbAccessLogOutput)
+}
+
+func (i ClbAccessLogArgs) ToClbAccessLogPtrOutput() ClbAccessLogPtrOutput {
+	return i.ToClbAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (i ClbAccessLogArgs) ToClbAccessLogPtrOutputWithContext(ctx context.Context) ClbAccessLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbAccessLogOutput).ToClbAccessLogPtrOutputWithContext(ctx)
+}
+
+// ClbAccessLogPtrInput is an input type that accepts ClbAccessLogArgs, ClbAccessLogPtr and ClbAccessLogPtrOutput values.
+// You can construct a concrete instance of `ClbAccessLogPtrInput` via:
+//
+//	        ClbAccessLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClbAccessLogPtrInput interface {
+	pulumi.Input
+
+	ToClbAccessLogPtrOutput() ClbAccessLogPtrOutput
+	ToClbAccessLogPtrOutputWithContext(context.Context) ClbAccessLogPtrOutput
+}
+
+type clbAccessLogPtrType ClbAccessLogArgs
+
+func ClbAccessLogPtr(v *ClbAccessLogArgs) ClbAccessLogPtrInput {
+	return (*clbAccessLogPtrType)(v)
+}
+
+func (*clbAccessLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbAccessLog)(nil)).Elem()
+}
+
+func (i *clbAccessLogPtrType) ToClbAccessLogPtrOutput() ClbAccessLogPtrOutput {
+	return i.ToClbAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (i *clbAccessLogPtrType) ToClbAccessLogPtrOutputWithContext(ctx context.Context) ClbAccessLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbAccessLogPtrOutput)
+}
+
+type ClbAccessLogOutput struct{ *pulumi.OutputState }
+
+func (ClbAccessLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbAccessLog)(nil)).Elem()
+}
+
+func (o ClbAccessLogOutput) ToClbAccessLogOutput() ClbAccessLogOutput {
+	return o
+}
+
+func (o ClbAccessLogOutput) ToClbAccessLogOutputWithContext(ctx context.Context) ClbAccessLogOutput {
+	return o
+}
+
+func (o ClbAccessLogOutput) ToClbAccessLogPtrOutput() ClbAccessLogPtrOutput {
+	return o.ToClbAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (o ClbAccessLogOutput) ToClbAccessLogPtrOutputWithContext(ctx context.Context) ClbAccessLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClbAccessLog) *ClbAccessLog {
+		return &v
+	}).(ClbAccessLogPtrOutput)
+}
+
+// 存储七层访问日志的对象存储桶的名称。
+func (o ClbAccessLogOutput) BucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbAccessLog) *string { return v.BucketName }).(pulumi.StringPtrOutput)
+}
+
+// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+func (o ClbAccessLogOutput) DeliveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbAccessLog) *string { return v.DeliveryType }).(pulumi.StringPtrOutput)
+}
+
+// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+func (o ClbAccessLogOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ClbAccessLog) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// 日志项目。
+func (o ClbAccessLogOutput) TlsProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbAccessLog) *string { return v.TlsProjectId }).(pulumi.StringPtrOutput)
+}
+
+// 日志主题。
+func (o ClbAccessLogOutput) TlsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbAccessLog) *string { return v.TlsTopicId }).(pulumi.StringPtrOutput)
+}
+
+type ClbAccessLogPtrOutput struct{ *pulumi.OutputState }
+
+func (ClbAccessLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbAccessLog)(nil)).Elem()
+}
+
+func (o ClbAccessLogPtrOutput) ToClbAccessLogPtrOutput() ClbAccessLogPtrOutput {
+	return o
+}
+
+func (o ClbAccessLogPtrOutput) ToClbAccessLogPtrOutputWithContext(ctx context.Context) ClbAccessLogPtrOutput {
+	return o
+}
+
+func (o ClbAccessLogPtrOutput) Elem() ClbAccessLogOutput {
+	return o.ApplyT(func(v *ClbAccessLog) ClbAccessLog {
+		if v != nil {
+			return *v
+		}
+		var ret ClbAccessLog
+		return ret
+	}).(ClbAccessLogOutput)
+}
+
+// 存储七层访问日志的对象存储桶的名称。
+func (o ClbAccessLogPtrOutput) BucketName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BucketName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+func (o ClbAccessLogPtrOutput) DeliveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DeliveryType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+func (o ClbAccessLogPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClbAccessLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 日志项目。
+func (o ClbAccessLogPtrOutput) TlsProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TlsProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 日志主题。
+func (o ClbAccessLogPtrOutput) TlsTopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TlsTopicId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClbEip struct {
+	// 带宽峰值。
+	Bandwidth *float64 `pulumi:"bandwidth"`
+	// 共享带宽包ID。
+	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
+	// 计费方式。
+	EipBillingType *float64 `pulumi:"eipBillingType"`
+	// 线路类型。
+	Isp *string `pulumi:"isp"`
+	// 防护包ID。
+	SecurityProtectionInstanceId *float64 `pulumi:"securityProtectionInstanceId"`
+	// 安全防护类型。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// ClbEipInput is an input type that accepts ClbEipArgs and ClbEipOutput values.
+// You can construct a concrete instance of `ClbEipInput` via:
+//
+//	ClbEipArgs{...}
+type ClbEipInput interface {
+	pulumi.Input
+
+	ToClbEipOutput() ClbEipOutput
+	ToClbEipOutputWithContext(context.Context) ClbEipOutput
+}
+
+type ClbEipArgs struct {
+	// 带宽峰值。
+	Bandwidth pulumi.Float64PtrInput `pulumi:"bandwidth"`
+	// 共享带宽包ID。
+	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
+	// 计费方式。
+	EipBillingType pulumi.Float64PtrInput `pulumi:"eipBillingType"`
+	// 线路类型。
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// 防护包ID。
+	SecurityProtectionInstanceId pulumi.Float64PtrInput `pulumi:"securityProtectionInstanceId"`
+	// 安全防护类型。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (ClbEipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbEip)(nil)).Elem()
+}
+
+func (i ClbEipArgs) ToClbEipOutput() ClbEipOutput {
+	return i.ToClbEipOutputWithContext(context.Background())
+}
+
+func (i ClbEipArgs) ToClbEipOutputWithContext(ctx context.Context) ClbEipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEipOutput)
+}
+
+func (i ClbEipArgs) ToClbEipPtrOutput() ClbEipPtrOutput {
+	return i.ToClbEipPtrOutputWithContext(context.Background())
+}
+
+func (i ClbEipArgs) ToClbEipPtrOutputWithContext(ctx context.Context) ClbEipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEipOutput).ToClbEipPtrOutputWithContext(ctx)
+}
+
+// ClbEipPtrInput is an input type that accepts ClbEipArgs, ClbEipPtr and ClbEipPtrOutput values.
+// You can construct a concrete instance of `ClbEipPtrInput` via:
+//
+//	        ClbEipArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClbEipPtrInput interface {
+	pulumi.Input
+
+	ToClbEipPtrOutput() ClbEipPtrOutput
+	ToClbEipPtrOutputWithContext(context.Context) ClbEipPtrOutput
+}
+
+type clbEipPtrType ClbEipArgs
+
+func ClbEipPtr(v *ClbEipArgs) ClbEipPtrInput {
+	return (*clbEipPtrType)(v)
+}
+
+func (*clbEipPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbEip)(nil)).Elem()
+}
+
+func (i *clbEipPtrType) ToClbEipPtrOutput() ClbEipPtrOutput {
+	return i.ToClbEipPtrOutputWithContext(context.Background())
+}
+
+func (i *clbEipPtrType) ToClbEipPtrOutputWithContext(ctx context.Context) ClbEipPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEipPtrOutput)
+}
+
+type ClbEipOutput struct{ *pulumi.OutputState }
+
+func (ClbEipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbEip)(nil)).Elem()
+}
+
+func (o ClbEipOutput) ToClbEipOutput() ClbEipOutput {
+	return o
+}
+
+func (o ClbEipOutput) ToClbEipOutputWithContext(ctx context.Context) ClbEipOutput {
+	return o
+}
+
+func (o ClbEipOutput) ToClbEipPtrOutput() ClbEipPtrOutput {
+	return o.ToClbEipPtrOutputWithContext(context.Background())
+}
+
+func (o ClbEipOutput) ToClbEipPtrOutputWithContext(ctx context.Context) ClbEipPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClbEip) *ClbEip {
+		return &v
+	}).(ClbEipPtrOutput)
+}
+
+// 带宽峰值。
+func (o ClbEipOutput) Bandwidth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClbEip) *float64 { return v.Bandwidth }).(pulumi.Float64PtrOutput)
+}
+
+// 共享带宽包ID。
+func (o ClbEipOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbEip) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
+}
+
+// 计费方式。
+func (o ClbEipOutput) EipBillingType() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClbEip) *float64 { return v.EipBillingType }).(pulumi.Float64PtrOutput)
+}
+
+// 线路类型。
+func (o ClbEipOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+// 防护包ID。
+func (o ClbEipOutput) SecurityProtectionInstanceId() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClbEip) *float64 { return v.SecurityProtectionInstanceId }).(pulumi.Float64PtrOutput)
+}
+
+// 安全防护类型。
+func (o ClbEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClbEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type ClbEipPtrOutput struct{ *pulumi.OutputState }
+
+func (ClbEipPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbEip)(nil)).Elem()
+}
+
+func (o ClbEipPtrOutput) ToClbEipPtrOutput() ClbEipPtrOutput {
+	return o
+}
+
+func (o ClbEipPtrOutput) ToClbEipPtrOutputWithContext(ctx context.Context) ClbEipPtrOutput {
+	return o
+}
+
+func (o ClbEipPtrOutput) Elem() ClbEipOutput {
+	return o.ApplyT(func(v *ClbEip) ClbEip {
+		if v != nil {
+			return *v
+		}
+		var ret ClbEip
+		return ret
+	}).(ClbEipOutput)
+}
+
+// 带宽峰值。
+func (o ClbEipPtrOutput) Bandwidth() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ClbEip) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.Bandwidth
+	}).(pulumi.Float64PtrOutput)
+}
+
+// 共享带宽包ID。
+func (o ClbEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbEip) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthPackageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 计费方式。
+func (o ClbEipPtrOutput) EipBillingType() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ClbEip) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.EipBillingType
+	}).(pulumi.Float64PtrOutput)
+}
+
+// 线路类型。
+func (o ClbEipPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbEip) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// 防护包ID。
+func (o ClbEipPtrOutput) SecurityProtectionInstanceId() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v *ClbEip) *float64 {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionInstanceId
+	}).(pulumi.Float64PtrOutput)
+}
+
+// 安全防护类型。
+func (o ClbEipPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ClbEip) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+type ClbEni struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress *string `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId *string `pulumi:"eniId"`
+}
+
+// ClbEniInput is an input type that accepts ClbEniArgs and ClbEniOutput values.
+// You can construct a concrete instance of `ClbEniInput` via:
+//
+//	ClbEniArgs{...}
+type ClbEniInput interface {
+	pulumi.Input
+
+	ToClbEniOutput() ClbEniOutput
+	ToClbEniOutputWithContext(context.Context) ClbEniOutput
+}
+
+type ClbEniArgs struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress pulumi.StringPtrInput `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId pulumi.StringPtrInput `pulumi:"eniId"`
+}
+
+func (ClbEniArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbEni)(nil)).Elem()
+}
+
+func (i ClbEniArgs) ToClbEniOutput() ClbEniOutput {
+	return i.ToClbEniOutputWithContext(context.Background())
+}
+
+func (i ClbEniArgs) ToClbEniOutputWithContext(ctx context.Context) ClbEniOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEniOutput)
+}
+
+func (i ClbEniArgs) ToClbEniPtrOutput() ClbEniPtrOutput {
+	return i.ToClbEniPtrOutputWithContext(context.Background())
+}
+
+func (i ClbEniArgs) ToClbEniPtrOutputWithContext(ctx context.Context) ClbEniPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEniOutput).ToClbEniPtrOutputWithContext(ctx)
+}
+
+// ClbEniPtrInput is an input type that accepts ClbEniArgs, ClbEniPtr and ClbEniPtrOutput values.
+// You can construct a concrete instance of `ClbEniPtrInput` via:
+//
+//	        ClbEniArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClbEniPtrInput interface {
+	pulumi.Input
+
+	ToClbEniPtrOutput() ClbEniPtrOutput
+	ToClbEniPtrOutputWithContext(context.Context) ClbEniPtrOutput
+}
+
+type clbEniPtrType ClbEniArgs
+
+func ClbEniPtr(v *ClbEniArgs) ClbEniPtrInput {
+	return (*clbEniPtrType)(v)
+}
+
+func (*clbEniPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbEni)(nil)).Elem()
+}
+
+func (i *clbEniPtrType) ToClbEniPtrOutput() ClbEniPtrOutput {
+	return i.ToClbEniPtrOutputWithContext(context.Background())
+}
+
+func (i *clbEniPtrType) ToClbEniPtrOutputWithContext(ctx context.Context) ClbEniPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEniPtrOutput)
+}
+
+type ClbEniOutput struct{ *pulumi.OutputState }
+
+func (ClbEniOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbEni)(nil)).Elem()
+}
+
+func (o ClbEniOutput) ToClbEniOutput() ClbEniOutput {
+	return o
+}
+
+func (o ClbEniOutput) ToClbEniOutputWithContext(ctx context.Context) ClbEniOutput {
+	return o
+}
+
+func (o ClbEniOutput) ToClbEniPtrOutput() ClbEniPtrOutput {
+	return o.ToClbEniPtrOutputWithContext(context.Background())
+}
+
+func (o ClbEniOutput) ToClbEniPtrOutputWithContext(ctx context.Context) ClbEniPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClbEni) *ClbEni {
+		return &v
+	}).(ClbEniPtrOutput)
+}
+
+// 负载均衡实例的私网IP地址。
+func (o ClbEniOutput) EniAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbEni) *string { return v.EniAddress }).(pulumi.StringPtrOutput)
+}
+
+// 负载均衡实例占用的网卡ID。
+func (o ClbEniOutput) EniId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbEni) *string { return v.EniId }).(pulumi.StringPtrOutput)
+}
+
+type ClbEniPtrOutput struct{ *pulumi.OutputState }
+
+func (ClbEniPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbEni)(nil)).Elem()
+}
+
+func (o ClbEniPtrOutput) ToClbEniPtrOutput() ClbEniPtrOutput {
+	return o
+}
+
+func (o ClbEniPtrOutput) ToClbEniPtrOutputWithContext(ctx context.Context) ClbEniPtrOutput {
+	return o
+}
+
+func (o ClbEniPtrOutput) Elem() ClbEniOutput {
+	return o.ApplyT(func(v *ClbEni) ClbEni {
+		if v != nil {
+			return *v
+		}
+		var ret ClbEni
+		return ret
+	}).(ClbEniOutput)
+}
+
+// 负载均衡实例的私网IP地址。
+func (o ClbEniPtrOutput) EniAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbEni) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EniAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// 负载均衡实例占用的网卡ID。
+func (o ClbEniPtrOutput) EniId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbEni) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EniId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClbEnis struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress *string `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId *string `pulumi:"eniId"`
+}
+
+// ClbEnisInput is an input type that accepts ClbEnisArgs and ClbEnisOutput values.
+// You can construct a concrete instance of `ClbEnisInput` via:
+//
+//	ClbEnisArgs{...}
+type ClbEnisInput interface {
+	pulumi.Input
+
+	ToClbEnisOutput() ClbEnisOutput
+	ToClbEnisOutputWithContext(context.Context) ClbEnisOutput
+}
+
+type ClbEnisArgs struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress pulumi.StringPtrInput `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId pulumi.StringPtrInput `pulumi:"eniId"`
+}
+
+func (ClbEnisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbEnis)(nil)).Elem()
+}
+
+func (i ClbEnisArgs) ToClbEnisOutput() ClbEnisOutput {
+	return i.ToClbEnisOutputWithContext(context.Background())
+}
+
+func (i ClbEnisArgs) ToClbEnisOutputWithContext(ctx context.Context) ClbEnisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEnisOutput)
+}
+
+func (i ClbEnisArgs) ToClbEnisPtrOutput() ClbEnisPtrOutput {
+	return i.ToClbEnisPtrOutputWithContext(context.Background())
+}
+
+func (i ClbEnisArgs) ToClbEnisPtrOutputWithContext(ctx context.Context) ClbEnisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEnisOutput).ToClbEnisPtrOutputWithContext(ctx)
+}
+
+// ClbEnisPtrInput is an input type that accepts ClbEnisArgs, ClbEnisPtr and ClbEnisPtrOutput values.
+// You can construct a concrete instance of `ClbEnisPtrInput` via:
+//
+//	        ClbEnisArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClbEnisPtrInput interface {
+	pulumi.Input
+
+	ToClbEnisPtrOutput() ClbEnisPtrOutput
+	ToClbEnisPtrOutputWithContext(context.Context) ClbEnisPtrOutput
+}
+
+type clbEnisPtrType ClbEnisArgs
+
+func ClbEnisPtr(v *ClbEnisArgs) ClbEnisPtrInput {
+	return (*clbEnisPtrType)(v)
+}
+
+func (*clbEnisPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbEnis)(nil)).Elem()
+}
+
+func (i *clbEnisPtrType) ToClbEnisPtrOutput() ClbEnisPtrOutput {
+	return i.ToClbEnisPtrOutputWithContext(context.Background())
+}
+
+func (i *clbEnisPtrType) ToClbEnisPtrOutputWithContext(ctx context.Context) ClbEnisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbEnisPtrOutput)
+}
+
+type ClbEnisOutput struct{ *pulumi.OutputState }
+
+func (ClbEnisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbEnis)(nil)).Elem()
+}
+
+func (o ClbEnisOutput) ToClbEnisOutput() ClbEnisOutput {
+	return o
+}
+
+func (o ClbEnisOutput) ToClbEnisOutputWithContext(ctx context.Context) ClbEnisOutput {
+	return o
+}
+
+func (o ClbEnisOutput) ToClbEnisPtrOutput() ClbEnisPtrOutput {
+	return o.ToClbEnisPtrOutputWithContext(context.Background())
+}
+
+func (o ClbEnisOutput) ToClbEnisPtrOutputWithContext(ctx context.Context) ClbEnisPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClbEnis) *ClbEnis {
+		return &v
+	}).(ClbEnisPtrOutput)
+}
+
+// 负载均衡实例的私网IP地址。
+func (o ClbEnisOutput) EniAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbEnis) *string { return v.EniAddress }).(pulumi.StringPtrOutput)
+}
+
+// 负载均衡实例占用的网卡ID。
+func (o ClbEnisOutput) EniId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbEnis) *string { return v.EniId }).(pulumi.StringPtrOutput)
+}
+
+type ClbEnisPtrOutput struct{ *pulumi.OutputState }
+
+func (ClbEnisPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClbEnis)(nil)).Elem()
+}
+
+func (o ClbEnisPtrOutput) ToClbEnisPtrOutput() ClbEnisPtrOutput {
+	return o
+}
+
+func (o ClbEnisPtrOutput) ToClbEnisPtrOutputWithContext(ctx context.Context) ClbEnisPtrOutput {
+	return o
+}
+
+func (o ClbEnisPtrOutput) Elem() ClbEnisOutput {
+	return o.ApplyT(func(v *ClbEnis) ClbEnis {
+		if v != nil {
+			return *v
+		}
+		var ret ClbEnis
+		return ret
+	}).(ClbEnisOutput)
+}
+
+// 负载均衡实例的私网IP地址。
+func (o ClbEnisPtrOutput) EniAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbEnis) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EniAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// 负载均衡实例占用的网卡ID。
+func (o ClbEnisPtrOutput) EniId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClbEnis) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EniId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClbListener struct {
+	// 监听器的ID。
+	ListenerId *string `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName *string `pulumi:"listenerName"`
+}
+
+// ClbListenerInput is an input type that accepts ClbListenerArgs and ClbListenerOutput values.
+// You can construct a concrete instance of `ClbListenerInput` via:
+//
+//	ClbListenerArgs{...}
+type ClbListenerInput interface {
+	pulumi.Input
+
+	ToClbListenerOutput() ClbListenerOutput
+	ToClbListenerOutputWithContext(context.Context) ClbListenerOutput
+}
+
+type ClbListenerArgs struct {
+	// 监听器的ID。
+	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName pulumi.StringPtrInput `pulumi:"listenerName"`
+}
+
+func (ClbListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbListener)(nil)).Elem()
+}
+
+func (i ClbListenerArgs) ToClbListenerOutput() ClbListenerOutput {
+	return i.ToClbListenerOutputWithContext(context.Background())
+}
+
+func (i ClbListenerArgs) ToClbListenerOutputWithContext(ctx context.Context) ClbListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbListenerOutput)
+}
+
+// ClbListenerArrayInput is an input type that accepts ClbListenerArray and ClbListenerArrayOutput values.
+// You can construct a concrete instance of `ClbListenerArrayInput` via:
+//
+//	ClbListenerArray{ ClbListenerArgs{...} }
+type ClbListenerArrayInput interface {
+	pulumi.Input
+
+	ToClbListenerArrayOutput() ClbListenerArrayOutput
+	ToClbListenerArrayOutputWithContext(context.Context) ClbListenerArrayOutput
+}
+
+type ClbListenerArray []ClbListenerInput
+
+func (ClbListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClbListener)(nil)).Elem()
+}
+
+func (i ClbListenerArray) ToClbListenerArrayOutput() ClbListenerArrayOutput {
+	return i.ToClbListenerArrayOutputWithContext(context.Background())
+}
+
+func (i ClbListenerArray) ToClbListenerArrayOutputWithContext(ctx context.Context) ClbListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbListenerArrayOutput)
+}
+
+type ClbListenerOutput struct{ *pulumi.OutputState }
+
+func (ClbListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbListener)(nil)).Elem()
+}
+
+func (o ClbListenerOutput) ToClbListenerOutput() ClbListenerOutput {
+	return o
+}
+
+func (o ClbListenerOutput) ToClbListenerOutputWithContext(ctx context.Context) ClbListenerOutput {
+	return o
+}
+
+// 监听器的ID。
+func (o ClbListenerOutput) ListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
+}
+
+// 监听器的名称。
+func (o ClbListenerOutput) ListenerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbListener) *string { return v.ListenerName }).(pulumi.StringPtrOutput)
+}
+
+type ClbListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (ClbListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClbListener)(nil)).Elem()
+}
+
+func (o ClbListenerArrayOutput) ToClbListenerArrayOutput() ClbListenerArrayOutput {
+	return o
+}
+
+func (o ClbListenerArrayOutput) ToClbListenerArrayOutputWithContext(ctx context.Context) ClbListenerArrayOutput {
+	return o
+}
+
+func (o ClbListenerArrayOutput) Index(i pulumi.IntInput) ClbListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClbListener {
+		return vs[0].([]ClbListener)[vs[1].(int)]
+	}).(ClbListenerOutput)
+}
+
+type ClbServerGroup struct {
+	// 负载均衡实例中后端服务器组的ID。
+	ServerGroupId *string `pulumi:"serverGroupId"`
+	// 负载均衡实例中后端服务器组的名称。
+	ServerGroupName *string `pulumi:"serverGroupName"`
+}
+
+// ClbServerGroupInput is an input type that accepts ClbServerGroupArgs and ClbServerGroupOutput values.
+// You can construct a concrete instance of `ClbServerGroupInput` via:
+//
+//	ClbServerGroupArgs{...}
+type ClbServerGroupInput interface {
+	pulumi.Input
+
+	ToClbServerGroupOutput() ClbServerGroupOutput
+	ToClbServerGroupOutputWithContext(context.Context) ClbServerGroupOutput
+}
+
+type ClbServerGroupArgs struct {
+	// 负载均衡实例中后端服务器组的ID。
+	ServerGroupId pulumi.StringPtrInput `pulumi:"serverGroupId"`
+	// 负载均衡实例中后端服务器组的名称。
+	ServerGroupName pulumi.StringPtrInput `pulumi:"serverGroupName"`
+}
+
+func (ClbServerGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbServerGroup)(nil)).Elem()
+}
+
+func (i ClbServerGroupArgs) ToClbServerGroupOutput() ClbServerGroupOutput {
+	return i.ToClbServerGroupOutputWithContext(context.Background())
+}
+
+func (i ClbServerGroupArgs) ToClbServerGroupOutputWithContext(ctx context.Context) ClbServerGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbServerGroupOutput)
+}
+
+// ClbServerGroupArrayInput is an input type that accepts ClbServerGroupArray and ClbServerGroupArrayOutput values.
+// You can construct a concrete instance of `ClbServerGroupArrayInput` via:
+//
+//	ClbServerGroupArray{ ClbServerGroupArgs{...} }
+type ClbServerGroupArrayInput interface {
+	pulumi.Input
+
+	ToClbServerGroupArrayOutput() ClbServerGroupArrayOutput
+	ToClbServerGroupArrayOutputWithContext(context.Context) ClbServerGroupArrayOutput
+}
+
+type ClbServerGroupArray []ClbServerGroupInput
+
+func (ClbServerGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClbServerGroup)(nil)).Elem()
+}
+
+func (i ClbServerGroupArray) ToClbServerGroupArrayOutput() ClbServerGroupArrayOutput {
+	return i.ToClbServerGroupArrayOutputWithContext(context.Background())
+}
+
+func (i ClbServerGroupArray) ToClbServerGroupArrayOutputWithContext(ctx context.Context) ClbServerGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbServerGroupArrayOutput)
+}
+
+type ClbServerGroupOutput struct{ *pulumi.OutputState }
+
+func (ClbServerGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbServerGroup)(nil)).Elem()
+}
+
+func (o ClbServerGroupOutput) ToClbServerGroupOutput() ClbServerGroupOutput {
+	return o
+}
+
+func (o ClbServerGroupOutput) ToClbServerGroupOutputWithContext(ctx context.Context) ClbServerGroupOutput {
+	return o
+}
+
+// 负载均衡实例中后端服务器组的ID。
+func (o ClbServerGroupOutput) ServerGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbServerGroup) *string { return v.ServerGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 负载均衡实例中后端服务器组的名称。
+func (o ClbServerGroupOutput) ServerGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbServerGroup) *string { return v.ServerGroupName }).(pulumi.StringPtrOutput)
+}
+
+type ClbServerGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (ClbServerGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClbServerGroup)(nil)).Elem()
+}
+
+func (o ClbServerGroupArrayOutput) ToClbServerGroupArrayOutput() ClbServerGroupArrayOutput {
+	return o
+}
+
+func (o ClbServerGroupArrayOutput) ToClbServerGroupArrayOutputWithContext(ctx context.Context) ClbServerGroupArrayOutput {
+	return o
+}
+
+func (o ClbServerGroupArrayOutput) Index(i pulumi.IntInput) ClbServerGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClbServerGroup {
+		return vs[0].([]ClbServerGroup)[vs[1].(int)]
+	}).(ClbServerGroupOutput)
+}
+
+type ClbTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// ClbTagInput is an input type that accepts ClbTagArgs and ClbTagOutput values.
+// You can construct a concrete instance of `ClbTagInput` via:
+//
+//	ClbTagArgs{...}
+type ClbTagInput interface {
+	pulumi.Input
+
+	ToClbTagOutput() ClbTagOutput
+	ToClbTagOutputWithContext(context.Context) ClbTagOutput
+}
+
+type ClbTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ClbTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbTag)(nil)).Elem()
+}
+
+func (i ClbTagArgs) ToClbTagOutput() ClbTagOutput {
+	return i.ToClbTagOutputWithContext(context.Background())
+}
+
+func (i ClbTagArgs) ToClbTagOutputWithContext(ctx context.Context) ClbTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbTagOutput)
+}
+
+// ClbTagArrayInput is an input type that accepts ClbTagArray and ClbTagArrayOutput values.
+// You can construct a concrete instance of `ClbTagArrayInput` via:
+//
+//	ClbTagArray{ ClbTagArgs{...} }
+type ClbTagArrayInput interface {
+	pulumi.Input
+
+	ToClbTagArrayOutput() ClbTagArrayOutput
+	ToClbTagArrayOutputWithContext(context.Context) ClbTagArrayOutput
+}
+
+type ClbTagArray []ClbTagInput
+
+func (ClbTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClbTag)(nil)).Elem()
+}
+
+func (i ClbTagArray) ToClbTagArrayOutput() ClbTagArrayOutput {
+	return i.ToClbTagArrayOutputWithContext(context.Background())
+}
+
+func (i ClbTagArray) ToClbTagArrayOutputWithContext(ctx context.Context) ClbTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClbTagArrayOutput)
+}
+
+type ClbTagOutput struct{ *pulumi.OutputState }
+
+func (ClbTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClbTag)(nil)).Elem()
+}
+
+func (o ClbTagOutput) ToClbTagOutput() ClbTagOutput {
+	return o
+}
+
+func (o ClbTagOutput) ToClbTagOutputWithContext(ctx context.Context) ClbTagOutput {
+	return o
+}
+
+// 标签键。
+func (o ClbTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o ClbTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClbTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ClbTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ClbTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClbTag)(nil)).Elem()
+}
+
+func (o ClbTagArrayOutput) ToClbTagArrayOutput() ClbTagArrayOutput {
+	return o
+}
+
+func (o ClbTagArrayOutput) ToClbTagArrayOutputWithContext(ctx context.Context) ClbTagArrayOutput {
+	return o
+}
+
+func (o ClbTagArrayOutput) Index(i pulumi.IntInput) ClbTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClbTag {
+		return vs[0].([]ClbTag)[vs[1].(int)]
+	}).(ClbTagOutput)
+}
+
 type ListenerHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
 	Domain *string `pulumi:"domain"`
@@ -3230,6 +4305,631 @@ func (o GetCertificateTagArrayOutput) Index(i pulumi.IntInput) GetCertificateTag
 	}).(GetCertificateTagOutput)
 }
 
+type GetClbAccessLog struct {
+	// 存储七层访问日志的对象存储桶的名称。
+	BucketName string `pulumi:"bucketName"`
+	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	DeliveryType string `pulumi:"deliveryType"`
+	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	Enabled bool `pulumi:"enabled"`
+	// 日志项目。
+	TlsProjectId string `pulumi:"tlsProjectId"`
+	// 日志主题。
+	TlsTopicId string `pulumi:"tlsTopicId"`
+}
+
+// GetClbAccessLogInput is an input type that accepts GetClbAccessLogArgs and GetClbAccessLogOutput values.
+// You can construct a concrete instance of `GetClbAccessLogInput` via:
+//
+//	GetClbAccessLogArgs{...}
+type GetClbAccessLogInput interface {
+	pulumi.Input
+
+	ToGetClbAccessLogOutput() GetClbAccessLogOutput
+	ToGetClbAccessLogOutputWithContext(context.Context) GetClbAccessLogOutput
+}
+
+type GetClbAccessLogArgs struct {
+	// 存储七层访问日志的对象存储桶的名称。
+	BucketName pulumi.StringInput `pulumi:"bucketName"`
+	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	DeliveryType pulumi.StringInput `pulumi:"deliveryType"`
+	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// 日志项目。
+	TlsProjectId pulumi.StringInput `pulumi:"tlsProjectId"`
+	// 日志主题。
+	TlsTopicId pulumi.StringInput `pulumi:"tlsTopicId"`
+}
+
+func (GetClbAccessLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbAccessLog)(nil)).Elem()
+}
+
+func (i GetClbAccessLogArgs) ToGetClbAccessLogOutput() GetClbAccessLogOutput {
+	return i.ToGetClbAccessLogOutputWithContext(context.Background())
+}
+
+func (i GetClbAccessLogArgs) ToGetClbAccessLogOutputWithContext(ctx context.Context) GetClbAccessLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbAccessLogOutput)
+}
+
+type GetClbAccessLogOutput struct{ *pulumi.OutputState }
+
+func (GetClbAccessLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbAccessLog)(nil)).Elem()
+}
+
+func (o GetClbAccessLogOutput) ToGetClbAccessLogOutput() GetClbAccessLogOutput {
+	return o
+}
+
+func (o GetClbAccessLogOutput) ToGetClbAccessLogOutputWithContext(ctx context.Context) GetClbAccessLogOutput {
+	return o
+}
+
+// 存储七层访问日志的对象存储桶的名称。
+func (o GetClbAccessLogOutput) BucketName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbAccessLog) string { return v.BucketName }).(pulumi.StringOutput)
+}
+
+// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+func (o GetClbAccessLogOutput) DeliveryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbAccessLog) string { return v.DeliveryType }).(pulumi.StringOutput)
+}
+
+// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+func (o GetClbAccessLogOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClbAccessLog) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// 日志项目。
+func (o GetClbAccessLogOutput) TlsProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbAccessLog) string { return v.TlsProjectId }).(pulumi.StringOutput)
+}
+
+// 日志主题。
+func (o GetClbAccessLogOutput) TlsTopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbAccessLog) string { return v.TlsTopicId }).(pulumi.StringOutput)
+}
+
+type GetClbEip struct {
+	// 带宽峰值。
+	Bandwidth float64 `pulumi:"bandwidth"`
+	// 共享带宽包ID。
+	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
+	// 计费方式。
+	EipBillingType float64 `pulumi:"eipBillingType"`
+	// 线路类型。
+	Isp string `pulumi:"isp"`
+	// 防护包ID。
+	SecurityProtectionInstanceId float64 `pulumi:"securityProtectionInstanceId"`
+	// 安全防护类型。
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// GetClbEipInput is an input type that accepts GetClbEipArgs and GetClbEipOutput values.
+// You can construct a concrete instance of `GetClbEipInput` via:
+//
+//	GetClbEipArgs{...}
+type GetClbEipInput interface {
+	pulumi.Input
+
+	ToGetClbEipOutput() GetClbEipOutput
+	ToGetClbEipOutputWithContext(context.Context) GetClbEipOutput
+}
+
+type GetClbEipArgs struct {
+	// 带宽峰值。
+	Bandwidth pulumi.Float64Input `pulumi:"bandwidth"`
+	// 共享带宽包ID。
+	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
+	// 计费方式。
+	EipBillingType pulumi.Float64Input `pulumi:"eipBillingType"`
+	// 线路类型。
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// 防护包ID。
+	SecurityProtectionInstanceId pulumi.Float64Input `pulumi:"securityProtectionInstanceId"`
+	// 安全防护类型。
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (GetClbEipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbEip)(nil)).Elem()
+}
+
+func (i GetClbEipArgs) ToGetClbEipOutput() GetClbEipOutput {
+	return i.ToGetClbEipOutputWithContext(context.Background())
+}
+
+func (i GetClbEipArgs) ToGetClbEipOutputWithContext(ctx context.Context) GetClbEipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbEipOutput)
+}
+
+type GetClbEipOutput struct{ *pulumi.OutputState }
+
+func (GetClbEipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbEip)(nil)).Elem()
+}
+
+func (o GetClbEipOutput) ToGetClbEipOutput() GetClbEipOutput {
+	return o
+}
+
+func (o GetClbEipOutput) ToGetClbEipOutputWithContext(ctx context.Context) GetClbEipOutput {
+	return o
+}
+
+// 带宽峰值。
+func (o GetClbEipOutput) Bandwidth() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClbEip) float64 { return v.Bandwidth }).(pulumi.Float64Output)
+}
+
+// 共享带宽包ID。
+func (o GetClbEipOutput) BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbEip) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
+}
+
+// 计费方式。
+func (o GetClbEipOutput) EipBillingType() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClbEip) float64 { return v.EipBillingType }).(pulumi.Float64Output)
+}
+
+// 线路类型。
+func (o GetClbEipOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbEip) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// 防护包ID。
+func (o GetClbEipOutput) SecurityProtectionInstanceId() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClbEip) float64 { return v.SecurityProtectionInstanceId }).(pulumi.Float64Output)
+}
+
+// 安全防护类型。
+func (o GetClbEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClbEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetClbEni struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress string `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId string `pulumi:"eniId"`
+}
+
+// GetClbEniInput is an input type that accepts GetClbEniArgs and GetClbEniOutput values.
+// You can construct a concrete instance of `GetClbEniInput` via:
+//
+//	GetClbEniArgs{...}
+type GetClbEniInput interface {
+	pulumi.Input
+
+	ToGetClbEniOutput() GetClbEniOutput
+	ToGetClbEniOutputWithContext(context.Context) GetClbEniOutput
+}
+
+type GetClbEniArgs struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress pulumi.StringInput `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId pulumi.StringInput `pulumi:"eniId"`
+}
+
+func (GetClbEniArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbEni)(nil)).Elem()
+}
+
+func (i GetClbEniArgs) ToGetClbEniOutput() GetClbEniOutput {
+	return i.ToGetClbEniOutputWithContext(context.Background())
+}
+
+func (i GetClbEniArgs) ToGetClbEniOutputWithContext(ctx context.Context) GetClbEniOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbEniOutput)
+}
+
+type GetClbEniOutput struct{ *pulumi.OutputState }
+
+func (GetClbEniOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbEni)(nil)).Elem()
+}
+
+func (o GetClbEniOutput) ToGetClbEniOutput() GetClbEniOutput {
+	return o
+}
+
+func (o GetClbEniOutput) ToGetClbEniOutputWithContext(ctx context.Context) GetClbEniOutput {
+	return o
+}
+
+// 负载均衡实例的私网IP地址。
+func (o GetClbEniOutput) EniAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbEni) string { return v.EniAddress }).(pulumi.StringOutput)
+}
+
+// 负载均衡实例占用的网卡ID。
+func (o GetClbEniOutput) EniId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbEni) string { return v.EniId }).(pulumi.StringOutput)
+}
+
+type GetClbEnis struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress string `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId string `pulumi:"eniId"`
+}
+
+// GetClbEnisInput is an input type that accepts GetClbEnisArgs and GetClbEnisOutput values.
+// You can construct a concrete instance of `GetClbEnisInput` via:
+//
+//	GetClbEnisArgs{...}
+type GetClbEnisInput interface {
+	pulumi.Input
+
+	ToGetClbEnisOutput() GetClbEnisOutput
+	ToGetClbEnisOutputWithContext(context.Context) GetClbEnisOutput
+}
+
+type GetClbEnisArgs struct {
+	// 负载均衡实例的私网IP地址。
+	EniAddress pulumi.StringInput `pulumi:"eniAddress"`
+	// 负载均衡实例占用的网卡ID。
+	EniId pulumi.StringInput `pulumi:"eniId"`
+}
+
+func (GetClbEnisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbEnis)(nil)).Elem()
+}
+
+func (i GetClbEnisArgs) ToGetClbEnisOutput() GetClbEnisOutput {
+	return i.ToGetClbEnisOutputWithContext(context.Background())
+}
+
+func (i GetClbEnisArgs) ToGetClbEnisOutputWithContext(ctx context.Context) GetClbEnisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbEnisOutput)
+}
+
+type GetClbEnisOutput struct{ *pulumi.OutputState }
+
+func (GetClbEnisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbEnis)(nil)).Elem()
+}
+
+func (o GetClbEnisOutput) ToGetClbEnisOutput() GetClbEnisOutput {
+	return o
+}
+
+func (o GetClbEnisOutput) ToGetClbEnisOutputWithContext(ctx context.Context) GetClbEnisOutput {
+	return o
+}
+
+// 负载均衡实例的私网IP地址。
+func (o GetClbEnisOutput) EniAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbEnis) string { return v.EniAddress }).(pulumi.StringOutput)
+}
+
+// 负载均衡实例占用的网卡ID。
+func (o GetClbEnisOutput) EniId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbEnis) string { return v.EniId }).(pulumi.StringOutput)
+}
+
+type GetClbListener struct {
+	// 监听器的ID。
+	ListenerId string `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName string `pulumi:"listenerName"`
+}
+
+// GetClbListenerInput is an input type that accepts GetClbListenerArgs and GetClbListenerOutput values.
+// You can construct a concrete instance of `GetClbListenerInput` via:
+//
+//	GetClbListenerArgs{...}
+type GetClbListenerInput interface {
+	pulumi.Input
+
+	ToGetClbListenerOutput() GetClbListenerOutput
+	ToGetClbListenerOutputWithContext(context.Context) GetClbListenerOutput
+}
+
+type GetClbListenerArgs struct {
+	// 监听器的ID。
+	ListenerId pulumi.StringInput `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName pulumi.StringInput `pulumi:"listenerName"`
+}
+
+func (GetClbListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbListener)(nil)).Elem()
+}
+
+func (i GetClbListenerArgs) ToGetClbListenerOutput() GetClbListenerOutput {
+	return i.ToGetClbListenerOutputWithContext(context.Background())
+}
+
+func (i GetClbListenerArgs) ToGetClbListenerOutputWithContext(ctx context.Context) GetClbListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbListenerOutput)
+}
+
+// GetClbListenerArrayInput is an input type that accepts GetClbListenerArray and GetClbListenerArrayOutput values.
+// You can construct a concrete instance of `GetClbListenerArrayInput` via:
+//
+//	GetClbListenerArray{ GetClbListenerArgs{...} }
+type GetClbListenerArrayInput interface {
+	pulumi.Input
+
+	ToGetClbListenerArrayOutput() GetClbListenerArrayOutput
+	ToGetClbListenerArrayOutputWithContext(context.Context) GetClbListenerArrayOutput
+}
+
+type GetClbListenerArray []GetClbListenerInput
+
+func (GetClbListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClbListener)(nil)).Elem()
+}
+
+func (i GetClbListenerArray) ToGetClbListenerArrayOutput() GetClbListenerArrayOutput {
+	return i.ToGetClbListenerArrayOutputWithContext(context.Background())
+}
+
+func (i GetClbListenerArray) ToGetClbListenerArrayOutputWithContext(ctx context.Context) GetClbListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbListenerArrayOutput)
+}
+
+type GetClbListenerOutput struct{ *pulumi.OutputState }
+
+func (GetClbListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbListener)(nil)).Elem()
+}
+
+func (o GetClbListenerOutput) ToGetClbListenerOutput() GetClbListenerOutput {
+	return o
+}
+
+func (o GetClbListenerOutput) ToGetClbListenerOutputWithContext(ctx context.Context) GetClbListenerOutput {
+	return o
+}
+
+// 监听器的ID。
+func (o GetClbListenerOutput) ListenerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbListener) string { return v.ListenerId }).(pulumi.StringOutput)
+}
+
+// 监听器的名称。
+func (o GetClbListenerOutput) ListenerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbListener) string { return v.ListenerName }).(pulumi.StringOutput)
+}
+
+type GetClbListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClbListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClbListener)(nil)).Elem()
+}
+
+func (o GetClbListenerArrayOutput) ToGetClbListenerArrayOutput() GetClbListenerArrayOutput {
+	return o
+}
+
+func (o GetClbListenerArrayOutput) ToGetClbListenerArrayOutputWithContext(ctx context.Context) GetClbListenerArrayOutput {
+	return o
+}
+
+func (o GetClbListenerArrayOutput) Index(i pulumi.IntInput) GetClbListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClbListener {
+		return vs[0].([]GetClbListener)[vs[1].(int)]
+	}).(GetClbListenerOutput)
+}
+
+type GetClbServerGroup struct {
+	// 负载均衡实例中后端服务器组的ID。
+	ServerGroupId string `pulumi:"serverGroupId"`
+	// 负载均衡实例中后端服务器组的名称。
+	ServerGroupName string `pulumi:"serverGroupName"`
+}
+
+// GetClbServerGroupInput is an input type that accepts GetClbServerGroupArgs and GetClbServerGroupOutput values.
+// You can construct a concrete instance of `GetClbServerGroupInput` via:
+//
+//	GetClbServerGroupArgs{...}
+type GetClbServerGroupInput interface {
+	pulumi.Input
+
+	ToGetClbServerGroupOutput() GetClbServerGroupOutput
+	ToGetClbServerGroupOutputWithContext(context.Context) GetClbServerGroupOutput
+}
+
+type GetClbServerGroupArgs struct {
+	// 负载均衡实例中后端服务器组的ID。
+	ServerGroupId pulumi.StringInput `pulumi:"serverGroupId"`
+	// 负载均衡实例中后端服务器组的名称。
+	ServerGroupName pulumi.StringInput `pulumi:"serverGroupName"`
+}
+
+func (GetClbServerGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbServerGroup)(nil)).Elem()
+}
+
+func (i GetClbServerGroupArgs) ToGetClbServerGroupOutput() GetClbServerGroupOutput {
+	return i.ToGetClbServerGroupOutputWithContext(context.Background())
+}
+
+func (i GetClbServerGroupArgs) ToGetClbServerGroupOutputWithContext(ctx context.Context) GetClbServerGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbServerGroupOutput)
+}
+
+// GetClbServerGroupArrayInput is an input type that accepts GetClbServerGroupArray and GetClbServerGroupArrayOutput values.
+// You can construct a concrete instance of `GetClbServerGroupArrayInput` via:
+//
+//	GetClbServerGroupArray{ GetClbServerGroupArgs{...} }
+type GetClbServerGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetClbServerGroupArrayOutput() GetClbServerGroupArrayOutput
+	ToGetClbServerGroupArrayOutputWithContext(context.Context) GetClbServerGroupArrayOutput
+}
+
+type GetClbServerGroupArray []GetClbServerGroupInput
+
+func (GetClbServerGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClbServerGroup)(nil)).Elem()
+}
+
+func (i GetClbServerGroupArray) ToGetClbServerGroupArrayOutput() GetClbServerGroupArrayOutput {
+	return i.ToGetClbServerGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetClbServerGroupArray) ToGetClbServerGroupArrayOutputWithContext(ctx context.Context) GetClbServerGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbServerGroupArrayOutput)
+}
+
+type GetClbServerGroupOutput struct{ *pulumi.OutputState }
+
+func (GetClbServerGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbServerGroup)(nil)).Elem()
+}
+
+func (o GetClbServerGroupOutput) ToGetClbServerGroupOutput() GetClbServerGroupOutput {
+	return o
+}
+
+func (o GetClbServerGroupOutput) ToGetClbServerGroupOutputWithContext(ctx context.Context) GetClbServerGroupOutput {
+	return o
+}
+
+// 负载均衡实例中后端服务器组的ID。
+func (o GetClbServerGroupOutput) ServerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbServerGroup) string { return v.ServerGroupId }).(pulumi.StringOutput)
+}
+
+// 负载均衡实例中后端服务器组的名称。
+func (o GetClbServerGroupOutput) ServerGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbServerGroup) string { return v.ServerGroupName }).(pulumi.StringOutput)
+}
+
+type GetClbServerGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClbServerGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClbServerGroup)(nil)).Elem()
+}
+
+func (o GetClbServerGroupArrayOutput) ToGetClbServerGroupArrayOutput() GetClbServerGroupArrayOutput {
+	return o
+}
+
+func (o GetClbServerGroupArrayOutput) ToGetClbServerGroupArrayOutputWithContext(ctx context.Context) GetClbServerGroupArrayOutput {
+	return o
+}
+
+func (o GetClbServerGroupArrayOutput) Index(i pulumi.IntInput) GetClbServerGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClbServerGroup {
+		return vs[0].([]GetClbServerGroup)[vs[1].(int)]
+	}).(GetClbServerGroupOutput)
+}
+
+type GetClbTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetClbTagInput is an input type that accepts GetClbTagArgs and GetClbTagOutput values.
+// You can construct a concrete instance of `GetClbTagInput` via:
+//
+//	GetClbTagArgs{...}
+type GetClbTagInput interface {
+	pulumi.Input
+
+	ToGetClbTagOutput() GetClbTagOutput
+	ToGetClbTagOutputWithContext(context.Context) GetClbTagOutput
+}
+
+type GetClbTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClbTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbTag)(nil)).Elem()
+}
+
+func (i GetClbTagArgs) ToGetClbTagOutput() GetClbTagOutput {
+	return i.ToGetClbTagOutputWithContext(context.Background())
+}
+
+func (i GetClbTagArgs) ToGetClbTagOutputWithContext(ctx context.Context) GetClbTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbTagOutput)
+}
+
+// GetClbTagArrayInput is an input type that accepts GetClbTagArray and GetClbTagArrayOutput values.
+// You can construct a concrete instance of `GetClbTagArrayInput` via:
+//
+//	GetClbTagArray{ GetClbTagArgs{...} }
+type GetClbTagArrayInput interface {
+	pulumi.Input
+
+	ToGetClbTagArrayOutput() GetClbTagArrayOutput
+	ToGetClbTagArrayOutputWithContext(context.Context) GetClbTagArrayOutput
+}
+
+type GetClbTagArray []GetClbTagInput
+
+func (GetClbTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClbTag)(nil)).Elem()
+}
+
+func (i GetClbTagArray) ToGetClbTagArrayOutput() GetClbTagArrayOutput {
+	return i.ToGetClbTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetClbTagArray) ToGetClbTagArrayOutputWithContext(ctx context.Context) GetClbTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClbTagArrayOutput)
+}
+
+type GetClbTagOutput struct{ *pulumi.OutputState }
+
+func (GetClbTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClbTag)(nil)).Elem()
+}
+
+func (o GetClbTagOutput) ToGetClbTagOutput() GetClbTagOutput {
+	return o
+}
+
+func (o GetClbTagOutput) ToGetClbTagOutputWithContext(ctx context.Context) GetClbTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetClbTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetClbTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClbTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClbTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClbTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClbTag)(nil)).Elem()
+}
+
+func (o GetClbTagArrayOutput) ToGetClbTagArrayOutput() GetClbTagArrayOutput {
+	return o
+}
+
+func (o GetClbTagArrayOutput) ToGetClbTagArrayOutputWithContext(ctx context.Context) GetClbTagArrayOutput {
+	return o
+}
+
+func (o GetClbTagArrayOutput) Index(i pulumi.IntInput) GetClbTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClbTag {
+		return vs[0].([]GetClbTag)[vs[1].(int)]
+	}).(GetClbTagOutput)
+}
+
 type GetListenerHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
 	Domain string `pulumi:"domain"`
@@ -5047,6 +6747,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AclTagArrayInput)(nil)).Elem(), AclTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagInput)(nil)).Elem(), CertificateTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagArrayInput)(nil)).Elem(), CertificateTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbAccessLogInput)(nil)).Elem(), ClbAccessLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbAccessLogPtrInput)(nil)).Elem(), ClbAccessLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbEipInput)(nil)).Elem(), ClbEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbEipPtrInput)(nil)).Elem(), ClbEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbEniInput)(nil)).Elem(), ClbEniArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbEniPtrInput)(nil)).Elem(), ClbEniArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbEnisInput)(nil)).Elem(), ClbEnisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbEnisPtrInput)(nil)).Elem(), ClbEnisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbListenerInput)(nil)).Elem(), ClbListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbListenerArrayInput)(nil)).Elem(), ClbListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbServerGroupInput)(nil)).Elem(), ClbServerGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbServerGroupArrayInput)(nil)).Elem(), ClbServerGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbTagInput)(nil)).Elem(), ClbTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClbTagArrayInput)(nil)).Elem(), ClbTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckPtrInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
@@ -5083,6 +6797,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAclTagArrayInput)(nil)).Elem(), GetAclTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagInput)(nil)).Elem(), GetCertificateTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagArrayInput)(nil)).Elem(), GetCertificateTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbAccessLogInput)(nil)).Elem(), GetClbAccessLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbEipInput)(nil)).Elem(), GetClbEipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbEniInput)(nil)).Elem(), GetClbEniArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbEnisInput)(nil)).Elem(), GetClbEnisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbListenerInput)(nil)).Elem(), GetClbListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbListenerArrayInput)(nil)).Elem(), GetClbListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbServerGroupInput)(nil)).Elem(), GetClbServerGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbServerGroupArrayInput)(nil)).Elem(), GetClbServerGroupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbTagInput)(nil)).Elem(), GetClbTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClbTagArrayInput)(nil)).Elem(), GetClbTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerHealthCheckInput)(nil)).Elem(), GetListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
@@ -5116,6 +6840,20 @@ func init() {
 	pulumi.RegisterOutputType(AclTagArrayOutput{})
 	pulumi.RegisterOutputType(CertificateTagOutput{})
 	pulumi.RegisterOutputType(CertificateTagArrayOutput{})
+	pulumi.RegisterOutputType(ClbAccessLogOutput{})
+	pulumi.RegisterOutputType(ClbAccessLogPtrOutput{})
+	pulumi.RegisterOutputType(ClbEipOutput{})
+	pulumi.RegisterOutputType(ClbEipPtrOutput{})
+	pulumi.RegisterOutputType(ClbEniOutput{})
+	pulumi.RegisterOutputType(ClbEniPtrOutput{})
+	pulumi.RegisterOutputType(ClbEnisOutput{})
+	pulumi.RegisterOutputType(ClbEnisPtrOutput{})
+	pulumi.RegisterOutputType(ClbListenerOutput{})
+	pulumi.RegisterOutputType(ClbListenerArrayOutput{})
+	pulumi.RegisterOutputType(ClbServerGroupOutput{})
+	pulumi.RegisterOutputType(ClbServerGroupArrayOutput{})
+	pulumi.RegisterOutputType(ClbTagOutput{})
+	pulumi.RegisterOutputType(ClbTagArrayOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(ListenerHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
@@ -5152,6 +6890,16 @@ func init() {
 	pulumi.RegisterOutputType(GetAclTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateTagOutput{})
 	pulumi.RegisterOutputType(GetCertificateTagArrayOutput{})
+	pulumi.RegisterOutputType(GetClbAccessLogOutput{})
+	pulumi.RegisterOutputType(GetClbEipOutput{})
+	pulumi.RegisterOutputType(GetClbEniOutput{})
+	pulumi.RegisterOutputType(GetClbEnisOutput{})
+	pulumi.RegisterOutputType(GetClbListenerOutput{})
+	pulumi.RegisterOutputType(GetClbListenerArrayOutput{})
+	pulumi.RegisterOutputType(GetClbServerGroupOutput{})
+	pulumi.RegisterOutputType(GetClbServerGroupArrayOutput{})
+	pulumi.RegisterOutputType(GetClbTagOutput{})
+	pulumi.RegisterOutputType(GetClbTagArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetListenerTagOutput{})
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})

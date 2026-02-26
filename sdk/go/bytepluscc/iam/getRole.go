@@ -41,13 +41,15 @@ type LookupRoleResult struct {
 	// 是否是服务关联角色, 0否，1是。
 	IsServiceLinkedRole int `pulumi:"isServiceLinkedRole"`
 	// 角色最大会话时间，角色最大会话时间。用于限制角色扮演产生的临时安全凭证的有效期的最大范围。取值范围：3600~43200，单位为秒，默认为43200。
-	MaxSessionDuration int             `pulumi:"maxSessionDuration"`
-	Policies           []GetRolePolicy `pulumi:"policies"`
+	MaxSessionDuration int `pulumi:"maxSessionDuration"`
+	// 角色策略。
+	Policies []GetRolePolicy `pulumi:"policies"`
 	// 角色ID。
 	RoleId int `pulumi:"roleId"`
 	// 角色名，长度1~64，支持英文、数字和.-_符号。
-	RoleName string       `pulumi:"roleName"`
-	Tags     []GetRoleTag `pulumi:"tags"`
+	RoleName string `pulumi:"roleName"`
+	// 标签。
+	Tags []GetRoleTag `pulumi:"tags"`
 	// 角色TRN。
 	Trn string `pulumi:"trn"`
 	// 角色信任策略，信任策略遵循IAM的策略语法中基于资源的策略规则。
@@ -120,6 +122,7 @@ func (o LookupRoleResultOutput) MaxSessionDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRoleResult) int { return v.MaxSessionDuration }).(pulumi.IntOutput)
 }
 
+// 角色策略。
 func (o LookupRoleResultOutput) Policies() GetRolePolicyArrayOutput {
 	return o.ApplyT(func(v LookupRoleResult) []GetRolePolicy { return v.Policies }).(GetRolePolicyArrayOutput)
 }
@@ -134,6 +137,7 @@ func (o LookupRoleResultOutput) RoleName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRoleResult) string { return v.RoleName }).(pulumi.StringOutput)
 }
 
+// 标签。
 func (o LookupRoleResultOutput) Tags() GetRoleTagArrayOutput {
 	return o.ApplyT(func(v LookupRoleResult) []GetRoleTag { return v.Tags }).(GetRoleTagArrayOutput)
 }

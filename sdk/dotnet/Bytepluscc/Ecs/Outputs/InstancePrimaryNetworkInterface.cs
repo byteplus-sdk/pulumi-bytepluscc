@@ -45,7 +45,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
         /// <summary>
         /// 实例的子网ID。
         /// </summary>
-        public readonly string SubnetId;
+        public readonly string? SubnetId;
         /// <summary>
         /// 实例的VPC ID。
         /// </summary>
@@ -67,7 +67,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
 
             ImmutableArray<string> securityGroupIds,
 
-            string subnetId,
+            string? subnetId,
 
             string? vpcId)
         {

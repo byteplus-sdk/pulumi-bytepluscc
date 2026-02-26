@@ -10,6 +10,16 @@ export const getKey: typeof import("./getKey").getKey = null as any;
 export const getKeyOutput: typeof import("./getKey").getKeyOutput = null as any;
 utilities.lazyLoad(exports, ["getKey","getKeyOutput"], () => require("./getKey"));
 
+export { GetKeyRingArgs, GetKeyRingResult, GetKeyRingOutputArgs } from "./getKeyRing";
+export const getKeyRing: typeof import("./getKeyRing").getKeyRing = null as any;
+export const getKeyRingOutput: typeof import("./getKeyRing").getKeyRingOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyRing","getKeyRingOutput"], () => require("./getKeyRing"));
+
+export { GetKeyRingsResult } from "./getKeyRings";
+export const getKeyRings: typeof import("./getKeyRings").getKeyRings = null as any;
+export const getKeyRingsOutput: typeof import("./getKeyRings").getKeyRingsOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyRings","getKeyRingsOutput"], () => require("./getKeyRings"));
+
 export { GetKeysResult } from "./getKeys";
 export const getKeys: typeof import("./getKeys").getKeys = null as any;
 export const getKeysOutput: typeof import("./getKeys").getKeysOutput = null as any;
@@ -20,6 +30,11 @@ export type Key = import("./key").Key;
 export const Key: typeof import("./key").Key = null as any;
 utilities.lazyLoad(exports, ["Key"], () => require("./key"));
 
+export { KeyRingArgs, KeyRingState } from "./keyRing";
+export type KeyRing = import("./keyRing").KeyRing;
+export const KeyRing: typeof import("./keyRing").KeyRing = null as any;
+utilities.lazyLoad(exports, ["KeyRing"], () => require("./keyRing"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:kms/key:Key":
                 return new Key(name, <any>undefined, { urn })
+            case "bytepluscc:kms/keyRing:KeyRing":
+                return new KeyRing(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "kms/key", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "kms/keyRing", _module)

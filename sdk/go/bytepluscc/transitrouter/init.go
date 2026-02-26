@@ -27,6 +27,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TransitRouterRouteEntry{}
 	case "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable":
 		r = &TransitRouterRouteTable{}
+	case "bytepluscc:transitrouter/vpcAttachment:VpcAttachment":
+		r = &VpcAttachment{}
+	case "bytepluscc:transitrouter/vpnAttachment:VpnAttachment":
+		r = &VpnAttachment{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +57,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"transitrouter/transitRouterRouteTable",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/vpcAttachment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/vpnAttachment",
 		&module{version},
 	)
 }

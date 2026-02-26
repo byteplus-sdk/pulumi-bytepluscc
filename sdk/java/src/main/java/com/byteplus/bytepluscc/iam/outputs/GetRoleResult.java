@@ -44,6 +44,10 @@ public final class GetRoleResult {
      * 
      */
     private Integer maxSessionDuration;
+    /**
+     * @return 角色策略。
+     * 
+     */
     private List<GetRolePolicy> policies;
     /**
      * @return 角色ID。
@@ -55,6 +59,10 @@ public final class GetRoleResult {
      * 
      */
     private String roleName;
+    /**
+     * @return 标签。
+     * 
+     */
     private List<GetRoleTag> tags;
     /**
      * @return 角色TRN。
@@ -115,6 +123,10 @@ public final class GetRoleResult {
     public Integer maxSessionDuration() {
         return this.maxSessionDuration;
     }
+    /**
+     * @return 角色策略。
+     * 
+     */
     public List<GetRolePolicy> policies() {
         return this.policies;
     }
@@ -132,6 +144,10 @@ public final class GetRoleResult {
     public String roleName() {
         return this.roleName;
     }
+    /**
+     * @return 标签。
+     * 
+     */
     public List<GetRoleTag> tags() {
         return this.tags;
     }

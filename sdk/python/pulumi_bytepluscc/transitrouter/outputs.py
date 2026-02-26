@@ -21,10 +21,16 @@ __all__ = [
     'TransitRouterAttachmentTag',
     'TransitRouterRouteTableTag',
     'TransitRouterTag',
+    'VpcAttachmentAttachPoint',
+    'VpcAttachmentTag',
+    'VpnAttachmentTag',
     'GetTransitRouterAttachmentResult',
     'GetTransitRouterAttachmentTagResult',
     'GetTransitRouterRouteTableTagResult',
     'GetTransitRouterTagResult',
+    'GetVpcAttachmentAttachPointResult',
+    'GetVpcAttachmentTagResult',
+    'GetVpnAttachmentTagResult',
 ]
 
 @pulumi.output_type
@@ -399,6 +405,116 @@ class TransitRouterTag(dict):
 
 
 @pulumi.output_type
+class VpcAttachmentAttachPoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "zoneId":
+            suggest = "zone_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VpcAttachmentAttachPoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VpcAttachmentAttachPoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VpcAttachmentAttachPoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 subnet_id: builtins.str,
+                 zone_id: builtins.str):
+        """
+        :param builtins.str subnet_id: 连接点的子网ID。
+        :param builtins.str zone_id: 连接点的可用区ID。
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        连接点的子网ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        连接点的可用区ID。
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class VpcAttachmentTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class VpnAttachmentTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetTransitRouterAttachmentResult(dict):
     def __init__(__self__, *,
                  auto_publish_route_enabled: builtins.bool,
@@ -697,6 +813,104 @@ class GetTransitRouterTagResult(dict):
     def value(self) -> builtins.str:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVpcAttachmentAttachPointResult(dict):
+    def __init__(__self__, *,
+                 network_interface_id: builtins.str,
+                 subnet_id: builtins.str,
+                 zone_id: builtins.str):
+        """
+        :param builtins.str network_interface_id: 连接点的网卡ID。
+        :param builtins.str subnet_id: 连接点的子网ID。
+        :param builtins.str zone_id: 连接点的可用区ID。
+        """
+        pulumi.set(__self__, "network_interface_id", network_interface_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="networkInterfaceId")
+    def network_interface_id(self) -> builtins.str:
+        """
+        连接点的网卡ID。
+        """
+        return pulumi.get(self, "network_interface_id")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        连接点的子网ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> builtins.str:
+        """
+        连接点的可用区ID。
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetVpcAttachmentTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVpnAttachmentTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。
         """
         return pulumi.get(self, "value")
 
