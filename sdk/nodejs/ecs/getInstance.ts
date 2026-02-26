@@ -27,7 +27,9 @@ export interface GetInstanceArgs {
  * A collection of values returned by getInstance.
  */
 export interface GetInstanceResult {
+    readonly affinityGroupId: string;
     readonly affinityGroupSize: number;
+    readonly autoPay: boolean;
     readonly autoRenew: boolean;
     readonly autoRenewPeriod: number;
     readonly cpuMaxFrequency: number;
@@ -39,16 +41,21 @@ export interface GetInstanceResult {
     readonly deploymentSetId: string;
     readonly description: string;
     readonly eipAddress: outputs.ecs.GetInstanceEipAddress;
+    readonly elasticScheduledInstanceType: string;
+    readonly enableJumboFrame: boolean;
     readonly expiredAt: string;
     readonly hostname: string;
     readonly hpcClusterId: string;
     readonly id: string;
     readonly image: outputs.ecs.GetInstanceImage;
+    readonly includeDataVolumes: boolean;
+    readonly installRunCommandAgent: boolean;
     readonly instanceChargeType: string;
     readonly instanceId: string;
     readonly instanceName: string;
     readonly instanceType: string;
     readonly keyPair: outputs.ecs.GetInstanceKeyPair;
+    readonly localVolumes: outputs.ecs.GetInstanceLocalVolume[];
     readonly operationSystem: outputs.ecs.GetInstanceOperationSystem;
     readonly password: string;
     readonly period: number;
@@ -56,6 +63,10 @@ export interface GetInstanceResult {
     readonly placement: outputs.ecs.GetInstancePlacement;
     readonly primaryNetworkInterface: outputs.ecs.GetInstancePrimaryNetworkInterface;
     readonly projectName: string;
+    readonly rdmaIpAddresses: string[];
+    readonly rdmaNetworkInterfaceDetails: outputs.ecs.GetInstanceRdmaNetworkInterfaceDetail[];
+    readonly renewInfo: outputs.ecs.GetInstanceRenewInfo;
+    readonly roleNames: string[];
     readonly secondaryNetworkInterfaces: outputs.ecs.GetInstanceSecondaryNetworkInterface[];
     readonly spotPriceLimit: number;
     readonly spotStrategy: string;

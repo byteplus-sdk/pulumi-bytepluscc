@@ -21,6 +21,9 @@ __all__ = [
     'AclListener',
     'AclTag',
     'CertificateTag',
+    'CustomizedCfgListener',
+    'CustomizedCfgTag',
+    'HealthCheckTemplateTag',
     'ListenerDomainExtension',
     'ListenerServerGroup',
     'ListenerTag',
@@ -38,6 +41,9 @@ __all__ = [
     'GetAclListenerResult',
     'GetAclTagResult',
     'GetCertificateTagResult',
+    'GetCustomizedCfgListenerResult',
+    'GetCustomizedCfgTagResult',
+    'GetHealthCheckTemplateTagResult',
     'GetListenerDomainExtensionResult',
     'GetListenerServerGroupResult',
     'GetListenerTagResult',
@@ -182,6 +188,142 @@ class CertificateTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class CustomizedCfgListener(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "listenerId":
+            suggest = "listener_id"
+        elif key == "listenerName":
+            suggest = "listener_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomizedCfgListener. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomizedCfgListener.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomizedCfgListener.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 listener_id: Optional[builtins.str] = None,
+                 listener_name: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None,
+                 protocol: Optional[builtins.str] = None):
+        """
+        :param builtins.str listener_id: 监听器的 ID。
+        :param builtins.str listener_name: 监听器的名称。
+        :param builtins.int port: 监听器的端口。
+        :param builtins.str protocol: 监听器的协议。
+        """
+        if listener_id is not None:
+            pulumi.set(__self__, "listener_id", listener_id)
+        if listener_name is not None:
+            pulumi.set(__self__, "listener_name", listener_name)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+
+    @property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> Optional[builtins.str]:
+        """
+        监听器的 ID。
+        """
+        return pulumi.get(self, "listener_id")
+
+    @property
+    @pulumi.getter(name="listenerName")
+    def listener_name(self) -> Optional[builtins.str]:
+        """
+        监听器的名称。
+        """
+        return pulumi.get(self, "listener_name")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        监听器的端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[builtins.str]:
+        """
+        监听器的协议。
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class CustomizedCfgTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class HealthCheckTemplateTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        :param builtins.str value: 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
         """
         return pulumi.get(self, "value")
 
@@ -1232,6 +1374,115 @@ class GetCertificateTagResult(dict):
     def value(self) -> builtins.str:
         """
         用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCustomizedCfgListenerResult(dict):
+    def __init__(__self__, *,
+                 listener_id: builtins.str,
+                 listener_name: builtins.str,
+                 port: builtins.int,
+                 protocol: builtins.str):
+        """
+        :param builtins.str listener_id: 监听器的 ID。
+        :param builtins.str listener_name: 监听器的名称。
+        :param builtins.int port: 监听器的端口。
+        :param builtins.str protocol: 监听器的协议。
+        """
+        pulumi.set(__self__, "listener_id", listener_id)
+        pulumi.set(__self__, "listener_name", listener_name)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+
+    @property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> builtins.str:
+        """
+        监听器的 ID。
+        """
+        return pulumi.get(self, "listener_id")
+
+    @property
+    @pulumi.getter(name="listenerName")
+    def listener_name(self) -> builtins.str:
+        """
+        监听器的名称。
+        """
+        return pulumi.get(self, "listener_name")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        监听器的端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> builtins.str:
+        """
+        监听器的协议。
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class GetCustomizedCfgTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetHealthCheckTemplateTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        :param builtins.str value: 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
         """
         return pulumi.get(self, "value")
 

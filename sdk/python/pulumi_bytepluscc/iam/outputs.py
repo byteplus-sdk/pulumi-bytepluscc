@@ -553,12 +553,12 @@ class UserAccessKey(dict):
         suggest = None
         if key == "accessKeyId":
             suggest = "access_key_id"
-        elif key == "createdTime":
-            suggest = "created_time"
+        elif key == "createDate":
+            suggest = "create_date"
         elif key == "requestTime":
             suggest = "request_time"
-        elif key == "updatedTime":
-            suggest = "updated_time"
+        elif key == "updateDate":
+            suggest = "update_date"
         elif key == "userName":
             suggest = "user_name"
 
@@ -575,27 +575,27 @@ class UserAccessKey(dict):
 
     def __init__(__self__, *,
                  access_key_id: Optional[builtins.str] = None,
-                 created_time: Optional[builtins.str] = None,
+                 create_date: Optional[builtins.str] = None,
                  region: Optional[builtins.str] = None,
                  request_time: Optional[builtins.str] = None,
                  service: Optional[builtins.str] = None,
                  status: Optional[builtins.str] = None,
-                 updated_time: Optional[builtins.str] = None,
+                 update_date: Optional[builtins.str] = None,
                  user_name: Optional[builtins.str] = None):
         """
         :param builtins.str access_key_id: 访问密钥ID。
-        :param builtins.str created_time: 访问密钥创建时间。
+        :param builtins.str create_date: 访问密钥创建时间。
         :param builtins.str region: 最近一次使用的服务区域。
         :param builtins.str request_time: 访问密钥最近一次使用时间。
         :param builtins.str service: 最近一次使用的服务名称。
         :param builtins.str status: 访问密钥状态。Active代表启用，Inactive代表禁用。
-        :param builtins.str updated_time: 访问密钥更新时间。
+        :param builtins.str update_date: 访问密钥更新时间。
         :param builtins.str user_name: 访问密钥Secret。
         """
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
-        if created_time is not None:
-            pulumi.set(__self__, "created_time", created_time)
+        if create_date is not None:
+            pulumi.set(__self__, "create_date", create_date)
         if region is not None:
             pulumi.set(__self__, "region", region)
         if request_time is not None:
@@ -604,8 +604,8 @@ class UserAccessKey(dict):
             pulumi.set(__self__, "service", service)
         if status is not None:
             pulumi.set(__self__, "status", status)
-        if updated_time is not None:
-            pulumi.set(__self__, "updated_time", updated_time)
+        if update_date is not None:
+            pulumi.set(__self__, "update_date", update_date)
         if user_name is not None:
             pulumi.set(__self__, "user_name", user_name)
 
@@ -618,12 +618,12 @@ class UserAccessKey(dict):
         return pulumi.get(self, "access_key_id")
 
     @property
-    @pulumi.getter(name="createdTime")
-    def created_time(self) -> Optional[builtins.str]:
+    @pulumi.getter(name="createDate")
+    def create_date(self) -> Optional[builtins.str]:
         """
         访问密钥创建时间。
         """
-        return pulumi.get(self, "created_time")
+        return pulumi.get(self, "create_date")
 
     @property
     @pulumi.getter
@@ -658,12 +658,12 @@ class UserAccessKey(dict):
         return pulumi.get(self, "status")
 
     @property
-    @pulumi.getter(name="updatedTime")
-    def updated_time(self) -> Optional[builtins.str]:
+    @pulumi.getter(name="updateDate")
+    def update_date(self) -> Optional[builtins.str]:
         """
         访问密钥更新时间。
         """
-        return pulumi.get(self, "updated_time")
+        return pulumi.get(self, "update_date")
 
     @property
     @pulumi.getter(name="userName")
@@ -1669,30 +1669,30 @@ class GetRoleTagResult(dict):
 class GetUserAccessKeyResult(dict):
     def __init__(__self__, *,
                  access_key_id: builtins.str,
-                 created_time: builtins.str,
+                 create_date: builtins.str,
                  region: builtins.str,
                  request_time: builtins.str,
                  service: builtins.str,
                  status: builtins.str,
-                 updated_time: builtins.str,
+                 update_date: builtins.str,
                  user_name: builtins.str):
         """
         :param builtins.str access_key_id: 访问密钥ID。
-        :param builtins.str created_time: 访问密钥创建时间。
+        :param builtins.str create_date: 访问密钥创建时间。
         :param builtins.str region: 最近一次使用的服务区域。
         :param builtins.str request_time: 访问密钥最近一次使用时间。
         :param builtins.str service: 最近一次使用的服务名称。
         :param builtins.str status: 访问密钥状态。Active代表启用，Inactive代表禁用。
-        :param builtins.str updated_time: 访问密钥更新时间。
+        :param builtins.str update_date: 访问密钥更新时间。
         :param builtins.str user_name: 访问密钥Secret。
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
-        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "create_date", create_date)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "request_time", request_time)
         pulumi.set(__self__, "service", service)
         pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "updated_time", updated_time)
+        pulumi.set(__self__, "update_date", update_date)
         pulumi.set(__self__, "user_name", user_name)
 
     @property
@@ -1704,12 +1704,12 @@ class GetUserAccessKeyResult(dict):
         return pulumi.get(self, "access_key_id")
 
     @property
-    @pulumi.getter(name="createdTime")
-    def created_time(self) -> builtins.str:
+    @pulumi.getter(name="createDate")
+    def create_date(self) -> builtins.str:
         """
         访问密钥创建时间。
         """
-        return pulumi.get(self, "created_time")
+        return pulumi.get(self, "create_date")
 
     @property
     @pulumi.getter
@@ -1744,12 +1744,12 @@ class GetUserAccessKeyResult(dict):
         return pulumi.get(self, "status")
 
     @property
-    @pulumi.getter(name="updatedTime")
-    def updated_time(self) -> builtins.str:
+    @pulumi.getter(name="updateDate")
+    def update_date(self) -> builtins.str:
         """
         访问密钥更新时间。
         """
-        return pulumi.get(self, "updated_time")
+        return pulumi.get(self, "update_date")
 
     @property
     @pulumi.getter(name="userName")

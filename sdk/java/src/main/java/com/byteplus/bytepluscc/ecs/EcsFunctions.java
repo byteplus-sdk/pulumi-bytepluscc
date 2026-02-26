@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.ecs;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.ecs.inputs.GetCommandArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetCommandPlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetDeploymentSetArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetDeploymentSetPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImagePlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetInstanceArgs;
@@ -14,8 +16,14 @@ import com.byteplus.bytepluscc.ecs.inputs.GetInvocationArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetInvocationPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetKeypairArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetKeypairPlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplateArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplatePlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplateVersionArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplateVersionPlainArgs;
 import com.byteplus.bytepluscc.ecs.outputs.GetCommandResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetCommandsResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetDeploymentSetResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetDeploymentSetsResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImageResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImagesResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceResult;
@@ -24,6 +32,10 @@ import com.byteplus.bytepluscc.ecs.outputs.GetInvocationResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetInvocationsResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetKeypairResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetKeypairsResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplateResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplateVersionResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplateVersionsResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplatesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -116,6 +128,90 @@ public final class EcsFunctions {
      */
     public static CompletableFuture<GetCommandsResult> getCommandsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getCommands:getCommands", TypeShape.of(GetCommandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static Output<GetDeploymentSetResult> getDeploymentSet(GetDeploymentSetArgs args) {
+        return getDeploymentSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static CompletableFuture<GetDeploymentSetResult> getDeploymentSetPlain(GetDeploymentSetPlainArgs args) {
+        return getDeploymentSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static Output<GetDeploymentSetResult> getDeploymentSet(GetDeploymentSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDeploymentSet:getDeploymentSet", TypeShape.of(GetDeploymentSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static Output<GetDeploymentSetResult> getDeploymentSet(GetDeploymentSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDeploymentSet:getDeploymentSet", TypeShape.of(GetDeploymentSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static CompletableFuture<GetDeploymentSetResult> getDeploymentSetPlain(GetDeploymentSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getDeploymentSet:getDeploymentSet", TypeShape.of(GetDeploymentSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static Output<GetDeploymentSetsResult> getDeploymentSets() {
+        return getDeploymentSets(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static CompletableFuture<GetDeploymentSetsResult> getDeploymentSetsPlain() {
+        return getDeploymentSetsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static Output<GetDeploymentSetsResult> getDeploymentSets(InvokeArgs args) {
+        return getDeploymentSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static CompletableFuture<GetDeploymentSetsResult> getDeploymentSetsPlain(InvokeArgs args) {
+        return getDeploymentSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static Output<GetDeploymentSetsResult> getDeploymentSets(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDeploymentSets:getDeploymentSets", TypeShape.of(GetDeploymentSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static Output<GetDeploymentSetsResult> getDeploymentSets(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDeploymentSets:getDeploymentSets", TypeShape.of(GetDeploymentSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DeploymentSet
+     * 
+     */
+    public static CompletableFuture<GetDeploymentSetsResult> getDeploymentSetsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getDeploymentSets:getDeploymentSets", TypeShape.of(GetDeploymentSetsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::ECS::Image
@@ -452,5 +548,173 @@ public final class EcsFunctions {
      */
     public static CompletableFuture<GetKeypairsResult> getKeypairsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getKeypairs:getKeypairs", TypeShape.of(GetKeypairsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static Output<GetLaunchTemplateResult> getLaunchTemplate(GetLaunchTemplateArgs args) {
+        return getLaunchTemplate(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplateResult> getLaunchTemplatePlain(GetLaunchTemplatePlainArgs args) {
+        return getLaunchTemplatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static Output<GetLaunchTemplateResult> getLaunchTemplate(GetLaunchTemplateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplate:getLaunchTemplate", TypeShape.of(GetLaunchTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static Output<GetLaunchTemplateResult> getLaunchTemplate(GetLaunchTemplateArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplate:getLaunchTemplate", TypeShape.of(GetLaunchTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplateResult> getLaunchTemplatePlain(GetLaunchTemplatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getLaunchTemplate:getLaunchTemplate", TypeShape.of(GetLaunchTemplateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static Output<GetLaunchTemplateVersionResult> getLaunchTemplateVersion(GetLaunchTemplateVersionArgs args) {
+        return getLaunchTemplateVersion(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplateVersionResult> getLaunchTemplateVersionPlain(GetLaunchTemplateVersionPlainArgs args) {
+        return getLaunchTemplateVersionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static Output<GetLaunchTemplateVersionResult> getLaunchTemplateVersion(GetLaunchTemplateVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplateVersion:getLaunchTemplateVersion", TypeShape.of(GetLaunchTemplateVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static Output<GetLaunchTemplateVersionResult> getLaunchTemplateVersion(GetLaunchTemplateVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplateVersion:getLaunchTemplateVersion", TypeShape.of(GetLaunchTemplateVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplateVersionResult> getLaunchTemplateVersionPlain(GetLaunchTemplateVersionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getLaunchTemplateVersion:getLaunchTemplateVersion", TypeShape.of(GetLaunchTemplateVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static Output<GetLaunchTemplateVersionsResult> getLaunchTemplateVersions() {
+        return getLaunchTemplateVersions(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplateVersionsResult> getLaunchTemplateVersionsPlain() {
+        return getLaunchTemplateVersionsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static Output<GetLaunchTemplateVersionsResult> getLaunchTemplateVersions(InvokeArgs args) {
+        return getLaunchTemplateVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplateVersionsResult> getLaunchTemplateVersionsPlain(InvokeArgs args) {
+        return getLaunchTemplateVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static Output<GetLaunchTemplateVersionsResult> getLaunchTemplateVersions(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplateVersions:getLaunchTemplateVersions", TypeShape.of(GetLaunchTemplateVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static Output<GetLaunchTemplateVersionsResult> getLaunchTemplateVersions(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplateVersions:getLaunchTemplateVersions", TypeShape.of(GetLaunchTemplateVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplateVersionsResult> getLaunchTemplateVersionsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getLaunchTemplateVersions:getLaunchTemplateVersions", TypeShape.of(GetLaunchTemplateVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static Output<GetLaunchTemplatesResult> getLaunchTemplates() {
+        return getLaunchTemplates(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplatesResult> getLaunchTemplatesPlain() {
+        return getLaunchTemplatesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static Output<GetLaunchTemplatesResult> getLaunchTemplates(InvokeArgs args) {
+        return getLaunchTemplates(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplatesResult> getLaunchTemplatesPlain(InvokeArgs args) {
+        return getLaunchTemplatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static Output<GetLaunchTemplatesResult> getLaunchTemplates(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplates:getLaunchTemplates", TypeShape.of(GetLaunchTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static Output<GetLaunchTemplatesResult> getLaunchTemplates(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getLaunchTemplates:getLaunchTemplates", TypeShape.of(GetLaunchTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::Launchtemplate
+     * 
+     */
+    public static CompletableFuture<GetLaunchTemplatesResult> getLaunchTemplatesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getLaunchTemplates:getLaunchTemplates", TypeShape.of(GetLaunchTemplatesResult.class), args, Utilities.withVersion(options));
     }
 }

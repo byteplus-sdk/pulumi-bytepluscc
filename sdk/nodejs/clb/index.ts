@@ -15,6 +15,11 @@ export type Certificate = import("./certificate").Certificate;
 export const Certificate: typeof import("./certificate").Certificate = null as any;
 utilities.lazyLoad(exports, ["Certificate"], () => require("./certificate"));
 
+export { ClbArgs, ClbState } from "./clb";
+export type Clb = import("./clb").Clb;
+export const Clb: typeof import("./clb").Clb = null as any;
+utilities.lazyLoad(exports, ["Clb"], () => require("./clb"));
+
 export { GetAclArgs, GetAclResult, GetAclOutputArgs } from "./getAcl";
 export const getAcl: typeof import("./getAcl").getAcl = null as any;
 export const getAclOutput: typeof import("./getAcl").getAclOutput = null as any;
@@ -34,6 +39,16 @@ export { GetCertificatesResult } from "./getCertificates";
 export const getCertificates: typeof import("./getCertificates").getCertificates = null as any;
 export const getCertificatesOutput: typeof import("./getCertificates").getCertificatesOutput = null as any;
 utilities.lazyLoad(exports, ["getCertificates","getCertificatesOutput"], () => require("./getCertificates"));
+
+export { GetClbArgs, GetClbResult, GetClbOutputArgs } from "./getClb";
+export const getClb: typeof import("./getClb").getClb = null as any;
+export const getClbOutput: typeof import("./getClb").getClbOutput = null as any;
+utilities.lazyLoad(exports, ["getClb","getClbOutput"], () => require("./getClb"));
+
+export { GetClbsResult } from "./getClbs";
+export const getClbs: typeof import("./getClbs").getClbs = null as any;
+export const getClbsOutput: typeof import("./getClbs").getClbsOutput = null as any;
+utilities.lazyLoad(exports, ["getClbs","getClbsOutput"], () => require("./getClbs"));
 
 export { GetListenerArgs, GetListenerResult, GetListenerOutputArgs } from "./getListener";
 export const getListener: typeof import("./getListener").getListener = null as any;
@@ -134,6 +149,8 @@ const _module = {
                 return new Acl(name, <any>undefined, { urn })
             case "bytepluscc:clb/certificate:Certificate":
                 return new Certificate(name, <any>undefined, { urn })
+            case "bytepluscc:clb/clb:Clb":
+                return new Clb(name, <any>undefined, { urn })
             case "bytepluscc:clb/listener:Listener":
                 return new Listener(name, <any>undefined, { urn })
             case "bytepluscc:clb/nlb:Nlb":
@@ -153,6 +170,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/acl", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/certificate", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/clb", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/listener", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlb", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlbListener", _module)

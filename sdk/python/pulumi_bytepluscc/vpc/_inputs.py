@@ -32,6 +32,14 @@ __all__ = [
     'EniPrivateIpSetAssociatedElasticIpArgsDict',
     'EniTagArgs',
     'EniTagArgsDict',
+    'FlowLogTagArgs',
+    'FlowLogTagArgsDict',
+    'HaVipTagArgs',
+    'HaVipTagArgsDict',
+    'Ipv6AddressBandwidthTagArgs',
+    'Ipv6AddressBandwidthTagArgsDict',
+    'Ipv6GatewayTagArgs',
+    'Ipv6GatewayTagArgsDict',
     'NetworkAclDefaultEgressAclEntryArgs',
     'NetworkAclDefaultEgressAclEntryArgsDict',
     'NetworkAclDefaultIngressAclEntryArgs',
@@ -68,6 +76,16 @@ __all__ = [
     'SubnetRouteTableArgsDict',
     'SubnetTagArgs',
     'SubnetTagArgsDict',
+    'TrafficMirrorFilterEgressFilterRuleArgs',
+    'TrafficMirrorFilterEgressFilterRuleArgsDict',
+    'TrafficMirrorFilterIngressFilterRuleArgs',
+    'TrafficMirrorFilterIngressFilterRuleArgsDict',
+    'TrafficMirrorFilterTagArgs',
+    'TrafficMirrorFilterTagArgsDict',
+    'TrafficMirrorSessionTagArgs',
+    'TrafficMirrorSessionTagArgsDict',
+    'TrafficMirrorTargetTagArgs',
+    'TrafficMirrorTargetTagArgsDict',
     'VpcAssociateCenArgs',
     'VpcAssociateCenArgsDict',
     'VpcTagArgs',
@@ -484,6 +502,214 @@ class EniTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class FlowLogTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+elif False:
+    FlowLogTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FlowLogTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class HaVipTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+elif False:
+    HaVipTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class HaVipTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class Ipv6AddressBandwidthTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签值。
+        """
+elif False:
+    Ipv6AddressBandwidthTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class Ipv6AddressBandwidthTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签键。
+        :param pulumi.Input[builtins.str] value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class Ipv6GatewayTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签值。
+        """
+elif False:
+    Ipv6GatewayTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class Ipv6GatewayTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签键。
+        :param pulumi.Input[builtins.str] value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签值。
         """
         return pulumi.get(self, "value")
 
@@ -2440,6 +2666,706 @@ class SubnetTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class TrafficMirrorFilterEgressFilterRuleArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则实例描述。
+        """
+        destination_cidr_block: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则目的地址。
+        """
+        destination_port_range: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则目的端口范围。
+        """
+        policy: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        """
+        priority: NotRequired[pulumi.Input[builtins.int]]
+        """
+        筛选规则优先级。
+        """
+        project_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        所属项目的名称。
+        """
+        protocol: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则协议类型。
+        """
+        source_cidr_block: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则源地址。
+        """
+        source_port_range: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则源端口范围。
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则状态。
+        """
+        traffic_direction: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则方向。egress：出方向。ingress：入方向。
+        """
+        traffic_mirror_filter_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选条件实例ID。
+        """
+        traffic_mirror_filter_rule_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则实例ID。
+        """
+elif False:
+    TrafficMirrorFilterEgressFilterRuleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TrafficMirrorFilterEgressFilterRuleArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_port_range: Optional[pulumi.Input[builtins.str]] = None,
+                 policy: Optional[pulumi.Input[builtins.str]] = None,
+                 priority: Optional[pulumi.Input[builtins.int]] = None,
+                 project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 protocol: Optional[pulumi.Input[builtins.str]] = None,
+                 source_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
+                 source_port_range: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None,
+                 traffic_direction: Optional[pulumi.Input[builtins.str]] = None,
+                 traffic_mirror_filter_id: Optional[pulumi.Input[builtins.str]] = None,
+                 traffic_mirror_filter_rule_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] description: 筛选规则实例描述。
+        :param pulumi.Input[builtins.str] destination_cidr_block: 筛选规则目的地址。
+        :param pulumi.Input[builtins.str] destination_port_range: 筛选规则目的端口范围。
+        :param pulumi.Input[builtins.str] policy: 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        :param pulumi.Input[builtins.int] priority: 筛选规则优先级。
+        :param pulumi.Input[builtins.str] project_name: 所属项目的名称。
+        :param pulumi.Input[builtins.str] protocol: 筛选规则协议类型。
+        :param pulumi.Input[builtins.str] source_cidr_block: 筛选规则源地址。
+        :param pulumi.Input[builtins.str] source_port_range: 筛选规则源端口范围。
+        :param pulumi.Input[builtins.str] status: 筛选规则状态。
+        :param pulumi.Input[builtins.str] traffic_direction: 筛选规则方向。egress：出方向。ingress：入方向。
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_rule_id: 筛选规则实例ID。
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if destination_cidr_block is not None:
+            pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
+        if destination_port_range is not None:
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
+        if policy is not None:
+            pulumi.set(__self__, "policy", policy)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if source_cidr_block is not None:
+            pulumi.set(__self__, "source_cidr_block", source_cidr_block)
+        if source_port_range is not None:
+            pulumi.set(__self__, "source_port_range", source_port_range)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if traffic_direction is not None:
+            pulumi.set(__self__, "traffic_direction", traffic_direction)
+        if traffic_mirror_filter_id is not None:
+            pulumi.set(__self__, "traffic_mirror_filter_id", traffic_mirror_filter_id)
+        if traffic_mirror_filter_rule_id is not None:
+            pulumi.set(__self__, "traffic_mirror_filter_rule_id", traffic_mirror_filter_rule_id)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则实例描述。
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="destinationCidrBlock")
+    def destination_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则目的地址。
+        """
+        return pulumi.get(self, "destination_cidr_block")
+
+    @destination_cidr_block.setter
+    def destination_cidr_block(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_cidr_block", value)
+
+    @property
+    @pulumi.getter(name="destinationPortRange")
+    def destination_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则目的端口范围。
+        """
+        return pulumi.get(self, "destination_port_range")
+
+    @destination_port_range.setter
+    def destination_port_range(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_port_range", value)
+
+    @property
+    @pulumi.getter
+    def policy(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        """
+        return pulumi.get(self, "policy")
+
+    @policy.setter
+    def policy(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "policy", value)
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        筛选规则优先级。
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "priority", value)
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        所属项目的名称。
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则协议类型。
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter(name="sourceCidrBlock")
+    def source_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则源地址。
+        """
+        return pulumi.get(self, "source_cidr_block")
+
+    @source_cidr_block.setter
+    def source_cidr_block(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_cidr_block", value)
+
+    @property
+    @pulumi.getter(name="sourcePortRange")
+    def source_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则源端口范围。
+        """
+        return pulumi.get(self, "source_port_range")
+
+    @source_port_range.setter
+    def source_port_range(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_port_range", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则状态。
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="trafficDirection")
+    def traffic_direction(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则方向。egress：出方向。ingress：入方向。
+        """
+        return pulumi.get(self, "traffic_direction")
+
+    @traffic_direction.setter
+    def traffic_direction(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "traffic_direction", value)
+
+    @property
+    @pulumi.getter(name="trafficMirrorFilterId")
+    def traffic_mirror_filter_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选条件实例ID。
+        """
+        return pulumi.get(self, "traffic_mirror_filter_id")
+
+    @traffic_mirror_filter_id.setter
+    def traffic_mirror_filter_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "traffic_mirror_filter_id", value)
+
+    @property
+    @pulumi.getter(name="trafficMirrorFilterRuleId")
+    def traffic_mirror_filter_rule_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则实例ID。
+        """
+        return pulumi.get(self, "traffic_mirror_filter_rule_id")
+
+    @traffic_mirror_filter_rule_id.setter
+    def traffic_mirror_filter_rule_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "traffic_mirror_filter_rule_id", value)
+
+
+if not MYPY:
+    class TrafficMirrorFilterIngressFilterRuleArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则实例描述。
+        """
+        destination_cidr_block: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则目的地址。
+        """
+        destination_port_range: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则目的端口范围。
+        """
+        policy: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        """
+        priority: NotRequired[pulumi.Input[builtins.int]]
+        """
+        筛选规则优先级。
+        """
+        project_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        所属项目的名称。
+        """
+        protocol: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则协议类型。
+        """
+        source_cidr_block: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则源地址。
+        """
+        source_port_range: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则源端口范围。
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则状态。
+        """
+        traffic_direction: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则方向。egress：出方向。ingress：入方向。
+        """
+        traffic_mirror_filter_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选条件实例ID。
+        """
+        traffic_mirror_filter_rule_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        筛选规则实例ID。
+        """
+elif False:
+    TrafficMirrorFilterIngressFilterRuleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TrafficMirrorFilterIngressFilterRuleArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
+                 destination_port_range: Optional[pulumi.Input[builtins.str]] = None,
+                 policy: Optional[pulumi.Input[builtins.str]] = None,
+                 priority: Optional[pulumi.Input[builtins.int]] = None,
+                 project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 protocol: Optional[pulumi.Input[builtins.str]] = None,
+                 source_cidr_block: Optional[pulumi.Input[builtins.str]] = None,
+                 source_port_range: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None,
+                 traffic_direction: Optional[pulumi.Input[builtins.str]] = None,
+                 traffic_mirror_filter_id: Optional[pulumi.Input[builtins.str]] = None,
+                 traffic_mirror_filter_rule_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] description: 筛选规则实例描述。
+        :param pulumi.Input[builtins.str] destination_cidr_block: 筛选规则目的地址。
+        :param pulumi.Input[builtins.str] destination_port_range: 筛选规则目的端口范围。
+        :param pulumi.Input[builtins.str] policy: 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        :param pulumi.Input[builtins.int] priority: 筛选规则优先级。
+        :param pulumi.Input[builtins.str] project_name: 所属项目的名称。
+        :param pulumi.Input[builtins.str] protocol: 筛选规则协议类型。
+        :param pulumi.Input[builtins.str] source_cidr_block: 筛选规则源地址。
+        :param pulumi.Input[builtins.str] source_port_range: 筛选规则源端口范围。
+        :param pulumi.Input[builtins.str] status: 筛选规则状态。
+        :param pulumi.Input[builtins.str] traffic_direction: 筛选规则方向。egress：出方向。ingress：入方向。
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_id: 筛选条件实例ID。
+        :param pulumi.Input[builtins.str] traffic_mirror_filter_rule_id: 筛选规则实例ID。
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if destination_cidr_block is not None:
+            pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
+        if destination_port_range is not None:
+            pulumi.set(__self__, "destination_port_range", destination_port_range)
+        if policy is not None:
+            pulumi.set(__self__, "policy", policy)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if source_cidr_block is not None:
+            pulumi.set(__self__, "source_cidr_block", source_cidr_block)
+        if source_port_range is not None:
+            pulumi.set(__self__, "source_port_range", source_port_range)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if traffic_direction is not None:
+            pulumi.set(__self__, "traffic_direction", traffic_direction)
+        if traffic_mirror_filter_id is not None:
+            pulumi.set(__self__, "traffic_mirror_filter_id", traffic_mirror_filter_id)
+        if traffic_mirror_filter_rule_id is not None:
+            pulumi.set(__self__, "traffic_mirror_filter_rule_id", traffic_mirror_filter_rule_id)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则实例描述。
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="destinationCidrBlock")
+    def destination_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则目的地址。
+        """
+        return pulumi.get(self, "destination_cidr_block")
+
+    @destination_cidr_block.setter
+    def destination_cidr_block(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_cidr_block", value)
+
+    @property
+    @pulumi.getter(name="destinationPortRange")
+    def destination_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则目的端口范围。
+        """
+        return pulumi.get(self, "destination_port_range")
+
+    @destination_port_range.setter
+    def destination_port_range(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "destination_port_range", value)
+
+    @property
+    @pulumi.getter
+    def policy(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        """
+        return pulumi.get(self, "policy")
+
+    @policy.setter
+    def policy(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "policy", value)
+
+    @property
+    @pulumi.getter
+    def priority(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        筛选规则优先级。
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "priority", value)
+
+    @property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        所属项目的名称。
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则协议类型。
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter(name="sourceCidrBlock")
+    def source_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则源地址。
+        """
+        return pulumi.get(self, "source_cidr_block")
+
+    @source_cidr_block.setter
+    def source_cidr_block(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_cidr_block", value)
+
+    @property
+    @pulumi.getter(name="sourcePortRange")
+    def source_port_range(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则源端口范围。
+        """
+        return pulumi.get(self, "source_port_range")
+
+    @source_port_range.setter
+    def source_port_range(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_port_range", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则状态。
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="trafficDirection")
+    def traffic_direction(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则方向。egress：出方向。ingress：入方向。
+        """
+        return pulumi.get(self, "traffic_direction")
+
+    @traffic_direction.setter
+    def traffic_direction(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "traffic_direction", value)
+
+    @property
+    @pulumi.getter(name="trafficMirrorFilterId")
+    def traffic_mirror_filter_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选条件实例ID。
+        """
+        return pulumi.get(self, "traffic_mirror_filter_id")
+
+    @traffic_mirror_filter_id.setter
+    def traffic_mirror_filter_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "traffic_mirror_filter_id", value)
+
+    @property
+    @pulumi.getter(name="trafficMirrorFilterRuleId")
+    def traffic_mirror_filter_rule_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        筛选规则实例ID。
+        """
+        return pulumi.get(self, "traffic_mirror_filter_rule_id")
+
+    @traffic_mirror_filter_rule_id.setter
+    def traffic_mirror_filter_rule_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "traffic_mirror_filter_rule_id", value)
+
+
+if not MYPY:
+    class TrafficMirrorFilterTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签值。
+        """
+elif False:
+    TrafficMirrorFilterTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TrafficMirrorFilterTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签键。
+        :param pulumi.Input[builtins.str] value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class TrafficMirrorSessionTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签值。
+        """
+elif False:
+    TrafficMirrorSessionTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TrafficMirrorSessionTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签键。
+        :param pulumi.Input[builtins.str] value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class TrafficMirrorTargetTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+elif False:
+    TrafficMirrorTargetTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TrafficMirrorTargetTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        :param pulumi.Input[builtins.str] value: 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
         """
         return pulumi.get(self, "value")
 

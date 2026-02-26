@@ -32,6 +32,8 @@ type Vpc struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 	DnsServers pulumi.StringArrayOutput `pulumi:"dnsServers"`
+	// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+	EnableIpv6 pulumi.BoolOutput `pulumi:"enableIpv6"`
 	// VPC 绑定的 IPv4 网关的 ID。
 	Ipv4GatewayId pulumi.StringOutput `pulumi:"ipv4GatewayId"`
 	// VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
@@ -108,6 +110,8 @@ type vpcState struct {
 	Description *string `pulumi:"description"`
 	// VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 	DnsServers []string `pulumi:"dnsServers"`
+	// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+	EnableIpv6 *bool `pulumi:"enableIpv6"`
 	// VPC 绑定的 IPv4 网关的 ID。
 	Ipv4GatewayId *string `pulumi:"ipv4GatewayId"`
 	// VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
@@ -155,6 +159,8 @@ type VpcState struct {
 	Description pulumi.StringPtrInput
 	// VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 	DnsServers pulumi.StringArrayInput
+	// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+	EnableIpv6 pulumi.BoolPtrInput
 	// VPC 绑定的 IPv4 网关的 ID。
 	Ipv4GatewayId pulumi.StringPtrInput
 	// VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
@@ -201,6 +207,8 @@ type vpcArgs struct {
 	Description *string `pulumi:"description"`
 	// VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 	DnsServers []string `pulumi:"dnsServers"`
+	// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+	EnableIpv6 *bool `pulumi:"enableIpv6"`
 	// VPC 绑定的 IPv4 网关的 ID。
 	Ipv4GatewayId *string `pulumi:"ipv4GatewayId"`
 	// VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
@@ -228,6 +236,8 @@ type VpcArgs struct {
 	Description pulumi.StringPtrInput
 	// VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 	DnsServers pulumi.StringArrayInput
+	// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+	EnableIpv6 pulumi.BoolPtrInput
 	// VPC 绑定的 IPv4 网关的 ID。
 	Ipv4GatewayId pulumi.StringPtrInput
 	// VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
@@ -361,6 +371,11 @@ func (o VpcOutput) Description() pulumi.StringOutput {
 // VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 func (o VpcOutput) DnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Vpc) pulumi.StringArrayOutput { return v.DnsServers }).(pulumi.StringArrayOutput)
+}
+
+// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+func (o VpcOutput) EnableIpv6() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Vpc) pulumi.BoolOutput { return v.EnableIpv6 }).(pulumi.BoolOutput)
 }
 
 // VPC 绑定的 IPv4 网关的 ID。

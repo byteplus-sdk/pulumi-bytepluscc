@@ -88,6 +88,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// 角色最大会话时间，角色最大会话时间。用于限制角色扮演产生的临时安全凭证的有效期的最大范围。取值范围：3600~43200，单位为秒，默认为43200。
         /// </summary>
         public readonly int MaxSessionDuration;
+        /// <summary>
+        /// 角色策略。
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRolePolicyResult> Policies;
         /// <summary>
         /// 角色ID。
@@ -97,6 +100,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// 角色名，长度1~64，支持英文、数字和.-_符号。
         /// </summary>
         public readonly string RoleName;
+        /// <summary>
+        /// 标签。
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRoleTagResult> Tags;
         /// <summary>
         /// 角色TRN。

@@ -64,6 +64,21 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * 
+     */
+    @Import(name="enableIpv6")
+    private @Nullable Output<Boolean> enableIpv6;
+
+    /**
+     * @return 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * 
+     */
+    public Optional<Output<Boolean>> enableIpv6() {
+        return Optional.ofNullable(this.enableIpv6);
+    }
+
+    /**
      * VPC 绑定的 IPv4 网关的 ID。
      * 
      */
@@ -196,6 +211,7 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
         this.cidrBlock = $.cidrBlock;
         this.description = $.description;
         this.dnsServers = $.dnsServers;
+        this.enableIpv6 = $.enableIpv6;
         this.ipv4GatewayId = $.ipv4GatewayId;
         this.ipv6CidrBlock = $.ipv6CidrBlock;
         this.natGatewayIds = $.natGatewayIds;
@@ -296,6 +312,27 @@ public final class VpcArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder dnsServers(String... dnsServers) {
             return dnsServers(List.of(dnsServers));
+        }
+
+        /**
+         * @param enableIpv6 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableIpv6(@Nullable Output<Boolean> enableIpv6) {
+            $.enableIpv6 = enableIpv6;
+            return this;
+        }
+
+        /**
+         * @param enableIpv6 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableIpv6(Boolean enableIpv6) {
+            return enableIpv6(Output.of(enableIpv6));
         }
 
         /**

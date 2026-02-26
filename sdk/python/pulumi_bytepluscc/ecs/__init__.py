@@ -7,8 +7,11 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .command import *
+from .deployment_set import *
 from .get_command import *
 from .get_commands import *
+from .get_deployment_set import *
+from .get_deployment_sets import *
 from .get_image import *
 from .get_images import *
 from .get_instance import *
@@ -17,9 +20,15 @@ from .get_invocation import *
 from .get_invocations import *
 from .get_keypair import *
 from .get_keypairs import *
+from .get_launch_template import *
+from .get_launch_template_version import *
+from .get_launch_template_versions import *
+from .get_launch_templates import *
 from .image import *
 from .instance import *
 from .invocation import *
 from .keypair import *
+from .launch_template import *
+from .launch_template_version import *
 from ._inputs import *
 from . import outputs

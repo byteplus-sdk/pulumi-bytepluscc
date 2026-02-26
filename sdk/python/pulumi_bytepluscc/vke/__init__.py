@@ -8,14 +8,20 @@ import typing
 # Export this package's modules as members:
 from .addon import *
 from .cluster import *
+from .default_node_pool import *
 from .get_addon import *
 from .get_addons import *
 from .get_cluster import *
 from .get_clusters import *
+from .get_default_node_pool import *
+from .get_default_node_pools import *
+from .get_node import *
 from .get_node_pool import *
 from .get_node_pools import *
+from .get_nodes import *
 from .get_permission import *
 from .get_permissions import *
+from .node import *
 from .node_pool import *
 from .permission import *
 from ._inputs import *

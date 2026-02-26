@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AccesskeyArgs, AccesskeyState } from "./accesskey";
+export type Accesskey = import("./accesskey").Accesskey;
+export const Accesskey: typeof import("./accesskey").Accesskey = null as any;
+utilities.lazyLoad(exports, ["Accesskey"], () => require("./accesskey"));
+
+export { GetAccesskeyArgs, GetAccesskeyResult, GetAccesskeyOutputArgs } from "./getAccesskey";
+export const getAccesskey: typeof import("./getAccesskey").getAccesskey = null as any;
+export const getAccesskeyOutput: typeof import("./getAccesskey").getAccesskeyOutput = null as any;
+utilities.lazyLoad(exports, ["getAccesskey","getAccesskeyOutput"], () => require("./getAccesskey"));
+
+export { GetAccesskeysResult } from "./getAccesskeys";
+export const getAccesskeys: typeof import("./getAccesskeys").getAccesskeys = null as any;
+export const getAccesskeysOutput: typeof import("./getAccesskeys").getAccesskeysOutput = null as any;
+utilities.lazyLoad(exports, ["getAccesskeys","getAccesskeysOutput"], () => require("./getAccesskeys"));
+
 export { GetGroupArgs, GetGroupResult, GetGroupOutputArgs } from "./getGroup";
 export const getGroup: typeof import("./getGroup").getGroup = null as any;
 export const getGroupOutput: typeof import("./getGroup").getGroupOutput = null as any;
@@ -85,6 +100,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:iam/accesskey:Accesskey":
+                return new Accesskey(name, <any>undefined, { urn })
             case "bytepluscc:iam/group:Group":
                 return new Group(name, <any>undefined, { urn })
             case "bytepluscc:iam/policy:Policy":
@@ -100,6 +117,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "iam/accesskey", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/group", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/policy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "iam/project", _module)

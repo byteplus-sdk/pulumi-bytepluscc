@@ -5,6 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AccountArgs, AccountState } from "./account";
+export type Account = import("./account").Account;
+export const Account: typeof import("./account").Account = null as any;
+utilities.lazyLoad(exports, ["Account"], () => require("./account"));
+
+export { EndpointPublicAddressArgs, EndpointPublicAddressState } from "./endpointPublicAddress";
+export type EndpointPublicAddress = import("./endpointPublicAddress").EndpointPublicAddress;
+export const EndpointPublicAddress: typeof import("./endpointPublicAddress").EndpointPublicAddress = null as any;
+utilities.lazyLoad(exports, ["EndpointPublicAddress"], () => require("./endpointPublicAddress"));
+
+export { GetAccountArgs, GetAccountResult, GetAccountOutputArgs } from "./getAccount";
+export const getAccount: typeof import("./getAccount").getAccount = null as any;
+export const getAccountOutput: typeof import("./getAccount").getAccountOutput = null as any;
+utilities.lazyLoad(exports, ["getAccount","getAccountOutput"], () => require("./getAccount"));
+
+export { GetAccountsResult } from "./getAccounts";
+export const getAccounts: typeof import("./getAccounts").getAccounts = null as any;
+export const getAccountsOutput: typeof import("./getAccounts").getAccountsOutput = null as any;
+utilities.lazyLoad(exports, ["getAccounts","getAccountsOutput"], () => require("./getAccounts"));
+
+export { GetEndpointPublicAddressArgs, GetEndpointPublicAddressResult, GetEndpointPublicAddressOutputArgs } from "./getEndpointPublicAddress";
+export const getEndpointPublicAddress: typeof import("./getEndpointPublicAddress").getEndpointPublicAddress = null as any;
+export const getEndpointPublicAddressOutput: typeof import("./getEndpointPublicAddress").getEndpointPublicAddressOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpointPublicAddress","getEndpointPublicAddressOutput"], () => require("./getEndpointPublicAddress"));
+
+export { GetEndpointPublicAddressesResult } from "./getEndpointPublicAddresses";
+export const getEndpointPublicAddresses: typeof import("./getEndpointPublicAddresses").getEndpointPublicAddresses = null as any;
+export const getEndpointPublicAddressesOutput: typeof import("./getEndpointPublicAddresses").getEndpointPublicAddressesOutput = null as any;
+utilities.lazyLoad(exports, ["getEndpointPublicAddresses","getEndpointPublicAddressesOutput"], () => require("./getEndpointPublicAddresses"));
+
 export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
 export const getInstance: typeof import("./getInstance").getInstance = null as any;
 export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
@@ -25,6 +55,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:redis/account:Account":
+                return new Account(name, <any>undefined, { urn })
+            case "bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress":
+                return new EndpointPublicAddress(name, <any>undefined, { urn })
             case "bytepluscc:redis/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
             default:
@@ -32,4 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "redis/account", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "redis/endpointPublicAddress", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/instance", _module)

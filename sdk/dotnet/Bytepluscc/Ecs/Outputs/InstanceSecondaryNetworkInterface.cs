@@ -34,10 +34,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
         /// 实例的子网ID。
         /// </summary>
         public readonly string? SubnetId;
-        /// <summary>
-        /// 实例的VPC ID。
-        /// </summary>
-        public readonly string? VpcId;
 
         [OutputConstructor]
         private InstanceSecondaryNetworkInterface(
@@ -49,16 +45,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
 
             ImmutableArray<string> securityGroupIds,
 
-            string? subnetId,
-
-            string? vpcId)
+            string? subnetId)
         {
             Ipv6AddressCount = ipv6AddressCount;
             PrimaryIpAddress = primaryIpAddress;
             PrivateIpAddresses = privateIpAddresses;
             SecurityGroupIds = securityGroupIds;
             SubnetId = subnetId;
-            VpcId = vpcId;
         }
     }
 }

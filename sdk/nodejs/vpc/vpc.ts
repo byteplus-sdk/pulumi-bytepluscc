@@ -65,6 +65,10 @@ export class Vpc extends pulumi.CustomResource {
      */
     public readonly dnsServers!: pulumi.Output<string[]>;
     /**
+     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     */
+    public readonly enableIpv6!: pulumi.Output<boolean>;
+    /**
      * VPC 绑定的 IPv4 网关的 ID。
      */
     public readonly ipv4GatewayId!: pulumi.Output<string>;
@@ -149,6 +153,7 @@ export class Vpc extends pulumi.CustomResource {
             resourceInputs["creationTime"] = state ? state.creationTime : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["dnsServers"] = state ? state.dnsServers : undefined;
+            resourceInputs["enableIpv6"] = state ? state.enableIpv6 : undefined;
             resourceInputs["ipv4GatewayId"] = state ? state.ipv4GatewayId : undefined;
             resourceInputs["ipv6CidrBlock"] = state ? state.ipv6CidrBlock : undefined;
             resourceInputs["isDefault"] = state ? state.isDefault : undefined;
@@ -171,6 +176,7 @@ export class Vpc extends pulumi.CustomResource {
             resourceInputs["cidrBlock"] = args ? args.cidrBlock : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["dnsServers"] = args ? args.dnsServers : undefined;
+            resourceInputs["enableIpv6"] = args ? args.enableIpv6 : undefined;
             resourceInputs["ipv4GatewayId"] = args ? args.ipv4GatewayId : undefined;
             resourceInputs["ipv6CidrBlock"] = args ? args.ipv6CidrBlock : undefined;
             resourceInputs["natGatewayIds"] = args ? args.natGatewayIds : undefined;
@@ -222,6 +228,10 @@ export interface VpcState {
      * VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
      */
     dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     */
+    enableIpv6?: pulumi.Input<boolean>;
     /**
      * VPC 绑定的 IPv4 网关的 ID。
      */
@@ -305,6 +315,10 @@ export interface VpcArgs {
      * VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
      */
     dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     */
+    enableIpv6?: pulumi.Input<boolean>;
     /**
      * VPC 绑定的 IPv4 网关的 ID。
      */

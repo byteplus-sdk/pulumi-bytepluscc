@@ -1162,7 +1162,7 @@ type UserAccessKey struct {
 	// 访问密钥ID。
 	AccessKeyId *string `pulumi:"accessKeyId"`
 	// 访问密钥创建时间。
-	CreatedTime *string `pulumi:"createdTime"`
+	CreateDate *string `pulumi:"createDate"`
 	// 最近一次使用的服务区域。
 	Region *string `pulumi:"region"`
 	// 访问密钥最近一次使用时间。
@@ -1172,7 +1172,7 @@ type UserAccessKey struct {
 	// 访问密钥状态。Active代表启用，Inactive代表禁用。
 	Status *string `pulumi:"status"`
 	// 访问密钥更新时间。
-	UpdatedTime *string `pulumi:"updatedTime"`
+	UpdateDate *string `pulumi:"updateDate"`
 	// 访问密钥Secret。
 	UserName *string `pulumi:"userName"`
 }
@@ -1192,7 +1192,7 @@ type UserAccessKeyArgs struct {
 	// 访问密钥ID。
 	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
 	// 访问密钥创建时间。
-	CreatedTime pulumi.StringPtrInput `pulumi:"createdTime"`
+	CreateDate pulumi.StringPtrInput `pulumi:"createDate"`
 	// 最近一次使用的服务区域。
 	Region pulumi.StringPtrInput `pulumi:"region"`
 	// 访问密钥最近一次使用时间。
@@ -1202,7 +1202,7 @@ type UserAccessKeyArgs struct {
 	// 访问密钥状态。Active代表启用，Inactive代表禁用。
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// 访问密钥更新时间。
-	UpdatedTime pulumi.StringPtrInput `pulumi:"updatedTime"`
+	UpdateDate pulumi.StringPtrInput `pulumi:"updateDate"`
 	// 访问密钥Secret。
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
 }
@@ -1264,8 +1264,8 @@ func (o UserAccessKeyOutput) AccessKeyId() pulumi.StringPtrOutput {
 }
 
 // 访问密钥创建时间。
-func (o UserAccessKeyOutput) CreatedTime() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v UserAccessKey) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
+func (o UserAccessKeyOutput) CreateDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UserAccessKey) *string { return v.CreateDate }).(pulumi.StringPtrOutput)
 }
 
 // 最近一次使用的服务区域。
@@ -1289,8 +1289,8 @@ func (o UserAccessKeyOutput) Status() pulumi.StringPtrOutput {
 }
 
 // 访问密钥更新时间。
-func (o UserAccessKeyOutput) UpdatedTime() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v UserAccessKey) *string { return v.UpdatedTime }).(pulumi.StringPtrOutput)
+func (o UserAccessKeyOutput) UpdateDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UserAccessKey) *string { return v.UpdateDate }).(pulumi.StringPtrOutput)
 }
 
 // 访问密钥Secret。
@@ -3521,7 +3521,7 @@ type GetUserAccessKey struct {
 	// 访问密钥ID。
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// 访问密钥创建时间。
-	CreatedTime string `pulumi:"createdTime"`
+	CreateDate string `pulumi:"createDate"`
 	// 最近一次使用的服务区域。
 	Region string `pulumi:"region"`
 	// 访问密钥最近一次使用时间。
@@ -3531,7 +3531,7 @@ type GetUserAccessKey struct {
 	// 访问密钥状态。Active代表启用，Inactive代表禁用。
 	Status string `pulumi:"status"`
 	// 访问密钥更新时间。
-	UpdatedTime string `pulumi:"updatedTime"`
+	UpdateDate string `pulumi:"updateDate"`
 	// 访问密钥Secret。
 	UserName string `pulumi:"userName"`
 }
@@ -3551,7 +3551,7 @@ type GetUserAccessKeyArgs struct {
 	// 访问密钥ID。
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// 访问密钥创建时间。
-	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	CreateDate pulumi.StringInput `pulumi:"createDate"`
 	// 最近一次使用的服务区域。
 	Region pulumi.StringInput `pulumi:"region"`
 	// 访问密钥最近一次使用时间。
@@ -3561,7 +3561,7 @@ type GetUserAccessKeyArgs struct {
 	// 访问密钥状态。Active代表启用，Inactive代表禁用。
 	Status pulumi.StringInput `pulumi:"status"`
 	// 访问密钥更新时间。
-	UpdatedTime pulumi.StringInput `pulumi:"updatedTime"`
+	UpdateDate pulumi.StringInput `pulumi:"updateDate"`
 	// 访问密钥Secret。
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
@@ -3623,8 +3623,8 @@ func (o GetUserAccessKeyOutput) AccessKeyId() pulumi.StringOutput {
 }
 
 // 访问密钥创建时间。
-func (o GetUserAccessKeyOutput) CreatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAccessKey) string { return v.CreatedTime }).(pulumi.StringOutput)
+func (o GetUserAccessKeyOutput) CreateDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAccessKey) string { return v.CreateDate }).(pulumi.StringOutput)
 }
 
 // 最近一次使用的服务区域。
@@ -3648,8 +3648,8 @@ func (o GetUserAccessKeyOutput) Status() pulumi.StringOutput {
 }
 
 // 访问密钥更新时间。
-func (o GetUserAccessKeyOutput) UpdatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserAccessKey) string { return v.UpdatedTime }).(pulumi.StringOutput)
+func (o GetUserAccessKeyOutput) UpdateDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUserAccessKey) string { return v.UpdateDate }).(pulumi.StringOutput)
 }
 
 // 访问密钥Secret。

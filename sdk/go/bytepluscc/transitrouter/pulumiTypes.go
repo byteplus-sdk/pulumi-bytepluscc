@@ -587,6 +587,324 @@ func (o TransitRouterTagArrayOutput) Index(i pulumi.IntInput) TransitRouterTagOu
 	}).(TransitRouterTagOutput)
 }
 
+type VpcAttachmentAttachPoint struct {
+	// 连接点的子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// 连接点的可用区ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// VpcAttachmentAttachPointInput is an input type that accepts VpcAttachmentAttachPointArgs and VpcAttachmentAttachPointOutput values.
+// You can construct a concrete instance of `VpcAttachmentAttachPointInput` via:
+//
+//	VpcAttachmentAttachPointArgs{...}
+type VpcAttachmentAttachPointInput interface {
+	pulumi.Input
+
+	ToVpcAttachmentAttachPointOutput() VpcAttachmentAttachPointOutput
+	ToVpcAttachmentAttachPointOutputWithContext(context.Context) VpcAttachmentAttachPointOutput
+}
+
+type VpcAttachmentAttachPointArgs struct {
+	// 连接点的子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// 连接点的可用区ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (VpcAttachmentAttachPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (i VpcAttachmentAttachPointArgs) ToVpcAttachmentAttachPointOutput() VpcAttachmentAttachPointOutput {
+	return i.ToVpcAttachmentAttachPointOutputWithContext(context.Background())
+}
+
+func (i VpcAttachmentAttachPointArgs) ToVpcAttachmentAttachPointOutputWithContext(ctx context.Context) VpcAttachmentAttachPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcAttachmentAttachPointOutput)
+}
+
+// VpcAttachmentAttachPointArrayInput is an input type that accepts VpcAttachmentAttachPointArray and VpcAttachmentAttachPointArrayOutput values.
+// You can construct a concrete instance of `VpcAttachmentAttachPointArrayInput` via:
+//
+//	VpcAttachmentAttachPointArray{ VpcAttachmentAttachPointArgs{...} }
+type VpcAttachmentAttachPointArrayInput interface {
+	pulumi.Input
+
+	ToVpcAttachmentAttachPointArrayOutput() VpcAttachmentAttachPointArrayOutput
+	ToVpcAttachmentAttachPointArrayOutputWithContext(context.Context) VpcAttachmentAttachPointArrayOutput
+}
+
+type VpcAttachmentAttachPointArray []VpcAttachmentAttachPointInput
+
+func (VpcAttachmentAttachPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (i VpcAttachmentAttachPointArray) ToVpcAttachmentAttachPointArrayOutput() VpcAttachmentAttachPointArrayOutput {
+	return i.ToVpcAttachmentAttachPointArrayOutputWithContext(context.Background())
+}
+
+func (i VpcAttachmentAttachPointArray) ToVpcAttachmentAttachPointArrayOutputWithContext(ctx context.Context) VpcAttachmentAttachPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcAttachmentAttachPointArrayOutput)
+}
+
+type VpcAttachmentAttachPointOutput struct{ *pulumi.OutputState }
+
+func (VpcAttachmentAttachPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (o VpcAttachmentAttachPointOutput) ToVpcAttachmentAttachPointOutput() VpcAttachmentAttachPointOutput {
+	return o
+}
+
+func (o VpcAttachmentAttachPointOutput) ToVpcAttachmentAttachPointOutputWithContext(ctx context.Context) VpcAttachmentAttachPointOutput {
+	return o
+}
+
+// 连接点的子网ID。
+func (o VpcAttachmentAttachPointOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v VpcAttachmentAttachPoint) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// 连接点的可用区ID。
+func (o VpcAttachmentAttachPointOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v VpcAttachmentAttachPoint) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type VpcAttachmentAttachPointArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcAttachmentAttachPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (o VpcAttachmentAttachPointArrayOutput) ToVpcAttachmentAttachPointArrayOutput() VpcAttachmentAttachPointArrayOutput {
+	return o
+}
+
+func (o VpcAttachmentAttachPointArrayOutput) ToVpcAttachmentAttachPointArrayOutputWithContext(ctx context.Context) VpcAttachmentAttachPointArrayOutput {
+	return o
+}
+
+func (o VpcAttachmentAttachPointArrayOutput) Index(i pulumi.IntInput) VpcAttachmentAttachPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcAttachmentAttachPoint {
+		return vs[0].([]VpcAttachmentAttachPoint)[vs[1].(int)]
+	}).(VpcAttachmentAttachPointOutput)
+}
+
+type VpcAttachmentTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// VpcAttachmentTagInput is an input type that accepts VpcAttachmentTagArgs and VpcAttachmentTagOutput values.
+// You can construct a concrete instance of `VpcAttachmentTagInput` via:
+//
+//	VpcAttachmentTagArgs{...}
+type VpcAttachmentTagInput interface {
+	pulumi.Input
+
+	ToVpcAttachmentTagOutput() VpcAttachmentTagOutput
+	ToVpcAttachmentTagOutputWithContext(context.Context) VpcAttachmentTagOutput
+}
+
+type VpcAttachmentTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VpcAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcAttachmentTag)(nil)).Elem()
+}
+
+func (i VpcAttachmentTagArgs) ToVpcAttachmentTagOutput() VpcAttachmentTagOutput {
+	return i.ToVpcAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i VpcAttachmentTagArgs) ToVpcAttachmentTagOutputWithContext(ctx context.Context) VpcAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcAttachmentTagOutput)
+}
+
+// VpcAttachmentTagArrayInput is an input type that accepts VpcAttachmentTagArray and VpcAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `VpcAttachmentTagArrayInput` via:
+//
+//	VpcAttachmentTagArray{ VpcAttachmentTagArgs{...} }
+type VpcAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToVpcAttachmentTagArrayOutput() VpcAttachmentTagArrayOutput
+	ToVpcAttachmentTagArrayOutputWithContext(context.Context) VpcAttachmentTagArrayOutput
+}
+
+type VpcAttachmentTagArray []VpcAttachmentTagInput
+
+func (VpcAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcAttachmentTag)(nil)).Elem()
+}
+
+func (i VpcAttachmentTagArray) ToVpcAttachmentTagArrayOutput() VpcAttachmentTagArrayOutput {
+	return i.ToVpcAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i VpcAttachmentTagArray) ToVpcAttachmentTagArrayOutputWithContext(ctx context.Context) VpcAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpcAttachmentTagArrayOutput)
+}
+
+type VpcAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (VpcAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpcAttachmentTag)(nil)).Elem()
+}
+
+func (o VpcAttachmentTagOutput) ToVpcAttachmentTagOutput() VpcAttachmentTagOutput {
+	return o
+}
+
+func (o VpcAttachmentTagOutput) ToVpcAttachmentTagOutputWithContext(ctx context.Context) VpcAttachmentTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o VpcAttachmentTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcAttachmentTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o VpcAttachmentTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpcAttachmentTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VpcAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (VpcAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpcAttachmentTag)(nil)).Elem()
+}
+
+func (o VpcAttachmentTagArrayOutput) ToVpcAttachmentTagArrayOutput() VpcAttachmentTagArrayOutput {
+	return o
+}
+
+func (o VpcAttachmentTagArrayOutput) ToVpcAttachmentTagArrayOutputWithContext(ctx context.Context) VpcAttachmentTagArrayOutput {
+	return o
+}
+
+func (o VpcAttachmentTagArrayOutput) Index(i pulumi.IntInput) VpcAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpcAttachmentTag {
+		return vs[0].([]VpcAttachmentTag)[vs[1].(int)]
+	}).(VpcAttachmentTagOutput)
+}
+
+type VpnAttachmentTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// VpnAttachmentTagInput is an input type that accepts VpnAttachmentTagArgs and VpnAttachmentTagOutput values.
+// You can construct a concrete instance of `VpnAttachmentTagInput` via:
+//
+//	VpnAttachmentTagArgs{...}
+type VpnAttachmentTagInput interface {
+	pulumi.Input
+
+	ToVpnAttachmentTagOutput() VpnAttachmentTagOutput
+	ToVpnAttachmentTagOutputWithContext(context.Context) VpnAttachmentTagOutput
+}
+
+type VpnAttachmentTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VpnAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnAttachmentTag)(nil)).Elem()
+}
+
+func (i VpnAttachmentTagArgs) ToVpnAttachmentTagOutput() VpnAttachmentTagOutput {
+	return i.ToVpnAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i VpnAttachmentTagArgs) ToVpnAttachmentTagOutputWithContext(ctx context.Context) VpnAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnAttachmentTagOutput)
+}
+
+// VpnAttachmentTagArrayInput is an input type that accepts VpnAttachmentTagArray and VpnAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `VpnAttachmentTagArrayInput` via:
+//
+//	VpnAttachmentTagArray{ VpnAttachmentTagArgs{...} }
+type VpnAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToVpnAttachmentTagArrayOutput() VpnAttachmentTagArrayOutput
+	ToVpnAttachmentTagArrayOutputWithContext(context.Context) VpnAttachmentTagArrayOutput
+}
+
+type VpnAttachmentTagArray []VpnAttachmentTagInput
+
+func (VpnAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnAttachmentTag)(nil)).Elem()
+}
+
+func (i VpnAttachmentTagArray) ToVpnAttachmentTagArrayOutput() VpnAttachmentTagArrayOutput {
+	return i.ToVpnAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i VpnAttachmentTagArray) ToVpnAttachmentTagArrayOutputWithContext(ctx context.Context) VpnAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnAttachmentTagArrayOutput)
+}
+
+type VpnAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (VpnAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnAttachmentTag)(nil)).Elem()
+}
+
+func (o VpnAttachmentTagOutput) ToVpnAttachmentTagOutput() VpnAttachmentTagOutput {
+	return o
+}
+
+func (o VpnAttachmentTagOutput) ToVpnAttachmentTagOutputWithContext(ctx context.Context) VpnAttachmentTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o VpnAttachmentTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnAttachmentTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o VpnAttachmentTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnAttachmentTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VpnAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (VpnAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnAttachmentTag)(nil)).Elem()
+}
+
+func (o VpnAttachmentTagArrayOutput) ToVpnAttachmentTagArrayOutput() VpnAttachmentTagArrayOutput {
+	return o
+}
+
+func (o VpnAttachmentTagArrayOutput) ToVpnAttachmentTagArrayOutputWithContext(ctx context.Context) VpnAttachmentTagArrayOutput {
+	return o
+}
+
+func (o VpnAttachmentTagArrayOutput) Index(i pulumi.IntInput) VpnAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpnAttachmentTag {
+		return vs[0].([]VpnAttachmentTag)[vs[1].(int)]
+	}).(VpnAttachmentTagOutput)
+}
+
 type GetTransitRouterAttachment struct {
 	// 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
 	AutoPublishRouteEnabled bool `pulumi:"autoPublishRouteEnabled"`
@@ -1164,6 +1482,333 @@ func (o GetTransitRouterTagArrayOutput) Index(i pulumi.IntInput) GetTransitRoute
 	}).(GetTransitRouterTagOutput)
 }
 
+type GetVpcAttachmentAttachPoint struct {
+	// 连接点的网卡ID。
+	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
+	// 连接点的子网ID。
+	SubnetId string `pulumi:"subnetId"`
+	// 连接点的可用区ID。
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetVpcAttachmentAttachPointInput is an input type that accepts GetVpcAttachmentAttachPointArgs and GetVpcAttachmentAttachPointOutput values.
+// You can construct a concrete instance of `GetVpcAttachmentAttachPointInput` via:
+//
+//	GetVpcAttachmentAttachPointArgs{...}
+type GetVpcAttachmentAttachPointInput interface {
+	pulumi.Input
+
+	ToGetVpcAttachmentAttachPointOutput() GetVpcAttachmentAttachPointOutput
+	ToGetVpcAttachmentAttachPointOutputWithContext(context.Context) GetVpcAttachmentAttachPointOutput
+}
+
+type GetVpcAttachmentAttachPointArgs struct {
+	// 连接点的网卡ID。
+	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
+	// 连接点的子网ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// 连接点的可用区ID。
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetVpcAttachmentAttachPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (i GetVpcAttachmentAttachPointArgs) ToGetVpcAttachmentAttachPointOutput() GetVpcAttachmentAttachPointOutput {
+	return i.ToGetVpcAttachmentAttachPointOutputWithContext(context.Background())
+}
+
+func (i GetVpcAttachmentAttachPointArgs) ToGetVpcAttachmentAttachPointOutputWithContext(ctx context.Context) GetVpcAttachmentAttachPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcAttachmentAttachPointOutput)
+}
+
+// GetVpcAttachmentAttachPointArrayInput is an input type that accepts GetVpcAttachmentAttachPointArray and GetVpcAttachmentAttachPointArrayOutput values.
+// You can construct a concrete instance of `GetVpcAttachmentAttachPointArrayInput` via:
+//
+//	GetVpcAttachmentAttachPointArray{ GetVpcAttachmentAttachPointArgs{...} }
+type GetVpcAttachmentAttachPointArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcAttachmentAttachPointArrayOutput() GetVpcAttachmentAttachPointArrayOutput
+	ToGetVpcAttachmentAttachPointArrayOutputWithContext(context.Context) GetVpcAttachmentAttachPointArrayOutput
+}
+
+type GetVpcAttachmentAttachPointArray []GetVpcAttachmentAttachPointInput
+
+func (GetVpcAttachmentAttachPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (i GetVpcAttachmentAttachPointArray) ToGetVpcAttachmentAttachPointArrayOutput() GetVpcAttachmentAttachPointArrayOutput {
+	return i.ToGetVpcAttachmentAttachPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcAttachmentAttachPointArray) ToGetVpcAttachmentAttachPointArrayOutputWithContext(ctx context.Context) GetVpcAttachmentAttachPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcAttachmentAttachPointArrayOutput)
+}
+
+type GetVpcAttachmentAttachPointOutput struct{ *pulumi.OutputState }
+
+func (GetVpcAttachmentAttachPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (o GetVpcAttachmentAttachPointOutput) ToGetVpcAttachmentAttachPointOutput() GetVpcAttachmentAttachPointOutput {
+	return o
+}
+
+func (o GetVpcAttachmentAttachPointOutput) ToGetVpcAttachmentAttachPointOutputWithContext(ctx context.Context) GetVpcAttachmentAttachPointOutput {
+	return o
+}
+
+// 连接点的网卡ID。
+func (o GetVpcAttachmentAttachPointOutput) NetworkInterfaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcAttachmentAttachPoint) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
+}
+
+// 连接点的子网ID。
+func (o GetVpcAttachmentAttachPointOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcAttachmentAttachPoint) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// 连接点的可用区ID。
+func (o GetVpcAttachmentAttachPointOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcAttachmentAttachPoint) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetVpcAttachmentAttachPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcAttachmentAttachPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcAttachmentAttachPoint)(nil)).Elem()
+}
+
+func (o GetVpcAttachmentAttachPointArrayOutput) ToGetVpcAttachmentAttachPointArrayOutput() GetVpcAttachmentAttachPointArrayOutput {
+	return o
+}
+
+func (o GetVpcAttachmentAttachPointArrayOutput) ToGetVpcAttachmentAttachPointArrayOutputWithContext(ctx context.Context) GetVpcAttachmentAttachPointArrayOutput {
+	return o
+}
+
+func (o GetVpcAttachmentAttachPointArrayOutput) Index(i pulumi.IntInput) GetVpcAttachmentAttachPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcAttachmentAttachPoint {
+		return vs[0].([]GetVpcAttachmentAttachPoint)[vs[1].(int)]
+	}).(GetVpcAttachmentAttachPointOutput)
+}
+
+type GetVpcAttachmentTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetVpcAttachmentTagInput is an input type that accepts GetVpcAttachmentTagArgs and GetVpcAttachmentTagOutput values.
+// You can construct a concrete instance of `GetVpcAttachmentTagInput` via:
+//
+//	GetVpcAttachmentTagArgs{...}
+type GetVpcAttachmentTagInput interface {
+	pulumi.Input
+
+	ToGetVpcAttachmentTagOutput() GetVpcAttachmentTagOutput
+	ToGetVpcAttachmentTagOutputWithContext(context.Context) GetVpcAttachmentTagOutput
+}
+
+type GetVpcAttachmentTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpcAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcAttachmentTag)(nil)).Elem()
+}
+
+func (i GetVpcAttachmentTagArgs) ToGetVpcAttachmentTagOutput() GetVpcAttachmentTagOutput {
+	return i.ToGetVpcAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i GetVpcAttachmentTagArgs) ToGetVpcAttachmentTagOutputWithContext(ctx context.Context) GetVpcAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcAttachmentTagOutput)
+}
+
+// GetVpcAttachmentTagArrayInput is an input type that accepts GetVpcAttachmentTagArray and GetVpcAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `GetVpcAttachmentTagArrayInput` via:
+//
+//	GetVpcAttachmentTagArray{ GetVpcAttachmentTagArgs{...} }
+type GetVpcAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcAttachmentTagArrayOutput() GetVpcAttachmentTagArrayOutput
+	ToGetVpcAttachmentTagArrayOutputWithContext(context.Context) GetVpcAttachmentTagArrayOutput
+}
+
+type GetVpcAttachmentTagArray []GetVpcAttachmentTagInput
+
+func (GetVpcAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcAttachmentTag)(nil)).Elem()
+}
+
+func (i GetVpcAttachmentTagArray) ToGetVpcAttachmentTagArrayOutput() GetVpcAttachmentTagArrayOutput {
+	return i.ToGetVpcAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcAttachmentTagArray) ToGetVpcAttachmentTagArrayOutputWithContext(ctx context.Context) GetVpcAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcAttachmentTagArrayOutput)
+}
+
+type GetVpcAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (GetVpcAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcAttachmentTag)(nil)).Elem()
+}
+
+func (o GetVpcAttachmentTagOutput) ToGetVpcAttachmentTagOutput() GetVpcAttachmentTagOutput {
+	return o
+}
+
+func (o GetVpcAttachmentTagOutput) ToGetVpcAttachmentTagOutputWithContext(ctx context.Context) GetVpcAttachmentTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetVpcAttachmentTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcAttachmentTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetVpcAttachmentTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpcAttachmentTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpcAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcAttachmentTag)(nil)).Elem()
+}
+
+func (o GetVpcAttachmentTagArrayOutput) ToGetVpcAttachmentTagArrayOutput() GetVpcAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetVpcAttachmentTagArrayOutput) ToGetVpcAttachmentTagArrayOutputWithContext(ctx context.Context) GetVpcAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetVpcAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetVpcAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcAttachmentTag {
+		return vs[0].([]GetVpcAttachmentTag)[vs[1].(int)]
+	}).(GetVpcAttachmentTagOutput)
+}
+
+type GetVpnAttachmentTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetVpnAttachmentTagInput is an input type that accepts GetVpnAttachmentTagArgs and GetVpnAttachmentTagOutput values.
+// You can construct a concrete instance of `GetVpnAttachmentTagInput` via:
+//
+//	GetVpnAttachmentTagArgs{...}
+type GetVpnAttachmentTagInput interface {
+	pulumi.Input
+
+	ToGetVpnAttachmentTagOutput() GetVpnAttachmentTagOutput
+	ToGetVpnAttachmentTagOutputWithContext(context.Context) GetVpnAttachmentTagOutput
+}
+
+type GetVpnAttachmentTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpnAttachmentTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnAttachmentTag)(nil)).Elem()
+}
+
+func (i GetVpnAttachmentTagArgs) ToGetVpnAttachmentTagOutput() GetVpnAttachmentTagOutput {
+	return i.ToGetVpnAttachmentTagOutputWithContext(context.Background())
+}
+
+func (i GetVpnAttachmentTagArgs) ToGetVpnAttachmentTagOutputWithContext(ctx context.Context) GetVpnAttachmentTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnAttachmentTagOutput)
+}
+
+// GetVpnAttachmentTagArrayInput is an input type that accepts GetVpnAttachmentTagArray and GetVpnAttachmentTagArrayOutput values.
+// You can construct a concrete instance of `GetVpnAttachmentTagArrayInput` via:
+//
+//	GetVpnAttachmentTagArray{ GetVpnAttachmentTagArgs{...} }
+type GetVpnAttachmentTagArrayInput interface {
+	pulumi.Input
+
+	ToGetVpnAttachmentTagArrayOutput() GetVpnAttachmentTagArrayOutput
+	ToGetVpnAttachmentTagArrayOutputWithContext(context.Context) GetVpnAttachmentTagArrayOutput
+}
+
+type GetVpnAttachmentTagArray []GetVpnAttachmentTagInput
+
+func (GetVpnAttachmentTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnAttachmentTag)(nil)).Elem()
+}
+
+func (i GetVpnAttachmentTagArray) ToGetVpnAttachmentTagArrayOutput() GetVpnAttachmentTagArrayOutput {
+	return i.ToGetVpnAttachmentTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpnAttachmentTagArray) ToGetVpnAttachmentTagArrayOutputWithContext(ctx context.Context) GetVpnAttachmentTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnAttachmentTagArrayOutput)
+}
+
+type GetVpnAttachmentTagOutput struct{ *pulumi.OutputState }
+
+func (GetVpnAttachmentTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnAttachmentTag)(nil)).Elem()
+}
+
+func (o GetVpnAttachmentTagOutput) ToGetVpnAttachmentTagOutput() GetVpnAttachmentTagOutput {
+	return o
+}
+
+func (o GetVpnAttachmentTagOutput) ToGetVpnAttachmentTagOutputWithContext(ctx context.Context) GetVpnAttachmentTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetVpnAttachmentTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnAttachmentTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetVpnAttachmentTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnAttachmentTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpnAttachmentTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpnAttachmentTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnAttachmentTag)(nil)).Elem()
+}
+
+func (o GetVpnAttachmentTagArrayOutput) ToGetVpnAttachmentTagArrayOutput() GetVpnAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetVpnAttachmentTagArrayOutput) ToGetVpnAttachmentTagArrayOutputWithContext(ctx context.Context) GetVpnAttachmentTagArrayOutput {
+	return o
+}
+
+func (o GetVpnAttachmentTagArrayOutput) Index(i pulumi.IntInput) GetVpnAttachmentTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpnAttachmentTag {
+		return vs[0].([]GetVpnAttachmentTag)[vs[1].(int)]
+	}).(GetVpnAttachmentTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentInput)(nil)).Elem(), TransitRouterAttachmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterAttachmentArrayInput)(nil)).Elem(), TransitRouterAttachmentArray{})
@@ -1173,6 +1818,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterRouteTableTagArrayInput)(nil)).Elem(), TransitRouterRouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterTagInput)(nil)).Elem(), TransitRouterTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterTagArrayInput)(nil)).Elem(), TransitRouterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcAttachmentAttachPointInput)(nil)).Elem(), VpcAttachmentAttachPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcAttachmentAttachPointArrayInput)(nil)).Elem(), VpcAttachmentAttachPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcAttachmentTagInput)(nil)).Elem(), VpcAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpcAttachmentTagArrayInput)(nil)).Elem(), VpcAttachmentTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnAttachmentTagInput)(nil)).Elem(), VpnAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnAttachmentTagArrayInput)(nil)).Elem(), VpnAttachmentTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentInput)(nil)).Elem(), GetTransitRouterAttachmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentArrayInput)(nil)).Elem(), GetTransitRouterAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterAttachmentTagInput)(nil)).Elem(), GetTransitRouterAttachmentTagArgs{})
@@ -1181,6 +1832,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterRouteTableTagArrayInput)(nil)).Elem(), GetTransitRouterRouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterTagInput)(nil)).Elem(), GetTransitRouterTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterTagArrayInput)(nil)).Elem(), GetTransitRouterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAttachmentAttachPointInput)(nil)).Elem(), GetVpcAttachmentAttachPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAttachmentAttachPointArrayInput)(nil)).Elem(), GetVpcAttachmentAttachPointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAttachmentTagInput)(nil)).Elem(), GetVpcAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAttachmentTagArrayInput)(nil)).Elem(), GetVpcAttachmentTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnAttachmentTagInput)(nil)).Elem(), GetVpnAttachmentTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnAttachmentTagArrayInput)(nil)).Elem(), GetVpnAttachmentTagArray{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterAttachmentTagOutput{})
@@ -1189,6 +1846,12 @@ func init() {
 	pulumi.RegisterOutputType(TransitRouterRouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterTagOutput{})
 	pulumi.RegisterOutputType(TransitRouterTagArrayOutput{})
+	pulumi.RegisterOutputType(VpcAttachmentAttachPointOutput{})
+	pulumi.RegisterOutputType(VpcAttachmentAttachPointArrayOutput{})
+	pulumi.RegisterOutputType(VpcAttachmentTagOutput{})
+	pulumi.RegisterOutputType(VpcAttachmentTagArrayOutput{})
+	pulumi.RegisterOutputType(VpnAttachmentTagOutput{})
+	pulumi.RegisterOutputType(VpnAttachmentTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterAttachmentTagOutput{})
@@ -1197,4 +1860,10 @@ func init() {
 	pulumi.RegisterOutputType(GetTransitRouterRouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterTagOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcAttachmentAttachPointOutput{})
+	pulumi.RegisterOutputType(GetVpcAttachmentAttachPointArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcAttachmentTagOutput{})
+	pulumi.RegisterOutputType(GetVpcAttachmentTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpnAttachmentTagOutput{})
+	pulumi.RegisterOutputType(GetVpnAttachmentTagArrayOutput{})
 }

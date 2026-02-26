@@ -293,8 +293,8 @@ github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.51 h1:3yzSRdWAZoRc0wnotFAiorxuWe
 github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.51/go.mod h1:eqR3bDX3XtdPBcB9vERznOyi0MAcAI1GFAdcRspNMBU=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 h1:rrlsRCitt/isPkfLGPQFHf8G65iyxSgNgG2PbAR5v4Y=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16/go.mod h1:7iCaE+dR9EycrJU0GQyMhptbInLbQhsKXiDKDjNi8Vs=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.16 h1:7ie8vzeoodobR+IHPmMfcisQVFuDMMA17mKLOz1uPuE=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.16/go.mod h1:Fz/tEf76IpQPABNbK+DThbz0b/0hBjplQjd2JHyP++U=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.17 h1:WW0RwfD7JZMkFnRIcWvaT6+JVvCtZTqFH+aqH3al3IY=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.17/go.mod h1:Fz/tEf76IpQPABNbK+DThbz0b/0hBjplQjd2JHyP++U=
 github.com/cenkalti/backoff/v3 v3.2.2 h1:cfUAAO3yvKMYKPrvhDuHSwQnhZNk/RMHKdZqKTxfm6M=
 github.com/cenkalti/backoff/v3 v3.2.2/go.mod h1:cIeZDE3IrqwwJl6VUwCN6trj1oXrTS4rc0ij+ULvLYs=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=

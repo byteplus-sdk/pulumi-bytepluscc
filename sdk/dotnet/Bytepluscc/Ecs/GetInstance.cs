@@ -58,7 +58,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     [OutputType]
     public sealed class GetInstanceResult
     {
+        public readonly string AffinityGroupId;
         public readonly int AffinityGroupSize;
+        public readonly bool AutoPay;
         public readonly bool AutoRenew;
         public readonly int AutoRenewPeriod;
         public readonly double CpuMaxFrequency;
@@ -70,16 +72,21 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public readonly string DeploymentSetId;
         public readonly string Description;
         public readonly Outputs.GetInstanceEipAddressResult EipAddress;
+        public readonly string ElasticScheduledInstanceType;
+        public readonly bool EnableJumboFrame;
         public readonly string ExpiredAt;
         public readonly string Hostname;
         public readonly string HpcClusterId;
         public readonly string Id;
         public readonly Outputs.GetInstanceImageResult Image;
+        public readonly bool IncludeDataVolumes;
+        public readonly bool InstallRunCommandAgent;
         public readonly string InstanceChargeType;
         public readonly string InstanceId;
         public readonly string InstanceName;
         public readonly string InstanceType;
         public readonly Outputs.GetInstanceKeyPairResult KeyPair;
+        public readonly ImmutableArray<Outputs.GetInstanceLocalVolumeResult> LocalVolumes;
         public readonly Outputs.GetInstanceOperationSystemResult OperationSystem;
         public readonly string Password;
         public readonly int Period;
@@ -87,6 +94,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public readonly Outputs.GetInstancePlacementResult Placement;
         public readonly Outputs.GetInstancePrimaryNetworkInterfaceResult PrimaryNetworkInterface;
         public readonly string ProjectName;
+        public readonly ImmutableArray<string> RdmaIpAddresses;
+        public readonly ImmutableArray<Outputs.GetInstanceRdmaNetworkInterfaceDetailResult> RdmaNetworkInterfaceDetails;
+        public readonly Outputs.GetInstanceRenewInfoResult RenewInfo;
+        public readonly ImmutableArray<string> RoleNames;
         public readonly ImmutableArray<Outputs.GetInstanceSecondaryNetworkInterfaceResult> SecondaryNetworkInterfaces;
         public readonly double SpotPriceLimit;
         public readonly string SpotStrategy;
@@ -101,7 +112,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
         [OutputConstructor]
         private GetInstanceResult(
+            string affinityGroupId,
+
             int affinityGroupSize,
+
+            bool autoPay,
 
             bool autoRenew,
 
@@ -125,6 +140,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
             Outputs.GetInstanceEipAddressResult eipAddress,
 
+            string elasticScheduledInstanceType,
+
+            bool enableJumboFrame,
+
             string expiredAt,
 
             string hostname,
@@ -135,6 +154,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
             Outputs.GetInstanceImageResult image,
 
+            bool includeDataVolumes,
+
+            bool installRunCommandAgent,
+
             string instanceChargeType,
 
             string instanceId,
@@ -144,6 +167,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             string instanceType,
 
             Outputs.GetInstanceKeyPairResult keyPair,
+
+            ImmutableArray<Outputs.GetInstanceLocalVolumeResult> localVolumes,
 
             Outputs.GetInstanceOperationSystemResult operationSystem,
 
@@ -158,6 +183,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             Outputs.GetInstancePrimaryNetworkInterfaceResult primaryNetworkInterface,
 
             string projectName,
+
+            ImmutableArray<string> rdmaIpAddresses,
+
+            ImmutableArray<Outputs.GetInstanceRdmaNetworkInterfaceDetailResult> rdmaNetworkInterfaceDetails,
+
+            Outputs.GetInstanceRenewInfoResult renewInfo,
+
+            ImmutableArray<string> roleNames,
 
             ImmutableArray<Outputs.GetInstanceSecondaryNetworkInterfaceResult> secondaryNetworkInterfaces,
 
@@ -181,7 +214,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
             string zoneId)
         {
+            AffinityGroupId = affinityGroupId;
             AffinityGroupSize = affinityGroupSize;
+            AutoPay = autoPay;
             AutoRenew = autoRenew;
             AutoRenewPeriod = autoRenewPeriod;
             CpuMaxFrequency = cpuMaxFrequency;
@@ -193,16 +228,21 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             DeploymentSetId = deploymentSetId;
             Description = description;
             EipAddress = eipAddress;
+            ElasticScheduledInstanceType = elasticScheduledInstanceType;
+            EnableJumboFrame = enableJumboFrame;
             ExpiredAt = expiredAt;
             Hostname = hostname;
             HpcClusterId = hpcClusterId;
             Id = id;
             Image = image;
+            IncludeDataVolumes = includeDataVolumes;
+            InstallRunCommandAgent = installRunCommandAgent;
             InstanceChargeType = instanceChargeType;
             InstanceId = instanceId;
             InstanceName = instanceName;
             InstanceType = instanceType;
             KeyPair = keyPair;
+            LocalVolumes = localVolumes;
             OperationSystem = operationSystem;
             Password = password;
             Period = period;
@@ -210,6 +250,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             Placement = placement;
             PrimaryNetworkInterface = primaryNetworkInterface;
             ProjectName = projectName;
+            RdmaIpAddresses = rdmaIpAddresses;
+            RdmaNetworkInterfaceDetails = rdmaNetworkInterfaceDetails;
+            RenewInfo = renewInfo;
+            RoleNames = roleNames;
             SecondaryNetworkInterfaces = secondaryNetworkInterfaces;
             SpotPriceLimit = spotPriceLimit;
             SpotStrategy = spotStrategy;

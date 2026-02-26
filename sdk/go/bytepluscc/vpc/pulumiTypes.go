@@ -1021,6 +1021,430 @@ func (o EniTagArrayOutput) Index(i pulumi.IntInput) EniTagOutput {
 	}).(EniTagOutput)
 }
 
+type FlowLogTag struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value *string `pulumi:"value"`
+}
+
+// FlowLogTagInput is an input type that accepts FlowLogTagArgs and FlowLogTagOutput values.
+// You can construct a concrete instance of `FlowLogTagInput` via:
+//
+//	FlowLogTagArgs{...}
+type FlowLogTagInput interface {
+	pulumi.Input
+
+	ToFlowLogTagOutput() FlowLogTagOutput
+	ToFlowLogTagOutputWithContext(context.Context) FlowLogTagOutput
+}
+
+type FlowLogTagArgs struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (FlowLogTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FlowLogTag)(nil)).Elem()
+}
+
+func (i FlowLogTagArgs) ToFlowLogTagOutput() FlowLogTagOutput {
+	return i.ToFlowLogTagOutputWithContext(context.Background())
+}
+
+func (i FlowLogTagArgs) ToFlowLogTagOutputWithContext(ctx context.Context) FlowLogTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FlowLogTagOutput)
+}
+
+// FlowLogTagArrayInput is an input type that accepts FlowLogTagArray and FlowLogTagArrayOutput values.
+// You can construct a concrete instance of `FlowLogTagArrayInput` via:
+//
+//	FlowLogTagArray{ FlowLogTagArgs{...} }
+type FlowLogTagArrayInput interface {
+	pulumi.Input
+
+	ToFlowLogTagArrayOutput() FlowLogTagArrayOutput
+	ToFlowLogTagArrayOutputWithContext(context.Context) FlowLogTagArrayOutput
+}
+
+type FlowLogTagArray []FlowLogTagInput
+
+func (FlowLogTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FlowLogTag)(nil)).Elem()
+}
+
+func (i FlowLogTagArray) ToFlowLogTagArrayOutput() FlowLogTagArrayOutput {
+	return i.ToFlowLogTagArrayOutputWithContext(context.Background())
+}
+
+func (i FlowLogTagArray) ToFlowLogTagArrayOutputWithContext(ctx context.Context) FlowLogTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FlowLogTagArrayOutput)
+}
+
+type FlowLogTagOutput struct{ *pulumi.OutputState }
+
+func (FlowLogTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FlowLogTag)(nil)).Elem()
+}
+
+func (o FlowLogTagOutput) ToFlowLogTagOutput() FlowLogTagOutput {
+	return o
+}
+
+func (o FlowLogTagOutput) ToFlowLogTagOutputWithContext(ctx context.Context) FlowLogTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o FlowLogTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FlowLogTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o FlowLogTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FlowLogTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type FlowLogTagArrayOutput struct{ *pulumi.OutputState }
+
+func (FlowLogTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FlowLogTag)(nil)).Elem()
+}
+
+func (o FlowLogTagArrayOutput) ToFlowLogTagArrayOutput() FlowLogTagArrayOutput {
+	return o
+}
+
+func (o FlowLogTagArrayOutput) ToFlowLogTagArrayOutputWithContext(ctx context.Context) FlowLogTagArrayOutput {
+	return o
+}
+
+func (o FlowLogTagArrayOutput) Index(i pulumi.IntInput) FlowLogTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FlowLogTag {
+		return vs[0].([]FlowLogTag)[vs[1].(int)]
+	}).(FlowLogTagOutput)
+}
+
+type HaVipTag struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value *string `pulumi:"value"`
+}
+
+// HaVipTagInput is an input type that accepts HaVipTagArgs and HaVipTagOutput values.
+// You can construct a concrete instance of `HaVipTagInput` via:
+//
+//	HaVipTagArgs{...}
+type HaVipTagInput interface {
+	pulumi.Input
+
+	ToHaVipTagOutput() HaVipTagOutput
+	ToHaVipTagOutputWithContext(context.Context) HaVipTagOutput
+}
+
+type HaVipTagArgs struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (HaVipTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HaVipTag)(nil)).Elem()
+}
+
+func (i HaVipTagArgs) ToHaVipTagOutput() HaVipTagOutput {
+	return i.ToHaVipTagOutputWithContext(context.Background())
+}
+
+func (i HaVipTagArgs) ToHaVipTagOutputWithContext(ctx context.Context) HaVipTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HaVipTagOutput)
+}
+
+// HaVipTagArrayInput is an input type that accepts HaVipTagArray and HaVipTagArrayOutput values.
+// You can construct a concrete instance of `HaVipTagArrayInput` via:
+//
+//	HaVipTagArray{ HaVipTagArgs{...} }
+type HaVipTagArrayInput interface {
+	pulumi.Input
+
+	ToHaVipTagArrayOutput() HaVipTagArrayOutput
+	ToHaVipTagArrayOutputWithContext(context.Context) HaVipTagArrayOutput
+}
+
+type HaVipTagArray []HaVipTagInput
+
+func (HaVipTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HaVipTag)(nil)).Elem()
+}
+
+func (i HaVipTagArray) ToHaVipTagArrayOutput() HaVipTagArrayOutput {
+	return i.ToHaVipTagArrayOutputWithContext(context.Background())
+}
+
+func (i HaVipTagArray) ToHaVipTagArrayOutputWithContext(ctx context.Context) HaVipTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HaVipTagArrayOutput)
+}
+
+type HaVipTagOutput struct{ *pulumi.OutputState }
+
+func (HaVipTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HaVipTag)(nil)).Elem()
+}
+
+func (o HaVipTagOutput) ToHaVipTagOutput() HaVipTagOutput {
+	return o
+}
+
+func (o HaVipTagOutput) ToHaVipTagOutputWithContext(ctx context.Context) HaVipTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o HaVipTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HaVipTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o HaVipTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HaVipTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type HaVipTagArrayOutput struct{ *pulumi.OutputState }
+
+func (HaVipTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HaVipTag)(nil)).Elem()
+}
+
+func (o HaVipTagArrayOutput) ToHaVipTagArrayOutput() HaVipTagArrayOutput {
+	return o
+}
+
+func (o HaVipTagArrayOutput) ToHaVipTagArrayOutputWithContext(ctx context.Context) HaVipTagArrayOutput {
+	return o
+}
+
+func (o HaVipTagArrayOutput) Index(i pulumi.IntInput) HaVipTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HaVipTag {
+		return vs[0].([]HaVipTag)[vs[1].(int)]
+	}).(HaVipTagOutput)
+}
+
+type Ipv6AddressBandwidthTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// Ipv6AddressBandwidthTagInput is an input type that accepts Ipv6AddressBandwidthTagArgs and Ipv6AddressBandwidthTagOutput values.
+// You can construct a concrete instance of `Ipv6AddressBandwidthTagInput` via:
+//
+//	Ipv6AddressBandwidthTagArgs{...}
+type Ipv6AddressBandwidthTagInput interface {
+	pulumi.Input
+
+	ToIpv6AddressBandwidthTagOutput() Ipv6AddressBandwidthTagOutput
+	ToIpv6AddressBandwidthTagOutputWithContext(context.Context) Ipv6AddressBandwidthTagOutput
+}
+
+type Ipv6AddressBandwidthTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (Ipv6AddressBandwidthTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*Ipv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (i Ipv6AddressBandwidthTagArgs) ToIpv6AddressBandwidthTagOutput() Ipv6AddressBandwidthTagOutput {
+	return i.ToIpv6AddressBandwidthTagOutputWithContext(context.Background())
+}
+
+func (i Ipv6AddressBandwidthTagArgs) ToIpv6AddressBandwidthTagOutputWithContext(ctx context.Context) Ipv6AddressBandwidthTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(Ipv6AddressBandwidthTagOutput)
+}
+
+// Ipv6AddressBandwidthTagArrayInput is an input type that accepts Ipv6AddressBandwidthTagArray and Ipv6AddressBandwidthTagArrayOutput values.
+// You can construct a concrete instance of `Ipv6AddressBandwidthTagArrayInput` via:
+//
+//	Ipv6AddressBandwidthTagArray{ Ipv6AddressBandwidthTagArgs{...} }
+type Ipv6AddressBandwidthTagArrayInput interface {
+	pulumi.Input
+
+	ToIpv6AddressBandwidthTagArrayOutput() Ipv6AddressBandwidthTagArrayOutput
+	ToIpv6AddressBandwidthTagArrayOutputWithContext(context.Context) Ipv6AddressBandwidthTagArrayOutput
+}
+
+type Ipv6AddressBandwidthTagArray []Ipv6AddressBandwidthTagInput
+
+func (Ipv6AddressBandwidthTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Ipv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (i Ipv6AddressBandwidthTagArray) ToIpv6AddressBandwidthTagArrayOutput() Ipv6AddressBandwidthTagArrayOutput {
+	return i.ToIpv6AddressBandwidthTagArrayOutputWithContext(context.Background())
+}
+
+func (i Ipv6AddressBandwidthTagArray) ToIpv6AddressBandwidthTagArrayOutputWithContext(ctx context.Context) Ipv6AddressBandwidthTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(Ipv6AddressBandwidthTagArrayOutput)
+}
+
+type Ipv6AddressBandwidthTagOutput struct{ *pulumi.OutputState }
+
+func (Ipv6AddressBandwidthTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*Ipv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (o Ipv6AddressBandwidthTagOutput) ToIpv6AddressBandwidthTagOutput() Ipv6AddressBandwidthTagOutput {
+	return o
+}
+
+func (o Ipv6AddressBandwidthTagOutput) ToIpv6AddressBandwidthTagOutputWithContext(ctx context.Context) Ipv6AddressBandwidthTagOutput {
+	return o
+}
+
+// 标签键。
+func (o Ipv6AddressBandwidthTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Ipv6AddressBandwidthTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o Ipv6AddressBandwidthTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Ipv6AddressBandwidthTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type Ipv6AddressBandwidthTagArrayOutput struct{ *pulumi.OutputState }
+
+func (Ipv6AddressBandwidthTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Ipv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (o Ipv6AddressBandwidthTagArrayOutput) ToIpv6AddressBandwidthTagArrayOutput() Ipv6AddressBandwidthTagArrayOutput {
+	return o
+}
+
+func (o Ipv6AddressBandwidthTagArrayOutput) ToIpv6AddressBandwidthTagArrayOutputWithContext(ctx context.Context) Ipv6AddressBandwidthTagArrayOutput {
+	return o
+}
+
+func (o Ipv6AddressBandwidthTagArrayOutput) Index(i pulumi.IntInput) Ipv6AddressBandwidthTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Ipv6AddressBandwidthTag {
+		return vs[0].([]Ipv6AddressBandwidthTag)[vs[1].(int)]
+	}).(Ipv6AddressBandwidthTagOutput)
+}
+
+type Ipv6GatewayTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// Ipv6GatewayTagInput is an input type that accepts Ipv6GatewayTagArgs and Ipv6GatewayTagOutput values.
+// You can construct a concrete instance of `Ipv6GatewayTagInput` via:
+//
+//	Ipv6GatewayTagArgs{...}
+type Ipv6GatewayTagInput interface {
+	pulumi.Input
+
+	ToIpv6GatewayTagOutput() Ipv6GatewayTagOutput
+	ToIpv6GatewayTagOutputWithContext(context.Context) Ipv6GatewayTagOutput
+}
+
+type Ipv6GatewayTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (Ipv6GatewayTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*Ipv6GatewayTag)(nil)).Elem()
+}
+
+func (i Ipv6GatewayTagArgs) ToIpv6GatewayTagOutput() Ipv6GatewayTagOutput {
+	return i.ToIpv6GatewayTagOutputWithContext(context.Background())
+}
+
+func (i Ipv6GatewayTagArgs) ToIpv6GatewayTagOutputWithContext(ctx context.Context) Ipv6GatewayTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(Ipv6GatewayTagOutput)
+}
+
+// Ipv6GatewayTagArrayInput is an input type that accepts Ipv6GatewayTagArray and Ipv6GatewayTagArrayOutput values.
+// You can construct a concrete instance of `Ipv6GatewayTagArrayInput` via:
+//
+//	Ipv6GatewayTagArray{ Ipv6GatewayTagArgs{...} }
+type Ipv6GatewayTagArrayInput interface {
+	pulumi.Input
+
+	ToIpv6GatewayTagArrayOutput() Ipv6GatewayTagArrayOutput
+	ToIpv6GatewayTagArrayOutputWithContext(context.Context) Ipv6GatewayTagArrayOutput
+}
+
+type Ipv6GatewayTagArray []Ipv6GatewayTagInput
+
+func (Ipv6GatewayTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Ipv6GatewayTag)(nil)).Elem()
+}
+
+func (i Ipv6GatewayTagArray) ToIpv6GatewayTagArrayOutput() Ipv6GatewayTagArrayOutput {
+	return i.ToIpv6GatewayTagArrayOutputWithContext(context.Background())
+}
+
+func (i Ipv6GatewayTagArray) ToIpv6GatewayTagArrayOutputWithContext(ctx context.Context) Ipv6GatewayTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(Ipv6GatewayTagArrayOutput)
+}
+
+type Ipv6GatewayTagOutput struct{ *pulumi.OutputState }
+
+func (Ipv6GatewayTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*Ipv6GatewayTag)(nil)).Elem()
+}
+
+func (o Ipv6GatewayTagOutput) ToIpv6GatewayTagOutput() Ipv6GatewayTagOutput {
+	return o
+}
+
+func (o Ipv6GatewayTagOutput) ToIpv6GatewayTagOutputWithContext(ctx context.Context) Ipv6GatewayTagOutput {
+	return o
+}
+
+// 标签键。
+func (o Ipv6GatewayTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Ipv6GatewayTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o Ipv6GatewayTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v Ipv6GatewayTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type Ipv6GatewayTagArrayOutput struct{ *pulumi.OutputState }
+
+func (Ipv6GatewayTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]Ipv6GatewayTag)(nil)).Elem()
+}
+
+func (o Ipv6GatewayTagArrayOutput) ToIpv6GatewayTagArrayOutput() Ipv6GatewayTagArrayOutput {
+	return o
+}
+
+func (o Ipv6GatewayTagArrayOutput) ToIpv6GatewayTagArrayOutputWithContext(ctx context.Context) Ipv6GatewayTagArrayOutput {
+	return o
+}
+
+func (o Ipv6GatewayTagArrayOutput) Index(i pulumi.IntInput) Ipv6GatewayTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) Ipv6GatewayTag {
+		return vs[0].([]Ipv6GatewayTag)[vs[1].(int)]
+	}).(Ipv6GatewayTagOutput)
+}
+
 type NetworkAclDefaultEgressAclEntry struct {
 	// 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
 	CidrIp *string `pulumi:"cidrIp"`
@@ -3438,6 +3862,734 @@ func (o SubnetTagArrayOutput) Index(i pulumi.IntInput) SubnetTagOutput {
 	}).(SubnetTagOutput)
 }
 
+type TrafficMirrorFilterEgressFilterRule struct {
+	// 筛选规则实例描述。
+	Description *string `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange *string `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy *string `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority *int `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName *string `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol *string `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock *string `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange *string `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status *string `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection *string `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId *string `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId *string `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+// TrafficMirrorFilterEgressFilterRuleInput is an input type that accepts TrafficMirrorFilterEgressFilterRuleArgs and TrafficMirrorFilterEgressFilterRuleOutput values.
+// You can construct a concrete instance of `TrafficMirrorFilterEgressFilterRuleInput` via:
+//
+//	TrafficMirrorFilterEgressFilterRuleArgs{...}
+type TrafficMirrorFilterEgressFilterRuleInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorFilterEgressFilterRuleOutput() TrafficMirrorFilterEgressFilterRuleOutput
+	ToTrafficMirrorFilterEgressFilterRuleOutputWithContext(context.Context) TrafficMirrorFilterEgressFilterRuleOutput
+}
+
+type TrafficMirrorFilterEgressFilterRuleArgs struct {
+	// 筛选规则实例描述。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange pulumi.StringPtrInput `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock pulumi.StringPtrInput `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange pulumi.StringPtrInput `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection pulumi.StringPtrInput `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+func (TrafficMirrorFilterEgressFilterRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (i TrafficMirrorFilterEgressFilterRuleArgs) ToTrafficMirrorFilterEgressFilterRuleOutput() TrafficMirrorFilterEgressFilterRuleOutput {
+	return i.ToTrafficMirrorFilterEgressFilterRuleOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorFilterEgressFilterRuleArgs) ToTrafficMirrorFilterEgressFilterRuleOutputWithContext(ctx context.Context) TrafficMirrorFilterEgressFilterRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorFilterEgressFilterRuleOutput)
+}
+
+// TrafficMirrorFilterEgressFilterRuleArrayInput is an input type that accepts TrafficMirrorFilterEgressFilterRuleArray and TrafficMirrorFilterEgressFilterRuleArrayOutput values.
+// You can construct a concrete instance of `TrafficMirrorFilterEgressFilterRuleArrayInput` via:
+//
+//	TrafficMirrorFilterEgressFilterRuleArray{ TrafficMirrorFilterEgressFilterRuleArgs{...} }
+type TrafficMirrorFilterEgressFilterRuleArrayInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorFilterEgressFilterRuleArrayOutput() TrafficMirrorFilterEgressFilterRuleArrayOutput
+	ToTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(context.Context) TrafficMirrorFilterEgressFilterRuleArrayOutput
+}
+
+type TrafficMirrorFilterEgressFilterRuleArray []TrafficMirrorFilterEgressFilterRuleInput
+
+func (TrafficMirrorFilterEgressFilterRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (i TrafficMirrorFilterEgressFilterRuleArray) ToTrafficMirrorFilterEgressFilterRuleArrayOutput() TrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return i.ToTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorFilterEgressFilterRuleArray) ToTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(ctx context.Context) TrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorFilterEgressFilterRuleArrayOutput)
+}
+
+type TrafficMirrorFilterEgressFilterRuleOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorFilterEgressFilterRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (o TrafficMirrorFilterEgressFilterRuleOutput) ToTrafficMirrorFilterEgressFilterRuleOutput() TrafficMirrorFilterEgressFilterRuleOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterEgressFilterRuleOutput) ToTrafficMirrorFilterEgressFilterRuleOutputWithContext(ctx context.Context) TrafficMirrorFilterEgressFilterRuleOutput {
+	return o
+}
+
+// 筛选规则实例描述。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则目的地址。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则目的端口范围。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) DestinationPortRange() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.DestinationPortRange }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Policy }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则优先级。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *int { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+// 所属项目的名称。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则协议类型。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则源地址。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) SourceCidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.SourceCidrBlock }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则源端口范围。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) SourcePortRange() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.SourcePortRange }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则状态。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则方向。egress：出方向。ingress：入方向。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) TrafficDirection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.TrafficDirection }).(pulumi.StringPtrOutput)
+}
+
+// 筛选条件实例ID。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.TrafficMirrorFilterId }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则实例ID。
+func (o TrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterEgressFilterRule) *string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringPtrOutput)
+}
+
+type TrafficMirrorFilterEgressFilterRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorFilterEgressFilterRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (o TrafficMirrorFilterEgressFilterRuleArrayOutput) ToTrafficMirrorFilterEgressFilterRuleArrayOutput() TrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterEgressFilterRuleArrayOutput) ToTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(ctx context.Context) TrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterEgressFilterRuleArrayOutput) Index(i pulumi.IntInput) TrafficMirrorFilterEgressFilterRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TrafficMirrorFilterEgressFilterRule {
+		return vs[0].([]TrafficMirrorFilterEgressFilterRule)[vs[1].(int)]
+	}).(TrafficMirrorFilterEgressFilterRuleOutput)
+}
+
+type TrafficMirrorFilterIngressFilterRule struct {
+	// 筛选规则实例描述。
+	Description *string `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock *string `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange *string `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy *string `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority *int `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName *string `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol *string `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock *string `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange *string `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status *string `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection *string `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId *string `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId *string `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+// TrafficMirrorFilterIngressFilterRuleInput is an input type that accepts TrafficMirrorFilterIngressFilterRuleArgs and TrafficMirrorFilterIngressFilterRuleOutput values.
+// You can construct a concrete instance of `TrafficMirrorFilterIngressFilterRuleInput` via:
+//
+//	TrafficMirrorFilterIngressFilterRuleArgs{...}
+type TrafficMirrorFilterIngressFilterRuleInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorFilterIngressFilterRuleOutput() TrafficMirrorFilterIngressFilterRuleOutput
+	ToTrafficMirrorFilterIngressFilterRuleOutputWithContext(context.Context) TrafficMirrorFilterIngressFilterRuleOutput
+}
+
+type TrafficMirrorFilterIngressFilterRuleArgs struct {
+	// 筛选规则实例描述。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock pulumi.StringPtrInput `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange pulumi.StringPtrInput `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock pulumi.StringPtrInput `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange pulumi.StringPtrInput `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection pulumi.StringPtrInput `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId pulumi.StringPtrInput `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+func (TrafficMirrorFilterIngressFilterRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (i TrafficMirrorFilterIngressFilterRuleArgs) ToTrafficMirrorFilterIngressFilterRuleOutput() TrafficMirrorFilterIngressFilterRuleOutput {
+	return i.ToTrafficMirrorFilterIngressFilterRuleOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorFilterIngressFilterRuleArgs) ToTrafficMirrorFilterIngressFilterRuleOutputWithContext(ctx context.Context) TrafficMirrorFilterIngressFilterRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorFilterIngressFilterRuleOutput)
+}
+
+// TrafficMirrorFilterIngressFilterRuleArrayInput is an input type that accepts TrafficMirrorFilterIngressFilterRuleArray and TrafficMirrorFilterIngressFilterRuleArrayOutput values.
+// You can construct a concrete instance of `TrafficMirrorFilterIngressFilterRuleArrayInput` via:
+//
+//	TrafficMirrorFilterIngressFilterRuleArray{ TrafficMirrorFilterIngressFilterRuleArgs{...} }
+type TrafficMirrorFilterIngressFilterRuleArrayInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorFilterIngressFilterRuleArrayOutput() TrafficMirrorFilterIngressFilterRuleArrayOutput
+	ToTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(context.Context) TrafficMirrorFilterIngressFilterRuleArrayOutput
+}
+
+type TrafficMirrorFilterIngressFilterRuleArray []TrafficMirrorFilterIngressFilterRuleInput
+
+func (TrafficMirrorFilterIngressFilterRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (i TrafficMirrorFilterIngressFilterRuleArray) ToTrafficMirrorFilterIngressFilterRuleArrayOutput() TrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return i.ToTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorFilterIngressFilterRuleArray) ToTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(ctx context.Context) TrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorFilterIngressFilterRuleArrayOutput)
+}
+
+type TrafficMirrorFilterIngressFilterRuleOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorFilterIngressFilterRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (o TrafficMirrorFilterIngressFilterRuleOutput) ToTrafficMirrorFilterIngressFilterRuleOutput() TrafficMirrorFilterIngressFilterRuleOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterIngressFilterRuleOutput) ToTrafficMirrorFilterIngressFilterRuleOutputWithContext(ctx context.Context) TrafficMirrorFilterIngressFilterRuleOutput {
+	return o
+}
+
+// 筛选规则实例描述。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则目的地址。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) DestinationCidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.DestinationCidrBlock }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则目的端口范围。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) DestinationPortRange() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.DestinationPortRange }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Policy }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则优先级。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *int { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+// 所属项目的名称。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则协议类型。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则源地址。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) SourceCidrBlock() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.SourceCidrBlock }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则源端口范围。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) SourcePortRange() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.SourcePortRange }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则状态。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则方向。egress：出方向。ingress：入方向。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) TrafficDirection() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.TrafficDirection }).(pulumi.StringPtrOutput)
+}
+
+// 筛选条件实例ID。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.TrafficMirrorFilterId }).(pulumi.StringPtrOutput)
+}
+
+// 筛选规则实例ID。
+func (o TrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterIngressFilterRule) *string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringPtrOutput)
+}
+
+type TrafficMirrorFilterIngressFilterRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorFilterIngressFilterRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (o TrafficMirrorFilterIngressFilterRuleArrayOutput) ToTrafficMirrorFilterIngressFilterRuleArrayOutput() TrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterIngressFilterRuleArrayOutput) ToTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(ctx context.Context) TrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterIngressFilterRuleArrayOutput) Index(i pulumi.IntInput) TrafficMirrorFilterIngressFilterRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TrafficMirrorFilterIngressFilterRule {
+		return vs[0].([]TrafficMirrorFilterIngressFilterRule)[vs[1].(int)]
+	}).(TrafficMirrorFilterIngressFilterRuleOutput)
+}
+
+type TrafficMirrorFilterTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// TrafficMirrorFilterTagInput is an input type that accepts TrafficMirrorFilterTagArgs and TrafficMirrorFilterTagOutput values.
+// You can construct a concrete instance of `TrafficMirrorFilterTagInput` via:
+//
+//	TrafficMirrorFilterTagArgs{...}
+type TrafficMirrorFilterTagInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorFilterTagOutput() TrafficMirrorFilterTagOutput
+	ToTrafficMirrorFilterTagOutputWithContext(context.Context) TrafficMirrorFilterTagOutput
+}
+
+type TrafficMirrorFilterTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TrafficMirrorFilterTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (i TrafficMirrorFilterTagArgs) ToTrafficMirrorFilterTagOutput() TrafficMirrorFilterTagOutput {
+	return i.ToTrafficMirrorFilterTagOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorFilterTagArgs) ToTrafficMirrorFilterTagOutputWithContext(ctx context.Context) TrafficMirrorFilterTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorFilterTagOutput)
+}
+
+// TrafficMirrorFilterTagArrayInput is an input type that accepts TrafficMirrorFilterTagArray and TrafficMirrorFilterTagArrayOutput values.
+// You can construct a concrete instance of `TrafficMirrorFilterTagArrayInput` via:
+//
+//	TrafficMirrorFilterTagArray{ TrafficMirrorFilterTagArgs{...} }
+type TrafficMirrorFilterTagArrayInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorFilterTagArrayOutput() TrafficMirrorFilterTagArrayOutput
+	ToTrafficMirrorFilterTagArrayOutputWithContext(context.Context) TrafficMirrorFilterTagArrayOutput
+}
+
+type TrafficMirrorFilterTagArray []TrafficMirrorFilterTagInput
+
+func (TrafficMirrorFilterTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (i TrafficMirrorFilterTagArray) ToTrafficMirrorFilterTagArrayOutput() TrafficMirrorFilterTagArrayOutput {
+	return i.ToTrafficMirrorFilterTagArrayOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorFilterTagArray) ToTrafficMirrorFilterTagArrayOutputWithContext(ctx context.Context) TrafficMirrorFilterTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorFilterTagArrayOutput)
+}
+
+type TrafficMirrorFilterTagOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorFilterTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (o TrafficMirrorFilterTagOutput) ToTrafficMirrorFilterTagOutput() TrafficMirrorFilterTagOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterTagOutput) ToTrafficMirrorFilterTagOutputWithContext(ctx context.Context) TrafficMirrorFilterTagOutput {
+	return o
+}
+
+// 标签键。
+func (o TrafficMirrorFilterTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o TrafficMirrorFilterTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorFilterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type TrafficMirrorFilterTagArrayOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorFilterTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (o TrafficMirrorFilterTagArrayOutput) ToTrafficMirrorFilterTagArrayOutput() TrafficMirrorFilterTagArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterTagArrayOutput) ToTrafficMirrorFilterTagArrayOutputWithContext(ctx context.Context) TrafficMirrorFilterTagArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorFilterTagArrayOutput) Index(i pulumi.IntInput) TrafficMirrorFilterTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TrafficMirrorFilterTag {
+		return vs[0].([]TrafficMirrorFilterTag)[vs[1].(int)]
+	}).(TrafficMirrorFilterTagOutput)
+}
+
+type TrafficMirrorSessionTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// TrafficMirrorSessionTagInput is an input type that accepts TrafficMirrorSessionTagArgs and TrafficMirrorSessionTagOutput values.
+// You can construct a concrete instance of `TrafficMirrorSessionTagInput` via:
+//
+//	TrafficMirrorSessionTagArgs{...}
+type TrafficMirrorSessionTagInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorSessionTagOutput() TrafficMirrorSessionTagOutput
+	ToTrafficMirrorSessionTagOutputWithContext(context.Context) TrafficMirrorSessionTagOutput
+}
+
+type TrafficMirrorSessionTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TrafficMirrorSessionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (i TrafficMirrorSessionTagArgs) ToTrafficMirrorSessionTagOutput() TrafficMirrorSessionTagOutput {
+	return i.ToTrafficMirrorSessionTagOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorSessionTagArgs) ToTrafficMirrorSessionTagOutputWithContext(ctx context.Context) TrafficMirrorSessionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorSessionTagOutput)
+}
+
+// TrafficMirrorSessionTagArrayInput is an input type that accepts TrafficMirrorSessionTagArray and TrafficMirrorSessionTagArrayOutput values.
+// You can construct a concrete instance of `TrafficMirrorSessionTagArrayInput` via:
+//
+//	TrafficMirrorSessionTagArray{ TrafficMirrorSessionTagArgs{...} }
+type TrafficMirrorSessionTagArrayInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorSessionTagArrayOutput() TrafficMirrorSessionTagArrayOutput
+	ToTrafficMirrorSessionTagArrayOutputWithContext(context.Context) TrafficMirrorSessionTagArrayOutput
+}
+
+type TrafficMirrorSessionTagArray []TrafficMirrorSessionTagInput
+
+func (TrafficMirrorSessionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (i TrafficMirrorSessionTagArray) ToTrafficMirrorSessionTagArrayOutput() TrafficMirrorSessionTagArrayOutput {
+	return i.ToTrafficMirrorSessionTagArrayOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorSessionTagArray) ToTrafficMirrorSessionTagArrayOutputWithContext(ctx context.Context) TrafficMirrorSessionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorSessionTagArrayOutput)
+}
+
+type TrafficMirrorSessionTagOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorSessionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (o TrafficMirrorSessionTagOutput) ToTrafficMirrorSessionTagOutput() TrafficMirrorSessionTagOutput {
+	return o
+}
+
+func (o TrafficMirrorSessionTagOutput) ToTrafficMirrorSessionTagOutputWithContext(ctx context.Context) TrafficMirrorSessionTagOutput {
+	return o
+}
+
+// 标签键。
+func (o TrafficMirrorSessionTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorSessionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o TrafficMirrorSessionTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorSessionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type TrafficMirrorSessionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorSessionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (o TrafficMirrorSessionTagArrayOutput) ToTrafficMirrorSessionTagArrayOutput() TrafficMirrorSessionTagArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorSessionTagArrayOutput) ToTrafficMirrorSessionTagArrayOutputWithContext(ctx context.Context) TrafficMirrorSessionTagArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorSessionTagArrayOutput) Index(i pulumi.IntInput) TrafficMirrorSessionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TrafficMirrorSessionTag {
+		return vs[0].([]TrafficMirrorSessionTag)[vs[1].(int)]
+	}).(TrafficMirrorSessionTagOutput)
+}
+
+type TrafficMirrorTargetTag struct {
+	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key *string `pulumi:"key"`
+	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value *string `pulumi:"value"`
+}
+
+// TrafficMirrorTargetTagInput is an input type that accepts TrafficMirrorTargetTagArgs and TrafficMirrorTargetTagOutput values.
+// You can construct a concrete instance of `TrafficMirrorTargetTagInput` via:
+//
+//	TrafficMirrorTargetTagArgs{...}
+type TrafficMirrorTargetTagInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorTargetTagOutput() TrafficMirrorTargetTagOutput
+	ToTrafficMirrorTargetTagOutputWithContext(context.Context) TrafficMirrorTargetTagOutput
+}
+
+type TrafficMirrorTargetTagArgs struct {
+	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TrafficMirrorTargetTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (i TrafficMirrorTargetTagArgs) ToTrafficMirrorTargetTagOutput() TrafficMirrorTargetTagOutput {
+	return i.ToTrafficMirrorTargetTagOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorTargetTagArgs) ToTrafficMirrorTargetTagOutputWithContext(ctx context.Context) TrafficMirrorTargetTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorTargetTagOutput)
+}
+
+// TrafficMirrorTargetTagArrayInput is an input type that accepts TrafficMirrorTargetTagArray and TrafficMirrorTargetTagArrayOutput values.
+// You can construct a concrete instance of `TrafficMirrorTargetTagArrayInput` via:
+//
+//	TrafficMirrorTargetTagArray{ TrafficMirrorTargetTagArgs{...} }
+type TrafficMirrorTargetTagArrayInput interface {
+	pulumi.Input
+
+	ToTrafficMirrorTargetTagArrayOutput() TrafficMirrorTargetTagArrayOutput
+	ToTrafficMirrorTargetTagArrayOutputWithContext(context.Context) TrafficMirrorTargetTagArrayOutput
+}
+
+type TrafficMirrorTargetTagArray []TrafficMirrorTargetTagInput
+
+func (TrafficMirrorTargetTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (i TrafficMirrorTargetTagArray) ToTrafficMirrorTargetTagArrayOutput() TrafficMirrorTargetTagArrayOutput {
+	return i.ToTrafficMirrorTargetTagArrayOutputWithContext(context.Background())
+}
+
+func (i TrafficMirrorTargetTagArray) ToTrafficMirrorTargetTagArrayOutputWithContext(ctx context.Context) TrafficMirrorTargetTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrafficMirrorTargetTagArrayOutput)
+}
+
+type TrafficMirrorTargetTagOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorTargetTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (o TrafficMirrorTargetTagOutput) ToTrafficMirrorTargetTagOutput() TrafficMirrorTargetTagOutput {
+	return o
+}
+
+func (o TrafficMirrorTargetTagOutput) ToTrafficMirrorTargetTagOutputWithContext(ctx context.Context) TrafficMirrorTargetTagOutput {
+	return o
+}
+
+// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o TrafficMirrorTargetTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorTargetTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o TrafficMirrorTargetTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TrafficMirrorTargetTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type TrafficMirrorTargetTagArrayOutput struct{ *pulumi.OutputState }
+
+func (TrafficMirrorTargetTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (o TrafficMirrorTargetTagArrayOutput) ToTrafficMirrorTargetTagArrayOutput() TrafficMirrorTargetTagArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorTargetTagArrayOutput) ToTrafficMirrorTargetTagArrayOutputWithContext(ctx context.Context) TrafficMirrorTargetTagArrayOutput {
+	return o
+}
+
+func (o TrafficMirrorTargetTagArrayOutput) Index(i pulumi.IntInput) TrafficMirrorTargetTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TrafficMirrorTargetTag {
+		return vs[0].([]TrafficMirrorTargetTag)[vs[1].(int)]
+	}).(TrafficMirrorTargetTagOutput)
+}
+
 type VpcAssociateCen struct {
 	// CEN的ID。
 	CenId *string `pulumi:"cenId"`
@@ -4406,6 +5558,430 @@ func (o GetEniTagArrayOutput) Index(i pulumi.IntInput) GetEniTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEniTag {
 		return vs[0].([]GetEniTag)[vs[1].(int)]
 	}).(GetEniTagOutput)
+}
+
+type GetFlowLogTag struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value string `pulumi:"value"`
+}
+
+// GetFlowLogTagInput is an input type that accepts GetFlowLogTagArgs and GetFlowLogTagOutput values.
+// You can construct a concrete instance of `GetFlowLogTagInput` via:
+//
+//	GetFlowLogTagArgs{...}
+type GetFlowLogTagInput interface {
+	pulumi.Input
+
+	ToGetFlowLogTagOutput() GetFlowLogTagOutput
+	ToGetFlowLogTagOutputWithContext(context.Context) GetFlowLogTagOutput
+}
+
+type GetFlowLogTagArgs struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFlowLogTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlowLogTag)(nil)).Elem()
+}
+
+func (i GetFlowLogTagArgs) ToGetFlowLogTagOutput() GetFlowLogTagOutput {
+	return i.ToGetFlowLogTagOutputWithContext(context.Background())
+}
+
+func (i GetFlowLogTagArgs) ToGetFlowLogTagOutputWithContext(ctx context.Context) GetFlowLogTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlowLogTagOutput)
+}
+
+// GetFlowLogTagArrayInput is an input type that accepts GetFlowLogTagArray and GetFlowLogTagArrayOutput values.
+// You can construct a concrete instance of `GetFlowLogTagArrayInput` via:
+//
+//	GetFlowLogTagArray{ GetFlowLogTagArgs{...} }
+type GetFlowLogTagArrayInput interface {
+	pulumi.Input
+
+	ToGetFlowLogTagArrayOutput() GetFlowLogTagArrayOutput
+	ToGetFlowLogTagArrayOutputWithContext(context.Context) GetFlowLogTagArrayOutput
+}
+
+type GetFlowLogTagArray []GetFlowLogTagInput
+
+func (GetFlowLogTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlowLogTag)(nil)).Elem()
+}
+
+func (i GetFlowLogTagArray) ToGetFlowLogTagArrayOutput() GetFlowLogTagArrayOutput {
+	return i.ToGetFlowLogTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetFlowLogTagArray) ToGetFlowLogTagArrayOutputWithContext(ctx context.Context) GetFlowLogTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlowLogTagArrayOutput)
+}
+
+type GetFlowLogTagOutput struct{ *pulumi.OutputState }
+
+func (GetFlowLogTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlowLogTag)(nil)).Elem()
+}
+
+func (o GetFlowLogTagOutput) ToGetFlowLogTagOutput() GetFlowLogTagOutput {
+	return o
+}
+
+func (o GetFlowLogTagOutput) ToGetFlowLogTagOutputWithContext(ctx context.Context) GetFlowLogTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o GetFlowLogTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlowLogTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o GetFlowLogTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlowLogTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFlowLogTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFlowLogTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlowLogTag)(nil)).Elem()
+}
+
+func (o GetFlowLogTagArrayOutput) ToGetFlowLogTagArrayOutput() GetFlowLogTagArrayOutput {
+	return o
+}
+
+func (o GetFlowLogTagArrayOutput) ToGetFlowLogTagArrayOutputWithContext(ctx context.Context) GetFlowLogTagArrayOutput {
+	return o
+}
+
+func (o GetFlowLogTagArrayOutput) Index(i pulumi.IntInput) GetFlowLogTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFlowLogTag {
+		return vs[0].([]GetFlowLogTag)[vs[1].(int)]
+	}).(GetFlowLogTagOutput)
+}
+
+type GetHaVipTag struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value string `pulumi:"value"`
+}
+
+// GetHaVipTagInput is an input type that accepts GetHaVipTagArgs and GetHaVipTagOutput values.
+// You can construct a concrete instance of `GetHaVipTagInput` via:
+//
+//	GetHaVipTagArgs{...}
+type GetHaVipTagInput interface {
+	pulumi.Input
+
+	ToGetHaVipTagOutput() GetHaVipTagOutput
+	ToGetHaVipTagOutputWithContext(context.Context) GetHaVipTagOutput
+}
+
+type GetHaVipTagArgs struct {
+	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetHaVipTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHaVipTag)(nil)).Elem()
+}
+
+func (i GetHaVipTagArgs) ToGetHaVipTagOutput() GetHaVipTagOutput {
+	return i.ToGetHaVipTagOutputWithContext(context.Background())
+}
+
+func (i GetHaVipTagArgs) ToGetHaVipTagOutputWithContext(ctx context.Context) GetHaVipTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHaVipTagOutput)
+}
+
+// GetHaVipTagArrayInput is an input type that accepts GetHaVipTagArray and GetHaVipTagArrayOutput values.
+// You can construct a concrete instance of `GetHaVipTagArrayInput` via:
+//
+//	GetHaVipTagArray{ GetHaVipTagArgs{...} }
+type GetHaVipTagArrayInput interface {
+	pulumi.Input
+
+	ToGetHaVipTagArrayOutput() GetHaVipTagArrayOutput
+	ToGetHaVipTagArrayOutputWithContext(context.Context) GetHaVipTagArrayOutput
+}
+
+type GetHaVipTagArray []GetHaVipTagInput
+
+func (GetHaVipTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHaVipTag)(nil)).Elem()
+}
+
+func (i GetHaVipTagArray) ToGetHaVipTagArrayOutput() GetHaVipTagArrayOutput {
+	return i.ToGetHaVipTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetHaVipTagArray) ToGetHaVipTagArrayOutputWithContext(ctx context.Context) GetHaVipTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHaVipTagArrayOutput)
+}
+
+type GetHaVipTagOutput struct{ *pulumi.OutputState }
+
+func (GetHaVipTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHaVipTag)(nil)).Elem()
+}
+
+func (o GetHaVipTagOutput) ToGetHaVipTagOutput() GetHaVipTagOutput {
+	return o
+}
+
+func (o GetHaVipTagOutput) ToGetHaVipTagOutputWithContext(ctx context.Context) GetHaVipTagOutput {
+	return o
+}
+
+// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o GetHaVipTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHaVipTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o GetHaVipTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHaVipTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetHaVipTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHaVipTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHaVipTag)(nil)).Elem()
+}
+
+func (o GetHaVipTagArrayOutput) ToGetHaVipTagArrayOutput() GetHaVipTagArrayOutput {
+	return o
+}
+
+func (o GetHaVipTagArrayOutput) ToGetHaVipTagArrayOutputWithContext(ctx context.Context) GetHaVipTagArrayOutput {
+	return o
+}
+
+func (o GetHaVipTagArrayOutput) Index(i pulumi.IntInput) GetHaVipTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHaVipTag {
+		return vs[0].([]GetHaVipTag)[vs[1].(int)]
+	}).(GetHaVipTagOutput)
+}
+
+type GetIpv6AddressBandwidthTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetIpv6AddressBandwidthTagInput is an input type that accepts GetIpv6AddressBandwidthTagArgs and GetIpv6AddressBandwidthTagOutput values.
+// You can construct a concrete instance of `GetIpv6AddressBandwidthTagInput` via:
+//
+//	GetIpv6AddressBandwidthTagArgs{...}
+type GetIpv6AddressBandwidthTagInput interface {
+	pulumi.Input
+
+	ToGetIpv6AddressBandwidthTagOutput() GetIpv6AddressBandwidthTagOutput
+	ToGetIpv6AddressBandwidthTagOutputWithContext(context.Context) GetIpv6AddressBandwidthTagOutput
+}
+
+type GetIpv6AddressBandwidthTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIpv6AddressBandwidthTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (i GetIpv6AddressBandwidthTagArgs) ToGetIpv6AddressBandwidthTagOutput() GetIpv6AddressBandwidthTagOutput {
+	return i.ToGetIpv6AddressBandwidthTagOutputWithContext(context.Background())
+}
+
+func (i GetIpv6AddressBandwidthTagArgs) ToGetIpv6AddressBandwidthTagOutputWithContext(ctx context.Context) GetIpv6AddressBandwidthTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6AddressBandwidthTagOutput)
+}
+
+// GetIpv6AddressBandwidthTagArrayInput is an input type that accepts GetIpv6AddressBandwidthTagArray and GetIpv6AddressBandwidthTagArrayOutput values.
+// You can construct a concrete instance of `GetIpv6AddressBandwidthTagArrayInput` via:
+//
+//	GetIpv6AddressBandwidthTagArray{ GetIpv6AddressBandwidthTagArgs{...} }
+type GetIpv6AddressBandwidthTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIpv6AddressBandwidthTagArrayOutput() GetIpv6AddressBandwidthTagArrayOutput
+	ToGetIpv6AddressBandwidthTagArrayOutputWithContext(context.Context) GetIpv6AddressBandwidthTagArrayOutput
+}
+
+type GetIpv6AddressBandwidthTagArray []GetIpv6AddressBandwidthTagInput
+
+func (GetIpv6AddressBandwidthTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (i GetIpv6AddressBandwidthTagArray) ToGetIpv6AddressBandwidthTagArrayOutput() GetIpv6AddressBandwidthTagArrayOutput {
+	return i.ToGetIpv6AddressBandwidthTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpv6AddressBandwidthTagArray) ToGetIpv6AddressBandwidthTagArrayOutputWithContext(ctx context.Context) GetIpv6AddressBandwidthTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6AddressBandwidthTagArrayOutput)
+}
+
+type GetIpv6AddressBandwidthTagOutput struct{ *pulumi.OutputState }
+
+func (GetIpv6AddressBandwidthTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (o GetIpv6AddressBandwidthTagOutput) ToGetIpv6AddressBandwidthTagOutput() GetIpv6AddressBandwidthTagOutput {
+	return o
+}
+
+func (o GetIpv6AddressBandwidthTagOutput) ToGetIpv6AddressBandwidthTagOutputWithContext(ctx context.Context) GetIpv6AddressBandwidthTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetIpv6AddressBandwidthTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6AddressBandwidthTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetIpv6AddressBandwidthTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6AddressBandwidthTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIpv6AddressBandwidthTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpv6AddressBandwidthTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6AddressBandwidthTag)(nil)).Elem()
+}
+
+func (o GetIpv6AddressBandwidthTagArrayOutput) ToGetIpv6AddressBandwidthTagArrayOutput() GetIpv6AddressBandwidthTagArrayOutput {
+	return o
+}
+
+func (o GetIpv6AddressBandwidthTagArrayOutput) ToGetIpv6AddressBandwidthTagArrayOutputWithContext(ctx context.Context) GetIpv6AddressBandwidthTagArrayOutput {
+	return o
+}
+
+func (o GetIpv6AddressBandwidthTagArrayOutput) Index(i pulumi.IntInput) GetIpv6AddressBandwidthTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpv6AddressBandwidthTag {
+		return vs[0].([]GetIpv6AddressBandwidthTag)[vs[1].(int)]
+	}).(GetIpv6AddressBandwidthTagOutput)
+}
+
+type GetIpv6GatewayTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetIpv6GatewayTagInput is an input type that accepts GetIpv6GatewayTagArgs and GetIpv6GatewayTagOutput values.
+// You can construct a concrete instance of `GetIpv6GatewayTagInput` via:
+//
+//	GetIpv6GatewayTagArgs{...}
+type GetIpv6GatewayTagInput interface {
+	pulumi.Input
+
+	ToGetIpv6GatewayTagOutput() GetIpv6GatewayTagOutput
+	ToGetIpv6GatewayTagOutputWithContext(context.Context) GetIpv6GatewayTagOutput
+}
+
+type GetIpv6GatewayTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIpv6GatewayTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6GatewayTag)(nil)).Elem()
+}
+
+func (i GetIpv6GatewayTagArgs) ToGetIpv6GatewayTagOutput() GetIpv6GatewayTagOutput {
+	return i.ToGetIpv6GatewayTagOutputWithContext(context.Background())
+}
+
+func (i GetIpv6GatewayTagArgs) ToGetIpv6GatewayTagOutputWithContext(ctx context.Context) GetIpv6GatewayTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6GatewayTagOutput)
+}
+
+// GetIpv6GatewayTagArrayInput is an input type that accepts GetIpv6GatewayTagArray and GetIpv6GatewayTagArrayOutput values.
+// You can construct a concrete instance of `GetIpv6GatewayTagArrayInput` via:
+//
+//	GetIpv6GatewayTagArray{ GetIpv6GatewayTagArgs{...} }
+type GetIpv6GatewayTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIpv6GatewayTagArrayOutput() GetIpv6GatewayTagArrayOutput
+	ToGetIpv6GatewayTagArrayOutputWithContext(context.Context) GetIpv6GatewayTagArrayOutput
+}
+
+type GetIpv6GatewayTagArray []GetIpv6GatewayTagInput
+
+func (GetIpv6GatewayTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6GatewayTag)(nil)).Elem()
+}
+
+func (i GetIpv6GatewayTagArray) ToGetIpv6GatewayTagArrayOutput() GetIpv6GatewayTagArrayOutput {
+	return i.ToGetIpv6GatewayTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpv6GatewayTagArray) ToGetIpv6GatewayTagArrayOutputWithContext(ctx context.Context) GetIpv6GatewayTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpv6GatewayTagArrayOutput)
+}
+
+type GetIpv6GatewayTagOutput struct{ *pulumi.OutputState }
+
+func (GetIpv6GatewayTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpv6GatewayTag)(nil)).Elem()
+}
+
+func (o GetIpv6GatewayTagOutput) ToGetIpv6GatewayTagOutput() GetIpv6GatewayTagOutput {
+	return o
+}
+
+func (o GetIpv6GatewayTagOutput) ToGetIpv6GatewayTagOutputWithContext(ctx context.Context) GetIpv6GatewayTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetIpv6GatewayTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6GatewayTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetIpv6GatewayTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpv6GatewayTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIpv6GatewayTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpv6GatewayTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpv6GatewayTag)(nil)).Elem()
+}
+
+func (o GetIpv6GatewayTagArrayOutput) ToGetIpv6GatewayTagArrayOutput() GetIpv6GatewayTagArrayOutput {
+	return o
+}
+
+func (o GetIpv6GatewayTagArrayOutput) ToGetIpv6GatewayTagArrayOutputWithContext(ctx context.Context) GetIpv6GatewayTagArrayOutput {
+	return o
+}
+
+func (o GetIpv6GatewayTagArrayOutput) Index(i pulumi.IntInput) GetIpv6GatewayTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpv6GatewayTag {
+		return vs[0].([]GetIpv6GatewayTag)[vs[1].(int)]
+	}).(GetIpv6GatewayTagOutput)
 }
 
 type GetNetworkAclDefaultEgressAclEntry struct {
@@ -6883,6 +8459,734 @@ func (o GetSubnetTagArrayOutput) Index(i pulumi.IntInput) GetSubnetTagOutput {
 	}).(GetSubnetTagOutput)
 }
 
+type GetTrafficMirrorFilterEgressFilterRule struct {
+	// 筛选规则实例描述。
+	Description string `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange string `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy string `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority int `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName string `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol string `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock string `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange string `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status string `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection string `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId string `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId string `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+// GetTrafficMirrorFilterEgressFilterRuleInput is an input type that accepts GetTrafficMirrorFilterEgressFilterRuleArgs and GetTrafficMirrorFilterEgressFilterRuleOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorFilterEgressFilterRuleInput` via:
+//
+//	GetTrafficMirrorFilterEgressFilterRuleArgs{...}
+type GetTrafficMirrorFilterEgressFilterRuleInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorFilterEgressFilterRuleOutput() GetTrafficMirrorFilterEgressFilterRuleOutput
+	ToGetTrafficMirrorFilterEgressFilterRuleOutputWithContext(context.Context) GetTrafficMirrorFilterEgressFilterRuleOutput
+}
+
+type GetTrafficMirrorFilterEgressFilterRuleArgs struct {
+	// 筛选规则实例描述。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange pulumi.StringInput `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy pulumi.StringInput `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority pulumi.IntInput `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock pulumi.StringInput `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange pulumi.StringInput `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status pulumi.StringInput `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection pulumi.StringInput `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId pulumi.StringInput `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId pulumi.StringInput `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+func (GetTrafficMirrorFilterEgressFilterRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorFilterEgressFilterRuleArgs) ToGetTrafficMirrorFilterEgressFilterRuleOutput() GetTrafficMirrorFilterEgressFilterRuleOutput {
+	return i.ToGetTrafficMirrorFilterEgressFilterRuleOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorFilterEgressFilterRuleArgs) ToGetTrafficMirrorFilterEgressFilterRuleOutputWithContext(ctx context.Context) GetTrafficMirrorFilterEgressFilterRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorFilterEgressFilterRuleOutput)
+}
+
+// GetTrafficMirrorFilterEgressFilterRuleArrayInput is an input type that accepts GetTrafficMirrorFilterEgressFilterRuleArray and GetTrafficMirrorFilterEgressFilterRuleArrayOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorFilterEgressFilterRuleArrayInput` via:
+//
+//	GetTrafficMirrorFilterEgressFilterRuleArray{ GetTrafficMirrorFilterEgressFilterRuleArgs{...} }
+type GetTrafficMirrorFilterEgressFilterRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorFilterEgressFilterRuleArrayOutput() GetTrafficMirrorFilterEgressFilterRuleArrayOutput
+	ToGetTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(context.Context) GetTrafficMirrorFilterEgressFilterRuleArrayOutput
+}
+
+type GetTrafficMirrorFilterEgressFilterRuleArray []GetTrafficMirrorFilterEgressFilterRuleInput
+
+func (GetTrafficMirrorFilterEgressFilterRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorFilterEgressFilterRuleArray) ToGetTrafficMirrorFilterEgressFilterRuleArrayOutput() GetTrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return i.ToGetTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorFilterEgressFilterRuleArray) ToGetTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(ctx context.Context) GetTrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorFilterEgressFilterRuleArrayOutput)
+}
+
+type GetTrafficMirrorFilterEgressFilterRuleOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorFilterEgressFilterRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) ToGetTrafficMirrorFilterEgressFilterRuleOutput() GetTrafficMirrorFilterEgressFilterRuleOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) ToGetTrafficMirrorFilterEgressFilterRuleOutputWithContext(ctx context.Context) GetTrafficMirrorFilterEgressFilterRuleOutput {
+	return o
+}
+
+// 筛选规则实例描述。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 筛选规则目的地址。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) DestinationCidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
+}
+
+// 筛选规则目的端口范围。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) DestinationPortRange() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.DestinationPortRange }).(pulumi.StringOutput)
+}
+
+// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+// 筛选规则优先级。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Priority() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) int { return v.Priority }).(pulumi.IntOutput)
+}
+
+// 所属项目的名称。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// 筛选规则协议类型。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// 筛选规则源地址。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) SourceCidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.SourceCidrBlock }).(pulumi.StringOutput)
+}
+
+// 筛选规则源端口范围。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) SourcePortRange() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.SourcePortRange }).(pulumi.StringOutput)
+}
+
+// 筛选规则状态。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// 筛选规则方向。egress：出方向。ingress：入方向。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) TrafficDirection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.TrafficDirection }).(pulumi.StringOutput)
+}
+
+// 筛选条件实例ID。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.TrafficMirrorFilterId }).(pulumi.StringOutput)
+}
+
+// 筛选规则实例ID。
+func (o GetTrafficMirrorFilterEgressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterEgressFilterRule) string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringOutput)
+}
+
+type GetTrafficMirrorFilterEgressFilterRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorFilterEgressFilterRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorFilterEgressFilterRule)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorFilterEgressFilterRuleArrayOutput) ToGetTrafficMirrorFilterEgressFilterRuleArrayOutput() GetTrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterEgressFilterRuleArrayOutput) ToGetTrafficMirrorFilterEgressFilterRuleArrayOutputWithContext(ctx context.Context) GetTrafficMirrorFilterEgressFilterRuleArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterEgressFilterRuleArrayOutput) Index(i pulumi.IntInput) GetTrafficMirrorFilterEgressFilterRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrafficMirrorFilterEgressFilterRule {
+		return vs[0].([]GetTrafficMirrorFilterEgressFilterRule)[vs[1].(int)]
+	}).(GetTrafficMirrorFilterEgressFilterRuleOutput)
+}
+
+type GetTrafficMirrorFilterIngressFilterRule struct {
+	// 筛选规则实例描述。
+	Description string `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock string `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange string `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy string `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority int `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName string `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol string `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock string `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange string `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status string `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection string `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId string `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId string `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+// GetTrafficMirrorFilterIngressFilterRuleInput is an input type that accepts GetTrafficMirrorFilterIngressFilterRuleArgs and GetTrafficMirrorFilterIngressFilterRuleOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorFilterIngressFilterRuleInput` via:
+//
+//	GetTrafficMirrorFilterIngressFilterRuleArgs{...}
+type GetTrafficMirrorFilterIngressFilterRuleInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorFilterIngressFilterRuleOutput() GetTrafficMirrorFilterIngressFilterRuleOutput
+	ToGetTrafficMirrorFilterIngressFilterRuleOutputWithContext(context.Context) GetTrafficMirrorFilterIngressFilterRuleOutput
+}
+
+type GetTrafficMirrorFilterIngressFilterRuleArgs struct {
+	// 筛选规则实例描述。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 筛选规则目的地址。
+	DestinationCidrBlock pulumi.StringInput `pulumi:"destinationCidrBlock"`
+	// 筛选规则目的端口范围。
+	DestinationPortRange pulumi.StringInput `pulumi:"destinationPortRange"`
+	// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+	Policy pulumi.StringInput `pulumi:"policy"`
+	// 筛选规则优先级。
+	Priority pulumi.IntInput `pulumi:"priority"`
+	// 所属项目的名称。
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// 筛选规则协议类型。
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// 筛选规则源地址。
+	SourceCidrBlock pulumi.StringInput `pulumi:"sourceCidrBlock"`
+	// 筛选规则源端口范围。
+	SourcePortRange pulumi.StringInput `pulumi:"sourcePortRange"`
+	// 筛选规则状态。
+	Status pulumi.StringInput `pulumi:"status"`
+	// 筛选规则方向。egress：出方向。ingress：入方向。
+	TrafficDirection pulumi.StringInput `pulumi:"trafficDirection"`
+	// 筛选条件实例ID。
+	TrafficMirrorFilterId pulumi.StringInput `pulumi:"trafficMirrorFilterId"`
+	// 筛选规则实例ID。
+	TrafficMirrorFilterRuleId pulumi.StringInput `pulumi:"trafficMirrorFilterRuleId"`
+}
+
+func (GetTrafficMirrorFilterIngressFilterRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorFilterIngressFilterRuleArgs) ToGetTrafficMirrorFilterIngressFilterRuleOutput() GetTrafficMirrorFilterIngressFilterRuleOutput {
+	return i.ToGetTrafficMirrorFilterIngressFilterRuleOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorFilterIngressFilterRuleArgs) ToGetTrafficMirrorFilterIngressFilterRuleOutputWithContext(ctx context.Context) GetTrafficMirrorFilterIngressFilterRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorFilterIngressFilterRuleOutput)
+}
+
+// GetTrafficMirrorFilterIngressFilterRuleArrayInput is an input type that accepts GetTrafficMirrorFilterIngressFilterRuleArray and GetTrafficMirrorFilterIngressFilterRuleArrayOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorFilterIngressFilterRuleArrayInput` via:
+//
+//	GetTrafficMirrorFilterIngressFilterRuleArray{ GetTrafficMirrorFilterIngressFilterRuleArgs{...} }
+type GetTrafficMirrorFilterIngressFilterRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorFilterIngressFilterRuleArrayOutput() GetTrafficMirrorFilterIngressFilterRuleArrayOutput
+	ToGetTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(context.Context) GetTrafficMirrorFilterIngressFilterRuleArrayOutput
+}
+
+type GetTrafficMirrorFilterIngressFilterRuleArray []GetTrafficMirrorFilterIngressFilterRuleInput
+
+func (GetTrafficMirrorFilterIngressFilterRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorFilterIngressFilterRuleArray) ToGetTrafficMirrorFilterIngressFilterRuleArrayOutput() GetTrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return i.ToGetTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorFilterIngressFilterRuleArray) ToGetTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(ctx context.Context) GetTrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorFilterIngressFilterRuleArrayOutput)
+}
+
+type GetTrafficMirrorFilterIngressFilterRuleOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorFilterIngressFilterRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) ToGetTrafficMirrorFilterIngressFilterRuleOutput() GetTrafficMirrorFilterIngressFilterRuleOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) ToGetTrafficMirrorFilterIngressFilterRuleOutputWithContext(ctx context.Context) GetTrafficMirrorFilterIngressFilterRuleOutput {
+	return o
+}
+
+// 筛选规则实例描述。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 筛选规则目的地址。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) DestinationCidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.DestinationCidrBlock }).(pulumi.StringOutput)
+}
+
+// 筛选规则目的端口范围。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) DestinationPortRange() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.DestinationPortRange }).(pulumi.StringOutput)
+}
+
+// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+// 筛选规则优先级。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Priority() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) int { return v.Priority }).(pulumi.IntOutput)
+}
+
+// 所属项目的名称。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// 筛选规则协议类型。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// 筛选规则源地址。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) SourceCidrBlock() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.SourceCidrBlock }).(pulumi.StringOutput)
+}
+
+// 筛选规则源端口范围。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) SourcePortRange() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.SourcePortRange }).(pulumi.StringOutput)
+}
+
+// 筛选规则状态。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// 筛选规则方向。egress：出方向。ingress：入方向。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) TrafficDirection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.TrafficDirection }).(pulumi.StringOutput)
+}
+
+// 筛选条件实例ID。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.TrafficMirrorFilterId }).(pulumi.StringOutput)
+}
+
+// 筛选规则实例ID。
+func (o GetTrafficMirrorFilterIngressFilterRuleOutput) TrafficMirrorFilterRuleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterIngressFilterRule) string { return v.TrafficMirrorFilterRuleId }).(pulumi.StringOutput)
+}
+
+type GetTrafficMirrorFilterIngressFilterRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorFilterIngressFilterRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorFilterIngressFilterRule)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorFilterIngressFilterRuleArrayOutput) ToGetTrafficMirrorFilterIngressFilterRuleArrayOutput() GetTrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterIngressFilterRuleArrayOutput) ToGetTrafficMirrorFilterIngressFilterRuleArrayOutputWithContext(ctx context.Context) GetTrafficMirrorFilterIngressFilterRuleArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterIngressFilterRuleArrayOutput) Index(i pulumi.IntInput) GetTrafficMirrorFilterIngressFilterRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrafficMirrorFilterIngressFilterRule {
+		return vs[0].([]GetTrafficMirrorFilterIngressFilterRule)[vs[1].(int)]
+	}).(GetTrafficMirrorFilterIngressFilterRuleOutput)
+}
+
+type GetTrafficMirrorFilterTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetTrafficMirrorFilterTagInput is an input type that accepts GetTrafficMirrorFilterTagArgs and GetTrafficMirrorFilterTagOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorFilterTagInput` via:
+//
+//	GetTrafficMirrorFilterTagArgs{...}
+type GetTrafficMirrorFilterTagInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorFilterTagOutput() GetTrafficMirrorFilterTagOutput
+	ToGetTrafficMirrorFilterTagOutputWithContext(context.Context) GetTrafficMirrorFilterTagOutput
+}
+
+type GetTrafficMirrorFilterTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTrafficMirrorFilterTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorFilterTagArgs) ToGetTrafficMirrorFilterTagOutput() GetTrafficMirrorFilterTagOutput {
+	return i.ToGetTrafficMirrorFilterTagOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorFilterTagArgs) ToGetTrafficMirrorFilterTagOutputWithContext(ctx context.Context) GetTrafficMirrorFilterTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorFilterTagOutput)
+}
+
+// GetTrafficMirrorFilterTagArrayInput is an input type that accepts GetTrafficMirrorFilterTagArray and GetTrafficMirrorFilterTagArrayOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorFilterTagArrayInput` via:
+//
+//	GetTrafficMirrorFilterTagArray{ GetTrafficMirrorFilterTagArgs{...} }
+type GetTrafficMirrorFilterTagArrayInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorFilterTagArrayOutput() GetTrafficMirrorFilterTagArrayOutput
+	ToGetTrafficMirrorFilterTagArrayOutputWithContext(context.Context) GetTrafficMirrorFilterTagArrayOutput
+}
+
+type GetTrafficMirrorFilterTagArray []GetTrafficMirrorFilterTagInput
+
+func (GetTrafficMirrorFilterTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorFilterTagArray) ToGetTrafficMirrorFilterTagArrayOutput() GetTrafficMirrorFilterTagArrayOutput {
+	return i.ToGetTrafficMirrorFilterTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorFilterTagArray) ToGetTrafficMirrorFilterTagArrayOutputWithContext(ctx context.Context) GetTrafficMirrorFilterTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorFilterTagArrayOutput)
+}
+
+type GetTrafficMirrorFilterTagOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorFilterTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorFilterTagOutput) ToGetTrafficMirrorFilterTagOutput() GetTrafficMirrorFilterTagOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterTagOutput) ToGetTrafficMirrorFilterTagOutputWithContext(ctx context.Context) GetTrafficMirrorFilterTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetTrafficMirrorFilterTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetTrafficMirrorFilterTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorFilterTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTrafficMirrorFilterTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorFilterTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorFilterTag)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorFilterTagArrayOutput) ToGetTrafficMirrorFilterTagArrayOutput() GetTrafficMirrorFilterTagArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterTagArrayOutput) ToGetTrafficMirrorFilterTagArrayOutputWithContext(ctx context.Context) GetTrafficMirrorFilterTagArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorFilterTagArrayOutput) Index(i pulumi.IntInput) GetTrafficMirrorFilterTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrafficMirrorFilterTag {
+		return vs[0].([]GetTrafficMirrorFilterTag)[vs[1].(int)]
+	}).(GetTrafficMirrorFilterTagOutput)
+}
+
+type GetTrafficMirrorSessionTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetTrafficMirrorSessionTagInput is an input type that accepts GetTrafficMirrorSessionTagArgs and GetTrafficMirrorSessionTagOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorSessionTagInput` via:
+//
+//	GetTrafficMirrorSessionTagArgs{...}
+type GetTrafficMirrorSessionTagInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorSessionTagOutput() GetTrafficMirrorSessionTagOutput
+	ToGetTrafficMirrorSessionTagOutputWithContext(context.Context) GetTrafficMirrorSessionTagOutput
+}
+
+type GetTrafficMirrorSessionTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTrafficMirrorSessionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorSessionTagArgs) ToGetTrafficMirrorSessionTagOutput() GetTrafficMirrorSessionTagOutput {
+	return i.ToGetTrafficMirrorSessionTagOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorSessionTagArgs) ToGetTrafficMirrorSessionTagOutputWithContext(ctx context.Context) GetTrafficMirrorSessionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorSessionTagOutput)
+}
+
+// GetTrafficMirrorSessionTagArrayInput is an input type that accepts GetTrafficMirrorSessionTagArray and GetTrafficMirrorSessionTagArrayOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorSessionTagArrayInput` via:
+//
+//	GetTrafficMirrorSessionTagArray{ GetTrafficMirrorSessionTagArgs{...} }
+type GetTrafficMirrorSessionTagArrayInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorSessionTagArrayOutput() GetTrafficMirrorSessionTagArrayOutput
+	ToGetTrafficMirrorSessionTagArrayOutputWithContext(context.Context) GetTrafficMirrorSessionTagArrayOutput
+}
+
+type GetTrafficMirrorSessionTagArray []GetTrafficMirrorSessionTagInput
+
+func (GetTrafficMirrorSessionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorSessionTagArray) ToGetTrafficMirrorSessionTagArrayOutput() GetTrafficMirrorSessionTagArrayOutput {
+	return i.ToGetTrafficMirrorSessionTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorSessionTagArray) ToGetTrafficMirrorSessionTagArrayOutputWithContext(ctx context.Context) GetTrafficMirrorSessionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorSessionTagArrayOutput)
+}
+
+type GetTrafficMirrorSessionTagOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorSessionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorSessionTagOutput) ToGetTrafficMirrorSessionTagOutput() GetTrafficMirrorSessionTagOutput {
+	return o
+}
+
+func (o GetTrafficMirrorSessionTagOutput) ToGetTrafficMirrorSessionTagOutputWithContext(ctx context.Context) GetTrafficMirrorSessionTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetTrafficMirrorSessionTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorSessionTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetTrafficMirrorSessionTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorSessionTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTrafficMirrorSessionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorSessionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorSessionTag)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorSessionTagArrayOutput) ToGetTrafficMirrorSessionTagArrayOutput() GetTrafficMirrorSessionTagArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorSessionTagArrayOutput) ToGetTrafficMirrorSessionTagArrayOutputWithContext(ctx context.Context) GetTrafficMirrorSessionTagArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorSessionTagArrayOutput) Index(i pulumi.IntInput) GetTrafficMirrorSessionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrafficMirrorSessionTag {
+		return vs[0].([]GetTrafficMirrorSessionTag)[vs[1].(int)]
+	}).(GetTrafficMirrorSessionTagOutput)
+}
+
+type GetTrafficMirrorTargetTag struct {
+	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key string `pulumi:"key"`
+	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value string `pulumi:"value"`
+}
+
+// GetTrafficMirrorTargetTagInput is an input type that accepts GetTrafficMirrorTargetTagArgs and GetTrafficMirrorTargetTagOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorTargetTagInput` via:
+//
+//	GetTrafficMirrorTargetTagArgs{...}
+type GetTrafficMirrorTargetTagInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorTargetTagOutput() GetTrafficMirrorTargetTagOutput
+	ToGetTrafficMirrorTargetTagOutputWithContext(context.Context) GetTrafficMirrorTargetTagOutput
+}
+
+type GetTrafficMirrorTargetTagArgs struct {
+	// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTrafficMirrorTargetTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorTargetTagArgs) ToGetTrafficMirrorTargetTagOutput() GetTrafficMirrorTargetTagOutput {
+	return i.ToGetTrafficMirrorTargetTagOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorTargetTagArgs) ToGetTrafficMirrorTargetTagOutputWithContext(ctx context.Context) GetTrafficMirrorTargetTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorTargetTagOutput)
+}
+
+// GetTrafficMirrorTargetTagArrayInput is an input type that accepts GetTrafficMirrorTargetTagArray and GetTrafficMirrorTargetTagArrayOutput values.
+// You can construct a concrete instance of `GetTrafficMirrorTargetTagArrayInput` via:
+//
+//	GetTrafficMirrorTargetTagArray{ GetTrafficMirrorTargetTagArgs{...} }
+type GetTrafficMirrorTargetTagArrayInput interface {
+	pulumi.Input
+
+	ToGetTrafficMirrorTargetTagArrayOutput() GetTrafficMirrorTargetTagArrayOutput
+	ToGetTrafficMirrorTargetTagArrayOutputWithContext(context.Context) GetTrafficMirrorTargetTagArrayOutput
+}
+
+type GetTrafficMirrorTargetTagArray []GetTrafficMirrorTargetTagInput
+
+func (GetTrafficMirrorTargetTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (i GetTrafficMirrorTargetTagArray) ToGetTrafficMirrorTargetTagArrayOutput() GetTrafficMirrorTargetTagArrayOutput {
+	return i.ToGetTrafficMirrorTargetTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrafficMirrorTargetTagArray) ToGetTrafficMirrorTargetTagArrayOutputWithContext(ctx context.Context) GetTrafficMirrorTargetTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrafficMirrorTargetTagArrayOutput)
+}
+
+type GetTrafficMirrorTargetTagOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorTargetTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorTargetTagOutput) ToGetTrafficMirrorTargetTagOutput() GetTrafficMirrorTargetTagOutput {
+	return o
+}
+
+func (o GetTrafficMirrorTargetTagOutput) ToGetTrafficMirrorTargetTagOutputWithContext(ctx context.Context) GetTrafficMirrorTargetTagOutput {
+	return o
+}
+
+// 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+func (o GetTrafficMirrorTargetTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorTargetTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+func (o GetTrafficMirrorTargetTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrafficMirrorTargetTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTrafficMirrorTargetTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrafficMirrorTargetTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrafficMirrorTargetTag)(nil)).Elem()
+}
+
+func (o GetTrafficMirrorTargetTagArrayOutput) ToGetTrafficMirrorTargetTagArrayOutput() GetTrafficMirrorTargetTagArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorTargetTagArrayOutput) ToGetTrafficMirrorTargetTagArrayOutputWithContext(ctx context.Context) GetTrafficMirrorTargetTagArrayOutput {
+	return o
+}
+
+func (o GetTrafficMirrorTargetTagArrayOutput) Index(i pulumi.IntInput) GetTrafficMirrorTargetTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrafficMirrorTargetTag {
+		return vs[0].([]GetTrafficMirrorTargetTag)[vs[1].(int)]
+	}).(GetTrafficMirrorTargetTagOutput)
+}
+
 type GetVpcAssociateCen struct {
 	// CEN的ID。
 	CenId string `pulumi:"cenId"`
@@ -7121,6 +9425,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*EniPrivateIpSetAssociatedElasticIpPtrInput)(nil)).Elem(), EniPrivateIpSetAssociatedElasticIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EniTagInput)(nil)).Elem(), EniTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EniTagArrayInput)(nil)).Elem(), EniTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FlowLogTagInput)(nil)).Elem(), FlowLogTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FlowLogTagArrayInput)(nil)).Elem(), FlowLogTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HaVipTagInput)(nil)).Elem(), HaVipTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HaVipTagArrayInput)(nil)).Elem(), HaVipTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6AddressBandwidthTagInput)(nil)).Elem(), Ipv6AddressBandwidthTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6AddressBandwidthTagArrayInput)(nil)).Elem(), Ipv6AddressBandwidthTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6GatewayTagInput)(nil)).Elem(), Ipv6GatewayTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6GatewayTagArrayInput)(nil)).Elem(), Ipv6GatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkAclDefaultEgressAclEntryInput)(nil)).Elem(), NetworkAclDefaultEgressAclEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkAclDefaultEgressAclEntryArrayInput)(nil)).Elem(), NetworkAclDefaultEgressAclEntryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkAclDefaultIngressAclEntryInput)(nil)).Elem(), NetworkAclDefaultIngressAclEntryArgs{})
@@ -7157,6 +9469,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SubnetRouteTablePtrInput)(nil)).Elem(), SubnetRouteTableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SubnetTagInput)(nil)).Elem(), SubnetTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SubnetTagArrayInput)(nil)).Elem(), SubnetTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorFilterEgressFilterRuleInput)(nil)).Elem(), TrafficMirrorFilterEgressFilterRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorFilterEgressFilterRuleArrayInput)(nil)).Elem(), TrafficMirrorFilterEgressFilterRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorFilterIngressFilterRuleInput)(nil)).Elem(), TrafficMirrorFilterIngressFilterRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorFilterIngressFilterRuleArrayInput)(nil)).Elem(), TrafficMirrorFilterIngressFilterRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorFilterTagInput)(nil)).Elem(), TrafficMirrorFilterTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorFilterTagArrayInput)(nil)).Elem(), TrafficMirrorFilterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorSessionTagInput)(nil)).Elem(), TrafficMirrorSessionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorSessionTagArrayInput)(nil)).Elem(), TrafficMirrorSessionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorTargetTagInput)(nil)).Elem(), TrafficMirrorTargetTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrafficMirrorTargetTagArrayInput)(nil)).Elem(), TrafficMirrorTargetTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcAssociateCenInput)(nil)).Elem(), VpcAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcAssociateCenArrayInput)(nil)).Elem(), VpcAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcTagInput)(nil)).Elem(), VpcTagArgs{})
@@ -7174,6 +9496,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniPrivateIpSetAssociatedElasticIpInput)(nil)).Elem(), GetEniPrivateIpSetAssociatedElasticIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniTagInput)(nil)).Elem(), GetEniTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEniTagArrayInput)(nil)).Elem(), GetEniTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlowLogTagInput)(nil)).Elem(), GetFlowLogTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlowLogTagArrayInput)(nil)).Elem(), GetFlowLogTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHaVipTagInput)(nil)).Elem(), GetHaVipTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHaVipTagArrayInput)(nil)).Elem(), GetHaVipTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6AddressBandwidthTagInput)(nil)).Elem(), GetIpv6AddressBandwidthTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6AddressBandwidthTagArrayInput)(nil)).Elem(), GetIpv6AddressBandwidthTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6GatewayTagInput)(nil)).Elem(), GetIpv6GatewayTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6GatewayTagArrayInput)(nil)).Elem(), GetIpv6GatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAclDefaultEgressAclEntryInput)(nil)).Elem(), GetNetworkAclDefaultEgressAclEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAclDefaultEgressAclEntryArrayInput)(nil)).Elem(), GetNetworkAclDefaultEgressAclEntryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAclDefaultIngressAclEntryInput)(nil)).Elem(), GetNetworkAclDefaultIngressAclEntryArgs{})
@@ -7209,6 +9539,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetRouteTableInput)(nil)).Elem(), GetSubnetRouteTableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetTagInput)(nil)).Elem(), GetSubnetTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSubnetTagArrayInput)(nil)).Elem(), GetSubnetTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorFilterEgressFilterRuleInput)(nil)).Elem(), GetTrafficMirrorFilterEgressFilterRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorFilterEgressFilterRuleArrayInput)(nil)).Elem(), GetTrafficMirrorFilterEgressFilterRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorFilterIngressFilterRuleInput)(nil)).Elem(), GetTrafficMirrorFilterIngressFilterRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorFilterIngressFilterRuleArrayInput)(nil)).Elem(), GetTrafficMirrorFilterIngressFilterRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorFilterTagInput)(nil)).Elem(), GetTrafficMirrorFilterTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorFilterTagArrayInput)(nil)).Elem(), GetTrafficMirrorFilterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorSessionTagInput)(nil)).Elem(), GetTrafficMirrorSessionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorSessionTagArrayInput)(nil)).Elem(), GetTrafficMirrorSessionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorTargetTagInput)(nil)).Elem(), GetTrafficMirrorTargetTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrafficMirrorTargetTagArrayInput)(nil)).Elem(), GetTrafficMirrorTargetTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAssociateCenInput)(nil)).Elem(), GetVpcAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcAssociateCenArrayInput)(nil)).Elem(), GetVpcAssociateCenArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcTagInput)(nil)).Elem(), GetVpcTagArgs{})
@@ -7229,6 +9569,14 @@ func init() {
 	pulumi.RegisterOutputType(EniPrivateIpSetAssociatedElasticIpPtrOutput{})
 	pulumi.RegisterOutputType(EniTagOutput{})
 	pulumi.RegisterOutputType(EniTagArrayOutput{})
+	pulumi.RegisterOutputType(FlowLogTagOutput{})
+	pulumi.RegisterOutputType(FlowLogTagArrayOutput{})
+	pulumi.RegisterOutputType(HaVipTagOutput{})
+	pulumi.RegisterOutputType(HaVipTagArrayOutput{})
+	pulumi.RegisterOutputType(Ipv6AddressBandwidthTagOutput{})
+	pulumi.RegisterOutputType(Ipv6AddressBandwidthTagArrayOutput{})
+	pulumi.RegisterOutputType(Ipv6GatewayTagOutput{})
+	pulumi.RegisterOutputType(Ipv6GatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(NetworkAclDefaultEgressAclEntryOutput{})
 	pulumi.RegisterOutputType(NetworkAclDefaultEgressAclEntryArrayOutput{})
 	pulumi.RegisterOutputType(NetworkAclDefaultIngressAclEntryOutput{})
@@ -7265,6 +9613,16 @@ func init() {
 	pulumi.RegisterOutputType(SubnetRouteTablePtrOutput{})
 	pulumi.RegisterOutputType(SubnetTagOutput{})
 	pulumi.RegisterOutputType(SubnetTagArrayOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorFilterEgressFilterRuleOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorFilterEgressFilterRuleArrayOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorFilterIngressFilterRuleOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorFilterIngressFilterRuleArrayOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorFilterTagOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorFilterTagArrayOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorSessionTagOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorSessionTagArrayOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorTargetTagOutput{})
+	pulumi.RegisterOutputType(TrafficMirrorTargetTagArrayOutput{})
 	pulumi.RegisterOutputType(VpcAssociateCenOutput{})
 	pulumi.RegisterOutputType(VpcAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(VpcTagOutput{})
@@ -7282,6 +9640,14 @@ func init() {
 	pulumi.RegisterOutputType(GetEniPrivateIpSetAssociatedElasticIpOutput{})
 	pulumi.RegisterOutputType(GetEniTagOutput{})
 	pulumi.RegisterOutputType(GetEniTagArrayOutput{})
+	pulumi.RegisterOutputType(GetFlowLogTagOutput{})
+	pulumi.RegisterOutputType(GetFlowLogTagArrayOutput{})
+	pulumi.RegisterOutputType(GetHaVipTagOutput{})
+	pulumi.RegisterOutputType(GetHaVipTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIpv6AddressBandwidthTagOutput{})
+	pulumi.RegisterOutputType(GetIpv6AddressBandwidthTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIpv6GatewayTagOutput{})
+	pulumi.RegisterOutputType(GetIpv6GatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkAclDefaultEgressAclEntryOutput{})
 	pulumi.RegisterOutputType(GetNetworkAclDefaultEgressAclEntryArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkAclDefaultIngressAclEntryOutput{})
@@ -7317,6 +9683,16 @@ func init() {
 	pulumi.RegisterOutputType(GetSubnetRouteTableOutput{})
 	pulumi.RegisterOutputType(GetSubnetTagOutput{})
 	pulumi.RegisterOutputType(GetSubnetTagArrayOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorFilterEgressFilterRuleOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorFilterEgressFilterRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorFilterIngressFilterRuleOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorFilterIngressFilterRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorFilterTagOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorFilterTagArrayOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorSessionTagOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorSessionTagArrayOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorTargetTagOutput{})
+	pulumi.RegisterOutputType(GetTrafficMirrorTargetTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcAssociateCenOutput{})
 	pulumi.RegisterOutputType(GetVpcAssociateCenArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcTagOutput{})

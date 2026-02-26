@@ -2994,6 +2994,4542 @@ func (o ClusterTagArrayOutput) Index(i pulumi.IntInput) ClusterTagOutput {
 	}).(ClusterTagOutput)
 }
 
+type DefaultNodePoolAutoScaling struct {
+	// 配置节点池的期望节点数。
+	DesiredReplicas *int `pulumi:"desiredReplicas"`
+	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	Enabled *bool `pulumi:"enabled"`
+	// 配置节点池的最大节点数。
+	MaxReplicas *int `pulumi:"maxReplicas"`
+	// 配置节点池的最小节点数。
+	MinReplicas *int `pulumi:"minReplicas"`
+	// 优先级。
+	Priority *int `pulumi:"priority"`
+	// 伸缩组ID。
+	ScalingGroupId *string `pulumi:"scalingGroupId"`
+	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	SubnetPolicy *string `pulumi:"subnetPolicy"`
+}
+
+// DefaultNodePoolAutoScalingInput is an input type that accepts DefaultNodePoolAutoScalingArgs and DefaultNodePoolAutoScalingOutput values.
+// You can construct a concrete instance of `DefaultNodePoolAutoScalingInput` via:
+//
+//	DefaultNodePoolAutoScalingArgs{...}
+type DefaultNodePoolAutoScalingInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolAutoScalingOutput() DefaultNodePoolAutoScalingOutput
+	ToDefaultNodePoolAutoScalingOutputWithContext(context.Context) DefaultNodePoolAutoScalingOutput
+}
+
+type DefaultNodePoolAutoScalingArgs struct {
+	// 配置节点池的期望节点数。
+	DesiredReplicas pulumi.IntPtrInput `pulumi:"desiredReplicas"`
+	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// 配置节点池的最大节点数。
+	MaxReplicas pulumi.IntPtrInput `pulumi:"maxReplicas"`
+	// 配置节点池的最小节点数。
+	MinReplicas pulumi.IntPtrInput `pulumi:"minReplicas"`
+	// 优先级。
+	Priority pulumi.IntPtrInput `pulumi:"priority"`
+	// 伸缩组ID。
+	ScalingGroupId pulumi.StringPtrInput `pulumi:"scalingGroupId"`
+	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	SubnetPolicy pulumi.StringPtrInput `pulumi:"subnetPolicy"`
+}
+
+func (DefaultNodePoolAutoScalingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolAutoScaling)(nil)).Elem()
+}
+
+func (i DefaultNodePoolAutoScalingArgs) ToDefaultNodePoolAutoScalingOutput() DefaultNodePoolAutoScalingOutput {
+	return i.ToDefaultNodePoolAutoScalingOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolAutoScalingArgs) ToDefaultNodePoolAutoScalingOutputWithContext(ctx context.Context) DefaultNodePoolAutoScalingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolAutoScalingOutput)
+}
+
+func (i DefaultNodePoolAutoScalingArgs) ToDefaultNodePoolAutoScalingPtrOutput() DefaultNodePoolAutoScalingPtrOutput {
+	return i.ToDefaultNodePoolAutoScalingPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolAutoScalingArgs) ToDefaultNodePoolAutoScalingPtrOutputWithContext(ctx context.Context) DefaultNodePoolAutoScalingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolAutoScalingOutput).ToDefaultNodePoolAutoScalingPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolAutoScalingPtrInput is an input type that accepts DefaultNodePoolAutoScalingArgs, DefaultNodePoolAutoScalingPtr and DefaultNodePoolAutoScalingPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolAutoScalingPtrInput` via:
+//
+//	        DefaultNodePoolAutoScalingArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolAutoScalingPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolAutoScalingPtrOutput() DefaultNodePoolAutoScalingPtrOutput
+	ToDefaultNodePoolAutoScalingPtrOutputWithContext(context.Context) DefaultNodePoolAutoScalingPtrOutput
+}
+
+type defaultNodePoolAutoScalingPtrType DefaultNodePoolAutoScalingArgs
+
+func DefaultNodePoolAutoScalingPtr(v *DefaultNodePoolAutoScalingArgs) DefaultNodePoolAutoScalingPtrInput {
+	return (*defaultNodePoolAutoScalingPtrType)(v)
+}
+
+func (*defaultNodePoolAutoScalingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolAutoScaling)(nil)).Elem()
+}
+
+func (i *defaultNodePoolAutoScalingPtrType) ToDefaultNodePoolAutoScalingPtrOutput() DefaultNodePoolAutoScalingPtrOutput {
+	return i.ToDefaultNodePoolAutoScalingPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolAutoScalingPtrType) ToDefaultNodePoolAutoScalingPtrOutputWithContext(ctx context.Context) DefaultNodePoolAutoScalingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolAutoScalingPtrOutput)
+}
+
+type DefaultNodePoolAutoScalingOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolAutoScalingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolAutoScaling)(nil)).Elem()
+}
+
+func (o DefaultNodePoolAutoScalingOutput) ToDefaultNodePoolAutoScalingOutput() DefaultNodePoolAutoScalingOutput {
+	return o
+}
+
+func (o DefaultNodePoolAutoScalingOutput) ToDefaultNodePoolAutoScalingOutputWithContext(ctx context.Context) DefaultNodePoolAutoScalingOutput {
+	return o
+}
+
+func (o DefaultNodePoolAutoScalingOutput) ToDefaultNodePoolAutoScalingPtrOutput() DefaultNodePoolAutoScalingPtrOutput {
+	return o.ToDefaultNodePoolAutoScalingPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolAutoScalingOutput) ToDefaultNodePoolAutoScalingPtrOutputWithContext(ctx context.Context) DefaultNodePoolAutoScalingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolAutoScaling) *DefaultNodePoolAutoScaling {
+		return &v
+	}).(DefaultNodePoolAutoScalingPtrOutput)
+}
+
+// 配置节点池的期望节点数。
+func (o DefaultNodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.DesiredReplicas }).(pulumi.IntPtrOutput)
+}
+
+// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+func (o DefaultNodePoolAutoScalingOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// 配置节点池的最大节点数。
+func (o DefaultNodePoolAutoScalingOutput) MaxReplicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.MaxReplicas }).(pulumi.IntPtrOutput)
+}
+
+// 配置节点池的最小节点数。
+func (o DefaultNodePoolAutoScalingOutput) MinReplicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.MinReplicas }).(pulumi.IntPtrOutput)
+}
+
+// 优先级。
+func (o DefaultNodePoolAutoScalingOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *int { return v.Priority }).(pulumi.IntPtrOutput)
+}
+
+// 伸缩组ID。
+func (o DefaultNodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *string { return v.ScalingGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+func (o DefaultNodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolAutoScaling) *string { return v.SubnetPolicy }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolAutoScalingPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolAutoScalingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolAutoScaling)(nil)).Elem()
+}
+
+func (o DefaultNodePoolAutoScalingPtrOutput) ToDefaultNodePoolAutoScalingPtrOutput() DefaultNodePoolAutoScalingPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolAutoScalingPtrOutput) ToDefaultNodePoolAutoScalingPtrOutputWithContext(ctx context.Context) DefaultNodePoolAutoScalingPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolAutoScalingPtrOutput) Elem() DefaultNodePoolAutoScalingOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) DefaultNodePoolAutoScaling {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolAutoScaling
+		return ret
+	}).(DefaultNodePoolAutoScalingOutput)
+}
+
+// 配置节点池的期望节点数。
+func (o DefaultNodePoolAutoScalingPtrOutput) DesiredReplicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DesiredReplicas
+	}).(pulumi.IntPtrOutput)
+}
+
+// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+func (o DefaultNodePoolAutoScalingPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 配置节点池的最大节点数。
+func (o DefaultNodePoolAutoScalingPtrOutput) MaxReplicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxReplicas
+	}).(pulumi.IntPtrOutput)
+}
+
+// 配置节点池的最小节点数。
+func (o DefaultNodePoolAutoScalingPtrOutput) MinReplicas() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinReplicas
+	}).(pulumi.IntPtrOutput)
+}
+
+// 优先级。
+func (o DefaultNodePoolAutoScalingPtrOutput) Priority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Priority
+	}).(pulumi.IntPtrOutput)
+}
+
+// 伸缩组ID。
+func (o DefaultNodePoolAutoScalingPtrOutput) ScalingGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScalingGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+func (o DefaultNodePoolAutoScalingPtrOutput) SubnetPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolAutoScaling) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetPolicy
+	}).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfig struct {
+	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	AutoSyncDisabled *bool `pulumi:"autoSyncDisabled"`
+	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	Cordon *bool `pulumi:"cordon"`
+	// Kubelet 组件的相关配置
+	KubeletConfig *DefaultNodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
+	Labels        []DefaultNodePoolKubernetesConfigLabel        `pulumi:"labels"`
+	// Kubernetes 中节点对象的元数据名称前缀。
+	NamePrefix *string `pulumi:"namePrefix"`
+	// Kubernetes 中节点对象的元数据名称后缀。
+	NameSuffix *string `pulumi:"nameSuffix"`
+	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	NameUseHostname *bool                                  `pulumi:"nameUseHostname"`
+	Taints          []DefaultNodePoolKubernetesConfigTaint `pulumi:"taints"`
+}
+
+// DefaultNodePoolKubernetesConfigInput is an input type that accepts DefaultNodePoolKubernetesConfigArgs and DefaultNodePoolKubernetesConfigOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigInput` via:
+//
+//	DefaultNodePoolKubernetesConfigArgs{...}
+type DefaultNodePoolKubernetesConfigInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigOutput() DefaultNodePoolKubernetesConfigOutput
+	ToDefaultNodePoolKubernetesConfigOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigOutput
+}
+
+type DefaultNodePoolKubernetesConfigArgs struct {
+	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	AutoSyncDisabled pulumi.BoolPtrInput `pulumi:"autoSyncDisabled"`
+	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	Cordon pulumi.BoolPtrInput `pulumi:"cordon"`
+	// Kubelet 组件的相关配置
+	KubeletConfig DefaultNodePoolKubernetesConfigKubeletConfigPtrInput `pulumi:"kubeletConfig"`
+	Labels        DefaultNodePoolKubernetesConfigLabelArrayInput       `pulumi:"labels"`
+	// Kubernetes 中节点对象的元数据名称前缀。
+	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
+	// Kubernetes 中节点对象的元数据名称后缀。
+	NameSuffix pulumi.StringPtrInput `pulumi:"nameSuffix"`
+	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	NameUseHostname pulumi.BoolPtrInput                            `pulumi:"nameUseHostname"`
+	Taints          DefaultNodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
+}
+
+func (DefaultNodePoolKubernetesConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfig)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigArgs) ToDefaultNodePoolKubernetesConfigOutput() DefaultNodePoolKubernetesConfigOutput {
+	return i.ToDefaultNodePoolKubernetesConfigOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigArgs) ToDefaultNodePoolKubernetesConfigOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigOutput)
+}
+
+func (i DefaultNodePoolKubernetesConfigArgs) ToDefaultNodePoolKubernetesConfigPtrOutput() DefaultNodePoolKubernetesConfigPtrOutput {
+	return i.ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigArgs) ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigOutput).ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolKubernetesConfigPtrInput is an input type that accepts DefaultNodePoolKubernetesConfigArgs, DefaultNodePoolKubernetesConfigPtr and DefaultNodePoolKubernetesConfigPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigPtrInput` via:
+//
+//	        DefaultNodePoolKubernetesConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolKubernetesConfigPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigPtrOutput() DefaultNodePoolKubernetesConfigPtrOutput
+	ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigPtrOutput
+}
+
+type defaultNodePoolKubernetesConfigPtrType DefaultNodePoolKubernetesConfigArgs
+
+func DefaultNodePoolKubernetesConfigPtr(v *DefaultNodePoolKubernetesConfigArgs) DefaultNodePoolKubernetesConfigPtrInput {
+	return (*defaultNodePoolKubernetesConfigPtrType)(v)
+}
+
+func (*defaultNodePoolKubernetesConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolKubernetesConfig)(nil)).Elem()
+}
+
+func (i *defaultNodePoolKubernetesConfigPtrType) ToDefaultNodePoolKubernetesConfigPtrOutput() DefaultNodePoolKubernetesConfigPtrOutput {
+	return i.ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolKubernetesConfigPtrType) ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigOutput) ToDefaultNodePoolKubernetesConfigOutput() DefaultNodePoolKubernetesConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigOutput) ToDefaultNodePoolKubernetesConfigOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigOutput) ToDefaultNodePoolKubernetesConfigPtrOutput() DefaultNodePoolKubernetesConfigPtrOutput {
+	return o.ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolKubernetesConfigOutput) ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolKubernetesConfig) *DefaultNodePoolKubernetesConfig {
+		return &v
+	}).(DefaultNodePoolKubernetesConfigPtrOutput)
+}
+
+// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+func (o DefaultNodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *bool { return v.AutoSyncDisabled }).(pulumi.BoolPtrOutput)
+}
+
+// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+func (o DefaultNodePoolKubernetesConfigOutput) Cordon() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *bool { return v.Cordon }).(pulumi.BoolPtrOutput)
+}
+
+// Kubelet 组件的相关配置
+func (o DefaultNodePoolKubernetesConfigOutput) KubeletConfig() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *DefaultNodePoolKubernetesConfigKubeletConfig {
+		return v.KubeletConfig
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigOutput) Labels() DefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) []DefaultNodePoolKubernetesConfigLabel { return v.Labels }).(DefaultNodePoolKubernetesConfigLabelArrayOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称前缀。
+func (o DefaultNodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称后缀。
+func (o DefaultNodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *string { return v.NameSuffix }).(pulumi.StringPtrOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+func (o DefaultNodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) *bool { return v.NameUseHostname }).(pulumi.BoolPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigOutput) Taints() DefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfig) []DefaultNodePoolKubernetesConfigTaint { return v.Taints }).(DefaultNodePoolKubernetesConfigTaintArrayOutput)
+}
+
+type DefaultNodePoolKubernetesConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolKubernetesConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigPtrOutput) ToDefaultNodePoolKubernetesConfigPtrOutput() DefaultNodePoolKubernetesConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigPtrOutput) ToDefaultNodePoolKubernetesConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigPtrOutput) Elem() DefaultNodePoolKubernetesConfigOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) DefaultNodePoolKubernetesConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolKubernetesConfig
+		return ret
+	}).(DefaultNodePoolKubernetesConfigOutput)
+}
+
+// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+func (o DefaultNodePoolKubernetesConfigPtrOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoSyncDisabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+func (o DefaultNodePoolKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Cordon
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Kubelet 组件的相关配置
+func (o DefaultNodePoolKubernetesConfigPtrOutput) KubeletConfig() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *DefaultNodePoolKubernetesConfigKubeletConfig {
+		if v == nil {
+			return nil
+		}
+		return v.KubeletConfig
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigPtrOutput) Labels() DefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) []DefaultNodePoolKubernetesConfigLabel {
+		if v == nil {
+			return nil
+		}
+		return v.Labels
+	}).(DefaultNodePoolKubernetesConfigLabelArrayOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称前缀。
+func (o DefaultNodePoolKubernetesConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NamePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称后缀。
+func (o DefaultNodePoolKubernetesConfigPtrOutput) NameSuffix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NameSuffix
+	}).(pulumi.StringPtrOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+func (o DefaultNodePoolKubernetesConfigPtrOutput) NameUseHostname() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.NameUseHostname
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigPtrOutput) Taints() DefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfig) []DefaultNodePoolKubernetesConfigTaint {
+		if v == nil {
+			return nil
+		}
+		return v.Taints
+	}).(DefaultNodePoolKubernetesConfigTaintArrayOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfig struct {
+	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	CpuManagerPolicy *string `pulumi:"cpuManagerPolicy"`
+	// 特性门控。
+	FeatureGates *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
+	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	KubeApiBurst *int `pulumi:"kubeApiBurst"`
+	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	KubeApiQps    *int                                                       `pulumi:"kubeApiQps"`
+	KubeReserveds []DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
+	// 配置 kubelet 支持的最大 Pod 数量
+	MaxPods *int `pulumi:"maxPods"`
+	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	RegistryBurst *int `pulumi:"registryBurst"`
+	// 可用来限制镜像仓库的 QPS 上限
+	RegistryPullQps *int `pulumi:"registryPullQps"`
+	// 逐一拉取镜像。
+	SerializeImagePulls *bool                                                        `pulumi:"serializeImagePulls"`
+	SystemReserveds     []DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
+	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	TopologyManagerPolicy *string `pulumi:"topologyManagerPolicy"`
+	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	TopologyManagerScope *string `pulumi:"topologyManagerScope"`
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigArgs and DefaultNodePoolKubernetesConfigKubeletConfigOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigInput` via:
+//
+//	DefaultNodePoolKubernetesConfigKubeletConfigArgs{...}
+type DefaultNodePoolKubernetesConfigKubeletConfigInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigOutput() DefaultNodePoolKubernetesConfigKubeletConfigOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigOutput
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigArgs struct {
+	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	CpuManagerPolicy pulumi.StringPtrInput `pulumi:"cpuManagerPolicy"`
+	// 特性门控。
+	FeatureGates DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput `pulumi:"featureGates"`
+	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	KubeApiBurst pulumi.IntPtrInput `pulumi:"kubeApiBurst"`
+	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	KubeApiQps    pulumi.IntPtrInput                                                 `pulumi:"kubeApiQps"`
+	KubeReserveds DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
+	// 配置 kubelet 支持的最大 Pod 数量
+	MaxPods pulumi.IntPtrInput `pulumi:"maxPods"`
+	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	RegistryBurst pulumi.IntPtrInput `pulumi:"registryBurst"`
+	// 可用来限制镜像仓库的 QPS 上限
+	RegistryPullQps pulumi.IntPtrInput `pulumi:"registryPullQps"`
+	// 逐一拉取镜像。
+	SerializeImagePulls pulumi.BoolPtrInput                                                  `pulumi:"serializeImagePulls"`
+	SystemReserveds     DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
+	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	TopologyManagerPolicy pulumi.StringPtrInput `pulumi:"topologyManagerPolicy"`
+	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	TopologyManagerScope pulumi.StringPtrInput `pulumi:"topologyManagerScope"`
+}
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfig)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigOutput() DefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigOutput)
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigOutput).ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigPtrInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigArgs, DefaultNodePoolKubernetesConfigKubeletConfigPtr and DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigPtrInput` via:
+//
+//	        DefaultNodePoolKubernetesConfigKubeletConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolKubernetesConfigKubeletConfigPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput
+}
+
+type defaultNodePoolKubernetesConfigKubeletConfigPtrType DefaultNodePoolKubernetesConfigKubeletConfigArgs
+
+func DefaultNodePoolKubernetesConfigKubeletConfigPtr(v *DefaultNodePoolKubernetesConfigKubeletConfigArgs) DefaultNodePoolKubernetesConfigKubeletConfigPtrInput {
+	return (*defaultNodePoolKubernetesConfigKubeletConfigPtrType)(v)
+}
+
+func (*defaultNodePoolKubernetesConfigKubeletConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolKubernetesConfigKubeletConfig)(nil)).Elem()
+}
+
+func (i *defaultNodePoolKubernetesConfigKubeletConfigPtrType) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolKubernetesConfigKubeletConfigPtrType) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigOutput() DefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return o.ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolKubernetesConfigKubeletConfig) *DefaultNodePoolKubernetesConfigKubeletConfig {
+		return &v
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput)
+}
+
+// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *string { return v.CpuManagerPolicy }).(pulumi.StringPtrOutput)
+}
+
+// 特性门控。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
+		return v.FeatureGates
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
+}
+
+// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiBurst }).(pulumi.IntPtrOutput)
+}
+
+// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiQps }).(pulumi.IntPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) []DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
+		return v.KubeReserveds
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
+}
+
+// 配置 kubelet 支持的最大 Pod 数量
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.MaxPods }).(pulumi.IntPtrOutput)
+}
+
+// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryBurst }).(pulumi.IntPtrOutput)
+}
+
+// 可用来限制镜像仓库的 QPS 上限
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryPullQps }).(pulumi.IntPtrOutput)
+}
+
+// 逐一拉取镜像。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *bool { return v.SerializeImagePulls }).(pulumi.BoolPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) []DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
+		return v.SystemReserveds
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
+}
+
+// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *string { return v.TopologyManagerPolicy }).(pulumi.StringPtrOutput)
+}
+
+// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfig) *string { return v.TopologyManagerScope }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolKubernetesConfigKubeletConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) Elem() DefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) DefaultNodePoolKubernetesConfigKubeletConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolKubernetesConfigKubeletConfig
+		return ret
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigOutput)
+}
+
+// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CpuManagerPolicy
+	}).(pulumi.StringPtrOutput)
+}
+
+// 特性门控。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) FeatureGates() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
+		if v == nil {
+			return nil
+		}
+		return v.FeatureGates
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
+}
+
+// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiBurst() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.KubeApiBurst
+	}).(pulumi.IntPtrOutput)
+}
+
+// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiQps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.KubeApiQps
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) KubeReserveds() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) []DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
+		if v == nil {
+			return nil
+		}
+		return v.KubeReserveds
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
+}
+
+// 配置 kubelet 支持的最大 Pod 数量
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) MaxPods() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxPods
+	}).(pulumi.IntPtrOutput)
+}
+
+// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryBurst() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryBurst
+	}).(pulumi.IntPtrOutput)
+}
+
+// 可用来限制镜像仓库的 QPS 上限
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryPullQps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryPullQps
+	}).(pulumi.IntPtrOutput)
+}
+
+// 逐一拉取镜像。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SerializeImagePulls
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) SystemReserveds() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) []DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
+		if v == nil {
+			return nil
+		}
+		return v.SystemReserveds
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
+}
+
+// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerPolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopologyManagerPolicy
+	}).(pulumi.StringPtrOutput)
+}
+
+// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopologyManagerScope
+	}).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates struct {
+	// 是否开启特性开关本地垂直Pod伸缩
+	InPlacePodVerticalScaling *bool `pulumi:"inPlacePodVerticalScaling"`
+	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	QoSResourceManager *bool `pulumi:"qoSResourceManager"`
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs and DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput` via:
+//
+//	DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{...}
+type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
+	// 是否开启特性开关本地垂直Pod伸缩
+	InPlacePodVerticalScaling pulumi.BoolPtrInput `pulumi:"inPlacePodVerticalScaling"`
+	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	QoSResourceManager pulumi.BoolPtrInput `pulumi:"qoSResourceManager"`
+}
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput).ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs, DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtr and DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput` via:
+//
+//	        DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput
+}
+
+type defaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrType DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs
+
+func DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtr(v *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput {
+	return (*defaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrType)(v)
+}
+
+func (*defaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates)(nil)).Elem()
+}
+
+func (i *defaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrType) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrType) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return o.ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
+		return &v
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
+}
+
+// 是否开启特性开关本地垂直Pod伸缩
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
+		return v.InPlacePodVerticalScaling
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool { return v.QoSResourceManager }).(pulumi.BoolPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) Elem() DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates
+		return ret
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
+}
+
+// 是否开启特性开关本地垂直Pod伸缩
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.InPlacePodVerticalScaling
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) QoSResourceManager() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.QoSResourceManager
+	}).(pulumi.BoolPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name *string `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	Quantity *string `pulumi:"quantity"`
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs and DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput` via:
+//
+//	DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs{...}
+type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
+}
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput)
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray and DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput` via:
+//
+//	DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray{ DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs{...} }
+type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray []DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return o
+}
+
+// 资源名称，取值为 cpu 或 memory。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput() DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
+		return vs[0].([]DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)[vs[1].(int)]
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name *string `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	Quantity *string `pulumi:"quantity"`
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs and DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput` via:
+//
+//	DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs{...}
+type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
+}
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput)
+}
+
+// DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput is an input type that accepts DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray and DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput` via:
+//
+//	DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray{ DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs{...} }
+type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput
+	ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray []DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return i.ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return o
+}
+
+// 资源名称，取值为 cpu 或 memory。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput() DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) ToDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
+		return vs[0].([]DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)[vs[1].(int)]
+	}).(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput)
+}
+
+type DefaultNodePoolKubernetesConfigLabel struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// DefaultNodePoolKubernetesConfigLabelInput is an input type that accepts DefaultNodePoolKubernetesConfigLabelArgs and DefaultNodePoolKubernetesConfigLabelOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigLabelInput` via:
+//
+//	DefaultNodePoolKubernetesConfigLabelArgs{...}
+type DefaultNodePoolKubernetesConfigLabelInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigLabelOutput() DefaultNodePoolKubernetesConfigLabelOutput
+	ToDefaultNodePoolKubernetesConfigLabelOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigLabelOutput
+}
+
+type DefaultNodePoolKubernetesConfigLabelArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DefaultNodePoolKubernetesConfigLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigLabelArgs) ToDefaultNodePoolKubernetesConfigLabelOutput() DefaultNodePoolKubernetesConfigLabelOutput {
+	return i.ToDefaultNodePoolKubernetesConfigLabelOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigLabelArgs) ToDefaultNodePoolKubernetesConfigLabelOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigLabelOutput)
+}
+
+// DefaultNodePoolKubernetesConfigLabelArrayInput is an input type that accepts DefaultNodePoolKubernetesConfigLabelArray and DefaultNodePoolKubernetesConfigLabelArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigLabelArrayInput` via:
+//
+//	DefaultNodePoolKubernetesConfigLabelArray{ DefaultNodePoolKubernetesConfigLabelArgs{...} }
+type DefaultNodePoolKubernetesConfigLabelArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigLabelArrayOutput() DefaultNodePoolKubernetesConfigLabelArrayOutput
+	ToDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigLabelArrayOutput
+}
+
+type DefaultNodePoolKubernetesConfigLabelArray []DefaultNodePoolKubernetesConfigLabelInput
+
+func (DefaultNodePoolKubernetesConfigLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigLabelArray) ToDefaultNodePoolKubernetesConfigLabelArrayOutput() DefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return i.ToDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigLabelArray) ToDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigLabelArrayOutput)
+}
+
+type DefaultNodePoolKubernetesConfigLabelOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigLabelOutput) ToDefaultNodePoolKubernetesConfigLabelOutput() DefaultNodePoolKubernetesConfigLabelOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigLabelOutput) ToDefaultNodePoolKubernetesConfigLabelOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigLabelOutput {
+	return o
+}
+
+// 标签键。
+func (o DefaultNodePoolKubernetesConfigLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o DefaultNodePoolKubernetesConfigLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigLabelArrayOutput) ToDefaultNodePoolKubernetesConfigLabelArrayOutput() DefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigLabelArrayOutput) ToDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolKubernetesConfigLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolKubernetesConfigLabel {
+		return vs[0].([]DefaultNodePoolKubernetesConfigLabel)[vs[1].(int)]
+	}).(DefaultNodePoolKubernetesConfigLabelOutput)
+}
+
+type DefaultNodePoolKubernetesConfigTaint struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect *string `pulumi:"effect"`
+	// 污点键。
+	Key *string `pulumi:"key"`
+	// 污点值。
+	Value *string `pulumi:"value"`
+}
+
+// DefaultNodePoolKubernetesConfigTaintInput is an input type that accepts DefaultNodePoolKubernetesConfigTaintArgs and DefaultNodePoolKubernetesConfigTaintOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigTaintInput` via:
+//
+//	DefaultNodePoolKubernetesConfigTaintArgs{...}
+type DefaultNodePoolKubernetesConfigTaintInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigTaintOutput() DefaultNodePoolKubernetesConfigTaintOutput
+	ToDefaultNodePoolKubernetesConfigTaintOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigTaintOutput
+}
+
+type DefaultNodePoolKubernetesConfigTaintArgs struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect pulumi.StringPtrInput `pulumi:"effect"`
+	// 污点键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 污点值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DefaultNodePoolKubernetesConfigTaintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigTaintArgs) ToDefaultNodePoolKubernetesConfigTaintOutput() DefaultNodePoolKubernetesConfigTaintOutput {
+	return i.ToDefaultNodePoolKubernetesConfigTaintOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigTaintArgs) ToDefaultNodePoolKubernetesConfigTaintOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigTaintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigTaintOutput)
+}
+
+// DefaultNodePoolKubernetesConfigTaintArrayInput is an input type that accepts DefaultNodePoolKubernetesConfigTaintArray and DefaultNodePoolKubernetesConfigTaintArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolKubernetesConfigTaintArrayInput` via:
+//
+//	DefaultNodePoolKubernetesConfigTaintArray{ DefaultNodePoolKubernetesConfigTaintArgs{...} }
+type DefaultNodePoolKubernetesConfigTaintArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolKubernetesConfigTaintArrayOutput() DefaultNodePoolKubernetesConfigTaintArrayOutput
+	ToDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(context.Context) DefaultNodePoolKubernetesConfigTaintArrayOutput
+}
+
+type DefaultNodePoolKubernetesConfigTaintArray []DefaultNodePoolKubernetesConfigTaintInput
+
+func (DefaultNodePoolKubernetesConfigTaintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i DefaultNodePoolKubernetesConfigTaintArray) ToDefaultNodePoolKubernetesConfigTaintArrayOutput() DefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return i.ToDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolKubernetesConfigTaintArray) ToDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolKubernetesConfigTaintArrayOutput)
+}
+
+type DefaultNodePoolKubernetesConfigTaintOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigTaintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigTaintOutput) ToDefaultNodePoolKubernetesConfigTaintOutput() DefaultNodePoolKubernetesConfigTaintOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigTaintOutput) ToDefaultNodePoolKubernetesConfigTaintOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigTaintOutput {
+	return o
+}
+
+// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+func (o DefaultNodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
+}
+
+// 污点键。
+func (o DefaultNodePoolKubernetesConfigTaintOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 污点值。
+func (o DefaultNodePoolKubernetesConfigTaintOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolKubernetesConfigTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolKubernetesConfigTaintArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolKubernetesConfigTaintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o DefaultNodePoolKubernetesConfigTaintArrayOutput) ToDefaultNodePoolKubernetesConfigTaintArrayOutput() DefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigTaintArrayOutput) ToDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) DefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolKubernetesConfigTaintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolKubernetesConfigTaint {
+		return vs[0].([]DefaultNodePoolKubernetesConfigTaint)[vs[1].(int)]
+	}).(DefaultNodePoolKubernetesConfigTaintOutput)
+}
+
+type DefaultNodePoolManagement struct {
+	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	Enabled *bool `pulumi:"enabled"`
+	// 检查自愈配置。
+	RemedyConfig *DefaultNodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
+}
+
+// DefaultNodePoolManagementInput is an input type that accepts DefaultNodePoolManagementArgs and DefaultNodePoolManagementOutput values.
+// You can construct a concrete instance of `DefaultNodePoolManagementInput` via:
+//
+//	DefaultNodePoolManagementArgs{...}
+type DefaultNodePoolManagementInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolManagementOutput() DefaultNodePoolManagementOutput
+	ToDefaultNodePoolManagementOutputWithContext(context.Context) DefaultNodePoolManagementOutput
+}
+
+type DefaultNodePoolManagementArgs struct {
+	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// 检查自愈配置。
+	RemedyConfig DefaultNodePoolManagementRemedyConfigPtrInput `pulumi:"remedyConfig"`
+}
+
+func (DefaultNodePoolManagementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolManagement)(nil)).Elem()
+}
+
+func (i DefaultNodePoolManagementArgs) ToDefaultNodePoolManagementOutput() DefaultNodePoolManagementOutput {
+	return i.ToDefaultNodePoolManagementOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolManagementArgs) ToDefaultNodePoolManagementOutputWithContext(ctx context.Context) DefaultNodePoolManagementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolManagementOutput)
+}
+
+func (i DefaultNodePoolManagementArgs) ToDefaultNodePoolManagementPtrOutput() DefaultNodePoolManagementPtrOutput {
+	return i.ToDefaultNodePoolManagementPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolManagementArgs) ToDefaultNodePoolManagementPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolManagementOutput).ToDefaultNodePoolManagementPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolManagementPtrInput is an input type that accepts DefaultNodePoolManagementArgs, DefaultNodePoolManagementPtr and DefaultNodePoolManagementPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolManagementPtrInput` via:
+//
+//	        DefaultNodePoolManagementArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolManagementPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolManagementPtrOutput() DefaultNodePoolManagementPtrOutput
+	ToDefaultNodePoolManagementPtrOutputWithContext(context.Context) DefaultNodePoolManagementPtrOutput
+}
+
+type defaultNodePoolManagementPtrType DefaultNodePoolManagementArgs
+
+func DefaultNodePoolManagementPtr(v *DefaultNodePoolManagementArgs) DefaultNodePoolManagementPtrInput {
+	return (*defaultNodePoolManagementPtrType)(v)
+}
+
+func (*defaultNodePoolManagementPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolManagement)(nil)).Elem()
+}
+
+func (i *defaultNodePoolManagementPtrType) ToDefaultNodePoolManagementPtrOutput() DefaultNodePoolManagementPtrOutput {
+	return i.ToDefaultNodePoolManagementPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolManagementPtrType) ToDefaultNodePoolManagementPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolManagementPtrOutput)
+}
+
+type DefaultNodePoolManagementOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolManagementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolManagement)(nil)).Elem()
+}
+
+func (o DefaultNodePoolManagementOutput) ToDefaultNodePoolManagementOutput() DefaultNodePoolManagementOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementOutput) ToDefaultNodePoolManagementOutputWithContext(ctx context.Context) DefaultNodePoolManagementOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementOutput) ToDefaultNodePoolManagementPtrOutput() DefaultNodePoolManagementPtrOutput {
+	return o.ToDefaultNodePoolManagementPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolManagementOutput) ToDefaultNodePoolManagementPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolManagement) *DefaultNodePoolManagement {
+		return &v
+	}).(DefaultNodePoolManagementPtrOutput)
+}
+
+// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+func (o DefaultNodePoolManagementOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolManagement) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// 检查自愈配置。
+func (o DefaultNodePoolManagementOutput) RemedyConfig() DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolManagement) *DefaultNodePoolManagementRemedyConfig { return v.RemedyConfig }).(DefaultNodePoolManagementRemedyConfigPtrOutput)
+}
+
+type DefaultNodePoolManagementPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolManagementPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolManagement)(nil)).Elem()
+}
+
+func (o DefaultNodePoolManagementPtrOutput) ToDefaultNodePoolManagementPtrOutput() DefaultNodePoolManagementPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementPtrOutput) ToDefaultNodePoolManagementPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementPtrOutput) Elem() DefaultNodePoolManagementOutput {
+	return o.ApplyT(func(v *DefaultNodePoolManagement) DefaultNodePoolManagement {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolManagement
+		return ret
+	}).(DefaultNodePoolManagementOutput)
+}
+
+// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+func (o DefaultNodePoolManagementPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolManagement) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 检查自愈配置。
+func (o DefaultNodePoolManagementPtrOutput) RemedyConfig() DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolManagement) *DefaultNodePoolManagementRemedyConfig {
+		if v == nil {
+			return nil
+		}
+		return v.RemedyConfig
+	}).(DefaultNodePoolManagementRemedyConfigPtrOutput)
+}
+
+type DefaultNodePoolManagementRemedyConfig struct {
+	// 是否开启检查自愈。
+	Enabled *bool `pulumi:"enabled"`
+	// 检查自愈规则ID。
+	RemedyId *string `pulumi:"remedyId"`
+}
+
+// DefaultNodePoolManagementRemedyConfigInput is an input type that accepts DefaultNodePoolManagementRemedyConfigArgs and DefaultNodePoolManagementRemedyConfigOutput values.
+// You can construct a concrete instance of `DefaultNodePoolManagementRemedyConfigInput` via:
+//
+//	DefaultNodePoolManagementRemedyConfigArgs{...}
+type DefaultNodePoolManagementRemedyConfigInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolManagementRemedyConfigOutput() DefaultNodePoolManagementRemedyConfigOutput
+	ToDefaultNodePoolManagementRemedyConfigOutputWithContext(context.Context) DefaultNodePoolManagementRemedyConfigOutput
+}
+
+type DefaultNodePoolManagementRemedyConfigArgs struct {
+	// 是否开启检查自愈。
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// 检查自愈规则ID。
+	RemedyId pulumi.StringPtrInput `pulumi:"remedyId"`
+}
+
+func (DefaultNodePoolManagementRemedyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolManagementRemedyConfig)(nil)).Elem()
+}
+
+func (i DefaultNodePoolManagementRemedyConfigArgs) ToDefaultNodePoolManagementRemedyConfigOutput() DefaultNodePoolManagementRemedyConfigOutput {
+	return i.ToDefaultNodePoolManagementRemedyConfigOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolManagementRemedyConfigArgs) ToDefaultNodePoolManagementRemedyConfigOutputWithContext(ctx context.Context) DefaultNodePoolManagementRemedyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolManagementRemedyConfigOutput)
+}
+
+func (i DefaultNodePoolManagementRemedyConfigArgs) ToDefaultNodePoolManagementRemedyConfigPtrOutput() DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return i.ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolManagementRemedyConfigArgs) ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolManagementRemedyConfigOutput).ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolManagementRemedyConfigPtrInput is an input type that accepts DefaultNodePoolManagementRemedyConfigArgs, DefaultNodePoolManagementRemedyConfigPtr and DefaultNodePoolManagementRemedyConfigPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolManagementRemedyConfigPtrInput` via:
+//
+//	        DefaultNodePoolManagementRemedyConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolManagementRemedyConfigPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolManagementRemedyConfigPtrOutput() DefaultNodePoolManagementRemedyConfigPtrOutput
+	ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(context.Context) DefaultNodePoolManagementRemedyConfigPtrOutput
+}
+
+type defaultNodePoolManagementRemedyConfigPtrType DefaultNodePoolManagementRemedyConfigArgs
+
+func DefaultNodePoolManagementRemedyConfigPtr(v *DefaultNodePoolManagementRemedyConfigArgs) DefaultNodePoolManagementRemedyConfigPtrInput {
+	return (*defaultNodePoolManagementRemedyConfigPtrType)(v)
+}
+
+func (*defaultNodePoolManagementRemedyConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolManagementRemedyConfig)(nil)).Elem()
+}
+
+func (i *defaultNodePoolManagementRemedyConfigPtrType) ToDefaultNodePoolManagementRemedyConfigPtrOutput() DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return i.ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolManagementRemedyConfigPtrType) ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolManagementRemedyConfigPtrOutput)
+}
+
+type DefaultNodePoolManagementRemedyConfigOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolManagementRemedyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolManagementRemedyConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolManagementRemedyConfigOutput) ToDefaultNodePoolManagementRemedyConfigOutput() DefaultNodePoolManagementRemedyConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementRemedyConfigOutput) ToDefaultNodePoolManagementRemedyConfigOutputWithContext(ctx context.Context) DefaultNodePoolManagementRemedyConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementRemedyConfigOutput) ToDefaultNodePoolManagementRemedyConfigPtrOutput() DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return o.ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolManagementRemedyConfigOutput) ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolManagementRemedyConfig) *DefaultNodePoolManagementRemedyConfig {
+		return &v
+	}).(DefaultNodePoolManagementRemedyConfigPtrOutput)
+}
+
+// 是否开启检查自愈。
+func (o DefaultNodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolManagementRemedyConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// 检查自愈规则ID。
+func (o DefaultNodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolManagementRemedyConfig) *string { return v.RemedyId }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolManagementRemedyConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolManagementRemedyConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolManagementRemedyConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolManagementRemedyConfigPtrOutput) ToDefaultNodePoolManagementRemedyConfigPtrOutput() DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementRemedyConfigPtrOutput) ToDefaultNodePoolManagementRemedyConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolManagementRemedyConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolManagementRemedyConfigPtrOutput) Elem() DefaultNodePoolManagementRemedyConfigOutput {
+	return o.ApplyT(func(v *DefaultNodePoolManagementRemedyConfig) DefaultNodePoolManagementRemedyConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolManagementRemedyConfig
+		return ret
+	}).(DefaultNodePoolManagementRemedyConfigOutput)
+}
+
+// 是否开启检查自愈。
+func (o DefaultNodePoolManagementRemedyConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolManagementRemedyConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 检查自愈规则ID。
+func (o DefaultNodePoolManagementRemedyConfigPtrOutput) RemedyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolManagementRemedyConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RemedyId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfig struct {
+	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	AdditionalContainerStorageEnabled *bool `pulumi:"additionalContainerStorageEnabled"`
+	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	AutoRenew *bool `pulumi:"autoRenew"`
+	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	AutoRenewPeriod *int                                  `pulumi:"autoRenewPeriod"`
+	DataVolumes     []DefaultNodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
+	// 实例在部署集中的分组号，0表示未设置
+	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID
+	DeploymentSetId *string `pulumi:"deploymentSetId"`
+	// 节点对应的主机名称。
+	Hostname *string `pulumi:"hostname"`
+	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	HpcClusterIds []string `pulumi:"hpcClusterIds"`
+	// 节点对应云服务器所使用的镜像 ID。
+	ImageId *string `pulumi:"imageId"`
+	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	InitializeScript *string `pulumi:"initializeScript"`
+	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	InstanceChargeType *string `pulumi:"instanceChargeType"`
+	// 节点（实例）名称。
+	InstanceName *string `pulumi:"instanceName"`
+	// 节点对应的云服务器实例规格 ID 列表。
+	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
+	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	InstancesDistribution *DefaultNodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
+	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	NamePrefix *string `pulumi:"namePrefix"`
+	// 节点间的网络通讯模式。
+	NetworkTrafficMode *string `pulumi:"networkTrafficMode"`
+	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	Period *int `pulumi:"period"`
+	// 部署节点前执行脚本。
+	PreScript *string `pulumi:"preScript"`
+	// ECS所属项目，一个ECS只能归属于一个项目。
+	ProjectName *string `pulumi:"projectName"`
+	// 节点自动开启公网访问的配置信息
+	PublicAccessConfig *DefaultNodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
+	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	PublicAccessEnabled *bool `pulumi:"publicAccessEnabled"`
+	// 节点安全配置。
+	Security *DefaultNodePoolNodeConfigSecurity `pulumi:"security"`
+	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	SpotStrategy *string `pulumi:"spotStrategy"`
+	// 节点网络所属的子网 ID 列表。
+	SubnetIds []string `pulumi:"subnetIds"`
+	// 节点的系统盘配置。
+	SystemVolume *DefaultNodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
+	Tags         []DefaultNodePoolNodeConfigTag         `pulumi:"tags"`
+}
+
+// DefaultNodePoolNodeConfigInput is an input type that accepts DefaultNodePoolNodeConfigArgs and DefaultNodePoolNodeConfigOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigInput` via:
+//
+//	DefaultNodePoolNodeConfigArgs{...}
+type DefaultNodePoolNodeConfigInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigOutput() DefaultNodePoolNodeConfigOutput
+	ToDefaultNodePoolNodeConfigOutputWithContext(context.Context) DefaultNodePoolNodeConfigOutput
+}
+
+type DefaultNodePoolNodeConfigArgs struct {
+	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	AdditionalContainerStorageEnabled pulumi.BoolPtrInput `pulumi:"additionalContainerStorageEnabled"`
+	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
+	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	AutoRenewPeriod pulumi.IntPtrInput                            `pulumi:"autoRenewPeriod"`
+	DataVolumes     DefaultNodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
+	// 实例在部署集中的分组号，0表示未设置
+	DeploymentSetGroupNumber pulumi.IntPtrInput `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID
+	DeploymentSetId pulumi.StringPtrInput `pulumi:"deploymentSetId"`
+	// 节点对应的主机名称。
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
+	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
+	// 节点对应云服务器所使用的镜像 ID。
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
+	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	InitializeScript pulumi.StringPtrInput `pulumi:"initializeScript"`
+	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	InstanceChargeType pulumi.StringPtrInput `pulumi:"instanceChargeType"`
+	// 节点（实例）名称。
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// 节点对应的云服务器实例规格 ID 列表。
+	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
+	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	InstancesDistribution DefaultNodePoolNodeConfigInstancesDistributionPtrInput `pulumi:"instancesDistribution"`
+	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
+	// 节点间的网络通讯模式。
+	NetworkTrafficMode pulumi.StringPtrInput `pulumi:"networkTrafficMode"`
+	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	Period pulumi.IntPtrInput `pulumi:"period"`
+	// 部署节点前执行脚本。
+	PreScript pulumi.StringPtrInput `pulumi:"preScript"`
+	// ECS所属项目，一个ECS只能归属于一个项目。
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// 节点自动开启公网访问的配置信息
+	PublicAccessConfig DefaultNodePoolNodeConfigPublicAccessConfigPtrInput `pulumi:"publicAccessConfig"`
+	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	PublicAccessEnabled pulumi.BoolPtrInput `pulumi:"publicAccessEnabled"`
+	// 节点安全配置。
+	Security DefaultNodePoolNodeConfigSecurityPtrInput `pulumi:"security"`
+	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	SpotStrategy pulumi.StringPtrInput `pulumi:"spotStrategy"`
+	// 节点网络所属的子网 ID 列表。
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+	// 节点的系统盘配置。
+	SystemVolume DefaultNodePoolNodeConfigSystemVolumePtrInput `pulumi:"systemVolume"`
+	Tags         DefaultNodePoolNodeConfigTagArrayInput        `pulumi:"tags"`
+}
+
+func (DefaultNodePoolNodeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfig)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigArgs) ToDefaultNodePoolNodeConfigOutput() DefaultNodePoolNodeConfigOutput {
+	return i.ToDefaultNodePoolNodeConfigOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigArgs) ToDefaultNodePoolNodeConfigOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigOutput)
+}
+
+func (i DefaultNodePoolNodeConfigArgs) ToDefaultNodePoolNodeConfigPtrOutput() DefaultNodePoolNodeConfigPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigArgs) ToDefaultNodePoolNodeConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigOutput).ToDefaultNodePoolNodeConfigPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolNodeConfigPtrInput is an input type that accepts DefaultNodePoolNodeConfigArgs, DefaultNodePoolNodeConfigPtr and DefaultNodePoolNodeConfigPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigPtrInput` via:
+//
+//	        DefaultNodePoolNodeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolNodeConfigPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigPtrOutput() DefaultNodePoolNodeConfigPtrOutput
+	ToDefaultNodePoolNodeConfigPtrOutputWithContext(context.Context) DefaultNodePoolNodeConfigPtrOutput
+}
+
+type defaultNodePoolNodeConfigPtrType DefaultNodePoolNodeConfigArgs
+
+func DefaultNodePoolNodeConfigPtr(v *DefaultNodePoolNodeConfigArgs) DefaultNodePoolNodeConfigPtrInput {
+	return (*defaultNodePoolNodeConfigPtrType)(v)
+}
+
+func (*defaultNodePoolNodeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfig)(nil)).Elem()
+}
+
+func (i *defaultNodePoolNodeConfigPtrType) ToDefaultNodePoolNodeConfigPtrOutput() DefaultNodePoolNodeConfigPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolNodeConfigPtrType) ToDefaultNodePoolNodeConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigOutput) ToDefaultNodePoolNodeConfigOutput() DefaultNodePoolNodeConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigOutput) ToDefaultNodePoolNodeConfigOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigOutput) ToDefaultNodePoolNodeConfigPtrOutput() DefaultNodePoolNodeConfigPtrOutput {
+	return o.ToDefaultNodePoolNodeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolNodeConfigOutput) ToDefaultNodePoolNodeConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfig {
+		return &v
+	}).(DefaultNodePoolNodeConfigPtrOutput)
+}
+
+// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+func (o DefaultNodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+func (o DefaultNodePoolNodeConfigOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
+}
+
+// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+func (o DefaultNodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *int { return v.AutoRenewPeriod }).(pulumi.IntPtrOutput)
+}
+
+func (o DefaultNodePoolNodeConfigOutput) DataVolumes() DefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []DefaultNodePoolNodeConfigDataVolume { return v.DataVolumes }).(DefaultNodePoolNodeConfigDataVolumeArrayOutput)
+}
+
+// 实例在部署集中的分组号，0表示未设置
+func (o DefaultNodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *int { return v.DeploymentSetGroupNumber }).(pulumi.IntPtrOutput)
+}
+
+// 实例需要加入的部署集ID
+func (o DefaultNodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.DeploymentSetId }).(pulumi.StringPtrOutput)
+}
+
+// 节点对应的主机名称。
+func (o DefaultNodePoolNodeConfigOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.Hostname }).(pulumi.StringPtrOutput)
+}
+
+// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+func (o DefaultNodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
+}
+
+// 节点对应云服务器所使用的镜像 ID。
+func (o DefaultNodePoolNodeConfigOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.ImageId }).(pulumi.StringPtrOutput)
+}
+
+// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+func (o DefaultNodePoolNodeConfigOutput) InitializeScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.InitializeScript }).(pulumi.StringPtrOutput)
+}
+
+// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+func (o DefaultNodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.InstanceChargeType }).(pulumi.StringPtrOutput)
+}
+
+// 节点（实例）名称。
+func (o DefaultNodePoolNodeConfigOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// 节点对应的云服务器实例规格 ID 列表。
+func (o DefaultNodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
+}
+
+// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+func (o DefaultNodePoolNodeConfigOutput) InstancesDistribution() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigInstancesDistribution {
+		return v.InstancesDistribution
+	}).(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput)
+}
+
+// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+func (o DefaultNodePoolNodeConfigOutput) NamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
+}
+
+// 节点间的网络通讯模式。
+func (o DefaultNodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.NetworkTrafficMode }).(pulumi.StringPtrOutput)
+}
+
+// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+func (o DefaultNodePoolNodeConfigOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *int { return v.Period }).(pulumi.IntPtrOutput)
+}
+
+// 部署节点前执行脚本。
+func (o DefaultNodePoolNodeConfigOutput) PreScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.PreScript }).(pulumi.StringPtrOutput)
+}
+
+// ECS所属项目，一个ECS只能归属于一个项目。
+func (o DefaultNodePoolNodeConfigOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// 节点自动开启公网访问的配置信息
+func (o DefaultNodePoolNodeConfigOutput) PublicAccessConfig() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigPublicAccessConfig {
+		return v.PublicAccessConfig
+	}).(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput)
+}
+
+// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+func (o DefaultNodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *bool { return v.PublicAccessEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// 节点安全配置。
+func (o DefaultNodePoolNodeConfigOutput) Security() DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSecurity { return v.Security }).(DefaultNodePoolNodeConfigSecurityPtrOutput)
+}
+
+// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+func (o DefaultNodePoolNodeConfigOutput) SpotStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *string { return v.SpotStrategy }).(pulumi.StringPtrOutput)
+}
+
+// 节点网络所属的子网 ID 列表。
+func (o DefaultNodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
+}
+
+// 节点的系统盘配置。
+func (o DefaultNodePoolNodeConfigOutput) SystemVolume() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSystemVolume { return v.SystemVolume }).(DefaultNodePoolNodeConfigSystemVolumePtrOutput)
+}
+
+func (o DefaultNodePoolNodeConfigOutput) Tags() DefaultNodePoolNodeConfigTagArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfig) []DefaultNodePoolNodeConfigTag { return v.Tags }).(DefaultNodePoolNodeConfigTagArrayOutput)
+}
+
+type DefaultNodePoolNodeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigPtrOutput) ToDefaultNodePoolNodeConfigPtrOutput() DefaultNodePoolNodeConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigPtrOutput) ToDefaultNodePoolNodeConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigPtrOutput) Elem() DefaultNodePoolNodeConfigOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) DefaultNodePoolNodeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolNodeConfig
+		return ret
+	}).(DefaultNodePoolNodeConfigOutput)
+}
+
+// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+func (o DefaultNodePoolNodeConfigPtrOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalContainerStorageEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+func (o DefaultNodePoolNodeConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenew
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+func (o DefaultNodePoolNodeConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenewPeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o DefaultNodePoolNodeConfigPtrOutput) DataVolumes() DefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []DefaultNodePoolNodeConfigDataVolume {
+		if v == nil {
+			return nil
+		}
+		return v.DataVolumes
+	}).(DefaultNodePoolNodeConfigDataVolumeArrayOutput)
+}
+
+// 实例在部署集中的分组号，0表示未设置
+func (o DefaultNodePoolNodeConfigPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DeploymentSetGroupNumber
+	}).(pulumi.IntPtrOutput)
+}
+
+// 实例需要加入的部署集ID
+func (o DefaultNodePoolNodeConfigPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DeploymentSetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点对应的主机名称。
+func (o DefaultNodePoolNodeConfigPtrOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Hostname
+	}).(pulumi.StringPtrOutput)
+}
+
+// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+func (o DefaultNodePoolNodeConfigPtrOutput) HpcClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.HpcClusterIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// 节点对应云服务器所使用的镜像 ID。
+func (o DefaultNodePoolNodeConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+func (o DefaultNodePoolNodeConfigPtrOutput) InitializeScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InitializeScript
+	}).(pulumi.StringPtrOutput)
+}
+
+// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+func (o DefaultNodePoolNodeConfigPtrOutput) InstanceChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点（实例）名称。
+func (o DefaultNodePoolNodeConfigPtrOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点对应的云服务器实例规格 ID 列表。
+func (o DefaultNodePoolNodeConfigPtrOutput) InstanceTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceTypeIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+func (o DefaultNodePoolNodeConfigPtrOutput) InstancesDistribution() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigInstancesDistribution {
+		if v == nil {
+			return nil
+		}
+		return v.InstancesDistribution
+	}).(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput)
+}
+
+// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+func (o DefaultNodePoolNodeConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NamePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点间的网络通讯模式。
+func (o DefaultNodePoolNodeConfigPtrOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkTrafficMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+func (o DefaultNodePoolNodeConfigPtrOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Period
+	}).(pulumi.IntPtrOutput)
+}
+
+// 部署节点前执行脚本。
+func (o DefaultNodePoolNodeConfigPtrOutput) PreScript() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PreScript
+	}).(pulumi.StringPtrOutput)
+}
+
+// ECS所属项目，一个ECS只能归属于一个项目。
+func (o DefaultNodePoolNodeConfigPtrOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点自动开启公网访问的配置信息
+func (o DefaultNodePoolNodeConfigPtrOutput) PublicAccessConfig() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigPublicAccessConfig {
+		if v == nil {
+			return nil
+		}
+		return v.PublicAccessConfig
+	}).(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput)
+}
+
+// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+func (o DefaultNodePoolNodeConfigPtrOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.PublicAccessEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 节点安全配置。
+func (o DefaultNodePoolNodeConfigPtrOutput) Security() DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSecurity {
+		if v == nil {
+			return nil
+		}
+		return v.Security
+	}).(DefaultNodePoolNodeConfigSecurityPtrOutput)
+}
+
+// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+func (o DefaultNodePoolNodeConfigPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SpotStrategy
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点网络所属的子网 ID 列表。
+func (o DefaultNodePoolNodeConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// 节点的系统盘配置。
+func (o DefaultNodePoolNodeConfigPtrOutput) SystemVolume() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) *DefaultNodePoolNodeConfigSystemVolume {
+		if v == nil {
+			return nil
+		}
+		return v.SystemVolume
+	}).(DefaultNodePoolNodeConfigSystemVolumePtrOutput)
+}
+
+func (o DefaultNodePoolNodeConfigPtrOutput) Tags() DefaultNodePoolNodeConfigTagArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfig) []DefaultNodePoolNodeConfigTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(DefaultNodePoolNodeConfigTagArrayOutput)
+}
+
+type DefaultNodePoolNodeConfigDataVolume struct {
+	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	FileSystem *string `pulumi:"fileSystem"`
+	// 磁盘格式化后的目标挂载目录。
+	MountPoint *string `pulumi:"mountPoint"`
+	// 放置组Id
+	PlacementGroupId *string `pulumi:"placementGroupId"`
+	// 磁盘容量，单位 GiB。
+	Size *int `pulumi:"size"`
+	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	SnapshotId *string `pulumi:"snapshotId"`
+	// 放置子组
+	SubgroupNumber *int `pulumi:"subgroupNumber"`
+	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type *string `pulumi:"type"`
+}
+
+// DefaultNodePoolNodeConfigDataVolumeInput is an input type that accepts DefaultNodePoolNodeConfigDataVolumeArgs and DefaultNodePoolNodeConfigDataVolumeOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigDataVolumeInput` via:
+//
+//	DefaultNodePoolNodeConfigDataVolumeArgs{...}
+type DefaultNodePoolNodeConfigDataVolumeInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigDataVolumeOutput() DefaultNodePoolNodeConfigDataVolumeOutput
+	ToDefaultNodePoolNodeConfigDataVolumeOutputWithContext(context.Context) DefaultNodePoolNodeConfigDataVolumeOutput
+}
+
+type DefaultNodePoolNodeConfigDataVolumeArgs struct {
+	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	FileSystem pulumi.StringPtrInput `pulumi:"fileSystem"`
+	// 磁盘格式化后的目标挂载目录。
+	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
+	// 放置组Id
+	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
+	// 磁盘容量，单位 GiB。
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// 放置子组
+	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
+	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DefaultNodePoolNodeConfigDataVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigDataVolumeArgs) ToDefaultNodePoolNodeConfigDataVolumeOutput() DefaultNodePoolNodeConfigDataVolumeOutput {
+	return i.ToDefaultNodePoolNodeConfigDataVolumeOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigDataVolumeArgs) ToDefaultNodePoolNodeConfigDataVolumeOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigDataVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigDataVolumeOutput)
+}
+
+// DefaultNodePoolNodeConfigDataVolumeArrayInput is an input type that accepts DefaultNodePoolNodeConfigDataVolumeArray and DefaultNodePoolNodeConfigDataVolumeArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigDataVolumeArrayInput` via:
+//
+//	DefaultNodePoolNodeConfigDataVolumeArray{ DefaultNodePoolNodeConfigDataVolumeArgs{...} }
+type DefaultNodePoolNodeConfigDataVolumeArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigDataVolumeArrayOutput() DefaultNodePoolNodeConfigDataVolumeArrayOutput
+	ToDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(context.Context) DefaultNodePoolNodeConfigDataVolumeArrayOutput
+}
+
+type DefaultNodePoolNodeConfigDataVolumeArray []DefaultNodePoolNodeConfigDataVolumeInput
+
+func (DefaultNodePoolNodeConfigDataVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigDataVolumeArray) ToDefaultNodePoolNodeConfigDataVolumeArrayOutput() DefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return i.ToDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigDataVolumeArray) ToDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigDataVolumeArrayOutput)
+}
+
+type DefaultNodePoolNodeConfigDataVolumeOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigDataVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) ToDefaultNodePoolNodeConfigDataVolumeOutput() DefaultNodePoolNodeConfigDataVolumeOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) ToDefaultNodePoolNodeConfigDataVolumeOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigDataVolumeOutput {
+	return o
+}
+
+// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.FileSystem }).(pulumi.StringPtrOutput)
+}
+
+// 磁盘格式化后的目标挂载目录。
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
+}
+
+// 放置组Id
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 磁盘容量，单位 GiB。
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// 放置子组
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
+}
+
+// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+func (o DefaultNodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigDataVolume) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigDataVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigDataVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigDataVolumeArrayOutput) ToDefaultNodePoolNodeConfigDataVolumeArrayOutput() DefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigDataVolumeArrayOutput) ToDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolNodeConfigDataVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolNodeConfigDataVolume {
+		return vs[0].([]DefaultNodePoolNodeConfigDataVolume)[vs[1].(int)]
+	}).(DefaultNodePoolNodeConfigDataVolumeOutput)
+}
+
+type DefaultNodePoolNodeConfigInstancesDistribution struct {
+	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	CapacityRebalance *bool `pulumi:"capacityRebalance"`
+	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	CompensateWithOnDemand *bool `pulumi:"compensateWithOnDemand"`
+	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	OnDemandBaseCapacity *int `pulumi:"onDemandBaseCapacity"`
+	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	OnDemandPercentageAboveBaseCapacity *int `pulumi:"onDemandPercentageAboveBaseCapacity"`
+}
+
+// DefaultNodePoolNodeConfigInstancesDistributionInput is an input type that accepts DefaultNodePoolNodeConfigInstancesDistributionArgs and DefaultNodePoolNodeConfigInstancesDistributionOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigInstancesDistributionInput` via:
+//
+//	DefaultNodePoolNodeConfigInstancesDistributionArgs{...}
+type DefaultNodePoolNodeConfigInstancesDistributionInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigInstancesDistributionOutput() DefaultNodePoolNodeConfigInstancesDistributionOutput
+	ToDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(context.Context) DefaultNodePoolNodeConfigInstancesDistributionOutput
+}
+
+type DefaultNodePoolNodeConfigInstancesDistributionArgs struct {
+	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	CapacityRebalance pulumi.BoolPtrInput `pulumi:"capacityRebalance"`
+	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	CompensateWithOnDemand pulumi.BoolPtrInput `pulumi:"compensateWithOnDemand"`
+	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	OnDemandBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandBaseCapacity"`
+	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	OnDemandPercentageAboveBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
+}
+
+func (DefaultNodePoolNodeConfigInstancesDistributionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigInstancesDistribution)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigInstancesDistributionArgs) ToDefaultNodePoolNodeConfigInstancesDistributionOutput() DefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return i.ToDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigInstancesDistributionArgs) ToDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigInstancesDistributionOutput)
+}
+
+func (i DefaultNodePoolNodeConfigInstancesDistributionArgs) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutput() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigInstancesDistributionArgs) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigInstancesDistributionOutput).ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolNodeConfigInstancesDistributionPtrInput is an input type that accepts DefaultNodePoolNodeConfigInstancesDistributionArgs, DefaultNodePoolNodeConfigInstancesDistributionPtr and DefaultNodePoolNodeConfigInstancesDistributionPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigInstancesDistributionPtrInput` via:
+//
+//	        DefaultNodePoolNodeConfigInstancesDistributionArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolNodeConfigInstancesDistributionPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutput() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput
+	ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(context.Context) DefaultNodePoolNodeConfigInstancesDistributionPtrOutput
+}
+
+type defaultNodePoolNodeConfigInstancesDistributionPtrType DefaultNodePoolNodeConfigInstancesDistributionArgs
+
+func DefaultNodePoolNodeConfigInstancesDistributionPtr(v *DefaultNodePoolNodeConfigInstancesDistributionArgs) DefaultNodePoolNodeConfigInstancesDistributionPtrInput {
+	return (*defaultNodePoolNodeConfigInstancesDistributionPtrType)(v)
+}
+
+func (*defaultNodePoolNodeConfigInstancesDistributionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigInstancesDistribution)(nil)).Elem()
+}
+
+func (i *defaultNodePoolNodeConfigInstancesDistributionPtrType) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutput() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolNodeConfigInstancesDistributionPtrType) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigInstancesDistributionOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigInstancesDistributionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigInstancesDistribution)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) ToDefaultNodePoolNodeConfigInstancesDistributionOutput() DefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) ToDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutput() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return o.ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolNodeConfigInstancesDistribution) *DefaultNodePoolNodeConfigInstancesDistribution {
+		return &v
+	}).(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput)
+}
+
+// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *bool { return v.CapacityRebalance }).(pulumi.BoolPtrOutput)
+}
+
+// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *bool { return v.CompensateWithOnDemand }).(pulumi.BoolPtrOutput)
+}
+
+// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *int { return v.OnDemandBaseCapacity }).(pulumi.IntPtrOutput)
+}
+
+// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+func (o DefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigInstancesDistribution) *int {
+		return v.OnDemandPercentageAboveBaseCapacity
+	}).(pulumi.IntPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigInstancesDistributionPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigInstancesDistribution)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutput() DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) ToDefaultNodePoolNodeConfigInstancesDistributionPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigInstancesDistributionPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) Elem() DefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) DefaultNodePoolNodeConfigInstancesDistribution {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolNodeConfigInstancesDistribution
+		return ret
+	}).(DefaultNodePoolNodeConfigInstancesDistributionOutput)
+}
+
+// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) CapacityRebalance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityRebalance
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CompensateWithOnDemand
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *int {
+		if v == nil {
+			return nil
+		}
+		return v.OnDemandBaseCapacity
+	}).(pulumi.IntPtrOutput)
+}
+
+// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+func (o DefaultNodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigInstancesDistribution) *int {
+		if v == nil {
+			return nil
+		}
+		return v.OnDemandPercentageAboveBaseCapacity
+	}).(pulumi.IntPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigPublicAccessConfig struct {
+	// 公网 IP 的带宽峰值，单位：Mbps。
+	Bandwidth *int `pulumi:"bandwidth"`
+	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	BillingType *int `pulumi:"billingType"`
+	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	Isp *string `pulumi:"isp"`
+}
+
+// DefaultNodePoolNodeConfigPublicAccessConfigInput is an input type that accepts DefaultNodePoolNodeConfigPublicAccessConfigArgs and DefaultNodePoolNodeConfigPublicAccessConfigOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigPublicAccessConfigInput` via:
+//
+//	DefaultNodePoolNodeConfigPublicAccessConfigArgs{...}
+type DefaultNodePoolNodeConfigPublicAccessConfigInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigPublicAccessConfigOutput() DefaultNodePoolNodeConfigPublicAccessConfigOutput
+	ToDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(context.Context) DefaultNodePoolNodeConfigPublicAccessConfigOutput
+}
+
+type DefaultNodePoolNodeConfigPublicAccessConfigArgs struct {
+	// 公网 IP 的带宽峰值，单位：Mbps。
+	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
+	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
+	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+}
+
+func (DefaultNodePoolNodeConfigPublicAccessConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigPublicAccessConfig)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigPublicAccessConfigArgs) ToDefaultNodePoolNodeConfigPublicAccessConfigOutput() DefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return i.ToDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigPublicAccessConfigArgs) ToDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigPublicAccessConfigOutput)
+}
+
+func (i DefaultNodePoolNodeConfigPublicAccessConfigArgs) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutput() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigPublicAccessConfigArgs) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigPublicAccessConfigOutput).ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolNodeConfigPublicAccessConfigPtrInput is an input type that accepts DefaultNodePoolNodeConfigPublicAccessConfigArgs, DefaultNodePoolNodeConfigPublicAccessConfigPtr and DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigPublicAccessConfigPtrInput` via:
+//
+//	        DefaultNodePoolNodeConfigPublicAccessConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolNodeConfigPublicAccessConfigPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutput() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput
+	ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(context.Context) DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput
+}
+
+type defaultNodePoolNodeConfigPublicAccessConfigPtrType DefaultNodePoolNodeConfigPublicAccessConfigArgs
+
+func DefaultNodePoolNodeConfigPublicAccessConfigPtr(v *DefaultNodePoolNodeConfigPublicAccessConfigArgs) DefaultNodePoolNodeConfigPublicAccessConfigPtrInput {
+	return (*defaultNodePoolNodeConfigPublicAccessConfigPtrType)(v)
+}
+
+func (*defaultNodePoolNodeConfigPublicAccessConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigPublicAccessConfig)(nil)).Elem()
+}
+
+func (i *defaultNodePoolNodeConfigPublicAccessConfigPtrType) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutput() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolNodeConfigPublicAccessConfigPtrType) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigPublicAccessConfigOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigPublicAccessConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigPublicAccessConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) ToDefaultNodePoolNodeConfigPublicAccessConfigOutput() DefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) ToDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutput() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return o.ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolNodeConfigPublicAccessConfig) *DefaultNodePoolNodeConfigPublicAccessConfig {
+		return &v
+	}).(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput)
+}
+
+// 公网 IP 的带宽峰值，单位：Mbps。
+func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigPublicAccessConfig) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
+}
+
+// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigPublicAccessConfig) *int { return v.BillingType }).(pulumi.IntPtrOutput)
+}
+
+// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+func (o DefaultNodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigPublicAccessConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigPublicAccessConfig)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutput() DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) ToDefaultNodePoolNodeConfigPublicAccessConfigPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Elem() DefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigPublicAccessConfig) DefaultNodePoolNodeConfigPublicAccessConfig {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolNodeConfigPublicAccessConfig
+		return ret
+	}).(DefaultNodePoolNodeConfigPublicAccessConfigOutput)
+}
+
+// 公网 IP 的带宽峰值，单位：Mbps。
+func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Bandwidth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigPublicAccessConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Bandwidth
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) BillingType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigPublicAccessConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BillingType
+	}).(pulumi.IntPtrOutput)
+}
+
+// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+func (o DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigPublicAccessConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSecurity struct {
+	// 节点的访问方式配置。
+	Login *DefaultNodePoolNodeConfigSecurityLogin `pulumi:"login"`
+	// 节点网络所在的安全组 ID 列表。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	SecurityStrategies []string `pulumi:"securityStrategies"`
+	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	SecurityStrategyEnabled *bool `pulumi:"securityStrategyEnabled"`
+}
+
+// DefaultNodePoolNodeConfigSecurityInput is an input type that accepts DefaultNodePoolNodeConfigSecurityArgs and DefaultNodePoolNodeConfigSecurityOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigSecurityInput` via:
+//
+//	DefaultNodePoolNodeConfigSecurityArgs{...}
+type DefaultNodePoolNodeConfigSecurityInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigSecurityOutput() DefaultNodePoolNodeConfigSecurityOutput
+	ToDefaultNodePoolNodeConfigSecurityOutputWithContext(context.Context) DefaultNodePoolNodeConfigSecurityOutput
+}
+
+type DefaultNodePoolNodeConfigSecurityArgs struct {
+	// 节点的访问方式配置。
+	Login DefaultNodePoolNodeConfigSecurityLoginPtrInput `pulumi:"login"`
+	// 节点网络所在的安全组 ID 列表。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	SecurityStrategies pulumi.StringArrayInput `pulumi:"securityStrategies"`
+	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	SecurityStrategyEnabled pulumi.BoolPtrInput `pulumi:"securityStrategyEnabled"`
+}
+
+func (DefaultNodePoolNodeConfigSecurityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigSecurity)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigSecurityArgs) ToDefaultNodePoolNodeConfigSecurityOutput() DefaultNodePoolNodeConfigSecurityOutput {
+	return i.ToDefaultNodePoolNodeConfigSecurityOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigSecurityArgs) ToDefaultNodePoolNodeConfigSecurityOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSecurityOutput)
+}
+
+func (i DefaultNodePoolNodeConfigSecurityArgs) ToDefaultNodePoolNodeConfigSecurityPtrOutput() DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigSecurityArgs) ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSecurityOutput).ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolNodeConfigSecurityPtrInput is an input type that accepts DefaultNodePoolNodeConfigSecurityArgs, DefaultNodePoolNodeConfigSecurityPtr and DefaultNodePoolNodeConfigSecurityPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigSecurityPtrInput` via:
+//
+//	        DefaultNodePoolNodeConfigSecurityArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolNodeConfigSecurityPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigSecurityPtrOutput() DefaultNodePoolNodeConfigSecurityPtrOutput
+	ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(context.Context) DefaultNodePoolNodeConfigSecurityPtrOutput
+}
+
+type defaultNodePoolNodeConfigSecurityPtrType DefaultNodePoolNodeConfigSecurityArgs
+
+func DefaultNodePoolNodeConfigSecurityPtr(v *DefaultNodePoolNodeConfigSecurityArgs) DefaultNodePoolNodeConfigSecurityPtrInput {
+	return (*defaultNodePoolNodeConfigSecurityPtrType)(v)
+}
+
+func (*defaultNodePoolNodeConfigSecurityPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigSecurity)(nil)).Elem()
+}
+
+func (i *defaultNodePoolNodeConfigSecurityPtrType) ToDefaultNodePoolNodeConfigSecurityPtrOutput() DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolNodeConfigSecurityPtrType) ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSecurityPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSecurityOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigSecurityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigSecurity)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigSecurityOutput) ToDefaultNodePoolNodeConfigSecurityOutput() DefaultNodePoolNodeConfigSecurityOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityOutput) ToDefaultNodePoolNodeConfigSecurityOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityOutput) ToDefaultNodePoolNodeConfigSecurityPtrOutput() DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return o.ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolNodeConfigSecurityOutput) ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolNodeConfigSecurity) *DefaultNodePoolNodeConfigSecurity {
+		return &v
+	}).(DefaultNodePoolNodeConfigSecurityPtrOutput)
+}
+
+// 节点的访问方式配置。
+func (o DefaultNodePoolNodeConfigSecurityOutput) Login() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) *DefaultNodePoolNodeConfigSecurityLogin { return v.Login }).(DefaultNodePoolNodeConfigSecurityLoginPtrOutput)
+}
+
+// 节点网络所在的安全组 ID 列表。
+func (o DefaultNodePoolNodeConfigSecurityOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 节点的安全策略，参数值说明：Hids：主机安全加固。
+func (o DefaultNodePoolNodeConfigSecurityOutput) SecurityStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) []string { return v.SecurityStrategies }).(pulumi.StringArrayOutput)
+}
+
+// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+func (o DefaultNodePoolNodeConfigSecurityOutput) SecurityStrategyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurity) *bool { return v.SecurityStrategyEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSecurityPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigSecurityPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigSecurity)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigSecurityPtrOutput) ToDefaultNodePoolNodeConfigSecurityPtrOutput() DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityPtrOutput) ToDefaultNodePoolNodeConfigSecurityPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityPtrOutput) Elem() DefaultNodePoolNodeConfigSecurityOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) DefaultNodePoolNodeConfigSecurity {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolNodeConfigSecurity
+		return ret
+	}).(DefaultNodePoolNodeConfigSecurityOutput)
+}
+
+// 节点的访问方式配置。
+func (o DefaultNodePoolNodeConfigSecurityPtrOutput) Login() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) *DefaultNodePoolNodeConfigSecurityLogin {
+		if v == nil {
+			return nil
+		}
+		return v.Login
+	}).(DefaultNodePoolNodeConfigSecurityLoginPtrOutput)
+}
+
+// 节点网络所在的安全组 ID 列表。
+func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityGroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// 节点的安全策略，参数值说明：Hids：主机安全加固。
+func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityStrategies
+	}).(pulumi.StringArrayOutput)
+}
+
+// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+func (o DefaultNodePoolNodeConfigSecurityPtrOutput) SecurityStrategyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurity) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityStrategyEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSecurityLogin struct {
+	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	Password *string `pulumi:"password"`
+	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	SshKeyPairName *string `pulumi:"sshKeyPairName"`
+	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	Type *string `pulumi:"type"`
+}
+
+// DefaultNodePoolNodeConfigSecurityLoginInput is an input type that accepts DefaultNodePoolNodeConfigSecurityLoginArgs and DefaultNodePoolNodeConfigSecurityLoginOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigSecurityLoginInput` via:
+//
+//	DefaultNodePoolNodeConfigSecurityLoginArgs{...}
+type DefaultNodePoolNodeConfigSecurityLoginInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigSecurityLoginOutput() DefaultNodePoolNodeConfigSecurityLoginOutput
+	ToDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(context.Context) DefaultNodePoolNodeConfigSecurityLoginOutput
+}
+
+type DefaultNodePoolNodeConfigSecurityLoginArgs struct {
+	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	SshKeyPairName pulumi.StringPtrInput `pulumi:"sshKeyPairName"`
+	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DefaultNodePoolNodeConfigSecurityLoginArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigSecurityLogin)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigSecurityLoginArgs) ToDefaultNodePoolNodeConfigSecurityLoginOutput() DefaultNodePoolNodeConfigSecurityLoginOutput {
+	return i.ToDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigSecurityLoginArgs) ToDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityLoginOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSecurityLoginOutput)
+}
+
+func (i DefaultNodePoolNodeConfigSecurityLoginArgs) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutput() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigSecurityLoginArgs) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSecurityLoginOutput).ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolNodeConfigSecurityLoginPtrInput is an input type that accepts DefaultNodePoolNodeConfigSecurityLoginArgs, DefaultNodePoolNodeConfigSecurityLoginPtr and DefaultNodePoolNodeConfigSecurityLoginPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigSecurityLoginPtrInput` via:
+//
+//	        DefaultNodePoolNodeConfigSecurityLoginArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolNodeConfigSecurityLoginPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigSecurityLoginPtrOutput() DefaultNodePoolNodeConfigSecurityLoginPtrOutput
+	ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(context.Context) DefaultNodePoolNodeConfigSecurityLoginPtrOutput
+}
+
+type defaultNodePoolNodeConfigSecurityLoginPtrType DefaultNodePoolNodeConfigSecurityLoginArgs
+
+func DefaultNodePoolNodeConfigSecurityLoginPtr(v *DefaultNodePoolNodeConfigSecurityLoginArgs) DefaultNodePoolNodeConfigSecurityLoginPtrInput {
+	return (*defaultNodePoolNodeConfigSecurityLoginPtrType)(v)
+}
+
+func (*defaultNodePoolNodeConfigSecurityLoginPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigSecurityLogin)(nil)).Elem()
+}
+
+func (i *defaultNodePoolNodeConfigSecurityLoginPtrType) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutput() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return i.ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolNodeConfigSecurityLoginPtrType) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSecurityLoginPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSecurityLoginOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigSecurityLoginOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigSecurityLogin)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigSecurityLoginOutput) ToDefaultNodePoolNodeConfigSecurityLoginOutput() DefaultNodePoolNodeConfigSecurityLoginOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityLoginOutput) ToDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityLoginOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityLoginOutput) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutput() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return o.ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolNodeConfigSecurityLoginOutput) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolNodeConfigSecurityLogin) *DefaultNodePoolNodeConfigSecurityLogin {
+		return &v
+	}).(DefaultNodePoolNodeConfigSecurityLoginPtrOutput)
+}
+
+// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+func (o DefaultNodePoolNodeConfigSecurityLoginOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurityLogin) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+func (o DefaultNodePoolNodeConfigSecurityLoginOutput) SshKeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurityLogin) *string { return v.SshKeyPairName }).(pulumi.StringPtrOutput)
+}
+
+// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+func (o DefaultNodePoolNodeConfigSecurityLoginOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSecurityLogin) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSecurityLoginPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigSecurityLoginPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigSecurityLogin)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutput() DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) ToDefaultNodePoolNodeConfigSecurityLoginPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSecurityLoginPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Elem() DefaultNodePoolNodeConfigSecurityLoginOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurityLogin) DefaultNodePoolNodeConfigSecurityLogin {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolNodeConfigSecurityLogin
+		return ret
+	}).(DefaultNodePoolNodeConfigSecurityLoginOutput)
+}
+
+// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurityLogin) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) SshKeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurityLogin) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SshKeyPairName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+func (o DefaultNodePoolNodeConfigSecurityLoginPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSecurityLogin) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSystemVolume struct {
+	// 放置组Id
+	PlacementGroupId *string `pulumi:"placementGroupId"`
+	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	Size *int `pulumi:"size"`
+	// 放置子组
+	SubgroupNumber *int `pulumi:"subgroupNumber"`
+	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type *string `pulumi:"type"`
+}
+
+// DefaultNodePoolNodeConfigSystemVolumeInput is an input type that accepts DefaultNodePoolNodeConfigSystemVolumeArgs and DefaultNodePoolNodeConfigSystemVolumeOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigSystemVolumeInput` via:
+//
+//	DefaultNodePoolNodeConfigSystemVolumeArgs{...}
+type DefaultNodePoolNodeConfigSystemVolumeInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigSystemVolumeOutput() DefaultNodePoolNodeConfigSystemVolumeOutput
+	ToDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(context.Context) DefaultNodePoolNodeConfigSystemVolumeOutput
+}
+
+type DefaultNodePoolNodeConfigSystemVolumeArgs struct {
+	// 放置组Id
+	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
+	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 放置子组
+	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
+	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DefaultNodePoolNodeConfigSystemVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigSystemVolume)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigSystemVolumeArgs) ToDefaultNodePoolNodeConfigSystemVolumeOutput() DefaultNodePoolNodeConfigSystemVolumeOutput {
+	return i.ToDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigSystemVolumeArgs) ToDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSystemVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSystemVolumeOutput)
+}
+
+func (i DefaultNodePoolNodeConfigSystemVolumeArgs) ToDefaultNodePoolNodeConfigSystemVolumePtrOutput() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return i.ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigSystemVolumeArgs) ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSystemVolumeOutput).ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolNodeConfigSystemVolumePtrInput is an input type that accepts DefaultNodePoolNodeConfigSystemVolumeArgs, DefaultNodePoolNodeConfigSystemVolumePtr and DefaultNodePoolNodeConfigSystemVolumePtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigSystemVolumePtrInput` via:
+//
+//	        DefaultNodePoolNodeConfigSystemVolumeArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolNodeConfigSystemVolumePtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigSystemVolumePtrOutput() DefaultNodePoolNodeConfigSystemVolumePtrOutput
+	ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(context.Context) DefaultNodePoolNodeConfigSystemVolumePtrOutput
+}
+
+type defaultNodePoolNodeConfigSystemVolumePtrType DefaultNodePoolNodeConfigSystemVolumeArgs
+
+func DefaultNodePoolNodeConfigSystemVolumePtr(v *DefaultNodePoolNodeConfigSystemVolumeArgs) DefaultNodePoolNodeConfigSystemVolumePtrInput {
+	return (*defaultNodePoolNodeConfigSystemVolumePtrType)(v)
+}
+
+func (*defaultNodePoolNodeConfigSystemVolumePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigSystemVolume)(nil)).Elem()
+}
+
+func (i *defaultNodePoolNodeConfigSystemVolumePtrType) ToDefaultNodePoolNodeConfigSystemVolumePtrOutput() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return i.ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolNodeConfigSystemVolumePtrType) ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigSystemVolumePtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSystemVolumeOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigSystemVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigSystemVolume)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) ToDefaultNodePoolNodeConfigSystemVolumeOutput() DefaultNodePoolNodeConfigSystemVolumeOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) ToDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSystemVolumeOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) ToDefaultNodePoolNodeConfigSystemVolumePtrOutput() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return o.ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolNodeConfigSystemVolume) *DefaultNodePoolNodeConfigSystemVolume {
+		return &v
+	}).(DefaultNodePoolNodeConfigSystemVolumePtrOutput)
+}
+
+// 放置组Id
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 放置子组
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
+}
+
+// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+func (o DefaultNodePoolNodeConfigSystemVolumeOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigSystemVolume) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigSystemVolumePtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigSystemVolumePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeConfigSystemVolume)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) ToDefaultNodePoolNodeConfigSystemVolumePtrOutput() DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) ToDefaultNodePoolNodeConfigSystemVolumePtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigSystemVolumePtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Elem() DefaultNodePoolNodeConfigSystemVolumeOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) DefaultNodePoolNodeConfigSystemVolume {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolNodeConfigSystemVolume
+		return ret
+	}).(DefaultNodePoolNodeConfigSystemVolumeOutput)
+}
+
+// 放置组Id
+func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) PlacementGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PlacementGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Size
+	}).(pulumi.IntPtrOutput)
+}
+
+// 放置子组
+func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) SubgroupNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SubgroupNumber
+	}).(pulumi.IntPtrOutput)
+}
+
+// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+func (o DefaultNodePoolNodeConfigSystemVolumePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeConfigSystemVolume) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// DefaultNodePoolNodeConfigTagInput is an input type that accepts DefaultNodePoolNodeConfigTagArgs and DefaultNodePoolNodeConfigTagOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigTagInput` via:
+//
+//	DefaultNodePoolNodeConfigTagArgs{...}
+type DefaultNodePoolNodeConfigTagInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigTagOutput() DefaultNodePoolNodeConfigTagOutput
+	ToDefaultNodePoolNodeConfigTagOutputWithContext(context.Context) DefaultNodePoolNodeConfigTagOutput
+}
+
+type DefaultNodePoolNodeConfigTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DefaultNodePoolNodeConfigTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigTagArgs) ToDefaultNodePoolNodeConfigTagOutput() DefaultNodePoolNodeConfigTagOutput {
+	return i.ToDefaultNodePoolNodeConfigTagOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigTagArgs) ToDefaultNodePoolNodeConfigTagOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigTagOutput)
+}
+
+// DefaultNodePoolNodeConfigTagArrayInput is an input type that accepts DefaultNodePoolNodeConfigTagArray and DefaultNodePoolNodeConfigTagArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeConfigTagArrayInput` via:
+//
+//	DefaultNodePoolNodeConfigTagArray{ DefaultNodePoolNodeConfigTagArgs{...} }
+type DefaultNodePoolNodeConfigTagArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeConfigTagArrayOutput() DefaultNodePoolNodeConfigTagArrayOutput
+	ToDefaultNodePoolNodeConfigTagArrayOutputWithContext(context.Context) DefaultNodePoolNodeConfigTagArrayOutput
+}
+
+type DefaultNodePoolNodeConfigTagArray []DefaultNodePoolNodeConfigTagInput
+
+func (DefaultNodePoolNodeConfigTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeConfigTagArray) ToDefaultNodePoolNodeConfigTagArrayOutput() DefaultNodePoolNodeConfigTagArrayOutput {
+	return i.ToDefaultNodePoolNodeConfigTagArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeConfigTagArray) ToDefaultNodePoolNodeConfigTagArrayOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeConfigTagArrayOutput)
+}
+
+type DefaultNodePoolNodeConfigTagOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigTagOutput) ToDefaultNodePoolNodeConfigTagOutput() DefaultNodePoolNodeConfigTagOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigTagOutput) ToDefaultNodePoolNodeConfigTagOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigTagOutput {
+	return o
+}
+
+// 标签键。
+func (o DefaultNodePoolNodeConfigTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o DefaultNodePoolNodeConfigTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeConfigTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolNodeConfigTagArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeConfigTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeConfigTagArrayOutput) ToDefaultNodePoolNodeConfigTagArrayOutput() DefaultNodePoolNodeConfigTagArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigTagArrayOutput) ToDefaultNodePoolNodeConfigTagArrayOutputWithContext(ctx context.Context) DefaultNodePoolNodeConfigTagArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeConfigTagArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolNodeConfigTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolNodeConfigTag {
+		return vs[0].([]DefaultNodePoolNodeConfigTag)[vs[1].(int)]
+	}).(DefaultNodePoolNodeConfigTagOutput)
+}
+
+type DefaultNodePoolNodeStatistics struct {
+	// Phase=Creating的节点总数量。
+	CreatingCount *int `pulumi:"creatingCount"`
+	// Phase=Deleting的节点总数量。
+	DeletingCount *int `pulumi:"deletingCount"`
+	// Phase=Failed的节点总数量。
+	FailedCount *int `pulumi:"failedCount"`
+	// Phase=Running的节点总数量。
+	RunningCount *int `pulumi:"runningCount"`
+	// 节点池中的节点总数量。
+	TotalCount *int `pulumi:"totalCount"`
+	// Phase=Updating的节点总数量。
+	UpdatingCount *int `pulumi:"updatingCount"`
+}
+
+// DefaultNodePoolNodeStatisticsInput is an input type that accepts DefaultNodePoolNodeStatisticsArgs and DefaultNodePoolNodeStatisticsOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeStatisticsInput` via:
+//
+//	DefaultNodePoolNodeStatisticsArgs{...}
+type DefaultNodePoolNodeStatisticsInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeStatisticsOutput() DefaultNodePoolNodeStatisticsOutput
+	ToDefaultNodePoolNodeStatisticsOutputWithContext(context.Context) DefaultNodePoolNodeStatisticsOutput
+}
+
+type DefaultNodePoolNodeStatisticsArgs struct {
+	// Phase=Creating的节点总数量。
+	CreatingCount pulumi.IntPtrInput `pulumi:"creatingCount"`
+	// Phase=Deleting的节点总数量。
+	DeletingCount pulumi.IntPtrInput `pulumi:"deletingCount"`
+	// Phase=Failed的节点总数量。
+	FailedCount pulumi.IntPtrInput `pulumi:"failedCount"`
+	// Phase=Running的节点总数量。
+	RunningCount pulumi.IntPtrInput `pulumi:"runningCount"`
+	// 节点池中的节点总数量。
+	TotalCount pulumi.IntPtrInput `pulumi:"totalCount"`
+	// Phase=Updating的节点总数量。
+	UpdatingCount pulumi.IntPtrInput `pulumi:"updatingCount"`
+}
+
+func (DefaultNodePoolNodeStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeStatistics)(nil)).Elem()
+}
+
+func (i DefaultNodePoolNodeStatisticsArgs) ToDefaultNodePoolNodeStatisticsOutput() DefaultNodePoolNodeStatisticsOutput {
+	return i.ToDefaultNodePoolNodeStatisticsOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeStatisticsArgs) ToDefaultNodePoolNodeStatisticsOutputWithContext(ctx context.Context) DefaultNodePoolNodeStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeStatisticsOutput)
+}
+
+func (i DefaultNodePoolNodeStatisticsArgs) ToDefaultNodePoolNodeStatisticsPtrOutput() DefaultNodePoolNodeStatisticsPtrOutput {
+	return i.ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolNodeStatisticsArgs) ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeStatisticsOutput).ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolNodeStatisticsPtrInput is an input type that accepts DefaultNodePoolNodeStatisticsArgs, DefaultNodePoolNodeStatisticsPtr and DefaultNodePoolNodeStatisticsPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolNodeStatisticsPtrInput` via:
+//
+//	        DefaultNodePoolNodeStatisticsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolNodeStatisticsPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolNodeStatisticsPtrOutput() DefaultNodePoolNodeStatisticsPtrOutput
+	ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(context.Context) DefaultNodePoolNodeStatisticsPtrOutput
+}
+
+type defaultNodePoolNodeStatisticsPtrType DefaultNodePoolNodeStatisticsArgs
+
+func DefaultNodePoolNodeStatisticsPtr(v *DefaultNodePoolNodeStatisticsArgs) DefaultNodePoolNodeStatisticsPtrInput {
+	return (*defaultNodePoolNodeStatisticsPtrType)(v)
+}
+
+func (*defaultNodePoolNodeStatisticsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeStatistics)(nil)).Elem()
+}
+
+func (i *defaultNodePoolNodeStatisticsPtrType) ToDefaultNodePoolNodeStatisticsPtrOutput() DefaultNodePoolNodeStatisticsPtrOutput {
+	return i.ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolNodeStatisticsPtrType) ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeStatisticsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolNodeStatisticsPtrOutput)
+}
+
+type DefaultNodePoolNodeStatisticsOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolNodeStatistics)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeStatisticsOutput) ToDefaultNodePoolNodeStatisticsOutput() DefaultNodePoolNodeStatisticsOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeStatisticsOutput) ToDefaultNodePoolNodeStatisticsOutputWithContext(ctx context.Context) DefaultNodePoolNodeStatisticsOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeStatisticsOutput) ToDefaultNodePoolNodeStatisticsPtrOutput() DefaultNodePoolNodeStatisticsPtrOutput {
+	return o.ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolNodeStatisticsOutput) ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeStatisticsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolNodeStatistics) *DefaultNodePoolNodeStatistics {
+		return &v
+	}).(DefaultNodePoolNodeStatisticsPtrOutput)
+}
+
+// Phase=Creating的节点总数量。
+func (o DefaultNodePoolNodeStatisticsOutput) CreatingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.CreatingCount }).(pulumi.IntPtrOutput)
+}
+
+// Phase=Deleting的节点总数量。
+func (o DefaultNodePoolNodeStatisticsOutput) DeletingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.DeletingCount }).(pulumi.IntPtrOutput)
+}
+
+// Phase=Failed的节点总数量。
+func (o DefaultNodePoolNodeStatisticsOutput) FailedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.FailedCount }).(pulumi.IntPtrOutput)
+}
+
+// Phase=Running的节点总数量。
+func (o DefaultNodePoolNodeStatisticsOutput) RunningCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.RunningCount }).(pulumi.IntPtrOutput)
+}
+
+// 节点池中的节点总数量。
+func (o DefaultNodePoolNodeStatisticsOutput) TotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.TotalCount }).(pulumi.IntPtrOutput)
+}
+
+// Phase=Updating的节点总数量。
+func (o DefaultNodePoolNodeStatisticsOutput) UpdatingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolNodeStatistics) *int { return v.UpdatingCount }).(pulumi.IntPtrOutput)
+}
+
+type DefaultNodePoolNodeStatisticsPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolNodeStatisticsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolNodeStatistics)(nil)).Elem()
+}
+
+func (o DefaultNodePoolNodeStatisticsPtrOutput) ToDefaultNodePoolNodeStatisticsPtrOutput() DefaultNodePoolNodeStatisticsPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeStatisticsPtrOutput) ToDefaultNodePoolNodeStatisticsPtrOutputWithContext(ctx context.Context) DefaultNodePoolNodeStatisticsPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolNodeStatisticsPtrOutput) Elem() DefaultNodePoolNodeStatisticsOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) DefaultNodePoolNodeStatistics {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolNodeStatistics
+		return ret
+	}).(DefaultNodePoolNodeStatisticsOutput)
+}
+
+// Phase=Creating的节点总数量。
+func (o DefaultNodePoolNodeStatisticsPtrOutput) CreatingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CreatingCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Phase=Deleting的节点总数量。
+func (o DefaultNodePoolNodeStatisticsPtrOutput) DeletingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DeletingCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Phase=Failed的节点总数量。
+func (o DefaultNodePoolNodeStatisticsPtrOutput) FailedCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FailedCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Phase=Running的节点总数量。
+func (o DefaultNodePoolNodeStatisticsPtrOutput) RunningCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RunningCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// 节点池中的节点总数量。
+func (o DefaultNodePoolNodeStatisticsPtrOutput) TotalCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TotalCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Phase=Updating的节点总数量。
+func (o DefaultNodePoolNodeStatisticsPtrOutput) UpdatingCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolNodeStatistics) *int {
+		if v == nil {
+			return nil
+		}
+		return v.UpdatingCount
+	}).(pulumi.IntPtrOutput)
+}
+
+type DefaultNodePoolStatus struct {
+	Conditions []DefaultNodePoolStatusCondition `pulumi:"conditions"`
+	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	Phase *string `pulumi:"phase"`
+}
+
+// DefaultNodePoolStatusInput is an input type that accepts DefaultNodePoolStatusArgs and DefaultNodePoolStatusOutput values.
+// You can construct a concrete instance of `DefaultNodePoolStatusInput` via:
+//
+//	DefaultNodePoolStatusArgs{...}
+type DefaultNodePoolStatusInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolStatusOutput() DefaultNodePoolStatusOutput
+	ToDefaultNodePoolStatusOutputWithContext(context.Context) DefaultNodePoolStatusOutput
+}
+
+type DefaultNodePoolStatusArgs struct {
+	Conditions DefaultNodePoolStatusConditionArrayInput `pulumi:"conditions"`
+	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	Phase pulumi.StringPtrInput `pulumi:"phase"`
+}
+
+func (DefaultNodePoolStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolStatus)(nil)).Elem()
+}
+
+func (i DefaultNodePoolStatusArgs) ToDefaultNodePoolStatusOutput() DefaultNodePoolStatusOutput {
+	return i.ToDefaultNodePoolStatusOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolStatusArgs) ToDefaultNodePoolStatusOutputWithContext(ctx context.Context) DefaultNodePoolStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolStatusOutput)
+}
+
+func (i DefaultNodePoolStatusArgs) ToDefaultNodePoolStatusPtrOutput() DefaultNodePoolStatusPtrOutput {
+	return i.ToDefaultNodePoolStatusPtrOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolStatusArgs) ToDefaultNodePoolStatusPtrOutputWithContext(ctx context.Context) DefaultNodePoolStatusPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolStatusOutput).ToDefaultNodePoolStatusPtrOutputWithContext(ctx)
+}
+
+// DefaultNodePoolStatusPtrInput is an input type that accepts DefaultNodePoolStatusArgs, DefaultNodePoolStatusPtr and DefaultNodePoolStatusPtrOutput values.
+// You can construct a concrete instance of `DefaultNodePoolStatusPtrInput` via:
+//
+//	        DefaultNodePoolStatusArgs{...}
+//
+//	or:
+//
+//	        nil
+type DefaultNodePoolStatusPtrInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolStatusPtrOutput() DefaultNodePoolStatusPtrOutput
+	ToDefaultNodePoolStatusPtrOutputWithContext(context.Context) DefaultNodePoolStatusPtrOutput
+}
+
+type defaultNodePoolStatusPtrType DefaultNodePoolStatusArgs
+
+func DefaultNodePoolStatusPtr(v *DefaultNodePoolStatusArgs) DefaultNodePoolStatusPtrInput {
+	return (*defaultNodePoolStatusPtrType)(v)
+}
+
+func (*defaultNodePoolStatusPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolStatus)(nil)).Elem()
+}
+
+func (i *defaultNodePoolStatusPtrType) ToDefaultNodePoolStatusPtrOutput() DefaultNodePoolStatusPtrOutput {
+	return i.ToDefaultNodePoolStatusPtrOutputWithContext(context.Background())
+}
+
+func (i *defaultNodePoolStatusPtrType) ToDefaultNodePoolStatusPtrOutputWithContext(ctx context.Context) DefaultNodePoolStatusPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolStatusPtrOutput)
+}
+
+type DefaultNodePoolStatusOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolStatus)(nil)).Elem()
+}
+
+func (o DefaultNodePoolStatusOutput) ToDefaultNodePoolStatusOutput() DefaultNodePoolStatusOutput {
+	return o
+}
+
+func (o DefaultNodePoolStatusOutput) ToDefaultNodePoolStatusOutputWithContext(ctx context.Context) DefaultNodePoolStatusOutput {
+	return o
+}
+
+func (o DefaultNodePoolStatusOutput) ToDefaultNodePoolStatusPtrOutput() DefaultNodePoolStatusPtrOutput {
+	return o.ToDefaultNodePoolStatusPtrOutputWithContext(context.Background())
+}
+
+func (o DefaultNodePoolStatusOutput) ToDefaultNodePoolStatusPtrOutputWithContext(ctx context.Context) DefaultNodePoolStatusPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DefaultNodePoolStatus) *DefaultNodePoolStatus {
+		return &v
+	}).(DefaultNodePoolStatusPtrOutput)
+}
+
+func (o DefaultNodePoolStatusOutput) Conditions() DefaultNodePoolStatusConditionArrayOutput {
+	return o.ApplyT(func(v DefaultNodePoolStatus) []DefaultNodePoolStatusCondition { return v.Conditions }).(DefaultNodePoolStatusConditionArrayOutput)
+}
+
+// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+func (o DefaultNodePoolStatusOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolStatusPtrOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolStatusPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DefaultNodePoolStatus)(nil)).Elem()
+}
+
+func (o DefaultNodePoolStatusPtrOutput) ToDefaultNodePoolStatusPtrOutput() DefaultNodePoolStatusPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolStatusPtrOutput) ToDefaultNodePoolStatusPtrOutputWithContext(ctx context.Context) DefaultNodePoolStatusPtrOutput {
+	return o
+}
+
+func (o DefaultNodePoolStatusPtrOutput) Elem() DefaultNodePoolStatusOutput {
+	return o.ApplyT(func(v *DefaultNodePoolStatus) DefaultNodePoolStatus {
+		if v != nil {
+			return *v
+		}
+		var ret DefaultNodePoolStatus
+		return ret
+	}).(DefaultNodePoolStatusOutput)
+}
+
+func (o DefaultNodePoolStatusPtrOutput) Conditions() DefaultNodePoolStatusConditionArrayOutput {
+	return o.ApplyT(func(v *DefaultNodePoolStatus) []DefaultNodePoolStatusCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Conditions
+	}).(DefaultNodePoolStatusConditionArrayOutput)
+}
+
+// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+func (o DefaultNodePoolStatusPtrOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DefaultNodePoolStatus) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Phase
+	}).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolStatusCondition struct {
+	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	Type *string `pulumi:"type"`
+}
+
+// DefaultNodePoolStatusConditionInput is an input type that accepts DefaultNodePoolStatusConditionArgs and DefaultNodePoolStatusConditionOutput values.
+// You can construct a concrete instance of `DefaultNodePoolStatusConditionInput` via:
+//
+//	DefaultNodePoolStatusConditionArgs{...}
+type DefaultNodePoolStatusConditionInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolStatusConditionOutput() DefaultNodePoolStatusConditionOutput
+	ToDefaultNodePoolStatusConditionOutputWithContext(context.Context) DefaultNodePoolStatusConditionOutput
+}
+
+type DefaultNodePoolStatusConditionArgs struct {
+	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DefaultNodePoolStatusConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (i DefaultNodePoolStatusConditionArgs) ToDefaultNodePoolStatusConditionOutput() DefaultNodePoolStatusConditionOutput {
+	return i.ToDefaultNodePoolStatusConditionOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolStatusConditionArgs) ToDefaultNodePoolStatusConditionOutputWithContext(ctx context.Context) DefaultNodePoolStatusConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolStatusConditionOutput)
+}
+
+// DefaultNodePoolStatusConditionArrayInput is an input type that accepts DefaultNodePoolStatusConditionArray and DefaultNodePoolStatusConditionArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolStatusConditionArrayInput` via:
+//
+//	DefaultNodePoolStatusConditionArray{ DefaultNodePoolStatusConditionArgs{...} }
+type DefaultNodePoolStatusConditionArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolStatusConditionArrayOutput() DefaultNodePoolStatusConditionArrayOutput
+	ToDefaultNodePoolStatusConditionArrayOutputWithContext(context.Context) DefaultNodePoolStatusConditionArrayOutput
+}
+
+type DefaultNodePoolStatusConditionArray []DefaultNodePoolStatusConditionInput
+
+func (DefaultNodePoolStatusConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (i DefaultNodePoolStatusConditionArray) ToDefaultNodePoolStatusConditionArrayOutput() DefaultNodePoolStatusConditionArrayOutput {
+	return i.ToDefaultNodePoolStatusConditionArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolStatusConditionArray) ToDefaultNodePoolStatusConditionArrayOutputWithContext(ctx context.Context) DefaultNodePoolStatusConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolStatusConditionArrayOutput)
+}
+
+type DefaultNodePoolStatusConditionOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolStatusConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (o DefaultNodePoolStatusConditionOutput) ToDefaultNodePoolStatusConditionOutput() DefaultNodePoolStatusConditionOutput {
+	return o
+}
+
+func (o DefaultNodePoolStatusConditionOutput) ToDefaultNodePoolStatusConditionOutputWithContext(ctx context.Context) DefaultNodePoolStatusConditionOutput {
+	return o
+}
+
+// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+func (o DefaultNodePoolStatusConditionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolStatusCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolStatusConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolStatusConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (o DefaultNodePoolStatusConditionArrayOutput) ToDefaultNodePoolStatusConditionArrayOutput() DefaultNodePoolStatusConditionArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolStatusConditionArrayOutput) ToDefaultNodePoolStatusConditionArrayOutputWithContext(ctx context.Context) DefaultNodePoolStatusConditionArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolStatusConditionArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolStatusConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolStatusCondition {
+		return vs[0].([]DefaultNodePoolStatusCondition)[vs[1].(int)]
+	}).(DefaultNodePoolStatusConditionOutput)
+}
+
+type DefaultNodePoolTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// DefaultNodePoolTagInput is an input type that accepts DefaultNodePoolTagArgs and DefaultNodePoolTagOutput values.
+// You can construct a concrete instance of `DefaultNodePoolTagInput` via:
+//
+//	DefaultNodePoolTagArgs{...}
+type DefaultNodePoolTagInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolTagOutput() DefaultNodePoolTagOutput
+	ToDefaultNodePoolTagOutputWithContext(context.Context) DefaultNodePoolTagOutput
+}
+
+type DefaultNodePoolTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DefaultNodePoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolTag)(nil)).Elem()
+}
+
+func (i DefaultNodePoolTagArgs) ToDefaultNodePoolTagOutput() DefaultNodePoolTagOutput {
+	return i.ToDefaultNodePoolTagOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolTagArgs) ToDefaultNodePoolTagOutputWithContext(ctx context.Context) DefaultNodePoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolTagOutput)
+}
+
+// DefaultNodePoolTagArrayInput is an input type that accepts DefaultNodePoolTagArray and DefaultNodePoolTagArrayOutput values.
+// You can construct a concrete instance of `DefaultNodePoolTagArrayInput` via:
+//
+//	DefaultNodePoolTagArray{ DefaultNodePoolTagArgs{...} }
+type DefaultNodePoolTagArrayInput interface {
+	pulumi.Input
+
+	ToDefaultNodePoolTagArrayOutput() DefaultNodePoolTagArrayOutput
+	ToDefaultNodePoolTagArrayOutputWithContext(context.Context) DefaultNodePoolTagArrayOutput
+}
+
+type DefaultNodePoolTagArray []DefaultNodePoolTagInput
+
+func (DefaultNodePoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolTag)(nil)).Elem()
+}
+
+func (i DefaultNodePoolTagArray) ToDefaultNodePoolTagArrayOutput() DefaultNodePoolTagArrayOutput {
+	return i.ToDefaultNodePoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i DefaultNodePoolTagArray) ToDefaultNodePoolTagArrayOutputWithContext(ctx context.Context) DefaultNodePoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DefaultNodePoolTagArrayOutput)
+}
+
+type DefaultNodePoolTagOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DefaultNodePoolTag)(nil)).Elem()
+}
+
+func (o DefaultNodePoolTagOutput) ToDefaultNodePoolTagOutput() DefaultNodePoolTagOutput {
+	return o
+}
+
+func (o DefaultNodePoolTagOutput) ToDefaultNodePoolTagOutputWithContext(ctx context.Context) DefaultNodePoolTagOutput {
+	return o
+}
+
+// 标签键。
+func (o DefaultNodePoolTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o DefaultNodePoolTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DefaultNodePoolTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DefaultNodePoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (DefaultNodePoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DefaultNodePoolTag)(nil)).Elem()
+}
+
+func (o DefaultNodePoolTagArrayOutput) ToDefaultNodePoolTagArrayOutput() DefaultNodePoolTagArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolTagArrayOutput) ToDefaultNodePoolTagArrayOutputWithContext(ctx context.Context) DefaultNodePoolTagArrayOutput {
+	return o
+}
+
+func (o DefaultNodePoolTagArrayOutput) Index(i pulumi.IntInput) DefaultNodePoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DefaultNodePoolTag {
+		return vs[0].([]DefaultNodePoolTag)[vs[1].(int)]
+	}).(DefaultNodePoolTagOutput)
+}
+
+type NodeKubernetesConfig struct {
+	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	Cordon *bool                       `pulumi:"cordon"`
+	Labels []NodeKubernetesConfigLabel `pulumi:"labels"`
+	Taints []NodeKubernetesConfigTaint `pulumi:"taints"`
+}
+
+// NodeKubernetesConfigInput is an input type that accepts NodeKubernetesConfigArgs and NodeKubernetesConfigOutput values.
+// You can construct a concrete instance of `NodeKubernetesConfigInput` via:
+//
+//	NodeKubernetesConfigArgs{...}
+type NodeKubernetesConfigInput interface {
+	pulumi.Input
+
+	ToNodeKubernetesConfigOutput() NodeKubernetesConfigOutput
+	ToNodeKubernetesConfigOutputWithContext(context.Context) NodeKubernetesConfigOutput
+}
+
+type NodeKubernetesConfigArgs struct {
+	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	Cordon pulumi.BoolPtrInput                 `pulumi:"cordon"`
+	Labels NodeKubernetesConfigLabelArrayInput `pulumi:"labels"`
+	Taints NodeKubernetesConfigTaintArrayInput `pulumi:"taints"`
+}
+
+func (NodeKubernetesConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeKubernetesConfig)(nil)).Elem()
+}
+
+func (i NodeKubernetesConfigArgs) ToNodeKubernetesConfigOutput() NodeKubernetesConfigOutput {
+	return i.ToNodeKubernetesConfigOutputWithContext(context.Background())
+}
+
+func (i NodeKubernetesConfigArgs) ToNodeKubernetesConfigOutputWithContext(ctx context.Context) NodeKubernetesConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeKubernetesConfigOutput)
+}
+
+func (i NodeKubernetesConfigArgs) ToNodeKubernetesConfigPtrOutput() NodeKubernetesConfigPtrOutput {
+	return i.ToNodeKubernetesConfigPtrOutputWithContext(context.Background())
+}
+
+func (i NodeKubernetesConfigArgs) ToNodeKubernetesConfigPtrOutputWithContext(ctx context.Context) NodeKubernetesConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeKubernetesConfigOutput).ToNodeKubernetesConfigPtrOutputWithContext(ctx)
+}
+
+// NodeKubernetesConfigPtrInput is an input type that accepts NodeKubernetesConfigArgs, NodeKubernetesConfigPtr and NodeKubernetesConfigPtrOutput values.
+// You can construct a concrete instance of `NodeKubernetesConfigPtrInput` via:
+//
+//	        NodeKubernetesConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodeKubernetesConfigPtrInput interface {
+	pulumi.Input
+
+	ToNodeKubernetesConfigPtrOutput() NodeKubernetesConfigPtrOutput
+	ToNodeKubernetesConfigPtrOutputWithContext(context.Context) NodeKubernetesConfigPtrOutput
+}
+
+type nodeKubernetesConfigPtrType NodeKubernetesConfigArgs
+
+func NodeKubernetesConfigPtr(v *NodeKubernetesConfigArgs) NodeKubernetesConfigPtrInput {
+	return (*nodeKubernetesConfigPtrType)(v)
+}
+
+func (*nodeKubernetesConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeKubernetesConfig)(nil)).Elem()
+}
+
+func (i *nodeKubernetesConfigPtrType) ToNodeKubernetesConfigPtrOutput() NodeKubernetesConfigPtrOutput {
+	return i.ToNodeKubernetesConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *nodeKubernetesConfigPtrType) ToNodeKubernetesConfigPtrOutputWithContext(ctx context.Context) NodeKubernetesConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeKubernetesConfigPtrOutput)
+}
+
+type NodeKubernetesConfigOutput struct{ *pulumi.OutputState }
+
+func (NodeKubernetesConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeKubernetesConfig)(nil)).Elem()
+}
+
+func (o NodeKubernetesConfigOutput) ToNodeKubernetesConfigOutput() NodeKubernetesConfigOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigOutput) ToNodeKubernetesConfigOutputWithContext(ctx context.Context) NodeKubernetesConfigOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigOutput) ToNodeKubernetesConfigPtrOutput() NodeKubernetesConfigPtrOutput {
+	return o.ToNodeKubernetesConfigPtrOutputWithContext(context.Background())
+}
+
+func (o NodeKubernetesConfigOutput) ToNodeKubernetesConfigPtrOutputWithContext(ctx context.Context) NodeKubernetesConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodeKubernetesConfig) *NodeKubernetesConfig {
+		return &v
+	}).(NodeKubernetesConfigPtrOutput)
+}
+
+// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+func (o NodeKubernetesConfigOutput) Cordon() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodeKubernetesConfig) *bool { return v.Cordon }).(pulumi.BoolPtrOutput)
+}
+
+func (o NodeKubernetesConfigOutput) Labels() NodeKubernetesConfigLabelArrayOutput {
+	return o.ApplyT(func(v NodeKubernetesConfig) []NodeKubernetesConfigLabel { return v.Labels }).(NodeKubernetesConfigLabelArrayOutput)
+}
+
+func (o NodeKubernetesConfigOutput) Taints() NodeKubernetesConfigTaintArrayOutput {
+	return o.ApplyT(func(v NodeKubernetesConfig) []NodeKubernetesConfigTaint { return v.Taints }).(NodeKubernetesConfigTaintArrayOutput)
+}
+
+type NodeKubernetesConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (NodeKubernetesConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeKubernetesConfig)(nil)).Elem()
+}
+
+func (o NodeKubernetesConfigPtrOutput) ToNodeKubernetesConfigPtrOutput() NodeKubernetesConfigPtrOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigPtrOutput) ToNodeKubernetesConfigPtrOutputWithContext(ctx context.Context) NodeKubernetesConfigPtrOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigPtrOutput) Elem() NodeKubernetesConfigOutput {
+	return o.ApplyT(func(v *NodeKubernetesConfig) NodeKubernetesConfig {
+		if v != nil {
+			return *v
+		}
+		var ret NodeKubernetesConfig
+		return ret
+	}).(NodeKubernetesConfigOutput)
+}
+
+// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+func (o NodeKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NodeKubernetesConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Cordon
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o NodeKubernetesConfigPtrOutput) Labels() NodeKubernetesConfigLabelArrayOutput {
+	return o.ApplyT(func(v *NodeKubernetesConfig) []NodeKubernetesConfigLabel {
+		if v == nil {
+			return nil
+		}
+		return v.Labels
+	}).(NodeKubernetesConfigLabelArrayOutput)
+}
+
+func (o NodeKubernetesConfigPtrOutput) Taints() NodeKubernetesConfigTaintArrayOutput {
+	return o.ApplyT(func(v *NodeKubernetesConfig) []NodeKubernetesConfigTaint {
+		if v == nil {
+			return nil
+		}
+		return v.Taints
+	}).(NodeKubernetesConfigTaintArrayOutput)
+}
+
+type NodeKubernetesConfigLabel struct {
+	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key *string `pulumi:"key"`
+	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value *string `pulumi:"value"`
+}
+
+// NodeKubernetesConfigLabelInput is an input type that accepts NodeKubernetesConfigLabelArgs and NodeKubernetesConfigLabelOutput values.
+// You can construct a concrete instance of `NodeKubernetesConfigLabelInput` via:
+//
+//	NodeKubernetesConfigLabelArgs{...}
+type NodeKubernetesConfigLabelInput interface {
+	pulumi.Input
+
+	ToNodeKubernetesConfigLabelOutput() NodeKubernetesConfigLabelOutput
+	ToNodeKubernetesConfigLabelOutputWithContext(context.Context) NodeKubernetesConfigLabelOutput
+}
+
+type NodeKubernetesConfigLabelArgs struct {
+	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NodeKubernetesConfigLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i NodeKubernetesConfigLabelArgs) ToNodeKubernetesConfigLabelOutput() NodeKubernetesConfigLabelOutput {
+	return i.ToNodeKubernetesConfigLabelOutputWithContext(context.Background())
+}
+
+func (i NodeKubernetesConfigLabelArgs) ToNodeKubernetesConfigLabelOutputWithContext(ctx context.Context) NodeKubernetesConfigLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeKubernetesConfigLabelOutput)
+}
+
+// NodeKubernetesConfigLabelArrayInput is an input type that accepts NodeKubernetesConfigLabelArray and NodeKubernetesConfigLabelArrayOutput values.
+// You can construct a concrete instance of `NodeKubernetesConfigLabelArrayInput` via:
+//
+//	NodeKubernetesConfigLabelArray{ NodeKubernetesConfigLabelArgs{...} }
+type NodeKubernetesConfigLabelArrayInput interface {
+	pulumi.Input
+
+	ToNodeKubernetesConfigLabelArrayOutput() NodeKubernetesConfigLabelArrayOutput
+	ToNodeKubernetesConfigLabelArrayOutputWithContext(context.Context) NodeKubernetesConfigLabelArrayOutput
+}
+
+type NodeKubernetesConfigLabelArray []NodeKubernetesConfigLabelInput
+
+func (NodeKubernetesConfigLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i NodeKubernetesConfigLabelArray) ToNodeKubernetesConfigLabelArrayOutput() NodeKubernetesConfigLabelArrayOutput {
+	return i.ToNodeKubernetesConfigLabelArrayOutputWithContext(context.Background())
+}
+
+func (i NodeKubernetesConfigLabelArray) ToNodeKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) NodeKubernetesConfigLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeKubernetesConfigLabelArrayOutput)
+}
+
+type NodeKubernetesConfigLabelOutput struct{ *pulumi.OutputState }
+
+func (NodeKubernetesConfigLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o NodeKubernetesConfigLabelOutput) ToNodeKubernetesConfigLabelOutput() NodeKubernetesConfigLabelOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigLabelOutput) ToNodeKubernetesConfigLabelOutputWithContext(ctx context.Context) NodeKubernetesConfigLabelOutput {
+	return o
+}
+
+// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+func (o NodeKubernetesConfigLabelOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeKubernetesConfigLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+func (o NodeKubernetesConfigLabelOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeKubernetesConfigLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NodeKubernetesConfigLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (NodeKubernetesConfigLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o NodeKubernetesConfigLabelArrayOutput) ToNodeKubernetesConfigLabelArrayOutput() NodeKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigLabelArrayOutput) ToNodeKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) NodeKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) NodeKubernetesConfigLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodeKubernetesConfigLabel {
+		return vs[0].([]NodeKubernetesConfigLabel)[vs[1].(int)]
+	}).(NodeKubernetesConfigLabelOutput)
+}
+
+type NodeKubernetesConfigTaint struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect *string `pulumi:"effect"`
+	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key *string `pulumi:"key"`
+	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value *string `pulumi:"value"`
+}
+
+// NodeKubernetesConfigTaintInput is an input type that accepts NodeKubernetesConfigTaintArgs and NodeKubernetesConfigTaintOutput values.
+// You can construct a concrete instance of `NodeKubernetesConfigTaintInput` via:
+//
+//	NodeKubernetesConfigTaintArgs{...}
+type NodeKubernetesConfigTaintInput interface {
+	pulumi.Input
+
+	ToNodeKubernetesConfigTaintOutput() NodeKubernetesConfigTaintOutput
+	ToNodeKubernetesConfigTaintOutputWithContext(context.Context) NodeKubernetesConfigTaintOutput
+}
+
+type NodeKubernetesConfigTaintArgs struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect pulumi.StringPtrInput `pulumi:"effect"`
+	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NodeKubernetesConfigTaintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i NodeKubernetesConfigTaintArgs) ToNodeKubernetesConfigTaintOutput() NodeKubernetesConfigTaintOutput {
+	return i.ToNodeKubernetesConfigTaintOutputWithContext(context.Background())
+}
+
+func (i NodeKubernetesConfigTaintArgs) ToNodeKubernetesConfigTaintOutputWithContext(ctx context.Context) NodeKubernetesConfigTaintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeKubernetesConfigTaintOutput)
+}
+
+// NodeKubernetesConfigTaintArrayInput is an input type that accepts NodeKubernetesConfigTaintArray and NodeKubernetesConfigTaintArrayOutput values.
+// You can construct a concrete instance of `NodeKubernetesConfigTaintArrayInput` via:
+//
+//	NodeKubernetesConfigTaintArray{ NodeKubernetesConfigTaintArgs{...} }
+type NodeKubernetesConfigTaintArrayInput interface {
+	pulumi.Input
+
+	ToNodeKubernetesConfigTaintArrayOutput() NodeKubernetesConfigTaintArrayOutput
+	ToNodeKubernetesConfigTaintArrayOutputWithContext(context.Context) NodeKubernetesConfigTaintArrayOutput
+}
+
+type NodeKubernetesConfigTaintArray []NodeKubernetesConfigTaintInput
+
+func (NodeKubernetesConfigTaintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i NodeKubernetesConfigTaintArray) ToNodeKubernetesConfigTaintArrayOutput() NodeKubernetesConfigTaintArrayOutput {
+	return i.ToNodeKubernetesConfigTaintArrayOutputWithContext(context.Background())
+}
+
+func (i NodeKubernetesConfigTaintArray) ToNodeKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) NodeKubernetesConfigTaintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeKubernetesConfigTaintArrayOutput)
+}
+
+type NodeKubernetesConfigTaintOutput struct{ *pulumi.OutputState }
+
+func (NodeKubernetesConfigTaintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o NodeKubernetesConfigTaintOutput) ToNodeKubernetesConfigTaintOutput() NodeKubernetesConfigTaintOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigTaintOutput) ToNodeKubernetesConfigTaintOutputWithContext(ctx context.Context) NodeKubernetesConfigTaintOutput {
+	return o
+}
+
+// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+func (o NodeKubernetesConfigTaintOutput) Effect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeKubernetesConfigTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
+}
+
+// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+func (o NodeKubernetesConfigTaintOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeKubernetesConfigTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+func (o NodeKubernetesConfigTaintOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeKubernetesConfigTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NodeKubernetesConfigTaintArrayOutput struct{ *pulumi.OutputState }
+
+func (NodeKubernetesConfigTaintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o NodeKubernetesConfigTaintArrayOutput) ToNodeKubernetesConfigTaintArrayOutput() NodeKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigTaintArrayOutput) ToNodeKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) NodeKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o NodeKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) NodeKubernetesConfigTaintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodeKubernetesConfigTaint {
+		return vs[0].([]NodeKubernetesConfigTaint)[vs[1].(int)]
+	}).(NodeKubernetesConfigTaintOutput)
+}
+
 type NodePoolAutoScaling struct {
 	// 配置节点池的期望节点数。
 	DesiredReplicas *int `pulumi:"desiredReplicas"`
@@ -7132,6 +11668,255 @@ func (o NodePoolTagArrayOutput) Index(i pulumi.IntInput) NodePoolTagOutput {
 	}).(NodePoolTagOutput)
 }
 
+type NodeStatus struct {
+	Conditions []NodeStatusCondition `pulumi:"conditions"`
+	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	Phase *string `pulumi:"phase"`
+}
+
+// NodeStatusInput is an input type that accepts NodeStatusArgs and NodeStatusOutput values.
+// You can construct a concrete instance of `NodeStatusInput` via:
+//
+//	NodeStatusArgs{...}
+type NodeStatusInput interface {
+	pulumi.Input
+
+	ToNodeStatusOutput() NodeStatusOutput
+	ToNodeStatusOutputWithContext(context.Context) NodeStatusOutput
+}
+
+type NodeStatusArgs struct {
+	Conditions NodeStatusConditionArrayInput `pulumi:"conditions"`
+	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	Phase pulumi.StringPtrInput `pulumi:"phase"`
+}
+
+func (NodeStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeStatus)(nil)).Elem()
+}
+
+func (i NodeStatusArgs) ToNodeStatusOutput() NodeStatusOutput {
+	return i.ToNodeStatusOutputWithContext(context.Background())
+}
+
+func (i NodeStatusArgs) ToNodeStatusOutputWithContext(ctx context.Context) NodeStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeStatusOutput)
+}
+
+func (i NodeStatusArgs) ToNodeStatusPtrOutput() NodeStatusPtrOutput {
+	return i.ToNodeStatusPtrOutputWithContext(context.Background())
+}
+
+func (i NodeStatusArgs) ToNodeStatusPtrOutputWithContext(ctx context.Context) NodeStatusPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeStatusOutput).ToNodeStatusPtrOutputWithContext(ctx)
+}
+
+// NodeStatusPtrInput is an input type that accepts NodeStatusArgs, NodeStatusPtr and NodeStatusPtrOutput values.
+// You can construct a concrete instance of `NodeStatusPtrInput` via:
+//
+//	        NodeStatusArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodeStatusPtrInput interface {
+	pulumi.Input
+
+	ToNodeStatusPtrOutput() NodeStatusPtrOutput
+	ToNodeStatusPtrOutputWithContext(context.Context) NodeStatusPtrOutput
+}
+
+type nodeStatusPtrType NodeStatusArgs
+
+func NodeStatusPtr(v *NodeStatusArgs) NodeStatusPtrInput {
+	return (*nodeStatusPtrType)(v)
+}
+
+func (*nodeStatusPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeStatus)(nil)).Elem()
+}
+
+func (i *nodeStatusPtrType) ToNodeStatusPtrOutput() NodeStatusPtrOutput {
+	return i.ToNodeStatusPtrOutputWithContext(context.Background())
+}
+
+func (i *nodeStatusPtrType) ToNodeStatusPtrOutputWithContext(ctx context.Context) NodeStatusPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeStatusPtrOutput)
+}
+
+type NodeStatusOutput struct{ *pulumi.OutputState }
+
+func (NodeStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeStatus)(nil)).Elem()
+}
+
+func (o NodeStatusOutput) ToNodeStatusOutput() NodeStatusOutput {
+	return o
+}
+
+func (o NodeStatusOutput) ToNodeStatusOutputWithContext(ctx context.Context) NodeStatusOutput {
+	return o
+}
+
+func (o NodeStatusOutput) ToNodeStatusPtrOutput() NodeStatusPtrOutput {
+	return o.ToNodeStatusPtrOutputWithContext(context.Background())
+}
+
+func (o NodeStatusOutput) ToNodeStatusPtrOutputWithContext(ctx context.Context) NodeStatusPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodeStatus) *NodeStatus {
+		return &v
+	}).(NodeStatusPtrOutput)
+}
+
+func (o NodeStatusOutput) Conditions() NodeStatusConditionArrayOutput {
+	return o.ApplyT(func(v NodeStatus) []NodeStatusCondition { return v.Conditions }).(NodeStatusConditionArrayOutput)
+}
+
+// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+func (o NodeStatusOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
+}
+
+type NodeStatusPtrOutput struct{ *pulumi.OutputState }
+
+func (NodeStatusPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeStatus)(nil)).Elem()
+}
+
+func (o NodeStatusPtrOutput) ToNodeStatusPtrOutput() NodeStatusPtrOutput {
+	return o
+}
+
+func (o NodeStatusPtrOutput) ToNodeStatusPtrOutputWithContext(ctx context.Context) NodeStatusPtrOutput {
+	return o
+}
+
+func (o NodeStatusPtrOutput) Elem() NodeStatusOutput {
+	return o.ApplyT(func(v *NodeStatus) NodeStatus {
+		if v != nil {
+			return *v
+		}
+		var ret NodeStatus
+		return ret
+	}).(NodeStatusOutput)
+}
+
+func (o NodeStatusPtrOutput) Conditions() NodeStatusConditionArrayOutput {
+	return o.ApplyT(func(v *NodeStatus) []NodeStatusCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Conditions
+	}).(NodeStatusConditionArrayOutput)
+}
+
+// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+func (o NodeStatusPtrOutput) Phase() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodeStatus) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Phase
+	}).(pulumi.StringPtrOutput)
+}
+
+type NodeStatusCondition struct {
+	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	Type *string `pulumi:"type"`
+}
+
+// NodeStatusConditionInput is an input type that accepts NodeStatusConditionArgs and NodeStatusConditionOutput values.
+// You can construct a concrete instance of `NodeStatusConditionInput` via:
+//
+//	NodeStatusConditionArgs{...}
+type NodeStatusConditionInput interface {
+	pulumi.Input
+
+	ToNodeStatusConditionOutput() NodeStatusConditionOutput
+	ToNodeStatusConditionOutputWithContext(context.Context) NodeStatusConditionOutput
+}
+
+type NodeStatusConditionArgs struct {
+	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (NodeStatusConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeStatusCondition)(nil)).Elem()
+}
+
+func (i NodeStatusConditionArgs) ToNodeStatusConditionOutput() NodeStatusConditionOutput {
+	return i.ToNodeStatusConditionOutputWithContext(context.Background())
+}
+
+func (i NodeStatusConditionArgs) ToNodeStatusConditionOutputWithContext(ctx context.Context) NodeStatusConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeStatusConditionOutput)
+}
+
+// NodeStatusConditionArrayInput is an input type that accepts NodeStatusConditionArray and NodeStatusConditionArrayOutput values.
+// You can construct a concrete instance of `NodeStatusConditionArrayInput` via:
+//
+//	NodeStatusConditionArray{ NodeStatusConditionArgs{...} }
+type NodeStatusConditionArrayInput interface {
+	pulumi.Input
+
+	ToNodeStatusConditionArrayOutput() NodeStatusConditionArrayOutput
+	ToNodeStatusConditionArrayOutputWithContext(context.Context) NodeStatusConditionArrayOutput
+}
+
+type NodeStatusConditionArray []NodeStatusConditionInput
+
+func (NodeStatusConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeStatusCondition)(nil)).Elem()
+}
+
+func (i NodeStatusConditionArray) ToNodeStatusConditionArrayOutput() NodeStatusConditionArrayOutput {
+	return i.ToNodeStatusConditionArrayOutputWithContext(context.Background())
+}
+
+func (i NodeStatusConditionArray) ToNodeStatusConditionArrayOutputWithContext(ctx context.Context) NodeStatusConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeStatusConditionArrayOutput)
+}
+
+type NodeStatusConditionOutput struct{ *pulumi.OutputState }
+
+func (NodeStatusConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeStatusCondition)(nil)).Elem()
+}
+
+func (o NodeStatusConditionOutput) ToNodeStatusConditionOutput() NodeStatusConditionOutput {
+	return o
+}
+
+func (o NodeStatusConditionOutput) ToNodeStatusConditionOutputWithContext(ctx context.Context) NodeStatusConditionOutput {
+	return o
+}
+
+// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+func (o NodeStatusConditionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeStatusCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type NodeStatusConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (NodeStatusConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeStatusCondition)(nil)).Elem()
+}
+
+func (o NodeStatusConditionArrayOutput) ToNodeStatusConditionArrayOutput() NodeStatusConditionArrayOutput {
+	return o
+}
+
+func (o NodeStatusConditionArrayOutput) ToNodeStatusConditionArrayOutputWithContext(ctx context.Context) NodeStatusConditionArrayOutput {
+	return o
+}
+
+func (o NodeStatusConditionArrayOutput) Index(i pulumi.IntInput) NodeStatusConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodeStatusCondition {
+		return vs[0].([]NodeStatusCondition)[vs[1].(int)]
+	}).(NodeStatusConditionOutput)
+}
+
 type GetAddonStatus struct {
 	// 组件当前主状态下的状态条件。
 	Conditions []GetAddonStatusCondition `pulumi:"conditions"`
@@ -8654,6 +13439,2573 @@ func (o GetClusterTagArrayOutput) Index(i pulumi.IntInput) GetClusterTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterTag {
 		return vs[0].([]GetClusterTag)[vs[1].(int)]
 	}).(GetClusterTagOutput)
+}
+
+type GetDefaultNodePoolAutoScaling struct {
+	// 配置节点池的期望节点数。
+	DesiredReplicas int `pulumi:"desiredReplicas"`
+	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	Enabled bool `pulumi:"enabled"`
+	// 配置节点池的最大节点数。
+	MaxReplicas int `pulumi:"maxReplicas"`
+	// 配置节点池的最小节点数。
+	MinReplicas int `pulumi:"minReplicas"`
+	// 优先级。
+	Priority int `pulumi:"priority"`
+	// 伸缩组ID。
+	ScalingGroupId string `pulumi:"scalingGroupId"`
+	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	SubnetPolicy string `pulumi:"subnetPolicy"`
+}
+
+// GetDefaultNodePoolAutoScalingInput is an input type that accepts GetDefaultNodePoolAutoScalingArgs and GetDefaultNodePoolAutoScalingOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolAutoScalingInput` via:
+//
+//	GetDefaultNodePoolAutoScalingArgs{...}
+type GetDefaultNodePoolAutoScalingInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolAutoScalingOutput() GetDefaultNodePoolAutoScalingOutput
+	ToGetDefaultNodePoolAutoScalingOutputWithContext(context.Context) GetDefaultNodePoolAutoScalingOutput
+}
+
+type GetDefaultNodePoolAutoScalingArgs struct {
+	// 配置节点池的期望节点数。
+	DesiredReplicas pulumi.IntInput `pulumi:"desiredReplicas"`
+	// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// 配置节点池的最大节点数。
+	MaxReplicas pulumi.IntInput `pulumi:"maxReplicas"`
+	// 配置节点池的最小节点数。
+	MinReplicas pulumi.IntInput `pulumi:"minReplicas"`
+	// 优先级。
+	Priority pulumi.IntInput `pulumi:"priority"`
+	// 伸缩组ID。
+	ScalingGroupId pulumi.StringInput `pulumi:"scalingGroupId"`
+	// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+	SubnetPolicy pulumi.StringInput `pulumi:"subnetPolicy"`
+}
+
+func (GetDefaultNodePoolAutoScalingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolAutoScaling)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolAutoScalingArgs) ToGetDefaultNodePoolAutoScalingOutput() GetDefaultNodePoolAutoScalingOutput {
+	return i.ToGetDefaultNodePoolAutoScalingOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolAutoScalingArgs) ToGetDefaultNodePoolAutoScalingOutputWithContext(ctx context.Context) GetDefaultNodePoolAutoScalingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolAutoScalingOutput)
+}
+
+type GetDefaultNodePoolAutoScalingOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolAutoScalingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolAutoScaling)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolAutoScalingOutput) ToGetDefaultNodePoolAutoScalingOutput() GetDefaultNodePoolAutoScalingOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolAutoScalingOutput) ToGetDefaultNodePoolAutoScalingOutputWithContext(ctx context.Context) GetDefaultNodePoolAutoScalingOutput {
+	return o
+}
+
+// 配置节点池的期望节点数。
+func (o GetDefaultNodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.DesiredReplicas }).(pulumi.IntOutput)
+}
+
+// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+func (o GetDefaultNodePoolAutoScalingOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// 配置节点池的最大节点数。
+func (o GetDefaultNodePoolAutoScalingOutput) MaxReplicas() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.MaxReplicas }).(pulumi.IntOutput)
+}
+
+// 配置节点池的最小节点数。
+func (o GetDefaultNodePoolAutoScalingOutput) MinReplicas() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.MinReplicas }).(pulumi.IntOutput)
+}
+
+// 优先级。
+func (o GetDefaultNodePoolAutoScalingOutput) Priority() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) int { return v.Priority }).(pulumi.IntOutput)
+}
+
+// 伸缩组ID。
+func (o GetDefaultNodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) string { return v.ScalingGroupId }).(pulumi.StringOutput)
+}
+
+// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+func (o GetDefaultNodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolAutoScaling) string { return v.SubnetPolicy }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfig struct {
+	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	AutoSyncDisabled bool `pulumi:"autoSyncDisabled"`
+	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	Cordon bool `pulumi:"cordon"`
+	// Kubelet 组件的相关配置
+	KubeletConfig GetDefaultNodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
+	// 节点池/节点的 Kubernetes 标签（Labels）信息。
+	Labels []GetDefaultNodePoolKubernetesConfigLabel `pulumi:"labels"`
+	// Kubernetes 中节点对象的元数据名称前缀。
+	NamePrefix string `pulumi:"namePrefix"`
+	// Kubernetes 中节点对象的元数据名称后缀。
+	NameSuffix string `pulumi:"nameSuffix"`
+	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	NameUseHostname bool `pulumi:"nameUseHostname"`
+	// 节点池/节点的 Kubernetes 污点（Taints）信息。
+	Taints []GetDefaultNodePoolKubernetesConfigTaint `pulumi:"taints"`
+}
+
+// GetDefaultNodePoolKubernetesConfigInput is an input type that accepts GetDefaultNodePoolKubernetesConfigArgs and GetDefaultNodePoolKubernetesConfigOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigArgs{...}
+type GetDefaultNodePoolKubernetesConfigInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigOutput() GetDefaultNodePoolKubernetesConfigOutput
+	ToGetDefaultNodePoolKubernetesConfigOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigArgs struct {
+	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+	AutoSyncDisabled pulumi.BoolInput `pulumi:"autoSyncDisabled"`
+	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+	Cordon pulumi.BoolInput `pulumi:"cordon"`
+	// Kubelet 组件的相关配置
+	KubeletConfig GetDefaultNodePoolKubernetesConfigKubeletConfigInput `pulumi:"kubeletConfig"`
+	// 节点池/节点的 Kubernetes 标签（Labels）信息。
+	Labels GetDefaultNodePoolKubernetesConfigLabelArrayInput `pulumi:"labels"`
+	// Kubernetes 中节点对象的元数据名称前缀。
+	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
+	// Kubernetes 中节点对象的元数据名称后缀。
+	NameSuffix pulumi.StringInput `pulumi:"nameSuffix"`
+	// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+	NameUseHostname pulumi.BoolInput `pulumi:"nameUseHostname"`
+	// 节点池/节点的 Kubernetes 污点（Taints）信息。
+	Taints GetDefaultNodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
+}
+
+func (GetDefaultNodePoolKubernetesConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfig)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigArgs) ToGetDefaultNodePoolKubernetesConfigOutput() GetDefaultNodePoolKubernetesConfigOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigArgs) ToGetDefaultNodePoolKubernetesConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfig)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigOutput) ToGetDefaultNodePoolKubernetesConfigOutput() GetDefaultNodePoolKubernetesConfigOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigOutput) ToGetDefaultNodePoolKubernetesConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigOutput {
+	return o
+}
+
+// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+func (o GetDefaultNodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) bool { return v.AutoSyncDisabled }).(pulumi.BoolOutput)
+}
+
+// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+func (o GetDefaultNodePoolKubernetesConfigOutput) Cordon() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) bool { return v.Cordon }).(pulumi.BoolOutput)
+}
+
+// Kubelet 组件的相关配置
+func (o GetDefaultNodePoolKubernetesConfigOutput) KubeletConfig() GetDefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) GetDefaultNodePoolKubernetesConfigKubeletConfig {
+		return v.KubeletConfig
+	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigOutput)
+}
+
+// 节点池/节点的 Kubernetes 标签（Labels）信息。
+func (o GetDefaultNodePoolKubernetesConfigOutput) Labels() GetDefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) []GetDefaultNodePoolKubernetesConfigLabel { return v.Labels }).(GetDefaultNodePoolKubernetesConfigLabelArrayOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称前缀。
+func (o GetDefaultNodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称后缀。
+func (o GetDefaultNodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) string { return v.NameSuffix }).(pulumi.StringOutput)
+}
+
+// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+func (o GetDefaultNodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) bool { return v.NameUseHostname }).(pulumi.BoolOutput)
+}
+
+// 节点池/节点的 Kubernetes 污点（Taints）信息。
+func (o GetDefaultNodePoolKubernetesConfigOutput) Taints() GetDefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfig) []GetDefaultNodePoolKubernetesConfigTaint { return v.Taints }).(GetDefaultNodePoolKubernetesConfigTaintArrayOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfig struct {
+	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	CpuManagerPolicy string `pulumi:"cpuManagerPolicy"`
+	// 特性门控。
+	FeatureGates GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
+	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	KubeApiBurst int `pulumi:"kubeApiBurst"`
+	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	KubeApiQps int `pulumi:"kubeApiQps"`
+	// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	KubeReserveds []GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
+	// 配置 kubelet 支持的最大 Pod 数量
+	MaxPods int `pulumi:"maxPods"`
+	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	RegistryBurst int `pulumi:"registryBurst"`
+	// 可用来限制镜像仓库的 QPS 上限
+	RegistryPullQps int `pulumi:"registryPullQps"`
+	// 逐一拉取镜像。
+	SerializeImagePulls bool `pulumi:"serializeImagePulls"`
+	// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	SystemReserveds []GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
+	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	TopologyManagerPolicy string `pulumi:"topologyManagerPolicy"`
+	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	TopologyManagerScope string `pulumi:"topologyManagerScope"`
+}
+
+// GetDefaultNodePoolKubernetesConfigKubeletConfigInput is an input type that accepts GetDefaultNodePoolKubernetesConfigKubeletConfigArgs and GetDefaultNodePoolKubernetesConfigKubeletConfigOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigKubeletConfigInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigKubeletConfigArgs{...}
+type GetDefaultNodePoolKubernetesConfigKubeletConfigInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigOutput
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigArgs struct {
+	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+	CpuManagerPolicy pulumi.StringInput `pulumi:"cpuManagerPolicy"`
+	// 特性门控。
+	FeatureGates GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput `pulumi:"featureGates"`
+	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+	KubeApiBurst pulumi.IntInput `pulumi:"kubeApiBurst"`
+	// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+	KubeApiQps pulumi.IntInput `pulumi:"kubeApiQps"`
+	// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	KubeReserveds GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
+	// 配置 kubelet 支持的最大 Pod 数量
+	MaxPods pulumi.IntInput `pulumi:"maxPods"`
+	// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+	RegistryBurst pulumi.IntInput `pulumi:"registryBurst"`
+	// 可用来限制镜像仓库的 QPS 上限
+	RegistryPullQps pulumi.IntInput `pulumi:"registryPullQps"`
+	// 逐一拉取镜像。
+	SerializeImagePulls pulumi.BoolInput `pulumi:"serializeImagePulls"`
+	// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+	SystemReserveds GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
+	// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+	TopologyManagerPolicy pulumi.StringInput `pulumi:"topologyManagerPolicy"`
+	// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+	TopologyManagerScope pulumi.StringInput `pulumi:"topologyManagerScope"`
+}
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfig)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigKubeletConfigOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfig)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigOutput {
+	return o
+}
+
+// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) string { return v.CpuManagerPolicy }).(pulumi.StringOutput)
+}
+
+// 特性门控。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates {
+		return v.FeatureGates
+	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
+}
+
+// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiBurst }).(pulumi.IntOutput)
+}
+
+// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiQps }).(pulumi.IntOutput)
+}
+
+// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) []GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
+		return v.KubeReserveds
+	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
+}
+
+// 配置 kubelet 支持的最大 Pod 数量
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.MaxPods }).(pulumi.IntOutput)
+}
+
+// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryBurst }).(pulumi.IntOutput)
+}
+
+// 可用来限制镜像仓库的 QPS 上限
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryPullQps }).(pulumi.IntOutput)
+}
+
+// 逐一拉取镜像。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) bool { return v.SerializeImagePulls }).(pulumi.BoolOutput)
+}
+
+// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) []GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
+		return v.SystemReserveds
+	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
+}
+
+// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) string { return v.TopologyManagerPolicy }).(pulumi.StringOutput)
+}
+
+// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfig) string { return v.TopologyManagerScope }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates struct {
+	// 是否开启特性开关本地垂直Pod伸缩
+	InPlacePodVerticalScaling bool `pulumi:"inPlacePodVerticalScaling"`
+	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	QoSResourceManager bool `pulumi:"qoSResourceManager"`
+}
+
+// GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput is an input type that accepts GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs and GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{...}
+type GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
+	// 是否开启特性开关本地垂直Pod伸缩
+	InPlacePodVerticalScaling pulumi.BoolInput `pulumi:"inPlacePodVerticalScaling"`
+	// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+	QoSResourceManager pulumi.BoolInput `pulumi:"qoSResourceManager"`
+}
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
+	return o
+}
+
+// 是否开启特性开关本地垂直Pod伸缩
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) bool {
+		return v.InPlacePodVerticalScaling
+	}).(pulumi.BoolOutput)
+}
+
+// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGates) bool { return v.QoSResourceManager }).(pulumi.BoolOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name string `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	Quantity string `pulumi:"quantity"`
+}
+
+// GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput is an input type that accepts GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs and GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs{...}
+type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name pulumi.StringInput `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+	Quantity pulumi.StringInput `pulumi:"quantity"`
+}
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput)
+}
+
+// GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput is an input type that accepts GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray and GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray{ GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs{...} }
+type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray []GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return o
+}
+
+// 资源名称，取值为 cpu 或 memory。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Quantity }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
+		return vs[0].([]GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved)[vs[1].(int)]
+	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name string `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	Quantity string `pulumi:"quantity"`
+}
+
+// GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput is an input type that accepts GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs and GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs{...}
+type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
+	// 资源名称，取值为 cpu 或 memory。
+	Name pulumi.StringInput `pulumi:"name"`
+	// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+	Quantity pulumi.StringInput `pulumi:"quantity"`
+}
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput)
+}
+
+// GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput is an input type that accepts GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray and GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray{ GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs{...} }
+type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput
+	ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray []GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return o
+}
+
+// 资源名称，取值为 cpu 或 memory。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Quantity }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput() GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) ToGetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved {
+		return vs[0].([]GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReserved)[vs[1].(int)]
+	}).(GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigLabel struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetDefaultNodePoolKubernetesConfigLabelInput is an input type that accepts GetDefaultNodePoolKubernetesConfigLabelArgs and GetDefaultNodePoolKubernetesConfigLabelOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigLabelInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigLabelArgs{...}
+type GetDefaultNodePoolKubernetesConfigLabelInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigLabelOutput() GetDefaultNodePoolKubernetesConfigLabelOutput
+	ToGetDefaultNodePoolKubernetesConfigLabelOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigLabelOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigLabelArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDefaultNodePoolKubernetesConfigLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigLabelArgs) ToGetDefaultNodePoolKubernetesConfigLabelOutput() GetDefaultNodePoolKubernetesConfigLabelOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigLabelOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigLabelArgs) ToGetDefaultNodePoolKubernetesConfigLabelOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigLabelOutput)
+}
+
+// GetDefaultNodePoolKubernetesConfigLabelArrayInput is an input type that accepts GetDefaultNodePoolKubernetesConfigLabelArray and GetDefaultNodePoolKubernetesConfigLabelArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigLabelArrayInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigLabelArray{ GetDefaultNodePoolKubernetesConfigLabelArgs{...} }
+type GetDefaultNodePoolKubernetesConfigLabelArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigLabelArrayOutput() GetDefaultNodePoolKubernetesConfigLabelArrayOutput
+	ToGetDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigLabelArrayOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigLabelArray []GetDefaultNodePoolKubernetesConfigLabelInput
+
+func (GetDefaultNodePoolKubernetesConfigLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigLabelArray) ToGetDefaultNodePoolKubernetesConfigLabelArrayOutput() GetDefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigLabelArray) ToGetDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigLabelArrayOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigLabelOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigLabelOutput) ToGetDefaultNodePoolKubernetesConfigLabelOutput() GetDefaultNodePoolKubernetesConfigLabelOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigLabelOutput) ToGetDefaultNodePoolKubernetesConfigLabelOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigLabelOutput {
+	return o
+}
+
+// 标签键。
+func (o GetDefaultNodePoolKubernetesConfigLabelOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigLabel) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetDefaultNodePoolKubernetesConfigLabelOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigLabel) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigLabelArrayOutput) ToGetDefaultNodePoolKubernetesConfigLabelArrayOutput() GetDefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigLabelArrayOutput) ToGetDefaultNodePoolKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolKubernetesConfigLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolKubernetesConfigLabel {
+		return vs[0].([]GetDefaultNodePoolKubernetesConfigLabel)[vs[1].(int)]
+	}).(GetDefaultNodePoolKubernetesConfigLabelOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigTaint struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect string `pulumi:"effect"`
+	// 污点键。
+	Key string `pulumi:"key"`
+	// 污点值。
+	Value string `pulumi:"value"`
+}
+
+// GetDefaultNodePoolKubernetesConfigTaintInput is an input type that accepts GetDefaultNodePoolKubernetesConfigTaintArgs and GetDefaultNodePoolKubernetesConfigTaintOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigTaintInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigTaintArgs{...}
+type GetDefaultNodePoolKubernetesConfigTaintInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigTaintOutput() GetDefaultNodePoolKubernetesConfigTaintOutput
+	ToGetDefaultNodePoolKubernetesConfigTaintOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigTaintOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigTaintArgs struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect pulumi.StringInput `pulumi:"effect"`
+	// 污点键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 污点值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDefaultNodePoolKubernetesConfigTaintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigTaintArgs) ToGetDefaultNodePoolKubernetesConfigTaintOutput() GetDefaultNodePoolKubernetesConfigTaintOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigTaintOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigTaintArgs) ToGetDefaultNodePoolKubernetesConfigTaintOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigTaintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigTaintOutput)
+}
+
+// GetDefaultNodePoolKubernetesConfigTaintArrayInput is an input type that accepts GetDefaultNodePoolKubernetesConfigTaintArray and GetDefaultNodePoolKubernetesConfigTaintArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolKubernetesConfigTaintArrayInput` via:
+//
+//	GetDefaultNodePoolKubernetesConfigTaintArray{ GetDefaultNodePoolKubernetesConfigTaintArgs{...} }
+type GetDefaultNodePoolKubernetesConfigTaintArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolKubernetesConfigTaintArrayOutput() GetDefaultNodePoolKubernetesConfigTaintArrayOutput
+	ToGetDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(context.Context) GetDefaultNodePoolKubernetesConfigTaintArrayOutput
+}
+
+type GetDefaultNodePoolKubernetesConfigTaintArray []GetDefaultNodePoolKubernetesConfigTaintInput
+
+func (GetDefaultNodePoolKubernetesConfigTaintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolKubernetesConfigTaintArray) ToGetDefaultNodePoolKubernetesConfigTaintArrayOutput() GetDefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return i.ToGetDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolKubernetesConfigTaintArray) ToGetDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolKubernetesConfigTaintArrayOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigTaintOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigTaintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigTaintOutput) ToGetDefaultNodePoolKubernetesConfigTaintOutput() GetDefaultNodePoolKubernetesConfigTaintOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigTaintOutput) ToGetDefaultNodePoolKubernetesConfigTaintOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigTaintOutput {
+	return o
+}
+
+// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+func (o GetDefaultNodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigTaint) string { return v.Effect }).(pulumi.StringOutput)
+}
+
+// 污点键。
+func (o GetDefaultNodePoolKubernetesConfigTaintOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigTaint) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 污点值。
+func (o GetDefaultNodePoolKubernetesConfigTaintOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolKubernetesConfigTaint) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolKubernetesConfigTaintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolKubernetesConfigTaintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolKubernetesConfigTaintArrayOutput) ToGetDefaultNodePoolKubernetesConfigTaintArrayOutput() GetDefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigTaintArrayOutput) ToGetDefaultNodePoolKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolKubernetesConfigTaintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolKubernetesConfigTaint {
+		return vs[0].([]GetDefaultNodePoolKubernetesConfigTaint)[vs[1].(int)]
+	}).(GetDefaultNodePoolKubernetesConfigTaintOutput)
+}
+
+type GetDefaultNodePoolManagement struct {
+	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	Enabled bool `pulumi:"enabled"`
+	// 检查自愈配置。
+	RemedyConfig GetDefaultNodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
+}
+
+// GetDefaultNodePoolManagementInput is an input type that accepts GetDefaultNodePoolManagementArgs and GetDefaultNodePoolManagementOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolManagementInput` via:
+//
+//	GetDefaultNodePoolManagementArgs{...}
+type GetDefaultNodePoolManagementInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolManagementOutput() GetDefaultNodePoolManagementOutput
+	ToGetDefaultNodePoolManagementOutputWithContext(context.Context) GetDefaultNodePoolManagementOutput
+}
+
+type GetDefaultNodePoolManagementArgs struct {
+	// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// 检查自愈配置。
+	RemedyConfig GetDefaultNodePoolManagementRemedyConfigInput `pulumi:"remedyConfig"`
+}
+
+func (GetDefaultNodePoolManagementArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolManagement)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolManagementArgs) ToGetDefaultNodePoolManagementOutput() GetDefaultNodePoolManagementOutput {
+	return i.ToGetDefaultNodePoolManagementOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolManagementArgs) ToGetDefaultNodePoolManagementOutputWithContext(ctx context.Context) GetDefaultNodePoolManagementOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolManagementOutput)
+}
+
+type GetDefaultNodePoolManagementOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolManagementOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolManagement)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolManagementOutput) ToGetDefaultNodePoolManagementOutput() GetDefaultNodePoolManagementOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolManagementOutput) ToGetDefaultNodePoolManagementOutputWithContext(ctx context.Context) GetDefaultNodePoolManagementOutput {
+	return o
+}
+
+// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+func (o GetDefaultNodePoolManagementOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolManagement) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// 检查自愈配置。
+func (o GetDefaultNodePoolManagementOutput) RemedyConfig() GetDefaultNodePoolManagementRemedyConfigOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolManagement) GetDefaultNodePoolManagementRemedyConfig { return v.RemedyConfig }).(GetDefaultNodePoolManagementRemedyConfigOutput)
+}
+
+type GetDefaultNodePoolManagementRemedyConfig struct {
+	// 是否开启检查自愈。
+	Enabled bool `pulumi:"enabled"`
+	// 检查自愈规则ID。
+	RemedyId string `pulumi:"remedyId"`
+}
+
+// GetDefaultNodePoolManagementRemedyConfigInput is an input type that accepts GetDefaultNodePoolManagementRemedyConfigArgs and GetDefaultNodePoolManagementRemedyConfigOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolManagementRemedyConfigInput` via:
+//
+//	GetDefaultNodePoolManagementRemedyConfigArgs{...}
+type GetDefaultNodePoolManagementRemedyConfigInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolManagementRemedyConfigOutput() GetDefaultNodePoolManagementRemedyConfigOutput
+	ToGetDefaultNodePoolManagementRemedyConfigOutputWithContext(context.Context) GetDefaultNodePoolManagementRemedyConfigOutput
+}
+
+type GetDefaultNodePoolManagementRemedyConfigArgs struct {
+	// 是否开启检查自愈。
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// 检查自愈规则ID。
+	RemedyId pulumi.StringInput `pulumi:"remedyId"`
+}
+
+func (GetDefaultNodePoolManagementRemedyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolManagementRemedyConfig)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolManagementRemedyConfigArgs) ToGetDefaultNodePoolManagementRemedyConfigOutput() GetDefaultNodePoolManagementRemedyConfigOutput {
+	return i.ToGetDefaultNodePoolManagementRemedyConfigOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolManagementRemedyConfigArgs) ToGetDefaultNodePoolManagementRemedyConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolManagementRemedyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolManagementRemedyConfigOutput)
+}
+
+type GetDefaultNodePoolManagementRemedyConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolManagementRemedyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolManagementRemedyConfig)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolManagementRemedyConfigOutput) ToGetDefaultNodePoolManagementRemedyConfigOutput() GetDefaultNodePoolManagementRemedyConfigOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolManagementRemedyConfigOutput) ToGetDefaultNodePoolManagementRemedyConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolManagementRemedyConfigOutput {
+	return o
+}
+
+// 是否开启检查自愈。
+func (o GetDefaultNodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolManagementRemedyConfig) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// 检查自愈规则ID。
+func (o GetDefaultNodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolManagementRemedyConfig) string { return v.RemedyId }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolNodeConfig struct {
+	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	AdditionalContainerStorageEnabled bool `pulumi:"additionalContainerStorageEnabled"`
+	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	AutoRenew bool `pulumi:"autoRenew"`
+	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	AutoRenewPeriod int `pulumi:"autoRenewPeriod"`
+	// 节点的数据盘配置。
+	DataVolumes []GetDefaultNodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
+	// 实例在部署集中的分组号，0表示未设置
+	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID
+	DeploymentSetId string `pulumi:"deploymentSetId"`
+	// 节点对应的主机名称。
+	Hostname string `pulumi:"hostname"`
+	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	HpcClusterIds []string `pulumi:"hpcClusterIds"`
+	// 节点对应云服务器所使用的镜像 ID。
+	ImageId string `pulumi:"imageId"`
+	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	InitializeScript string `pulumi:"initializeScript"`
+	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	InstanceChargeType string `pulumi:"instanceChargeType"`
+	// 节点（实例）名称。
+	InstanceName string `pulumi:"instanceName"`
+	// 节点对应的云服务器实例规格 ID 列表。
+	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
+	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	InstancesDistribution GetDefaultNodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
+	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	NamePrefix string `pulumi:"namePrefix"`
+	// 节点间的网络通讯模式。
+	NetworkTrafficMode string `pulumi:"networkTrafficMode"`
+	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	Period int `pulumi:"period"`
+	// 部署节点前执行脚本。
+	PreScript string `pulumi:"preScript"`
+	// ECS所属项目，一个ECS只能归属于一个项目。
+	ProjectName string `pulumi:"projectName"`
+	// 节点自动开启公网访问的配置信息
+	PublicAccessConfig GetDefaultNodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
+	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	PublicAccessEnabled bool `pulumi:"publicAccessEnabled"`
+	// 节点安全配置。
+	Security GetDefaultNodePoolNodeConfigSecurity `pulumi:"security"`
+	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	SpotStrategy string `pulumi:"spotStrategy"`
+	// 节点网络所属的子网 ID 列表。
+	SubnetIds []string `pulumi:"subnetIds"`
+	// 节点的系统盘配置。
+	SystemVolume GetDefaultNodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
+	// 节点池配置的标签信息
+	Tags []GetDefaultNodePoolNodeConfigTag `pulumi:"tags"`
+}
+
+// GetDefaultNodePoolNodeConfigInput is an input type that accepts GetDefaultNodePoolNodeConfigArgs and GetDefaultNodePoolNodeConfigOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigInput` via:
+//
+//	GetDefaultNodePoolNodeConfigArgs{...}
+type GetDefaultNodePoolNodeConfigInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigOutput() GetDefaultNodePoolNodeConfigOutput
+	ToGetDefaultNodePoolNodeConfigOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigOutput
+}
+
+type GetDefaultNodePoolNodeConfigArgs struct {
+	// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+	AdditionalContainerStorageEnabled pulumi.BoolInput `pulumi:"additionalContainerStorageEnabled"`
+	// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
+	// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+	AutoRenewPeriod pulumi.IntInput `pulumi:"autoRenewPeriod"`
+	// 节点的数据盘配置。
+	DataVolumes GetDefaultNodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
+	// 实例在部署集中的分组号，0表示未设置
+	DeploymentSetGroupNumber pulumi.IntInput `pulumi:"deploymentSetGroupNumber"`
+	// 实例需要加入的部署集ID
+	DeploymentSetId pulumi.StringInput `pulumi:"deploymentSetId"`
+	// 节点对应的主机名称。
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
+	// 节点对应云服务器所使用的镜像 ID。
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+	InitializeScript pulumi.StringInput `pulumi:"initializeScript"`
+	// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+	InstanceChargeType pulumi.StringInput `pulumi:"instanceChargeType"`
+	// 节点（实例）名称。
+	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// 节点对应的云服务器实例规格 ID 列表。
+	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
+	// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+	InstancesDistribution GetDefaultNodePoolNodeConfigInstancesDistributionInput `pulumi:"instancesDistribution"`
+	// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
+	// 节点间的网络通讯模式。
+	NetworkTrafficMode pulumi.StringInput `pulumi:"networkTrafficMode"`
+	// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+	Period pulumi.IntInput `pulumi:"period"`
+	// 部署节点前执行脚本。
+	PreScript pulumi.StringInput `pulumi:"preScript"`
+	// ECS所属项目，一个ECS只能归属于一个项目。
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// 节点自动开启公网访问的配置信息
+	PublicAccessConfig GetDefaultNodePoolNodeConfigPublicAccessConfigInput `pulumi:"publicAccessConfig"`
+	// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+	PublicAccessEnabled pulumi.BoolInput `pulumi:"publicAccessEnabled"`
+	// 节点安全配置。
+	Security GetDefaultNodePoolNodeConfigSecurityInput `pulumi:"security"`
+	// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+	SpotStrategy pulumi.StringInput `pulumi:"spotStrategy"`
+	// 节点网络所属的子网 ID 列表。
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+	// 节点的系统盘配置。
+	SystemVolume GetDefaultNodePoolNodeConfigSystemVolumeInput `pulumi:"systemVolume"`
+	// 节点池配置的标签信息
+	Tags GetDefaultNodePoolNodeConfigTagArrayInput `pulumi:"tags"`
+}
+
+func (GetDefaultNodePoolNodeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfig)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigArgs) ToGetDefaultNodePoolNodeConfigOutput() GetDefaultNodePoolNodeConfigOutput {
+	return i.ToGetDefaultNodePoolNodeConfigOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigArgs) ToGetDefaultNodePoolNodeConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigOutput)
+}
+
+type GetDefaultNodePoolNodeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfig)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigOutput) ToGetDefaultNodePoolNodeConfigOutput() GetDefaultNodePoolNodeConfigOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigOutput) ToGetDefaultNodePoolNodeConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigOutput {
+	return o
+}
+
+// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+func (o GetDefaultNodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolOutput)
+}
+
+// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+func (o GetDefaultNodePoolNodeConfigOutput) AutoRenew() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) bool { return v.AutoRenew }).(pulumi.BoolOutput)
+}
+
+// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+func (o GetDefaultNodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) int { return v.AutoRenewPeriod }).(pulumi.IntOutput)
+}
+
+// 节点的数据盘配置。
+func (o GetDefaultNodePoolNodeConfigOutput) DataVolumes() GetDefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []GetDefaultNodePoolNodeConfigDataVolume { return v.DataVolumes }).(GetDefaultNodePoolNodeConfigDataVolumeArrayOutput)
+}
+
+// 实例在部署集中的分组号，0表示未设置
+func (o GetDefaultNodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
+}
+
+// 实例需要加入的部署集ID
+func (o GetDefaultNodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.DeploymentSetId }).(pulumi.StringOutput)
+}
+
+// 节点对应的主机名称。
+func (o GetDefaultNodePoolNodeConfigOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+func (o GetDefaultNodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
+}
+
+// 节点对应云服务器所使用的镜像 ID。
+func (o GetDefaultNodePoolNodeConfigOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+func (o GetDefaultNodePoolNodeConfigOutput) InitializeScript() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.InitializeScript }).(pulumi.StringOutput)
+}
+
+// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+func (o GetDefaultNodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.InstanceChargeType }).(pulumi.StringOutput)
+}
+
+// 节点（实例）名称。
+func (o GetDefaultNodePoolNodeConfigOutput) InstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// 节点对应的云服务器实例规格 ID 列表。
+func (o GetDefaultNodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
+}
+
+// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+func (o GetDefaultNodePoolNodeConfigOutput) InstancesDistribution() GetDefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigInstancesDistribution {
+		return v.InstancesDistribution
+	}).(GetDefaultNodePoolNodeConfigInstancesDistributionOutput)
+}
+
+// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+func (o GetDefaultNodePoolNodeConfigOutput) NamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
+}
+
+// 节点间的网络通讯模式。
+func (o GetDefaultNodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.NetworkTrafficMode }).(pulumi.StringOutput)
+}
+
+// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+func (o GetDefaultNodePoolNodeConfigOutput) Period() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) int { return v.Period }).(pulumi.IntOutput)
+}
+
+// 部署节点前执行脚本。
+func (o GetDefaultNodePoolNodeConfigOutput) PreScript() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.PreScript }).(pulumi.StringOutput)
+}
+
+// ECS所属项目，一个ECS只能归属于一个项目。
+func (o GetDefaultNodePoolNodeConfigOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// 节点自动开启公网访问的配置信息
+func (o GetDefaultNodePoolNodeConfigOutput) PublicAccessConfig() GetDefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigPublicAccessConfig {
+		return v.PublicAccessConfig
+	}).(GetDefaultNodePoolNodeConfigPublicAccessConfigOutput)
+}
+
+// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+func (o GetDefaultNodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) bool { return v.PublicAccessEnabled }).(pulumi.BoolOutput)
+}
+
+// 节点安全配置。
+func (o GetDefaultNodePoolNodeConfigOutput) Security() GetDefaultNodePoolNodeConfigSecurityOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigSecurity { return v.Security }).(GetDefaultNodePoolNodeConfigSecurityOutput)
+}
+
+// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+func (o GetDefaultNodePoolNodeConfigOutput) SpotStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) string { return v.SpotStrategy }).(pulumi.StringOutput)
+}
+
+// 节点网络所属的子网 ID 列表。
+func (o GetDefaultNodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
+}
+
+// 节点的系统盘配置。
+func (o GetDefaultNodePoolNodeConfigOutput) SystemVolume() GetDefaultNodePoolNodeConfigSystemVolumeOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) GetDefaultNodePoolNodeConfigSystemVolume { return v.SystemVolume }).(GetDefaultNodePoolNodeConfigSystemVolumeOutput)
+}
+
+// 节点池配置的标签信息
+func (o GetDefaultNodePoolNodeConfigOutput) Tags() GetDefaultNodePoolNodeConfigTagArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfig) []GetDefaultNodePoolNodeConfigTag { return v.Tags }).(GetDefaultNodePoolNodeConfigTagArrayOutput)
+}
+
+type GetDefaultNodePoolNodeConfigDataVolume struct {
+	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	FileSystem string `pulumi:"fileSystem"`
+	// 磁盘格式化后的目标挂载目录。
+	MountPoint string `pulumi:"mountPoint"`
+	// 放置组Id
+	PlacementGroupId string `pulumi:"placementGroupId"`
+	// 磁盘容量，单位 GiB。
+	Size int `pulumi:"size"`
+	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	SnapshotId string `pulumi:"snapshotId"`
+	// 放置子组
+	SubgroupNumber int `pulumi:"subgroupNumber"`
+	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type string `pulumi:"type"`
+}
+
+// GetDefaultNodePoolNodeConfigDataVolumeInput is an input type that accepts GetDefaultNodePoolNodeConfigDataVolumeArgs and GetDefaultNodePoolNodeConfigDataVolumeOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigDataVolumeInput` via:
+//
+//	GetDefaultNodePoolNodeConfigDataVolumeArgs{...}
+type GetDefaultNodePoolNodeConfigDataVolumeInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigDataVolumeOutput() GetDefaultNodePoolNodeConfigDataVolumeOutput
+	ToGetDefaultNodePoolNodeConfigDataVolumeOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigDataVolumeOutput
+}
+
+type GetDefaultNodePoolNodeConfigDataVolumeArgs struct {
+	// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+	FileSystem pulumi.StringInput `pulumi:"fileSystem"`
+	// 磁盘格式化后的目标挂载目录。
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+	// 放置组Id
+	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
+	// 磁盘容量，单位 GiB。
+	Size pulumi.IntInput `pulumi:"size"`
+	// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
+	// 放置子组
+	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
+	// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDefaultNodePoolNodeConfigDataVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigDataVolumeArgs) ToGetDefaultNodePoolNodeConfigDataVolumeOutput() GetDefaultNodePoolNodeConfigDataVolumeOutput {
+	return i.ToGetDefaultNodePoolNodeConfigDataVolumeOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigDataVolumeArgs) ToGetDefaultNodePoolNodeConfigDataVolumeOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigDataVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigDataVolumeOutput)
+}
+
+// GetDefaultNodePoolNodeConfigDataVolumeArrayInput is an input type that accepts GetDefaultNodePoolNodeConfigDataVolumeArray and GetDefaultNodePoolNodeConfigDataVolumeArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigDataVolumeArrayInput` via:
+//
+//	GetDefaultNodePoolNodeConfigDataVolumeArray{ GetDefaultNodePoolNodeConfigDataVolumeArgs{...} }
+type GetDefaultNodePoolNodeConfigDataVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigDataVolumeArrayOutput() GetDefaultNodePoolNodeConfigDataVolumeArrayOutput
+	ToGetDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigDataVolumeArrayOutput
+}
+
+type GetDefaultNodePoolNodeConfigDataVolumeArray []GetDefaultNodePoolNodeConfigDataVolumeInput
+
+func (GetDefaultNodePoolNodeConfigDataVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigDataVolumeArray) ToGetDefaultNodePoolNodeConfigDataVolumeArrayOutput() GetDefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return i.ToGetDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigDataVolumeArray) ToGetDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigDataVolumeArrayOutput)
+}
+
+type GetDefaultNodePoolNodeConfigDataVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigDataVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) ToGetDefaultNodePoolNodeConfigDataVolumeOutput() GetDefaultNodePoolNodeConfigDataVolumeOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) ToGetDefaultNodePoolNodeConfigDataVolumeOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigDataVolumeOutput {
+	return o
+}
+
+// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.FileSystem }).(pulumi.StringOutput)
+}
+
+// 磁盘格式化后的目标挂载目录。
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+// 放置组Id
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
+}
+
+// 磁盘容量，单位 GiB。
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
+}
+
+// 放置子组
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
+}
+
+// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+func (o GetDefaultNodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigDataVolume) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolNodeConfigDataVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigDataVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolNodeConfigDataVolume)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigDataVolumeArrayOutput) ToGetDefaultNodePoolNodeConfigDataVolumeArrayOutput() GetDefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigDataVolumeArrayOutput) ToGetDefaultNodePoolNodeConfigDataVolumeArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigDataVolumeArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolNodeConfigDataVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolNodeConfigDataVolume {
+		return vs[0].([]GetDefaultNodePoolNodeConfigDataVolume)[vs[1].(int)]
+	}).(GetDefaultNodePoolNodeConfigDataVolumeOutput)
+}
+
+type GetDefaultNodePoolNodeConfigInstancesDistribution struct {
+	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	CapacityRebalance bool `pulumi:"capacityRebalance"`
+	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	CompensateWithOnDemand bool `pulumi:"compensateWithOnDemand"`
+	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	OnDemandBaseCapacity int `pulumi:"onDemandBaseCapacity"`
+	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	OnDemandPercentageAboveBaseCapacity int `pulumi:"onDemandPercentageAboveBaseCapacity"`
+}
+
+// GetDefaultNodePoolNodeConfigInstancesDistributionInput is an input type that accepts GetDefaultNodePoolNodeConfigInstancesDistributionArgs and GetDefaultNodePoolNodeConfigInstancesDistributionOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigInstancesDistributionInput` via:
+//
+//	GetDefaultNodePoolNodeConfigInstancesDistributionArgs{...}
+type GetDefaultNodePoolNodeConfigInstancesDistributionInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigInstancesDistributionOutput() GetDefaultNodePoolNodeConfigInstancesDistributionOutput
+	ToGetDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigInstancesDistributionOutput
+}
+
+type GetDefaultNodePoolNodeConfigInstancesDistributionArgs struct {
+	// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+	CapacityRebalance pulumi.BoolInput `pulumi:"capacityRebalance"`
+	// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+	CompensateWithOnDemand pulumi.BoolInput `pulumi:"compensateWithOnDemand"`
+	// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+	OnDemandBaseCapacity pulumi.IntInput `pulumi:"onDemandBaseCapacity"`
+	// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+	OnDemandPercentageAboveBaseCapacity pulumi.IntInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
+}
+
+func (GetDefaultNodePoolNodeConfigInstancesDistributionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigInstancesDistribution)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigInstancesDistributionArgs) ToGetDefaultNodePoolNodeConfigInstancesDistributionOutput() GetDefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return i.ToGetDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigInstancesDistributionArgs) ToGetDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigInstancesDistributionOutput)
+}
+
+type GetDefaultNodePoolNodeConfigInstancesDistributionOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigInstancesDistributionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigInstancesDistribution)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) ToGetDefaultNodePoolNodeConfigInstancesDistributionOutput() GetDefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) ToGetDefaultNodePoolNodeConfigInstancesDistributionOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigInstancesDistributionOutput {
+	return o
+}
+
+// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) bool { return v.CapacityRebalance }).(pulumi.BoolOutput)
+}
+
+// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) bool { return v.CompensateWithOnDemand }).(pulumi.BoolOutput)
+}
+
+// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) int { return v.OnDemandBaseCapacity }).(pulumi.IntOutput)
+}
+
+// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+func (o GetDefaultNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigInstancesDistribution) int {
+		return v.OnDemandPercentageAboveBaseCapacity
+	}).(pulumi.IntOutput)
+}
+
+type GetDefaultNodePoolNodeConfigPublicAccessConfig struct {
+	// 公网 IP 的带宽峰值，单位：Mbps。
+	Bandwidth int `pulumi:"bandwidth"`
+	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	BillingType int `pulumi:"billingType"`
+	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	Isp string `pulumi:"isp"`
+}
+
+// GetDefaultNodePoolNodeConfigPublicAccessConfigInput is an input type that accepts GetDefaultNodePoolNodeConfigPublicAccessConfigArgs and GetDefaultNodePoolNodeConfigPublicAccessConfigOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigPublicAccessConfigInput` via:
+//
+//	GetDefaultNodePoolNodeConfigPublicAccessConfigArgs{...}
+type GetDefaultNodePoolNodeConfigPublicAccessConfigInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigPublicAccessConfigOutput() GetDefaultNodePoolNodeConfigPublicAccessConfigOutput
+	ToGetDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigPublicAccessConfigOutput
+}
+
+type GetDefaultNodePoolNodeConfigPublicAccessConfigArgs struct {
+	// 公网 IP 的带宽峰值，单位：Mbps。
+	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
+	// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+	BillingType pulumi.IntInput `pulumi:"billingType"`
+	// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+	Isp pulumi.StringInput `pulumi:"isp"`
+}
+
+func (GetDefaultNodePoolNodeConfigPublicAccessConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigPublicAccessConfig)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigPublicAccessConfigArgs) ToGetDefaultNodePoolNodeConfigPublicAccessConfigOutput() GetDefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return i.ToGetDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigPublicAccessConfigArgs) ToGetDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigPublicAccessConfigOutput)
+}
+
+type GetDefaultNodePoolNodeConfigPublicAccessConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigPublicAccessConfig)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) ToGetDefaultNodePoolNodeConfigPublicAccessConfigOutput() GetDefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) ToGetDefaultNodePoolNodeConfigPublicAccessConfigOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigPublicAccessConfigOutput {
+	return o
+}
+
+// 公网 IP 的带宽峰值，单位：Mbps。
+func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigPublicAccessConfig) int { return v.Bandwidth }).(pulumi.IntOutput)
+}
+
+// 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigPublicAccessConfig) int { return v.BillingType }).(pulumi.IntOutput)
+}
+
+// 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+func (o GetDefaultNodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigPublicAccessConfig) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolNodeConfigSecurity struct {
+	// 节点的访问方式配置。
+	Login GetDefaultNodePoolNodeConfigSecurityLogin `pulumi:"login"`
+	// 节点网络所在的安全组 ID 列表。
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	SecurityStrategies []string `pulumi:"securityStrategies"`
+	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	SecurityStrategyEnabled bool `pulumi:"securityStrategyEnabled"`
+}
+
+// GetDefaultNodePoolNodeConfigSecurityInput is an input type that accepts GetDefaultNodePoolNodeConfigSecurityArgs and GetDefaultNodePoolNodeConfigSecurityOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigSecurityInput` via:
+//
+//	GetDefaultNodePoolNodeConfigSecurityArgs{...}
+type GetDefaultNodePoolNodeConfigSecurityInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigSecurityOutput() GetDefaultNodePoolNodeConfigSecurityOutput
+	ToGetDefaultNodePoolNodeConfigSecurityOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigSecurityOutput
+}
+
+type GetDefaultNodePoolNodeConfigSecurityArgs struct {
+	// 节点的访问方式配置。
+	Login GetDefaultNodePoolNodeConfigSecurityLoginInput `pulumi:"login"`
+	// 节点网络所在的安全组 ID 列表。
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// 节点的安全策略，参数值说明：Hids：主机安全加固。
+	SecurityStrategies pulumi.StringArrayInput `pulumi:"securityStrategies"`
+	// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+	SecurityStrategyEnabled pulumi.BoolInput `pulumi:"securityStrategyEnabled"`
+}
+
+func (GetDefaultNodePoolNodeConfigSecurityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigSecurity)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigSecurityArgs) ToGetDefaultNodePoolNodeConfigSecurityOutput() GetDefaultNodePoolNodeConfigSecurityOutput {
+	return i.ToGetDefaultNodePoolNodeConfigSecurityOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigSecurityArgs) ToGetDefaultNodePoolNodeConfigSecurityOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigSecurityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigSecurityOutput)
+}
+
+type GetDefaultNodePoolNodeConfigSecurityOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigSecurityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigSecurity)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigSecurityOutput) ToGetDefaultNodePoolNodeConfigSecurityOutput() GetDefaultNodePoolNodeConfigSecurityOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigSecurityOutput) ToGetDefaultNodePoolNodeConfigSecurityOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigSecurityOutput {
+	return o
+}
+
+// 节点的访问方式配置。
+func (o GetDefaultNodePoolNodeConfigSecurityOutput) Login() GetDefaultNodePoolNodeConfigSecurityLoginOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) GetDefaultNodePoolNodeConfigSecurityLogin { return v.Login }).(GetDefaultNodePoolNodeConfigSecurityLoginOutput)
+}
+
+// 节点网络所在的安全组 ID 列表。
+func (o GetDefaultNodePoolNodeConfigSecurityOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// 节点的安全策略，参数值说明：Hids：主机安全加固。
+func (o GetDefaultNodePoolNodeConfigSecurityOutput) SecurityStrategies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) []string { return v.SecurityStrategies }).(pulumi.StringArrayOutput)
+}
+
+// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+func (o GetDefaultNodePoolNodeConfigSecurityOutput) SecurityStrategyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurity) bool { return v.SecurityStrategyEnabled }).(pulumi.BoolOutput)
+}
+
+type GetDefaultNodePoolNodeConfigSecurityLogin struct {
+	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	Password string `pulumi:"password"`
+	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	SshKeyPairName string `pulumi:"sshKeyPairName"`
+	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	Type string `pulumi:"type"`
+}
+
+// GetDefaultNodePoolNodeConfigSecurityLoginInput is an input type that accepts GetDefaultNodePoolNodeConfigSecurityLoginArgs and GetDefaultNodePoolNodeConfigSecurityLoginOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigSecurityLoginInput` via:
+//
+//	GetDefaultNodePoolNodeConfigSecurityLoginArgs{...}
+type GetDefaultNodePoolNodeConfigSecurityLoginInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigSecurityLoginOutput() GetDefaultNodePoolNodeConfigSecurityLoginOutput
+	ToGetDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigSecurityLoginOutput
+}
+
+type GetDefaultNodePoolNodeConfigSecurityLoginArgs struct {
+	// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+	Password pulumi.StringInput `pulumi:"password"`
+	// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+	SshKeyPairName pulumi.StringInput `pulumi:"sshKeyPairName"`
+	// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDefaultNodePoolNodeConfigSecurityLoginArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigSecurityLogin)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigSecurityLoginArgs) ToGetDefaultNodePoolNodeConfigSecurityLoginOutput() GetDefaultNodePoolNodeConfigSecurityLoginOutput {
+	return i.ToGetDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigSecurityLoginArgs) ToGetDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigSecurityLoginOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigSecurityLoginOutput)
+}
+
+type GetDefaultNodePoolNodeConfigSecurityLoginOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigSecurityLoginOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigSecurityLogin)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) ToGetDefaultNodePoolNodeConfigSecurityLoginOutput() GetDefaultNodePoolNodeConfigSecurityLoginOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) ToGetDefaultNodePoolNodeConfigSecurityLoginOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigSecurityLoginOutput {
+	return o
+}
+
+// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ & * _   - + = | { } [ ] : ; ' < > , . ? /
+func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurityLogin) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) SshKeyPairName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurityLogin) string { return v.SshKeyPairName }).(pulumi.StringOutput)
+}
+
+// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+func (o GetDefaultNodePoolNodeConfigSecurityLoginOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSecurityLogin) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolNodeConfigSystemVolume struct {
+	// 放置组Id
+	PlacementGroupId string `pulumi:"placementGroupId"`
+	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	Size int `pulumi:"size"`
+	// 放置子组
+	SubgroupNumber int `pulumi:"subgroupNumber"`
+	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type string `pulumi:"type"`
+}
+
+// GetDefaultNodePoolNodeConfigSystemVolumeInput is an input type that accepts GetDefaultNodePoolNodeConfigSystemVolumeArgs and GetDefaultNodePoolNodeConfigSystemVolumeOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigSystemVolumeInput` via:
+//
+//	GetDefaultNodePoolNodeConfigSystemVolumeArgs{...}
+type GetDefaultNodePoolNodeConfigSystemVolumeInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigSystemVolumeOutput() GetDefaultNodePoolNodeConfigSystemVolumeOutput
+	ToGetDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigSystemVolumeOutput
+}
+
+type GetDefaultNodePoolNodeConfigSystemVolumeArgs struct {
+	// 放置组Id
+	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
+	// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+	Size pulumi.IntInput `pulumi:"size"`
+	// 放置子组
+	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
+	// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDefaultNodePoolNodeConfigSystemVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigSystemVolume)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigSystemVolumeArgs) ToGetDefaultNodePoolNodeConfigSystemVolumeOutput() GetDefaultNodePoolNodeConfigSystemVolumeOutput {
+	return i.ToGetDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigSystemVolumeArgs) ToGetDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigSystemVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigSystemVolumeOutput)
+}
+
+type GetDefaultNodePoolNodeConfigSystemVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigSystemVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigSystemVolume)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) ToGetDefaultNodePoolNodeConfigSystemVolumeOutput() GetDefaultNodePoolNodeConfigSystemVolumeOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) ToGetDefaultNodePoolNodeConfigSystemVolumeOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigSystemVolumeOutput {
+	return o
+}
+
+// 放置组Id
+func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
+}
+
+// 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 放置子组
+func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
+}
+
+// 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+func (o GetDefaultNodePoolNodeConfigSystemVolumeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigSystemVolume) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolNodeConfigTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetDefaultNodePoolNodeConfigTagInput is an input type that accepts GetDefaultNodePoolNodeConfigTagArgs and GetDefaultNodePoolNodeConfigTagOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigTagInput` via:
+//
+//	GetDefaultNodePoolNodeConfigTagArgs{...}
+type GetDefaultNodePoolNodeConfigTagInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigTagOutput() GetDefaultNodePoolNodeConfigTagOutput
+	ToGetDefaultNodePoolNodeConfigTagOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigTagOutput
+}
+
+type GetDefaultNodePoolNodeConfigTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDefaultNodePoolNodeConfigTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigTagArgs) ToGetDefaultNodePoolNodeConfigTagOutput() GetDefaultNodePoolNodeConfigTagOutput {
+	return i.ToGetDefaultNodePoolNodeConfigTagOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigTagArgs) ToGetDefaultNodePoolNodeConfigTagOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigTagOutput)
+}
+
+// GetDefaultNodePoolNodeConfigTagArrayInput is an input type that accepts GetDefaultNodePoolNodeConfigTagArray and GetDefaultNodePoolNodeConfigTagArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeConfigTagArrayInput` via:
+//
+//	GetDefaultNodePoolNodeConfigTagArray{ GetDefaultNodePoolNodeConfigTagArgs{...} }
+type GetDefaultNodePoolNodeConfigTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeConfigTagArrayOutput() GetDefaultNodePoolNodeConfigTagArrayOutput
+	ToGetDefaultNodePoolNodeConfigTagArrayOutputWithContext(context.Context) GetDefaultNodePoolNodeConfigTagArrayOutput
+}
+
+type GetDefaultNodePoolNodeConfigTagArray []GetDefaultNodePoolNodeConfigTagInput
+
+func (GetDefaultNodePoolNodeConfigTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeConfigTagArray) ToGetDefaultNodePoolNodeConfigTagArrayOutput() GetDefaultNodePoolNodeConfigTagArrayOutput {
+	return i.ToGetDefaultNodePoolNodeConfigTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeConfigTagArray) ToGetDefaultNodePoolNodeConfigTagArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeConfigTagArrayOutput)
+}
+
+type GetDefaultNodePoolNodeConfigTagOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigTagOutput) ToGetDefaultNodePoolNodeConfigTagOutput() GetDefaultNodePoolNodeConfigTagOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigTagOutput) ToGetDefaultNodePoolNodeConfigTagOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetDefaultNodePoolNodeConfigTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetDefaultNodePoolNodeConfigTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeConfigTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolNodeConfigTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeConfigTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolNodeConfigTag)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeConfigTagArrayOutput) ToGetDefaultNodePoolNodeConfigTagArrayOutput() GetDefaultNodePoolNodeConfigTagArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigTagArrayOutput) ToGetDefaultNodePoolNodeConfigTagArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeConfigTagArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeConfigTagArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolNodeConfigTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolNodeConfigTag {
+		return vs[0].([]GetDefaultNodePoolNodeConfigTag)[vs[1].(int)]
+	}).(GetDefaultNodePoolNodeConfigTagOutput)
+}
+
+type GetDefaultNodePoolNodeStatistics struct {
+	// Phase=Creating的节点总数量。
+	CreatingCount int `pulumi:"creatingCount"`
+	// Phase=Deleting的节点总数量。
+	DeletingCount int `pulumi:"deletingCount"`
+	// Phase=Failed的节点总数量。
+	FailedCount int `pulumi:"failedCount"`
+	// Phase=Running的节点总数量。
+	RunningCount int `pulumi:"runningCount"`
+	// 节点池中的节点总数量。
+	TotalCount int `pulumi:"totalCount"`
+	// Phase=Updating的节点总数量。
+	UpdatingCount int `pulumi:"updatingCount"`
+}
+
+// GetDefaultNodePoolNodeStatisticsInput is an input type that accepts GetDefaultNodePoolNodeStatisticsArgs and GetDefaultNodePoolNodeStatisticsOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolNodeStatisticsInput` via:
+//
+//	GetDefaultNodePoolNodeStatisticsArgs{...}
+type GetDefaultNodePoolNodeStatisticsInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolNodeStatisticsOutput() GetDefaultNodePoolNodeStatisticsOutput
+	ToGetDefaultNodePoolNodeStatisticsOutputWithContext(context.Context) GetDefaultNodePoolNodeStatisticsOutput
+}
+
+type GetDefaultNodePoolNodeStatisticsArgs struct {
+	// Phase=Creating的节点总数量。
+	CreatingCount pulumi.IntInput `pulumi:"creatingCount"`
+	// Phase=Deleting的节点总数量。
+	DeletingCount pulumi.IntInput `pulumi:"deletingCount"`
+	// Phase=Failed的节点总数量。
+	FailedCount pulumi.IntInput `pulumi:"failedCount"`
+	// Phase=Running的节点总数量。
+	RunningCount pulumi.IntInput `pulumi:"runningCount"`
+	// 节点池中的节点总数量。
+	TotalCount pulumi.IntInput `pulumi:"totalCount"`
+	// Phase=Updating的节点总数量。
+	UpdatingCount pulumi.IntInput `pulumi:"updatingCount"`
+}
+
+func (GetDefaultNodePoolNodeStatisticsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeStatistics)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolNodeStatisticsArgs) ToGetDefaultNodePoolNodeStatisticsOutput() GetDefaultNodePoolNodeStatisticsOutput {
+	return i.ToGetDefaultNodePoolNodeStatisticsOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolNodeStatisticsArgs) ToGetDefaultNodePoolNodeStatisticsOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeStatisticsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolNodeStatisticsOutput)
+}
+
+type GetDefaultNodePoolNodeStatisticsOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolNodeStatisticsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolNodeStatistics)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolNodeStatisticsOutput) ToGetDefaultNodePoolNodeStatisticsOutput() GetDefaultNodePoolNodeStatisticsOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolNodeStatisticsOutput) ToGetDefaultNodePoolNodeStatisticsOutputWithContext(ctx context.Context) GetDefaultNodePoolNodeStatisticsOutput {
+	return o
+}
+
+// Phase=Creating的节点总数量。
+func (o GetDefaultNodePoolNodeStatisticsOutput) CreatingCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.CreatingCount }).(pulumi.IntOutput)
+}
+
+// Phase=Deleting的节点总数量。
+func (o GetDefaultNodePoolNodeStatisticsOutput) DeletingCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.DeletingCount }).(pulumi.IntOutput)
+}
+
+// Phase=Failed的节点总数量。
+func (o GetDefaultNodePoolNodeStatisticsOutput) FailedCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.FailedCount }).(pulumi.IntOutput)
+}
+
+// Phase=Running的节点总数量。
+func (o GetDefaultNodePoolNodeStatisticsOutput) RunningCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.RunningCount }).(pulumi.IntOutput)
+}
+
+// 节点池中的节点总数量。
+func (o GetDefaultNodePoolNodeStatisticsOutput) TotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.TotalCount }).(pulumi.IntOutput)
+}
+
+// Phase=Updating的节点总数量。
+func (o GetDefaultNodePoolNodeStatisticsOutput) UpdatingCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolNodeStatistics) int { return v.UpdatingCount }).(pulumi.IntOutput)
+}
+
+type GetDefaultNodePoolStatus struct {
+	// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+	Conditions []GetDefaultNodePoolStatusCondition `pulumi:"conditions"`
+	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	Phase string `pulumi:"phase"`
+}
+
+// GetDefaultNodePoolStatusInput is an input type that accepts GetDefaultNodePoolStatusArgs and GetDefaultNodePoolStatusOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolStatusInput` via:
+//
+//	GetDefaultNodePoolStatusArgs{...}
+type GetDefaultNodePoolStatusInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolStatusOutput() GetDefaultNodePoolStatusOutput
+	ToGetDefaultNodePoolStatusOutputWithContext(context.Context) GetDefaultNodePoolStatusOutput
+}
+
+type GetDefaultNodePoolStatusArgs struct {
+	// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+	Conditions GetDefaultNodePoolStatusConditionArrayInput `pulumi:"conditions"`
+	// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+	Phase pulumi.StringInput `pulumi:"phase"`
+}
+
+func (GetDefaultNodePoolStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolStatus)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolStatusArgs) ToGetDefaultNodePoolStatusOutput() GetDefaultNodePoolStatusOutput {
+	return i.ToGetDefaultNodePoolStatusOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolStatusArgs) ToGetDefaultNodePoolStatusOutputWithContext(ctx context.Context) GetDefaultNodePoolStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolStatusOutput)
+}
+
+type GetDefaultNodePoolStatusOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolStatus)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolStatusOutput) ToGetDefaultNodePoolStatusOutput() GetDefaultNodePoolStatusOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolStatusOutput) ToGetDefaultNodePoolStatusOutputWithContext(ctx context.Context) GetDefaultNodePoolStatusOutput {
+	return o
+}
+
+// 节点池当前主状态下的状态条件，即进入该主状态的原因。
+func (o GetDefaultNodePoolStatusOutput) Conditions() GetDefaultNodePoolStatusConditionArrayOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolStatus) []GetDefaultNodePoolStatusCondition { return v.Conditions }).(GetDefaultNodePoolStatusConditionArrayOutput)
+}
+
+// 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+func (o GetDefaultNodePoolStatusOutput) Phase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolStatus) string { return v.Phase }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolStatusCondition struct {
+	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	Type string `pulumi:"type"`
+}
+
+// GetDefaultNodePoolStatusConditionInput is an input type that accepts GetDefaultNodePoolStatusConditionArgs and GetDefaultNodePoolStatusConditionOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolStatusConditionInput` via:
+//
+//	GetDefaultNodePoolStatusConditionArgs{...}
+type GetDefaultNodePoolStatusConditionInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolStatusConditionOutput() GetDefaultNodePoolStatusConditionOutput
+	ToGetDefaultNodePoolStatusConditionOutputWithContext(context.Context) GetDefaultNodePoolStatusConditionOutput
+}
+
+type GetDefaultNodePoolStatusConditionArgs struct {
+	// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDefaultNodePoolStatusConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolStatusConditionArgs) ToGetDefaultNodePoolStatusConditionOutput() GetDefaultNodePoolStatusConditionOutput {
+	return i.ToGetDefaultNodePoolStatusConditionOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolStatusConditionArgs) ToGetDefaultNodePoolStatusConditionOutputWithContext(ctx context.Context) GetDefaultNodePoolStatusConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolStatusConditionOutput)
+}
+
+// GetDefaultNodePoolStatusConditionArrayInput is an input type that accepts GetDefaultNodePoolStatusConditionArray and GetDefaultNodePoolStatusConditionArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolStatusConditionArrayInput` via:
+//
+//	GetDefaultNodePoolStatusConditionArray{ GetDefaultNodePoolStatusConditionArgs{...} }
+type GetDefaultNodePoolStatusConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolStatusConditionArrayOutput() GetDefaultNodePoolStatusConditionArrayOutput
+	ToGetDefaultNodePoolStatusConditionArrayOutputWithContext(context.Context) GetDefaultNodePoolStatusConditionArrayOutput
+}
+
+type GetDefaultNodePoolStatusConditionArray []GetDefaultNodePoolStatusConditionInput
+
+func (GetDefaultNodePoolStatusConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolStatusConditionArray) ToGetDefaultNodePoolStatusConditionArrayOutput() GetDefaultNodePoolStatusConditionArrayOutput {
+	return i.ToGetDefaultNodePoolStatusConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolStatusConditionArray) ToGetDefaultNodePoolStatusConditionArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolStatusConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolStatusConditionArrayOutput)
+}
+
+type GetDefaultNodePoolStatusConditionOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolStatusConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolStatusConditionOutput) ToGetDefaultNodePoolStatusConditionOutput() GetDefaultNodePoolStatusConditionOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolStatusConditionOutput) ToGetDefaultNodePoolStatusConditionOutputWithContext(ctx context.Context) GetDefaultNodePoolStatusConditionOutput {
+	return o
+}
+
+// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+func (o GetDefaultNodePoolStatusConditionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolStatusCondition) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolStatusConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolStatusConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolStatusCondition)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolStatusConditionArrayOutput) ToGetDefaultNodePoolStatusConditionArrayOutput() GetDefaultNodePoolStatusConditionArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolStatusConditionArrayOutput) ToGetDefaultNodePoolStatusConditionArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolStatusConditionArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolStatusConditionArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolStatusConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolStatusCondition {
+		return vs[0].([]GetDefaultNodePoolStatusCondition)[vs[1].(int)]
+	}).(GetDefaultNodePoolStatusConditionOutput)
+}
+
+type GetDefaultNodePoolTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetDefaultNodePoolTagInput is an input type that accepts GetDefaultNodePoolTagArgs and GetDefaultNodePoolTagOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolTagInput` via:
+//
+//	GetDefaultNodePoolTagArgs{...}
+type GetDefaultNodePoolTagInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolTagOutput() GetDefaultNodePoolTagOutput
+	ToGetDefaultNodePoolTagOutputWithContext(context.Context) GetDefaultNodePoolTagOutput
+}
+
+type GetDefaultNodePoolTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDefaultNodePoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolTag)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolTagArgs) ToGetDefaultNodePoolTagOutput() GetDefaultNodePoolTagOutput {
+	return i.ToGetDefaultNodePoolTagOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolTagArgs) ToGetDefaultNodePoolTagOutputWithContext(ctx context.Context) GetDefaultNodePoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolTagOutput)
+}
+
+// GetDefaultNodePoolTagArrayInput is an input type that accepts GetDefaultNodePoolTagArray and GetDefaultNodePoolTagArrayOutput values.
+// You can construct a concrete instance of `GetDefaultNodePoolTagArrayInput` via:
+//
+//	GetDefaultNodePoolTagArray{ GetDefaultNodePoolTagArgs{...} }
+type GetDefaultNodePoolTagArrayInput interface {
+	pulumi.Input
+
+	ToGetDefaultNodePoolTagArrayOutput() GetDefaultNodePoolTagArrayOutput
+	ToGetDefaultNodePoolTagArrayOutputWithContext(context.Context) GetDefaultNodePoolTagArrayOutput
+}
+
+type GetDefaultNodePoolTagArray []GetDefaultNodePoolTagInput
+
+func (GetDefaultNodePoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolTag)(nil)).Elem()
+}
+
+func (i GetDefaultNodePoolTagArray) ToGetDefaultNodePoolTagArrayOutput() GetDefaultNodePoolTagArrayOutput {
+	return i.ToGetDefaultNodePoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetDefaultNodePoolTagArray) ToGetDefaultNodePoolTagArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDefaultNodePoolTagArrayOutput)
+}
+
+type GetDefaultNodePoolTagOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDefaultNodePoolTag)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolTagOutput) ToGetDefaultNodePoolTagOutput() GetDefaultNodePoolTagOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolTagOutput) ToGetDefaultNodePoolTagOutputWithContext(ctx context.Context) GetDefaultNodePoolTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetDefaultNodePoolTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetDefaultNodePoolTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDefaultNodePoolTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDefaultNodePoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDefaultNodePoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDefaultNodePoolTag)(nil)).Elem()
+}
+
+func (o GetDefaultNodePoolTagArrayOutput) ToGetDefaultNodePoolTagArrayOutput() GetDefaultNodePoolTagArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolTagArrayOutput) ToGetDefaultNodePoolTagArrayOutputWithContext(ctx context.Context) GetDefaultNodePoolTagArrayOutput {
+	return o
+}
+
+func (o GetDefaultNodePoolTagArrayOutput) Index(i pulumi.IntInput) GetDefaultNodePoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDefaultNodePoolTag {
+		return vs[0].([]GetDefaultNodePoolTag)[vs[1].(int)]
+	}).(GetDefaultNodePoolTagOutput)
+}
+
+type GetNodeKubernetesConfig struct {
+	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	Cordon bool `pulumi:"cordon"`
+	// 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+	Labels []GetNodeKubernetesConfigLabel `pulumi:"labels"`
+	// 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+	Taints []GetNodeKubernetesConfigTaint `pulumi:"taints"`
+}
+
+// GetNodeKubernetesConfigInput is an input type that accepts GetNodeKubernetesConfigArgs and GetNodeKubernetesConfigOutput values.
+// You can construct a concrete instance of `GetNodeKubernetesConfigInput` via:
+//
+//	GetNodeKubernetesConfigArgs{...}
+type GetNodeKubernetesConfigInput interface {
+	pulumi.Input
+
+	ToGetNodeKubernetesConfigOutput() GetNodeKubernetesConfigOutput
+	ToGetNodeKubernetesConfigOutputWithContext(context.Context) GetNodeKubernetesConfigOutput
+}
+
+type GetNodeKubernetesConfigArgs struct {
+	// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+	Cordon pulumi.BoolInput `pulumi:"cordon"`
+	// 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+	Labels GetNodeKubernetesConfigLabelArrayInput `pulumi:"labels"`
+	// 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+	Taints GetNodeKubernetesConfigTaintArrayInput `pulumi:"taints"`
+}
+
+func (GetNodeKubernetesConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeKubernetesConfig)(nil)).Elem()
+}
+
+func (i GetNodeKubernetesConfigArgs) ToGetNodeKubernetesConfigOutput() GetNodeKubernetesConfigOutput {
+	return i.ToGetNodeKubernetesConfigOutputWithContext(context.Background())
+}
+
+func (i GetNodeKubernetesConfigArgs) ToGetNodeKubernetesConfigOutputWithContext(ctx context.Context) GetNodeKubernetesConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeKubernetesConfigOutput)
+}
+
+type GetNodeKubernetesConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNodeKubernetesConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeKubernetesConfig)(nil)).Elem()
+}
+
+func (o GetNodeKubernetesConfigOutput) ToGetNodeKubernetesConfigOutput() GetNodeKubernetesConfigOutput {
+	return o
+}
+
+func (o GetNodeKubernetesConfigOutput) ToGetNodeKubernetesConfigOutputWithContext(ctx context.Context) GetNodeKubernetesConfigOutput {
+	return o
+}
+
+// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+func (o GetNodeKubernetesConfigOutput) Cordon() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfig) bool { return v.Cordon }).(pulumi.BoolOutput)
+}
+
+// 节点池/节点的 Kubernetes 标签（Labels）信息。最多可传入 20 个标签。
+func (o GetNodeKubernetesConfigOutput) Labels() GetNodeKubernetesConfigLabelArrayOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfig) []GetNodeKubernetesConfigLabel { return v.Labels }).(GetNodeKubernetesConfigLabelArrayOutput)
+}
+
+// 节点池/节点的 Kubernetes 污点（Taints）信息。最多可传入 20 个污点。
+func (o GetNodeKubernetesConfigOutput) Taints() GetNodeKubernetesConfigTaintArrayOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfig) []GetNodeKubernetesConfigTaint { return v.Taints }).(GetNodeKubernetesConfigTaintArrayOutput)
+}
+
+type GetNodeKubernetesConfigLabel struct {
+	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key string `pulumi:"key"`
+	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value string `pulumi:"value"`
+}
+
+// GetNodeKubernetesConfigLabelInput is an input type that accepts GetNodeKubernetesConfigLabelArgs and GetNodeKubernetesConfigLabelOutput values.
+// You can construct a concrete instance of `GetNodeKubernetesConfigLabelInput` via:
+//
+//	GetNodeKubernetesConfigLabelArgs{...}
+type GetNodeKubernetesConfigLabelInput interface {
+	pulumi.Input
+
+	ToGetNodeKubernetesConfigLabelOutput() GetNodeKubernetesConfigLabelOutput
+	ToGetNodeKubernetesConfigLabelOutputWithContext(context.Context) GetNodeKubernetesConfigLabelOutput
+}
+
+type GetNodeKubernetesConfigLabelArgs struct {
+	// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNodeKubernetesConfigLabelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i GetNodeKubernetesConfigLabelArgs) ToGetNodeKubernetesConfigLabelOutput() GetNodeKubernetesConfigLabelOutput {
+	return i.ToGetNodeKubernetesConfigLabelOutputWithContext(context.Background())
+}
+
+func (i GetNodeKubernetesConfigLabelArgs) ToGetNodeKubernetesConfigLabelOutputWithContext(ctx context.Context) GetNodeKubernetesConfigLabelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeKubernetesConfigLabelOutput)
+}
+
+// GetNodeKubernetesConfigLabelArrayInput is an input type that accepts GetNodeKubernetesConfigLabelArray and GetNodeKubernetesConfigLabelArrayOutput values.
+// You can construct a concrete instance of `GetNodeKubernetesConfigLabelArrayInput` via:
+//
+//	GetNodeKubernetesConfigLabelArray{ GetNodeKubernetesConfigLabelArgs{...} }
+type GetNodeKubernetesConfigLabelArrayInput interface {
+	pulumi.Input
+
+	ToGetNodeKubernetesConfigLabelArrayOutput() GetNodeKubernetesConfigLabelArrayOutput
+	ToGetNodeKubernetesConfigLabelArrayOutputWithContext(context.Context) GetNodeKubernetesConfigLabelArrayOutput
+}
+
+type GetNodeKubernetesConfigLabelArray []GetNodeKubernetesConfigLabelInput
+
+func (GetNodeKubernetesConfigLabelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (i GetNodeKubernetesConfigLabelArray) ToGetNodeKubernetesConfigLabelArrayOutput() GetNodeKubernetesConfigLabelArrayOutput {
+	return i.ToGetNodeKubernetesConfigLabelArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodeKubernetesConfigLabelArray) ToGetNodeKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) GetNodeKubernetesConfigLabelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeKubernetesConfigLabelArrayOutput)
+}
+
+type GetNodeKubernetesConfigLabelOutput struct{ *pulumi.OutputState }
+
+func (GetNodeKubernetesConfigLabelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o GetNodeKubernetesConfigLabelOutput) ToGetNodeKubernetesConfigLabelOutput() GetNodeKubernetesConfigLabelOutput {
+	return o
+}
+
+func (o GetNodeKubernetesConfigLabelOutput) ToGetNodeKubernetesConfigLabelOutputWithContext(ctx context.Context) GetNodeKubernetesConfigLabelOutput {
+	return o
+}
+
+// 标签键，有效的标签键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+func (o GetNodeKubernetesConfigLabelOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfigLabel) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+func (o GetNodeKubernetesConfigLabelOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfigLabel) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNodeKubernetesConfigLabelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodeKubernetesConfigLabelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeKubernetesConfigLabel)(nil)).Elem()
+}
+
+func (o GetNodeKubernetesConfigLabelArrayOutput) ToGetNodeKubernetesConfigLabelArrayOutput() GetNodeKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o GetNodeKubernetesConfigLabelArrayOutput) ToGetNodeKubernetesConfigLabelArrayOutputWithContext(ctx context.Context) GetNodeKubernetesConfigLabelArrayOutput {
+	return o
+}
+
+func (o GetNodeKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) GetNodeKubernetesConfigLabelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodeKubernetesConfigLabel {
+		return vs[0].([]GetNodeKubernetesConfigLabel)[vs[1].(int)]
+	}).(GetNodeKubernetesConfigLabelOutput)
+}
+
+type GetNodeKubernetesConfigTaint struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect string `pulumi:"effect"`
+	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key string `pulumi:"key"`
+	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value string `pulumi:"value"`
+}
+
+// GetNodeKubernetesConfigTaintInput is an input type that accepts GetNodeKubernetesConfigTaintArgs and GetNodeKubernetesConfigTaintOutput values.
+// You can construct a concrete instance of `GetNodeKubernetesConfigTaintInput` via:
+//
+//	GetNodeKubernetesConfigTaintArgs{...}
+type GetNodeKubernetesConfigTaintInput interface {
+	pulumi.Input
+
+	ToGetNodeKubernetesConfigTaintOutput() GetNodeKubernetesConfigTaintOutput
+	ToGetNodeKubernetesConfigTaintOutputWithContext(context.Context) GetNodeKubernetesConfigTaintOutput
+}
+
+type GetNodeKubernetesConfigTaintArgs struct {
+	// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+	Effect pulumi.StringInput `pulumi:"effect"`
+	// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNodeKubernetesConfigTaintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i GetNodeKubernetesConfigTaintArgs) ToGetNodeKubernetesConfigTaintOutput() GetNodeKubernetesConfigTaintOutput {
+	return i.ToGetNodeKubernetesConfigTaintOutputWithContext(context.Background())
+}
+
+func (i GetNodeKubernetesConfigTaintArgs) ToGetNodeKubernetesConfigTaintOutputWithContext(ctx context.Context) GetNodeKubernetesConfigTaintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeKubernetesConfigTaintOutput)
+}
+
+// GetNodeKubernetesConfigTaintArrayInput is an input type that accepts GetNodeKubernetesConfigTaintArray and GetNodeKubernetesConfigTaintArrayOutput values.
+// You can construct a concrete instance of `GetNodeKubernetesConfigTaintArrayInput` via:
+//
+//	GetNodeKubernetesConfigTaintArray{ GetNodeKubernetesConfigTaintArgs{...} }
+type GetNodeKubernetesConfigTaintArrayInput interface {
+	pulumi.Input
+
+	ToGetNodeKubernetesConfigTaintArrayOutput() GetNodeKubernetesConfigTaintArrayOutput
+	ToGetNodeKubernetesConfigTaintArrayOutputWithContext(context.Context) GetNodeKubernetesConfigTaintArrayOutput
+}
+
+type GetNodeKubernetesConfigTaintArray []GetNodeKubernetesConfigTaintInput
+
+func (GetNodeKubernetesConfigTaintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (i GetNodeKubernetesConfigTaintArray) ToGetNodeKubernetesConfigTaintArrayOutput() GetNodeKubernetesConfigTaintArrayOutput {
+	return i.ToGetNodeKubernetesConfigTaintArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodeKubernetesConfigTaintArray) ToGetNodeKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) GetNodeKubernetesConfigTaintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeKubernetesConfigTaintArrayOutput)
+}
+
+type GetNodeKubernetesConfigTaintOutput struct{ *pulumi.OutputState }
+
+func (GetNodeKubernetesConfigTaintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o GetNodeKubernetesConfigTaintOutput) ToGetNodeKubernetesConfigTaintOutput() GetNodeKubernetesConfigTaintOutput {
+	return o
+}
+
+func (o GetNodeKubernetesConfigTaintOutput) ToGetNodeKubernetesConfigTaintOutputWithContext(ctx context.Context) GetNodeKubernetesConfigTaintOutput {
+	return o
+}
+
+// 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+func (o GetNodeKubernetesConfigTaintOutput) Effect() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfigTaint) string { return v.Effect }).(pulumi.StringOutput)
+}
+
+// 污点键，有效的污点键有两个段：<前缀>和<名称>，用斜杠（/）分隔。<名称>是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。<前缀>是可选的。如果指定<前缀>，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。<前缀>和<名称>总长度不超过 82 个字符。
+func (o GetNodeKubernetesConfigTaintOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfigTaint) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+func (o GetNodeKubernetesConfigTaintOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeKubernetesConfigTaint) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNodeKubernetesConfigTaintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodeKubernetesConfigTaintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeKubernetesConfigTaint)(nil)).Elem()
+}
+
+func (o GetNodeKubernetesConfigTaintArrayOutput) ToGetNodeKubernetesConfigTaintArrayOutput() GetNodeKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o GetNodeKubernetesConfigTaintArrayOutput) ToGetNodeKubernetesConfigTaintArrayOutputWithContext(ctx context.Context) GetNodeKubernetesConfigTaintArrayOutput {
+	return o
+}
+
+func (o GetNodeKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) GetNodeKubernetesConfigTaintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodeKubernetesConfigTaint {
+		return vs[0].([]GetNodeKubernetesConfigTaint)[vs[1].(int)]
+	}).(GetNodeKubernetesConfigTaintOutput)
 }
 
 type GetNodePoolAutoScaling struct {
@@ -10924,6 +18276,164 @@ func (o GetNodePoolTagArrayOutput) Index(i pulumi.IntInput) GetNodePoolTagOutput
 	}).(GetNodePoolTagOutput)
 }
 
+type GetNodeStatus struct {
+	// 节点当前主状态下的状态条件，即进入该主状态的原因。
+	Conditions []GetNodeStatusCondition `pulumi:"conditions"`
+	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	Phase string `pulumi:"phase"`
+}
+
+// GetNodeStatusInput is an input type that accepts GetNodeStatusArgs and GetNodeStatusOutput values.
+// You can construct a concrete instance of `GetNodeStatusInput` via:
+//
+//	GetNodeStatusArgs{...}
+type GetNodeStatusInput interface {
+	pulumi.Input
+
+	ToGetNodeStatusOutput() GetNodeStatusOutput
+	ToGetNodeStatusOutputWithContext(context.Context) GetNodeStatusOutput
+}
+
+type GetNodeStatusArgs struct {
+	// 节点当前主状态下的状态条件，即进入该主状态的原因。
+	Conditions GetNodeStatusConditionArrayInput `pulumi:"conditions"`
+	// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+	Phase pulumi.StringInput `pulumi:"phase"`
+}
+
+func (GetNodeStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeStatus)(nil)).Elem()
+}
+
+func (i GetNodeStatusArgs) ToGetNodeStatusOutput() GetNodeStatusOutput {
+	return i.ToGetNodeStatusOutputWithContext(context.Background())
+}
+
+func (i GetNodeStatusArgs) ToGetNodeStatusOutputWithContext(ctx context.Context) GetNodeStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeStatusOutput)
+}
+
+type GetNodeStatusOutput struct{ *pulumi.OutputState }
+
+func (GetNodeStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeStatus)(nil)).Elem()
+}
+
+func (o GetNodeStatusOutput) ToGetNodeStatusOutput() GetNodeStatusOutput {
+	return o
+}
+
+func (o GetNodeStatusOutput) ToGetNodeStatusOutputWithContext(ctx context.Context) GetNodeStatusOutput {
+	return o
+}
+
+// 节点当前主状态下的状态条件，即进入该主状态的原因。
+func (o GetNodeStatusOutput) Conditions() GetNodeStatusConditionArrayOutput {
+	return o.ApplyT(func(v GetNodeStatus) []GetNodeStatusCondition { return v.Conditions }).(GetNodeStatusConditionArrayOutput)
+}
+
+// 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+func (o GetNodeStatusOutput) Phase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeStatus) string { return v.Phase }).(pulumi.StringOutput)
+}
+
+type GetNodeStatusCondition struct {
+	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	Type string `pulumi:"type"`
+}
+
+// GetNodeStatusConditionInput is an input type that accepts GetNodeStatusConditionArgs and GetNodeStatusConditionOutput values.
+// You can construct a concrete instance of `GetNodeStatusConditionInput` via:
+//
+//	GetNodeStatusConditionArgs{...}
+type GetNodeStatusConditionInput interface {
+	pulumi.Input
+
+	ToGetNodeStatusConditionOutput() GetNodeStatusConditionOutput
+	ToGetNodeStatusConditionOutputWithContext(context.Context) GetNodeStatusConditionOutput
+}
+
+type GetNodeStatusConditionArgs struct {
+	// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNodeStatusConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeStatusCondition)(nil)).Elem()
+}
+
+func (i GetNodeStatusConditionArgs) ToGetNodeStatusConditionOutput() GetNodeStatusConditionOutput {
+	return i.ToGetNodeStatusConditionOutputWithContext(context.Background())
+}
+
+func (i GetNodeStatusConditionArgs) ToGetNodeStatusConditionOutputWithContext(ctx context.Context) GetNodeStatusConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeStatusConditionOutput)
+}
+
+// GetNodeStatusConditionArrayInput is an input type that accepts GetNodeStatusConditionArray and GetNodeStatusConditionArrayOutput values.
+// You can construct a concrete instance of `GetNodeStatusConditionArrayInput` via:
+//
+//	GetNodeStatusConditionArray{ GetNodeStatusConditionArgs{...} }
+type GetNodeStatusConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetNodeStatusConditionArrayOutput() GetNodeStatusConditionArrayOutput
+	ToGetNodeStatusConditionArrayOutputWithContext(context.Context) GetNodeStatusConditionArrayOutput
+}
+
+type GetNodeStatusConditionArray []GetNodeStatusConditionInput
+
+func (GetNodeStatusConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeStatusCondition)(nil)).Elem()
+}
+
+func (i GetNodeStatusConditionArray) ToGetNodeStatusConditionArrayOutput() GetNodeStatusConditionArrayOutput {
+	return i.ToGetNodeStatusConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodeStatusConditionArray) ToGetNodeStatusConditionArrayOutputWithContext(ctx context.Context) GetNodeStatusConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeStatusConditionArrayOutput)
+}
+
+type GetNodeStatusConditionOutput struct{ *pulumi.OutputState }
+
+func (GetNodeStatusConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeStatusCondition)(nil)).Elem()
+}
+
+func (o GetNodeStatusConditionOutput) ToGetNodeStatusConditionOutput() GetNodeStatusConditionOutput {
+	return o
+}
+
+func (o GetNodeStatusConditionOutput) ToGetNodeStatusConditionOutputWithContext(ctx context.Context) GetNodeStatusConditionOutput {
+	return o
+}
+
+// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+func (o GetNodeStatusConditionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeStatusCondition) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNodeStatusConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodeStatusConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeStatusCondition)(nil)).Elem()
+}
+
+func (o GetNodeStatusConditionArrayOutput) ToGetNodeStatusConditionArrayOutput() GetNodeStatusConditionArrayOutput {
+	return o
+}
+
+func (o GetNodeStatusConditionArrayOutput) ToGetNodeStatusConditionArrayOutputWithContext(ctx context.Context) GetNodeStatusConditionArrayOutput {
+	return o
+}
+
+func (o GetNodeStatusConditionArrayOutput) Index(i pulumi.IntInput) GetNodeStatusConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodeStatusCondition {
+		return vs[0].([]GetNodeStatusCondition)[vs[1].(int)]
+	}).(GetNodeStatusConditionOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AddonStatusInput)(nil)).Elem(), AddonStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AddonStatusPtrInput)(nil)).Elem(), AddonStatusArgs{})
@@ -10965,6 +18475,56 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterStatusConditionArrayInput)(nil)).Elem(), ClusterStatusConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterTagInput)(nil)).Elem(), ClusterTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterTagArrayInput)(nil)).Elem(), ClusterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolAutoScalingInput)(nil)).Elem(), DefaultNodePoolAutoScalingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolAutoScalingPtrInput)(nil)).Elem(), DefaultNodePoolAutoScalingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigPtrInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigPtrInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigLabelInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigLabelArrayInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigTaintInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigTaintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolKubernetesConfigTaintArrayInput)(nil)).Elem(), DefaultNodePoolKubernetesConfigTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolManagementInput)(nil)).Elem(), DefaultNodePoolManagementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolManagementPtrInput)(nil)).Elem(), DefaultNodePoolManagementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolManagementRemedyConfigInput)(nil)).Elem(), DefaultNodePoolManagementRemedyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolManagementRemedyConfigPtrInput)(nil)).Elem(), DefaultNodePoolManagementRemedyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigInput)(nil)).Elem(), DefaultNodePoolNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigPtrInput)(nil)).Elem(), DefaultNodePoolNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigDataVolumeInput)(nil)).Elem(), DefaultNodePoolNodeConfigDataVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigDataVolumeArrayInput)(nil)).Elem(), DefaultNodePoolNodeConfigDataVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigInstancesDistributionInput)(nil)).Elem(), DefaultNodePoolNodeConfigInstancesDistributionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigInstancesDistributionPtrInput)(nil)).Elem(), DefaultNodePoolNodeConfigInstancesDistributionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigPublicAccessConfigInput)(nil)).Elem(), DefaultNodePoolNodeConfigPublicAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigPublicAccessConfigPtrInput)(nil)).Elem(), DefaultNodePoolNodeConfigPublicAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigSecurityInput)(nil)).Elem(), DefaultNodePoolNodeConfigSecurityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigSecurityPtrInput)(nil)).Elem(), DefaultNodePoolNodeConfigSecurityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigSecurityLoginInput)(nil)).Elem(), DefaultNodePoolNodeConfigSecurityLoginArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigSecurityLoginPtrInput)(nil)).Elem(), DefaultNodePoolNodeConfigSecurityLoginArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigSystemVolumeInput)(nil)).Elem(), DefaultNodePoolNodeConfigSystemVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigSystemVolumePtrInput)(nil)).Elem(), DefaultNodePoolNodeConfigSystemVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigTagInput)(nil)).Elem(), DefaultNodePoolNodeConfigTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeConfigTagArrayInput)(nil)).Elem(), DefaultNodePoolNodeConfigTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeStatisticsInput)(nil)).Elem(), DefaultNodePoolNodeStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolNodeStatisticsPtrInput)(nil)).Elem(), DefaultNodePoolNodeStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolStatusInput)(nil)).Elem(), DefaultNodePoolStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolStatusPtrInput)(nil)).Elem(), DefaultNodePoolStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolStatusConditionInput)(nil)).Elem(), DefaultNodePoolStatusConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolStatusConditionArrayInput)(nil)).Elem(), DefaultNodePoolStatusConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolTagInput)(nil)).Elem(), DefaultNodePoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DefaultNodePoolTagArrayInput)(nil)).Elem(), DefaultNodePoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeKubernetesConfigInput)(nil)).Elem(), NodeKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeKubernetesConfigPtrInput)(nil)).Elem(), NodeKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeKubernetesConfigLabelInput)(nil)).Elem(), NodeKubernetesConfigLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeKubernetesConfigLabelArrayInput)(nil)).Elem(), NodeKubernetesConfigLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeKubernetesConfigTaintInput)(nil)).Elem(), NodeKubernetesConfigTaintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeKubernetesConfigTaintArrayInput)(nil)).Elem(), NodeKubernetesConfigTaintArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolAutoScalingInput)(nil)).Elem(), NodePoolAutoScalingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolAutoScalingPtrInput)(nil)).Elem(), NodePoolAutoScalingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigInput)(nil)).Elem(), NodePoolKubernetesConfigArgs{})
@@ -11009,6 +18569,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolStatusConditionArrayInput)(nil)).Elem(), NodePoolStatusConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolTagInput)(nil)).Elem(), NodePoolTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolTagArrayInput)(nil)).Elem(), NodePoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeStatusInput)(nil)).Elem(), NodeStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeStatusPtrInput)(nil)).Elem(), NodeStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeStatusConditionInput)(nil)).Elem(), NodeStatusConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeStatusConditionArrayInput)(nil)).Elem(), NodeStatusConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonStatusInput)(nil)).Elem(), GetAddonStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonStatusConditionInput)(nil)).Elem(), GetAddonStatusConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonStatusConditionArrayInput)(nil)).Elem(), GetAddonStatusConditionArray{})
@@ -11034,6 +18598,41 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterStatusConditionArrayInput)(nil)).Elem(), GetClusterStatusConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterTagInput)(nil)).Elem(), GetClusterTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterTagArrayInput)(nil)).Elem(), GetClusterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolAutoScalingInput)(nil)).Elem(), GetDefaultNodePoolAutoScalingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigKubeletConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigLabelInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigLabelArrayInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigTaintInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigTaintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolKubernetesConfigTaintArrayInput)(nil)).Elem(), GetDefaultNodePoolKubernetesConfigTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolManagementInput)(nil)).Elem(), GetDefaultNodePoolManagementArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolManagementRemedyConfigInput)(nil)).Elem(), GetDefaultNodePoolManagementRemedyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigDataVolumeInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigDataVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigDataVolumeArrayInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigDataVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigInstancesDistributionInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigInstancesDistributionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigPublicAccessConfigInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigPublicAccessConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigSecurityInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigSecurityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigSecurityLoginInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigSecurityLoginArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigSystemVolumeInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigSystemVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigTagInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeConfigTagArrayInput)(nil)).Elem(), GetDefaultNodePoolNodeConfigTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolNodeStatisticsInput)(nil)).Elem(), GetDefaultNodePoolNodeStatisticsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolStatusInput)(nil)).Elem(), GetDefaultNodePoolStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolStatusConditionInput)(nil)).Elem(), GetDefaultNodePoolStatusConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolStatusConditionArrayInput)(nil)).Elem(), GetDefaultNodePoolStatusConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolTagInput)(nil)).Elem(), GetDefaultNodePoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDefaultNodePoolTagArrayInput)(nil)).Elem(), GetDefaultNodePoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeKubernetesConfigInput)(nil)).Elem(), GetNodeKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeKubernetesConfigLabelInput)(nil)).Elem(), GetNodeKubernetesConfigLabelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeKubernetesConfigLabelArrayInput)(nil)).Elem(), GetNodeKubernetesConfigLabelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeKubernetesConfigTaintInput)(nil)).Elem(), GetNodeKubernetesConfigTaintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeKubernetesConfigTaintArrayInput)(nil)).Elem(), GetNodeKubernetesConfigTaintArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolAutoScalingInput)(nil)).Elem(), GetNodePoolAutoScalingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigInput)(nil)).Elem(), GetNodePoolKubernetesConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigInput)(nil)).Elem(), GetNodePoolKubernetesConfigKubeletConfigArgs{})
@@ -11064,6 +18663,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolStatusConditionArrayInput)(nil)).Elem(), GetNodePoolStatusConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolTagInput)(nil)).Elem(), GetNodePoolTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolTagArrayInput)(nil)).Elem(), GetNodePoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeStatusInput)(nil)).Elem(), GetNodeStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeStatusConditionInput)(nil)).Elem(), GetNodeStatusConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeStatusConditionArrayInput)(nil)).Elem(), GetNodeStatusConditionArray{})
 	pulumi.RegisterOutputType(AddonStatusOutput{})
 	pulumi.RegisterOutputType(AddonStatusPtrOutput{})
 	pulumi.RegisterOutputType(AddonStatusConditionOutput{})
@@ -11104,6 +18706,56 @@ func init() {
 	pulumi.RegisterOutputType(ClusterStatusConditionArrayOutput{})
 	pulumi.RegisterOutputType(ClusterTagOutput{})
 	pulumi.RegisterOutputType(ClusterTagArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolAutoScalingOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolAutoScalingPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigLabelOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigLabelArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigTaintOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolKubernetesConfigTaintArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolManagementOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolManagementPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolManagementRemedyConfigOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolManagementRemedyConfigPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigDataVolumeOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigDataVolumeArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigInstancesDistributionOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigInstancesDistributionPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigPublicAccessConfigOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigPublicAccessConfigPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigSecurityOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigSecurityPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigSecurityLoginOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigSecurityLoginPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigSystemVolumeOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigSystemVolumePtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigTagOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeConfigTagArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeStatisticsOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolNodeStatisticsPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolStatusOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolStatusPtrOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolStatusConditionOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolStatusConditionArrayOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolTagOutput{})
+	pulumi.RegisterOutputType(DefaultNodePoolTagArrayOutput{})
+	pulumi.RegisterOutputType(NodeKubernetesConfigOutput{})
+	pulumi.RegisterOutputType(NodeKubernetesConfigPtrOutput{})
+	pulumi.RegisterOutputType(NodeKubernetesConfigLabelOutput{})
+	pulumi.RegisterOutputType(NodeKubernetesConfigLabelArrayOutput{})
+	pulumi.RegisterOutputType(NodeKubernetesConfigTaintOutput{})
+	pulumi.RegisterOutputType(NodeKubernetesConfigTaintArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolAutoScalingOutput{})
 	pulumi.RegisterOutputType(NodePoolAutoScalingPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigOutput{})
@@ -11148,6 +18800,10 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolStatusConditionArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolTagOutput{})
 	pulumi.RegisterOutputType(NodePoolTagArrayOutput{})
+	pulumi.RegisterOutputType(NodeStatusOutput{})
+	pulumi.RegisterOutputType(NodeStatusPtrOutput{})
+	pulumi.RegisterOutputType(NodeStatusConditionOutput{})
+	pulumi.RegisterOutputType(NodeStatusConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetAddonStatusOutput{})
 	pulumi.RegisterOutputType(GetAddonStatusConditionOutput{})
 	pulumi.RegisterOutputType(GetAddonStatusConditionArrayOutput{})
@@ -11173,6 +18829,41 @@ func init() {
 	pulumi.RegisterOutputType(GetClusterStatusConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterTagOutput{})
 	pulumi.RegisterOutputType(GetClusterTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolAutoScalingOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigKubeletConfigOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigLabelOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigTaintOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolKubernetesConfigTaintArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolManagementOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolManagementRemedyConfigOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigDataVolumeOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigDataVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigInstancesDistributionOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigPublicAccessConfigOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigSecurityOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigSecurityLoginOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigSystemVolumeOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigTagOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeConfigTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolNodeStatisticsOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolStatusOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolStatusConditionOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolStatusConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolTagOutput{})
+	pulumi.RegisterOutputType(GetDefaultNodePoolTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNodeKubernetesConfigOutput{})
+	pulumi.RegisterOutputType(GetNodeKubernetesConfigLabelOutput{})
+	pulumi.RegisterOutputType(GetNodeKubernetesConfigLabelArrayOutput{})
+	pulumi.RegisterOutputType(GetNodeKubernetesConfigTaintOutput{})
+	pulumi.RegisterOutputType(GetNodeKubernetesConfigTaintArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolAutoScalingOutput{})
 	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigOutput{})
 	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigKubeletConfigOutput{})
@@ -11203,4 +18894,7 @@ func init() {
 	pulumi.RegisterOutputType(GetNodePoolStatusConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolTagOutput{})
 	pulumi.RegisterOutputType(GetNodePoolTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNodeStatusOutput{})
+	pulumi.RegisterOutputType(GetNodeStatusConditionOutput{})
+	pulumi.RegisterOutputType(GetNodeStatusConditionArrayOutput{})
 }

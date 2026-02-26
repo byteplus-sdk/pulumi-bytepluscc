@@ -29,6 +29,7 @@ class InstanceArgs:
                  system_volume: pulumi.Input['InstanceSystemVolumeArgs'],
                  zone_id: pulumi.Input[builtins.str],
                  affinity_group_size: Optional[pulumi.Input[builtins.int]] = None,
+                 auto_pay: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew_period: Optional[pulumi.Input[builtins.int]] = None,
                  cpu_max_frequency: Optional[pulumi.Input[builtins.float]] = None,
@@ -38,24 +39,27 @@ class InstanceArgs:
                  deployment_set_id: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_address: Optional[pulumi.Input['InstanceEipAddressArgs']] = None,
+                 enable_jumbo_frame: Optional[pulumi.Input[builtins.bool]] = None,
                  hostname: Optional[pulumi.Input[builtins.str]] = None,
                  hpc_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
+                 include_data_volumes: Optional[pulumi.Input[builtins.bool]] = None,
+                 install_run_command_agent: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  key_pair: Optional[pulumi.Input['InstanceKeyPairArgs']] = None,
-                 operation_system: Optional[pulumi.Input['InstanceOperationSystemArgs']] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  period: Optional[pulumi.Input[builtins.int]] = None,
                  period_unit: Optional[pulumi.Input[builtins.str]] = None,
                  placement: Optional[pulumi.Input['InstancePlacementArgs']] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 renew_info: Optional[pulumi.Input['InstanceRenewInfoArgs']] = None,
+                 role_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  secondary_network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceSecondaryNetworkInterfaceArgs']]]] = None,
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  stopped_mode: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
-                 user_data: Optional[pulumi.Input[builtins.str]] = None,
-                 vpc_id: Optional[pulumi.Input[builtins.str]] = None):
+                 user_data: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Instance resource.
         :param pulumi.Input['InstanceImageArgs'] image: 实例的镜像。
@@ -71,6 +75,7 @@ class InstanceArgs:
         :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区ID。
         :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
                - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_pay: 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
         :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
                **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
@@ -93,6 +98,7 @@ class InstanceArgs:
                只能包含中文、字母、数字、点号“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”
                - 长度限制在255个字符以内。
         :param pulumi.Input['InstanceEipAddressArgs'] eip_address: 实例的EIP地址。
+        :param pulumi.Input[builtins.bool] enable_jumbo_frame: 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
         :param pulumi.Input[builtins.str] hostname: 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
                允许使用字母、数字、点号“.”或中划线“-”。 -
                不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -102,10 +108,12 @@ class InstanceArgs:
                Windows系统长度限制在2～15个字符之间。
         :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
                仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
+        :param pulumi.Input[builtins.bool] include_data_volumes: 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+               （默认）：不转换。
+        :param pulumi.Input[builtins.bool] install_run_command_agent: 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
         :param pulumi.Input['InstanceKeyPairArgs'] key_pair: 实例的密钥对名称。
-        :param pulumi.Input['InstanceOperationSystemArgs'] operation_system: 实例的操作系统类型。
         :param pulumi.Input[builtins.str] password: 实例的密码。
         :param pulumi.Input[builtins.int] period: 购买资源的时长（N）。 -
                `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
@@ -115,6 +123,8 @@ class InstanceArgs:
                仅当`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input['InstancePlacementArgs'] placement: 实例的部署信息。
         :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
+        :param pulumi.Input['InstanceRenewInfoArgs'] renew_info: 续费信息。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] role_names: 实例绑定的IAM角色名称。
         :param pulumi.Input[builtins.float] spot_price_limit: 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
                仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
                当`SpotStrategy`取值为`SpotWithPriceLimit`时，您可以自定义设置竞价实例的价格上限，当市场价格高于您的出价时，实例会被释放；当`SpotStrategy`取值为`SpotAsPriceGo`时，则代表您接受系统自动出价，跟随当前市场实际价格，此时无需填写该参数。
@@ -128,11 +138,10 @@ class InstanceArgs:
                KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
                StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
                有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
                Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
                Windows实例：脚本内容不能超过8KB，且无需Base64编码。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
         """
         pulumi.set(__self__, "image", image)
         pulumi.set(__self__, "instance_name", instance_name)
@@ -142,6 +151,8 @@ class InstanceArgs:
         pulumi.set(__self__, "zone_id", zone_id)
         if affinity_group_size is not None:
             pulumi.set(__self__, "affinity_group_size", affinity_group_size)
+        if auto_pay is not None:
+            pulumi.set(__self__, "auto_pay", auto_pay)
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
         if auto_renew_period is not None:
@@ -160,16 +171,20 @@ class InstanceArgs:
             pulumi.set(__self__, "description", description)
         if eip_address is not None:
             pulumi.set(__self__, "eip_address", eip_address)
+        if enable_jumbo_frame is not None:
+            pulumi.set(__self__, "enable_jumbo_frame", enable_jumbo_frame)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if hpc_cluster_id is not None:
             pulumi.set(__self__, "hpc_cluster_id", hpc_cluster_id)
+        if include_data_volumes is not None:
+            pulumi.set(__self__, "include_data_volumes", include_data_volumes)
+        if install_run_command_agent is not None:
+            pulumi.set(__self__, "install_run_command_agent", install_run_command_agent)
         if instance_charge_type is not None:
             pulumi.set(__self__, "instance_charge_type", instance_charge_type)
         if key_pair is not None:
             pulumi.set(__self__, "key_pair", key_pair)
-        if operation_system is not None:
-            pulumi.set(__self__, "operation_system", operation_system)
         if password is not None:
             pulumi.set(__self__, "password", password)
         if period is not None:
@@ -180,6 +195,10 @@ class InstanceArgs:
             pulumi.set(__self__, "placement", placement)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if renew_info is not None:
+            pulumi.set(__self__, "renew_info", renew_info)
+        if role_names is not None:
+            pulumi.set(__self__, "role_names", role_names)
         if secondary_network_interfaces is not None:
             pulumi.set(__self__, "secondary_network_interfaces", secondary_network_interfaces)
         if spot_price_limit is not None:
@@ -194,8 +213,6 @@ class InstanceArgs:
             pulumi.set(__self__, "tags", tags)
         if user_data is not None:
             pulumi.set(__self__, "user_data", user_data)
-        if vpc_id is not None:
-            pulumi.set(__self__, "vpc_id", vpc_id)
 
     @property
     @pulumi.getter
@@ -286,6 +303,18 @@ class InstanceArgs:
     @affinity_group_size.setter
     def affinity_group_size(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "affinity_group_size", value)
+
+    @property
+    @pulumi.getter(name="autoPay")
+    def auto_pay(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+        """
+        return pulumi.get(self, "auto_pay")
+
+    @auto_pay.setter
+    def auto_pay(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_pay", value)
 
     @property
     @pulumi.getter(name="autoRenew")
@@ -409,6 +438,18 @@ class InstanceArgs:
         pulumi.set(self, "eip_address", value)
 
     @property
+    @pulumi.getter(name="enableJumboFrame")
+    def enable_jumbo_frame(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+        """
+        return pulumi.get(self, "enable_jumbo_frame")
+
+    @enable_jumbo_frame.setter
+    def enable_jumbo_frame(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_jumbo_frame", value)
+
+    @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -440,6 +481,31 @@ class InstanceArgs:
         pulumi.set(self, "hpc_cluster_id", value)
 
     @property
+    @pulumi.getter(name="includeDataVolumes")
+    def include_data_volumes(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+        （默认）：不转换。
+        """
+        return pulumi.get(self, "include_data_volumes")
+
+    @include_data_volumes.setter
+    def include_data_volumes(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "include_data_volumes", value)
+
+    @property
+    @pulumi.getter(name="installRunCommandAgent")
+    def install_run_command_agent(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+        """
+        return pulumi.get(self, "install_run_command_agent")
+
+    @install_run_command_agent.setter
+    def install_run_command_agent(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "install_run_command_agent", value)
+
+    @property
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -463,18 +529,6 @@ class InstanceArgs:
     @key_pair.setter
     def key_pair(self, value: Optional[pulumi.Input['InstanceKeyPairArgs']]):
         pulumi.set(self, "key_pair", value)
-
-    @property
-    @pulumi.getter(name="operationSystem")
-    def operation_system(self) -> Optional[pulumi.Input['InstanceOperationSystemArgs']]:
-        """
-        实例的操作系统类型。
-        """
-        return pulumi.get(self, "operation_system")
-
-    @operation_system.setter
-    def operation_system(self, value: Optional[pulumi.Input['InstanceOperationSystemArgs']]):
-        pulumi.set(self, "operation_system", value)
 
     @property
     @pulumi.getter
@@ -541,6 +595,30 @@ class InstanceArgs:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="renewInfo")
+    def renew_info(self) -> Optional[pulumi.Input['InstanceRenewInfoArgs']]:
+        """
+        续费信息。
+        """
+        return pulumi.get(self, "renew_info")
+
+    @renew_info.setter
+    def renew_info(self, value: Optional[pulumi.Input['InstanceRenewInfoArgs']]):
+        pulumi.set(self, "renew_info", value)
+
+    @property
+    @pulumi.getter(name="roleNames")
+    def role_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        实例绑定的IAM角色名称。
+        """
+        return pulumi.get(self, "role_names")
+
+    @role_names.setter
+    def role_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "role_names", value)
+
+    @property
     @pulumi.getter(name="secondaryNetworkInterfaces")
     def secondary_network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceSecondaryNetworkInterfaceArgs']]]]:
         return pulumi.get(self, "secondary_network_interfaces")
@@ -599,7 +677,7 @@ class InstanceArgs:
         KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
         StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
         有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         """
         return pulumi.get(self, "stopped_mode")
 
@@ -630,23 +708,13 @@ class InstanceArgs:
     def user_data(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "user_data", value)
 
-    @property
-    @pulumi.getter(name="vpcId")
-    def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-        """
-        return pulumi.get(self, "vpc_id")
-
-    @vpc_id.setter
-    def vpc_id(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "vpc_id", value)
-
 
 @pulumi.input_type
 class _InstanceState:
     def __init__(__self__, *,
+                 affinity_group_id: Optional[pulumi.Input[builtins.str]] = None,
                  affinity_group_size: Optional[pulumi.Input[builtins.int]] = None,
+                 auto_pay: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew_period: Optional[pulumi.Input[builtins.int]] = None,
                  cpu_max_frequency: Optional[pulumi.Input[builtins.float]] = None,
@@ -658,15 +726,20 @@ class _InstanceState:
                  deployment_set_id: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_address: Optional[pulumi.Input['InstanceEipAddressArgs']] = None,
+                 elastic_scheduled_instance_type: Optional[pulumi.Input[builtins.str]] = None,
+                 enable_jumbo_frame: Optional[pulumi.Input[builtins.bool]] = None,
                  expired_at: Optional[pulumi.Input[builtins.str]] = None,
                  hostname: Optional[pulumi.Input[builtins.str]] = None,
                  hpc_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
                  image: Optional[pulumi.Input['InstanceImageArgs']] = None,
+                 include_data_volumes: Optional[pulumi.Input[builtins.bool]] = None,
+                 install_run_command_agent: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  key_pair: Optional[pulumi.Input['InstanceKeyPairArgs']] = None,
+                 local_volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLocalVolumeArgs']]]] = None,
                  operation_system: Optional[pulumi.Input['InstanceOperationSystemArgs']] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  period: Optional[pulumi.Input[builtins.int]] = None,
@@ -674,6 +747,10 @@ class _InstanceState:
                  placement: Optional[pulumi.Input['InstancePlacementArgs']] = None,
                  primary_network_interface: Optional[pulumi.Input['InstancePrimaryNetworkInterfaceArgs']] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 rdma_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 rdma_network_interface_details: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceRdmaNetworkInterfaceDetailArgs']]]] = None,
+                 renew_info: Optional[pulumi.Input['InstanceRenewInfoArgs']] = None,
+                 role_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  secondary_network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceSecondaryNetworkInterfaceArgs']]]] = None,
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
@@ -687,8 +764,10 @@ class _InstanceState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
+        :param pulumi.Input[builtins.str] affinity_group_id: 亲和组ID。
         :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
                - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_pay: 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
         :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
                **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
@@ -713,6 +792,8 @@ class _InstanceState:
                只能包含中文、字母、数字、点号“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”
                - 长度限制在255个字符以内。
         :param pulumi.Input['InstanceEipAddressArgs'] eip_address: 实例的EIP地址。
+        :param pulumi.Input[builtins.str] elastic_scheduled_instance_type: 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+        :param pulumi.Input[builtins.bool] enable_jumbo_frame: 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
         :param pulumi.Input[builtins.str] expired_at: 实例的过期时间。
         :param pulumi.Input[builtins.str] hostname: 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
                允许使用字母、数字、点号“.”或中划线“-”。 -
@@ -724,6 +805,9 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
                仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         :param pulumi.Input['InstanceImageArgs'] image: 实例的镜像。
+        :param pulumi.Input[builtins.bool] include_data_volumes: 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+               （默认）：不转换。
+        :param pulumi.Input[builtins.bool] install_run_command_agent: 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
         :param pulumi.Input[builtins.str] instance_id: ECS实例的ID。
@@ -746,6 +830,9 @@ class _InstanceState:
         :param pulumi.Input['InstancePlacementArgs'] placement: 实例的部署信息。
         :param pulumi.Input['InstancePrimaryNetworkInterfaceArgs'] primary_network_interface: 实例的主网卡。
         :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rdma_ip_addresses: 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+        :param pulumi.Input['InstanceRenewInfoArgs'] renew_info: 续费信息。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] role_names: 实例绑定的IAM角色名称。
         :param pulumi.Input[builtins.float] spot_price_limit: 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
                仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
                当`SpotStrategy`取值为`SpotWithPriceLimit`时，您可以自定义设置竞价实例的价格上限，当市场价格高于您的出价时，实例会被释放；当`SpotStrategy`取值为`SpotAsPriceGo`时，则代表您接受系统自动出价，跟随当前市场实际价格，此时无需填写该参数。
@@ -759,7 +846,7 @@ class _InstanceState:
                KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
                StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
                有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         :param pulumi.Input['InstanceSystemVolumeArgs'] system_volume: 实例的系统卷。
         :param pulumi.Input[builtins.str] updated_at: 实例的更新时间。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
@@ -768,8 +855,12 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] vpc_id: 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
         :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区ID。
         """
+        if affinity_group_id is not None:
+            pulumi.set(__self__, "affinity_group_id", affinity_group_id)
         if affinity_group_size is not None:
             pulumi.set(__self__, "affinity_group_size", affinity_group_size)
+        if auto_pay is not None:
+            pulumi.set(__self__, "auto_pay", auto_pay)
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
         if auto_renew_period is not None:
@@ -792,6 +883,10 @@ class _InstanceState:
             pulumi.set(__self__, "description", description)
         if eip_address is not None:
             pulumi.set(__self__, "eip_address", eip_address)
+        if elastic_scheduled_instance_type is not None:
+            pulumi.set(__self__, "elastic_scheduled_instance_type", elastic_scheduled_instance_type)
+        if enable_jumbo_frame is not None:
+            pulumi.set(__self__, "enable_jumbo_frame", enable_jumbo_frame)
         if expired_at is not None:
             pulumi.set(__self__, "expired_at", expired_at)
         if hostname is not None:
@@ -800,6 +895,10 @@ class _InstanceState:
             pulumi.set(__self__, "hpc_cluster_id", hpc_cluster_id)
         if image is not None:
             pulumi.set(__self__, "image", image)
+        if include_data_volumes is not None:
+            pulumi.set(__self__, "include_data_volumes", include_data_volumes)
+        if install_run_command_agent is not None:
+            pulumi.set(__self__, "install_run_command_agent", install_run_command_agent)
         if instance_charge_type is not None:
             pulumi.set(__self__, "instance_charge_type", instance_charge_type)
         if instance_id is not None:
@@ -810,6 +909,8 @@ class _InstanceState:
             pulumi.set(__self__, "instance_type", instance_type)
         if key_pair is not None:
             pulumi.set(__self__, "key_pair", key_pair)
+        if local_volumes is not None:
+            pulumi.set(__self__, "local_volumes", local_volumes)
         if operation_system is not None:
             pulumi.set(__self__, "operation_system", operation_system)
         if password is not None:
@@ -824,6 +925,14 @@ class _InstanceState:
             pulumi.set(__self__, "primary_network_interface", primary_network_interface)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if rdma_ip_addresses is not None:
+            pulumi.set(__self__, "rdma_ip_addresses", rdma_ip_addresses)
+        if rdma_network_interface_details is not None:
+            pulumi.set(__self__, "rdma_network_interface_details", rdma_network_interface_details)
+        if renew_info is not None:
+            pulumi.set(__self__, "renew_info", renew_info)
+        if role_names is not None:
+            pulumi.set(__self__, "role_names", role_names)
         if secondary_network_interfaces is not None:
             pulumi.set(__self__, "secondary_network_interfaces", secondary_network_interfaces)
         if spot_price_limit is not None:
@@ -848,6 +957,18 @@ class _InstanceState:
             pulumi.set(__self__, "zone_id", zone_id)
 
     @property
+    @pulumi.getter(name="affinityGroupId")
+    def affinity_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        亲和组ID。
+        """
+        return pulumi.get(self, "affinity_group_id")
+
+    @affinity_group_id.setter
+    def affinity_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "affinity_group_id", value)
+
+    @property
     @pulumi.getter(name="affinityGroupSize")
     def affinity_group_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -859,6 +980,18 @@ class _InstanceState:
     @affinity_group_size.setter
     def affinity_group_size(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "affinity_group_size", value)
+
+    @property
+    @pulumi.getter(name="autoPay")
+    def auto_pay(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+        """
+        return pulumi.get(self, "auto_pay")
+
+    @auto_pay.setter
+    def auto_pay(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_pay", value)
 
     @property
     @pulumi.getter(name="autoRenew")
@@ -1006,6 +1139,30 @@ class _InstanceState:
         pulumi.set(self, "eip_address", value)
 
     @property
+    @pulumi.getter(name="elasticScheduledInstanceType")
+    def elastic_scheduled_instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+        """
+        return pulumi.get(self, "elastic_scheduled_instance_type")
+
+    @elastic_scheduled_instance_type.setter
+    def elastic_scheduled_instance_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "elastic_scheduled_instance_type", value)
+
+    @property
+    @pulumi.getter(name="enableJumboFrame")
+    def enable_jumbo_frame(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+        """
+        return pulumi.get(self, "enable_jumbo_frame")
+
+    @enable_jumbo_frame.setter
+    def enable_jumbo_frame(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_jumbo_frame", value)
+
+    @property
     @pulumi.getter(name="expiredAt")
     def expired_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1059,6 +1216,31 @@ class _InstanceState:
     @image.setter
     def image(self, value: Optional[pulumi.Input['InstanceImageArgs']]):
         pulumi.set(self, "image", value)
+
+    @property
+    @pulumi.getter(name="includeDataVolumes")
+    def include_data_volumes(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+        （默认）：不转换。
+        """
+        return pulumi.get(self, "include_data_volumes")
+
+    @include_data_volumes.setter
+    def include_data_volumes(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "include_data_volumes", value)
+
+    @property
+    @pulumi.getter(name="installRunCommandAgent")
+    def install_run_command_agent(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+        """
+        return pulumi.get(self, "install_run_command_agent")
+
+    @install_run_command_agent.setter
+    def install_run_command_agent(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "install_run_command_agent", value)
 
     @property
     @pulumi.getter(name="instanceChargeType")
@@ -1125,6 +1307,15 @@ class _InstanceState:
     @key_pair.setter
     def key_pair(self, value: Optional[pulumi.Input['InstanceKeyPairArgs']]):
         pulumi.set(self, "key_pair", value)
+
+    @property
+    @pulumi.getter(name="localVolumes")
+    def local_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLocalVolumeArgs']]]]:
+        return pulumi.get(self, "local_volumes")
+
+    @local_volumes.setter
+    def local_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLocalVolumeArgs']]]]):
+        pulumi.set(self, "local_volumes", value)
 
     @property
     @pulumi.getter(name="operationSystem")
@@ -1215,6 +1406,51 @@ class _InstanceState:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="rdmaIpAddresses")
+    def rdma_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+        """
+        return pulumi.get(self, "rdma_ip_addresses")
+
+    @rdma_ip_addresses.setter
+    def rdma_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "rdma_ip_addresses", value)
+
+    @property
+    @pulumi.getter(name="rdmaNetworkInterfaceDetails")
+    def rdma_network_interface_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceRdmaNetworkInterfaceDetailArgs']]]]:
+        return pulumi.get(self, "rdma_network_interface_details")
+
+    @rdma_network_interface_details.setter
+    def rdma_network_interface_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceRdmaNetworkInterfaceDetailArgs']]]]):
+        pulumi.set(self, "rdma_network_interface_details", value)
+
+    @property
+    @pulumi.getter(name="renewInfo")
+    def renew_info(self) -> Optional[pulumi.Input['InstanceRenewInfoArgs']]:
+        """
+        续费信息。
+        """
+        return pulumi.get(self, "renew_info")
+
+    @renew_info.setter
+    def renew_info(self, value: Optional[pulumi.Input['InstanceRenewInfoArgs']]):
+        pulumi.set(self, "renew_info", value)
+
+    @property
+    @pulumi.getter(name="roleNames")
+    def role_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        实例绑定的IAM角色名称。
+        """
+        return pulumi.get(self, "role_names")
+
+    @role_names.setter
+    def role_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "role_names", value)
+
+    @property
     @pulumi.getter(name="secondaryNetworkInterfaces")
     def secondary_network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceSecondaryNetworkInterfaceArgs']]]]:
         return pulumi.get(self, "secondary_network_interfaces")
@@ -1273,7 +1509,7 @@ class _InstanceState:
         KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
         StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
         有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         """
         return pulumi.get(self, "stopped_mode")
 
@@ -1360,6 +1596,7 @@ class Instance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  affinity_group_size: Optional[pulumi.Input[builtins.int]] = None,
+                 auto_pay: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew_period: Optional[pulumi.Input[builtins.int]] = None,
                  cpu_max_frequency: Optional[pulumi.Input[builtins.float]] = None,
@@ -1369,20 +1606,24 @@ class Instance(pulumi.CustomResource):
                  deployment_set_id: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_address: Optional[pulumi.Input[Union['InstanceEipAddressArgs', 'InstanceEipAddressArgsDict']]] = None,
+                 enable_jumbo_frame: Optional[pulumi.Input[builtins.bool]] = None,
                  hostname: Optional[pulumi.Input[builtins.str]] = None,
                  hpc_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
                  image: Optional[pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']]] = None,
+                 include_data_volumes: Optional[pulumi.Input[builtins.bool]] = None,
+                 install_run_command_agent: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  key_pair: Optional[pulumi.Input[Union['InstanceKeyPairArgs', 'InstanceKeyPairArgsDict']]] = None,
-                 operation_system: Optional[pulumi.Input[Union['InstanceOperationSystemArgs', 'InstanceOperationSystemArgsDict']]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  period: Optional[pulumi.Input[builtins.int]] = None,
                  period_unit: Optional[pulumi.Input[builtins.str]] = None,
                  placement: Optional[pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']]] = None,
                  primary_network_interface: Optional[pulumi.Input[Union['InstancePrimaryNetworkInterfaceArgs', 'InstancePrimaryNetworkInterfaceArgsDict']]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 renew_info: Optional[pulumi.Input[Union['InstanceRenewInfoArgs', 'InstanceRenewInfoArgsDict']]] = None,
+                 role_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  secondary_network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceSecondaryNetworkInterfaceArgs', 'InstanceSecondaryNetworkInterfaceArgsDict']]]]] = None,
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
@@ -1391,7 +1632,6 @@ class Instance(pulumi.CustomResource):
                  system_volume: Optional[pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
                  user_data: Optional[pulumi.Input[builtins.str]] = None,
-                 vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
@@ -1407,6 +1647,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
                - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_pay: 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
         :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
                **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
@@ -1429,6 +1670,7 @@ class Instance(pulumi.CustomResource):
                只能包含中文、字母、数字、点号“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”
                - 长度限制在255个字符以内。
         :param pulumi.Input[Union['InstanceEipAddressArgs', 'InstanceEipAddressArgsDict']] eip_address: 实例的EIP地址。
+        :param pulumi.Input[builtins.bool] enable_jumbo_frame: 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
         :param pulumi.Input[builtins.str] hostname: 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
                允许使用字母、数字、点号“.”或中划线“-”。 -
                不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -1439,6 +1681,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
                仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         :param pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']] image: 实例的镜像。
+        :param pulumi.Input[builtins.bool] include_data_volumes: 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+               （默认）：不转换。
+        :param pulumi.Input[builtins.bool] install_run_command_agent: 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
         :param pulumi.Input[builtins.str] instance_name: 实例的名称。 - 以字母或中文开头。 -
@@ -1449,7 +1694,6 @@ class Instance(pulumi.CustomResource):
                -
                查询库存：您可以调用[DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279)查询可用区中计算资源的库存信息。
         :param pulumi.Input[Union['InstanceKeyPairArgs', 'InstanceKeyPairArgsDict']] key_pair: 实例的密钥对名称。
-        :param pulumi.Input[Union['InstanceOperationSystemArgs', 'InstanceOperationSystemArgsDict']] operation_system: 实例的操作系统类型。
         :param pulumi.Input[builtins.str] password: 实例的密码。
         :param pulumi.Input[builtins.int] period: 购买资源的时长（N）。 -
                `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
@@ -1460,6 +1704,8 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']] placement: 实例的部署信息。
         :param pulumi.Input[Union['InstancePrimaryNetworkInterfaceArgs', 'InstancePrimaryNetworkInterfaceArgsDict']] primary_network_interface: 实例的主网卡。
         :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
+        :param pulumi.Input[Union['InstanceRenewInfoArgs', 'InstanceRenewInfoArgsDict']] renew_info: 续费信息。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] role_names: 实例绑定的IAM角色名称。
         :param pulumi.Input[builtins.float] spot_price_limit: 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
                仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
                当`SpotStrategy`取值为`SpotWithPriceLimit`时，您可以自定义设置竞价实例的价格上限，当市场价格高于您的出价时，实例会被释放；当`SpotStrategy`取值为`SpotAsPriceGo`时，则代表您接受系统自动出价，跟随当前市场实际价格，此时无需填写该参数。
@@ -1473,12 +1719,11 @@ class Instance(pulumi.CustomResource):
                KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
                StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
                有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         :param pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']] system_volume: 实例的系统卷。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
                Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
                Windows实例：脚本内容不能超过8KB，且无需Base64编码。
-        :param pulumi.Input[builtins.str] vpc_id: 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
         :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区ID。
         """
         ...
@@ -1512,6 +1757,7 @@ class Instance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  affinity_group_size: Optional[pulumi.Input[builtins.int]] = None,
+                 auto_pay: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  auto_renew_period: Optional[pulumi.Input[builtins.int]] = None,
                  cpu_max_frequency: Optional[pulumi.Input[builtins.float]] = None,
@@ -1521,20 +1767,24 @@ class Instance(pulumi.CustomResource):
                  deployment_set_id: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_address: Optional[pulumi.Input[Union['InstanceEipAddressArgs', 'InstanceEipAddressArgsDict']]] = None,
+                 enable_jumbo_frame: Optional[pulumi.Input[builtins.bool]] = None,
                  hostname: Optional[pulumi.Input[builtins.str]] = None,
                  hpc_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
                  image: Optional[pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']]] = None,
+                 include_data_volumes: Optional[pulumi.Input[builtins.bool]] = None,
+                 install_run_command_agent: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  instance_name: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  key_pair: Optional[pulumi.Input[Union['InstanceKeyPairArgs', 'InstanceKeyPairArgsDict']]] = None,
-                 operation_system: Optional[pulumi.Input[Union['InstanceOperationSystemArgs', 'InstanceOperationSystemArgsDict']]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  period: Optional[pulumi.Input[builtins.int]] = None,
                  period_unit: Optional[pulumi.Input[builtins.str]] = None,
                  placement: Optional[pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']]] = None,
                  primary_network_interface: Optional[pulumi.Input[Union['InstancePrimaryNetworkInterfaceArgs', 'InstancePrimaryNetworkInterfaceArgsDict']]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 renew_info: Optional[pulumi.Input[Union['InstanceRenewInfoArgs', 'InstanceRenewInfoArgsDict']]] = None,
+                 role_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  secondary_network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceSecondaryNetworkInterfaceArgs', 'InstanceSecondaryNetworkInterfaceArgsDict']]]]] = None,
                  spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
                  spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
@@ -1543,7 +1793,6 @@ class Instance(pulumi.CustomResource):
                  system_volume: Optional[pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
                  user_data: Optional[pulumi.Input[builtins.str]] = None,
-                 vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1555,6 +1804,7 @@ class Instance(pulumi.CustomResource):
             __props__ = InstanceArgs.__new__(InstanceArgs)
 
             __props__.__dict__["affinity_group_size"] = affinity_group_size
+            __props__.__dict__["auto_pay"] = auto_pay
             __props__.__dict__["auto_renew"] = auto_renew
             __props__.__dict__["auto_renew_period"] = auto_renew_period
             __props__.__dict__["cpu_max_frequency"] = cpu_max_frequency
@@ -1564,11 +1814,14 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["deployment_set_id"] = deployment_set_id
             __props__.__dict__["description"] = description
             __props__.__dict__["eip_address"] = eip_address
+            __props__.__dict__["enable_jumbo_frame"] = enable_jumbo_frame
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["hpc_cluster_id"] = hpc_cluster_id
             if image is None and not opts.urn:
                 raise TypeError("Missing required property 'image'")
             __props__.__dict__["image"] = image
+            __props__.__dict__["include_data_volumes"] = include_data_volumes
+            __props__.__dict__["install_run_command_agent"] = install_run_command_agent
             __props__.__dict__["instance_charge_type"] = instance_charge_type
             if instance_name is None and not opts.urn:
                 raise TypeError("Missing required property 'instance_name'")
@@ -1577,7 +1830,6 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'instance_type'")
             __props__.__dict__["instance_type"] = instance_type
             __props__.__dict__["key_pair"] = key_pair
-            __props__.__dict__["operation_system"] = operation_system
             __props__.__dict__["password"] = password
             __props__.__dict__["period"] = period
             __props__.__dict__["period_unit"] = period_unit
@@ -1586,6 +1838,8 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'primary_network_interface'")
             __props__.__dict__["primary_network_interface"] = primary_network_interface
             __props__.__dict__["project_name"] = project_name
+            __props__.__dict__["renew_info"] = renew_info
+            __props__.__dict__["role_names"] = role_names
             __props__.__dict__["secondary_network_interfaces"] = secondary_network_interfaces
             __props__.__dict__["spot_price_limit"] = spot_price_limit
             __props__.__dict__["spot_strategy"] = spot_strategy
@@ -1596,15 +1850,21 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["system_volume"] = system_volume
             __props__.__dict__["tags"] = tags
             __props__.__dict__["user_data"] = user_data
-            __props__.__dict__["vpc_id"] = vpc_id
             if zone_id is None and not opts.urn:
                 raise TypeError("Missing required property 'zone_id'")
             __props__.__dict__["zone_id"] = zone_id
+            __props__.__dict__["affinity_group_id"] = None
             __props__.__dict__["cpu_memory"] = None
             __props__.__dict__["created_at"] = None
+            __props__.__dict__["elastic_scheduled_instance_type"] = None
             __props__.__dict__["expired_at"] = None
             __props__.__dict__["instance_id"] = None
+            __props__.__dict__["local_volumes"] = None
+            __props__.__dict__["operation_system"] = None
+            __props__.__dict__["rdma_ip_addresses"] = None
+            __props__.__dict__["rdma_network_interface_details"] = None
             __props__.__dict__["updated_at"] = None
+            __props__.__dict__["vpc_id"] = None
         super(Instance, __self__).__init__(
             'bytepluscc:ecs/instance:Instance',
             resource_name,
@@ -1615,7 +1875,9 @@ class Instance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            affinity_group_id: Optional[pulumi.Input[builtins.str]] = None,
             affinity_group_size: Optional[pulumi.Input[builtins.int]] = None,
+            auto_pay: Optional[pulumi.Input[builtins.bool]] = None,
             auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
             auto_renew_period: Optional[pulumi.Input[builtins.int]] = None,
             cpu_max_frequency: Optional[pulumi.Input[builtins.float]] = None,
@@ -1627,15 +1889,20 @@ class Instance(pulumi.CustomResource):
             deployment_set_id: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             eip_address: Optional[pulumi.Input[Union['InstanceEipAddressArgs', 'InstanceEipAddressArgsDict']]] = None,
+            elastic_scheduled_instance_type: Optional[pulumi.Input[builtins.str]] = None,
+            enable_jumbo_frame: Optional[pulumi.Input[builtins.bool]] = None,
             expired_at: Optional[pulumi.Input[builtins.str]] = None,
             hostname: Optional[pulumi.Input[builtins.str]] = None,
             hpc_cluster_id: Optional[pulumi.Input[builtins.str]] = None,
             image: Optional[pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']]] = None,
+            include_data_volumes: Optional[pulumi.Input[builtins.bool]] = None,
+            install_run_command_agent: Optional[pulumi.Input[builtins.bool]] = None,
             instance_charge_type: Optional[pulumi.Input[builtins.str]] = None,
             instance_id: Optional[pulumi.Input[builtins.str]] = None,
             instance_name: Optional[pulumi.Input[builtins.str]] = None,
             instance_type: Optional[pulumi.Input[builtins.str]] = None,
             key_pair: Optional[pulumi.Input[Union['InstanceKeyPairArgs', 'InstanceKeyPairArgsDict']]] = None,
+            local_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLocalVolumeArgs', 'InstanceLocalVolumeArgsDict']]]]] = None,
             operation_system: Optional[pulumi.Input[Union['InstanceOperationSystemArgs', 'InstanceOperationSystemArgsDict']]] = None,
             password: Optional[pulumi.Input[builtins.str]] = None,
             period: Optional[pulumi.Input[builtins.int]] = None,
@@ -1643,6 +1910,10 @@ class Instance(pulumi.CustomResource):
             placement: Optional[pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']]] = None,
             primary_network_interface: Optional[pulumi.Input[Union['InstancePrimaryNetworkInterfaceArgs', 'InstancePrimaryNetworkInterfaceArgsDict']]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
+            rdma_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+            rdma_network_interface_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceRdmaNetworkInterfaceDetailArgs', 'InstanceRdmaNetworkInterfaceDetailArgsDict']]]]] = None,
+            renew_info: Optional[pulumi.Input[Union['InstanceRenewInfoArgs', 'InstanceRenewInfoArgsDict']]] = None,
+            role_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             secondary_network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceSecondaryNetworkInterfaceArgs', 'InstanceSecondaryNetworkInterfaceArgsDict']]]]] = None,
             spot_price_limit: Optional[pulumi.Input[builtins.float]] = None,
             spot_strategy: Optional[pulumi.Input[builtins.str]] = None,
@@ -1661,8 +1932,10 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] affinity_group_id: 亲和组ID。
         :param pulumi.Input[builtins.int] affinity_group_size: 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
                - 该功能正在邀测中，如需试用，请联系客户经理申请。
+        :param pulumi.Input[builtins.bool] auto_pay: 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
         :param pulumi.Input[builtins.bool] auto_renew: 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
                **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
         :param pulumi.Input[builtins.int] auto_renew_period: 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
@@ -1687,6 +1960,8 @@ class Instance(pulumi.CustomResource):
                只能包含中文、字母、数字、点号“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”
                - 长度限制在255个字符以内。
         :param pulumi.Input[Union['InstanceEipAddressArgs', 'InstanceEipAddressArgsDict']] eip_address: 实例的EIP地址。
+        :param pulumi.Input[builtins.str] elastic_scheduled_instance_type: 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+        :param pulumi.Input[builtins.bool] enable_jumbo_frame: 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
         :param pulumi.Input[builtins.str] expired_at: 实例的过期时间。
         :param pulumi.Input[builtins.str] hostname: 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
                允许使用字母、数字、点号“.”或中划线“-”。 -
@@ -1698,6 +1973,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群ID。 **提示:**
                仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
         :param pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']] image: 实例的镜像。
+        :param pulumi.Input[builtins.bool] include_data_volumes: 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+               （默认）：不转换。
+        :param pulumi.Input[builtins.bool] install_run_command_agent: 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
         :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
                PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
         :param pulumi.Input[builtins.str] instance_id: ECS实例的ID。
@@ -1720,6 +1998,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']] placement: 实例的部署信息。
         :param pulumi.Input[Union['InstancePrimaryNetworkInterfaceArgs', 'InstancePrimaryNetworkInterfaceArgsDict']] primary_network_interface: 实例的主网卡。
         :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rdma_ip_addresses: 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+        :param pulumi.Input[Union['InstanceRenewInfoArgs', 'InstanceRenewInfoArgsDict']] renew_info: 续费信息。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] role_names: 实例绑定的IAM角色名称。
         :param pulumi.Input[builtins.float] spot_price_limit: 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
                仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
                当`SpotStrategy`取值为`SpotWithPriceLimit`时，您可以自定义设置竞价实例的价格上限，当市场价格高于您的出价时，实例会被释放；当`SpotStrategy`取值为`SpotAsPriceGo`时，则代表您接受系统自动出价，跟随当前市场实际价格，此时无需填写该参数。
@@ -1733,7 +2014,7 @@ class Instance(pulumi.CustomResource):
                KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
                StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
                有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+               默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         :param pulumi.Input[Union['InstanceSystemVolumeArgs', 'InstanceSystemVolumeArgsDict']] system_volume: 实例的系统卷。
         :param pulumi.Input[builtins.str] updated_at: 实例的更新时间。
         :param pulumi.Input[builtins.str] user_data: 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
@@ -1746,7 +2027,9 @@ class Instance(pulumi.CustomResource):
 
         __props__ = _InstanceState.__new__(_InstanceState)
 
+        __props__.__dict__["affinity_group_id"] = affinity_group_id
         __props__.__dict__["affinity_group_size"] = affinity_group_size
+        __props__.__dict__["auto_pay"] = auto_pay
         __props__.__dict__["auto_renew"] = auto_renew
         __props__.__dict__["auto_renew_period"] = auto_renew_period
         __props__.__dict__["cpu_max_frequency"] = cpu_max_frequency
@@ -1758,15 +2041,20 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["deployment_set_id"] = deployment_set_id
         __props__.__dict__["description"] = description
         __props__.__dict__["eip_address"] = eip_address
+        __props__.__dict__["elastic_scheduled_instance_type"] = elastic_scheduled_instance_type
+        __props__.__dict__["enable_jumbo_frame"] = enable_jumbo_frame
         __props__.__dict__["expired_at"] = expired_at
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["hpc_cluster_id"] = hpc_cluster_id
         __props__.__dict__["image"] = image
+        __props__.__dict__["include_data_volumes"] = include_data_volumes
+        __props__.__dict__["install_run_command_agent"] = install_run_command_agent
         __props__.__dict__["instance_charge_type"] = instance_charge_type
         __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["instance_name"] = instance_name
         __props__.__dict__["instance_type"] = instance_type
         __props__.__dict__["key_pair"] = key_pair
+        __props__.__dict__["local_volumes"] = local_volumes
         __props__.__dict__["operation_system"] = operation_system
         __props__.__dict__["password"] = password
         __props__.__dict__["period"] = period
@@ -1774,6 +2062,10 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["placement"] = placement
         __props__.__dict__["primary_network_interface"] = primary_network_interface
         __props__.__dict__["project_name"] = project_name
+        __props__.__dict__["rdma_ip_addresses"] = rdma_ip_addresses
+        __props__.__dict__["rdma_network_interface_details"] = rdma_network_interface_details
+        __props__.__dict__["renew_info"] = renew_info
+        __props__.__dict__["role_names"] = role_names
         __props__.__dict__["secondary_network_interfaces"] = secondary_network_interfaces
         __props__.__dict__["spot_price_limit"] = spot_price_limit
         __props__.__dict__["spot_strategy"] = spot_strategy
@@ -1788,6 +2080,14 @@ class Instance(pulumi.CustomResource):
         return Instance(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="affinityGroupId")
+    def affinity_group_id(self) -> pulumi.Output[builtins.str]:
+        """
+        亲和组ID。
+        """
+        return pulumi.get(self, "affinity_group_id")
+
+    @property
     @pulumi.getter(name="affinityGroupSize")
     def affinity_group_size(self) -> pulumi.Output[builtins.int]:
         """
@@ -1795,6 +2095,14 @@ class Instance(pulumi.CustomResource):
         - 该功能正在邀测中，如需试用，请联系客户经理申请。
         """
         return pulumi.get(self, "affinity_group_size")
+
+    @property
+    @pulumi.getter(name="autoPay")
+    def auto_pay(self) -> pulumi.Output[builtins.bool]:
+        """
+        是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+        """
+        return pulumi.get(self, "auto_pay")
 
     @property
     @pulumi.getter(name="autoRenew")
@@ -1898,6 +2206,22 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "eip_address")
 
     @property
+    @pulumi.getter(name="elasticScheduledInstanceType")
+    def elastic_scheduled_instance_type(self) -> pulumi.Output[builtins.str]:
+        """
+        弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+        """
+        return pulumi.get(self, "elastic_scheduled_instance_type")
+
+    @property
+    @pulumi.getter(name="enableJumboFrame")
+    def enable_jumbo_frame(self) -> pulumi.Output[builtins.bool]:
+        """
+        实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+        """
+        return pulumi.get(self, "enable_jumbo_frame")
+
+    @property
     @pulumi.getter(name="expiredAt")
     def expired_at(self) -> pulumi.Output[builtins.str]:
         """
@@ -1935,6 +2259,23 @@ class Instance(pulumi.CustomResource):
         实例的镜像。
         """
         return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="includeDataVolumes")
+    def include_data_volumes(self) -> pulumi.Output[builtins.bool]:
+        """
+        是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+        （默认）：不转换。
+        """
+        return pulumi.get(self, "include_data_volumes")
+
+    @property
+    @pulumi.getter(name="installRunCommandAgent")
+    def install_run_command_agent(self) -> pulumi.Output[builtins.bool]:
+        """
+        创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+        """
+        return pulumi.get(self, "install_run_command_agent")
 
     @property
     @pulumi.getter(name="instanceChargeType")
@@ -1981,6 +2322,11 @@ class Instance(pulumi.CustomResource):
         实例的密钥对名称。
         """
         return pulumi.get(self, "key_pair")
+
+    @property
+    @pulumi.getter(name="localVolumes")
+    def local_volumes(self) -> pulumi.Output[Sequence['outputs.InstanceLocalVolume']]:
+        return pulumi.get(self, "local_volumes")
 
     @property
     @pulumi.getter(name="operationSystem")
@@ -2043,6 +2389,35 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "project_name")
 
     @property
+    @pulumi.getter(name="rdmaIpAddresses")
+    def rdma_ip_addresses(self) -> pulumi.Output[Sequence[builtins.str]]:
+        """
+        当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+        """
+        return pulumi.get(self, "rdma_ip_addresses")
+
+    @property
+    @pulumi.getter(name="rdmaNetworkInterfaceDetails")
+    def rdma_network_interface_details(self) -> pulumi.Output[Sequence['outputs.InstanceRdmaNetworkInterfaceDetail']]:
+        return pulumi.get(self, "rdma_network_interface_details")
+
+    @property
+    @pulumi.getter(name="renewInfo")
+    def renew_info(self) -> pulumi.Output['outputs.InstanceRenewInfo']:
+        """
+        续费信息。
+        """
+        return pulumi.get(self, "renew_info")
+
+    @property
+    @pulumi.getter(name="roleNames")
+    def role_names(self) -> pulumi.Output[Sequence[builtins.str]]:
+        """
+        实例绑定的IAM角色名称。
+        """
+        return pulumi.get(self, "role_names")
+
+    @property
     @pulumi.getter(name="secondaryNetworkInterfaces")
     def secondary_network_interfaces(self) -> pulumi.Output[Sequence['outputs.InstanceSecondaryNetworkInterface']]:
         return pulumi.get(self, "secondary_network_interfaces")
@@ -2085,7 +2460,7 @@ class Instance(pulumi.CustomResource):
         KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
         StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
         有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+        默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
         """
         return pulumi.get(self, "stopped_mode")
 

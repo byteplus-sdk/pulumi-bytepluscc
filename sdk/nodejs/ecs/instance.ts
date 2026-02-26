@@ -44,10 +44,18 @@ export class Instance extends pulumi.CustomResource {
     }
 
     /**
+     * 亲和组ID。
+     */
+    public /*out*/ readonly affinityGroupId!: pulumi.Output<string>;
+    /**
      * 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
      * - 该功能正在邀测中，如需试用，请联系客户经理申请。
      */
     public readonly affinityGroupSize!: pulumi.Output<number>;
+    /**
+     * 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     */
+    public readonly autoPay!: pulumi.Output<boolean>;
     /**
      * 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
      * **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
@@ -106,6 +114,14 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly eipAddress!: pulumi.Output<outputs.ecs.InstanceEipAddress>;
     /**
+     * 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+     */
+    public /*out*/ readonly elasticScheduledInstanceType!: pulumi.Output<string>;
+    /**
+     * 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     */
+    public readonly enableJumboFrame!: pulumi.Output<boolean>;
+    /**
      * 实例的过期时间。
      */
     public /*out*/ readonly expiredAt!: pulumi.Output<string>;
@@ -128,6 +144,15 @@ export class Instance extends pulumi.CustomResource {
      * 实例的镜像。
      */
     public readonly image!: pulumi.Output<outputs.ecs.InstanceImage>;
+    /**
+     * 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+     * （默认）：不转换。
+     */
+    public readonly includeDataVolumes!: pulumi.Output<boolean>;
+    /**
+     * 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     */
+    public readonly installRunCommandAgent!: pulumi.Output<boolean>;
     /**
      * 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
      * PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
@@ -154,10 +179,11 @@ export class Instance extends pulumi.CustomResource {
      * 实例的密钥对名称。
      */
     public readonly keyPair!: pulumi.Output<outputs.ecs.InstanceKeyPair>;
+    public /*out*/ readonly localVolumes!: pulumi.Output<outputs.ecs.InstanceLocalVolume[]>;
     /**
      * 实例的操作系统类型。
      */
-    public readonly operationSystem!: pulumi.Output<outputs.ecs.InstanceOperationSystem>;
+    public /*out*/ readonly operationSystem!: pulumi.Output<outputs.ecs.InstanceOperationSystem>;
     /**
      * 实例的密码。
      */
@@ -186,6 +212,19 @@ export class Instance extends pulumi.CustomResource {
      * 实例所属的项目名称。
      */
     public readonly projectName!: pulumi.Output<string>;
+    /**
+     * 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+     */
+    public /*out*/ readonly rdmaIpAddresses!: pulumi.Output<string[]>;
+    public /*out*/ readonly rdmaNetworkInterfaceDetails!: pulumi.Output<outputs.ecs.InstanceRdmaNetworkInterfaceDetail[]>;
+    /**
+     * 续费信息。
+     */
+    public readonly renewInfo!: pulumi.Output<outputs.ecs.InstanceRenewInfo>;
+    /**
+     * 实例绑定的IAM角色名称。
+     */
+    public readonly roleNames!: pulumi.Output<string[]>;
     public readonly secondaryNetworkInterfaces!: pulumi.Output<outputs.ecs.InstanceSecondaryNetworkInterface[]>;
     /**
      * 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
@@ -210,7 +249,7 @@ export class Instance extends pulumi.CustomResource {
      * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
      * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
      * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
      */
     public readonly stoppedMode!: pulumi.Output<string>;
     /**
@@ -231,7 +270,7 @@ export class Instance extends pulumi.CustomResource {
     /**
      * 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
      */
-    public readonly vpcId!: pulumi.Output<string>;
+    public /*out*/ readonly vpcId!: pulumi.Output<string>;
     /**
      * 实例所在的可用区ID。
      */
@@ -250,7 +289,9 @@ export class Instance extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as InstanceState | undefined;
+            resourceInputs["affinityGroupId"] = state ? state.affinityGroupId : undefined;
             resourceInputs["affinityGroupSize"] = state ? state.affinityGroupSize : undefined;
+            resourceInputs["autoPay"] = state ? state.autoPay : undefined;
             resourceInputs["autoRenew"] = state ? state.autoRenew : undefined;
             resourceInputs["autoRenewPeriod"] = state ? state.autoRenewPeriod : undefined;
             resourceInputs["cpuMaxFrequency"] = state ? state.cpuMaxFrequency : undefined;
@@ -262,15 +303,20 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["deploymentSetId"] = state ? state.deploymentSetId : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["eipAddress"] = state ? state.eipAddress : undefined;
+            resourceInputs["elasticScheduledInstanceType"] = state ? state.elasticScheduledInstanceType : undefined;
+            resourceInputs["enableJumboFrame"] = state ? state.enableJumboFrame : undefined;
             resourceInputs["expiredAt"] = state ? state.expiredAt : undefined;
             resourceInputs["hostname"] = state ? state.hostname : undefined;
             resourceInputs["hpcClusterId"] = state ? state.hpcClusterId : undefined;
             resourceInputs["image"] = state ? state.image : undefined;
+            resourceInputs["includeDataVolumes"] = state ? state.includeDataVolumes : undefined;
+            resourceInputs["installRunCommandAgent"] = state ? state.installRunCommandAgent : undefined;
             resourceInputs["instanceChargeType"] = state ? state.instanceChargeType : undefined;
             resourceInputs["instanceId"] = state ? state.instanceId : undefined;
             resourceInputs["instanceName"] = state ? state.instanceName : undefined;
             resourceInputs["instanceType"] = state ? state.instanceType : undefined;
             resourceInputs["keyPair"] = state ? state.keyPair : undefined;
+            resourceInputs["localVolumes"] = state ? state.localVolumes : undefined;
             resourceInputs["operationSystem"] = state ? state.operationSystem : undefined;
             resourceInputs["password"] = state ? state.password : undefined;
             resourceInputs["period"] = state ? state.period : undefined;
@@ -278,6 +324,10 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["placement"] = state ? state.placement : undefined;
             resourceInputs["primaryNetworkInterface"] = state ? state.primaryNetworkInterface : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
+            resourceInputs["rdmaIpAddresses"] = state ? state.rdmaIpAddresses : undefined;
+            resourceInputs["rdmaNetworkInterfaceDetails"] = state ? state.rdmaNetworkInterfaceDetails : undefined;
+            resourceInputs["renewInfo"] = state ? state.renewInfo : undefined;
+            resourceInputs["roleNames"] = state ? state.roleNames : undefined;
             resourceInputs["secondaryNetworkInterfaces"] = state ? state.secondaryNetworkInterfaces : undefined;
             resourceInputs["spotPriceLimit"] = state ? state.spotPriceLimit : undefined;
             resourceInputs["spotStrategy"] = state ? state.spotStrategy : undefined;
@@ -310,6 +360,7 @@ export class Instance extends pulumi.CustomResource {
                 throw new Error("Missing required property 'zoneId'");
             }
             resourceInputs["affinityGroupSize"] = args ? args.affinityGroupSize : undefined;
+            resourceInputs["autoPay"] = args ? args.autoPay : undefined;
             resourceInputs["autoRenew"] = args ? args.autoRenew : undefined;
             resourceInputs["autoRenewPeriod"] = args ? args.autoRenewPeriod : undefined;
             resourceInputs["cpuMaxFrequency"] = args ? args.cpuMaxFrequency : undefined;
@@ -319,20 +370,24 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["deploymentSetId"] = args ? args.deploymentSetId : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["eipAddress"] = args ? args.eipAddress : undefined;
+            resourceInputs["enableJumboFrame"] = args ? args.enableJumboFrame : undefined;
             resourceInputs["hostname"] = args ? args.hostname : undefined;
             resourceInputs["hpcClusterId"] = args ? args.hpcClusterId : undefined;
             resourceInputs["image"] = args ? args.image : undefined;
+            resourceInputs["includeDataVolumes"] = args ? args.includeDataVolumes : undefined;
+            resourceInputs["installRunCommandAgent"] = args ? args.installRunCommandAgent : undefined;
             resourceInputs["instanceChargeType"] = args ? args.instanceChargeType : undefined;
             resourceInputs["instanceName"] = args ? args.instanceName : undefined;
             resourceInputs["instanceType"] = args ? args.instanceType : undefined;
             resourceInputs["keyPair"] = args ? args.keyPair : undefined;
-            resourceInputs["operationSystem"] = args ? args.operationSystem : undefined;
             resourceInputs["password"] = args ? args.password : undefined;
             resourceInputs["period"] = args ? args.period : undefined;
             resourceInputs["periodUnit"] = args ? args.periodUnit : undefined;
             resourceInputs["placement"] = args ? args.placement : undefined;
             resourceInputs["primaryNetworkInterface"] = args ? args.primaryNetworkInterface : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
+            resourceInputs["renewInfo"] = args ? args.renewInfo : undefined;
+            resourceInputs["roleNames"] = args ? args.roleNames : undefined;
             resourceInputs["secondaryNetworkInterfaces"] = args ? args.secondaryNetworkInterfaces : undefined;
             resourceInputs["spotPriceLimit"] = args ? args.spotPriceLimit : undefined;
             resourceInputs["spotStrategy"] = args ? args.spotStrategy : undefined;
@@ -341,13 +396,19 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["systemVolume"] = args ? args.systemVolume : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["userData"] = args ? args.userData : undefined;
-            resourceInputs["vpcId"] = args ? args.vpcId : undefined;
             resourceInputs["zoneId"] = args ? args.zoneId : undefined;
+            resourceInputs["affinityGroupId"] = undefined /*out*/;
             resourceInputs["cpuMemory"] = undefined /*out*/;
             resourceInputs["createdAt"] = undefined /*out*/;
+            resourceInputs["elasticScheduledInstanceType"] = undefined /*out*/;
             resourceInputs["expiredAt"] = undefined /*out*/;
             resourceInputs["instanceId"] = undefined /*out*/;
+            resourceInputs["localVolumes"] = undefined /*out*/;
+            resourceInputs["operationSystem"] = undefined /*out*/;
+            resourceInputs["rdmaIpAddresses"] = undefined /*out*/;
+            resourceInputs["rdmaNetworkInterfaceDetails"] = undefined /*out*/;
             resourceInputs["updatedAt"] = undefined /*out*/;
+            resourceInputs["vpcId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Instance.__pulumiType, name, resourceInputs, opts);
@@ -359,10 +420,18 @@ export class Instance extends pulumi.CustomResource {
  */
 export interface InstanceState {
     /**
+     * 亲和组ID。
+     */
+    affinityGroupId?: pulumi.Input<string>;
+    /**
      * 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
      * - 该功能正在邀测中，如需试用，请联系客户经理申请。
      */
     affinityGroupSize?: pulumi.Input<number>;
+    /**
+     * 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     */
+    autoPay?: pulumi.Input<boolean>;
     /**
      * 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
      * **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
@@ -421,6 +490,14 @@ export interface InstanceState {
      */
     eipAddress?: pulumi.Input<inputs.ecs.InstanceEipAddress>;
     /**
+     * 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+     */
+    elasticScheduledInstanceType?: pulumi.Input<string>;
+    /**
+     * 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     */
+    enableJumboFrame?: pulumi.Input<boolean>;
+    /**
      * 实例的过期时间。
      */
     expiredAt?: pulumi.Input<string>;
@@ -443,6 +520,15 @@ export interface InstanceState {
      * 实例的镜像。
      */
     image?: pulumi.Input<inputs.ecs.InstanceImage>;
+    /**
+     * 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+     * （默认）：不转换。
+     */
+    includeDataVolumes?: pulumi.Input<boolean>;
+    /**
+     * 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     */
+    installRunCommandAgent?: pulumi.Input<boolean>;
     /**
      * 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
      * PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
@@ -469,6 +555,7 @@ export interface InstanceState {
      * 实例的密钥对名称。
      */
     keyPair?: pulumi.Input<inputs.ecs.InstanceKeyPair>;
+    localVolumes?: pulumi.Input<pulumi.Input<inputs.ecs.InstanceLocalVolume>[]>;
     /**
      * 实例的操作系统类型。
      */
@@ -501,6 +588,19 @@ export interface InstanceState {
      * 实例所属的项目名称。
      */
     projectName?: pulumi.Input<string>;
+    /**
+     * 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+     */
+    rdmaIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    rdmaNetworkInterfaceDetails?: pulumi.Input<pulumi.Input<inputs.ecs.InstanceRdmaNetworkInterfaceDetail>[]>;
+    /**
+     * 续费信息。
+     */
+    renewInfo?: pulumi.Input<inputs.ecs.InstanceRenewInfo>;
+    /**
+     * 实例绑定的IAM角色名称。
+     */
+    roleNames?: pulumi.Input<pulumi.Input<string>[]>;
     secondaryNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.ecs.InstanceSecondaryNetworkInterface>[]>;
     /**
      * 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
@@ -525,7 +625,7 @@ export interface InstanceState {
      * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
      * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
      * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
      */
     stoppedMode?: pulumi.Input<string>;
     /**
@@ -562,6 +662,10 @@ export interface InstanceArgs {
      * - 该功能正在邀测中，如需试用，请联系客户经理申请。
      */
     affinityGroupSize?: pulumi.Input<number>;
+    /**
+     * 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     */
+    autoPay?: pulumi.Input<boolean>;
     /**
      * 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
      * **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
@@ -612,6 +716,10 @@ export interface InstanceArgs {
      */
     eipAddress?: pulumi.Input<inputs.ecs.InstanceEipAddress>;
     /**
+     * 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     */
+    enableJumboFrame?: pulumi.Input<boolean>;
+    /**
      * 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
      * 允许使用字母、数字、点号“.”或中划线“-”。 -
      * 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
@@ -630,6 +738,15 @@ export interface InstanceArgs {
      * 实例的镜像。
      */
     image: pulumi.Input<inputs.ecs.InstanceImage>;
+    /**
+     * 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
+     * （默认）：不转换。
+     */
+    includeDataVolumes?: pulumi.Input<boolean>;
+    /**
+     * 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     */
+    installRunCommandAgent?: pulumi.Input<boolean>;
     /**
      * 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
      * PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
@@ -652,10 +769,6 @@ export interface InstanceArgs {
      * 实例的密钥对名称。
      */
     keyPair?: pulumi.Input<inputs.ecs.InstanceKeyPair>;
-    /**
-     * 实例的操作系统类型。
-     */
-    operationSystem?: pulumi.Input<inputs.ecs.InstanceOperationSystem>;
     /**
      * 实例的密码。
      */
@@ -684,6 +797,14 @@ export interface InstanceArgs {
      * 实例所属的项目名称。
      */
     projectName?: pulumi.Input<string>;
+    /**
+     * 续费信息。
+     */
+    renewInfo?: pulumi.Input<inputs.ecs.InstanceRenewInfo>;
+    /**
+     * 实例绑定的IAM角色名称。
+     */
+    roleNames?: pulumi.Input<pulumi.Input<string>[]>;
     secondaryNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.ecs.InstanceSecondaryNetworkInterface>[]>;
     /**
      * 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
@@ -708,7 +829,7 @@ export interface InstanceArgs {
      * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
      * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
      * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。
+     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
      */
     stoppedMode?: pulumi.Input<string>;
     /**
@@ -722,10 +843,6 @@ export interface InstanceArgs {
      * Windows实例：脚本内容不能超过8KB，且无需Base64编码。
      */
     userData?: pulumi.Input<string>;
-    /**
-     * 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
-     */
-    vpcId?: pulumi.Input<string>;
     /**
      * 实例所在的可用区ID。
      */

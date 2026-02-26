@@ -38,11 +38,6 @@ public final class InstanceSecondaryNetworkInterface {
      * 
      */
     private @Nullable String subnetId;
-    /**
-     * @return 实例的VPC ID。
-     * 
-     */
-    private @Nullable String vpcId;
 
     private InstanceSecondaryNetworkInterface() {}
     /**
@@ -80,13 +75,6 @@ public final class InstanceSecondaryNetworkInterface {
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
-    /**
-     * @return 实例的VPC ID。
-     * 
-     */
-    public Optional<String> vpcId() {
-        return Optional.ofNullable(this.vpcId);
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -102,7 +90,6 @@ public final class InstanceSecondaryNetworkInterface {
         private @Nullable List<String> privateIpAddresses;
         private @Nullable List<String> securityGroupIds;
         private @Nullable String subnetId;
-        private @Nullable String vpcId;
         public Builder() {}
         public Builder(InstanceSecondaryNetworkInterface defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,7 +98,6 @@ public final class InstanceSecondaryNetworkInterface {
     	      this.privateIpAddresses = defaults.privateIpAddresses;
     	      this.securityGroupIds = defaults.securityGroupIds;
     	      this.subnetId = defaults.subnetId;
-    	      this.vpcId = defaults.vpcId;
         }
 
         @CustomType.Setter
@@ -150,12 +136,6 @@ public final class InstanceSecondaryNetworkInterface {
             this.subnetId = subnetId;
             return this;
         }
-        @CustomType.Setter
-        public Builder vpcId(@Nullable String vpcId) {
-
-            this.vpcId = vpcId;
-            return this;
-        }
         public InstanceSecondaryNetworkInterface build() {
             final var _resultValue = new InstanceSecondaryNetworkInterface();
             _resultValue.ipv6AddressCount = ipv6AddressCount;
@@ -163,7 +143,6 @@ public final class InstanceSecondaryNetworkInterface {
             _resultValue.privateIpAddresses = privateIpAddresses;
             _resultValue.securityGroupIds = securityGroupIds;
             _resultValue.subnetId = subnetId;
-            _resultValue.vpcId = vpcId;
             return _resultValue;
         }
     }

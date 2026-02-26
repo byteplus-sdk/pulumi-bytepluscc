@@ -34,15 +34,15 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
      * 访问密钥创建时间。
      * 
      */
-    @Import(name="createdTime")
-    private @Nullable Output<String> createdTime;
+    @Import(name="createDate")
+    private @Nullable Output<String> createDate;
 
     /**
      * @return 访问密钥创建时间。
      * 
      */
-    public Optional<Output<String>> createdTime() {
-        return Optional.ofNullable(this.createdTime);
+    public Optional<Output<String>> createDate() {
+        return Optional.ofNullable(this.createDate);
     }
 
     /**
@@ -109,15 +109,15 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
      * 访问密钥更新时间。
      * 
      */
-    @Import(name="updatedTime")
-    private @Nullable Output<String> updatedTime;
+    @Import(name="updateDate")
+    private @Nullable Output<String> updateDate;
 
     /**
      * @return 访问密钥更新时间。
      * 
      */
-    public Optional<Output<String>> updatedTime() {
-        return Optional.ofNullable(this.updatedTime);
+    public Optional<Output<String>> updateDate() {
+        return Optional.ofNullable(this.updateDate);
     }
 
     /**
@@ -139,12 +139,12 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
 
     private UserAccessKeyArgs(UserAccessKeyArgs $) {
         this.accessKeyId = $.accessKeyId;
-        this.createdTime = $.createdTime;
+        this.createDate = $.createDate;
         this.region = $.region;
         this.requestTime = $.requestTime;
         this.service = $.service;
         this.status = $.status;
-        this.updatedTime = $.updatedTime;
+        this.updateDate = $.updateDate;
         this.userName = $.userName;
     }
 
@@ -188,24 +188,24 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 访问密钥创建时间。
+         * @param createDate 访问密钥创建时间。
          * 
          * @return builder
          * 
          */
-        public Builder createdTime(@Nullable Output<String> createdTime) {
-            $.createdTime = createdTime;
+        public Builder createDate(@Nullable Output<String> createDate) {
+            $.createDate = createDate;
             return this;
         }
 
         /**
-         * @param createdTime 访问密钥创建时间。
+         * @param createDate 访问密钥创建时间。
          * 
          * @return builder
          * 
          */
-        public Builder createdTime(String createdTime) {
-            return createdTime(Output.of(createdTime));
+        public Builder createDate(String createDate) {
+            return createDate(Output.of(createDate));
         }
 
         /**
@@ -293,24 +293,24 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 访问密钥更新时间。
+         * @param updateDate 访问密钥更新时间。
          * 
          * @return builder
          * 
          */
-        public Builder updatedTime(@Nullable Output<String> updatedTime) {
-            $.updatedTime = updatedTime;
+        public Builder updateDate(@Nullable Output<String> updateDate) {
+            $.updateDate = updateDate;
             return this;
         }
 
         /**
-         * @param updatedTime 访问密钥更新时间。
+         * @param updateDate 访问密钥更新时间。
          * 
          * @return builder
          * 
          */
-        public Builder updatedTime(String updatedTime) {
-            return updatedTime(Output.of(updatedTime));
+        public Builder updateDate(String updateDate) {
+            return updateDate(Output.of(updateDate));
         }
 
         /**

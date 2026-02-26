@@ -25,6 +25,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Addon{}
 	case "bytepluscc:vke/cluster:Cluster":
 		r = &Cluster{}
+	case "bytepluscc:vke/defaultNodePool:DefaultNodePool":
+		r = &DefaultNodePool{}
+	case "bytepluscc:vke/node:Node":
+		r = &Node{}
 	case "bytepluscc:vke/nodePool:NodePool":
 		r = &NodePool{}
 	case "bytepluscc:vke/permission:Permission":
@@ -50,6 +54,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vke/cluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vke/defaultNodePool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vke/node",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

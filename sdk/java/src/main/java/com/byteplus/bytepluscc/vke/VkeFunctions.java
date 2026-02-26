@@ -8,6 +8,10 @@ import com.byteplus.bytepluscc.vke.inputs.GetAddonArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetAddonPlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetClusterArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetClusterPlainArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetDefaultNodePoolArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetDefaultNodePoolPlainArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetNodeArgs;
+import com.byteplus.bytepluscc.vke.inputs.GetNodePlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodePoolArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetNodePoolPlainArgs;
 import com.byteplus.bytepluscc.vke.inputs.GetPermissionArgs;
@@ -16,8 +20,12 @@ import com.byteplus.bytepluscc.vke.outputs.GetAddonResult;
 import com.byteplus.bytepluscc.vke.outputs.GetAddonsResult;
 import com.byteplus.bytepluscc.vke.outputs.GetClusterResult;
 import com.byteplus.bytepluscc.vke.outputs.GetClustersResult;
+import com.byteplus.bytepluscc.vke.outputs.GetDefaultNodePoolResult;
+import com.byteplus.bytepluscc.vke.outputs.GetDefaultNodePoolsResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolResult;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolsResult;
+import com.byteplus.bytepluscc.vke.outputs.GetNodeResult;
+import com.byteplus.bytepluscc.vke.outputs.GetNodesResult;
 import com.byteplus.bytepluscc.vke.outputs.GetPermissionResult;
 import com.byteplus.bytepluscc.vke.outputs.GetPermissionsResult;
 import com.pulumi.core.Output;
@@ -198,6 +206,125 @@ public final class VkeFunctions {
         return Deployment.getInstance().invokeAsync("bytepluscc:vke/getClusters:getClusters", TypeShape.of(GetClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static Output<GetDefaultNodePoolResult> getDefaultNodePool(GetDefaultNodePoolArgs args) {
+        return getDefaultNodePool(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static CompletableFuture<GetDefaultNodePoolResult> getDefaultNodePoolPlain(GetDefaultNodePoolPlainArgs args) {
+        return getDefaultNodePoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static Output<GetDefaultNodePoolResult> getDefaultNodePool(GetDefaultNodePoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getDefaultNodePool:getDefaultNodePool", TypeShape.of(GetDefaultNodePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static Output<GetDefaultNodePoolResult> getDefaultNodePool(GetDefaultNodePoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getDefaultNodePool:getDefaultNodePool", TypeShape.of(GetDefaultNodePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static CompletableFuture<GetDefaultNodePoolResult> getDefaultNodePoolPlain(GetDefaultNodePoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getDefaultNodePool:getDefaultNodePool", TypeShape.of(GetDefaultNodePoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static Output<GetDefaultNodePoolsResult> getDefaultNodePools() {
+        return getDefaultNodePools(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static CompletableFuture<GetDefaultNodePoolsResult> getDefaultNodePoolsPlain() {
+        return getDefaultNodePoolsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static Output<GetDefaultNodePoolsResult> getDefaultNodePools(InvokeArgs args) {
+        return getDefaultNodePools(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static CompletableFuture<GetDefaultNodePoolsResult> getDefaultNodePoolsPlain(InvokeArgs args) {
+        return getDefaultNodePoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static Output<GetDefaultNodePoolsResult> getDefaultNodePools(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getDefaultNodePools:getDefaultNodePools", TypeShape.of(GetDefaultNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static Output<GetDefaultNodePoolsResult> getDefaultNodePools(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getDefaultNodePools:getDefaultNodePools", TypeShape.of(GetDefaultNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::DefaultNodePool
+     * 
+     */
+    public static CompletableFuture<GetDefaultNodePoolsResult> getDefaultNodePoolsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getDefaultNodePools:getDefaultNodePools", TypeShape.of(GetDefaultNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static Output<GetNodeResult> getNode(GetNodeArgs args) {
+        return getNode(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static CompletableFuture<GetNodeResult> getNodePlain(GetNodePlainArgs args) {
+        return getNodePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static Output<GetNodeResult> getNode(GetNodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNode:getNode", TypeShape.of(GetNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static Output<GetNodeResult> getNode(GetNodeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNode:getNode", TypeShape.of(GetNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static CompletableFuture<GetNodeResult> getNodePlain(GetNodePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getNode:getNode", TypeShape.of(GetNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * Data Source schema for Byteplus::VKE::NodePool
      * 
      */
@@ -280,6 +407,55 @@ public final class VkeFunctions {
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vke/getNodePools:getNodePools", TypeShape.of(GetNodePoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static Output<GetNodesResult> getNodes() {
+        return getNodes(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static CompletableFuture<GetNodesResult> getNodesPlain() {
+        return getNodesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static Output<GetNodesResult> getNodes(InvokeArgs args) {
+        return getNodes(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static CompletableFuture<GetNodesResult> getNodesPlain(InvokeArgs args) {
+        return getNodesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static Output<GetNodesResult> getNodes(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNodes:getNodes", TypeShape.of(GetNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static Output<GetNodesResult> getNodes(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vke/getNodes:getNodes", TypeShape.of(GetNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VKE::Node
+     * 
+     */
+    public static CompletableFuture<GetNodesResult> getNodesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vke/getNodes:getNodes", TypeShape.of(GetNodesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VKE::Permission

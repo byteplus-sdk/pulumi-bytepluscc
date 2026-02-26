@@ -12,8 +12,14 @@ from .get_transit_router_route_entry import *
 from .get_transit_router_route_table import *
 from .get_transit_router_route_tables import *
 from .get_transit_routers import *
+from .get_vpc_attachment import *
+from .get_vpc_attachments import *
+from .get_vpn_attachment import *
+from .get_vpn_attachments import *
 from .transit_router import *
 from .transit_router_route_entry import *
 from .transit_router_route_table import *
+from .vpc_attachment import *
+from .vpn_attachment import *
 from ._inputs import *
 from . import outputs

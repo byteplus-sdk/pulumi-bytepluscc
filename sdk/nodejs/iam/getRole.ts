@@ -54,6 +54,9 @@ export interface GetRoleResult {
      * 角色最大会话时间，角色最大会话时间。用于限制角色扮演产生的临时安全凭证的有效期的最大范围。取值范围：3600~43200，单位为秒，默认为43200。
      */
     readonly maxSessionDuration: number;
+    /**
+     * 角色策略。
+     */
     readonly policies: outputs.iam.GetRolePolicy[];
     /**
      * 角色ID。
@@ -63,6 +66,9 @@ export interface GetRoleResult {
      * 角色名，长度1~64，支持英文、数字和.-_符号。
      */
     readonly roleName: string;
+    /**
+     * 标签。
+     */
     readonly tags: outputs.iam.GetRoleTag[];
     /**
      * 角色TRN。

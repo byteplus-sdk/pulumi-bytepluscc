@@ -76,6 +76,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         [Input("releaseWithInstance")]
         public Input<bool>? ReleaseWithInstance { get; set; }
 
+        /// <summary>
+        /// DDoS原生防护（企业版）ID。
+        /// </summary>
+        [Input("securityProtectionInstanceId")]
+        public Input<int>? SecurityProtectionInstanceId { get; set; }
+
+        [Input("securityProtectionTypes")]
+        private InputList<string>? _securityProtectionTypes;
+
+        /// <summary>
+        /// 公网IP的安全防护类型。
+        /// </summary>
+        public InputList<string> SecurityProtectionTypes
+        {
+            get => _securityProtectionTypes ?? (_securityProtectionTypes = new InputList<string>());
+            set => _securityProtectionTypes = value;
+        }
+
         public InstanceEipAddressArgs()
         {
         }

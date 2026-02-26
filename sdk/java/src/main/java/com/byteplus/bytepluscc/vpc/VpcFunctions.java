@@ -10,6 +10,14 @@ import com.byteplus.bytepluscc.vpc.inputs.GetEipArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEipPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetEniPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetFlowLogArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetFlowLogPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetHaVipArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetHaVipPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpv6AddressBandwidthArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpv6AddressBandwidthPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpv6GatewayArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpv6GatewayPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetNetworkAclArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetNetworkAclPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetPrefixListArgs;
@@ -20,6 +28,14 @@ import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSecurityGroupPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSubnetArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetSubnetPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorFilterArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorFilterPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorFilterRuleArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorFilterRulePlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorSessionArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorSessionPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorTargetArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetTrafficMirrorTargetPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetVpcPlainArgs;
 import com.byteplus.bytepluscc.vpc.outputs.GetBandwidthPackageResult;
@@ -28,6 +44,14 @@ import com.byteplus.bytepluscc.vpc.outputs.GetEipResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEipsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEniResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetEnisResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetFlowLogResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetFlowLogsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetHaVipResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetHaVipsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpv6AddressBandwidthResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpv6AddressBandwidthsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpv6GatewayResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpv6GatewaysResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetNetworkAclResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetNetworkAclsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetPrefixListResult;
@@ -38,6 +62,14 @@ import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSecurityGroupsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSubnetResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetSubnetsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorFilterResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorFilterRuleResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorFilterRulesResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorFiltersResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorSessionResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorSessionsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorTargetResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetTrafficMirrorTargetsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetVpcResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetVpcsResult;
 import com.pulumi.core.Output;
@@ -300,6 +332,342 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetEnisResult> getEnisPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getEnis:getEnis", TypeShape.of(GetEnisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static Output<GetFlowLogResult> getFlowLog(GetFlowLogArgs args) {
+        return getFlowLog(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static CompletableFuture<GetFlowLogResult> getFlowLogPlain(GetFlowLogPlainArgs args) {
+        return getFlowLogPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static Output<GetFlowLogResult> getFlowLog(GetFlowLogArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getFlowLog:getFlowLog", TypeShape.of(GetFlowLogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static Output<GetFlowLogResult> getFlowLog(GetFlowLogArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getFlowLog:getFlowLog", TypeShape.of(GetFlowLogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static CompletableFuture<GetFlowLogResult> getFlowLogPlain(GetFlowLogPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getFlowLog:getFlowLog", TypeShape.of(GetFlowLogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static Output<GetFlowLogsResult> getFlowLogs() {
+        return getFlowLogs(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static CompletableFuture<GetFlowLogsResult> getFlowLogsPlain() {
+        return getFlowLogsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static Output<GetFlowLogsResult> getFlowLogs(InvokeArgs args) {
+        return getFlowLogs(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static CompletableFuture<GetFlowLogsResult> getFlowLogsPlain(InvokeArgs args) {
+        return getFlowLogsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static Output<GetFlowLogsResult> getFlowLogs(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getFlowLogs:getFlowLogs", TypeShape.of(GetFlowLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static Output<GetFlowLogsResult> getFlowLogs(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getFlowLogs:getFlowLogs", TypeShape.of(GetFlowLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::FlowLog
+     * 
+     */
+    public static CompletableFuture<GetFlowLogsResult> getFlowLogsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getFlowLogs:getFlowLogs", TypeShape.of(GetFlowLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static Output<GetHaVipResult> getHaVip(GetHaVipArgs args) {
+        return getHaVip(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static CompletableFuture<GetHaVipResult> getHaVipPlain(GetHaVipPlainArgs args) {
+        return getHaVipPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static Output<GetHaVipResult> getHaVip(GetHaVipArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getHaVip:getHaVip", TypeShape.of(GetHaVipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static Output<GetHaVipResult> getHaVip(GetHaVipArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getHaVip:getHaVip", TypeShape.of(GetHaVipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static CompletableFuture<GetHaVipResult> getHaVipPlain(GetHaVipPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getHaVip:getHaVip", TypeShape.of(GetHaVipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static Output<GetHaVipsResult> getHaVips() {
+        return getHaVips(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static CompletableFuture<GetHaVipsResult> getHaVipsPlain() {
+        return getHaVipsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static Output<GetHaVipsResult> getHaVips(InvokeArgs args) {
+        return getHaVips(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static CompletableFuture<GetHaVipsResult> getHaVipsPlain(InvokeArgs args) {
+        return getHaVipsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static Output<GetHaVipsResult> getHaVips(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getHaVips:getHaVips", TypeShape.of(GetHaVipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static Output<GetHaVipsResult> getHaVips(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getHaVips:getHaVips", TypeShape.of(GetHaVipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::HAVIP
+     * 
+     */
+    public static CompletableFuture<GetHaVipsResult> getHaVipsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getHaVips:getHaVips", TypeShape.of(GetHaVipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static Output<GetIpv6AddressBandwidthResult> getIpv6AddressBandwidth(GetIpv6AddressBandwidthArgs args) {
+        return getIpv6AddressBandwidth(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static CompletableFuture<GetIpv6AddressBandwidthResult> getIpv6AddressBandwidthPlain(GetIpv6AddressBandwidthPlainArgs args) {
+        return getIpv6AddressBandwidthPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static Output<GetIpv6AddressBandwidthResult> getIpv6AddressBandwidth(GetIpv6AddressBandwidthArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6AddressBandwidth:getIpv6AddressBandwidth", TypeShape.of(GetIpv6AddressBandwidthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static Output<GetIpv6AddressBandwidthResult> getIpv6AddressBandwidth(GetIpv6AddressBandwidthArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6AddressBandwidth:getIpv6AddressBandwidth", TypeShape.of(GetIpv6AddressBandwidthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static CompletableFuture<GetIpv6AddressBandwidthResult> getIpv6AddressBandwidthPlain(GetIpv6AddressBandwidthPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpv6AddressBandwidth:getIpv6AddressBandwidth", TypeShape.of(GetIpv6AddressBandwidthResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static Output<GetIpv6AddressBandwidthsResult> getIpv6AddressBandwidths() {
+        return getIpv6AddressBandwidths(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static CompletableFuture<GetIpv6AddressBandwidthsResult> getIpv6AddressBandwidthsPlain() {
+        return getIpv6AddressBandwidthsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static Output<GetIpv6AddressBandwidthsResult> getIpv6AddressBandwidths(InvokeArgs args) {
+        return getIpv6AddressBandwidths(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static CompletableFuture<GetIpv6AddressBandwidthsResult> getIpv6AddressBandwidthsPlain(InvokeArgs args) {
+        return getIpv6AddressBandwidthsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static Output<GetIpv6AddressBandwidthsResult> getIpv6AddressBandwidths(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6AddressBandwidths:getIpv6AddressBandwidths", TypeShape.of(GetIpv6AddressBandwidthsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static Output<GetIpv6AddressBandwidthsResult> getIpv6AddressBandwidths(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6AddressBandwidths:getIpv6AddressBandwidths", TypeShape.of(GetIpv6AddressBandwidthsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth
+     * 
+     */
+    public static CompletableFuture<GetIpv6AddressBandwidthsResult> getIpv6AddressBandwidthsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpv6AddressBandwidths:getIpv6AddressBandwidths", TypeShape.of(GetIpv6AddressBandwidthsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static Output<GetIpv6GatewayResult> getIpv6Gateway(GetIpv6GatewayArgs args) {
+        return getIpv6Gateway(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv6GatewayResult> getIpv6GatewayPlain(GetIpv6GatewayPlainArgs args) {
+        return getIpv6GatewayPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static Output<GetIpv6GatewayResult> getIpv6Gateway(GetIpv6GatewayArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6Gateway:getIpv6Gateway", TypeShape.of(GetIpv6GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static Output<GetIpv6GatewayResult> getIpv6Gateway(GetIpv6GatewayArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6Gateway:getIpv6Gateway", TypeShape.of(GetIpv6GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv6GatewayResult> getIpv6GatewayPlain(GetIpv6GatewayPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpv6Gateway:getIpv6Gateway", TypeShape.of(GetIpv6GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static Output<GetIpv6GatewaysResult> getIpv6Gateways() {
+        return getIpv6Gateways(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv6GatewaysResult> getIpv6GatewaysPlain() {
+        return getIpv6GatewaysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static Output<GetIpv6GatewaysResult> getIpv6Gateways(InvokeArgs args) {
+        return getIpv6Gateways(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv6GatewaysResult> getIpv6GatewaysPlain(InvokeArgs args) {
+        return getIpv6GatewaysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static Output<GetIpv6GatewaysResult> getIpv6Gateways(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6Gateways:getIpv6Gateways", TypeShape.of(GetIpv6GatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static Output<GetIpv6GatewaysResult> getIpv6Gateways(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv6Gateways:getIpv6Gateways", TypeShape.of(GetIpv6GatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv6Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv6GatewaysResult> getIpv6GatewaysPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpv6Gateways:getIpv6Gateways", TypeShape.of(GetIpv6GatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::NetworkAcl
@@ -720,6 +1088,342 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getSubnets:getSubnets", TypeShape.of(GetSubnetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterResult> getTrafficMirrorFilter(GetTrafficMirrorFilterArgs args) {
+        return getTrafficMirrorFilter(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFilterResult> getTrafficMirrorFilterPlain(GetTrafficMirrorFilterPlainArgs args) {
+        return getTrafficMirrorFilterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterResult> getTrafficMirrorFilter(GetTrafficMirrorFilterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilter:getTrafficMirrorFilter", TypeShape.of(GetTrafficMirrorFilterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterResult> getTrafficMirrorFilter(GetTrafficMirrorFilterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilter:getTrafficMirrorFilter", TypeShape.of(GetTrafficMirrorFilterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFilterResult> getTrafficMirrorFilterPlain(GetTrafficMirrorFilterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorFilter:getTrafficMirrorFilter", TypeShape.of(GetTrafficMirrorFilterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterRuleResult> getTrafficMirrorFilterRule(GetTrafficMirrorFilterRuleArgs args) {
+        return getTrafficMirrorFilterRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFilterRuleResult> getTrafficMirrorFilterRulePlain(GetTrafficMirrorFilterRulePlainArgs args) {
+        return getTrafficMirrorFilterRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterRuleResult> getTrafficMirrorFilterRule(GetTrafficMirrorFilterRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilterRule:getTrafficMirrorFilterRule", TypeShape.of(GetTrafficMirrorFilterRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterRuleResult> getTrafficMirrorFilterRule(GetTrafficMirrorFilterRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilterRule:getTrafficMirrorFilterRule", TypeShape.of(GetTrafficMirrorFilterRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFilterRuleResult> getTrafficMirrorFilterRulePlain(GetTrafficMirrorFilterRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorFilterRule:getTrafficMirrorFilterRule", TypeShape.of(GetTrafficMirrorFilterRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterRulesResult> getTrafficMirrorFilterRules() {
+        return getTrafficMirrorFilterRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFilterRulesResult> getTrafficMirrorFilterRulesPlain() {
+        return getTrafficMirrorFilterRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterRulesResult> getTrafficMirrorFilterRules(InvokeArgs args) {
+        return getTrafficMirrorFilterRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFilterRulesResult> getTrafficMirrorFilterRulesPlain(InvokeArgs args) {
+        return getTrafficMirrorFilterRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterRulesResult> getTrafficMirrorFilterRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilterRules:getTrafficMirrorFilterRules", TypeShape.of(GetTrafficMirrorFilterRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static Output<GetTrafficMirrorFilterRulesResult> getTrafficMirrorFilterRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilterRules:getTrafficMirrorFilterRules", TypeShape.of(GetTrafficMirrorFilterRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilterRule
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFilterRulesResult> getTrafficMirrorFilterRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorFilterRules:getTrafficMirrorFilterRules", TypeShape.of(GetTrafficMirrorFilterRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static Output<GetTrafficMirrorFiltersResult> getTrafficMirrorFilters() {
+        return getTrafficMirrorFilters(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFiltersResult> getTrafficMirrorFiltersPlain() {
+        return getTrafficMirrorFiltersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static Output<GetTrafficMirrorFiltersResult> getTrafficMirrorFilters(InvokeArgs args) {
+        return getTrafficMirrorFilters(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFiltersResult> getTrafficMirrorFiltersPlain(InvokeArgs args) {
+        return getTrafficMirrorFiltersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static Output<GetTrafficMirrorFiltersResult> getTrafficMirrorFilters(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilters:getTrafficMirrorFilters", TypeShape.of(GetTrafficMirrorFiltersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static Output<GetTrafficMirrorFiltersResult> getTrafficMirrorFilters(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorFilters:getTrafficMirrorFilters", TypeShape.of(GetTrafficMirrorFiltersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorFilter
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorFiltersResult> getTrafficMirrorFiltersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorFilters:getTrafficMirrorFilters", TypeShape.of(GetTrafficMirrorFiltersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static Output<GetTrafficMirrorSessionResult> getTrafficMirrorSession(GetTrafficMirrorSessionArgs args) {
+        return getTrafficMirrorSession(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorSessionResult> getTrafficMirrorSessionPlain(GetTrafficMirrorSessionPlainArgs args) {
+        return getTrafficMirrorSessionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static Output<GetTrafficMirrorSessionResult> getTrafficMirrorSession(GetTrafficMirrorSessionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorSession:getTrafficMirrorSession", TypeShape.of(GetTrafficMirrorSessionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static Output<GetTrafficMirrorSessionResult> getTrafficMirrorSession(GetTrafficMirrorSessionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorSession:getTrafficMirrorSession", TypeShape.of(GetTrafficMirrorSessionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorSessionResult> getTrafficMirrorSessionPlain(GetTrafficMirrorSessionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorSession:getTrafficMirrorSession", TypeShape.of(GetTrafficMirrorSessionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static Output<GetTrafficMirrorSessionsResult> getTrafficMirrorSessions() {
+        return getTrafficMirrorSessions(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorSessionsResult> getTrafficMirrorSessionsPlain() {
+        return getTrafficMirrorSessionsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static Output<GetTrafficMirrorSessionsResult> getTrafficMirrorSessions(InvokeArgs args) {
+        return getTrafficMirrorSessions(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorSessionsResult> getTrafficMirrorSessionsPlain(InvokeArgs args) {
+        return getTrafficMirrorSessionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static Output<GetTrafficMirrorSessionsResult> getTrafficMirrorSessions(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorSessions:getTrafficMirrorSessions", TypeShape.of(GetTrafficMirrorSessionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static Output<GetTrafficMirrorSessionsResult> getTrafficMirrorSessions(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorSessions:getTrafficMirrorSessions", TypeShape.of(GetTrafficMirrorSessionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorSession
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorSessionsResult> getTrafficMirrorSessionsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorSessions:getTrafficMirrorSessions", TypeShape.of(GetTrafficMirrorSessionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static Output<GetTrafficMirrorTargetResult> getTrafficMirrorTarget(GetTrafficMirrorTargetArgs args) {
+        return getTrafficMirrorTarget(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorTargetResult> getTrafficMirrorTargetPlain(GetTrafficMirrorTargetPlainArgs args) {
+        return getTrafficMirrorTargetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static Output<GetTrafficMirrorTargetResult> getTrafficMirrorTarget(GetTrafficMirrorTargetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorTarget:getTrafficMirrorTarget", TypeShape.of(GetTrafficMirrorTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static Output<GetTrafficMirrorTargetResult> getTrafficMirrorTarget(GetTrafficMirrorTargetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorTarget:getTrafficMirrorTarget", TypeShape.of(GetTrafficMirrorTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorTargetResult> getTrafficMirrorTargetPlain(GetTrafficMirrorTargetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorTarget:getTrafficMirrorTarget", TypeShape.of(GetTrafficMirrorTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static Output<GetTrafficMirrorTargetsResult> getTrafficMirrorTargets() {
+        return getTrafficMirrorTargets(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorTargetsResult> getTrafficMirrorTargetsPlain() {
+        return getTrafficMirrorTargetsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static Output<GetTrafficMirrorTargetsResult> getTrafficMirrorTargets(InvokeArgs args) {
+        return getTrafficMirrorTargets(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorTargetsResult> getTrafficMirrorTargetsPlain(InvokeArgs args) {
+        return getTrafficMirrorTargetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static Output<GetTrafficMirrorTargetsResult> getTrafficMirrorTargets(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorTargets:getTrafficMirrorTargets", TypeShape.of(GetTrafficMirrorTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static Output<GetTrafficMirrorTargetsResult> getTrafficMirrorTargets(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getTrafficMirrorTargets:getTrafficMirrorTargets", TypeShape.of(GetTrafficMirrorTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::TrafficMirrorTarget
+     * 
+     */
+    public static CompletableFuture<GetTrafficMirrorTargetsResult> getTrafficMirrorTargetsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getTrafficMirrorTargets:getTrafficMirrorTargets", TypeShape.of(GetTrafficMirrorTargetsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::VPC

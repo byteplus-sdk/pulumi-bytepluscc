@@ -13,6 +13,112 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type CustomerGatewayTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// CustomerGatewayTagInput is an input type that accepts CustomerGatewayTagArgs and CustomerGatewayTagOutput values.
+// You can construct a concrete instance of `CustomerGatewayTagInput` via:
+//
+//	CustomerGatewayTagArgs{...}
+type CustomerGatewayTagInput interface {
+	pulumi.Input
+
+	ToCustomerGatewayTagOutput() CustomerGatewayTagOutput
+	ToCustomerGatewayTagOutputWithContext(context.Context) CustomerGatewayTagOutput
+}
+
+type CustomerGatewayTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (CustomerGatewayTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomerGatewayTag)(nil)).Elem()
+}
+
+func (i CustomerGatewayTagArgs) ToCustomerGatewayTagOutput() CustomerGatewayTagOutput {
+	return i.ToCustomerGatewayTagOutputWithContext(context.Background())
+}
+
+func (i CustomerGatewayTagArgs) ToCustomerGatewayTagOutputWithContext(ctx context.Context) CustomerGatewayTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomerGatewayTagOutput)
+}
+
+// CustomerGatewayTagArrayInput is an input type that accepts CustomerGatewayTagArray and CustomerGatewayTagArrayOutput values.
+// You can construct a concrete instance of `CustomerGatewayTagArrayInput` via:
+//
+//	CustomerGatewayTagArray{ CustomerGatewayTagArgs{...} }
+type CustomerGatewayTagArrayInput interface {
+	pulumi.Input
+
+	ToCustomerGatewayTagArrayOutput() CustomerGatewayTagArrayOutput
+	ToCustomerGatewayTagArrayOutputWithContext(context.Context) CustomerGatewayTagArrayOutput
+}
+
+type CustomerGatewayTagArray []CustomerGatewayTagInput
+
+func (CustomerGatewayTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomerGatewayTag)(nil)).Elem()
+}
+
+func (i CustomerGatewayTagArray) ToCustomerGatewayTagArrayOutput() CustomerGatewayTagArrayOutput {
+	return i.ToCustomerGatewayTagArrayOutputWithContext(context.Background())
+}
+
+func (i CustomerGatewayTagArray) ToCustomerGatewayTagArrayOutputWithContext(ctx context.Context) CustomerGatewayTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomerGatewayTagArrayOutput)
+}
+
+type CustomerGatewayTagOutput struct{ *pulumi.OutputState }
+
+func (CustomerGatewayTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomerGatewayTag)(nil)).Elem()
+}
+
+func (o CustomerGatewayTagOutput) ToCustomerGatewayTagOutput() CustomerGatewayTagOutput {
+	return o
+}
+
+func (o CustomerGatewayTagOutput) ToCustomerGatewayTagOutputWithContext(ctx context.Context) CustomerGatewayTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o CustomerGatewayTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomerGatewayTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o CustomerGatewayTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomerGatewayTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type CustomerGatewayTagArrayOutput struct{ *pulumi.OutputState }
+
+func (CustomerGatewayTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomerGatewayTag)(nil)).Elem()
+}
+
+func (o CustomerGatewayTagArrayOutput) ToCustomerGatewayTagArrayOutput() CustomerGatewayTagArrayOutput {
+	return o
+}
+
+func (o CustomerGatewayTagArrayOutput) ToCustomerGatewayTagArrayOutputWithContext(ctx context.Context) CustomerGatewayTagArrayOutput {
+	return o
+}
+
+func (o CustomerGatewayTagArrayOutput) Index(i pulumi.IntInput) CustomerGatewayTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CustomerGatewayTag {
+		return vs[0].([]CustomerGatewayTag)[vs[1].(int)]
+	}).(CustomerGatewayTagOutput)
+}
+
 type VpnGatewayTag struct {
 	// VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
 	Key *string `pulumi:"key"`
@@ -117,6 +223,112 @@ func (o VpnGatewayTagArrayOutput) Index(i pulumi.IntInput) VpnGatewayTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpnGatewayTag {
 		return vs[0].([]VpnGatewayTag)[vs[1].(int)]
 	}).(VpnGatewayTagOutput)
+}
+
+type GetCustomerGatewayTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetCustomerGatewayTagInput is an input type that accepts GetCustomerGatewayTagArgs and GetCustomerGatewayTagOutput values.
+// You can construct a concrete instance of `GetCustomerGatewayTagInput` via:
+//
+//	GetCustomerGatewayTagArgs{...}
+type GetCustomerGatewayTagInput interface {
+	pulumi.Input
+
+	ToGetCustomerGatewayTagOutput() GetCustomerGatewayTagOutput
+	ToGetCustomerGatewayTagOutputWithContext(context.Context) GetCustomerGatewayTagOutput
+}
+
+type GetCustomerGatewayTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCustomerGatewayTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomerGatewayTag)(nil)).Elem()
+}
+
+func (i GetCustomerGatewayTagArgs) ToGetCustomerGatewayTagOutput() GetCustomerGatewayTagOutput {
+	return i.ToGetCustomerGatewayTagOutputWithContext(context.Background())
+}
+
+func (i GetCustomerGatewayTagArgs) ToGetCustomerGatewayTagOutputWithContext(ctx context.Context) GetCustomerGatewayTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomerGatewayTagOutput)
+}
+
+// GetCustomerGatewayTagArrayInput is an input type that accepts GetCustomerGatewayTagArray and GetCustomerGatewayTagArrayOutput values.
+// You can construct a concrete instance of `GetCustomerGatewayTagArrayInput` via:
+//
+//	GetCustomerGatewayTagArray{ GetCustomerGatewayTagArgs{...} }
+type GetCustomerGatewayTagArrayInput interface {
+	pulumi.Input
+
+	ToGetCustomerGatewayTagArrayOutput() GetCustomerGatewayTagArrayOutput
+	ToGetCustomerGatewayTagArrayOutputWithContext(context.Context) GetCustomerGatewayTagArrayOutput
+}
+
+type GetCustomerGatewayTagArray []GetCustomerGatewayTagInput
+
+func (GetCustomerGatewayTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomerGatewayTag)(nil)).Elem()
+}
+
+func (i GetCustomerGatewayTagArray) ToGetCustomerGatewayTagArrayOutput() GetCustomerGatewayTagArrayOutput {
+	return i.ToGetCustomerGatewayTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetCustomerGatewayTagArray) ToGetCustomerGatewayTagArrayOutputWithContext(ctx context.Context) GetCustomerGatewayTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomerGatewayTagArrayOutput)
+}
+
+type GetCustomerGatewayTagOutput struct{ *pulumi.OutputState }
+
+func (GetCustomerGatewayTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomerGatewayTag)(nil)).Elem()
+}
+
+func (o GetCustomerGatewayTagOutput) ToGetCustomerGatewayTagOutput() GetCustomerGatewayTagOutput {
+	return o
+}
+
+func (o GetCustomerGatewayTagOutput) ToGetCustomerGatewayTagOutputWithContext(ctx context.Context) GetCustomerGatewayTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetCustomerGatewayTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomerGatewayTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetCustomerGatewayTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomerGatewayTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCustomerGatewayTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCustomerGatewayTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomerGatewayTag)(nil)).Elem()
+}
+
+func (o GetCustomerGatewayTagArrayOutput) ToGetCustomerGatewayTagArrayOutput() GetCustomerGatewayTagArrayOutput {
+	return o
+}
+
+func (o GetCustomerGatewayTagArrayOutput) ToGetCustomerGatewayTagArrayOutputWithContext(ctx context.Context) GetCustomerGatewayTagArrayOutput {
+	return o
+}
+
+func (o GetCustomerGatewayTagArrayOutput) Index(i pulumi.IntInput) GetCustomerGatewayTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomerGatewayTag {
+		return vs[0].([]GetCustomerGatewayTag)[vs[1].(int)]
+	}).(GetCustomerGatewayTagOutput)
 }
 
 type GetVpnGatewayTag struct {
@@ -226,12 +438,20 @@ func (o GetVpnGatewayTagArrayOutput) Index(i pulumi.IntInput) GetVpnGatewayTagOu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomerGatewayTagInput)(nil)).Elem(), CustomerGatewayTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomerGatewayTagArrayInput)(nil)).Elem(), CustomerGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayTagInput)(nil)).Elem(), VpnGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayTagArrayInput)(nil)).Elem(), VpnGatewayTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagInput)(nil)).Elem(), GetCustomerGatewayTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagArrayInput)(nil)).Elem(), GetCustomerGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayTagInput)(nil)).Elem(), GetVpnGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayTagArrayInput)(nil)).Elem(), GetVpnGatewayTagArray{})
+	pulumi.RegisterOutputType(CustomerGatewayTagOutput{})
+	pulumi.RegisterOutputType(CustomerGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(VpnGatewayTagOutput{})
 	pulumi.RegisterOutputType(VpnGatewayTagArrayOutput{})
+	pulumi.RegisterOutputType(GetCustomerGatewayTagOutput{})
+	pulumi.RegisterOutputType(GetCustomerGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVpnGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetVpnGatewayTagArrayOutput{})
 }

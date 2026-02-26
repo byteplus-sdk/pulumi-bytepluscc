@@ -8,10 +8,13 @@ import typing
 # Export this package's modules as members:
 from .acl import *
 from .certificate import *
+from .clb import *
 from .get_acl import *
 from .get_acls import *
 from .get_certificate import *
 from .get_certificates import *
+from .get_clb import *
+from .get_clbs import *
 from .get_listener import *
 from .get_listeners import *
 from .get_nlb import *

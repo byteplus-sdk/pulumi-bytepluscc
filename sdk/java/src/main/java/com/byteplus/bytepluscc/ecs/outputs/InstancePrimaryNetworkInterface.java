@@ -4,7 +4,6 @@
 package com.byteplus.bytepluscc.ecs.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -48,12 +47,12 @@ public final class InstancePrimaryNetworkInterface {
      * @return 实例的安全组ID。
      * 
      */
-    private List<String> securityGroupIds;
+    private @Nullable List<String> securityGroupIds;
     /**
      * @return 实例的子网ID。
      * 
      */
-    private String subnetId;
+    private @Nullable String subnetId;
     /**
      * @return 实例的VPC ID。
      * 
@@ -108,14 +107,14 @@ public final class InstancePrimaryNetworkInterface {
      * 
      */
     public List<String> securityGroupIds() {
-        return this.securityGroupIds;
+        return this.securityGroupIds == null ? List.of() : this.securityGroupIds;
     }
     /**
      * @return 实例的子网ID。
      * 
      */
-    public String subnetId() {
-        return this.subnetId;
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
     /**
      * @return 实例的VPC ID。
@@ -140,8 +139,8 @@ public final class InstancePrimaryNetworkInterface {
         private @Nullable String networkInterfaceId;
         private @Nullable String primaryIpAddress;
         private @Nullable List<String> privateIpAddresses;
-        private List<String> securityGroupIds;
-        private String subnetId;
+        private @Nullable List<String> securityGroupIds;
+        private @Nullable String subnetId;
         private @Nullable String vpcId;
         public Builder() {}
         public Builder(InstancePrimaryNetworkInterface defaults) {
@@ -200,10 +199,8 @@ public final class InstancePrimaryNetworkInterface {
             return privateIpAddresses(List.of(privateIpAddresses));
         }
         @CustomType.Setter
-        public Builder securityGroupIds(List<String> securityGroupIds) {
-            if (securityGroupIds == null) {
-              throw new MissingRequiredPropertyException("InstancePrimaryNetworkInterface", "securityGroupIds");
-            }
+        public Builder securityGroupIds(@Nullable List<String> securityGroupIds) {
+
             this.securityGroupIds = securityGroupIds;
             return this;
         }
@@ -211,10 +208,8 @@ public final class InstancePrimaryNetworkInterface {
             return securityGroupIds(List.of(securityGroupIds));
         }
         @CustomType.Setter
-        public Builder subnetId(String subnetId) {
-            if (subnetId == null) {
-              throw new MissingRequiredPropertyException("InstancePrimaryNetworkInterface", "subnetId");
-            }
+        public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

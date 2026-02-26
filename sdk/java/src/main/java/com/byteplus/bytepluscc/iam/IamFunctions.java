@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.iam;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetPolicyArgs;
@@ -14,6 +16,8 @@ import com.byteplus.bytepluscc.iam.inputs.GetRoleArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetRolePlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetUserArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetUserPlainArgs;
+import com.byteplus.bytepluscc.iam.outputs.GetAccesskeyResult;
+import com.byteplus.bytepluscc.iam.outputs.GetAccesskeysResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupsResult;
 import com.byteplus.bytepluscc.iam.outputs.GetPoliciesResult;
@@ -33,6 +37,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class IamFunctions {
+    /**
+     * Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static Output<GetAccesskeyResult> getAccesskey(GetAccesskeyArgs args) {
+        return getAccesskey(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static CompletableFuture<GetAccesskeyResult> getAccesskeyPlain(GetAccesskeyPlainArgs args) {
+        return getAccesskeyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static Output<GetAccesskeyResult> getAccesskey(GetAccesskeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskey:getAccesskey", TypeShape.of(GetAccesskeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static Output<GetAccesskeyResult> getAccesskey(GetAccesskeyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskey:getAccesskey", TypeShape.of(GetAccesskeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static CompletableFuture<GetAccesskeyResult> getAccesskeyPlain(GetAccesskeyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getAccesskey:getAccesskey", TypeShape.of(GetAccesskeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static Output<GetAccesskeysResult> getAccesskeys() {
+        return getAccesskeys(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static CompletableFuture<GetAccesskeysResult> getAccesskeysPlain() {
+        return getAccesskeysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static Output<GetAccesskeysResult> getAccesskeys(InvokeArgs args) {
+        return getAccesskeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static CompletableFuture<GetAccesskeysResult> getAccesskeysPlain(InvokeArgs args) {
+        return getAccesskeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static Output<GetAccesskeysResult> getAccesskeys(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskeys:getAccesskeys", TypeShape.of(GetAccesskeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static Output<GetAccesskeysResult> getAccesskeys(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getAccesskeys:getAccesskeys", TypeShape.of(GetAccesskeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::AccessKey
+     * 
+     */
+    public static CompletableFuture<GetAccesskeysResult> getAccesskeysPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getAccesskeys:getAccesskeys", TypeShape.of(GetAccesskeysResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::IAM::Group
      * 

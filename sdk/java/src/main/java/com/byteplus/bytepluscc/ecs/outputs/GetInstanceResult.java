@@ -7,9 +7,12 @@ import com.byteplus.bytepluscc.ecs.outputs.GetInstanceCpuMemory;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceEipAddress;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceImage;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceKeyPair;
+import com.byteplus.bytepluscc.ecs.outputs.GetInstanceLocalVolume;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceOperationSystem;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstancePlacement;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstancePrimaryNetworkInterface;
+import com.byteplus.bytepluscc.ecs.outputs.GetInstanceRdmaNetworkInterfaceDetail;
+import com.byteplus.bytepluscc.ecs.outputs.GetInstanceRenewInfo;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceSecondaryNetworkInterface;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceSystemVolume;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceTag;
@@ -24,7 +27,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetInstanceResult {
+    private String affinityGroupId;
     private Integer affinityGroupSize;
+    private Boolean autoPay;
     private Boolean autoRenew;
     private Integer autoRenewPeriod;
     private Double cpuMaxFrequency;
@@ -36,16 +41,21 @@ public final class GetInstanceResult {
     private String deploymentSetId;
     private String description;
     private GetInstanceEipAddress eipAddress;
+    private String elasticScheduledInstanceType;
+    private Boolean enableJumboFrame;
     private String expiredAt;
     private String hostname;
     private String hpcClusterId;
     private String id;
     private GetInstanceImage image;
+    private Boolean includeDataVolumes;
+    private Boolean installRunCommandAgent;
     private String instanceChargeType;
     private String instanceId;
     private String instanceName;
     private String instanceType;
     private GetInstanceKeyPair keyPair;
+    private List<GetInstanceLocalVolume> localVolumes;
     private GetInstanceOperationSystem operationSystem;
     private String password;
     private Integer period;
@@ -53,6 +63,10 @@ public final class GetInstanceResult {
     private GetInstancePlacement placement;
     private GetInstancePrimaryNetworkInterface primaryNetworkInterface;
     private String projectName;
+    private List<String> rdmaIpAddresses;
+    private List<GetInstanceRdmaNetworkInterfaceDetail> rdmaNetworkInterfaceDetails;
+    private GetInstanceRenewInfo renewInfo;
+    private List<String> roleNames;
     private List<GetInstanceSecondaryNetworkInterface> secondaryNetworkInterfaces;
     private Double spotPriceLimit;
     private String spotStrategy;
@@ -66,8 +80,14 @@ public final class GetInstanceResult {
     private String zoneId;
 
     private GetInstanceResult() {}
+    public String affinityGroupId() {
+        return this.affinityGroupId;
+    }
     public Integer affinityGroupSize() {
         return this.affinityGroupSize;
+    }
+    public Boolean autoPay() {
+        return this.autoPay;
     }
     public Boolean autoRenew() {
         return this.autoRenew;
@@ -102,6 +122,12 @@ public final class GetInstanceResult {
     public GetInstanceEipAddress eipAddress() {
         return this.eipAddress;
     }
+    public String elasticScheduledInstanceType() {
+        return this.elasticScheduledInstanceType;
+    }
+    public Boolean enableJumboFrame() {
+        return this.enableJumboFrame;
+    }
     public String expiredAt() {
         return this.expiredAt;
     }
@@ -117,6 +143,12 @@ public final class GetInstanceResult {
     public GetInstanceImage image() {
         return this.image;
     }
+    public Boolean includeDataVolumes() {
+        return this.includeDataVolumes;
+    }
+    public Boolean installRunCommandAgent() {
+        return this.installRunCommandAgent;
+    }
     public String instanceChargeType() {
         return this.instanceChargeType;
     }
@@ -131,6 +163,9 @@ public final class GetInstanceResult {
     }
     public GetInstanceKeyPair keyPair() {
         return this.keyPair;
+    }
+    public List<GetInstanceLocalVolume> localVolumes() {
+        return this.localVolumes;
     }
     public GetInstanceOperationSystem operationSystem() {
         return this.operationSystem;
@@ -152,6 +187,18 @@ public final class GetInstanceResult {
     }
     public String projectName() {
         return this.projectName;
+    }
+    public List<String> rdmaIpAddresses() {
+        return this.rdmaIpAddresses;
+    }
+    public List<GetInstanceRdmaNetworkInterfaceDetail> rdmaNetworkInterfaceDetails() {
+        return this.rdmaNetworkInterfaceDetails;
+    }
+    public GetInstanceRenewInfo renewInfo() {
+        return this.renewInfo;
+    }
+    public List<String> roleNames() {
+        return this.roleNames;
     }
     public List<GetInstanceSecondaryNetworkInterface> secondaryNetworkInterfaces() {
         return this.secondaryNetworkInterfaces;
@@ -196,7 +243,9 @@ public final class GetInstanceResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String affinityGroupId;
         private Integer affinityGroupSize;
+        private Boolean autoPay;
         private Boolean autoRenew;
         private Integer autoRenewPeriod;
         private Double cpuMaxFrequency;
@@ -208,16 +257,21 @@ public final class GetInstanceResult {
         private String deploymentSetId;
         private String description;
         private GetInstanceEipAddress eipAddress;
+        private String elasticScheduledInstanceType;
+        private Boolean enableJumboFrame;
         private String expiredAt;
         private String hostname;
         private String hpcClusterId;
         private String id;
         private GetInstanceImage image;
+        private Boolean includeDataVolumes;
+        private Boolean installRunCommandAgent;
         private String instanceChargeType;
         private String instanceId;
         private String instanceName;
         private String instanceType;
         private GetInstanceKeyPair keyPair;
+        private List<GetInstanceLocalVolume> localVolumes;
         private GetInstanceOperationSystem operationSystem;
         private String password;
         private Integer period;
@@ -225,6 +279,10 @@ public final class GetInstanceResult {
         private GetInstancePlacement placement;
         private GetInstancePrimaryNetworkInterface primaryNetworkInterface;
         private String projectName;
+        private List<String> rdmaIpAddresses;
+        private List<GetInstanceRdmaNetworkInterfaceDetail> rdmaNetworkInterfaceDetails;
+        private GetInstanceRenewInfo renewInfo;
+        private List<String> roleNames;
         private List<GetInstanceSecondaryNetworkInterface> secondaryNetworkInterfaces;
         private Double spotPriceLimit;
         private String spotStrategy;
@@ -239,7 +297,9 @@ public final class GetInstanceResult {
         public Builder() {}
         public Builder(GetInstanceResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.affinityGroupId = defaults.affinityGroupId;
     	      this.affinityGroupSize = defaults.affinityGroupSize;
+    	      this.autoPay = defaults.autoPay;
     	      this.autoRenew = defaults.autoRenew;
     	      this.autoRenewPeriod = defaults.autoRenewPeriod;
     	      this.cpuMaxFrequency = defaults.cpuMaxFrequency;
@@ -251,16 +311,21 @@ public final class GetInstanceResult {
     	      this.deploymentSetId = defaults.deploymentSetId;
     	      this.description = defaults.description;
     	      this.eipAddress = defaults.eipAddress;
+    	      this.elasticScheduledInstanceType = defaults.elasticScheduledInstanceType;
+    	      this.enableJumboFrame = defaults.enableJumboFrame;
     	      this.expiredAt = defaults.expiredAt;
     	      this.hostname = defaults.hostname;
     	      this.hpcClusterId = defaults.hpcClusterId;
     	      this.id = defaults.id;
     	      this.image = defaults.image;
+    	      this.includeDataVolumes = defaults.includeDataVolumes;
+    	      this.installRunCommandAgent = defaults.installRunCommandAgent;
     	      this.instanceChargeType = defaults.instanceChargeType;
     	      this.instanceId = defaults.instanceId;
     	      this.instanceName = defaults.instanceName;
     	      this.instanceType = defaults.instanceType;
     	      this.keyPair = defaults.keyPair;
+    	      this.localVolumes = defaults.localVolumes;
     	      this.operationSystem = defaults.operationSystem;
     	      this.password = defaults.password;
     	      this.period = defaults.period;
@@ -268,6 +333,10 @@ public final class GetInstanceResult {
     	      this.placement = defaults.placement;
     	      this.primaryNetworkInterface = defaults.primaryNetworkInterface;
     	      this.projectName = defaults.projectName;
+    	      this.rdmaIpAddresses = defaults.rdmaIpAddresses;
+    	      this.rdmaNetworkInterfaceDetails = defaults.rdmaNetworkInterfaceDetails;
+    	      this.renewInfo = defaults.renewInfo;
+    	      this.roleNames = defaults.roleNames;
     	      this.secondaryNetworkInterfaces = defaults.secondaryNetworkInterfaces;
     	      this.spotPriceLimit = defaults.spotPriceLimit;
     	      this.spotStrategy = defaults.spotStrategy;
@@ -282,11 +351,27 @@ public final class GetInstanceResult {
         }
 
         @CustomType.Setter
+        public Builder affinityGroupId(String affinityGroupId) {
+            if (affinityGroupId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "affinityGroupId");
+            }
+            this.affinityGroupId = affinityGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder affinityGroupSize(Integer affinityGroupSize) {
             if (affinityGroupSize == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "affinityGroupSize");
             }
             this.affinityGroupSize = affinityGroupSize;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoPay(Boolean autoPay) {
+            if (autoPay == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "autoPay");
+            }
+            this.autoPay = autoPay;
             return this;
         }
         @CustomType.Setter
@@ -378,6 +463,22 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder elasticScheduledInstanceType(String elasticScheduledInstanceType) {
+            if (elasticScheduledInstanceType == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "elasticScheduledInstanceType");
+            }
+            this.elasticScheduledInstanceType = elasticScheduledInstanceType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder enableJumboFrame(Boolean enableJumboFrame) {
+            if (enableJumboFrame == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "enableJumboFrame");
+            }
+            this.enableJumboFrame = enableJumboFrame;
+            return this;
+        }
+        @CustomType.Setter
         public Builder expiredAt(String expiredAt) {
             if (expiredAt == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "expiredAt");
@@ -415,6 +516,22 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "image");
             }
             this.image = image;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder includeDataVolumes(Boolean includeDataVolumes) {
+            if (includeDataVolumes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "includeDataVolumes");
+            }
+            this.includeDataVolumes = includeDataVolumes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder installRunCommandAgent(Boolean installRunCommandAgent) {
+            if (installRunCommandAgent == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "installRunCommandAgent");
+            }
+            this.installRunCommandAgent = installRunCommandAgent;
             return this;
         }
         @CustomType.Setter
@@ -456,6 +573,17 @@ public final class GetInstanceResult {
             }
             this.keyPair = keyPair;
             return this;
+        }
+        @CustomType.Setter
+        public Builder localVolumes(List<GetInstanceLocalVolume> localVolumes) {
+            if (localVolumes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "localVolumes");
+            }
+            this.localVolumes = localVolumes;
+            return this;
+        }
+        public Builder localVolumes(GetInstanceLocalVolume... localVolumes) {
+            return localVolumes(List.of(localVolumes));
         }
         @CustomType.Setter
         public Builder operationSystem(GetInstanceOperationSystem operationSystem) {
@@ -512,6 +640,47 @@ public final class GetInstanceResult {
             }
             this.projectName = projectName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder rdmaIpAddresses(List<String> rdmaIpAddresses) {
+            if (rdmaIpAddresses == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "rdmaIpAddresses");
+            }
+            this.rdmaIpAddresses = rdmaIpAddresses;
+            return this;
+        }
+        public Builder rdmaIpAddresses(String... rdmaIpAddresses) {
+            return rdmaIpAddresses(List.of(rdmaIpAddresses));
+        }
+        @CustomType.Setter
+        public Builder rdmaNetworkInterfaceDetails(List<GetInstanceRdmaNetworkInterfaceDetail> rdmaNetworkInterfaceDetails) {
+            if (rdmaNetworkInterfaceDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "rdmaNetworkInterfaceDetails");
+            }
+            this.rdmaNetworkInterfaceDetails = rdmaNetworkInterfaceDetails;
+            return this;
+        }
+        public Builder rdmaNetworkInterfaceDetails(GetInstanceRdmaNetworkInterfaceDetail... rdmaNetworkInterfaceDetails) {
+            return rdmaNetworkInterfaceDetails(List.of(rdmaNetworkInterfaceDetails));
+        }
+        @CustomType.Setter
+        public Builder renewInfo(GetInstanceRenewInfo renewInfo) {
+            if (renewInfo == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "renewInfo");
+            }
+            this.renewInfo = renewInfo;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder roleNames(List<String> roleNames) {
+            if (roleNames == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "roleNames");
+            }
+            this.roleNames = roleNames;
+            return this;
+        }
+        public Builder roleNames(String... roleNames) {
+            return roleNames(List.of(roleNames));
         }
         @CustomType.Setter
         public Builder secondaryNetworkInterfaces(List<GetInstanceSecondaryNetworkInterface> secondaryNetworkInterfaces) {
@@ -609,7 +778,9 @@ public final class GetInstanceResult {
         }
         public GetInstanceResult build() {
             final var _resultValue = new GetInstanceResult();
+            _resultValue.affinityGroupId = affinityGroupId;
             _resultValue.affinityGroupSize = affinityGroupSize;
+            _resultValue.autoPay = autoPay;
             _resultValue.autoRenew = autoRenew;
             _resultValue.autoRenewPeriod = autoRenewPeriod;
             _resultValue.cpuMaxFrequency = cpuMaxFrequency;
@@ -621,16 +792,21 @@ public final class GetInstanceResult {
             _resultValue.deploymentSetId = deploymentSetId;
             _resultValue.description = description;
             _resultValue.eipAddress = eipAddress;
+            _resultValue.elasticScheduledInstanceType = elasticScheduledInstanceType;
+            _resultValue.enableJumboFrame = enableJumboFrame;
             _resultValue.expiredAt = expiredAt;
             _resultValue.hostname = hostname;
             _resultValue.hpcClusterId = hpcClusterId;
             _resultValue.id = id;
             _resultValue.image = image;
+            _resultValue.includeDataVolumes = includeDataVolumes;
+            _resultValue.installRunCommandAgent = installRunCommandAgent;
             _resultValue.instanceChargeType = instanceChargeType;
             _resultValue.instanceId = instanceId;
             _resultValue.instanceName = instanceName;
             _resultValue.instanceType = instanceType;
             _resultValue.keyPair = keyPair;
+            _resultValue.localVolumes = localVolumes;
             _resultValue.operationSystem = operationSystem;
             _resultValue.password = password;
             _resultValue.period = period;
@@ -638,6 +814,10 @@ public final class GetInstanceResult {
             _resultValue.placement = placement;
             _resultValue.primaryNetworkInterface = primaryNetworkInterface;
             _resultValue.projectName = projectName;
+            _resultValue.rdmaIpAddresses = rdmaIpAddresses;
+            _resultValue.rdmaNetworkInterfaceDetails = rdmaNetworkInterfaceDetails;
+            _resultValue.renewInfo = renewInfo;
+            _resultValue.roleNames = roleNames;
             _resultValue.secondaryNetworkInterfaces = secondaryNetworkInterfaces;
             _resultValue.spotPriceLimit = spotPriceLimit;
             _resultValue.spotStrategy = spotStrategy;

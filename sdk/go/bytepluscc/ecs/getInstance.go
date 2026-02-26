@@ -29,46 +29,57 @@ type LookupInstanceArgs struct {
 
 // A collection of values returned by getInstance.
 type LookupInstanceResult struct {
-	AffinityGroupSize          int                                    `pulumi:"affinityGroupSize"`
-	AutoRenew                  bool                                   `pulumi:"autoRenew"`
-	AutoRenewPeriod            int                                    `pulumi:"autoRenewPeriod"`
-	CpuMaxFrequency            float64                                `pulumi:"cpuMaxFrequency"`
-	CpuMemory                  GetInstanceCpuMemory                   `pulumi:"cpuMemory"`
-	CreatedAt                  string                                 `pulumi:"createdAt"`
-	CreditSpecification        string                                 `pulumi:"creditSpecification"`
-	DeletionProtection         bool                                   `pulumi:"deletionProtection"`
-	DeploymentSetGroupNumber   int                                    `pulumi:"deploymentSetGroupNumber"`
-	DeploymentSetId            string                                 `pulumi:"deploymentSetId"`
-	Description                string                                 `pulumi:"description"`
-	EipAddress                 GetInstanceEipAddress                  `pulumi:"eipAddress"`
-	ExpiredAt                  string                                 `pulumi:"expiredAt"`
-	Hostname                   string                                 `pulumi:"hostname"`
-	HpcClusterId               string                                 `pulumi:"hpcClusterId"`
-	Id                         string                                 `pulumi:"id"`
-	Image                      GetInstanceImage                       `pulumi:"image"`
-	InstanceChargeType         string                                 `pulumi:"instanceChargeType"`
-	InstanceId                 string                                 `pulumi:"instanceId"`
-	InstanceName               string                                 `pulumi:"instanceName"`
-	InstanceType               string                                 `pulumi:"instanceType"`
-	KeyPair                    GetInstanceKeyPair                     `pulumi:"keyPair"`
-	OperationSystem            GetInstanceOperationSystem             `pulumi:"operationSystem"`
-	Password                   string                                 `pulumi:"password"`
-	Period                     int                                    `pulumi:"period"`
-	PeriodUnit                 string                                 `pulumi:"periodUnit"`
-	Placement                  GetInstancePlacement                   `pulumi:"placement"`
-	PrimaryNetworkInterface    GetInstancePrimaryNetworkInterface     `pulumi:"primaryNetworkInterface"`
-	ProjectName                string                                 `pulumi:"projectName"`
-	SecondaryNetworkInterfaces []GetInstanceSecondaryNetworkInterface `pulumi:"secondaryNetworkInterfaces"`
-	SpotPriceLimit             float64                                `pulumi:"spotPriceLimit"`
-	SpotStrategy               string                                 `pulumi:"spotStrategy"`
-	Status                     string                                 `pulumi:"status"`
-	StoppedMode                string                                 `pulumi:"stoppedMode"`
-	SystemVolume               GetInstanceSystemVolume                `pulumi:"systemVolume"`
-	Tags                       []GetInstanceTag                       `pulumi:"tags"`
-	UpdatedAt                  string                                 `pulumi:"updatedAt"`
-	UserData                   string                                 `pulumi:"userData"`
-	VpcId                      string                                 `pulumi:"vpcId"`
-	ZoneId                     string                                 `pulumi:"zoneId"`
+	AffinityGroupId              string                                  `pulumi:"affinityGroupId"`
+	AffinityGroupSize            int                                     `pulumi:"affinityGroupSize"`
+	AutoPay                      bool                                    `pulumi:"autoPay"`
+	AutoRenew                    bool                                    `pulumi:"autoRenew"`
+	AutoRenewPeriod              int                                     `pulumi:"autoRenewPeriod"`
+	CpuMaxFrequency              float64                                 `pulumi:"cpuMaxFrequency"`
+	CpuMemory                    GetInstanceCpuMemory                    `pulumi:"cpuMemory"`
+	CreatedAt                    string                                  `pulumi:"createdAt"`
+	CreditSpecification          string                                  `pulumi:"creditSpecification"`
+	DeletionProtection           bool                                    `pulumi:"deletionProtection"`
+	DeploymentSetGroupNumber     int                                     `pulumi:"deploymentSetGroupNumber"`
+	DeploymentSetId              string                                  `pulumi:"deploymentSetId"`
+	Description                  string                                  `pulumi:"description"`
+	EipAddress                   GetInstanceEipAddress                   `pulumi:"eipAddress"`
+	ElasticScheduledInstanceType string                                  `pulumi:"elasticScheduledInstanceType"`
+	EnableJumboFrame             bool                                    `pulumi:"enableJumboFrame"`
+	ExpiredAt                    string                                  `pulumi:"expiredAt"`
+	Hostname                     string                                  `pulumi:"hostname"`
+	HpcClusterId                 string                                  `pulumi:"hpcClusterId"`
+	Id                           string                                  `pulumi:"id"`
+	Image                        GetInstanceImage                        `pulumi:"image"`
+	IncludeDataVolumes           bool                                    `pulumi:"includeDataVolumes"`
+	InstallRunCommandAgent       bool                                    `pulumi:"installRunCommandAgent"`
+	InstanceChargeType           string                                  `pulumi:"instanceChargeType"`
+	InstanceId                   string                                  `pulumi:"instanceId"`
+	InstanceName                 string                                  `pulumi:"instanceName"`
+	InstanceType                 string                                  `pulumi:"instanceType"`
+	KeyPair                      GetInstanceKeyPair                      `pulumi:"keyPair"`
+	LocalVolumes                 []GetInstanceLocalVolume                `pulumi:"localVolumes"`
+	OperationSystem              GetInstanceOperationSystem              `pulumi:"operationSystem"`
+	Password                     string                                  `pulumi:"password"`
+	Period                       int                                     `pulumi:"period"`
+	PeriodUnit                   string                                  `pulumi:"periodUnit"`
+	Placement                    GetInstancePlacement                    `pulumi:"placement"`
+	PrimaryNetworkInterface      GetInstancePrimaryNetworkInterface      `pulumi:"primaryNetworkInterface"`
+	ProjectName                  string                                  `pulumi:"projectName"`
+	RdmaIpAddresses              []string                                `pulumi:"rdmaIpAddresses"`
+	RdmaNetworkInterfaceDetails  []GetInstanceRdmaNetworkInterfaceDetail `pulumi:"rdmaNetworkInterfaceDetails"`
+	RenewInfo                    GetInstanceRenewInfo                    `pulumi:"renewInfo"`
+	RoleNames                    []string                                `pulumi:"roleNames"`
+	SecondaryNetworkInterfaces   []GetInstanceSecondaryNetworkInterface  `pulumi:"secondaryNetworkInterfaces"`
+	SpotPriceLimit               float64                                 `pulumi:"spotPriceLimit"`
+	SpotStrategy                 string                                  `pulumi:"spotStrategy"`
+	Status                       string                                  `pulumi:"status"`
+	StoppedMode                  string                                  `pulumi:"stoppedMode"`
+	SystemVolume                 GetInstanceSystemVolume                 `pulumi:"systemVolume"`
+	Tags                         []GetInstanceTag                        `pulumi:"tags"`
+	UpdatedAt                    string                                  `pulumi:"updatedAt"`
+	UserData                     string                                  `pulumi:"userData"`
+	VpcId                        string                                  `pulumi:"vpcId"`
+	ZoneId                       string                                  `pulumi:"zoneId"`
 }
 
 func LookupInstanceOutput(ctx *pulumi.Context, args LookupInstanceOutputArgs, opts ...pulumi.InvokeOption) LookupInstanceResultOutput {
@@ -104,8 +115,16 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
+func (o LookupInstanceResultOutput) AffinityGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.AffinityGroupId }).(pulumi.StringOutput)
+}
+
 func (o LookupInstanceResultOutput) AffinityGroupSize() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.AffinityGroupSize }).(pulumi.IntOutput)
+}
+
+func (o LookupInstanceResultOutput) AutoPay() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.AutoPay }).(pulumi.BoolOutput)
 }
 
 func (o LookupInstanceResultOutput) AutoRenew() pulumi.BoolOutput {
@@ -152,6 +171,14 @@ func (o LookupInstanceResultOutput) EipAddress() GetInstanceEipAddressOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceEipAddress { return v.EipAddress }).(GetInstanceEipAddressOutput)
 }
 
+func (o LookupInstanceResultOutput) ElasticScheduledInstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.ElasticScheduledInstanceType }).(pulumi.StringOutput)
+}
+
+func (o LookupInstanceResultOutput) EnableJumboFrame() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.EnableJumboFrame }).(pulumi.BoolOutput)
+}
+
 func (o LookupInstanceResultOutput) ExpiredAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ExpiredAt }).(pulumi.StringOutput)
 }
@@ -172,6 +199,14 @@ func (o LookupInstanceResultOutput) Image() GetInstanceImageOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceImage { return v.Image }).(GetInstanceImageOutput)
 }
 
+func (o LookupInstanceResultOutput) IncludeDataVolumes() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IncludeDataVolumes }).(pulumi.BoolOutput)
+}
+
+func (o LookupInstanceResultOutput) InstallRunCommandAgent() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.InstallRunCommandAgent }).(pulumi.BoolOutput)
+}
+
 func (o LookupInstanceResultOutput) InstanceChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceChargeType }).(pulumi.StringOutput)
 }
@@ -190,6 +225,10 @@ func (o LookupInstanceResultOutput) InstanceType() pulumi.StringOutput {
 
 func (o LookupInstanceResultOutput) KeyPair() GetInstanceKeyPairOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceKeyPair { return v.KeyPair }).(GetInstanceKeyPairOutput)
+}
+
+func (o LookupInstanceResultOutput) LocalVolumes() GetInstanceLocalVolumeArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceLocalVolume { return v.LocalVolumes }).(GetInstanceLocalVolumeArrayOutput)
 }
 
 func (o LookupInstanceResultOutput) OperationSystem() GetInstanceOperationSystemOutput {
@@ -218,6 +257,24 @@ func (o LookupInstanceResultOutput) PrimaryNetworkInterface() GetInstancePrimary
 
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+func (o LookupInstanceResultOutput) RdmaIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []string { return v.RdmaIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupInstanceResultOutput) RdmaNetworkInterfaceDetails() GetInstanceRdmaNetworkInterfaceDetailArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceRdmaNetworkInterfaceDetail {
+		return v.RdmaNetworkInterfaceDetails
+	}).(GetInstanceRdmaNetworkInterfaceDetailArrayOutput)
+}
+
+func (o LookupInstanceResultOutput) RenewInfo() GetInstanceRenewInfoOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceRenewInfo { return v.RenewInfo }).(GetInstanceRenewInfoOutput)
+}
+
+func (o LookupInstanceResultOutput) RoleNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []string { return v.RoleNames }).(pulumi.StringArrayOutput)
 }
 
 func (o LookupInstanceResultOutput) SecondaryNetworkInterfaces() GetInstanceSecondaryNetworkInterfaceArrayOutput {

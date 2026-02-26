@@ -42,6 +42,8 @@ type LookupVpcResult struct {
 	Description string `pulumi:"description"`
 	// VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 	DnsServers []string `pulumi:"dnsServers"`
+	// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+	EnableIpv6 bool `pulumi:"enableIpv6"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 	// VPC 绑定的 IPv4 网关的 ID。
@@ -142,6 +144,11 @@ func (o LookupVpcResultOutput) Description() pulumi.StringOutput {
 // VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
 func (o LookupVpcResultOutput) DnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupVpcResult) []string { return v.DnsServers }).(pulumi.StringArrayOutput)
+}
+
+// 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+func (o LookupVpcResultOutput) EnableIpv6() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupVpcResult) bool { return v.EnableIpv6 }).(pulumi.BoolOutput)
 }
 
 // Uniquely identifies the resource.

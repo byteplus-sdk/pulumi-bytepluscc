@@ -55,12 +55,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
-        /// <summary>
-        /// 实例的VPC ID。
-        /// </summary>
-        [Input("vpcId")]
-        public Input<string>? VpcId { get; set; }
-
         public InstanceSecondaryNetworkInterfaceArgs()
         {
         }

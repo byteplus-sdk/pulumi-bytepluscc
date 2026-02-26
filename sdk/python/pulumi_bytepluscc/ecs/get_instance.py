@@ -28,10 +28,16 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, affinity_group_size=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, created_at=None, credit_specification=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, affinity_group_id=None, affinity_group_size=None, auto_pay=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, created_at=None, credit_specification=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, elastic_scheduled_instance_type=None, enable_jumbo_frame=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, include_data_volumes=None, install_run_command_agent=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, local_volumes=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, rdma_ip_addresses=None, rdma_network_interface_details=None, renew_info=None, role_names=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
+        if affinity_group_id and not isinstance(affinity_group_id, str):
+            raise TypeError("Expected argument 'affinity_group_id' to be a str")
+        pulumi.set(__self__, "affinity_group_id", affinity_group_id)
         if affinity_group_size and not isinstance(affinity_group_size, int):
             raise TypeError("Expected argument 'affinity_group_size' to be a int")
         pulumi.set(__self__, "affinity_group_size", affinity_group_size)
+        if auto_pay and not isinstance(auto_pay, bool):
+            raise TypeError("Expected argument 'auto_pay' to be a bool")
+        pulumi.set(__self__, "auto_pay", auto_pay)
         if auto_renew and not isinstance(auto_renew, bool):
             raise TypeError("Expected argument 'auto_renew' to be a bool")
         pulumi.set(__self__, "auto_renew", auto_renew)
@@ -65,6 +71,12 @@ class GetInstanceResult:
         if eip_address and not isinstance(eip_address, dict):
             raise TypeError("Expected argument 'eip_address' to be a dict")
         pulumi.set(__self__, "eip_address", eip_address)
+        if elastic_scheduled_instance_type and not isinstance(elastic_scheduled_instance_type, str):
+            raise TypeError("Expected argument 'elastic_scheduled_instance_type' to be a str")
+        pulumi.set(__self__, "elastic_scheduled_instance_type", elastic_scheduled_instance_type)
+        if enable_jumbo_frame and not isinstance(enable_jumbo_frame, bool):
+            raise TypeError("Expected argument 'enable_jumbo_frame' to be a bool")
+        pulumi.set(__self__, "enable_jumbo_frame", enable_jumbo_frame)
         if expired_at and not isinstance(expired_at, str):
             raise TypeError("Expected argument 'expired_at' to be a str")
         pulumi.set(__self__, "expired_at", expired_at)
@@ -80,6 +92,12 @@ class GetInstanceResult:
         if image and not isinstance(image, dict):
             raise TypeError("Expected argument 'image' to be a dict")
         pulumi.set(__self__, "image", image)
+        if include_data_volumes and not isinstance(include_data_volumes, bool):
+            raise TypeError("Expected argument 'include_data_volumes' to be a bool")
+        pulumi.set(__self__, "include_data_volumes", include_data_volumes)
+        if install_run_command_agent and not isinstance(install_run_command_agent, bool):
+            raise TypeError("Expected argument 'install_run_command_agent' to be a bool")
+        pulumi.set(__self__, "install_run_command_agent", install_run_command_agent)
         if instance_charge_type and not isinstance(instance_charge_type, str):
             raise TypeError("Expected argument 'instance_charge_type' to be a str")
         pulumi.set(__self__, "instance_charge_type", instance_charge_type)
@@ -95,6 +113,9 @@ class GetInstanceResult:
         if key_pair and not isinstance(key_pair, dict):
             raise TypeError("Expected argument 'key_pair' to be a dict")
         pulumi.set(__self__, "key_pair", key_pair)
+        if local_volumes and not isinstance(local_volumes, list):
+            raise TypeError("Expected argument 'local_volumes' to be a list")
+        pulumi.set(__self__, "local_volumes", local_volumes)
         if operation_system and not isinstance(operation_system, dict):
             raise TypeError("Expected argument 'operation_system' to be a dict")
         pulumi.set(__self__, "operation_system", operation_system)
@@ -116,6 +137,18 @@ class GetInstanceResult:
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
+        if rdma_ip_addresses and not isinstance(rdma_ip_addresses, list):
+            raise TypeError("Expected argument 'rdma_ip_addresses' to be a list")
+        pulumi.set(__self__, "rdma_ip_addresses", rdma_ip_addresses)
+        if rdma_network_interface_details and not isinstance(rdma_network_interface_details, list):
+            raise TypeError("Expected argument 'rdma_network_interface_details' to be a list")
+        pulumi.set(__self__, "rdma_network_interface_details", rdma_network_interface_details)
+        if renew_info and not isinstance(renew_info, dict):
+            raise TypeError("Expected argument 'renew_info' to be a dict")
+        pulumi.set(__self__, "renew_info", renew_info)
+        if role_names and not isinstance(role_names, list):
+            raise TypeError("Expected argument 'role_names' to be a list")
+        pulumi.set(__self__, "role_names", role_names)
         if secondary_network_interfaces and not isinstance(secondary_network_interfaces, list):
             raise TypeError("Expected argument 'secondary_network_interfaces' to be a list")
         pulumi.set(__self__, "secondary_network_interfaces", secondary_network_interfaces)
@@ -151,9 +184,19 @@ class GetInstanceResult:
         pulumi.set(__self__, "zone_id", zone_id)
 
     @property
+    @pulumi.getter(name="affinityGroupId")
+    def affinity_group_id(self) -> builtins.str:
+        return pulumi.get(self, "affinity_group_id")
+
+    @property
     @pulumi.getter(name="affinityGroupSize")
     def affinity_group_size(self) -> builtins.int:
         return pulumi.get(self, "affinity_group_size")
+
+    @property
+    @pulumi.getter(name="autoPay")
+    def auto_pay(self) -> builtins.bool:
+        return pulumi.get(self, "auto_pay")
 
     @property
     @pulumi.getter(name="autoRenew")
@@ -211,6 +254,16 @@ class GetInstanceResult:
         return pulumi.get(self, "eip_address")
 
     @property
+    @pulumi.getter(name="elasticScheduledInstanceType")
+    def elastic_scheduled_instance_type(self) -> builtins.str:
+        return pulumi.get(self, "elastic_scheduled_instance_type")
+
+    @property
+    @pulumi.getter(name="enableJumboFrame")
+    def enable_jumbo_frame(self) -> builtins.bool:
+        return pulumi.get(self, "enable_jumbo_frame")
+
+    @property
     @pulumi.getter(name="expiredAt")
     def expired_at(self) -> builtins.str:
         return pulumi.get(self, "expired_at")
@@ -236,6 +289,16 @@ class GetInstanceResult:
         return pulumi.get(self, "image")
 
     @property
+    @pulumi.getter(name="includeDataVolumes")
+    def include_data_volumes(self) -> builtins.bool:
+        return pulumi.get(self, "include_data_volumes")
+
+    @property
+    @pulumi.getter(name="installRunCommandAgent")
+    def install_run_command_agent(self) -> builtins.bool:
+        return pulumi.get(self, "install_run_command_agent")
+
+    @property
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> builtins.str:
         return pulumi.get(self, "instance_charge_type")
@@ -259,6 +322,11 @@ class GetInstanceResult:
     @pulumi.getter(name="keyPair")
     def key_pair(self) -> 'outputs.GetInstanceKeyPairResult':
         return pulumi.get(self, "key_pair")
+
+    @property
+    @pulumi.getter(name="localVolumes")
+    def local_volumes(self) -> Sequence['outputs.GetInstanceLocalVolumeResult']:
+        return pulumi.get(self, "local_volumes")
 
     @property
     @pulumi.getter(name="operationSystem")
@@ -294,6 +362,26 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter(name="rdmaIpAddresses")
+    def rdma_ip_addresses(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "rdma_ip_addresses")
+
+    @property
+    @pulumi.getter(name="rdmaNetworkInterfaceDetails")
+    def rdma_network_interface_details(self) -> Sequence['outputs.GetInstanceRdmaNetworkInterfaceDetailResult']:
+        return pulumi.get(self, "rdma_network_interface_details")
+
+    @property
+    @pulumi.getter(name="renewInfo")
+    def renew_info(self) -> 'outputs.GetInstanceRenewInfoResult':
+        return pulumi.get(self, "renew_info")
+
+    @property
+    @pulumi.getter(name="roleNames")
+    def role_names(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "role_names")
 
     @property
     @pulumi.getter(name="secondaryNetworkInterfaces")
@@ -357,7 +445,9 @@ class AwaitableGetInstanceResult(GetInstanceResult):
         if False:
             yield self
         return GetInstanceResult(
+            affinity_group_id=self.affinity_group_id,
             affinity_group_size=self.affinity_group_size,
+            auto_pay=self.auto_pay,
             auto_renew=self.auto_renew,
             auto_renew_period=self.auto_renew_period,
             cpu_max_frequency=self.cpu_max_frequency,
@@ -369,16 +459,21 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             deployment_set_id=self.deployment_set_id,
             description=self.description,
             eip_address=self.eip_address,
+            elastic_scheduled_instance_type=self.elastic_scheduled_instance_type,
+            enable_jumbo_frame=self.enable_jumbo_frame,
             expired_at=self.expired_at,
             hostname=self.hostname,
             hpc_cluster_id=self.hpc_cluster_id,
             id=self.id,
             image=self.image,
+            include_data_volumes=self.include_data_volumes,
+            install_run_command_agent=self.install_run_command_agent,
             instance_charge_type=self.instance_charge_type,
             instance_id=self.instance_id,
             instance_name=self.instance_name,
             instance_type=self.instance_type,
             key_pair=self.key_pair,
+            local_volumes=self.local_volumes,
             operation_system=self.operation_system,
             password=self.password,
             period=self.period,
@@ -386,6 +481,10 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             placement=self.placement,
             primary_network_interface=self.primary_network_interface,
             project_name=self.project_name,
+            rdma_ip_addresses=self.rdma_ip_addresses,
+            rdma_network_interface_details=self.rdma_network_interface_details,
+            renew_info=self.renew_info,
+            role_names=self.role_names,
             secondary_network_interfaces=self.secondary_network_interfaces,
             spot_price_limit=self.spot_price_limit,
             spot_strategy=self.spot_strategy,
@@ -410,7 +509,9 @@ def get_instance(id: Optional[builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('bytepluscc:ecs/getInstance:getInstance', __args__, opts=opts, typ=GetInstanceResult).value
 
     return AwaitableGetInstanceResult(
+        affinity_group_id=pulumi.get(__ret__, 'affinity_group_id'),
         affinity_group_size=pulumi.get(__ret__, 'affinity_group_size'),
+        auto_pay=pulumi.get(__ret__, 'auto_pay'),
         auto_renew=pulumi.get(__ret__, 'auto_renew'),
         auto_renew_period=pulumi.get(__ret__, 'auto_renew_period'),
         cpu_max_frequency=pulumi.get(__ret__, 'cpu_max_frequency'),
@@ -422,16 +523,21 @@ def get_instance(id: Optional[builtins.str] = None,
         deployment_set_id=pulumi.get(__ret__, 'deployment_set_id'),
         description=pulumi.get(__ret__, 'description'),
         eip_address=pulumi.get(__ret__, 'eip_address'),
+        elastic_scheduled_instance_type=pulumi.get(__ret__, 'elastic_scheduled_instance_type'),
+        enable_jumbo_frame=pulumi.get(__ret__, 'enable_jumbo_frame'),
         expired_at=pulumi.get(__ret__, 'expired_at'),
         hostname=pulumi.get(__ret__, 'hostname'),
         hpc_cluster_id=pulumi.get(__ret__, 'hpc_cluster_id'),
         id=pulumi.get(__ret__, 'id'),
         image=pulumi.get(__ret__, 'image'),
+        include_data_volumes=pulumi.get(__ret__, 'include_data_volumes'),
+        install_run_command_agent=pulumi.get(__ret__, 'install_run_command_agent'),
         instance_charge_type=pulumi.get(__ret__, 'instance_charge_type'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         instance_name=pulumi.get(__ret__, 'instance_name'),
         instance_type=pulumi.get(__ret__, 'instance_type'),
         key_pair=pulumi.get(__ret__, 'key_pair'),
+        local_volumes=pulumi.get(__ret__, 'local_volumes'),
         operation_system=pulumi.get(__ret__, 'operation_system'),
         password=pulumi.get(__ret__, 'password'),
         period=pulumi.get(__ret__, 'period'),
@@ -439,6 +545,10 @@ def get_instance(id: Optional[builtins.str] = None,
         placement=pulumi.get(__ret__, 'placement'),
         primary_network_interface=pulumi.get(__ret__, 'primary_network_interface'),
         project_name=pulumi.get(__ret__, 'project_name'),
+        rdma_ip_addresses=pulumi.get(__ret__, 'rdma_ip_addresses'),
+        rdma_network_interface_details=pulumi.get(__ret__, 'rdma_network_interface_details'),
+        renew_info=pulumi.get(__ret__, 'renew_info'),
+        role_names=pulumi.get(__ret__, 'role_names'),
         secondary_network_interfaces=pulumi.get(__ret__, 'secondary_network_interfaces'),
         spot_price_limit=pulumi.get(__ret__, 'spot_price_limit'),
         spot_strategy=pulumi.get(__ret__, 'spot_strategy'),
@@ -460,7 +570,9 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('bytepluscc:ecs/getInstance:getInstance', __args__, opts=opts, typ=GetInstanceResult)
     return __ret__.apply(lambda __response__: GetInstanceResult(
+        affinity_group_id=pulumi.get(__response__, 'affinity_group_id'),
         affinity_group_size=pulumi.get(__response__, 'affinity_group_size'),
+        auto_pay=pulumi.get(__response__, 'auto_pay'),
         auto_renew=pulumi.get(__response__, 'auto_renew'),
         auto_renew_period=pulumi.get(__response__, 'auto_renew_period'),
         cpu_max_frequency=pulumi.get(__response__, 'cpu_max_frequency'),
@@ -472,16 +584,21 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         deployment_set_id=pulumi.get(__response__, 'deployment_set_id'),
         description=pulumi.get(__response__, 'description'),
         eip_address=pulumi.get(__response__, 'eip_address'),
+        elastic_scheduled_instance_type=pulumi.get(__response__, 'elastic_scheduled_instance_type'),
+        enable_jumbo_frame=pulumi.get(__response__, 'enable_jumbo_frame'),
         expired_at=pulumi.get(__response__, 'expired_at'),
         hostname=pulumi.get(__response__, 'hostname'),
         hpc_cluster_id=pulumi.get(__response__, 'hpc_cluster_id'),
         id=pulumi.get(__response__, 'id'),
         image=pulumi.get(__response__, 'image'),
+        include_data_volumes=pulumi.get(__response__, 'include_data_volumes'),
+        install_run_command_agent=pulumi.get(__response__, 'install_run_command_agent'),
         instance_charge_type=pulumi.get(__response__, 'instance_charge_type'),
         instance_id=pulumi.get(__response__, 'instance_id'),
         instance_name=pulumi.get(__response__, 'instance_name'),
         instance_type=pulumi.get(__response__, 'instance_type'),
         key_pair=pulumi.get(__response__, 'key_pair'),
+        local_volumes=pulumi.get(__response__, 'local_volumes'),
         operation_system=pulumi.get(__response__, 'operation_system'),
         password=pulumi.get(__response__, 'password'),
         period=pulumi.get(__response__, 'period'),
@@ -489,6 +606,10 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         placement=pulumi.get(__response__, 'placement'),
         primary_network_interface=pulumi.get(__response__, 'primary_network_interface'),
         project_name=pulumi.get(__response__, 'project_name'),
+        rdma_ip_addresses=pulumi.get(__response__, 'rdma_ip_addresses'),
+        rdma_network_interface_details=pulumi.get(__response__, 'rdma_network_interface_details'),
+        renew_info=pulumi.get(__response__, 'renew_info'),
+        role_names=pulumi.get(__response__, 'role_names'),
         secondary_network_interfaces=pulumi.get(__response__, 'secondary_network_interfaces'),
         spot_price_limit=pulumi.get(__response__, 'spot_price_limit'),
         spot_strategy=pulumi.get(__response__, 'spot_strategy'),

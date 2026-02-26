@@ -428,6 +428,342 @@ func (o CertificateTagArrayOutput) Index(i pulumi.IntInput) CertificateTagOutput
 	}).(CertificateTagOutput)
 }
 
+type CustomizedCfgListener struct {
+	// 监听器的 ID。
+	ListenerId *string `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName *string `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port *int `pulumi:"port"`
+	// 监听器的协议。
+	Protocol *string `pulumi:"protocol"`
+}
+
+// CustomizedCfgListenerInput is an input type that accepts CustomizedCfgListenerArgs and CustomizedCfgListenerOutput values.
+// You can construct a concrete instance of `CustomizedCfgListenerInput` via:
+//
+//	CustomizedCfgListenerArgs{...}
+type CustomizedCfgListenerInput interface {
+	pulumi.Input
+
+	ToCustomizedCfgListenerOutput() CustomizedCfgListenerOutput
+	ToCustomizedCfgListenerOutputWithContext(context.Context) CustomizedCfgListenerOutput
+}
+
+type CustomizedCfgListenerArgs struct {
+	// 监听器的 ID。
+	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName pulumi.StringPtrInput `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// 监听器的协议。
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+}
+
+func (CustomizedCfgListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomizedCfgListener)(nil)).Elem()
+}
+
+func (i CustomizedCfgListenerArgs) ToCustomizedCfgListenerOutput() CustomizedCfgListenerOutput {
+	return i.ToCustomizedCfgListenerOutputWithContext(context.Background())
+}
+
+func (i CustomizedCfgListenerArgs) ToCustomizedCfgListenerOutputWithContext(ctx context.Context) CustomizedCfgListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomizedCfgListenerOutput)
+}
+
+// CustomizedCfgListenerArrayInput is an input type that accepts CustomizedCfgListenerArray and CustomizedCfgListenerArrayOutput values.
+// You can construct a concrete instance of `CustomizedCfgListenerArrayInput` via:
+//
+//	CustomizedCfgListenerArray{ CustomizedCfgListenerArgs{...} }
+type CustomizedCfgListenerArrayInput interface {
+	pulumi.Input
+
+	ToCustomizedCfgListenerArrayOutput() CustomizedCfgListenerArrayOutput
+	ToCustomizedCfgListenerArrayOutputWithContext(context.Context) CustomizedCfgListenerArrayOutput
+}
+
+type CustomizedCfgListenerArray []CustomizedCfgListenerInput
+
+func (CustomizedCfgListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomizedCfgListener)(nil)).Elem()
+}
+
+func (i CustomizedCfgListenerArray) ToCustomizedCfgListenerArrayOutput() CustomizedCfgListenerArrayOutput {
+	return i.ToCustomizedCfgListenerArrayOutputWithContext(context.Background())
+}
+
+func (i CustomizedCfgListenerArray) ToCustomizedCfgListenerArrayOutputWithContext(ctx context.Context) CustomizedCfgListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomizedCfgListenerArrayOutput)
+}
+
+type CustomizedCfgListenerOutput struct{ *pulumi.OutputState }
+
+func (CustomizedCfgListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomizedCfgListener)(nil)).Elem()
+}
+
+func (o CustomizedCfgListenerOutput) ToCustomizedCfgListenerOutput() CustomizedCfgListenerOutput {
+	return o
+}
+
+func (o CustomizedCfgListenerOutput) ToCustomizedCfgListenerOutputWithContext(ctx context.Context) CustomizedCfgListenerOutput {
+	return o
+}
+
+// 监听器的 ID。
+func (o CustomizedCfgListenerOutput) ListenerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomizedCfgListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
+}
+
+// 监听器的名称。
+func (o CustomizedCfgListenerOutput) ListenerName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomizedCfgListener) *string { return v.ListenerName }).(pulumi.StringPtrOutput)
+}
+
+// 监听器的端口。
+func (o CustomizedCfgListenerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomizedCfgListener) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// 监听器的协议。
+func (o CustomizedCfgListenerOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomizedCfgListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+type CustomizedCfgListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (CustomizedCfgListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomizedCfgListener)(nil)).Elem()
+}
+
+func (o CustomizedCfgListenerArrayOutput) ToCustomizedCfgListenerArrayOutput() CustomizedCfgListenerArrayOutput {
+	return o
+}
+
+func (o CustomizedCfgListenerArrayOutput) ToCustomizedCfgListenerArrayOutputWithContext(ctx context.Context) CustomizedCfgListenerArrayOutput {
+	return o
+}
+
+func (o CustomizedCfgListenerArrayOutput) Index(i pulumi.IntInput) CustomizedCfgListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CustomizedCfgListener {
+		return vs[0].([]CustomizedCfgListener)[vs[1].(int)]
+	}).(CustomizedCfgListenerOutput)
+}
+
+type CustomizedCfgTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// CustomizedCfgTagInput is an input type that accepts CustomizedCfgTagArgs and CustomizedCfgTagOutput values.
+// You can construct a concrete instance of `CustomizedCfgTagInput` via:
+//
+//	CustomizedCfgTagArgs{...}
+type CustomizedCfgTagInput interface {
+	pulumi.Input
+
+	ToCustomizedCfgTagOutput() CustomizedCfgTagOutput
+	ToCustomizedCfgTagOutputWithContext(context.Context) CustomizedCfgTagOutput
+}
+
+type CustomizedCfgTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (CustomizedCfgTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomizedCfgTag)(nil)).Elem()
+}
+
+func (i CustomizedCfgTagArgs) ToCustomizedCfgTagOutput() CustomizedCfgTagOutput {
+	return i.ToCustomizedCfgTagOutputWithContext(context.Background())
+}
+
+func (i CustomizedCfgTagArgs) ToCustomizedCfgTagOutputWithContext(ctx context.Context) CustomizedCfgTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomizedCfgTagOutput)
+}
+
+// CustomizedCfgTagArrayInput is an input type that accepts CustomizedCfgTagArray and CustomizedCfgTagArrayOutput values.
+// You can construct a concrete instance of `CustomizedCfgTagArrayInput` via:
+//
+//	CustomizedCfgTagArray{ CustomizedCfgTagArgs{...} }
+type CustomizedCfgTagArrayInput interface {
+	pulumi.Input
+
+	ToCustomizedCfgTagArrayOutput() CustomizedCfgTagArrayOutput
+	ToCustomizedCfgTagArrayOutputWithContext(context.Context) CustomizedCfgTagArrayOutput
+}
+
+type CustomizedCfgTagArray []CustomizedCfgTagInput
+
+func (CustomizedCfgTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomizedCfgTag)(nil)).Elem()
+}
+
+func (i CustomizedCfgTagArray) ToCustomizedCfgTagArrayOutput() CustomizedCfgTagArrayOutput {
+	return i.ToCustomizedCfgTagArrayOutputWithContext(context.Background())
+}
+
+func (i CustomizedCfgTagArray) ToCustomizedCfgTagArrayOutputWithContext(ctx context.Context) CustomizedCfgTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomizedCfgTagArrayOutput)
+}
+
+type CustomizedCfgTagOutput struct{ *pulumi.OutputState }
+
+func (CustomizedCfgTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomizedCfgTag)(nil)).Elem()
+}
+
+func (o CustomizedCfgTagOutput) ToCustomizedCfgTagOutput() CustomizedCfgTagOutput {
+	return o
+}
+
+func (o CustomizedCfgTagOutput) ToCustomizedCfgTagOutputWithContext(ctx context.Context) CustomizedCfgTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o CustomizedCfgTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomizedCfgTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o CustomizedCfgTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomizedCfgTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type CustomizedCfgTagArrayOutput struct{ *pulumi.OutputState }
+
+func (CustomizedCfgTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomizedCfgTag)(nil)).Elem()
+}
+
+func (o CustomizedCfgTagArrayOutput) ToCustomizedCfgTagArrayOutput() CustomizedCfgTagArrayOutput {
+	return o
+}
+
+func (o CustomizedCfgTagArrayOutput) ToCustomizedCfgTagArrayOutputWithContext(ctx context.Context) CustomizedCfgTagArrayOutput {
+	return o
+}
+
+func (o CustomizedCfgTagArrayOutput) Index(i pulumi.IntInput) CustomizedCfgTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CustomizedCfgTag {
+		return vs[0].([]CustomizedCfgTag)[vs[1].(int)]
+	}).(CustomizedCfgTagOutput)
+}
+
+type HealthCheckTemplateTag struct {
+	// 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value *string `pulumi:"value"`
+}
+
+// HealthCheckTemplateTagInput is an input type that accepts HealthCheckTemplateTagArgs and HealthCheckTemplateTagOutput values.
+// You can construct a concrete instance of `HealthCheckTemplateTagInput` via:
+//
+//	HealthCheckTemplateTagArgs{...}
+type HealthCheckTemplateTagInput interface {
+	pulumi.Input
+
+	ToHealthCheckTemplateTagOutput() HealthCheckTemplateTagOutput
+	ToHealthCheckTemplateTagOutputWithContext(context.Context) HealthCheckTemplateTagOutput
+}
+
+type HealthCheckTemplateTagArgs struct {
+	// 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (HealthCheckTemplateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (i HealthCheckTemplateTagArgs) ToHealthCheckTemplateTagOutput() HealthCheckTemplateTagOutput {
+	return i.ToHealthCheckTemplateTagOutputWithContext(context.Background())
+}
+
+func (i HealthCheckTemplateTagArgs) ToHealthCheckTemplateTagOutputWithContext(ctx context.Context) HealthCheckTemplateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HealthCheckTemplateTagOutput)
+}
+
+// HealthCheckTemplateTagArrayInput is an input type that accepts HealthCheckTemplateTagArray and HealthCheckTemplateTagArrayOutput values.
+// You can construct a concrete instance of `HealthCheckTemplateTagArrayInput` via:
+//
+//	HealthCheckTemplateTagArray{ HealthCheckTemplateTagArgs{...} }
+type HealthCheckTemplateTagArrayInput interface {
+	pulumi.Input
+
+	ToHealthCheckTemplateTagArrayOutput() HealthCheckTemplateTagArrayOutput
+	ToHealthCheckTemplateTagArrayOutputWithContext(context.Context) HealthCheckTemplateTagArrayOutput
+}
+
+type HealthCheckTemplateTagArray []HealthCheckTemplateTagInput
+
+func (HealthCheckTemplateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (i HealthCheckTemplateTagArray) ToHealthCheckTemplateTagArrayOutput() HealthCheckTemplateTagArrayOutput {
+	return i.ToHealthCheckTemplateTagArrayOutputWithContext(context.Background())
+}
+
+func (i HealthCheckTemplateTagArray) ToHealthCheckTemplateTagArrayOutputWithContext(ctx context.Context) HealthCheckTemplateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HealthCheckTemplateTagArrayOutput)
+}
+
+type HealthCheckTemplateTagOutput struct{ *pulumi.OutputState }
+
+func (HealthCheckTemplateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (o HealthCheckTemplateTagOutput) ToHealthCheckTemplateTagOutput() HealthCheckTemplateTagOutput {
+	return o
+}
+
+func (o HealthCheckTemplateTagOutput) ToHealthCheckTemplateTagOutputWithContext(ctx context.Context) HealthCheckTemplateTagOutput {
+	return o
+}
+
+// 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+func (o HealthCheckTemplateTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HealthCheckTemplateTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+func (o HealthCheckTemplateTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HealthCheckTemplateTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type HealthCheckTemplateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (HealthCheckTemplateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (o HealthCheckTemplateTagArrayOutput) ToHealthCheckTemplateTagArrayOutput() HealthCheckTemplateTagArrayOutput {
+	return o
+}
+
+func (o HealthCheckTemplateTagArrayOutput) ToHealthCheckTemplateTagArrayOutputWithContext(ctx context.Context) HealthCheckTemplateTagArrayOutput {
+	return o
+}
+
+func (o HealthCheckTemplateTagArrayOutput) Index(i pulumi.IntInput) HealthCheckTemplateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HealthCheckTemplateTag {
+		return vs[0].([]HealthCheckTemplateTag)[vs[1].(int)]
+	}).(HealthCheckTemplateTagOutput)
+}
+
 type ListenerDomainExtension struct {
 	// 域名使用的服务器证书 ID 。当证书来源为 certCenter 时生效。
 	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
@@ -2892,6 +3228,342 @@ func (o GetCertificateTagArrayOutput) Index(i pulumi.IntInput) GetCertificateTag
 	}).(GetCertificateTagOutput)
 }
 
+type GetCustomizedCfgListener struct {
+	// 监听器的 ID。
+	ListenerId string `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName string `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port int `pulumi:"port"`
+	// 监听器的协议。
+	Protocol string `pulumi:"protocol"`
+}
+
+// GetCustomizedCfgListenerInput is an input type that accepts GetCustomizedCfgListenerArgs and GetCustomizedCfgListenerOutput values.
+// You can construct a concrete instance of `GetCustomizedCfgListenerInput` via:
+//
+//	GetCustomizedCfgListenerArgs{...}
+type GetCustomizedCfgListenerInput interface {
+	pulumi.Input
+
+	ToGetCustomizedCfgListenerOutput() GetCustomizedCfgListenerOutput
+	ToGetCustomizedCfgListenerOutputWithContext(context.Context) GetCustomizedCfgListenerOutput
+}
+
+type GetCustomizedCfgListenerArgs struct {
+	// 监听器的 ID。
+	ListenerId pulumi.StringInput `pulumi:"listenerId"`
+	// 监听器的名称。
+	ListenerName pulumi.StringInput `pulumi:"listenerName"`
+	// 监听器的端口。
+	Port pulumi.IntInput `pulumi:"port"`
+	// 监听器的协议。
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+}
+
+func (GetCustomizedCfgListenerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomizedCfgListener)(nil)).Elem()
+}
+
+func (i GetCustomizedCfgListenerArgs) ToGetCustomizedCfgListenerOutput() GetCustomizedCfgListenerOutput {
+	return i.ToGetCustomizedCfgListenerOutputWithContext(context.Background())
+}
+
+func (i GetCustomizedCfgListenerArgs) ToGetCustomizedCfgListenerOutputWithContext(ctx context.Context) GetCustomizedCfgListenerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomizedCfgListenerOutput)
+}
+
+// GetCustomizedCfgListenerArrayInput is an input type that accepts GetCustomizedCfgListenerArray and GetCustomizedCfgListenerArrayOutput values.
+// You can construct a concrete instance of `GetCustomizedCfgListenerArrayInput` via:
+//
+//	GetCustomizedCfgListenerArray{ GetCustomizedCfgListenerArgs{...} }
+type GetCustomizedCfgListenerArrayInput interface {
+	pulumi.Input
+
+	ToGetCustomizedCfgListenerArrayOutput() GetCustomizedCfgListenerArrayOutput
+	ToGetCustomizedCfgListenerArrayOutputWithContext(context.Context) GetCustomizedCfgListenerArrayOutput
+}
+
+type GetCustomizedCfgListenerArray []GetCustomizedCfgListenerInput
+
+func (GetCustomizedCfgListenerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomizedCfgListener)(nil)).Elem()
+}
+
+func (i GetCustomizedCfgListenerArray) ToGetCustomizedCfgListenerArrayOutput() GetCustomizedCfgListenerArrayOutput {
+	return i.ToGetCustomizedCfgListenerArrayOutputWithContext(context.Background())
+}
+
+func (i GetCustomizedCfgListenerArray) ToGetCustomizedCfgListenerArrayOutputWithContext(ctx context.Context) GetCustomizedCfgListenerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomizedCfgListenerArrayOutput)
+}
+
+type GetCustomizedCfgListenerOutput struct{ *pulumi.OutputState }
+
+func (GetCustomizedCfgListenerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomizedCfgListener)(nil)).Elem()
+}
+
+func (o GetCustomizedCfgListenerOutput) ToGetCustomizedCfgListenerOutput() GetCustomizedCfgListenerOutput {
+	return o
+}
+
+func (o GetCustomizedCfgListenerOutput) ToGetCustomizedCfgListenerOutputWithContext(ctx context.Context) GetCustomizedCfgListenerOutput {
+	return o
+}
+
+// 监听器的 ID。
+func (o GetCustomizedCfgListenerOutput) ListenerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomizedCfgListener) string { return v.ListenerId }).(pulumi.StringOutput)
+}
+
+// 监听器的名称。
+func (o GetCustomizedCfgListenerOutput) ListenerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomizedCfgListener) string { return v.ListenerName }).(pulumi.StringOutput)
+}
+
+// 监听器的端口。
+func (o GetCustomizedCfgListenerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomizedCfgListener) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// 监听器的协议。
+func (o GetCustomizedCfgListenerOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomizedCfgListener) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+type GetCustomizedCfgListenerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCustomizedCfgListenerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomizedCfgListener)(nil)).Elem()
+}
+
+func (o GetCustomizedCfgListenerArrayOutput) ToGetCustomizedCfgListenerArrayOutput() GetCustomizedCfgListenerArrayOutput {
+	return o
+}
+
+func (o GetCustomizedCfgListenerArrayOutput) ToGetCustomizedCfgListenerArrayOutputWithContext(ctx context.Context) GetCustomizedCfgListenerArrayOutput {
+	return o
+}
+
+func (o GetCustomizedCfgListenerArrayOutput) Index(i pulumi.IntInput) GetCustomizedCfgListenerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomizedCfgListener {
+		return vs[0].([]GetCustomizedCfgListener)[vs[1].(int)]
+	}).(GetCustomizedCfgListenerOutput)
+}
+
+type GetCustomizedCfgTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetCustomizedCfgTagInput is an input type that accepts GetCustomizedCfgTagArgs and GetCustomizedCfgTagOutput values.
+// You can construct a concrete instance of `GetCustomizedCfgTagInput` via:
+//
+//	GetCustomizedCfgTagArgs{...}
+type GetCustomizedCfgTagInput interface {
+	pulumi.Input
+
+	ToGetCustomizedCfgTagOutput() GetCustomizedCfgTagOutput
+	ToGetCustomizedCfgTagOutputWithContext(context.Context) GetCustomizedCfgTagOutput
+}
+
+type GetCustomizedCfgTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCustomizedCfgTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomizedCfgTag)(nil)).Elem()
+}
+
+func (i GetCustomizedCfgTagArgs) ToGetCustomizedCfgTagOutput() GetCustomizedCfgTagOutput {
+	return i.ToGetCustomizedCfgTagOutputWithContext(context.Background())
+}
+
+func (i GetCustomizedCfgTagArgs) ToGetCustomizedCfgTagOutputWithContext(ctx context.Context) GetCustomizedCfgTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomizedCfgTagOutput)
+}
+
+// GetCustomizedCfgTagArrayInput is an input type that accepts GetCustomizedCfgTagArray and GetCustomizedCfgTagArrayOutput values.
+// You can construct a concrete instance of `GetCustomizedCfgTagArrayInput` via:
+//
+//	GetCustomizedCfgTagArray{ GetCustomizedCfgTagArgs{...} }
+type GetCustomizedCfgTagArrayInput interface {
+	pulumi.Input
+
+	ToGetCustomizedCfgTagArrayOutput() GetCustomizedCfgTagArrayOutput
+	ToGetCustomizedCfgTagArrayOutputWithContext(context.Context) GetCustomizedCfgTagArrayOutput
+}
+
+type GetCustomizedCfgTagArray []GetCustomizedCfgTagInput
+
+func (GetCustomizedCfgTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomizedCfgTag)(nil)).Elem()
+}
+
+func (i GetCustomizedCfgTagArray) ToGetCustomizedCfgTagArrayOutput() GetCustomizedCfgTagArrayOutput {
+	return i.ToGetCustomizedCfgTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetCustomizedCfgTagArray) ToGetCustomizedCfgTagArrayOutputWithContext(ctx context.Context) GetCustomizedCfgTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomizedCfgTagArrayOutput)
+}
+
+type GetCustomizedCfgTagOutput struct{ *pulumi.OutputState }
+
+func (GetCustomizedCfgTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomizedCfgTag)(nil)).Elem()
+}
+
+func (o GetCustomizedCfgTagOutput) ToGetCustomizedCfgTagOutput() GetCustomizedCfgTagOutput {
+	return o
+}
+
+func (o GetCustomizedCfgTagOutput) ToGetCustomizedCfgTagOutputWithContext(ctx context.Context) GetCustomizedCfgTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetCustomizedCfgTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomizedCfgTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetCustomizedCfgTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomizedCfgTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetCustomizedCfgTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCustomizedCfgTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomizedCfgTag)(nil)).Elem()
+}
+
+func (o GetCustomizedCfgTagArrayOutput) ToGetCustomizedCfgTagArrayOutput() GetCustomizedCfgTagArrayOutput {
+	return o
+}
+
+func (o GetCustomizedCfgTagArrayOutput) ToGetCustomizedCfgTagArrayOutputWithContext(ctx context.Context) GetCustomizedCfgTagArrayOutput {
+	return o
+}
+
+func (o GetCustomizedCfgTagArrayOutput) Index(i pulumi.IntInput) GetCustomizedCfgTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomizedCfgTag {
+		return vs[0].([]GetCustomizedCfgTag)[vs[1].(int)]
+	}).(GetCustomizedCfgTagOutput)
+}
+
+type GetHealthCheckTemplateTag struct {
+	// 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value string `pulumi:"value"`
+}
+
+// GetHealthCheckTemplateTagInput is an input type that accepts GetHealthCheckTemplateTagArgs and GetHealthCheckTemplateTagOutput values.
+// You can construct a concrete instance of `GetHealthCheckTemplateTagInput` via:
+//
+//	GetHealthCheckTemplateTagArgs{...}
+type GetHealthCheckTemplateTagInput interface {
+	pulumi.Input
+
+	ToGetHealthCheckTemplateTagOutput() GetHealthCheckTemplateTagOutput
+	ToGetHealthCheckTemplateTagOutputWithContext(context.Context) GetHealthCheckTemplateTagOutput
+}
+
+type GetHealthCheckTemplateTagArgs struct {
+	// 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetHealthCheckTemplateTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (i GetHealthCheckTemplateTagArgs) ToGetHealthCheckTemplateTagOutput() GetHealthCheckTemplateTagOutput {
+	return i.ToGetHealthCheckTemplateTagOutputWithContext(context.Background())
+}
+
+func (i GetHealthCheckTemplateTagArgs) ToGetHealthCheckTemplateTagOutputWithContext(ctx context.Context) GetHealthCheckTemplateTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHealthCheckTemplateTagOutput)
+}
+
+// GetHealthCheckTemplateTagArrayInput is an input type that accepts GetHealthCheckTemplateTagArray and GetHealthCheckTemplateTagArrayOutput values.
+// You can construct a concrete instance of `GetHealthCheckTemplateTagArrayInput` via:
+//
+//	GetHealthCheckTemplateTagArray{ GetHealthCheckTemplateTagArgs{...} }
+type GetHealthCheckTemplateTagArrayInput interface {
+	pulumi.Input
+
+	ToGetHealthCheckTemplateTagArrayOutput() GetHealthCheckTemplateTagArrayOutput
+	ToGetHealthCheckTemplateTagArrayOutputWithContext(context.Context) GetHealthCheckTemplateTagArrayOutput
+}
+
+type GetHealthCheckTemplateTagArray []GetHealthCheckTemplateTagInput
+
+func (GetHealthCheckTemplateTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (i GetHealthCheckTemplateTagArray) ToGetHealthCheckTemplateTagArrayOutput() GetHealthCheckTemplateTagArrayOutput {
+	return i.ToGetHealthCheckTemplateTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetHealthCheckTemplateTagArray) ToGetHealthCheckTemplateTagArrayOutputWithContext(ctx context.Context) GetHealthCheckTemplateTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHealthCheckTemplateTagArrayOutput)
+}
+
+type GetHealthCheckTemplateTagOutput struct{ *pulumi.OutputState }
+
+func (GetHealthCheckTemplateTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (o GetHealthCheckTemplateTagOutput) ToGetHealthCheckTemplateTagOutput() GetHealthCheckTemplateTagOutput {
+	return o
+}
+
+func (o GetHealthCheckTemplateTagOutput) ToGetHealthCheckTemplateTagOutputWithContext(ctx context.Context) GetHealthCheckTemplateTagOutput {
+	return o
+}
+
+// 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+func (o GetHealthCheckTemplateTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHealthCheckTemplateTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+func (o GetHealthCheckTemplateTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHealthCheckTemplateTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetHealthCheckTemplateTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHealthCheckTemplateTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHealthCheckTemplateTag)(nil)).Elem()
+}
+
+func (o GetHealthCheckTemplateTagArrayOutput) ToGetHealthCheckTemplateTagArrayOutput() GetHealthCheckTemplateTagArrayOutput {
+	return o
+}
+
+func (o GetHealthCheckTemplateTagArrayOutput) ToGetHealthCheckTemplateTagArrayOutputWithContext(ctx context.Context) GetHealthCheckTemplateTagArrayOutput {
+	return o
+}
+
+func (o GetHealthCheckTemplateTagArrayOutput) Index(i pulumi.IntInput) GetHealthCheckTemplateTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHealthCheckTemplateTag {
+		return vs[0].([]GetHealthCheckTemplateTag)[vs[1].(int)]
+	}).(GetHealthCheckTemplateTagOutput)
+}
+
 type GetListenerDomainExtension struct {
 	// 域名使用的服务器证书 ID 。当证书来源为 certCenter 时生效。
 	CertCenterCertificateId string `pulumi:"certCenterCertificateId"`
@@ -4756,6 +5428,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AclTagArrayInput)(nil)).Elem(), AclTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagInput)(nil)).Elem(), CertificateTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateTagArrayInput)(nil)).Elem(), CertificateTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomizedCfgListenerInput)(nil)).Elem(), CustomizedCfgListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomizedCfgListenerArrayInput)(nil)).Elem(), CustomizedCfgListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomizedCfgTagInput)(nil)).Elem(), CustomizedCfgTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomizedCfgTagArrayInput)(nil)).Elem(), CustomizedCfgTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HealthCheckTemplateTagInput)(nil)).Elem(), HealthCheckTemplateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HealthCheckTemplateTagArrayInput)(nil)).Elem(), HealthCheckTemplateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerDomainExtensionInput)(nil)).Elem(), ListenerDomainExtensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerDomainExtensionArrayInput)(nil)).Elem(), ListenerDomainExtensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerServerGroupInput)(nil)).Elem(), ListenerServerGroupArgs{})
@@ -4790,6 +5468,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAclTagArrayInput)(nil)).Elem(), GetAclTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagInput)(nil)).Elem(), GetCertificateTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateTagArrayInput)(nil)).Elem(), GetCertificateTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomizedCfgListenerInput)(nil)).Elem(), GetCustomizedCfgListenerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomizedCfgListenerArrayInput)(nil)).Elem(), GetCustomizedCfgListenerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomizedCfgTagInput)(nil)).Elem(), GetCustomizedCfgTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomizedCfgTagArrayInput)(nil)).Elem(), GetCustomizedCfgTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHealthCheckTemplateTagInput)(nil)).Elem(), GetHealthCheckTemplateTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHealthCheckTemplateTagArrayInput)(nil)).Elem(), GetHealthCheckTemplateTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerDomainExtensionInput)(nil)).Elem(), GetListenerDomainExtensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerDomainExtensionArrayInput)(nil)).Elem(), GetListenerDomainExtensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerServerGroupInput)(nil)).Elem(), GetListenerServerGroupArgs{})
@@ -4825,6 +5509,12 @@ func init() {
 	pulumi.RegisterOutputType(AclTagArrayOutput{})
 	pulumi.RegisterOutputType(CertificateTagOutput{})
 	pulumi.RegisterOutputType(CertificateTagArrayOutput{})
+	pulumi.RegisterOutputType(CustomizedCfgListenerOutput{})
+	pulumi.RegisterOutputType(CustomizedCfgListenerArrayOutput{})
+	pulumi.RegisterOutputType(CustomizedCfgTagOutput{})
+	pulumi.RegisterOutputType(CustomizedCfgTagArrayOutput{})
+	pulumi.RegisterOutputType(HealthCheckTemplateTagOutput{})
+	pulumi.RegisterOutputType(HealthCheckTemplateTagArrayOutput{})
 	pulumi.RegisterOutputType(ListenerDomainExtensionOutput{})
 	pulumi.RegisterOutputType(ListenerDomainExtensionArrayOutput{})
 	pulumi.RegisterOutputType(ListenerServerGroupOutput{})
@@ -4859,6 +5549,12 @@ func init() {
 	pulumi.RegisterOutputType(GetAclTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateTagOutput{})
 	pulumi.RegisterOutputType(GetCertificateTagArrayOutput{})
+	pulumi.RegisterOutputType(GetCustomizedCfgListenerOutput{})
+	pulumi.RegisterOutputType(GetCustomizedCfgListenerArrayOutput{})
+	pulumi.RegisterOutputType(GetCustomizedCfgTagOutput{})
+	pulumi.RegisterOutputType(GetCustomizedCfgTagArrayOutput{})
+	pulumi.RegisterOutputType(GetHealthCheckTemplateTagOutput{})
+	pulumi.RegisterOutputType(GetHealthCheckTemplateTagArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerDomainExtensionOutput{})
 	pulumi.RegisterOutputType(GetListenerDomainExtensionArrayOutput{})
 	pulumi.RegisterOutputType(GetListenerServerGroupOutput{})

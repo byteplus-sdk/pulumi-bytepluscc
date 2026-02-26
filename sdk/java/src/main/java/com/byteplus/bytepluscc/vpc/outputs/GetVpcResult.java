@@ -45,6 +45,11 @@ public final class GetVpcResult {
      */
     private List<String> dnsServers;
     /**
+     * @return 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * 
+     */
+    private Boolean enableIpv6;
+    /**
      * @return Uniquely identifies the resource.
      * 
      */
@@ -177,6 +182,13 @@ public final class GetVpcResult {
      */
     public List<String> dnsServers() {
         return this.dnsServers;
+    }
+    /**
+     * @return 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * 
+     */
+    public Boolean enableIpv6() {
+        return this.enableIpv6;
     }
     /**
      * @return Uniquely identifies the resource.
@@ -320,6 +332,7 @@ public final class GetVpcResult {
         private String creationTime;
         private String description;
         private List<String> dnsServers;
+        private Boolean enableIpv6;
         private String id;
         private String ipv4GatewayId;
         private String ipv6CidrBlock;
@@ -347,6 +360,7 @@ public final class GetVpcResult {
     	      this.creationTime = defaults.creationTime;
     	      this.description = defaults.description;
     	      this.dnsServers = defaults.dnsServers;
+    	      this.enableIpv6 = defaults.enableIpv6;
     	      this.id = defaults.id;
     	      this.ipv4GatewayId = defaults.ipv4GatewayId;
     	      this.ipv6CidrBlock = defaults.ipv6CidrBlock;
@@ -420,6 +434,14 @@ public final class GetVpcResult {
         }
         public Builder dnsServers(String... dnsServers) {
             return dnsServers(List.of(dnsServers));
+        }
+        @CustomType.Setter
+        public Builder enableIpv6(Boolean enableIpv6) {
+            if (enableIpv6 == null) {
+              throw new MissingRequiredPropertyException("GetVpcResult", "enableIpv6");
+            }
+            this.enableIpv6 = enableIpv6;
+            return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -594,6 +616,7 @@ public final class GetVpcResult {
             _resultValue.creationTime = creationTime;
             _resultValue.description = description;
             _resultValue.dnsServers = dnsServers;
+            _resultValue.enableIpv6 = enableIpv6;
             _resultValue.id = id;
             _resultValue.ipv4GatewayId = ipv4GatewayId;
             _resultValue.ipv6CidrBlock = ipv6CidrBlock;

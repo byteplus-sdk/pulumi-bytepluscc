@@ -4,16 +4,28 @@
 package com.byteplus.bytepluscc.rdsmysql;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetAllowListArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetAllowListPlainArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetBackupArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetBackupPlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetDatabaseArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetDatabasePlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetDbAccountArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetDbAccountPlainArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetEndpointPlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetAllowListResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetAllowListsResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetBackupResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetBackupsResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetDatabaseResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetDatabasesResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetDbAccountResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetDbAccountsResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetEndpointsResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstancesResult;
 import com.pulumi.core.Output;
@@ -25,6 +37,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class RdsmysqlFunctions {
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args) {
+        return getAllowList(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args) {
+        return getAllowListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists() {
+        return getAllowLists(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain() {
+        return getAllowListsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args) {
+        return getAllowLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args) {
+        return getAllowListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static Output<GetBackupResult> getBackup(GetBackupArgs args) {
+        return getBackup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupResult> getBackupPlain(GetBackupPlainArgs args) {
+        return getBackupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static Output<GetBackupResult> getBackup(GetBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static Output<GetBackupResult> getBackup(GetBackupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupResult> getBackupPlain(GetBackupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getBackup:getBackup", TypeShape.of(GetBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups() {
+        return getBackups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupsResult> getBackupsPlain() {
+        return getBackupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups(InvokeArgs args) {
+        return getBackups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupsResult> getBackupsPlain(InvokeArgs args) {
+        return getBackupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static Output<GetBackupsResult> getBackups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Backup
+     * 
+     */
+    public static CompletableFuture<GetBackupsResult> getBackupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getBackups:getBackups", TypeShape.of(GetBackupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::RDSMySQL::Database
      * 
@@ -192,6 +372,90 @@ public final class RdsmysqlFunctions {
      */
     public static CompletableFuture<GetDbAccountsResult> getDbAccountsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getDbAccounts:getDbAccounts", TypeShape.of(GetDbAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args) {
+        return getEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args) {
+        return getEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints() {
+        return getEndpoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain() {
+        return getEndpointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args) {
+        return getEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(InvokeArgs args) {
+        return getEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static Output<GetEndpointsResult> getEndpoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Endpoint
+     * 
+     */
+    public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::RDSMySQL::Instance

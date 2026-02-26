@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:redis/account:Account":
+		r = &Account{}
+	case "bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress":
+		r = &EndpointPublicAddress{}
 	case "bytepluscc:redis/instance:Instance":
 		r = &Instance{}
 	default:
@@ -36,6 +40,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"redis/account",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"redis/endpointPublicAddress",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"redis/instance",

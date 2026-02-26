@@ -15,6 +15,11 @@ export type Certificate = import("./certificate").Certificate;
 export const Certificate: typeof import("./certificate").Certificate = null as any;
 utilities.lazyLoad(exports, ["Certificate"], () => require("./certificate"));
 
+export { CustomizedCfgArgs, CustomizedCfgState } from "./customizedCfg";
+export type CustomizedCfg = import("./customizedCfg").CustomizedCfg;
+export const CustomizedCfg: typeof import("./customizedCfg").CustomizedCfg = null as any;
+utilities.lazyLoad(exports, ["CustomizedCfg"], () => require("./customizedCfg"));
+
 export { GetAclArgs, GetAclResult, GetAclOutputArgs } from "./getAcl";
 export const getAcl: typeof import("./getAcl").getAcl = null as any;
 export const getAclOutput: typeof import("./getAcl").getAclOutput = null as any;
@@ -34,6 +39,26 @@ export { GetCertificatesResult } from "./getCertificates";
 export const getCertificates: typeof import("./getCertificates").getCertificates = null as any;
 export const getCertificatesOutput: typeof import("./getCertificates").getCertificatesOutput = null as any;
 utilities.lazyLoad(exports, ["getCertificates","getCertificatesOutput"], () => require("./getCertificates"));
+
+export { GetCustomizedCfgArgs, GetCustomizedCfgResult, GetCustomizedCfgOutputArgs } from "./getCustomizedCfg";
+export const getCustomizedCfg: typeof import("./getCustomizedCfg").getCustomizedCfg = null as any;
+export const getCustomizedCfgOutput: typeof import("./getCustomizedCfg").getCustomizedCfgOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomizedCfg","getCustomizedCfgOutput"], () => require("./getCustomizedCfg"));
+
+export { GetCustomizedCfgsResult } from "./getCustomizedCfgs";
+export const getCustomizedCfgs: typeof import("./getCustomizedCfgs").getCustomizedCfgs = null as any;
+export const getCustomizedCfgsOutput: typeof import("./getCustomizedCfgs").getCustomizedCfgsOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomizedCfgs","getCustomizedCfgsOutput"], () => require("./getCustomizedCfgs"));
+
+export { GetHealthCheckTemplateArgs, GetHealthCheckTemplateResult, GetHealthCheckTemplateOutputArgs } from "./getHealthCheckTemplate";
+export const getHealthCheckTemplate: typeof import("./getHealthCheckTemplate").getHealthCheckTemplate = null as any;
+export const getHealthCheckTemplateOutput: typeof import("./getHealthCheckTemplate").getHealthCheckTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getHealthCheckTemplate","getHealthCheckTemplateOutput"], () => require("./getHealthCheckTemplate"));
+
+export { GetHealthCheckTemplatesResult } from "./getHealthCheckTemplates";
+export const getHealthCheckTemplates: typeof import("./getHealthCheckTemplates").getHealthCheckTemplates = null as any;
+export const getHealthCheckTemplatesOutput: typeof import("./getHealthCheckTemplates").getHealthCheckTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getHealthCheckTemplates","getHealthCheckTemplatesOutput"], () => require("./getHealthCheckTemplates"));
 
 export { GetListenerArgs, GetListenerResult, GetListenerOutputArgs } from "./getListener";
 export const getListener: typeof import("./getListener").getListener = null as any;
@@ -65,6 +90,11 @@ export const getServerGroups: typeof import("./getServerGroups").getServerGroups
 export const getServerGroupsOutput: typeof import("./getServerGroups").getServerGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getServerGroups","getServerGroupsOutput"], () => require("./getServerGroups"));
 
+export { HealthCheckTemplateArgs, HealthCheckTemplateState } from "./healthCheckTemplate";
+export type HealthCheckTemplate = import("./healthCheckTemplate").HealthCheckTemplate;
+export const HealthCheckTemplate: typeof import("./healthCheckTemplate").HealthCheckTemplate = null as any;
+utilities.lazyLoad(exports, ["HealthCheckTemplate"], () => require("./healthCheckTemplate"));
+
 export { ListenerArgs, ListenerState } from "./listener";
 export type Listener = import("./listener").Listener;
 export const Listener: typeof import("./listener").Listener = null as any;
@@ -89,6 +119,10 @@ const _module = {
                 return new Acl(name, <any>undefined, { urn })
             case "bytepluscc:alb/certificate:Certificate":
                 return new Certificate(name, <any>undefined, { urn })
+            case "bytepluscc:alb/customizedCfg:CustomizedCfg":
+                return new CustomizedCfg(name, <any>undefined, { urn })
+            case "bytepluscc:alb/healthCheckTemplate:HealthCheckTemplate":
+                return new HealthCheckTemplate(name, <any>undefined, { urn })
             case "bytepluscc:alb/listener:Listener":
                 return new Listener(name, <any>undefined, { urn })
             case "bytepluscc:alb/loadBalancer:LoadBalancer":
@@ -102,6 +136,8 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/acl", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/certificate", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "alb/customizedCfg", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "alb/healthCheckTemplate", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/listener", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/loadBalancer", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/serverGroup", _module)

@@ -35,6 +35,26 @@ export const getTransitRouters: typeof import("./getTransitRouters").getTransitR
 export const getTransitRoutersOutput: typeof import("./getTransitRouters").getTransitRoutersOutput = null as any;
 utilities.lazyLoad(exports, ["getTransitRouters","getTransitRoutersOutput"], () => require("./getTransitRouters"));
 
+export { GetVpcAttachmentArgs, GetVpcAttachmentResult, GetVpcAttachmentOutputArgs } from "./getVpcAttachment";
+export const getVpcAttachment: typeof import("./getVpcAttachment").getVpcAttachment = null as any;
+export const getVpcAttachmentOutput: typeof import("./getVpcAttachment").getVpcAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcAttachment","getVpcAttachmentOutput"], () => require("./getVpcAttachment"));
+
+export { GetVpcAttachmentsResult } from "./getVpcAttachments";
+export const getVpcAttachments: typeof import("./getVpcAttachments").getVpcAttachments = null as any;
+export const getVpcAttachmentsOutput: typeof import("./getVpcAttachments").getVpcAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcAttachments","getVpcAttachmentsOutput"], () => require("./getVpcAttachments"));
+
+export { GetVpnAttachmentArgs, GetVpnAttachmentResult, GetVpnAttachmentOutputArgs } from "./getVpnAttachment";
+export const getVpnAttachment: typeof import("./getVpnAttachment").getVpnAttachment = null as any;
+export const getVpnAttachmentOutput: typeof import("./getVpnAttachment").getVpnAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getVpnAttachment","getVpnAttachmentOutput"], () => require("./getVpnAttachment"));
+
+export { GetVpnAttachmentsResult } from "./getVpnAttachments";
+export const getVpnAttachments: typeof import("./getVpnAttachments").getVpnAttachments = null as any;
+export const getVpnAttachmentsOutput: typeof import("./getVpnAttachments").getVpnAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getVpnAttachments","getVpnAttachmentsOutput"], () => require("./getVpnAttachments"));
+
 export { TransitRouterArgs, TransitRouterState } from "./transitRouter";
 export type TransitRouter = import("./transitRouter").TransitRouter;
 export const TransitRouter: typeof import("./transitRouter").TransitRouter = null as any;
@@ -50,6 +70,16 @@ export type TransitRouterRouteTable = import("./transitRouterRouteTable").Transi
 export const TransitRouterRouteTable: typeof import("./transitRouterRouteTable").TransitRouterRouteTable = null as any;
 utilities.lazyLoad(exports, ["TransitRouterRouteTable"], () => require("./transitRouterRouteTable"));
 
+export { VpcAttachmentArgs, VpcAttachmentState } from "./vpcAttachment";
+export type VpcAttachment = import("./vpcAttachment").VpcAttachment;
+export const VpcAttachment: typeof import("./vpcAttachment").VpcAttachment = null as any;
+utilities.lazyLoad(exports, ["VpcAttachment"], () => require("./vpcAttachment"));
+
+export { VpnAttachmentArgs, VpnAttachmentState } from "./vpnAttachment";
+export type VpnAttachment = import("./vpnAttachment").VpnAttachment;
+export const VpnAttachment: typeof import("./vpnAttachment").VpnAttachment = null as any;
+utilities.lazyLoad(exports, ["VpnAttachment"], () => require("./vpnAttachment"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -61,6 +91,10 @@ const _module = {
                 return new TransitRouterRouteEntry(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable":
                 return new TransitRouterRouteTable(name, <any>undefined, { urn })
+            case "bytepluscc:transitrouter/vpcAttachment:VpcAttachment":
+                return new VpcAttachment(name, <any>undefined, { urn })
+            case "bytepluscc:transitrouter/vpnAttachment:VpnAttachment":
+                return new VpnAttachment(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -69,3 +103,5 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouter", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteEntry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteTable", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/vpcAttachment", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/vpnAttachment", _module)

@@ -16,11 +16,65 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'CustomerGatewayTagArgs',
+    'CustomerGatewayTagArgsDict',
     'VpnGatewayTagArgs',
     'VpnGatewayTagArgsDict',
 ]
 
 MYPY = False
+
+if not MYPY:
+    class CustomerGatewayTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。
+        """
+elif False:
+    CustomerGatewayTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CustomerGatewayTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
 
 if not MYPY:
     class VpnGatewayTagArgsDict(TypedDict):

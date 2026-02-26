@@ -6,12 +6,21 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .allow_list import *
+from .backup import *
 from .database import *
 from .db_account import *
+from .endpoint import *
+from .get_allow_list import *
+from .get_allow_lists import *
+from .get_backup import *
+from .get_backups import *
 from .get_database import *
 from .get_databases import *
 from .get_db_account import *
 from .get_db_accounts import *
+from .get_endpoint import *
+from .get_endpoints import *
 from .get_instance import *
 from .get_instances import *
 from .instance import *
