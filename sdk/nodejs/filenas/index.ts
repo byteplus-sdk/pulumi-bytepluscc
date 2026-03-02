@@ -15,6 +15,16 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetMountPointArgs, GetMountPointResult, GetMountPointOutputArgs } from "./getMountPoint";
+export const getMountPoint: typeof import("./getMountPoint").getMountPoint = null as any;
+export const getMountPointOutput: typeof import("./getMountPoint").getMountPointOutput = null as any;
+utilities.lazyLoad(exports, ["getMountPoint","getMountPointOutput"], () => require("./getMountPoint"));
+
+export { GetMountPointsResult } from "./getMountPoints";
+export const getMountPoints: typeof import("./getMountPoints").getMountPoints = null as any;
+export const getMountPointsOutput: typeof import("./getMountPoints").getMountPointsOutput = null as any;
+utilities.lazyLoad(exports, ["getMountPoints","getMountPointsOutput"], () => require("./getMountPoints"));
+
 export { GetSnapshotArgs, GetSnapshotResult, GetSnapshotOutputArgs } from "./getSnapshot";
 export const getSnapshot: typeof import("./getSnapshot").getSnapshot = null as any;
 export const getSnapshotOutput: typeof import("./getSnapshot").getSnapshotOutput = null as any;
@@ -30,6 +40,11 @@ export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
 
+export { MountPointArgs, MountPointState } from "./mountPoint";
+export type MountPoint = import("./mountPoint").MountPoint;
+export const MountPoint: typeof import("./mountPoint").MountPoint = null as any;
+utilities.lazyLoad(exports, ["MountPoint"], () => require("./mountPoint"));
+
 export { SnapshotArgs, SnapshotState } from "./snapshot";
 export type Snapshot = import("./snapshot").Snapshot;
 export const Snapshot: typeof import("./snapshot").Snapshot = null as any;
@@ -42,6 +57,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:filenas/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:filenas/mountPoint:MountPoint":
+                return new MountPoint(name, <any>undefined, { urn })
             case "bytepluscc:filenas/snapshot:Snapshot":
                 return new Snapshot(name, <any>undefined, { urn })
             default:
@@ -50,4 +67,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "filenas/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "filenas/mountPoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "filenas/snapshot", _module)

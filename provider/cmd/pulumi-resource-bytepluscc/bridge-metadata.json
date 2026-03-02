@@ -450,6 +450,23 @@
                     }
                 }
             },
+            "bytepluscc_clb_nlb_security_policy": {
+                "current": "bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy",
+                "fields": {
+                    "ciphers": {
+                        "maxItemsOne": false
+                    },
+                    "related_listener_ids": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "tls_versions": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_nlb_server_group": {
                 "current": "bytepluscc:clb/nlbServerGroup:NlbServerGroup",
                 "fields": {
@@ -482,6 +499,25 @@
                         "maxItemsOne": false
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudidentity_group": {
+                "current": "bytepluscc:cloudidentity/group:Group",
+                "fields": {
+                    "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudidentity_permission_set": {
+                "current": "bytepluscc:cloudidentity/permissionSet:PermissionSet",
+                "fields": {
+                    "permission_policies": {
+                        "maxItemsOne": false
+                    },
+                    "status_notifications": {
                         "maxItemsOne": false
                     }
                 }
@@ -833,6 +869,21 @@
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_filenas_mount_point": {
+                "current": "bytepluscc:filenas/mountPoint:MountPoint",
+                "fields": {
+                    "clients": {
+                        "maxItemsOne": false
+                    },
+                    "permission_group": {
+                        "fields": {
+                            "mount_points": {
+                                "maxItemsOne": false
+                            }
+                        }
                     }
                 }
             },
@@ -1268,6 +1319,14 @@
                                 }
                             }
                         }
+                    }
+                }
+            },
+            "bytepluscc_rdspostgresql_db_account": {
+                "current": "bytepluscc:rdspostgresql/dbAccount:DbAccount",
+                "fields": {
+                    "not_allow_privileges": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -2558,6 +2617,31 @@
                     }
                 }
             },
+            "bytepluscc_clb_nlb_security_policies": {
+                "current": "bytepluscc:clb/getNlbSecurityPolicies:getNlbSecurityPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_clb_nlb_security_policy": {
+                "current": "bytepluscc:clb/getNlbSecurityPolicy:getNlbSecurityPolicy",
+                "fields": {
+                    "ciphers": {
+                        "maxItemsOne": false
+                    },
+                    "related_listener_ids": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    },
+                    "tls_versions": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_nlb_server_group": {
                 "current": "bytepluscc:clb/getNlbServerGroup:getNlbServerGroup",
                 "fields": {
@@ -2620,6 +2704,41 @@
             },
             "bytepluscc_clb_server_groups": {
                 "current": "bytepluscc:clb/getServerGroups:getServerGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudidentity_group": {
+                "current": "bytepluscc:cloudidentity/getGroup:getGroup",
+                "fields": {
+                    "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudidentity_groups": {
+                "current": "bytepluscc:cloudidentity/getGroups:getGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudidentity_permission_set": {
+                "current": "bytepluscc:cloudidentity/getPermissionSet:getPermissionSet",
+                "fields": {
+                    "permission_policies": {
+                        "maxItemsOne": false
+                    },
+                    "status_notifications": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudidentity_permission_sets": {
+                "current": "bytepluscc:cloudidentity/getPermissionSets:getPermissionSets",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -3109,6 +3228,29 @@
             },
             "bytepluscc_filenas_instances": {
                 "current": "bytepluscc:filenas/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_filenas_mount_point": {
+                "current": "bytepluscc:filenas/getMountPoint:getMountPoint",
+                "fields": {
+                    "clients": {
+                        "maxItemsOne": false
+                    },
+                    "permission_group": {
+                        "fields": {
+                            "mount_points": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_filenas_mount_points": {
+                "current": "bytepluscc:filenas/getMountPoints:getMountPoints",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -3776,6 +3918,22 @@
             },
             "bytepluscc_rdspostgresql_allow_lists": {
                 "current": "bytepluscc:rdspostgresql/getAllowLists:getAllowLists",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdspostgresql_db_account": {
+                "current": "bytepluscc:rdspostgresql/getDbAccount:getDbAccount",
+                "fields": {
+                    "not_allow_privileges": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdspostgresql_db_accounts": {
+                "current": "bytepluscc:rdspostgresql/getDbAccounts:getDbAccounts",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

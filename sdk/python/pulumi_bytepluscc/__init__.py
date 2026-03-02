@@ -318,6 +318,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "clb/nlbSecurityPolicy",
+  "fqn": "pulumi_bytepluscc.clb",
+  "classes": {
+   "bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy": "NlbSecurityPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/nlbServerGroup",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -338,6 +346,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
    "bytepluscc:clb/serverGroup:ServerGroup": "ServerGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cloudidentity/group",
+  "fqn": "pulumi_bytepluscc.cloudidentity",
+  "classes": {
+   "bytepluscc:cloudidentity/group:Group": "Group"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cloudidentity/permissionSet",
+  "fqn": "pulumi_bytepluscc.cloudidentity",
+  "classes": {
+   "bytepluscc:cloudidentity/permissionSet:PermissionSet": "PermissionSet"
   }
  },
  {
@@ -474,6 +498,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.filenas",
   "classes": {
    "bytepluscc:filenas/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "filenas/mountPoint",
+  "fqn": "pulumi_bytepluscc.filenas",
+  "classes": {
+   "bytepluscc:filenas/mountPoint:MountPoint": "MountPoint"
   }
  },
  {
@@ -706,6 +738,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.rdspostgresql",
   "classes": {
    "bytepluscc:rdspostgresql/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdspostgresql/dbAccount",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/dbAccount:DbAccount": "DbAccount"
   }
  },
  {

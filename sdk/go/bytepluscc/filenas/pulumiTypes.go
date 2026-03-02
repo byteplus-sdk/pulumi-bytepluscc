@@ -421,6 +421,483 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type MountPointClient struct {
+	// 客户端的私有网络 IP 地址。
+	Ip *string `pulumi:"ip"`
+	// 挂载协议版本号。取值：NFSv3。
+	ProtocolVersion *string `pulumi:"protocolVersion"`
+	// 私有网络名称。
+	VpcName *string `pulumi:"vpcName"`
+}
+
+// MountPointClientInput is an input type that accepts MountPointClientArgs and MountPointClientOutput values.
+// You can construct a concrete instance of `MountPointClientInput` via:
+//
+//	MountPointClientArgs{...}
+type MountPointClientInput interface {
+	pulumi.Input
+
+	ToMountPointClientOutput() MountPointClientOutput
+	ToMountPointClientOutputWithContext(context.Context) MountPointClientOutput
+}
+
+type MountPointClientArgs struct {
+	// 客户端的私有网络 IP 地址。
+	Ip pulumi.StringPtrInput `pulumi:"ip"`
+	// 挂载协议版本号。取值：NFSv3。
+	ProtocolVersion pulumi.StringPtrInput `pulumi:"protocolVersion"`
+	// 私有网络名称。
+	VpcName pulumi.StringPtrInput `pulumi:"vpcName"`
+}
+
+func (MountPointClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountPointClient)(nil)).Elem()
+}
+
+func (i MountPointClientArgs) ToMountPointClientOutput() MountPointClientOutput {
+	return i.ToMountPointClientOutputWithContext(context.Background())
+}
+
+func (i MountPointClientArgs) ToMountPointClientOutputWithContext(ctx context.Context) MountPointClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountPointClientOutput)
+}
+
+// MountPointClientArrayInput is an input type that accepts MountPointClientArray and MountPointClientArrayOutput values.
+// You can construct a concrete instance of `MountPointClientArrayInput` via:
+//
+//	MountPointClientArray{ MountPointClientArgs{...} }
+type MountPointClientArrayInput interface {
+	pulumi.Input
+
+	ToMountPointClientArrayOutput() MountPointClientArrayOutput
+	ToMountPointClientArrayOutputWithContext(context.Context) MountPointClientArrayOutput
+}
+
+type MountPointClientArray []MountPointClientInput
+
+func (MountPointClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountPointClient)(nil)).Elem()
+}
+
+func (i MountPointClientArray) ToMountPointClientArrayOutput() MountPointClientArrayOutput {
+	return i.ToMountPointClientArrayOutputWithContext(context.Background())
+}
+
+func (i MountPointClientArray) ToMountPointClientArrayOutputWithContext(ctx context.Context) MountPointClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountPointClientArrayOutput)
+}
+
+type MountPointClientOutput struct{ *pulumi.OutputState }
+
+func (MountPointClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountPointClient)(nil)).Elem()
+}
+
+func (o MountPointClientOutput) ToMountPointClientOutput() MountPointClientOutput {
+	return o
+}
+
+func (o MountPointClientOutput) ToMountPointClientOutputWithContext(ctx context.Context) MountPointClientOutput {
+	return o
+}
+
+// 客户端的私有网络 IP 地址。
+func (o MountPointClientOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointClient) *string { return v.Ip }).(pulumi.StringPtrOutput)
+}
+
+// 挂载协议版本号。取值：NFSv3。
+func (o MountPointClientOutput) ProtocolVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointClient) *string { return v.ProtocolVersion }).(pulumi.StringPtrOutput)
+}
+
+// 私有网络名称。
+func (o MountPointClientOutput) VpcName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointClient) *string { return v.VpcName }).(pulumi.StringPtrOutput)
+}
+
+type MountPointClientArrayOutput struct{ *pulumi.OutputState }
+
+func (MountPointClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountPointClient)(nil)).Elem()
+}
+
+func (o MountPointClientArrayOutput) ToMountPointClientArrayOutput() MountPointClientArrayOutput {
+	return o
+}
+
+func (o MountPointClientArrayOutput) ToMountPointClientArrayOutputWithContext(ctx context.Context) MountPointClientArrayOutput {
+	return o
+}
+
+func (o MountPointClientArrayOutput) Index(i pulumi.IntInput) MountPointClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MountPointClient {
+		return vs[0].([]MountPointClient)[vs[1].(int)]
+	}).(MountPointClientOutput)
+}
+
+type MountPointPermissionGroup struct {
+	// 权限组创建时间。
+	CreateTime *string `pulumi:"createTime"`
+	// 权限组描述信息。
+	Description *string `pulumi:"description"`
+	// 关联该权限组的文件系统数量。
+	FileSystemCount *int `pulumi:"fileSystemCount"`
+	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	FileSystemType *string                               `pulumi:"fileSystemType"`
+	MountPoints    []MountPointPermissionGroupMountPoint `pulumi:"mountPoints"`
+	// 权限组名称。
+	PermissionGroupName *string `pulumi:"permissionGroupName"`
+	// 权限规则数量。
+	PermissionRuleCount *int `pulumi:"permissionRuleCount"`
+}
+
+// MountPointPermissionGroupInput is an input type that accepts MountPointPermissionGroupArgs and MountPointPermissionGroupOutput values.
+// You can construct a concrete instance of `MountPointPermissionGroupInput` via:
+//
+//	MountPointPermissionGroupArgs{...}
+type MountPointPermissionGroupInput interface {
+	pulumi.Input
+
+	ToMountPointPermissionGroupOutput() MountPointPermissionGroupOutput
+	ToMountPointPermissionGroupOutputWithContext(context.Context) MountPointPermissionGroupOutput
+}
+
+type MountPointPermissionGroupArgs struct {
+	// 权限组创建时间。
+	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
+	// 权限组描述信息。
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 关联该权限组的文件系统数量。
+	FileSystemCount pulumi.IntPtrInput `pulumi:"fileSystemCount"`
+	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	FileSystemType pulumi.StringPtrInput                         `pulumi:"fileSystemType"`
+	MountPoints    MountPointPermissionGroupMountPointArrayInput `pulumi:"mountPoints"`
+	// 权限组名称。
+	PermissionGroupName pulumi.StringPtrInput `pulumi:"permissionGroupName"`
+	// 权限规则数量。
+	PermissionRuleCount pulumi.IntPtrInput `pulumi:"permissionRuleCount"`
+}
+
+func (MountPointPermissionGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountPointPermissionGroup)(nil)).Elem()
+}
+
+func (i MountPointPermissionGroupArgs) ToMountPointPermissionGroupOutput() MountPointPermissionGroupOutput {
+	return i.ToMountPointPermissionGroupOutputWithContext(context.Background())
+}
+
+func (i MountPointPermissionGroupArgs) ToMountPointPermissionGroupOutputWithContext(ctx context.Context) MountPointPermissionGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountPointPermissionGroupOutput)
+}
+
+func (i MountPointPermissionGroupArgs) ToMountPointPermissionGroupPtrOutput() MountPointPermissionGroupPtrOutput {
+	return i.ToMountPointPermissionGroupPtrOutputWithContext(context.Background())
+}
+
+func (i MountPointPermissionGroupArgs) ToMountPointPermissionGroupPtrOutputWithContext(ctx context.Context) MountPointPermissionGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountPointPermissionGroupOutput).ToMountPointPermissionGroupPtrOutputWithContext(ctx)
+}
+
+// MountPointPermissionGroupPtrInput is an input type that accepts MountPointPermissionGroupArgs, MountPointPermissionGroupPtr and MountPointPermissionGroupPtrOutput values.
+// You can construct a concrete instance of `MountPointPermissionGroupPtrInput` via:
+//
+//	        MountPointPermissionGroupArgs{...}
+//
+//	or:
+//
+//	        nil
+type MountPointPermissionGroupPtrInput interface {
+	pulumi.Input
+
+	ToMountPointPermissionGroupPtrOutput() MountPointPermissionGroupPtrOutput
+	ToMountPointPermissionGroupPtrOutputWithContext(context.Context) MountPointPermissionGroupPtrOutput
+}
+
+type mountPointPermissionGroupPtrType MountPointPermissionGroupArgs
+
+func MountPointPermissionGroupPtr(v *MountPointPermissionGroupArgs) MountPointPermissionGroupPtrInput {
+	return (*mountPointPermissionGroupPtrType)(v)
+}
+
+func (*mountPointPermissionGroupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MountPointPermissionGroup)(nil)).Elem()
+}
+
+func (i *mountPointPermissionGroupPtrType) ToMountPointPermissionGroupPtrOutput() MountPointPermissionGroupPtrOutput {
+	return i.ToMountPointPermissionGroupPtrOutputWithContext(context.Background())
+}
+
+func (i *mountPointPermissionGroupPtrType) ToMountPointPermissionGroupPtrOutputWithContext(ctx context.Context) MountPointPermissionGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountPointPermissionGroupPtrOutput)
+}
+
+type MountPointPermissionGroupOutput struct{ *pulumi.OutputState }
+
+func (MountPointPermissionGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountPointPermissionGroup)(nil)).Elem()
+}
+
+func (o MountPointPermissionGroupOutput) ToMountPointPermissionGroupOutput() MountPointPermissionGroupOutput {
+	return o
+}
+
+func (o MountPointPermissionGroupOutput) ToMountPointPermissionGroupOutputWithContext(ctx context.Context) MountPointPermissionGroupOutput {
+	return o
+}
+
+func (o MountPointPermissionGroupOutput) ToMountPointPermissionGroupPtrOutput() MountPointPermissionGroupPtrOutput {
+	return o.ToMountPointPermissionGroupPtrOutputWithContext(context.Background())
+}
+
+func (o MountPointPermissionGroupOutput) ToMountPointPermissionGroupPtrOutputWithContext(ctx context.Context) MountPointPermissionGroupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MountPointPermissionGroup) *MountPointPermissionGroup {
+		return &v
+	}).(MountPointPermissionGroupPtrOutput)
+}
+
+// 权限组创建时间。
+func (o MountPointPermissionGroupOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
+}
+
+// 权限组描述信息。
+func (o MountPointPermissionGroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 关联该权限组的文件系统数量。
+func (o MountPointPermissionGroupOutput) FileSystemCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroup) *int { return v.FileSystemCount }).(pulumi.IntPtrOutput)
+}
+
+// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+func (o MountPointPermissionGroupOutput) FileSystemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.FileSystemType }).(pulumi.StringPtrOutput)
+}
+
+func (o MountPointPermissionGroupOutput) MountPoints() MountPointPermissionGroupMountPointArrayOutput {
+	return o.ApplyT(func(v MountPointPermissionGroup) []MountPointPermissionGroupMountPoint { return v.MountPoints }).(MountPointPermissionGroupMountPointArrayOutput)
+}
+
+// 权限组名称。
+func (o MountPointPermissionGroupOutput) PermissionGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroup) *string { return v.PermissionGroupName }).(pulumi.StringPtrOutput)
+}
+
+// 权限规则数量。
+func (o MountPointPermissionGroupOutput) PermissionRuleCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroup) *int { return v.PermissionRuleCount }).(pulumi.IntPtrOutput)
+}
+
+type MountPointPermissionGroupPtrOutput struct{ *pulumi.OutputState }
+
+func (MountPointPermissionGroupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MountPointPermissionGroup)(nil)).Elem()
+}
+
+func (o MountPointPermissionGroupPtrOutput) ToMountPointPermissionGroupPtrOutput() MountPointPermissionGroupPtrOutput {
+	return o
+}
+
+func (o MountPointPermissionGroupPtrOutput) ToMountPointPermissionGroupPtrOutputWithContext(ctx context.Context) MountPointPermissionGroupPtrOutput {
+	return o
+}
+
+func (o MountPointPermissionGroupPtrOutput) Elem() MountPointPermissionGroupOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) MountPointPermissionGroup {
+		if v != nil {
+			return *v
+		}
+		var ret MountPointPermissionGroup
+		return ret
+	}).(MountPointPermissionGroupOutput)
+}
+
+// 权限组创建时间。
+func (o MountPointPermissionGroupPtrOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreateTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 权限组描述信息。
+func (o MountPointPermissionGroupPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// 关联该权限组的文件系统数量。
+func (o MountPointPermissionGroupPtrOutput) FileSystemCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FileSystemCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+func (o MountPointPermissionGroupPtrOutput) FileSystemType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FileSystemType
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MountPointPermissionGroupPtrOutput) MountPoints() MountPointPermissionGroupMountPointArrayOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) []MountPointPermissionGroupMountPoint {
+		if v == nil {
+			return nil
+		}
+		return v.MountPoints
+	}).(MountPointPermissionGroupMountPointArrayOutput)
+}
+
+// 权限组名称。
+func (o MountPointPermissionGroupPtrOutput) PermissionGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PermissionGroupName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 权限规则数量。
+func (o MountPointPermissionGroupPtrOutput) PermissionRuleCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MountPointPermissionGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PermissionRuleCount
+	}).(pulumi.IntPtrOutput)
+}
+
+type MountPointPermissionGroupMountPoint struct {
+	// 文件系统 ID。
+	FileSystemId *string `pulumi:"fileSystemId"`
+	// 挂载点 ID。
+	MountPointId *string `pulumi:"mountPointId"`
+	// 挂载点名称。
+	MountPointName *string `pulumi:"mountPointName"`
+}
+
+// MountPointPermissionGroupMountPointInput is an input type that accepts MountPointPermissionGroupMountPointArgs and MountPointPermissionGroupMountPointOutput values.
+// You can construct a concrete instance of `MountPointPermissionGroupMountPointInput` via:
+//
+//	MountPointPermissionGroupMountPointArgs{...}
+type MountPointPermissionGroupMountPointInput interface {
+	pulumi.Input
+
+	ToMountPointPermissionGroupMountPointOutput() MountPointPermissionGroupMountPointOutput
+	ToMountPointPermissionGroupMountPointOutputWithContext(context.Context) MountPointPermissionGroupMountPointOutput
+}
+
+type MountPointPermissionGroupMountPointArgs struct {
+	// 文件系统 ID。
+	FileSystemId pulumi.StringPtrInput `pulumi:"fileSystemId"`
+	// 挂载点 ID。
+	MountPointId pulumi.StringPtrInput `pulumi:"mountPointId"`
+	// 挂载点名称。
+	MountPointName pulumi.StringPtrInput `pulumi:"mountPointName"`
+}
+
+func (MountPointPermissionGroupMountPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (i MountPointPermissionGroupMountPointArgs) ToMountPointPermissionGroupMountPointOutput() MountPointPermissionGroupMountPointOutput {
+	return i.ToMountPointPermissionGroupMountPointOutputWithContext(context.Background())
+}
+
+func (i MountPointPermissionGroupMountPointArgs) ToMountPointPermissionGroupMountPointOutputWithContext(ctx context.Context) MountPointPermissionGroupMountPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountPointPermissionGroupMountPointOutput)
+}
+
+// MountPointPermissionGroupMountPointArrayInput is an input type that accepts MountPointPermissionGroupMountPointArray and MountPointPermissionGroupMountPointArrayOutput values.
+// You can construct a concrete instance of `MountPointPermissionGroupMountPointArrayInput` via:
+//
+//	MountPointPermissionGroupMountPointArray{ MountPointPermissionGroupMountPointArgs{...} }
+type MountPointPermissionGroupMountPointArrayInput interface {
+	pulumi.Input
+
+	ToMountPointPermissionGroupMountPointArrayOutput() MountPointPermissionGroupMountPointArrayOutput
+	ToMountPointPermissionGroupMountPointArrayOutputWithContext(context.Context) MountPointPermissionGroupMountPointArrayOutput
+}
+
+type MountPointPermissionGroupMountPointArray []MountPointPermissionGroupMountPointInput
+
+func (MountPointPermissionGroupMountPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (i MountPointPermissionGroupMountPointArray) ToMountPointPermissionGroupMountPointArrayOutput() MountPointPermissionGroupMountPointArrayOutput {
+	return i.ToMountPointPermissionGroupMountPointArrayOutputWithContext(context.Background())
+}
+
+func (i MountPointPermissionGroupMountPointArray) ToMountPointPermissionGroupMountPointArrayOutputWithContext(ctx context.Context) MountPointPermissionGroupMountPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MountPointPermissionGroupMountPointArrayOutput)
+}
+
+type MountPointPermissionGroupMountPointOutput struct{ *pulumi.OutputState }
+
+func (MountPointPermissionGroupMountPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (o MountPointPermissionGroupMountPointOutput) ToMountPointPermissionGroupMountPointOutput() MountPointPermissionGroupMountPointOutput {
+	return o
+}
+
+func (o MountPointPermissionGroupMountPointOutput) ToMountPointPermissionGroupMountPointOutputWithContext(ctx context.Context) MountPointPermissionGroupMountPointOutput {
+	return o
+}
+
+// 文件系统 ID。
+func (o MountPointPermissionGroupMountPointOutput) FileSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroupMountPoint) *string { return v.FileSystemId }).(pulumi.StringPtrOutput)
+}
+
+// 挂载点 ID。
+func (o MountPointPermissionGroupMountPointOutput) MountPointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroupMountPoint) *string { return v.MountPointId }).(pulumi.StringPtrOutput)
+}
+
+// 挂载点名称。
+func (o MountPointPermissionGroupMountPointOutput) MountPointName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MountPointPermissionGroupMountPoint) *string { return v.MountPointName }).(pulumi.StringPtrOutput)
+}
+
+type MountPointPermissionGroupMountPointArrayOutput struct{ *pulumi.OutputState }
+
+func (MountPointPermissionGroupMountPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (o MountPointPermissionGroupMountPointArrayOutput) ToMountPointPermissionGroupMountPointArrayOutput() MountPointPermissionGroupMountPointArrayOutput {
+	return o
+}
+
+func (o MountPointPermissionGroupMountPointArrayOutput) ToMountPointPermissionGroupMountPointArrayOutputWithContext(ctx context.Context) MountPointPermissionGroupMountPointArrayOutput {
+	return o
+}
+
+func (o MountPointPermissionGroupMountPointArrayOutput) Index(i pulumi.IntInput) MountPointPermissionGroupMountPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MountPointPermissionGroupMountPoint {
+		return vs[0].([]MountPointPermissionGroupMountPoint)[vs[1].(int)]
+	}).(MountPointPermissionGroupMountPointOutput)
+}
+
 type GetInstanceCachePerformance struct {
 	// 预配置带宽，用于增加文件系统带宽。
 	CacheBandwidth int `pulumi:"cacheBandwidth"`
@@ -649,6 +1126,342 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 	}).(GetInstanceTagOutput)
 }
 
+type GetMountPointClient struct {
+	// 客户端的私有网络 IP 地址。
+	Ip string `pulumi:"ip"`
+	// 挂载协议版本号。取值：NFSv3。
+	ProtocolVersion string `pulumi:"protocolVersion"`
+	// 私有网络名称。
+	VpcName string `pulumi:"vpcName"`
+}
+
+// GetMountPointClientInput is an input type that accepts GetMountPointClientArgs and GetMountPointClientOutput values.
+// You can construct a concrete instance of `GetMountPointClientInput` via:
+//
+//	GetMountPointClientArgs{...}
+type GetMountPointClientInput interface {
+	pulumi.Input
+
+	ToGetMountPointClientOutput() GetMountPointClientOutput
+	ToGetMountPointClientOutputWithContext(context.Context) GetMountPointClientOutput
+}
+
+type GetMountPointClientArgs struct {
+	// 客户端的私有网络 IP 地址。
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// 挂载协议版本号。取值：NFSv3。
+	ProtocolVersion pulumi.StringInput `pulumi:"protocolVersion"`
+	// 私有网络名称。
+	VpcName pulumi.StringInput `pulumi:"vpcName"`
+}
+
+func (GetMountPointClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountPointClient)(nil)).Elem()
+}
+
+func (i GetMountPointClientArgs) ToGetMountPointClientOutput() GetMountPointClientOutput {
+	return i.ToGetMountPointClientOutputWithContext(context.Background())
+}
+
+func (i GetMountPointClientArgs) ToGetMountPointClientOutputWithContext(ctx context.Context) GetMountPointClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountPointClientOutput)
+}
+
+// GetMountPointClientArrayInput is an input type that accepts GetMountPointClientArray and GetMountPointClientArrayOutput values.
+// You can construct a concrete instance of `GetMountPointClientArrayInput` via:
+//
+//	GetMountPointClientArray{ GetMountPointClientArgs{...} }
+type GetMountPointClientArrayInput interface {
+	pulumi.Input
+
+	ToGetMountPointClientArrayOutput() GetMountPointClientArrayOutput
+	ToGetMountPointClientArrayOutputWithContext(context.Context) GetMountPointClientArrayOutput
+}
+
+type GetMountPointClientArray []GetMountPointClientInput
+
+func (GetMountPointClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountPointClient)(nil)).Elem()
+}
+
+func (i GetMountPointClientArray) ToGetMountPointClientArrayOutput() GetMountPointClientArrayOutput {
+	return i.ToGetMountPointClientArrayOutputWithContext(context.Background())
+}
+
+func (i GetMountPointClientArray) ToGetMountPointClientArrayOutputWithContext(ctx context.Context) GetMountPointClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountPointClientArrayOutput)
+}
+
+type GetMountPointClientOutput struct{ *pulumi.OutputState }
+
+func (GetMountPointClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountPointClient)(nil)).Elem()
+}
+
+func (o GetMountPointClientOutput) ToGetMountPointClientOutput() GetMountPointClientOutput {
+	return o
+}
+
+func (o GetMountPointClientOutput) ToGetMountPointClientOutputWithContext(ctx context.Context) GetMountPointClientOutput {
+	return o
+}
+
+// 客户端的私有网络 IP 地址。
+func (o GetMountPointClientOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointClient) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// 挂载协议版本号。取值：NFSv3。
+func (o GetMountPointClientOutput) ProtocolVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointClient) string { return v.ProtocolVersion }).(pulumi.StringOutput)
+}
+
+// 私有网络名称。
+func (o GetMountPointClientOutput) VpcName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointClient) string { return v.VpcName }).(pulumi.StringOutput)
+}
+
+type GetMountPointClientArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMountPointClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountPointClient)(nil)).Elem()
+}
+
+func (o GetMountPointClientArrayOutput) ToGetMountPointClientArrayOutput() GetMountPointClientArrayOutput {
+	return o
+}
+
+func (o GetMountPointClientArrayOutput) ToGetMountPointClientArrayOutputWithContext(ctx context.Context) GetMountPointClientArrayOutput {
+	return o
+}
+
+func (o GetMountPointClientArrayOutput) Index(i pulumi.IntInput) GetMountPointClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountPointClient {
+		return vs[0].([]GetMountPointClient)[vs[1].(int)]
+	}).(GetMountPointClientOutput)
+}
+
+type GetMountPointPermissionGroup struct {
+	// 权限组创建时间。
+	CreateTime string `pulumi:"createTime"`
+	// 权限组描述信息。
+	Description string `pulumi:"description"`
+	// 关联该权限组的文件系统数量。
+	FileSystemCount int `pulumi:"fileSystemCount"`
+	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	FileSystemType string `pulumi:"fileSystemType"`
+	// 使用该权限组的挂载点信息。
+	MountPoints []GetMountPointPermissionGroupMountPoint `pulumi:"mountPoints"`
+	// 权限组名称。
+	PermissionGroupName string `pulumi:"permissionGroupName"`
+	// 权限规则数量。
+	PermissionRuleCount int `pulumi:"permissionRuleCount"`
+}
+
+// GetMountPointPermissionGroupInput is an input type that accepts GetMountPointPermissionGroupArgs and GetMountPointPermissionGroupOutput values.
+// You can construct a concrete instance of `GetMountPointPermissionGroupInput` via:
+//
+//	GetMountPointPermissionGroupArgs{...}
+type GetMountPointPermissionGroupInput interface {
+	pulumi.Input
+
+	ToGetMountPointPermissionGroupOutput() GetMountPointPermissionGroupOutput
+	ToGetMountPointPermissionGroupOutputWithContext(context.Context) GetMountPointPermissionGroupOutput
+}
+
+type GetMountPointPermissionGroupArgs struct {
+	// 权限组创建时间。
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// 权限组描述信息。
+	Description pulumi.StringInput `pulumi:"description"`
+	// 关联该权限组的文件系统数量。
+	FileSystemCount pulumi.IntInput `pulumi:"fileSystemCount"`
+	// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+	FileSystemType pulumi.StringInput `pulumi:"fileSystemType"`
+	// 使用该权限组的挂载点信息。
+	MountPoints GetMountPointPermissionGroupMountPointArrayInput `pulumi:"mountPoints"`
+	// 权限组名称。
+	PermissionGroupName pulumi.StringInput `pulumi:"permissionGroupName"`
+	// 权限规则数量。
+	PermissionRuleCount pulumi.IntInput `pulumi:"permissionRuleCount"`
+}
+
+func (GetMountPointPermissionGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountPointPermissionGroup)(nil)).Elem()
+}
+
+func (i GetMountPointPermissionGroupArgs) ToGetMountPointPermissionGroupOutput() GetMountPointPermissionGroupOutput {
+	return i.ToGetMountPointPermissionGroupOutputWithContext(context.Background())
+}
+
+func (i GetMountPointPermissionGroupArgs) ToGetMountPointPermissionGroupOutputWithContext(ctx context.Context) GetMountPointPermissionGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountPointPermissionGroupOutput)
+}
+
+type GetMountPointPermissionGroupOutput struct{ *pulumi.OutputState }
+
+func (GetMountPointPermissionGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountPointPermissionGroup)(nil)).Elem()
+}
+
+func (o GetMountPointPermissionGroupOutput) ToGetMountPointPermissionGroupOutput() GetMountPointPermissionGroupOutput {
+	return o
+}
+
+func (o GetMountPointPermissionGroupOutput) ToGetMountPointPermissionGroupOutputWithContext(ctx context.Context) GetMountPointPermissionGroupOutput {
+	return o
+}
+
+// 权限组创建时间。
+func (o GetMountPointPermissionGroupOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// 权限组描述信息。
+func (o GetMountPointPermissionGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 关联该权限组的文件系统数量。
+func (o GetMountPointPermissionGroupOutput) FileSystemCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroup) int { return v.FileSystemCount }).(pulumi.IntOutput)
+}
+
+// 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+func (o GetMountPointPermissionGroupOutput) FileSystemType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.FileSystemType }).(pulumi.StringOutput)
+}
+
+// 使用该权限组的挂载点信息。
+func (o GetMountPointPermissionGroupOutput) MountPoints() GetMountPointPermissionGroupMountPointArrayOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroup) []GetMountPointPermissionGroupMountPoint { return v.MountPoints }).(GetMountPointPermissionGroupMountPointArrayOutput)
+}
+
+// 权限组名称。
+func (o GetMountPointPermissionGroupOutput) PermissionGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroup) string { return v.PermissionGroupName }).(pulumi.StringOutput)
+}
+
+// 权限规则数量。
+func (o GetMountPointPermissionGroupOutput) PermissionRuleCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroup) int { return v.PermissionRuleCount }).(pulumi.IntOutput)
+}
+
+type GetMountPointPermissionGroupMountPoint struct {
+	// 文件系统 ID。
+	FileSystemId string `pulumi:"fileSystemId"`
+	// 挂载点 ID。
+	MountPointId string `pulumi:"mountPointId"`
+	// 挂载点名称。
+	MountPointName string `pulumi:"mountPointName"`
+}
+
+// GetMountPointPermissionGroupMountPointInput is an input type that accepts GetMountPointPermissionGroupMountPointArgs and GetMountPointPermissionGroupMountPointOutput values.
+// You can construct a concrete instance of `GetMountPointPermissionGroupMountPointInput` via:
+//
+//	GetMountPointPermissionGroupMountPointArgs{...}
+type GetMountPointPermissionGroupMountPointInput interface {
+	pulumi.Input
+
+	ToGetMountPointPermissionGroupMountPointOutput() GetMountPointPermissionGroupMountPointOutput
+	ToGetMountPointPermissionGroupMountPointOutputWithContext(context.Context) GetMountPointPermissionGroupMountPointOutput
+}
+
+type GetMountPointPermissionGroupMountPointArgs struct {
+	// 文件系统 ID。
+	FileSystemId pulumi.StringInput `pulumi:"fileSystemId"`
+	// 挂载点 ID。
+	MountPointId pulumi.StringInput `pulumi:"mountPointId"`
+	// 挂载点名称。
+	MountPointName pulumi.StringInput `pulumi:"mountPointName"`
+}
+
+func (GetMountPointPermissionGroupMountPointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (i GetMountPointPermissionGroupMountPointArgs) ToGetMountPointPermissionGroupMountPointOutput() GetMountPointPermissionGroupMountPointOutput {
+	return i.ToGetMountPointPermissionGroupMountPointOutputWithContext(context.Background())
+}
+
+func (i GetMountPointPermissionGroupMountPointArgs) ToGetMountPointPermissionGroupMountPointOutputWithContext(ctx context.Context) GetMountPointPermissionGroupMountPointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountPointPermissionGroupMountPointOutput)
+}
+
+// GetMountPointPermissionGroupMountPointArrayInput is an input type that accepts GetMountPointPermissionGroupMountPointArray and GetMountPointPermissionGroupMountPointArrayOutput values.
+// You can construct a concrete instance of `GetMountPointPermissionGroupMountPointArrayInput` via:
+//
+//	GetMountPointPermissionGroupMountPointArray{ GetMountPointPermissionGroupMountPointArgs{...} }
+type GetMountPointPermissionGroupMountPointArrayInput interface {
+	pulumi.Input
+
+	ToGetMountPointPermissionGroupMountPointArrayOutput() GetMountPointPermissionGroupMountPointArrayOutput
+	ToGetMountPointPermissionGroupMountPointArrayOutputWithContext(context.Context) GetMountPointPermissionGroupMountPointArrayOutput
+}
+
+type GetMountPointPermissionGroupMountPointArray []GetMountPointPermissionGroupMountPointInput
+
+func (GetMountPointPermissionGroupMountPointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (i GetMountPointPermissionGroupMountPointArray) ToGetMountPointPermissionGroupMountPointArrayOutput() GetMountPointPermissionGroupMountPointArrayOutput {
+	return i.ToGetMountPointPermissionGroupMountPointArrayOutputWithContext(context.Background())
+}
+
+func (i GetMountPointPermissionGroupMountPointArray) ToGetMountPointPermissionGroupMountPointArrayOutputWithContext(ctx context.Context) GetMountPointPermissionGroupMountPointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMountPointPermissionGroupMountPointArrayOutput)
+}
+
+type GetMountPointPermissionGroupMountPointOutput struct{ *pulumi.OutputState }
+
+func (GetMountPointPermissionGroupMountPointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (o GetMountPointPermissionGroupMountPointOutput) ToGetMountPointPermissionGroupMountPointOutput() GetMountPointPermissionGroupMountPointOutput {
+	return o
+}
+
+func (o GetMountPointPermissionGroupMountPointOutput) ToGetMountPointPermissionGroupMountPointOutputWithContext(ctx context.Context) GetMountPointPermissionGroupMountPointOutput {
+	return o
+}
+
+// 文件系统 ID。
+func (o GetMountPointPermissionGroupMountPointOutput) FileSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroupMountPoint) string { return v.FileSystemId }).(pulumi.StringOutput)
+}
+
+// 挂载点 ID。
+func (o GetMountPointPermissionGroupMountPointOutput) MountPointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroupMountPoint) string { return v.MountPointId }).(pulumi.StringOutput)
+}
+
+// 挂载点名称。
+func (o GetMountPointPermissionGroupMountPointOutput) MountPointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMountPointPermissionGroupMountPoint) string { return v.MountPointName }).(pulumi.StringOutput)
+}
+
+type GetMountPointPermissionGroupMountPointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMountPointPermissionGroupMountPointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMountPointPermissionGroupMountPoint)(nil)).Elem()
+}
+
+func (o GetMountPointPermissionGroupMountPointArrayOutput) ToGetMountPointPermissionGroupMountPointArrayOutput() GetMountPointPermissionGroupMountPointArrayOutput {
+	return o
+}
+
+func (o GetMountPointPermissionGroupMountPointArrayOutput) ToGetMountPointPermissionGroupMountPointArrayOutputWithContext(ctx context.Context) GetMountPointPermissionGroupMountPointArrayOutput {
+	return o
+}
+
+func (o GetMountPointPermissionGroupMountPointArrayOutput) Index(i pulumi.IntInput) GetMountPointPermissionGroupMountPointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMountPointPermissionGroupMountPoint {
+		return vs[0].([]GetMountPointPermissionGroupMountPoint)[vs[1].(int)]
+	}).(GetMountPointPermissionGroupMountPointOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCachePerformanceInput)(nil)).Elem(), InstanceCachePerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCachePerformancePtrInput)(nil)).Elem(), InstanceCachePerformanceArgs{})
@@ -656,18 +1469,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityPtrInput)(nil)).Elem(), InstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountPointClientInput)(nil)).Elem(), MountPointClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountPointClientArrayInput)(nil)).Elem(), MountPointClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountPointPermissionGroupInput)(nil)).Elem(), MountPointPermissionGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountPointPermissionGroupPtrInput)(nil)).Elem(), MountPointPermissionGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountPointPermissionGroupMountPointInput)(nil)).Elem(), MountPointPermissionGroupMountPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MountPointPermissionGroupMountPointArrayInput)(nil)).Elem(), MountPointPermissionGroupMountPointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCachePerformanceInput)(nil)).Elem(), GetInstanceCachePerformanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCapacityInput)(nil)).Elem(), GetInstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountPointClientInput)(nil)).Elem(), GetMountPointClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountPointClientArrayInput)(nil)).Elem(), GetMountPointClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountPointPermissionGroupInput)(nil)).Elem(), GetMountPointPermissionGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountPointPermissionGroupMountPointInput)(nil)).Elem(), GetMountPointPermissionGroupMountPointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMountPointPermissionGroupMountPointArrayInput)(nil)).Elem(), GetMountPointPermissionGroupMountPointArray{})
 	pulumi.RegisterOutputType(InstanceCachePerformanceOutput{})
 	pulumi.RegisterOutputType(InstanceCachePerformancePtrOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(MountPointClientOutput{})
+	pulumi.RegisterOutputType(MountPointClientArrayOutput{})
+	pulumi.RegisterOutputType(MountPointPermissionGroupOutput{})
+	pulumi.RegisterOutputType(MountPointPermissionGroupPtrOutput{})
+	pulumi.RegisterOutputType(MountPointPermissionGroupMountPointOutput{})
+	pulumi.RegisterOutputType(MountPointPermissionGroupMountPointArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceCachePerformanceOutput{})
 	pulumi.RegisterOutputType(GetInstanceCapacityOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetMountPointClientOutput{})
+	pulumi.RegisterOutputType(GetMountPointClientArrayOutput{})
+	pulumi.RegisterOutputType(GetMountPointPermissionGroupOutput{})
+	pulumi.RegisterOutputType(GetMountPointPermissionGroupMountPointOutput{})
+	pulumi.RegisterOutputType(GetMountPointPermissionGroupMountPointArrayOutput{})
 }

@@ -5654,6 +5654,27 @@
                 }
             }
         },
+        "bytepluscc:clb/NlbSecurityPolicyTag:NlbSecurityPolicyTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:clb/NlbServerGroupHealthCheck:NlbServerGroupHealthCheck": {
             "properties": {
                 "domain": {
@@ -6498,6 +6519,28 @@
                 }
             }
         },
+        "bytepluscc:clb/getNlbSecurityPolicyTag:getNlbSecurityPolicyTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "用户标签的标签键。\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "用户标签的标签值。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "bytepluscc:clb/getNlbServerGroupHealthCheck:getNlbServerGroupHealthCheck": {
             "properties": {
                 "domain": {
@@ -6892,6 +6935,137 @@
             "required": [
                 "key",
                 "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cloudidentity/GroupMember:GroupMember": {
+            "properties": {
+                "userId": {
+                    "type": "string",
+                    "description": "用户id。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "userId"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cloudidentity/PermissionSetPermissionPolicy:PermissionSetPermissionPolicy": {
+            "properties": {
+                "permissionPolicyDocument": {
+                    "type": "string",
+                    "description": "策略语法内容。语法可参考 策略语法说明。\n"
+                },
+                "permissionPolicyName": {
+                    "type": "string",
+                    "description": "策略名称。\n"
+                },
+                "permissionPolicyType": {
+                    "type": "string",
+                    "description": "策略类型，System or Inline。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "permissionPolicyDocument",
+                        "permissionPolicyName",
+                        "permissionPolicyType"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cloudidentity/getGroupMember:getGroupMember": {
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "用户描述信息\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "用户显示名称。\n"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "用户邮箱。\n"
+                },
+                "identityType": {
+                    "type": "string",
+                    "description": "用户身份类型。\n"
+                },
+                "joinTime": {
+                    "type": "string",
+                    "description": "用户加入用户组的时间。\n"
+                },
+                "phone": {
+                    "type": "string",
+                    "description": "用户手机号。\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "用户来源。\n"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "用户id。\n"
+                },
+                "userName": {
+                    "type": "string",
+                    "description": "用户名。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "description",
+                "displayName",
+                "email",
+                "identityType",
+                "joinTime",
+                "phone",
+                "source",
+                "userId",
+                "userName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cloudidentity/getPermissionSetPermissionPolicy:getPermissionSetPermissionPolicy": {
+            "properties": {
+                "createdTime": {
+                    "type": "string",
+                    "description": "策略创建时间。\n"
+                },
+                "permissionPolicyDocument": {
+                    "type": "string",
+                    "description": "策略语法内容。语法可参考 策略语法说明。\n"
+                },
+                "permissionPolicyName": {
+                    "type": "string",
+                    "description": "策略名称。\n"
+                },
+                "permissionPolicyType": {
+                    "type": "string",
+                    "description": "策略类型，System or Inline。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createdTime",
+                "permissionPolicyDocument",
+                "permissionPolicyName",
+                "permissionPolicyType"
             ],
             "language": {
                 "nodejs": {
@@ -12560,6 +12734,106 @@
                 }
             }
         },
+        "bytepluscc:filenas/MountPointClient:MountPointClient": {
+            "properties": {
+                "ip": {
+                    "type": "string",
+                    "description": "客户端的私有网络 IP 地址。\n"
+                },
+                "protocolVersion": {
+                    "type": "string",
+                    "description": "挂载协议版本号。取值：NFSv3。\n"
+                },
+                "vpcName": {
+                    "type": "string",
+                    "description": "私有网络名称。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "ip",
+                        "protocolVersion",
+                        "vpcName"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:filenas/MountPointPermissionGroup:MountPointPermissionGroup": {
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "description": "权限组创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "权限组描述信息。\n"
+                },
+                "fileSystemCount": {
+                    "type": "integer",
+                    "description": "关联该权限组的文件系统数量。\n"
+                },
+                "fileSystemType": {
+                    "type": "string",
+                    "description": "文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。\n"
+                },
+                "mountPoints": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:filenas/MountPointPermissionGroupMountPoint:MountPointPermissionGroupMountPoint"
+                    }
+                },
+                "permissionGroupName": {
+                    "type": "string",
+                    "description": "权限组名称。\n"
+                },
+                "permissionRuleCount": {
+                    "type": "integer",
+                    "description": "权限规则数量。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "createTime",
+                        "description",
+                        "fileSystemCount",
+                        "fileSystemType",
+                        "mountPoints",
+                        "permissionGroupName",
+                        "permissionRuleCount"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:filenas/MountPointPermissionGroupMountPoint:MountPointPermissionGroupMountPoint": {
+            "properties": {
+                "fileSystemId": {
+                    "type": "string",
+                    "description": "文件系统 ID。\n"
+                },
+                "mountPointId": {
+                    "type": "string",
+                    "description": "挂载点 ID。\n"
+                },
+                "mountPointName": {
+                    "type": "string",
+                    "description": "挂载点名称。\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "fileSystemId",
+                        "mountPointId",
+                        "mountPointName"
+                    ]
+                }
+            }
+        },
         "bytepluscc:filenas/getInstanceCachePerformance:getInstanceCachePerformance": {
             "properties": {
                 "cacheBandwidth": {
@@ -12619,6 +12893,110 @@
                 "key",
                 "type",
                 "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:filenas/getMountPointClient:getMountPointClient": {
+            "properties": {
+                "ip": {
+                    "type": "string",
+                    "description": "客户端的私有网络 IP 地址。\n"
+                },
+                "protocolVersion": {
+                    "type": "string",
+                    "description": "挂载协议版本号。取值：NFSv3。\n"
+                },
+                "vpcName": {
+                    "type": "string",
+                    "description": "私有网络名称。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "ip",
+                "protocolVersion",
+                "vpcName"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:filenas/getMountPointPermissionGroup:getMountPointPermissionGroup": {
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "description": "权限组创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "权限组描述信息。\n"
+                },
+                "fileSystemCount": {
+                    "type": "integer",
+                    "description": "关联该权限组的文件系统数量。\n"
+                },
+                "fileSystemType": {
+                    "type": "string",
+                    "description": "文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。\n"
+                },
+                "mountPoints": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:filenas/getMountPointPermissionGroupMountPoint:getMountPointPermissionGroupMountPoint"
+                    },
+                    "description": "使用该权限组的挂载点信息。\n"
+                },
+                "permissionGroupName": {
+                    "type": "string",
+                    "description": "权限组名称。\n"
+                },
+                "permissionRuleCount": {
+                    "type": "integer",
+                    "description": "权限规则数量。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "createTime",
+                "description",
+                "fileSystemCount",
+                "fileSystemType",
+                "mountPoints",
+                "permissionGroupName",
+                "permissionRuleCount"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:filenas/getMountPointPermissionGroupMountPoint:getMountPointPermissionGroupMountPoint": {
+            "properties": {
+                "fileSystemId": {
+                    "type": "string",
+                    "description": "文件系统 ID。\n"
+                },
+                "mountPointId": {
+                    "type": "string",
+                    "description": "挂载点 ID。\n"
+                },
+                "mountPointName": {
+                    "type": "string",
+                    "description": "挂载点名称。\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "fileSystemId",
+                "mountPointId",
+                "mountPointName"
             ],
             "language": {
                 "nodejs": {
@@ -32055,6 +32433,174 @@
                 "type": "object"
             }
         },
+        "bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy": {
+            "description": "基于一些常见的场景，为您预置了一些安全策略，若系统预置的策略不满足您的需求，您还可以自定义安全策略。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst cLBNLBSecurityPolicyDemo = new bytepluscc.clb.NlbSecurityPolicy(\"CLBNLBSecurityPolicyDemo\", {\n    ciphers: [\n        \"TLS_AES_128_CCM_SHA256\",\n        \"TLS_AES_128_GCM_SHA256\",\n    ],\n    projectName: \"default\",\n    securityPolicyName: \"ccapi-test-1\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n    tlsVersions: [\"TLSv1.3\"],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nc_lbnlb_security_policy_demo = bytepluscc.clb.NlbSecurityPolicy(\"CLBNLBSecurityPolicyDemo\",\n    ciphers=[\n        \"TLS_AES_128_CCM_SHA256\",\n        \"TLS_AES_128_GCM_SHA256\",\n    ],\n    project_name=\"default\",\n    security_policy_name=\"ccapi-test-1\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }],\n    tls_versions=[\"TLSv1.3\"])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var cLBNLBSecurityPolicyDemo = new Bytepluscc.Clb.NlbSecurityPolicy(\"CLBNLBSecurityPolicyDemo\", new()\n    {\n        Ciphers = new[]\n        {\n            \"TLS_AES_128_CCM_SHA256\",\n            \"TLS_AES_128_GCM_SHA256\",\n        },\n        ProjectName = \"default\",\n        SecurityPolicyName = \"ccapi-test-1\",\n        Tags = new[]\n        {\n            new Bytepluscc.Clb.Inputs.NlbSecurityPolicyTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n        TlsVersions = new[]\n        {\n            \"TLSv1.3\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/clb\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := clb.NewNlbSecurityPolicy(ctx, \"CLBNLBSecurityPolicyDemo\", \u0026clb.NlbSecurityPolicyArgs{\n\t\t\tCiphers: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"TLS_AES_128_CCM_SHA256\"),\n\t\t\t\tpulumi.String(\"TLS_AES_128_GCM_SHA256\"),\n\t\t\t},\n\t\t\tProjectName:        pulumi.String(\"default\"),\n\t\t\tSecurityPolicyName: pulumi.String(\"ccapi-test-1\"),\n\t\t\tTags: clb.NlbSecurityPolicyTagArray{\n\t\t\t\t\u0026clb.NlbSecurityPolicyTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tTlsVersions: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"TLSv1.3\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.clb.NlbSecurityPolicy;\nimport com.byteplus.bytepluscc.clb.NlbSecurityPolicyArgs;\nimport com.pulumi.bytepluscc.clb.inputs.NlbSecurityPolicyTagArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var cLBNLBSecurityPolicyDemo = new NlbSecurityPolicy(\"cLBNLBSecurityPolicyDemo\", NlbSecurityPolicyArgs.builder()\n            .ciphers(            \n                \"TLS_AES_128_CCM_SHA256\",\n                \"TLS_AES_128_GCM_SHA256\")\n            .projectName(\"default\")\n            .securityPolicyName(\"ccapi-test-1\")\n            .tags(NlbSecurityPolicyTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .tlsVersions(\"TLSv1.3\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  cLBNLBSecurityPolicyDemo:\n    type: bytepluscc:clb:NlbSecurityPolicy\n    name: CLBNLBSecurityPolicyDemo\n    properties:\n      ciphers:\n        - TLS_AES_128_CCM_SHA256\n        - TLS_AES_128_GCM_SHA256\n      projectName: default\n      securityPolicyName: ccapi-test-1\n      tags:\n        - key: env\n          value: test\n      tlsVersions:\n        - TLSv1.3\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy example \"security_policy_id\"\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "TLS 安全策略所属的账号ID。\n"
+                },
+                "ciphers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 \u0026 TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。\n"
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "创建时间。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "TLS自定义安全策略所属项目的名称。不传则默认为defaul。\n"
+                },
+                "relatedListenerIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "TLS 安全策略关联的监听器。\n"
+                },
+                "securityPolicyId": {
+                    "type": "string",
+                    "description": "安全策略ID。\n"
+                },
+                "securityPolicyName": {
+                    "type": "string",
+                    "description": "安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "TLS 自定义安全策略状态。Creating：创建中。Configuring：配置中。Active：正常。Deleting：删除中。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/NlbSecurityPolicyTag:NlbSecurityPolicyTag"
+                    }
+                },
+                "tlsVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。\n"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "更新时间。\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "ciphers",
+                "createdTime",
+                "projectName",
+                "relatedListenerIds",
+                "securityPolicyId",
+                "securityPolicyName",
+                "status",
+                "tags",
+                "tlsVersions",
+                "updatedTime"
+            ],
+            "inputProperties": {
+                "ciphers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 \u0026 TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "TLS自定义安全策略所属项目的名称。不传则默认为defaul。\n"
+                },
+                "securityPolicyName": {
+                    "type": "string",
+                    "description": "安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:clb/NlbSecurityPolicyTag:NlbSecurityPolicyTag"
+                    }
+                },
+                "tlsVersions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。\n"
+                }
+            },
+            "requiredInputs": [
+                "ciphers",
+                "tlsVersions"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering NlbSecurityPolicy resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "TLS 安全策略所属的账号ID。\n"
+                    },
+                    "ciphers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 \u0026 TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。\n"
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "创建时间。\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "TLS自定义安全策略所属项目的名称。不传则默认为defaul。\n"
+                    },
+                    "relatedListenerIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "TLS 安全策略关联的监听器。\n"
+                    },
+                    "securityPolicyId": {
+                        "type": "string",
+                        "description": "安全策略ID。\n"
+                    },
+                    "securityPolicyName": {
+                        "type": "string",
+                        "description": "安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "TLS 自定义安全策略状态。Creating：创建中。Configuring：配置中。Active：正常。Deleting：删除中。\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/NlbSecurityPolicyTag:NlbSecurityPolicyTag"
+                        }
+                    },
+                    "tlsVersions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。\n"
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "更新时间。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:clb/nlbServerGroup:NlbServerGroup": {
             "description": "服务器组是一组后端服务器。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  nLBServerGroupDemo:\n    type: bytepluscc:clb:NlbServerGroup\n    name: NLBServerGroupDemo\n    properties:\n      bypassSecurityGroupEnabled: false\n      healthCheck:\n        enabled: false\n      vpcId: vpc-13f8k4dwdsydc3n6nu5rxxxxx\n      projectName: default\n      serverGroupName: NLBServerGroupDemo.Aa1xxxxx\n      type: instance\n      protocol: UDP\n      description: test.IPV4.UDP.WLC_=\n      scheduler: wlc\n      ipAddressVersion: ipv4\n      anyPortEnabled: false\n      connectionDrainEnabled: false\n      preserveClientIpEnabled: false\n      sessionPersistenceEnabled: false\n      proxyProtocolType: off\n      servers:\n        - instance_id: i-ye2fvd0qo0bw80ctxxxxx\n          type: ecs\n          ip: 192.168.xx.76\n          port: 10\n          weight: 50\n        - instance_id: eni-mirt64nt1xq85smt1a3xxxxx\n          type: eni\n          ip: 192.168.xx.77\n          port: 20\n          weight: 50\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:clb/nlbServerGroup:NlbServerGroup example \"server_group_id\"\n```\n\n",
             "properties": {
@@ -32721,6 +33267,263 @@
                     "updateTime": {
                         "type": "string",
                         "description": "后端服务器组的最近操作时间。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudidentity/group:Group": {
+            "description": "当您需要批量为云身份中心用户进行SSO授权时，您可以先通过用户组进行批量的用户管理。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  cloudIdentityGroupDemo:\n    type: bytepluscc:cloudidentity:Group\n    name: CloudIdentityGroupDemo\n    properties:\n      description: ccapi-multi-des\n      displayName: test for ccapi\n      groupName: ccapi-multi\n      joinType: Manual\n      members:\n        - user_id: '***********'\n        - user_id: '*************'\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cloudidentity/group:Group example \"group_id\"\n```\n\n",
+            "properties": {
+                "createdTime": {
+                    "type": "string",
+                    "description": "创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "描述。\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "显示名。\n"
+                },
+                "groupId": {
+                    "type": "string",
+                    "description": "用户组id。\n"
+                },
+                "groupName": {
+                    "type": "string",
+                    "description": "用户组名称。\n"
+                },
+                "joinType": {
+                    "type": "string",
+                    "description": "用户组类型。\n"
+                },
+                "members": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudidentity/GroupMember:GroupMember"
+                    }
+                },
+                "source": {
+                    "type": "string",
+                    "description": "用户组来源。\n"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "更新时间。\n"
+                }
+            },
+            "required": [
+                "createdTime",
+                "description",
+                "displayName",
+                "groupId",
+                "groupName",
+                "joinType",
+                "members",
+                "source",
+                "updatedTime"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "描述。\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "显示名。\n"
+                },
+                "groupName": {
+                    "type": "string",
+                    "description": "用户组名称。\n"
+                },
+                "joinType": {
+                    "type": "string",
+                    "description": "用户组类型。\n"
+                },
+                "members": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudidentity/GroupMember:GroupMember"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "groupName",
+                "joinType"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Group resources.\n",
+                "properties": {
+                    "createdTime": {
+                        "type": "string",
+                        "description": "创建时间。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "描述。\n"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "显示名。\n"
+                    },
+                    "groupId": {
+                        "type": "string",
+                        "description": "用户组id。\n"
+                    },
+                    "groupName": {
+                        "type": "string",
+                        "description": "用户组名称。\n"
+                    },
+                    "joinType": {
+                        "type": "string",
+                        "description": "用户组类型。\n"
+                    },
+                    "members": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudidentity/GroupMember:GroupMember"
+                        }
+                    },
+                    "source": {
+                        "type": "string",
+                        "description": "用户组来源。\n"
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "更新时间。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudidentity/permissionSet:PermissionSet": {
+            "description": "当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```yaml\nresources:\n  cloudIdentityPermissionSetDemo:\n    type: bytepluscc:cloudidentity:PermissionSet\n    name: CloudIdentityPermissionSetDemo\n    properties:\n      description: cc-test\n      name: cctest-test\n      relayState: https://console.xxxxx.com/xxxxx\n      sessionDuration: 3600\n      permissionPolicies:\n        - permission_policy_name: AdministratorAccess\n          permission_policy_type: System\n          permission_policy_document: \"\"\n        - permission_policy_name: IAMFullAccess\n          permission_policy_type: System\n          permission_policy_document: \"\"\n        - permission_policy_name: InlinePolicy\n          permission_policy_type: Inline\n          permission_policy_document: |-\n            {\n                \"Statement\": [\n                    {\n                        \"Effect\": \"Allow\",\n                        \"Action\": [\n                            \"vpc:*\"\n                        ],\n                        \"Resource\": [\n                            \"*\"\n                        ]\n                    }\n                ]\n            }\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cloudidentity/permissionSet:PermissionSet example \"permission_set_id\"\n```\n\n",
+            "properties": {
+                "createdTime": {
+                    "type": "string",
+                    "description": "创建时间。\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "权限集描述。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "权限集名称。\n"
+                },
+                "permissionPolicies": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudidentity/PermissionSetPermissionPolicy:PermissionSetPermissionPolicy"
+                    }
+                },
+                "permissionSetId": {
+                    "type": "string",
+                    "description": "权限集 ID。\n"
+                },
+                "relayState": {
+                    "type": "string",
+                    "description": "跳转控制台 URL。\n"
+                },
+                "sessionDuration": {
+                    "type": "integer",
+                    "description": "session 过期时间，单位秒。\n"
+                },
+                "statusNotifications": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "状态通知配置。\n"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "更新时间。\n"
+                }
+            },
+            "required": [
+                "createdTime",
+                "description",
+                "name",
+                "permissionPolicies",
+                "permissionSetId",
+                "relayState",
+                "sessionDuration",
+                "statusNotifications",
+                "updatedTime"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "权限集描述。\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "权限集名称。\n"
+                },
+                "permissionPolicies": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cloudidentity/PermissionSetPermissionPolicy:PermissionSetPermissionPolicy"
+                    }
+                },
+                "relayState": {
+                    "type": "string",
+                    "description": "跳转控制台 URL。\n"
+                },
+                "sessionDuration": {
+                    "type": "integer",
+                    "description": "session 过期时间，单位秒。\n"
+                }
+            },
+            "requiredInputs": [
+                "name"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PermissionSet resources.\n",
+                "properties": {
+                    "createdTime": {
+                        "type": "string",
+                        "description": "创建时间。\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "权限集描述。\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "权限集名称。\n"
+                    },
+                    "permissionPolicies": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudidentity/PermissionSetPermissionPolicy:PermissionSetPermissionPolicy"
+                        }
+                    },
+                    "permissionSetId": {
+                        "type": "string",
+                        "description": "权限集 ID。\n"
+                    },
+                    "relayState": {
+                        "type": "string",
+                        "description": "跳转控制台 URL。\n"
+                    },
+                    "sessionDuration": {
+                        "type": "integer",
+                        "description": "session 过期时间，单位秒。\n"
+                    },
+                    "statusNotifications": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "状态通知配置。\n"
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "更新时间。\n"
                     }
                 },
                 "type": "object"
@@ -37220,6 +38023,187 @@
                     "zoneName": {
                         "type": "string",
                         "description": "可用区名称。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:filenas/mountPoint:MountPoint": {
+            "description": "挂载点是 NAS 文件系统在网络环境中的连接点。NAS 文件系统需要挂载在计算节点中才能完成数据的访问与存储。挂载是将计算节点与 NAS 文件系统相连接的操作。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst fileNASMountPointDemo = new bytepluscc.filenas.MountPoint(\"FileNASMountPointDemo\", {\n    fileSystemId: \"enas-cnbja0f8*****\",\n    mountPointName: \"test-1\",\n    permissionGroupId: \"pgroup-01bc1182\",\n    subnetId: \"subnet-btepcsc5*****\",\n    vpcId: \"vpc-3nr6adcn064u8931*****\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nfile_nas_mount_point_demo = bytepluscc.filenas.MountPoint(\"FileNASMountPointDemo\",\n    file_system_id=\"enas-cnbja0f8*****\",\n    mount_point_name=\"test-1\",\n    permission_group_id=\"pgroup-01bc1182\",\n    subnet_id=\"subnet-btepcsc5*****\",\n    vpc_id=\"vpc-3nr6adcn064u8931*****\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var fileNASMountPointDemo = new Bytepluscc.Filenas.MountPoint(\"FileNASMountPointDemo\", new()\n    {\n        FileSystemId = \"enas-cnbja0f8*****\",\n        MountPointName = \"test-1\",\n        PermissionGroupId = \"pgroup-01bc1182\",\n        SubnetId = \"subnet-btepcsc5*****\",\n        VpcId = \"vpc-3nr6adcn064u8931*****\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/filenas\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := filenas.NewMountPoint(ctx, \"FileNASMountPointDemo\", \u0026filenas.MountPointArgs{\n\t\t\tFileSystemId:      pulumi.String(\"enas-cnbja0f8*****\"),\n\t\t\tMountPointName:    pulumi.String(\"test-1\"),\n\t\t\tPermissionGroupId: pulumi.String(\"pgroup-01bc1182\"),\n\t\t\tSubnetId:          pulumi.String(\"subnet-btepcsc5*****\"),\n\t\t\tVpcId:             pulumi.String(\"vpc-3nr6adcn064u8931*****\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.filenas.MountPoint;\nimport com.byteplus.bytepluscc.filenas.MountPointArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var fileNASMountPointDemo = new MountPoint(\"fileNASMountPointDemo\", MountPointArgs.builder()\n            .fileSystemId(\"enas-cnbja0f8*****\")\n            .mountPointName(\"test-1\")\n            .permissionGroupId(\"pgroup-01bc1182\")\n            .subnetId(\"subnet-btepcsc5*****\")\n            .vpcId(\"vpc-3nr6adcn064u8931*****\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  fileNASMountPointDemo:\n    type: bytepluscc:filenas:MountPoint\n    name: FileNASMountPointDemo\n    properties:\n      fileSystemId: enas-cnbja0f8*****\n      mountPointName: test-1\n      permissionGroupId: pgroup-01bc1182\n      subnetId: subnet-btepcsc5*****\n      vpcId: vpc-3nr6adcn064u8931*****\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:filenas/mountPoint:MountPoint example \"file_system_id|mount_point_id\"\n```\n\n",
+            "properties": {
+                "clients": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:filenas/MountPointClient:MountPointClient"
+                    }
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "挂载点创建时间。\n"
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "DNS 地址。\n"
+                },
+                "fileSystemId": {
+                    "type": "string",
+                    "description": "文件系统 ID。\n"
+                },
+                "ip": {
+                    "type": "string",
+                    "description": "挂载点地址。\n"
+                },
+                "mountPointId": {
+                    "type": "string",
+                    "description": "挂载点 ID。\n"
+                },
+                "mountPointName": {
+                    "type": "string",
+                    "description": "挂载点名称。\n"
+                },
+                "permissionGroup": {
+                    "$ref": "#/types/bytepluscc:filenas/MountPointPermissionGroup:MountPointPermissionGroup",
+                    "description": "挂载点绑定的权限组信息。\n"
+                },
+                "permissionGroupId": {
+                    "type": "string",
+                    "description": "权限组 ID。\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。\n"
+                },
+                "subnetId": {
+                    "type": "string",
+                    "description": "子网 ID。\n"
+                },
+                "subnetName": {
+                    "type": "string",
+                    "description": "子网名称。\n"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "description": "挂载点更新时间。\n"
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "私有网络 ID。\n"
+                },
+                "vpcName": {
+                    "type": "string",
+                    "description": "私有网络名称。\n"
+                }
+            },
+            "required": [
+                "clients",
+                "createdTime",
+                "domain",
+                "fileSystemId",
+                "ip",
+                "mountPointId",
+                "mountPointName",
+                "permissionGroup",
+                "permissionGroupId",
+                "status",
+                "subnetId",
+                "subnetName",
+                "updatedTime",
+                "vpcId",
+                "vpcName"
+            ],
+            "inputProperties": {
+                "fileSystemId": {
+                    "type": "string",
+                    "description": "文件系统 ID。\n"
+                },
+                "mountPointName": {
+                    "type": "string",
+                    "description": "挂载点名称。\n"
+                },
+                "permissionGroupId": {
+                    "type": "string",
+                    "description": "权限组 ID。\n"
+                },
+                "subnetId": {
+                    "type": "string",
+                    "description": "子网 ID。\n"
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "私有网络 ID。\n"
+                }
+            },
+            "requiredInputs": [
+                "fileSystemId",
+                "mountPointName",
+                "permissionGroupId",
+                "subnetId",
+                "vpcId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering MountPoint resources.\n",
+                "properties": {
+                    "clients": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:filenas/MountPointClient:MountPointClient"
+                        }
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "挂载点创建时间。\n"
+                    },
+                    "domain": {
+                        "type": "string",
+                        "description": "DNS 地址。\n"
+                    },
+                    "fileSystemId": {
+                        "type": "string",
+                        "description": "文件系统 ID。\n"
+                    },
+                    "ip": {
+                        "type": "string",
+                        "description": "挂载点地址。\n"
+                    },
+                    "mountPointId": {
+                        "type": "string",
+                        "description": "挂载点 ID。\n"
+                    },
+                    "mountPointName": {
+                        "type": "string",
+                        "description": "挂载点名称。\n"
+                    },
+                    "permissionGroup": {
+                        "$ref": "#/types/bytepluscc:filenas/MountPointPermissionGroup:MountPointPermissionGroup",
+                        "description": "挂载点绑定的权限组信息。\n"
+                    },
+                    "permissionGroupId": {
+                        "type": "string",
+                        "description": "权限组 ID。\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。\n"
+                    },
+                    "subnetId": {
+                        "type": "string",
+                        "description": "子网 ID。\n"
+                    },
+                    "subnetName": {
+                        "type": "string",
+                        "description": "子网名称。\n"
+                    },
+                    "updatedTime": {
+                        "type": "string",
+                        "description": "挂载点更新时间。\n"
+                    },
+                    "vpcId": {
+                        "type": "string",
+                        "description": "私有网络 ID。\n"
+                    },
+                    "vpcName": {
+                        "type": "string",
+                        "description": "私有网络名称。\n"
                     }
                 },
                 "type": "object"
@@ -43938,6 +44922,113 @@
                     "userAllowList": {
                         "type": "string",
                         "description": "安全组之外的、需要加入白名单的 IP 地址。可输入 IP 地址或 CIDR 格式的 IP 地址段。说明该字段不能与 AllowList 字段同时使用。\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdspostgresql/dbAccount:DbAccount": {
+            "description": "RDS PostgreSQL 数据库账号\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst rDSPostgreSQLDBAccountNormalDemo = new bytepluscc.rdspostgresql.DbAccount(\"RDSPostgreSQLDBAccountNormalDemo\", {\n    instanceId: \"postgres-xxxxxxx\",\n    accountName: \"ccapi-test-Normal\",\n    accountPassword: \"**********\",\n    accountType: \"Normal\",\n    accountPrivileges: \"Inherit,Login,CreateRole,CreateDB\",\n    notAllowPrivileges: [\"DDL\"],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nr_ds_postgre_sqldb_account_normal_demo = bytepluscc.rdspostgresql.DbAccount(\"RDSPostgreSQLDBAccountNormalDemo\",\n    instance_id=\"postgres-xxxxxxx\",\n    account_name=\"ccapi-test-Normal\",\n    account_password=\"**********\",\n    account_type=\"Normal\",\n    account_privileges=\"Inherit,Login,CreateRole,CreateDB\",\n    not_allow_privileges=[\"DDL\"])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var rDSPostgreSQLDBAccountNormalDemo = new Bytepluscc.Rdspostgresql.DbAccount(\"RDSPostgreSQLDBAccountNormalDemo\", new()\n    {\n        InstanceId = \"postgres-xxxxxxx\",\n        AccountName = \"ccapi-test-Normal\",\n        AccountPassword = \"**********\",\n        AccountType = \"Normal\",\n        AccountPrivileges = \"Inherit,Login,CreateRole,CreateDB\",\n        NotAllowPrivileges = new[]\n        {\n            \"DDL\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/rdspostgresql\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := rdspostgresql.NewDbAccount(ctx, \"RDSPostgreSQLDBAccountNormalDemo\", \u0026rdspostgresql.DbAccountArgs{\n\t\t\tInstanceId:        pulumi.String(\"postgres-xxxxxxx\"),\n\t\t\tAccountName:       pulumi.String(\"ccapi-test-Normal\"),\n\t\t\tAccountPassword:   pulumi.String(\"**********\"),\n\t\t\tAccountType:       pulumi.String(\"Normal\"),\n\t\t\tAccountPrivileges: pulumi.String(\"Inherit,Login,CreateRole,CreateDB\"),\n\t\t\tNotAllowPrivileges: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"DDL\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.rdspostgresql.DbAccount;\nimport com.byteplus.bytepluscc.rdspostgresql.DbAccountArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var rDSPostgreSQLDBAccountNormalDemo = new DbAccount(\"rDSPostgreSQLDBAccountNormalDemo\", DbAccountArgs.builder()\n            .instanceId(\"postgres-xxxxxxx\")\n            .accountName(\"ccapi-test-Normal\")\n            .accountPassword(\"**********\")\n            .accountType(\"Normal\")\n            .accountPrivileges(\"Inherit,Login,CreateRole,CreateDB\")\n            .notAllowPrivileges(\"DDL\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  rDSPostgreSQLDBAccountNormalDemo:\n    type: bytepluscc:rdspostgresql:DbAccount\n    name: RDSPostgreSQLDBAccountNormalDemo\n    properties:\n      instanceId: postgres-xxxxxxx\n      accountName: ccapi-test-Normal\n      accountPassword: '**********'\n      accountType: Normal\n      accountPrivileges: Inherit,Login,CreateRole,CreateDB\n      notAllowPrivileges:\n        - DDL\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:rdspostgresql/dbAccount:DbAccount example \"instance_id|account_name\"\n```\n\n",
+            "properties": {
+                "accountName": {
+                    "type": "string",
+                    "description": "数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。\n"
+                },
+                "accountPassword": {
+                    "type": "string",
+                    "description": "数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()\u0026_+-=。\n"
+                },
+                "accountPrivileges": {
+                    "type": "string",
+                    "description": "账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数\n"
+                },
+                "accountType": {
+                    "type": "string",
+                    "description": "数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "实例 ID\n"
+                },
+                "notAllowPrivileges": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。\n"
+                }
+            },
+            "required": [
+                "accountName",
+                "accountPassword",
+                "accountPrivileges",
+                "accountType",
+                "instanceId",
+                "notAllowPrivileges"
+            ],
+            "inputProperties": {
+                "accountName": {
+                    "type": "string",
+                    "description": "数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。\n"
+                },
+                "accountPassword": {
+                    "type": "string",
+                    "description": "数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()\u0026_+-=。\n"
+                },
+                "accountPrivileges": {
+                    "type": "string",
+                    "description": "账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数\n"
+                },
+                "accountType": {
+                    "type": "string",
+                    "description": "数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "实例 ID\n"
+                },
+                "notAllowPrivileges": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。\n"
+                }
+            },
+            "requiredInputs": [
+                "accountName",
+                "accountPassword",
+                "accountType"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering DbAccount resources.\n",
+                "properties": {
+                    "accountName": {
+                        "type": "string",
+                        "description": "数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。\n"
+                    },
+                    "accountPassword": {
+                        "type": "string",
+                        "description": "数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()\u0026_+-=。\n"
+                    },
+                    "accountPrivileges": {
+                        "type": "string",
+                        "description": "账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数\n"
+                    },
+                    "accountType": {
+                        "type": "string",
+                        "description": "数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "实例 ID\n"
+                    },
+                    "notAllowPrivileges": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。\n"
                     }
                 },
                 "type": "object"
@@ -56545,6 +57636,126 @@
                 "type": "object"
             }
         },
+        "bytepluscc:clb/getNlbSecurityPolicies:getNlbSecurityPolicies": {
+            "description": "Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy\n",
+            "outputs": {
+                "description": "A collection of values returned by getNlbSecurityPolicies.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:clb/getNlbSecurityPolicy:getNlbSecurityPolicy": {
+            "description": "Data Source schema for Byteplus::CLB::NLBSecurityPolicy\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getNlbSecurityPolicy.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getNlbSecurityPolicy.\n",
+                "properties": {
+                    "accountId": {
+                        "description": "TLS 安全策略所属的账号ID。\n",
+                        "type": "string"
+                    },
+                    "ciphers": {
+                        "description": "TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 \u0026 TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "createdTime": {
+                        "description": "创建时间。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "TLS自定义安全策略所属项目的名称。不传则默认为defaul。\n",
+                        "type": "string"
+                    },
+                    "relatedListenerIds": {
+                        "description": "TLS 安全策略关联的监听器。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "securityPolicyId": {
+                        "description": "安全策略ID。\n",
+                        "type": "string"
+                    },
+                    "securityPolicyName": {
+                        "description": "安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "TLS 自定义安全策略状态。Creating：创建中。Configuring：配置中。Active：正常。Deleting：删除中。\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "标签列表。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:clb/getNlbSecurityPolicyTag:getNlbSecurityPolicyTag"
+                        },
+                        "type": "array"
+                    },
+                    "tlsVersions": {
+                        "description": "更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "updatedTime": {
+                        "description": "更新时间。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "ciphers",
+                    "createdTime",
+                    "id",
+                    "projectName",
+                    "relatedListenerIds",
+                    "securityPolicyId",
+                    "securityPolicyName",
+                    "status",
+                    "tags",
+                    "tlsVersions",
+                    "updatedTime"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:clb/getNlbServerGroup:getNlbServerGroup": {
             "description": "Data Source schema for Byteplus::CLB::NLBServerGroup\n",
             "inputs": {
@@ -56969,6 +58180,211 @@
             "description": "Plural Data Source schema for Byteplus::CLB::ServerGroup\n",
             "outputs": {
                 "description": "A collection of values returned by getServerGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudidentity/getGroup:getGroup": {
+            "description": "Data Source schema for Byteplus::CloudIdentity::Group\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getGroup.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getGroup.\n",
+                "properties": {
+                    "createdTime": {
+                        "description": "创建时间。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "描述。\n",
+                        "type": "string"
+                    },
+                    "displayName": {
+                        "description": "显示名。\n",
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "description": "用户组id。\n",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "用户组名称。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "joinType": {
+                        "description": "用户组类型。\n",
+                        "type": "string"
+                    },
+                    "members": {
+                        "description": "用户组成员列表\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudidentity/getGroupMember:getGroupMember"
+                        },
+                        "type": "array"
+                    },
+                    "source": {
+                        "description": "用户组来源。\n",
+                        "type": "string"
+                    },
+                    "updatedTime": {
+                        "description": "更新时间。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createdTime",
+                    "description",
+                    "displayName",
+                    "groupId",
+                    "groupName",
+                    "id",
+                    "joinType",
+                    "members",
+                    "source",
+                    "updatedTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudidentity/getGroups:getGroups": {
+            "description": "Plural Data Source schema for Byteplus::CloudIdentity::Group\n",
+            "outputs": {
+                "description": "A collection of values returned by getGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudidentity/getPermissionSet:getPermissionSet": {
+            "description": "Data Source schema for Byteplus::CloudIdentity::PermissionSet\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getPermissionSet.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPermissionSet.\n",
+                "properties": {
+                    "createdTime": {
+                        "description": "创建时间。\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "权限集描述。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "权限集名称。\n",
+                        "type": "string"
+                    },
+                    "permissionPolicies": {
+                        "description": "权限集下的策略列表。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cloudidentity/getPermissionSetPermissionPolicy:getPermissionSetPermissionPolicy"
+                        },
+                        "type": "array"
+                    },
+                    "permissionSetId": {
+                        "description": "权限集 ID。\n",
+                        "type": "string"
+                    },
+                    "relayState": {
+                        "description": "跳转控制台 URL。\n",
+                        "type": "string"
+                    },
+                    "sessionDuration": {
+                        "description": "session 过期时间，单位秒。\n",
+                        "type": "integer"
+                    },
+                    "statusNotifications": {
+                        "description": "状态通知配置。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "updatedTime": {
+                        "description": "更新时间。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createdTime",
+                    "description",
+                    "id",
+                    "name",
+                    "permissionPolicies",
+                    "permissionSetId",
+                    "relayState",
+                    "sessionDuration",
+                    "statusNotifications",
+                    "updatedTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudidentity/getPermissionSets:getPermissionSets": {
+            "description": "Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet\n",
+            "outputs": {
+                "description": "A collection of values returned by getPermissionSets.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -59693,6 +61109,137 @@
             "description": "Plural Data Source schema for Byteplus::FileNAS::Instance\n",
             "outputs": {
                 "description": "A collection of values returned by getInstances.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:filenas/getMountPoint:getMountPoint": {
+            "description": "Data Source schema for Byteplus::FileNAS::MountPoint\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getMountPoint.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getMountPoint.\n",
+                "properties": {
+                    "clients": {
+                        "description": "客户端信息。\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:filenas/getMountPointClient:getMountPointClient"
+                        },
+                        "type": "array"
+                    },
+                    "createdTime": {
+                        "description": "挂载点创建时间。\n",
+                        "type": "string"
+                    },
+                    "domain": {
+                        "description": "DNS 地址。\n",
+                        "type": "string"
+                    },
+                    "fileSystemId": {
+                        "description": "文件系统 ID。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "ip": {
+                        "description": "挂载点地址。\n",
+                        "type": "string"
+                    },
+                    "mountPointId": {
+                        "description": "挂载点 ID。\n",
+                        "type": "string"
+                    },
+                    "mountPointName": {
+                        "description": "挂载点名称。\n",
+                        "type": "string"
+                    },
+                    "permissionGroup": {
+                        "$ref": "#/types/bytepluscc:filenas/getMountPointPermissionGroup:getMountPointPermissionGroup",
+                        "description": "挂载点绑定的权限组信息。\n"
+                    },
+                    "permissionGroupId": {
+                        "description": "权限组 ID。\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。\n",
+                        "type": "string"
+                    },
+                    "subnetId": {
+                        "description": "子网 ID。\n",
+                        "type": "string"
+                    },
+                    "subnetName": {
+                        "description": "子网名称。\n",
+                        "type": "string"
+                    },
+                    "updatedTime": {
+                        "description": "挂载点更新时间。\n",
+                        "type": "string"
+                    },
+                    "vpcId": {
+                        "description": "私有网络 ID。\n",
+                        "type": "string"
+                    },
+                    "vpcName": {
+                        "description": "私有网络名称。\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "clients",
+                    "createdTime",
+                    "domain",
+                    "fileSystemId",
+                    "id",
+                    "ip",
+                    "mountPointId",
+                    "mountPointName",
+                    "permissionGroup",
+                    "permissionGroupId",
+                    "status",
+                    "subnetId",
+                    "subnetName",
+                    "updatedTime",
+                    "vpcId",
+                    "vpcName"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:filenas/getMountPoints:getMountPoints": {
+            "description": "Plural Data Source schema for Byteplus::FileNAS::MountPoint\n",
+            "outputs": {
+                "description": "A collection of values returned by getMountPoints.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -64023,6 +65570,92 @@
             "description": "Plural Data Source schema for Byteplus::RDSPostgreSQL::AllowList\n",
             "outputs": {
                 "description": "A collection of values returned by getAllowLists.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdspostgresql/getDbAccount:getDbAccount": {
+            "description": "Data Source schema for Byteplus::RDSPostgreSQL::DBAccount\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getDbAccount.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getDbAccount.\n",
+                "properties": {
+                    "accountName": {
+                        "description": "数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。\n",
+                        "type": "string"
+                    },
+                    "accountPassword": {
+                        "description": "数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()\u0026_+-=。\n",
+                        "type": "string"
+                    },
+                    "accountPrivileges": {
+                        "description": "账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数\n",
+                        "type": "string"
+                    },
+                    "accountType": {
+                        "description": "数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "description": "实例 ID\n",
+                        "type": "string"
+                    },
+                    "notAllowPrivileges": {
+                        "description": "为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "accountName",
+                    "accountPassword",
+                    "accountPrivileges",
+                    "accountType",
+                    "id",
+                    "instanceId",
+                    "notAllowPrivileges"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:rdspostgresql/getDbAccounts:getDbAccounts": {
+            "description": "Plural Data Source schema for Byteplus::RDSPostgreSQL::DBAccount\n",
+            "outputs": {
+                "description": "A collection of values returned by getDbAccounts.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",

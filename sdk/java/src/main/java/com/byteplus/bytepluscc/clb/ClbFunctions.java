@@ -16,6 +16,8 @@ import com.byteplus.bytepluscc.clb.inputs.GetNlbArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetNlbListenerArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetNlbListenerPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetNlbPlainArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetNlbSecurityPolicyArgs;
+import com.byteplus.bytepluscc.clb.inputs.GetNlbSecurityPolicyPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetNlbServerGroupArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetNlbServerGroupPlainArgs;
 import com.byteplus.bytepluscc.clb.inputs.GetRuleArgs;
@@ -33,6 +35,8 @@ import com.byteplus.bytepluscc.clb.outputs.GetListenersResult;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbListenerResult;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbListenersResult;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbResult;
+import com.byteplus.bytepluscc.clb.outputs.GetNlbSecurityPoliciesResult;
+import com.byteplus.bytepluscc.clb.outputs.GetNlbSecurityPolicyResult;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbServerGroupResult;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbServerGroupsResult;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbsResult;
@@ -503,6 +507,90 @@ public final class ClbFunctions {
      */
     public static CompletableFuture<GetNlbListenersResult> getNlbListenersPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:clb/getNlbListeners:getNlbListeners", TypeShape.of(GetNlbListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static Output<GetNlbSecurityPoliciesResult> getNlbSecurityPolicies() {
+        return getNlbSecurityPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static CompletableFuture<GetNlbSecurityPoliciesResult> getNlbSecurityPoliciesPlain() {
+        return getNlbSecurityPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static Output<GetNlbSecurityPoliciesResult> getNlbSecurityPolicies(InvokeArgs args) {
+        return getNlbSecurityPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static CompletableFuture<GetNlbSecurityPoliciesResult> getNlbSecurityPoliciesPlain(InvokeArgs args) {
+        return getNlbSecurityPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static Output<GetNlbSecurityPoliciesResult> getNlbSecurityPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbSecurityPolicies:getNlbSecurityPolicies", TypeShape.of(GetNlbSecurityPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static Output<GetNlbSecurityPoliciesResult> getNlbSecurityPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbSecurityPolicies:getNlbSecurityPolicies", TypeShape.of(GetNlbSecurityPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static CompletableFuture<GetNlbSecurityPoliciesResult> getNlbSecurityPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getNlbSecurityPolicies:getNlbSecurityPolicies", TypeShape.of(GetNlbSecurityPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static Output<GetNlbSecurityPolicyResult> getNlbSecurityPolicy(GetNlbSecurityPolicyArgs args) {
+        return getNlbSecurityPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static CompletableFuture<GetNlbSecurityPolicyResult> getNlbSecurityPolicyPlain(GetNlbSecurityPolicyPlainArgs args) {
+        return getNlbSecurityPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static Output<GetNlbSecurityPolicyResult> getNlbSecurityPolicy(GetNlbSecurityPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbSecurityPolicy:getNlbSecurityPolicy", TypeShape.of(GetNlbSecurityPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static Output<GetNlbSecurityPolicyResult> getNlbSecurityPolicy(GetNlbSecurityPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:clb/getNlbSecurityPolicy:getNlbSecurityPolicy", TypeShape.of(GetNlbSecurityPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CLB::NLBSecurityPolicy
+     * 
+     */
+    public static CompletableFuture<GetNlbSecurityPolicyResult> getNlbSecurityPolicyPlain(GetNlbSecurityPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:clb/getNlbSecurityPolicy:getNlbSecurityPolicy", TypeShape.of(GetNlbSecurityPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::CLB::NLBServerGroup

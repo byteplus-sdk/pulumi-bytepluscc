@@ -31,6 +31,7 @@ __all__ = [
     'ListenerTag',
     'NlbListenerHealth',
     'NlbListenerTag',
+    'NlbSecurityPolicyTag',
     'NlbServerGroupHealthCheck',
     'NlbServerGroupServer',
     'NlbServerGroupTag',
@@ -56,6 +57,7 @@ __all__ = [
     'GetListenerTagResult',
     'GetNlbListenerHealthResult',
     'GetNlbListenerTagResult',
+    'GetNlbSecurityPolicyTagResult',
     'GetNlbServerGroupHealthCheckResult',
     'GetNlbServerGroupServerResult',
     'GetNlbServerGroupTagResult',
@@ -1034,6 +1036,37 @@ class NlbListenerTag(dict):
     def value(self) -> Optional[builtins.str]:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class NlbSecurityPolicyTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        用户标签的标签值。
         """
         return pulumi.get(self, "value")
 
@@ -2597,6 +2630,35 @@ class GetNlbListenerTagResult(dict):
     def value(self) -> builtins.str:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetNlbSecurityPolicyTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 用户标签的标签键。
+        :param builtins.str value: 用户标签的标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        用户标签的标签值。
         """
         return pulumi.get(self, "value")
 
