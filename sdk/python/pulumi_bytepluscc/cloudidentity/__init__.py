@@ -6,6 +6,14 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_group import *
+from .get_groups import *
+from .get_permission_set import *
+from .get_permission_sets import *
 from .get_user import *
 from .get_users import *
+from .group import *
+from .permission_set import *
 from .user import *
+from ._inputs import *
+from . import outputs

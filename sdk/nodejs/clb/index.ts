@@ -75,6 +75,16 @@ export const getNlbListeners: typeof import("./getNlbListeners").getNlbListeners
 export const getNlbListenersOutput: typeof import("./getNlbListeners").getNlbListenersOutput = null as any;
 utilities.lazyLoad(exports, ["getNlbListeners","getNlbListenersOutput"], () => require("./getNlbListeners"));
 
+export { GetNlbSecurityPoliciesResult } from "./getNlbSecurityPolicies";
+export const getNlbSecurityPolicies: typeof import("./getNlbSecurityPolicies").getNlbSecurityPolicies = null as any;
+export const getNlbSecurityPoliciesOutput: typeof import("./getNlbSecurityPolicies").getNlbSecurityPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getNlbSecurityPolicies","getNlbSecurityPoliciesOutput"], () => require("./getNlbSecurityPolicies"));
+
+export { GetNlbSecurityPolicyArgs, GetNlbSecurityPolicyResult, GetNlbSecurityPolicyOutputArgs } from "./getNlbSecurityPolicy";
+export const getNlbSecurityPolicy: typeof import("./getNlbSecurityPolicy").getNlbSecurityPolicy = null as any;
+export const getNlbSecurityPolicyOutput: typeof import("./getNlbSecurityPolicy").getNlbSecurityPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getNlbSecurityPolicy","getNlbSecurityPolicyOutput"], () => require("./getNlbSecurityPolicy"));
+
 export { GetNlbServerGroupArgs, GetNlbServerGroupResult, GetNlbServerGroupOutputArgs } from "./getNlbServerGroup";
 export const getNlbServerGroup: typeof import("./getNlbServerGroup").getNlbServerGroup = null as any;
 export const getNlbServerGroupOutput: typeof import("./getNlbServerGroup").getNlbServerGroupOutput = null as any;
@@ -125,6 +135,11 @@ export type NlbListener = import("./nlbListener").NlbListener;
 export const NlbListener: typeof import("./nlbListener").NlbListener = null as any;
 utilities.lazyLoad(exports, ["NlbListener"], () => require("./nlbListener"));
 
+export { NlbSecurityPolicyArgs, NlbSecurityPolicyState } from "./nlbSecurityPolicy";
+export type NlbSecurityPolicy = import("./nlbSecurityPolicy").NlbSecurityPolicy;
+export const NlbSecurityPolicy: typeof import("./nlbSecurityPolicy").NlbSecurityPolicy = null as any;
+utilities.lazyLoad(exports, ["NlbSecurityPolicy"], () => require("./nlbSecurityPolicy"));
+
 export { NlbServerGroupArgs, NlbServerGroupState } from "./nlbServerGroup";
 export type NlbServerGroup = import("./nlbServerGroup").NlbServerGroup;
 export const NlbServerGroup: typeof import("./nlbServerGroup").NlbServerGroup = null as any;
@@ -157,6 +172,8 @@ const _module = {
                 return new Nlb(name, <any>undefined, { urn })
             case "bytepluscc:clb/nlbListener:NlbListener":
                 return new NlbListener(name, <any>undefined, { urn })
+            case "bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy":
+                return new NlbSecurityPolicy(name, <any>undefined, { urn })
             case "bytepluscc:clb/nlbServerGroup:NlbServerGroup":
                 return new NlbServerGroup(name, <any>undefined, { urn })
             case "bytepluscc:clb/rule:Rule":
@@ -174,6 +191,7 @@ pulumi.runtime.registerResourceModule("bytepluscc", "clb/clb", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/listener", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlb", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlbListener", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlbSecurityPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/nlbServerGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/rule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "clb/serverGroup", _module)

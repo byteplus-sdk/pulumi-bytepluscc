@@ -14,14 +14,21 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'InstanceCachePerformance',
     'InstanceCapacity',
     'InstanceTag',
+    'MountPointClient',
+    'MountPointPermissionGroup',
+    'MountPointPermissionGroupMountPoint',
     'GetInstanceCachePerformanceResult',
     'GetInstanceCapacityResult',
     'GetInstanceTagResult',
+    'GetMountPointClientResult',
+    'GetMountPointPermissionGroupResult',
+    'GetMountPointPermissionGroupMountPointResult',
 ]
 
 @pulumi.output_type
@@ -135,6 +142,246 @@ class InstanceTag(dict):
 
 
 @pulumi.output_type
+class MountPointClient(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "protocolVersion":
+            suggest = "protocol_version"
+        elif key == "vpcName":
+            suggest = "vpc_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MountPointClient. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MountPointClient.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MountPointClient.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ip: Optional[builtins.str] = None,
+                 protocol_version: Optional[builtins.str] = None,
+                 vpc_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str ip: 客户端的私有网络 IP 地址。
+        :param builtins.str protocol_version: 挂载协议版本号。取值：NFSv3。
+        :param builtins.str vpc_name: 私有网络名称。
+        """
+        if ip is not None:
+            pulumi.set(__self__, "ip", ip)
+        if protocol_version is not None:
+            pulumi.set(__self__, "protocol_version", protocol_version)
+        if vpc_name is not None:
+            pulumi.set(__self__, "vpc_name", vpc_name)
+
+    @property
+    @pulumi.getter
+    def ip(self) -> Optional[builtins.str]:
+        """
+        客户端的私有网络 IP 地址。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter(name="protocolVersion")
+    def protocol_version(self) -> Optional[builtins.str]:
+        """
+        挂载协议版本号。取值：NFSv3。
+        """
+        return pulumi.get(self, "protocol_version")
+
+    @property
+    @pulumi.getter(name="vpcName")
+    def vpc_name(self) -> Optional[builtins.str]:
+        """
+        私有网络名称。
+        """
+        return pulumi.get(self, "vpc_name")
+
+
+@pulumi.output_type
+class MountPointPermissionGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "createTime":
+            suggest = "create_time"
+        elif key == "fileSystemCount":
+            suggest = "file_system_count"
+        elif key == "fileSystemType":
+            suggest = "file_system_type"
+        elif key == "mountPoints":
+            suggest = "mount_points"
+        elif key == "permissionGroupName":
+            suggest = "permission_group_name"
+        elif key == "permissionRuleCount":
+            suggest = "permission_rule_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MountPointPermissionGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MountPointPermissionGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MountPointPermissionGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 create_time: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 file_system_count: Optional[builtins.int] = None,
+                 file_system_type: Optional[builtins.str] = None,
+                 mount_points: Optional[Sequence['outputs.MountPointPermissionGroupMountPoint']] = None,
+                 permission_group_name: Optional[builtins.str] = None,
+                 permission_rule_count: Optional[builtins.int] = None):
+        """
+        :param builtins.str create_time: 权限组创建时间。
+        :param builtins.str description: 权限组描述信息。
+        :param builtins.int file_system_count: 关联该权限组的文件系统数量。
+        :param builtins.str file_system_type: 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+        :param builtins.str permission_group_name: 权限组名称。
+        :param builtins.int permission_rule_count: 权限规则数量。
+        """
+        if create_time is not None:
+            pulumi.set(__self__, "create_time", create_time)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if file_system_count is not None:
+            pulumi.set(__self__, "file_system_count", file_system_count)
+        if file_system_type is not None:
+            pulumi.set(__self__, "file_system_type", file_system_type)
+        if mount_points is not None:
+            pulumi.set(__self__, "mount_points", mount_points)
+        if permission_group_name is not None:
+            pulumi.set(__self__, "permission_group_name", permission_group_name)
+        if permission_rule_count is not None:
+            pulumi.set(__self__, "permission_rule_count", permission_rule_count)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> Optional[builtins.str]:
+        """
+        权限组创建时间。
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        权限组描述信息。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="fileSystemCount")
+    def file_system_count(self) -> Optional[builtins.int]:
+        """
+        关联该权限组的文件系统数量。
+        """
+        return pulumi.get(self, "file_system_count")
+
+    @property
+    @pulumi.getter(name="fileSystemType")
+    def file_system_type(self) -> Optional[builtins.str]:
+        """
+        文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+        """
+        return pulumi.get(self, "file_system_type")
+
+    @property
+    @pulumi.getter(name="mountPoints")
+    def mount_points(self) -> Optional[Sequence['outputs.MountPointPermissionGroupMountPoint']]:
+        return pulumi.get(self, "mount_points")
+
+    @property
+    @pulumi.getter(name="permissionGroupName")
+    def permission_group_name(self) -> Optional[builtins.str]:
+        """
+        权限组名称。
+        """
+        return pulumi.get(self, "permission_group_name")
+
+    @property
+    @pulumi.getter(name="permissionRuleCount")
+    def permission_rule_count(self) -> Optional[builtins.int]:
+        """
+        权限规则数量。
+        """
+        return pulumi.get(self, "permission_rule_count")
+
+
+@pulumi.output_type
+class MountPointPermissionGroupMountPoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileSystemId":
+            suggest = "file_system_id"
+        elif key == "mountPointId":
+            suggest = "mount_point_id"
+        elif key == "mountPointName":
+            suggest = "mount_point_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MountPointPermissionGroupMountPoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MountPointPermissionGroupMountPoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MountPointPermissionGroupMountPoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_system_id: Optional[builtins.str] = None,
+                 mount_point_id: Optional[builtins.str] = None,
+                 mount_point_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str file_system_id: 文件系统 ID。
+        :param builtins.str mount_point_id: 挂载点 ID。
+        :param builtins.str mount_point_name: 挂载点名称。
+        """
+        if file_system_id is not None:
+            pulumi.set(__self__, "file_system_id", file_system_id)
+        if mount_point_id is not None:
+            pulumi.set(__self__, "mount_point_id", mount_point_id)
+        if mount_point_name is not None:
+            pulumi.set(__self__, "mount_point_name", mount_point_name)
+
+    @property
+    @pulumi.getter(name="fileSystemId")
+    def file_system_id(self) -> Optional[builtins.str]:
+        """
+        文件系统 ID。
+        """
+        return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="mountPointId")
+    def mount_point_id(self) -> Optional[builtins.str]:
+        """
+        挂载点 ID。
+        """
+        return pulumi.get(self, "mount_point_id")
+
+    @property
+    @pulumi.getter(name="mountPointName")
+    def mount_point_name(self) -> Optional[builtins.str]:
+        """
+        挂载点名称。
+        """
+        return pulumi.get(self, "mount_point_name")
+
+
+@pulumi.output_type
 class GetInstanceCachePerformanceResult(dict):
     def __init__(__self__, *,
                  cache_bandwidth: builtins.int):
@@ -219,5 +466,169 @@ class GetInstanceTagResult(dict):
         标签值。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMountPointClientResult(dict):
+    def __init__(__self__, *,
+                 ip: builtins.str,
+                 protocol_version: builtins.str,
+                 vpc_name: builtins.str):
+        """
+        :param builtins.str ip: 客户端的私有网络 IP 地址。
+        :param builtins.str protocol_version: 挂载协议版本号。取值：NFSv3。
+        :param builtins.str vpc_name: 私有网络名称。
+        """
+        pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "protocol_version", protocol_version)
+        pulumi.set(__self__, "vpc_name", vpc_name)
+
+    @property
+    @pulumi.getter
+    def ip(self) -> builtins.str:
+        """
+        客户端的私有网络 IP 地址。
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter(name="protocolVersion")
+    def protocol_version(self) -> builtins.str:
+        """
+        挂载协议版本号。取值：NFSv3。
+        """
+        return pulumi.get(self, "protocol_version")
+
+    @property
+    @pulumi.getter(name="vpcName")
+    def vpc_name(self) -> builtins.str:
+        """
+        私有网络名称。
+        """
+        return pulumi.get(self, "vpc_name")
+
+
+@pulumi.output_type
+class GetMountPointPermissionGroupResult(dict):
+    def __init__(__self__, *,
+                 create_time: builtins.str,
+                 description: builtins.str,
+                 file_system_count: builtins.int,
+                 file_system_type: builtins.str,
+                 mount_points: Sequence['outputs.GetMountPointPermissionGroupMountPointResult'],
+                 permission_group_name: builtins.str,
+                 permission_rule_count: builtins.int):
+        """
+        :param builtins.str create_time: 权限组创建时间。
+        :param builtins.str description: 权限组描述信息。
+        :param builtins.int file_system_count: 关联该权限组的文件系统数量。
+        :param builtins.str file_system_type: 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+        :param Sequence['GetMountPointPermissionGroupMountPointArgs'] mount_points: 使用该权限组的挂载点信息。
+        :param builtins.str permission_group_name: 权限组名称。
+        :param builtins.int permission_rule_count: 权限规则数量。
+        """
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "file_system_count", file_system_count)
+        pulumi.set(__self__, "file_system_type", file_system_type)
+        pulumi.set(__self__, "mount_points", mount_points)
+        pulumi.set(__self__, "permission_group_name", permission_group_name)
+        pulumi.set(__self__, "permission_rule_count", permission_rule_count)
+
+    @property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> builtins.str:
+        """
+        权限组创建时间。
+        """
+        return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        权限组描述信息。
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="fileSystemCount")
+    def file_system_count(self) -> builtins.int:
+        """
+        关联该权限组的文件系统数量。
+        """
+        return pulumi.get(self, "file_system_count")
+
+    @property
+    @pulumi.getter(name="fileSystemType")
+    def file_system_type(self) -> builtins.str:
+        """
+        文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+        """
+        return pulumi.get(self, "file_system_type")
+
+    @property
+    @pulumi.getter(name="mountPoints")
+    def mount_points(self) -> Sequence['outputs.GetMountPointPermissionGroupMountPointResult']:
+        """
+        使用该权限组的挂载点信息。
+        """
+        return pulumi.get(self, "mount_points")
+
+    @property
+    @pulumi.getter(name="permissionGroupName")
+    def permission_group_name(self) -> builtins.str:
+        """
+        权限组名称。
+        """
+        return pulumi.get(self, "permission_group_name")
+
+    @property
+    @pulumi.getter(name="permissionRuleCount")
+    def permission_rule_count(self) -> builtins.int:
+        """
+        权限规则数量。
+        """
+        return pulumi.get(self, "permission_rule_count")
+
+
+@pulumi.output_type
+class GetMountPointPermissionGroupMountPointResult(dict):
+    def __init__(__self__, *,
+                 file_system_id: builtins.str,
+                 mount_point_id: builtins.str,
+                 mount_point_name: builtins.str):
+        """
+        :param builtins.str file_system_id: 文件系统 ID。
+        :param builtins.str mount_point_id: 挂载点 ID。
+        :param builtins.str mount_point_name: 挂载点名称。
+        """
+        pulumi.set(__self__, "file_system_id", file_system_id)
+        pulumi.set(__self__, "mount_point_id", mount_point_id)
+        pulumi.set(__self__, "mount_point_name", mount_point_name)
+
+    @property
+    @pulumi.getter(name="fileSystemId")
+    def file_system_id(self) -> builtins.str:
+        """
+        文件系统 ID。
+        """
+        return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter(name="mountPointId")
+    def mount_point_id(self) -> builtins.str:
+        """
+        挂载点 ID。
+        """
+        return pulumi.get(self, "mount_point_id")
+
+    @property
+    @pulumi.getter(name="mountPointName")
+    def mount_point_name(self) -> builtins.str:
+        """
+        挂载点名称。
+        """
+        return pulumi.get(self, "mount_point_name")
 
 

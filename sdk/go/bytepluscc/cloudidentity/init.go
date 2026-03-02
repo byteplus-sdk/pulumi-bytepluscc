@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:cloudidentity/group:Group":
+		r = &Group{}
+	case "bytepluscc:cloudidentity/permissionSet:PermissionSet":
+		r = &PermissionSet{}
 	case "bytepluscc:cloudidentity/user:User":
 		r = &User{}
 	default:
@@ -36,6 +40,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cloudidentity/group",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cloudidentity/permissionSet",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"cloudidentity/user",

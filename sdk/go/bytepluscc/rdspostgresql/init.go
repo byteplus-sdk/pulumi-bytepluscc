@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:rdspostgresql/allowList:AllowList":
 		r = &AllowList{}
+	case "bytepluscc:rdspostgresql/dbAccount:DbAccount":
+		r = &DbAccount{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rdspostgresql/allowList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdspostgresql/dbAccount",
 		&module{version},
 	)
 }

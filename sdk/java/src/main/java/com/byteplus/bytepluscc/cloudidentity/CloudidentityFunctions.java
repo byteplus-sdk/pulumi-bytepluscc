@@ -4,8 +4,16 @@
 package com.byteplus.bytepluscc.cloudidentity;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cloudidentity.inputs.GetGroupArgs;
+import com.byteplus.bytepluscc.cloudidentity.inputs.GetGroupPlainArgs;
+import com.byteplus.bytepluscc.cloudidentity.inputs.GetPermissionSetArgs;
+import com.byteplus.bytepluscc.cloudidentity.inputs.GetPermissionSetPlainArgs;
 import com.byteplus.bytepluscc.cloudidentity.inputs.GetUserArgs;
 import com.byteplus.bytepluscc.cloudidentity.inputs.GetUserPlainArgs;
+import com.byteplus.bytepluscc.cloudidentity.outputs.GetGroupResult;
+import com.byteplus.bytepluscc.cloudidentity.outputs.GetGroupsResult;
+import com.byteplus.bytepluscc.cloudidentity.outputs.GetPermissionSetResult;
+import com.byteplus.bytepluscc.cloudidentity.outputs.GetPermissionSetsResult;
 import com.byteplus.bytepluscc.cloudidentity.outputs.GetUserResult;
 import com.byteplus.bytepluscc.cloudidentity.outputs.GetUsersResult;
 import com.pulumi.core.Output;
@@ -17,6 +25,174 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CloudidentityFunctions {
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args) {
+        return getGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args) {
+        return getGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudidentity/getGroup:getGroup", TypeShape.of(GetGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups() {
+        return getGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain() {
+        return getGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args) {
+        return getGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args) {
+        return getGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static Output<GetGroupsResult> getGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::Group
+     * 
+     */
+    public static CompletableFuture<GetGroupsResult> getGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudidentity/getGroups:getGroups", TypeShape.of(GetGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static Output<GetPermissionSetResult> getPermissionSet(GetPermissionSetArgs args) {
+        return getPermissionSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static CompletableFuture<GetPermissionSetResult> getPermissionSetPlain(GetPermissionSetPlainArgs args) {
+        return getPermissionSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static Output<GetPermissionSetResult> getPermissionSet(GetPermissionSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getPermissionSet:getPermissionSet", TypeShape.of(GetPermissionSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static Output<GetPermissionSetResult> getPermissionSet(GetPermissionSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getPermissionSet:getPermissionSet", TypeShape.of(GetPermissionSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static CompletableFuture<GetPermissionSetResult> getPermissionSetPlain(GetPermissionSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudidentity/getPermissionSet:getPermissionSet", TypeShape.of(GetPermissionSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static Output<GetPermissionSetsResult> getPermissionSets() {
+        return getPermissionSets(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static CompletableFuture<GetPermissionSetsResult> getPermissionSetsPlain() {
+        return getPermissionSetsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static Output<GetPermissionSetsResult> getPermissionSets(InvokeArgs args) {
+        return getPermissionSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static CompletableFuture<GetPermissionSetsResult> getPermissionSetsPlain(InvokeArgs args) {
+        return getPermissionSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static Output<GetPermissionSetsResult> getPermissionSets(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getPermissionSets:getPermissionSets", TypeShape.of(GetPermissionSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static Output<GetPermissionSetsResult> getPermissionSets(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cloudidentity/getPermissionSets:getPermissionSets", TypeShape.of(GetPermissionSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CloudIdentity::PermissionSet
+     * 
+     */
+    public static CompletableFuture<GetPermissionSetsResult> getPermissionSetsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cloudidentity/getPermissionSets:getPermissionSets", TypeShape.of(GetPermissionSetsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CloudIdentity::User
      * 

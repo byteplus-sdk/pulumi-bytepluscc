@@ -2257,6 +2257,112 @@ func (o NlbListenerTagArrayOutput) Index(i pulumi.IntInput) NlbListenerTagOutput
 	}).(NlbListenerTagOutput)
 }
 
+type NlbSecurityPolicyTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// NlbSecurityPolicyTagInput is an input type that accepts NlbSecurityPolicyTagArgs and NlbSecurityPolicyTagOutput values.
+// You can construct a concrete instance of `NlbSecurityPolicyTagInput` via:
+//
+//	NlbSecurityPolicyTagArgs{...}
+type NlbSecurityPolicyTagInput interface {
+	pulumi.Input
+
+	ToNlbSecurityPolicyTagOutput() NlbSecurityPolicyTagOutput
+	ToNlbSecurityPolicyTagOutputWithContext(context.Context) NlbSecurityPolicyTagOutput
+}
+
+type NlbSecurityPolicyTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NlbSecurityPolicyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (i NlbSecurityPolicyTagArgs) ToNlbSecurityPolicyTagOutput() NlbSecurityPolicyTagOutput {
+	return i.ToNlbSecurityPolicyTagOutputWithContext(context.Background())
+}
+
+func (i NlbSecurityPolicyTagArgs) ToNlbSecurityPolicyTagOutputWithContext(ctx context.Context) NlbSecurityPolicyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbSecurityPolicyTagOutput)
+}
+
+// NlbSecurityPolicyTagArrayInput is an input type that accepts NlbSecurityPolicyTagArray and NlbSecurityPolicyTagArrayOutput values.
+// You can construct a concrete instance of `NlbSecurityPolicyTagArrayInput` via:
+//
+//	NlbSecurityPolicyTagArray{ NlbSecurityPolicyTagArgs{...} }
+type NlbSecurityPolicyTagArrayInput interface {
+	pulumi.Input
+
+	ToNlbSecurityPolicyTagArrayOutput() NlbSecurityPolicyTagArrayOutput
+	ToNlbSecurityPolicyTagArrayOutputWithContext(context.Context) NlbSecurityPolicyTagArrayOutput
+}
+
+type NlbSecurityPolicyTagArray []NlbSecurityPolicyTagInput
+
+func (NlbSecurityPolicyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (i NlbSecurityPolicyTagArray) ToNlbSecurityPolicyTagArrayOutput() NlbSecurityPolicyTagArrayOutput {
+	return i.ToNlbSecurityPolicyTagArrayOutputWithContext(context.Background())
+}
+
+func (i NlbSecurityPolicyTagArray) ToNlbSecurityPolicyTagArrayOutputWithContext(ctx context.Context) NlbSecurityPolicyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbSecurityPolicyTagArrayOutput)
+}
+
+type NlbSecurityPolicyTagOutput struct{ *pulumi.OutputState }
+
+func (NlbSecurityPolicyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (o NlbSecurityPolicyTagOutput) ToNlbSecurityPolicyTagOutput() NlbSecurityPolicyTagOutput {
+	return o
+}
+
+func (o NlbSecurityPolicyTagOutput) ToNlbSecurityPolicyTagOutputWithContext(ctx context.Context) NlbSecurityPolicyTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o NlbSecurityPolicyTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbSecurityPolicyTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o NlbSecurityPolicyTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbSecurityPolicyTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NlbSecurityPolicyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (NlbSecurityPolicyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (o NlbSecurityPolicyTagArrayOutput) ToNlbSecurityPolicyTagArrayOutput() NlbSecurityPolicyTagArrayOutput {
+	return o
+}
+
+func (o NlbSecurityPolicyTagArrayOutput) ToNlbSecurityPolicyTagArrayOutputWithContext(ctx context.Context) NlbSecurityPolicyTagArrayOutput {
+	return o
+}
+
+func (o NlbSecurityPolicyTagArrayOutput) Index(i pulumi.IntInput) NlbSecurityPolicyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NlbSecurityPolicyTag {
+		return vs[0].([]NlbSecurityPolicyTag)[vs[1].(int)]
+	}).(NlbSecurityPolicyTagOutput)
+}
+
 type NlbServerGroupHealthCheck struct {
 	// 健康检查的域名。
 	Domain *string `pulumi:"domain"`
@@ -5453,6 +5559,112 @@ func (o GetNlbListenerTagArrayOutput) Index(i pulumi.IntInput) GetNlbListenerTag
 	}).(GetNlbListenerTagOutput)
 }
 
+type GetNlbSecurityPolicyTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetNlbSecurityPolicyTagInput is an input type that accepts GetNlbSecurityPolicyTagArgs and GetNlbSecurityPolicyTagOutput values.
+// You can construct a concrete instance of `GetNlbSecurityPolicyTagInput` via:
+//
+//	GetNlbSecurityPolicyTagArgs{...}
+type GetNlbSecurityPolicyTagInput interface {
+	pulumi.Input
+
+	ToGetNlbSecurityPolicyTagOutput() GetNlbSecurityPolicyTagOutput
+	ToGetNlbSecurityPolicyTagOutputWithContext(context.Context) GetNlbSecurityPolicyTagOutput
+}
+
+type GetNlbSecurityPolicyTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNlbSecurityPolicyTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (i GetNlbSecurityPolicyTagArgs) ToGetNlbSecurityPolicyTagOutput() GetNlbSecurityPolicyTagOutput {
+	return i.ToGetNlbSecurityPolicyTagOutputWithContext(context.Background())
+}
+
+func (i GetNlbSecurityPolicyTagArgs) ToGetNlbSecurityPolicyTagOutputWithContext(ctx context.Context) GetNlbSecurityPolicyTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbSecurityPolicyTagOutput)
+}
+
+// GetNlbSecurityPolicyTagArrayInput is an input type that accepts GetNlbSecurityPolicyTagArray and GetNlbSecurityPolicyTagArrayOutput values.
+// You can construct a concrete instance of `GetNlbSecurityPolicyTagArrayInput` via:
+//
+//	GetNlbSecurityPolicyTagArray{ GetNlbSecurityPolicyTagArgs{...} }
+type GetNlbSecurityPolicyTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNlbSecurityPolicyTagArrayOutput() GetNlbSecurityPolicyTagArrayOutput
+	ToGetNlbSecurityPolicyTagArrayOutputWithContext(context.Context) GetNlbSecurityPolicyTagArrayOutput
+}
+
+type GetNlbSecurityPolicyTagArray []GetNlbSecurityPolicyTagInput
+
+func (GetNlbSecurityPolicyTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (i GetNlbSecurityPolicyTagArray) ToGetNlbSecurityPolicyTagArrayOutput() GetNlbSecurityPolicyTagArrayOutput {
+	return i.ToGetNlbSecurityPolicyTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNlbSecurityPolicyTagArray) ToGetNlbSecurityPolicyTagArrayOutputWithContext(ctx context.Context) GetNlbSecurityPolicyTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbSecurityPolicyTagArrayOutput)
+}
+
+type GetNlbSecurityPolicyTagOutput struct{ *pulumi.OutputState }
+
+func (GetNlbSecurityPolicyTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (o GetNlbSecurityPolicyTagOutput) ToGetNlbSecurityPolicyTagOutput() GetNlbSecurityPolicyTagOutput {
+	return o
+}
+
+func (o GetNlbSecurityPolicyTagOutput) ToGetNlbSecurityPolicyTagOutputWithContext(ctx context.Context) GetNlbSecurityPolicyTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetNlbSecurityPolicyTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbSecurityPolicyTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetNlbSecurityPolicyTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbSecurityPolicyTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNlbSecurityPolicyTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNlbSecurityPolicyTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNlbSecurityPolicyTag)(nil)).Elem()
+}
+
+func (o GetNlbSecurityPolicyTagArrayOutput) ToGetNlbSecurityPolicyTagArrayOutput() GetNlbSecurityPolicyTagArrayOutput {
+	return o
+}
+
+func (o GetNlbSecurityPolicyTagArrayOutput) ToGetNlbSecurityPolicyTagArrayOutputWithContext(ctx context.Context) GetNlbSecurityPolicyTagArrayOutput {
+	return o
+}
+
+func (o GetNlbSecurityPolicyTagArrayOutput) Index(i pulumi.IntInput) GetNlbSecurityPolicyTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNlbSecurityPolicyTag {
+		return vs[0].([]GetNlbSecurityPolicyTag)[vs[1].(int)]
+	}).(GetNlbSecurityPolicyTagOutput)
+}
+
 type GetNlbServerGroupHealthCheck struct {
 	// 健康检查的域名。
 	Domain string `pulumi:"domain"`
@@ -6769,6 +6981,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerHealthArrayInput)(nil)).Elem(), NlbListenerHealthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerTagInput)(nil)).Elem(), NlbListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerTagArrayInput)(nil)).Elem(), NlbListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbSecurityPolicyTagInput)(nil)).Elem(), NlbSecurityPolicyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbSecurityPolicyTagArrayInput)(nil)).Elem(), NlbSecurityPolicyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupHealthCheckInput)(nil)).Elem(), NlbServerGroupHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupHealthCheckPtrInput)(nil)).Elem(), NlbServerGroupHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbServerGroupServerInput)(nil)).Elem(), NlbServerGroupServerArgs{})
@@ -6814,6 +7028,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerHealthArrayInput)(nil)).Elem(), GetNlbListenerHealthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerTagInput)(nil)).Elem(), GetNlbListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerTagArrayInput)(nil)).Elem(), GetNlbListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbSecurityPolicyTagInput)(nil)).Elem(), GetNlbSecurityPolicyTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbSecurityPolicyTagArrayInput)(nil)).Elem(), GetNlbSecurityPolicyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupHealthCheckInput)(nil)).Elem(), GetNlbServerGroupHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupServerInput)(nil)).Elem(), GetNlbServerGroupServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbServerGroupServerArrayInput)(nil)).Elem(), GetNlbServerGroupServerArray{})
@@ -6862,6 +7078,8 @@ func init() {
 	pulumi.RegisterOutputType(NlbListenerHealthArrayOutput{})
 	pulumi.RegisterOutputType(NlbListenerTagOutput{})
 	pulumi.RegisterOutputType(NlbListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(NlbSecurityPolicyTagOutput{})
+	pulumi.RegisterOutputType(NlbSecurityPolicyTagArrayOutput{})
 	pulumi.RegisterOutputType(NlbServerGroupHealthCheckOutput{})
 	pulumi.RegisterOutputType(NlbServerGroupHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(NlbServerGroupServerOutput{})
@@ -6907,6 +7125,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNlbListenerHealthArrayOutput{})
 	pulumi.RegisterOutputType(GetNlbListenerTagOutput{})
 	pulumi.RegisterOutputType(GetNlbListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbSecurityPolicyTagOutput{})
+	pulumi.RegisterOutputType(GetNlbSecurityPolicyTagArrayOutput{})
 	pulumi.RegisterOutputType(GetNlbServerGroupHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetNlbServerGroupServerOutput{})
 	pulumi.RegisterOutputType(GetNlbServerGroupServerArrayOutput{})

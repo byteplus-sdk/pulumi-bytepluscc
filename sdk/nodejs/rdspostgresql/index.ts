@@ -10,6 +10,11 @@ export type AllowList = import("./allowList").AllowList;
 export const AllowList: typeof import("./allowList").AllowList = null as any;
 utilities.lazyLoad(exports, ["AllowList"], () => require("./allowList"));
 
+export { DbAccountArgs, DbAccountState } from "./dbAccount";
+export type DbAccount = import("./dbAccount").DbAccount;
+export const DbAccount: typeof import("./dbAccount").DbAccount = null as any;
+utilities.lazyLoad(exports, ["DbAccount"], () => require("./dbAccount"));
+
 export { GetAllowListArgs, GetAllowListResult, GetAllowListOutputArgs } from "./getAllowList";
 export const getAllowList: typeof import("./getAllowList").getAllowList = null as any;
 export const getAllowListOutput: typeof import("./getAllowList").getAllowListOutput = null as any;
@@ -20,6 +25,16 @@ export const getAllowLists: typeof import("./getAllowLists").getAllowLists = nul
 export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
 utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
 
+export { GetDbAccountArgs, GetDbAccountResult, GetDbAccountOutputArgs } from "./getDbAccount";
+export const getDbAccount: typeof import("./getDbAccount").getDbAccount = null as any;
+export const getDbAccountOutput: typeof import("./getDbAccount").getDbAccountOutput = null as any;
+utilities.lazyLoad(exports, ["getDbAccount","getDbAccountOutput"], () => require("./getDbAccount"));
+
+export { GetDbAccountsResult } from "./getDbAccounts";
+export const getDbAccounts: typeof import("./getDbAccounts").getDbAccounts = null as any;
+export const getDbAccountsOutput: typeof import("./getDbAccounts").getDbAccountsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbAccounts","getDbAccountsOutput"], () => require("./getDbAccounts"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:rdspostgresql/allowList:AllowList":
                 return new AllowList(name, <any>undefined, { urn })
+            case "bytepluscc:rdspostgresql/dbAccount:DbAccount":
+                return new DbAccount(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/allowList", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdspostgresql/dbAccount", _module)

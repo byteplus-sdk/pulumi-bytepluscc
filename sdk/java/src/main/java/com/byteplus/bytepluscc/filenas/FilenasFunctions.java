@@ -6,10 +6,14 @@ package com.byteplus.bytepluscc.filenas;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.filenas.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.filenas.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.filenas.inputs.GetMountPointArgs;
+import com.byteplus.bytepluscc.filenas.inputs.GetMountPointPlainArgs;
 import com.byteplus.bytepluscc.filenas.inputs.GetSnapshotArgs;
 import com.byteplus.bytepluscc.filenas.inputs.GetSnapshotPlainArgs;
 import com.byteplus.bytepluscc.filenas.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.filenas.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.filenas.outputs.GetMountPointResult;
+import com.byteplus.bytepluscc.filenas.outputs.GetMountPointsResult;
 import com.byteplus.bytepluscc.filenas.outputs.GetSnapshotResult;
 import com.byteplus.bytepluscc.filenas.outputs.GetSnapshotsResult;
 import com.pulumi.core.Output;
@@ -104,6 +108,90 @@ public final class FilenasFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:filenas/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static Output<GetMountPointResult> getMountPoint(GetMountPointArgs args) {
+        return getMountPoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static CompletableFuture<GetMountPointResult> getMountPointPlain(GetMountPointPlainArgs args) {
+        return getMountPointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static Output<GetMountPointResult> getMountPoint(GetMountPointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getMountPoint:getMountPoint", TypeShape.of(GetMountPointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static Output<GetMountPointResult> getMountPoint(GetMountPointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getMountPoint:getMountPoint", TypeShape.of(GetMountPointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static CompletableFuture<GetMountPointResult> getMountPointPlain(GetMountPointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:filenas/getMountPoint:getMountPoint", TypeShape.of(GetMountPointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static Output<GetMountPointsResult> getMountPoints() {
+        return getMountPoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static CompletableFuture<GetMountPointsResult> getMountPointsPlain() {
+        return getMountPointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static Output<GetMountPointsResult> getMountPoints(InvokeArgs args) {
+        return getMountPoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static CompletableFuture<GetMountPointsResult> getMountPointsPlain(InvokeArgs args) {
+        return getMountPointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static Output<GetMountPointsResult> getMountPoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getMountPoints:getMountPoints", TypeShape.of(GetMountPointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static Output<GetMountPointsResult> getMountPoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:filenas/getMountPoints:getMountPoints", TypeShape.of(GetMountPointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::FileNAS::MountPoint
+     * 
+     */
+    public static CompletableFuture<GetMountPointsResult> getMountPointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:filenas/getMountPoints:getMountPoints", TypeShape.of(GetMountPointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::FileNAS::Snapshot
