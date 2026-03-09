@@ -123,6 +123,10 @@ export class Key extends pulumi.CustomResource {
      */
     public readonly protectionLevel!: pulumi.Output<string>;
     /**
+     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     */
+    public readonly rotateInterval!: pulumi.Output<number>;
+    /**
      * 密钥轮转状态，取值：Enable，Disable。
      */
     public readonly rotateState!: pulumi.Output<string>;
@@ -171,6 +175,7 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["multiRegionConfiguration"] = state ? state.multiRegionConfiguration : undefined;
             resourceInputs["origin"] = state ? state.origin : undefined;
             resourceInputs["protectionLevel"] = state ? state.protectionLevel : undefined;
+            resourceInputs["rotateInterval"] = state ? state.rotateInterval : undefined;
             resourceInputs["rotateState"] = state ? state.rotateState : undefined;
             resourceInputs["scheduleDeleteTime"] = state ? state.scheduleDeleteTime : undefined;
             resourceInputs["scheduleRotationTime"] = state ? state.scheduleRotationTime : undefined;
@@ -193,6 +198,7 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["multiRegion"] = args ? args.multiRegion : undefined;
             resourceInputs["origin"] = args ? args.origin : undefined;
             resourceInputs["protectionLevel"] = args ? args.protectionLevel : undefined;
+            resourceInputs["rotateInterval"] = args ? args.rotateInterval : undefined;
             resourceInputs["rotateState"] = args ? args.rotateState : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["createdTime"] = undefined /*out*/;
@@ -272,6 +278,10 @@ export interface KeyState {
      */
     protectionLevel?: pulumi.Input<string>;
     /**
+     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     */
+    rotateInterval?: pulumi.Input<number>;
+    /**
      * 密钥轮转状态，取值：Enable，Disable。
      */
     rotateState?: pulumi.Input<string>;
@@ -330,6 +340,10 @@ export interface KeyArgs {
      * 密钥保护级别，取值：SOFTWARE，HSM。
      */
     protectionLevel?: pulumi.Input<string>;
+    /**
+     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     */
+    rotateInterval?: pulumi.Input<number>;
     /**
      * 密钥轮转状态，取值：Enable，Disable。
      */

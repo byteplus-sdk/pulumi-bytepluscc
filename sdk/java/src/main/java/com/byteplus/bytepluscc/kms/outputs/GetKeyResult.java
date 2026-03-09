@@ -91,6 +91,11 @@ public final class GetKeyResult {
      */
     private String protectionLevel;
     /**
+     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    private Integer rotateInterval;
+    /**
      * @return 密钥轮转状态，取值：Enable，Disable。
      * 
      */
@@ -228,6 +233,13 @@ public final class GetKeyResult {
         return this.protectionLevel;
     }
     /**
+     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    public Integer rotateInterval() {
+        return this.rotateInterval;
+    }
+    /**
      * @return 密钥轮转状态，取值：Enable，Disable。
      * 
      */
@@ -294,6 +306,7 @@ public final class GetKeyResult {
         private GetKeyMultiRegionConfiguration multiRegionConfiguration;
         private String origin;
         private String protectionLevel;
+        private Integer rotateInterval;
         private String rotateState;
         private String scheduleDeleteTime;
         private String scheduleRotationTime;
@@ -318,6 +331,7 @@ public final class GetKeyResult {
     	      this.multiRegionConfiguration = defaults.multiRegionConfiguration;
     	      this.origin = defaults.origin;
     	      this.protectionLevel = defaults.protectionLevel;
+    	      this.rotateInterval = defaults.rotateInterval;
     	      this.rotateState = defaults.rotateState;
     	      this.scheduleDeleteTime = defaults.scheduleDeleteTime;
     	      this.scheduleRotationTime = defaults.scheduleRotationTime;
@@ -447,6 +461,14 @@ public final class GetKeyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder rotateInterval(Integer rotateInterval) {
+            if (rotateInterval == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "rotateInterval");
+            }
+            this.rotateInterval = rotateInterval;
+            return this;
+        }
+        @CustomType.Setter
         public Builder rotateState(String rotateState) {
             if (rotateState == null) {
               throw new MissingRequiredPropertyException("GetKeyResult", "rotateState");
@@ -514,6 +536,7 @@ public final class GetKeyResult {
             _resultValue.multiRegionConfiguration = multiRegionConfiguration;
             _resultValue.origin = origin;
             _resultValue.protectionLevel = protectionLevel;
+            _resultValue.rotateInterval = rotateInterval;
             _resultValue.rotateState = rotateState;
             _resultValue.scheduleDeleteTime = scheduleDeleteTime;
             _resultValue.scheduleRotationTime = scheduleRotationTime;

@@ -33,6 +33,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Listener{}
 	case "bytepluscc:alb/loadBalancer:LoadBalancer":
 		r = &LoadBalancer{}
+	case "bytepluscc:alb/rule:Rule":
+		r = &Rule{}
 	case "bytepluscc:alb/serverGroup:ServerGroup":
 		r = &ServerGroup{}
 	default:
@@ -76,6 +78,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"alb/loadBalancer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"alb/rule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

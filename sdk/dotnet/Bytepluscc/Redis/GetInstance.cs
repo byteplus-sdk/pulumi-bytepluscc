@@ -77,6 +77,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly string BackupPointName;
         /// <summary>
+        /// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        /// </summary>
+        public readonly string BlueGreenRole;
+        /// <summary>
         /// 实例的容量信息。
         /// </summary>
         public readonly Outputs.GetInstanceCapacityResult Capacity;
@@ -173,6 +177,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly string PrivateAddress;
         /// <summary>
+        /// 实例私网连接地址的端口号。
+        /// </summary>
+        public readonly string PrivatePort;
+        /// <summary>
         /// 实例所属的项目。
         /// </summary>
         public readonly string ProjectName;
@@ -245,6 +253,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 
             string backupPointName,
 
+            string blueGreenRole,
+
             Outputs.GetInstanceCapacityResult capacity,
 
             string chargeType,
@@ -293,6 +303,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 
             string privateAddress,
 
+            string privatePort,
+
             string projectName,
 
             int purchaseMonths,
@@ -328,6 +340,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             AllowListIds = allowListIds;
             AutoRenew = autoRenew;
             BackupPointName = backupPointName;
+            BlueGreenRole = blueGreenRole;
             Capacity = capacity;
             ChargeType = chargeType;
             ConfigureNodes = configureNodes;
@@ -352,6 +365,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
             Password = password;
             Port = port;
             PrivateAddress = privateAddress;
+            PrivatePort = privatePort;
             ProjectName = projectName;
             PurchaseMonths = purchaseMonths;
             ReserveAdditionalBandwidth = reserveAdditionalBandwidth;

@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.vke.outputs;
 
+import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigContainerdConfig;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigKubeletConfig;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigLabel;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigTaint;
@@ -20,6 +21,11 @@ public final class GetNodePoolKubernetesConfig {
      * 
      */
     private Boolean autoSyncDisabled;
+    /**
+     * @return 节点池 Containerd 相关配置。
+     * 
+     */
+    private GetNodePoolKubernetesConfigContainerdConfig containerdConfig;
     /**
      * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
      * 
@@ -63,6 +69,13 @@ public final class GetNodePoolKubernetesConfig {
      */
     public Boolean autoSyncDisabled() {
         return this.autoSyncDisabled;
+    }
+    /**
+     * @return 节点池 Containerd 相关配置。
+     * 
+     */
+    public GetNodePoolKubernetesConfigContainerdConfig containerdConfig() {
+        return this.containerdConfig;
     }
     /**
      * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
@@ -124,6 +137,7 @@ public final class GetNodePoolKubernetesConfig {
     @CustomType.Builder
     public static final class Builder {
         private Boolean autoSyncDisabled;
+        private GetNodePoolKubernetesConfigContainerdConfig containerdConfig;
         private Boolean cordon;
         private GetNodePoolKubernetesConfigKubeletConfig kubeletConfig;
         private List<GetNodePoolKubernetesConfigLabel> labels;
@@ -135,6 +149,7 @@ public final class GetNodePoolKubernetesConfig {
         public Builder(GetNodePoolKubernetesConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoSyncDisabled = defaults.autoSyncDisabled;
+    	      this.containerdConfig = defaults.containerdConfig;
     	      this.cordon = defaults.cordon;
     	      this.kubeletConfig = defaults.kubeletConfig;
     	      this.labels = defaults.labels;
@@ -150,6 +165,14 @@ public final class GetNodePoolKubernetesConfig {
               throw new MissingRequiredPropertyException("GetNodePoolKubernetesConfig", "autoSyncDisabled");
             }
             this.autoSyncDisabled = autoSyncDisabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder containerdConfig(GetNodePoolKubernetesConfigContainerdConfig containerdConfig) {
+            if (containerdConfig == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolKubernetesConfig", "containerdConfig");
+            }
+            this.containerdConfig = containerdConfig;
             return this;
         }
         @CustomType.Setter
@@ -217,6 +240,7 @@ public final class GetNodePoolKubernetesConfig {
         public GetNodePoolKubernetesConfig build() {
             final var _resultValue = new GetNodePoolKubernetesConfig();
             _resultValue.autoSyncDisabled = autoSyncDisabled;
+            _resultValue.containerdConfig = containerdConfig;
             _resultValue.cordon = cordon;
             _resultValue.kubeletConfig = kubeletConfig;
             _resultValue.labels = labels;

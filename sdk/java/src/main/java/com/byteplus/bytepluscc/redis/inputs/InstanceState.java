@@ -69,6 +69,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     * 
+     */
+    @Import(name="blueGreenRole")
+    private @Nullable Output<String> blueGreenRole;
+
+    /**
+     * @return 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     * 
+     */
+    public Optional<Output<String>> blueGreenRole() {
+        return Optional.ofNullable(this.blueGreenRole);
+    }
+
+    /**
      * 实例的容量信息。
      * 
      */
@@ -398,6 +413,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 实例私网连接地址的端口号。
+     * 
+     */
+    @Import(name="privatePort")
+    private @Nullable Output<String> privatePort;
+
+    /**
+     * @return 实例私网连接地址的端口号。
+     * 
+     */
+    public Optional<Output<String>> privatePort() {
+        return Optional.ofNullable(this.privatePort);
+    }
+
+    /**
      * 实例所属的项目。
      * 
      */
@@ -627,6 +657,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.allowListIds = $.allowListIds;
         this.autoRenew = $.autoRenew;
         this.backupPointName = $.backupPointName;
+        this.blueGreenRole = $.blueGreenRole;
         this.capacity = $.capacity;
         this.chargeType = $.chargeType;
         this.configureNodes = $.configureNodes;
@@ -650,6 +681,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.password = $.password;
         this.port = $.port;
         this.privateAddress = $.privateAddress;
+        this.privatePort = $.privatePort;
         this.projectName = $.projectName;
         this.purchaseMonths = $.purchaseMonths;
         this.reserveAdditionalBandwidth = $.reserveAdditionalBandwidth;
@@ -757,6 +789,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder backupPointName(String backupPointName) {
             return backupPointName(Output.of(backupPointName));
+        }
+
+        /**
+         * @param blueGreenRole 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blueGreenRole(@Nullable Output<String> blueGreenRole) {
+            $.blueGreenRole = blueGreenRole;
+            return this;
+        }
+
+        /**
+         * @param blueGreenRole 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blueGreenRole(String blueGreenRole) {
+            return blueGreenRole(Output.of(blueGreenRole));
         }
 
         /**
@@ -1234,6 +1287,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder privateAddress(String privateAddress) {
             return privateAddress(Output.of(privateAddress));
+        }
+
+        /**
+         * @param privatePort 实例私网连接地址的端口号。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privatePort(@Nullable Output<String> privatePort) {
+            $.privatePort = privatePort;
+            return this;
+        }
+
+        /**
+         * @param privatePort 实例私网连接地址的端口号。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privatePort(String privatePort) {
+            return privatePort(Output.of(privatePort));
         }
 
         /**

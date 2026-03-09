@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AllowListAssociatedInstanceArgs',
+    'AllowListAssociatedInstanceArgsDict',
     'TopicAccessPolicyArgs',
     'TopicAccessPolicyArgsDict',
     'TopicTagArgs',
@@ -23,6 +25,38 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AllowListAssociatedInstanceArgsDict(TypedDict):
+        instance_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        白名单绑定的实例ID。
+        """
+elif False:
+    AllowListAssociatedInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AllowListAssociatedInstanceArgs:
+    def __init__(__self__, *,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] instance_id: 白名单绑定的实例ID。
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        白名单绑定的实例ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
 
 if not MYPY:
     class TopicAccessPolicyArgsDict(TypedDict):

@@ -231,6 +231,21 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    @Import(name="rotateInterval")
+    private @Nullable Output<Integer> rotateInterval;
+
+    /**
+     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    public Optional<Output<Integer>> rotateInterval() {
+        return Optional.ofNullable(this.rotateInterval);
+    }
+
+    /**
      * 密钥轮转状态，取值：Enable，Disable。
      * 
      */
@@ -329,6 +344,7 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         this.multiRegionConfiguration = $.multiRegionConfiguration;
         this.origin = $.origin;
         this.protectionLevel = $.protectionLevel;
+        this.rotateInterval = $.rotateInterval;
         this.rotateState = $.rotateState;
         this.scheduleDeleteTime = $.scheduleDeleteTime;
         this.scheduleRotationTime = $.scheduleRotationTime;
@@ -647,6 +663,27 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder protectionLevel(String protectionLevel) {
             return protectionLevel(Output.of(protectionLevel));
+        }
+
+        /**
+         * @param rotateInterval 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotateInterval(@Nullable Output<Integer> rotateInterval) {
+            $.rotateInterval = rotateInterval;
+            return this;
+        }
+
+        /**
+         * @param rotateInterval 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotateInterval(Integer rotateInterval) {
+            return rotateInterval(Output.of(rotateInterval));
         }
 
         /**

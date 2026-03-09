@@ -32,6 +32,25 @@ __all__ = [
     'LoadBalancerIpv6EipBillingConfig',
     'LoadBalancerTag',
     'LoadBalancerZoneMapping',
+    'RuleForwardGroupConfig',
+    'RuleForwardGroupConfigServerGroupTuple',
+    'RuleRedirectConfig',
+    'RuleRewriteConfig',
+    'RuleRuleAction',
+    'RuleRuleActionFixedResponseConfig',
+    'RuleRuleActionForwardGroupConfig',
+    'RuleRuleActionForwardGroupConfigServerGroupStickySession',
+    'RuleRuleActionForwardGroupConfigServerGroupTuple',
+    'RuleRuleActionRedirectConfig',
+    'RuleRuleActionRewriteConfig',
+    'RuleRuleActionTrafficLimitConfig',
+    'RuleRuleCondition',
+    'RuleRuleConditionHeaderConfig',
+    'RuleRuleConditionHostConfig',
+    'RuleRuleConditionMethodConfig',
+    'RuleRuleConditionPathConfig',
+    'RuleRuleConditionQueryStringConfig',
+    'RuleRuleConditionQueryStringConfigValue',
     'ServerGroupHealthCheck',
     'ServerGroupListener',
     'ServerGroupServer',
@@ -56,6 +75,25 @@ __all__ = [
     'GetLoadBalancerZoneMappingLoadBalancerAddressEipResult',
     'GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult',
     'GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult',
+    'GetRuleForwardGroupConfigResult',
+    'GetRuleForwardGroupConfigServerGroupTupleResult',
+    'GetRuleRedirectConfigResult',
+    'GetRuleRewriteConfigResult',
+    'GetRuleRuleActionResult',
+    'GetRuleRuleActionFixedResponseConfigResult',
+    'GetRuleRuleActionForwardGroupConfigResult',
+    'GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult',
+    'GetRuleRuleActionForwardGroupConfigServerGroupTupleResult',
+    'GetRuleRuleActionRedirectConfigResult',
+    'GetRuleRuleActionRewriteConfigResult',
+    'GetRuleRuleActionTrafficLimitConfigResult',
+    'GetRuleRuleConditionResult',
+    'GetRuleRuleConditionHeaderConfigResult',
+    'GetRuleRuleConditionHostConfigResult',
+    'GetRuleRuleConditionMethodConfigResult',
+    'GetRuleRuleConditionPathConfigResult',
+    'GetRuleRuleConditionQueryStringConfigResult',
+    'GetRuleRuleConditionQueryStringConfigValueResult',
     'GetServerGroupHealthCheckResult',
     'GetServerGroupListenerResult',
     'GetServerGroupServerResult',
@@ -786,6 +824,891 @@ class LoadBalancerZoneMapping(dict):
         可用区的唯一标识符。
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class RuleForwardGroupConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serverGroupTuples":
+            suggest = "server_group_tuples"
+        elif key == "stickySessionEnabled":
+            suggest = "sticky_session_enabled"
+        elif key == "stickySessionTimeout":
+            suggest = "sticky_session_timeout"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleForwardGroupConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleForwardGroupConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleForwardGroupConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 server_group_tuples: Optional[Sequence['outputs.RuleForwardGroupConfigServerGroupTuple']] = None,
+                 sticky_session_enabled: Optional[builtins.str] = None,
+                 sticky_session_timeout: Optional[builtins.int] = None):
+        """
+        :param builtins.str sticky_session_enabled: 是否开启组间会话保持。on：开启。off：不开启。
+        :param builtins.int sticky_session_timeout: 组件回话保持的超时时间。单位：秒。
+        """
+        if server_group_tuples is not None:
+            pulumi.set(__self__, "server_group_tuples", server_group_tuples)
+        if sticky_session_enabled is not None:
+            pulumi.set(__self__, "sticky_session_enabled", sticky_session_enabled)
+        if sticky_session_timeout is not None:
+            pulumi.set(__self__, "sticky_session_timeout", sticky_session_timeout)
+
+    @property
+    @pulumi.getter(name="serverGroupTuples")
+    def server_group_tuples(self) -> Optional[Sequence['outputs.RuleForwardGroupConfigServerGroupTuple']]:
+        return pulumi.get(self, "server_group_tuples")
+
+    @property
+    @pulumi.getter(name="stickySessionEnabled")
+    def sticky_session_enabled(self) -> Optional[builtins.str]:
+        """
+        是否开启组间会话保持。on：开启。off：不开启。
+        """
+        return pulumi.get(self, "sticky_session_enabled")
+
+    @property
+    @pulumi.getter(name="stickySessionTimeout")
+    def sticky_session_timeout(self) -> Optional[builtins.int]:
+        """
+        组件回话保持的超时时间。单位：秒。
+        """
+        return pulumi.get(self, "sticky_session_timeout")
+
+
+@pulumi.output_type
+class RuleForwardGroupConfigServerGroupTuple(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serverGroupId":
+            suggest = "server_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleForwardGroupConfigServerGroupTuple. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleForwardGroupConfigServerGroupTuple.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleForwardGroupConfigServerGroupTuple.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 server_group_id: Optional[builtins.str] = None,
+                 weight: Optional[builtins.int] = None):
+        """
+        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
+        :param builtins.int weight: 服务器组权重。
+        """
+        if server_group_id is not None:
+            pulumi.set(__self__, "server_group_id", server_group_id)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="serverGroupId")
+    def server_group_id(self) -> Optional[builtins.str]:
+        """
+        转发到的目的服务器组 ID。
+        """
+        return pulumi.get(self, "server_group_id")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.int]:
+        """
+        服务器组权重。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class RuleRedirectConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "redirectDomain":
+            suggest = "redirect_domain"
+        elif key == "redirectHttpCode":
+            suggest = "redirect_http_code"
+        elif key == "redirectPort":
+            suggest = "redirect_port"
+        elif key == "redirectProtocol":
+            suggest = "redirect_protocol"
+        elif key == "redirectUri":
+            suggest = "redirect_uri"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRedirectConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRedirectConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRedirectConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 redirect_domain: Optional[builtins.str] = None,
+                 redirect_http_code: Optional[builtins.str] = None,
+                 redirect_port: Optional[builtins.str] = None,
+                 redirect_protocol: Optional[builtins.str] = None,
+                 redirect_uri: Optional[builtins.str] = None):
+        """
+        :param builtins.str redirect_domain: 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+        :param builtins.str redirect_http_code: 重定向状态码。301、302、307、308。
+        :param builtins.str redirect_port: 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+        :param builtins.str redirect_protocol: 重定向使用的协议。HTTP、HTTPS。
+        :param builtins.str redirect_uri: 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        """
+        if redirect_domain is not None:
+            pulumi.set(__self__, "redirect_domain", redirect_domain)
+        if redirect_http_code is not None:
+            pulumi.set(__self__, "redirect_http_code", redirect_http_code)
+        if redirect_port is not None:
+            pulumi.set(__self__, "redirect_port", redirect_port)
+        if redirect_protocol is not None:
+            pulumi.set(__self__, "redirect_protocol", redirect_protocol)
+        if redirect_uri is not None:
+            pulumi.set(__self__, "redirect_uri", redirect_uri)
+
+    @property
+    @pulumi.getter(name="redirectDomain")
+    def redirect_domain(self) -> Optional[builtins.str]:
+        """
+        重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+        """
+        return pulumi.get(self, "redirect_domain")
+
+    @property
+    @pulumi.getter(name="redirectHttpCode")
+    def redirect_http_code(self) -> Optional[builtins.str]:
+        """
+        重定向状态码。301、302、307、308。
+        """
+        return pulumi.get(self, "redirect_http_code")
+
+    @property
+    @pulumi.getter(name="redirectPort")
+    def redirect_port(self) -> Optional[builtins.str]:
+        """
+        重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+        """
+        return pulumi.get(self, "redirect_port")
+
+    @property
+    @pulumi.getter(name="redirectProtocol")
+    def redirect_protocol(self) -> Optional[builtins.str]:
+        """
+        重定向使用的协议。HTTP、HTTPS。
+        """
+        return pulumi.get(self, "redirect_protocol")
+
+    @property
+    @pulumi.getter(name="redirectUri")
+    def redirect_uri(self) -> Optional[builtins.str]:
+        """
+        重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        """
+        return pulumi.get(self, "redirect_uri")
+
+
+@pulumi.output_type
+class RuleRewriteConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rewritePath":
+            suggest = "rewrite_path"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRewriteConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRewriteConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRewriteConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rewrite_path: Optional[builtins.str] = None):
+        """
+        :param builtins.str rewrite_path: 重写路径。
+        """
+        if rewrite_path is not None:
+            pulumi.set(__self__, "rewrite_path", rewrite_path)
+
+    @property
+    @pulumi.getter(name="rewritePath")
+    def rewrite_path(self) -> Optional[builtins.str]:
+        """
+        重写路径。
+        """
+        return pulumi.get(self, "rewrite_path")
+
+
+@pulumi.output_type
+class RuleRuleAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fixedResponseConfig":
+            suggest = "fixed_response_config"
+        elif key == "forwardGroupConfig":
+            suggest = "forward_group_config"
+        elif key == "redirectConfig":
+            suggest = "redirect_config"
+        elif key == "rewriteConfig":
+            suggest = "rewrite_config"
+        elif key == "trafficLimitConfig":
+            suggest = "traffic_limit_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRuleAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRuleAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRuleAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 fixed_response_config: Optional['outputs.RuleRuleActionFixedResponseConfig'] = None,
+                 forward_group_config: Optional['outputs.RuleRuleActionForwardGroupConfig'] = None,
+                 redirect_config: Optional['outputs.RuleRuleActionRedirectConfig'] = None,
+                 rewrite_config: Optional['outputs.RuleRuleActionRewriteConfig'] = None,
+                 traffic_limit_config: Optional['outputs.RuleRuleActionTrafficLimitConfig'] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param 'RuleRuleActionFixedResponseConfigArgs' fixed_response_config: FixedResponseConfig
+        :param 'RuleRuleActionForwardGroupConfigArgs' forward_group_config: ForwardGroupConfig
+        :param 'RuleRuleActionRedirectConfigArgs' redirect_config: RedirectConfig
+        :param 'RuleRuleActionRewriteConfigArgs' rewrite_config: RewriteConfig
+        :param 'RuleRuleActionTrafficLimitConfigArgs' traffic_limit_config: TrafficLimitConfig
+        :param builtins.str type: 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        """
+        if fixed_response_config is not None:
+            pulumi.set(__self__, "fixed_response_config", fixed_response_config)
+        if forward_group_config is not None:
+            pulumi.set(__self__, "forward_group_config", forward_group_config)
+        if redirect_config is not None:
+            pulumi.set(__self__, "redirect_config", redirect_config)
+        if rewrite_config is not None:
+            pulumi.set(__self__, "rewrite_config", rewrite_config)
+        if traffic_limit_config is not None:
+            pulumi.set(__self__, "traffic_limit_config", traffic_limit_config)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="fixedResponseConfig")
+    def fixed_response_config(self) -> Optional['outputs.RuleRuleActionFixedResponseConfig']:
+        """
+        FixedResponseConfig
+        """
+        return pulumi.get(self, "fixed_response_config")
+
+    @property
+    @pulumi.getter(name="forwardGroupConfig")
+    def forward_group_config(self) -> Optional['outputs.RuleRuleActionForwardGroupConfig']:
+        """
+        ForwardGroupConfig
+        """
+        return pulumi.get(self, "forward_group_config")
+
+    @property
+    @pulumi.getter(name="redirectConfig")
+    def redirect_config(self) -> Optional['outputs.RuleRuleActionRedirectConfig']:
+        """
+        RedirectConfig
+        """
+        return pulumi.get(self, "redirect_config")
+
+    @property
+    @pulumi.getter(name="rewriteConfig")
+    def rewrite_config(self) -> Optional['outputs.RuleRuleActionRewriteConfig']:
+        """
+        RewriteConfig
+        """
+        return pulumi.get(self, "rewrite_config")
+
+    @property
+    @pulumi.getter(name="trafficLimitConfig")
+    def traffic_limit_config(self) -> Optional['outputs.RuleRuleActionTrafficLimitConfig']:
+        """
+        TrafficLimitConfig
+        """
+        return pulumi.get(self, "traffic_limit_config")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class RuleRuleActionFixedResponseConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contentType":
+            suggest = "content_type"
+        elif key == "httpCode":
+            suggest = "http_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRuleActionFixedResponseConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRuleActionFixedResponseConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRuleActionFixedResponseConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 content: Optional[builtins.str] = None,
+                 content_type: Optional[builtins.str] = None,
+                 http_code: Optional[builtins.str] = None):
+        """
+        :param builtins.str content: 返回的固定内容。
+        :param builtins.str content_type: 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+        :param builtins.str http_code: 返回的 HTTP 状态码。
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if http_code is not None:
+            pulumi.set(__self__, "http_code", http_code)
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[builtins.str]:
+        """
+        返回的固定内容。
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[builtins.str]:
+        """
+        返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
+    @pulumi.getter(name="httpCode")
+    def http_code(self) -> Optional[builtins.str]:
+        """
+        返回的 HTTP 状态码。
+        """
+        return pulumi.get(self, "http_code")
+
+
+@pulumi.output_type
+class RuleRuleActionForwardGroupConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serverGroupStickySession":
+            suggest = "server_group_sticky_session"
+        elif key == "serverGroupTuples":
+            suggest = "server_group_tuples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRuleActionForwardGroupConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRuleActionForwardGroupConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRuleActionForwardGroupConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 server_group_sticky_session: Optional['outputs.RuleRuleActionForwardGroupConfigServerGroupStickySession'] = None,
+                 server_group_tuples: Optional[Sequence['outputs.RuleRuleActionForwardGroupConfigServerGroupTuple']] = None):
+        """
+        :param 'RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs' server_group_sticky_session: ServerGroupStickySession
+        """
+        if server_group_sticky_session is not None:
+            pulumi.set(__self__, "server_group_sticky_session", server_group_sticky_session)
+        if server_group_tuples is not None:
+            pulumi.set(__self__, "server_group_tuples", server_group_tuples)
+
+    @property
+    @pulumi.getter(name="serverGroupStickySession")
+    def server_group_sticky_session(self) -> Optional['outputs.RuleRuleActionForwardGroupConfigServerGroupStickySession']:
+        """
+        ServerGroupStickySession
+        """
+        return pulumi.get(self, "server_group_sticky_session")
+
+    @property
+    @pulumi.getter(name="serverGroupTuples")
+    def server_group_tuples(self) -> Optional[Sequence['outputs.RuleRuleActionForwardGroupConfigServerGroupTuple']]:
+        return pulumi.get(self, "server_group_tuples")
+
+
+@pulumi.output_type
+class RuleRuleActionForwardGroupConfigServerGroupStickySession(dict):
+    def __init__(__self__, *,
+                 enabled: Optional[builtins.str] = None,
+                 timeout: Optional[builtins.int] = None):
+        """
+        :param builtins.str enabled: 是否开启组间会话保持。on：开启。off：不开启。
+        :param builtins.int timeout: 组件回话保持的超时时间。单位：秒。
+        """
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if timeout is not None:
+            pulumi.set(__self__, "timeout", timeout)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[builtins.str]:
+        """
+        是否开启组间会话保持。on：开启。off：不开启。
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> Optional[builtins.int]:
+        """
+        组件回话保持的超时时间。单位：秒。
+        """
+        return pulumi.get(self, "timeout")
+
+
+@pulumi.output_type
+class RuleRuleActionForwardGroupConfigServerGroupTuple(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serverGroupId":
+            suggest = "server_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRuleActionForwardGroupConfigServerGroupTuple. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRuleActionForwardGroupConfigServerGroupTuple.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRuleActionForwardGroupConfigServerGroupTuple.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 server_group_id: Optional[builtins.str] = None,
+                 weight: Optional[builtins.int] = None):
+        """
+        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
+        :param builtins.int weight: 服务器组权重。
+        """
+        if server_group_id is not None:
+            pulumi.set(__self__, "server_group_id", server_group_id)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="serverGroupId")
+    def server_group_id(self) -> Optional[builtins.str]:
+        """
+        转发到的目的服务器组 ID。
+        """
+        return pulumi.get(self, "server_group_id")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.int]:
+        """
+        服务器组权重。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class RuleRuleActionRedirectConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpCode":
+            suggest = "http_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRuleActionRedirectConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRuleActionRedirectConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRuleActionRedirectConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host: Optional[builtins.str] = None,
+                 http_code: Optional[builtins.str] = None,
+                 path: Optional[builtins.str] = None,
+                 port: Optional[builtins.str] = None,
+                 protocol: Optional[builtins.str] = None):
+        """
+        :param builtins.str host: 重定向域名，仅支持精确域名。
+        :param builtins.str http_code: 重定向状态码，支持301，302，307，308。
+        :param builtins.str path: 重定向 URI。。
+        :param builtins.str port: 重定向端口。
+        :param builtins.str protocol: 重定向使用的协议，支持HTTP，HTTPS。
+        """
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if http_code is not None:
+            pulumi.set(__self__, "http_code", http_code)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[builtins.str]:
+        """
+        重定向域名，仅支持精确域名。
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="httpCode")
+    def http_code(self) -> Optional[builtins.str]:
+        """
+        重定向状态码，支持301，302，307，308。
+        """
+        return pulumi.get(self, "http_code")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[builtins.str]:
+        """
+        重定向 URI。。
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.str]:
+        """
+        重定向端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[builtins.str]:
+        """
+        重定向使用的协议，支持HTTP，HTTPS。
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class RuleRuleActionRewriteConfig(dict):
+    def __init__(__self__, *,
+                 path: Optional[builtins.str] = None):
+        """
+        :param builtins.str path: 重写路径。
+        """
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[builtins.str]:
+        """
+        重写路径。
+        """
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class RuleRuleActionTrafficLimitConfig(dict):
+    def __init__(__self__, *,
+                 qps: Optional[builtins.int] = None):
+        """
+        :param builtins.int qps: 每秒请求数。
+        """
+        if qps is not None:
+            pulumi.set(__self__, "qps", qps)
+
+    @property
+    @pulumi.getter
+    def qps(self) -> Optional[builtins.int]:
+        """
+        每秒请求数。
+        """
+        return pulumi.get(self, "qps")
+
+
+@pulumi.output_type
+class RuleRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "headerConfig":
+            suggest = "header_config"
+        elif key == "hostConfig":
+            suggest = "host_config"
+        elif key == "methodConfig":
+            suggest = "method_config"
+        elif key == "pathConfig":
+            suggest = "path_config"
+        elif key == "queryStringConfig":
+            suggest = "query_string_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 header_config: Optional['outputs.RuleRuleConditionHeaderConfig'] = None,
+                 host_config: Optional['outputs.RuleRuleConditionHostConfig'] = None,
+                 method_config: Optional['outputs.RuleRuleConditionMethodConfig'] = None,
+                 path_config: Optional['outputs.RuleRuleConditionPathConfig'] = None,
+                 query_string_config: Optional['outputs.RuleRuleConditionQueryStringConfig'] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param 'RuleRuleConditionHeaderConfigArgs' header_config: HeaderConfig。
+        :param 'RuleRuleConditionHostConfigArgs' host_config: HostConfig。
+        :param 'RuleRuleConditionMethodConfigArgs' method_config: MethodConfig。
+        :param 'RuleRuleConditionPathConfigArgs' path_config: PathConfig。
+        :param 'RuleRuleConditionQueryStringConfigArgs' query_string_config: QueryStringConfig。
+        :param builtins.str type: 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        """
+        if header_config is not None:
+            pulumi.set(__self__, "header_config", header_config)
+        if host_config is not None:
+            pulumi.set(__self__, "host_config", host_config)
+        if method_config is not None:
+            pulumi.set(__self__, "method_config", method_config)
+        if path_config is not None:
+            pulumi.set(__self__, "path_config", path_config)
+        if query_string_config is not None:
+            pulumi.set(__self__, "query_string_config", query_string_config)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="headerConfig")
+    def header_config(self) -> Optional['outputs.RuleRuleConditionHeaderConfig']:
+        """
+        HeaderConfig。
+        """
+        return pulumi.get(self, "header_config")
+
+    @property
+    @pulumi.getter(name="hostConfig")
+    def host_config(self) -> Optional['outputs.RuleRuleConditionHostConfig']:
+        """
+        HostConfig。
+        """
+        return pulumi.get(self, "host_config")
+
+    @property
+    @pulumi.getter(name="methodConfig")
+    def method_config(self) -> Optional['outputs.RuleRuleConditionMethodConfig']:
+        """
+        MethodConfig。
+        """
+        return pulumi.get(self, "method_config")
+
+    @property
+    @pulumi.getter(name="pathConfig")
+    def path_config(self) -> Optional['outputs.RuleRuleConditionPathConfig']:
+        """
+        PathConfig。
+        """
+        return pulumi.get(self, "path_config")
+
+    @property
+    @pulumi.getter(name="queryStringConfig")
+    def query_string_config(self) -> Optional['outputs.RuleRuleConditionQueryStringConfig']:
+        """
+        QueryStringConfig。
+        """
+        return pulumi.get(self, "query_string_config")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class RuleRuleConditionHeaderConfig(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 values: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.str key: 头字段键。
+        :param Sequence[builtins.str] values: 头字段值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        头字段键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[builtins.str]]:
+        """
+        头字段值。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class RuleRuleConditionHostConfig(dict):
+    def __init__(__self__, *,
+                 values: Optional[Sequence[builtins.str]] = None):
+        """
+        :param Sequence[builtins.str] values: 转发规则的域名，支持泛域名和精确域名。
+        """
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[builtins.str]]:
+        """
+        转发规则的域名，支持泛域名和精确域名。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class RuleRuleConditionMethodConfig(dict):
+    def __init__(__self__, *,
+                 values: Optional[Sequence[builtins.str]] = None):
+        """
+        :param Sequence[builtins.str] values: 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        """
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[builtins.str]]:
+        """
+        请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class RuleRuleConditionPathConfig(dict):
+    def __init__(__self__, *,
+                 values: Optional[Sequence[builtins.str]] = None):
+        """
+        :param Sequence[builtins.str] values: 转发规则的URL，仅支持绝对路径。
+        """
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[builtins.str]]:
+        """
+        转发规则的URL，仅支持绝对路径。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class RuleRuleConditionQueryStringConfig(dict):
+    def __init__(__self__, *,
+                 values: Optional[Sequence['outputs.RuleRuleConditionQueryStringConfigValue']] = None):
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence['outputs.RuleRuleConditionQueryStringConfigValue']]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class RuleRuleConditionQueryStringConfigValue(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 查询字符串键。
+        :param builtins.str value: 查询字符串值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        查询字符串键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        查询字符串值。
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2086,6 +3009,656 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult(dict):
         IPv6公网IP的线路类型，BGP表示多线。
         """
         return pulumi.get(self, "isp")
+
+
+@pulumi.output_type
+class GetRuleForwardGroupConfigResult(dict):
+    def __init__(__self__, *,
+                 server_group_tuples: Sequence['outputs.GetRuleForwardGroupConfigServerGroupTupleResult'],
+                 sticky_session_enabled: builtins.str,
+                 sticky_session_timeout: builtins.int):
+        """
+        :param Sequence['GetRuleForwardGroupConfigServerGroupTupleArgs'] server_group_tuples: 转发到的目的服务器组列表。
+        :param builtins.str sticky_session_enabled: 是否开启组间会话保持。on：开启。off：不开启。
+        :param builtins.int sticky_session_timeout: 组件回话保持的超时时间。单位：秒。
+        """
+        pulumi.set(__self__, "server_group_tuples", server_group_tuples)
+        pulumi.set(__self__, "sticky_session_enabled", sticky_session_enabled)
+        pulumi.set(__self__, "sticky_session_timeout", sticky_session_timeout)
+
+    @property
+    @pulumi.getter(name="serverGroupTuples")
+    def server_group_tuples(self) -> Sequence['outputs.GetRuleForwardGroupConfigServerGroupTupleResult']:
+        """
+        转发到的目的服务器组列表。
+        """
+        return pulumi.get(self, "server_group_tuples")
+
+    @property
+    @pulumi.getter(name="stickySessionEnabled")
+    def sticky_session_enabled(self) -> builtins.str:
+        """
+        是否开启组间会话保持。on：开启。off：不开启。
+        """
+        return pulumi.get(self, "sticky_session_enabled")
+
+    @property
+    @pulumi.getter(name="stickySessionTimeout")
+    def sticky_session_timeout(self) -> builtins.int:
+        """
+        组件回话保持的超时时间。单位：秒。
+        """
+        return pulumi.get(self, "sticky_session_timeout")
+
+
+@pulumi.output_type
+class GetRuleForwardGroupConfigServerGroupTupleResult(dict):
+    def __init__(__self__, *,
+                 server_group_id: builtins.str,
+                 weight: builtins.int):
+        """
+        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
+        :param builtins.int weight: 服务器组权重。
+        """
+        pulumi.set(__self__, "server_group_id", server_group_id)
+        pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="serverGroupId")
+    def server_group_id(self) -> builtins.str:
+        """
+        转发到的目的服务器组 ID。
+        """
+        return pulumi.get(self, "server_group_id")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.int:
+        """
+        服务器组权重。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetRuleRedirectConfigResult(dict):
+    def __init__(__self__, *,
+                 redirect_domain: builtins.str,
+                 redirect_http_code: builtins.str,
+                 redirect_port: builtins.str,
+                 redirect_protocol: builtins.str,
+                 redirect_uri: builtins.str):
+        """
+        :param builtins.str redirect_domain: 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+        :param builtins.str redirect_http_code: 重定向状态码。301、302、307、308。
+        :param builtins.str redirect_port: 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+        :param builtins.str redirect_protocol: 重定向使用的协议。HTTP、HTTPS。
+        :param builtins.str redirect_uri: 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        """
+        pulumi.set(__self__, "redirect_domain", redirect_domain)
+        pulumi.set(__self__, "redirect_http_code", redirect_http_code)
+        pulumi.set(__self__, "redirect_port", redirect_port)
+        pulumi.set(__self__, "redirect_protocol", redirect_protocol)
+        pulumi.set(__self__, "redirect_uri", redirect_uri)
+
+    @property
+    @pulumi.getter(name="redirectDomain")
+    def redirect_domain(self) -> builtins.str:
+        """
+        重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+        """
+        return pulumi.get(self, "redirect_domain")
+
+    @property
+    @pulumi.getter(name="redirectHttpCode")
+    def redirect_http_code(self) -> builtins.str:
+        """
+        重定向状态码。301、302、307、308。
+        """
+        return pulumi.get(self, "redirect_http_code")
+
+    @property
+    @pulumi.getter(name="redirectPort")
+    def redirect_port(self) -> builtins.str:
+        """
+        重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+        """
+        return pulumi.get(self, "redirect_port")
+
+    @property
+    @pulumi.getter(name="redirectProtocol")
+    def redirect_protocol(self) -> builtins.str:
+        """
+        重定向使用的协议。HTTP、HTTPS。
+        """
+        return pulumi.get(self, "redirect_protocol")
+
+    @property
+    @pulumi.getter(name="redirectUri")
+    def redirect_uri(self) -> builtins.str:
+        """
+        重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        """
+        return pulumi.get(self, "redirect_uri")
+
+
+@pulumi.output_type
+class GetRuleRewriteConfigResult(dict):
+    def __init__(__self__, *,
+                 rewrite_path: builtins.str):
+        """
+        :param builtins.str rewrite_path: 重写路径。
+        """
+        pulumi.set(__self__, "rewrite_path", rewrite_path)
+
+    @property
+    @pulumi.getter(name="rewritePath")
+    def rewrite_path(self) -> builtins.str:
+        """
+        重写路径。
+        """
+        return pulumi.get(self, "rewrite_path")
+
+
+@pulumi.output_type
+class GetRuleRuleActionResult(dict):
+    def __init__(__self__, *,
+                 fixed_response_config: 'outputs.GetRuleRuleActionFixedResponseConfigResult',
+                 forward_group_config: 'outputs.GetRuleRuleActionForwardGroupConfigResult',
+                 redirect_config: 'outputs.GetRuleRuleActionRedirectConfigResult',
+                 rewrite_config: 'outputs.GetRuleRuleActionRewriteConfigResult',
+                 traffic_limit_config: 'outputs.GetRuleRuleActionTrafficLimitConfigResult',
+                 type: builtins.str):
+        """
+        :param 'GetRuleRuleActionFixedResponseConfigArgs' fixed_response_config: FixedResponseConfig
+        :param 'GetRuleRuleActionForwardGroupConfigArgs' forward_group_config: ForwardGroupConfig
+        :param 'GetRuleRuleActionRedirectConfigArgs' redirect_config: RedirectConfig
+        :param 'GetRuleRuleActionRewriteConfigArgs' rewrite_config: RewriteConfig
+        :param 'GetRuleRuleActionTrafficLimitConfigArgs' traffic_limit_config: TrafficLimitConfig
+        :param builtins.str type: 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        """
+        pulumi.set(__self__, "fixed_response_config", fixed_response_config)
+        pulumi.set(__self__, "forward_group_config", forward_group_config)
+        pulumi.set(__self__, "redirect_config", redirect_config)
+        pulumi.set(__self__, "rewrite_config", rewrite_config)
+        pulumi.set(__self__, "traffic_limit_config", traffic_limit_config)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="fixedResponseConfig")
+    def fixed_response_config(self) -> 'outputs.GetRuleRuleActionFixedResponseConfigResult':
+        """
+        FixedResponseConfig
+        """
+        return pulumi.get(self, "fixed_response_config")
+
+    @property
+    @pulumi.getter(name="forwardGroupConfig")
+    def forward_group_config(self) -> 'outputs.GetRuleRuleActionForwardGroupConfigResult':
+        """
+        ForwardGroupConfig
+        """
+        return pulumi.get(self, "forward_group_config")
+
+    @property
+    @pulumi.getter(name="redirectConfig")
+    def redirect_config(self) -> 'outputs.GetRuleRuleActionRedirectConfigResult':
+        """
+        RedirectConfig
+        """
+        return pulumi.get(self, "redirect_config")
+
+    @property
+    @pulumi.getter(name="rewriteConfig")
+    def rewrite_config(self) -> 'outputs.GetRuleRuleActionRewriteConfigResult':
+        """
+        RewriteConfig
+        """
+        return pulumi.get(self, "rewrite_config")
+
+    @property
+    @pulumi.getter(name="trafficLimitConfig")
+    def traffic_limit_config(self) -> 'outputs.GetRuleRuleActionTrafficLimitConfigResult':
+        """
+        TrafficLimitConfig
+        """
+        return pulumi.get(self, "traffic_limit_config")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuleRuleActionFixedResponseConfigResult(dict):
+    def __init__(__self__, *,
+                 content: builtins.str,
+                 content_type: builtins.str,
+                 http_code: builtins.str):
+        """
+        :param builtins.str content: 返回的固定内容。
+        :param builtins.str content_type: 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+        :param builtins.str http_code: 返回的 HTTP 状态码。
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "http_code", http_code)
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        返回的固定内容。
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> builtins.str:
+        """
+        返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+        """
+        return pulumi.get(self, "content_type")
+
+    @property
+    @pulumi.getter(name="httpCode")
+    def http_code(self) -> builtins.str:
+        """
+        返回的 HTTP 状态码。
+        """
+        return pulumi.get(self, "http_code")
+
+
+@pulumi.output_type
+class GetRuleRuleActionForwardGroupConfigResult(dict):
+    def __init__(__self__, *,
+                 server_group_sticky_session: 'outputs.GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult',
+                 server_group_tuples: Sequence['outputs.GetRuleRuleActionForwardGroupConfigServerGroupTupleResult']):
+        """
+        :param 'GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs' server_group_sticky_session: ServerGroupStickySession
+        :param Sequence['GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs'] server_group_tuples: ServerGroupTuples
+        """
+        pulumi.set(__self__, "server_group_sticky_session", server_group_sticky_session)
+        pulumi.set(__self__, "server_group_tuples", server_group_tuples)
+
+    @property
+    @pulumi.getter(name="serverGroupStickySession")
+    def server_group_sticky_session(self) -> 'outputs.GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult':
+        """
+        ServerGroupStickySession
+        """
+        return pulumi.get(self, "server_group_sticky_session")
+
+    @property
+    @pulumi.getter(name="serverGroupTuples")
+    def server_group_tuples(self) -> Sequence['outputs.GetRuleRuleActionForwardGroupConfigServerGroupTupleResult']:
+        """
+        ServerGroupTuples
+        """
+        return pulumi.get(self, "server_group_tuples")
+
+
+@pulumi.output_type
+class GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult(dict):
+    def __init__(__self__, *,
+                 enabled: builtins.str,
+                 timeout: builtins.int):
+        """
+        :param builtins.str enabled: 是否开启组间会话保持。on：开启。off：不开启。
+        :param builtins.int timeout: 组件回话保持的超时时间。单位：秒。
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "timeout", timeout)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> builtins.str:
+        """
+        是否开启组间会话保持。on：开启。off：不开启。
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> builtins.int:
+        """
+        组件回话保持的超时时间。单位：秒。
+        """
+        return pulumi.get(self, "timeout")
+
+
+@pulumi.output_type
+class GetRuleRuleActionForwardGroupConfigServerGroupTupleResult(dict):
+    def __init__(__self__, *,
+                 server_group_id: builtins.str,
+                 weight: builtins.int):
+        """
+        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
+        :param builtins.int weight: 服务器组权重。
+        """
+        pulumi.set(__self__, "server_group_id", server_group_id)
+        pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="serverGroupId")
+    def server_group_id(self) -> builtins.str:
+        """
+        转发到的目的服务器组 ID。
+        """
+        return pulumi.get(self, "server_group_id")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.int:
+        """
+        服务器组权重。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetRuleRuleActionRedirectConfigResult(dict):
+    def __init__(__self__, *,
+                 host: builtins.str,
+                 http_code: builtins.str,
+                 path: builtins.str,
+                 port: builtins.str,
+                 protocol: builtins.str):
+        """
+        :param builtins.str host: 重定向域名，仅支持精确域名。
+        :param builtins.str http_code: 重定向状态码，支持301，302，307，308。
+        :param builtins.str path: 重定向 URI。。
+        :param builtins.str port: 重定向端口。
+        :param builtins.str protocol: 重定向使用的协议，支持HTTP，HTTPS。
+        """
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "http_code", http_code)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+
+    @property
+    @pulumi.getter
+    def host(self) -> builtins.str:
+        """
+        重定向域名，仅支持精确域名。
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter(name="httpCode")
+    def http_code(self) -> builtins.str:
+        """
+        重定向状态码，支持301，302，307，308。
+        """
+        return pulumi.get(self, "http_code")
+
+    @property
+    @pulumi.getter
+    def path(self) -> builtins.str:
+        """
+        重定向 URI。。
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.str:
+        """
+        重定向端口。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> builtins.str:
+        """
+        重定向使用的协议，支持HTTP，HTTPS。
+        """
+        return pulumi.get(self, "protocol")
+
+
+@pulumi.output_type
+class GetRuleRuleActionRewriteConfigResult(dict):
+    def __init__(__self__, *,
+                 path: builtins.str):
+        """
+        :param builtins.str path: 重写路径。
+        """
+        pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter
+    def path(self) -> builtins.str:
+        """
+        重写路径。
+        """
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class GetRuleRuleActionTrafficLimitConfigResult(dict):
+    def __init__(__self__, *,
+                 qps: builtins.int):
+        """
+        :param builtins.int qps: 每秒请求数。
+        """
+        pulumi.set(__self__, "qps", qps)
+
+    @property
+    @pulumi.getter
+    def qps(self) -> builtins.int:
+        """
+        每秒请求数。
+        """
+        return pulumi.get(self, "qps")
+
+
+@pulumi.output_type
+class GetRuleRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 header_config: 'outputs.GetRuleRuleConditionHeaderConfigResult',
+                 host_config: 'outputs.GetRuleRuleConditionHostConfigResult',
+                 method_config: 'outputs.GetRuleRuleConditionMethodConfigResult',
+                 path_config: 'outputs.GetRuleRuleConditionPathConfigResult',
+                 query_string_config: 'outputs.GetRuleRuleConditionQueryStringConfigResult',
+                 type: builtins.str):
+        """
+        :param 'GetRuleRuleConditionHeaderConfigArgs' header_config: HeaderConfig。
+        :param 'GetRuleRuleConditionHostConfigArgs' host_config: HostConfig。
+        :param 'GetRuleRuleConditionMethodConfigArgs' method_config: MethodConfig。
+        :param 'GetRuleRuleConditionPathConfigArgs' path_config: PathConfig。
+        :param 'GetRuleRuleConditionQueryStringConfigArgs' query_string_config: QueryStringConfig。
+        :param builtins.str type: 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        """
+        pulumi.set(__self__, "header_config", header_config)
+        pulumi.set(__self__, "host_config", host_config)
+        pulumi.set(__self__, "method_config", method_config)
+        pulumi.set(__self__, "path_config", path_config)
+        pulumi.set(__self__, "query_string_config", query_string_config)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="headerConfig")
+    def header_config(self) -> 'outputs.GetRuleRuleConditionHeaderConfigResult':
+        """
+        HeaderConfig。
+        """
+        return pulumi.get(self, "header_config")
+
+    @property
+    @pulumi.getter(name="hostConfig")
+    def host_config(self) -> 'outputs.GetRuleRuleConditionHostConfigResult':
+        """
+        HostConfig。
+        """
+        return pulumi.get(self, "host_config")
+
+    @property
+    @pulumi.getter(name="methodConfig")
+    def method_config(self) -> 'outputs.GetRuleRuleConditionMethodConfigResult':
+        """
+        MethodConfig。
+        """
+        return pulumi.get(self, "method_config")
+
+    @property
+    @pulumi.getter(name="pathConfig")
+    def path_config(self) -> 'outputs.GetRuleRuleConditionPathConfigResult':
+        """
+        PathConfig。
+        """
+        return pulumi.get(self, "path_config")
+
+    @property
+    @pulumi.getter(name="queryStringConfig")
+    def query_string_config(self) -> 'outputs.GetRuleRuleConditionQueryStringConfigResult':
+        """
+        QueryStringConfig。
+        """
+        return pulumi.get(self, "query_string_config")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetRuleRuleConditionHeaderConfigResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 values: Sequence[builtins.str]):
+        """
+        :param builtins.str key: 头字段键。
+        :param Sequence[builtins.str] values: 头字段值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        头字段键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        """
+        头字段值。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetRuleRuleConditionHostConfigResult(dict):
+    def __init__(__self__, *,
+                 values: Sequence[builtins.str]):
+        """
+        :param Sequence[builtins.str] values: 转发规则的域名，支持泛域名和精确域名。
+        """
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        """
+        转发规则的域名，支持泛域名和精确域名。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetRuleRuleConditionMethodConfigResult(dict):
+    def __init__(__self__, *,
+                 values: Sequence[builtins.str]):
+        """
+        :param Sequence[builtins.str] values: 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        """
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        """
+        请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetRuleRuleConditionPathConfigResult(dict):
+    def __init__(__self__, *,
+                 values: Sequence[builtins.str]):
+        """
+        :param Sequence[builtins.str] values: 转发规则的URL，仅支持绝对路径。
+        """
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        """
+        转发规则的URL，仅支持绝对路径。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetRuleRuleConditionQueryStringConfigResult(dict):
+    def __init__(__self__, *,
+                 values: Sequence['outputs.GetRuleRuleConditionQueryStringConfigValueResult']):
+        """
+        :param Sequence['GetRuleRuleConditionQueryStringConfigValueArgs'] values: Values。
+        """
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.GetRuleRuleConditionQueryStringConfigValueResult']:
+        """
+        Values。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetRuleRuleConditionQueryStringConfigValueResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 查询字符串键。
+        :param builtins.str value: 查询字符串值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        查询字符串键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        查询字符串值。
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

@@ -232,6 +232,242 @@ export namespace alb {
         zoneId?: pulumi.Input<string>;
     }
 
+    export interface RuleForwardGroupConfig {
+        serverGroupTuples?: pulumi.Input<pulumi.Input<inputs.alb.RuleForwardGroupConfigServerGroupTuple>[]>;
+        /**
+         * 是否开启组间会话保持。on：开启。off：不开启。
+         */
+        stickySessionEnabled?: pulumi.Input<string>;
+        /**
+         * 组件回话保持的超时时间。单位：秒。
+         */
+        stickySessionTimeout?: pulumi.Input<number>;
+    }
+
+    export interface RuleForwardGroupConfigServerGroupTuple {
+        /**
+         * 转发到的目的服务器组 ID。
+         */
+        serverGroupId?: pulumi.Input<string>;
+        /**
+         * 服务器组权重。
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface RuleRedirectConfig {
+        /**
+         * 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+         */
+        redirectDomain?: pulumi.Input<string>;
+        /**
+         * 重定向状态码。301、302、307、308。
+         */
+        redirectHttpCode?: pulumi.Input<string>;
+        /**
+         * 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+         */
+        redirectPort?: pulumi.Input<string>;
+        /**
+         * 重定向使用的协议。HTTP、HTTPS。
+         */
+        redirectProtocol?: pulumi.Input<string>;
+        /**
+         * 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+         */
+        redirectUri?: pulumi.Input<string>;
+    }
+
+    export interface RuleRewriteConfig {
+        /**
+         * 重写路径。
+         */
+        rewritePath?: pulumi.Input<string>;
+    }
+
+    export interface RuleRuleAction {
+        /**
+         * FixedResponseConfig
+         */
+        fixedResponseConfig?: pulumi.Input<inputs.alb.RuleRuleActionFixedResponseConfig>;
+        /**
+         * ForwardGroupConfig
+         */
+        forwardGroupConfig?: pulumi.Input<inputs.alb.RuleRuleActionForwardGroupConfig>;
+        /**
+         * RedirectConfig
+         */
+        redirectConfig?: pulumi.Input<inputs.alb.RuleRuleActionRedirectConfig>;
+        /**
+         * RewriteConfig
+         */
+        rewriteConfig?: pulumi.Input<inputs.alb.RuleRuleActionRewriteConfig>;
+        /**
+         * TrafficLimitConfig
+         */
+        trafficLimitConfig?: pulumi.Input<inputs.alb.RuleRuleActionTrafficLimitConfig>;
+        /**
+         * 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface RuleRuleActionFixedResponseConfig {
+        /**
+         * 返回的固定内容。
+         */
+        content?: pulumi.Input<string>;
+        /**
+         * 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+         */
+        contentType?: pulumi.Input<string>;
+        /**
+         * 返回的 HTTP 状态码。
+         */
+        httpCode?: pulumi.Input<string>;
+    }
+
+    export interface RuleRuleActionForwardGroupConfig {
+        /**
+         * ServerGroupStickySession
+         */
+        serverGroupStickySession?: pulumi.Input<inputs.alb.RuleRuleActionForwardGroupConfigServerGroupStickySession>;
+        serverGroupTuples?: pulumi.Input<pulumi.Input<inputs.alb.RuleRuleActionForwardGroupConfigServerGroupTuple>[]>;
+    }
+
+    export interface RuleRuleActionForwardGroupConfigServerGroupStickySession {
+        /**
+         * 是否开启组间会话保持。on：开启。off：不开启。
+         */
+        enabled?: pulumi.Input<string>;
+        /**
+         * 组件回话保持的超时时间。单位：秒。
+         */
+        timeout?: pulumi.Input<number>;
+    }
+
+    export interface RuleRuleActionForwardGroupConfigServerGroupTuple {
+        /**
+         * 转发到的目的服务器组 ID。
+         */
+        serverGroupId?: pulumi.Input<string>;
+        /**
+         * 服务器组权重。
+         */
+        weight?: pulumi.Input<number>;
+    }
+
+    export interface RuleRuleActionRedirectConfig {
+        /**
+         * 重定向域名，仅支持精确域名。
+         */
+        host?: pulumi.Input<string>;
+        /**
+         * 重定向状态码，支持301，302，307，308。
+         */
+        httpCode?: pulumi.Input<string>;
+        /**
+         * 重定向 URI。。
+         */
+        path?: pulumi.Input<string>;
+        /**
+         * 重定向端口。
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * 重定向使用的协议，支持HTTP，HTTPS。
+         */
+        protocol?: pulumi.Input<string>;
+    }
+
+    export interface RuleRuleActionRewriteConfig {
+        /**
+         * 重写路径。
+         */
+        path?: pulumi.Input<string>;
+    }
+
+    export interface RuleRuleActionTrafficLimitConfig {
+        /**
+         * 每秒请求数。
+         */
+        qps?: pulumi.Input<number>;
+    }
+
+    export interface RuleRuleCondition {
+        /**
+         * HeaderConfig。
+         */
+        headerConfig?: pulumi.Input<inputs.alb.RuleRuleConditionHeaderConfig>;
+        /**
+         * HostConfig。
+         */
+        hostConfig?: pulumi.Input<inputs.alb.RuleRuleConditionHostConfig>;
+        /**
+         * MethodConfig。
+         */
+        methodConfig?: pulumi.Input<inputs.alb.RuleRuleConditionMethodConfig>;
+        /**
+         * PathConfig。
+         */
+        pathConfig?: pulumi.Input<inputs.alb.RuleRuleConditionPathConfig>;
+        /**
+         * QueryStringConfig。
+         */
+        queryStringConfig?: pulumi.Input<inputs.alb.RuleRuleConditionQueryStringConfig>;
+        /**
+         * 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface RuleRuleConditionHeaderConfig {
+        /**
+         * 头字段键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 头字段值。
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface RuleRuleConditionHostConfig {
+        /**
+         * 转发规则的域名，支持泛域名和精确域名。
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface RuleRuleConditionMethodConfig {
+        /**
+         * 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface RuleRuleConditionPathConfig {
+        /**
+         * 转发规则的URL，仅支持绝对路径。
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface RuleRuleConditionQueryStringConfig {
+        values?: pulumi.Input<pulumi.Input<inputs.alb.RuleRuleConditionQueryStringConfigValue>[]>;
+    }
+
+    export interface RuleRuleConditionQueryStringConfigValue {
+        /**
+         * 查询字符串键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 查询字符串值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface ServerGroupHealthCheck {
         /**
          * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
@@ -930,6 +1166,91 @@ export namespace apig {
          */
         value?: pulumi.Input<string>;
     }
+}
+
+export namespace ark {
+    export interface EndpointCertificate {
+        /**
+         * X509私有证书过期的时间。使用秒级时间戳表示。
+         */
+        notAfter?: pulumi.Input<number>;
+        /**
+         * X509私有证书开始生效的时间。使用秒级时间戳表示。
+         */
+        notBefore?: pulumi.Input<number>;
+        /**
+         * 证书方。
+         */
+        pcaHost?: pulumi.Input<string>;
+        /**
+         * PEM 格式的叶子证书。
+         */
+        pcaInstanceCertificate?: pulumi.Input<string>;
+        /**
+         * 证书名称。
+         */
+        pcaName?: pulumi.Input<string>;
+        /**
+         * PEM 格式的根证书。
+         */
+        pcaRootCaCertificate?: pulumi.Input<string>;
+        /**
+         * PEM 格式的中间根证书和根证书。
+         */
+        pcaSubCaCertificate?: pulumi.Input<string>;
+    }
+
+    export interface EndpointModelReference {
+        /**
+         * 定制模型的ID。
+         */
+        customModelId?: pulumi.Input<string>;
+        /**
+         * 基础模型。
+         */
+        foundationModel?: pulumi.Input<inputs.ark.EndpointModelReferenceFoundationModel>;
+    }
+
+    export interface EndpointModelReferenceFoundationModel {
+        /**
+         * 基础模型版本。
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface EndpointModeration {
+        /**
+         * 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+         */
+        strategy?: pulumi.Input<string>;
+    }
+
+    export interface EndpointRateLimit {
+        /**
+         * Requests Per Minute，每分钟请求数。
+         */
+        rpm?: pulumi.Input<number>;
+        /**
+         * Tokens Per Minute，每分钟请求 token 数。
+         */
+        tpm?: pulumi.Input<number>;
+    }
+
+    export interface EndpointTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
 }
 
 export namespace autoscaling {
@@ -4013,6 +4334,13 @@ export namespace iam {
 }
 
 export namespace kafka {
+    export interface AllowListAssociatedInstance {
+        /**
+         * 白名单绑定的实例ID。
+         */
+        instanceId?: pulumi.Input<string>;
+    }
+
     export interface TopicAccessPolicy {
         /**
          * SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
@@ -4354,6 +4682,164 @@ export namespace rabbitmq {
         key?: pulumi.Input<string>;
         /**
          * 标签的值。
+         */
+        value?: pulumi.Input<string>;
+    }
+}
+
+export namespace rdsmssql {
+    export interface InstanceChargeInfo {
+        /**
+         * 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeEndTime?: pulumi.Input<string>;
+        /**
+         * 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeStartTime?: pulumi.Input<string>;
+        /**
+         * 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+         */
+        chargeStatus?: pulumi.Input<string>;
+        /**
+         * 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+         */
+        chargeType?: pulumi.Input<string>;
+        /**
+         * 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueReclaimTime?: pulumi.Input<string>;
+        /**
+         * 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueTime?: pulumi.Input<string>;
+        /**
+         * 预付费场景下的购买时长。默认值：1。
+         */
+        period?: pulumi.Input<number>;
+        /**
+         * 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+         */
+        periodUnit?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConnectionInfo {
+        addresses?: pulumi.Input<pulumi.Input<inputs.rdsmssql.InstanceConnectionInfoAddress>[]>;
+        /**
+         * 描述信息。
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 终端 ID。
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * 终端名称。
+         */
+        endpointName?: pulumi.Input<string>;
+        /**
+         * 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+         */
+        endpointType?: pulumi.Input<string>;
+    }
+
+    export interface InstanceConnectionInfoAddress {
+        /**
+         * 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+         */
+        dnsVisibility?: pulumi.Input<boolean>;
+        /**
+         * 域名。
+         */
+        domain?: pulumi.Input<string>;
+        /**
+         * EIP的ID，仅对公网地址有效。
+         */
+        eipId?: pulumi.Input<string>;
+        /**
+         * IP地址。
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * 网络地址类型。取值：Private：私网类型。Public：公网类型。
+         */
+        networkType?: pulumi.Input<string>;
+        /**
+         * 端口。
+         */
+        port?: pulumi.Input<string>;
+        /**
+         * 子网 ID，仅对私网地址有效。
+         */
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceNodeDetailInfo {
+        /**
+         * 节点的创建时间。
+         */
+        createTime?: pulumi.Input<string>;
+        /**
+         * 节点主机名。
+         */
+        hostName?: pulumi.Input<string>;
+        /**
+         * 实例ID。
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * 内存大小，单位为 GiB。
+         */
+        memory?: pulumi.Input<number>;
+        /**
+         * 节点ID。
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * 节点IP。
+         */
+        nodeIp?: pulumi.Input<string>;
+        /**
+         * 节点规格。
+         */
+        nodeSpec?: pulumi.Input<string>;
+        /**
+         * 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+         */
+        nodeStatus?: pulumi.Input<string>;
+        /**
+         * 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+         */
+        nodeType?: pulumi.Input<string>;
+        /**
+         * 区域ID。
+         */
+        regionId?: pulumi.Input<string>;
+        /**
+         * 更新时间。
+         */
+        updateTime?: pulumi.Input<string>;
+        /**
+         * vCPU 数量。
+         */
+        vcpu?: pulumi.Input<number>;
+        /**
+         * 可用区ID。
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
          */
         value?: pulumi.Input<string>;
     }
@@ -5013,6 +5499,19 @@ export namespace storageebs {
          * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
          */
         throughput?: pulumi.Input<number>;
+    }
+}
+
+export namespace tls {
+    export interface ProjectTag {
+        /**
+         * 标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 标签值。
+         */
+        value?: pulumi.Input<string>;
     }
 }
 
@@ -6031,6 +6530,10 @@ export namespace vke {
          */
         autoSyncDisabled?: pulumi.Input<boolean>;
         /**
+         * 节点池 Containerd 相关配置。
+         */
+        containerdConfig?: pulumi.Input<inputs.vke.NodePoolKubernetesConfigContainerdConfig>;
+        /**
          * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
          */
         cordon?: pulumi.Input<boolean>;
@@ -6054,11 +6557,31 @@ export namespace vke {
         taints?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigTaint>[]>;
     }
 
+    export interface NodePoolKubernetesConfigContainerdConfig {
+        /**
+         * 指定跳过证书认证的容器镜像仓库地址。
+         */
+        insecureRegistries?: pulumi.Input<pulumi.Input<string>[]>;
+        registryProxyConfigs?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig>[]>;
+    }
+
+    export interface NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+        /**
+         * 代理地址。
+         */
+        proxyEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 容器镜像仓库地址。
+         */
+        registry?: pulumi.Input<string>;
+    }
+
     export interface NodePoolKubernetesConfigKubeletConfig {
         /**
          * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
          */
         cpuManagerPolicy?: pulumi.Input<string>;
+        evictionHards?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolKubernetesConfigKubeletConfigEvictionHard>[]>;
         /**
          * 特性门控。
          */
@@ -6097,6 +6620,17 @@ export namespace vke {
          * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
          */
         topologyManagerScope?: pulumi.Input<string>;
+    }
+
+    export interface NodePoolKubernetesConfigKubeletConfigEvictionHard {
+        /**
+         * 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 硬性门限值。
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface NodePoolKubernetesConfigKubeletConfigFeatureGates {

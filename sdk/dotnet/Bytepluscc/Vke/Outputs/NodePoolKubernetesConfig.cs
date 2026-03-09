@@ -19,6 +19,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// </summary>
         public readonly bool? AutoSyncDisabled;
         /// <summary>
+        /// 节点池 Containerd 相关配置。
+        /// </summary>
+        public readonly Outputs.NodePoolKubernetesConfigContainerdConfig? ContainerdConfig;
+        /// <summary>
         /// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
         /// </summary>
         public readonly bool? Cordon;
@@ -45,6 +49,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         private NodePoolKubernetesConfig(
             bool? autoSyncDisabled,
 
+            Outputs.NodePoolKubernetesConfigContainerdConfig? containerdConfig,
+
             bool? cordon,
 
             Outputs.NodePoolKubernetesConfigKubeletConfig? kubeletConfig,
@@ -60,6 +66,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
             ImmutableArray<Outputs.NodePoolKubernetesConfigTaint> taints)
         {
             AutoSyncDisabled = autoSyncDisabled;
+            ContainerdConfig = containerdConfig;
             Cordon = cordon;
             KubeletConfig = kubeletConfig;
             Labels = labels;

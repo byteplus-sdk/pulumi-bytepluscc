@@ -275,6 +275,20 @@ public class Key extends com.pulumi.resources.CustomResource {
         return this.protectionLevel;
     }
     /**
+     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    @Export(name="rotateInterval", refs={Integer.class}, tree="[0]")
+    private Output<Integer> rotateInterval;
+
+    /**
+     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    public Output<Integer> rotateInterval() {
+        return this.rotateInterval;
+    }
+    /**
      * 密钥轮转状态，取值：Enable，Disable。
      * 
      */

@@ -36,6 +36,8 @@ type LookupInstanceResult struct {
 	AutoRenew bool `pulumi:"autoRenew"`
 	// 为变更前创建的全量备份设置备份名称。
 	BackupPointName string `pulumi:"backupPointName"`
+	// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+	BlueGreenRole string `pulumi:"blueGreenRole"`
 	// 实例的容量信息。
 	Capacity GetInstanceCapacity `pulumi:"capacity"`
 	// 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
@@ -84,6 +86,8 @@ type LookupInstanceResult struct {
 	Port int `pulumi:"port"`
 	// 实例私网连接地址的域名。
 	PrivateAddress string `pulumi:"privateAddress"`
+	// 实例私网连接地址的端口号。
+	PrivatePort string `pulumi:"privatePort"`
 	// 实例所属的项目。
 	ProjectName string `pulumi:"projectName"`
 	// 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
@@ -165,6 +169,11 @@ func (o LookupInstanceResultOutput) AutoRenew() pulumi.BoolOutput {
 // 为变更前创建的全量备份设置备份名称。
 func (o LookupInstanceResultOutput) BackupPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.BackupPointName }).(pulumi.StringOutput)
+}
+
+// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+func (o LookupInstanceResultOutput) BlueGreenRole() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.BlueGreenRole }).(pulumi.StringOutput)
 }
 
 // 实例的容量信息。
@@ -285,6 +294,11 @@ func (o LookupInstanceResultOutput) Port() pulumi.IntOutput {
 // 实例私网连接地址的域名。
 func (o LookupInstanceResultOutput) PrivateAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.PrivateAddress }).(pulumi.StringOutput)
+}
+
+// 实例私网连接地址的端口号。
+func (o LookupInstanceResultOutput) PrivatePort() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.PrivatePort }).(pulumi.StringOutput)
 }
 
 // 实例所属的项目。

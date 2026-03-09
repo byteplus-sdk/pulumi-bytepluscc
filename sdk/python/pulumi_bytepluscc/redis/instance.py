@@ -401,6 +401,7 @@ class _InstanceState:
                  allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
                  backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+                 blue_green_role: Optional[pulumi.Input[builtins.str]] = None,
                  capacity: Optional[pulumi.Input['InstanceCapacityArgs']] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None,
                  configure_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceConfigureNodeArgs']]]] = None,
@@ -424,6 +425,7 @@ class _InstanceState:
                  password: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None,
                  private_address: Optional[pulumi.Input[builtins.str]] = None,
+                 private_port: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  purchase_months: Optional[pulumi.Input[builtins.int]] = None,
                  reserve_additional_bandwidth: Optional[pulumi.Input[builtins.bool]] = None,
@@ -445,6 +447,7 @@ class _InstanceState:
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
         :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
         :param pulumi.Input[builtins.str] backup_point_name: 为变更前创建的全量备份设置备份名称。
+        :param pulumi.Input[builtins.str] blue_green_role: 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
         :param pulumi.Input['InstanceCapacityArgs'] capacity: 实例的容量信息。
         :param pulumi.Input[builtins.str] charge_type: 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
         :param pulumi.Input[builtins.bool] create_backup: 是否在变更前创建备份。
@@ -466,6 +469,7 @@ class _InstanceState:
         :param pulumi.Input[builtins.str] password: 设置默认数据库 default 账号的密码。
         :param pulumi.Input[builtins.int] port: 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
         :param pulumi.Input[builtins.str] private_address: 实例私网连接地址的域名。
+        :param pulumi.Input[builtins.str] private_port: 实例私网连接地址的端口号。
         :param pulumi.Input[builtins.str] project_name: 实例所属的项目。
         :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
         :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: 设置是否保留额外带宽
@@ -487,6 +491,8 @@ class _InstanceState:
             pulumi.set(__self__, "auto_renew", auto_renew)
         if backup_point_name is not None:
             pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if blue_green_role is not None:
+            pulumi.set(__self__, "blue_green_role", blue_green_role)
         if capacity is not None:
             pulumi.set(__self__, "capacity", capacity)
         if charge_type is not None:
@@ -533,6 +539,8 @@ class _InstanceState:
             pulumi.set(__self__, "port", port)
         if private_address is not None:
             pulumi.set(__self__, "private_address", private_address)
+        if private_port is not None:
+            pulumi.set(__self__, "private_port", private_port)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if purchase_months is not None:
@@ -601,6 +609,18 @@ class _InstanceState:
     @backup_point_name.setter
     def backup_point_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "backup_point_name", value)
+
+    @property
+    @pulumi.getter(name="blueGreenRole")
+    def blue_green_role(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        """
+        return pulumi.get(self, "blue_green_role")
+
+    @blue_green_role.setter
+    def blue_green_role(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "blue_green_role", value)
 
     @property
     @pulumi.getter
@@ -871,6 +891,18 @@ class _InstanceState:
     @private_address.setter
     def private_address(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "private_address", value)
+
+    @property
+    @pulumi.getter(name="privatePort")
+    def private_port(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例私网连接地址的端口号。
+        """
+        return pulumi.get(self, "private_port")
+
+    @private_port.setter
+    def private_port(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "private_port", value)
 
     @property
     @pulumi.getter(name="projectName")
@@ -1297,6 +1329,7 @@ class Instance(pulumi.CustomResource):
             if vpc_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vpc_id'")
             __props__.__dict__["vpc_id"] = vpc_id
+            __props__.__dict__["blue_green_role"] = None
             __props__.__dict__["capacity"] = None
             __props__.__dict__["create_time"] = None
             __props__.__dict__["data_layout"] = None
@@ -1308,6 +1341,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["max_connections"] = None
             __props__.__dict__["node_ids"] = None
             __props__.__dict__["private_address"] = None
+            __props__.__dict__["private_port"] = None
             __props__.__dict__["service_type"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["vi_pv6"] = None
@@ -1328,6 +1362,7 @@ class Instance(pulumi.CustomResource):
             allow_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
             backup_point_name: Optional[pulumi.Input[builtins.str]] = None,
+            blue_green_role: Optional[pulumi.Input[builtins.str]] = None,
             capacity: Optional[pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']]] = None,
             charge_type: Optional[pulumi.Input[builtins.str]] = None,
             configure_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceConfigureNodeArgs', 'InstanceConfigureNodeArgsDict']]]]] = None,
@@ -1351,6 +1386,7 @@ class Instance(pulumi.CustomResource):
             password: Optional[pulumi.Input[builtins.str]] = None,
             port: Optional[pulumi.Input[builtins.int]] = None,
             private_address: Optional[pulumi.Input[builtins.str]] = None,
+            private_port: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             purchase_months: Optional[pulumi.Input[builtins.int]] = None,
             reserve_additional_bandwidth: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1377,6 +1413,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
         :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
         :param pulumi.Input[builtins.str] backup_point_name: 为变更前创建的全量备份设置备份名称。
+        :param pulumi.Input[builtins.str] blue_green_role: 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
         :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: 实例的容量信息。
         :param pulumi.Input[builtins.str] charge_type: 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
         :param pulumi.Input[builtins.bool] create_backup: 是否在变更前创建备份。
@@ -1398,6 +1435,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] password: 设置默认数据库 default 账号的密码。
         :param pulumi.Input[builtins.int] port: 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
         :param pulumi.Input[builtins.str] private_address: 实例私网连接地址的域名。
+        :param pulumi.Input[builtins.str] private_port: 实例私网连接地址的端口号。
         :param pulumi.Input[builtins.str] project_name: 实例所属的项目。
         :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
         :param pulumi.Input[builtins.bool] reserve_additional_bandwidth: 设置是否保留额外带宽
@@ -1420,6 +1458,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["allow_list_ids"] = allow_list_ids
         __props__.__dict__["auto_renew"] = auto_renew
         __props__.__dict__["backup_point_name"] = backup_point_name
+        __props__.__dict__["blue_green_role"] = blue_green_role
         __props__.__dict__["capacity"] = capacity
         __props__.__dict__["charge_type"] = charge_type
         __props__.__dict__["configure_nodes"] = configure_nodes
@@ -1443,6 +1482,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["password"] = password
         __props__.__dict__["port"] = port
         __props__.__dict__["private_address"] = private_address
+        __props__.__dict__["private_port"] = private_port
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["purchase_months"] = purchase_months
         __props__.__dict__["reserve_additional_bandwidth"] = reserve_additional_bandwidth
@@ -1484,6 +1524,14 @@ class Instance(pulumi.CustomResource):
         为变更前创建的全量备份设置备份名称。
         """
         return pulumi.get(self, "backup_point_name")
+
+    @property
+    @pulumi.getter(name="blueGreenRole")
+    def blue_green_role(self) -> pulumi.Output[builtins.str]:
+        """
+        实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        """
+        return pulumi.get(self, "blue_green_role")
 
     @property
     @pulumi.getter
@@ -1662,6 +1710,14 @@ class Instance(pulumi.CustomResource):
         实例私网连接地址的域名。
         """
         return pulumi.get(self, "private_address")
+
+    @property
+    @pulumi.getter(name="privatePort")
+    def private_port(self) -> pulumi.Output[builtins.str]:
+        """
+        实例私网连接地址的端口号。
+        """
+        return pulumi.get(self, "private_port")
 
     @property
     @pulumi.getter(name="projectName")

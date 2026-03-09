@@ -110,8 +110,14 @@ __all__ = [
     'NodePoolAutoScalingArgsDict',
     'NodePoolKubernetesConfigArgs',
     'NodePoolKubernetesConfigArgsDict',
+    'NodePoolKubernetesConfigContainerdConfigArgs',
+    'NodePoolKubernetesConfigContainerdConfigArgsDict',
+    'NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs',
+    'NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgsDict',
     'NodePoolKubernetesConfigKubeletConfigArgs',
     'NodePoolKubernetesConfigKubeletConfigArgsDict',
+    'NodePoolKubernetesConfigKubeletConfigEvictionHardArgs',
+    'NodePoolKubernetesConfigKubeletConfigEvictionHardArgsDict',
     'NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs',
     'NodePoolKubernetesConfigKubeletConfigFeatureGatesArgsDict',
     'NodePoolKubernetesConfigKubeletConfigKubeReservedArgs',
@@ -3945,6 +3951,10 @@ if not MYPY:
         """
         是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
         """
+        containerd_config: NotRequired[pulumi.Input['NodePoolKubernetesConfigContainerdConfigArgsDict']]
+        """
+        节点池 Containerd 相关配置。
+        """
         cordon: NotRequired[pulumi.Input[builtins.bool]]
         """
         封锁节点配置，参数值说明：false：不封锁。true：封锁。
@@ -3974,6 +3984,7 @@ elif False:
 class NodePoolKubernetesConfigArgs:
     def __init__(__self__, *,
                  auto_sync_disabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 containerd_config: Optional[pulumi.Input['NodePoolKubernetesConfigContainerdConfigArgs']] = None,
                  cordon: Optional[pulumi.Input[builtins.bool]] = None,
                  kubelet_config: Optional[pulumi.Input['NodePoolKubernetesConfigKubeletConfigArgs']] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigLabelArgs']]]] = None,
@@ -3983,6 +3994,7 @@ class NodePoolKubernetesConfigArgs:
                  taints: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigTaintArgs']]]] = None):
         """
         :param pulumi.Input[builtins.bool] auto_sync_disabled: 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        :param pulumi.Input['NodePoolKubernetesConfigContainerdConfigArgs'] containerd_config: 节点池 Containerd 相关配置。
         :param pulumi.Input[builtins.bool] cordon: 封锁节点配置，参数值说明：false：不封锁。true：封锁。
         :param pulumi.Input['NodePoolKubernetesConfigKubeletConfigArgs'] kubelet_config: Kubelet 组件的相关配置
         :param pulumi.Input[builtins.str] name_prefix: Kubernetes 中节点对象的元数据名称前缀。
@@ -3991,6 +4003,8 @@ class NodePoolKubernetesConfigArgs:
         """
         if auto_sync_disabled is not None:
             pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
+        if containerd_config is not None:
+            pulumi.set(__self__, "containerd_config", containerd_config)
         if cordon is not None:
             pulumi.set(__self__, "cordon", cordon)
         if kubelet_config is not None:
@@ -4017,6 +4031,18 @@ class NodePoolKubernetesConfigArgs:
     @auto_sync_disabled.setter
     def auto_sync_disabled(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "auto_sync_disabled", value)
+
+    @property
+    @pulumi.getter(name="containerdConfig")
+    def containerd_config(self) -> Optional[pulumi.Input['NodePoolKubernetesConfigContainerdConfigArgs']]:
+        """
+        节点池 Containerd 相关配置。
+        """
+        return pulumi.get(self, "containerd_config")
+
+    @containerd_config.setter
+    def containerd_config(self, value: Optional[pulumi.Input['NodePoolKubernetesConfigContainerdConfigArgs']]):
+        pulumi.set(self, "containerd_config", value)
 
     @property
     @pulumi.getter
@@ -4098,11 +4124,109 @@ class NodePoolKubernetesConfigArgs:
 
 
 if not MYPY:
+    class NodePoolKubernetesConfigContainerdConfigArgsDict(TypedDict):
+        insecure_registries: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        指定跳过证书认证的容器镜像仓库地址。
+        """
+        registry_proxy_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgsDict']]]]
+elif False:
+    NodePoolKubernetesConfigContainerdConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodePoolKubernetesConfigContainerdConfigArgs:
+    def __init__(__self__, *,
+                 insecure_registries: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 registry_proxy_configs: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] insecure_registries: 指定跳过证书认证的容器镜像仓库地址。
+        """
+        if insecure_registries is not None:
+            pulumi.set(__self__, "insecure_registries", insecure_registries)
+        if registry_proxy_configs is not None:
+            pulumi.set(__self__, "registry_proxy_configs", registry_proxy_configs)
+
+    @property
+    @pulumi.getter(name="insecureRegistries")
+    def insecure_registries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        指定跳过证书认证的容器镜像仓库地址。
+        """
+        return pulumi.get(self, "insecure_registries")
+
+    @insecure_registries.setter
+    def insecure_registries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "insecure_registries", value)
+
+    @property
+    @pulumi.getter(name="registryProxyConfigs")
+    def registry_proxy_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs']]]]:
+        return pulumi.get(self, "registry_proxy_configs")
+
+    @registry_proxy_configs.setter
+    def registry_proxy_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs']]]]):
+        pulumi.set(self, "registry_proxy_configs", value)
+
+
+if not MYPY:
+    class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgsDict(TypedDict):
+        proxy_endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        代理地址。
+        """
+        registry: NotRequired[pulumi.Input[builtins.str]]
+        """
+        容器镜像仓库地址。
+        """
+elif False:
+    NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs:
+    def __init__(__self__, *,
+                 proxy_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 registry: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] proxy_endpoints: 代理地址。
+        :param pulumi.Input[builtins.str] registry: 容器镜像仓库地址。
+        """
+        if proxy_endpoints is not None:
+            pulumi.set(__self__, "proxy_endpoints", proxy_endpoints)
+        if registry is not None:
+            pulumi.set(__self__, "registry", registry)
+
+    @property
+    @pulumi.getter(name="proxyEndpoints")
+    def proxy_endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        代理地址。
+        """
+        return pulumi.get(self, "proxy_endpoints")
+
+    @proxy_endpoints.setter
+    def proxy_endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "proxy_endpoints", value)
+
+    @property
+    @pulumi.getter
+    def registry(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        容器镜像仓库地址。
+        """
+        return pulumi.get(self, "registry")
+
+    @registry.setter
+    def registry(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "registry", value)
+
+
+if not MYPY:
     class NodePoolKubernetesConfigKubeletConfigArgsDict(TypedDict):
         cpu_manager_policy: NotRequired[pulumi.Input[builtins.str]]
         """
         配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
         """
+        eviction_hards: NotRequired[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigKubeletConfigEvictionHardArgsDict']]]]
         feature_gates: NotRequired[pulumi.Input['NodePoolKubernetesConfigKubeletConfigFeatureGatesArgsDict']]
         """
         特性门控。
@@ -4148,6 +4272,7 @@ elif False:
 class NodePoolKubernetesConfigKubeletConfigArgs:
     def __init__(__self__, *,
                  cpu_manager_policy: Optional[pulumi.Input[builtins.str]] = None,
+                 eviction_hards: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigKubeletConfigEvictionHardArgs']]]] = None,
                  feature_gates: Optional[pulumi.Input['NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs']] = None,
                  kube_api_burst: Optional[pulumi.Input[builtins.int]] = None,
                  kube_api_qps: Optional[pulumi.Input[builtins.int]] = None,
@@ -4173,6 +4298,8 @@ class NodePoolKubernetesConfigKubeletConfigArgs:
         """
         if cpu_manager_policy is not None:
             pulumi.set(__self__, "cpu_manager_policy", cpu_manager_policy)
+        if eviction_hards is not None:
+            pulumi.set(__self__, "eviction_hards", eviction_hards)
         if feature_gates is not None:
             pulumi.set(__self__, "feature_gates", feature_gates)
         if kube_api_burst is not None:
@@ -4207,6 +4334,15 @@ class NodePoolKubernetesConfigKubeletConfigArgs:
     @cpu_manager_policy.setter
     def cpu_manager_policy(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "cpu_manager_policy", value)
+
+    @property
+    @pulumi.getter(name="evictionHards")
+    def eviction_hards(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigKubeletConfigEvictionHardArgs']]]]:
+        return pulumi.get(self, "eviction_hards")
+
+    @eviction_hards.setter
+    def eviction_hards(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolKubernetesConfigKubeletConfigEvictionHardArgs']]]]):
+        pulumi.set(self, "eviction_hards", value)
 
     @property
     @pulumi.getter(name="featureGates")
@@ -4333,6 +4469,58 @@ class NodePoolKubernetesConfigKubeletConfigArgs:
     @topology_manager_scope.setter
     def topology_manager_scope(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "topology_manager_scope", value)
+
+
+if not MYPY:
+    class NodePoolKubernetesConfigKubeletConfigEvictionHardArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        硬性门限值。
+        """
+elif False:
+    NodePoolKubernetesConfigKubeletConfigEvictionHardArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        :param pulumi.Input[builtins.str] value: 硬性门限值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        硬性门限值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:

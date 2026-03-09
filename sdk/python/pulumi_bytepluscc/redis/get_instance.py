@@ -28,7 +28,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_point_name=None, capacity=None, charge_type=None, configure_nodes=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
+    def __init__(__self__, allow_list_ids=None, auto_renew=None, backup_point_name=None, blue_green_role=None, capacity=None, charge_type=None, configure_nodes=None, create_backup=None, create_time=None, data_layout=None, deletion_protection=None, engine_version=None, expired_time=None, id=None, instance_class=None, instance_id=None, instance_name=None, instance_shards=None, maintenance_time=None, max_connections=None, multi_az=None, no_auth_mode=None, node_ids=None, node_number=None, parameter_group_id=None, password=None, port=None, private_address=None, private_port=None, project_name=None, purchase_months=None, reserve_additional_bandwidth=None, service_type=None, shard_capacity=None, shard_number=None, sharded_cluster=None, status=None, subnet_id=None, tags=None, vi_pv6=None, vip=None, visit_addrs=None, vpc_auth_mode=None, vpc_id=None, zone_ids=None):
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -38,6 +38,9 @@ class GetInstanceResult:
         if backup_point_name and not isinstance(backup_point_name, str):
             raise TypeError("Expected argument 'backup_point_name' to be a str")
         pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if blue_green_role and not isinstance(blue_green_role, str):
+            raise TypeError("Expected argument 'blue_green_role' to be a str")
+        pulumi.set(__self__, "blue_green_role", blue_green_role)
         if capacity and not isinstance(capacity, dict):
             raise TypeError("Expected argument 'capacity' to be a dict")
         pulumi.set(__self__, "capacity", capacity)
@@ -110,6 +113,9 @@ class GetInstanceResult:
         if private_address and not isinstance(private_address, str):
             raise TypeError("Expected argument 'private_address' to be a str")
         pulumi.set(__self__, "private_address", private_address)
+        if private_port and not isinstance(private_port, str):
+            raise TypeError("Expected argument 'private_port' to be a str")
+        pulumi.set(__self__, "private_port", private_port)
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
@@ -182,6 +188,14 @@ class GetInstanceResult:
         为变更前创建的全量备份设置备份名称。
         """
         return pulumi.get(self, "backup_point_name")
+
+    @property
+    @pulumi.getter(name="blueGreenRole")
+    def blue_green_role(self) -> builtins.str:
+        """
+        实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        """
+        return pulumi.get(self, "blue_green_role")
 
     @property
     @pulumi.getter
@@ -376,6 +390,14 @@ class GetInstanceResult:
         return pulumi.get(self, "private_address")
 
     @property
+    @pulumi.getter(name="privatePort")
+    def private_port(self) -> builtins.str:
+        """
+        实例私网连接地址的端口号。
+        """
+        return pulumi.get(self, "private_port")
+
+    @property
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
@@ -513,6 +535,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             allow_list_ids=self.allow_list_ids,
             auto_renew=self.auto_renew,
             backup_point_name=self.backup_point_name,
+            blue_green_role=self.blue_green_role,
             capacity=self.capacity,
             charge_type=self.charge_type,
             configure_nodes=self.configure_nodes,
@@ -537,6 +560,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             password=self.password,
             port=self.port,
             private_address=self.private_address,
+            private_port=self.private_port,
             project_name=self.project_name,
             purchase_months=self.purchase_months,
             reserve_additional_bandwidth=self.reserve_additional_bandwidth,
@@ -572,6 +596,7 @@ def get_instance(id: Optional[builtins.str] = None,
         allow_list_ids=pulumi.get(__ret__, 'allow_list_ids'),
         auto_renew=pulumi.get(__ret__, 'auto_renew'),
         backup_point_name=pulumi.get(__ret__, 'backup_point_name'),
+        blue_green_role=pulumi.get(__ret__, 'blue_green_role'),
         capacity=pulumi.get(__ret__, 'capacity'),
         charge_type=pulumi.get(__ret__, 'charge_type'),
         configure_nodes=pulumi.get(__ret__, 'configure_nodes'),
@@ -596,6 +621,7 @@ def get_instance(id: Optional[builtins.str] = None,
         password=pulumi.get(__ret__, 'password'),
         port=pulumi.get(__ret__, 'port'),
         private_address=pulumi.get(__ret__, 'private_address'),
+        private_port=pulumi.get(__ret__, 'private_port'),
         project_name=pulumi.get(__ret__, 'project_name'),
         purchase_months=pulumi.get(__ret__, 'purchase_months'),
         reserve_additional_bandwidth=pulumi.get(__ret__, 'reserve_additional_bandwidth'),
@@ -628,6 +654,7 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         allow_list_ids=pulumi.get(__response__, 'allow_list_ids'),
         auto_renew=pulumi.get(__response__, 'auto_renew'),
         backup_point_name=pulumi.get(__response__, 'backup_point_name'),
+        blue_green_role=pulumi.get(__response__, 'blue_green_role'),
         capacity=pulumi.get(__response__, 'capacity'),
         charge_type=pulumi.get(__response__, 'charge_type'),
         configure_nodes=pulumi.get(__response__, 'configure_nodes'),
@@ -652,6 +679,7 @@ def get_instance_output(id: Optional[pulumi.Input[builtins.str]] = None,
         password=pulumi.get(__response__, 'password'),
         port=pulumi.get(__response__, 'port'),
         private_address=pulumi.get(__response__, 'private_address'),
+        private_port=pulumi.get(__response__, 'private_port'),
         project_name=pulumi.get(__response__, 'project_name'),
         purchase_months=pulumi.get(__response__, 'purchase_months'),
         reserve_additional_bandwidth=pulumi.get(__response__, 'reserve_additional_bandwidth'),

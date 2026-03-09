@@ -34,6 +34,11 @@ public final class GetInstanceResult {
      */
     private String backupPointName;
     /**
+     * @return 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     * 
+     */
+    private String blueGreenRole;
+    /**
      * @return 实例的容量信息。
      * 
      */
@@ -154,6 +159,11 @@ public final class GetInstanceResult {
      */
     private String privateAddress;
     /**
+     * @return 实例私网连接地址的端口号。
+     * 
+     */
+    private String privatePort;
+    /**
      * @return 实例所属的项目。
      * 
      */
@@ -255,6 +265,13 @@ public final class GetInstanceResult {
      */
     public String backupPointName() {
         return this.backupPointName;
+    }
+    /**
+     * @return 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     * 
+     */
+    public String blueGreenRole() {
+        return this.blueGreenRole;
     }
     /**
      * @return 实例的容量信息。
@@ -425,6 +442,13 @@ public final class GetInstanceResult {
         return this.privateAddress;
     }
     /**
+     * @return 实例私网连接地址的端口号。
+     * 
+     */
+    public String privatePort() {
+        return this.privatePort;
+    }
+    /**
      * @return 实例所属的项目。
      * 
      */
@@ -549,6 +573,7 @@ public final class GetInstanceResult {
         private List<String> allowListIds;
         private Boolean autoRenew;
         private String backupPointName;
+        private String blueGreenRole;
         private GetInstanceCapacity capacity;
         private String chargeType;
         private List<GetInstanceConfigureNode> configureNodes;
@@ -573,6 +598,7 @@ public final class GetInstanceResult {
         private String password;
         private Integer port;
         private String privateAddress;
+        private String privatePort;
         private String projectName;
         private Integer purchaseMonths;
         private Boolean reserveAdditionalBandwidth;
@@ -595,6 +621,7 @@ public final class GetInstanceResult {
     	      this.allowListIds = defaults.allowListIds;
     	      this.autoRenew = defaults.autoRenew;
     	      this.backupPointName = defaults.backupPointName;
+    	      this.blueGreenRole = defaults.blueGreenRole;
     	      this.capacity = defaults.capacity;
     	      this.chargeType = defaults.chargeType;
     	      this.configureNodes = defaults.configureNodes;
@@ -619,6 +646,7 @@ public final class GetInstanceResult {
     	      this.password = defaults.password;
     	      this.port = defaults.port;
     	      this.privateAddress = defaults.privateAddress;
+    	      this.privatePort = defaults.privatePort;
     	      this.projectName = defaults.projectName;
     	      this.purchaseMonths = defaults.purchaseMonths;
     	      this.reserveAdditionalBandwidth = defaults.reserveAdditionalBandwidth;
@@ -662,6 +690,14 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "backupPointName");
             }
             this.backupPointName = backupPointName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder blueGreenRole(String blueGreenRole) {
+            if (blueGreenRole == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "blueGreenRole");
+            }
+            this.blueGreenRole = blueGreenRole;
             return this;
         }
         @CustomType.Setter
@@ -866,6 +902,14 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder privatePort(String privatePort) {
+            if (privatePort == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "privatePort");
+            }
+            this.privatePort = privatePort;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectName(String projectName) {
             if (projectName == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "projectName");
@@ -1007,6 +1051,7 @@ public final class GetInstanceResult {
             _resultValue.allowListIds = allowListIds;
             _resultValue.autoRenew = autoRenew;
             _resultValue.backupPointName = backupPointName;
+            _resultValue.blueGreenRole = blueGreenRole;
             _resultValue.capacity = capacity;
             _resultValue.chargeType = chargeType;
             _resultValue.configureNodes = configureNodes;
@@ -1031,6 +1076,7 @@ public final class GetInstanceResult {
             _resultValue.password = password;
             _resultValue.port = port;
             _resultValue.privateAddress = privateAddress;
+            _resultValue.privatePort = privatePort;
             _resultValue.projectName = projectName;
             _resultValue.purchaseMonths = purchaseMonths;
             _resultValue.reserveAdditionalBandwidth = reserveAdditionalBandwidth;

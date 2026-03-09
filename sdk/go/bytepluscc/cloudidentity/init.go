@@ -25,8 +25,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Group{}
 	case "bytepluscc:cloudidentity/permissionSet:PermissionSet":
 		r = &PermissionSet{}
+	case "bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment":
+		r = &PermissionSetAssignment{}
+	case "bytepluscc:cloudidentity/permissionSetProvisioning:PermissionSetProvisioning":
+		r = &PermissionSetProvisioning{}
 	case "bytepluscc:cloudidentity/user:User":
 		r = &User{}
+	case "bytepluscc:cloudidentity/userProvisioning:UserProvisioning":
+		r = &UserProvisioning{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -52,7 +58,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"cloudidentity/permissionSetAssignment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cloudidentity/permissionSetProvisioning",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"cloudidentity/user",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cloudidentity/userProvisioning",
 		&module{version},
 	)
 }

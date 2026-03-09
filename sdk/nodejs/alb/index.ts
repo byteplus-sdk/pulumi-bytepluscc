@@ -80,6 +80,16 @@ export const getLoadBalancers: typeof import("./getLoadBalancers").getLoadBalanc
 export const getLoadBalancersOutput: typeof import("./getLoadBalancers").getLoadBalancersOutput = null as any;
 utilities.lazyLoad(exports, ["getLoadBalancers","getLoadBalancersOutput"], () => require("./getLoadBalancers"));
 
+export { GetRuleArgs, GetRuleResult, GetRuleOutputArgs } from "./getRule";
+export const getRule: typeof import("./getRule").getRule = null as any;
+export const getRuleOutput: typeof import("./getRule").getRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getRule","getRuleOutput"], () => require("./getRule"));
+
+export { GetRulesResult } from "./getRules";
+export const getRules: typeof import("./getRules").getRules = null as any;
+export const getRulesOutput: typeof import("./getRules").getRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getRules","getRulesOutput"], () => require("./getRules"));
+
 export { GetServerGroupArgs, GetServerGroupResult, GetServerGroupOutputArgs } from "./getServerGroup";
 export const getServerGroup: typeof import("./getServerGroup").getServerGroup = null as any;
 export const getServerGroupOutput: typeof import("./getServerGroup").getServerGroupOutput = null as any;
@@ -105,6 +115,11 @@ export type LoadBalancer = import("./loadBalancer").LoadBalancer;
 export const LoadBalancer: typeof import("./loadBalancer").LoadBalancer = null as any;
 utilities.lazyLoad(exports, ["LoadBalancer"], () => require("./loadBalancer"));
 
+export { RuleArgs, RuleState } from "./rule";
+export type Rule = import("./rule").Rule;
+export const Rule: typeof import("./rule").Rule = null as any;
+utilities.lazyLoad(exports, ["Rule"], () => require("./rule"));
+
 export { ServerGroupArgs, ServerGroupState } from "./serverGroup";
 export type ServerGroup = import("./serverGroup").ServerGroup;
 export const ServerGroup: typeof import("./serverGroup").ServerGroup = null as any;
@@ -127,6 +142,8 @@ const _module = {
                 return new Listener(name, <any>undefined, { urn })
             case "bytepluscc:alb/loadBalancer:LoadBalancer":
                 return new LoadBalancer(name, <any>undefined, { urn })
+            case "bytepluscc:alb/rule:Rule":
+                return new Rule(name, <any>undefined, { urn })
             case "bytepluscc:alb/serverGroup:ServerGroup":
                 return new ServerGroup(name, <any>undefined, { urn })
             default:
@@ -140,4 +157,5 @@ pulumi.runtime.registerResourceModule("bytepluscc", "alb/customizedCfg", _module
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/healthCheckTemplate", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/listener", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/loadBalancer", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "alb/rule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "alb/serverGroup", _module)

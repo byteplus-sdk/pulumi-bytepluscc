@@ -30,6 +30,7 @@ class KeyArgs:
                  multi_region: Optional[pulumi.Input[builtins.bool]] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['KeyTagArgs']]]] = None):
         """
@@ -42,6 +43,7 @@ class KeyArgs:
         :param pulumi.Input[builtins.bool] multi_region: 是否为 Multi-region 类型的主密钥。
         :param pulumi.Input[builtins.str] origin: 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
         :param pulumi.Input[builtins.str] protection_level: 密钥保护级别，取值：SOFTWARE，HSM。
+        :param pulumi.Input[builtins.int] rotate_interval: 密钥轮转周期，单位：天；取值范围：[90, 2560]。
         :param pulumi.Input[builtins.str] rotate_state: 密钥轮转状态，取值：Enable，Disable。
         """
         pulumi.set(__self__, "key_name", key_name)
@@ -58,6 +60,8 @@ class KeyArgs:
             pulumi.set(__self__, "origin", origin)
         if protection_level is not None:
             pulumi.set(__self__, "protection_level", protection_level)
+        if rotate_interval is not None:
+            pulumi.set(__self__, "rotate_interval", rotate_interval)
         if rotate_state is not None:
             pulumi.set(__self__, "rotate_state", rotate_state)
         if tags is not None:
@@ -160,6 +164,18 @@ class KeyArgs:
         pulumi.set(self, "protection_level", value)
 
     @property
+    @pulumi.getter(name="rotateInterval")
+    def rotate_interval(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        """
+        return pulumi.get(self, "rotate_interval")
+
+    @rotate_interval.setter
+    def rotate_interval(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "rotate_interval", value)
+
+    @property
     @pulumi.getter(name="rotateState")
     def rotate_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -198,6 +214,7 @@ class _KeyState:
                  multi_region_configuration: Optional[pulumi.Input['KeyMultiRegionConfigurationArgs']] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  schedule_delete_time: Optional[pulumi.Input[builtins.str]] = None,
                  schedule_rotation_time: Optional[pulumi.Input[builtins.str]] = None,
@@ -220,6 +237,7 @@ class _KeyState:
         :param pulumi.Input['KeyMultiRegionConfigurationArgs'] multi_region_configuration: Multi-region key 配置信息。
         :param pulumi.Input[builtins.str] origin: 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
         :param pulumi.Input[builtins.str] protection_level: 密钥保护级别，取值：SOFTWARE，HSM。
+        :param pulumi.Input[builtins.int] rotate_interval: 密钥轮转周期，单位：天；取值范围：[90, 2560]。
         :param pulumi.Input[builtins.str] rotate_state: 密钥轮转状态，取值：Enable，Disable。
         :param pulumi.Input[builtins.str] schedule_delete_time: 密钥删除时间。
         :param pulumi.Input[builtins.str] schedule_rotation_time: 密钥轮转时间。
@@ -254,6 +272,8 @@ class _KeyState:
             pulumi.set(__self__, "origin", origin)
         if protection_level is not None:
             pulumi.set(__self__, "protection_level", protection_level)
+        if rotate_interval is not None:
+            pulumi.set(__self__, "rotate_interval", rotate_interval)
         if rotate_state is not None:
             pulumi.set(__self__, "rotate_state", rotate_state)
         if schedule_delete_time is not None:
@@ -436,6 +456,18 @@ class _KeyState:
         pulumi.set(self, "protection_level", value)
 
     @property
+    @pulumi.getter(name="rotateInterval")
+    def rotate_interval(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        """
+        return pulumi.get(self, "rotate_interval")
+
+    @rotate_interval.setter
+    def rotate_interval(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "rotate_interval", value)
+
+    @property
     @pulumi.getter(name="rotateState")
     def rotate_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -519,6 +551,7 @@ class Key(pulumi.CustomResource):
                  multi_region: Optional[pulumi.Input[builtins.bool]] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyTagArgs', 'KeyTagArgsDict']]]]] = None,
                  __props__=None):
@@ -563,6 +596,7 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] multi_region: 是否为 Multi-region 类型的主密钥。
         :param pulumi.Input[builtins.str] origin: 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
         :param pulumi.Input[builtins.str] protection_level: 密钥保护级别，取值：SOFTWARE，HSM。
+        :param pulumi.Input[builtins.int] rotate_interval: 密钥轮转周期，单位：天；取值范围：[90, 2560]。
         :param pulumi.Input[builtins.str] rotate_state: 密钥轮转状态，取值：Enable，Disable。
         """
         ...
@@ -625,6 +659,7 @@ class Key(pulumi.CustomResource):
                  multi_region: Optional[pulumi.Input[builtins.bool]] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
+                 rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
                  rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyTagArgs', 'KeyTagArgsDict']]]]] = None,
                  __props__=None):
@@ -648,6 +683,7 @@ class Key(pulumi.CustomResource):
             __props__.__dict__["multi_region"] = multi_region
             __props__.__dict__["origin"] = origin
             __props__.__dict__["protection_level"] = protection_level
+            __props__.__dict__["rotate_interval"] = rotate_interval
             __props__.__dict__["rotate_state"] = rotate_state
             __props__.__dict__["tags"] = tags
             __props__.__dict__["created_time"] = None
@@ -684,6 +720,7 @@ class Key(pulumi.CustomResource):
             multi_region_configuration: Optional[pulumi.Input[Union['KeyMultiRegionConfigurationArgs', 'KeyMultiRegionConfigurationArgsDict']]] = None,
             origin: Optional[pulumi.Input[builtins.str]] = None,
             protection_level: Optional[pulumi.Input[builtins.str]] = None,
+            rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
             rotate_state: Optional[pulumi.Input[builtins.str]] = None,
             schedule_delete_time: Optional[pulumi.Input[builtins.str]] = None,
             schedule_rotation_time: Optional[pulumi.Input[builtins.str]] = None,
@@ -711,6 +748,7 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[Union['KeyMultiRegionConfigurationArgs', 'KeyMultiRegionConfigurationArgsDict']] multi_region_configuration: Multi-region key 配置信息。
         :param pulumi.Input[builtins.str] origin: 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
         :param pulumi.Input[builtins.str] protection_level: 密钥保护级别，取值：SOFTWARE，HSM。
+        :param pulumi.Input[builtins.int] rotate_interval: 密钥轮转周期，单位：天；取值范围：[90, 2560]。
         :param pulumi.Input[builtins.str] rotate_state: 密钥轮转状态，取值：Enable，Disable。
         :param pulumi.Input[builtins.str] schedule_delete_time: 密钥删除时间。
         :param pulumi.Input[builtins.str] schedule_rotation_time: 密钥轮转时间。
@@ -735,6 +773,7 @@ class Key(pulumi.CustomResource):
         __props__.__dict__["multi_region_configuration"] = multi_region_configuration
         __props__.__dict__["origin"] = origin
         __props__.__dict__["protection_level"] = protection_level
+        __props__.__dict__["rotate_interval"] = rotate_interval
         __props__.__dict__["rotate_state"] = rotate_state
         __props__.__dict__["schedule_delete_time"] = schedule_delete_time
         __props__.__dict__["schedule_rotation_time"] = schedule_rotation_time
@@ -854,6 +893,14 @@ class Key(pulumi.CustomResource):
         密钥保护级别，取值：SOFTWARE，HSM。
         """
         return pulumi.get(self, "protection_level")
+
+    @property
+    @pulumi.getter(name="rotateInterval")
+    def rotate_interval(self) -> pulumi.Output[builtins.int]:
+        """
+        密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        """
+        return pulumi.get(self, "rotate_interval")
 
     @property
     @pulumi.getter(name="rotateState")

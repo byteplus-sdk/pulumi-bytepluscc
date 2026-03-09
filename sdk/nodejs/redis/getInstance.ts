@@ -43,6 +43,10 @@ export interface GetInstanceResult {
      */
     readonly backupPointName: string;
     /**
+     * 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     */
+    readonly blueGreenRole: string;
+    /**
      * 实例的容量信息。
      */
     readonly capacity: outputs.redis.GetInstanceCapacity;
@@ -138,6 +142,10 @@ export interface GetInstanceResult {
      * 实例私网连接地址的域名。
      */
     readonly privateAddress: string;
+    /**
+     * 实例私网连接地址的端口号。
+     */
+    readonly privatePort: string;
     /**
      * 实例所属的项目。
      */

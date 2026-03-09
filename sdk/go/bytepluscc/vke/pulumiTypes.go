@@ -7784,6 +7784,8 @@ func (o NodePoolAutoScalingPtrOutput) SubnetPolicy() pulumi.StringPtrOutput {
 type NodePoolKubernetesConfig struct {
 	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
 	AutoSyncDisabled *bool `pulumi:"autoSyncDisabled"`
+	// 节点池 Containerd 相关配置。
+	ContainerdConfig *NodePoolKubernetesConfigContainerdConfig `pulumi:"containerdConfig"`
 	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
 	Cordon *bool `pulumi:"cordon"`
 	// Kubelet 组件的相关配置
@@ -7812,6 +7814,8 @@ type NodePoolKubernetesConfigInput interface {
 type NodePoolKubernetesConfigArgs struct {
 	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
 	AutoSyncDisabled pulumi.BoolPtrInput `pulumi:"autoSyncDisabled"`
+	// 节点池 Containerd 相关配置。
+	ContainerdConfig NodePoolKubernetesConfigContainerdConfigPtrInput `pulumi:"containerdConfig"`
 	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
 	Cordon pulumi.BoolPtrInput `pulumi:"cordon"`
 	// Kubelet 组件的相关配置
@@ -7908,6 +7912,11 @@ func (o NodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolPtrOutput 
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.AutoSyncDisabled }).(pulumi.BoolPtrOutput)
 }
 
+// 节点池 Containerd 相关配置。
+func (o NodePoolKubernetesConfigOutput) ContainerdConfig() NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfig) *NodePoolKubernetesConfigContainerdConfig { return v.ContainerdConfig }).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
+}
+
 // 封锁节点配置，参数值说明：false：不封锁。true：封锁。
 func (o NodePoolKubernetesConfigOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.Cordon }).(pulumi.BoolPtrOutput)
@@ -7973,6 +7982,16 @@ func (o NodePoolKubernetesConfigPtrOutput) AutoSyncDisabled() pulumi.BoolPtrOutp
 		}
 		return v.AutoSyncDisabled
 	}).(pulumi.BoolPtrOutput)
+}
+
+// 节点池 Containerd 相关配置。
+func (o NodePoolKubernetesConfigPtrOutput) ContainerdConfig() NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return o.ApplyT(func(v *NodePoolKubernetesConfig) *NodePoolKubernetesConfigContainerdConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ContainerdConfig
+	}).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
 }
 
 // 封锁节点配置，参数值说明：false：不封锁。true：封锁。
@@ -8043,9 +8062,270 @@ func (o NodePoolKubernetesConfigPtrOutput) Taints() NodePoolKubernetesConfigTain
 	}).(NodePoolKubernetesConfigTaintArrayOutput)
 }
 
+type NodePoolKubernetesConfigContainerdConfig struct {
+	// 指定跳过证书认证的容器镜像仓库地址。
+	InsecureRegistries   []string                                                      `pulumi:"insecureRegistries"`
+	RegistryProxyConfigs []NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig `pulumi:"registryProxyConfigs"`
+}
+
+// NodePoolKubernetesConfigContainerdConfigInput is an input type that accepts NodePoolKubernetesConfigContainerdConfigArgs and NodePoolKubernetesConfigContainerdConfigOutput values.
+// You can construct a concrete instance of `NodePoolKubernetesConfigContainerdConfigInput` via:
+//
+//	NodePoolKubernetesConfigContainerdConfigArgs{...}
+type NodePoolKubernetesConfigContainerdConfigInput interface {
+	pulumi.Input
+
+	ToNodePoolKubernetesConfigContainerdConfigOutput() NodePoolKubernetesConfigContainerdConfigOutput
+	ToNodePoolKubernetesConfigContainerdConfigOutputWithContext(context.Context) NodePoolKubernetesConfigContainerdConfigOutput
+}
+
+type NodePoolKubernetesConfigContainerdConfigArgs struct {
+	// 指定跳过证书认证的容器镜像仓库地址。
+	InsecureRegistries   pulumi.StringArrayInput                                               `pulumi:"insecureRegistries"`
+	RegistryProxyConfigs NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput `pulumi:"registryProxyConfigs"`
+}
+
+func (NodePoolKubernetesConfigContainerdConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfig)(nil)).Elem()
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigArgs) ToNodePoolKubernetesConfigContainerdConfigOutput() NodePoolKubernetesConfigContainerdConfigOutput {
+	return i.ToNodePoolKubernetesConfigContainerdConfigOutputWithContext(context.Background())
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigArgs) ToNodePoolKubernetesConfigContainerdConfigOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolKubernetesConfigContainerdConfigOutput)
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigArgs) ToNodePoolKubernetesConfigContainerdConfigPtrOutput() NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return i.ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(context.Background())
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigArgs) ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolKubernetesConfigContainerdConfigOutput).ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(ctx)
+}
+
+// NodePoolKubernetesConfigContainerdConfigPtrInput is an input type that accepts NodePoolKubernetesConfigContainerdConfigArgs, NodePoolKubernetesConfigContainerdConfigPtr and NodePoolKubernetesConfigContainerdConfigPtrOutput values.
+// You can construct a concrete instance of `NodePoolKubernetesConfigContainerdConfigPtrInput` via:
+//
+//	        NodePoolKubernetesConfigContainerdConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodePoolKubernetesConfigContainerdConfigPtrInput interface {
+	pulumi.Input
+
+	ToNodePoolKubernetesConfigContainerdConfigPtrOutput() NodePoolKubernetesConfigContainerdConfigPtrOutput
+	ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(context.Context) NodePoolKubernetesConfigContainerdConfigPtrOutput
+}
+
+type nodePoolKubernetesConfigContainerdConfigPtrType NodePoolKubernetesConfigContainerdConfigArgs
+
+func NodePoolKubernetesConfigContainerdConfigPtr(v *NodePoolKubernetesConfigContainerdConfigArgs) NodePoolKubernetesConfigContainerdConfigPtrInput {
+	return (*nodePoolKubernetesConfigContainerdConfigPtrType)(v)
+}
+
+func (*nodePoolKubernetesConfigContainerdConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolKubernetesConfigContainerdConfig)(nil)).Elem()
+}
+
+func (i *nodePoolKubernetesConfigContainerdConfigPtrType) ToNodePoolKubernetesConfigContainerdConfigPtrOutput() NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return i.ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *nodePoolKubernetesConfigContainerdConfigPtrType) ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
+}
+
+type NodePoolKubernetesConfigContainerdConfigOutput struct{ *pulumi.OutputState }
+
+func (NodePoolKubernetesConfigContainerdConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfig)(nil)).Elem()
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigOutput) ToNodePoolKubernetesConfigContainerdConfigOutput() NodePoolKubernetesConfigContainerdConfigOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigOutput) ToNodePoolKubernetesConfigContainerdConfigOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigOutput) ToNodePoolKubernetesConfigContainerdConfigPtrOutput() NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return o.ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(context.Background())
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigOutput) ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodePoolKubernetesConfigContainerdConfig) *NodePoolKubernetesConfigContainerdConfig {
+		return &v
+	}).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
+}
+
+// 指定跳过证书认证的容器镜像仓库地址。
+func (o NodePoolKubernetesConfigContainerdConfigOutput) InsecureRegistries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfig) []string { return v.InsecureRegistries }).(pulumi.StringArrayOutput)
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigOutput) RegistryProxyConfigs() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfig) []NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+		return v.RegistryProxyConfigs
+	}).(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput)
+}
+
+type NodePoolKubernetesConfigContainerdConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (NodePoolKubernetesConfigContainerdConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodePoolKubernetesConfigContainerdConfig)(nil)).Elem()
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) ToNodePoolKubernetesConfigContainerdConfigPtrOutput() NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) ToNodePoolKubernetesConfigContainerdConfigPtrOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigPtrOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) Elem() NodePoolKubernetesConfigContainerdConfigOutput {
+	return o.ApplyT(func(v *NodePoolKubernetesConfigContainerdConfig) NodePoolKubernetesConfigContainerdConfig {
+		if v != nil {
+			return *v
+		}
+		var ret NodePoolKubernetesConfigContainerdConfig
+		return ret
+	}).(NodePoolKubernetesConfigContainerdConfigOutput)
+}
+
+// 指定跳过证书认证的容器镜像仓库地址。
+func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) InsecureRegistries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NodePoolKubernetesConfigContainerdConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.InsecureRegistries
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) RegistryProxyConfigs() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return o.ApplyT(func(v *NodePoolKubernetesConfigContainerdConfig) []NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryProxyConfigs
+	}).(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput)
+}
+
+type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig struct {
+	// 代理地址。
+	ProxyEndpoints []string `pulumi:"proxyEndpoints"`
+	// 容器镜像仓库地址。
+	Registry *string `pulumi:"registry"`
+}
+
+// NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput is an input type that accepts NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs and NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput values.
+// You can construct a concrete instance of `NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput` via:
+//
+//	NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs{...}
+type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput interface {
+	pulumi.Input
+
+	ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput
+	ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(context.Context) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput
+}
+
+type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs struct {
+	// 代理地址。
+	ProxyEndpoints pulumi.StringArrayInput `pulumi:"proxyEndpoints"`
+	// 容器镜像仓库地址。
+	Registry pulumi.StringPtrInput `pulumi:"registry"`
+}
+
+func (NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return i.ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(context.Background())
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput)
+}
+
+// NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput is an input type that accepts NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray and NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput values.
+// You can construct a concrete instance of `NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput` via:
+//
+//	NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray{ NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs{...} }
+type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput interface {
+	pulumi.Input
+
+	ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput
+	ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(context.Context) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput
+}
+
+type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray []NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput
+
+func (NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return i.ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(context.Background())
+}
+
+func (i NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput)
+}
+
+type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput struct{ *pulumi.OutputState }
+
+func (NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return o
+}
+
+// 代理地址。
+func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ProxyEndpoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) []string { return v.ProxyEndpoints }).(pulumi.StringArrayOutput)
+}
+
+// 容器镜像仓库地址。
+func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) Registry() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) *string { return v.Registry }).(pulumi.StringPtrOutput)
+}
+
+type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput() NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) ToNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(ctx context.Context) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) Index(i pulumi.IntInput) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+		return vs[0].([]NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)[vs[1].(int)]
+	}).(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput)
+}
+
 type NodePoolKubernetesConfigKubeletConfig struct {
 	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
-	CpuManagerPolicy *string `pulumi:"cpuManagerPolicy"`
+	CpuManagerPolicy *string                                             `pulumi:"cpuManagerPolicy"`
+	EvictionHards    []NodePoolKubernetesConfigKubeletConfigEvictionHard `pulumi:"evictionHards"`
 	// 特性门控。
 	FeatureGates *NodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
 	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
@@ -8081,7 +8361,8 @@ type NodePoolKubernetesConfigKubeletConfigInput interface {
 
 type NodePoolKubernetesConfigKubeletConfigArgs struct {
 	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
-	CpuManagerPolicy pulumi.StringPtrInput `pulumi:"cpuManagerPolicy"`
+	CpuManagerPolicy pulumi.StringPtrInput                                       `pulumi:"cpuManagerPolicy"`
+	EvictionHards    NodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput `pulumi:"evictionHards"`
 	// 特性门控。
 	FeatureGates NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput `pulumi:"featureGates"`
 	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
@@ -8186,6 +8467,12 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.S
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *string { return v.CpuManagerPolicy }).(pulumi.StringPtrOutput)
 }
 
+func (o NodePoolKubernetesConfigKubeletConfigOutput) EvictionHards() NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigEvictionHard {
+		return v.EvictionHards
+	}).(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
+}
+
 // 特性门控。
 func (o NodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *NodePoolKubernetesConfigKubeletConfigFeatureGates {
@@ -8277,6 +8564,15 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) CpuManagerPolicy() pulum
 		}
 		return v.CpuManagerPolicy
 	}).(pulumi.StringPtrOutput)
+}
+
+func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) EvictionHards() NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigEvictionHard {
+		if v == nil {
+			return nil
+		}
+		return v.EvictionHards
+	}).(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
 // 特性门控。
@@ -8385,6 +8681,112 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerScope() p
 		}
 		return v.TopologyManagerScope
 	}).(pulumi.StringPtrOutput)
+}
+
+type NodePoolKubernetesConfigKubeletConfigEvictionHard struct {
+	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	Key *string `pulumi:"key"`
+	// 硬性门限值。
+	Value *string `pulumi:"value"`
+}
+
+// NodePoolKubernetesConfigKubeletConfigEvictionHardInput is an input type that accepts NodePoolKubernetesConfigKubeletConfigEvictionHardArgs and NodePoolKubernetesConfigKubeletConfigEvictionHardOutput values.
+// You can construct a concrete instance of `NodePoolKubernetesConfigKubeletConfigEvictionHardInput` via:
+//
+//	NodePoolKubernetesConfigKubeletConfigEvictionHardArgs{...}
+type NodePoolKubernetesConfigKubeletConfigEvictionHardInput interface {
+	pulumi.Input
+
+	ToNodePoolKubernetesConfigKubeletConfigEvictionHardOutput() NodePoolKubernetesConfigKubeletConfigEvictionHardOutput
+	ToNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(context.Context) NodePoolKubernetesConfigKubeletConfigEvictionHardOutput
+}
+
+type NodePoolKubernetesConfigKubeletConfigEvictionHardArgs struct {
+	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 硬性门限值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NodePoolKubernetesConfigKubeletConfigEvictionHardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (i NodePoolKubernetesConfigKubeletConfigEvictionHardArgs) ToNodePoolKubernetesConfigKubeletConfigEvictionHardOutput() NodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return i.ToNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(context.Background())
+}
+
+func (i NodePoolKubernetesConfigKubeletConfigEvictionHardArgs) ToNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(ctx context.Context) NodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolKubernetesConfigKubeletConfigEvictionHardOutput)
+}
+
+// NodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput is an input type that accepts NodePoolKubernetesConfigKubeletConfigEvictionHardArray and NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput values.
+// You can construct a concrete instance of `NodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput` via:
+//
+//	NodePoolKubernetesConfigKubeletConfigEvictionHardArray{ NodePoolKubernetesConfigKubeletConfigEvictionHardArgs{...} }
+type NodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput interface {
+	pulumi.Input
+
+	ToNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput() NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput
+	ToNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(context.Context) NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput
+}
+
+type NodePoolKubernetesConfigKubeletConfigEvictionHardArray []NodePoolKubernetesConfigKubeletConfigEvictionHardInput
+
+func (NodePoolKubernetesConfigKubeletConfigEvictionHardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (i NodePoolKubernetesConfigKubeletConfigEvictionHardArray) ToNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput() NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return i.ToNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(context.Background())
+}
+
+func (i NodePoolKubernetesConfigKubeletConfigEvictionHardArray) ToNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(ctx context.Context) NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
+}
+
+type NodePoolKubernetesConfigKubeletConfigEvictionHardOutput struct{ *pulumi.OutputState }
+
+func (NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ToNodePoolKubernetesConfigKubeletConfigEvictionHardOutput() NodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ToNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(ctx context.Context) NodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return o
+}
+
+// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigEvictionHard) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 硬性门限值。
+func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigEvictionHard) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput struct{ *pulumi.OutputState }
+
+func (NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (o NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) ToNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput() NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) ToNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(ctx context.Context) NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return o
+}
+
+func (o NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) Index(i pulumi.IntInput) NodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodePoolKubernetesConfigKubeletConfigEvictionHard {
+		return vs[0].([]NodePoolKubernetesConfigKubeletConfigEvictionHard)[vs[1].(int)]
+	}).(NodePoolKubernetesConfigKubeletConfigEvictionHardOutput)
 }
 
 type NodePoolKubernetesConfigKubeletConfigFeatureGates struct {
@@ -16117,6 +16519,8 @@ func (o GetNodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringOutput {
 type GetNodePoolKubernetesConfig struct {
 	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
 	AutoSyncDisabled bool `pulumi:"autoSyncDisabled"`
+	// 节点池 Containerd 相关配置。
+	ContainerdConfig GetNodePoolKubernetesConfigContainerdConfig `pulumi:"containerdConfig"`
 	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
 	Cordon bool `pulumi:"cordon"`
 	// Kubelet 组件的相关配置
@@ -16147,6 +16551,8 @@ type GetNodePoolKubernetesConfigInput interface {
 type GetNodePoolKubernetesConfigArgs struct {
 	// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
 	AutoSyncDisabled pulumi.BoolInput `pulumi:"autoSyncDisabled"`
+	// 节点池 Containerd 相关配置。
+	ContainerdConfig GetNodePoolKubernetesConfigContainerdConfigInput `pulumi:"containerdConfig"`
 	// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
 	Cordon pulumi.BoolInput `pulumi:"cordon"`
 	// Kubelet 组件的相关配置
@@ -16194,6 +16600,13 @@ func (o GetNodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolOutput 
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.AutoSyncDisabled }).(pulumi.BoolOutput)
 }
 
+// 节点池 Containerd 相关配置。
+func (o GetNodePoolKubernetesConfigOutput) ContainerdConfig() GetNodePoolKubernetesConfigContainerdConfigOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfig) GetNodePoolKubernetesConfigContainerdConfig {
+		return v.ContainerdConfig
+	}).(GetNodePoolKubernetesConfigContainerdConfigOutput)
+}
+
 // 封锁节点配置，参数值说明：false：不封锁。true：封锁。
 func (o GetNodePoolKubernetesConfigOutput) Cordon() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.Cordon }).(pulumi.BoolOutput)
@@ -16229,9 +16642,182 @@ func (o GetNodePoolKubernetesConfigOutput) Taints() GetNodePoolKubernetesConfigT
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) []GetNodePoolKubernetesConfigTaint { return v.Taints }).(GetNodePoolKubernetesConfigTaintArrayOutput)
 }
 
+type GetNodePoolKubernetesConfigContainerdConfig struct {
+	// 指定跳过证书认证的容器镜像仓库地址。
+	InsecureRegistries []string `pulumi:"insecureRegistries"`
+	// 容器镜像仓库代理配置。
+	RegistryProxyConfigs []GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig `pulumi:"registryProxyConfigs"`
+}
+
+// GetNodePoolKubernetesConfigContainerdConfigInput is an input type that accepts GetNodePoolKubernetesConfigContainerdConfigArgs and GetNodePoolKubernetesConfigContainerdConfigOutput values.
+// You can construct a concrete instance of `GetNodePoolKubernetesConfigContainerdConfigInput` via:
+//
+//	GetNodePoolKubernetesConfigContainerdConfigArgs{...}
+type GetNodePoolKubernetesConfigContainerdConfigInput interface {
+	pulumi.Input
+
+	ToGetNodePoolKubernetesConfigContainerdConfigOutput() GetNodePoolKubernetesConfigContainerdConfigOutput
+	ToGetNodePoolKubernetesConfigContainerdConfigOutputWithContext(context.Context) GetNodePoolKubernetesConfigContainerdConfigOutput
+}
+
+type GetNodePoolKubernetesConfigContainerdConfigArgs struct {
+	// 指定跳过证书认证的容器镜像仓库地址。
+	InsecureRegistries pulumi.StringArrayInput `pulumi:"insecureRegistries"`
+	// 容器镜像仓库代理配置。
+	RegistryProxyConfigs GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput `pulumi:"registryProxyConfigs"`
+}
+
+func (GetNodePoolKubernetesConfigContainerdConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolKubernetesConfigContainerdConfig)(nil)).Elem()
+}
+
+func (i GetNodePoolKubernetesConfigContainerdConfigArgs) ToGetNodePoolKubernetesConfigContainerdConfigOutput() GetNodePoolKubernetesConfigContainerdConfigOutput {
+	return i.ToGetNodePoolKubernetesConfigContainerdConfigOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolKubernetesConfigContainerdConfigArgs) ToGetNodePoolKubernetesConfigContainerdConfigOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigContainerdConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolKubernetesConfigContainerdConfigOutput)
+}
+
+type GetNodePoolKubernetesConfigContainerdConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolKubernetesConfigContainerdConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolKubernetesConfigContainerdConfig)(nil)).Elem()
+}
+
+func (o GetNodePoolKubernetesConfigContainerdConfigOutput) ToGetNodePoolKubernetesConfigContainerdConfigOutput() GetNodePoolKubernetesConfigContainerdConfigOutput {
+	return o
+}
+
+func (o GetNodePoolKubernetesConfigContainerdConfigOutput) ToGetNodePoolKubernetesConfigContainerdConfigOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigContainerdConfigOutput {
+	return o
+}
+
+// 指定跳过证书认证的容器镜像仓库地址。
+func (o GetNodePoolKubernetesConfigContainerdConfigOutput) InsecureRegistries() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfig) []string { return v.InsecureRegistries }).(pulumi.StringArrayOutput)
+}
+
+// 容器镜像仓库代理配置。
+func (o GetNodePoolKubernetesConfigContainerdConfigOutput) RegistryProxyConfigs() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfig) []GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+		return v.RegistryProxyConfigs
+	}).(GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput)
+}
+
+type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig struct {
+	// 代理地址。
+	ProxyEndpoints []string `pulumi:"proxyEndpoints"`
+	// 容器镜像仓库地址。
+	Registry string `pulumi:"registry"`
+}
+
+// GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput is an input type that accepts GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs and GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput values.
+// You can construct a concrete instance of `GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput` via:
+//
+//	GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs{...}
+type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput interface {
+	pulumi.Input
+
+	ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput
+	ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(context.Context) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput
+}
+
+type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs struct {
+	// 代理地址。
+	ProxyEndpoints pulumi.StringArrayInput `pulumi:"proxyEndpoints"`
+	// 容器镜像仓库地址。
+	Registry pulumi.StringInput `pulumi:"registry"`
+}
+
+func (GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (i GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return i.ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput)
+}
+
+// GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput is an input type that accepts GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray and GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput` via:
+//
+//	GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray{ GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs{...} }
+type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput
+	ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(context.Context) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput
+}
+
+type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray []GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput
+
+func (GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (i GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return i.ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput)
+}
+
+type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return o
+}
+
+func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return o
+}
+
+// 代理地址。
+func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ProxyEndpoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) []string {
+		return v.ProxyEndpoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// 容器镜像仓库地址。
+func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) Registry() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) string { return v.Registry }).(pulumi.StringOutput)
+}
+
+type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)(nil)).Elem()
+}
+
+func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput() GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return o
+}
+
+func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) ToGetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput {
+	return o
+}
+
+func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) Index(i pulumi.IntInput) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+		return vs[0].([]GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig)[vs[1].(int)]
+	}).(GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput)
+}
+
 type GetNodePoolKubernetesConfigKubeletConfig struct {
 	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
 	CpuManagerPolicy string `pulumi:"cpuManagerPolicy"`
+	// 触发 Pod 驱逐操作的一组硬性门限。
+	EvictionHards []GetNodePoolKubernetesConfigKubeletConfigEvictionHard `pulumi:"evictionHards"`
 	// 特性门控。
 	FeatureGates GetNodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
 	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
@@ -16270,6 +16856,8 @@ type GetNodePoolKubernetesConfigKubeletConfigInput interface {
 type GetNodePoolKubernetesConfigKubeletConfigArgs struct {
 	// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
 	CpuManagerPolicy pulumi.StringInput `pulumi:"cpuManagerPolicy"`
+	// 触发 Pod 驱逐操作的一组硬性门限。
+	EvictionHards GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput `pulumi:"evictionHards"`
 	// 特性门控。
 	FeatureGates GetNodePoolKubernetesConfigKubeletConfigFeatureGatesInput `pulumi:"featureGates"`
 	// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
@@ -16323,6 +16911,13 @@ func (o GetNodePoolKubernetesConfigKubeletConfigOutput) ToGetNodePoolKubernetesC
 // 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) string { return v.CpuManagerPolicy }).(pulumi.StringOutput)
+}
+
+// 触发 Pod 驱逐操作的一组硬性门限。
+func (o GetNodePoolKubernetesConfigKubeletConfigOutput) EvictionHards() GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) []GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
+		return v.EvictionHards
+	}).(GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
 // 特性门控。
@@ -16384,6 +16979,112 @@ func (o GetNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerPolicy() 
 // 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) string { return v.TopologyManagerScope }).(pulumi.StringOutput)
+}
+
+type GetNodePoolKubernetesConfigKubeletConfigEvictionHard struct {
+	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	Key string `pulumi:"key"`
+	// 硬性门限值。
+	Value string `pulumi:"value"`
+}
+
+// GetNodePoolKubernetesConfigKubeletConfigEvictionHardInput is an input type that accepts GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs and GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput values.
+// You can construct a concrete instance of `GetNodePoolKubernetesConfigKubeletConfigEvictionHardInput` via:
+//
+//	GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs{...}
+type GetNodePoolKubernetesConfigKubeletConfigEvictionHardInput interface {
+	pulumi.Input
+
+	ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput() GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput
+	ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(context.Context) GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput
+}
+
+type GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs struct {
+	// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+	Key pulumi.StringInput `pulumi:"key"`
+	// 硬性门限值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (i GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput() GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return i.ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput)
+}
+
+// GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput is an input type that accepts GetNodePoolKubernetesConfigKubeletConfigEvictionHardArray and GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput values.
+// You can construct a concrete instance of `GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput` via:
+//
+//	GetNodePoolKubernetesConfigKubeletConfigEvictionHardArray{ GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs{...} }
+type GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput interface {
+	pulumi.Input
+
+	ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput() GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput
+	ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(context.Context) GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput
+}
+
+type GetNodePoolKubernetesConfigKubeletConfigEvictionHardArray []GetNodePoolKubernetesConfigKubeletConfigEvictionHardInput
+
+func (GetNodePoolKubernetesConfigKubeletConfigEvictionHardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (i GetNodePoolKubernetesConfigKubeletConfigEvictionHardArray) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput() GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return i.ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodePoolKubernetesConfigKubeletConfigEvictionHardArray) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
+}
+
+type GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput() GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return o
+}
+
+func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return o
+}
+
+// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigEvictionHard) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 硬性门限值。
+func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigEvictionHard) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodePoolKubernetesConfigKubeletConfigEvictionHard)(nil)).Elem()
+}
+
+func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput() GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return o
+}
+
+func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) ToGetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutputWithContext(ctx context.Context) GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
+	return o
+}
+
+func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) Index(i pulumi.IntInput) GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
+		return vs[0].([]GetNodePoolKubernetesConfigKubeletConfigEvictionHard)[vs[1].(int)]
+	}).(GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput)
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigFeatureGates struct {
@@ -18529,8 +19230,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolAutoScalingPtrInput)(nil)).Elem(), NodePoolAutoScalingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigInput)(nil)).Elem(), NodePoolKubernetesConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigPtrInput)(nil)).Elem(), NodePoolKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfigInput)(nil)).Elem(), NodePoolKubernetesConfigContainerdConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfigPtrInput)(nil)).Elem(), NodePoolKubernetesConfigContainerdConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput)(nil)).Elem(), NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput)(nil)).Elem(), NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigInput)(nil)).Elem(), NodePoolKubernetesConfigKubeletConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigPtrInput)(nil)).Elem(), NodePoolKubernetesConfigKubeletConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigEvictionHardInput)(nil)).Elem(), NodePoolKubernetesConfigKubeletConfigEvictionHardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput)(nil)).Elem(), NodePoolKubernetesConfigKubeletConfigEvictionHardArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigFeatureGatesInput)(nil)).Elem(), NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput)(nil)).Elem(), NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolKubernetesConfigKubeletConfigKubeReservedInput)(nil)).Elem(), NodePoolKubernetesConfigKubeletConfigKubeReservedArgs{})
@@ -18635,7 +19342,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeKubernetesConfigTaintArrayInput)(nil)).Elem(), GetNodeKubernetesConfigTaintArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolAutoScalingInput)(nil)).Elem(), GetNodePoolAutoScalingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigInput)(nil)).Elem(), GetNodePoolKubernetesConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigContainerdConfigInput)(nil)).Elem(), GetNodePoolKubernetesConfigContainerdConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput)(nil)).Elem(), GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput)(nil)).Elem(), GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigInput)(nil)).Elem(), GetNodePoolKubernetesConfigKubeletConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigEvictionHardInput)(nil)).Elem(), GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput)(nil)).Elem(), GetNodePoolKubernetesConfigKubeletConfigEvictionHardArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigFeatureGatesInput)(nil)).Elem(), GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigKubeReservedInput)(nil)).Elem(), GetNodePoolKubernetesConfigKubeletConfigKubeReservedArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput)(nil)).Elem(), GetNodePoolKubernetesConfigKubeletConfigKubeReservedArray{})
@@ -18760,8 +19472,14 @@ func init() {
 	pulumi.RegisterOutputType(NodePoolAutoScalingPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolKubernetesConfigContainerdConfigOutput{})
+	pulumi.RegisterOutputType(NodePoolKubernetesConfigContainerdConfigPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput{})
+	pulumi.RegisterOutputType(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigKubeletConfigOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigKubeletConfigPtrOutput{})
+	pulumi.RegisterOutputType(NodePoolKubernetesConfigKubeletConfigEvictionHardOutput{})
+	pulumi.RegisterOutputType(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolKubernetesConfigKubeletConfigKubeReservedOutput{})
@@ -18866,7 +19584,12 @@ func init() {
 	pulumi.RegisterOutputType(GetNodeKubernetesConfigTaintArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolAutoScalingOutput{})
 	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigOutput{})
+	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigContainerdConfigOutput{})
+	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput{})
+	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigKubeletConfigOutput{})
+	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput{})
+	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput{})
 	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput{})
 	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigKubeletConfigKubeReservedOutput{})
 	pulumi.RegisterOutputType(GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput{})

@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.vke.outputs;
 
+import com.byteplus.bytepluscc.vke.outputs.NodePoolKubernetesConfigContainerdConfig;
 import com.byteplus.bytepluscc.vke.outputs.NodePoolKubernetesConfigKubeletConfig;
 import com.byteplus.bytepluscc.vke.outputs.NodePoolKubernetesConfigLabel;
 import com.byteplus.bytepluscc.vke.outputs.NodePoolKubernetesConfigTaint;
@@ -21,6 +22,11 @@ public final class NodePoolKubernetesConfig {
      * 
      */
     private @Nullable Boolean autoSyncDisabled;
+    /**
+     * @return 节点池 Containerd 相关配置。
+     * 
+     */
+    private @Nullable NodePoolKubernetesConfigContainerdConfig containerdConfig;
     /**
      * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
      * 
@@ -56,6 +62,13 @@ public final class NodePoolKubernetesConfig {
      */
     public Optional<Boolean> autoSyncDisabled() {
         return Optional.ofNullable(this.autoSyncDisabled);
+    }
+    /**
+     * @return 节点池 Containerd 相关配置。
+     * 
+     */
+    public Optional<NodePoolKubernetesConfigContainerdConfig> containerdConfig() {
+        return Optional.ofNullable(this.containerdConfig);
     }
     /**
      * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
@@ -109,6 +122,7 @@ public final class NodePoolKubernetesConfig {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean autoSyncDisabled;
+        private @Nullable NodePoolKubernetesConfigContainerdConfig containerdConfig;
         private @Nullable Boolean cordon;
         private @Nullable NodePoolKubernetesConfigKubeletConfig kubeletConfig;
         private @Nullable List<NodePoolKubernetesConfigLabel> labels;
@@ -120,6 +134,7 @@ public final class NodePoolKubernetesConfig {
         public Builder(NodePoolKubernetesConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.autoSyncDisabled = defaults.autoSyncDisabled;
+    	      this.containerdConfig = defaults.containerdConfig;
     	      this.cordon = defaults.cordon;
     	      this.kubeletConfig = defaults.kubeletConfig;
     	      this.labels = defaults.labels;
@@ -133,6 +148,12 @@ public final class NodePoolKubernetesConfig {
         public Builder autoSyncDisabled(@Nullable Boolean autoSyncDisabled) {
 
             this.autoSyncDisabled = autoSyncDisabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder containerdConfig(@Nullable NodePoolKubernetesConfigContainerdConfig containerdConfig) {
+
+            this.containerdConfig = containerdConfig;
             return this;
         }
         @CustomType.Setter
@@ -186,6 +207,7 @@ public final class NodePoolKubernetesConfig {
         public NodePoolKubernetesConfig build() {
             final var _resultValue = new NodePoolKubernetesConfig();
             _resultValue.autoSyncDisabled = autoSyncDisabled;
+            _resultValue.containerdConfig = containerdConfig;
             _resultValue.cordon = cordon;
             _resultValue.kubeletConfig = kubeletConfig;
             _resultValue.labels = labels;

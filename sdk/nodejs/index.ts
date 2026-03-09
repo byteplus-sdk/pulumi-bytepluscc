@@ -12,6 +12,7 @@ import { Provider } from "./provider";
 // Export sub-modules:
 import * as alb from "./alb";
 import * as apig from "./apig";
+import * as ark from "./ark";
 import * as autoscaling from "./autoscaling";
 import * as bmq from "./bmq";
 import * as cdn from "./cdn";
@@ -35,10 +36,12 @@ import * as natgateway from "./natgateway";
 import * as organization from "./organization";
 import * as privatelink from "./privatelink";
 import * as rabbitmq from "./rabbitmq";
+import * as rdsmssql from "./rdsmssql";
 import * as rdsmysql from "./rdsmysql";
 import * as rdspostgresql from "./rdspostgresql";
 import * as redis from "./redis";
 import * as storageebs from "./storageebs";
+import * as tls from "./tls";
 import * as transitrouter from "./transitrouter";
 import * as types from "./types";
 import * as vefaas from "./vefaas";
@@ -51,6 +54,7 @@ import * as vpn from "./vpn";
 export {
     alb,
     apig,
+    ark,
     autoscaling,
     bmq,
     cdn,
@@ -74,10 +78,12 @@ export {
     organization,
     privatelink,
     rabbitmq,
+    rdsmssql,
     rdsmysql,
     rdspostgresql,
     redis,
     storageebs,
+    tls,
     transitrouter,
     types,
     vefaas,

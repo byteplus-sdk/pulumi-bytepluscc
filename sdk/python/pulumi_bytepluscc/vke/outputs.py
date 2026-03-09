@@ -64,7 +64,10 @@ __all__ = [
     'NodeKubernetesConfigTaint',
     'NodePoolAutoScaling',
     'NodePoolKubernetesConfig',
+    'NodePoolKubernetesConfigContainerdConfig',
+    'NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig',
     'NodePoolKubernetesConfigKubeletConfig',
+    'NodePoolKubernetesConfigKubeletConfigEvictionHard',
     'NodePoolKubernetesConfigKubeletConfigFeatureGates',
     'NodePoolKubernetesConfigKubeletConfigKubeReserved',
     'NodePoolKubernetesConfigKubeletConfigSystemReserved',
@@ -133,7 +136,10 @@ __all__ = [
     'GetNodeKubernetesConfigTaintResult',
     'GetNodePoolAutoScalingResult',
     'GetNodePoolKubernetesConfigResult',
+    'GetNodePoolKubernetesConfigContainerdConfigResult',
+    'GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult',
     'GetNodePoolKubernetesConfigKubeletConfigResult',
+    'GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult',
     'GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult',
     'GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult',
     'GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult',
@@ -3042,6 +3048,8 @@ class NodePoolKubernetesConfig(dict):
         suggest = None
         if key == "autoSyncDisabled":
             suggest = "auto_sync_disabled"
+        elif key == "containerdConfig":
+            suggest = "containerd_config"
         elif key == "kubeletConfig":
             suggest = "kubelet_config"
         elif key == "namePrefix":
@@ -3064,6 +3072,7 @@ class NodePoolKubernetesConfig(dict):
 
     def __init__(__self__, *,
                  auto_sync_disabled: Optional[builtins.bool] = None,
+                 containerd_config: Optional['outputs.NodePoolKubernetesConfigContainerdConfig'] = None,
                  cordon: Optional[builtins.bool] = None,
                  kubelet_config: Optional['outputs.NodePoolKubernetesConfigKubeletConfig'] = None,
                  labels: Optional[Sequence['outputs.NodePoolKubernetesConfigLabel']] = None,
@@ -3073,6 +3082,7 @@ class NodePoolKubernetesConfig(dict):
                  taints: Optional[Sequence['outputs.NodePoolKubernetesConfigTaint']] = None):
         """
         :param builtins.bool auto_sync_disabled: 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        :param 'NodePoolKubernetesConfigContainerdConfigArgs' containerd_config: 节点池 Containerd 相关配置。
         :param builtins.bool cordon: 封锁节点配置，参数值说明：false：不封锁。true：封锁。
         :param 'NodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet 组件的相关配置
         :param builtins.str name_prefix: Kubernetes 中节点对象的元数据名称前缀。
@@ -3081,6 +3091,8 @@ class NodePoolKubernetesConfig(dict):
         """
         if auto_sync_disabled is not None:
             pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
+        if containerd_config is not None:
+            pulumi.set(__self__, "containerd_config", containerd_config)
         if cordon is not None:
             pulumi.set(__self__, "cordon", cordon)
         if kubelet_config is not None:
@@ -3103,6 +3115,14 @@ class NodePoolKubernetesConfig(dict):
         是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
         """
         return pulumi.get(self, "auto_sync_disabled")
+
+    @property
+    @pulumi.getter(name="containerdConfig")
+    def containerd_config(self) -> Optional['outputs.NodePoolKubernetesConfigContainerdConfig']:
+        """
+        节点池 Containerd 相关配置。
+        """
+        return pulumi.get(self, "containerd_config")
 
     @property
     @pulumi.getter
@@ -3156,12 +3176,108 @@ class NodePoolKubernetesConfig(dict):
 
 
 @pulumi.output_type
+class NodePoolKubernetesConfigContainerdConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "insecureRegistries":
+            suggest = "insecure_registries"
+        elif key == "registryProxyConfigs":
+            suggest = "registry_proxy_configs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolKubernetesConfigContainerdConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolKubernetesConfigContainerdConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolKubernetesConfigContainerdConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 insecure_registries: Optional[Sequence[builtins.str]] = None,
+                 registry_proxy_configs: Optional[Sequence['outputs.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig']] = None):
+        """
+        :param Sequence[builtins.str] insecure_registries: 指定跳过证书认证的容器镜像仓库地址。
+        """
+        if insecure_registries is not None:
+            pulumi.set(__self__, "insecure_registries", insecure_registries)
+        if registry_proxy_configs is not None:
+            pulumi.set(__self__, "registry_proxy_configs", registry_proxy_configs)
+
+    @property
+    @pulumi.getter(name="insecureRegistries")
+    def insecure_registries(self) -> Optional[Sequence[builtins.str]]:
+        """
+        指定跳过证书认证的容器镜像仓库地址。
+        """
+        return pulumi.get(self, "insecure_registries")
+
+    @property
+    @pulumi.getter(name="registryProxyConfigs")
+    def registry_proxy_configs(self) -> Optional[Sequence['outputs.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig']]:
+        return pulumi.get(self, "registry_proxy_configs")
+
+
+@pulumi.output_type
+class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "proxyEndpoints":
+            suggest = "proxy_endpoints"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 proxy_endpoints: Optional[Sequence[builtins.str]] = None,
+                 registry: Optional[builtins.str] = None):
+        """
+        :param Sequence[builtins.str] proxy_endpoints: 代理地址。
+        :param builtins.str registry: 容器镜像仓库地址。
+        """
+        if proxy_endpoints is not None:
+            pulumi.set(__self__, "proxy_endpoints", proxy_endpoints)
+        if registry is not None:
+            pulumi.set(__self__, "registry", registry)
+
+    @property
+    @pulumi.getter(name="proxyEndpoints")
+    def proxy_endpoints(self) -> Optional[Sequence[builtins.str]]:
+        """
+        代理地址。
+        """
+        return pulumi.get(self, "proxy_endpoints")
+
+    @property
+    @pulumi.getter
+    def registry(self) -> Optional[builtins.str]:
+        """
+        容器镜像仓库地址。
+        """
+        return pulumi.get(self, "registry")
+
+
+@pulumi.output_type
 class NodePoolKubernetesConfigKubeletConfig(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
         if key == "cpuManagerPolicy":
             suggest = "cpu_manager_policy"
+        elif key == "evictionHards":
+            suggest = "eviction_hards"
         elif key == "featureGates":
             suggest = "feature_gates"
         elif key == "kubeApiBurst":
@@ -3198,6 +3314,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
 
     def __init__(__self__, *,
                  cpu_manager_policy: Optional[builtins.str] = None,
+                 eviction_hards: Optional[Sequence['outputs.NodePoolKubernetesConfigKubeletConfigEvictionHard']] = None,
                  feature_gates: Optional['outputs.NodePoolKubernetesConfigKubeletConfigFeatureGates'] = None,
                  kube_api_burst: Optional[builtins.int] = None,
                  kube_api_qps: Optional[builtins.int] = None,
@@ -3223,6 +3340,8 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
         """
         if cpu_manager_policy is not None:
             pulumi.set(__self__, "cpu_manager_policy", cpu_manager_policy)
+        if eviction_hards is not None:
+            pulumi.set(__self__, "eviction_hards", eviction_hards)
         if feature_gates is not None:
             pulumi.set(__self__, "feature_gates", feature_gates)
         if kube_api_burst is not None:
@@ -3253,6 +3372,11 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
         配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
         """
         return pulumi.get(self, "cpu_manager_policy")
+
+    @property
+    @pulumi.getter(name="evictionHards")
+    def eviction_hards(self) -> Optional[Sequence['outputs.NodePoolKubernetesConfigKubeletConfigEvictionHard']]:
+        return pulumi.get(self, "eviction_hards")
 
     @property
     @pulumi.getter(name="featureGates")
@@ -3335,6 +3459,37 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
         拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
         """
         return pulumi.get(self, "topology_manager_scope")
+
+
+@pulumi.output_type
+class NodePoolKubernetesConfigKubeletConfigEvictionHard(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        :param builtins.str value: 硬性门限值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        硬性门限值。
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -6887,6 +7042,7 @@ class GetNodePoolAutoScalingResult(dict):
 class GetNodePoolKubernetesConfigResult(dict):
     def __init__(__self__, *,
                  auto_sync_disabled: builtins.bool,
+                 containerd_config: 'outputs.GetNodePoolKubernetesConfigContainerdConfigResult',
                  cordon: builtins.bool,
                  kubelet_config: 'outputs.GetNodePoolKubernetesConfigKubeletConfigResult',
                  labels: Sequence['outputs.GetNodePoolKubernetesConfigLabelResult'],
@@ -6896,6 +7052,7 @@ class GetNodePoolKubernetesConfigResult(dict):
                  taints: Sequence['outputs.GetNodePoolKubernetesConfigTaintResult']):
         """
         :param builtins.bool auto_sync_disabled: 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        :param 'GetNodePoolKubernetesConfigContainerdConfigArgs' containerd_config: 节点池 Containerd 相关配置。
         :param builtins.bool cordon: 封锁节点配置，参数值说明：false：不封锁。true：封锁。
         :param 'GetNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet 组件的相关配置
         :param Sequence['GetNodePoolKubernetesConfigLabelArgs'] labels: 节点池/节点的 Kubernetes 标签（Labels）信息。
@@ -6905,6 +7062,7 @@ class GetNodePoolKubernetesConfigResult(dict):
         :param Sequence['GetNodePoolKubernetesConfigTaintArgs'] taints: 节点池/节点的 Kubernetes 污点（Taints）信息。
         """
         pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
+        pulumi.set(__self__, "containerd_config", containerd_config)
         pulumi.set(__self__, "cordon", cordon)
         pulumi.set(__self__, "kubelet_config", kubelet_config)
         pulumi.set(__self__, "labels", labels)
@@ -6920,6 +7078,14 @@ class GetNodePoolKubernetesConfigResult(dict):
         是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
         """
         return pulumi.get(self, "auto_sync_disabled")
+
+    @property
+    @pulumi.getter(name="containerdConfig")
+    def containerd_config(self) -> 'outputs.GetNodePoolKubernetesConfigContainerdConfigResult':
+        """
+        节点池 Containerd 相关配置。
+        """
+        return pulumi.get(self, "containerd_config")
 
     @property
     @pulumi.getter
@@ -6979,9 +7145,68 @@ class GetNodePoolKubernetesConfigResult(dict):
 
 
 @pulumi.output_type
+class GetNodePoolKubernetesConfigContainerdConfigResult(dict):
+    def __init__(__self__, *,
+                 insecure_registries: Sequence[builtins.str],
+                 registry_proxy_configs: Sequence['outputs.GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult']):
+        """
+        :param Sequence[builtins.str] insecure_registries: 指定跳过证书认证的容器镜像仓库地址。
+        :param Sequence['GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs'] registry_proxy_configs: 容器镜像仓库代理配置。
+        """
+        pulumi.set(__self__, "insecure_registries", insecure_registries)
+        pulumi.set(__self__, "registry_proxy_configs", registry_proxy_configs)
+
+    @property
+    @pulumi.getter(name="insecureRegistries")
+    def insecure_registries(self) -> Sequence[builtins.str]:
+        """
+        指定跳过证书认证的容器镜像仓库地址。
+        """
+        return pulumi.get(self, "insecure_registries")
+
+    @property
+    @pulumi.getter(name="registryProxyConfigs")
+    def registry_proxy_configs(self) -> Sequence['outputs.GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult']:
+        """
+        容器镜像仓库代理配置。
+        """
+        return pulumi.get(self, "registry_proxy_configs")
+
+
+@pulumi.output_type
+class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult(dict):
+    def __init__(__self__, *,
+                 proxy_endpoints: Sequence[builtins.str],
+                 registry: builtins.str):
+        """
+        :param Sequence[builtins.str] proxy_endpoints: 代理地址。
+        :param builtins.str registry: 容器镜像仓库地址。
+        """
+        pulumi.set(__self__, "proxy_endpoints", proxy_endpoints)
+        pulumi.set(__self__, "registry", registry)
+
+    @property
+    @pulumi.getter(name="proxyEndpoints")
+    def proxy_endpoints(self) -> Sequence[builtins.str]:
+        """
+        代理地址。
+        """
+        return pulumi.get(self, "proxy_endpoints")
+
+    @property
+    @pulumi.getter
+    def registry(self) -> builtins.str:
+        """
+        容器镜像仓库地址。
+        """
+        return pulumi.get(self, "registry")
+
+
+@pulumi.output_type
 class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     def __init__(__self__, *,
                  cpu_manager_policy: builtins.str,
+                 eviction_hards: Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult'],
                  feature_gates: 'outputs.GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult',
                  kube_api_burst: builtins.int,
                  kube_api_qps: builtins.int,
@@ -6995,6 +7220,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
                  topology_manager_scope: builtins.str):
         """
         :param builtins.str cpu_manager_policy: 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs'] eviction_hards: 触发 Pod 驱逐操作的一组硬性门限。
         :param 'GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: 特性门控。
         :param builtins.int kube_api_burst: 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
         :param builtins.int kube_api_qps: 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
@@ -7008,6 +7234,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
         :param builtins.str topology_manager_scope: 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
         """
         pulumi.set(__self__, "cpu_manager_policy", cpu_manager_policy)
+        pulumi.set(__self__, "eviction_hards", eviction_hards)
         pulumi.set(__self__, "feature_gates", feature_gates)
         pulumi.set(__self__, "kube_api_burst", kube_api_burst)
         pulumi.set(__self__, "kube_api_qps", kube_api_qps)
@@ -7027,6 +7254,14 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
         配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
         """
         return pulumi.get(self, "cpu_manager_policy")
+
+    @property
+    @pulumi.getter(name="evictionHards")
+    def eviction_hards(self) -> Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult']:
+        """
+        触发 Pod 驱逐操作的一组硬性门限。
+        """
+        return pulumi.get(self, "eviction_hards")
 
     @property
     @pulumi.getter(name="featureGates")
@@ -7115,6 +7350,35 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
         拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
         """
         return pulumi.get(self, "topology_manager_scope")
+
+
+@pulumi.output_type
+class GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        :param builtins.str value: 硬性门限值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        硬性门限值。
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
