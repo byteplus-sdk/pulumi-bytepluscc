@@ -60,6 +60,8 @@ type LookupKeyResult struct {
 	Origin string `pulumi:"origin"`
 	// 密钥保护级别，取值：SOFTWARE，HSM。
 	ProtectionLevel string `pulumi:"protectionLevel"`
+	// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+	RotateInterval int `pulumi:"rotateInterval"`
 	// 密钥轮转状态，取值：Enable，Disable。
 	RotateState string `pulumi:"rotateState"`
 	// 密钥删除时间。
@@ -181,6 +183,11 @@ func (o LookupKeyResultOutput) Origin() pulumi.StringOutput {
 // 密钥保护级别，取值：SOFTWARE，HSM。
 func (o LookupKeyResultOutput) ProtectionLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.ProtectionLevel }).(pulumi.StringOutput)
+}
+
+// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+func (o LookupKeyResultOutput) RotateInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyResult) int { return v.RotateInterval }).(pulumi.IntOutput)
 }
 
 // 密钥轮转状态，取值：Enable，Disable。

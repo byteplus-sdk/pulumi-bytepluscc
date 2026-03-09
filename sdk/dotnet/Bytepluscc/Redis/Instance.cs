@@ -91,6 +91,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<string> BackupPointName { get; private set; } = null!;
 
         /// <summary>
+        /// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        /// </summary>
+        [Output("blueGreenRole")]
+        public Output<string> BlueGreenRole { get; private set; } = null!;
+
+        /// <summary>
         /// 实例的容量信息。
         /// </summary>
         [Output("capacity")]
@@ -221,6 +227,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         [Output("privateAddress")]
         public Output<string> PrivateAddress { get; private set; } = null!;
+
+        /// <summary>
+        /// 实例私网连接地址的端口号。
+        /// </summary>
+        [Output("privatePort")]
+        public Output<string> PrivatePort { get; private set; } = null!;
 
         /// <summary>
         /// 实例所属的项目。
@@ -546,6 +558,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<string>? BackupPointName { get; set; }
 
         /// <summary>
+        /// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        /// </summary>
+        [Input("blueGreenRole")]
+        public Input<string>? BlueGreenRole { get; set; }
+
+        /// <summary>
         /// 实例的容量信息。
         /// </summary>
         [Input("capacity")]
@@ -692,6 +710,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         [Input("privateAddress")]
         public Input<string>? PrivateAddress { get; set; }
+
+        /// <summary>
+        /// 实例私网连接地址的端口号。
+        /// </summary>
+        [Input("privatePort")]
+        public Input<string>? PrivatePort { get; set; }
 
         /// <summary>
         /// 实例所属的项目。

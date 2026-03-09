@@ -90,6 +90,8 @@ type Key struct {
 	Origin pulumi.StringOutput `pulumi:"origin"`
 	// 密钥保护级别，取值：SOFTWARE，HSM。
 	ProtectionLevel pulumi.StringOutput `pulumi:"protectionLevel"`
+	// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+	RotateInterval pulumi.IntOutput `pulumi:"rotateInterval"`
 	// 密钥轮转状态，取值：Enable，Disable。
 	RotateState pulumi.StringOutput `pulumi:"rotateState"`
 	// 密钥删除时间。
@@ -167,6 +169,8 @@ type keyState struct {
 	Origin *string `pulumi:"origin"`
 	// 密钥保护级别，取值：SOFTWARE，HSM。
 	ProtectionLevel *string `pulumi:"protectionLevel"`
+	// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+	RotateInterval *int `pulumi:"rotateInterval"`
 	// 密钥轮转状态，取值：Enable，Disable。
 	RotateState *string `pulumi:"rotateState"`
 	// 密钥删除时间。
@@ -209,6 +213,8 @@ type KeyState struct {
 	Origin pulumi.StringPtrInput
 	// 密钥保护级别，取值：SOFTWARE，HSM。
 	ProtectionLevel pulumi.StringPtrInput
+	// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+	RotateInterval pulumi.IntPtrInput
 	// 密钥轮转状态，取值：Enable，Disable。
 	RotateState pulumi.StringPtrInput
 	// 密钥删除时间。
@@ -243,6 +249,8 @@ type keyArgs struct {
 	Origin *string `pulumi:"origin"`
 	// 密钥保护级别，取值：SOFTWARE，HSM。
 	ProtectionLevel *string `pulumi:"protectionLevel"`
+	// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+	RotateInterval *int `pulumi:"rotateInterval"`
 	// 密钥轮转状态，取值：Enable，Disable。
 	RotateState *string  `pulumi:"rotateState"`
 	Tags        []KeyTag `pulumi:"tags"`
@@ -266,6 +274,8 @@ type KeyArgs struct {
 	Origin pulumi.StringPtrInput
 	// 密钥保护级别，取值：SOFTWARE，HSM。
 	ProtectionLevel pulumi.StringPtrInput
+	// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+	RotateInterval pulumi.IntPtrInput
 	// 密钥轮转状态，取值：Enable，Disable。
 	RotateState pulumi.StringPtrInput
 	Tags        KeyTagArrayInput
@@ -426,6 +436,11 @@ func (o KeyOutput) Origin() pulumi.StringOutput {
 // 密钥保护级别，取值：SOFTWARE，HSM。
 func (o KeyOutput) ProtectionLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.ProtectionLevel }).(pulumi.StringOutput)
+}
+
+// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+func (o KeyOutput) RotateInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v *Key) pulumi.IntOutput { return v.RotateInterval }).(pulumi.IntOutput)
 }
 
 // 密钥轮转状态，取值：Enable，Disable。

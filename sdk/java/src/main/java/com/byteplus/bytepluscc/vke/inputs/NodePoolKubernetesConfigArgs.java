@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.vke.inputs;
 
+import com.byteplus.bytepluscc.vke.inputs.NodePoolKubernetesConfigContainerdConfigArgs;
 import com.byteplus.bytepluscc.vke.inputs.NodePoolKubernetesConfigKubeletConfigArgs;
 import com.byteplus.bytepluscc.vke.inputs.NodePoolKubernetesConfigLabelArgs;
 import com.byteplus.bytepluscc.vke.inputs.NodePoolKubernetesConfigTaintArgs;
@@ -33,6 +34,21 @@ public final class NodePoolKubernetesConfigArgs extends com.pulumi.resources.Res
      */
     public Optional<Output<Boolean>> autoSyncDisabled() {
         return Optional.ofNullable(this.autoSyncDisabled);
+    }
+
+    /**
+     * 节点池 Containerd 相关配置。
+     * 
+     */
+    @Import(name="containerdConfig")
+    private @Nullable Output<NodePoolKubernetesConfigContainerdConfigArgs> containerdConfig;
+
+    /**
+     * @return 节点池 Containerd 相关配置。
+     * 
+     */
+    public Optional<Output<NodePoolKubernetesConfigContainerdConfigArgs>> containerdConfig() {
+        return Optional.ofNullable(this.containerdConfig);
     }
 
     /**
@@ -128,6 +144,7 @@ public final class NodePoolKubernetesConfigArgs extends com.pulumi.resources.Res
 
     private NodePoolKubernetesConfigArgs(NodePoolKubernetesConfigArgs $) {
         this.autoSyncDisabled = $.autoSyncDisabled;
+        this.containerdConfig = $.containerdConfig;
         this.cordon = $.cordon;
         this.kubeletConfig = $.kubeletConfig;
         this.labels = $.labels;
@@ -174,6 +191,27 @@ public final class NodePoolKubernetesConfigArgs extends com.pulumi.resources.Res
          */
         public Builder autoSyncDisabled(Boolean autoSyncDisabled) {
             return autoSyncDisabled(Output.of(autoSyncDisabled));
+        }
+
+        /**
+         * @param containerdConfig 节点池 Containerd 相关配置。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containerdConfig(@Nullable Output<NodePoolKubernetesConfigContainerdConfigArgs> containerdConfig) {
+            $.containerdConfig = containerdConfig;
+            return this;
+        }
+
+        /**
+         * @param containerdConfig 节点池 Containerd 相关配置。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containerdConfig(NodePoolKubernetesConfigContainerdConfigArgs containerdConfig) {
+            return containerdConfig(Output.of(containerdConfig));
         }
 
         /**

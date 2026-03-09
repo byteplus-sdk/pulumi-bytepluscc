@@ -1874,6 +1874,2803 @@ func (o LoadBalancerZoneMappingArrayOutput) Index(i pulumi.IntInput) LoadBalance
 	}).(LoadBalancerZoneMappingOutput)
 }
 
+type RuleForwardGroupConfig struct {
+	ServerGroupTuples []RuleForwardGroupConfigServerGroupTuple `pulumi:"serverGroupTuples"`
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	StickySessionEnabled *string `pulumi:"stickySessionEnabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	StickySessionTimeout *int `pulumi:"stickySessionTimeout"`
+}
+
+// RuleForwardGroupConfigInput is an input type that accepts RuleForwardGroupConfigArgs and RuleForwardGroupConfigOutput values.
+// You can construct a concrete instance of `RuleForwardGroupConfigInput` via:
+//
+//	RuleForwardGroupConfigArgs{...}
+type RuleForwardGroupConfigInput interface {
+	pulumi.Input
+
+	ToRuleForwardGroupConfigOutput() RuleForwardGroupConfigOutput
+	ToRuleForwardGroupConfigOutputWithContext(context.Context) RuleForwardGroupConfigOutput
+}
+
+type RuleForwardGroupConfigArgs struct {
+	ServerGroupTuples RuleForwardGroupConfigServerGroupTupleArrayInput `pulumi:"serverGroupTuples"`
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	StickySessionEnabled pulumi.StringPtrInput `pulumi:"stickySessionEnabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	StickySessionTimeout pulumi.IntPtrInput `pulumi:"stickySessionTimeout"`
+}
+
+func (RuleForwardGroupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleForwardGroupConfig)(nil)).Elem()
+}
+
+func (i RuleForwardGroupConfigArgs) ToRuleForwardGroupConfigOutput() RuleForwardGroupConfigOutput {
+	return i.ToRuleForwardGroupConfigOutputWithContext(context.Background())
+}
+
+func (i RuleForwardGroupConfigArgs) ToRuleForwardGroupConfigOutputWithContext(ctx context.Context) RuleForwardGroupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleForwardGroupConfigOutput)
+}
+
+func (i RuleForwardGroupConfigArgs) ToRuleForwardGroupConfigPtrOutput() RuleForwardGroupConfigPtrOutput {
+	return i.ToRuleForwardGroupConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleForwardGroupConfigArgs) ToRuleForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleForwardGroupConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleForwardGroupConfigOutput).ToRuleForwardGroupConfigPtrOutputWithContext(ctx)
+}
+
+// RuleForwardGroupConfigPtrInput is an input type that accepts RuleForwardGroupConfigArgs, RuleForwardGroupConfigPtr and RuleForwardGroupConfigPtrOutput values.
+// You can construct a concrete instance of `RuleForwardGroupConfigPtrInput` via:
+//
+//	        RuleForwardGroupConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleForwardGroupConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleForwardGroupConfigPtrOutput() RuleForwardGroupConfigPtrOutput
+	ToRuleForwardGroupConfigPtrOutputWithContext(context.Context) RuleForwardGroupConfigPtrOutput
+}
+
+type ruleForwardGroupConfigPtrType RuleForwardGroupConfigArgs
+
+func RuleForwardGroupConfigPtr(v *RuleForwardGroupConfigArgs) RuleForwardGroupConfigPtrInput {
+	return (*ruleForwardGroupConfigPtrType)(v)
+}
+
+func (*ruleForwardGroupConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleForwardGroupConfig)(nil)).Elem()
+}
+
+func (i *ruleForwardGroupConfigPtrType) ToRuleForwardGroupConfigPtrOutput() RuleForwardGroupConfigPtrOutput {
+	return i.ToRuleForwardGroupConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleForwardGroupConfigPtrType) ToRuleForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleForwardGroupConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleForwardGroupConfigPtrOutput)
+}
+
+type RuleForwardGroupConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleForwardGroupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleForwardGroupConfig)(nil)).Elem()
+}
+
+func (o RuleForwardGroupConfigOutput) ToRuleForwardGroupConfigOutput() RuleForwardGroupConfigOutput {
+	return o
+}
+
+func (o RuleForwardGroupConfigOutput) ToRuleForwardGroupConfigOutputWithContext(ctx context.Context) RuleForwardGroupConfigOutput {
+	return o
+}
+
+func (o RuleForwardGroupConfigOutput) ToRuleForwardGroupConfigPtrOutput() RuleForwardGroupConfigPtrOutput {
+	return o.ToRuleForwardGroupConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleForwardGroupConfigOutput) ToRuleForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleForwardGroupConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleForwardGroupConfig) *RuleForwardGroupConfig {
+		return &v
+	}).(RuleForwardGroupConfigPtrOutput)
+}
+
+func (o RuleForwardGroupConfigOutput) ServerGroupTuples() RuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return o.ApplyT(func(v RuleForwardGroupConfig) []RuleForwardGroupConfigServerGroupTuple { return v.ServerGroupTuples }).(RuleForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+// 是否开启组间会话保持。on：开启。off：不开启。
+func (o RuleForwardGroupConfigOutput) StickySessionEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleForwardGroupConfig) *string { return v.StickySessionEnabled }).(pulumi.StringPtrOutput)
+}
+
+// 组件回话保持的超时时间。单位：秒。
+func (o RuleForwardGroupConfigOutput) StickySessionTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleForwardGroupConfig) *int { return v.StickySessionTimeout }).(pulumi.IntPtrOutput)
+}
+
+type RuleForwardGroupConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleForwardGroupConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleForwardGroupConfig)(nil)).Elem()
+}
+
+func (o RuleForwardGroupConfigPtrOutput) ToRuleForwardGroupConfigPtrOutput() RuleForwardGroupConfigPtrOutput {
+	return o
+}
+
+func (o RuleForwardGroupConfigPtrOutput) ToRuleForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleForwardGroupConfigPtrOutput {
+	return o
+}
+
+func (o RuleForwardGroupConfigPtrOutput) Elem() RuleForwardGroupConfigOutput {
+	return o.ApplyT(func(v *RuleForwardGroupConfig) RuleForwardGroupConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleForwardGroupConfig
+		return ret
+	}).(RuleForwardGroupConfigOutput)
+}
+
+func (o RuleForwardGroupConfigPtrOutput) ServerGroupTuples() RuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return o.ApplyT(func(v *RuleForwardGroupConfig) []RuleForwardGroupConfigServerGroupTuple {
+		if v == nil {
+			return nil
+		}
+		return v.ServerGroupTuples
+	}).(RuleForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+// 是否开启组间会话保持。on：开启。off：不开启。
+func (o RuleForwardGroupConfigPtrOutput) StickySessionEnabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleForwardGroupConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StickySessionEnabled
+	}).(pulumi.StringPtrOutput)
+}
+
+// 组件回话保持的超时时间。单位：秒。
+func (o RuleForwardGroupConfigPtrOutput) StickySessionTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleForwardGroupConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.StickySessionTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+type RuleForwardGroupConfigServerGroupTuple struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId *string `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight *int `pulumi:"weight"`
+}
+
+// RuleForwardGroupConfigServerGroupTupleInput is an input type that accepts RuleForwardGroupConfigServerGroupTupleArgs and RuleForwardGroupConfigServerGroupTupleOutput values.
+// You can construct a concrete instance of `RuleForwardGroupConfigServerGroupTupleInput` via:
+//
+//	RuleForwardGroupConfigServerGroupTupleArgs{...}
+type RuleForwardGroupConfigServerGroupTupleInput interface {
+	pulumi.Input
+
+	ToRuleForwardGroupConfigServerGroupTupleOutput() RuleForwardGroupConfigServerGroupTupleOutput
+	ToRuleForwardGroupConfigServerGroupTupleOutputWithContext(context.Context) RuleForwardGroupConfigServerGroupTupleOutput
+}
+
+type RuleForwardGroupConfigServerGroupTupleArgs struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId pulumi.StringPtrInput `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (RuleForwardGroupConfigServerGroupTupleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i RuleForwardGroupConfigServerGroupTupleArgs) ToRuleForwardGroupConfigServerGroupTupleOutput() RuleForwardGroupConfigServerGroupTupleOutput {
+	return i.ToRuleForwardGroupConfigServerGroupTupleOutputWithContext(context.Background())
+}
+
+func (i RuleForwardGroupConfigServerGroupTupleArgs) ToRuleForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) RuleForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleForwardGroupConfigServerGroupTupleOutput)
+}
+
+// RuleForwardGroupConfigServerGroupTupleArrayInput is an input type that accepts RuleForwardGroupConfigServerGroupTupleArray and RuleForwardGroupConfigServerGroupTupleArrayOutput values.
+// You can construct a concrete instance of `RuleForwardGroupConfigServerGroupTupleArrayInput` via:
+//
+//	RuleForwardGroupConfigServerGroupTupleArray{ RuleForwardGroupConfigServerGroupTupleArgs{...} }
+type RuleForwardGroupConfigServerGroupTupleArrayInput interface {
+	pulumi.Input
+
+	ToRuleForwardGroupConfigServerGroupTupleArrayOutput() RuleForwardGroupConfigServerGroupTupleArrayOutput
+	ToRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Context) RuleForwardGroupConfigServerGroupTupleArrayOutput
+}
+
+type RuleForwardGroupConfigServerGroupTupleArray []RuleForwardGroupConfigServerGroupTupleInput
+
+func (RuleForwardGroupConfigServerGroupTupleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i RuleForwardGroupConfigServerGroupTupleArray) ToRuleForwardGroupConfigServerGroupTupleArrayOutput() RuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return i.ToRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Background())
+}
+
+func (i RuleForwardGroupConfigServerGroupTupleArray) ToRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) RuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+type RuleForwardGroupConfigServerGroupTupleOutput struct{ *pulumi.OutputState }
+
+func (RuleForwardGroupConfigServerGroupTupleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o RuleForwardGroupConfigServerGroupTupleOutput) ToRuleForwardGroupConfigServerGroupTupleOutput() RuleForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+func (o RuleForwardGroupConfigServerGroupTupleOutput) ToRuleForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) RuleForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+// 转发到的目的服务器组 ID。
+func (o RuleForwardGroupConfigServerGroupTupleOutput) ServerGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleForwardGroupConfigServerGroupTuple) *string { return v.ServerGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 服务器组权重。
+func (o RuleForwardGroupConfigServerGroupTupleOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleForwardGroupConfigServerGroupTuple) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type RuleForwardGroupConfigServerGroupTupleArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleForwardGroupConfigServerGroupTupleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o RuleForwardGroupConfigServerGroupTupleArrayOutput) ToRuleForwardGroupConfigServerGroupTupleArrayOutput() RuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o RuleForwardGroupConfigServerGroupTupleArrayOutput) ToRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) RuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o RuleForwardGroupConfigServerGroupTupleArrayOutput) Index(i pulumi.IntInput) RuleForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleForwardGroupConfigServerGroupTuple {
+		return vs[0].([]RuleForwardGroupConfigServerGroupTuple)[vs[1].(int)]
+	}).(RuleForwardGroupConfigServerGroupTupleOutput)
+}
+
+type RuleRedirectConfig struct {
+	// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+	RedirectDomain *string `pulumi:"redirectDomain"`
+	// 重定向状态码。301、302、307、308。
+	RedirectHttpCode *string `pulumi:"redirectHttpCode"`
+	// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+	RedirectPort *string `pulumi:"redirectPort"`
+	// 重定向使用的协议。HTTP、HTTPS。
+	RedirectProtocol *string `pulumi:"redirectProtocol"`
+	// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+	RedirectUri *string `pulumi:"redirectUri"`
+}
+
+// RuleRedirectConfigInput is an input type that accepts RuleRedirectConfigArgs and RuleRedirectConfigOutput values.
+// You can construct a concrete instance of `RuleRedirectConfigInput` via:
+//
+//	RuleRedirectConfigArgs{...}
+type RuleRedirectConfigInput interface {
+	pulumi.Input
+
+	ToRuleRedirectConfigOutput() RuleRedirectConfigOutput
+	ToRuleRedirectConfigOutputWithContext(context.Context) RuleRedirectConfigOutput
+}
+
+type RuleRedirectConfigArgs struct {
+	// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+	RedirectDomain pulumi.StringPtrInput `pulumi:"redirectDomain"`
+	// 重定向状态码。301、302、307、308。
+	RedirectHttpCode pulumi.StringPtrInput `pulumi:"redirectHttpCode"`
+	// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+	RedirectPort pulumi.StringPtrInput `pulumi:"redirectPort"`
+	// 重定向使用的协议。HTTP、HTTPS。
+	RedirectProtocol pulumi.StringPtrInput `pulumi:"redirectProtocol"`
+	// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+	RedirectUri pulumi.StringPtrInput `pulumi:"redirectUri"`
+}
+
+func (RuleRedirectConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRedirectConfig)(nil)).Elem()
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigOutput() RuleRedirectConfigOutput {
+	return i.ToRuleRedirectConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigOutputWithContext(ctx context.Context) RuleRedirectConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRedirectConfigOutput)
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return i.ToRuleRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRedirectConfigArgs) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRedirectConfigOutput).ToRuleRedirectConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRedirectConfigPtrInput is an input type that accepts RuleRedirectConfigArgs, RuleRedirectConfigPtr and RuleRedirectConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRedirectConfigPtrInput` via:
+//
+//	        RuleRedirectConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRedirectConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput
+	ToRuleRedirectConfigPtrOutputWithContext(context.Context) RuleRedirectConfigPtrOutput
+}
+
+type ruleRedirectConfigPtrType RuleRedirectConfigArgs
+
+func RuleRedirectConfigPtr(v *RuleRedirectConfigArgs) RuleRedirectConfigPtrInput {
+	return (*ruleRedirectConfigPtrType)(v)
+}
+
+func (*ruleRedirectConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRedirectConfig)(nil)).Elem()
+}
+
+func (i *ruleRedirectConfigPtrType) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return i.ToRuleRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRedirectConfigPtrType) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRedirectConfigPtrOutput)
+}
+
+type RuleRedirectConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRedirectConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRedirectConfig)(nil)).Elem()
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigOutput() RuleRedirectConfigOutput {
+	return o
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigOutputWithContext(ctx context.Context) RuleRedirectConfigOutput {
+	return o
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return o.ToRuleRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRedirectConfigOutput) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRedirectConfig) *RuleRedirectConfig {
+		return &v
+	}).(RuleRedirectConfigPtrOutput)
+}
+
+// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+func (o RuleRedirectConfigOutput) RedirectDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.RedirectDomain }).(pulumi.StringPtrOutput)
+}
+
+// 重定向状态码。301、302、307、308。
+func (o RuleRedirectConfigOutput) RedirectHttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.RedirectHttpCode }).(pulumi.StringPtrOutput)
+}
+
+// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+func (o RuleRedirectConfigOutput) RedirectPort() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.RedirectPort }).(pulumi.StringPtrOutput)
+}
+
+// 重定向使用的协议。HTTP、HTTPS。
+func (o RuleRedirectConfigOutput) RedirectProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.RedirectProtocol }).(pulumi.StringPtrOutput)
+}
+
+// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+func (o RuleRedirectConfigOutput) RedirectUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.RedirectUri }).(pulumi.StringPtrOutput)
+}
+
+type RuleRedirectConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRedirectConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRedirectConfig)(nil)).Elem()
+}
+
+func (o RuleRedirectConfigPtrOutput) ToRuleRedirectConfigPtrOutput() RuleRedirectConfigPtrOutput {
+	return o
+}
+
+func (o RuleRedirectConfigPtrOutput) ToRuleRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRedirectConfigPtrOutput {
+	return o
+}
+
+func (o RuleRedirectConfigPtrOutput) Elem() RuleRedirectConfigOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) RuleRedirectConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRedirectConfig
+		return ret
+	}).(RuleRedirectConfigOutput)
+}
+
+// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+func (o RuleRedirectConfigPtrOutput) RedirectDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectDomain
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向状态码。301、302、307、308。
+func (o RuleRedirectConfigPtrOutput) RedirectHttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectHttpCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+func (o RuleRedirectConfigPtrOutput) RedirectPort() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectPort
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向使用的协议。HTTP、HTTPS。
+func (o RuleRedirectConfigPtrOutput) RedirectProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectProtocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+func (o RuleRedirectConfigPtrOutput) RedirectUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectUri
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuleRewriteConfig struct {
+	// 重写路径。
+	RewritePath *string `pulumi:"rewritePath"`
+}
+
+// RuleRewriteConfigInput is an input type that accepts RuleRewriteConfigArgs and RuleRewriteConfigOutput values.
+// You can construct a concrete instance of `RuleRewriteConfigInput` via:
+//
+//	RuleRewriteConfigArgs{...}
+type RuleRewriteConfigInput interface {
+	pulumi.Input
+
+	ToRuleRewriteConfigOutput() RuleRewriteConfigOutput
+	ToRuleRewriteConfigOutputWithContext(context.Context) RuleRewriteConfigOutput
+}
+
+type RuleRewriteConfigArgs struct {
+	// 重写路径。
+	RewritePath pulumi.StringPtrInput `pulumi:"rewritePath"`
+}
+
+func (RuleRewriteConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRewriteConfig)(nil)).Elem()
+}
+
+func (i RuleRewriteConfigArgs) ToRuleRewriteConfigOutput() RuleRewriteConfigOutput {
+	return i.ToRuleRewriteConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRewriteConfigArgs) ToRuleRewriteConfigOutputWithContext(ctx context.Context) RuleRewriteConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRewriteConfigOutput)
+}
+
+func (i RuleRewriteConfigArgs) ToRuleRewriteConfigPtrOutput() RuleRewriteConfigPtrOutput {
+	return i.ToRuleRewriteConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRewriteConfigArgs) ToRuleRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRewriteConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRewriteConfigOutput).ToRuleRewriteConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRewriteConfigPtrInput is an input type that accepts RuleRewriteConfigArgs, RuleRewriteConfigPtr and RuleRewriteConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRewriteConfigPtrInput` via:
+//
+//	        RuleRewriteConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRewriteConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRewriteConfigPtrOutput() RuleRewriteConfigPtrOutput
+	ToRuleRewriteConfigPtrOutputWithContext(context.Context) RuleRewriteConfigPtrOutput
+}
+
+type ruleRewriteConfigPtrType RuleRewriteConfigArgs
+
+func RuleRewriteConfigPtr(v *RuleRewriteConfigArgs) RuleRewriteConfigPtrInput {
+	return (*ruleRewriteConfigPtrType)(v)
+}
+
+func (*ruleRewriteConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRewriteConfig)(nil)).Elem()
+}
+
+func (i *ruleRewriteConfigPtrType) ToRuleRewriteConfigPtrOutput() RuleRewriteConfigPtrOutput {
+	return i.ToRuleRewriteConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRewriteConfigPtrType) ToRuleRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRewriteConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRewriteConfigPtrOutput)
+}
+
+type RuleRewriteConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRewriteConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRewriteConfig)(nil)).Elem()
+}
+
+func (o RuleRewriteConfigOutput) ToRuleRewriteConfigOutput() RuleRewriteConfigOutput {
+	return o
+}
+
+func (o RuleRewriteConfigOutput) ToRuleRewriteConfigOutputWithContext(ctx context.Context) RuleRewriteConfigOutput {
+	return o
+}
+
+func (o RuleRewriteConfigOutput) ToRuleRewriteConfigPtrOutput() RuleRewriteConfigPtrOutput {
+	return o.ToRuleRewriteConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRewriteConfigOutput) ToRuleRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRewriteConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRewriteConfig) *RuleRewriteConfig {
+		return &v
+	}).(RuleRewriteConfigPtrOutput)
+}
+
+// 重写路径。
+func (o RuleRewriteConfigOutput) RewritePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRewriteConfig) *string { return v.RewritePath }).(pulumi.StringPtrOutput)
+}
+
+type RuleRewriteConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRewriteConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRewriteConfig)(nil)).Elem()
+}
+
+func (o RuleRewriteConfigPtrOutput) ToRuleRewriteConfigPtrOutput() RuleRewriteConfigPtrOutput {
+	return o
+}
+
+func (o RuleRewriteConfigPtrOutput) ToRuleRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRewriteConfigPtrOutput {
+	return o
+}
+
+func (o RuleRewriteConfigPtrOutput) Elem() RuleRewriteConfigOutput {
+	return o.ApplyT(func(v *RuleRewriteConfig) RuleRewriteConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRewriteConfig
+		return ret
+	}).(RuleRewriteConfigOutput)
+}
+
+// 重写路径。
+func (o RuleRewriteConfigPtrOutput) RewritePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRewriteConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RewritePath
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleAction struct {
+	// FixedResponseConfig
+	FixedResponseConfig *RuleRuleActionFixedResponseConfig `pulumi:"fixedResponseConfig"`
+	// ForwardGroupConfig
+	ForwardGroupConfig *RuleRuleActionForwardGroupConfig `pulumi:"forwardGroupConfig"`
+	// RedirectConfig
+	RedirectConfig *RuleRuleActionRedirectConfig `pulumi:"redirectConfig"`
+	// RewriteConfig
+	RewriteConfig *RuleRuleActionRewriteConfig `pulumi:"rewriteConfig"`
+	// TrafficLimitConfig
+	TrafficLimitConfig *RuleRuleActionTrafficLimitConfig `pulumi:"trafficLimitConfig"`
+	// 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+	Type *string `pulumi:"type"`
+}
+
+// RuleRuleActionInput is an input type that accepts RuleRuleActionArgs and RuleRuleActionOutput values.
+// You can construct a concrete instance of `RuleRuleActionInput` via:
+//
+//	RuleRuleActionArgs{...}
+type RuleRuleActionInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionOutput() RuleRuleActionOutput
+	ToRuleRuleActionOutputWithContext(context.Context) RuleRuleActionOutput
+}
+
+type RuleRuleActionArgs struct {
+	// FixedResponseConfig
+	FixedResponseConfig RuleRuleActionFixedResponseConfigPtrInput `pulumi:"fixedResponseConfig"`
+	// ForwardGroupConfig
+	ForwardGroupConfig RuleRuleActionForwardGroupConfigPtrInput `pulumi:"forwardGroupConfig"`
+	// RedirectConfig
+	RedirectConfig RuleRuleActionRedirectConfigPtrInput `pulumi:"redirectConfig"`
+	// RewriteConfig
+	RewriteConfig RuleRuleActionRewriteConfigPtrInput `pulumi:"rewriteConfig"`
+	// TrafficLimitConfig
+	TrafficLimitConfig RuleRuleActionTrafficLimitConfigPtrInput `pulumi:"trafficLimitConfig"`
+	// 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (RuleRuleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleAction)(nil)).Elem()
+}
+
+func (i RuleRuleActionArgs) ToRuleRuleActionOutput() RuleRuleActionOutput {
+	return i.ToRuleRuleActionOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionArgs) ToRuleRuleActionOutputWithContext(ctx context.Context) RuleRuleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionOutput)
+}
+
+// RuleRuleActionArrayInput is an input type that accepts RuleRuleActionArray and RuleRuleActionArrayOutput values.
+// You can construct a concrete instance of `RuleRuleActionArrayInput` via:
+//
+//	RuleRuleActionArray{ RuleRuleActionArgs{...} }
+type RuleRuleActionArrayInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionArrayOutput() RuleRuleActionArrayOutput
+	ToRuleRuleActionArrayOutputWithContext(context.Context) RuleRuleActionArrayOutput
+}
+
+type RuleRuleActionArray []RuleRuleActionInput
+
+func (RuleRuleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleAction)(nil)).Elem()
+}
+
+func (i RuleRuleActionArray) ToRuleRuleActionArrayOutput() RuleRuleActionArrayOutput {
+	return i.ToRuleRuleActionArrayOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionArray) ToRuleRuleActionArrayOutputWithContext(ctx context.Context) RuleRuleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionArrayOutput)
+}
+
+type RuleRuleActionOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleAction)(nil)).Elem()
+}
+
+func (o RuleRuleActionOutput) ToRuleRuleActionOutput() RuleRuleActionOutput {
+	return o
+}
+
+func (o RuleRuleActionOutput) ToRuleRuleActionOutputWithContext(ctx context.Context) RuleRuleActionOutput {
+	return o
+}
+
+// FixedResponseConfig
+func (o RuleRuleActionOutput) FixedResponseConfig() RuleRuleActionFixedResponseConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleAction) *RuleRuleActionFixedResponseConfig { return v.FixedResponseConfig }).(RuleRuleActionFixedResponseConfigPtrOutput)
+}
+
+// ForwardGroupConfig
+func (o RuleRuleActionOutput) ForwardGroupConfig() RuleRuleActionForwardGroupConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleAction) *RuleRuleActionForwardGroupConfig { return v.ForwardGroupConfig }).(RuleRuleActionForwardGroupConfigPtrOutput)
+}
+
+// RedirectConfig
+func (o RuleRuleActionOutput) RedirectConfig() RuleRuleActionRedirectConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleAction) *RuleRuleActionRedirectConfig { return v.RedirectConfig }).(RuleRuleActionRedirectConfigPtrOutput)
+}
+
+// RewriteConfig
+func (o RuleRuleActionOutput) RewriteConfig() RuleRuleActionRewriteConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleAction) *RuleRuleActionRewriteConfig { return v.RewriteConfig }).(RuleRuleActionRewriteConfigPtrOutput)
+}
+
+// TrafficLimitConfig
+func (o RuleRuleActionOutput) TrafficLimitConfig() RuleRuleActionTrafficLimitConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleAction) *RuleRuleActionTrafficLimitConfig { return v.TrafficLimitConfig }).(RuleRuleActionTrafficLimitConfigPtrOutput)
+}
+
+// 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+func (o RuleRuleActionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleAction) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleAction)(nil)).Elem()
+}
+
+func (o RuleRuleActionArrayOutput) ToRuleRuleActionArrayOutput() RuleRuleActionArrayOutput {
+	return o
+}
+
+func (o RuleRuleActionArrayOutput) ToRuleRuleActionArrayOutputWithContext(ctx context.Context) RuleRuleActionArrayOutput {
+	return o
+}
+
+func (o RuleRuleActionArrayOutput) Index(i pulumi.IntInput) RuleRuleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleRuleAction {
+		return vs[0].([]RuleRuleAction)[vs[1].(int)]
+	}).(RuleRuleActionOutput)
+}
+
+type RuleRuleActionFixedResponseConfig struct {
+	// 返回的固定内容。
+	Content *string `pulumi:"content"`
+	// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+	ContentType *string `pulumi:"contentType"`
+	// 返回的 HTTP 状态码。
+	HttpCode *string `pulumi:"httpCode"`
+}
+
+// RuleRuleActionFixedResponseConfigInput is an input type that accepts RuleRuleActionFixedResponseConfigArgs and RuleRuleActionFixedResponseConfigOutput values.
+// You can construct a concrete instance of `RuleRuleActionFixedResponseConfigInput` via:
+//
+//	RuleRuleActionFixedResponseConfigArgs{...}
+type RuleRuleActionFixedResponseConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionFixedResponseConfigOutput() RuleRuleActionFixedResponseConfigOutput
+	ToRuleRuleActionFixedResponseConfigOutputWithContext(context.Context) RuleRuleActionFixedResponseConfigOutput
+}
+
+type RuleRuleActionFixedResponseConfigArgs struct {
+	// 返回的固定内容。
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	// 返回的 HTTP 状态码。
+	HttpCode pulumi.StringPtrInput `pulumi:"httpCode"`
+}
+
+func (RuleRuleActionFixedResponseConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionFixedResponseConfig)(nil)).Elem()
+}
+
+func (i RuleRuleActionFixedResponseConfigArgs) ToRuleRuleActionFixedResponseConfigOutput() RuleRuleActionFixedResponseConfigOutput {
+	return i.ToRuleRuleActionFixedResponseConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionFixedResponseConfigArgs) ToRuleRuleActionFixedResponseConfigOutputWithContext(ctx context.Context) RuleRuleActionFixedResponseConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionFixedResponseConfigOutput)
+}
+
+func (i RuleRuleActionFixedResponseConfigArgs) ToRuleRuleActionFixedResponseConfigPtrOutput() RuleRuleActionFixedResponseConfigPtrOutput {
+	return i.ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionFixedResponseConfigArgs) ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionFixedResponseConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionFixedResponseConfigOutput).ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleActionFixedResponseConfigPtrInput is an input type that accepts RuleRuleActionFixedResponseConfigArgs, RuleRuleActionFixedResponseConfigPtr and RuleRuleActionFixedResponseConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleActionFixedResponseConfigPtrInput` via:
+//
+//	        RuleRuleActionFixedResponseConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleActionFixedResponseConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionFixedResponseConfigPtrOutput() RuleRuleActionFixedResponseConfigPtrOutput
+	ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(context.Context) RuleRuleActionFixedResponseConfigPtrOutput
+}
+
+type ruleRuleActionFixedResponseConfigPtrType RuleRuleActionFixedResponseConfigArgs
+
+func RuleRuleActionFixedResponseConfigPtr(v *RuleRuleActionFixedResponseConfigArgs) RuleRuleActionFixedResponseConfigPtrInput {
+	return (*ruleRuleActionFixedResponseConfigPtrType)(v)
+}
+
+func (*ruleRuleActionFixedResponseConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionFixedResponseConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleActionFixedResponseConfigPtrType) ToRuleRuleActionFixedResponseConfigPtrOutput() RuleRuleActionFixedResponseConfigPtrOutput {
+	return i.ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleActionFixedResponseConfigPtrType) ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionFixedResponseConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionFixedResponseConfigPtrOutput)
+}
+
+type RuleRuleActionFixedResponseConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionFixedResponseConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionFixedResponseConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionFixedResponseConfigOutput) ToRuleRuleActionFixedResponseConfigOutput() RuleRuleActionFixedResponseConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionFixedResponseConfigOutput) ToRuleRuleActionFixedResponseConfigOutputWithContext(ctx context.Context) RuleRuleActionFixedResponseConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionFixedResponseConfigOutput) ToRuleRuleActionFixedResponseConfigPtrOutput() RuleRuleActionFixedResponseConfigPtrOutput {
+	return o.ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleActionFixedResponseConfigOutput) ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionFixedResponseConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleActionFixedResponseConfig) *RuleRuleActionFixedResponseConfig {
+		return &v
+	}).(RuleRuleActionFixedResponseConfigPtrOutput)
+}
+
+// 返回的固定内容。
+func (o RuleRuleActionFixedResponseConfigOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionFixedResponseConfig) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+func (o RuleRuleActionFixedResponseConfigOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionFixedResponseConfig) *string { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// 返回的 HTTP 状态码。
+func (o RuleRuleActionFixedResponseConfigOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionFixedResponseConfig) *string { return v.HttpCode }).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleActionFixedResponseConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionFixedResponseConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionFixedResponseConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionFixedResponseConfigPtrOutput) ToRuleRuleActionFixedResponseConfigPtrOutput() RuleRuleActionFixedResponseConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionFixedResponseConfigPtrOutput) ToRuleRuleActionFixedResponseConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionFixedResponseConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionFixedResponseConfigPtrOutput) Elem() RuleRuleActionFixedResponseConfigOutput {
+	return o.ApplyT(func(v *RuleRuleActionFixedResponseConfig) RuleRuleActionFixedResponseConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleActionFixedResponseConfig
+		return ret
+	}).(RuleRuleActionFixedResponseConfigOutput)
+}
+
+// 返回的固定内容。
+func (o RuleRuleActionFixedResponseConfigPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionFixedResponseConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+func (o RuleRuleActionFixedResponseConfigPtrOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionFixedResponseConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 返回的 HTTP 状态码。
+func (o RuleRuleActionFixedResponseConfigPtrOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionFixedResponseConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpCode
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleActionForwardGroupConfig struct {
+	// ServerGroupStickySession
+	ServerGroupStickySession *RuleRuleActionForwardGroupConfigServerGroupStickySession `pulumi:"serverGroupStickySession"`
+	ServerGroupTuples        []RuleRuleActionForwardGroupConfigServerGroupTuple        `pulumi:"serverGroupTuples"`
+}
+
+// RuleRuleActionForwardGroupConfigInput is an input type that accepts RuleRuleActionForwardGroupConfigArgs and RuleRuleActionForwardGroupConfigOutput values.
+// You can construct a concrete instance of `RuleRuleActionForwardGroupConfigInput` via:
+//
+//	RuleRuleActionForwardGroupConfigArgs{...}
+type RuleRuleActionForwardGroupConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionForwardGroupConfigOutput() RuleRuleActionForwardGroupConfigOutput
+	ToRuleRuleActionForwardGroupConfigOutputWithContext(context.Context) RuleRuleActionForwardGroupConfigOutput
+}
+
+type RuleRuleActionForwardGroupConfigArgs struct {
+	// ServerGroupStickySession
+	ServerGroupStickySession RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrInput `pulumi:"serverGroupStickySession"`
+	ServerGroupTuples        RuleRuleActionForwardGroupConfigServerGroupTupleArrayInput       `pulumi:"serverGroupTuples"`
+}
+
+func (RuleRuleActionForwardGroupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionForwardGroupConfig)(nil)).Elem()
+}
+
+func (i RuleRuleActionForwardGroupConfigArgs) ToRuleRuleActionForwardGroupConfigOutput() RuleRuleActionForwardGroupConfigOutput {
+	return i.ToRuleRuleActionForwardGroupConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionForwardGroupConfigArgs) ToRuleRuleActionForwardGroupConfigOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigOutput)
+}
+
+func (i RuleRuleActionForwardGroupConfigArgs) ToRuleRuleActionForwardGroupConfigPtrOutput() RuleRuleActionForwardGroupConfigPtrOutput {
+	return i.ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionForwardGroupConfigArgs) ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigOutput).ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleActionForwardGroupConfigPtrInput is an input type that accepts RuleRuleActionForwardGroupConfigArgs, RuleRuleActionForwardGroupConfigPtr and RuleRuleActionForwardGroupConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleActionForwardGroupConfigPtrInput` via:
+//
+//	        RuleRuleActionForwardGroupConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleActionForwardGroupConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionForwardGroupConfigPtrOutput() RuleRuleActionForwardGroupConfigPtrOutput
+	ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(context.Context) RuleRuleActionForwardGroupConfigPtrOutput
+}
+
+type ruleRuleActionForwardGroupConfigPtrType RuleRuleActionForwardGroupConfigArgs
+
+func RuleRuleActionForwardGroupConfigPtr(v *RuleRuleActionForwardGroupConfigArgs) RuleRuleActionForwardGroupConfigPtrInput {
+	return (*ruleRuleActionForwardGroupConfigPtrType)(v)
+}
+
+func (*ruleRuleActionForwardGroupConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionForwardGroupConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleActionForwardGroupConfigPtrType) ToRuleRuleActionForwardGroupConfigPtrOutput() RuleRuleActionForwardGroupConfigPtrOutput {
+	return i.ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleActionForwardGroupConfigPtrType) ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigPtrOutput)
+}
+
+type RuleRuleActionForwardGroupConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionForwardGroupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionForwardGroupConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionForwardGroupConfigOutput) ToRuleRuleActionForwardGroupConfigOutput() RuleRuleActionForwardGroupConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigOutput) ToRuleRuleActionForwardGroupConfigOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigOutput) ToRuleRuleActionForwardGroupConfigPtrOutput() RuleRuleActionForwardGroupConfigPtrOutput {
+	return o.ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleActionForwardGroupConfigOutput) ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleActionForwardGroupConfig) *RuleRuleActionForwardGroupConfig {
+		return &v
+	}).(RuleRuleActionForwardGroupConfigPtrOutput)
+}
+
+// ServerGroupStickySession
+func (o RuleRuleActionForwardGroupConfigOutput) ServerGroupStickySession() RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionForwardGroupConfig) *RuleRuleActionForwardGroupConfigServerGroupStickySession {
+		return v.ServerGroupStickySession
+	}).(RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput)
+}
+
+func (o RuleRuleActionForwardGroupConfigOutput) ServerGroupTuples() RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return o.ApplyT(func(v RuleRuleActionForwardGroupConfig) []RuleRuleActionForwardGroupConfigServerGroupTuple {
+		return v.ServerGroupTuples
+	}).(RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+type RuleRuleActionForwardGroupConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionForwardGroupConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionForwardGroupConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionForwardGroupConfigPtrOutput) ToRuleRuleActionForwardGroupConfigPtrOutput() RuleRuleActionForwardGroupConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigPtrOutput) ToRuleRuleActionForwardGroupConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigPtrOutput) Elem() RuleRuleActionForwardGroupConfigOutput {
+	return o.ApplyT(func(v *RuleRuleActionForwardGroupConfig) RuleRuleActionForwardGroupConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleActionForwardGroupConfig
+		return ret
+	}).(RuleRuleActionForwardGroupConfigOutput)
+}
+
+// ServerGroupStickySession
+func (o RuleRuleActionForwardGroupConfigPtrOutput) ServerGroupStickySession() RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionForwardGroupConfig) *RuleRuleActionForwardGroupConfigServerGroupStickySession {
+		if v == nil {
+			return nil
+		}
+		return v.ServerGroupStickySession
+	}).(RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput)
+}
+
+func (o RuleRuleActionForwardGroupConfigPtrOutput) ServerGroupTuples() RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return o.ApplyT(func(v *RuleRuleActionForwardGroupConfig) []RuleRuleActionForwardGroupConfigServerGroupTuple {
+		if v == nil {
+			return nil
+		}
+		return v.ServerGroupTuples
+	}).(RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupStickySession struct {
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	Enabled *string `pulumi:"enabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	Timeout *int `pulumi:"timeout"`
+}
+
+// RuleRuleActionForwardGroupConfigServerGroupStickySessionInput is an input type that accepts RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs and RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput values.
+// You can construct a concrete instance of `RuleRuleActionForwardGroupConfigServerGroupStickySessionInput` via:
+//
+//	RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs{...}
+type RuleRuleActionForwardGroupConfigServerGroupStickySessionInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput
+	ToRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs struct {
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	Enabled pulumi.StringPtrInput `pulumi:"enabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
+}
+
+func (RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupStickySession)(nil)).Elem()
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return i.ToRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput)
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return i.ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput).ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(ctx)
+}
+
+// RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrInput is an input type that accepts RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs, RuleRuleActionForwardGroupConfigServerGroupStickySessionPtr and RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput values.
+// You can construct a concrete instance of `RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrInput` via:
+//
+//	        RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput
+	ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput
+}
+
+type ruleRuleActionForwardGroupConfigServerGroupStickySessionPtrType RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs
+
+func RuleRuleActionForwardGroupConfigServerGroupStickySessionPtr(v *RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrInput {
+	return (*ruleRuleActionForwardGroupConfigServerGroupStickySessionPtrType)(v)
+}
+
+func (*ruleRuleActionForwardGroupConfigServerGroupStickySessionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionForwardGroupConfigServerGroupStickySession)(nil)).Elem()
+}
+
+func (i *ruleRuleActionForwardGroupConfigServerGroupStickySessionPtrType) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return i.ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleActionForwardGroupConfigServerGroupStickySessionPtrType) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput)
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupStickySession)(nil)).Elem()
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return o.ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleActionForwardGroupConfigServerGroupStickySession) *RuleRuleActionForwardGroupConfigServerGroupStickySession {
+		return &v
+	}).(RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput)
+}
+
+// 是否开启组间会话保持。on：开启。off：不开启。
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) Enabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionForwardGroupConfigServerGroupStickySession) *string { return v.Enabled }).(pulumi.StringPtrOutput)
+}
+
+// 组件回话保持的超时时间。单位：秒。
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionForwardGroupConfigServerGroupStickySession) *int { return v.Timeout }).(pulumi.IntPtrOutput)
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionForwardGroupConfigServerGroupStickySession)(nil)).Elem()
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput() RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput) ToRuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput) Elem() RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return o.ApplyT(func(v *RuleRuleActionForwardGroupConfigServerGroupStickySession) RuleRuleActionForwardGroupConfigServerGroupStickySession {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleActionForwardGroupConfigServerGroupStickySession
+		return ret
+	}).(RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput)
+}
+
+// 是否开启组间会话保持。on：开启。off：不开启。
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput) Enabled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionForwardGroupConfigServerGroupStickySession) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.StringPtrOutput)
+}
+
+// 组件回话保持的超时时间。单位：秒。
+func (o RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionForwardGroupConfigServerGroupStickySession) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Timeout
+	}).(pulumi.IntPtrOutput)
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupTuple struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId *string `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight *int `pulumi:"weight"`
+}
+
+// RuleRuleActionForwardGroupConfigServerGroupTupleInput is an input type that accepts RuleRuleActionForwardGroupConfigServerGroupTupleArgs and RuleRuleActionForwardGroupConfigServerGroupTupleOutput values.
+// You can construct a concrete instance of `RuleRuleActionForwardGroupConfigServerGroupTupleInput` via:
+//
+//	RuleRuleActionForwardGroupConfigServerGroupTupleArgs{...}
+type RuleRuleActionForwardGroupConfigServerGroupTupleInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionForwardGroupConfigServerGroupTupleOutput() RuleRuleActionForwardGroupConfigServerGroupTupleOutput
+	ToRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(context.Context) RuleRuleActionForwardGroupConfigServerGroupTupleOutput
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupTupleArgs struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId pulumi.StringPtrInput `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (RuleRuleActionForwardGroupConfigServerGroupTupleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupTupleArgs) ToRuleRuleActionForwardGroupConfigServerGroupTupleOutput() RuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return i.ToRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupTupleArgs) ToRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigServerGroupTupleOutput)
+}
+
+// RuleRuleActionForwardGroupConfigServerGroupTupleArrayInput is an input type that accepts RuleRuleActionForwardGroupConfigServerGroupTupleArray and RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput values.
+// You can construct a concrete instance of `RuleRuleActionForwardGroupConfigServerGroupTupleArrayInput` via:
+//
+//	RuleRuleActionForwardGroupConfigServerGroupTupleArray{ RuleRuleActionForwardGroupConfigServerGroupTupleArgs{...} }
+type RuleRuleActionForwardGroupConfigServerGroupTupleArrayInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput() RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput
+	ToRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Context) RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupTupleArray []RuleRuleActionForwardGroupConfigServerGroupTupleInput
+
+func (RuleRuleActionForwardGroupConfigServerGroupTupleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupTupleArray) ToRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput() RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return i.ToRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionForwardGroupConfigServerGroupTupleArray) ToRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupTupleOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionForwardGroupConfigServerGroupTupleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupTupleOutput) ToRuleRuleActionForwardGroupConfigServerGroupTupleOutput() RuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupTupleOutput) ToRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+// 转发到的目的服务器组 ID。
+func (o RuleRuleActionForwardGroupConfigServerGroupTupleOutput) ServerGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionForwardGroupConfigServerGroupTuple) *string { return v.ServerGroupId }).(pulumi.StringPtrOutput)
+}
+
+// 服务器组权重。
+func (o RuleRuleActionForwardGroupConfigServerGroupTupleOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionForwardGroupConfigServerGroupTuple) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) ToRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput() RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) ToRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) Index(i pulumi.IntInput) RuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleRuleActionForwardGroupConfigServerGroupTuple {
+		return vs[0].([]RuleRuleActionForwardGroupConfigServerGroupTuple)[vs[1].(int)]
+	}).(RuleRuleActionForwardGroupConfigServerGroupTupleOutput)
+}
+
+type RuleRuleActionRedirectConfig struct {
+	// 重定向域名，仅支持精确域名。
+	Host *string `pulumi:"host"`
+	// 重定向状态码，支持301，302，307，308。
+	HttpCode *string `pulumi:"httpCode"`
+	// 重定向 URI。。
+	Path *string `pulumi:"path"`
+	// 重定向端口。
+	Port *string `pulumi:"port"`
+	// 重定向使用的协议，支持HTTP，HTTPS。
+	Protocol *string `pulumi:"protocol"`
+}
+
+// RuleRuleActionRedirectConfigInput is an input type that accepts RuleRuleActionRedirectConfigArgs and RuleRuleActionRedirectConfigOutput values.
+// You can construct a concrete instance of `RuleRuleActionRedirectConfigInput` via:
+//
+//	RuleRuleActionRedirectConfigArgs{...}
+type RuleRuleActionRedirectConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionRedirectConfigOutput() RuleRuleActionRedirectConfigOutput
+	ToRuleRuleActionRedirectConfigOutputWithContext(context.Context) RuleRuleActionRedirectConfigOutput
+}
+
+type RuleRuleActionRedirectConfigArgs struct {
+	// 重定向域名，仅支持精确域名。
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// 重定向状态码，支持301，302，307，308。
+	HttpCode pulumi.StringPtrInput `pulumi:"httpCode"`
+	// 重定向 URI。。
+	Path pulumi.StringPtrInput `pulumi:"path"`
+	// 重定向端口。
+	Port pulumi.StringPtrInput `pulumi:"port"`
+	// 重定向使用的协议，支持HTTP，HTTPS。
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+}
+
+func (RuleRuleActionRedirectConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionRedirectConfig)(nil)).Elem()
+}
+
+func (i RuleRuleActionRedirectConfigArgs) ToRuleRuleActionRedirectConfigOutput() RuleRuleActionRedirectConfigOutput {
+	return i.ToRuleRuleActionRedirectConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionRedirectConfigArgs) ToRuleRuleActionRedirectConfigOutputWithContext(ctx context.Context) RuleRuleActionRedirectConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionRedirectConfigOutput)
+}
+
+func (i RuleRuleActionRedirectConfigArgs) ToRuleRuleActionRedirectConfigPtrOutput() RuleRuleActionRedirectConfigPtrOutput {
+	return i.ToRuleRuleActionRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionRedirectConfigArgs) ToRuleRuleActionRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRedirectConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionRedirectConfigOutput).ToRuleRuleActionRedirectConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleActionRedirectConfigPtrInput is an input type that accepts RuleRuleActionRedirectConfigArgs, RuleRuleActionRedirectConfigPtr and RuleRuleActionRedirectConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleActionRedirectConfigPtrInput` via:
+//
+//	        RuleRuleActionRedirectConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleActionRedirectConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionRedirectConfigPtrOutput() RuleRuleActionRedirectConfigPtrOutput
+	ToRuleRuleActionRedirectConfigPtrOutputWithContext(context.Context) RuleRuleActionRedirectConfigPtrOutput
+}
+
+type ruleRuleActionRedirectConfigPtrType RuleRuleActionRedirectConfigArgs
+
+func RuleRuleActionRedirectConfigPtr(v *RuleRuleActionRedirectConfigArgs) RuleRuleActionRedirectConfigPtrInput {
+	return (*ruleRuleActionRedirectConfigPtrType)(v)
+}
+
+func (*ruleRuleActionRedirectConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionRedirectConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleActionRedirectConfigPtrType) ToRuleRuleActionRedirectConfigPtrOutput() RuleRuleActionRedirectConfigPtrOutput {
+	return i.ToRuleRuleActionRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleActionRedirectConfigPtrType) ToRuleRuleActionRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRedirectConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionRedirectConfigPtrOutput)
+}
+
+type RuleRuleActionRedirectConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionRedirectConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionRedirectConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionRedirectConfigOutput) ToRuleRuleActionRedirectConfigOutput() RuleRuleActionRedirectConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionRedirectConfigOutput) ToRuleRuleActionRedirectConfigOutputWithContext(ctx context.Context) RuleRuleActionRedirectConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionRedirectConfigOutput) ToRuleRuleActionRedirectConfigPtrOutput() RuleRuleActionRedirectConfigPtrOutput {
+	return o.ToRuleRuleActionRedirectConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleActionRedirectConfigOutput) ToRuleRuleActionRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRedirectConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleActionRedirectConfig) *RuleRuleActionRedirectConfig {
+		return &v
+	}).(RuleRuleActionRedirectConfigPtrOutput)
+}
+
+// 重定向域名，仅支持精确域名。
+func (o RuleRuleActionRedirectConfigOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionRedirectConfig) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// 重定向状态码，支持301，302，307，308。
+func (o RuleRuleActionRedirectConfigOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionRedirectConfig) *string { return v.HttpCode }).(pulumi.StringPtrOutput)
+}
+
+// 重定向 URI。。
+func (o RuleRuleActionRedirectConfigOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionRedirectConfig) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+// 重定向端口。
+func (o RuleRuleActionRedirectConfigOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionRedirectConfig) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+// 重定向使用的协议，支持HTTP，HTTPS。
+func (o RuleRuleActionRedirectConfigOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionRedirectConfig) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleActionRedirectConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionRedirectConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionRedirectConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionRedirectConfigPtrOutput) ToRuleRuleActionRedirectConfigPtrOutput() RuleRuleActionRedirectConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionRedirectConfigPtrOutput) ToRuleRuleActionRedirectConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRedirectConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionRedirectConfigPtrOutput) Elem() RuleRuleActionRedirectConfigOutput {
+	return o.ApplyT(func(v *RuleRuleActionRedirectConfig) RuleRuleActionRedirectConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleActionRedirectConfig
+		return ret
+	}).(RuleRuleActionRedirectConfigOutput)
+}
+
+// 重定向域名，仅支持精确域名。
+func (o RuleRuleActionRedirectConfigPtrOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Host
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向状态码，支持301，302，307，308。
+func (o RuleRuleActionRedirectConfigPtrOutput) HttpCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpCode
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向 URI。。
+func (o RuleRuleActionRedirectConfigPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向端口。
+func (o RuleRuleActionRedirectConfigPtrOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.StringPtrOutput)
+}
+
+// 重定向使用的协议，支持HTTP，HTTPS。
+func (o RuleRuleActionRedirectConfigPtrOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionRedirectConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Protocol
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleActionRewriteConfig struct {
+	// 重写路径。
+	Path *string `pulumi:"path"`
+}
+
+// RuleRuleActionRewriteConfigInput is an input type that accepts RuleRuleActionRewriteConfigArgs and RuleRuleActionRewriteConfigOutput values.
+// You can construct a concrete instance of `RuleRuleActionRewriteConfigInput` via:
+//
+//	RuleRuleActionRewriteConfigArgs{...}
+type RuleRuleActionRewriteConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionRewriteConfigOutput() RuleRuleActionRewriteConfigOutput
+	ToRuleRuleActionRewriteConfigOutputWithContext(context.Context) RuleRuleActionRewriteConfigOutput
+}
+
+type RuleRuleActionRewriteConfigArgs struct {
+	// 重写路径。
+	Path pulumi.StringPtrInput `pulumi:"path"`
+}
+
+func (RuleRuleActionRewriteConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionRewriteConfig)(nil)).Elem()
+}
+
+func (i RuleRuleActionRewriteConfigArgs) ToRuleRuleActionRewriteConfigOutput() RuleRuleActionRewriteConfigOutput {
+	return i.ToRuleRuleActionRewriteConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionRewriteConfigArgs) ToRuleRuleActionRewriteConfigOutputWithContext(ctx context.Context) RuleRuleActionRewriteConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionRewriteConfigOutput)
+}
+
+func (i RuleRuleActionRewriteConfigArgs) ToRuleRuleActionRewriteConfigPtrOutput() RuleRuleActionRewriteConfigPtrOutput {
+	return i.ToRuleRuleActionRewriteConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionRewriteConfigArgs) ToRuleRuleActionRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRewriteConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionRewriteConfigOutput).ToRuleRuleActionRewriteConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleActionRewriteConfigPtrInput is an input type that accepts RuleRuleActionRewriteConfigArgs, RuleRuleActionRewriteConfigPtr and RuleRuleActionRewriteConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleActionRewriteConfigPtrInput` via:
+//
+//	        RuleRuleActionRewriteConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleActionRewriteConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionRewriteConfigPtrOutput() RuleRuleActionRewriteConfigPtrOutput
+	ToRuleRuleActionRewriteConfigPtrOutputWithContext(context.Context) RuleRuleActionRewriteConfigPtrOutput
+}
+
+type ruleRuleActionRewriteConfigPtrType RuleRuleActionRewriteConfigArgs
+
+func RuleRuleActionRewriteConfigPtr(v *RuleRuleActionRewriteConfigArgs) RuleRuleActionRewriteConfigPtrInput {
+	return (*ruleRuleActionRewriteConfigPtrType)(v)
+}
+
+func (*ruleRuleActionRewriteConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionRewriteConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleActionRewriteConfigPtrType) ToRuleRuleActionRewriteConfigPtrOutput() RuleRuleActionRewriteConfigPtrOutput {
+	return i.ToRuleRuleActionRewriteConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleActionRewriteConfigPtrType) ToRuleRuleActionRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRewriteConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionRewriteConfigPtrOutput)
+}
+
+type RuleRuleActionRewriteConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionRewriteConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionRewriteConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionRewriteConfigOutput) ToRuleRuleActionRewriteConfigOutput() RuleRuleActionRewriteConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionRewriteConfigOutput) ToRuleRuleActionRewriteConfigOutputWithContext(ctx context.Context) RuleRuleActionRewriteConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionRewriteConfigOutput) ToRuleRuleActionRewriteConfigPtrOutput() RuleRuleActionRewriteConfigPtrOutput {
+	return o.ToRuleRuleActionRewriteConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleActionRewriteConfigOutput) ToRuleRuleActionRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRewriteConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleActionRewriteConfig) *RuleRuleActionRewriteConfig {
+		return &v
+	}).(RuleRuleActionRewriteConfigPtrOutput)
+}
+
+// 重写路径。
+func (o RuleRuleActionRewriteConfigOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionRewriteConfig) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleActionRewriteConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionRewriteConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionRewriteConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionRewriteConfigPtrOutput) ToRuleRuleActionRewriteConfigPtrOutput() RuleRuleActionRewriteConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionRewriteConfigPtrOutput) ToRuleRuleActionRewriteConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionRewriteConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionRewriteConfigPtrOutput) Elem() RuleRuleActionRewriteConfigOutput {
+	return o.ApplyT(func(v *RuleRuleActionRewriteConfig) RuleRuleActionRewriteConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleActionRewriteConfig
+		return ret
+	}).(RuleRuleActionRewriteConfigOutput)
+}
+
+// 重写路径。
+func (o RuleRuleActionRewriteConfigPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionRewriteConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleActionTrafficLimitConfig struct {
+	// 每秒请求数。
+	Qps *int `pulumi:"qps"`
+}
+
+// RuleRuleActionTrafficLimitConfigInput is an input type that accepts RuleRuleActionTrafficLimitConfigArgs and RuleRuleActionTrafficLimitConfigOutput values.
+// You can construct a concrete instance of `RuleRuleActionTrafficLimitConfigInput` via:
+//
+//	RuleRuleActionTrafficLimitConfigArgs{...}
+type RuleRuleActionTrafficLimitConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionTrafficLimitConfigOutput() RuleRuleActionTrafficLimitConfigOutput
+	ToRuleRuleActionTrafficLimitConfigOutputWithContext(context.Context) RuleRuleActionTrafficLimitConfigOutput
+}
+
+type RuleRuleActionTrafficLimitConfigArgs struct {
+	// 每秒请求数。
+	Qps pulumi.IntPtrInput `pulumi:"qps"`
+}
+
+func (RuleRuleActionTrafficLimitConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionTrafficLimitConfig)(nil)).Elem()
+}
+
+func (i RuleRuleActionTrafficLimitConfigArgs) ToRuleRuleActionTrafficLimitConfigOutput() RuleRuleActionTrafficLimitConfigOutput {
+	return i.ToRuleRuleActionTrafficLimitConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionTrafficLimitConfigArgs) ToRuleRuleActionTrafficLimitConfigOutputWithContext(ctx context.Context) RuleRuleActionTrafficLimitConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionTrafficLimitConfigOutput)
+}
+
+func (i RuleRuleActionTrafficLimitConfigArgs) ToRuleRuleActionTrafficLimitConfigPtrOutput() RuleRuleActionTrafficLimitConfigPtrOutput {
+	return i.ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleActionTrafficLimitConfigArgs) ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionTrafficLimitConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionTrafficLimitConfigOutput).ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleActionTrafficLimitConfigPtrInput is an input type that accepts RuleRuleActionTrafficLimitConfigArgs, RuleRuleActionTrafficLimitConfigPtr and RuleRuleActionTrafficLimitConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleActionTrafficLimitConfigPtrInput` via:
+//
+//	        RuleRuleActionTrafficLimitConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleActionTrafficLimitConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleActionTrafficLimitConfigPtrOutput() RuleRuleActionTrafficLimitConfigPtrOutput
+	ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(context.Context) RuleRuleActionTrafficLimitConfigPtrOutput
+}
+
+type ruleRuleActionTrafficLimitConfigPtrType RuleRuleActionTrafficLimitConfigArgs
+
+func RuleRuleActionTrafficLimitConfigPtr(v *RuleRuleActionTrafficLimitConfigArgs) RuleRuleActionTrafficLimitConfigPtrInput {
+	return (*ruleRuleActionTrafficLimitConfigPtrType)(v)
+}
+
+func (*ruleRuleActionTrafficLimitConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionTrafficLimitConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleActionTrafficLimitConfigPtrType) ToRuleRuleActionTrafficLimitConfigPtrOutput() RuleRuleActionTrafficLimitConfigPtrOutput {
+	return i.ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleActionTrafficLimitConfigPtrType) ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionTrafficLimitConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleActionTrafficLimitConfigPtrOutput)
+}
+
+type RuleRuleActionTrafficLimitConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionTrafficLimitConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleActionTrafficLimitConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionTrafficLimitConfigOutput) ToRuleRuleActionTrafficLimitConfigOutput() RuleRuleActionTrafficLimitConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionTrafficLimitConfigOutput) ToRuleRuleActionTrafficLimitConfigOutputWithContext(ctx context.Context) RuleRuleActionTrafficLimitConfigOutput {
+	return o
+}
+
+func (o RuleRuleActionTrafficLimitConfigOutput) ToRuleRuleActionTrafficLimitConfigPtrOutput() RuleRuleActionTrafficLimitConfigPtrOutput {
+	return o.ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleActionTrafficLimitConfigOutput) ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionTrafficLimitConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleActionTrafficLimitConfig) *RuleRuleActionTrafficLimitConfig {
+		return &v
+	}).(RuleRuleActionTrafficLimitConfigPtrOutput)
+}
+
+// 每秒请求数。
+func (o RuleRuleActionTrafficLimitConfigOutput) Qps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleRuleActionTrafficLimitConfig) *int { return v.Qps }).(pulumi.IntPtrOutput)
+}
+
+type RuleRuleActionTrafficLimitConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleActionTrafficLimitConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleActionTrafficLimitConfig)(nil)).Elem()
+}
+
+func (o RuleRuleActionTrafficLimitConfigPtrOutput) ToRuleRuleActionTrafficLimitConfigPtrOutput() RuleRuleActionTrafficLimitConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionTrafficLimitConfigPtrOutput) ToRuleRuleActionTrafficLimitConfigPtrOutputWithContext(ctx context.Context) RuleRuleActionTrafficLimitConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleActionTrafficLimitConfigPtrOutput) Elem() RuleRuleActionTrafficLimitConfigOutput {
+	return o.ApplyT(func(v *RuleRuleActionTrafficLimitConfig) RuleRuleActionTrafficLimitConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleActionTrafficLimitConfig
+		return ret
+	}).(RuleRuleActionTrafficLimitConfigOutput)
+}
+
+// 每秒请求数。
+func (o RuleRuleActionTrafficLimitConfigPtrOutput) Qps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleRuleActionTrafficLimitConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Qps
+	}).(pulumi.IntPtrOutput)
+}
+
+type RuleRuleCondition struct {
+	// HeaderConfig。
+	HeaderConfig *RuleRuleConditionHeaderConfig `pulumi:"headerConfig"`
+	// HostConfig。
+	HostConfig *RuleRuleConditionHostConfig `pulumi:"hostConfig"`
+	// MethodConfig。
+	MethodConfig *RuleRuleConditionMethodConfig `pulumi:"methodConfig"`
+	// PathConfig。
+	PathConfig *RuleRuleConditionPathConfig `pulumi:"pathConfig"`
+	// QueryStringConfig。
+	QueryStringConfig *RuleRuleConditionQueryStringConfig `pulumi:"queryStringConfig"`
+	// 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+	Type *string `pulumi:"type"`
+}
+
+// RuleRuleConditionInput is an input type that accepts RuleRuleConditionArgs and RuleRuleConditionOutput values.
+// You can construct a concrete instance of `RuleRuleConditionInput` via:
+//
+//	RuleRuleConditionArgs{...}
+type RuleRuleConditionInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionOutput() RuleRuleConditionOutput
+	ToRuleRuleConditionOutputWithContext(context.Context) RuleRuleConditionOutput
+}
+
+type RuleRuleConditionArgs struct {
+	// HeaderConfig。
+	HeaderConfig RuleRuleConditionHeaderConfigPtrInput `pulumi:"headerConfig"`
+	// HostConfig。
+	HostConfig RuleRuleConditionHostConfigPtrInput `pulumi:"hostConfig"`
+	// MethodConfig。
+	MethodConfig RuleRuleConditionMethodConfigPtrInput `pulumi:"methodConfig"`
+	// PathConfig。
+	PathConfig RuleRuleConditionPathConfigPtrInput `pulumi:"pathConfig"`
+	// QueryStringConfig。
+	QueryStringConfig RuleRuleConditionQueryStringConfigPtrInput `pulumi:"queryStringConfig"`
+	// 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (RuleRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleCondition)(nil)).Elem()
+}
+
+func (i RuleRuleConditionArgs) ToRuleRuleConditionOutput() RuleRuleConditionOutput {
+	return i.ToRuleRuleConditionOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionArgs) ToRuleRuleConditionOutputWithContext(ctx context.Context) RuleRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionOutput)
+}
+
+// RuleRuleConditionArrayInput is an input type that accepts RuleRuleConditionArray and RuleRuleConditionArrayOutput values.
+// You can construct a concrete instance of `RuleRuleConditionArrayInput` via:
+//
+//	RuleRuleConditionArray{ RuleRuleConditionArgs{...} }
+type RuleRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionArrayOutput() RuleRuleConditionArrayOutput
+	ToRuleRuleConditionArrayOutputWithContext(context.Context) RuleRuleConditionArrayOutput
+}
+
+type RuleRuleConditionArray []RuleRuleConditionInput
+
+func (RuleRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleCondition)(nil)).Elem()
+}
+
+func (i RuleRuleConditionArray) ToRuleRuleConditionArrayOutput() RuleRuleConditionArrayOutput {
+	return i.ToRuleRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionArray) ToRuleRuleConditionArrayOutputWithContext(ctx context.Context) RuleRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionArrayOutput)
+}
+
+type RuleRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleCondition)(nil)).Elem()
+}
+
+func (o RuleRuleConditionOutput) ToRuleRuleConditionOutput() RuleRuleConditionOutput {
+	return o
+}
+
+func (o RuleRuleConditionOutput) ToRuleRuleConditionOutputWithContext(ctx context.Context) RuleRuleConditionOutput {
+	return o
+}
+
+// HeaderConfig。
+func (o RuleRuleConditionOutput) HeaderConfig() RuleRuleConditionHeaderConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleCondition) *RuleRuleConditionHeaderConfig { return v.HeaderConfig }).(RuleRuleConditionHeaderConfigPtrOutput)
+}
+
+// HostConfig。
+func (o RuleRuleConditionOutput) HostConfig() RuleRuleConditionHostConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleCondition) *RuleRuleConditionHostConfig { return v.HostConfig }).(RuleRuleConditionHostConfigPtrOutput)
+}
+
+// MethodConfig。
+func (o RuleRuleConditionOutput) MethodConfig() RuleRuleConditionMethodConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleCondition) *RuleRuleConditionMethodConfig { return v.MethodConfig }).(RuleRuleConditionMethodConfigPtrOutput)
+}
+
+// PathConfig。
+func (o RuleRuleConditionOutput) PathConfig() RuleRuleConditionPathConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleCondition) *RuleRuleConditionPathConfig { return v.PathConfig }).(RuleRuleConditionPathConfigPtrOutput)
+}
+
+// QueryStringConfig。
+func (o RuleRuleConditionOutput) QueryStringConfig() RuleRuleConditionQueryStringConfigPtrOutput {
+	return o.ApplyT(func(v RuleRuleCondition) *RuleRuleConditionQueryStringConfig { return v.QueryStringConfig }).(RuleRuleConditionQueryStringConfigPtrOutput)
+}
+
+// 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+func (o RuleRuleConditionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleCondition)(nil)).Elem()
+}
+
+func (o RuleRuleConditionArrayOutput) ToRuleRuleConditionArrayOutput() RuleRuleConditionArrayOutput {
+	return o
+}
+
+func (o RuleRuleConditionArrayOutput) ToRuleRuleConditionArrayOutputWithContext(ctx context.Context) RuleRuleConditionArrayOutput {
+	return o
+}
+
+func (o RuleRuleConditionArrayOutput) Index(i pulumi.IntInput) RuleRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleRuleCondition {
+		return vs[0].([]RuleRuleCondition)[vs[1].(int)]
+	}).(RuleRuleConditionOutput)
+}
+
+type RuleRuleConditionHeaderConfig struct {
+	// 头字段键。
+	Key *string `pulumi:"key"`
+	// 头字段值。
+	Values []string `pulumi:"values"`
+}
+
+// RuleRuleConditionHeaderConfigInput is an input type that accepts RuleRuleConditionHeaderConfigArgs and RuleRuleConditionHeaderConfigOutput values.
+// You can construct a concrete instance of `RuleRuleConditionHeaderConfigInput` via:
+//
+//	RuleRuleConditionHeaderConfigArgs{...}
+type RuleRuleConditionHeaderConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionHeaderConfigOutput() RuleRuleConditionHeaderConfigOutput
+	ToRuleRuleConditionHeaderConfigOutputWithContext(context.Context) RuleRuleConditionHeaderConfigOutput
+}
+
+type RuleRuleConditionHeaderConfigArgs struct {
+	// 头字段键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 头字段值。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (RuleRuleConditionHeaderConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionHeaderConfig)(nil)).Elem()
+}
+
+func (i RuleRuleConditionHeaderConfigArgs) ToRuleRuleConditionHeaderConfigOutput() RuleRuleConditionHeaderConfigOutput {
+	return i.ToRuleRuleConditionHeaderConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionHeaderConfigArgs) ToRuleRuleConditionHeaderConfigOutputWithContext(ctx context.Context) RuleRuleConditionHeaderConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionHeaderConfigOutput)
+}
+
+func (i RuleRuleConditionHeaderConfigArgs) ToRuleRuleConditionHeaderConfigPtrOutput() RuleRuleConditionHeaderConfigPtrOutput {
+	return i.ToRuleRuleConditionHeaderConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionHeaderConfigArgs) ToRuleRuleConditionHeaderConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHeaderConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionHeaderConfigOutput).ToRuleRuleConditionHeaderConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleConditionHeaderConfigPtrInput is an input type that accepts RuleRuleConditionHeaderConfigArgs, RuleRuleConditionHeaderConfigPtr and RuleRuleConditionHeaderConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleConditionHeaderConfigPtrInput` via:
+//
+//	        RuleRuleConditionHeaderConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleConditionHeaderConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionHeaderConfigPtrOutput() RuleRuleConditionHeaderConfigPtrOutput
+	ToRuleRuleConditionHeaderConfigPtrOutputWithContext(context.Context) RuleRuleConditionHeaderConfigPtrOutput
+}
+
+type ruleRuleConditionHeaderConfigPtrType RuleRuleConditionHeaderConfigArgs
+
+func RuleRuleConditionHeaderConfigPtr(v *RuleRuleConditionHeaderConfigArgs) RuleRuleConditionHeaderConfigPtrInput {
+	return (*ruleRuleConditionHeaderConfigPtrType)(v)
+}
+
+func (*ruleRuleConditionHeaderConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionHeaderConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleConditionHeaderConfigPtrType) ToRuleRuleConditionHeaderConfigPtrOutput() RuleRuleConditionHeaderConfigPtrOutput {
+	return i.ToRuleRuleConditionHeaderConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleConditionHeaderConfigPtrType) ToRuleRuleConditionHeaderConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHeaderConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionHeaderConfigPtrOutput)
+}
+
+type RuleRuleConditionHeaderConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionHeaderConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionHeaderConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionHeaderConfigOutput) ToRuleRuleConditionHeaderConfigOutput() RuleRuleConditionHeaderConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionHeaderConfigOutput) ToRuleRuleConditionHeaderConfigOutputWithContext(ctx context.Context) RuleRuleConditionHeaderConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionHeaderConfigOutput) ToRuleRuleConditionHeaderConfigPtrOutput() RuleRuleConditionHeaderConfigPtrOutput {
+	return o.ToRuleRuleConditionHeaderConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleConditionHeaderConfigOutput) ToRuleRuleConditionHeaderConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHeaderConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleConditionHeaderConfig) *RuleRuleConditionHeaderConfig {
+		return &v
+	}).(RuleRuleConditionHeaderConfigPtrOutput)
+}
+
+// 头字段键。
+func (o RuleRuleConditionHeaderConfigOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleConditionHeaderConfig) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 头字段值。
+func (o RuleRuleConditionHeaderConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleRuleConditionHeaderConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionHeaderConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionHeaderConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionHeaderConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionHeaderConfigPtrOutput) ToRuleRuleConditionHeaderConfigPtrOutput() RuleRuleConditionHeaderConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionHeaderConfigPtrOutput) ToRuleRuleConditionHeaderConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHeaderConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionHeaderConfigPtrOutput) Elem() RuleRuleConditionHeaderConfigOutput {
+	return o.ApplyT(func(v *RuleRuleConditionHeaderConfig) RuleRuleConditionHeaderConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleConditionHeaderConfig
+		return ret
+	}).(RuleRuleConditionHeaderConfigOutput)
+}
+
+// 头字段键。
+func (o RuleRuleConditionHeaderConfigPtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleRuleConditionHeaderConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// 头字段值。
+func (o RuleRuleConditionHeaderConfigPtrOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleRuleConditionHeaderConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionHostConfig struct {
+	// 转发规则的域名，支持泛域名和精确域名。
+	Values []string `pulumi:"values"`
+}
+
+// RuleRuleConditionHostConfigInput is an input type that accepts RuleRuleConditionHostConfigArgs and RuleRuleConditionHostConfigOutput values.
+// You can construct a concrete instance of `RuleRuleConditionHostConfigInput` via:
+//
+//	RuleRuleConditionHostConfigArgs{...}
+type RuleRuleConditionHostConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionHostConfigOutput() RuleRuleConditionHostConfigOutput
+	ToRuleRuleConditionHostConfigOutputWithContext(context.Context) RuleRuleConditionHostConfigOutput
+}
+
+type RuleRuleConditionHostConfigArgs struct {
+	// 转发规则的域名，支持泛域名和精确域名。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (RuleRuleConditionHostConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionHostConfig)(nil)).Elem()
+}
+
+func (i RuleRuleConditionHostConfigArgs) ToRuleRuleConditionHostConfigOutput() RuleRuleConditionHostConfigOutput {
+	return i.ToRuleRuleConditionHostConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionHostConfigArgs) ToRuleRuleConditionHostConfigOutputWithContext(ctx context.Context) RuleRuleConditionHostConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionHostConfigOutput)
+}
+
+func (i RuleRuleConditionHostConfigArgs) ToRuleRuleConditionHostConfigPtrOutput() RuleRuleConditionHostConfigPtrOutput {
+	return i.ToRuleRuleConditionHostConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionHostConfigArgs) ToRuleRuleConditionHostConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHostConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionHostConfigOutput).ToRuleRuleConditionHostConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleConditionHostConfigPtrInput is an input type that accepts RuleRuleConditionHostConfigArgs, RuleRuleConditionHostConfigPtr and RuleRuleConditionHostConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleConditionHostConfigPtrInput` via:
+//
+//	        RuleRuleConditionHostConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleConditionHostConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionHostConfigPtrOutput() RuleRuleConditionHostConfigPtrOutput
+	ToRuleRuleConditionHostConfigPtrOutputWithContext(context.Context) RuleRuleConditionHostConfigPtrOutput
+}
+
+type ruleRuleConditionHostConfigPtrType RuleRuleConditionHostConfigArgs
+
+func RuleRuleConditionHostConfigPtr(v *RuleRuleConditionHostConfigArgs) RuleRuleConditionHostConfigPtrInput {
+	return (*ruleRuleConditionHostConfigPtrType)(v)
+}
+
+func (*ruleRuleConditionHostConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionHostConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleConditionHostConfigPtrType) ToRuleRuleConditionHostConfigPtrOutput() RuleRuleConditionHostConfigPtrOutput {
+	return i.ToRuleRuleConditionHostConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleConditionHostConfigPtrType) ToRuleRuleConditionHostConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHostConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionHostConfigPtrOutput)
+}
+
+type RuleRuleConditionHostConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionHostConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionHostConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionHostConfigOutput) ToRuleRuleConditionHostConfigOutput() RuleRuleConditionHostConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionHostConfigOutput) ToRuleRuleConditionHostConfigOutputWithContext(ctx context.Context) RuleRuleConditionHostConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionHostConfigOutput) ToRuleRuleConditionHostConfigPtrOutput() RuleRuleConditionHostConfigPtrOutput {
+	return o.ToRuleRuleConditionHostConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleConditionHostConfigOutput) ToRuleRuleConditionHostConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHostConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleConditionHostConfig) *RuleRuleConditionHostConfig {
+		return &v
+	}).(RuleRuleConditionHostConfigPtrOutput)
+}
+
+// 转发规则的域名，支持泛域名和精确域名。
+func (o RuleRuleConditionHostConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleRuleConditionHostConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionHostConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionHostConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionHostConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionHostConfigPtrOutput) ToRuleRuleConditionHostConfigPtrOutput() RuleRuleConditionHostConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionHostConfigPtrOutput) ToRuleRuleConditionHostConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionHostConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionHostConfigPtrOutput) Elem() RuleRuleConditionHostConfigOutput {
+	return o.ApplyT(func(v *RuleRuleConditionHostConfig) RuleRuleConditionHostConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleConditionHostConfig
+		return ret
+	}).(RuleRuleConditionHostConfigOutput)
+}
+
+// 转发规则的域名，支持泛域名和精确域名。
+func (o RuleRuleConditionHostConfigPtrOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleRuleConditionHostConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionMethodConfig struct {
+	// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+	Values []string `pulumi:"values"`
+}
+
+// RuleRuleConditionMethodConfigInput is an input type that accepts RuleRuleConditionMethodConfigArgs and RuleRuleConditionMethodConfigOutput values.
+// You can construct a concrete instance of `RuleRuleConditionMethodConfigInput` via:
+//
+//	RuleRuleConditionMethodConfigArgs{...}
+type RuleRuleConditionMethodConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionMethodConfigOutput() RuleRuleConditionMethodConfigOutput
+	ToRuleRuleConditionMethodConfigOutputWithContext(context.Context) RuleRuleConditionMethodConfigOutput
+}
+
+type RuleRuleConditionMethodConfigArgs struct {
+	// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (RuleRuleConditionMethodConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionMethodConfig)(nil)).Elem()
+}
+
+func (i RuleRuleConditionMethodConfigArgs) ToRuleRuleConditionMethodConfigOutput() RuleRuleConditionMethodConfigOutput {
+	return i.ToRuleRuleConditionMethodConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionMethodConfigArgs) ToRuleRuleConditionMethodConfigOutputWithContext(ctx context.Context) RuleRuleConditionMethodConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionMethodConfigOutput)
+}
+
+func (i RuleRuleConditionMethodConfigArgs) ToRuleRuleConditionMethodConfigPtrOutput() RuleRuleConditionMethodConfigPtrOutput {
+	return i.ToRuleRuleConditionMethodConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionMethodConfigArgs) ToRuleRuleConditionMethodConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionMethodConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionMethodConfigOutput).ToRuleRuleConditionMethodConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleConditionMethodConfigPtrInput is an input type that accepts RuleRuleConditionMethodConfigArgs, RuleRuleConditionMethodConfigPtr and RuleRuleConditionMethodConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleConditionMethodConfigPtrInput` via:
+//
+//	        RuleRuleConditionMethodConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleConditionMethodConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionMethodConfigPtrOutput() RuleRuleConditionMethodConfigPtrOutput
+	ToRuleRuleConditionMethodConfigPtrOutputWithContext(context.Context) RuleRuleConditionMethodConfigPtrOutput
+}
+
+type ruleRuleConditionMethodConfigPtrType RuleRuleConditionMethodConfigArgs
+
+func RuleRuleConditionMethodConfigPtr(v *RuleRuleConditionMethodConfigArgs) RuleRuleConditionMethodConfigPtrInput {
+	return (*ruleRuleConditionMethodConfigPtrType)(v)
+}
+
+func (*ruleRuleConditionMethodConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionMethodConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleConditionMethodConfigPtrType) ToRuleRuleConditionMethodConfigPtrOutput() RuleRuleConditionMethodConfigPtrOutput {
+	return i.ToRuleRuleConditionMethodConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleConditionMethodConfigPtrType) ToRuleRuleConditionMethodConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionMethodConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionMethodConfigPtrOutput)
+}
+
+type RuleRuleConditionMethodConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionMethodConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionMethodConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionMethodConfigOutput) ToRuleRuleConditionMethodConfigOutput() RuleRuleConditionMethodConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionMethodConfigOutput) ToRuleRuleConditionMethodConfigOutputWithContext(ctx context.Context) RuleRuleConditionMethodConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionMethodConfigOutput) ToRuleRuleConditionMethodConfigPtrOutput() RuleRuleConditionMethodConfigPtrOutput {
+	return o.ToRuleRuleConditionMethodConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleConditionMethodConfigOutput) ToRuleRuleConditionMethodConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionMethodConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleConditionMethodConfig) *RuleRuleConditionMethodConfig {
+		return &v
+	}).(RuleRuleConditionMethodConfigPtrOutput)
+}
+
+// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+func (o RuleRuleConditionMethodConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleRuleConditionMethodConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionMethodConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionMethodConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionMethodConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionMethodConfigPtrOutput) ToRuleRuleConditionMethodConfigPtrOutput() RuleRuleConditionMethodConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionMethodConfigPtrOutput) ToRuleRuleConditionMethodConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionMethodConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionMethodConfigPtrOutput) Elem() RuleRuleConditionMethodConfigOutput {
+	return o.ApplyT(func(v *RuleRuleConditionMethodConfig) RuleRuleConditionMethodConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleConditionMethodConfig
+		return ret
+	}).(RuleRuleConditionMethodConfigOutput)
+}
+
+// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+func (o RuleRuleConditionMethodConfigPtrOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleRuleConditionMethodConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionPathConfig struct {
+	// 转发规则的URL，仅支持绝对路径。
+	Values []string `pulumi:"values"`
+}
+
+// RuleRuleConditionPathConfigInput is an input type that accepts RuleRuleConditionPathConfigArgs and RuleRuleConditionPathConfigOutput values.
+// You can construct a concrete instance of `RuleRuleConditionPathConfigInput` via:
+//
+//	RuleRuleConditionPathConfigArgs{...}
+type RuleRuleConditionPathConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionPathConfigOutput() RuleRuleConditionPathConfigOutput
+	ToRuleRuleConditionPathConfigOutputWithContext(context.Context) RuleRuleConditionPathConfigOutput
+}
+
+type RuleRuleConditionPathConfigArgs struct {
+	// 转发规则的URL，仅支持绝对路径。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (RuleRuleConditionPathConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionPathConfig)(nil)).Elem()
+}
+
+func (i RuleRuleConditionPathConfigArgs) ToRuleRuleConditionPathConfigOutput() RuleRuleConditionPathConfigOutput {
+	return i.ToRuleRuleConditionPathConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionPathConfigArgs) ToRuleRuleConditionPathConfigOutputWithContext(ctx context.Context) RuleRuleConditionPathConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionPathConfigOutput)
+}
+
+func (i RuleRuleConditionPathConfigArgs) ToRuleRuleConditionPathConfigPtrOutput() RuleRuleConditionPathConfigPtrOutput {
+	return i.ToRuleRuleConditionPathConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionPathConfigArgs) ToRuleRuleConditionPathConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionPathConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionPathConfigOutput).ToRuleRuleConditionPathConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleConditionPathConfigPtrInput is an input type that accepts RuleRuleConditionPathConfigArgs, RuleRuleConditionPathConfigPtr and RuleRuleConditionPathConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleConditionPathConfigPtrInput` via:
+//
+//	        RuleRuleConditionPathConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleConditionPathConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionPathConfigPtrOutput() RuleRuleConditionPathConfigPtrOutput
+	ToRuleRuleConditionPathConfigPtrOutputWithContext(context.Context) RuleRuleConditionPathConfigPtrOutput
+}
+
+type ruleRuleConditionPathConfigPtrType RuleRuleConditionPathConfigArgs
+
+func RuleRuleConditionPathConfigPtr(v *RuleRuleConditionPathConfigArgs) RuleRuleConditionPathConfigPtrInput {
+	return (*ruleRuleConditionPathConfigPtrType)(v)
+}
+
+func (*ruleRuleConditionPathConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionPathConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleConditionPathConfigPtrType) ToRuleRuleConditionPathConfigPtrOutput() RuleRuleConditionPathConfigPtrOutput {
+	return i.ToRuleRuleConditionPathConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleConditionPathConfigPtrType) ToRuleRuleConditionPathConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionPathConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionPathConfigPtrOutput)
+}
+
+type RuleRuleConditionPathConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionPathConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionPathConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionPathConfigOutput) ToRuleRuleConditionPathConfigOutput() RuleRuleConditionPathConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionPathConfigOutput) ToRuleRuleConditionPathConfigOutputWithContext(ctx context.Context) RuleRuleConditionPathConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionPathConfigOutput) ToRuleRuleConditionPathConfigPtrOutput() RuleRuleConditionPathConfigPtrOutput {
+	return o.ToRuleRuleConditionPathConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleConditionPathConfigOutput) ToRuleRuleConditionPathConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionPathConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleConditionPathConfig) *RuleRuleConditionPathConfig {
+		return &v
+	}).(RuleRuleConditionPathConfigPtrOutput)
+}
+
+// 转发规则的URL，仅支持绝对路径。
+func (o RuleRuleConditionPathConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleRuleConditionPathConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionPathConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionPathConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionPathConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionPathConfigPtrOutput) ToRuleRuleConditionPathConfigPtrOutput() RuleRuleConditionPathConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionPathConfigPtrOutput) ToRuleRuleConditionPathConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionPathConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionPathConfigPtrOutput) Elem() RuleRuleConditionPathConfigOutput {
+	return o.ApplyT(func(v *RuleRuleConditionPathConfig) RuleRuleConditionPathConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleConditionPathConfig
+		return ret
+	}).(RuleRuleConditionPathConfigOutput)
+}
+
+// 转发规则的URL，仅支持绝对路径。
+func (o RuleRuleConditionPathConfigPtrOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleRuleConditionPathConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleRuleConditionQueryStringConfig struct {
+	Values []RuleRuleConditionQueryStringConfigValue `pulumi:"values"`
+}
+
+// RuleRuleConditionQueryStringConfigInput is an input type that accepts RuleRuleConditionQueryStringConfigArgs and RuleRuleConditionQueryStringConfigOutput values.
+// You can construct a concrete instance of `RuleRuleConditionQueryStringConfigInput` via:
+//
+//	RuleRuleConditionQueryStringConfigArgs{...}
+type RuleRuleConditionQueryStringConfigInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionQueryStringConfigOutput() RuleRuleConditionQueryStringConfigOutput
+	ToRuleRuleConditionQueryStringConfigOutputWithContext(context.Context) RuleRuleConditionQueryStringConfigOutput
+}
+
+type RuleRuleConditionQueryStringConfigArgs struct {
+	Values RuleRuleConditionQueryStringConfigValueArrayInput `pulumi:"values"`
+}
+
+func (RuleRuleConditionQueryStringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionQueryStringConfig)(nil)).Elem()
+}
+
+func (i RuleRuleConditionQueryStringConfigArgs) ToRuleRuleConditionQueryStringConfigOutput() RuleRuleConditionQueryStringConfigOutput {
+	return i.ToRuleRuleConditionQueryStringConfigOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionQueryStringConfigArgs) ToRuleRuleConditionQueryStringConfigOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionQueryStringConfigOutput)
+}
+
+func (i RuleRuleConditionQueryStringConfigArgs) ToRuleRuleConditionQueryStringConfigPtrOutput() RuleRuleConditionQueryStringConfigPtrOutput {
+	return i.ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionQueryStringConfigArgs) ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionQueryStringConfigOutput).ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(ctx)
+}
+
+// RuleRuleConditionQueryStringConfigPtrInput is an input type that accepts RuleRuleConditionQueryStringConfigArgs, RuleRuleConditionQueryStringConfigPtr and RuleRuleConditionQueryStringConfigPtrOutput values.
+// You can construct a concrete instance of `RuleRuleConditionQueryStringConfigPtrInput` via:
+//
+//	        RuleRuleConditionQueryStringConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleRuleConditionQueryStringConfigPtrInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionQueryStringConfigPtrOutput() RuleRuleConditionQueryStringConfigPtrOutput
+	ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(context.Context) RuleRuleConditionQueryStringConfigPtrOutput
+}
+
+type ruleRuleConditionQueryStringConfigPtrType RuleRuleConditionQueryStringConfigArgs
+
+func RuleRuleConditionQueryStringConfigPtr(v *RuleRuleConditionQueryStringConfigArgs) RuleRuleConditionQueryStringConfigPtrInput {
+	return (*ruleRuleConditionQueryStringConfigPtrType)(v)
+}
+
+func (*ruleRuleConditionQueryStringConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionQueryStringConfig)(nil)).Elem()
+}
+
+func (i *ruleRuleConditionQueryStringConfigPtrType) ToRuleRuleConditionQueryStringConfigPtrOutput() RuleRuleConditionQueryStringConfigPtrOutput {
+	return i.ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleRuleConditionQueryStringConfigPtrType) ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionQueryStringConfigPtrOutput)
+}
+
+type RuleRuleConditionQueryStringConfigOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionQueryStringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionQueryStringConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionQueryStringConfigOutput) ToRuleRuleConditionQueryStringConfigOutput() RuleRuleConditionQueryStringConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionQueryStringConfigOutput) ToRuleRuleConditionQueryStringConfigOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigOutput {
+	return o
+}
+
+func (o RuleRuleConditionQueryStringConfigOutput) ToRuleRuleConditionQueryStringConfigPtrOutput() RuleRuleConditionQueryStringConfigPtrOutput {
+	return o.ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(context.Background())
+}
+
+func (o RuleRuleConditionQueryStringConfigOutput) ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleRuleConditionQueryStringConfig) *RuleRuleConditionQueryStringConfig {
+		return &v
+	}).(RuleRuleConditionQueryStringConfigPtrOutput)
+}
+
+func (o RuleRuleConditionQueryStringConfigOutput) Values() RuleRuleConditionQueryStringConfigValueArrayOutput {
+	return o.ApplyT(func(v RuleRuleConditionQueryStringConfig) []RuleRuleConditionQueryStringConfigValue { return v.Values }).(RuleRuleConditionQueryStringConfigValueArrayOutput)
+}
+
+type RuleRuleConditionQueryStringConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionQueryStringConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleRuleConditionQueryStringConfig)(nil)).Elem()
+}
+
+func (o RuleRuleConditionQueryStringConfigPtrOutput) ToRuleRuleConditionQueryStringConfigPtrOutput() RuleRuleConditionQueryStringConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionQueryStringConfigPtrOutput) ToRuleRuleConditionQueryStringConfigPtrOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigPtrOutput {
+	return o
+}
+
+func (o RuleRuleConditionQueryStringConfigPtrOutput) Elem() RuleRuleConditionQueryStringConfigOutput {
+	return o.ApplyT(func(v *RuleRuleConditionQueryStringConfig) RuleRuleConditionQueryStringConfig {
+		if v != nil {
+			return *v
+		}
+		var ret RuleRuleConditionQueryStringConfig
+		return ret
+	}).(RuleRuleConditionQueryStringConfigOutput)
+}
+
+func (o RuleRuleConditionQueryStringConfigPtrOutput) Values() RuleRuleConditionQueryStringConfigValueArrayOutput {
+	return o.ApplyT(func(v *RuleRuleConditionQueryStringConfig) []RuleRuleConditionQueryStringConfigValue {
+		if v == nil {
+			return nil
+		}
+		return v.Values
+	}).(RuleRuleConditionQueryStringConfigValueArrayOutput)
+}
+
+type RuleRuleConditionQueryStringConfigValue struct {
+	// 查询字符串键。
+	Key *string `pulumi:"key"`
+	// 查询字符串值。
+	Value *string `pulumi:"value"`
+}
+
+// RuleRuleConditionQueryStringConfigValueInput is an input type that accepts RuleRuleConditionQueryStringConfigValueArgs and RuleRuleConditionQueryStringConfigValueOutput values.
+// You can construct a concrete instance of `RuleRuleConditionQueryStringConfigValueInput` via:
+//
+//	RuleRuleConditionQueryStringConfigValueArgs{...}
+type RuleRuleConditionQueryStringConfigValueInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionQueryStringConfigValueOutput() RuleRuleConditionQueryStringConfigValueOutput
+	ToRuleRuleConditionQueryStringConfigValueOutputWithContext(context.Context) RuleRuleConditionQueryStringConfigValueOutput
+}
+
+type RuleRuleConditionQueryStringConfigValueArgs struct {
+	// 查询字符串键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 查询字符串值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (RuleRuleConditionQueryStringConfigValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (i RuleRuleConditionQueryStringConfigValueArgs) ToRuleRuleConditionQueryStringConfigValueOutput() RuleRuleConditionQueryStringConfigValueOutput {
+	return i.ToRuleRuleConditionQueryStringConfigValueOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionQueryStringConfigValueArgs) ToRuleRuleConditionQueryStringConfigValueOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionQueryStringConfigValueOutput)
+}
+
+// RuleRuleConditionQueryStringConfigValueArrayInput is an input type that accepts RuleRuleConditionQueryStringConfigValueArray and RuleRuleConditionQueryStringConfigValueArrayOutput values.
+// You can construct a concrete instance of `RuleRuleConditionQueryStringConfigValueArrayInput` via:
+//
+//	RuleRuleConditionQueryStringConfigValueArray{ RuleRuleConditionQueryStringConfigValueArgs{...} }
+type RuleRuleConditionQueryStringConfigValueArrayInput interface {
+	pulumi.Input
+
+	ToRuleRuleConditionQueryStringConfigValueArrayOutput() RuleRuleConditionQueryStringConfigValueArrayOutput
+	ToRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(context.Context) RuleRuleConditionQueryStringConfigValueArrayOutput
+}
+
+type RuleRuleConditionQueryStringConfigValueArray []RuleRuleConditionQueryStringConfigValueInput
+
+func (RuleRuleConditionQueryStringConfigValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (i RuleRuleConditionQueryStringConfigValueArray) ToRuleRuleConditionQueryStringConfigValueArrayOutput() RuleRuleConditionQueryStringConfigValueArrayOutput {
+	return i.ToRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(context.Background())
+}
+
+func (i RuleRuleConditionQueryStringConfigValueArray) ToRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleRuleConditionQueryStringConfigValueArrayOutput)
+}
+
+type RuleRuleConditionQueryStringConfigValueOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionQueryStringConfigValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (o RuleRuleConditionQueryStringConfigValueOutput) ToRuleRuleConditionQueryStringConfigValueOutput() RuleRuleConditionQueryStringConfigValueOutput {
+	return o
+}
+
+func (o RuleRuleConditionQueryStringConfigValueOutput) ToRuleRuleConditionQueryStringConfigValueOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigValueOutput {
+	return o
+}
+
+// 查询字符串键。
+func (o RuleRuleConditionQueryStringConfigValueOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleConditionQueryStringConfigValue) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 查询字符串值。
+func (o RuleRuleConditionQueryStringConfigValueOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleRuleConditionQueryStringConfigValue) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type RuleRuleConditionQueryStringConfigValueArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleRuleConditionQueryStringConfigValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (o RuleRuleConditionQueryStringConfigValueArrayOutput) ToRuleRuleConditionQueryStringConfigValueArrayOutput() RuleRuleConditionQueryStringConfigValueArrayOutput {
+	return o
+}
+
+func (o RuleRuleConditionQueryStringConfigValueArrayOutput) ToRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(ctx context.Context) RuleRuleConditionQueryStringConfigValueArrayOutput {
+	return o
+}
+
+func (o RuleRuleConditionQueryStringConfigValueArrayOutput) Index(i pulumi.IntInput) RuleRuleConditionQueryStringConfigValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleRuleConditionQueryStringConfigValue {
+		return vs[0].([]RuleRuleConditionQueryStringConfigValue)[vs[1].(int)]
+	}).(RuleRuleConditionQueryStringConfigValueOutput)
+}
+
 type ServerGroupHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
 	Domain *string `pulumi:"domain"`
@@ -4826,6 +7623,1479 @@ func (o GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput) Isp() pulumi
 	return o.ApplyT(func(v GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip) string { return v.Isp }).(pulumi.StringOutput)
 }
 
+type GetRuleForwardGroupConfig struct {
+	// 转发到的目的服务器组列表。
+	ServerGroupTuples []GetRuleForwardGroupConfigServerGroupTuple `pulumi:"serverGroupTuples"`
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	StickySessionEnabled string `pulumi:"stickySessionEnabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	StickySessionTimeout int `pulumi:"stickySessionTimeout"`
+}
+
+// GetRuleForwardGroupConfigInput is an input type that accepts GetRuleForwardGroupConfigArgs and GetRuleForwardGroupConfigOutput values.
+// You can construct a concrete instance of `GetRuleForwardGroupConfigInput` via:
+//
+//	GetRuleForwardGroupConfigArgs{...}
+type GetRuleForwardGroupConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleForwardGroupConfigOutput() GetRuleForwardGroupConfigOutput
+	ToGetRuleForwardGroupConfigOutputWithContext(context.Context) GetRuleForwardGroupConfigOutput
+}
+
+type GetRuleForwardGroupConfigArgs struct {
+	// 转发到的目的服务器组列表。
+	ServerGroupTuples GetRuleForwardGroupConfigServerGroupTupleArrayInput `pulumi:"serverGroupTuples"`
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	StickySessionEnabled pulumi.StringInput `pulumi:"stickySessionEnabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	StickySessionTimeout pulumi.IntInput `pulumi:"stickySessionTimeout"`
+}
+
+func (GetRuleForwardGroupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleForwardGroupConfig)(nil)).Elem()
+}
+
+func (i GetRuleForwardGroupConfigArgs) ToGetRuleForwardGroupConfigOutput() GetRuleForwardGroupConfigOutput {
+	return i.ToGetRuleForwardGroupConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleForwardGroupConfigArgs) ToGetRuleForwardGroupConfigOutputWithContext(ctx context.Context) GetRuleForwardGroupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleForwardGroupConfigOutput)
+}
+
+type GetRuleForwardGroupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleForwardGroupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleForwardGroupConfig)(nil)).Elem()
+}
+
+func (o GetRuleForwardGroupConfigOutput) ToGetRuleForwardGroupConfigOutput() GetRuleForwardGroupConfigOutput {
+	return o
+}
+
+func (o GetRuleForwardGroupConfigOutput) ToGetRuleForwardGroupConfigOutputWithContext(ctx context.Context) GetRuleForwardGroupConfigOutput {
+	return o
+}
+
+// 转发到的目的服务器组列表。
+func (o GetRuleForwardGroupConfigOutput) ServerGroupTuples() GetRuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return o.ApplyT(func(v GetRuleForwardGroupConfig) []GetRuleForwardGroupConfigServerGroupTuple {
+		return v.ServerGroupTuples
+	}).(GetRuleForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+// 是否开启组间会话保持。on：开启。off：不开启。
+func (o GetRuleForwardGroupConfigOutput) StickySessionEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleForwardGroupConfig) string { return v.StickySessionEnabled }).(pulumi.StringOutput)
+}
+
+// 组件回话保持的超时时间。单位：秒。
+func (o GetRuleForwardGroupConfigOutput) StickySessionTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleForwardGroupConfig) int { return v.StickySessionTimeout }).(pulumi.IntOutput)
+}
+
+type GetRuleForwardGroupConfigServerGroupTuple struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId string `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight int `pulumi:"weight"`
+}
+
+// GetRuleForwardGroupConfigServerGroupTupleInput is an input type that accepts GetRuleForwardGroupConfigServerGroupTupleArgs and GetRuleForwardGroupConfigServerGroupTupleOutput values.
+// You can construct a concrete instance of `GetRuleForwardGroupConfigServerGroupTupleInput` via:
+//
+//	GetRuleForwardGroupConfigServerGroupTupleArgs{...}
+type GetRuleForwardGroupConfigServerGroupTupleInput interface {
+	pulumi.Input
+
+	ToGetRuleForwardGroupConfigServerGroupTupleOutput() GetRuleForwardGroupConfigServerGroupTupleOutput
+	ToGetRuleForwardGroupConfigServerGroupTupleOutputWithContext(context.Context) GetRuleForwardGroupConfigServerGroupTupleOutput
+}
+
+type GetRuleForwardGroupConfigServerGroupTupleArgs struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId pulumi.StringInput `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetRuleForwardGroupConfigServerGroupTupleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i GetRuleForwardGroupConfigServerGroupTupleArgs) ToGetRuleForwardGroupConfigServerGroupTupleOutput() GetRuleForwardGroupConfigServerGroupTupleOutput {
+	return i.ToGetRuleForwardGroupConfigServerGroupTupleOutputWithContext(context.Background())
+}
+
+func (i GetRuleForwardGroupConfigServerGroupTupleArgs) ToGetRuleForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) GetRuleForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleForwardGroupConfigServerGroupTupleOutput)
+}
+
+// GetRuleForwardGroupConfigServerGroupTupleArrayInput is an input type that accepts GetRuleForwardGroupConfigServerGroupTupleArray and GetRuleForwardGroupConfigServerGroupTupleArrayOutput values.
+// You can construct a concrete instance of `GetRuleForwardGroupConfigServerGroupTupleArrayInput` via:
+//
+//	GetRuleForwardGroupConfigServerGroupTupleArray{ GetRuleForwardGroupConfigServerGroupTupleArgs{...} }
+type GetRuleForwardGroupConfigServerGroupTupleArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleForwardGroupConfigServerGroupTupleArrayOutput() GetRuleForwardGroupConfigServerGroupTupleArrayOutput
+	ToGetRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Context) GetRuleForwardGroupConfigServerGroupTupleArrayOutput
+}
+
+type GetRuleForwardGroupConfigServerGroupTupleArray []GetRuleForwardGroupConfigServerGroupTupleInput
+
+func (GetRuleForwardGroupConfigServerGroupTupleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i GetRuleForwardGroupConfigServerGroupTupleArray) ToGetRuleForwardGroupConfigServerGroupTupleArrayOutput() GetRuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return i.ToGetRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleForwardGroupConfigServerGroupTupleArray) ToGetRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) GetRuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+type GetRuleForwardGroupConfigServerGroupTupleOutput struct{ *pulumi.OutputState }
+
+func (GetRuleForwardGroupConfigServerGroupTupleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o GetRuleForwardGroupConfigServerGroupTupleOutput) ToGetRuleForwardGroupConfigServerGroupTupleOutput() GetRuleForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+func (o GetRuleForwardGroupConfigServerGroupTupleOutput) ToGetRuleForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) GetRuleForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+// 转发到的目的服务器组 ID。
+func (o GetRuleForwardGroupConfigServerGroupTupleOutput) ServerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleForwardGroupConfigServerGroupTuple) string { return v.ServerGroupId }).(pulumi.StringOutput)
+}
+
+// 服务器组权重。
+func (o GetRuleForwardGroupConfigServerGroupTupleOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleForwardGroupConfigServerGroupTuple) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetRuleForwardGroupConfigServerGroupTupleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleForwardGroupConfigServerGroupTupleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o GetRuleForwardGroupConfigServerGroupTupleArrayOutput) ToGetRuleForwardGroupConfigServerGroupTupleArrayOutput() GetRuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o GetRuleForwardGroupConfigServerGroupTupleArrayOutput) ToGetRuleForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) GetRuleForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o GetRuleForwardGroupConfigServerGroupTupleArrayOutput) Index(i pulumi.IntInput) GetRuleForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleForwardGroupConfigServerGroupTuple {
+		return vs[0].([]GetRuleForwardGroupConfigServerGroupTuple)[vs[1].(int)]
+	}).(GetRuleForwardGroupConfigServerGroupTupleOutput)
+}
+
+type GetRuleRedirectConfig struct {
+	// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+	RedirectDomain string `pulumi:"redirectDomain"`
+	// 重定向状态码。301、302、307、308。
+	RedirectHttpCode string `pulumi:"redirectHttpCode"`
+	// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+	RedirectPort string `pulumi:"redirectPort"`
+	// 重定向使用的协议。HTTP、HTTPS。
+	RedirectProtocol string `pulumi:"redirectProtocol"`
+	// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+	RedirectUri string `pulumi:"redirectUri"`
+}
+
+// GetRuleRedirectConfigInput is an input type that accepts GetRuleRedirectConfigArgs and GetRuleRedirectConfigOutput values.
+// You can construct a concrete instance of `GetRuleRedirectConfigInput` via:
+//
+//	GetRuleRedirectConfigArgs{...}
+type GetRuleRedirectConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRedirectConfigOutput() GetRuleRedirectConfigOutput
+	ToGetRuleRedirectConfigOutputWithContext(context.Context) GetRuleRedirectConfigOutput
+}
+
+type GetRuleRedirectConfigArgs struct {
+	// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+	RedirectDomain pulumi.StringInput `pulumi:"redirectDomain"`
+	// 重定向状态码。301、302、307、308。
+	RedirectHttpCode pulumi.StringInput `pulumi:"redirectHttpCode"`
+	// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+	RedirectPort pulumi.StringInput `pulumi:"redirectPort"`
+	// 重定向使用的协议。HTTP、HTTPS。
+	RedirectProtocol pulumi.StringInput `pulumi:"redirectProtocol"`
+	// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+	RedirectUri pulumi.StringInput `pulumi:"redirectUri"`
+}
+
+func (GetRuleRedirectConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRedirectConfig)(nil)).Elem()
+}
+
+func (i GetRuleRedirectConfigArgs) ToGetRuleRedirectConfigOutput() GetRuleRedirectConfigOutput {
+	return i.ToGetRuleRedirectConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRedirectConfigArgs) ToGetRuleRedirectConfigOutputWithContext(ctx context.Context) GetRuleRedirectConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRedirectConfigOutput)
+}
+
+type GetRuleRedirectConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRedirectConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRedirectConfig)(nil)).Elem()
+}
+
+func (o GetRuleRedirectConfigOutput) ToGetRuleRedirectConfigOutput() GetRuleRedirectConfigOutput {
+	return o
+}
+
+func (o GetRuleRedirectConfigOutput) ToGetRuleRedirectConfigOutputWithContext(ctx context.Context) GetRuleRedirectConfigOutput {
+	return o
+}
+
+// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+func (o GetRuleRedirectConfigOutput) RedirectDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.RedirectDomain }).(pulumi.StringOutput)
+}
+
+// 重定向状态码。301、302、307、308。
+func (o GetRuleRedirectConfigOutput) RedirectHttpCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.RedirectHttpCode }).(pulumi.StringOutput)
+}
+
+// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+func (o GetRuleRedirectConfigOutput) RedirectPort() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.RedirectPort }).(pulumi.StringOutput)
+}
+
+// 重定向使用的协议。HTTP、HTTPS。
+func (o GetRuleRedirectConfigOutput) RedirectProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.RedirectProtocol }).(pulumi.StringOutput)
+}
+
+// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+func (o GetRuleRedirectConfigOutput) RedirectUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.RedirectUri }).(pulumi.StringOutput)
+}
+
+type GetRuleRewriteConfig struct {
+	// 重写路径。
+	RewritePath string `pulumi:"rewritePath"`
+}
+
+// GetRuleRewriteConfigInput is an input type that accepts GetRuleRewriteConfigArgs and GetRuleRewriteConfigOutput values.
+// You can construct a concrete instance of `GetRuleRewriteConfigInput` via:
+//
+//	GetRuleRewriteConfigArgs{...}
+type GetRuleRewriteConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRewriteConfigOutput() GetRuleRewriteConfigOutput
+	ToGetRuleRewriteConfigOutputWithContext(context.Context) GetRuleRewriteConfigOutput
+}
+
+type GetRuleRewriteConfigArgs struct {
+	// 重写路径。
+	RewritePath pulumi.StringInput `pulumi:"rewritePath"`
+}
+
+func (GetRuleRewriteConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRewriteConfig)(nil)).Elem()
+}
+
+func (i GetRuleRewriteConfigArgs) ToGetRuleRewriteConfigOutput() GetRuleRewriteConfigOutput {
+	return i.ToGetRuleRewriteConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRewriteConfigArgs) ToGetRuleRewriteConfigOutputWithContext(ctx context.Context) GetRuleRewriteConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRewriteConfigOutput)
+}
+
+type GetRuleRewriteConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRewriteConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRewriteConfig)(nil)).Elem()
+}
+
+func (o GetRuleRewriteConfigOutput) ToGetRuleRewriteConfigOutput() GetRuleRewriteConfigOutput {
+	return o
+}
+
+func (o GetRuleRewriteConfigOutput) ToGetRuleRewriteConfigOutputWithContext(ctx context.Context) GetRuleRewriteConfigOutput {
+	return o
+}
+
+// 重写路径。
+func (o GetRuleRewriteConfigOutput) RewritePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRewriteConfig) string { return v.RewritePath }).(pulumi.StringOutput)
+}
+
+type GetRuleRuleAction struct {
+	// FixedResponseConfig
+	FixedResponseConfig GetRuleRuleActionFixedResponseConfig `pulumi:"fixedResponseConfig"`
+	// ForwardGroupConfig
+	ForwardGroupConfig GetRuleRuleActionForwardGroupConfig `pulumi:"forwardGroupConfig"`
+	// RedirectConfig
+	RedirectConfig GetRuleRuleActionRedirectConfig `pulumi:"redirectConfig"`
+	// RewriteConfig
+	RewriteConfig GetRuleRuleActionRewriteConfig `pulumi:"rewriteConfig"`
+	// TrafficLimitConfig
+	TrafficLimitConfig GetRuleRuleActionTrafficLimitConfig `pulumi:"trafficLimitConfig"`
+	// 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+	Type string `pulumi:"type"`
+}
+
+// GetRuleRuleActionInput is an input type that accepts GetRuleRuleActionArgs and GetRuleRuleActionOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionInput` via:
+//
+//	GetRuleRuleActionArgs{...}
+type GetRuleRuleActionInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionOutput() GetRuleRuleActionOutput
+	ToGetRuleRuleActionOutputWithContext(context.Context) GetRuleRuleActionOutput
+}
+
+type GetRuleRuleActionArgs struct {
+	// FixedResponseConfig
+	FixedResponseConfig GetRuleRuleActionFixedResponseConfigInput `pulumi:"fixedResponseConfig"`
+	// ForwardGroupConfig
+	ForwardGroupConfig GetRuleRuleActionForwardGroupConfigInput `pulumi:"forwardGroupConfig"`
+	// RedirectConfig
+	RedirectConfig GetRuleRuleActionRedirectConfigInput `pulumi:"redirectConfig"`
+	// RewriteConfig
+	RewriteConfig GetRuleRuleActionRewriteConfigInput `pulumi:"rewriteConfig"`
+	// TrafficLimitConfig
+	TrafficLimitConfig GetRuleRuleActionTrafficLimitConfigInput `pulumi:"trafficLimitConfig"`
+	// 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuleRuleActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleAction)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionArgs) ToGetRuleRuleActionOutput() GetRuleRuleActionOutput {
+	return i.ToGetRuleRuleActionOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionArgs) ToGetRuleRuleActionOutputWithContext(ctx context.Context) GetRuleRuleActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionOutput)
+}
+
+// GetRuleRuleActionArrayInput is an input type that accepts GetRuleRuleActionArray and GetRuleRuleActionArrayOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionArrayInput` via:
+//
+//	GetRuleRuleActionArray{ GetRuleRuleActionArgs{...} }
+type GetRuleRuleActionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionArrayOutput() GetRuleRuleActionArrayOutput
+	ToGetRuleRuleActionArrayOutputWithContext(context.Context) GetRuleRuleActionArrayOutput
+}
+
+type GetRuleRuleActionArray []GetRuleRuleActionInput
+
+func (GetRuleRuleActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleAction)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionArray) ToGetRuleRuleActionArrayOutput() GetRuleRuleActionArrayOutput {
+	return i.ToGetRuleRuleActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionArray) ToGetRuleRuleActionArrayOutputWithContext(ctx context.Context) GetRuleRuleActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionArrayOutput)
+}
+
+type GetRuleRuleActionOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleAction)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionOutput) ToGetRuleRuleActionOutput() GetRuleRuleActionOutput {
+	return o
+}
+
+func (o GetRuleRuleActionOutput) ToGetRuleRuleActionOutputWithContext(ctx context.Context) GetRuleRuleActionOutput {
+	return o
+}
+
+// FixedResponseConfig
+func (o GetRuleRuleActionOutput) FixedResponseConfig() GetRuleRuleActionFixedResponseConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleAction) GetRuleRuleActionFixedResponseConfig { return v.FixedResponseConfig }).(GetRuleRuleActionFixedResponseConfigOutput)
+}
+
+// ForwardGroupConfig
+func (o GetRuleRuleActionOutput) ForwardGroupConfig() GetRuleRuleActionForwardGroupConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleAction) GetRuleRuleActionForwardGroupConfig { return v.ForwardGroupConfig }).(GetRuleRuleActionForwardGroupConfigOutput)
+}
+
+// RedirectConfig
+func (o GetRuleRuleActionOutput) RedirectConfig() GetRuleRuleActionRedirectConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleAction) GetRuleRuleActionRedirectConfig { return v.RedirectConfig }).(GetRuleRuleActionRedirectConfigOutput)
+}
+
+// RewriteConfig
+func (o GetRuleRuleActionOutput) RewriteConfig() GetRuleRuleActionRewriteConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleAction) GetRuleRuleActionRewriteConfig { return v.RewriteConfig }).(GetRuleRuleActionRewriteConfigOutput)
+}
+
+// TrafficLimitConfig
+func (o GetRuleRuleActionOutput) TrafficLimitConfig() GetRuleRuleActionTrafficLimitConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleAction) GetRuleRuleActionTrafficLimitConfig { return v.TrafficLimitConfig }).(GetRuleRuleActionTrafficLimitConfigOutput)
+}
+
+// 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+func (o GetRuleRuleActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleAction) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRuleRuleActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleAction)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionArrayOutput) ToGetRuleRuleActionArrayOutput() GetRuleRuleActionArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleActionArrayOutput) ToGetRuleRuleActionArrayOutputWithContext(ctx context.Context) GetRuleRuleActionArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleActionArrayOutput) Index(i pulumi.IntInput) GetRuleRuleActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleRuleAction {
+		return vs[0].([]GetRuleRuleAction)[vs[1].(int)]
+	}).(GetRuleRuleActionOutput)
+}
+
+type GetRuleRuleActionFixedResponseConfig struct {
+	// 返回的固定内容。
+	Content string `pulumi:"content"`
+	// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+	ContentType string `pulumi:"contentType"`
+	// 返回的 HTTP 状态码。
+	HttpCode string `pulumi:"httpCode"`
+}
+
+// GetRuleRuleActionFixedResponseConfigInput is an input type that accepts GetRuleRuleActionFixedResponseConfigArgs and GetRuleRuleActionFixedResponseConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionFixedResponseConfigInput` via:
+//
+//	GetRuleRuleActionFixedResponseConfigArgs{...}
+type GetRuleRuleActionFixedResponseConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionFixedResponseConfigOutput() GetRuleRuleActionFixedResponseConfigOutput
+	ToGetRuleRuleActionFixedResponseConfigOutputWithContext(context.Context) GetRuleRuleActionFixedResponseConfigOutput
+}
+
+type GetRuleRuleActionFixedResponseConfigArgs struct {
+	// 返回的固定内容。
+	Content pulumi.StringInput `pulumi:"content"`
+	// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+	ContentType pulumi.StringInput `pulumi:"contentType"`
+	// 返回的 HTTP 状态码。
+	HttpCode pulumi.StringInput `pulumi:"httpCode"`
+}
+
+func (GetRuleRuleActionFixedResponseConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionFixedResponseConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionFixedResponseConfigArgs) ToGetRuleRuleActionFixedResponseConfigOutput() GetRuleRuleActionFixedResponseConfigOutput {
+	return i.ToGetRuleRuleActionFixedResponseConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionFixedResponseConfigArgs) ToGetRuleRuleActionFixedResponseConfigOutputWithContext(ctx context.Context) GetRuleRuleActionFixedResponseConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionFixedResponseConfigOutput)
+}
+
+type GetRuleRuleActionFixedResponseConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionFixedResponseConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionFixedResponseConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionFixedResponseConfigOutput) ToGetRuleRuleActionFixedResponseConfigOutput() GetRuleRuleActionFixedResponseConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleActionFixedResponseConfigOutput) ToGetRuleRuleActionFixedResponseConfigOutputWithContext(ctx context.Context) GetRuleRuleActionFixedResponseConfigOutput {
+	return o
+}
+
+// 返回的固定内容。
+func (o GetRuleRuleActionFixedResponseConfigOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionFixedResponseConfig) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+func (o GetRuleRuleActionFixedResponseConfigOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionFixedResponseConfig) string { return v.ContentType }).(pulumi.StringOutput)
+}
+
+// 返回的 HTTP 状态码。
+func (o GetRuleRuleActionFixedResponseConfigOutput) HttpCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionFixedResponseConfig) string { return v.HttpCode }).(pulumi.StringOutput)
+}
+
+type GetRuleRuleActionForwardGroupConfig struct {
+	// ServerGroupStickySession
+	ServerGroupStickySession GetRuleRuleActionForwardGroupConfigServerGroupStickySession `pulumi:"serverGroupStickySession"`
+	// ServerGroupTuples
+	ServerGroupTuples []GetRuleRuleActionForwardGroupConfigServerGroupTuple `pulumi:"serverGroupTuples"`
+}
+
+// GetRuleRuleActionForwardGroupConfigInput is an input type that accepts GetRuleRuleActionForwardGroupConfigArgs and GetRuleRuleActionForwardGroupConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionForwardGroupConfigInput` via:
+//
+//	GetRuleRuleActionForwardGroupConfigArgs{...}
+type GetRuleRuleActionForwardGroupConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionForwardGroupConfigOutput() GetRuleRuleActionForwardGroupConfigOutput
+	ToGetRuleRuleActionForwardGroupConfigOutputWithContext(context.Context) GetRuleRuleActionForwardGroupConfigOutput
+}
+
+type GetRuleRuleActionForwardGroupConfigArgs struct {
+	// ServerGroupStickySession
+	ServerGroupStickySession GetRuleRuleActionForwardGroupConfigServerGroupStickySessionInput `pulumi:"serverGroupStickySession"`
+	// ServerGroupTuples
+	ServerGroupTuples GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayInput `pulumi:"serverGroupTuples"`
+}
+
+func (GetRuleRuleActionForwardGroupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionForwardGroupConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionForwardGroupConfigArgs) ToGetRuleRuleActionForwardGroupConfigOutput() GetRuleRuleActionForwardGroupConfigOutput {
+	return i.ToGetRuleRuleActionForwardGroupConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionForwardGroupConfigArgs) ToGetRuleRuleActionForwardGroupConfigOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionForwardGroupConfigOutput)
+}
+
+type GetRuleRuleActionForwardGroupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionForwardGroupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionForwardGroupConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionForwardGroupConfigOutput) ToGetRuleRuleActionForwardGroupConfigOutput() GetRuleRuleActionForwardGroupConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleActionForwardGroupConfigOutput) ToGetRuleRuleActionForwardGroupConfigOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigOutput {
+	return o
+}
+
+// ServerGroupStickySession
+func (o GetRuleRuleActionForwardGroupConfigOutput) ServerGroupStickySession() GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return o.ApplyT(func(v GetRuleRuleActionForwardGroupConfig) GetRuleRuleActionForwardGroupConfigServerGroupStickySession {
+		return v.ServerGroupStickySession
+	}).(GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput)
+}
+
+// ServerGroupTuples
+func (o GetRuleRuleActionForwardGroupConfigOutput) ServerGroupTuples() GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return o.ApplyT(func(v GetRuleRuleActionForwardGroupConfig) []GetRuleRuleActionForwardGroupConfigServerGroupTuple {
+		return v.ServerGroupTuples
+	}).(GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupStickySession struct {
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	Enabled string `pulumi:"enabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	Timeout int `pulumi:"timeout"`
+}
+
+// GetRuleRuleActionForwardGroupConfigServerGroupStickySessionInput is an input type that accepts GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs and GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionForwardGroupConfigServerGroupStickySessionInput` via:
+//
+//	GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs{...}
+type GetRuleRuleActionForwardGroupConfigServerGroupStickySessionInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput() GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput
+	ToGetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(context.Context) GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs struct {
+	// 是否开启组间会话保持。on：开启。off：不开启。
+	Enabled pulumi.StringInput `pulumi:"enabled"`
+	// 组件回话保持的超时时间。单位：秒。
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+}
+
+func (GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigServerGroupStickySession)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ToGetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput() GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return i.ToGetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs) ToGetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput)
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigServerGroupStickySession)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ToGetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput() GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return o
+}
+
+func (o GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) ToGetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput {
+	return o
+}
+
+// 是否开启组间会话保持。on：开启。off：不开启。
+func (o GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) Enabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionForwardGroupConfigServerGroupStickySession) string { return v.Enabled }).(pulumi.StringOutput)
+}
+
+// 组件回话保持的超时时间。单位：秒。
+func (o GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleRuleActionForwardGroupConfigServerGroupStickySession) int { return v.Timeout }).(pulumi.IntOutput)
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupTuple struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId string `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight int `pulumi:"weight"`
+}
+
+// GetRuleRuleActionForwardGroupConfigServerGroupTupleInput is an input type that accepts GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs and GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionForwardGroupConfigServerGroupTupleInput` via:
+//
+//	GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs{...}
+type GetRuleRuleActionForwardGroupConfigServerGroupTupleInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionForwardGroupConfigServerGroupTupleOutput() GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput
+	ToGetRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(context.Context) GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs struct {
+	// 转发到的目的服务器组 ID。
+	ServerGroupId pulumi.StringInput `pulumi:"serverGroupId"`
+	// 服务器组权重。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleOutput() GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return i.ToGetRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput)
+}
+
+// GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayInput is an input type that accepts GetRuleRuleActionForwardGroupConfigServerGroupTupleArray and GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayInput` via:
+//
+//	GetRuleRuleActionForwardGroupConfigServerGroupTupleArray{ GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs{...} }
+type GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput() GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput
+	ToGetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Context) GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupTupleArray []GetRuleRuleActionForwardGroupConfigServerGroupTupleInput
+
+func (GetRuleRuleActionForwardGroupConfigServerGroupTupleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionForwardGroupConfigServerGroupTupleArray) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput() GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return i.ToGetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionForwardGroupConfigServerGroupTupleArray) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput)
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleOutput() GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+func (o GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return o
+}
+
+// 转发到的目的服务器组 ID。
+func (o GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput) ServerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionForwardGroupConfigServerGroupTuple) string { return v.ServerGroupId }).(pulumi.StringOutput)
+}
+
+// 服务器组权重。
+func (o GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleRuleActionForwardGroupConfigServerGroupTuple) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleActionForwardGroupConfigServerGroupTuple)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput() GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) ToGetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutputWithContext(ctx context.Context) GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput) Index(i pulumi.IntInput) GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleRuleActionForwardGroupConfigServerGroupTuple {
+		return vs[0].([]GetRuleRuleActionForwardGroupConfigServerGroupTuple)[vs[1].(int)]
+	}).(GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput)
+}
+
+type GetRuleRuleActionRedirectConfig struct {
+	// 重定向域名，仅支持精确域名。
+	Host string `pulumi:"host"`
+	// 重定向状态码，支持301，302，307，308。
+	HttpCode string `pulumi:"httpCode"`
+	// 重定向 URI。。
+	Path string `pulumi:"path"`
+	// 重定向端口。
+	Port string `pulumi:"port"`
+	// 重定向使用的协议，支持HTTP，HTTPS。
+	Protocol string `pulumi:"protocol"`
+}
+
+// GetRuleRuleActionRedirectConfigInput is an input type that accepts GetRuleRuleActionRedirectConfigArgs and GetRuleRuleActionRedirectConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionRedirectConfigInput` via:
+//
+//	GetRuleRuleActionRedirectConfigArgs{...}
+type GetRuleRuleActionRedirectConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionRedirectConfigOutput() GetRuleRuleActionRedirectConfigOutput
+	ToGetRuleRuleActionRedirectConfigOutputWithContext(context.Context) GetRuleRuleActionRedirectConfigOutput
+}
+
+type GetRuleRuleActionRedirectConfigArgs struct {
+	// 重定向域名，仅支持精确域名。
+	Host pulumi.StringInput `pulumi:"host"`
+	// 重定向状态码，支持301，302，307，308。
+	HttpCode pulumi.StringInput `pulumi:"httpCode"`
+	// 重定向 URI。。
+	Path pulumi.StringInput `pulumi:"path"`
+	// 重定向端口。
+	Port pulumi.StringInput `pulumi:"port"`
+	// 重定向使用的协议，支持HTTP，HTTPS。
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+}
+
+func (GetRuleRuleActionRedirectConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionRedirectConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionRedirectConfigArgs) ToGetRuleRuleActionRedirectConfigOutput() GetRuleRuleActionRedirectConfigOutput {
+	return i.ToGetRuleRuleActionRedirectConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionRedirectConfigArgs) ToGetRuleRuleActionRedirectConfigOutputWithContext(ctx context.Context) GetRuleRuleActionRedirectConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionRedirectConfigOutput)
+}
+
+type GetRuleRuleActionRedirectConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionRedirectConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionRedirectConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionRedirectConfigOutput) ToGetRuleRuleActionRedirectConfigOutput() GetRuleRuleActionRedirectConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleActionRedirectConfigOutput) ToGetRuleRuleActionRedirectConfigOutputWithContext(ctx context.Context) GetRuleRuleActionRedirectConfigOutput {
+	return o
+}
+
+// 重定向域名，仅支持精确域名。
+func (o GetRuleRuleActionRedirectConfigOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionRedirectConfig) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// 重定向状态码，支持301，302，307，308。
+func (o GetRuleRuleActionRedirectConfigOutput) HttpCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionRedirectConfig) string { return v.HttpCode }).(pulumi.StringOutput)
+}
+
+// 重定向 URI。。
+func (o GetRuleRuleActionRedirectConfigOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionRedirectConfig) string { return v.Path }).(pulumi.StringOutput)
+}
+
+// 重定向端口。
+func (o GetRuleRuleActionRedirectConfigOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionRedirectConfig) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// 重定向使用的协议，支持HTTP，HTTPS。
+func (o GetRuleRuleActionRedirectConfigOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionRedirectConfig) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+type GetRuleRuleActionRewriteConfig struct {
+	// 重写路径。
+	Path string `pulumi:"path"`
+}
+
+// GetRuleRuleActionRewriteConfigInput is an input type that accepts GetRuleRuleActionRewriteConfigArgs and GetRuleRuleActionRewriteConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionRewriteConfigInput` via:
+//
+//	GetRuleRuleActionRewriteConfigArgs{...}
+type GetRuleRuleActionRewriteConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionRewriteConfigOutput() GetRuleRuleActionRewriteConfigOutput
+	ToGetRuleRuleActionRewriteConfigOutputWithContext(context.Context) GetRuleRuleActionRewriteConfigOutput
+}
+
+type GetRuleRuleActionRewriteConfigArgs struct {
+	// 重写路径。
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetRuleRuleActionRewriteConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionRewriteConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionRewriteConfigArgs) ToGetRuleRuleActionRewriteConfigOutput() GetRuleRuleActionRewriteConfigOutput {
+	return i.ToGetRuleRuleActionRewriteConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionRewriteConfigArgs) ToGetRuleRuleActionRewriteConfigOutputWithContext(ctx context.Context) GetRuleRuleActionRewriteConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionRewriteConfigOutput)
+}
+
+type GetRuleRuleActionRewriteConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionRewriteConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionRewriteConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionRewriteConfigOutput) ToGetRuleRuleActionRewriteConfigOutput() GetRuleRuleActionRewriteConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleActionRewriteConfigOutput) ToGetRuleRuleActionRewriteConfigOutputWithContext(ctx context.Context) GetRuleRuleActionRewriteConfigOutput {
+	return o
+}
+
+// 重写路径。
+func (o GetRuleRuleActionRewriteConfigOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleActionRewriteConfig) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetRuleRuleActionTrafficLimitConfig struct {
+	// 每秒请求数。
+	Qps int `pulumi:"qps"`
+}
+
+// GetRuleRuleActionTrafficLimitConfigInput is an input type that accepts GetRuleRuleActionTrafficLimitConfigArgs and GetRuleRuleActionTrafficLimitConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleActionTrafficLimitConfigInput` via:
+//
+//	GetRuleRuleActionTrafficLimitConfigArgs{...}
+type GetRuleRuleActionTrafficLimitConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleActionTrafficLimitConfigOutput() GetRuleRuleActionTrafficLimitConfigOutput
+	ToGetRuleRuleActionTrafficLimitConfigOutputWithContext(context.Context) GetRuleRuleActionTrafficLimitConfigOutput
+}
+
+type GetRuleRuleActionTrafficLimitConfigArgs struct {
+	// 每秒请求数。
+	Qps pulumi.IntInput `pulumi:"qps"`
+}
+
+func (GetRuleRuleActionTrafficLimitConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionTrafficLimitConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleActionTrafficLimitConfigArgs) ToGetRuleRuleActionTrafficLimitConfigOutput() GetRuleRuleActionTrafficLimitConfigOutput {
+	return i.ToGetRuleRuleActionTrafficLimitConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleActionTrafficLimitConfigArgs) ToGetRuleRuleActionTrafficLimitConfigOutputWithContext(ctx context.Context) GetRuleRuleActionTrafficLimitConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleActionTrafficLimitConfigOutput)
+}
+
+type GetRuleRuleActionTrafficLimitConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleActionTrafficLimitConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleActionTrafficLimitConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleActionTrafficLimitConfigOutput) ToGetRuleRuleActionTrafficLimitConfigOutput() GetRuleRuleActionTrafficLimitConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleActionTrafficLimitConfigOutput) ToGetRuleRuleActionTrafficLimitConfigOutputWithContext(ctx context.Context) GetRuleRuleActionTrafficLimitConfigOutput {
+	return o
+}
+
+// 每秒请求数。
+func (o GetRuleRuleActionTrafficLimitConfigOutput) Qps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleRuleActionTrafficLimitConfig) int { return v.Qps }).(pulumi.IntOutput)
+}
+
+type GetRuleRuleCondition struct {
+	// HeaderConfig。
+	HeaderConfig GetRuleRuleConditionHeaderConfig `pulumi:"headerConfig"`
+	// HostConfig。
+	HostConfig GetRuleRuleConditionHostConfig `pulumi:"hostConfig"`
+	// MethodConfig。
+	MethodConfig GetRuleRuleConditionMethodConfig `pulumi:"methodConfig"`
+	// PathConfig。
+	PathConfig GetRuleRuleConditionPathConfig `pulumi:"pathConfig"`
+	// QueryStringConfig。
+	QueryStringConfig GetRuleRuleConditionQueryStringConfig `pulumi:"queryStringConfig"`
+	// 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+	Type string `pulumi:"type"`
+}
+
+// GetRuleRuleConditionInput is an input type that accepts GetRuleRuleConditionArgs and GetRuleRuleConditionOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionInput` via:
+//
+//	GetRuleRuleConditionArgs{...}
+type GetRuleRuleConditionInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionOutput() GetRuleRuleConditionOutput
+	ToGetRuleRuleConditionOutputWithContext(context.Context) GetRuleRuleConditionOutput
+}
+
+type GetRuleRuleConditionArgs struct {
+	// HeaderConfig。
+	HeaderConfig GetRuleRuleConditionHeaderConfigInput `pulumi:"headerConfig"`
+	// HostConfig。
+	HostConfig GetRuleRuleConditionHostConfigInput `pulumi:"hostConfig"`
+	// MethodConfig。
+	MethodConfig GetRuleRuleConditionMethodConfigInput `pulumi:"methodConfig"`
+	// PathConfig。
+	PathConfig GetRuleRuleConditionPathConfigInput `pulumi:"pathConfig"`
+	// QueryStringConfig。
+	QueryStringConfig GetRuleRuleConditionQueryStringConfigInput `pulumi:"queryStringConfig"`
+	// 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetRuleRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleCondition)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionArgs) ToGetRuleRuleConditionOutput() GetRuleRuleConditionOutput {
+	return i.ToGetRuleRuleConditionOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionArgs) ToGetRuleRuleConditionOutputWithContext(ctx context.Context) GetRuleRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionOutput)
+}
+
+// GetRuleRuleConditionArrayInput is an input type that accepts GetRuleRuleConditionArray and GetRuleRuleConditionArrayOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionArrayInput` via:
+//
+//	GetRuleRuleConditionArray{ GetRuleRuleConditionArgs{...} }
+type GetRuleRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionArrayOutput() GetRuleRuleConditionArrayOutput
+	ToGetRuleRuleConditionArrayOutputWithContext(context.Context) GetRuleRuleConditionArrayOutput
+}
+
+type GetRuleRuleConditionArray []GetRuleRuleConditionInput
+
+func (GetRuleRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleCondition)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionArray) ToGetRuleRuleConditionArrayOutput() GetRuleRuleConditionArrayOutput {
+	return i.ToGetRuleRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionArray) ToGetRuleRuleConditionArrayOutputWithContext(ctx context.Context) GetRuleRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionArrayOutput)
+}
+
+type GetRuleRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleCondition)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionOutput) ToGetRuleRuleConditionOutput() GetRuleRuleConditionOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionOutput) ToGetRuleRuleConditionOutputWithContext(ctx context.Context) GetRuleRuleConditionOutput {
+	return o
+}
+
+// HeaderConfig。
+func (o GetRuleRuleConditionOutput) HeaderConfig() GetRuleRuleConditionHeaderConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleCondition) GetRuleRuleConditionHeaderConfig { return v.HeaderConfig }).(GetRuleRuleConditionHeaderConfigOutput)
+}
+
+// HostConfig。
+func (o GetRuleRuleConditionOutput) HostConfig() GetRuleRuleConditionHostConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleCondition) GetRuleRuleConditionHostConfig { return v.HostConfig }).(GetRuleRuleConditionHostConfigOutput)
+}
+
+// MethodConfig。
+func (o GetRuleRuleConditionOutput) MethodConfig() GetRuleRuleConditionMethodConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleCondition) GetRuleRuleConditionMethodConfig { return v.MethodConfig }).(GetRuleRuleConditionMethodConfigOutput)
+}
+
+// PathConfig。
+func (o GetRuleRuleConditionOutput) PathConfig() GetRuleRuleConditionPathConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleCondition) GetRuleRuleConditionPathConfig { return v.PathConfig }).(GetRuleRuleConditionPathConfigOutput)
+}
+
+// QueryStringConfig。
+func (o GetRuleRuleConditionOutput) QueryStringConfig() GetRuleRuleConditionQueryStringConfigOutput {
+	return o.ApplyT(func(v GetRuleRuleCondition) GetRuleRuleConditionQueryStringConfig { return v.QueryStringConfig }).(GetRuleRuleConditionQueryStringConfigOutput)
+}
+
+// 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+func (o GetRuleRuleConditionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleCondition) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetRuleRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleCondition)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionArrayOutput) ToGetRuleRuleConditionArrayOutput() GetRuleRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionArrayOutput) ToGetRuleRuleConditionArrayOutputWithContext(ctx context.Context) GetRuleRuleConditionArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionArrayOutput) Index(i pulumi.IntInput) GetRuleRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleRuleCondition {
+		return vs[0].([]GetRuleRuleCondition)[vs[1].(int)]
+	}).(GetRuleRuleConditionOutput)
+}
+
+type GetRuleRuleConditionHeaderConfig struct {
+	// 头字段键。
+	Key string `pulumi:"key"`
+	// 头字段值。
+	Values []string `pulumi:"values"`
+}
+
+// GetRuleRuleConditionHeaderConfigInput is an input type that accepts GetRuleRuleConditionHeaderConfigArgs and GetRuleRuleConditionHeaderConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionHeaderConfigInput` via:
+//
+//	GetRuleRuleConditionHeaderConfigArgs{...}
+type GetRuleRuleConditionHeaderConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionHeaderConfigOutput() GetRuleRuleConditionHeaderConfigOutput
+	ToGetRuleRuleConditionHeaderConfigOutputWithContext(context.Context) GetRuleRuleConditionHeaderConfigOutput
+}
+
+type GetRuleRuleConditionHeaderConfigArgs struct {
+	// 头字段键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 头字段值。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuleRuleConditionHeaderConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionHeaderConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionHeaderConfigArgs) ToGetRuleRuleConditionHeaderConfigOutput() GetRuleRuleConditionHeaderConfigOutput {
+	return i.ToGetRuleRuleConditionHeaderConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionHeaderConfigArgs) ToGetRuleRuleConditionHeaderConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionHeaderConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionHeaderConfigOutput)
+}
+
+type GetRuleRuleConditionHeaderConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionHeaderConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionHeaderConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionHeaderConfigOutput) ToGetRuleRuleConditionHeaderConfigOutput() GetRuleRuleConditionHeaderConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionHeaderConfigOutput) ToGetRuleRuleConditionHeaderConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionHeaderConfigOutput {
+	return o
+}
+
+// 头字段键。
+func (o GetRuleRuleConditionHeaderConfigOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionHeaderConfig) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 头字段值。
+func (o GetRuleRuleConditionHeaderConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionHeaderConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleRuleConditionHostConfig struct {
+	// 转发规则的域名，支持泛域名和精确域名。
+	Values []string `pulumi:"values"`
+}
+
+// GetRuleRuleConditionHostConfigInput is an input type that accepts GetRuleRuleConditionHostConfigArgs and GetRuleRuleConditionHostConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionHostConfigInput` via:
+//
+//	GetRuleRuleConditionHostConfigArgs{...}
+type GetRuleRuleConditionHostConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionHostConfigOutput() GetRuleRuleConditionHostConfigOutput
+	ToGetRuleRuleConditionHostConfigOutputWithContext(context.Context) GetRuleRuleConditionHostConfigOutput
+}
+
+type GetRuleRuleConditionHostConfigArgs struct {
+	// 转发规则的域名，支持泛域名和精确域名。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuleRuleConditionHostConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionHostConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionHostConfigArgs) ToGetRuleRuleConditionHostConfigOutput() GetRuleRuleConditionHostConfigOutput {
+	return i.ToGetRuleRuleConditionHostConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionHostConfigArgs) ToGetRuleRuleConditionHostConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionHostConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionHostConfigOutput)
+}
+
+type GetRuleRuleConditionHostConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionHostConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionHostConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionHostConfigOutput) ToGetRuleRuleConditionHostConfigOutput() GetRuleRuleConditionHostConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionHostConfigOutput) ToGetRuleRuleConditionHostConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionHostConfigOutput {
+	return o
+}
+
+// 转发规则的域名，支持泛域名和精确域名。
+func (o GetRuleRuleConditionHostConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionHostConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleRuleConditionMethodConfig struct {
+	// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+	Values []string `pulumi:"values"`
+}
+
+// GetRuleRuleConditionMethodConfigInput is an input type that accepts GetRuleRuleConditionMethodConfigArgs and GetRuleRuleConditionMethodConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionMethodConfigInput` via:
+//
+//	GetRuleRuleConditionMethodConfigArgs{...}
+type GetRuleRuleConditionMethodConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionMethodConfigOutput() GetRuleRuleConditionMethodConfigOutput
+	ToGetRuleRuleConditionMethodConfigOutputWithContext(context.Context) GetRuleRuleConditionMethodConfigOutput
+}
+
+type GetRuleRuleConditionMethodConfigArgs struct {
+	// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuleRuleConditionMethodConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionMethodConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionMethodConfigArgs) ToGetRuleRuleConditionMethodConfigOutput() GetRuleRuleConditionMethodConfigOutput {
+	return i.ToGetRuleRuleConditionMethodConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionMethodConfigArgs) ToGetRuleRuleConditionMethodConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionMethodConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionMethodConfigOutput)
+}
+
+type GetRuleRuleConditionMethodConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionMethodConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionMethodConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionMethodConfigOutput) ToGetRuleRuleConditionMethodConfigOutput() GetRuleRuleConditionMethodConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionMethodConfigOutput) ToGetRuleRuleConditionMethodConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionMethodConfigOutput {
+	return o
+}
+
+// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+func (o GetRuleRuleConditionMethodConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionMethodConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleRuleConditionPathConfig struct {
+	// 转发规则的URL，仅支持绝对路径。
+	Values []string `pulumi:"values"`
+}
+
+// GetRuleRuleConditionPathConfigInput is an input type that accepts GetRuleRuleConditionPathConfigArgs and GetRuleRuleConditionPathConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionPathConfigInput` via:
+//
+//	GetRuleRuleConditionPathConfigArgs{...}
+type GetRuleRuleConditionPathConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionPathConfigOutput() GetRuleRuleConditionPathConfigOutput
+	ToGetRuleRuleConditionPathConfigOutputWithContext(context.Context) GetRuleRuleConditionPathConfigOutput
+}
+
+type GetRuleRuleConditionPathConfigArgs struct {
+	// 转发规则的URL，仅支持绝对路径。
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRuleRuleConditionPathConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionPathConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionPathConfigArgs) ToGetRuleRuleConditionPathConfigOutput() GetRuleRuleConditionPathConfigOutput {
+	return i.ToGetRuleRuleConditionPathConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionPathConfigArgs) ToGetRuleRuleConditionPathConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionPathConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionPathConfigOutput)
+}
+
+type GetRuleRuleConditionPathConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionPathConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionPathConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionPathConfigOutput) ToGetRuleRuleConditionPathConfigOutput() GetRuleRuleConditionPathConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionPathConfigOutput) ToGetRuleRuleConditionPathConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionPathConfigOutput {
+	return o
+}
+
+// 转发规则的URL，仅支持绝对路径。
+func (o GetRuleRuleConditionPathConfigOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionPathConfig) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleRuleConditionQueryStringConfig struct {
+	// Values。
+	Values []GetRuleRuleConditionQueryStringConfigValue `pulumi:"values"`
+}
+
+// GetRuleRuleConditionQueryStringConfigInput is an input type that accepts GetRuleRuleConditionQueryStringConfigArgs and GetRuleRuleConditionQueryStringConfigOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionQueryStringConfigInput` via:
+//
+//	GetRuleRuleConditionQueryStringConfigArgs{...}
+type GetRuleRuleConditionQueryStringConfigInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionQueryStringConfigOutput() GetRuleRuleConditionQueryStringConfigOutput
+	ToGetRuleRuleConditionQueryStringConfigOutputWithContext(context.Context) GetRuleRuleConditionQueryStringConfigOutput
+}
+
+type GetRuleRuleConditionQueryStringConfigArgs struct {
+	// Values。
+	Values GetRuleRuleConditionQueryStringConfigValueArrayInput `pulumi:"values"`
+}
+
+func (GetRuleRuleConditionQueryStringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionQueryStringConfig)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionQueryStringConfigArgs) ToGetRuleRuleConditionQueryStringConfigOutput() GetRuleRuleConditionQueryStringConfigOutput {
+	return i.ToGetRuleRuleConditionQueryStringConfigOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionQueryStringConfigArgs) ToGetRuleRuleConditionQueryStringConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionQueryStringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionQueryStringConfigOutput)
+}
+
+type GetRuleRuleConditionQueryStringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionQueryStringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionQueryStringConfig)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionQueryStringConfigOutput) ToGetRuleRuleConditionQueryStringConfigOutput() GetRuleRuleConditionQueryStringConfigOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionQueryStringConfigOutput) ToGetRuleRuleConditionQueryStringConfigOutputWithContext(ctx context.Context) GetRuleRuleConditionQueryStringConfigOutput {
+	return o
+}
+
+// Values。
+func (o GetRuleRuleConditionQueryStringConfigOutput) Values() GetRuleRuleConditionQueryStringConfigValueArrayOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionQueryStringConfig) []GetRuleRuleConditionQueryStringConfigValue {
+		return v.Values
+	}).(GetRuleRuleConditionQueryStringConfigValueArrayOutput)
+}
+
+type GetRuleRuleConditionQueryStringConfigValue struct {
+	// 查询字符串键。
+	Key string `pulumi:"key"`
+	// 查询字符串值。
+	Value string `pulumi:"value"`
+}
+
+// GetRuleRuleConditionQueryStringConfigValueInput is an input type that accepts GetRuleRuleConditionQueryStringConfigValueArgs and GetRuleRuleConditionQueryStringConfigValueOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionQueryStringConfigValueInput` via:
+//
+//	GetRuleRuleConditionQueryStringConfigValueArgs{...}
+type GetRuleRuleConditionQueryStringConfigValueInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionQueryStringConfigValueOutput() GetRuleRuleConditionQueryStringConfigValueOutput
+	ToGetRuleRuleConditionQueryStringConfigValueOutputWithContext(context.Context) GetRuleRuleConditionQueryStringConfigValueOutput
+}
+
+type GetRuleRuleConditionQueryStringConfigValueArgs struct {
+	// 查询字符串键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 查询字符串值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetRuleRuleConditionQueryStringConfigValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionQueryStringConfigValueArgs) ToGetRuleRuleConditionQueryStringConfigValueOutput() GetRuleRuleConditionQueryStringConfigValueOutput {
+	return i.ToGetRuleRuleConditionQueryStringConfigValueOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionQueryStringConfigValueArgs) ToGetRuleRuleConditionQueryStringConfigValueOutputWithContext(ctx context.Context) GetRuleRuleConditionQueryStringConfigValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionQueryStringConfigValueOutput)
+}
+
+// GetRuleRuleConditionQueryStringConfigValueArrayInput is an input type that accepts GetRuleRuleConditionQueryStringConfigValueArray and GetRuleRuleConditionQueryStringConfigValueArrayOutput values.
+// You can construct a concrete instance of `GetRuleRuleConditionQueryStringConfigValueArrayInput` via:
+//
+//	GetRuleRuleConditionQueryStringConfigValueArray{ GetRuleRuleConditionQueryStringConfigValueArgs{...} }
+type GetRuleRuleConditionQueryStringConfigValueArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleRuleConditionQueryStringConfigValueArrayOutput() GetRuleRuleConditionQueryStringConfigValueArrayOutput
+	ToGetRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(context.Context) GetRuleRuleConditionQueryStringConfigValueArrayOutput
+}
+
+type GetRuleRuleConditionQueryStringConfigValueArray []GetRuleRuleConditionQueryStringConfigValueInput
+
+func (GetRuleRuleConditionQueryStringConfigValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (i GetRuleRuleConditionQueryStringConfigValueArray) ToGetRuleRuleConditionQueryStringConfigValueArrayOutput() GetRuleRuleConditionQueryStringConfigValueArrayOutput {
+	return i.ToGetRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleRuleConditionQueryStringConfigValueArray) ToGetRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(ctx context.Context) GetRuleRuleConditionQueryStringConfigValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleRuleConditionQueryStringConfigValueArrayOutput)
+}
+
+type GetRuleRuleConditionQueryStringConfigValueOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionQueryStringConfigValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionQueryStringConfigValueOutput) ToGetRuleRuleConditionQueryStringConfigValueOutput() GetRuleRuleConditionQueryStringConfigValueOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionQueryStringConfigValueOutput) ToGetRuleRuleConditionQueryStringConfigValueOutputWithContext(ctx context.Context) GetRuleRuleConditionQueryStringConfigValueOutput {
+	return o
+}
+
+// 查询字符串键。
+func (o GetRuleRuleConditionQueryStringConfigValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionQueryStringConfigValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 查询字符串值。
+func (o GetRuleRuleConditionQueryStringConfigValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleRuleConditionQueryStringConfigValue) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetRuleRuleConditionQueryStringConfigValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleRuleConditionQueryStringConfigValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleRuleConditionQueryStringConfigValue)(nil)).Elem()
+}
+
+func (o GetRuleRuleConditionQueryStringConfigValueArrayOutput) ToGetRuleRuleConditionQueryStringConfigValueArrayOutput() GetRuleRuleConditionQueryStringConfigValueArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionQueryStringConfigValueArrayOutput) ToGetRuleRuleConditionQueryStringConfigValueArrayOutputWithContext(ctx context.Context) GetRuleRuleConditionQueryStringConfigValueArrayOutput {
+	return o
+}
+
+func (o GetRuleRuleConditionQueryStringConfigValueArrayOutput) Index(i pulumi.IntInput) GetRuleRuleConditionQueryStringConfigValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleRuleConditionQueryStringConfigValue {
+		return vs[0].([]GetRuleRuleConditionQueryStringConfigValue)[vs[1].(int)]
+	}).(GetRuleRuleConditionQueryStringConfigValueOutput)
+}
+
 type GetServerGroupHealthCheck struct {
 	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
 	Domain string `pulumi:"domain"`
@@ -5450,6 +9720,44 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerTagArrayInput)(nil)).Elem(), LoadBalancerTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerZoneMappingInput)(nil)).Elem(), LoadBalancerZoneMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LoadBalancerZoneMappingArrayInput)(nil)).Elem(), LoadBalancerZoneMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleForwardGroupConfigInput)(nil)).Elem(), RuleForwardGroupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleForwardGroupConfigPtrInput)(nil)).Elem(), RuleForwardGroupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleForwardGroupConfigServerGroupTupleInput)(nil)).Elem(), RuleForwardGroupConfigServerGroupTupleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleForwardGroupConfigServerGroupTupleArrayInput)(nil)).Elem(), RuleForwardGroupConfigServerGroupTupleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigInput)(nil)).Elem(), RuleRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRedirectConfigPtrInput)(nil)).Elem(), RuleRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRewriteConfigInput)(nil)).Elem(), RuleRewriteConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRewriteConfigPtrInput)(nil)).Elem(), RuleRewriteConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionInput)(nil)).Elem(), RuleRuleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionArrayInput)(nil)).Elem(), RuleRuleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionFixedResponseConfigInput)(nil)).Elem(), RuleRuleActionFixedResponseConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionFixedResponseConfigPtrInput)(nil)).Elem(), RuleRuleActionFixedResponseConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionForwardGroupConfigInput)(nil)).Elem(), RuleRuleActionForwardGroupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionForwardGroupConfigPtrInput)(nil)).Elem(), RuleRuleActionForwardGroupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupStickySessionInput)(nil)).Elem(), RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrInput)(nil)).Elem(), RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupTupleInput)(nil)).Elem(), RuleRuleActionForwardGroupConfigServerGroupTupleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionForwardGroupConfigServerGroupTupleArrayInput)(nil)).Elem(), RuleRuleActionForwardGroupConfigServerGroupTupleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionRedirectConfigInput)(nil)).Elem(), RuleRuleActionRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionRedirectConfigPtrInput)(nil)).Elem(), RuleRuleActionRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionRewriteConfigInput)(nil)).Elem(), RuleRuleActionRewriteConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionRewriteConfigPtrInput)(nil)).Elem(), RuleRuleActionRewriteConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionTrafficLimitConfigInput)(nil)).Elem(), RuleRuleActionTrafficLimitConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleActionTrafficLimitConfigPtrInput)(nil)).Elem(), RuleRuleActionTrafficLimitConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionInput)(nil)).Elem(), RuleRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionArrayInput)(nil)).Elem(), RuleRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionHeaderConfigInput)(nil)).Elem(), RuleRuleConditionHeaderConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionHeaderConfigPtrInput)(nil)).Elem(), RuleRuleConditionHeaderConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionHostConfigInput)(nil)).Elem(), RuleRuleConditionHostConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionHostConfigPtrInput)(nil)).Elem(), RuleRuleConditionHostConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionMethodConfigInput)(nil)).Elem(), RuleRuleConditionMethodConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionMethodConfigPtrInput)(nil)).Elem(), RuleRuleConditionMethodConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionPathConfigInput)(nil)).Elem(), RuleRuleConditionPathConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionPathConfigPtrInput)(nil)).Elem(), RuleRuleConditionPathConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionQueryStringConfigInput)(nil)).Elem(), RuleRuleConditionQueryStringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionQueryStringConfigPtrInput)(nil)).Elem(), RuleRuleConditionQueryStringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionQueryStringConfigValueInput)(nil)).Elem(), RuleRuleConditionQueryStringConfigValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleRuleConditionQueryStringConfigValueArrayInput)(nil)).Elem(), RuleRuleConditionQueryStringConfigValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupHealthCheckInput)(nil)).Elem(), ServerGroupHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupHealthCheckPtrInput)(nil)).Elem(), ServerGroupHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServerGroupListenerInput)(nil)).Elem(), ServerGroupListenerArgs{})
@@ -5493,6 +9801,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipInput)(nil)).Elem(), GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleForwardGroupConfigInput)(nil)).Elem(), GetRuleForwardGroupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleForwardGroupConfigServerGroupTupleInput)(nil)).Elem(), GetRuleForwardGroupConfigServerGroupTupleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleForwardGroupConfigServerGroupTupleArrayInput)(nil)).Elem(), GetRuleForwardGroupConfigServerGroupTupleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRedirectConfigInput)(nil)).Elem(), GetRuleRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRewriteConfigInput)(nil)).Elem(), GetRuleRewriteConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionInput)(nil)).Elem(), GetRuleRuleActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionArrayInput)(nil)).Elem(), GetRuleRuleActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionFixedResponseConfigInput)(nil)).Elem(), GetRuleRuleActionFixedResponseConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigInput)(nil)).Elem(), GetRuleRuleActionForwardGroupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigServerGroupStickySessionInput)(nil)).Elem(), GetRuleRuleActionForwardGroupConfigServerGroupStickySessionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigServerGroupTupleInput)(nil)).Elem(), GetRuleRuleActionForwardGroupConfigServerGroupTupleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayInput)(nil)).Elem(), GetRuleRuleActionForwardGroupConfigServerGroupTupleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionRedirectConfigInput)(nil)).Elem(), GetRuleRuleActionRedirectConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionRewriteConfigInput)(nil)).Elem(), GetRuleRuleActionRewriteConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleActionTrafficLimitConfigInput)(nil)).Elem(), GetRuleRuleActionTrafficLimitConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionInput)(nil)).Elem(), GetRuleRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionArrayInput)(nil)).Elem(), GetRuleRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionHeaderConfigInput)(nil)).Elem(), GetRuleRuleConditionHeaderConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionHostConfigInput)(nil)).Elem(), GetRuleRuleConditionHostConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionMethodConfigInput)(nil)).Elem(), GetRuleRuleConditionMethodConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionPathConfigInput)(nil)).Elem(), GetRuleRuleConditionPathConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionQueryStringConfigInput)(nil)).Elem(), GetRuleRuleConditionQueryStringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionQueryStringConfigValueInput)(nil)).Elem(), GetRuleRuleConditionQueryStringConfigValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleRuleConditionQueryStringConfigValueArrayInput)(nil)).Elem(), GetRuleRuleConditionQueryStringConfigValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupHealthCheckInput)(nil)).Elem(), GetServerGroupHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupListenerInput)(nil)).Elem(), GetServerGroupListenerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetServerGroupListenerArrayInput)(nil)).Elem(), GetServerGroupListenerArray{})
@@ -5531,6 +9863,44 @@ func init() {
 	pulumi.RegisterOutputType(LoadBalancerTagArrayOutput{})
 	pulumi.RegisterOutputType(LoadBalancerZoneMappingOutput{})
 	pulumi.RegisterOutputType(LoadBalancerZoneMappingArrayOutput{})
+	pulumi.RegisterOutputType(RuleForwardGroupConfigOutput{})
+	pulumi.RegisterOutputType(RuleForwardGroupConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleForwardGroupConfigServerGroupTupleOutput{})
+	pulumi.RegisterOutputType(RuleForwardGroupConfigServerGroupTupleArrayOutput{})
+	pulumi.RegisterOutputType(RuleRedirectConfigOutput{})
+	pulumi.RegisterOutputType(RuleRedirectConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRewriteConfigOutput{})
+	pulumi.RegisterOutputType(RuleRewriteConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionArrayOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionFixedResponseConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionFixedResponseConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionForwardGroupConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionForwardGroupConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionForwardGroupConfigServerGroupStickySessionOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionForwardGroupConfigServerGroupStickySessionPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionForwardGroupConfigServerGroupTupleOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionRedirectConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionRedirectConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionRewriteConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionRewriteConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionTrafficLimitConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleActionTrafficLimitConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionHeaderConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionHeaderConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionHostConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionHostConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionMethodConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionMethodConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionPathConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionPathConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionQueryStringConfigOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionQueryStringConfigPtrOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionQueryStringConfigValueOutput{})
+	pulumi.RegisterOutputType(RuleRuleConditionQueryStringConfigValueArrayOutput{})
 	pulumi.RegisterOutputType(ServerGroupHealthCheckOutput{})
 	pulumi.RegisterOutputType(ServerGroupHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(ServerGroupListenerOutput{})
@@ -5574,6 +9944,30 @@ func init() {
 	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipOutput{})
+	pulumi.RegisterOutputType(GetRuleForwardGroupConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleForwardGroupConfigServerGroupTupleOutput{})
+	pulumi.RegisterOutputType(GetRuleForwardGroupConfigServerGroupTupleArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleRedirectConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRewriteConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionFixedResponseConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionForwardGroupConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionForwardGroupConfigServerGroupStickySessionOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionForwardGroupConfigServerGroupTupleOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionForwardGroupConfigServerGroupTupleArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionRedirectConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionRewriteConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleActionTrafficLimitConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionHeaderConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionHostConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionMethodConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionPathConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionQueryStringConfigOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionQueryStringConfigValueOutput{})
+	pulumi.RegisterOutputType(GetRuleRuleConditionQueryStringConfigValueArrayOutput{})
 	pulumi.RegisterOutputType(GetServerGroupHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetServerGroupListenerOutput{})
 	pulumi.RegisterOutputType(GetServerGroupListenerArrayOutput{})

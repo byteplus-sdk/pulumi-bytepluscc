@@ -19,6 +19,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// </summary>
         public readonly string CpuManagerPolicy;
         /// <summary>
+        /// 触发 Pod 驱逐操作的一组硬性门限。
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult> EvictionHards;
+        /// <summary>
         /// 特性门控。
         /// </summary>
         public readonly Outputs.GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult FeatureGates;
@@ -67,6 +71,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         private GetNodePoolKubernetesConfigKubeletConfigResult(
             string cpuManagerPolicy,
 
+            ImmutableArray<Outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult> evictionHards,
+
             Outputs.GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult featureGates,
 
             int kubeApiBurst,
@@ -90,6 +96,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
             string topologyManagerScope)
         {
             CpuManagerPolicy = cpuManagerPolicy;
+            EvictionHards = evictionHards;
             FeatureGates = featureGates;
             KubeApiBurst = kubeApiBurst;
             KubeApiQps = kubeApiQps;

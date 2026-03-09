@@ -73,6 +73,74 @@
                     }
                 }
             },
+            "bytepluscc_alb_rule": {
+                "current": "bytepluscc:alb/rule:Rule",
+                "fields": {
+                    "forward_group_config": {
+                        "fields": {
+                            "server_group_tuples": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "rule_actions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "forward_group_config": {
+                                    "fields": {
+                                        "server_group_tuples": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "rule_conditions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "header_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "host_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "method_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "path_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "query_string_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_alb_server_group": {
                 "current": "bytepluscc:alb/serverGroup:ServerGroup",
                 "fields": {
@@ -179,6 +247,14 @@
                         }
                     },
                     "watch_namespaces": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_ark_endpoint": {
+                "current": "bytepluscc:ark/endpoint:Endpoint",
+                "fields": {
+                    "tags": {
                         "maxItemsOne": false
                     }
                 }
@@ -522,8 +598,17 @@
                     }
                 }
             },
+            "bytepluscc_cloudidentity_permission_set_assignment": {
+                "current": "bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment"
+            },
+            "bytepluscc_cloudidentity_permission_set_provisioning": {
+                "current": "bytepluscc:cloudidentity/permissionSetProvisioning:PermissionSetProvisioning"
+            },
             "bytepluscc_cloudidentity_user": {
                 "current": "bytepluscc:cloudidentity/user:User"
+            },
+            "bytepluscc_cloudidentity_user_provisioning": {
+                "current": "bytepluscc:cloudidentity/userProvisioning:UserProvisioning"
             },
             "bytepluscc_cloudmonitor_rule": {
                 "current": "bytepluscc:cloudmonitor/rule:Rule",
@@ -1005,6 +1090,14 @@
                     }
                 }
             },
+            "bytepluscc_kafka_allow_list": {
+                "current": "bytepluscc:kafka/allowList:AllowList",
+                "fields": {
+                    "associated_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_kafka_topic": {
                 "current": "bytepluscc:kafka/topic:Topic",
                 "fields": {
@@ -1119,6 +1212,30 @@
                 "current": "bytepluscc:rabbitmq/publicAddress:PublicAddress",
                 "fields": {
                     "endpoints": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmssql_instance": {
+                "current": "bytepluscc:rdsmssql/instance:Instance",
+                "fields": {
+                    "allow_list_ids": {
+                        "maxItemsOne": false
+                    },
+                    "connection_info": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "address": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "node_detail_info": {
                         "maxItemsOne": false
                     },
                     "tags": {
@@ -1385,6 +1502,14 @@
                     }
                 }
             },
+            "bytepluscc_tls_project": {
+                "current": "bytepluscc:tls/project:Project",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_transitrouter_transit_router": {
                 "current": "bytepluscc:transitrouter/transitRouter:TransitRouter",
                 "fields": {
@@ -1637,8 +1762,28 @@
                 "fields": {
                     "kubernetes_config": {
                         "fields": {
+                            "containerd_config": {
+                                "fields": {
+                                    "insecure_registries": {
+                                        "maxItemsOne": false
+                                    },
+                                    "registry_proxy_configs": {
+                                        "maxItemsOne": false,
+                                        "elem": {
+                                            "fields": {
+                                                "proxy_endpoints": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "kubelet_config": {
                                 "fields": {
+                                    "eviction_hard": {
+                                        "maxItemsOne": false
+                                    },
                                     "kube_reserved": {
                                         "maxItemsOne": false
                                     },
@@ -2104,6 +2249,82 @@
                     }
                 }
             },
+            "bytepluscc_alb_rule": {
+                "current": "bytepluscc:alb/getRule:getRule",
+                "fields": {
+                    "forward_group_config": {
+                        "fields": {
+                            "server_group_tuples": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "rule_actions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "forward_group_config": {
+                                    "fields": {
+                                        "server_group_tuples": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "rule_conditions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "header_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "host_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "method_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "path_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                },
+                                "query_string_config": {
+                                    "fields": {
+                                        "values": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_alb_rules": {
+                "current": "bytepluscc:alb/getRules:getRules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_alb_server_group": {
                 "current": "bytepluscc:alb/getServerGroup:getServerGroup",
                 "fields": {
@@ -2256,6 +2477,22 @@
             },
             "bytepluscc_apig_upstreams": {
                 "current": "bytepluscc:apig/getUpstreams:getUpstreams",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_ark_endpoint": {
+                "current": "bytepluscc:ark/getEndpoint:getEndpoint",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_ark_endpoints": {
+                "current": "bytepluscc:ark/getEndpoints:getEndpoints",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -2737,6 +2974,28 @@
                     }
                 }
             },
+            "bytepluscc_cloudidentity_permission_set_assignment": {
+                "current": "bytepluscc:cloudidentity/getPermissionSetAssignment:getPermissionSetAssignment"
+            },
+            "bytepluscc_cloudidentity_permission_set_assignments": {
+                "current": "bytepluscc:cloudidentity/getPermissionSetAssignments:getPermissionSetAssignments",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudidentity_permission_set_provisioning": {
+                "current": "bytepluscc:cloudidentity/getPermissionSetProvisioning:getPermissionSetProvisioning"
+            },
+            "bytepluscc_cloudidentity_permission_set_provisionings": {
+                "current": "bytepluscc:cloudidentity/getPermissionSetProvisionings:getPermissionSetProvisionings",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudidentity_permission_sets": {
                 "current": "bytepluscc:cloudidentity/getPermissionSets:getPermissionSets",
                 "fields": {
@@ -2747,6 +3006,17 @@
             },
             "bytepluscc_cloudidentity_user": {
                 "current": "bytepluscc:cloudidentity/getUser:getUser"
+            },
+            "bytepluscc_cloudidentity_user_provisioning": {
+                "current": "bytepluscc:cloudidentity/getUserProvisioning:getUserProvisioning"
+            },
+            "bytepluscc_cloudidentity_user_provisionings": {
+                "current": "bytepluscc:cloudidentity/getUserProvisionings:getUserProvisionings",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_cloudidentity_users": {
                 "current": "bytepluscc:cloudidentity/getUsers:getUsers",
@@ -3447,6 +3717,22 @@
                     }
                 }
             },
+            "bytepluscc_kafka_allow_list": {
+                "current": "bytepluscc:kafka/getAllowList:getAllowList",
+                "fields": {
+                    "associated_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kafka_allow_lists": {
+                "current": "bytepluscc:kafka/getAllowLists:getAllowLists",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_kafka_topic": {
                 "current": "bytepluscc:kafka/getTopic:getTopic",
                 "fields": {
@@ -3666,6 +3952,38 @@
             },
             "bytepluscc_rabbitmq_public_addresses": {
                 "current": "bytepluscc:rabbitmq/getPublicAddresses:getPublicAddresses",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmssql_instance": {
+                "current": "bytepluscc:rdsmssql/getInstance:getInstance",
+                "fields": {
+                    "allow_list_ids": {
+                        "maxItemsOne": false
+                    },
+                    "connection_info": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "address": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "node_detail_info": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmssql_instances": {
+                "current": "bytepluscc:rdsmssql/getInstances:getInstances",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -4035,6 +4353,22 @@
                     }
                 }
             },
+            "bytepluscc_tls_project": {
+                "current": "bytepluscc:tls/getProject:getProject",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_projects": {
+                "current": "bytepluscc:tls/getProjects:getProjects",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_transitrouter_transit_router": {
                 "current": "bytepluscc:transitrouter/getTransitRouter:getTransitRouter",
                 "fields": {
@@ -4375,8 +4709,28 @@
                 "fields": {
                     "kubernetes_config": {
                         "fields": {
+                            "containerd_config": {
+                                "fields": {
+                                    "insecure_registries": {
+                                        "maxItemsOne": false
+                                    },
+                                    "registry_proxy_configs": {
+                                        "maxItemsOne": false,
+                                        "elem": {
+                                            "fields": {
+                                                "proxy_endpoints": {
+                                                    "maxItemsOne": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
                             "kubelet_config": {
                                 "fields": {
+                                    "eviction_hard": {
+                                        "maxItemsOne": false
+                                    },
                                     "kube_reserved": {
                                         "maxItemsOne": false
                                     },

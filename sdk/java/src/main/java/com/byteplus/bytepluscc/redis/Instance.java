@@ -137,6 +137,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.backupPointName;
     }
     /**
+     * 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     * 
+     */
+    @Export(name="blueGreenRole", refs={String.class}, tree="[0]")
+    private Output<String> blueGreenRole;
+
+    /**
+     * @return 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     * 
+     */
+    public Output<String> blueGreenRole() {
+        return this.blueGreenRole;
+    }
+    /**
      * 实例的容量信息。
      * 
      */
@@ -441,6 +455,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> privateAddress() {
         return this.privateAddress;
+    }
+    /**
+     * 实例私网连接地址的端口号。
+     * 
+     */
+    @Export(name="privatePort", refs={String.class}, tree="[0]")
+    private Output<String> privatePort;
+
+    /**
+     * @return 实例私网连接地址的端口号。
+     * 
+     */
+    public Output<String> privatePort() {
+        return this.privatePort;
     }
     /**
      * 实例所属的项目。

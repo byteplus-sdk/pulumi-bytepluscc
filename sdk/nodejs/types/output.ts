@@ -397,6 +397,251 @@ export namespace alb {
         isp: string;
     }
 
+    export interface GetRuleForwardGroupConfig {
+        /**
+         * 转发到的目的服务器组列表。
+         */
+        serverGroupTuples: outputs.alb.GetRuleForwardGroupConfigServerGroupTuple[];
+        /**
+         * 是否开启组间会话保持。on：开启。off：不开启。
+         */
+        stickySessionEnabled: string;
+        /**
+         * 组件回话保持的超时时间。单位：秒。
+         */
+        stickySessionTimeout: number;
+    }
+
+    export interface GetRuleForwardGroupConfigServerGroupTuple {
+        /**
+         * 转发到的目的服务器组 ID。
+         */
+        serverGroupId: string;
+        /**
+         * 服务器组权重。
+         */
+        weight: number;
+    }
+
+    export interface GetRuleRedirectConfig {
+        /**
+         * 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+         */
+        redirectDomain: string;
+        /**
+         * 重定向状态码。301、302、307、308。
+         */
+        redirectHttpCode: string;
+        /**
+         * 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+         */
+        redirectPort: string;
+        /**
+         * 重定向使用的协议。HTTP、HTTPS。
+         */
+        redirectProtocol: string;
+        /**
+         * 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+         */
+        redirectUri: string;
+    }
+
+    export interface GetRuleRewriteConfig {
+        /**
+         * 重写路径。
+         */
+        rewritePath: string;
+    }
+
+    export interface GetRuleRuleAction {
+        /**
+         * FixedResponseConfig
+         */
+        fixedResponseConfig: outputs.alb.GetRuleRuleActionFixedResponseConfig;
+        /**
+         * ForwardGroupConfig
+         */
+        forwardGroupConfig: outputs.alb.GetRuleRuleActionForwardGroupConfig;
+        /**
+         * RedirectConfig
+         */
+        redirectConfig: outputs.alb.GetRuleRuleActionRedirectConfig;
+        /**
+         * RewriteConfig
+         */
+        rewriteConfig: outputs.alb.GetRuleRuleActionRewriteConfig;
+        /**
+         * TrafficLimitConfig
+         */
+        trafficLimitConfig: outputs.alb.GetRuleRuleActionTrafficLimitConfig;
+        /**
+         * 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+         */
+        type: string;
+    }
+
+    export interface GetRuleRuleActionFixedResponseConfig {
+        /**
+         * 返回的固定内容。
+         */
+        content: string;
+        /**
+         * 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+         */
+        contentType: string;
+        /**
+         * 返回的 HTTP 状态码。
+         */
+        httpCode: string;
+    }
+
+    export interface GetRuleRuleActionForwardGroupConfig {
+        /**
+         * ServerGroupStickySession
+         */
+        serverGroupStickySession: outputs.alb.GetRuleRuleActionForwardGroupConfigServerGroupStickySession;
+        /**
+         * ServerGroupTuples
+         */
+        serverGroupTuples: outputs.alb.GetRuleRuleActionForwardGroupConfigServerGroupTuple[];
+    }
+
+    export interface GetRuleRuleActionForwardGroupConfigServerGroupStickySession {
+        /**
+         * 是否开启组间会话保持。on：开启。off：不开启。
+         */
+        enabled: string;
+        /**
+         * 组件回话保持的超时时间。单位：秒。
+         */
+        timeout: number;
+    }
+
+    export interface GetRuleRuleActionForwardGroupConfigServerGroupTuple {
+        /**
+         * 转发到的目的服务器组 ID。
+         */
+        serverGroupId: string;
+        /**
+         * 服务器组权重。
+         */
+        weight: number;
+    }
+
+    export interface GetRuleRuleActionRedirectConfig {
+        /**
+         * 重定向域名，仅支持精确域名。
+         */
+        host: string;
+        /**
+         * 重定向状态码，支持301，302，307，308。
+         */
+        httpCode: string;
+        /**
+         * 重定向 URI。。
+         */
+        path: string;
+        /**
+         * 重定向端口。
+         */
+        port: string;
+        /**
+         * 重定向使用的协议，支持HTTP，HTTPS。
+         */
+        protocol: string;
+    }
+
+    export interface GetRuleRuleActionRewriteConfig {
+        /**
+         * 重写路径。
+         */
+        path: string;
+    }
+
+    export interface GetRuleRuleActionTrafficLimitConfig {
+        /**
+         * 每秒请求数。
+         */
+        qps: number;
+    }
+
+    export interface GetRuleRuleCondition {
+        /**
+         * HeaderConfig。
+         */
+        headerConfig: outputs.alb.GetRuleRuleConditionHeaderConfig;
+        /**
+         * HostConfig。
+         */
+        hostConfig: outputs.alb.GetRuleRuleConditionHostConfig;
+        /**
+         * MethodConfig。
+         */
+        methodConfig: outputs.alb.GetRuleRuleConditionMethodConfig;
+        /**
+         * PathConfig。
+         */
+        pathConfig: outputs.alb.GetRuleRuleConditionPathConfig;
+        /**
+         * QueryStringConfig。
+         */
+        queryStringConfig: outputs.alb.GetRuleRuleConditionQueryStringConfig;
+        /**
+         * 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+         */
+        type: string;
+    }
+
+    export interface GetRuleRuleConditionHeaderConfig {
+        /**
+         * 头字段键。
+         */
+        key: string;
+        /**
+         * 头字段值。
+         */
+        values: string[];
+    }
+
+    export interface GetRuleRuleConditionHostConfig {
+        /**
+         * 转发规则的域名，支持泛域名和精确域名。
+         */
+        values: string[];
+    }
+
+    export interface GetRuleRuleConditionMethodConfig {
+        /**
+         * 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+         */
+        values: string[];
+    }
+
+    export interface GetRuleRuleConditionPathConfig {
+        /**
+         * 转发规则的URL，仅支持绝对路径。
+         */
+        values: string[];
+    }
+
+    export interface GetRuleRuleConditionQueryStringConfig {
+        /**
+         * Values。
+         */
+        values: outputs.alb.GetRuleRuleConditionQueryStringConfigValue[];
+    }
+
+    export interface GetRuleRuleConditionQueryStringConfigValue {
+        /**
+         * 查询字符串键。
+         */
+        key: string;
+        /**
+         * 查询字符串值。
+         */
+        value: string;
+    }
+
     export interface GetServerGroupHealthCheck {
         /**
          * 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
@@ -649,6 +894,242 @@ export namespace alb {
          * 可用区的唯一标识符。
          */
         zoneId: string;
+    }
+
+    export interface RuleForwardGroupConfig {
+        serverGroupTuples: outputs.alb.RuleForwardGroupConfigServerGroupTuple[];
+        /**
+         * 是否开启组间会话保持。on：开启。off：不开启。
+         */
+        stickySessionEnabled: string;
+        /**
+         * 组件回话保持的超时时间。单位：秒。
+         */
+        stickySessionTimeout: number;
+    }
+
+    export interface RuleForwardGroupConfigServerGroupTuple {
+        /**
+         * 转发到的目的服务器组 ID。
+         */
+        serverGroupId: string;
+        /**
+         * 服务器组权重。
+         */
+        weight: number;
+    }
+
+    export interface RuleRedirectConfig {
+        /**
+         * 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+         */
+        redirectDomain: string;
+        /**
+         * 重定向状态码。301、302、307、308。
+         */
+        redirectHttpCode: string;
+        /**
+         * 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+         */
+        redirectPort: string;
+        /**
+         * 重定向使用的协议。HTTP、HTTPS。
+         */
+        redirectProtocol: string;
+        /**
+         * 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+         */
+        redirectUri: string;
+    }
+
+    export interface RuleRewriteConfig {
+        /**
+         * 重写路径。
+         */
+        rewritePath: string;
+    }
+
+    export interface RuleRuleAction {
+        /**
+         * FixedResponseConfig
+         */
+        fixedResponseConfig: outputs.alb.RuleRuleActionFixedResponseConfig;
+        /**
+         * ForwardGroupConfig
+         */
+        forwardGroupConfig: outputs.alb.RuleRuleActionForwardGroupConfig;
+        /**
+         * RedirectConfig
+         */
+        redirectConfig: outputs.alb.RuleRuleActionRedirectConfig;
+        /**
+         * RewriteConfig
+         */
+        rewriteConfig: outputs.alb.RuleRuleActionRewriteConfig;
+        /**
+         * TrafficLimitConfig
+         */
+        trafficLimitConfig: outputs.alb.RuleRuleActionTrafficLimitConfig;
+        /**
+         * 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+         */
+        type: string;
+    }
+
+    export interface RuleRuleActionFixedResponseConfig {
+        /**
+         * 返回的固定内容。
+         */
+        content: string;
+        /**
+         * 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+         */
+        contentType: string;
+        /**
+         * 返回的 HTTP 状态码。
+         */
+        httpCode: string;
+    }
+
+    export interface RuleRuleActionForwardGroupConfig {
+        /**
+         * ServerGroupStickySession
+         */
+        serverGroupStickySession: outputs.alb.RuleRuleActionForwardGroupConfigServerGroupStickySession;
+        serverGroupTuples: outputs.alb.RuleRuleActionForwardGroupConfigServerGroupTuple[];
+    }
+
+    export interface RuleRuleActionForwardGroupConfigServerGroupStickySession {
+        /**
+         * 是否开启组间会话保持。on：开启。off：不开启。
+         */
+        enabled: string;
+        /**
+         * 组件回话保持的超时时间。单位：秒。
+         */
+        timeout: number;
+    }
+
+    export interface RuleRuleActionForwardGroupConfigServerGroupTuple {
+        /**
+         * 转发到的目的服务器组 ID。
+         */
+        serverGroupId: string;
+        /**
+         * 服务器组权重。
+         */
+        weight: number;
+    }
+
+    export interface RuleRuleActionRedirectConfig {
+        /**
+         * 重定向域名，仅支持精确域名。
+         */
+        host: string;
+        /**
+         * 重定向状态码，支持301，302，307，308。
+         */
+        httpCode: string;
+        /**
+         * 重定向 URI。。
+         */
+        path: string;
+        /**
+         * 重定向端口。
+         */
+        port: string;
+        /**
+         * 重定向使用的协议，支持HTTP，HTTPS。
+         */
+        protocol: string;
+    }
+
+    export interface RuleRuleActionRewriteConfig {
+        /**
+         * 重写路径。
+         */
+        path: string;
+    }
+
+    export interface RuleRuleActionTrafficLimitConfig {
+        /**
+         * 每秒请求数。
+         */
+        qps: number;
+    }
+
+    export interface RuleRuleCondition {
+        /**
+         * HeaderConfig。
+         */
+        headerConfig: outputs.alb.RuleRuleConditionHeaderConfig;
+        /**
+         * HostConfig。
+         */
+        hostConfig: outputs.alb.RuleRuleConditionHostConfig;
+        /**
+         * MethodConfig。
+         */
+        methodConfig: outputs.alb.RuleRuleConditionMethodConfig;
+        /**
+         * PathConfig。
+         */
+        pathConfig: outputs.alb.RuleRuleConditionPathConfig;
+        /**
+         * QueryStringConfig。
+         */
+        queryStringConfig: outputs.alb.RuleRuleConditionQueryStringConfig;
+        /**
+         * 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+         */
+        type: string;
+    }
+
+    export interface RuleRuleConditionHeaderConfig {
+        /**
+         * 头字段键。
+         */
+        key: string;
+        /**
+         * 头字段值。
+         */
+        values: string[];
+    }
+
+    export interface RuleRuleConditionHostConfig {
+        /**
+         * 转发规则的域名，支持泛域名和精确域名。
+         */
+        values: string[];
+    }
+
+    export interface RuleRuleConditionMethodConfig {
+        /**
+         * 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+         */
+        values: string[];
+    }
+
+    export interface RuleRuleConditionPathConfig {
+        /**
+         * 转发规则的URL，仅支持绝对路径。
+         */
+        values: string[];
+    }
+
+    export interface RuleRuleConditionQueryStringConfig {
+        values: outputs.alb.RuleRuleConditionQueryStringConfigValue[];
+    }
+
+    export interface RuleRuleConditionQueryStringConfigValue {
+        /**
+         * 查询字符串键。
+         */
+        key: string;
+        /**
+         * 查询字符串值。
+         */
+        value: string;
     }
 
     export interface ServerGroupHealthCheck {
@@ -1939,6 +2420,173 @@ export namespace apig {
         key: string;
         /**
          * 值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace ark {
+    export interface EndpointCertificate {
+        /**
+         * X509私有证书过期的时间。使用秒级时间戳表示。
+         */
+        notAfter: number;
+        /**
+         * X509私有证书开始生效的时间。使用秒级时间戳表示。
+         */
+        notBefore: number;
+        /**
+         * 证书方。
+         */
+        pcaHost: string;
+        /**
+         * PEM 格式的叶子证书。
+         */
+        pcaInstanceCertificate: string;
+        /**
+         * 证书名称。
+         */
+        pcaName: string;
+        /**
+         * PEM 格式的根证书。
+         */
+        pcaRootCaCertificate: string;
+        /**
+         * PEM 格式的中间根证书和根证书。
+         */
+        pcaSubCaCertificate: string;
+    }
+
+    export interface EndpointModelReference {
+        /**
+         * 定制模型的ID。
+         */
+        customModelId: string;
+        /**
+         * 基础模型。
+         */
+        foundationModel: outputs.ark.EndpointModelReferenceFoundationModel;
+    }
+
+    export interface EndpointModelReferenceFoundationModel {
+        /**
+         * 基础模型版本。
+         */
+        modelVersion: string;
+        /**
+         * 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+         */
+        name: string;
+    }
+
+    export interface EndpointModeration {
+        /**
+         * 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+         */
+        strategy: string;
+    }
+
+    export interface EndpointRateLimit {
+        /**
+         * Requests Per Minute，每分钟请求数。
+         */
+        rpm: number;
+        /**
+         * Tokens Per Minute，每分钟请求 token 数。
+         */
+        tpm: number;
+    }
+
+    export interface EndpointTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface GetEndpointCertificate {
+        /**
+         * X509私有证书过期的时间。使用秒级时间戳表示。
+         */
+        notAfter: number;
+        /**
+         * X509私有证书开始生效的时间。使用秒级时间戳表示。
+         */
+        notBefore: number;
+        /**
+         * 证书方。
+         */
+        pcaHost: string;
+        /**
+         * PEM 格式的叶子证书。
+         */
+        pcaInstanceCertificate: string;
+        /**
+         * 证书名称。
+         */
+        pcaName: string;
+        /**
+         * PEM 格式的根证书。
+         */
+        pcaRootCaCertificate: string;
+        /**
+         * PEM 格式的中间根证书和根证书。
+         */
+        pcaSubCaCertificate: string;
+    }
+
+    export interface GetEndpointModelReference {
+        /**
+         * 定制模型的ID。
+         */
+        customModelId: string;
+        /**
+         * 基础模型。
+         */
+        foundationModel: outputs.ark.GetEndpointModelReferenceFoundationModel;
+    }
+
+    export interface GetEndpointModelReferenceFoundationModel {
+        /**
+         * 基础模型版本。
+         */
+        modelVersion: string;
+        /**
+         * 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+         */
+        name: string;
+    }
+
+    export interface GetEndpointModeration {
+        /**
+         * 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+         */
+        strategy: string;
+    }
+
+    export interface GetEndpointRateLimit {
+        /**
+         * Requests Per Minute，每分钟请求数。
+         */
+        rpm: number;
+        /**
+         * Tokens Per Minute，每分钟请求 token 数。
+         */
+        tpm: number;
+    }
+
+    export interface GetEndpointTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
          */
         value: string;
     }
@@ -8346,6 +8994,24 @@ export namespace iam {
 }
 
 export namespace kafka {
+    export interface AllowListAssociatedInstance {
+        /**
+         * 白名单绑定的实例ID。
+         */
+        instanceId: string;
+    }
+
+    export interface GetAllowListAssociatedInstance {
+        /**
+         * 白名单绑定的实例ID。
+         */
+        instanceId: string;
+        /**
+         * 白名单绑定的实例名称。
+         */
+        instanceName: string;
+    }
+
     export interface GetTopicAccessPolicy {
         /**
          * SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
@@ -9026,6 +9692,324 @@ export namespace rabbitmq {
         key: string;
         /**
          * 标签的值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace rdsmssql {
+    export interface GetInstanceChargeInfo {
+        /**
+         * 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+         */
+        autoRenew: boolean;
+        /**
+         * 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeEndTime: string;
+        /**
+         * 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeStartTime: string;
+        /**
+         * 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+         */
+        chargeStatus: string;
+        /**
+         * 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+         */
+        chargeType: string;
+        /**
+         * 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueReclaimTime: string;
+        /**
+         * 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueTime: string;
+        /**
+         * 预付费场景下的购买时长。默认值：1。
+         */
+        period: number;
+        /**
+         * 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+         */
+        periodUnit: string;
+    }
+
+    export interface GetInstanceConnectionInfo {
+        /**
+         * 地址列表。
+         */
+        addresses: outputs.rdsmssql.GetInstanceConnectionInfoAddress[];
+        /**
+         * 描述信息。
+         */
+        description: string;
+        /**
+         * 终端 ID。
+         */
+        endpointId: string;
+        /**
+         * 终端名称。
+         */
+        endpointName: string;
+        /**
+         * 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+         */
+        endpointType: string;
+    }
+
+    export interface GetInstanceConnectionInfoAddress {
+        /**
+         * 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+         */
+        dnsVisibility: boolean;
+        /**
+         * 域名。
+         */
+        domain: string;
+        /**
+         * EIP的ID，仅对公网地址有效。
+         */
+        eipId: string;
+        /**
+         * IP地址。
+         */
+        ipAddress: string;
+        /**
+         * 网络地址类型。取值：Private：私网类型。Public：公网类型。
+         */
+        networkType: string;
+        /**
+         * 端口。
+         */
+        port: string;
+        /**
+         * 子网 ID，仅对私网地址有效。
+         */
+        subnetId: string;
+    }
+
+    export interface GetInstanceNodeDetailInfo {
+        /**
+         * 节点的创建时间。
+         */
+        createTime: string;
+        /**
+         * 节点主机名。
+         */
+        hostName: string;
+        /**
+         * 实例ID。
+         */
+        instanceId: string;
+        /**
+         * 内存大小，单位为 GiB。
+         */
+        memory: number;
+        /**
+         * 节点ID。
+         */
+        nodeId: string;
+        /**
+         * 节点IP。
+         */
+        nodeIp: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+         */
+        nodeStatus: string;
+        /**
+         * 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+         */
+        nodeType: string;
+        /**
+         * 区域ID。
+         */
+        regionId: string;
+        /**
+         * 更新时间。
+         */
+        updateTime: string;
+        /**
+         * vCPU 数量。
+         */
+        vcpu: number;
+        /**
+         * 可用区ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface InstanceChargeInfo {
+        /**
+         * 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+         */
+        autoRenew: boolean;
+        /**
+         * 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeEndTime: string;
+        /**
+         * 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeStartTime: string;
+        /**
+         * 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+         */
+        chargeStatus: string;
+        /**
+         * 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+         */
+        chargeType: string;
+        /**
+         * 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueReclaimTime: string;
+        /**
+         * 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueTime: string;
+        /**
+         * 预付费场景下的购买时长。默认值：1。
+         */
+        period: number;
+        /**
+         * 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+         */
+        periodUnit: string;
+    }
+
+    export interface InstanceConnectionInfo {
+        addresses: outputs.rdsmssql.InstanceConnectionInfoAddress[];
+        /**
+         * 描述信息。
+         */
+        description: string;
+        /**
+         * 终端 ID。
+         */
+        endpointId: string;
+        /**
+         * 终端名称。
+         */
+        endpointName: string;
+        /**
+         * 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+         */
+        endpointType: string;
+    }
+
+    export interface InstanceConnectionInfoAddress {
+        /**
+         * 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+         */
+        dnsVisibility: boolean;
+        /**
+         * 域名。
+         */
+        domain: string;
+        /**
+         * EIP的ID，仅对公网地址有效。
+         */
+        eipId: string;
+        /**
+         * IP地址。
+         */
+        ipAddress: string;
+        /**
+         * 网络地址类型。取值：Private：私网类型。Public：公网类型。
+         */
+        networkType: string;
+        /**
+         * 端口。
+         */
+        port: string;
+        /**
+         * 子网 ID，仅对私网地址有效。
+         */
+        subnetId: string;
+    }
+
+    export interface InstanceNodeDetailInfo {
+        /**
+         * 节点的创建时间。
+         */
+        createTime: string;
+        /**
+         * 节点主机名。
+         */
+        hostName: string;
+        /**
+         * 实例ID。
+         */
+        instanceId: string;
+        /**
+         * 内存大小，单位为 GiB。
+         */
+        memory: number;
+        /**
+         * 节点ID。
+         */
+        nodeId: string;
+        /**
+         * 节点IP。
+         */
+        nodeIp: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+         */
+        nodeStatus: string;
+        /**
+         * 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+         */
+        nodeType: string;
+        /**
+         * 区域ID。
+         */
+        regionId: string;
+        /**
+         * 更新时间。
+         */
+        updateTime: string;
+        /**
+         * vCPU 数量。
+         */
+        vcpu: number;
+        /**
+         * 可用区ID。
+         */
+        zoneId: string;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
          */
         value: string;
     }
@@ -10415,6 +11399,31 @@ export namespace storageebs {
          * 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
          */
         throughput: number;
+    }
+
+}
+
+export namespace tls {
+    export interface GetProjectTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface ProjectTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
     }
 
 }
@@ -12434,6 +13443,10 @@ export namespace vke {
          */
         autoSyncDisabled: boolean;
         /**
+         * 节点池 Containerd 相关配置。
+         */
+        containerdConfig: outputs.vke.GetNodePoolKubernetesConfigContainerdConfig;
+        /**
          * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
          */
         cordon: boolean;
@@ -12463,11 +13476,37 @@ export namespace vke {
         taints: outputs.vke.GetNodePoolKubernetesConfigTaint[];
     }
 
+    export interface GetNodePoolKubernetesConfigContainerdConfig {
+        /**
+         * 指定跳过证书认证的容器镜像仓库地址。
+         */
+        insecureRegistries: string[];
+        /**
+         * 容器镜像仓库代理配置。
+         */
+        registryProxyConfigs: outputs.vke.GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig[];
+    }
+
+    export interface GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+        /**
+         * 代理地址。
+         */
+        proxyEndpoints: string[];
+        /**
+         * 容器镜像仓库地址。
+         */
+        registry: string;
+    }
+
     export interface GetNodePoolKubernetesConfigKubeletConfig {
         /**
          * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
          */
         cpuManagerPolicy: string;
+        /**
+         * 触发 Pod 驱逐操作的一组硬性门限。
+         */
+        evictionHards: outputs.vke.GetNodePoolKubernetesConfigKubeletConfigEvictionHard[];
         /**
          * 特性门控。
          */
@@ -12512,6 +13551,17 @@ export namespace vke {
          * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
          */
         topologyManagerScope: string;
+    }
+
+    export interface GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
+        /**
+         * 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+         */
+        key: string;
+        /**
+         * 硬性门限值。
+         */
+        value: string;
     }
 
     export interface GetNodePoolKubernetesConfigKubeletConfigFeatureGates {
@@ -12977,6 +14027,10 @@ export namespace vke {
          */
         autoSyncDisabled: boolean;
         /**
+         * 节点池 Containerd 相关配置。
+         */
+        containerdConfig: outputs.vke.NodePoolKubernetesConfigContainerdConfig;
+        /**
          * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
          */
         cordon: boolean;
@@ -13000,11 +14054,31 @@ export namespace vke {
         taints: outputs.vke.NodePoolKubernetesConfigTaint[];
     }
 
+    export interface NodePoolKubernetesConfigContainerdConfig {
+        /**
+         * 指定跳过证书认证的容器镜像仓库地址。
+         */
+        insecureRegistries: string[];
+        registryProxyConfigs: outputs.vke.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig[];
+    }
+
+    export interface NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
+        /**
+         * 代理地址。
+         */
+        proxyEndpoints: string[];
+        /**
+         * 容器镜像仓库地址。
+         */
+        registry: string;
+    }
+
     export interface NodePoolKubernetesConfigKubeletConfig {
         /**
          * 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
          */
         cpuManagerPolicy: string;
+        evictionHards: outputs.vke.NodePoolKubernetesConfigKubeletConfigEvictionHard[];
         /**
          * 特性门控。
          */
@@ -13043,6 +14117,17 @@ export namespace vke {
          * 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
          */
         topologyManagerScope: string;
+    }
+
+    export interface NodePoolKubernetesConfigKubeletConfigEvictionHard {
+        /**
+         * 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+         */
+        key: string;
+        /**
+         * 硬性门限值。
+         */
+        value: string;
     }
 
     export interface NodePoolKubernetesConfigKubeletConfigFeatureGates {

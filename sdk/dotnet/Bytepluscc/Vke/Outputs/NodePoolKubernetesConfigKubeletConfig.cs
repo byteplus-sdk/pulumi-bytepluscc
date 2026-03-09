@@ -18,6 +18,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
         /// </summary>
         public readonly string? CpuManagerPolicy;
+        public readonly ImmutableArray<Outputs.NodePoolKubernetesConfigKubeletConfigEvictionHard> EvictionHards;
         /// <summary>
         /// 特性门控。
         /// </summary>
@@ -61,6 +62,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         private NodePoolKubernetesConfigKubeletConfig(
             string? cpuManagerPolicy,
 
+            ImmutableArray<Outputs.NodePoolKubernetesConfigKubeletConfigEvictionHard> evictionHards,
+
             Outputs.NodePoolKubernetesConfigKubeletConfigFeatureGates? featureGates,
 
             int? kubeApiBurst,
@@ -84,6 +87,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
             string? topologyManagerScope)
         {
             CpuManagerPolicy = cpuManagerPolicy;
+            EvictionHards = evictionHards;
             FeatureGates = featureGates;
             KubeApiBurst = kubeApiBurst;
             KubeApiQps = kubeApiQps;

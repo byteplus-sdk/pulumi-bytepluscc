@@ -141,6 +141,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Output<string> ProtectionLevel { get; private set; } = null!;
 
         /// <summary>
+        /// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        /// </summary>
+        [Output("rotateInterval")]
+        public Output<int> RotateInterval { get; private set; } = null!;
+
+        /// <summary>
         /// 密钥轮转状态，取值：Enable，Disable。
         /// </summary>
         [Output("rotateState")]
@@ -269,6 +275,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? ProtectionLevel { get; set; }
 
         /// <summary>
+        /// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        /// </summary>
+        [Input("rotateInterval")]
+        public Input<int>? RotateInterval { get; set; }
+
+        /// <summary>
         /// 密钥轮转状态，取值：Enable，Disable。
         /// </summary>
         [Input("rotateState")]
@@ -373,6 +385,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("protectionLevel")]
         public Input<string>? ProtectionLevel { get; set; }
+
+        /// <summary>
+        /// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        /// </summary>
+        [Input("rotateInterval")]
+        public Input<int>? RotateInterval { get; set; }
 
         /// <summary>
         /// 密钥轮转状态，取值：Enable，Disable。

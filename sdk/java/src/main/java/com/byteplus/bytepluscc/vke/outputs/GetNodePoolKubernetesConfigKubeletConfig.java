@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.vke.outputs;
 
+import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHard;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigKubeletConfigFeatureGates;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigKubeletConfigKubeReserved;
 import com.byteplus.bytepluscc.vke.outputs.GetNodePoolKubernetesConfigKubeletConfigSystemReserved;
@@ -21,6 +22,11 @@ public final class GetNodePoolKubernetesConfigKubeletConfig {
      * 
      */
     private String cpuManagerPolicy;
+    /**
+     * @return 触发 Pod 驱逐操作的一组硬性门限。
+     * 
+     */
+    private List<GetNodePoolKubernetesConfigKubeletConfigEvictionHard> evictionHards;
     /**
      * @return 特性门控。
      * 
@@ -84,6 +90,13 @@ public final class GetNodePoolKubernetesConfigKubeletConfig {
      */
     public String cpuManagerPolicy() {
         return this.cpuManagerPolicy;
+    }
+    /**
+     * @return 触发 Pod 驱逐操作的一组硬性门限。
+     * 
+     */
+    public List<GetNodePoolKubernetesConfigKubeletConfigEvictionHard> evictionHards() {
+        return this.evictionHards;
     }
     /**
      * @return 特性门控。
@@ -173,6 +186,7 @@ public final class GetNodePoolKubernetesConfigKubeletConfig {
     @CustomType.Builder
     public static final class Builder {
         private String cpuManagerPolicy;
+        private List<GetNodePoolKubernetesConfigKubeletConfigEvictionHard> evictionHards;
         private GetNodePoolKubernetesConfigKubeletConfigFeatureGates featureGates;
         private Integer kubeApiBurst;
         private Integer kubeApiQps;
@@ -188,6 +202,7 @@ public final class GetNodePoolKubernetesConfigKubeletConfig {
         public Builder(GetNodePoolKubernetesConfigKubeletConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpuManagerPolicy = defaults.cpuManagerPolicy;
+    	      this.evictionHards = defaults.evictionHards;
     	      this.featureGates = defaults.featureGates;
     	      this.kubeApiBurst = defaults.kubeApiBurst;
     	      this.kubeApiQps = defaults.kubeApiQps;
@@ -208,6 +223,17 @@ public final class GetNodePoolKubernetesConfigKubeletConfig {
             }
             this.cpuManagerPolicy = cpuManagerPolicy;
             return this;
+        }
+        @CustomType.Setter
+        public Builder evictionHards(List<GetNodePoolKubernetesConfigKubeletConfigEvictionHard> evictionHards) {
+            if (evictionHards == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolKubernetesConfigKubeletConfig", "evictionHards");
+            }
+            this.evictionHards = evictionHards;
+            return this;
+        }
+        public Builder evictionHards(GetNodePoolKubernetesConfigKubeletConfigEvictionHard... evictionHards) {
+            return evictionHards(List.of(evictionHards));
         }
         @CustomType.Setter
         public Builder featureGates(GetNodePoolKubernetesConfigKubeletConfigFeatureGates featureGates) {
@@ -306,6 +332,7 @@ public final class GetNodePoolKubernetesConfigKubeletConfig {
         public GetNodePoolKubernetesConfigKubeletConfig build() {
             final var _resultValue = new GetNodePoolKubernetesConfigKubeletConfig();
             _resultValue.cpuManagerPolicy = cpuManagerPolicy;
+            _resultValue.evictionHards = evictionHards;
             _resultValue.featureGates = featureGates;
             _resultValue.kubeApiBurst = kubeApiBurst;
             _resultValue.kubeApiQps = kubeApiQps;

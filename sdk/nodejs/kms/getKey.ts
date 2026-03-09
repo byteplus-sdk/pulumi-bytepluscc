@@ -91,6 +91,10 @@ export interface GetKeyResult {
      */
     readonly protectionLevel: string;
     /**
+     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     */
+    readonly rotateInterval: number;
+    /**
      * 密钥轮转状态，取值：Enable，Disable。
      */
     readonly rotateState: string;

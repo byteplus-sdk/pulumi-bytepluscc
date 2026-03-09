@@ -16,6 +16,8 @@ import com.byteplus.bytepluscc.alb.inputs.GetListenerArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetListenerPlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetLoadBalancerArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetLoadBalancerPlainArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetRuleArgs;
+import com.byteplus.bytepluscc.alb.inputs.GetRulePlainArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetServerGroupArgs;
 import com.byteplus.bytepluscc.alb.inputs.GetServerGroupPlainArgs;
 import com.byteplus.bytepluscc.alb.outputs.GetAclResult;
@@ -30,6 +32,8 @@ import com.byteplus.bytepluscc.alb.outputs.GetListenerResult;
 import com.byteplus.bytepluscc.alb.outputs.GetListenersResult;
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancerResult;
 import com.byteplus.bytepluscc.alb.outputs.GetLoadBalancersResult;
+import com.byteplus.bytepluscc.alb.outputs.GetRuleResult;
+import com.byteplus.bytepluscc.alb.outputs.GetRulesResult;
 import com.byteplus.bytepluscc.alb.outputs.GetServerGroupResult;
 import com.byteplus.bytepluscc.alb.outputs.GetServerGroupsResult;
 import com.pulumi.core.Output;
@@ -544,6 +548,90 @@ public final class AlbFunctions {
      */
     public static CompletableFuture<GetLoadBalancersResult> getLoadBalancersPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:alb/getLoadBalancers:getLoadBalancers", TypeShape.of(GetLoadBalancersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args) {
+        return getRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args) {
+        return getRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static Output<GetRuleResult> getRule(GetRuleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules() {
+        return getRules(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain() {
+        return getRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args) {
+        return getRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain(InvokeArgs args) {
+        return getRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static Output<GetRulesResult> getRules(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:alb/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ALB::Rule
+     * 
+     */
+    public static CompletableFuture<GetRulesResult> getRulesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:alb/getRules:getRules", TypeShape.of(GetRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::ALB::ServerGroup

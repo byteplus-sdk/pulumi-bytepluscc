@@ -19,6 +19,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         [Input("cpuManagerPolicy")]
         public Input<string>? CpuManagerPolicy { get; set; }
 
+        [Input("evictionHards")]
+        private InputList<Inputs.NodePoolKubernetesConfigKubeletConfigEvictionHardGetArgs>? _evictionHards;
+        public InputList<Inputs.NodePoolKubernetesConfigKubeletConfigEvictionHardGetArgs> EvictionHards
+        {
+            get => _evictionHards ?? (_evictionHards = new InputList<Inputs.NodePoolKubernetesConfigKubeletConfigEvictionHardGetArgs>());
+            set => _evictionHards = value;
+        }
+
         /// <summary>
         /// 特性门控。
         /// </summary>

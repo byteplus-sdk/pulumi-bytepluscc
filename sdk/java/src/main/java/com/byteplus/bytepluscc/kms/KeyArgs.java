@@ -8,6 +8,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -140,6 +141,21 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    @Import(name="rotateInterval")
+    private @Nullable Output<Integer> rotateInterval;
+
+    /**
+     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * 
+     */
+    public Optional<Output<Integer>> rotateInterval() {
+        return Optional.ofNullable(this.rotateInterval);
+    }
+
+    /**
      * 密钥轮转状态，取值：Enable，Disable。
      * 
      */
@@ -172,6 +188,7 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         this.multiRegion = $.multiRegion;
         this.origin = $.origin;
         this.protectionLevel = $.protectionLevel;
+        this.rotateInterval = $.rotateInterval;
         this.rotateState = $.rotateState;
         this.tags = $.tags;
     }
@@ -360,6 +377,27 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder protectionLevel(String protectionLevel) {
             return protectionLevel(Output.of(protectionLevel));
+        }
+
+        /**
+         * @param rotateInterval 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotateInterval(@Nullable Output<Integer> rotateInterval) {
+            $.rotateInterval = rotateInterval;
+            return this;
+        }
+
+        /**
+         * @param rotateInterval 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder rotateInterval(Integer rotateInterval) {
+            return rotateInterval(Output.of(rotateInterval));
         }
 
         /**

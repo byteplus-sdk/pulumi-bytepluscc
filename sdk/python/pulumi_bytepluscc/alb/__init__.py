@@ -21,11 +21,14 @@ from .get_listener import *
 from .get_listeners import *
 from .get_load_balancer import *
 from .get_load_balancers import *
+from .get_rule import *
+from .get_rules import *
 from .get_server_group import *
 from .get_server_groups import *
 from .health_check_template import *
 from .listener import *
 from .load_balancer import *
+from .rule import *
 from .server_group import *
 from ._inputs import *
 from . import outputs

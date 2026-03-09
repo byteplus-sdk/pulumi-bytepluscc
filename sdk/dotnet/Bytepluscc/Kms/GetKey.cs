@@ -125,6 +125,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         public readonly string ProtectionLevel;
         /// <summary>
+        /// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        /// </summary>
+        public readonly int RotateInterval;
+        /// <summary>
         /// 密钥轮转状态，取值：Enable，Disable。
         /// </summary>
         public readonly string RotateState;
@@ -181,6 +185,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 
             string protectionLevel,
 
+            int rotateInterval,
+
             string rotateState,
 
             string scheduleDeleteTime,
@@ -208,6 +214,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
             MultiRegionConfiguration = multiRegionConfiguration;
             Origin = origin;
             ProtectionLevel = protectionLevel;
+            RotateInterval = rotateInterval;
             RotateState = rotateState;
             ScheduleDeleteTime = scheduleDeleteTime;
             ScheduleRotationTime = scheduleRotationTime;

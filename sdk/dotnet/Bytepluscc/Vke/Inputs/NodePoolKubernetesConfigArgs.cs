@@ -20,6 +20,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         public Input<bool>? AutoSyncDisabled { get; set; }
 
         /// <summary>
+        /// 节点池 Containerd 相关配置。
+        /// </summary>
+        [Input("containerdConfig")]
+        public Input<Inputs.NodePoolKubernetesConfigContainerdConfigArgs>? ContainerdConfig { get; set; }
+
+        /// <summary>
         /// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
         /// </summary>
         [Input("cordon")]

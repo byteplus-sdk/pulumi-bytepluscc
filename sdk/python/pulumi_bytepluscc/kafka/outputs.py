@@ -16,11 +16,49 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AllowListAssociatedInstance',
     'TopicAccessPolicy',
     'TopicTag',
+    'GetAllowListAssociatedInstanceResult',
     'GetTopicAccessPolicyResult',
     'GetTopicTagResult',
 ]
+
+@pulumi.output_type
+class AllowListAssociatedInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str instance_id: 白名单绑定的实例ID。
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        白名单绑定的实例ID。
+        """
+        return pulumi.get(self, "instance_id")
+
 
 @pulumi.output_type
 class TopicAccessPolicy(dict):
@@ -101,6 +139,35 @@ class TopicTag(dict):
         标签值。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAllowListAssociatedInstanceResult(dict):
+    def __init__(__self__, *,
+                 instance_id: builtins.str,
+                 instance_name: builtins.str):
+        """
+        :param builtins.str instance_id: 白名单绑定的实例ID。
+        :param builtins.str instance_name: 白名单绑定的实例名称。
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "instance_name", instance_name)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        白名单绑定的实例ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> builtins.str:
+        """
+        白名单绑定的实例名称。
+        """
+        return pulumi.get(self, "instance_name")
 
 
 @pulumi.output_type

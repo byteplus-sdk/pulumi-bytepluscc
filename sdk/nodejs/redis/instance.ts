@@ -92,6 +92,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public readonly backupPointName!: pulumi.Output<string>;
     /**
+     * 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     */
+    public /*out*/ readonly blueGreenRole!: pulumi.Output<string>;
+    /**
      * 实例的容量信息。
      */
     public /*out*/ readonly capacity!: pulumi.Output<outputs.redis.InstanceCapacity>;
@@ -178,6 +182,10 @@ export class Instance extends pulumi.CustomResource {
      */
     public /*out*/ readonly privateAddress!: pulumi.Output<string>;
     /**
+     * 实例私网连接地址的端口号。
+     */
+    public /*out*/ readonly privatePort!: pulumi.Output<string>;
+    /**
      * 实例所属的项目。
      */
     public readonly projectName!: pulumi.Output<string>;
@@ -252,6 +260,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["allowListIds"] = state ? state.allowListIds : undefined;
             resourceInputs["autoRenew"] = state ? state.autoRenew : undefined;
             resourceInputs["backupPointName"] = state ? state.backupPointName : undefined;
+            resourceInputs["blueGreenRole"] = state ? state.blueGreenRole : undefined;
             resourceInputs["capacity"] = state ? state.capacity : undefined;
             resourceInputs["chargeType"] = state ? state.chargeType : undefined;
             resourceInputs["configureNodes"] = state ? state.configureNodes : undefined;
@@ -275,6 +284,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["password"] = state ? state.password : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
             resourceInputs["privateAddress"] = state ? state.privateAddress : undefined;
+            resourceInputs["privatePort"] = state ? state.privatePort : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["purchaseMonths"] = state ? state.purchaseMonths : undefined;
             resourceInputs["reserveAdditionalBandwidth"] = state ? state.reserveAdditionalBandwidth : undefined;
@@ -341,6 +351,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["vpcId"] = args ? args.vpcId : undefined;
+            resourceInputs["blueGreenRole"] = undefined /*out*/;
             resourceInputs["capacity"] = undefined /*out*/;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["dataLayout"] = undefined /*out*/;
@@ -352,6 +363,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["maxConnections"] = undefined /*out*/;
             resourceInputs["nodeIds"] = undefined /*out*/;
             resourceInputs["privateAddress"] = undefined /*out*/;
+            resourceInputs["privatePort"] = undefined /*out*/;
             resourceInputs["serviceType"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["viPv6"] = undefined /*out*/;
@@ -381,6 +393,10 @@ export interface InstanceState {
      * 为变更前创建的全量备份设置备份名称。
      */
     backupPointName?: pulumi.Input<string>;
+    /**
+     * 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+     */
+    blueGreenRole?: pulumi.Input<string>;
     /**
      * 实例的容量信息。
      */
@@ -467,6 +483,10 @@ export interface InstanceState {
      * 实例私网连接地址的域名。
      */
     privateAddress?: pulumi.Input<string>;
+    /**
+     * 实例私网连接地址的端口号。
+     */
+    privatePort?: pulumi.Input<string>;
     /**
      * 实例所属的项目。
      */

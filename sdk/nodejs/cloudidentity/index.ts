@@ -20,6 +20,26 @@ export const getPermissionSet: typeof import("./getPermissionSet").getPermission
 export const getPermissionSetOutput: typeof import("./getPermissionSet").getPermissionSetOutput = null as any;
 utilities.lazyLoad(exports, ["getPermissionSet","getPermissionSetOutput"], () => require("./getPermissionSet"));
 
+export { GetPermissionSetAssignmentArgs, GetPermissionSetAssignmentResult, GetPermissionSetAssignmentOutputArgs } from "./getPermissionSetAssignment";
+export const getPermissionSetAssignment: typeof import("./getPermissionSetAssignment").getPermissionSetAssignment = null as any;
+export const getPermissionSetAssignmentOutput: typeof import("./getPermissionSetAssignment").getPermissionSetAssignmentOutput = null as any;
+utilities.lazyLoad(exports, ["getPermissionSetAssignment","getPermissionSetAssignmentOutput"], () => require("./getPermissionSetAssignment"));
+
+export { GetPermissionSetAssignmentsResult } from "./getPermissionSetAssignments";
+export const getPermissionSetAssignments: typeof import("./getPermissionSetAssignments").getPermissionSetAssignments = null as any;
+export const getPermissionSetAssignmentsOutput: typeof import("./getPermissionSetAssignments").getPermissionSetAssignmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getPermissionSetAssignments","getPermissionSetAssignmentsOutput"], () => require("./getPermissionSetAssignments"));
+
+export { GetPermissionSetProvisioningArgs, GetPermissionSetProvisioningResult, GetPermissionSetProvisioningOutputArgs } from "./getPermissionSetProvisioning";
+export const getPermissionSetProvisioning: typeof import("./getPermissionSetProvisioning").getPermissionSetProvisioning = null as any;
+export const getPermissionSetProvisioningOutput: typeof import("./getPermissionSetProvisioning").getPermissionSetProvisioningOutput = null as any;
+utilities.lazyLoad(exports, ["getPermissionSetProvisioning","getPermissionSetProvisioningOutput"], () => require("./getPermissionSetProvisioning"));
+
+export { GetPermissionSetProvisioningsResult } from "./getPermissionSetProvisionings";
+export const getPermissionSetProvisionings: typeof import("./getPermissionSetProvisionings").getPermissionSetProvisionings = null as any;
+export const getPermissionSetProvisioningsOutput: typeof import("./getPermissionSetProvisionings").getPermissionSetProvisioningsOutput = null as any;
+utilities.lazyLoad(exports, ["getPermissionSetProvisionings","getPermissionSetProvisioningsOutput"], () => require("./getPermissionSetProvisionings"));
+
 export { GetPermissionSetsResult } from "./getPermissionSets";
 export const getPermissionSets: typeof import("./getPermissionSets").getPermissionSets = null as any;
 export const getPermissionSetsOutput: typeof import("./getPermissionSets").getPermissionSetsOutput = null as any;
@@ -29,6 +49,16 @@ export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
 export const getUser: typeof import("./getUser").getUser = null as any;
 export const getUserOutput: typeof import("./getUser").getUserOutput = null as any;
 utilities.lazyLoad(exports, ["getUser","getUserOutput"], () => require("./getUser"));
+
+export { GetUserProvisioningArgs, GetUserProvisioningResult, GetUserProvisioningOutputArgs } from "./getUserProvisioning";
+export const getUserProvisioning: typeof import("./getUserProvisioning").getUserProvisioning = null as any;
+export const getUserProvisioningOutput: typeof import("./getUserProvisioning").getUserProvisioningOutput = null as any;
+utilities.lazyLoad(exports, ["getUserProvisioning","getUserProvisioningOutput"], () => require("./getUserProvisioning"));
+
+export { GetUserProvisioningsResult } from "./getUserProvisionings";
+export const getUserProvisionings: typeof import("./getUserProvisionings").getUserProvisionings = null as any;
+export const getUserProvisioningsOutput: typeof import("./getUserProvisionings").getUserProvisioningsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserProvisionings","getUserProvisioningsOutput"], () => require("./getUserProvisionings"));
 
 export { GetUsersResult } from "./getUsers";
 export const getUsers: typeof import("./getUsers").getUsers = null as any;
@@ -45,10 +75,25 @@ export type PermissionSet = import("./permissionSet").PermissionSet;
 export const PermissionSet: typeof import("./permissionSet").PermissionSet = null as any;
 utilities.lazyLoad(exports, ["PermissionSet"], () => require("./permissionSet"));
 
+export { PermissionSetAssignmentArgs, PermissionSetAssignmentState } from "./permissionSetAssignment";
+export type PermissionSetAssignment = import("./permissionSetAssignment").PermissionSetAssignment;
+export const PermissionSetAssignment: typeof import("./permissionSetAssignment").PermissionSetAssignment = null as any;
+utilities.lazyLoad(exports, ["PermissionSetAssignment"], () => require("./permissionSetAssignment"));
+
+export { PermissionSetProvisioningArgs, PermissionSetProvisioningState } from "./permissionSetProvisioning";
+export type PermissionSetProvisioning = import("./permissionSetProvisioning").PermissionSetProvisioning;
+export const PermissionSetProvisioning: typeof import("./permissionSetProvisioning").PermissionSetProvisioning = null as any;
+utilities.lazyLoad(exports, ["PermissionSetProvisioning"], () => require("./permissionSetProvisioning"));
+
 export { UserArgs, UserState } from "./user";
 export type User = import("./user").User;
 export const User: typeof import("./user").User = null as any;
 utilities.lazyLoad(exports, ["User"], () => require("./user"));
+
+export { UserProvisioningArgs, UserProvisioningState } from "./userProvisioning";
+export type UserProvisioning = import("./userProvisioning").UserProvisioning;
+export const UserProvisioning: typeof import("./userProvisioning").UserProvisioning = null as any;
+utilities.lazyLoad(exports, ["UserProvisioning"], () => require("./userProvisioning"));
 
 
 const _module = {
@@ -59,8 +104,14 @@ const _module = {
                 return new Group(name, <any>undefined, { urn })
             case "bytepluscc:cloudidentity/permissionSet:PermissionSet":
                 return new PermissionSet(name, <any>undefined, { urn })
+            case "bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment":
+                return new PermissionSetAssignment(name, <any>undefined, { urn })
+            case "bytepluscc:cloudidentity/permissionSetProvisioning:PermissionSetProvisioning":
+                return new PermissionSetProvisioning(name, <any>undefined, { urn })
             case "bytepluscc:cloudidentity/user:User":
                 return new User(name, <any>undefined, { urn })
+            case "bytepluscc:cloudidentity/userProvisioning:UserProvisioning":
+                return new UserProvisioning(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -68,4 +119,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudidentity/group", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudidentity/permissionSet", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudidentity/permissionSetAssignment", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudidentity/permissionSetProvisioning", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudidentity/user", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudidentity/userProvisioning", _module)

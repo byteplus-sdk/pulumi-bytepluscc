@@ -15,6 +15,8 @@ if typing.TYPE_CHECKING:
     alb = __alb
     import pulumi_bytepluscc.apig as __apig
     apig = __apig
+    import pulumi_bytepluscc.ark as __ark
+    ark = __ark
     import pulumi_bytepluscc.autoscaling as __autoscaling
     autoscaling = __autoscaling
     import pulumi_bytepluscc.bmq as __bmq
@@ -61,6 +63,8 @@ if typing.TYPE_CHECKING:
     privatelink = __privatelink
     import pulumi_bytepluscc.rabbitmq as __rabbitmq
     rabbitmq = __rabbitmq
+    import pulumi_bytepluscc.rdsmssql as __rdsmssql
+    rdsmssql = __rdsmssql
     import pulumi_bytepluscc.rdsmysql as __rdsmysql
     rdsmysql = __rdsmysql
     import pulumi_bytepluscc.rdspostgresql as __rdspostgresql
@@ -69,6 +73,8 @@ if typing.TYPE_CHECKING:
     redis = __redis
     import pulumi_bytepluscc.storageebs as __storageebs
     storageebs = __storageebs
+    import pulumi_bytepluscc.tls as __tls
+    tls = __tls
     import pulumi_bytepluscc.transitrouter as __transitrouter
     transitrouter = __transitrouter
     import pulumi_bytepluscc.vefaas as __vefaas
@@ -86,6 +92,7 @@ if typing.TYPE_CHECKING:
 else:
     alb = _utilities.lazy_import('pulumi_bytepluscc.alb')
     apig = _utilities.lazy_import('pulumi_bytepluscc.apig')
+    ark = _utilities.lazy_import('pulumi_bytepluscc.ark')
     autoscaling = _utilities.lazy_import('pulumi_bytepluscc.autoscaling')
     bmq = _utilities.lazy_import('pulumi_bytepluscc.bmq')
     cdn = _utilities.lazy_import('pulumi_bytepluscc.cdn')
@@ -109,10 +116,12 @@ else:
     organization = _utilities.lazy_import('pulumi_bytepluscc.organization')
     privatelink = _utilities.lazy_import('pulumi_bytepluscc.privatelink')
     rabbitmq = _utilities.lazy_import('pulumi_bytepluscc.rabbitmq')
+    rdsmssql = _utilities.lazy_import('pulumi_bytepluscc.rdsmssql')
     rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
     rdspostgresql = _utilities.lazy_import('pulumi_bytepluscc.rdspostgresql')
     redis = _utilities.lazy_import('pulumi_bytepluscc.redis')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
+    tls = _utilities.lazy_import('pulumi_bytepluscc.tls')
     transitrouter = _utilities.lazy_import('pulumi_bytepluscc.transitrouter')
     vefaas = _utilities.lazy_import('pulumi_bytepluscc.vefaas')
     vepfs = _utilities.lazy_import('pulumi_bytepluscc.vepfs')
@@ -174,6 +183,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "alb/rule",
+  "fqn": "pulumi_bytepluscc.alb",
+  "classes": {
+   "bytepluscc:alb/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "alb/serverGroup",
   "fqn": "pulumi_bytepluscc.alb",
   "classes": {
@@ -218,6 +235,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.apig",
   "classes": {
    "bytepluscc:apig/upstreamSource:UpstreamSource": "UpstreamSource"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ark/endpoint",
+  "fqn": "pulumi_bytepluscc.ark",
+  "classes": {
+   "bytepluscc:ark/endpoint:Endpoint": "Endpoint"
   }
  },
  {
@@ -366,10 +391,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudidentity/permissionSetAssignment",
+  "fqn": "pulumi_bytepluscc.cloudidentity",
+  "classes": {
+   "bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment": "PermissionSetAssignment"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cloudidentity/permissionSetProvisioning",
+  "fqn": "pulumi_bytepluscc.cloudidentity",
+  "classes": {
+   "bytepluscc:cloudidentity/permissionSetProvisioning:PermissionSetProvisioning": "PermissionSetProvisioning"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cloudidentity/user",
   "fqn": "pulumi_bytepluscc.cloudidentity",
   "classes": {
    "bytepluscc:cloudidentity/user:User": "User"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cloudidentity/userProvisioning",
+  "fqn": "pulumi_bytepluscc.cloudidentity",
+  "classes": {
+   "bytepluscc:cloudidentity/userProvisioning:UserProvisioning": "UserProvisioning"
   }
  },
  {
@@ -582,6 +631,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "kafka/allowList",
+  "fqn": "pulumi_bytepluscc.kafka",
+  "classes": {
+   "bytepluscc:kafka/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "kafka/topic",
   "fqn": "pulumi_bytepluscc.kafka",
   "classes": {
@@ -686,6 +743,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdsmssql/instance",
+  "fqn": "pulumi_bytepluscc.rdsmssql",
+  "classes": {
+   "bytepluscc:rdsmssql/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdsmysql/allowList",
   "fqn": "pulumi_bytepluscc.rdsmysql",
   "classes": {
@@ -786,6 +851,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {
    "bytepluscc:storageebs/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/project",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/project:Project": "Project"
   }
  },
  {

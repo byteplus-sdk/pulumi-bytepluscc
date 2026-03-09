@@ -81,6 +81,8 @@ type Instance struct {
 	AutoRenew pulumi.BoolOutput `pulumi:"autoRenew"`
 	// 为变更前创建的全量备份设置备份名称。
 	BackupPointName pulumi.StringOutput `pulumi:"backupPointName"`
+	// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+	BlueGreenRole pulumi.StringOutput `pulumi:"blueGreenRole"`
 	// 实例的容量信息。
 	Capacity InstanceCapacityOutput `pulumi:"capacity"`
 	// 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
@@ -125,6 +127,8 @@ type Instance struct {
 	Port pulumi.IntOutput `pulumi:"port"`
 	// 实例私网连接地址的域名。
 	PrivateAddress pulumi.StringOutput `pulumi:"privateAddress"`
+	// 实例私网连接地址的端口号。
+	PrivatePort pulumi.StringOutput `pulumi:"privatePort"`
 	// 实例所属的项目。
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
@@ -217,6 +221,8 @@ type instanceState struct {
 	AutoRenew *bool `pulumi:"autoRenew"`
 	// 为变更前创建的全量备份设置备份名称。
 	BackupPointName *string `pulumi:"backupPointName"`
+	// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+	BlueGreenRole *string `pulumi:"blueGreenRole"`
 	// 实例的容量信息。
 	Capacity *InstanceCapacity `pulumi:"capacity"`
 	// 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
@@ -261,6 +267,8 @@ type instanceState struct {
 	Port *int `pulumi:"port"`
 	// 实例私网连接地址的域名。
 	PrivateAddress *string `pulumi:"privateAddress"`
+	// 实例私网连接地址的端口号。
+	PrivatePort *string `pulumi:"privatePort"`
 	// 实例所属的项目。
 	ProjectName *string `pulumi:"projectName"`
 	// 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
@@ -300,6 +308,8 @@ type InstanceState struct {
 	AutoRenew pulumi.BoolPtrInput
 	// 为变更前创建的全量备份设置备份名称。
 	BackupPointName pulumi.StringPtrInput
+	// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+	BlueGreenRole pulumi.StringPtrInput
 	// 实例的容量信息。
 	Capacity InstanceCapacityPtrInput
 	// 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
@@ -344,6 +354,8 @@ type InstanceState struct {
 	Port pulumi.IntPtrInput
 	// 实例私网连接地址的域名。
 	PrivateAddress pulumi.StringPtrInput
+	// 实例私网连接地址的端口号。
+	PrivatePort pulumi.StringPtrInput
 	// 实例所属的项目。
 	ProjectName pulumi.StringPtrInput
 	// 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
@@ -581,6 +593,11 @@ func (o InstanceOutput) BackupPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.BackupPointName }).(pulumi.StringOutput)
 }
 
+// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+func (o InstanceOutput) BlueGreenRole() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.BlueGreenRole }).(pulumi.StringOutput)
+}
+
 // 实例的容量信息。
 func (o InstanceOutput) Capacity() InstanceCapacityOutput {
 	return o.ApplyT(func(v *Instance) InstanceCapacityOutput { return v.Capacity }).(InstanceCapacityOutput)
@@ -692,6 +709,11 @@ func (o InstanceOutput) Port() pulumi.IntOutput {
 // 实例私网连接地址的域名。
 func (o InstanceOutput) PrivateAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.PrivateAddress }).(pulumi.StringOutput)
+}
+
+// 实例私网连接地址的端口号。
+func (o InstanceOutput) PrivatePort() pulumi.StringOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.PrivatePort }).(pulumi.StringOutput)
 }
 
 // 实例所属的项目。
