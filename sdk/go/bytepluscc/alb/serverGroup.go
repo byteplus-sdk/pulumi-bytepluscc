@@ -24,6 +24,8 @@ type ServerGroup struct {
 
 	// 后端服务器组的创建时间。
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
+	// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+	CrossZoneEnabled pulumi.StringOutput `pulumi:"crossZoneEnabled"`
 	// 后端服务器组的描述。
 	Description pulumi.StringOutput `pulumi:"description"`
 	// 服务器组健康检查配置信息。
@@ -92,6 +94,8 @@ func GetServerGroup(ctx *pulumi.Context,
 type serverGroupState struct {
 	// 后端服务器组的创建时间。
 	CreateTime *string `pulumi:"createTime"`
+	// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+	CrossZoneEnabled *string `pulumi:"crossZoneEnabled"`
 	// 后端服务器组的描述。
 	Description *string `pulumi:"description"`
 	// 服务器组健康检查配置信息。
@@ -128,6 +132,8 @@ type serverGroupState struct {
 type ServerGroupState struct {
 	// 后端服务器组的创建时间。
 	CreateTime pulumi.StringPtrInput
+	// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+	CrossZoneEnabled pulumi.StringPtrInput
 	// 后端服务器组的描述。
 	Description pulumi.StringPtrInput
 	// 服务器组健康检查配置信息。
@@ -166,6 +172,8 @@ func (ServerGroupState) ElementType() reflect.Type {
 }
 
 type serverGroupArgs struct {
+	// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+	CrossZoneEnabled *string `pulumi:"crossZoneEnabled"`
 	// 后端服务器组的描述。
 	Description *string `pulumi:"description"`
 	// 服务器组健康检查配置信息。
@@ -194,6 +202,8 @@ type serverGroupArgs struct {
 
 // The set of arguments for constructing a ServerGroup resource.
 type ServerGroupArgs struct {
+	// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+	CrossZoneEnabled pulumi.StringPtrInput
 	// 后端服务器组的描述。
 	Description pulumi.StringPtrInput
 	// 服务器组健康检查配置信息。
@@ -310,6 +320,11 @@ func (o ServerGroupOutput) ToServerGroupOutputWithContext(ctx context.Context) S
 // 后端服务器组的创建时间。
 func (o ServerGroupOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+func (o ServerGroupOutput) CrossZoneEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v *ServerGroup) pulumi.StringOutput { return v.CrossZoneEnabled }).(pulumi.StringOutput)
 }
 
 // 后端服务器组的描述。

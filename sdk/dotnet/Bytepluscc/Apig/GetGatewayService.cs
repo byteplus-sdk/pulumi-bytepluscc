@@ -85,6 +85,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly Outputs.GetGatewayServiceDomainSpecResult DomainSpec;
         /// <summary>
+        /// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        /// </summary>
+        public readonly string DomainType;
+        /// <summary>
         /// 默认域名。
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayServiceDomainResult> Domains;
@@ -113,9 +117,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string ServiceId;
         /// <summary>
-        /// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        /// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
         /// </summary>
         public readonly string ServiceName;
+        /// <summary>
+        /// 服务默认域名网络配置。。
+        /// </summary>
+        public readonly Outputs.GetGatewayServiceServiceNetworkSpecResult ServiceNetworkSpec;
+        /// <summary>
+        /// 服务类型，取值：AIProvider：AI模型代理。
+        /// </summary>
+        public readonly string ServiceType;
         /// <summary>
         /// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
         /// </summary>
@@ -133,6 +145,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
 
             Outputs.GetGatewayServiceDomainSpecResult domainSpec,
 
+            string domainType,
+
             ImmutableArray<Outputs.GetGatewayServiceDomainResult> domains,
 
             string gatewayId,
@@ -149,6 +163,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
 
             string serviceName,
 
+            Outputs.GetGatewayServiceServiceNetworkSpecResult serviceNetworkSpec,
+
+            string serviceType,
+
             string status)
         {
             AuthSpec = authSpec;
@@ -156,6 +174,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
             CreatedTime = createdTime;
             CustomDomains = customDomains;
             DomainSpec = domainSpec;
+            DomainType = domainType;
             Domains = domains;
             GatewayId = gatewayId;
             GatewayName = gatewayName;
@@ -164,6 +183,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
             Protocols = protocols;
             ServiceId = serviceId;
             ServiceName = serviceName;
+            ServiceNetworkSpec = serviceNetworkSpec;
+            ServiceType = serviceType;
             Status = status;
         }
     }

@@ -28,6 +28,7 @@ class UpstreamArgs:
                  upstream_spec: pulumi.Input['UpstreamUpstreamSpecArgs'],
                  circuit_breaking_settings: Optional[pulumi.Input['UpstreamCircuitBreakingSettingsArgs']] = None,
                  comments: Optional[pulumi.Input[builtins.str]] = None,
+                 connection_pool_settings: Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']] = None,
                  load_balancer_settings: Optional[pulumi.Input['UpstreamLoadBalancerSettingsArgs']] = None,
                  protocol: Optional[pulumi.Input[builtins.str]] = None,
                  tls_settings: Optional[pulumi.Input['UpstreamTlsSettingsArgs']] = None):
@@ -39,6 +40,7 @@ class UpstreamArgs:
         :param pulumi.Input['UpstreamUpstreamSpecArgs'] upstream_spec: Upstream配置。
         :param pulumi.Input['UpstreamCircuitBreakingSettingsArgs'] circuit_breaking_settings: 服务熔断配置。
         :param pulumi.Input[builtins.str] comments: 备注。
+        :param pulumi.Input['UpstreamConnectionPoolSettingsArgs'] connection_pool_settings: 连接池配置。
         :param pulumi.Input['UpstreamLoadBalancerSettingsArgs'] load_balancer_settings: 负载均衡配置。
         :param pulumi.Input[builtins.str] protocol: 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
         :param pulumi.Input['UpstreamTlsSettingsArgs'] tls_settings: TLS配置。
@@ -51,6 +53,8 @@ class UpstreamArgs:
             pulumi.set(__self__, "circuit_breaking_settings", circuit_breaking_settings)
         if comments is not None:
             pulumi.set(__self__, "comments", comments)
+        if connection_pool_settings is not None:
+            pulumi.set(__self__, "connection_pool_settings", connection_pool_settings)
         if load_balancer_settings is not None:
             pulumi.set(__self__, "load_balancer_settings", load_balancer_settings)
         if protocol is not None:
@@ -131,6 +135,18 @@ class UpstreamArgs:
         pulumi.set(self, "comments", value)
 
     @property
+    @pulumi.getter(name="connectionPoolSettings")
+    def connection_pool_settings(self) -> Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']]:
+        """
+        连接池配置。
+        """
+        return pulumi.get(self, "connection_pool_settings")
+
+    @connection_pool_settings.setter
+    def connection_pool_settings(self, value: Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']]):
+        pulumi.set(self, "connection_pool_settings", value)
+
+    @property
     @pulumi.getter(name="loadBalancerSettings")
     def load_balancer_settings(self) -> Optional[pulumi.Input['UpstreamLoadBalancerSettingsArgs']]:
         """
@@ -173,6 +189,7 @@ class _UpstreamState:
                  backend_targets: Optional[pulumi.Input[Sequence[pulumi.Input['UpstreamBackendTargetArgs']]]] = None,
                  circuit_breaking_settings: Optional[pulumi.Input['UpstreamCircuitBreakingSettingsArgs']] = None,
                  comments: Optional[pulumi.Input[builtins.str]] = None,
+                 connection_pool_settings: Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']] = None,
                  created_time: Optional[pulumi.Input[builtins.str]] = None,
                  gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  load_balancer_settings: Optional[pulumi.Input['UpstreamLoadBalancerSettingsArgs']] = None,
@@ -188,6 +205,7 @@ class _UpstreamState:
         Input properties used for looking up and filtering Upstream resources.
         :param pulumi.Input['UpstreamCircuitBreakingSettingsArgs'] circuit_breaking_settings: 服务熔断配置。
         :param pulumi.Input[builtins.str] comments: 备注。
+        :param pulumi.Input['UpstreamConnectionPoolSettingsArgs'] connection_pool_settings: 连接池配置。
         :param pulumi.Input[builtins.str] created_time: Upstream创建时间。
         :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
         :param pulumi.Input['UpstreamLoadBalancerSettingsArgs'] load_balancer_settings: 负载均衡配置。
@@ -205,6 +223,8 @@ class _UpstreamState:
             pulumi.set(__self__, "circuit_breaking_settings", circuit_breaking_settings)
         if comments is not None:
             pulumi.set(__self__, "comments", comments)
+        if connection_pool_settings is not None:
+            pulumi.set(__self__, "connection_pool_settings", connection_pool_settings)
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
         if gateway_id is not None:
@@ -260,6 +280,18 @@ class _UpstreamState:
     @comments.setter
     def comments(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "comments", value)
+
+    @property
+    @pulumi.getter(name="connectionPoolSettings")
+    def connection_pool_settings(self) -> Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']]:
+        """
+        连接池配置。
+        """
+        return pulumi.get(self, "connection_pool_settings")
+
+    @connection_pool_settings.setter
+    def connection_pool_settings(self, value: Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']]):
+        pulumi.set(self, "connection_pool_settings", value)
 
     @property
     @pulumi.getter(name="createdTime")
@@ -399,6 +431,7 @@ class Upstream(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  circuit_breaking_settings: Optional[pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']]] = None,
                  comments: Optional[pulumi.Input[builtins.str]] = None,
+                 connection_pool_settings: Optional[pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']]] = None,
                  gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  load_balancer_settings: Optional[pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
@@ -420,6 +453,7 @@ class Upstream(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']] circuit_breaking_settings: 服务熔断配置。
         :param pulumi.Input[builtins.str] comments: 备注。
+        :param pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']] connection_pool_settings: 连接池配置。
         :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
         :param pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']] load_balancer_settings: 负载均衡配置。
         :param pulumi.Input[builtins.str] name: Upstream名称。
@@ -460,6 +494,7 @@ class Upstream(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  circuit_breaking_settings: Optional[pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']]] = None,
                  comments: Optional[pulumi.Input[builtins.str]] = None,
+                 connection_pool_settings: Optional[pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']]] = None,
                  gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  load_balancer_settings: Optional[pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']]] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
@@ -478,6 +513,7 @@ class Upstream(pulumi.CustomResource):
 
             __props__.__dict__["circuit_breaking_settings"] = circuit_breaking_settings
             __props__.__dict__["comments"] = comments
+            __props__.__dict__["connection_pool_settings"] = connection_pool_settings
             if gateway_id is None and not opts.urn:
                 raise TypeError("Missing required property 'gateway_id'")
             __props__.__dict__["gateway_id"] = gateway_id
@@ -511,6 +547,7 @@ class Upstream(pulumi.CustomResource):
             backend_targets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UpstreamBackendTargetArgs', 'UpstreamBackendTargetArgsDict']]]]] = None,
             circuit_breaking_settings: Optional[pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']]] = None,
             comments: Optional[pulumi.Input[builtins.str]] = None,
+            connection_pool_settings: Optional[pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']]] = None,
             created_time: Optional[pulumi.Input[builtins.str]] = None,
             gateway_id: Optional[pulumi.Input[builtins.str]] = None,
             load_balancer_settings: Optional[pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']]] = None,
@@ -531,6 +568,7 @@ class Upstream(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']] circuit_breaking_settings: 服务熔断配置。
         :param pulumi.Input[builtins.str] comments: 备注。
+        :param pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']] connection_pool_settings: 连接池配置。
         :param pulumi.Input[builtins.str] created_time: Upstream创建时间。
         :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
         :param pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']] load_balancer_settings: 负载均衡配置。
@@ -549,6 +587,7 @@ class Upstream(pulumi.CustomResource):
         __props__.__dict__["backend_targets"] = backend_targets
         __props__.__dict__["circuit_breaking_settings"] = circuit_breaking_settings
         __props__.__dict__["comments"] = comments
+        __props__.__dict__["connection_pool_settings"] = connection_pool_settings
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["gateway_id"] = gateway_id
         __props__.__dict__["load_balancer_settings"] = load_balancer_settings
@@ -582,6 +621,14 @@ class Upstream(pulumi.CustomResource):
         备注。
         """
         return pulumi.get(self, "comments")
+
+    @property
+    @pulumi.getter(name="connectionPoolSettings")
+    def connection_pool_settings(self) -> pulumi.Output['outputs.UpstreamConnectionPoolSettings']:
+        """
+        连接池配置。
+        """
+        return pulumi.get(self, "connection_pool_settings")
 
     @property
     @pulumi.getter(name="createdTime")

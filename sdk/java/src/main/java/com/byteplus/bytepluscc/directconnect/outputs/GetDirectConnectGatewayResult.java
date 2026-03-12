@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.directconnect.outputs;
 
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewayAssociateCen;
+import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewayAssociateEic;
 import com.byteplus.bytepluscc.directconnect.outputs.GetDirectConnectGatewayTag;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -25,6 +26,11 @@ public final class GetDirectConnectGatewayResult {
      * 
      */
     private List<GetDirectConnectGatewayAssociateCen> associateCens;
+    /**
+     * @return 关联的EIC信息。
+     * 
+     */
+    private GetDirectConnectGatewayAssociateEic associateEic;
     /**
      * @return 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
      * 
@@ -115,6 +121,13 @@ public final class GetDirectConnectGatewayResult {
      */
     public List<GetDirectConnectGatewayAssociateCen> associateCens() {
         return this.associateCens;
+    }
+    /**
+     * @return 关联的EIC信息。
+     * 
+     */
+    public GetDirectConnectGatewayAssociateEic associateEic() {
+        return this.associateEic;
     }
     /**
      * @return 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
@@ -233,6 +246,7 @@ public final class GetDirectConnectGatewayResult {
     public static final class Builder {
         private String accountId;
         private List<GetDirectConnectGatewayAssociateCen> associateCens;
+        private GetDirectConnectGatewayAssociateEic associateEic;
         private Integer bgpAsn;
         private String businessStatus;
         private String createdTime;
@@ -253,6 +267,7 @@ public final class GetDirectConnectGatewayResult {
     	      Objects.requireNonNull(defaults);
     	      this.accountId = defaults.accountId;
     	      this.associateCens = defaults.associateCens;
+    	      this.associateEic = defaults.associateEic;
     	      this.bgpAsn = defaults.bgpAsn;
     	      this.businessStatus = defaults.businessStatus;
     	      this.createdTime = defaults.createdTime;
@@ -288,6 +303,14 @@ public final class GetDirectConnectGatewayResult {
         }
         public Builder associateCens(GetDirectConnectGatewayAssociateCen... associateCens) {
             return associateCens(List.of(associateCens));
+        }
+        @CustomType.Setter
+        public Builder associateEic(GetDirectConnectGatewayAssociateEic associateEic) {
+            if (associateEic == null) {
+              throw new MissingRequiredPropertyException("GetDirectConnectGatewayResult", "associateEic");
+            }
+            this.associateEic = associateEic;
+            return this;
         }
         @CustomType.Setter
         public Builder bgpAsn(Integer bgpAsn) {
@@ -416,6 +439,7 @@ public final class GetDirectConnectGatewayResult {
             final var _resultValue = new GetDirectConnectGatewayResult();
             _resultValue.accountId = accountId;
             _resultValue.associateCens = associateCens;
+            _resultValue.associateEic = associateEic;
             _resultValue.bgpAsn = bgpAsn;
             _resultValue.businessStatus = businessStatus;
             _resultValue.createdTime = createdTime;

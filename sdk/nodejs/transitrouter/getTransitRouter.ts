@@ -55,6 +55,10 @@ export interface GetTransitRouterResult {
      */
     readonly description: string;
     /**
+     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     */
+    readonly grantSourceType: string;
+    /**
      * 实例共享的状态。Accepted：已接受。Initial：待接受。
      */
     readonly grantStatus: string;
@@ -62,6 +66,10 @@ export interface GetTransitRouterResult {
      * Uniquely identifies the resource.
      */
     readonly id: string;
+    /**
+     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     */
+    readonly multicastEnabled: boolean;
     /**
      * 中转路由器实例的欠费关停时间。
      */

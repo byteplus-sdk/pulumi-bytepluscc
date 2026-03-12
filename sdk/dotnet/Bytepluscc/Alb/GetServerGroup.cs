@@ -69,6 +69,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
+        /// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        /// </summary>
+        public readonly string CrossZoneEnabled;
+        /// <summary>
         /// 后端服务器组的描述。
         /// </summary>
         public readonly string Description;
@@ -145,6 +149,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         private GetServerGroupResult(
             string createTime,
 
+            string crossZoneEnabled,
+
             string description,
 
             Outputs.GetServerGroupHealthCheckResult healthCheck,
@@ -182,6 +188,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             string vpcId)
         {
             CreateTime = createTime;
+            CrossZoneEnabled = crossZoneEnabled;
             Description = description;
             HealthCheck = healthCheck;
             Id = id;

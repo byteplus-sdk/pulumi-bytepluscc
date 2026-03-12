@@ -24,6 +24,7 @@ class TransitRouterArgs:
     def __init__(__self__, *,
                  asn: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 multicast_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['TransitRouterTagArgs']]]] = None,
                  transit_router_name: Optional[pulumi.Input[builtins.str]] = None):
@@ -31,6 +32,7 @@ class TransitRouterArgs:
         The set of arguments for constructing a TransitRouter resource.
         :param pulumi.Input[builtins.int] asn: 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
         :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
         :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
         :param pulumi.Input[builtins.str] transit_router_name: 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
         """
@@ -38,6 +40,8 @@ class TransitRouterArgs:
             pulumi.set(__self__, "asn", asn)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if multicast_enabled is not None:
+            pulumi.set(__self__, "multicast_enabled", multicast_enabled)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if tags is not None:
@@ -68,6 +72,18 @@ class TransitRouterArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="multicastEnabled")
+    def multicast_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        """
+        return pulumi.get(self, "multicast_enabled")
+
+    @multicast_enabled.setter
+    def multicast_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "multicast_enabled", value)
 
     @property
     @pulumi.getter(name="projectName")
@@ -112,7 +128,9 @@ class _TransitRouterState:
                  creation_time: Optional[pulumi.Input[builtins.str]] = None,
                  deleted_time: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 grant_source_type: Optional[pulumi.Input[builtins.str]] = None,
                  grant_status: Optional[pulumi.Input[builtins.str]] = None,
+                 multicast_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  overdue_time: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
@@ -127,7 +145,9 @@ class _TransitRouterState:
         :param pulumi.Input[builtins.str] creation_time: 网络实例连接的创建时间。
         :param pulumi.Input[builtins.str] deleted_time: 网络实例连接的删除时间。
         :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        :param pulumi.Input[builtins.str] grant_source_type: 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
         :param pulumi.Input[builtins.str] grant_status: 实例共享的状态。Accepted：已接受。Initial：待接受。
+        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
         :param pulumi.Input[builtins.str] overdue_time: 中转路由器实例的欠费关停时间。
         :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
         :param pulumi.Input[builtins.str] status: 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
@@ -147,8 +167,12 @@ class _TransitRouterState:
             pulumi.set(__self__, "deleted_time", deleted_time)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if grant_source_type is not None:
+            pulumi.set(__self__, "grant_source_type", grant_source_type)
         if grant_status is not None:
             pulumi.set(__self__, "grant_status", grant_status)
+        if multicast_enabled is not None:
+            pulumi.set(__self__, "multicast_enabled", multicast_enabled)
         if overdue_time is not None:
             pulumi.set(__self__, "overdue_time", overdue_time)
         if project_name is not None:
@@ -234,6 +258,18 @@ class _TransitRouterState:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="grantSourceType")
+    def grant_source_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        """
+        return pulumi.get(self, "grant_source_type")
+
+    @grant_source_type.setter
+    def grant_source_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "grant_source_type", value)
+
+    @property
     @pulumi.getter(name="grantStatus")
     def grant_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -244,6 +280,18 @@ class _TransitRouterState:
     @grant_status.setter
     def grant_status(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "grant_status", value)
+
+    @property
+    @pulumi.getter(name="multicastEnabled")
+    def multicast_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        """
+        return pulumi.get(self, "multicast_enabled")
+
+    @multicast_enabled.setter
+    def multicast_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "multicast_enabled", value)
 
     @property
     @pulumi.getter(name="overdueTime")
@@ -335,6 +383,7 @@ class TransitRouter(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  asn: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 multicast_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TransitRouterTagArgs', 'TransitRouterTagArgsDict']]]]] = None,
                  transit_router_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -369,6 +418,7 @@ class TransitRouter(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.int] asn: 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
         :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
         :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
         :param pulumi.Input[builtins.str] transit_router_name: 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
         """
@@ -421,6 +471,7 @@ class TransitRouter(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  asn: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 multicast_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TransitRouterTagArgs', 'TransitRouterTagArgsDict']]]]] = None,
                  transit_router_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -435,6 +486,7 @@ class TransitRouter(pulumi.CustomResource):
 
             __props__.__dict__["asn"] = asn
             __props__.__dict__["description"] = description
+            __props__.__dict__["multicast_enabled"] = multicast_enabled
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["tags"] = tags
             __props__.__dict__["transit_router_name"] = transit_router_name
@@ -442,6 +494,7 @@ class TransitRouter(pulumi.CustomResource):
             __props__.__dict__["business_status"] = None
             __props__.__dict__["creation_time"] = None
             __props__.__dict__["deleted_time"] = None
+            __props__.__dict__["grant_source_type"] = None
             __props__.__dict__["grant_status"] = None
             __props__.__dict__["overdue_time"] = None
             __props__.__dict__["status"] = None
@@ -463,7 +516,9 @@ class TransitRouter(pulumi.CustomResource):
             creation_time: Optional[pulumi.Input[builtins.str]] = None,
             deleted_time: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
+            grant_source_type: Optional[pulumi.Input[builtins.str]] = None,
             grant_status: Optional[pulumi.Input[builtins.str]] = None,
+            multicast_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             overdue_time: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             status: Optional[pulumi.Input[builtins.str]] = None,
@@ -483,7 +538,9 @@ class TransitRouter(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] creation_time: 网络实例连接的创建时间。
         :param pulumi.Input[builtins.str] deleted_time: 网络实例连接的删除时间。
         :param pulumi.Input[builtins.str] description: 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        :param pulumi.Input[builtins.str] grant_source_type: 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
         :param pulumi.Input[builtins.str] grant_status: 实例共享的状态。Accepted：已接受。Initial：待接受。
+        :param pulumi.Input[builtins.bool] multicast_enabled: 中转路由器是否开启组播。true：开启。false（默认值）：不开启
         :param pulumi.Input[builtins.str] overdue_time: 中转路由器实例的欠费关停时间。
         :param pulumi.Input[builtins.str] project_name: 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
         :param pulumi.Input[builtins.str] status: 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
@@ -501,7 +558,9 @@ class TransitRouter(pulumi.CustomResource):
         __props__.__dict__["creation_time"] = creation_time
         __props__.__dict__["deleted_time"] = deleted_time
         __props__.__dict__["description"] = description
+        __props__.__dict__["grant_source_type"] = grant_source_type
         __props__.__dict__["grant_status"] = grant_status
+        __props__.__dict__["multicast_enabled"] = multicast_enabled
         __props__.__dict__["overdue_time"] = overdue_time
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["status"] = status
@@ -557,12 +616,28 @@ class TransitRouter(pulumi.CustomResource):
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="grantSourceType")
+    def grant_source_type(self) -> pulumi.Output[builtins.str]:
+        """
+        中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        """
+        return pulumi.get(self, "grant_source_type")
+
+    @property
     @pulumi.getter(name="grantStatus")
     def grant_status(self) -> pulumi.Output[builtins.str]:
         """
         实例共享的状态。Accepted：已接受。Initial：待接受。
         """
         return pulumi.get(self, "grant_status")
+
+    @property
+    @pulumi.getter(name="multicastEnabled")
+    def multicast_enabled(self) -> pulumi.Output[builtins.bool]:
+        """
+        中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        """
+        return pulumi.get(self, "multicast_enabled")
 
     @property
     @pulumi.getter(name="overdueTime")

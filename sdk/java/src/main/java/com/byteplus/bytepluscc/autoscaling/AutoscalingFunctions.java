@@ -8,10 +8,14 @@ import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingConfigurationArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingConfigurationPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingGroupArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingGroupPlainArgs;
+import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingPolicyArgs;
+import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingPolicyPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingConfigurationResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingConfigurationsResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingGroupResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingGroupsResult;
+import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingPoliciesResult;
+import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingPolicyResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -188,5 +192,89 @@ public final class AutoscalingFunctions {
      */
     public static CompletableFuture<GetScalingGroupsResult> getScalingGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getScalingGroups:getScalingGroups", TypeShape.of(GetScalingGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static Output<GetScalingPoliciesResult> getScalingPolicies() {
+        return getScalingPolicies(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetScalingPoliciesResult> getScalingPoliciesPlain() {
+        return getScalingPoliciesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static Output<GetScalingPoliciesResult> getScalingPolicies(InvokeArgs args) {
+        return getScalingPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetScalingPoliciesResult> getScalingPoliciesPlain(InvokeArgs args) {
+        return getScalingPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static Output<GetScalingPoliciesResult> getScalingPolicies(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingPolicies:getScalingPolicies", TypeShape.of(GetScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static Output<GetScalingPoliciesResult> getScalingPolicies(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingPolicies:getScalingPolicies", TypeShape.of(GetScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetScalingPoliciesResult> getScalingPoliciesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getScalingPolicies:getScalingPolicies", TypeShape.of(GetScalingPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static Output<GetScalingPolicyResult> getScalingPolicy(GetScalingPolicyArgs args) {
+        return getScalingPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetScalingPolicyResult> getScalingPolicyPlain(GetScalingPolicyPlainArgs args) {
+        return getScalingPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static Output<GetScalingPolicyResult> getScalingPolicy(GetScalingPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingPolicy:getScalingPolicy", TypeShape.of(GetScalingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static Output<GetScalingPolicyResult> getScalingPolicy(GetScalingPolicyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingPolicy:getScalingPolicy", TypeShape.of(GetScalingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingPolicy
+     * 
+     */
+    public static CompletableFuture<GetScalingPolicyResult> getScalingPolicyPlain(GetScalingPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getScalingPolicy:getScalingPolicy", TypeShape.of(GetScalingPolicyResult.class), args, Utilities.withVersion(options));
     }
 }

@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterAttachment;
 import com.byteplus.bytepluscc.transitrouter.outputs.GetTransitRouterTag;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -45,6 +46,11 @@ public final class GetTransitRouterResult {
      */
     private String description;
     /**
+     * @return 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * 
+     */
+    private String grantSourceType;
+    /**
      * @return 实例共享的状态。Accepted：已接受。Initial：待接受。
      * 
      */
@@ -54,6 +60,11 @@ public final class GetTransitRouterResult {
      * 
      */
     private String id;
+    /**
+     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    private Boolean multicastEnabled;
     /**
      * @return 中转路由器实例的欠费关停时间。
      * 
@@ -134,6 +145,13 @@ public final class GetTransitRouterResult {
         return this.description;
     }
     /**
+     * @return 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * 
+     */
+    public String grantSourceType() {
+        return this.grantSourceType;
+    }
+    /**
      * @return 实例共享的状态。Accepted：已接受。Initial：待接受。
      * 
      */
@@ -146,6 +164,13 @@ public final class GetTransitRouterResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    public Boolean multicastEnabled() {
+        return this.multicastEnabled;
     }
     /**
      * @return 中转路由器实例的欠费关停时间。
@@ -212,8 +237,10 @@ public final class GetTransitRouterResult {
         private String creationTime;
         private String deletedTime;
         private String description;
+        private String grantSourceType;
         private String grantStatus;
         private String id;
+        private Boolean multicastEnabled;
         private String overdueTime;
         private String projectName;
         private String status;
@@ -230,8 +257,10 @@ public final class GetTransitRouterResult {
     	      this.creationTime = defaults.creationTime;
     	      this.deletedTime = defaults.deletedTime;
     	      this.description = defaults.description;
+    	      this.grantSourceType = defaults.grantSourceType;
     	      this.grantStatus = defaults.grantStatus;
     	      this.id = defaults.id;
+    	      this.multicastEnabled = defaults.multicastEnabled;
     	      this.overdueTime = defaults.overdueTime;
     	      this.projectName = defaults.projectName;
     	      this.status = defaults.status;
@@ -293,6 +322,14 @@ public final class GetTransitRouterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder grantSourceType(String grantSourceType) {
+            if (grantSourceType == null) {
+              throw new MissingRequiredPropertyException("GetTransitRouterResult", "grantSourceType");
+            }
+            this.grantSourceType = grantSourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder grantStatus(String grantStatus) {
             if (grantStatus == null) {
               throw new MissingRequiredPropertyException("GetTransitRouterResult", "grantStatus");
@@ -306,6 +343,14 @@ public final class GetTransitRouterResult {
               throw new MissingRequiredPropertyException("GetTransitRouterResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder multicastEnabled(Boolean multicastEnabled) {
+            if (multicastEnabled == null) {
+              throw new MissingRequiredPropertyException("GetTransitRouterResult", "multicastEnabled");
+            }
+            this.multicastEnabled = multicastEnabled;
             return this;
         }
         @CustomType.Setter
@@ -375,8 +420,10 @@ public final class GetTransitRouterResult {
             _resultValue.creationTime = creationTime;
             _resultValue.deletedTime = deletedTime;
             _resultValue.description = description;
+            _resultValue.grantSourceType = grantSourceType;
             _resultValue.grantStatus = grantStatus;
             _resultValue.id = id;
+            _resultValue.multicastEnabled = multicastEnabled;
             _resultValue.overdueTime = overdueTime;
             _resultValue.projectName = projectName;
             _resultValue.status = status;

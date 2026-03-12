@@ -74,6 +74,14 @@ export class TransitRouterRouteEntry extends pulumi.CustomResource {
      */
     public readonly transitRouterRouteEntryNextHopId!: pulumi.Output<string>;
     /**
+     * 路由条目下一跳网络实例ID。
+     */
+    public /*out*/ readonly transitRouterRouteEntryNextHopResourceId!: pulumi.Output<string>;
+    /**
+     * 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     */
+    public /*out*/ readonly transitRouterRouteEntryNextHopResourceType!: pulumi.Output<string>;
+    /**
      * 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
      */
     public readonly transitRouterRouteEntryNextHopType!: pulumi.Output<string>;
@@ -111,6 +119,8 @@ export class TransitRouterRouteEntry extends pulumi.CustomResource {
             resourceInputs["transitRouterRouteEntryId"] = state ? state.transitRouterRouteEntryId : undefined;
             resourceInputs["transitRouterRouteEntryName"] = state ? state.transitRouterRouteEntryName : undefined;
             resourceInputs["transitRouterRouteEntryNextHopId"] = state ? state.transitRouterRouteEntryNextHopId : undefined;
+            resourceInputs["transitRouterRouteEntryNextHopResourceId"] = state ? state.transitRouterRouteEntryNextHopResourceId : undefined;
+            resourceInputs["transitRouterRouteEntryNextHopResourceType"] = state ? state.transitRouterRouteEntryNextHopResourceType : undefined;
             resourceInputs["transitRouterRouteEntryNextHopType"] = state ? state.transitRouterRouteEntryNextHopType : undefined;
             resourceInputs["transitRouterRouteEntryType"] = state ? state.transitRouterRouteEntryType : undefined;
             resourceInputs["transitRouterRouteTableId"] = state ? state.transitRouterRouteTableId : undefined;
@@ -136,6 +146,8 @@ export class TransitRouterRouteEntry extends pulumi.CustomResource {
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["transitRouterRouteEntryId"] = undefined /*out*/;
+            resourceInputs["transitRouterRouteEntryNextHopResourceId"] = undefined /*out*/;
+            resourceInputs["transitRouterRouteEntryNextHopResourceType"] = undefined /*out*/;
             resourceInputs["transitRouterRouteEntryType"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
         }
@@ -180,6 +192,14 @@ export interface TransitRouterRouteEntryState {
      * 路由条目的下一跳ID。
      */
     transitRouterRouteEntryNextHopId?: pulumi.Input<string>;
+    /**
+     * 路由条目下一跳网络实例ID。
+     */
+    transitRouterRouteEntryNextHopResourceId?: pulumi.Input<string>;
+    /**
+     * 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     */
+    transitRouterRouteEntryNextHopResourceType?: pulumi.Input<string>;
     /**
      * 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
      */

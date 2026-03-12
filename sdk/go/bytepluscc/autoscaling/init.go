@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ScalingConfiguration{}
 	case "bytepluscc:autoscaling/scalingGroup:ScalingGroup":
 		r = &ScalingGroup{}
+	case "bytepluscc:autoscaling/scalingPolicy:ScalingPolicy":
+		r = &ScalingPolicy{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +48,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"autoscaling/scalingGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"autoscaling/scalingPolicy",
 		&module{version},
 	)
 }

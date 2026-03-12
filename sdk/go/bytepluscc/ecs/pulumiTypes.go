@@ -403,6 +403,112 @@ func (o DeploymentSetCapacityArrayOutput) Index(i pulumi.IntInput) DeploymentSet
 	}).(DeploymentSetCapacityOutput)
 }
 
+type HpcClusterTag struct {
+	// 标签键。
+	Key *string `pulumi:"key"`
+	// 标签值。
+	Value *string `pulumi:"value"`
+}
+
+// HpcClusterTagInput is an input type that accepts HpcClusterTagArgs and HpcClusterTagOutput values.
+// You can construct a concrete instance of `HpcClusterTagInput` via:
+//
+//	HpcClusterTagArgs{...}
+type HpcClusterTagInput interface {
+	pulumi.Input
+
+	ToHpcClusterTagOutput() HpcClusterTagOutput
+	ToHpcClusterTagOutputWithContext(context.Context) HpcClusterTagOutput
+}
+
+type HpcClusterTagArgs struct {
+	// 标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (HpcClusterTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HpcClusterTag)(nil)).Elem()
+}
+
+func (i HpcClusterTagArgs) ToHpcClusterTagOutput() HpcClusterTagOutput {
+	return i.ToHpcClusterTagOutputWithContext(context.Background())
+}
+
+func (i HpcClusterTagArgs) ToHpcClusterTagOutputWithContext(ctx context.Context) HpcClusterTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HpcClusterTagOutput)
+}
+
+// HpcClusterTagArrayInput is an input type that accepts HpcClusterTagArray and HpcClusterTagArrayOutput values.
+// You can construct a concrete instance of `HpcClusterTagArrayInput` via:
+//
+//	HpcClusterTagArray{ HpcClusterTagArgs{...} }
+type HpcClusterTagArrayInput interface {
+	pulumi.Input
+
+	ToHpcClusterTagArrayOutput() HpcClusterTagArrayOutput
+	ToHpcClusterTagArrayOutputWithContext(context.Context) HpcClusterTagArrayOutput
+}
+
+type HpcClusterTagArray []HpcClusterTagInput
+
+func (HpcClusterTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HpcClusterTag)(nil)).Elem()
+}
+
+func (i HpcClusterTagArray) ToHpcClusterTagArrayOutput() HpcClusterTagArrayOutput {
+	return i.ToHpcClusterTagArrayOutputWithContext(context.Background())
+}
+
+func (i HpcClusterTagArray) ToHpcClusterTagArrayOutputWithContext(ctx context.Context) HpcClusterTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HpcClusterTagArrayOutput)
+}
+
+type HpcClusterTagOutput struct{ *pulumi.OutputState }
+
+func (HpcClusterTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HpcClusterTag)(nil)).Elem()
+}
+
+func (o HpcClusterTagOutput) ToHpcClusterTagOutput() HpcClusterTagOutput {
+	return o
+}
+
+func (o HpcClusterTagOutput) ToHpcClusterTagOutputWithContext(ctx context.Context) HpcClusterTagOutput {
+	return o
+}
+
+// 标签键。
+func (o HpcClusterTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HpcClusterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签值。
+func (o HpcClusterTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HpcClusterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type HpcClusterTagArrayOutput struct{ *pulumi.OutputState }
+
+func (HpcClusterTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HpcClusterTag)(nil)).Elem()
+}
+
+func (o HpcClusterTagArrayOutput) ToHpcClusterTagArrayOutput() HpcClusterTagArrayOutput {
+	return o
+}
+
+func (o HpcClusterTagArrayOutput) ToHpcClusterTagArrayOutputWithContext(ctx context.Context) HpcClusterTagArrayOutput {
+	return o
+}
+
+func (o HpcClusterTagArrayOutput) Index(i pulumi.IntInput) HpcClusterTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HpcClusterTag {
+		return vs[0].([]HpcClusterTag)[vs[1].(int)]
+	}).(HpcClusterTagOutput)
+}
+
 type ImageDetectionResults struct {
 	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
 	DetectionStatus *string                     `pulumi:"detectionStatus"`
@@ -6615,6 +6721,112 @@ func (o GetDeploymentSetCapacityArrayOutput) Index(i pulumi.IntInput) GetDeploym
 	}).(GetDeploymentSetCapacityOutput)
 }
 
+type GetHpcClusterTag struct {
+	// 标签键。
+	Key string `pulumi:"key"`
+	// 标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetHpcClusterTagInput is an input type that accepts GetHpcClusterTagArgs and GetHpcClusterTagOutput values.
+// You can construct a concrete instance of `GetHpcClusterTagInput` via:
+//
+//	GetHpcClusterTagArgs{...}
+type GetHpcClusterTagInput interface {
+	pulumi.Input
+
+	ToGetHpcClusterTagOutput() GetHpcClusterTagOutput
+	ToGetHpcClusterTagOutputWithContext(context.Context) GetHpcClusterTagOutput
+}
+
+type GetHpcClusterTagArgs struct {
+	// 标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetHpcClusterTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHpcClusterTag)(nil)).Elem()
+}
+
+func (i GetHpcClusterTagArgs) ToGetHpcClusterTagOutput() GetHpcClusterTagOutput {
+	return i.ToGetHpcClusterTagOutputWithContext(context.Background())
+}
+
+func (i GetHpcClusterTagArgs) ToGetHpcClusterTagOutputWithContext(ctx context.Context) GetHpcClusterTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHpcClusterTagOutput)
+}
+
+// GetHpcClusterTagArrayInput is an input type that accepts GetHpcClusterTagArray and GetHpcClusterTagArrayOutput values.
+// You can construct a concrete instance of `GetHpcClusterTagArrayInput` via:
+//
+//	GetHpcClusterTagArray{ GetHpcClusterTagArgs{...} }
+type GetHpcClusterTagArrayInput interface {
+	pulumi.Input
+
+	ToGetHpcClusterTagArrayOutput() GetHpcClusterTagArrayOutput
+	ToGetHpcClusterTagArrayOutputWithContext(context.Context) GetHpcClusterTagArrayOutput
+}
+
+type GetHpcClusterTagArray []GetHpcClusterTagInput
+
+func (GetHpcClusterTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHpcClusterTag)(nil)).Elem()
+}
+
+func (i GetHpcClusterTagArray) ToGetHpcClusterTagArrayOutput() GetHpcClusterTagArrayOutput {
+	return i.ToGetHpcClusterTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetHpcClusterTagArray) ToGetHpcClusterTagArrayOutputWithContext(ctx context.Context) GetHpcClusterTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHpcClusterTagArrayOutput)
+}
+
+type GetHpcClusterTagOutput struct{ *pulumi.OutputState }
+
+func (GetHpcClusterTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHpcClusterTag)(nil)).Elem()
+}
+
+func (o GetHpcClusterTagOutput) ToGetHpcClusterTagOutput() GetHpcClusterTagOutput {
+	return o
+}
+
+func (o GetHpcClusterTagOutput) ToGetHpcClusterTagOutputWithContext(ctx context.Context) GetHpcClusterTagOutput {
+	return o
+}
+
+// 标签键。
+func (o GetHpcClusterTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHpcClusterTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签值。
+func (o GetHpcClusterTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHpcClusterTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetHpcClusterTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHpcClusterTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHpcClusterTag)(nil)).Elem()
+}
+
+func (o GetHpcClusterTagArrayOutput) ToGetHpcClusterTagArrayOutput() GetHpcClusterTagArrayOutput {
+	return o
+}
+
+func (o GetHpcClusterTagArrayOutput) ToGetHpcClusterTagArrayOutputWithContext(ctx context.Context) GetHpcClusterTagArrayOutput {
+	return o
+}
+
+func (o GetHpcClusterTagArrayOutput) Index(i pulumi.IntInput) GetHpcClusterTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHpcClusterTag {
+		return vs[0].([]GetHpcClusterTag)[vs[1].(int)]
+	}).(GetHpcClusterTagOutput)
+}
+
 type GetImageDetectionResults struct {
 	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
 	DetectionStatus string `pulumi:"detectionStatus"`
@@ -10439,6 +10651,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandTagArrayInput)(nil)).Elem(), CommandTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSetCapacityInput)(nil)).Elem(), DeploymentSetCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSetCapacityArrayInput)(nil)).Elem(), DeploymentSetCapacityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HpcClusterTagInput)(nil)).Elem(), HpcClusterTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HpcClusterTagArrayInput)(nil)).Elem(), HpcClusterTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsPtrInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsItemInput)(nil)).Elem(), ImageDetectionResultsItemArgs{})
@@ -10511,6 +10725,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagArrayInput)(nil)).Elem(), GetCommandTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSetCapacityInput)(nil)).Elem(), GetDeploymentSetCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSetCapacityArrayInput)(nil)).Elem(), GetDeploymentSetCapacityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHpcClusterTagInput)(nil)).Elem(), GetHpcClusterTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHpcClusterTagArrayInput)(nil)).Elem(), GetHpcClusterTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsInput)(nil)).Elem(), GetImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemInput)(nil)).Elem(), GetImageDetectionResultsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemArrayInput)(nil)).Elem(), GetImageDetectionResultsItemArray{})
@@ -10568,6 +10784,8 @@ func init() {
 	pulumi.RegisterOutputType(CommandTagArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentSetCapacityOutput{})
 	pulumi.RegisterOutputType(DeploymentSetCapacityArrayOutput{})
+	pulumi.RegisterOutputType(HpcClusterTagOutput{})
+	pulumi.RegisterOutputType(HpcClusterTagArrayOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsPtrOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsItemOutput{})
@@ -10640,6 +10858,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCommandTagArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSetCapacityOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSetCapacityArrayOutput{})
+	pulumi.RegisterOutputType(GetHpcClusterTagOutput{})
+	pulumi.RegisterOutputType(GetHpcClusterTagArrayOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemArrayOutput{})

@@ -13,6 +13,42 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     /// <summary>
     /// 公网IP（Elastic IP Address，EIP）及其公网出口带宽，是火山引擎为云资源提供的可独立购买和持有的IP连通服务。公网IP支持直接绑定云服务器（包括ECS云服务器、EBM裸金属服务器、GPU云服务器），还支持绑定公网NAT网关、负载均衡、辅助网卡等组件，为云服务器提供公网互通能力。
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var eipDemo = new Bytepluscc.Vpc.Eip("EipDemo", new()
+    ///     {
+    ///         Name = "EipDemo",
+    ///         Description = "EipDemo description",
+    ///         Isp = "BGP",
+    ///         BillingType = 2,
+    ///         Bandwidth = 3,
+    ///         Period = 5,
+    ///         ProjectName = "default",
+    ///         BandwidthPackageId = "bwp-ij5gz1lf66m874o8cth*****",
+    ///         Tags = new[]
+    ///         {
+    ///             new Bytepluscc.Vpc.Inputs.EipTagArgs
+    ///             {
+    ///                 Key = "env",
+    ///                 Value = "test",
+    ///             },
+    ///         },
+    ///         InstanceId = "i-ye48ymyy9s5i3z4*****",
+    ///         InstanceType = "EcsInstance",
+    ///         DirectMode = true,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ```sh
@@ -287,6 +323,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+        /// </summary>
+        [Input("directMode")]
+        public Input<bool>? DirectMode { get; set; }
 
         /// <summary>
         /// 当前绑定的实例ID。

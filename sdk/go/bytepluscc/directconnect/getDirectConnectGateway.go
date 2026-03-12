@@ -34,6 +34,8 @@ type LookupDirectConnectGatewayResult struct {
 	AccountId string `pulumi:"accountId"`
 	// 关联的CEN信息。
 	AssociateCens []GetDirectConnectGatewayAssociateCen `pulumi:"associateCens"`
+	// 关联的EIC信息。
+	AssociateEic GetDirectConnectGatewayAssociateEic `pulumi:"associateEic"`
 	// 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
 	BgpAsn int `pulumi:"bgpAsn"`
 	// 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
@@ -108,6 +110,11 @@ func (o LookupDirectConnectGatewayResultOutput) AccountId() pulumi.StringOutput 
 // 关联的CEN信息。
 func (o LookupDirectConnectGatewayResultOutput) AssociateCens() GetDirectConnectGatewayAssociateCenArrayOutput {
 	return o.ApplyT(func(v LookupDirectConnectGatewayResult) []GetDirectConnectGatewayAssociateCen { return v.AssociateCens }).(GetDirectConnectGatewayAssociateCenArrayOutput)
+}
+
+// 关联的EIC信息。
+func (o LookupDirectConnectGatewayResultOutput) AssociateEic() GetDirectConnectGatewayAssociateEicOutput {
+	return o.ApplyT(func(v LookupDirectConnectGatewayResult) GetDirectConnectGatewayAssociateEic { return v.AssociateEic }).(GetDirectConnectGatewayAssociateEicOutput)
 }
 
 // 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。

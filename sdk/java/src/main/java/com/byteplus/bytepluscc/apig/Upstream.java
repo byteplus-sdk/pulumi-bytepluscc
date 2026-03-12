@@ -8,6 +8,7 @@ import com.byteplus.bytepluscc.apig.UpstreamArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamState;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamBackendTarget;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamCircuitBreakingSettings;
+import com.byteplus.bytepluscc.apig.outputs.UpstreamConnectionPoolSettings;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamLoadBalancerSettings;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamTlsSettings;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamUpstreamSpec;
@@ -70,6 +71,20 @@ public class Upstream extends com.pulumi.resources.CustomResource {
      */
     public Output<String> comments() {
         return this.comments;
+    }
+    /**
+     * 连接池配置。
+     * 
+     */
+    @Export(name="connectionPoolSettings", refs={UpstreamConnectionPoolSettings.class}, tree="[0]")
+    private Output<UpstreamConnectionPoolSettings> connectionPoolSettings;
+
+    /**
+     * @return 连接池配置。
+     * 
+     */
+    public Output<UpstreamConnectionPoolSettings> connectionPoolSettings() {
+        return this.connectionPoolSettings;
     }
     /**
      * Upstream创建时间。

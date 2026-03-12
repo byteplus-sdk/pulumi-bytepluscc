@@ -38,6 +38,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         public Output<string> Comments { get; private set; } = null!;
 
         /// <summary>
+        /// 连接池配置。
+        /// </summary>
+        [Output("connectionPoolSettings")]
+        public Output<Outputs.UpstreamConnectionPoolSettings> ConnectionPoolSettings { get; private set; } = null!;
+
+        /// <summary>
         /// Upstream创建时间。
         /// </summary>
         [Output("createdTime")]
@@ -160,6 +166,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         public Input<string>? Comments { get; set; }
 
         /// <summary>
+        /// 连接池配置。
+        /// </summary>
+        [Input("connectionPoolSettings")]
+        public Input<Inputs.UpstreamConnectionPoolSettingsArgs>? ConnectionPoolSettings { get; set; }
+
+        /// <summary>
         /// 网关实例ID。
         /// </summary>
         [Input("gatewayId", required: true)]
@@ -228,6 +240,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
+
+        /// <summary>
+        /// 连接池配置。
+        /// </summary>
+        [Input("connectionPoolSettings")]
+        public Input<Inputs.UpstreamConnectionPoolSettingsGetArgs>? ConnectionPoolSettings { get; set; }
 
         /// <summary>
         /// Upstream创建时间。

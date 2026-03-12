@@ -36,6 +36,8 @@ type LookupUpstreamResult struct {
 	CircuitBreakingSettings GetUpstreamCircuitBreakingSettings `pulumi:"circuitBreakingSettings"`
 	// 备注。
 	Comments string `pulumi:"comments"`
+	// 连接池配置。
+	ConnectionPoolSettings GetUpstreamConnectionPoolSettings `pulumi:"connectionPoolSettings"`
 	// Upstream创建时间。
 	CreatedTime string `pulumi:"createdTime"`
 	// 网关实例ID。
@@ -109,6 +111,11 @@ func (o LookupUpstreamResultOutput) CircuitBreakingSettings() GetUpstreamCircuit
 // 备注。
 func (o LookupUpstreamResultOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.Comments }).(pulumi.StringOutput)
+}
+
+// 连接池配置。
+func (o LookupUpstreamResultOutput) ConnectionPoolSettings() GetUpstreamConnectionPoolSettingsOutput {
+	return o.ApplyT(func(v LookupUpstreamResult) GetUpstreamConnectionPoolSettings { return v.ConnectionPoolSettings }).(GetUpstreamConnectionPoolSettingsOutput)
 }
 
 // Upstream创建时间。

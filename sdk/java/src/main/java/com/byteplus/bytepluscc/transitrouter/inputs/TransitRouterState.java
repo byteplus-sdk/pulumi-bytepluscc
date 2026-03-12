@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.transitrouter.inputs.TransitRouterAttachmentArgs;
 import com.byteplus.bytepluscc.transitrouter.inputs.TransitRouterTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -102,6 +103,21 @@ public final class TransitRouterState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * 
+     */
+    @Import(name="grantSourceType")
+    private @Nullable Output<String> grantSourceType;
+
+    /**
+     * @return 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * 
+     */
+    public Optional<Output<String>> grantSourceType() {
+        return Optional.ofNullable(this.grantSourceType);
+    }
+
+    /**
      * 实例共享的状态。Accepted：已接受。Initial：待接受。
      * 
      */
@@ -114,6 +130,21 @@ public final class TransitRouterState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<String>> grantStatus() {
         return Optional.ofNullable(this.grantStatus);
+    }
+
+    /**
+     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    @Import(name="multicastEnabled")
+    private @Nullable Output<Boolean> multicastEnabled;
+
+    /**
+     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    public Optional<Output<Boolean>> multicastEnabled() {
+        return Optional.ofNullable(this.multicastEnabled);
     }
 
     /**
@@ -222,7 +253,9 @@ public final class TransitRouterState extends com.pulumi.resources.ResourceArgs 
         this.creationTime = $.creationTime;
         this.deletedTime = $.deletedTime;
         this.description = $.description;
+        this.grantSourceType = $.grantSourceType;
         this.grantStatus = $.grantStatus;
+        this.multicastEnabled = $.multicastEnabled;
         this.overdueTime = $.overdueTime;
         this.projectName = $.projectName;
         this.status = $.status;
@@ -369,6 +402,27 @@ public final class TransitRouterState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
+         * @param grantSourceType 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder grantSourceType(@Nullable Output<String> grantSourceType) {
+            $.grantSourceType = grantSourceType;
+            return this;
+        }
+
+        /**
+         * @param grantSourceType 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder grantSourceType(String grantSourceType) {
+            return grantSourceType(Output.of(grantSourceType));
+        }
+
+        /**
          * @param grantStatus 实例共享的状态。Accepted：已接受。Initial：待接受。
          * 
          * @return builder
@@ -387,6 +441,27 @@ public final class TransitRouterState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder grantStatus(String grantStatus) {
             return grantStatus(Output.of(grantStatus));
+        }
+
+        /**
+         * @param multicastEnabled 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multicastEnabled(@Nullable Output<Boolean> multicastEnabled) {
+            $.multicastEnabled = multicastEnabled;
+            return this;
+        }
+
+        /**
+         * @param multicastEnabled 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multicastEnabled(Boolean multicastEnabled) {
+            return multicastEnabled(Output.of(multicastEnabled));
         }
 
         /**

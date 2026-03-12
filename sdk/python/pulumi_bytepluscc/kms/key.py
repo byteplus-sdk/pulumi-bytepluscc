@@ -25,31 +25,41 @@ class KeyArgs:
                  key_name: pulumi.Input[builtins.str],
                  keyring_name: pulumi.Input[builtins.str],
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
+                 key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
+                 key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_usage: Optional[pulumi.Input[builtins.str]] = None,
                  multi_region: Optional[pulumi.Input[builtins.bool]] = None,
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
                  rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
-                 rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['KeyTagArgs']]]] = None):
         """
         The set of arguments for constructing a Key resource.
         :param pulumi.Input[builtins.str] key_name: 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
         :param pulumi.Input[builtins.str] keyring_name: 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
         :param pulumi.Input[builtins.str] description: 密钥描述:长度为 0   - 8192 个字符。
+        :param pulumi.Input[builtins.int] key_archive_operation: 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        :param pulumi.Input[builtins.int] key_enable_operation: 用户主密钥启用操作（用户输入1=启用，2=禁用）
+        :param pulumi.Input[builtins.int] key_rotation_operation: 用户主密钥轮转操作（用户输入1=开启，2=关闭）
         :param pulumi.Input[builtins.str] key_spec: 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
         :param pulumi.Input[builtins.str] key_usage: 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
         :param pulumi.Input[builtins.bool] multi_region: 是否为 Multi-region 类型的主密钥。
         :param pulumi.Input[builtins.str] origin: 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
         :param pulumi.Input[builtins.str] protection_level: 密钥保护级别，取值：SOFTWARE，HSM。
         :param pulumi.Input[builtins.int] rotate_interval: 密钥轮转周期，单位：天；取值范围：[90, 2560]。
-        :param pulumi.Input[builtins.str] rotate_state: 密钥轮转状态，取值：Enable，Disable。
         """
         pulumi.set(__self__, "key_name", key_name)
         pulumi.set(__self__, "keyring_name", keyring_name)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if key_archive_operation is not None:
+            pulumi.set(__self__, "key_archive_operation", key_archive_operation)
+        if key_enable_operation is not None:
+            pulumi.set(__self__, "key_enable_operation", key_enable_operation)
+        if key_rotation_operation is not None:
+            pulumi.set(__self__, "key_rotation_operation", key_rotation_operation)
         if key_spec is not None:
             pulumi.set(__self__, "key_spec", key_spec)
         if key_usage is not None:
@@ -62,8 +72,6 @@ class KeyArgs:
             pulumi.set(__self__, "protection_level", protection_level)
         if rotate_interval is not None:
             pulumi.set(__self__, "rotate_interval", rotate_interval)
-        if rotate_state is not None:
-            pulumi.set(__self__, "rotate_state", rotate_state)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
 
@@ -102,6 +110,42 @@ class KeyArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="keyArchiveOperation")
+    def key_archive_operation(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        """
+        return pulumi.get(self, "key_archive_operation")
+
+    @key_archive_operation.setter
+    def key_archive_operation(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "key_archive_operation", value)
+
+    @property
+    @pulumi.getter(name="keyEnableOperation")
+    def key_enable_operation(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        用户主密钥启用操作（用户输入1=启用，2=禁用）
+        """
+        return pulumi.get(self, "key_enable_operation")
+
+    @key_enable_operation.setter
+    def key_enable_operation(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "key_enable_operation", value)
+
+    @property
+    @pulumi.getter(name="keyRotationOperation")
+    def key_rotation_operation(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        """
+        return pulumi.get(self, "key_rotation_operation")
+
+    @key_rotation_operation.setter
+    def key_rotation_operation(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "key_rotation_operation", value)
 
     @property
     @pulumi.getter(name="keySpec")
@@ -176,18 +220,6 @@ class KeyArgs:
         pulumi.set(self, "rotate_interval", value)
 
     @property
-    @pulumi.getter(name="rotateState")
-    def rotate_state(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        密钥轮转状态，取值：Enable，Disable。
-        """
-        return pulumi.get(self, "rotate_state")
-
-    @rotate_state.setter
-    def rotate_state(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "rotate_state", value)
-
-    @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyTagArgs']]]]:
         return pulumi.get(self, "tags")
@@ -202,9 +234,12 @@ class _KeyState:
     def __init__(__self__, *,
                  created_time: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
+                 key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_id: Optional[pulumi.Input[builtins.str]] = None,
                  key_material_expire_time: Optional[pulumi.Input[builtins.str]] = None,
                  key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_state: Optional[pulumi.Input[builtins.str]] = None,
                  key_usage: Optional[pulumi.Input[builtins.str]] = None,
@@ -225,9 +260,12 @@ class _KeyState:
         Input properties used for looking up and filtering Key resources.
         :param pulumi.Input[builtins.int] created_time: 密钥创建时间。
         :param pulumi.Input[builtins.str] description: 密钥描述:长度为 0   - 8192 个字符。
+        :param pulumi.Input[builtins.int] key_archive_operation: 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        :param pulumi.Input[builtins.int] key_enable_operation: 用户主密钥启用操作（用户输入1=启用，2=禁用）
         :param pulumi.Input[builtins.str] key_id: 密钥唯一标识符，UUID形式。
         :param pulumi.Input[builtins.str] key_material_expire_time: 密钥材料过期时间，当值为空时表示不会过期。
         :param pulumi.Input[builtins.str] key_name: 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        :param pulumi.Input[builtins.int] key_rotation_operation: 用户主密钥轮转操作（用户输入1=开启，2=关闭）
         :param pulumi.Input[builtins.str] key_spec: 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
         :param pulumi.Input[builtins.str] key_state: 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
         :param pulumi.Input[builtins.str] key_usage: 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
@@ -248,12 +286,18 @@ class _KeyState:
             pulumi.set(__self__, "created_time", created_time)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if key_archive_operation is not None:
+            pulumi.set(__self__, "key_archive_operation", key_archive_operation)
+        if key_enable_operation is not None:
+            pulumi.set(__self__, "key_enable_operation", key_enable_operation)
         if key_id is not None:
             pulumi.set(__self__, "key_id", key_id)
         if key_material_expire_time is not None:
             pulumi.set(__self__, "key_material_expire_time", key_material_expire_time)
         if key_name is not None:
             pulumi.set(__self__, "key_name", key_name)
+        if key_rotation_operation is not None:
+            pulumi.set(__self__, "key_rotation_operation", key_rotation_operation)
         if key_spec is not None:
             pulumi.set(__self__, "key_spec", key_spec)
         if key_state is not None:
@@ -312,6 +356,30 @@ class _KeyState:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="keyArchiveOperation")
+    def key_archive_operation(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        """
+        return pulumi.get(self, "key_archive_operation")
+
+    @key_archive_operation.setter
+    def key_archive_operation(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "key_archive_operation", value)
+
+    @property
+    @pulumi.getter(name="keyEnableOperation")
+    def key_enable_operation(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        用户主密钥启用操作（用户输入1=启用，2=禁用）
+        """
+        return pulumi.get(self, "key_enable_operation")
+
+    @key_enable_operation.setter
+    def key_enable_operation(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "key_enable_operation", value)
+
+    @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -346,6 +414,18 @@ class _KeyState:
     @key_name.setter
     def key_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "key_name", value)
+
+    @property
+    @pulumi.getter(name="keyRotationOperation")
+    def key_rotation_operation(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        """
+        return pulumi.get(self, "key_rotation_operation")
+
+    @key_rotation_operation.setter
+    def key_rotation_operation(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "key_rotation_operation", value)
 
     @property
     @pulumi.getter(name="keySpec")
@@ -544,7 +624,10 @@ class Key(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
+                 key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_usage: Optional[pulumi.Input[builtins.str]] = None,
                  keyring_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -552,33 +635,10 @@ class Key(pulumi.CustomResource):
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
                  rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
-                 rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyTagArgs', 'KeyTagArgsDict']]]]] = None,
                  __props__=None):
         """
         密钥管理服务（Key Management Service）是火山引擎上一站式的密钥管理和数据加密服务平台。提供简单易用的加密接口，KMS 帮助用户轻松管理密钥、保护云上核心数据的安全。同时极大降低用户自行部署密码基础设施的采购、研发成本。帮助业务轻松满足监管和合规需求。
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        k_ms_key_demo = bytepluscc.kms.Key("KMSKeyDemo",
-            keyring_name="KMSKeyDemo",
-            key_name="KMSKeyDemoKeyName",
-            key_spec="SYMMETRIC_256",
-            description="description KMSKeyDemo",
-            key_usage="ENCRYPT_DECRYPT",
-            protection_level="HSM",
-            rotate_state="Enable",
-            origin="CloudKMS",
-            multi_region=False,
-            tags=[{
-                "key": "env",
-                "value": "test",
-            }])
-        ```
 
         ## Import
 
@@ -589,7 +649,10 @@ class Key(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] description: 密钥描述:长度为 0   - 8192 个字符。
+        :param pulumi.Input[builtins.int] key_archive_operation: 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        :param pulumi.Input[builtins.int] key_enable_operation: 用户主密钥启用操作（用户输入1=启用，2=禁用）
         :param pulumi.Input[builtins.str] key_name: 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        :param pulumi.Input[builtins.int] key_rotation_operation: 用户主密钥轮转操作（用户输入1=开启，2=关闭）
         :param pulumi.Input[builtins.str] key_spec: 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
         :param pulumi.Input[builtins.str] key_usage: 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
         :param pulumi.Input[builtins.str] keyring_name: 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
@@ -597,7 +660,6 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] origin: 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
         :param pulumi.Input[builtins.str] protection_level: 密钥保护级别，取值：SOFTWARE，HSM。
         :param pulumi.Input[builtins.int] rotate_interval: 密钥轮转周期，单位：天；取值范围：[90, 2560]。
-        :param pulumi.Input[builtins.str] rotate_state: 密钥轮转状态，取值：Enable，Disable。
         """
         ...
     @overload
@@ -607,28 +669,6 @@ class Key(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         密钥管理服务（Key Management Service）是火山引擎上一站式的密钥管理和数据加密服务平台。提供简单易用的加密接口，KMS 帮助用户轻松管理密钥、保护云上核心数据的安全。同时极大降低用户自行部署密码基础设施的采购、研发成本。帮助业务轻松满足监管和合规需求。
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        k_ms_key_demo = bytepluscc.kms.Key("KMSKeyDemo",
-            keyring_name="KMSKeyDemo",
-            key_name="KMSKeyDemoKeyName",
-            key_spec="SYMMETRIC_256",
-            description="description KMSKeyDemo",
-            key_usage="ENCRYPT_DECRYPT",
-            protection_level="HSM",
-            rotate_state="Enable",
-            origin="CloudKMS",
-            multi_region=False,
-            tags=[{
-                "key": "env",
-                "value": "test",
-            }])
-        ```
 
         ## Import
 
@@ -652,7 +692,10 @@ class Key(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
+                 key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_name: Optional[pulumi.Input[builtins.str]] = None,
+                 key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
                  key_spec: Optional[pulumi.Input[builtins.str]] = None,
                  key_usage: Optional[pulumi.Input[builtins.str]] = None,
                  keyring_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -660,7 +703,6 @@ class Key(pulumi.CustomResource):
                  origin: Optional[pulumi.Input[builtins.str]] = None,
                  protection_level: Optional[pulumi.Input[builtins.str]] = None,
                  rotate_interval: Optional[pulumi.Input[builtins.int]] = None,
-                 rotate_state: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyTagArgs', 'KeyTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -672,9 +714,12 @@ class Key(pulumi.CustomResource):
             __props__ = KeyArgs.__new__(KeyArgs)
 
             __props__.__dict__["description"] = description
+            __props__.__dict__["key_archive_operation"] = key_archive_operation
+            __props__.__dict__["key_enable_operation"] = key_enable_operation
             if key_name is None and not opts.urn:
                 raise TypeError("Missing required property 'key_name'")
             __props__.__dict__["key_name"] = key_name
+            __props__.__dict__["key_rotation_operation"] = key_rotation_operation
             __props__.__dict__["key_spec"] = key_spec
             __props__.__dict__["key_usage"] = key_usage
             if keyring_name is None and not opts.urn:
@@ -684,7 +729,6 @@ class Key(pulumi.CustomResource):
             __props__.__dict__["origin"] = origin
             __props__.__dict__["protection_level"] = protection_level
             __props__.__dict__["rotate_interval"] = rotate_interval
-            __props__.__dict__["rotate_state"] = rotate_state
             __props__.__dict__["tags"] = tags
             __props__.__dict__["created_time"] = None
             __props__.__dict__["key_id"] = None
@@ -692,6 +736,7 @@ class Key(pulumi.CustomResource):
             __props__.__dict__["key_state"] = None
             __props__.__dict__["last_rotation_time"] = None
             __props__.__dict__["multi_region_configuration"] = None
+            __props__.__dict__["rotate_state"] = None
             __props__.__dict__["schedule_delete_time"] = None
             __props__.__dict__["schedule_rotation_time"] = None
             __props__.__dict__["trn"] = None
@@ -708,9 +753,12 @@ class Key(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             created_time: Optional[pulumi.Input[builtins.int]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
+            key_archive_operation: Optional[pulumi.Input[builtins.int]] = None,
+            key_enable_operation: Optional[pulumi.Input[builtins.int]] = None,
             key_id: Optional[pulumi.Input[builtins.str]] = None,
             key_material_expire_time: Optional[pulumi.Input[builtins.str]] = None,
             key_name: Optional[pulumi.Input[builtins.str]] = None,
+            key_rotation_operation: Optional[pulumi.Input[builtins.int]] = None,
             key_spec: Optional[pulumi.Input[builtins.str]] = None,
             key_state: Optional[pulumi.Input[builtins.str]] = None,
             key_usage: Optional[pulumi.Input[builtins.str]] = None,
@@ -736,9 +784,12 @@ class Key(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.int] created_time: 密钥创建时间。
         :param pulumi.Input[builtins.str] description: 密钥描述:长度为 0   - 8192 个字符。
+        :param pulumi.Input[builtins.int] key_archive_operation: 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        :param pulumi.Input[builtins.int] key_enable_operation: 用户主密钥启用操作（用户输入1=启用，2=禁用）
         :param pulumi.Input[builtins.str] key_id: 密钥唯一标识符，UUID形式。
         :param pulumi.Input[builtins.str] key_material_expire_time: 密钥材料过期时间，当值为空时表示不会过期。
         :param pulumi.Input[builtins.str] key_name: 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        :param pulumi.Input[builtins.int] key_rotation_operation: 用户主密钥轮转操作（用户输入1=开启，2=关闭）
         :param pulumi.Input[builtins.str] key_spec: 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
         :param pulumi.Input[builtins.str] key_state: 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
         :param pulumi.Input[builtins.str] key_usage: 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
@@ -761,9 +812,12 @@ class Key(pulumi.CustomResource):
 
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["description"] = description
+        __props__.__dict__["key_archive_operation"] = key_archive_operation
+        __props__.__dict__["key_enable_operation"] = key_enable_operation
         __props__.__dict__["key_id"] = key_id
         __props__.__dict__["key_material_expire_time"] = key_material_expire_time
         __props__.__dict__["key_name"] = key_name
+        __props__.__dict__["key_rotation_operation"] = key_rotation_operation
         __props__.__dict__["key_spec"] = key_spec
         __props__.__dict__["key_state"] = key_state
         __props__.__dict__["key_usage"] = key_usage
@@ -799,6 +853,22 @@ class Key(pulumi.CustomResource):
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="keyArchiveOperation")
+    def key_archive_operation(self) -> pulumi.Output[builtins.int]:
+        """
+        用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        """
+        return pulumi.get(self, "key_archive_operation")
+
+    @property
+    @pulumi.getter(name="keyEnableOperation")
+    def key_enable_operation(self) -> pulumi.Output[builtins.int]:
+        """
+        用户主密钥启用操作（用户输入1=启用，2=禁用）
+        """
+        return pulumi.get(self, "key_enable_operation")
+
+    @property
     @pulumi.getter(name="keyId")
     def key_id(self) -> pulumi.Output[builtins.str]:
         """
@@ -821,6 +891,14 @@ class Key(pulumi.CustomResource):
         主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
         """
         return pulumi.get(self, "key_name")
+
+    @property
+    @pulumi.getter(name="keyRotationOperation")
+    def key_rotation_operation(self) -> pulumi.Output[builtins.int]:
+        """
+        用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        """
+        return pulumi.get(self, "key_rotation_operation")
 
     @property
     @pulumi.getter(name="keySpec")

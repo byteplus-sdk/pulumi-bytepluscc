@@ -52,6 +52,20 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
         return this.createTime;
     }
     /**
+     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * 
+     */
+    @Export(name="crossZoneEnabled", refs={String.class}, tree="[0]")
+    private Output<String> crossZoneEnabled;
+
+    /**
+     * @return 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * 
+     */
+    public Output<String> crossZoneEnabled() {
+        return this.crossZoneEnabled;
+    }
+    /**
      * 后端服务器组的描述。
      * 
      */

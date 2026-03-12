@@ -73,6 +73,11 @@ public final class GetLoadBalancerResult {
      */
     private String id;
     /**
+     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * 
+     */
+    private String ipv6BandwidthPackageId;
+    /**
      * @return IPv6公网IP的计費配置，仅适用于公网实例。
      * 
      */
@@ -122,6 +127,11 @@ public final class GetLoadBalancerResult {
      * 
      */
     private String projectName;
+    /**
+     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * 
+     */
+    private String proxyProtocolEnabled;
     /**
      * @return ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
      * 
@@ -247,6 +257,13 @@ public final class GetLoadBalancerResult {
         return this.id;
     }
     /**
+     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * 
+     */
+    public String ipv6BandwidthPackageId() {
+        return this.ipv6BandwidthPackageId;
+    }
+    /**
      * @return IPv6公网IP的计費配置，仅适用于公网实例。
      * 
      */
@@ -315,6 +332,13 @@ public final class GetLoadBalancerResult {
      */
     public String projectName() {
         return this.projectName;
+    }
+    /**
+     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * 
+     */
+    public String proxyProtocolEnabled() {
+        return this.proxyProtocolEnabled;
     }
     /**
      * @return ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
@@ -400,6 +424,7 @@ public final class GetLoadBalancerResult {
         private GetLoadBalancerEipBillingConfig eipBillingConfig;
         private GetLoadBalancerGlobalAccelerator globalAccelerator;
         private String id;
+        private String ipv6BandwidthPackageId;
         private GetLoadBalancerIpv6EipBillingConfig ipv6EipBillingConfig;
         private Integer loadBalancerBillingType;
         private String loadBalancerEdition;
@@ -410,6 +435,7 @@ public final class GetLoadBalancerResult {
         private String modificationProtectionStatus;
         private String overdueTime;
         private String projectName;
+        private String proxyProtocolEnabled;
         private String status;
         private List<GetLoadBalancerTag> tags;
         private String type;
@@ -433,6 +459,7 @@ public final class GetLoadBalancerResult {
     	      this.eipBillingConfig = defaults.eipBillingConfig;
     	      this.globalAccelerator = defaults.globalAccelerator;
     	      this.id = defaults.id;
+    	      this.ipv6BandwidthPackageId = defaults.ipv6BandwidthPackageId;
     	      this.ipv6EipBillingConfig = defaults.ipv6EipBillingConfig;
     	      this.loadBalancerBillingType = defaults.loadBalancerBillingType;
     	      this.loadBalancerEdition = defaults.loadBalancerEdition;
@@ -443,6 +470,7 @@ public final class GetLoadBalancerResult {
     	      this.modificationProtectionStatus = defaults.modificationProtectionStatus;
     	      this.overdueTime = defaults.overdueTime;
     	      this.projectName = defaults.projectName;
+    	      this.proxyProtocolEnabled = defaults.proxyProtocolEnabled;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
     	      this.type = defaults.type;
@@ -543,6 +571,14 @@ public final class GetLoadBalancerResult {
             return this;
         }
         @CustomType.Setter
+        public Builder ipv6BandwidthPackageId(String ipv6BandwidthPackageId) {
+            if (ipv6BandwidthPackageId == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerResult", "ipv6BandwidthPackageId");
+            }
+            this.ipv6BandwidthPackageId = ipv6BandwidthPackageId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ipv6EipBillingConfig(GetLoadBalancerIpv6EipBillingConfig ipv6EipBillingConfig) {
             if (ipv6EipBillingConfig == null) {
               throw new MissingRequiredPropertyException("GetLoadBalancerResult", "ipv6EipBillingConfig");
@@ -620,6 +656,14 @@ public final class GetLoadBalancerResult {
               throw new MissingRequiredPropertyException("GetLoadBalancerResult", "projectName");
             }
             this.projectName = projectName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder proxyProtocolEnabled(String proxyProtocolEnabled) {
+            if (proxyProtocolEnabled == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerResult", "proxyProtocolEnabled");
+            }
+            this.proxyProtocolEnabled = proxyProtocolEnabled;
             return this;
         }
         @CustomType.Setter
@@ -713,6 +757,7 @@ public final class GetLoadBalancerResult {
             _resultValue.eipBillingConfig = eipBillingConfig;
             _resultValue.globalAccelerator = globalAccelerator;
             _resultValue.id = id;
+            _resultValue.ipv6BandwidthPackageId = ipv6BandwidthPackageId;
             _resultValue.ipv6EipBillingConfig = ipv6EipBillingConfig;
             _resultValue.loadBalancerBillingType = loadBalancerBillingType;
             _resultValue.loadBalancerEdition = loadBalancerEdition;
@@ -723,6 +768,7 @@ public final class GetLoadBalancerResult {
             _resultValue.modificationProtectionStatus = modificationProtectionStatus;
             _resultValue.overdueTime = overdueTime;
             _resultValue.projectName = projectName;
+            _resultValue.proxyProtocolEnabled = proxyProtocolEnabled;
             _resultValue.status = status;
             _resultValue.tags = tags;
             _resultValue.type = type;

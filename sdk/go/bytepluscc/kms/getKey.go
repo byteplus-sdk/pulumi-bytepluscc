@@ -36,12 +36,18 @@ type LookupKeyResult struct {
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
+	// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+	KeyArchiveOperation int `pulumi:"keyArchiveOperation"`
+	// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+	KeyEnableOperation int `pulumi:"keyEnableOperation"`
 	// 密钥唯一标识符，UUID形式。
 	KeyId string `pulumi:"keyId"`
 	// 密钥材料过期时间，当值为空时表示不会过期。
 	KeyMaterialExpireTime string `pulumi:"keyMaterialExpireTime"`
 	// 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
 	KeyName string `pulumi:"keyName"`
+	// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+	KeyRotationOperation int `pulumi:"keyRotationOperation"`
 	// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
 	KeySpec string `pulumi:"keySpec"`
 	// 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
@@ -125,6 +131,16 @@ func (o LookupKeyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+func (o LookupKeyResultOutput) KeyArchiveOperation() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyResult) int { return v.KeyArchiveOperation }).(pulumi.IntOutput)
+}
+
+// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+func (o LookupKeyResultOutput) KeyEnableOperation() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyResult) int { return v.KeyEnableOperation }).(pulumi.IntOutput)
+}
+
 // 密钥唯一标识符，UUID形式。
 func (o LookupKeyResultOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyId }).(pulumi.StringOutput)
@@ -138,6 +154,11 @@ func (o LookupKeyResultOutput) KeyMaterialExpireTime() pulumi.StringOutput {
 // 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
 func (o LookupKeyResultOutput) KeyName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyName }).(pulumi.StringOutput)
+}
+
+// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+func (o LookupKeyResultOutput) KeyRotationOperation() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyResult) int { return v.KeyRotationOperation }).(pulumi.IntOutput)
 }
 
 // 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。

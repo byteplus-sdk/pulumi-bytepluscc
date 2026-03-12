@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.apig.inputs.GatewayServiceAuthSpecArgs;
 import com.byteplus.bytepluscc.apig.inputs.GatewayServiceCustomDomainArgs;
 import com.byteplus.bytepluscc.apig.inputs.GatewayServiceDomainArgs;
 import com.byteplus.bytepluscc.apig.inputs.GatewayServiceDomainSpecArgs;
+import com.byteplus.bytepluscc.apig.inputs.GatewayServiceServiceNetworkSpecArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
@@ -85,6 +86,21 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<GatewayServiceDomainSpecArgs>> domainSpec() {
         return Optional.ofNullable(this.domainSpec);
+    }
+
+    /**
+     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * 
+     */
+    @Import(name="domainType")
+    private @Nullable Output<String> domainType;
+
+    /**
+     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * 
+     */
+    public Optional<Output<String>> domainType() {
+        return Optional.ofNullable(this.domainType);
     }
 
     @Import(name="domains")
@@ -170,18 +186,48 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      * 
      */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      * 
      */
     public Optional<Output<String>> serviceName() {
         return Optional.ofNullable(this.serviceName);
+    }
+
+    /**
+     * 服务默认域名网络配置。。
+     * 
+     */
+    @Import(name="serviceNetworkSpec")
+    private @Nullable Output<GatewayServiceServiceNetworkSpecArgs> serviceNetworkSpec;
+
+    /**
+     * @return 服务默认域名网络配置。。
+     * 
+     */
+    public Optional<Output<GatewayServiceServiceNetworkSpecArgs>> serviceNetworkSpec() {
+        return Optional.ofNullable(this.serviceNetworkSpec);
+    }
+
+    /**
+     * 服务类型，取值：AIProvider：AI模型代理。
+     * 
+     */
+    @Import(name="serviceType")
+    private @Nullable Output<String> serviceType;
+
+    /**
+     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * 
+     */
+    public Optional<Output<String>> serviceType() {
+        return Optional.ofNullable(this.serviceType);
     }
 
     /**
@@ -207,6 +253,7 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         this.createdTime = $.createdTime;
         this.customDomains = $.customDomains;
         this.domainSpec = $.domainSpec;
+        this.domainType = $.domainType;
         this.domains = $.domains;
         this.gatewayId = $.gatewayId;
         this.gatewayName = $.gatewayName;
@@ -214,6 +261,8 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         this.protocols = $.protocols;
         this.serviceId = $.serviceId;
         this.serviceName = $.serviceName;
+        this.serviceNetworkSpec = $.serviceNetworkSpec;
+        this.serviceType = $.serviceType;
         this.status = $.status;
     }
 
@@ -330,6 +379,27 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
          */
         public Builder domainSpec(GatewayServiceDomainSpecArgs domainSpec) {
             return domainSpec(Output.of(domainSpec));
+        }
+
+        /**
+         * @param domainType 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainType(@Nullable Output<String> domainType) {
+            $.domainType = domainType;
+            return this;
+        }
+
+        /**
+         * @param domainType 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domainType(String domainType) {
+            return domainType(Output.of(domainType));
         }
 
         public Builder domains(@Nullable Output<List<GatewayServiceDomainArgs>> domains) {
@@ -461,7 +531,7 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceName 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+         * @param serviceName 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
          * 
          * @return builder
          * 
@@ -472,13 +542,55 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param serviceName 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+         * @param serviceName 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
          * 
          * @return builder
          * 
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
+        }
+
+        /**
+         * @param serviceNetworkSpec 服务默认域名网络配置。。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceNetworkSpec(@Nullable Output<GatewayServiceServiceNetworkSpecArgs> serviceNetworkSpec) {
+            $.serviceNetworkSpec = serviceNetworkSpec;
+            return this;
+        }
+
+        /**
+         * @param serviceNetworkSpec 服务默认域名网络配置。。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceNetworkSpec(GatewayServiceServiceNetworkSpecArgs serviceNetworkSpec) {
+            return serviceNetworkSpec(Output.of(serviceNetworkSpec));
+        }
+
+        /**
+         * @param serviceType 服务类型，取值：AIProvider：AI模型代理。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceType(@Nullable Output<String> serviceType) {
+            $.serviceType = serviceType;
+            return this;
+        }
+
+        /**
+         * @param serviceType 服务类型，取值：AIProvider：AI模型代理。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceType(String serviceType) {
+            return serviceType(Output.of(serviceType));
         }
 
         /**

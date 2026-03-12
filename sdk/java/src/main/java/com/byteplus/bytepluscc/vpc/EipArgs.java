@@ -81,6 +81,21 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * 
+     */
+    @Import(name="directMode")
+    private @Nullable Output<Boolean> directMode;
+
+    /**
+     * @return 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * 
+     */
+    public Optional<Output<Boolean>> directMode() {
+        return Optional.ofNullable(this.directMode);
+    }
+
+    /**
      * 当前绑定的实例ID。
      * 
      */
@@ -319,6 +334,7 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
         this.bandwidthPackageId = $.bandwidthPackageId;
         this.billingType = $.billingType;
         this.description = $.description;
+        this.directMode = $.directMode;
         this.instanceId = $.instanceId;
         this.instanceType = $.instanceType;
         this.ipAddress = $.ipAddress;
@@ -437,6 +453,27 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param directMode 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder directMode(@Nullable Output<Boolean> directMode) {
+            $.directMode = directMode;
+            return this;
+        }
+
+        /**
+         * @param directMode 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder directMode(Boolean directMode) {
+            return directMode(Output.of(directMode));
         }
 
         /**

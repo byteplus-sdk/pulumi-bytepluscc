@@ -23,6 +23,51 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.Eip;
+ * import com.byteplus.bytepluscc.vpc.EipArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.EipTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var eipDemo = new Eip("eipDemo", EipArgs.builder()
+ *             .name("EipDemo")
+ *             .description("EipDemo description")
+ *             .isp("BGP")
+ *             .billingType(2)
+ *             .bandwidth(3)
+ *             .period(5)
+ *             .projectName("default")
+ *             .bandwidthPackageId("bwp-ij5gz1lf66m874o8cth*****")
+ *             .tags(EipTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .instanceId("i-ye48ymyy9s5i3z4*****")
+ *             .instanceType("EcsInstance")
+ *             .directMode(true)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

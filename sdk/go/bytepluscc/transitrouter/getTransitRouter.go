@@ -42,10 +42,14 @@ type LookupTransitRouterResult struct {
 	DeletedTime string `pulumi:"deletedTime"`
 	// 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
 	Description string `pulumi:"description"`
+	// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+	GrantSourceType string `pulumi:"grantSourceType"`
 	// 实例共享的状态。Accepted：已接受。Initial：待接受。
 	GrantStatus string `pulumi:"grantStatus"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
+	// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+	MulticastEnabled bool `pulumi:"multicastEnabled"`
 	// 中转路由器实例的欠费关停时间。
 	OverdueTime string `pulumi:"overdueTime"`
 	// 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
@@ -126,6 +130,11 @@ func (o LookupTransitRouterResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTransitRouterResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+func (o LookupTransitRouterResultOutput) GrantSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTransitRouterResult) string { return v.GrantSourceType }).(pulumi.StringOutput)
+}
+
 // 实例共享的状态。Accepted：已接受。Initial：待接受。
 func (o LookupTransitRouterResultOutput) GrantStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTransitRouterResult) string { return v.GrantStatus }).(pulumi.StringOutput)
@@ -134,6 +143,11 @@ func (o LookupTransitRouterResultOutput) GrantStatus() pulumi.StringOutput {
 // Uniquely identifies the resource.
 func (o LookupTransitRouterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTransitRouterResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+func (o LookupTransitRouterResultOutput) MulticastEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupTransitRouterResult) bool { return v.MulticastEnabled }).(pulumi.BoolOutput)
 }
 
 // 中转路由器实例的欠费关停时间。

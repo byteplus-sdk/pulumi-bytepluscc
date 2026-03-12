@@ -20,6 +20,7 @@ __all__ = [
     'CommandParameterDefinition',
     'CommandTag',
     'DeploymentSetCapacity',
+    'HpcClusterTag',
     'ImageDetectionResults',
     'ImageDetectionResultsItem',
     'ImageSnapshot',
@@ -56,6 +57,7 @@ __all__ = [
     'GetCommandParameterDefinitionResult',
     'GetCommandTagResult',
     'GetDeploymentSetCapacityResult',
+    'GetHpcClusterTagResult',
     'GetImageDetectionResultsResult',
     'GetImageDetectionResultsItemResult',
     'GetImageSnapshotResult',
@@ -326,6 +328,37 @@ class DeploymentSetCapacity(dict):
         可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class HpcClusterTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3338,6 +3371,35 @@ class GetDeploymentSetCapacityResult(dict):
         可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetHpcClusterTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

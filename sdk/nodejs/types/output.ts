@@ -243,6 +243,14 @@ export namespace alb {
          * 公网IP的线路类型，BGP表示多线。
          */
         isp: string;
+        /**
+         * 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+         */
+        securityProtectionInstanceId: number;
+        /**
+         * 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+         */
+        securityProtectionTypes: string;
     }
 
     export interface GetLoadBalancerGlobalAccelerator {
@@ -838,6 +846,14 @@ export namespace alb {
          * 公网IP的线路类型，BGP表示多线。
          */
         isp: string;
+        /**
+         * 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+         */
+        securityProtectionInstanceId: number;
+        /**
+         * 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+         */
+        securityProtectionTypes: string;
     }
 
     export interface LoadBalancerGlobalAccelerator {
@@ -1426,14 +1442,6 @@ export namespace apig {
     }
 
     export interface GatewayServiceCustomDomain {
-        /**
-         * 自定义域名。
-         */
-        domain: string;
-        /**
-         * 自定义域名ID。
-         */
-        domainId: string;
     }
 
     export interface GatewayServiceDomain {
@@ -1452,6 +1460,21 @@ export namespace apig {
          * 开启私网域名公网解析。
          */
         enablePublicResolution: boolean;
+    }
+
+    export interface GatewayServiceServiceNetworkSpec {
+        /**
+         * 开启私网。
+         */
+        enablePrivateNetwork: boolean;
+        /**
+         * 开启公网。
+         */
+        enablePublicNetwork: boolean;
+        /**
+         * 私网域名解析的目标IP。
+         */
+        privateNetworkIps: string[];
     }
 
     export interface GatewayTraceSpec {
@@ -1707,6 +1730,21 @@ export namespace apig {
         enablePublicResolution: boolean;
     }
 
+    export interface GetGatewayServiceServiceNetworkSpec {
+        /**
+         * 开启私网。
+         */
+        enablePrivateNetwork: boolean;
+        /**
+         * 开启公网。
+         */
+        enablePublicNetwork: boolean;
+        /**
+         * 私网域名解析的目标IP。
+         */
+        privateNetworkIps: string[];
+    }
+
     export interface GetGatewayTraceSpec {
         /**
          * 应用性能监控全链路版链路追踪配置。
@@ -1794,6 +1832,25 @@ export namespace apig {
         minHealthPercent: number;
     }
 
+    export interface GetUpstreamConnectionPoolSettings {
+        /**
+         * 开启。
+         */
+        enable: boolean;
+        /**
+         * HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+         */
+        http1MaxPendingRequests: number;
+        /**
+         * 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+         */
+        idleTimeout: number;
+        /**
+         * TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+         */
+        maxConnections: number;
+    }
+
     export interface GetUpstreamLoadBalancerSettings {
         /**
          * 一致性哈希负载均衡。
@@ -1814,6 +1871,10 @@ export namespace apig {
     }
 
     export interface GetUpstreamLoadBalancerSettingsConsistentHashLb {
+        /**
+         * 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+         */
+        hashBalanceFactor: number;
         /**
          * 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
          */
@@ -1954,6 +2015,10 @@ export namespace apig {
          */
         aiProvider: outputs.apig.GetUpstreamUpstreamSpecAiProvider;
         /**
+         * 固定域名。
+         */
+        domain: outputs.apig.GetUpstreamUpstreamSpecDomain;
+        /**
          * 云服务器。
          */
         ecsInstances: outputs.apig.GetUpstreamUpstreamSpecEcsInstance[];
@@ -2001,6 +2066,24 @@ export namespace apig {
         namespace: string;
         /**
          * 端口。
+         */
+        port: number;
+    }
+
+    export interface GetUpstreamUpstreamSpecDomain {
+        /**
+         * 域名列表。
+         */
+        domainLists: outputs.apig.GetUpstreamUpstreamSpecDomainDomainList[];
+    }
+
+    export interface GetUpstreamUpstreamSpecDomainDomainList {
+        /**
+         * 域名。
+         */
+        domain: string;
+        /**
+         * 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
          */
         port: number;
     }
@@ -2133,6 +2216,25 @@ export namespace apig {
         minHealthPercent: number;
     }
 
+    export interface UpstreamConnectionPoolSettings {
+        /**
+         * 开启。
+         */
+        enable: boolean;
+        /**
+         * HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+         */
+        http1MaxPendingRequests: number;
+        /**
+         * 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+         */
+        idleTimeout: number;
+        /**
+         * TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+         */
+        maxConnections: number;
+    }
+
     export interface UpstreamLoadBalancerSettings {
         /**
          * 一致性哈希负载均衡。
@@ -2153,6 +2255,10 @@ export namespace apig {
     }
 
     export interface UpstreamLoadBalancerSettingsConsistentHashLb {
+        /**
+         * 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+         */
+        hashBalanceFactor: number;
         /**
          * 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
          */
@@ -2292,6 +2398,10 @@ export namespace apig {
          * AI模型代理。
          */
         aiProvider: outputs.apig.UpstreamUpstreamSpecAiProvider;
+        /**
+         * 固定域名。
+         */
+        domain: outputs.apig.UpstreamUpstreamSpecDomain;
         ecsInstances: outputs.apig.UpstreamUpstreamSpecEcsInstance[];
         /**
          * 容器服务。
@@ -2337,6 +2447,21 @@ export namespace apig {
         namespace: string;
         /**
          * 端口。
+         */
+        port: number;
+    }
+
+    export interface UpstreamUpstreamSpecDomain {
+        domainLists: outputs.apig.UpstreamUpstreamSpecDomainDomainList[];
+    }
+
+    export interface UpstreamUpstreamSpecDomainDomainList {
+        /**
+         * 域名。
+         */
+        domain: string;
+        /**
+         * 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
          */
         port: number;
     }
@@ -2611,6 +2736,10 @@ export namespace autoscaling {
          * 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
          */
         isp: string;
+        /**
+         * 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+         */
+        releaseWithInstance: boolean;
     }
 
     export interface GetScalingConfigurationInstanceTypeOverride {
@@ -2641,7 +2770,19 @@ export namespace autoscaling {
          */
         deleteWithInstance: boolean;
         /**
-         * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+         * 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+         */
+        extraPerformanceIops: number;
+        /**
+         * 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
          */
         size: number;
         /**
@@ -2718,6 +2859,83 @@ export namespace autoscaling {
         value: string;
     }
 
+    export interface GetScalingPolicyAlarmPolicy {
+        /**
+         * 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+         */
+        condition: outputs.autoscaling.GetScalingPolicyAlarmPolicyCondition;
+        /**
+         * 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+         */
+        conditionOperator: string;
+        /**
+         * 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+         */
+        conditions: outputs.autoscaling.GetScalingPolicyAlarmPolicyCondition[];
+        /**
+         * 报警任务的生效时间段。
+         */
+        effective: string;
+        /**
+         * 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         */
+        evaluationCount: number;
+        /**
+         * 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         */
+        ruleType: string;
+    }
+
+    export interface GetScalingPolicyAlarmPolicyCondition {
+        /**
+         * 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+         */
+        comparisonOperator: string;
+        /**
+         * 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+         */
+        metricName: string;
+        /**
+         * 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+         */
+        metricUnit: string;
+        /**
+         * 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+         */
+        threshold: string;
+    }
+
+    export interface GetScalingPolicyScheduledPolicy {
+        /**
+         * 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+         */
+        launchTime: string;
+        /**
+         * 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+         */
+        launchTimeRead: string;
+        /**
+         * 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         */
+        recurrenceEndTime: string;
+        /**
+         * 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+         */
+        recurrenceEndTimeRead: string;
+        /**
+         * 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+         */
+        recurrenceStartTime: string;
+        /**
+         * 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         */
+        recurrenceType: string;
+        /**
+         * 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         */
+        recurrenceValue: string;
+    }
+
     export interface ScalingConfigurationEip {
         /**
          * 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
@@ -2735,6 +2953,10 @@ export namespace autoscaling {
          * 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
          */
         isp: string;
+        /**
+         * 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+         */
+        releaseWithInstance: boolean;
     }
 
     export interface ScalingConfigurationInstanceTypeOverride {
@@ -2765,7 +2987,19 @@ export namespace autoscaling {
          */
         deleteWithInstance: boolean;
         /**
-         * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+         * 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+         */
+        extraPerformanceIops: number;
+        /**
+         * 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
          */
         size: number;
         /**
@@ -2832,6 +3066,80 @@ export namespace autoscaling {
          * 用户标签的标签值。
          */
         value: string;
+    }
+
+    export interface ScalingPolicyAlarmPolicy {
+        /**
+         * 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+         */
+        condition: outputs.autoscaling.ScalingPolicyAlarmPolicyCondition;
+        /**
+         * 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+         */
+        conditionOperator: string;
+        conditions: outputs.autoscaling.ScalingPolicyAlarmPolicyCondition[];
+        /**
+         * 报警任务的生效时间段。
+         */
+        effective: string;
+        /**
+         * 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         */
+        evaluationCount: number;
+        /**
+         * 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         */
+        ruleType: string;
+    }
+
+    export interface ScalingPolicyAlarmPolicyCondition {
+        /**
+         * 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+         */
+        comparisonOperator: string;
+        /**
+         * 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+         */
+        metricName: string;
+        /**
+         * 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+         */
+        metricUnit: string;
+        /**
+         * 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+         */
+        threshold: string;
+    }
+
+    export interface ScalingPolicyScheduledPolicy {
+        /**
+         * 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+         */
+        launchTime: string;
+        /**
+         * 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+         */
+        launchTimeRead: string;
+        /**
+         * 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         */
+        recurrenceEndTime: string;
+        /**
+         * 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+         */
+        recurrenceEndTimeRead: string;
+        /**
+         * 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+         */
+        recurrenceStartTime: string;
+        /**
+         * 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         */
+        recurrenceType: string;
+        /**
+         * 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         */
+        recurrenceValue: string;
     }
 
 }
@@ -5145,6 +5453,21 @@ export namespace directconnect {
         cenStatus: string;
     }
 
+    export interface DirectConnectGatewayAssociateEic {
+        /**
+         * EIC的ID。
+         */
+        eicId: string;
+        /**
+         * EIC的用户ID。
+         */
+        eicOwnerId: string;
+        /**
+         * 实例在EIC中的状态。
+         */
+        eicStatus: string;
+    }
+
     export interface DirectConnectGatewayTag {
         /**
          * 用户标签的标签键。长度取值范围为1~128字符。
@@ -5169,6 +5492,21 @@ export namespace directconnect {
          * 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
          */
         cenStatus: string;
+    }
+
+    export interface GetDirectConnectGatewayAssociateEic {
+        /**
+         * EIC的ID。
+         */
+        eicId: string;
+        /**
+         * EIC的用户ID。
+         */
+        eicOwnerId: string;
+        /**
+         * 实例在EIC中的状态。
+         */
+        eicStatus: string;
     }
 
     export interface GetDirectConnectGatewayTag {
@@ -5338,6 +5676,17 @@ export namespace ecs {
          * 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
          */
         zoneId: string;
+    }
+
+    export interface GetHpcClusterTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
     }
 
     export interface GetImageDetectionResults {
@@ -6130,6 +6479,17 @@ export namespace ecs {
          * 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
          */
         volumeType: string;
+    }
+
+    export interface HpcClusterTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
     }
 
     export interface ImageDetectionResults {
@@ -9154,6 +9514,454 @@ export namespace kms {
 
 }
 
+export namespace mongodb {
+    export interface AllowListAssociatedInstance {
+        /**
+         * 已绑定当前白名单的实例 ID。
+         */
+        instanceId: string;
+        /**
+         * 已绑定当前白名单的实例名称。
+         */
+        instanceName: string;
+        /**
+         * 实例所属的项目名称。
+         */
+        projectName: string;
+        /**
+         * 实例所属的私有网络 ID。
+         */
+        vpc: string;
+    }
+
+    export interface GetAllowListAssociatedInstance {
+        /**
+         * 已绑定当前白名单的实例 ID。
+         */
+        instanceId: string;
+        /**
+         * 已绑定当前白名单的实例名称。
+         */
+        instanceName: string;
+        /**
+         * 实例所属的项目名称。
+         */
+        projectName: string;
+        /**
+         * 实例所属的私有网络 ID。
+         */
+        vpc: string;
+    }
+
+    export interface GetInstanceConfigServer {
+        /**
+         * ConfigServer 的节点 ID。
+         */
+        configServerNodeId: string;
+        /**
+         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+         */
+        nodeRole: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceMongo {
+        /**
+         * Mongos 的节点 ID。
+         */
+        mongosNodeId: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceNode {
+        /**
+         * 节点延迟时间。单位：秒。
+         */
+        nodeDelayTime: number;
+        /**
+         * 节点 ID。
+         */
+        nodeId: string;
+        /**
+         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         */
+        nodeRole: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 该节点的总存储空间。单位：GiB。
+         */
+        totalStorageGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 该节点已用的存储空间。单位：GiB。
+         */
+        usedStorageGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceNodeAvailabilityZone {
+        /**
+         * 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+         */
+        nodeNumber: number;
+        /**
+         * 只读节点所在的可用区。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceShard {
+        /**
+         * Shard 分片中各节点的信息列表。
+         */
+        nodes: outputs.mongodb.GetInstanceShardNode[];
+        /**
+         * Shard 节点的 ID。
+         */
+        shardId: string;
+    }
+
+    export interface GetInstanceShardNode {
+        /**
+         * 节点延迟时间。单位：秒。
+         */
+        nodeDelayTime: number;
+        /**
+         * 节点 ID。
+         */
+        nodeId: string;
+        /**
+         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         */
+        nodeRole: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 该节点的总存储空间。单位：GiB。
+         */
+        totalStorageGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 该节点已用的存储空间。单位：GiB。
+         */
+        usedStorageGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+    export interface InstanceConfigServer {
+        /**
+         * ConfigServer 的节点 ID。
+         */
+        configServerNodeId: string;
+        /**
+         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+         */
+        nodeRole: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface InstanceMongo {
+        /**
+         * Mongos 的节点 ID。
+         */
+        mongosNodeId: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface InstanceNode {
+        /**
+         * 节点延迟时间。单位：秒。
+         */
+        nodeDelayTime: number;
+        /**
+         * 节点 ID。
+         */
+        nodeId: string;
+        /**
+         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         */
+        nodeRole: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 该节点的总存储空间。单位：GiB。
+         */
+        totalStorageGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 该节点已用的存储空间。单位：GiB。
+         */
+        usedStorageGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface InstanceNodeAvailabilityZone {
+        /**
+         * 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+         */
+        nodeNumber: number;
+        /**
+         * 只读节点所在的可用区。
+         */
+        zoneId: string;
+    }
+
+    export interface InstanceShard {
+        nodes: outputs.mongodb.InstanceShardNode[];
+        /**
+         * Shard 节点的 ID。
+         */
+        shardId: string;
+    }
+
+    export interface InstanceShardNode {
+        /**
+         * 节点延迟时间。单位：秒。
+         */
+        nodeDelayTime: number;
+        /**
+         * 节点 ID。
+         */
+        nodeId: string;
+        /**
+         * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         */
+        nodeRole: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点状态。
+         */
+        nodeStatus: string;
+        /**
+         * 总内存。单位：GiB。
+         */
+        totalMemoryGb: number;
+        /**
+         * 该节点的总存储空间。单位：GiB。
+         */
+        totalStorageGb: number;
+        /**
+         * 总核数。
+         */
+        totalvCpu: number;
+        /**
+         * 已用内存。单位：GiB。
+         */
+        usedMemoryGb: number;
+        /**
+         * 该节点已用的存储空间。单位：GiB。
+         */
+        usedStorageGb: number;
+        /**
+         * 已用核数。
+         */
+        usedvCpu: number;
+        /**
+         * 当前节点所属的可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 标签键。
+         */
+        key: string;
+        /**
+         * 标签值。
+         */
+        value: string;
+    }
+
+}
+
 export namespace natgateway {
     export interface GetNgwEipAddress {
         /**
@@ -9399,6 +10207,143 @@ export namespace privatelink {
          * 终端节点服务标签的标签值。
          */
         value: string;
+    }
+
+}
+
+export namespace privatezone {
+    export interface GetResolverEndpointIpConfig {
+        /**
+         * 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+         */
+        azId: string;
+        /**
+         * 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         */
+        ip: string;
+        /**
+         * 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         */
+        ipv6: string;
+        /**
+         * 终端节点 IP 地址所在的子网 ID。
+         */
+        subnetId: string;
+    }
+
+    export interface GetResolverEndpointTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface GetResolverRuleForwardIP {
+        /**
+         * VPC 外部的 DNS 服务器的 IP 地址。
+         */
+        ip: string;
+        /**
+         * VPC 外部的 DNS 服务器的端口。
+         */
+        port: number;
+    }
+
+    export interface GetResolverRuleTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface GetResolverRuleVpC {
+        /**
+         * 创建该 VPC 的账号 ID。
+         */
+        accountId: string;
+        /**
+         * VPC 的地域。
+         */
+        region: string;
+        /**
+         * VPC 的地域的名称。
+         */
+        regionName: string;
+        /**
+         * VPC 的 ID。
+         */
+        vpcId: string;
+    }
+
+    export interface ResolverEndpointIpConfig {
+        /**
+         * 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+         */
+        azId: string;
+        /**
+         * 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         */
+        ip: string;
+        /**
+         * 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+         */
+        ipv6: string;
+        /**
+         * 终端节点 IP 地址所在的子网 ID。
+         */
+        subnetId: string;
+    }
+
+    export interface ResolverEndpointTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface ResolverRuleForwardIP {
+        /**
+         * VPC 外部的 DNS 服务器的 IP 地址。
+         */
+        ip: string;
+        /**
+         * VPC 外部的 DNS 服务器的端口。
+         */
+        port: number;
+    }
+
+    export interface ResolverRuleTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface ResolverRuleVpC {
+        /**
+         * VPC 的地域。
+         */
+        region: string;
+        /**
+         * VPC 的 ID。
+         */
+        vpcId: string;
     }
 
 }
@@ -9699,6 +10644,40 @@ export namespace rabbitmq {
 }
 
 export namespace rdsmssql {
+    export interface AllowListAssociatedInstance {
+        /**
+         * 实例ID。
+         */
+        instanceId: string;
+    }
+
+    export interface GetAllowListAssociatedInstance {
+        /**
+         * 实例ID。
+         */
+        instanceId: string;
+        /**
+         * 实例名称。
+         */
+        instanceName: string;
+        /**
+         * 实例状态。
+         */
+        instanceStatus: string;
+        /**
+         * 是否同步最新白名单 IP
+         */
+        isLatest: boolean;
+        /**
+         * 实例所属项目名称。
+         */
+        projectName: string;
+        /**
+         * 实例所属VPC ID。
+         */
+        vpc: string;
+    }
+
     export interface GetInstanceChargeInfo {
         /**
          * 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
@@ -11066,6 +12045,36 @@ export namespace rdspostgresql {
         securityGroupName: string;
     }
 
+    export interface DbEndpointAddress {
+        /**
+         * 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+         */
+        dnsVisibility: boolean;
+        /**
+         * 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+         */
+        domainPrefix: string;
+        /**
+         * 端口号。
+         */
+        port: string;
+    }
+
+    export interface DbEndpointReadOnlyNodeWeight {
+        /**
+         * 只读节点需要传入 NodeId。
+         */
+        nodeId: string;
+        /**
+         * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         */
+        nodeType: string;
+        /**
+         * 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+         */
+        weight: number;
+    }
+
     export interface GetAllowListAssociatedInstance {
         /**
          * 实例 ID。
@@ -11098,6 +12107,64 @@ export namespace rdspostgresql {
          * 安全组名称。
          */
         securityGroupName: string;
+    }
+
+    export interface GetDbEndpointAddress {
+        /**
+         * 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+         */
+        crossRegionDomain: string;
+        /**
+         * 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+         */
+        dnsVisibility: boolean;
+        /**
+         * 连接域名。
+         */
+        domain: string;
+        /**
+         * 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+         */
+        domainPrefix: string;
+        /**
+         * 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+         */
+        domainVisibilitySetting: string;
+        /**
+         * EIP 的 ID，仅对 Public 地址有效。
+         */
+        eipId: string;
+        /**
+         * IP 地址。
+         */
+        ipAddress: string;
+        /**
+         * 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+         */
+        networkType: string;
+        /**
+         * 端口号。
+         */
+        port: string;
+        /**
+         * 子网 ID。
+         */
+        subnetId: string;
+    }
+
+    export interface GetDbEndpointReadOnlyNodeWeight {
+        /**
+         * 只读节点需要传入 NodeId。
+         */
+        nodeId: string;
+        /**
+         * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         */
+        nodeType: string;
+        /**
+         * 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+         */
+        weight: number;
     }
 
 }
@@ -11716,6 +12783,358 @@ export namespace transitrouter {
         key: string;
         /**
          * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+}
+
+export namespace vedbm {
+    export interface GetInstanceChargeDetail {
+        /**
+         * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         */
+        autoRenew: boolean;
+        /**
+         * 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeEndTime: string;
+        /**
+         * 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeStartTime: string;
+        /**
+         * 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+         */
+        chargeStatus: string;
+        /**
+         * 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+         */
+        chargeType: string;
+        /**
+         * 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueReclaimTime: string;
+        /**
+         * 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueTime: string;
+        /**
+         * 预付费场景下的购买时长。
+         */
+        period: number;
+        /**
+         * 预付费场景下的购买周期。Month：包月。Year：包年。
+         */
+        periodUnit: string;
+    }
+
+    export interface GetInstanceEndpoint {
+        /**
+         * 连接地址信息。
+         */
+        addresses: outputs.vedbm.GetInstanceEndpointAddress[];
+        /**
+         * 是否允许自动加入新节点，取值：true：是。false：否。
+         */
+        autoAddNewNodes: boolean;
+        /**
+         * 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+         */
+        consistLevel: string;
+        /**
+         * 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+         */
+        consistTimeout: number;
+        /**
+         * 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+         */
+        consistTimeoutAction: string;
+        /**
+         * 地址描述。
+         */
+        description: string;
+        /**
+         * 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+         */
+        distributedTransaction: boolean;
+        /**
+         * 实例连接终端 ID。
+         */
+        endpointId: string;
+        /**
+         * 实例连接终端名称。
+         */
+        endpointName: string;
+        /**
+         * 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+         */
+        endpointType: string;
+        /**
+         * 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+         */
+        masterAcceptReadRequests: boolean;
+        /**
+         * 连接终端配置的节点列表。
+         */
+        nodeIds: string[];
+        /**
+         * 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+         */
+        readWriteMode: string;
+    }
+
+    export interface GetInstanceEndpointAddress {
+        /**
+         * 解析方式。当前返回值只能为 false。
+         */
+        dnsVisibility: boolean;
+        /**
+         * 实例内网访问域名。
+         */
+        domain: string;
+        /**
+         * 公网 ID。
+         */
+        eipId: string;
+        /**
+         * IP 地址。
+         */
+        ipAddress: string;
+        /**
+         * 网络类型：Private：私有网络 VPC。Public：公网访问。
+         */
+        networkType: string;
+        /**
+         * 实例内网访问端口。
+         */
+        port: string;
+        /**
+         * 子网 ID。子网必须属于所选的可用区。
+         */
+        subnetId: string;
+    }
+
+    export interface GetInstanceMaintenanceWindow {
+        /**
+         * 可维护周期粒度，默认取值为：Week（周）。
+         */
+        dayKind: string;
+        /**
+         * 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+         */
+        dayOfMonths: number[];
+        /**
+         * 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+         */
+        dayOfWeeks: string[];
+        /**
+         * 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+         */
+        maintenanceTime: string;
+    }
+
+    export interface GetInstanceNode {
+        /**
+         * 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+         */
+        failoverPriority: number;
+        /**
+         * 内存大小，单位为 GiB。
+         */
+        memory: number;
+        /**
+         * 节点 ID。
+         */
+        nodeId: string;
+        /**
+         * 节点规格。
+         */
+        nodeSpec: string;
+        /**
+         * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         */
+        nodeType: string;
+        /**
+         * CPU 大小，例如当取值为 1 时表示 CPU 大小为 1U。
+         */
+        vCpu: number;
+        /**
+         * 可用区 ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetInstanceTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         */
+        value: string;
+    }
+
+    export interface InstanceChargeDetail {
+        /**
+         * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+         */
+        autoRenew: boolean;
+        /**
+         * 预付费场景下计费到期的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeEndTime: string;
+        /**
+         * 计费开始的时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        chargeStartTime: string;
+        /**
+         * 付费状态：Normal：正常。Overdue：欠费。Shutdown：关停。
+         */
+        chargeStatus: string;
+        /**
+         * 计费类型。PostPaid：按量计费；PrePaid：包年包月。
+         */
+        chargeType: string;
+        /**
+         * 欠费关停时预计释放时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueReclaimTime: string;
+        /**
+         * 欠费关停时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         */
+        overdueTime: string;
+        /**
+         * 预付费场景下的购买时长。
+         */
+        period: number;
+        /**
+         * 预付费场景下的购买周期。Month：包月。Year：包年。
+         */
+        periodUnit: string;
+    }
+
+    export interface InstanceEndpoint {
+        addresses: outputs.vedbm.InstanceEndpointAddress[];
+        /**
+         * 是否允许自动加入新节点，取值：true：是。false：否。
+         */
+        autoAddNewNodes: boolean;
+        /**
+         * 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+         */
+        consistLevel: string;
+        /**
+         * 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+         */
+        consistTimeout: number;
+        /**
+         * 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+         */
+        consistTimeoutAction: string;
+        /**
+         * 地址描述。
+         */
+        description: string;
+        /**
+         * 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+         */
+        distributedTransaction: boolean;
+        /**
+         * 实例连接终端 ID。
+         */
+        endpointId: string;
+        /**
+         * 实例连接终端名称。
+         */
+        endpointName: string;
+        /**
+         * 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+         */
+        endpointType: string;
+        /**
+         * 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+         */
+        masterAcceptReadRequests: boolean;
+        /**
+         * 连接终端配置的节点列表。
+         */
+        nodeIds: string[];
+        /**
+         * 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+         */
+        readWriteMode: string;
+    }
+
+    export interface InstanceEndpointAddress {
+        /**
+         * 解析方式。当前返回值只能为 false。
+         */
+        dnsVisibility: boolean;
+        /**
+         * 实例内网访问域名。
+         */
+        domain: string;
+        /**
+         * 公网 ID。
+         */
+        eipId: string;
+        /**
+         * IP 地址。
+         */
+        ipAddress: string;
+        /**
+         * 网络类型：Private：私有网络 VPC。Public：公网访问。
+         */
+        networkType: string;
+        /**
+         * 实例内网访问端口。
+         */
+        port: string;
+        /**
+         * 子网 ID。子网必须属于所选的可用区。
+         */
+        subnetId: string;
+    }
+
+    export interface InstanceMaintenanceWindow {
+        /**
+         * 可维护周期粒度，默认取值为：Week（周）。
+         */
+        dayKind: string;
+        /**
+         * 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+         */
+        dayOfMonths: number[];
+        /**
+         * 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+         */
+        dayOfWeeks: string[];
+        /**
+         * 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+         */
+        maintenanceTime: string;
+    }
+
+    export interface InstanceNode {
+        /**
+         * 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+         */
+        failoverPriority: number;
+        /**
+         * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         */
+        nodeType: string;
+    }
+
+    export interface InstanceTag {
+        /**
+         * 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
          */
         value: string;
     }

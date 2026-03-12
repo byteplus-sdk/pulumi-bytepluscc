@@ -14,23 +14,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     [OutputType]
     public sealed class GatewayServiceCustomDomain
     {
-        /// <summary>
-        /// 自定义域名。
-        /// </summary>
-        public readonly string? Domain;
-        /// <summary>
-        /// 自定义域名ID。
-        /// </summary>
-        public readonly string? DomainId;
-
         [OutputConstructor]
-        private GatewayServiceCustomDomain(
-            string? domain,
-
-            string? domainId)
+        private GatewayServiceCustomDomain()
         {
-            Domain = domain;
-            DomainId = domainId;
         }
     }
 }

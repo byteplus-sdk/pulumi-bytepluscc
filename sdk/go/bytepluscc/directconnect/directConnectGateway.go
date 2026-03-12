@@ -59,6 +59,8 @@ type DirectConnectGateway struct {
 	// 专线网关所属账号的ID。
 	AccountId     pulumi.StringOutput                         `pulumi:"accountId"`
 	AssociateCens DirectConnectGatewayAssociateCenArrayOutput `pulumi:"associateCens"`
+	// 关联的EIC信息。
+	AssociateEic DirectConnectGatewayAssociateEicOutput `pulumi:"associateEic"`
 	// 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
 	BgpAsn pulumi.IntOutput `pulumi:"bgpAsn"`
 	// 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
@@ -121,6 +123,8 @@ type directConnectGatewayState struct {
 	// 专线网关所属账号的ID。
 	AccountId     *string                            `pulumi:"accountId"`
 	AssociateCens []DirectConnectGatewayAssociateCen `pulumi:"associateCens"`
+	// 关联的EIC信息。
+	AssociateEic *DirectConnectGatewayAssociateEic `pulumi:"associateEic"`
 	// 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
 	BgpAsn *int `pulumi:"bgpAsn"`
 	// 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
@@ -154,6 +158,8 @@ type DirectConnectGatewayState struct {
 	// 专线网关所属账号的ID。
 	AccountId     pulumi.StringPtrInput
 	AssociateCens DirectConnectGatewayAssociateCenArrayInput
+	// 关联的EIC信息。
+	AssociateEic DirectConnectGatewayAssociateEicPtrInput
 	// 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
 	BgpAsn pulumi.IntPtrInput
 	// 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
@@ -310,6 +316,11 @@ func (o DirectConnectGatewayOutput) AccountId() pulumi.StringOutput {
 
 func (o DirectConnectGatewayOutput) AssociateCens() DirectConnectGatewayAssociateCenArrayOutput {
 	return o.ApplyT(func(v *DirectConnectGateway) DirectConnectGatewayAssociateCenArrayOutput { return v.AssociateCens }).(DirectConnectGatewayAssociateCenArrayOutput)
+}
+
+// 关联的EIC信息。
+func (o DirectConnectGatewayOutput) AssociateEic() DirectConnectGatewayAssociateEicOutput {
+	return o.ApplyT(func(v *DirectConnectGateway) DirectConnectGatewayAssociateEicOutput { return v.AssociateEic }).(DirectConnectGatewayAssociateEicOutput)
 }
 
 // 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。

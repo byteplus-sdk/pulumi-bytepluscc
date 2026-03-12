@@ -28,7 +28,7 @@ class GetGatewayServiceResult:
     """
     A collection of values returned by getGatewayService.
     """
-    def __init__(__self__, auth_spec=None, comments=None, created_time=None, custom_domains=None, domain_spec=None, domains=None, gateway_id=None, gateway_name=None, id=None, message=None, protocols=None, service_id=None, service_name=None, status=None):
+    def __init__(__self__, auth_spec=None, comments=None, created_time=None, custom_domains=None, domain_spec=None, domain_type=None, domains=None, gateway_id=None, gateway_name=None, id=None, message=None, protocols=None, service_id=None, service_name=None, service_network_spec=None, service_type=None, status=None):
         if auth_spec and not isinstance(auth_spec, dict):
             raise TypeError("Expected argument 'auth_spec' to be a dict")
         pulumi.set(__self__, "auth_spec", auth_spec)
@@ -44,6 +44,9 @@ class GetGatewayServiceResult:
         if domain_spec and not isinstance(domain_spec, dict):
             raise TypeError("Expected argument 'domain_spec' to be a dict")
         pulumi.set(__self__, "domain_spec", domain_spec)
+        if domain_type and not isinstance(domain_type, str):
+            raise TypeError("Expected argument 'domain_type' to be a str")
+        pulumi.set(__self__, "domain_type", domain_type)
         if domains and not isinstance(domains, list):
             raise TypeError("Expected argument 'domains' to be a list")
         pulumi.set(__self__, "domains", domains)
@@ -68,6 +71,12 @@ class GetGatewayServiceResult:
         if service_name and not isinstance(service_name, str):
             raise TypeError("Expected argument 'service_name' to be a str")
         pulumi.set(__self__, "service_name", service_name)
+        if service_network_spec and not isinstance(service_network_spec, dict):
+            raise TypeError("Expected argument 'service_network_spec' to be a dict")
+        pulumi.set(__self__, "service_network_spec", service_network_spec)
+        if service_type and not isinstance(service_type, str):
+            raise TypeError("Expected argument 'service_type' to be a str")
+        pulumi.set(__self__, "service_type", service_type)
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
@@ -111,6 +120,14 @@ class GetGatewayServiceResult:
         域名详情。
         """
         return pulumi.get(self, "domain_spec")
+
+    @property
+    @pulumi.getter(name="domainType")
+    def domain_type(self) -> builtins.str:
+        """
+        域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        """
+        return pulumi.get(self, "domain_type")
 
     @property
     @pulumi.getter
@@ -172,9 +189,25 @@ class GetGatewayServiceResult:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> builtins.str:
         """
-        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
         """
         return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="serviceNetworkSpec")
+    def service_network_spec(self) -> 'outputs.GetGatewayServiceServiceNetworkSpecResult':
+        """
+        服务默认域名网络配置。。
+        """
+        return pulumi.get(self, "service_network_spec")
+
+    @property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> builtins.str:
+        """
+        服务类型，取值：AIProvider：AI模型代理。
+        """
+        return pulumi.get(self, "service_type")
 
     @property
     @pulumi.getter
@@ -196,6 +229,7 @@ class AwaitableGetGatewayServiceResult(GetGatewayServiceResult):
             created_time=self.created_time,
             custom_domains=self.custom_domains,
             domain_spec=self.domain_spec,
+            domain_type=self.domain_type,
             domains=self.domains,
             gateway_id=self.gateway_id,
             gateway_name=self.gateway_name,
@@ -204,6 +238,8 @@ class AwaitableGetGatewayServiceResult(GetGatewayServiceResult):
             protocols=self.protocols,
             service_id=self.service_id,
             service_name=self.service_name,
+            service_network_spec=self.service_network_spec,
+            service_type=self.service_type,
             status=self.status)
 
 
@@ -226,6 +262,7 @@ def get_gateway_service(id: Optional[builtins.str] = None,
         created_time=pulumi.get(__ret__, 'created_time'),
         custom_domains=pulumi.get(__ret__, 'custom_domains'),
         domain_spec=pulumi.get(__ret__, 'domain_spec'),
+        domain_type=pulumi.get(__ret__, 'domain_type'),
         domains=pulumi.get(__ret__, 'domains'),
         gateway_id=pulumi.get(__ret__, 'gateway_id'),
         gateway_name=pulumi.get(__ret__, 'gateway_name'),
@@ -234,6 +271,8 @@ def get_gateway_service(id: Optional[builtins.str] = None,
         protocols=pulumi.get(__ret__, 'protocols'),
         service_id=pulumi.get(__ret__, 'service_id'),
         service_name=pulumi.get(__ret__, 'service_name'),
+        service_network_spec=pulumi.get(__ret__, 'service_network_spec'),
+        service_type=pulumi.get(__ret__, 'service_type'),
         status=pulumi.get(__ret__, 'status'))
 def get_gateway_service_output(id: Optional[pulumi.Input[builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGatewayServiceResult]:
@@ -253,6 +292,7 @@ def get_gateway_service_output(id: Optional[pulumi.Input[builtins.str]] = None,
         created_time=pulumi.get(__response__, 'created_time'),
         custom_domains=pulumi.get(__response__, 'custom_domains'),
         domain_spec=pulumi.get(__response__, 'domain_spec'),
+        domain_type=pulumi.get(__response__, 'domain_type'),
         domains=pulumi.get(__response__, 'domains'),
         gateway_id=pulumi.get(__response__, 'gateway_id'),
         gateway_name=pulumi.get(__response__, 'gateway_name'),
@@ -261,4 +301,6 @@ def get_gateway_service_output(id: Optional[pulumi.Input[builtins.str]] = None,
         protocols=pulumi.get(__response__, 'protocols'),
         service_id=pulumi.get(__response__, 'service_id'),
         service_name=pulumi.get(__response__, 'service_name'),
+        service_network_spec=pulumi.get(__response__, 'service_network_spec'),
+        service_type=pulumi.get(__response__, 'service_type'),
         status=pulumi.get(__response__, 'status')))

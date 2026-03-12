@@ -83,9 +83,17 @@ export class TransitRouter extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     */
+    public /*out*/ readonly grantSourceType!: pulumi.Output<string>;
+    /**
      * 实例共享的状态。Accepted：已接受。Initial：待接受。
      */
     public /*out*/ readonly grantStatus!: pulumi.Output<string>;
+    /**
+     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     */
+    public readonly multicastEnabled!: pulumi.Output<boolean>;
     /**
      * 中转路由器实例的欠费关停时间。
      */
@@ -131,7 +139,9 @@ export class TransitRouter extends pulumi.CustomResource {
             resourceInputs["creationTime"] = state ? state.creationTime : undefined;
             resourceInputs["deletedTime"] = state ? state.deletedTime : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["grantSourceType"] = state ? state.grantSourceType : undefined;
             resourceInputs["grantStatus"] = state ? state.grantStatus : undefined;
+            resourceInputs["multicastEnabled"] = state ? state.multicastEnabled : undefined;
             resourceInputs["overdueTime"] = state ? state.overdueTime : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
@@ -143,6 +153,7 @@ export class TransitRouter extends pulumi.CustomResource {
             const args = argsOrState as TransitRouterArgs | undefined;
             resourceInputs["asn"] = args ? args.asn : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["multicastEnabled"] = args ? args.multicastEnabled : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["transitRouterName"] = args ? args.transitRouterName : undefined;
@@ -150,6 +161,7 @@ export class TransitRouter extends pulumi.CustomResource {
             resourceInputs["businessStatus"] = undefined /*out*/;
             resourceInputs["creationTime"] = undefined /*out*/;
             resourceInputs["deletedTime"] = undefined /*out*/;
+            resourceInputs["grantSourceType"] = undefined /*out*/;
             resourceInputs["grantStatus"] = undefined /*out*/;
             resourceInputs["overdueTime"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
@@ -187,9 +199,17 @@ export interface TransitRouterState {
      */
     description?: pulumi.Input<string>;
     /**
+     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     */
+    grantSourceType?: pulumi.Input<string>;
+    /**
      * 实例共享的状态。Accepted：已接受。Initial：待接受。
      */
     grantStatus?: pulumi.Input<string>;
+    /**
+     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     */
+    multicastEnabled?: pulumi.Input<boolean>;
     /**
      * 中转路由器实例的欠费关停时间。
      */
@@ -229,6 +249,10 @@ export interface TransitRouterArgs {
      * 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
      */
     description?: pulumi.Input<string>;
+    /**
+     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     */
+    multicastEnabled?: pulumi.Input<boolean>;
     /**
      * 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
      */

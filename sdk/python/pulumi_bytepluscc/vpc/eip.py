@@ -26,6 +26,7 @@ class EipArgs:
                  bandwidth: Optional[pulumi.Input[builtins.int]] = None,
                  bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 direct_mode: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
@@ -48,6 +49,7 @@ class EipArgs:
         :param pulumi.Input[builtins.int] bandwidth: 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
         :param pulumi.Input[builtins.str] bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
         :param pulumi.Input[builtins.str] description: 公网IP的描述信息。
+        :param pulumi.Input[builtins.bool] direct_mode: 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
         :param pulumi.Input[builtins.str] instance_id: 当前绑定的实例ID。
         :param pulumi.Input[builtins.str] instance_type: 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
         :param pulumi.Input[builtins.str] ip_address: 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
@@ -71,6 +73,8 @@ class EipArgs:
             pulumi.set(__self__, "bandwidth_package_id", bandwidth_package_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if direct_mode is not None:
+            pulumi.set(__self__, "direct_mode", direct_mode)
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
         if instance_type is not None:
@@ -151,6 +155,18 @@ class EipArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="directMode")
+    def direct_mode(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+        """
+        return pulumi.get(self, "direct_mode")
+
+    @direct_mode.setter
+    def direct_mode(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "direct_mode", value)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -884,6 +900,7 @@ class Eip(pulumi.CustomResource):
                  bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  billing_type: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 direct_mode: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
@@ -904,6 +921,30 @@ class Eip(pulumi.CustomResource):
         """
         公网IP（Elastic IP Address，EIP）及其公网出口带宽，是火山引擎为云资源提供的可独立购买和持有的IP连通服务。公网IP支持直接绑定云服务器（包括ECS云服务器、EBM裸金属服务器、GPU云服务器），还支持绑定公网NAT网关、负载均衡、辅助网卡等组件，为云服务器提供公网互通能力。
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_bytepluscc as bytepluscc
+
+        eip_demo = bytepluscc.vpc.Eip("EipDemo",
+            name="EipDemo",
+            description="EipDemo description",
+            isp="BGP",
+            billing_type=2,
+            bandwidth=3,
+            period=5,
+            project_name="default",
+            bandwidth_package_id="bwp-ij5gz1lf66m874o8cth*****",
+            tags=[{
+                "key": "env",
+                "value": "test",
+            }],
+            instance_id="i-ye48ymyy9s5i3z4*****",
+            instance_type="EcsInstance",
+            direct_mode=True)
+        ```
+
         ## Import
 
         ```sh
@@ -916,6 +957,7 @@ class Eip(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] bandwidth_package_id: 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
         :param pulumi.Input[builtins.int] billing_type: 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
         :param pulumi.Input[builtins.str] description: 公网IP的描述信息。
+        :param pulumi.Input[builtins.bool] direct_mode: 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
         :param pulumi.Input[builtins.str] instance_id: 当前绑定的实例ID。
         :param pulumi.Input[builtins.str] instance_type: 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
         :param pulumi.Input[builtins.str] ip_address: 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
@@ -940,6 +982,30 @@ class Eip(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         公网IP（Elastic IP Address，EIP）及其公网出口带宽，是火山引擎为云资源提供的可独立购买和持有的IP连通服务。公网IP支持直接绑定云服务器（包括ECS云服务器、EBM裸金属服务器、GPU云服务器），还支持绑定公网NAT网关、负载均衡、辅助网卡等组件，为云服务器提供公网互通能力。
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_bytepluscc as bytepluscc
+
+        eip_demo = bytepluscc.vpc.Eip("EipDemo",
+            name="EipDemo",
+            description="EipDemo description",
+            isp="BGP",
+            billing_type=2,
+            bandwidth=3,
+            period=5,
+            project_name="default",
+            bandwidth_package_id="bwp-ij5gz1lf66m874o8cth*****",
+            tags=[{
+                "key": "env",
+                "value": "test",
+            }],
+            instance_id="i-ye48ymyy9s5i3z4*****",
+            instance_type="EcsInstance",
+            direct_mode=True)
+        ```
 
         ## Import
 
@@ -966,6 +1032,7 @@ class Eip(pulumi.CustomResource):
                  bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  billing_type: Optional[pulumi.Input[builtins.int]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 direct_mode: Optional[pulumi.Input[builtins.bool]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  instance_type: Optional[pulumi.Input[builtins.str]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
@@ -997,6 +1064,7 @@ class Eip(pulumi.CustomResource):
                 raise TypeError("Missing required property 'billing_type'")
             __props__.__dict__["billing_type"] = billing_type
             __props__.__dict__["description"] = description
+            __props__.__dict__["direct_mode"] = direct_mode
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["instance_type"] = instance_type
             __props__.__dict__["ip_address"] = ip_address
@@ -1017,7 +1085,6 @@ class Eip(pulumi.CustomResource):
             __props__.__dict__["business_status"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["deleted_time"] = None
-            __props__.__dict__["direct_mode"] = None
             __props__.__dict__["eip_address"] = None
             __props__.__dict__["expired_time"] = None
             __props__.__dict__["is_blocked"] = None

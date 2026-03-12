@@ -9,26 +9,6 @@ import * as utilities from "../utilities";
 /**
  * 服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
- *
- * const apigGatewayServiceDemo = new bytepluscc.apig.GatewayService("ApigGatewayServiceDemo", {
- *     serviceName: "ApigGatewayServiceDemo",
- *     gatewayId: "gd3vehjs7npja181xxxxx",
- *     protocols: [
- *         "HTTP",
- *         "HTTPS",
- *     ],
- *     authSpec: {
- *         enable: false,
- *     },
- *     comments: "ApigGatewayServiceDemo-test",
- * });
- * ```
- *
  * ## Import
  *
  * ```sh
@@ -75,11 +55,15 @@ export class GatewayService extends pulumi.CustomResource {
      * 创建时间。
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
-    public /*out*/ readonly customDomains!: pulumi.Output<outputs.apig.GatewayServiceCustomDomain[]>;
+    public readonly customDomains!: pulumi.Output<outputs.apig.GatewayServiceCustomDomain[]>;
     /**
      * 域名详情。
      */
     public /*out*/ readonly domainSpec!: pulumi.Output<outputs.apig.GatewayServiceDomainSpec>;
+    /**
+     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     */
+    public readonly domainType!: pulumi.Output<string>;
     public /*out*/ readonly domains!: pulumi.Output<outputs.apig.GatewayServiceDomain[]>;
     /**
      * 网关ID。
@@ -102,9 +86,17 @@ export class GatewayService extends pulumi.CustomResource {
      */
     public /*out*/ readonly serviceId!: pulumi.Output<string>;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      */
     public readonly serviceName!: pulumi.Output<string>;
+    /**
+     * 服务默认域名网络配置。。
+     */
+    public readonly serviceNetworkSpec!: pulumi.Output<outputs.apig.GatewayServiceServiceNetworkSpec>;
+    /**
+     * 服务类型，取值：AIProvider：AI模型代理。
+     */
+    public readonly serviceType!: pulumi.Output<string>;
     /**
      * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
      */
@@ -128,6 +120,7 @@ export class GatewayService extends pulumi.CustomResource {
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
             resourceInputs["customDomains"] = state ? state.customDomains : undefined;
             resourceInputs["domainSpec"] = state ? state.domainSpec : undefined;
+            resourceInputs["domainType"] = state ? state.domainType : undefined;
             resourceInputs["domains"] = state ? state.domains : undefined;
             resourceInputs["gatewayId"] = state ? state.gatewayId : undefined;
             resourceInputs["gatewayName"] = state ? state.gatewayName : undefined;
@@ -135,6 +128,8 @@ export class GatewayService extends pulumi.CustomResource {
             resourceInputs["protocols"] = state ? state.protocols : undefined;
             resourceInputs["serviceId"] = state ? state.serviceId : undefined;
             resourceInputs["serviceName"] = state ? state.serviceName : undefined;
+            resourceInputs["serviceNetworkSpec"] = state ? state.serviceNetworkSpec : undefined;
+            resourceInputs["serviceType"] = state ? state.serviceType : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
         } else {
             const args = argsOrState as GatewayServiceArgs | undefined;
@@ -152,11 +147,14 @@ export class GatewayService extends pulumi.CustomResource {
             }
             resourceInputs["authSpec"] = args ? args.authSpec : undefined;
             resourceInputs["comments"] = args ? args.comments : undefined;
+            resourceInputs["customDomains"] = args ? args.customDomains : undefined;
+            resourceInputs["domainType"] = args ? args.domainType : undefined;
             resourceInputs["gatewayId"] = args ? args.gatewayId : undefined;
             resourceInputs["protocols"] = args ? args.protocols : undefined;
             resourceInputs["serviceName"] = args ? args.serviceName : undefined;
+            resourceInputs["serviceNetworkSpec"] = args ? args.serviceNetworkSpec : undefined;
+            resourceInputs["serviceType"] = args ? args.serviceType : undefined;
             resourceInputs["createdTime"] = undefined /*out*/;
-            resourceInputs["customDomains"] = undefined /*out*/;
             resourceInputs["domainSpec"] = undefined /*out*/;
             resourceInputs["domains"] = undefined /*out*/;
             resourceInputs["gatewayName"] = undefined /*out*/;
@@ -190,6 +188,10 @@ export interface GatewayServiceState {
      * 域名详情。
      */
     domainSpec?: pulumi.Input<inputs.apig.GatewayServiceDomainSpec>;
+    /**
+     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     */
+    domainType?: pulumi.Input<string>;
     domains?: pulumi.Input<pulumi.Input<inputs.apig.GatewayServiceDomain>[]>;
     /**
      * 网关ID。
@@ -212,9 +214,17 @@ export interface GatewayServiceState {
      */
     serviceId?: pulumi.Input<string>;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      */
     serviceName?: pulumi.Input<string>;
+    /**
+     * 服务默认域名网络配置。。
+     */
+    serviceNetworkSpec?: pulumi.Input<inputs.apig.GatewayServiceServiceNetworkSpec>;
+    /**
+     * 服务类型，取值：AIProvider：AI模型代理。
+     */
+    serviceType?: pulumi.Input<string>;
     /**
      * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
      */
@@ -233,6 +243,11 @@ export interface GatewayServiceArgs {
      * 备注，长度限制为0~253个字符。
      */
     comments?: pulumi.Input<string>;
+    customDomains?: pulumi.Input<pulumi.Input<inputs.apig.GatewayServiceCustomDomain>[]>;
+    /**
+     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     */
+    domainType?: pulumi.Input<string>;
     /**
      * 网关ID。
      */
@@ -242,7 +257,15 @@ export interface GatewayServiceArgs {
      */
     protocols: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      */
     serviceName: pulumi.Input<string>;
+    /**
+     * 服务默认域名网络配置。。
+     */
+    serviceNetworkSpec?: pulumi.Input<inputs.apig.GatewayServiceServiceNetworkSpec>;
+    /**
+     * 服务类型，取值：AIProvider：AI模型代理。
+     */
+    serviceType?: pulumi.Input<string>;
 }

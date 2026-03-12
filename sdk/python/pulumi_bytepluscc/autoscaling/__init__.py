@@ -10,7 +10,10 @@ from .get_scaling_configuration import *
 from .get_scaling_configurations import *
 from .get_scaling_group import *
 from .get_scaling_groups import *
+from .get_scaling_policies import *
+from .get_scaling_policy import *
 from .scaling_configuration import *
 from .scaling_group import *
+from .scaling_policy import *
 from ._inputs import *
 from . import outputs

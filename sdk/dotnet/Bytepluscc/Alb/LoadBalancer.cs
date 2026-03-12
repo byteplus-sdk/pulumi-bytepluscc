@@ -83,6 +83,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<Outputs.LoadBalancerGlobalAccelerator> GlobalAccelerator { get; private set; } = null!;
 
         /// <summary>
+        /// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        /// </summary>
+        [Output("ipv6BandwidthPackageId")]
+        public Output<string> Ipv6BandwidthPackageId { get; private set; } = null!;
+
+        /// <summary>
         /// IPv6公网IP的计費配置，仅适用于公网实例。
         /// </summary>
         [Output("ipv6EipBillingConfig")]
@@ -141,6 +147,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
+
+        /// <summary>
+        /// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        /// </summary>
+        [Output("proxyProtocolEnabled")]
+        public Output<string> ProxyProtocolEnabled { get; private set; } = null!;
 
         /// <summary>
         /// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
@@ -274,6 +286,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<Inputs.LoadBalancerGlobalAcceleratorArgs>? GlobalAccelerator { get; set; }
 
         /// <summary>
+        /// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        /// </summary>
+        [Input("ipv6BandwidthPackageId")]
+        public Input<string>? Ipv6BandwidthPackageId { get; set; }
+
+        /// <summary>
         /// IPv6公网IP的计費配置，仅适用于公网实例。
         /// </summary>
         [Input("ipv6EipBillingConfig")]
@@ -314,6 +332,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
+
+        /// <summary>
+        /// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        /// </summary>
+        [Input("proxyProtocolEnabled")]
+        public Input<string>? ProxyProtocolEnabled { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.LoadBalancerTagArgs>? _tags;
@@ -430,6 +454,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Input<Inputs.LoadBalancerGlobalAcceleratorGetArgs>? GlobalAccelerator { get; set; }
 
         /// <summary>
+        /// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        /// </summary>
+        [Input("ipv6BandwidthPackageId")]
+        public Input<string>? Ipv6BandwidthPackageId { get; set; }
+
+        /// <summary>
         /// IPv6公网IP的计費配置，仅适用于公网实例。
         /// </summary>
         [Input("ipv6EipBillingConfig")]
@@ -488,6 +518,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
+
+        /// <summary>
+        /// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        /// </summary>
+        [Input("proxyProtocolEnabled")]
+        public Input<string>? ProxyProtocolEnabled { get; set; }
 
         /// <summary>
         /// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。

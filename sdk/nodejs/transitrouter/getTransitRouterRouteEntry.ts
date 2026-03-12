@@ -65,6 +65,14 @@ export interface GetTransitRouterRouteEntryResult {
      */
     readonly transitRouterRouteEntryNextHopId: string;
     /**
+     * 路由条目下一跳网络实例ID。
+     */
+    readonly transitRouterRouteEntryNextHopResourceId: string;
+    /**
+     * 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     */
+    readonly transitRouterRouteEntryNextHopResourceType: string;
+    /**
      * 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
      */
     readonly transitRouterRouteEntryNextHopType: string;

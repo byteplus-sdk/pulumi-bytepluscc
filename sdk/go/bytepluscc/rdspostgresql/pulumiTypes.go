@@ -252,6 +252,236 @@ func (o AllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) Allo
 	}).(AllowListSecurityGroupBindInfoOutput)
 }
 
+type DbEndpointAddress struct {
+	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	DnsVisibility *bool `pulumi:"dnsVisibility"`
+	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	DomainPrefix *string `pulumi:"domainPrefix"`
+	// 端口号。
+	Port *string `pulumi:"port"`
+}
+
+// DbEndpointAddressInput is an input type that accepts DbEndpointAddressArgs and DbEndpointAddressOutput values.
+// You can construct a concrete instance of `DbEndpointAddressInput` via:
+//
+//	DbEndpointAddressArgs{...}
+type DbEndpointAddressInput interface {
+	pulumi.Input
+
+	ToDbEndpointAddressOutput() DbEndpointAddressOutput
+	ToDbEndpointAddressOutputWithContext(context.Context) DbEndpointAddressOutput
+}
+
+type DbEndpointAddressArgs struct {
+	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
+	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	DomainPrefix pulumi.StringPtrInput `pulumi:"domainPrefix"`
+	// 端口号。
+	Port pulumi.StringPtrInput `pulumi:"port"`
+}
+
+func (DbEndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointAddress)(nil)).Elem()
+}
+
+func (i DbEndpointAddressArgs) ToDbEndpointAddressOutput() DbEndpointAddressOutput {
+	return i.ToDbEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i DbEndpointAddressArgs) ToDbEndpointAddressOutputWithContext(ctx context.Context) DbEndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointAddressOutput)
+}
+
+// DbEndpointAddressArrayInput is an input type that accepts DbEndpointAddressArray and DbEndpointAddressArrayOutput values.
+// You can construct a concrete instance of `DbEndpointAddressArrayInput` via:
+//
+//	DbEndpointAddressArray{ DbEndpointAddressArgs{...} }
+type DbEndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToDbEndpointAddressArrayOutput() DbEndpointAddressArrayOutput
+	ToDbEndpointAddressArrayOutputWithContext(context.Context) DbEndpointAddressArrayOutput
+}
+
+type DbEndpointAddressArray []DbEndpointAddressInput
+
+func (DbEndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbEndpointAddress)(nil)).Elem()
+}
+
+func (i DbEndpointAddressArray) ToDbEndpointAddressArrayOutput() DbEndpointAddressArrayOutput {
+	return i.ToDbEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i DbEndpointAddressArray) ToDbEndpointAddressArrayOutputWithContext(ctx context.Context) DbEndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointAddressArrayOutput)
+}
+
+type DbEndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointAddress)(nil)).Elem()
+}
+
+func (o DbEndpointAddressOutput) ToDbEndpointAddressOutput() DbEndpointAddressOutput {
+	return o
+}
+
+func (o DbEndpointAddressOutput) ToDbEndpointAddressOutputWithContext(ctx context.Context) DbEndpointAddressOutput {
+	return o
+}
+
+// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+func (o DbEndpointAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DbEndpointAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
+}
+
+// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+func (o DbEndpointAddressOutput) DomainPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointAddress) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
+}
+
+// 端口号。
+func (o DbEndpointAddressOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+type DbEndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbEndpointAddress)(nil)).Elem()
+}
+
+func (o DbEndpointAddressArrayOutput) ToDbEndpointAddressArrayOutput() DbEndpointAddressArrayOutput {
+	return o
+}
+
+func (o DbEndpointAddressArrayOutput) ToDbEndpointAddressArrayOutputWithContext(ctx context.Context) DbEndpointAddressArrayOutput {
+	return o
+}
+
+func (o DbEndpointAddressArrayOutput) Index(i pulumi.IntInput) DbEndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbEndpointAddress {
+		return vs[0].([]DbEndpointAddress)[vs[1].(int)]
+	}).(DbEndpointAddressOutput)
+}
+
+type DbEndpointReadOnlyNodeWeight struct {
+	// 只读节点需要传入 NodeId。
+	NodeId *string `pulumi:"nodeId"`
+	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	NodeType *string `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	Weight *int `pulumi:"weight"`
+}
+
+// DbEndpointReadOnlyNodeWeightInput is an input type that accepts DbEndpointReadOnlyNodeWeightArgs and DbEndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `DbEndpointReadOnlyNodeWeightInput` via:
+//
+//	DbEndpointReadOnlyNodeWeightArgs{...}
+type DbEndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToDbEndpointReadOnlyNodeWeightOutput() DbEndpointReadOnlyNodeWeightOutput
+	ToDbEndpointReadOnlyNodeWeightOutputWithContext(context.Context) DbEndpointReadOnlyNodeWeightOutput
+}
+
+type DbEndpointReadOnlyNodeWeightArgs struct {
+	// 只读节点需要传入 NodeId。
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	Weight pulumi.IntPtrInput `pulumi:"weight"`
+}
+
+func (DbEndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i DbEndpointReadOnlyNodeWeightArgs) ToDbEndpointReadOnlyNodeWeightOutput() DbEndpointReadOnlyNodeWeightOutput {
+	return i.ToDbEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i DbEndpointReadOnlyNodeWeightArgs) ToDbEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) DbEndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointReadOnlyNodeWeightOutput)
+}
+
+// DbEndpointReadOnlyNodeWeightArrayInput is an input type that accepts DbEndpointReadOnlyNodeWeightArray and DbEndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `DbEndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	DbEndpointReadOnlyNodeWeightArray{ DbEndpointReadOnlyNodeWeightArgs{...} }
+type DbEndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToDbEndpointReadOnlyNodeWeightArrayOutput() DbEndpointReadOnlyNodeWeightArrayOutput
+	ToDbEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) DbEndpointReadOnlyNodeWeightArrayOutput
+}
+
+type DbEndpointReadOnlyNodeWeightArray []DbEndpointReadOnlyNodeWeightInput
+
+func (DbEndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i DbEndpointReadOnlyNodeWeightArray) ToDbEndpointReadOnlyNodeWeightArrayOutput() DbEndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToDbEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i DbEndpointReadOnlyNodeWeightArray) ToDbEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) DbEndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type DbEndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o DbEndpointReadOnlyNodeWeightOutput) ToDbEndpointReadOnlyNodeWeightOutput() DbEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o DbEndpointReadOnlyNodeWeightOutput) ToDbEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) DbEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// 只读节点需要传入 NodeId。
+func (o DbEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointReadOnlyNodeWeight) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+func (o DbEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbEndpointReadOnlyNodeWeight) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+func (o DbEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DbEndpointReadOnlyNodeWeight) *int { return v.Weight }).(pulumi.IntPtrOutput)
+}
+
+type DbEndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (DbEndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o DbEndpointReadOnlyNodeWeightArrayOutput) ToDbEndpointReadOnlyNodeWeightArrayOutput() DbEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o DbEndpointReadOnlyNodeWeightArrayOutput) ToDbEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) DbEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o DbEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) DbEndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbEndpointReadOnlyNodeWeight {
+		return vs[0].([]DbEndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(DbEndpointReadOnlyNodeWeightOutput)
+}
+
 type GetAllowListAssociatedInstance struct {
 	// 实例 ID。
 	InstanceId string `pulumi:"instanceId"`
@@ -491,21 +721,330 @@ func (o GetAllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetAllowListSecurityGroupBindInfoOutput)
 }
 
+type GetDbEndpointAddress struct {
+	// 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+	CrossRegionDomain string `pulumi:"crossRegionDomain"`
+	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	DnsVisibility bool `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain string `pulumi:"domain"`
+	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	DomainPrefix string `pulumi:"domainPrefix"`
+	// 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+	DomainVisibilitySetting string `pulumi:"domainVisibilitySetting"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId string `pulumi:"eipId"`
+	// IP 地址。
+	IpAddress string `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+	NetworkType string `pulumi:"networkType"`
+	// 端口号。
+	Port string `pulumi:"port"`
+	// 子网 ID。
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetDbEndpointAddressInput is an input type that accepts GetDbEndpointAddressArgs and GetDbEndpointAddressOutput values.
+// You can construct a concrete instance of `GetDbEndpointAddressInput` via:
+//
+//	GetDbEndpointAddressArgs{...}
+type GetDbEndpointAddressInput interface {
+	pulumi.Input
+
+	ToGetDbEndpointAddressOutput() GetDbEndpointAddressOutput
+	ToGetDbEndpointAddressOutputWithContext(context.Context) GetDbEndpointAddressOutput
+}
+
+type GetDbEndpointAddressArgs struct {
+	// 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+	CrossRegionDomain pulumi.StringInput `pulumi:"crossRegionDomain"`
+	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
+	// 连接域名。
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	DomainPrefix pulumi.StringInput `pulumi:"domainPrefix"`
+	// 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+	DomainVisibilitySetting pulumi.StringInput `pulumi:"domainVisibilitySetting"`
+	// EIP 的 ID，仅对 Public 地址有效。
+	EipId pulumi.StringInput `pulumi:"eipId"`
+	// IP 地址。
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// 端口号。
+	Port pulumi.StringInput `pulumi:"port"`
+	// 子网 ID。
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetDbEndpointAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointAddress)(nil)).Elem()
+}
+
+func (i GetDbEndpointAddressArgs) ToGetDbEndpointAddressOutput() GetDbEndpointAddressOutput {
+	return i.ToGetDbEndpointAddressOutputWithContext(context.Background())
+}
+
+func (i GetDbEndpointAddressArgs) ToGetDbEndpointAddressOutputWithContext(ctx context.Context) GetDbEndpointAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointAddressOutput)
+}
+
+// GetDbEndpointAddressArrayInput is an input type that accepts GetDbEndpointAddressArray and GetDbEndpointAddressArrayOutput values.
+// You can construct a concrete instance of `GetDbEndpointAddressArrayInput` via:
+//
+//	GetDbEndpointAddressArray{ GetDbEndpointAddressArgs{...} }
+type GetDbEndpointAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetDbEndpointAddressArrayOutput() GetDbEndpointAddressArrayOutput
+	ToGetDbEndpointAddressArrayOutputWithContext(context.Context) GetDbEndpointAddressArrayOutput
+}
+
+type GetDbEndpointAddressArray []GetDbEndpointAddressInput
+
+func (GetDbEndpointAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbEndpointAddress)(nil)).Elem()
+}
+
+func (i GetDbEndpointAddressArray) ToGetDbEndpointAddressArrayOutput() GetDbEndpointAddressArrayOutput {
+	return i.ToGetDbEndpointAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbEndpointAddressArray) ToGetDbEndpointAddressArrayOutputWithContext(ctx context.Context) GetDbEndpointAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointAddressArrayOutput)
+}
+
+type GetDbEndpointAddressOutput struct{ *pulumi.OutputState }
+
+func (GetDbEndpointAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointAddress)(nil)).Elem()
+}
+
+func (o GetDbEndpointAddressOutput) ToGetDbEndpointAddressOutput() GetDbEndpointAddressOutput {
+	return o
+}
+
+func (o GetDbEndpointAddressOutput) ToGetDbEndpointAddressOutputWithContext(ctx context.Context) GetDbEndpointAddressOutput {
+	return o
+}
+
+// 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+func (o GetDbEndpointAddressOutput) CrossRegionDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.CrossRegionDomain }).(pulumi.StringOutput)
+}
+
+// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+func (o GetDbEndpointAddressOutput) DnsVisibility() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
+}
+
+// 连接域名。
+func (o GetDbEndpointAddressOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+func (o GetDbEndpointAddressOutput) DomainPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.DomainPrefix }).(pulumi.StringOutput)
+}
+
+// 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+func (o GetDbEndpointAddressOutput) DomainVisibilitySetting() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.DomainVisibilitySetting }).(pulumi.StringOutput)
+}
+
+// EIP 的 ID，仅对 Public 地址有效。
+func (o GetDbEndpointAddressOutput) EipId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.EipId }).(pulumi.StringOutput)
+}
+
+// IP 地址。
+func (o GetDbEndpointAddressOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+func (o GetDbEndpointAddressOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// 端口号。
+func (o GetDbEndpointAddressOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.Port }).(pulumi.StringOutput)
+}
+
+// 子网 ID。
+func (o GetDbEndpointAddressOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetDbEndpointAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbEndpointAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbEndpointAddress)(nil)).Elem()
+}
+
+func (o GetDbEndpointAddressArrayOutput) ToGetDbEndpointAddressArrayOutput() GetDbEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetDbEndpointAddressArrayOutput) ToGetDbEndpointAddressArrayOutputWithContext(ctx context.Context) GetDbEndpointAddressArrayOutput {
+	return o
+}
+
+func (o GetDbEndpointAddressArrayOutput) Index(i pulumi.IntInput) GetDbEndpointAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbEndpointAddress {
+		return vs[0].([]GetDbEndpointAddress)[vs[1].(int)]
+	}).(GetDbEndpointAddressOutput)
+}
+
+type GetDbEndpointReadOnlyNodeWeight struct {
+	// 只读节点需要传入 NodeId。
+	NodeId string `pulumi:"nodeId"`
+	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	NodeType string `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	Weight int `pulumi:"weight"`
+}
+
+// GetDbEndpointReadOnlyNodeWeightInput is an input type that accepts GetDbEndpointReadOnlyNodeWeightArgs and GetDbEndpointReadOnlyNodeWeightOutput values.
+// You can construct a concrete instance of `GetDbEndpointReadOnlyNodeWeightInput` via:
+//
+//	GetDbEndpointReadOnlyNodeWeightArgs{...}
+type GetDbEndpointReadOnlyNodeWeightInput interface {
+	pulumi.Input
+
+	ToGetDbEndpointReadOnlyNodeWeightOutput() GetDbEndpointReadOnlyNodeWeightOutput
+	ToGetDbEndpointReadOnlyNodeWeightOutputWithContext(context.Context) GetDbEndpointReadOnlyNodeWeightOutput
+}
+
+type GetDbEndpointReadOnlyNodeWeightArgs struct {
+	// 只读节点需要传入 NodeId。
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetDbEndpointReadOnlyNodeWeightArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetDbEndpointReadOnlyNodeWeightArgs) ToGetDbEndpointReadOnlyNodeWeightOutput() GetDbEndpointReadOnlyNodeWeightOutput {
+	return i.ToGetDbEndpointReadOnlyNodeWeightOutputWithContext(context.Background())
+}
+
+func (i GetDbEndpointReadOnlyNodeWeightArgs) ToGetDbEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetDbEndpointReadOnlyNodeWeightOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointReadOnlyNodeWeightOutput)
+}
+
+// GetDbEndpointReadOnlyNodeWeightArrayInput is an input type that accepts GetDbEndpointReadOnlyNodeWeightArray and GetDbEndpointReadOnlyNodeWeightArrayOutput values.
+// You can construct a concrete instance of `GetDbEndpointReadOnlyNodeWeightArrayInput` via:
+//
+//	GetDbEndpointReadOnlyNodeWeightArray{ GetDbEndpointReadOnlyNodeWeightArgs{...} }
+type GetDbEndpointReadOnlyNodeWeightArrayInput interface {
+	pulumi.Input
+
+	ToGetDbEndpointReadOnlyNodeWeightArrayOutput() GetDbEndpointReadOnlyNodeWeightArrayOutput
+	ToGetDbEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Context) GetDbEndpointReadOnlyNodeWeightArrayOutput
+}
+
+type GetDbEndpointReadOnlyNodeWeightArray []GetDbEndpointReadOnlyNodeWeightInput
+
+func (GetDbEndpointReadOnlyNodeWeightArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (i GetDbEndpointReadOnlyNodeWeightArray) ToGetDbEndpointReadOnlyNodeWeightArrayOutput() GetDbEndpointReadOnlyNodeWeightArrayOutput {
+	return i.ToGetDbEndpointReadOnlyNodeWeightArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbEndpointReadOnlyNodeWeightArray) ToGetDbEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetDbEndpointReadOnlyNodeWeightArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbEndpointReadOnlyNodeWeightArrayOutput)
+}
+
+type GetDbEndpointReadOnlyNodeWeightOutput struct{ *pulumi.OutputState }
+
+func (GetDbEndpointReadOnlyNodeWeightOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetDbEndpointReadOnlyNodeWeightOutput) ToGetDbEndpointReadOnlyNodeWeightOutput() GetDbEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+func (o GetDbEndpointReadOnlyNodeWeightOutput) ToGetDbEndpointReadOnlyNodeWeightOutputWithContext(ctx context.Context) GetDbEndpointReadOnlyNodeWeightOutput {
+	return o
+}
+
+// 只读节点需要传入 NodeId。
+func (o GetDbEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointReadOnlyNodeWeight) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+func (o GetDbEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbEndpointReadOnlyNodeWeight) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+func (o GetDbEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbEndpointReadOnlyNodeWeight) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetDbEndpointReadOnlyNodeWeightArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbEndpointReadOnlyNodeWeightArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbEndpointReadOnlyNodeWeight)(nil)).Elem()
+}
+
+func (o GetDbEndpointReadOnlyNodeWeightArrayOutput) ToGetDbEndpointReadOnlyNodeWeightArrayOutput() GetDbEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetDbEndpointReadOnlyNodeWeightArrayOutput) ToGetDbEndpointReadOnlyNodeWeightArrayOutputWithContext(ctx context.Context) GetDbEndpointReadOnlyNodeWeightArrayOutput {
+	return o
+}
+
+func (o GetDbEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) GetDbEndpointReadOnlyNodeWeightOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbEndpointReadOnlyNodeWeight {
+		return vs[0].([]GetDbEndpointReadOnlyNodeWeight)[vs[1].(int)]
+	}).(GetDbEndpointReadOnlyNodeWeightOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), AllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointAddressInput)(nil)).Elem(), DbEndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointAddressArrayInput)(nil)).Elem(), DbEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), DbEndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), DbEndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListSecurityGroupBindInfoArrayInput)(nil)).Elem(), GetAllowListSecurityGroupBindInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointAddressInput)(nil)).Elem(), GetDbEndpointAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointAddressArrayInput)(nil)).Elem(), GetDbEndpointAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeightInput)(nil)).Elem(), GetDbEndpointReadOnlyNodeWeightArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbEndpointReadOnlyNodeWeightArrayInput)(nil)).Elem(), GetDbEndpointReadOnlyNodeWeightArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoOutput{})
 	pulumi.RegisterOutputType(AllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(DbEndpointAddressOutput{})
+	pulumi.RegisterOutputType(DbEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(DbEndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(DbEndpointReadOnlyNodeWeightArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoOutput{})
 	pulumi.RegisterOutputType(GetAllowListSecurityGroupBindInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetDbEndpointAddressOutput{})
+	pulumi.RegisterOutputType(GetDbEndpointAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetDbEndpointReadOnlyNodeWeightOutput{})
+	pulumi.RegisterOutputType(GetDbEndpointReadOnlyNodeWeightArrayOutput{})
 }

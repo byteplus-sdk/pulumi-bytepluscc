@@ -25,6 +25,16 @@ export const getScalingGroups: typeof import("./getScalingGroups").getScalingGro
 export const getScalingGroupsOutput: typeof import("./getScalingGroups").getScalingGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getScalingGroups","getScalingGroupsOutput"], () => require("./getScalingGroups"));
 
+export { GetScalingPoliciesResult } from "./getScalingPolicies";
+export const getScalingPolicies: typeof import("./getScalingPolicies").getScalingPolicies = null as any;
+export const getScalingPoliciesOutput: typeof import("./getScalingPolicies").getScalingPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getScalingPolicies","getScalingPoliciesOutput"], () => require("./getScalingPolicies"));
+
+export { GetScalingPolicyArgs, GetScalingPolicyResult, GetScalingPolicyOutputArgs } from "./getScalingPolicy";
+export const getScalingPolicy: typeof import("./getScalingPolicy").getScalingPolicy = null as any;
+export const getScalingPolicyOutput: typeof import("./getScalingPolicy").getScalingPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getScalingPolicy","getScalingPolicyOutput"], () => require("./getScalingPolicy"));
+
 export { ScalingConfigurationArgs, ScalingConfigurationState } from "./scalingConfiguration";
 export type ScalingConfiguration = import("./scalingConfiguration").ScalingConfiguration;
 export const ScalingConfiguration: typeof import("./scalingConfiguration").ScalingConfiguration = null as any;
@@ -35,6 +45,11 @@ export type ScalingGroup = import("./scalingGroup").ScalingGroup;
 export const ScalingGroup: typeof import("./scalingGroup").ScalingGroup = null as any;
 utilities.lazyLoad(exports, ["ScalingGroup"], () => require("./scalingGroup"));
 
+export { ScalingPolicyArgs, ScalingPolicyState } from "./scalingPolicy";
+export type ScalingPolicy = import("./scalingPolicy").ScalingPolicy;
+export const ScalingPolicy: typeof import("./scalingPolicy").ScalingPolicy = null as any;
+utilities.lazyLoad(exports, ["ScalingPolicy"], () => require("./scalingPolicy"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +59,8 @@ const _module = {
                 return new ScalingConfiguration(name, <any>undefined, { urn })
             case "bytepluscc:autoscaling/scalingGroup:ScalingGroup":
                 return new ScalingGroup(name, <any>undefined, { urn })
+            case "bytepluscc:autoscaling/scalingPolicy:ScalingPolicy":
+                return new ScalingPolicy(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +68,4 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingConfiguration", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingPolicy", _module)

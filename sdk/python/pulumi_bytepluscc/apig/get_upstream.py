@@ -28,7 +28,7 @@ class GetUpstreamResult:
     """
     A collection of values returned by getUpstream.
     """
-    def __init__(__self__, backend_targets=None, circuit_breaking_settings=None, comments=None, created_time=None, gateway_id=None, id=None, load_balancer_settings=None, name=None, protocol=None, source_type=None, tls_settings=None, updated_time=None, upstream_id=None, upstream_spec=None, version_details=None):
+    def __init__(__self__, backend_targets=None, circuit_breaking_settings=None, comments=None, connection_pool_settings=None, created_time=None, gateway_id=None, id=None, load_balancer_settings=None, name=None, protocol=None, source_type=None, tls_settings=None, updated_time=None, upstream_id=None, upstream_spec=None, version_details=None):
         if backend_targets and not isinstance(backend_targets, list):
             raise TypeError("Expected argument 'backend_targets' to be a list")
         pulumi.set(__self__, "backend_targets", backend_targets)
@@ -38,6 +38,9 @@ class GetUpstreamResult:
         if comments and not isinstance(comments, str):
             raise TypeError("Expected argument 'comments' to be a str")
         pulumi.set(__self__, "comments", comments)
+        if connection_pool_settings and not isinstance(connection_pool_settings, dict):
+            raise TypeError("Expected argument 'connection_pool_settings' to be a dict")
+        pulumi.set(__self__, "connection_pool_settings", connection_pool_settings)
         if created_time and not isinstance(created_time, str):
             raise TypeError("Expected argument 'created_time' to be a str")
         pulumi.set(__self__, "created_time", created_time)
@@ -98,6 +101,14 @@ class GetUpstreamResult:
         备注。
         """
         return pulumi.get(self, "comments")
+
+    @property
+    @pulumi.getter(name="connectionPoolSettings")
+    def connection_pool_settings(self) -> 'outputs.GetUpstreamConnectionPoolSettingsResult':
+        """
+        连接池配置。
+        """
+        return pulumi.get(self, "connection_pool_settings")
 
     @property
     @pulumi.getter(name="createdTime")
@@ -205,6 +216,7 @@ class AwaitableGetUpstreamResult(GetUpstreamResult):
             backend_targets=self.backend_targets,
             circuit_breaking_settings=self.circuit_breaking_settings,
             comments=self.comments,
+            connection_pool_settings=self.connection_pool_settings,
             created_time=self.created_time,
             gateway_id=self.gateway_id,
             id=self.id,
@@ -236,6 +248,7 @@ def get_upstream(id: Optional[builtins.str] = None,
         backend_targets=pulumi.get(__ret__, 'backend_targets'),
         circuit_breaking_settings=pulumi.get(__ret__, 'circuit_breaking_settings'),
         comments=pulumi.get(__ret__, 'comments'),
+        connection_pool_settings=pulumi.get(__ret__, 'connection_pool_settings'),
         created_time=pulumi.get(__ret__, 'created_time'),
         gateway_id=pulumi.get(__ret__, 'gateway_id'),
         id=pulumi.get(__ret__, 'id'),
@@ -264,6 +277,7 @@ def get_upstream_output(id: Optional[pulumi.Input[builtins.str]] = None,
         backend_targets=pulumi.get(__response__, 'backend_targets'),
         circuit_breaking_settings=pulumi.get(__response__, 'circuit_breaking_settings'),
         comments=pulumi.get(__response__, 'comments'),
+        connection_pool_settings=pulumi.get(__response__, 'connection_pool_settings'),
         created_time=pulumi.get(__response__, 'created_time'),
         gateway_id=pulumi.get(__response__, 'gateway_id'),
         id=pulumi.get(__response__, 'id'),

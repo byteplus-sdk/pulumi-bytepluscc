@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.apig.inputs;
 
 import com.byteplus.bytepluscc.apig.inputs.UpstreamUpstreamSpecAiProviderArgs;
+import com.byteplus.bytepluscc.apig.inputs.UpstreamUpstreamSpecDomainArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamUpstreamSpecEcsInstanceArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamUpstreamSpecK8SServiceArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamUpstreamSpecNacosServiceArgs;
@@ -33,6 +34,21 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
      */
     public Optional<Output<UpstreamUpstreamSpecAiProviderArgs>> aiProvider() {
         return Optional.ofNullable(this.aiProvider);
+    }
+
+    /**
+     * 固定域名。
+     * 
+     */
+    @Import(name="domain")
+    private @Nullable Output<UpstreamUpstreamSpecDomainArgs> domain;
+
+    /**
+     * @return 固定域名。
+     * 
+     */
+    public Optional<Output<UpstreamUpstreamSpecDomainArgs>> domain() {
+        return Optional.ofNullable(this.domain);
     }
 
     @Import(name="ecsInstances")
@@ -91,6 +107,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
     private UpstreamUpstreamSpecArgs(UpstreamUpstreamSpecArgs $) {
         this.aiProvider = $.aiProvider;
+        this.domain = $.domain;
         this.ecsInstances = $.ecsInstances;
         this.k8SService = $.k8SService;
         this.nacosService = $.nacosService;
@@ -134,6 +151,27 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
          */
         public Builder aiProvider(UpstreamUpstreamSpecAiProviderArgs aiProvider) {
             return aiProvider(Output.of(aiProvider));
+        }
+
+        /**
+         * @param domain 固定域名。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domain(@Nullable Output<UpstreamUpstreamSpecDomainArgs> domain) {
+            $.domain = domain;
+            return this;
+        }
+
+        /**
+         * @param domain 固定域名。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder domain(UpstreamUpstreamSpecDomainArgs domain) {
+            return domain(Output.of(domain));
         }
 
         public Builder ecsInstances(@Nullable Output<List<UpstreamUpstreamSpecEcsInstanceArgs>> ecsInstances) {

@@ -17,8 +17,10 @@ from .. import _utilities
 
 __all__ = [
     'DirectConnectGatewayAssociateCen',
+    'DirectConnectGatewayAssociateEic',
     'DirectConnectGatewayTag',
     'GetDirectConnectGatewayAssociateCenResult',
+    'GetDirectConnectGatewayAssociateEicResult',
     'GetDirectConnectGatewayTagResult',
 ]
 
@@ -84,6 +86,70 @@ class DirectConnectGatewayAssociateCen(dict):
         实例在CEN中的状态。Attaching：加载中。Attached：已加载。
         """
         return pulumi.get(self, "cen_status")
+
+
+@pulumi.output_type
+class DirectConnectGatewayAssociateEic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eicId":
+            suggest = "eic_id"
+        elif key == "eicOwnerId":
+            suggest = "eic_owner_id"
+        elif key == "eicStatus":
+            suggest = "eic_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DirectConnectGatewayAssociateEic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DirectConnectGatewayAssociateEic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DirectConnectGatewayAssociateEic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 eic_id: Optional[builtins.str] = None,
+                 eic_owner_id: Optional[builtins.str] = None,
+                 eic_status: Optional[builtins.str] = None):
+        """
+        :param builtins.str eic_id: EIC的ID。
+        :param builtins.str eic_owner_id: EIC的用户ID。
+        :param builtins.str eic_status: 实例在EIC中的状态。
+        """
+        if eic_id is not None:
+            pulumi.set(__self__, "eic_id", eic_id)
+        if eic_owner_id is not None:
+            pulumi.set(__self__, "eic_owner_id", eic_owner_id)
+        if eic_status is not None:
+            pulumi.set(__self__, "eic_status", eic_status)
+
+    @property
+    @pulumi.getter(name="eicId")
+    def eic_id(self) -> Optional[builtins.str]:
+        """
+        EIC的ID。
+        """
+        return pulumi.get(self, "eic_id")
+
+    @property
+    @pulumi.getter(name="eicOwnerId")
+    def eic_owner_id(self) -> Optional[builtins.str]:
+        """
+        EIC的用户ID。
+        """
+        return pulumi.get(self, "eic_owner_id")
+
+    @property
+    @pulumi.getter(name="eicStatus")
+    def eic_status(self) -> Optional[builtins.str]:
+        """
+        实例在EIC中的状态。
+        """
+        return pulumi.get(self, "eic_status")
 
 
 @pulumi.output_type
@@ -155,6 +221,46 @@ class GetDirectConnectGatewayAssociateCenResult(dict):
         实例在CEN中的状态。Attaching：加载中。Attached：已加载。
         """
         return pulumi.get(self, "cen_status")
+
+
+@pulumi.output_type
+class GetDirectConnectGatewayAssociateEicResult(dict):
+    def __init__(__self__, *,
+                 eic_id: builtins.str,
+                 eic_owner_id: builtins.str,
+                 eic_status: builtins.str):
+        """
+        :param builtins.str eic_id: EIC的ID。
+        :param builtins.str eic_owner_id: EIC的用户ID。
+        :param builtins.str eic_status: 实例在EIC中的状态。
+        """
+        pulumi.set(__self__, "eic_id", eic_id)
+        pulumi.set(__self__, "eic_owner_id", eic_owner_id)
+        pulumi.set(__self__, "eic_status", eic_status)
+
+    @property
+    @pulumi.getter(name="eicId")
+    def eic_id(self) -> builtins.str:
+        """
+        EIC的ID。
+        """
+        return pulumi.get(self, "eic_id")
+
+    @property
+    @pulumi.getter(name="eicOwnerId")
+    def eic_owner_id(self) -> builtins.str:
+        """
+        EIC的用户ID。
+        """
+        return pulumi.get(self, "eic_owner_id")
+
+    @property
+    @pulumi.getter(name="eicStatus")
+    def eic_status(self) -> builtins.str:
+        """
+        实例在EIC中的状态。
+        """
+        return pulumi.get(self, "eic_status")
 
 
 @pulumi.output_type

@@ -129,6 +129,8 @@ class _TransitRouterRouteEntryState:
                  transit_router_route_entry_id: Optional[pulumi.Input[builtins.str]] = None,
                  transit_router_route_entry_name: Optional[pulumi.Input[builtins.str]] = None,
                  transit_router_route_entry_next_hop_id: Optional[pulumi.Input[builtins.str]] = None,
+                 transit_router_route_entry_next_hop_resource_id: Optional[pulumi.Input[builtins.str]] = None,
+                 transit_router_route_entry_next_hop_resource_type: Optional[pulumi.Input[builtins.str]] = None,
                  transit_router_route_entry_next_hop_type: Optional[pulumi.Input[builtins.str]] = None,
                  transit_router_route_entry_type: Optional[pulumi.Input[builtins.str]] = None,
                  transit_router_route_table_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -143,6 +145,8 @@ class _TransitRouterRouteEntryState:
         :param pulumi.Input[builtins.str] transit_router_route_entry_id: TR路由条目的ID。
         :param pulumi.Input[builtins.str] transit_router_route_entry_name: 路由条目的名称。
         :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: 路由条目的下一跳ID。
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_id: 路由条目下一跳网络实例ID。
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_type: 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
         :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
         :param pulumi.Input[builtins.str] transit_router_route_entry_type: 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
         :param pulumi.Input[builtins.str] transit_router_route_table_id: 中转路由器实例关联的路由表的ID。
@@ -164,6 +168,10 @@ class _TransitRouterRouteEntryState:
             pulumi.set(__self__, "transit_router_route_entry_name", transit_router_route_entry_name)
         if transit_router_route_entry_next_hop_id is not None:
             pulumi.set(__self__, "transit_router_route_entry_next_hop_id", transit_router_route_entry_next_hop_id)
+        if transit_router_route_entry_next_hop_resource_id is not None:
+            pulumi.set(__self__, "transit_router_route_entry_next_hop_resource_id", transit_router_route_entry_next_hop_resource_id)
+        if transit_router_route_entry_next_hop_resource_type is not None:
+            pulumi.set(__self__, "transit_router_route_entry_next_hop_resource_type", transit_router_route_entry_next_hop_resource_type)
         if transit_router_route_entry_next_hop_type is not None:
             pulumi.set(__self__, "transit_router_route_entry_next_hop_type", transit_router_route_entry_next_hop_type)
         if transit_router_route_entry_type is not None:
@@ -268,6 +276,30 @@ class _TransitRouterRouteEntryState:
     @transit_router_route_entry_next_hop_id.setter
     def transit_router_route_entry_next_hop_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "transit_router_route_entry_next_hop_id", value)
+
+    @property
+    @pulumi.getter(name="transitRouterRouteEntryNextHopResourceId")
+    def transit_router_route_entry_next_hop_resource_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目下一跳网络实例ID。
+        """
+        return pulumi.get(self, "transit_router_route_entry_next_hop_resource_id")
+
+    @transit_router_route_entry_next_hop_resource_id.setter
+    def transit_router_route_entry_next_hop_resource_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "transit_router_route_entry_next_hop_resource_id", value)
+
+    @property
+    @pulumi.getter(name="transitRouterRouteEntryNextHopResourceType")
+    def transit_router_route_entry_next_hop_resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        """
+        return pulumi.get(self, "transit_router_route_entry_next_hop_resource_type")
+
+    @transit_router_route_entry_next_hop_resource_type.setter
+    def transit_router_route_entry_next_hop_resource_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "transit_router_route_entry_next_hop_resource_type", value)
 
     @property
     @pulumi.getter(name="transitRouterRouteEntryNextHopType")
@@ -410,6 +442,8 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
             __props__.__dict__["created_time"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["transit_router_route_entry_id"] = None
+            __props__.__dict__["transit_router_route_entry_next_hop_resource_id"] = None
+            __props__.__dict__["transit_router_route_entry_next_hop_resource_type"] = None
             __props__.__dict__["transit_router_route_entry_type"] = None
             __props__.__dict__["updated_time"] = None
         super(TransitRouterRouteEntry, __self__).__init__(
@@ -430,6 +464,8 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
             transit_router_route_entry_id: Optional[pulumi.Input[builtins.str]] = None,
             transit_router_route_entry_name: Optional[pulumi.Input[builtins.str]] = None,
             transit_router_route_entry_next_hop_id: Optional[pulumi.Input[builtins.str]] = None,
+            transit_router_route_entry_next_hop_resource_id: Optional[pulumi.Input[builtins.str]] = None,
+            transit_router_route_entry_next_hop_resource_type: Optional[pulumi.Input[builtins.str]] = None,
             transit_router_route_entry_next_hop_type: Optional[pulumi.Input[builtins.str]] = None,
             transit_router_route_entry_type: Optional[pulumi.Input[builtins.str]] = None,
             transit_router_route_table_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -449,6 +485,8 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] transit_router_route_entry_id: TR路由条目的ID。
         :param pulumi.Input[builtins.str] transit_router_route_entry_name: 路由条目的名称。
         :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: 路由条目的下一跳ID。
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_id: 路由条目下一跳网络实例ID。
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_type: 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
         :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
         :param pulumi.Input[builtins.str] transit_router_route_entry_type: 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
         :param pulumi.Input[builtins.str] transit_router_route_table_id: 中转路由器实例关联的路由表的ID。
@@ -466,6 +504,8 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
         __props__.__dict__["transit_router_route_entry_id"] = transit_router_route_entry_id
         __props__.__dict__["transit_router_route_entry_name"] = transit_router_route_entry_name
         __props__.__dict__["transit_router_route_entry_next_hop_id"] = transit_router_route_entry_next_hop_id
+        __props__.__dict__["transit_router_route_entry_next_hop_resource_id"] = transit_router_route_entry_next_hop_resource_id
+        __props__.__dict__["transit_router_route_entry_next_hop_resource_type"] = transit_router_route_entry_next_hop_resource_type
         __props__.__dict__["transit_router_route_entry_next_hop_type"] = transit_router_route_entry_next_hop_type
         __props__.__dict__["transit_router_route_entry_type"] = transit_router_route_entry_type
         __props__.__dict__["transit_router_route_table_id"] = transit_router_route_table_id
@@ -535,6 +575,22 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
         路由条目的下一跳ID。
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_id")
+
+    @property
+    @pulumi.getter(name="transitRouterRouteEntryNextHopResourceId")
+    def transit_router_route_entry_next_hop_resource_id(self) -> pulumi.Output[builtins.str]:
+        """
+        路由条目下一跳网络实例ID。
+        """
+        return pulumi.get(self, "transit_router_route_entry_next_hop_resource_id")
+
+    @property
+    @pulumi.getter(name="transitRouterRouteEntryNextHopResourceType")
+    def transit_router_route_entry_next_hop_resource_type(self) -> pulumi.Output[builtins.str]:
+        """
+        路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        """
+        return pulumi.get(self, "transit_router_route_entry_next_hop_resource_type")
 
     @property
     @pulumi.getter(name="transitRouterRouteEntryNextHopType")

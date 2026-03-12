@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Command{}
 	case "bytepluscc:ecs/deploymentSet:DeploymentSet":
 		r = &DeploymentSet{}
+	case "bytepluscc:ecs/hpcCluster:HpcCluster":
+		r = &HpcCluster{}
 	case "bytepluscc:ecs/image:Image":
 		r = &Image{}
 	case "bytepluscc:ecs/instance:Instance":
@@ -58,6 +60,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"ecs/deploymentSet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/hpcCluster",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

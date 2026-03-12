@@ -10,6 +10,7 @@ import com.byteplus.bytepluscc.apig.outputs.GatewayServiceAuthSpec;
 import com.byteplus.bytepluscc.apig.outputs.GatewayServiceCustomDomain;
 import com.byteplus.bytepluscc.apig.outputs.GatewayServiceDomain;
 import com.byteplus.bytepluscc.apig.outputs.GatewayServiceDomainSpec;
+import com.byteplus.bytepluscc.apig.outputs.GatewayServiceServiceNetworkSpec;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -24,45 +25,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.byteplus.bytepluscc.apig.GatewayService;
- * import com.byteplus.bytepluscc.apig.GatewayServiceArgs;
- * import com.pulumi.bytepluscc.apig.inputs.GatewayServiceAuthSpecArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var apigGatewayServiceDemo = new GatewayService("apigGatewayServiceDemo", GatewayServiceArgs.builder()
- *             .serviceName("ApigGatewayServiceDemo")
- *             .gatewayId("gd3vehjs7npja181xxxxx")
- *             .protocols(            
- *                 "HTTP",
- *                 "HTTPS")
- *             .authSpec(GatewayServiceAuthSpecArgs.builder()
- *                 .enable(false)
- *                 .build())
- *             .comments("ApigGatewayServiceDemo-test")
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -135,6 +97,20 @@ public class GatewayService extends com.pulumi.resources.CustomResource {
      */
     public Output<GatewayServiceDomainSpec> domainSpec() {
         return this.domainSpec;
+    }
+    /**
+     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * 
+     */
+    @Export(name="domainType", refs={String.class}, tree="[0]")
+    private Output<String> domainType;
+
+    /**
+     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * 
+     */
+    public Output<String> domainType() {
+        return this.domainType;
     }
     @Export(name="domains", refs={List.class,GatewayServiceDomain.class}, tree="[0,1]")
     private Output<List<GatewayServiceDomain>> domains;
@@ -213,18 +189,46 @@ public class GatewayService extends com.pulumi.resources.CustomResource {
         return this.serviceId;
     }
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      * 
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
+    }
+    /**
+     * 服务默认域名网络配置。。
+     * 
+     */
+    @Export(name="serviceNetworkSpec", refs={GatewayServiceServiceNetworkSpec.class}, tree="[0]")
+    private Output<GatewayServiceServiceNetworkSpec> serviceNetworkSpec;
+
+    /**
+     * @return 服务默认域名网络配置。。
+     * 
+     */
+    public Output<GatewayServiceServiceNetworkSpec> serviceNetworkSpec() {
+        return this.serviceNetworkSpec;
+    }
+    /**
+     * 服务类型，取值：AIProvider：AI模型代理。
+     * 
+     */
+    @Export(name="serviceType", refs={String.class}, tree="[0]")
+    private Output<String> serviceType;
+
+    /**
+     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * 
+     */
+    public Output<String> serviceType() {
+        return this.serviceType;
     }
     /**
      * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。

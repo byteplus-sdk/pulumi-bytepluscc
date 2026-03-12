@@ -57,6 +57,16 @@ public final class GetTransitRouterRouteEntryResult {
      */
     private String transitRouterRouteEntryNextHopId;
     /**
+     * @return 路由条目下一跳网络实例ID。
+     * 
+     */
+    private String transitRouterRouteEntryNextHopResourceId;
+    /**
+     * @return 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * 
+     */
+    private String transitRouterRouteEntryNextHopResourceType;
+    /**
      * @return 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
      * 
      */
@@ -142,6 +152,20 @@ public final class GetTransitRouterRouteEntryResult {
         return this.transitRouterRouteEntryNextHopId;
     }
     /**
+     * @return 路由条目下一跳网络实例ID。
+     * 
+     */
+    public String transitRouterRouteEntryNextHopResourceId() {
+        return this.transitRouterRouteEntryNextHopResourceId;
+    }
+    /**
+     * @return 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * 
+     */
+    public String transitRouterRouteEntryNextHopResourceType() {
+        return this.transitRouterRouteEntryNextHopResourceType;
+    }
+    /**
      * @return 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
      * 
      */
@@ -188,6 +212,8 @@ public final class GetTransitRouterRouteEntryResult {
         private String transitRouterRouteEntryId;
         private String transitRouterRouteEntryName;
         private String transitRouterRouteEntryNextHopId;
+        private String transitRouterRouteEntryNextHopResourceId;
+        private String transitRouterRouteEntryNextHopResourceType;
         private String transitRouterRouteEntryNextHopType;
         private String transitRouterRouteEntryType;
         private String transitRouterRouteTableId;
@@ -204,6 +230,8 @@ public final class GetTransitRouterRouteEntryResult {
     	      this.transitRouterRouteEntryId = defaults.transitRouterRouteEntryId;
     	      this.transitRouterRouteEntryName = defaults.transitRouterRouteEntryName;
     	      this.transitRouterRouteEntryNextHopId = defaults.transitRouterRouteEntryNextHopId;
+    	      this.transitRouterRouteEntryNextHopResourceId = defaults.transitRouterRouteEntryNextHopResourceId;
+    	      this.transitRouterRouteEntryNextHopResourceType = defaults.transitRouterRouteEntryNextHopResourceType;
     	      this.transitRouterRouteEntryNextHopType = defaults.transitRouterRouteEntryNextHopType;
     	      this.transitRouterRouteEntryType = defaults.transitRouterRouteEntryType;
     	      this.transitRouterRouteTableId = defaults.transitRouterRouteTableId;
@@ -286,6 +314,22 @@ public final class GetTransitRouterRouteEntryResult {
             return this;
         }
         @CustomType.Setter
+        public Builder transitRouterRouteEntryNextHopResourceId(String transitRouterRouteEntryNextHopResourceId) {
+            if (transitRouterRouteEntryNextHopResourceId == null) {
+              throw new MissingRequiredPropertyException("GetTransitRouterRouteEntryResult", "transitRouterRouteEntryNextHopResourceId");
+            }
+            this.transitRouterRouteEntryNextHopResourceId = transitRouterRouteEntryNextHopResourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder transitRouterRouteEntryNextHopResourceType(String transitRouterRouteEntryNextHopResourceType) {
+            if (transitRouterRouteEntryNextHopResourceType == null) {
+              throw new MissingRequiredPropertyException("GetTransitRouterRouteEntryResult", "transitRouterRouteEntryNextHopResourceType");
+            }
+            this.transitRouterRouteEntryNextHopResourceType = transitRouterRouteEntryNextHopResourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder transitRouterRouteEntryNextHopType(String transitRouterRouteEntryNextHopType) {
             if (transitRouterRouteEntryNextHopType == null) {
               throw new MissingRequiredPropertyException("GetTransitRouterRouteEntryResult", "transitRouterRouteEntryNextHopType");
@@ -328,6 +372,8 @@ public final class GetTransitRouterRouteEntryResult {
             _resultValue.transitRouterRouteEntryId = transitRouterRouteEntryId;
             _resultValue.transitRouterRouteEntryName = transitRouterRouteEntryName;
             _resultValue.transitRouterRouteEntryNextHopId = transitRouterRouteEntryNextHopId;
+            _resultValue.transitRouterRouteEntryNextHopResourceId = transitRouterRouteEntryNextHopResourceId;
+            _resultValue.transitRouterRouteEntryNextHopResourceType = transitRouterRouteEntryNextHopResourceType;
             _resultValue.transitRouterRouteEntryNextHopType = transitRouterRouteEntryNextHopType;
             _resultValue.transitRouterRouteEntryType = transitRouterRouteEntryType;
             _resultValue.transitRouterRouteTableId = transitRouterRouteTableId;

@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -32,6 +33,11 @@ public final class ScalingConfigurationEip {
      * 
      */
     private @Nullable String isp;
+    /**
+     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * 
+     */
+    private @Nullable Boolean releaseWithInstance;
 
     private ScalingConfigurationEip() {}
     /**
@@ -62,6 +68,13 @@ public final class ScalingConfigurationEip {
     public Optional<String> isp() {
         return Optional.ofNullable(this.isp);
     }
+    /**
+     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * 
+     */
+    public Optional<Boolean> releaseWithInstance() {
+        return Optional.ofNullable(this.releaseWithInstance);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -76,6 +89,7 @@ public final class ScalingConfigurationEip {
         private @Nullable String bandwidthPackageId;
         private @Nullable String billingType;
         private @Nullable String isp;
+        private @Nullable Boolean releaseWithInstance;
         public Builder() {}
         public Builder(ScalingConfigurationEip defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,6 +97,7 @@ public final class ScalingConfigurationEip {
     	      this.bandwidthPackageId = defaults.bandwidthPackageId;
     	      this.billingType = defaults.billingType;
     	      this.isp = defaults.isp;
+    	      this.releaseWithInstance = defaults.releaseWithInstance;
         }
 
         @CustomType.Setter
@@ -109,12 +124,19 @@ public final class ScalingConfigurationEip {
             this.isp = isp;
             return this;
         }
+        @CustomType.Setter
+        public Builder releaseWithInstance(@Nullable Boolean releaseWithInstance) {
+
+            this.releaseWithInstance = releaseWithInstance;
+            return this;
+        }
         public ScalingConfigurationEip build() {
             final var _resultValue = new ScalingConfigurationEip();
             _resultValue.bandwidth = bandwidth;
             _resultValue.bandwidthPackageId = bandwidthPackageId;
             _resultValue.billingType = billingType;
             _resultValue.isp = isp;
+            _resultValue.releaseWithInstance = releaseWithInstance;
             return _resultValue;
         }
     }

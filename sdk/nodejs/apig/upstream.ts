@@ -53,6 +53,10 @@ export class Upstream extends pulumi.CustomResource {
      */
     public readonly comments!: pulumi.Output<string>;
     /**
+     * 连接池配置。
+     */
+    public readonly connectionPoolSettings!: pulumi.Output<outputs.apig.UpstreamConnectionPoolSettings>;
+    /**
      * Upstream创建时间。
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
@@ -110,6 +114,7 @@ export class Upstream extends pulumi.CustomResource {
             resourceInputs["backendTargets"] = state ? state.backendTargets : undefined;
             resourceInputs["circuitBreakingSettings"] = state ? state.circuitBreakingSettings : undefined;
             resourceInputs["comments"] = state ? state.comments : undefined;
+            resourceInputs["connectionPoolSettings"] = state ? state.connectionPoolSettings : undefined;
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
             resourceInputs["gatewayId"] = state ? state.gatewayId : undefined;
             resourceInputs["loadBalancerSettings"] = state ? state.loadBalancerSettings : undefined;
@@ -137,6 +142,7 @@ export class Upstream extends pulumi.CustomResource {
             }
             resourceInputs["circuitBreakingSettings"] = args ? args.circuitBreakingSettings : undefined;
             resourceInputs["comments"] = args ? args.comments : undefined;
+            resourceInputs["connectionPoolSettings"] = args ? args.connectionPoolSettings : undefined;
             resourceInputs["gatewayId"] = args ? args.gatewayId : undefined;
             resourceInputs["loadBalancerSettings"] = args ? args.loadBalancerSettings : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -168,6 +174,10 @@ export interface UpstreamState {
      * 备注。
      */
     comments?: pulumi.Input<string>;
+    /**
+     * 连接池配置。
+     */
+    connectionPoolSettings?: pulumi.Input<inputs.apig.UpstreamConnectionPoolSettings>;
     /**
      * Upstream创建时间。
      */
@@ -223,6 +233,10 @@ export interface UpstreamArgs {
      * 备注。
      */
     comments?: pulumi.Input<string>;
+    /**
+     * 连接池配置。
+     */
+    connectionPoolSettings?: pulumi.Input<inputs.apig.UpstreamConnectionPoolSettings>;
     /**
      * 网关实例ID。
      */

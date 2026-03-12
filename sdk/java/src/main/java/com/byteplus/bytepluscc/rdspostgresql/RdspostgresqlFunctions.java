@@ -6,12 +6,24 @@ package com.byteplus.bytepluscc.rdspostgresql;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetAllowListArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetAllowListPlainArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDatabaseArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDatabasePlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbAccountArgs;
 import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbAccountPlainArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbEndpointArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetDbEndpointPlainArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetSchemaArgs;
+import com.byteplus.bytepluscc.rdspostgresql.inputs.GetSchemaPlainArgs;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetAllowListsResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDatabaseResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDatabasesResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbAccountResult;
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbAccountsResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetDbEndpointsResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetSchemaResult;
+import com.byteplus.bytepluscc.rdspostgresql.outputs.GetSchemasResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -106,6 +118,90 @@ public final class RdspostgresqlFunctions {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args) {
+        return getDatabase(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static CompletableFuture<GetDatabaseResult> getDatabasePlain(GetDatabasePlainArgs args) {
+        return getDatabasePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDatabase:getDatabase", TypeShape.of(GetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDatabase:getDatabase", TypeShape.of(GetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static CompletableFuture<GetDatabaseResult> getDatabasePlain(GetDatabasePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getDatabase:getDatabase", TypeShape.of(GetDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static Output<GetDatabasesResult> getDatabases() {
+        return getDatabases(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static CompletableFuture<GetDatabasesResult> getDatabasesPlain() {
+        return getDatabasesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static Output<GetDatabasesResult> getDatabases(InvokeArgs args) {
+        return getDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(InvokeArgs args) {
+        return getDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static Output<GetDatabasesResult> getDatabases(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDatabases:getDatabases", TypeShape.of(GetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static Output<GetDatabasesResult> getDatabases(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDatabases:getDatabases", TypeShape.of(GetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Database
+     * 
+     */
+    public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getDatabases:getDatabases", TypeShape.of(GetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * Data Source schema for Byteplus::RDSPostgreSQL::DBAccount
      * 
      */
@@ -188,5 +284,173 @@ public final class RdspostgresqlFunctions {
      */
     public static CompletableFuture<GetDbAccountsResult> getDbAccountsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getDbAccounts:getDbAccounts", TypeShape.of(GetDbAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static Output<GetDbEndpointResult> getDbEndpoint(GetDbEndpointArgs args) {
+        return getDbEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static CompletableFuture<GetDbEndpointResult> getDbEndpointPlain(GetDbEndpointPlainArgs args) {
+        return getDbEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static Output<GetDbEndpointResult> getDbEndpoint(GetDbEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDbEndpoint:getDbEndpoint", TypeShape.of(GetDbEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static Output<GetDbEndpointResult> getDbEndpoint(GetDbEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDbEndpoint:getDbEndpoint", TypeShape.of(GetDbEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static CompletableFuture<GetDbEndpointResult> getDbEndpointPlain(GetDbEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getDbEndpoint:getDbEndpoint", TypeShape.of(GetDbEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static Output<GetDbEndpointsResult> getDbEndpoints() {
+        return getDbEndpoints(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static CompletableFuture<GetDbEndpointsResult> getDbEndpointsPlain() {
+        return getDbEndpointsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static Output<GetDbEndpointsResult> getDbEndpoints(InvokeArgs args) {
+        return getDbEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static CompletableFuture<GetDbEndpointsResult> getDbEndpointsPlain(InvokeArgs args) {
+        return getDbEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static Output<GetDbEndpointsResult> getDbEndpoints(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDbEndpoints:getDbEndpoints", TypeShape.of(GetDbEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static Output<GetDbEndpointsResult> getDbEndpoints(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getDbEndpoints:getDbEndpoints", TypeShape.of(GetDbEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::DBEndpoint
+     * 
+     */
+    public static CompletableFuture<GetDbEndpointsResult> getDbEndpointsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getDbEndpoints:getDbEndpoints", TypeShape.of(GetDbEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static Output<GetSchemaResult> getSchema(GetSchemaArgs args) {
+        return getSchema(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static CompletableFuture<GetSchemaResult> getSchemaPlain(GetSchemaPlainArgs args) {
+        return getSchemaPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static Output<GetSchemaResult> getSchema(GetSchemaArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getSchema:getSchema", TypeShape.of(GetSchemaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static Output<GetSchemaResult> getSchema(GetSchemaArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getSchema:getSchema", TypeShape.of(GetSchemaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static CompletableFuture<GetSchemaResult> getSchemaPlain(GetSchemaPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getSchema:getSchema", TypeShape.of(GetSchemaResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static Output<GetSchemasResult> getSchemas() {
+        return getSchemas(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static CompletableFuture<GetSchemasResult> getSchemasPlain() {
+        return getSchemasPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static Output<GetSchemasResult> getSchemas(InvokeArgs args) {
+        return getSchemas(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static CompletableFuture<GetSchemasResult> getSchemasPlain(InvokeArgs args) {
+        return getSchemasPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static Output<GetSchemasResult> getSchemas(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getSchemas:getSchemas", TypeShape.of(GetSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static Output<GetSchemasResult> getSchemas(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdspostgresql/getSchemas:getSchemas", TypeShape.of(GetSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSPostgreSQL::Schema
+     * 
+     */
+    public static CompletableFuture<GetSchemasResult> getSchemasPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdspostgresql/getSchemas:getSchemas", TypeShape.of(GetSchemasResult.class), args, Utilities.withVersion(options));
     }
 }

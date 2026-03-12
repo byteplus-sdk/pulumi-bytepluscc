@@ -31,6 +31,16 @@ public final class GetKeyResult {
      */
     private String id;
     /**
+     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * 
+     */
+    private Integer keyArchiveOperation;
+    /**
+     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * 
+     */
+    private Integer keyEnableOperation;
+    /**
      * @return 密钥唯一标识符，UUID形式。
      * 
      */
@@ -45,6 +55,11 @@ public final class GetKeyResult {
      * 
      */
     private String keyName;
+    /**
+     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * 
+     */
+    private Integer keyRotationOperation;
     /**
      * @return 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
      * 
@@ -149,6 +164,20 @@ public final class GetKeyResult {
         return this.id;
     }
     /**
+     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * 
+     */
+    public Integer keyArchiveOperation() {
+        return this.keyArchiveOperation;
+    }
+    /**
+     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * 
+     */
+    public Integer keyEnableOperation() {
+        return this.keyEnableOperation;
+    }
+    /**
      * @return 密钥唯一标识符，UUID形式。
      * 
      */
@@ -168,6 +197,13 @@ public final class GetKeyResult {
      */
     public String keyName() {
         return this.keyName;
+    }
+    /**
+     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * 
+     */
+    public Integer keyRotationOperation() {
+        return this.keyRotationOperation;
     }
     /**
      * @return 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
@@ -294,9 +330,12 @@ public final class GetKeyResult {
         private Integer createdTime;
         private String description;
         private String id;
+        private Integer keyArchiveOperation;
+        private Integer keyEnableOperation;
         private String keyId;
         private String keyMaterialExpireTime;
         private String keyName;
+        private Integer keyRotationOperation;
         private String keySpec;
         private String keyState;
         private String keyUsage;
@@ -319,9 +358,12 @@ public final class GetKeyResult {
     	      this.createdTime = defaults.createdTime;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
+    	      this.keyArchiveOperation = defaults.keyArchiveOperation;
+    	      this.keyEnableOperation = defaults.keyEnableOperation;
     	      this.keyId = defaults.keyId;
     	      this.keyMaterialExpireTime = defaults.keyMaterialExpireTime;
     	      this.keyName = defaults.keyName;
+    	      this.keyRotationOperation = defaults.keyRotationOperation;
     	      this.keySpec = defaults.keySpec;
     	      this.keyState = defaults.keyState;
     	      this.keyUsage = defaults.keyUsage;
@@ -365,6 +407,22 @@ public final class GetKeyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder keyArchiveOperation(Integer keyArchiveOperation) {
+            if (keyArchiveOperation == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "keyArchiveOperation");
+            }
+            this.keyArchiveOperation = keyArchiveOperation;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyEnableOperation(Integer keyEnableOperation) {
+            if (keyEnableOperation == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "keyEnableOperation");
+            }
+            this.keyEnableOperation = keyEnableOperation;
+            return this;
+        }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             if (keyId == null) {
               throw new MissingRequiredPropertyException("GetKeyResult", "keyId");
@@ -386,6 +444,14 @@ public final class GetKeyResult {
               throw new MissingRequiredPropertyException("GetKeyResult", "keyName");
             }
             this.keyName = keyName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyRotationOperation(Integer keyRotationOperation) {
+            if (keyRotationOperation == null) {
+              throw new MissingRequiredPropertyException("GetKeyResult", "keyRotationOperation");
+            }
+            this.keyRotationOperation = keyRotationOperation;
             return this;
         }
         @CustomType.Setter
@@ -524,9 +590,12 @@ public final class GetKeyResult {
             _resultValue.createdTime = createdTime;
             _resultValue.description = description;
             _resultValue.id = id;
+            _resultValue.keyArchiveOperation = keyArchiveOperation;
+            _resultValue.keyEnableOperation = keyEnableOperation;
             _resultValue.keyId = keyId;
             _resultValue.keyMaterialExpireTime = keyMaterialExpireTime;
             _resultValue.keyName = keyName;
+            _resultValue.keyRotationOperation = keyRotationOperation;
             _resultValue.keySpec = keySpec;
             _resultValue.keyState = keyState;
             _resultValue.keyUsage = keyUsage;

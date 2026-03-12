@@ -23,6 +23,7 @@ __all__ = ['ServerGroupArgs', 'ServerGroup']
 class ServerGroupArgs:
     def __init__(__self__, *,
                  vpc_id: pulumi.Input[builtins.str],
+                 cross_zone_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  health_check: Optional[pulumi.Input['ServerGroupHealthCheckArgs']] = None,
                  ip_address_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -38,6 +39,7 @@ class ServerGroupArgs:
         """
         The set of arguments for constructing a ServerGroup resource.
         :param pulumi.Input[builtins.str] vpc_id: 后端服务器组所属 Vpc 的 ID。
+        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
         :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
         :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: 服务器组健康检查配置信息。
         :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
@@ -50,6 +52,8 @@ class ServerGroupArgs:
         :param pulumi.Input['ServerGroupStickySessionConfigArgs'] sticky_session_config: 会话保持功能的参数信息。
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
+        if cross_zone_enabled is not None:
+            pulumi.set(__self__, "cross_zone_enabled", cross_zone_enabled)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if health_check is not None:
@@ -86,6 +90,18 @@ class ServerGroupArgs:
     @vpc_id.setter
     def vpc_id(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "vpc_id", value)
+
+    @property
+    @pulumi.getter(name="crossZoneEnabled")
+    def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        """
+        return pulumi.get(self, "cross_zone_enabled")
+
+    @cross_zone_enabled.setter
+    def cross_zone_enabled(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cross_zone_enabled", value)
 
     @property
     @pulumi.getter
@@ -230,6 +246,7 @@ class ServerGroupArgs:
 class _ServerGroupState:
     def __init__(__self__, *,
                  create_time: Optional[pulumi.Input[builtins.str]] = None,
+                 cross_zone_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  health_check: Optional[pulumi.Input['ServerGroupHealthCheckArgs']] = None,
                  ip_address_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -250,6 +267,7 @@ class _ServerGroupState:
         """
         Input properties used for looking up and filtering ServerGroup resources.
         :param pulumi.Input[builtins.str] create_time: 后端服务器组的创建时间。
+        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
         :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
         :param pulumi.Input['ServerGroupHealthCheckArgs'] health_check: 服务器组健康检查配置信息。
         :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
@@ -267,6 +285,8 @@ class _ServerGroupState:
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
+        if cross_zone_enabled is not None:
+            pulumi.set(__self__, "cross_zone_enabled", cross_zone_enabled)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if health_check is not None:
@@ -313,6 +333,18 @@ class _ServerGroupState:
     @create_time.setter
     def create_time(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "create_time", value)
+
+    @property
+    @pulumi.getter(name="crossZoneEnabled")
+    def cross_zone_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        """
+        return pulumi.get(self, "cross_zone_enabled")
+
+    @cross_zone_enabled.setter
+    def cross_zone_enabled(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cross_zone_enabled", value)
 
     @property
     @pulumi.getter
@@ -516,6 +548,7 @@ class ServerGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cross_zone_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  health_check: Optional[pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']]] = None,
                  ip_address_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -541,6 +574,7 @@ class ServerGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
         :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
         :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: 服务器组健康检查配置信息。
         :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
@@ -583,6 +617,7 @@ class ServerGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 cross_zone_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  health_check: Optional[pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']]] = None,
                  ip_address_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -605,6 +640,7 @@ class ServerGroup(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ServerGroupArgs.__new__(ServerGroupArgs)
 
+            __props__.__dict__["cross_zone_enabled"] = cross_zone_enabled
             __props__.__dict__["description"] = description
             __props__.__dict__["health_check"] = health_check
             __props__.__dict__["ip_address_type"] = ip_address_type
@@ -636,6 +672,7 @@ class ServerGroup(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             create_time: Optional[pulumi.Input[builtins.str]] = None,
+            cross_zone_enabled: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             health_check: Optional[pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']]] = None,
             ip_address_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -661,6 +698,7 @@ class ServerGroup(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] create_time: 后端服务器组的创建时间。
+        :param pulumi.Input[builtins.str] cross_zone_enabled: 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
         :param pulumi.Input[builtins.str] description: 后端服务器组的描述。
         :param pulumi.Input[Union['ServerGroupHealthCheckArgs', 'ServerGroupHealthCheckArgsDict']] health_check: 服务器组健康检查配置信息。
         :param pulumi.Input[builtins.str] ip_address_type: 服务器组的IP地址类型。目前只支持 IPv4
@@ -681,6 +719,7 @@ class ServerGroup(pulumi.CustomResource):
         __props__ = _ServerGroupState.__new__(_ServerGroupState)
 
         __props__.__dict__["create_time"] = create_time
+        __props__.__dict__["cross_zone_enabled"] = cross_zone_enabled
         __props__.__dict__["description"] = description
         __props__.__dict__["health_check"] = health_check
         __props__.__dict__["ip_address_type"] = ip_address_type
@@ -707,6 +746,14 @@ class ServerGroup(pulumi.CustomResource):
         后端服务器组的创建时间。
         """
         return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="crossZoneEnabled")
+    def cross_zone_enabled(self) -> pulumi.Output[builtins.str]:
+        """
+        是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        """
+        return pulumi.get(self, "cross_zone_enabled")
 
     @property
     @pulumi.getter

@@ -55,12 +55,16 @@ if typing.TYPE_CHECKING:
     kafka = __kafka
     import pulumi_bytepluscc.kms as __kms
     kms = __kms
+    import pulumi_bytepluscc.mongodb as __mongodb
+    mongodb = __mongodb
     import pulumi_bytepluscc.natgateway as __natgateway
     natgateway = __natgateway
     import pulumi_bytepluscc.organization as __organization
     organization = __organization
     import pulumi_bytepluscc.privatelink as __privatelink
     privatelink = __privatelink
+    import pulumi_bytepluscc.privatezone as __privatezone
+    privatezone = __privatezone
     import pulumi_bytepluscc.rabbitmq as __rabbitmq
     rabbitmq = __rabbitmq
     import pulumi_bytepluscc.rdsmssql as __rdsmssql
@@ -77,6 +81,8 @@ if typing.TYPE_CHECKING:
     tls = __tls
     import pulumi_bytepluscc.transitrouter as __transitrouter
     transitrouter = __transitrouter
+    import pulumi_bytepluscc.vedbm as __vedbm
+    vedbm = __vedbm
     import pulumi_bytepluscc.vefaas as __vefaas
     vefaas = __vefaas
     import pulumi_bytepluscc.vepfs as __vepfs
@@ -112,9 +118,11 @@ else:
     iam = _utilities.lazy_import('pulumi_bytepluscc.iam')
     kafka = _utilities.lazy_import('pulumi_bytepluscc.kafka')
     kms = _utilities.lazy_import('pulumi_bytepluscc.kms')
+    mongodb = _utilities.lazy_import('pulumi_bytepluscc.mongodb')
     natgateway = _utilities.lazy_import('pulumi_bytepluscc.natgateway')
     organization = _utilities.lazy_import('pulumi_bytepluscc.organization')
     privatelink = _utilities.lazy_import('pulumi_bytepluscc.privatelink')
+    privatezone = _utilities.lazy_import('pulumi_bytepluscc.privatezone')
     rabbitmq = _utilities.lazy_import('pulumi_bytepluscc.rabbitmq')
     rdsmssql = _utilities.lazy_import('pulumi_bytepluscc.rdsmssql')
     rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
@@ -123,6 +131,7 @@ else:
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
     tls = _utilities.lazy_import('pulumi_bytepluscc.tls')
     transitrouter = _utilities.lazy_import('pulumi_bytepluscc.transitrouter')
+    vedbm = _utilities.lazy_import('pulumi_bytepluscc.vedbm')
     vefaas = _utilities.lazy_import('pulumi_bytepluscc.vefaas')
     vepfs = _utilities.lazy_import('pulumi_bytepluscc.vepfs')
     vke = _utilities.lazy_import('pulumi_bytepluscc.vke')
@@ -259,6 +268,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.autoscaling",
   "classes": {
    "bytepluscc:autoscaling/scalingGroup:ScalingGroup": "ScalingGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "autoscaling/scalingPolicy",
+  "fqn": "pulumi_bytepluscc.autoscaling",
+  "classes": {
+   "bytepluscc:autoscaling/scalingPolicy:ScalingPolicy": "ScalingPolicy"
   }
  },
  {
@@ -487,6 +504,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "ecs/hpcCluster",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/hpcCluster:HpcCluster": "HpcCluster"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "ecs/image",
   "fqn": "pulumi_bytepluscc.ecs",
   "classes": {
@@ -663,6 +688,22 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "mongodb/allowList",
+  "fqn": "pulumi_bytepluscc.mongodb",
+  "classes": {
+   "bytepluscc:mongodb/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "mongodb/instance",
+  "fqn": "pulumi_bytepluscc.mongodb",
+  "classes": {
+   "bytepluscc:mongodb/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "natgateway/dnatentry",
   "fqn": "pulumi_bytepluscc.natgateway",
   "classes": {
@@ -719,6 +760,30 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "privatezone/record",
+  "fqn": "pulumi_bytepluscc.privatezone",
+  "classes": {
+   "bytepluscc:privatezone/record:Record": "Record"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "privatezone/resolverEndpoint",
+  "fqn": "pulumi_bytepluscc.privatezone",
+  "classes": {
+   "bytepluscc:privatezone/resolverEndpoint:ResolverEndpoint": "ResolverEndpoint"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "privatezone/resolverRule",
+  "fqn": "pulumi_bytepluscc.privatezone",
+  "classes": {
+   "bytepluscc:privatezone/resolverRule:ResolverRule": "ResolverRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rabbitmq/instance",
   "fqn": "pulumi_bytepluscc.rabbitmq",
   "classes": {
@@ -739,6 +804,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.rabbitmq",
   "classes": {
    "bytepluscc:rabbitmq/publicAddress:PublicAddress": "PublicAddress"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdsmssql/allowList",
+  "fqn": "pulumi_bytepluscc.rdsmssql",
+  "classes": {
+   "bytepluscc:rdsmssql/allowList:AllowList": "AllowList"
   }
  },
  {
@@ -807,10 +880,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdspostgresql/database",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/database:Database": "Database"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdspostgresql/dbAccount",
   "fqn": "pulumi_bytepluscc.rdspostgresql",
   "classes": {
    "bytepluscc:rdspostgresql/dbAccount:DbAccount": "DbAccount"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdspostgresql/dbEndpoint",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint": "DbEndpoint"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "rdspostgresql/schema",
+  "fqn": "pulumi_bytepluscc.rdspostgresql",
+  "classes": {
+   "bytepluscc:rdspostgresql/schema:Schema": "Schema"
   }
  },
  {
@@ -899,6 +996,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/vpnAttachment:VpnAttachment": "VpnAttachment"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vedbm/instance",
+  "fqn": "pulumi_bytepluscc.vedbm",
+  "classes": {
+   "bytepluscc:vedbm/instance:Instance": "Instance"
   }
  },
  {

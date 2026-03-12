@@ -26,6 +26,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// 公网IP的线路类型，BGP表示多线。
         /// </summary>
         public readonly string? Isp;
+        /// <summary>
+        /// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        /// </summary>
+        public readonly int? SecurityProtectionInstanceId;
+        /// <summary>
+        /// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        /// </summary>
+        public readonly string? SecurityProtectionTypes;
 
         [OutputConstructor]
         private LoadBalancerEipBillingConfig(
@@ -33,11 +41,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
 
             int? billingType,
 
-            string? isp)
+            string? isp,
+
+            int? securityProtectionInstanceId,
+
+            string? securityProtectionTypes)
         {
             Bandwidth = bandwidth;
             BillingType = billingType;
             Isp = isp;
+            SecurityProtectionInstanceId = securityProtectionInstanceId;
+            SecurityProtectionTypes = securityProtectionTypes;
         }
     }
 }

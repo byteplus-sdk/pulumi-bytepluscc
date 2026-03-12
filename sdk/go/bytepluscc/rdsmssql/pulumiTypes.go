@@ -13,6 +13,103 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AllowListAssociatedInstance struct {
+	// 实例ID。
+	InstanceId *string `pulumi:"instanceId"`
+}
+
+// AllowListAssociatedInstanceInput is an input type that accepts AllowListAssociatedInstanceArgs and AllowListAssociatedInstanceOutput values.
+// You can construct a concrete instance of `AllowListAssociatedInstanceInput` via:
+//
+//	AllowListAssociatedInstanceArgs{...}
+type AllowListAssociatedInstanceInput interface {
+	pulumi.Input
+
+	ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput
+	ToAllowListAssociatedInstanceOutputWithContext(context.Context) AllowListAssociatedInstanceOutput
+}
+
+type AllowListAssociatedInstanceArgs struct {
+	// 实例ID。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+}
+
+func (AllowListAssociatedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i AllowListAssociatedInstanceArgs) ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput {
+	return i.ToAllowListAssociatedInstanceOutputWithContext(context.Background())
+}
+
+func (i AllowListAssociatedInstanceArgs) ToAllowListAssociatedInstanceOutputWithContext(ctx context.Context) AllowListAssociatedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListAssociatedInstanceOutput)
+}
+
+// AllowListAssociatedInstanceArrayInput is an input type that accepts AllowListAssociatedInstanceArray and AllowListAssociatedInstanceArrayOutput values.
+// You can construct a concrete instance of `AllowListAssociatedInstanceArrayInput` via:
+//
+//	AllowListAssociatedInstanceArray{ AllowListAssociatedInstanceArgs{...} }
+type AllowListAssociatedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput
+	ToAllowListAssociatedInstanceArrayOutputWithContext(context.Context) AllowListAssociatedInstanceArrayOutput
+}
+
+type AllowListAssociatedInstanceArray []AllowListAssociatedInstanceInput
+
+func (AllowListAssociatedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i AllowListAssociatedInstanceArray) ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput {
+	return i.ToAllowListAssociatedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i AllowListAssociatedInstanceArray) ToAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) AllowListAssociatedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AllowListAssociatedInstanceArrayOutput)
+}
+
+type AllowListAssociatedInstanceOutput struct{ *pulumi.OutputState }
+
+func (AllowListAssociatedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutput() AllowListAssociatedInstanceOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWithContext(ctx context.Context) AllowListAssociatedInstanceOutput {
+	return o
+}
+
+// 实例ID。
+func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+type AllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (AllowListAssociatedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) ToAllowListAssociatedInstanceArrayOutput() AllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) ToAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) AllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowListAssociatedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AllowListAssociatedInstance {
+		return vs[0].([]AllowListAssociatedInstance)[vs[1].(int)]
+	}).(AllowListAssociatedInstanceOutput)
+}
+
 type InstanceChargeInfo struct {
 	// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
 	AutoRenew *bool `pulumi:"autoRenew"`
@@ -894,6 +991,148 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type GetAllowListAssociatedInstance struct {
+	// 实例ID。
+	InstanceId string `pulumi:"instanceId"`
+	// 实例名称。
+	InstanceName string `pulumi:"instanceName"`
+	// 实例状态。
+	InstanceStatus string `pulumi:"instanceStatus"`
+	// 是否同步最新白名单 IP
+	IsLatest bool `pulumi:"isLatest"`
+	// 实例所属项目名称。
+	ProjectName string `pulumi:"projectName"`
+	// 实例所属VPC ID。
+	Vpc string `pulumi:"vpc"`
+}
+
+// GetAllowListAssociatedInstanceInput is an input type that accepts GetAllowListAssociatedInstanceArgs and GetAllowListAssociatedInstanceOutput values.
+// You can construct a concrete instance of `GetAllowListAssociatedInstanceInput` via:
+//
+//	GetAllowListAssociatedInstanceArgs{...}
+type GetAllowListAssociatedInstanceInput interface {
+	pulumi.Input
+
+	ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput
+	ToGetAllowListAssociatedInstanceOutputWithContext(context.Context) GetAllowListAssociatedInstanceOutput
+}
+
+type GetAllowListAssociatedInstanceArgs struct {
+	// 实例ID。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 实例名称。
+	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// 实例状态。
+	InstanceStatus pulumi.StringInput `pulumi:"instanceStatus"`
+	// 是否同步最新白名单 IP
+	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
+	// 实例所属项目名称。
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// 实例所属VPC ID。
+	Vpc pulumi.StringInput `pulumi:"vpc"`
+}
+
+func (GetAllowListAssociatedInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i GetAllowListAssociatedInstanceArgs) ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput {
+	return i.ToGetAllowListAssociatedInstanceOutputWithContext(context.Background())
+}
+
+func (i GetAllowListAssociatedInstanceArgs) ToGetAllowListAssociatedInstanceOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListAssociatedInstanceOutput)
+}
+
+// GetAllowListAssociatedInstanceArrayInput is an input type that accepts GetAllowListAssociatedInstanceArray and GetAllowListAssociatedInstanceArrayOutput values.
+// You can construct a concrete instance of `GetAllowListAssociatedInstanceArrayInput` via:
+//
+//	GetAllowListAssociatedInstanceArray{ GetAllowListAssociatedInstanceArgs{...} }
+type GetAllowListAssociatedInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput
+	ToGetAllowListAssociatedInstanceArrayOutputWithContext(context.Context) GetAllowListAssociatedInstanceArrayOutput
+}
+
+type GetAllowListAssociatedInstanceArray []GetAllowListAssociatedInstanceInput
+
+func (GetAllowListAssociatedInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (i GetAllowListAssociatedInstanceArray) ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput {
+	return i.ToGetAllowListAssociatedInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllowListAssociatedInstanceArray) ToGetAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllowListAssociatedInstanceArrayOutput)
+}
+
+type GetAllowListAssociatedInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListAssociatedInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOutput() GetAllowListAssociatedInstanceOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceOutput {
+	return o
+}
+
+// 实例ID。
+func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 实例名称。
+func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// 实例状态。
+func (o GetAllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceStatus }).(pulumi.StringOutput)
+}
+
+// 是否同步最新白名单 IP
+func (o GetAllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) bool { return v.IsLatest }).(pulumi.BoolOutput)
+}
+
+// 实例所属项目名称。
+func (o GetAllowListAssociatedInstanceOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// 实例所属VPC ID。
+func (o GetAllowListAssociatedInstanceOutput) Vpc() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.Vpc }).(pulumi.StringOutput)
+}
+
+type GetAllowListAssociatedInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllowListAssociatedInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllowListAssociatedInstance)(nil)).Elem()
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) ToGetAllowListAssociatedInstanceArrayOutput() GetAllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) ToGetAllowListAssociatedInstanceArrayOutputWithContext(ctx context.Context) GetAllowListAssociatedInstanceArrayOutput {
+	return o
+}
+
+func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetAllowListAssociatedInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllowListAssociatedInstance {
+		return vs[0].([]GetAllowListAssociatedInstance)[vs[1].(int)]
+	}).(GetAllowListAssociatedInstanceOutput)
+}
+
 type GetInstanceChargeInfo struct {
 	// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
 	AutoRenew bool `pulumi:"autoRenew"`
@@ -1614,6 +1853,8 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoInput)(nil)).Elem(), InstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoPtrInput)(nil)).Elem(), InstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoInput)(nil)).Elem(), InstanceConnectionInfoArgs{})
@@ -1624,6 +1865,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeDetailInfoArrayInput)(nil)).Elem(), InstanceNodeDetailInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeInfoInput)(nil)).Elem(), GetInstanceChargeInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoInput)(nil)).Elem(), GetInstanceConnectionInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoArrayInput)(nil)).Elem(), GetInstanceConnectionInfoArray{})
@@ -1633,6 +1876,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeDetailInfoArrayInput)(nil)).Elem(), GetInstanceNodeDetailInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
+	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(InstanceChargeInfoOutput{})
 	pulumi.RegisterOutputType(InstanceChargeInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceConnectionInfoOutput{})
@@ -1643,6 +1888,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceNodeDetailInfoArrayOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
+	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceChargeInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoArrayOutput{})

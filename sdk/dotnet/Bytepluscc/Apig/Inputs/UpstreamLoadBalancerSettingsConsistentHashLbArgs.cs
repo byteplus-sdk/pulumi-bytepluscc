@@ -14,6 +14,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamLoadBalancerSettingsConsistentHashLbArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+        /// </summary>
+        [Input("hashBalanceFactor")]
+        public Input<int>? HashBalanceFactor { get; set; }
+
+        /// <summary>
         /// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
         /// </summary>
         [Input("hashKey")]

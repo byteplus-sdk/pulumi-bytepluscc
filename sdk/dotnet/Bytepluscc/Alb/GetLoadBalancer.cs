@@ -109,6 +109,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        /// </summary>
+        public readonly string Ipv6BandwidthPackageId;
+        /// <summary>
         /// IPv6公网IP的计費配置，仅适用于公网实例。
         /// </summary>
         public readonly Outputs.GetLoadBalancerIpv6EipBillingConfigResult Ipv6EipBillingConfig;
@@ -148,6 +152,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// 实例所属项目名称。
         /// </summary>
         public readonly string ProjectName;
+        /// <summary>
+        /// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        /// </summary>
+        public readonly string ProxyProtocolEnabled;
         /// <summary>
         /// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
         /// </summary>
@@ -209,6 +217,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
 
             string id,
 
+            string ipv6BandwidthPackageId,
+
             Outputs.GetLoadBalancerIpv6EipBillingConfigResult ipv6EipBillingConfig,
 
             int loadBalancerBillingType,
@@ -228,6 +238,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             string overdueTime,
 
             string projectName,
+
+            string proxyProtocolEnabled,
 
             string status,
 
@@ -258,6 +270,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             EipBillingConfig = eipBillingConfig;
             GlobalAccelerator = globalAccelerator;
             Id = id;
+            Ipv6BandwidthPackageId = ipv6BandwidthPackageId;
             Ipv6EipBillingConfig = ipv6EipBillingConfig;
             LoadBalancerBillingType = loadBalancerBillingType;
             LoadBalancerEdition = loadBalancerEdition;
@@ -268,6 +281,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
             ModificationProtectionStatus = modificationProtectionStatus;
             OverdueTime = overdueTime;
             ProjectName = projectName;
+            ProxyProtocolEnabled = proxyProtocolEnabled;
             Status = status;
             Tags = tags;
             Type = type;

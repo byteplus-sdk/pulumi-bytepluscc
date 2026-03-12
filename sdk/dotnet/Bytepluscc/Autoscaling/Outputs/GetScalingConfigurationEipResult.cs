@@ -30,6 +30,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Outputs
         /// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
         /// </summary>
         public readonly string Isp;
+        /// <summary>
+        /// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+        /// </summary>
+        public readonly bool ReleaseWithInstance;
 
         [OutputConstructor]
         private GetScalingConfigurationEipResult(
@@ -39,12 +43,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Outputs
 
             string billingType,
 
-            string isp)
+            string isp,
+
+            bool releaseWithInstance)
         {
             Bandwidth = bandwidth;
             BandwidthPackageId = bandwidthPackageId;
             BillingType = billingType;
             Isp = isp;
+            ReleaseWithInstance = releaseWithInstance;
         }
     }
 }

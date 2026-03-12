@@ -23,6 +23,11 @@ public final class GetServerGroupResult {
      */
     private String createTime;
     /**
+     * @return 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * 
+     */
+    private String crossZoneEnabled;
+    /**
      * @return 后端服务器组的描述。
      * 
      */
@@ -120,6 +125,13 @@ public final class GetServerGroupResult {
      */
     public String createTime() {
         return this.createTime;
+    }
+    /**
+     * @return 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * 
+     */
+    public String crossZoneEnabled() {
+        return this.crossZoneEnabled;
     }
     /**
      * @return 后端服务器组的描述。
@@ -258,6 +270,7 @@ public final class GetServerGroupResult {
     @CustomType.Builder
     public static final class Builder {
         private String createTime;
+        private String crossZoneEnabled;
         private String description;
         private GetServerGroupHealthCheck healthCheck;
         private String id;
@@ -280,6 +293,7 @@ public final class GetServerGroupResult {
         public Builder(GetServerGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.createTime = defaults.createTime;
+    	      this.crossZoneEnabled = defaults.crossZoneEnabled;
     	      this.description = defaults.description;
     	      this.healthCheck = defaults.healthCheck;
     	      this.id = defaults.id;
@@ -306,6 +320,14 @@ public final class GetServerGroupResult {
               throw new MissingRequiredPropertyException("GetServerGroupResult", "createTime");
             }
             this.createTime = createTime;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder crossZoneEnabled(String crossZoneEnabled) {
+            if (crossZoneEnabled == null) {
+              throw new MissingRequiredPropertyException("GetServerGroupResult", "crossZoneEnabled");
+            }
+            this.crossZoneEnabled = crossZoneEnabled;
             return this;
         }
         @CustomType.Setter
@@ -464,6 +486,7 @@ public final class GetServerGroupResult {
         public GetServerGroupResult build() {
             final var _resultValue = new GetServerGroupResult();
             _resultValue.createTime = createTime;
+            _resultValue.crossZoneEnabled = crossZoneEnabled;
             _resultValue.description = description;
             _resultValue.healthCheck = healthCheck;
             _resultValue.id = id;

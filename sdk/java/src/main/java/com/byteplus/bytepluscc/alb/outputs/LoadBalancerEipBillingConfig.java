@@ -27,6 +27,16 @@ public final class LoadBalancerEipBillingConfig {
      * 
      */
     private @Nullable String isp;
+    /**
+     * @return 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+     * 
+     */
+    private @Nullable Integer securityProtectionInstanceId;
+    /**
+     * @return 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+     * 
+     */
+    private @Nullable String securityProtectionTypes;
 
     private LoadBalancerEipBillingConfig() {}
     /**
@@ -50,6 +60,20 @@ public final class LoadBalancerEipBillingConfig {
     public Optional<String> isp() {
         return Optional.ofNullable(this.isp);
     }
+    /**
+     * @return 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+     * 
+     */
+    public Optional<Integer> securityProtectionInstanceId() {
+        return Optional.ofNullable(this.securityProtectionInstanceId);
+    }
+    /**
+     * @return 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+     * 
+     */
+    public Optional<String> securityProtectionTypes() {
+        return Optional.ofNullable(this.securityProtectionTypes);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +87,16 @@ public final class LoadBalancerEipBillingConfig {
         private @Nullable Integer bandwidth;
         private @Nullable Integer billingType;
         private @Nullable String isp;
+        private @Nullable Integer securityProtectionInstanceId;
+        private @Nullable String securityProtectionTypes;
         public Builder() {}
         public Builder(LoadBalancerEipBillingConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bandwidth = defaults.bandwidth;
     	      this.billingType = defaults.billingType;
     	      this.isp = defaults.isp;
+    	      this.securityProtectionInstanceId = defaults.securityProtectionInstanceId;
+    	      this.securityProtectionTypes = defaults.securityProtectionTypes;
         }
 
         @CustomType.Setter
@@ -89,11 +117,25 @@ public final class LoadBalancerEipBillingConfig {
             this.isp = isp;
             return this;
         }
+        @CustomType.Setter
+        public Builder securityProtectionInstanceId(@Nullable Integer securityProtectionInstanceId) {
+
+            this.securityProtectionInstanceId = securityProtectionInstanceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityProtectionTypes(@Nullable String securityProtectionTypes) {
+
+            this.securityProtectionTypes = securityProtectionTypes;
+            return this;
+        }
         public LoadBalancerEipBillingConfig build() {
             final var _resultValue = new LoadBalancerEipBillingConfig();
             _resultValue.bandwidth = bandwidth;
             _resultValue.billingType = billingType;
             _resultValue.isp = isp;
+            _resultValue.securityProtectionInstanceId = securityProtectionInstanceId;
+            _resultValue.securityProtectionTypes = securityProtectionTypes;
             return _resultValue;
         }
     }

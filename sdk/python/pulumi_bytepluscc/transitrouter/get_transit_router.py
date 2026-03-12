@@ -28,7 +28,7 @@ class GetTransitRouterResult:
     """
     A collection of values returned by getTransitRouter.
     """
-    def __init__(__self__, asn=None, attachments=None, business_status=None, creation_time=None, deleted_time=None, description=None, grant_status=None, id=None, overdue_time=None, project_name=None, status=None, tags=None, transit_router_id=None, transit_router_name=None, update_time=None):
+    def __init__(__self__, asn=None, attachments=None, business_status=None, creation_time=None, deleted_time=None, description=None, grant_source_type=None, grant_status=None, id=None, multicast_enabled=None, overdue_time=None, project_name=None, status=None, tags=None, transit_router_id=None, transit_router_name=None, update_time=None):
         if asn and not isinstance(asn, int):
             raise TypeError("Expected argument 'asn' to be a int")
         pulumi.set(__self__, "asn", asn)
@@ -47,12 +47,18 @@ class GetTransitRouterResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if grant_source_type and not isinstance(grant_source_type, str):
+            raise TypeError("Expected argument 'grant_source_type' to be a str")
+        pulumi.set(__self__, "grant_source_type", grant_source_type)
         if grant_status and not isinstance(grant_status, str):
             raise TypeError("Expected argument 'grant_status' to be a str")
         pulumi.set(__self__, "grant_status", grant_status)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if multicast_enabled and not isinstance(multicast_enabled, bool):
+            raise TypeError("Expected argument 'multicast_enabled' to be a bool")
+        pulumi.set(__self__, "multicast_enabled", multicast_enabled)
         if overdue_time and not isinstance(overdue_time, str):
             raise TypeError("Expected argument 'overdue_time' to be a str")
         pulumi.set(__self__, "overdue_time", overdue_time)
@@ -124,6 +130,14 @@ class GetTransitRouterResult:
         return pulumi.get(self, "description")
 
     @property
+    @pulumi.getter(name="grantSourceType")
+    def grant_source_type(self) -> builtins.str:
+        """
+        中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        """
+        return pulumi.get(self, "grant_source_type")
+
+    @property
     @pulumi.getter(name="grantStatus")
     def grant_status(self) -> builtins.str:
         """
@@ -138,6 +152,14 @@ class GetTransitRouterResult:
         Uniquely identifies the resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="multicastEnabled")
+    def multicast_enabled(self) -> builtins.bool:
+        """
+        中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        """
+        return pulumi.get(self, "multicast_enabled")
 
     @property
     @pulumi.getter(name="overdueTime")
@@ -208,8 +230,10 @@ class AwaitableGetTransitRouterResult(GetTransitRouterResult):
             creation_time=self.creation_time,
             deleted_time=self.deleted_time,
             description=self.description,
+            grant_source_type=self.grant_source_type,
             grant_status=self.grant_status,
             id=self.id,
+            multicast_enabled=self.multicast_enabled,
             overdue_time=self.overdue_time,
             project_name=self.project_name,
             status=self.status,
@@ -239,8 +263,10 @@ def get_transit_router(id: Optional[builtins.str] = None,
         creation_time=pulumi.get(__ret__, 'creation_time'),
         deleted_time=pulumi.get(__ret__, 'deleted_time'),
         description=pulumi.get(__ret__, 'description'),
+        grant_source_type=pulumi.get(__ret__, 'grant_source_type'),
         grant_status=pulumi.get(__ret__, 'grant_status'),
         id=pulumi.get(__ret__, 'id'),
+        multicast_enabled=pulumi.get(__ret__, 'multicast_enabled'),
         overdue_time=pulumi.get(__ret__, 'overdue_time'),
         project_name=pulumi.get(__ret__, 'project_name'),
         status=pulumi.get(__ret__, 'status'),
@@ -267,8 +293,10 @@ def get_transit_router_output(id: Optional[pulumi.Input[builtins.str]] = None,
         creation_time=pulumi.get(__response__, 'creation_time'),
         deleted_time=pulumi.get(__response__, 'deleted_time'),
         description=pulumi.get(__response__, 'description'),
+        grant_source_type=pulumi.get(__response__, 'grant_source_type'),
         grant_status=pulumi.get(__response__, 'grant_status'),
         id=pulumi.get(__response__, 'id'),
+        multicast_enabled=pulumi.get(__response__, 'multicast_enabled'),
         overdue_time=pulumi.get(__response__, 'overdue_time'),
         project_name=pulumi.get(__response__, 'project_name'),
         status=pulumi.get(__response__, 'status'),

@@ -30,6 +30,7 @@ class LoadBalancerArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input['LoadBalancerEipBillingConfigArgs']] = None,
                  global_accelerator: Optional[pulumi.Input['LoadBalancerGlobalAcceleratorArgs']] = None,
+                 ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs']] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
                  load_balancer_edition: Optional[pulumi.Input[builtins.str]] = None,
@@ -37,6 +38,7 @@ class LoadBalancerArgs:
                  modification_protection_reason: Optional[pulumi.Input[builtins.str]] = None,
                  modification_protection_status: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerTagArgs']]]] = None,
                  waf_instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  waf_protected_domain: Optional[pulumi.Input[builtins.str]] = None,
@@ -52,6 +54,7 @@ class LoadBalancerArgs:
         :param pulumi.Input[builtins.str] description: ALB 实例的描述。
         :param pulumi.Input['LoadBalancerEipBillingConfigArgs'] eip_billing_config: 公网IP的计费配置，仅适用于公网实例。
         :param pulumi.Input['LoadBalancerGlobalAcceleratorArgs'] global_accelerator: 全球加速器配置，用于提升跨地域访问速度。
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
         :param pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs'] ipv6_eip_billing_config: IPv6公网IP的计費配置，仅适用于公网实例。
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB实例计费类型，当前仅支持按量计费（取值为1）。
         :param pulumi.Input[builtins.str] load_balancer_edition: 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
@@ -59,6 +62,7 @@ class LoadBalancerArgs:
         :param pulumi.Input[builtins.str] modification_protection_reason: 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
         :param pulumi.Input[builtins.str] modification_protection_status: 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
         :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
+        :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
         :param pulumi.Input[builtins.str] waf_instance_id: ALB 实例绑定的 WAF 安全防护实例 ID。
         :param pulumi.Input[builtins.str] waf_protected_domain: WAF防护的域名，用于精确匹配防护规则。
         :param pulumi.Input[builtins.str] waf_protection_enabled: WAF 安全防护开关。on：开启；off：关闭。
@@ -77,6 +81,8 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "eip_billing_config", eip_billing_config)
         if global_accelerator is not None:
             pulumi.set(__self__, "global_accelerator", global_accelerator)
+        if ipv6_bandwidth_package_id is not None:
+            pulumi.set(__self__, "ipv6_bandwidth_package_id", ipv6_bandwidth_package_id)
         if ipv6_eip_billing_config is not None:
             pulumi.set(__self__, "ipv6_eip_billing_config", ipv6_eip_billing_config)
         if load_balancer_billing_type is not None:
@@ -91,6 +97,8 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "modification_protection_status", modification_protection_status)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if proxy_protocol_enabled is not None:
+            pulumi.set(__self__, "proxy_protocol_enabled", proxy_protocol_enabled)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
         if waf_instance_id is not None:
@@ -199,6 +207,18 @@ class LoadBalancerArgs:
         pulumi.set(self, "global_accelerator", value)
 
     @property
+    @pulumi.getter(name="ipv6BandwidthPackageId")
+    def ipv6_bandwidth_package_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        """
+        return pulumi.get(self, "ipv6_bandwidth_package_id")
+
+    @ipv6_bandwidth_package_id.setter
+    def ipv6_bandwidth_package_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv6_bandwidth_package_id", value)
+
+    @property
     @pulumi.getter(name="ipv6EipBillingConfig")
     def ipv6_eip_billing_config(self) -> Optional[pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs']]:
         """
@@ -283,6 +303,18 @@ class LoadBalancerArgs:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="proxyProtocolEnabled")
+    def proxy_protocol_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        """
+        return pulumi.get(self, "proxy_protocol_enabled")
+
+    @proxy_protocol_enabled.setter
+    def proxy_protocol_enabled(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "proxy_protocol_enabled", value)
+
+    @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerTagArgs']]]]:
         return pulumi.get(self, "tags")
@@ -350,6 +382,7 @@ class _LoadBalancerState:
                  dns_name: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input['LoadBalancerEipBillingConfigArgs']] = None,
                  global_accelerator: Optional[pulumi.Input['LoadBalancerGlobalAcceleratorArgs']] = None,
+                 ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs']] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
                  load_balancer_edition: Optional[pulumi.Input[builtins.str]] = None,
@@ -360,6 +393,7 @@ class _LoadBalancerState:
                  modification_protection_status: Optional[pulumi.Input[builtins.str]] = None,
                  overdue_time: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerTagArgs']]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
@@ -381,6 +415,7 @@ class _LoadBalancerState:
         :param pulumi.Input[builtins.str] dns_name: DNS域名。
         :param pulumi.Input['LoadBalancerEipBillingConfigArgs'] eip_billing_config: 公网IP的计费配置，仅适用于公网实例。
         :param pulumi.Input['LoadBalancerGlobalAcceleratorArgs'] global_accelerator: 全球加速器配置，用于提升跨地域访问速度。
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
         :param pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs'] ipv6_eip_billing_config: IPv6公网IP的计費配置，仅适用于公网实例。
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB实例计费类型，当前仅支持按量计费（取值为1）。
         :param pulumi.Input[builtins.str] load_balancer_edition: 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
@@ -391,6 +426,7 @@ class _LoadBalancerState:
         :param pulumi.Input[builtins.str] modification_protection_status: 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
         :param pulumi.Input[builtins.str] overdue_time: ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
         :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
+        :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
         :param pulumi.Input[builtins.str] status: ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
         :param pulumi.Input[builtins.str] type: ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
         :param pulumi.Input[builtins.str] update_time: ALB 实例的最后更新时间。
@@ -419,6 +455,8 @@ class _LoadBalancerState:
             pulumi.set(__self__, "eip_billing_config", eip_billing_config)
         if global_accelerator is not None:
             pulumi.set(__self__, "global_accelerator", global_accelerator)
+        if ipv6_bandwidth_package_id is not None:
+            pulumi.set(__self__, "ipv6_bandwidth_package_id", ipv6_bandwidth_package_id)
         if ipv6_eip_billing_config is not None:
             pulumi.set(__self__, "ipv6_eip_billing_config", ipv6_eip_billing_config)
         if load_balancer_billing_type is not None:
@@ -439,6 +477,8 @@ class _LoadBalancerState:
             pulumi.set(__self__, "overdue_time", overdue_time)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if proxy_protocol_enabled is not None:
+            pulumi.set(__self__, "proxy_protocol_enabled", proxy_protocol_enabled)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if tags is not None:
@@ -579,6 +619,18 @@ class _LoadBalancerState:
         pulumi.set(self, "global_accelerator", value)
 
     @property
+    @pulumi.getter(name="ipv6BandwidthPackageId")
+    def ipv6_bandwidth_package_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        """
+        return pulumi.get(self, "ipv6_bandwidth_package_id")
+
+    @ipv6_bandwidth_package_id.setter
+    def ipv6_bandwidth_package_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv6_bandwidth_package_id", value)
+
+    @property
     @pulumi.getter(name="ipv6EipBillingConfig")
     def ipv6_eip_billing_config(self) -> Optional[pulumi.Input['LoadBalancerIpv6EipBillingConfigArgs']]:
         """
@@ -699,6 +751,18 @@ class _LoadBalancerState:
         pulumi.set(self, "project_name", value)
 
     @property
+    @pulumi.getter(name="proxyProtocolEnabled")
+    def proxy_protocol_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        """
+        return pulumi.get(self, "proxy_protocol_enabled")
+
+    @proxy_protocol_enabled.setter
+    def proxy_protocol_enabled(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "proxy_protocol_enabled", value)
+
+    @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -813,6 +877,7 @@ class LoadBalancer(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']]] = None,
                  global_accelerator: Optional[pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']]] = None,
+                 ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']]] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
                  load_balancer_edition: Optional[pulumi.Input[builtins.str]] = None,
@@ -820,6 +885,7 @@ class LoadBalancer(pulumi.CustomResource):
                  modification_protection_reason: Optional[pulumi.Input[builtins.str]] = None,
                  modification_protection_status: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerTagArgs', 'LoadBalancerTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -845,6 +911,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] description: ALB 实例的描述。
         :param pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']] eip_billing_config: 公网IP的计费配置，仅适用于公网实例。
         :param pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']] global_accelerator: 全球加速器配置，用于提升跨地域访问速度。
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
         :param pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']] ipv6_eip_billing_config: IPv6公网IP的计費配置，仅适用于公网实例。
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB实例计费类型，当前仅支持按量计费（取值为1）。
         :param pulumi.Input[builtins.str] load_balancer_edition: 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
@@ -852,6 +919,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] modification_protection_reason: 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
         :param pulumi.Input[builtins.str] modification_protection_status: 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
         :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
+        :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
         :param pulumi.Input[builtins.str] type: ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
         :param pulumi.Input[builtins.str] vpc_id: 负载均衡实例所属的私有网络（VPC）的ID。
         :param pulumi.Input[builtins.str] waf_instance_id: ALB 实例绑定的 WAF 安全防护实例 ID。
@@ -894,6 +962,7 @@ class LoadBalancer(pulumi.CustomResource):
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']]] = None,
                  global_accelerator: Optional[pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']]] = None,
+                 ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
                  ipv6_eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']]] = None,
                  load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
                  load_balancer_edition: Optional[pulumi.Input[builtins.str]] = None,
@@ -901,6 +970,7 @@ class LoadBalancer(pulumi.CustomResource):
                  modification_protection_reason: Optional[pulumi.Input[builtins.str]] = None,
                  modification_protection_status: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
+                 proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerTagArgs', 'LoadBalancerTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -923,6 +993,7 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["eip_billing_config"] = eip_billing_config
             __props__.__dict__["global_accelerator"] = global_accelerator
+            __props__.__dict__["ipv6_bandwidth_package_id"] = ipv6_bandwidth_package_id
             __props__.__dict__["ipv6_eip_billing_config"] = ipv6_eip_billing_config
             __props__.__dict__["load_balancer_billing_type"] = load_balancer_billing_type
             __props__.__dict__["load_balancer_edition"] = load_balancer_edition
@@ -930,6 +1001,7 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["modification_protection_reason"] = modification_protection_reason
             __props__.__dict__["modification_protection_status"] = modification_protection_status
             __props__.__dict__["project_name"] = project_name
+            __props__.__dict__["proxy_protocol_enabled"] = proxy_protocol_enabled
             __props__.__dict__["tags"] = tags
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
@@ -970,6 +1042,7 @@ class LoadBalancer(pulumi.CustomResource):
             dns_name: Optional[pulumi.Input[builtins.str]] = None,
             eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']]] = None,
             global_accelerator: Optional[pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']]] = None,
+            ipv6_bandwidth_package_id: Optional[pulumi.Input[builtins.str]] = None,
             ipv6_eip_billing_config: Optional[pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']]] = None,
             load_balancer_billing_type: Optional[pulumi.Input[builtins.int]] = None,
             load_balancer_edition: Optional[pulumi.Input[builtins.str]] = None,
@@ -980,6 +1053,7 @@ class LoadBalancer(pulumi.CustomResource):
             modification_protection_status: Optional[pulumi.Input[builtins.str]] = None,
             overdue_time: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
+            proxy_protocol_enabled: Optional[pulumi.Input[builtins.str]] = None,
             status: Optional[pulumi.Input[builtins.str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerTagArgs', 'LoadBalancerTagArgsDict']]]]] = None,
             type: Optional[pulumi.Input[builtins.str]] = None,
@@ -1006,6 +1080,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] dns_name: DNS域名。
         :param pulumi.Input[Union['LoadBalancerEipBillingConfigArgs', 'LoadBalancerEipBillingConfigArgsDict']] eip_billing_config: 公网IP的计费配置，仅适用于公网实例。
         :param pulumi.Input[Union['LoadBalancerGlobalAcceleratorArgs', 'LoadBalancerGlobalAcceleratorArgsDict']] global_accelerator: 全球加速器配置，用于提升跨地域访问速度。
+        :param pulumi.Input[builtins.str] ipv6_bandwidth_package_id: 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
         :param pulumi.Input[Union['LoadBalancerIpv6EipBillingConfigArgs', 'LoadBalancerIpv6EipBillingConfigArgsDict']] ipv6_eip_billing_config: IPv6公网IP的计費配置，仅适用于公网实例。
         :param pulumi.Input[builtins.int] load_balancer_billing_type: ALB实例计费类型，当前仅支持按量计费（取值为1）。
         :param pulumi.Input[builtins.str] load_balancer_edition: 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
@@ -1016,6 +1091,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] modification_protection_status: 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
         :param pulumi.Input[builtins.str] overdue_time: ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
         :param pulumi.Input[builtins.str] project_name: 实例所属项目名称。
+        :param pulumi.Input[builtins.str] proxy_protocol_enabled: ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
         :param pulumi.Input[builtins.str] status: ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
         :param pulumi.Input[builtins.str] type: ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
         :param pulumi.Input[builtins.str] update_time: ALB 实例的最后更新时间。
@@ -1038,6 +1114,7 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["dns_name"] = dns_name
         __props__.__dict__["eip_billing_config"] = eip_billing_config
         __props__.__dict__["global_accelerator"] = global_accelerator
+        __props__.__dict__["ipv6_bandwidth_package_id"] = ipv6_bandwidth_package_id
         __props__.__dict__["ipv6_eip_billing_config"] = ipv6_eip_billing_config
         __props__.__dict__["load_balancer_billing_type"] = load_balancer_billing_type
         __props__.__dict__["load_balancer_edition"] = load_balancer_edition
@@ -1048,6 +1125,7 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["modification_protection_status"] = modification_protection_status
         __props__.__dict__["overdue_time"] = overdue_time
         __props__.__dict__["project_name"] = project_name
+        __props__.__dict__["proxy_protocol_enabled"] = proxy_protocol_enabled
         __props__.__dict__["status"] = status
         __props__.__dict__["tags"] = tags
         __props__.__dict__["type"] = type
@@ -1140,6 +1218,14 @@ class LoadBalancer(pulumi.CustomResource):
         return pulumi.get(self, "global_accelerator")
 
     @property
+    @pulumi.getter(name="ipv6BandwidthPackageId")
+    def ipv6_bandwidth_package_id(self) -> pulumi.Output[builtins.str]:
+        """
+        创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        """
+        return pulumi.get(self, "ipv6_bandwidth_package_id")
+
+    @property
     @pulumi.getter(name="ipv6EipBillingConfig")
     def ipv6_eip_billing_config(self) -> pulumi.Output['outputs.LoadBalancerIpv6EipBillingConfig']:
         """
@@ -1218,6 +1304,14 @@ class LoadBalancer(pulumi.CustomResource):
         实例所属项目名称。
         """
         return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter(name="proxyProtocolEnabled")
+    def proxy_protocol_enabled(self) -> pulumi.Output[builtins.str]:
+        """
+        ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        """
+        return pulumi.get(self, "proxy_protocol_enabled")
 
     @property
     @pulumi.getter

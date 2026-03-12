@@ -18,6 +18,8 @@ from .. import _utilities
 __all__ = [
     'DirectConnectGatewayAssociateCenArgs',
     'DirectConnectGatewayAssociateCenArgsDict',
+    'DirectConnectGatewayAssociateEicArgs',
+    'DirectConnectGatewayAssociateEicArgsDict',
     'DirectConnectGatewayTagArgs',
     'DirectConnectGatewayTagArgsDict',
 ]
@@ -94,6 +96,78 @@ class DirectConnectGatewayAssociateCenArgs:
     @cen_status.setter
     def cen_status(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "cen_status", value)
+
+
+if not MYPY:
+    class DirectConnectGatewayAssociateEicArgsDict(TypedDict):
+        eic_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        EIC的ID。
+        """
+        eic_owner_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        EIC的用户ID。
+        """
+        eic_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例在EIC中的状态。
+        """
+elif False:
+    DirectConnectGatewayAssociateEicArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DirectConnectGatewayAssociateEicArgs:
+    def __init__(__self__, *,
+                 eic_id: Optional[pulumi.Input[builtins.str]] = None,
+                 eic_owner_id: Optional[pulumi.Input[builtins.str]] = None,
+                 eic_status: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] eic_id: EIC的ID。
+        :param pulumi.Input[builtins.str] eic_owner_id: EIC的用户ID。
+        :param pulumi.Input[builtins.str] eic_status: 实例在EIC中的状态。
+        """
+        if eic_id is not None:
+            pulumi.set(__self__, "eic_id", eic_id)
+        if eic_owner_id is not None:
+            pulumi.set(__self__, "eic_owner_id", eic_owner_id)
+        if eic_status is not None:
+            pulumi.set(__self__, "eic_status", eic_status)
+
+    @property
+    @pulumi.getter(name="eicId")
+    def eic_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        EIC的ID。
+        """
+        return pulumi.get(self, "eic_id")
+
+    @eic_id.setter
+    def eic_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eic_id", value)
+
+    @property
+    @pulumi.getter(name="eicOwnerId")
+    def eic_owner_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        EIC的用户ID。
+        """
+        return pulumi.get(self, "eic_owner_id")
+
+    @eic_owner_id.setter
+    def eic_owner_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eic_owner_id", value)
+
+    @property
+    @pulumi.getter(name="eicStatus")
+    def eic_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例在EIC中的状态。
+        """
+        return pulumi.get(self, "eic_status")
+
+    @eic_status.setter
+    def eic_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "eic_status", value)
 
 
 if not MYPY:

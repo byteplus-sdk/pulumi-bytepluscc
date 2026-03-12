@@ -84,6 +84,10 @@ export class LoadBalancer extends pulumi.CustomResource {
      */
     public readonly globalAccelerator!: pulumi.Output<outputs.alb.LoadBalancerGlobalAccelerator>;
     /**
+     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     */
+    public readonly ipv6BandwidthPackageId!: pulumi.Output<string>;
+    /**
      * IPv6公网IP的计費配置，仅适用于公网实例。
      */
     public readonly ipv6EipBillingConfig!: pulumi.Output<outputs.alb.LoadBalancerIpv6EipBillingConfig>;
@@ -123,6 +127,10 @@ export class LoadBalancer extends pulumi.CustomResource {
      * 实例所属项目名称。
      */
     public readonly projectName!: pulumi.Output<string>;
+    /**
+     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     */
+    public readonly proxyProtocolEnabled!: pulumi.Output<string>;
     /**
      * ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
      */
@@ -177,6 +185,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["dnsName"] = state ? state.dnsName : undefined;
             resourceInputs["eipBillingConfig"] = state ? state.eipBillingConfig : undefined;
             resourceInputs["globalAccelerator"] = state ? state.globalAccelerator : undefined;
+            resourceInputs["ipv6BandwidthPackageId"] = state ? state.ipv6BandwidthPackageId : undefined;
             resourceInputs["ipv6EipBillingConfig"] = state ? state.ipv6EipBillingConfig : undefined;
             resourceInputs["loadBalancerBillingType"] = state ? state.loadBalancerBillingType : undefined;
             resourceInputs["loadBalancerEdition"] = state ? state.loadBalancerEdition : undefined;
@@ -187,6 +196,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["modificationProtectionStatus"] = state ? state.modificationProtectionStatus : undefined;
             resourceInputs["overdueTime"] = state ? state.overdueTime : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
+            resourceInputs["proxyProtocolEnabled"] = state ? state.proxyProtocolEnabled : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
@@ -210,6 +220,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["eipBillingConfig"] = args ? args.eipBillingConfig : undefined;
             resourceInputs["globalAccelerator"] = args ? args.globalAccelerator : undefined;
+            resourceInputs["ipv6BandwidthPackageId"] = args ? args.ipv6BandwidthPackageId : undefined;
             resourceInputs["ipv6EipBillingConfig"] = args ? args.ipv6EipBillingConfig : undefined;
             resourceInputs["loadBalancerBillingType"] = args ? args.loadBalancerBillingType : undefined;
             resourceInputs["loadBalancerEdition"] = args ? args.loadBalancerEdition : undefined;
@@ -217,6 +228,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["modificationProtectionReason"] = args ? args.modificationProtectionReason : undefined;
             resourceInputs["modificationProtectionStatus"] = args ? args.modificationProtectionStatus : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
+            resourceInputs["proxyProtocolEnabled"] = args ? args.proxyProtocolEnabled : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["vpcId"] = args ? args.vpcId : undefined;
@@ -284,6 +296,10 @@ export interface LoadBalancerState {
      */
     globalAccelerator?: pulumi.Input<inputs.alb.LoadBalancerGlobalAccelerator>;
     /**
+     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     */
+    ipv6BandwidthPackageId?: pulumi.Input<string>;
+    /**
      * IPv6公网IP的计費配置，仅适用于公网实例。
      */
     ipv6EipBillingConfig?: pulumi.Input<inputs.alb.LoadBalancerIpv6EipBillingConfig>;
@@ -323,6 +339,10 @@ export interface LoadBalancerState {
      * 实例所属项目名称。
      */
     projectName?: pulumi.Input<string>;
+    /**
+     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     */
+    proxyProtocolEnabled?: pulumi.Input<string>;
     /**
      * ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
      */
@@ -384,6 +404,10 @@ export interface LoadBalancerArgs {
      */
     globalAccelerator?: pulumi.Input<inputs.alb.LoadBalancerGlobalAccelerator>;
     /**
+     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     */
+    ipv6BandwidthPackageId?: pulumi.Input<string>;
+    /**
      * IPv6公网IP的计費配置，仅适用于公网实例。
      */
     ipv6EipBillingConfig?: pulumi.Input<inputs.alb.LoadBalancerIpv6EipBillingConfig>;
@@ -411,6 +435,10 @@ export interface LoadBalancerArgs {
      * 实例所属项目名称。
      */
     projectName?: pulumi.Input<string>;
+    /**
+     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     */
+    proxyProtocolEnabled?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.alb.LoadBalancerTag>[]>;
     /**
      * ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。

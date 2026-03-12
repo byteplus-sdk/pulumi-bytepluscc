@@ -32,6 +32,8 @@ type LookupServerGroupArgs struct {
 type LookupServerGroupResult struct {
 	// 后端服务器组的创建时间。
 	CreateTime string `pulumi:"createTime"`
+	// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+	CrossZoneEnabled string `pulumi:"crossZoneEnabled"`
 	// 后端服务器组的描述。
 	Description string `pulumi:"description"`
 	// 服务器组健康检查配置信息。
@@ -107,6 +109,11 @@ func (o LookupServerGroupResultOutput) ToLookupServerGroupResultOutputWithContex
 // 后端服务器组的创建时间。
 func (o LookupServerGroupResultOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupServerGroupResult) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+func (o LookupServerGroupResultOutput) CrossZoneEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupServerGroupResult) string { return v.CrossZoneEnabled }).(pulumi.StringOutput)
 }
 
 // 后端服务器组的描述。

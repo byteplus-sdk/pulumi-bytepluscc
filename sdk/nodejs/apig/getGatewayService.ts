@@ -51,6 +51,10 @@ export interface GetGatewayServiceResult {
      */
     readonly domainSpec: outputs.apig.GetGatewayServiceDomainSpec;
     /**
+     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     */
+    readonly domainType: string;
+    /**
      * 默认域名。
      */
     readonly domains: outputs.apig.GetGatewayServiceDomain[];
@@ -79,9 +83,17 @@ export interface GetGatewayServiceResult {
      */
     readonly serviceId: string;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      */
     readonly serviceName: string;
+    /**
+     * 服务默认域名网络配置。。
+     */
+    readonly serviceNetworkSpec: outputs.apig.GetGatewayServiceServiceNetworkSpec;
+    /**
+     * 服务类型，取值：AIProvider：AI模型代理。
+     */
+    readonly serviceType: string;
     /**
      * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
      */

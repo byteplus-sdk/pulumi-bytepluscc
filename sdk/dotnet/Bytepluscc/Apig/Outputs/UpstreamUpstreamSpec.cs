@@ -18,6 +18,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         /// AI模型代理。
         /// </summary>
         public readonly Outputs.UpstreamUpstreamSpecAiProvider? AiProvider;
+        /// <summary>
+        /// 固定域名。
+        /// </summary>
+        public readonly Outputs.UpstreamUpstreamSpecDomain? Domain;
         public readonly ImmutableArray<Outputs.UpstreamUpstreamSpecEcsInstance> EcsInstances;
         /// <summary>
         /// 容器服务。
@@ -36,6 +40,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         private UpstreamUpstreamSpec(
             Outputs.UpstreamUpstreamSpecAiProvider? aiProvider,
 
+            Outputs.UpstreamUpstreamSpecDomain? domain,
+
             ImmutableArray<Outputs.UpstreamUpstreamSpecEcsInstance> ecsInstances,
 
             Outputs.UpstreamUpstreamSpecK8SService? k8SService,
@@ -45,6 +51,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
             Outputs.UpstreamUpstreamSpecVeFaas? veFaas)
         {
             AiProvider = aiProvider;
+            Domain = domain;
             EcsInstances = ecsInstances;
             K8SService = k8SService;
             NacosService = nacosService;

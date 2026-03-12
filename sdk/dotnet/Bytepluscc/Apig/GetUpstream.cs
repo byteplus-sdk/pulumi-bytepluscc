@@ -77,6 +77,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string Comments;
         /// <summary>
+        /// 连接池配置。
+        /// </summary>
+        public readonly Outputs.GetUpstreamConnectionPoolSettingsResult ConnectionPoolSettings;
+        /// <summary>
         /// Upstream创建时间。
         /// </summary>
         public readonly string CreatedTime;
@@ -133,6 +137,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
 
             string comments,
 
+            Outputs.GetUpstreamConnectionPoolSettingsResult connectionPoolSettings,
+
             string createdTime,
 
             string gatewayId,
@@ -160,6 +166,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
             BackendTargets = backendTargets;
             CircuitBreakingSettings = circuitBreakingSettings;
             Comments = comments;
+            ConnectionPoolSettings = connectionPoolSettings;
             CreatedTime = createdTime;
             GatewayId = gatewayId;
             Id = id;

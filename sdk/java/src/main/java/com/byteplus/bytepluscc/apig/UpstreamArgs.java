@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.apig;
 
 import com.byteplus.bytepluscc.apig.inputs.UpstreamCircuitBreakingSettingsArgs;
+import com.byteplus.bytepluscc.apig.inputs.UpstreamConnectionPoolSettingsArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamLoadBalancerSettingsArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamTlsSettingsArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamUpstreamSpecArgs;
@@ -48,6 +49,21 @@ public final class UpstreamArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> comments() {
         return Optional.ofNullable(this.comments);
+    }
+
+    /**
+     * 连接池配置。
+     * 
+     */
+    @Import(name="connectionPoolSettings")
+    private @Nullable Output<UpstreamConnectionPoolSettingsArgs> connectionPoolSettings;
+
+    /**
+     * @return 连接池配置。
+     * 
+     */
+    public Optional<Output<UpstreamConnectionPoolSettingsArgs>> connectionPoolSettings() {
+        return Optional.ofNullable(this.connectionPoolSettings);
     }
 
     /**
@@ -160,6 +176,7 @@ public final class UpstreamArgs extends com.pulumi.resources.ResourceArgs {
     private UpstreamArgs(UpstreamArgs $) {
         this.circuitBreakingSettings = $.circuitBreakingSettings;
         this.comments = $.comments;
+        this.connectionPoolSettings = $.connectionPoolSettings;
         this.gatewayId = $.gatewayId;
         this.loadBalancerSettings = $.loadBalancerSettings;
         this.name = $.name;
@@ -227,6 +244,27 @@ public final class UpstreamArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder comments(String comments) {
             return comments(Output.of(comments));
+        }
+
+        /**
+         * @param connectionPoolSettings 连接池配置。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionPoolSettings(@Nullable Output<UpstreamConnectionPoolSettingsArgs> connectionPoolSettings) {
+            $.connectionPoolSettings = connectionPoolSettings;
+            return this;
+        }
+
+        /**
+         * @param connectionPoolSettings 连接池配置。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionPoolSettings(UpstreamConnectionPoolSettingsArgs connectionPoolSettings) {
+            return connectionPoolSettings(Output.of(connectionPoolSettings));
         }
 
         /**

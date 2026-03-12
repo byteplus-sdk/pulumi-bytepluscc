@@ -35,6 +35,16 @@ export const getDeploymentSets: typeof import("./getDeploymentSets").getDeployme
 export const getDeploymentSetsOutput: typeof import("./getDeploymentSets").getDeploymentSetsOutput = null as any;
 utilities.lazyLoad(exports, ["getDeploymentSets","getDeploymentSetsOutput"], () => require("./getDeploymentSets"));
 
+export { GetHpcClusterArgs, GetHpcClusterResult, GetHpcClusterOutputArgs } from "./getHpcCluster";
+export const getHpcCluster: typeof import("./getHpcCluster").getHpcCluster = null as any;
+export const getHpcClusterOutput: typeof import("./getHpcCluster").getHpcClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getHpcCluster","getHpcClusterOutput"], () => require("./getHpcCluster"));
+
+export { GetHpcClustersResult } from "./getHpcClusters";
+export const getHpcClusters: typeof import("./getHpcClusters").getHpcClusters = null as any;
+export const getHpcClustersOutput: typeof import("./getHpcClusters").getHpcClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getHpcClusters","getHpcClustersOutput"], () => require("./getHpcClusters"));
+
 export { GetImageArgs, GetImageResult, GetImageOutputArgs } from "./getImage";
 export const getImage: typeof import("./getImage").getImage = null as any;
 export const getImageOutput: typeof import("./getImage").getImageOutput = null as any;
@@ -95,6 +105,11 @@ export const getLaunchTemplates: typeof import("./getLaunchTemplates").getLaunch
 export const getLaunchTemplatesOutput: typeof import("./getLaunchTemplates").getLaunchTemplatesOutput = null as any;
 utilities.lazyLoad(exports, ["getLaunchTemplates","getLaunchTemplatesOutput"], () => require("./getLaunchTemplates"));
 
+export { HpcClusterArgs, HpcClusterState } from "./hpcCluster";
+export type HpcCluster = import("./hpcCluster").HpcCluster;
+export const HpcCluster: typeof import("./hpcCluster").HpcCluster = null as any;
+utilities.lazyLoad(exports, ["HpcCluster"], () => require("./hpcCluster"));
+
 export { ImageArgs, ImageState } from "./image";
 export type Image = import("./image").Image;
 export const Image: typeof import("./image").Image = null as any;
@@ -134,6 +149,8 @@ const _module = {
                 return new Command(name, <any>undefined, { urn })
             case "bytepluscc:ecs/deploymentSet:DeploymentSet":
                 return new DeploymentSet(name, <any>undefined, { urn })
+            case "bytepluscc:ecs/hpcCluster:HpcCluster":
+                return new HpcCluster(name, <any>undefined, { urn })
             case "bytepluscc:ecs/image:Image":
                 return new Image(name, <any>undefined, { urn })
             case "bytepluscc:ecs/instance:Instance":
@@ -153,6 +170,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/command", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/deploymentSet", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "ecs/hpcCluster", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/image", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/invocation", _module)

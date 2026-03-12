@@ -13,40 +13,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     /// <summary>
     /// 密钥管理服务（Key Management Service）是火山引擎上一站式的密钥管理和数据加密服务平台。提供简单易用的加密接口，KMS 帮助用户轻松管理密钥、保护云上核心数据的安全。同时极大降低用户自行部署密码基础设施的采购、研发成本。帮助业务轻松满足监管和合规需求。
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var kMSKeyDemo = new Bytepluscc.Kms.Key("KMSKeyDemo", new()
-    ///     {
-    ///         KeyringName = "KMSKeyDemo",
-    ///         KeyName = "KMSKeyDemoKeyName",
-    ///         KeySpec = "SYMMETRIC_256",
-    ///         Description = "description KMSKeyDemo",
-    ///         KeyUsage = "ENCRYPT_DECRYPT",
-    ///         ProtectionLevel = "HSM",
-    ///         RotateState = "Enable",
-    ///         Origin = "CloudKMS",
-    ///         MultiRegion = false,
-    ///         Tags = new[]
-    ///         {
-    ///             new Bytepluscc.Kms.Inputs.KeyTagArgs
-    ///             {
-    ///                 Key = "env",
-    ///                 Value = "test",
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ```sh
@@ -69,6 +35,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        /// </summary>
+        [Output("keyArchiveOperation")]
+        public Output<int> KeyArchiveOperation { get; private set; } = null!;
+
+        /// <summary>
+        /// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+        /// </summary>
+        [Output("keyEnableOperation")]
+        public Output<int> KeyEnableOperation { get; private set; } = null!;
+
+        /// <summary>
         /// 密钥唯一标识符，UUID形式。
         /// </summary>
         [Output("keyId")]
@@ -85,6 +63,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Output("keyName")]
         public Output<string> KeyName { get; private set; } = null!;
+
+        /// <summary>
+        /// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        /// </summary>
+        [Output("keyRotationOperation")]
+        public Output<int> KeyRotationOperation { get; private set; } = null!;
 
         /// <summary>
         /// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
@@ -233,10 +217,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        /// </summary>
+        [Input("keyArchiveOperation")]
+        public Input<int>? KeyArchiveOperation { get; set; }
+
+        /// <summary>
+        /// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+        /// </summary>
+        [Input("keyEnableOperation")]
+        public Input<int>? KeyEnableOperation { get; set; }
+
+        /// <summary>
         /// 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
         /// </summary>
         [Input("keyName", required: true)]
         public Input<string> KeyName { get; set; } = null!;
+
+        /// <summary>
+        /// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        /// </summary>
+        [Input("keyRotationOperation")]
+        public Input<int>? KeyRotationOperation { get; set; }
 
         /// <summary>
         /// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
@@ -280,12 +282,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         [Input("rotateInterval")]
         public Input<int>? RotateInterval { get; set; }
 
-        /// <summary>
-        /// 密钥轮转状态，取值：Enable，Disable。
-        /// </summary>
-        [Input("rotateState")]
-        public Input<string>? RotateState { get; set; }
-
         [Input("tags")]
         private InputList<Inputs.KeyTagArgs>? _tags;
         public InputList<Inputs.KeyTagArgs> Tags
@@ -315,6 +311,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        /// </summary>
+        [Input("keyArchiveOperation")]
+        public Input<int>? KeyArchiveOperation { get; set; }
+
+        /// <summary>
+        /// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+        /// </summary>
+        [Input("keyEnableOperation")]
+        public Input<int>? KeyEnableOperation { get; set; }
+
+        /// <summary>
         /// 密钥唯一标识符，UUID形式。
         /// </summary>
         [Input("keyId")]
@@ -331,6 +339,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("keyName")]
         public Input<string>? KeyName { get; set; }
+
+        /// <summary>
+        /// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        /// </summary>
+        [Input("keyRotationOperation")]
+        public Input<int>? KeyRotationOperation { get; set; }
 
         /// <summary>
         /// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。

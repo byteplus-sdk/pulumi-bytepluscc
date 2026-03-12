@@ -71,6 +71,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         public Output<string> TransitRouterRouteEntryNextHopId { get; private set; } = null!;
 
         /// <summary>
+        /// 路由条目下一跳网络实例ID。
+        /// </summary>
+        [Output("transitRouterRouteEntryNextHopResourceId")]
+        public Output<string> TransitRouterRouteEntryNextHopResourceId { get; private set; } = null!;
+
+        /// <summary>
+        /// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        /// </summary>
+        [Output("transitRouterRouteEntryNextHopResourceType")]
+        public Output<string> TransitRouterRouteEntryNextHopResourceType { get; private set; } = null!;
+
+        /// <summary>
         /// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
         /// </summary>
         [Output("transitRouterRouteEntryNextHopType")]
@@ -238,6 +250,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         /// </summary>
         [Input("transitRouterRouteEntryNextHopId")]
         public Input<string>? TransitRouterRouteEntryNextHopId { get; set; }
+
+        /// <summary>
+        /// 路由条目下一跳网络实例ID。
+        /// </summary>
+        [Input("transitRouterRouteEntryNextHopResourceId")]
+        public Input<string>? TransitRouterRouteEntryNextHopResourceId { get; set; }
+
+        /// <summary>
+        /// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        /// </summary>
+        [Input("transitRouterRouteEntryNextHopResourceType")]
+        public Input<string>? TransitRouterRouteEntryNextHopResourceType { get; set; }
 
         /// <summary>
         /// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。

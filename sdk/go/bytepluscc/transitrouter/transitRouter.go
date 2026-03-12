@@ -67,8 +67,12 @@ type TransitRouter struct {
 	DeletedTime pulumi.StringOutput `pulumi:"deletedTime"`
 	// 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
 	Description pulumi.StringOutput `pulumi:"description"`
+	// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+	GrantSourceType pulumi.StringOutput `pulumi:"grantSourceType"`
 	// 实例共享的状态。Accepted：已接受。Initial：待接受。
 	GrantStatus pulumi.StringOutput `pulumi:"grantStatus"`
+	// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+	MulticastEnabled pulumi.BoolOutput `pulumi:"multicastEnabled"`
 	// 中转路由器实例的欠费关停时间。
 	OverdueTime pulumi.StringOutput `pulumi:"overdueTime"`
 	// 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
@@ -125,8 +129,12 @@ type transitRouterState struct {
 	DeletedTime *string `pulumi:"deletedTime"`
 	// 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
 	Description *string `pulumi:"description"`
+	// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+	GrantSourceType *string `pulumi:"grantSourceType"`
 	// 实例共享的状态。Accepted：已接受。Initial：待接受。
 	GrantStatus *string `pulumi:"grantStatus"`
+	// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+	MulticastEnabled *bool `pulumi:"multicastEnabled"`
 	// 中转路由器实例的欠费关停时间。
 	OverdueTime *string `pulumi:"overdueTime"`
 	// 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
@@ -154,8 +162,12 @@ type TransitRouterState struct {
 	DeletedTime pulumi.StringPtrInput
 	// 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
 	Description pulumi.StringPtrInput
+	// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+	GrantSourceType pulumi.StringPtrInput
 	// 实例共享的状态。Accepted：已接受。Initial：待接受。
 	GrantStatus pulumi.StringPtrInput
+	// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+	MulticastEnabled pulumi.BoolPtrInput
 	// 中转路由器实例的欠费关停时间。
 	OverdueTime pulumi.StringPtrInput
 	// 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
@@ -180,6 +192,8 @@ type transitRouterArgs struct {
 	Asn *int `pulumi:"asn"`
 	// 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
 	Description *string `pulumi:"description"`
+	// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+	MulticastEnabled *bool `pulumi:"multicastEnabled"`
 	// 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
 	ProjectName *string            `pulumi:"projectName"`
 	Tags        []TransitRouterTag `pulumi:"tags"`
@@ -193,6 +207,8 @@ type TransitRouterArgs struct {
 	Asn pulumi.IntPtrInput
 	// 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
 	Description pulumi.StringPtrInput
+	// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+	MulticastEnabled pulumi.BoolPtrInput
 	// 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
 	ProjectName pulumi.StringPtrInput
 	Tags        TransitRouterTagArrayInput
@@ -316,9 +332,19 @@ func (o TransitRouterOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *TransitRouter) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+func (o TransitRouterOutput) GrantSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *TransitRouter) pulumi.StringOutput { return v.GrantSourceType }).(pulumi.StringOutput)
+}
+
 // 实例共享的状态。Accepted：已接受。Initial：待接受。
 func (o TransitRouterOutput) GrantStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *TransitRouter) pulumi.StringOutput { return v.GrantStatus }).(pulumi.StringOutput)
+}
+
+// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+func (o TransitRouterOutput) MulticastEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *TransitRouter) pulumi.BoolOutput { return v.MulticastEnabled }).(pulumi.BoolOutput)
 }
 
 // 中转路由器实例的欠费关停时间。
