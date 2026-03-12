@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.apig.outputs;
 
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamUpstreamSpecAiProvider;
+import com.byteplus.bytepluscc.apig.outputs.GetUpstreamUpstreamSpecDomain;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamUpstreamSpecEcsInstance;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamUpstreamSpecK8SService;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamUpstreamSpecNacosService;
@@ -20,6 +21,11 @@ public final class GetUpstreamUpstreamSpec {
      * 
      */
     private GetUpstreamUpstreamSpecAiProvider aiProvider;
+    /**
+     * @return 固定域名。
+     * 
+     */
+    private GetUpstreamUpstreamSpecDomain domain;
     /**
      * @return 云服务器。
      * 
@@ -48,6 +54,13 @@ public final class GetUpstreamUpstreamSpec {
      */
     public GetUpstreamUpstreamSpecAiProvider aiProvider() {
         return this.aiProvider;
+    }
+    /**
+     * @return 固定域名。
+     * 
+     */
+    public GetUpstreamUpstreamSpecDomain domain() {
+        return this.domain;
     }
     /**
      * @return 云服务器。
@@ -88,6 +101,7 @@ public final class GetUpstreamUpstreamSpec {
     @CustomType.Builder
     public static final class Builder {
         private GetUpstreamUpstreamSpecAiProvider aiProvider;
+        private GetUpstreamUpstreamSpecDomain domain;
         private List<GetUpstreamUpstreamSpecEcsInstance> ecsInstances;
         private GetUpstreamUpstreamSpecK8SService k8SService;
         private GetUpstreamUpstreamSpecNacosService nacosService;
@@ -96,6 +110,7 @@ public final class GetUpstreamUpstreamSpec {
         public Builder(GetUpstreamUpstreamSpec defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aiProvider = defaults.aiProvider;
+    	      this.domain = defaults.domain;
     	      this.ecsInstances = defaults.ecsInstances;
     	      this.k8SService = defaults.k8SService;
     	      this.nacosService = defaults.nacosService;
@@ -108,6 +123,14 @@ public final class GetUpstreamUpstreamSpec {
               throw new MissingRequiredPropertyException("GetUpstreamUpstreamSpec", "aiProvider");
             }
             this.aiProvider = aiProvider;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domain(GetUpstreamUpstreamSpecDomain domain) {
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetUpstreamUpstreamSpec", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
@@ -148,6 +171,7 @@ public final class GetUpstreamUpstreamSpec {
         public GetUpstreamUpstreamSpec build() {
             final var _resultValue = new GetUpstreamUpstreamSpec();
             _resultValue.aiProvider = aiProvider;
+            _resultValue.domain = domain;
             _resultValue.ecsInstances = ecsInstances;
             _resultValue.k8SService = k8SService;
             _resultValue.nacosService = nacosService;

@@ -42,6 +42,8 @@ type LoadBalancer struct {
 	EipBillingConfig LoadBalancerEipBillingConfigOutput `pulumi:"eipBillingConfig"`
 	// 全球加速器配置，用于提升跨地域访问速度。
 	GlobalAccelerator LoadBalancerGlobalAcceleratorOutput `pulumi:"globalAccelerator"`
+	// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+	Ipv6BandwidthPackageId pulumi.StringOutput `pulumi:"ipv6BandwidthPackageId"`
 	// IPv6公网IP的计費配置，仅适用于公网实例。
 	Ipv6EipBillingConfig LoadBalancerIpv6EipBillingConfigOutput `pulumi:"ipv6EipBillingConfig"`
 	// ALB实例计费类型，当前仅支持按量计费（取值为1）。
@@ -62,6 +64,8 @@ type LoadBalancer struct {
 	OverdueTime pulumi.StringOutput `pulumi:"overdueTime"`
 	// 实例所属项目名称。
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
+	// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+	ProxyProtocolEnabled pulumi.StringOutput `pulumi:"proxyProtocolEnabled"`
 	// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
 	Status pulumi.StringOutput        `pulumi:"status"`
 	Tags   LoadBalancerTagArrayOutput `pulumi:"tags"`
@@ -136,6 +140,8 @@ type loadBalancerState struct {
 	EipBillingConfig *LoadBalancerEipBillingConfig `pulumi:"eipBillingConfig"`
 	// 全球加速器配置，用于提升跨地域访问速度。
 	GlobalAccelerator *LoadBalancerGlobalAccelerator `pulumi:"globalAccelerator"`
+	// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+	Ipv6BandwidthPackageId *string `pulumi:"ipv6BandwidthPackageId"`
 	// IPv6公网IP的计費配置，仅适用于公网实例。
 	Ipv6EipBillingConfig *LoadBalancerIpv6EipBillingConfig `pulumi:"ipv6EipBillingConfig"`
 	// ALB实例计费类型，当前仅支持按量计费（取值为1）。
@@ -156,6 +162,8 @@ type loadBalancerState struct {
 	OverdueTime *string `pulumi:"overdueTime"`
 	// 实例所属项目名称。
 	ProjectName *string `pulumi:"projectName"`
+	// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+	ProxyProtocolEnabled *string `pulumi:"proxyProtocolEnabled"`
 	// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
 	Status *string           `pulumi:"status"`
 	Tags   []LoadBalancerTag `pulumi:"tags"`
@@ -195,6 +203,8 @@ type LoadBalancerState struct {
 	EipBillingConfig LoadBalancerEipBillingConfigPtrInput
 	// 全球加速器配置，用于提升跨地域访问速度。
 	GlobalAccelerator LoadBalancerGlobalAcceleratorPtrInput
+	// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+	Ipv6BandwidthPackageId pulumi.StringPtrInput
 	// IPv6公网IP的计費配置，仅适用于公网实例。
 	Ipv6EipBillingConfig LoadBalancerIpv6EipBillingConfigPtrInput
 	// ALB实例计费类型，当前仅支持按量计费（取值为1）。
@@ -215,6 +225,8 @@ type LoadBalancerState struct {
 	OverdueTime pulumi.StringPtrInput
 	// 实例所属项目名称。
 	ProjectName pulumi.StringPtrInput
+	// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+	ProxyProtocolEnabled pulumi.StringPtrInput
 	// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
 	Status pulumi.StringPtrInput
 	Tags   LoadBalancerTagArrayInput
@@ -250,6 +262,8 @@ type loadBalancerArgs struct {
 	EipBillingConfig *LoadBalancerEipBillingConfig `pulumi:"eipBillingConfig"`
 	// 全球加速器配置，用于提升跨地域访问速度。
 	GlobalAccelerator *LoadBalancerGlobalAccelerator `pulumi:"globalAccelerator"`
+	// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+	Ipv6BandwidthPackageId *string `pulumi:"ipv6BandwidthPackageId"`
 	// IPv6公网IP的计費配置，仅适用于公网实例。
 	Ipv6EipBillingConfig *LoadBalancerIpv6EipBillingConfig `pulumi:"ipv6EipBillingConfig"`
 	// ALB实例计费类型，当前仅支持按量计费（取值为1）。
@@ -263,8 +277,10 @@ type loadBalancerArgs struct {
 	// 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
 	ModificationProtectionStatus *string `pulumi:"modificationProtectionStatus"`
 	// 实例所属项目名称。
-	ProjectName *string           `pulumi:"projectName"`
-	Tags        []LoadBalancerTag `pulumi:"tags"`
+	ProjectName *string `pulumi:"projectName"`
+	// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+	ProxyProtocolEnabled *string           `pulumi:"proxyProtocolEnabled"`
+	Tags                 []LoadBalancerTag `pulumi:"tags"`
 	// ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
 	Type string `pulumi:"type"`
 	// 负载均衡实例所属的私有网络（VPC）的ID。
@@ -292,6 +308,8 @@ type LoadBalancerArgs struct {
 	EipBillingConfig LoadBalancerEipBillingConfigPtrInput
 	// 全球加速器配置，用于提升跨地域访问速度。
 	GlobalAccelerator LoadBalancerGlobalAcceleratorPtrInput
+	// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+	Ipv6BandwidthPackageId pulumi.StringPtrInput
 	// IPv6公网IP的计費配置，仅适用于公网实例。
 	Ipv6EipBillingConfig LoadBalancerIpv6EipBillingConfigPtrInput
 	// ALB实例计费类型，当前仅支持按量计费（取值为1）。
@@ -306,7 +324,9 @@ type LoadBalancerArgs struct {
 	ModificationProtectionStatus pulumi.StringPtrInput
 	// 实例所属项目名称。
 	ProjectName pulumi.StringPtrInput
-	Tags        LoadBalancerTagArrayInput
+	// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+	ProxyProtocolEnabled pulumi.StringPtrInput
+	Tags                 LoadBalancerTagArrayInput
 	// ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
 	Type pulumi.StringInput
 	// 负载均衡实例所属的私有网络（VPC）的ID。
@@ -457,6 +477,11 @@ func (o LoadBalancerOutput) GlobalAccelerator() LoadBalancerGlobalAcceleratorOut
 	return o.ApplyT(func(v *LoadBalancer) LoadBalancerGlobalAcceleratorOutput { return v.GlobalAccelerator }).(LoadBalancerGlobalAcceleratorOutput)
 }
 
+// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+func (o LoadBalancerOutput) Ipv6BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.Ipv6BandwidthPackageId }).(pulumi.StringOutput)
+}
+
 // IPv6公网IP的计費配置，仅适用于公网实例。
 func (o LoadBalancerOutput) Ipv6EipBillingConfig() LoadBalancerIpv6EipBillingConfigOutput {
 	return o.ApplyT(func(v *LoadBalancer) LoadBalancerIpv6EipBillingConfigOutput { return v.Ipv6EipBillingConfig }).(LoadBalancerIpv6EipBillingConfigOutput)
@@ -505,6 +530,11 @@ func (o LoadBalancerOutput) OverdueTime() pulumi.StringOutput {
 // 实例所属项目名称。
 func (o LoadBalancerOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+func (o LoadBalancerOutput) ProxyProtocolEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.ProxyProtocolEnabled }).(pulumi.StringOutput)
 }
 
 // ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。

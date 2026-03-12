@@ -43,6 +43,14 @@ export interface GetKeyResult {
      */
     readonly id: string;
     /**
+     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     */
+    readonly keyArchiveOperation: number;
+    /**
+     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     */
+    readonly keyEnableOperation: number;
+    /**
      * 密钥唯一标识符，UUID形式。
      */
     readonly keyId: string;
@@ -54,6 +62,10 @@ export interface GetKeyResult {
      * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
      */
     readonly keyName: string;
+    /**
+     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     */
+    readonly keyRotationOperation: number;
     /**
      * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
      */

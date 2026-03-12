@@ -48,6 +48,10 @@ type LookupTransitRouterRouteEntryResult struct {
 	TransitRouterRouteEntryName string `pulumi:"transitRouterRouteEntryName"`
 	// 路由条目的下一跳ID。
 	TransitRouterRouteEntryNextHopId string `pulumi:"transitRouterRouteEntryNextHopId"`
+	// 路由条目下一跳网络实例ID。
+	TransitRouterRouteEntryNextHopResourceId string `pulumi:"transitRouterRouteEntryNextHopResourceId"`
+	// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	TransitRouterRouteEntryNextHopResourceType string `pulumi:"transitRouterRouteEntryNextHopResourceType"`
 	// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
 	TransitRouterRouteEntryNextHopType string `pulumi:"transitRouterRouteEntryNextHopType"`
 	// 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
@@ -135,6 +139,18 @@ func (o LookupTransitRouterRouteEntryResultOutput) TransitRouterRouteEntryName()
 // 路由条目的下一跳ID。
 func (o LookupTransitRouterRouteEntryResultOutput) TransitRouterRouteEntryNextHopId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTransitRouterRouteEntryResult) string { return v.TransitRouterRouteEntryNextHopId }).(pulumi.StringOutput)
+}
+
+// 路由条目下一跳网络实例ID。
+func (o LookupTransitRouterRouteEntryResultOutput) TransitRouterRouteEntryNextHopResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTransitRouterRouteEntryResult) string { return v.TransitRouterRouteEntryNextHopResourceId }).(pulumi.StringOutput)
+}
+
+// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+func (o LookupTransitRouterRouteEntryResultOutput) TransitRouterRouteEntryNextHopResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTransitRouterRouteEntryResult) string {
+		return v.TransitRouterRouteEntryNextHopResourceType
+	}).(pulumi.StringOutput)
 }
 
 // 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。

@@ -556,6 +556,10 @@ class LoadBalancerEipBillingConfig(dict):
         suggest = None
         if key == "billingType":
             suggest = "billing_type"
+        elif key == "securityProtectionInstanceId":
+            suggest = "security_protection_instance_id"
+        elif key == "securityProtectionTypes":
+            suggest = "security_protection_types"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in LoadBalancerEipBillingConfig. Access the value via the '{suggest}' property getter instead.")
@@ -571,11 +575,15 @@ class LoadBalancerEipBillingConfig(dict):
     def __init__(__self__, *,
                  bandwidth: Optional[builtins.int] = None,
                  billing_type: Optional[builtins.int] = None,
-                 isp: Optional[builtins.str] = None):
+                 isp: Optional[builtins.str] = None,
+                 security_protection_instance_id: Optional[builtins.int] = None,
+                 security_protection_types: Optional[builtins.str] = None):
         """
         :param builtins.int bandwidth: EIP的带宽峰值，单位为Mbps。
         :param builtins.int billing_type: EIP的计费方式，2为按带宽计费，3为按流量计费。
         :param builtins.str isp: 公网IP的线路类型，BGP表示多线。
+        :param builtins.int security_protection_instance_id: 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        :param builtins.str security_protection_types: 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -583,6 +591,10 @@ class LoadBalancerEipBillingConfig(dict):
             pulumi.set(__self__, "billing_type", billing_type)
         if isp is not None:
             pulumi.set(__self__, "isp", isp)
+        if security_protection_instance_id is not None:
+            pulumi.set(__self__, "security_protection_instance_id", security_protection_instance_id)
+        if security_protection_types is not None:
+            pulumi.set(__self__, "security_protection_types", security_protection_types)
 
     @property
     @pulumi.getter
@@ -607,6 +619,22 @@ class LoadBalancerEipBillingConfig(dict):
         公网IP的线路类型，BGP表示多线。
         """
         return pulumi.get(self, "isp")
+
+    @property
+    @pulumi.getter(name="securityProtectionInstanceId")
+    def security_protection_instance_id(self) -> Optional[builtins.int]:
+        """
+        创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        """
+        return pulumi.get(self, "security_protection_instance_id")
+
+    @property
+    @pulumi.getter(name="securityProtectionTypes")
+    def security_protection_types(self) -> Optional[builtins.str]:
+        """
+        创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        """
+        return pulumi.get(self, "security_protection_types")
 
 
 @pulumi.output_type
@@ -2568,15 +2596,21 @@ class GetLoadBalancerEipBillingConfigResult(dict):
     def __init__(__self__, *,
                  bandwidth: builtins.int,
                  billing_type: builtins.int,
-                 isp: builtins.str):
+                 isp: builtins.str,
+                 security_protection_instance_id: builtins.int,
+                 security_protection_types: builtins.str):
         """
         :param builtins.int bandwidth: EIP的带宽峰值，单位为Mbps。
         :param builtins.int billing_type: EIP的计费方式，2为按带宽计费，3为按流量计费。
         :param builtins.str isp: 公网IP的线路类型，BGP表示多线。
+        :param builtins.int security_protection_instance_id: 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        :param builtins.str security_protection_types: 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
         pulumi.set(__self__, "isp", isp)
+        pulumi.set(__self__, "security_protection_instance_id", security_protection_instance_id)
+        pulumi.set(__self__, "security_protection_types", security_protection_types)
 
     @property
     @pulumi.getter
@@ -2601,6 +2635,22 @@ class GetLoadBalancerEipBillingConfigResult(dict):
         公网IP的线路类型，BGP表示多线。
         """
         return pulumi.get(self, "isp")
+
+    @property
+    @pulumi.getter(name="securityProtectionInstanceId")
+    def security_protection_instance_id(self) -> builtins.int:
+        """
+        创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        """
+        return pulumi.get(self, "security_protection_instance_id")
+
+    @property
+    @pulumi.getter(name="securityProtectionTypes")
+    def security_protection_types(self) -> builtins.str:
+        """
+        创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        """
+        return pulumi.get(self, "security_protection_types")
 
 
 @pulumi.output_type

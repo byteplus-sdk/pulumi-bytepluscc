@@ -178,6 +178,20 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
         return this.globalAccelerator;
     }
     /**
+     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * 
+     */
+    @Export(name="ipv6BandwidthPackageId", refs={String.class}, tree="[0]")
+    private Output<String> ipv6BandwidthPackageId;
+
+    /**
+     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * 
+     */
+    public Output<String> ipv6BandwidthPackageId() {
+        return this.ipv6BandwidthPackageId;
+    }
+    /**
      * IPv6公网IP的计費配置，仅适用于公网实例。
      * 
      */
@@ -316,6 +330,20 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      */
     public Output<String> projectName() {
         return this.projectName;
+    }
+    /**
+     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * 
+     */
+    @Export(name="proxyProtocolEnabled", refs={String.class}, tree="[0]")
+    private Output<String> proxyProtocolEnabled;
+
+    /**
+     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * 
+     */
+    public Output<String> proxyProtocolEnabled() {
+        return this.proxyProtocolEnabled;
     }
     /**
      * ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。

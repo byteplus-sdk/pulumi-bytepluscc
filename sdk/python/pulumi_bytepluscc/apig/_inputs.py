@@ -48,6 +48,8 @@ __all__ = [
     'GatewayServiceDomainArgsDict',
     'GatewayServiceDomainSpecArgs',
     'GatewayServiceDomainSpecArgsDict',
+    'GatewayServiceServiceNetworkSpecArgs',
+    'GatewayServiceServiceNetworkSpecArgsDict',
     'GatewayTraceSpecArgs',
     'GatewayTraceSpecArgsDict',
     'GatewayTraceSpecApmTraceSpecArgs',
@@ -58,6 +60,8 @@ __all__ = [
     'UpstreamBackendTargetArgsDict',
     'UpstreamCircuitBreakingSettingsArgs',
     'UpstreamCircuitBreakingSettingsArgsDict',
+    'UpstreamConnectionPoolSettingsArgs',
+    'UpstreamConnectionPoolSettingsArgsDict',
     'UpstreamLoadBalancerSettingsArgs',
     'UpstreamLoadBalancerSettingsArgsDict',
     'UpstreamLoadBalancerSettingsConsistentHashLbArgs',
@@ -84,6 +88,10 @@ __all__ = [
     'UpstreamUpstreamSpecAiProviderArgsDict',
     'UpstreamUpstreamSpecAiProviderCustomModelServiceArgs',
     'UpstreamUpstreamSpecAiProviderCustomModelServiceArgsDict',
+    'UpstreamUpstreamSpecDomainArgs',
+    'UpstreamUpstreamSpecDomainArgsDict',
+    'UpstreamUpstreamSpecDomainDomainListArgs',
+    'UpstreamUpstreamSpecDomainDomainListArgsDict',
     'UpstreamUpstreamSpecEcsInstanceArgs',
     'UpstreamUpstreamSpecEcsInstanceArgsDict',
     'UpstreamUpstreamSpecK8SServiceArgs',
@@ -928,54 +936,14 @@ class GatewayServiceAuthSpecArgs:
 
 if not MYPY:
     class GatewayServiceCustomDomainArgsDict(TypedDict):
-        domain: NotRequired[pulumi.Input[builtins.str]]
-        """
-        自定义域名。
-        """
-        domain_id: NotRequired[pulumi.Input[builtins.str]]
-        """
-        自定义域名ID。
-        """
+        pass
 elif False:
     GatewayServiceCustomDomainArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GatewayServiceCustomDomainArgs:
-    def __init__(__self__, *,
-                 domain: Optional[pulumi.Input[builtins.str]] = None,
-                 domain_id: Optional[pulumi.Input[builtins.str]] = None):
-        """
-        :param pulumi.Input[builtins.str] domain: 自定义域名。
-        :param pulumi.Input[builtins.str] domain_id: 自定义域名ID。
-        """
-        if domain is not None:
-            pulumi.set(__self__, "domain", domain)
-        if domain_id is not None:
-            pulumi.set(__self__, "domain_id", domain_id)
-
-    @property
-    @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        自定义域名。
-        """
-        return pulumi.get(self, "domain")
-
-    @domain.setter
-    def domain(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "domain", value)
-
-    @property
-    @pulumi.getter(name="domainId")
-    def domain_id(self) -> Optional[pulumi.Input[builtins.str]]:
-        """
-        自定义域名ID。
-        """
-        return pulumi.get(self, "domain_id")
-
-    @domain_id.setter
-    def domain_id(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "domain_id", value)
+    def __init__(__self__):
+        pass
 
 
 if not MYPY:
@@ -1060,6 +1028,78 @@ class GatewayServiceDomainSpecArgs:
     @enable_public_resolution.setter
     def enable_public_resolution(self, value: Optional[pulumi.Input[builtins.bool]]):
         pulumi.set(self, "enable_public_resolution", value)
+
+
+if not MYPY:
+    class GatewayServiceServiceNetworkSpecArgsDict(TypedDict):
+        enable_private_network: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        开启私网。
+        """
+        enable_public_network: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        开启公网。
+        """
+        private_network_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        私网域名解析的目标IP。
+        """
+elif False:
+    GatewayServiceServiceNetworkSpecArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayServiceServiceNetworkSpecArgs:
+    def __init__(__self__, *,
+                 enable_private_network: Optional[pulumi.Input[builtins.bool]] = None,
+                 enable_public_network: Optional[pulumi.Input[builtins.bool]] = None,
+                 private_network_ips: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable_private_network: 开启私网。
+        :param pulumi.Input[builtins.bool] enable_public_network: 开启公网。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] private_network_ips: 私网域名解析的目标IP。
+        """
+        if enable_private_network is not None:
+            pulumi.set(__self__, "enable_private_network", enable_private_network)
+        if enable_public_network is not None:
+            pulumi.set(__self__, "enable_public_network", enable_public_network)
+        if private_network_ips is not None:
+            pulumi.set(__self__, "private_network_ips", private_network_ips)
+
+    @property
+    @pulumi.getter(name="enablePrivateNetwork")
+    def enable_private_network(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        开启私网。
+        """
+        return pulumi.get(self, "enable_private_network")
+
+    @enable_private_network.setter
+    def enable_private_network(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_private_network", value)
+
+    @property
+    @pulumi.getter(name="enablePublicNetwork")
+    def enable_public_network(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        开启公网。
+        """
+        return pulumi.get(self, "enable_public_network")
+
+    @enable_public_network.setter
+    def enable_public_network(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable_public_network", value)
+
+    @property
+    @pulumi.getter(name="privateNetworkIps")
+    def private_network_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        私网域名解析的目标IP。
+        """
+        return pulumi.get(self, "private_network_ips")
+
+    @private_network_ips.setter
+    def private_network_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "private_network_ips", value)
 
 
 if not MYPY:
@@ -1483,6 +1523,98 @@ class UpstreamCircuitBreakingSettingsArgs:
 
 
 if not MYPY:
+    class UpstreamConnectionPoolSettingsArgsDict(TypedDict):
+        enable: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        开启。
+        """
+        http1_max_pending_requests: NotRequired[pulumi.Input[builtins.int]]
+        """
+        HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        """
+        idle_timeout: NotRequired[pulumi.Input[builtins.int]]
+        """
+        空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        """
+        max_connections: NotRequired[pulumi.Input[builtins.int]]
+        """
+        TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        """
+elif False:
+    UpstreamConnectionPoolSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class UpstreamConnectionPoolSettingsArgs:
+    def __init__(__self__, *,
+                 enable: Optional[pulumi.Input[builtins.bool]] = None,
+                 http1_max_pending_requests: Optional[pulumi.Input[builtins.int]] = None,
+                 idle_timeout: Optional[pulumi.Input[builtins.int]] = None,
+                 max_connections: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.bool] enable: 开启。
+        :param pulumi.Input[builtins.int] http1_max_pending_requests: HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        :param pulumi.Input[builtins.int] idle_timeout: 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        :param pulumi.Input[builtins.int] max_connections: TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if http1_max_pending_requests is not None:
+            pulumi.set(__self__, "http1_max_pending_requests", http1_max_pending_requests)
+        if idle_timeout is not None:
+            pulumi.set(__self__, "idle_timeout", idle_timeout)
+        if max_connections is not None:
+            pulumi.set(__self__, "max_connections", max_connections)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        开启。
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "enable", value)
+
+    @property
+    @pulumi.getter(name="http1MaxPendingRequests")
+    def http1_max_pending_requests(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "http1_max_pending_requests")
+
+    @http1_max_pending_requests.setter
+    def http1_max_pending_requests(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "http1_max_pending_requests", value)
+
+    @property
+    @pulumi.getter(name="idleTimeout")
+    def idle_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "idle_timeout")
+
+    @idle_timeout.setter
+    def idle_timeout(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "idle_timeout", value)
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "max_connections")
+
+    @max_connections.setter
+    def max_connections(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "max_connections", value)
+
+
+if not MYPY:
     class UpstreamLoadBalancerSettingsArgsDict(TypedDict):
         consistent_hash_lb: NotRequired[pulumi.Input['UpstreamLoadBalancerSettingsConsistentHashLbArgsDict']]
         """
@@ -1576,6 +1708,10 @@ class UpstreamLoadBalancerSettingsArgs:
 
 if not MYPY:
     class UpstreamLoadBalancerSettingsConsistentHashLbArgsDict(TypedDict):
+        hash_balance_factor: NotRequired[pulumi.Input[builtins.int]]
+        """
+        过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+        """
         hash_key: NotRequired[pulumi.Input[builtins.str]]
         """
         一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
@@ -1602,18 +1738,22 @@ elif False:
 @pulumi.input_type
 class UpstreamLoadBalancerSettingsConsistentHashLbArgs:
     def __init__(__self__, *,
+                 hash_balance_factor: Optional[pulumi.Input[builtins.int]] = None,
                  hash_key: Optional[pulumi.Input[builtins.str]] = None,
                  http_cookie: Optional[pulumi.Input['UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs']] = None,
                  http_header_name: Optional[pulumi.Input[builtins.str]] = None,
                  http_query_parameter_name: Optional[pulumi.Input[builtins.str]] = None,
                  use_source_ip: Optional[pulumi.Input[builtins.str]] = None):
         """
+        :param pulumi.Input[builtins.int] hash_balance_factor: 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
         :param pulumi.Input[builtins.str] hash_key: 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
         :param pulumi.Input['UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs'] http_cookie: Cookie。
         :param pulumi.Input[builtins.str] http_header_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
         :param pulumi.Input[builtins.str] http_query_parameter_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
         :param pulumi.Input[builtins.str] use_source_ip: 源IP地址。
         """
+        if hash_balance_factor is not None:
+            pulumi.set(__self__, "hash_balance_factor", hash_balance_factor)
         if hash_key is not None:
             pulumi.set(__self__, "hash_key", hash_key)
         if http_cookie is not None:
@@ -1624,6 +1764,18 @@ class UpstreamLoadBalancerSettingsConsistentHashLbArgs:
             pulumi.set(__self__, "http_query_parameter_name", http_query_parameter_name)
         if use_source_ip is not None:
             pulumi.set(__self__, "use_source_ip", use_source_ip)
+
+    @property
+    @pulumi.getter(name="hashBalanceFactor")
+    def hash_balance_factor(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+        """
+        return pulumi.get(self, "hash_balance_factor")
+
+    @hash_balance_factor.setter
+    def hash_balance_factor(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "hash_balance_factor", value)
 
     @property
     @pulumi.getter(name="hashKey")
@@ -2228,6 +2380,10 @@ if not MYPY:
         """
         AI模型代理。
         """
+        domain: NotRequired[pulumi.Input['UpstreamUpstreamSpecDomainArgsDict']]
+        """
+        固定域名。
+        """
         ecs_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['UpstreamUpstreamSpecEcsInstanceArgsDict']]]]
         k8_s_service: NotRequired[pulumi.Input['UpstreamUpstreamSpecK8SServiceArgsDict']]
         """
@@ -2248,18 +2404,22 @@ elif False:
 class UpstreamUpstreamSpecArgs:
     def __init__(__self__, *,
                  ai_provider: Optional[pulumi.Input['UpstreamUpstreamSpecAiProviderArgs']] = None,
+                 domain: Optional[pulumi.Input['UpstreamUpstreamSpecDomainArgs']] = None,
                  ecs_instances: Optional[pulumi.Input[Sequence[pulumi.Input['UpstreamUpstreamSpecEcsInstanceArgs']]]] = None,
                  k8_s_service: Optional[pulumi.Input['UpstreamUpstreamSpecK8SServiceArgs']] = None,
                  nacos_service: Optional[pulumi.Input['UpstreamUpstreamSpecNacosServiceArgs']] = None,
                  ve_faas: Optional[pulumi.Input['UpstreamUpstreamSpecVeFaasArgs']] = None):
         """
         :param pulumi.Input['UpstreamUpstreamSpecAiProviderArgs'] ai_provider: AI模型代理。
+        :param pulumi.Input['UpstreamUpstreamSpecDomainArgs'] domain: 固定域名。
         :param pulumi.Input['UpstreamUpstreamSpecK8SServiceArgs'] k8_s_service: 容器服务。
         :param pulumi.Input['UpstreamUpstreamSpecNacosServiceArgs'] nacos_service: 注册中心。
         :param pulumi.Input['UpstreamUpstreamSpecVeFaasArgs'] ve_faas: 函数服务。
         """
         if ai_provider is not None:
             pulumi.set(__self__, "ai_provider", ai_provider)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
         if ecs_instances is not None:
             pulumi.set(__self__, "ecs_instances", ecs_instances)
         if k8_s_service is not None:
@@ -2280,6 +2440,18 @@ class UpstreamUpstreamSpecArgs:
     @ai_provider.setter
     def ai_provider(self, value: Optional[pulumi.Input['UpstreamUpstreamSpecAiProviderArgs']]):
         pulumi.set(self, "ai_provider", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input['UpstreamUpstreamSpecDomainArgs']]:
+        """
+        固定域名。
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input['UpstreamUpstreamSpecDomainArgs']]):
+        pulumi.set(self, "domain", value)
 
     @property
     @pulumi.getter(name="ecsInstances")
@@ -2483,6 +2655,81 @@ class UpstreamUpstreamSpecAiProviderCustomModelServiceArgs:
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
         端口。
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "port", value)
+
+
+if not MYPY:
+    class UpstreamUpstreamSpecDomainArgsDict(TypedDict):
+        domain_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UpstreamUpstreamSpecDomainDomainListArgsDict']]]]
+elif False:
+    UpstreamUpstreamSpecDomainArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class UpstreamUpstreamSpecDomainArgs:
+    def __init__(__self__, *,
+                 domain_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UpstreamUpstreamSpecDomainDomainListArgs']]]] = None):
+        if domain_lists is not None:
+            pulumi.set(__self__, "domain_lists", domain_lists)
+
+    @property
+    @pulumi.getter(name="domainLists")
+    def domain_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UpstreamUpstreamSpecDomainDomainListArgs']]]]:
+        return pulumi.get(self, "domain_lists")
+
+    @domain_lists.setter
+    def domain_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UpstreamUpstreamSpecDomainDomainListArgs']]]]):
+        pulumi.set(self, "domain_lists", value)
+
+
+if not MYPY:
+    class UpstreamUpstreamSpecDomainDomainListArgsDict(TypedDict):
+        domain: NotRequired[pulumi.Input[builtins.str]]
+        """
+        域名。
+        """
+        port: NotRequired[pulumi.Input[builtins.int]]
+        """
+        端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        """
+elif False:
+    UpstreamUpstreamSpecDomainDomainListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class UpstreamUpstreamSpecDomainDomainListArgs:
+    def __init__(__self__, *,
+                 domain: Optional[pulumi.Input[builtins.str]] = None,
+                 port: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] domain: 域名。
+        :param pulumi.Input[builtins.int] port: 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        域名。
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
         """
         return pulumi.get(self, "port")
 

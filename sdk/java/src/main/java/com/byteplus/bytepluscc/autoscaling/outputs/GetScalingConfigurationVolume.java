@@ -18,7 +18,22 @@ public final class GetScalingConfigurationVolume {
      */
     private Boolean deleteWithInstance;
     /**
-     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+     * @return 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+     * 
+     */
+    private Integer extraPerformanceIops;
+    /**
+     * @return 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+     * 
+     */
+    private Integer extraPerformanceThroughputMb;
+    /**
+     * @return 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+     * 
+     */
+    private String extraPerformanceTypeId;
+    /**
+     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
      * 
      */
     private Integer size;
@@ -37,7 +52,28 @@ public final class GetScalingConfigurationVolume {
         return this.deleteWithInstance;
     }
     /**
-     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+     * @return 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+     * 
+     */
+    public Integer extraPerformanceIops() {
+        return this.extraPerformanceIops;
+    }
+    /**
+     * @return 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+     * 
+     */
+    public Integer extraPerformanceThroughputMb() {
+        return this.extraPerformanceThroughputMb;
+    }
+    /**
+     * @return 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+     * 
+     */
+    public String extraPerformanceTypeId() {
+        return this.extraPerformanceTypeId;
+    }
+    /**
+     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
      * 
      */
     public Integer size() {
@@ -61,12 +97,18 @@ public final class GetScalingConfigurationVolume {
     @CustomType.Builder
     public static final class Builder {
         private Boolean deleteWithInstance;
+        private Integer extraPerformanceIops;
+        private Integer extraPerformanceThroughputMb;
+        private String extraPerformanceTypeId;
         private Integer size;
         private String volumeType;
         public Builder() {}
         public Builder(GetScalingConfigurationVolume defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deleteWithInstance = defaults.deleteWithInstance;
+    	      this.extraPerformanceIops = defaults.extraPerformanceIops;
+    	      this.extraPerformanceThroughputMb = defaults.extraPerformanceThroughputMb;
+    	      this.extraPerformanceTypeId = defaults.extraPerformanceTypeId;
     	      this.size = defaults.size;
     	      this.volumeType = defaults.volumeType;
         }
@@ -77,6 +119,30 @@ public final class GetScalingConfigurationVolume {
               throw new MissingRequiredPropertyException("GetScalingConfigurationVolume", "deleteWithInstance");
             }
             this.deleteWithInstance = deleteWithInstance;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder extraPerformanceIops(Integer extraPerformanceIops) {
+            if (extraPerformanceIops == null) {
+              throw new MissingRequiredPropertyException("GetScalingConfigurationVolume", "extraPerformanceIops");
+            }
+            this.extraPerformanceIops = extraPerformanceIops;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder extraPerformanceThroughputMb(Integer extraPerformanceThroughputMb) {
+            if (extraPerformanceThroughputMb == null) {
+              throw new MissingRequiredPropertyException("GetScalingConfigurationVolume", "extraPerformanceThroughputMb");
+            }
+            this.extraPerformanceThroughputMb = extraPerformanceThroughputMb;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder extraPerformanceTypeId(String extraPerformanceTypeId) {
+            if (extraPerformanceTypeId == null) {
+              throw new MissingRequiredPropertyException("GetScalingConfigurationVolume", "extraPerformanceTypeId");
+            }
+            this.extraPerformanceTypeId = extraPerformanceTypeId;
             return this;
         }
         @CustomType.Setter
@@ -98,6 +164,9 @@ public final class GetScalingConfigurationVolume {
         public GetScalingConfigurationVolume build() {
             final var _resultValue = new GetScalingConfigurationVolume();
             _resultValue.deleteWithInstance = deleteWithInstance;
+            _resultValue.extraPerformanceIops = extraPerformanceIops;
+            _resultValue.extraPerformanceThroughputMb = extraPerformanceThroughputMb;
+            _resultValue.extraPerformanceTypeId = extraPerformanceTypeId;
             _resultValue.size = size;
             _resultValue.volumeType = volumeType;
             return _resultValue;

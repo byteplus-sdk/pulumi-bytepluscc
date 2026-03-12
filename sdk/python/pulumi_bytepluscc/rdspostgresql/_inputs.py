@@ -20,6 +20,10 @@ __all__ = [
     'AllowListAssociatedInstanceArgsDict',
     'AllowListSecurityGroupBindInfoArgs',
     'AllowListSecurityGroupBindInfoArgsDict',
+    'DbEndpointAddressArgs',
+    'DbEndpointAddressArgsDict',
+    'DbEndpointReadOnlyNodeWeightArgs',
+    'DbEndpointReadOnlyNodeWeightArgsDict',
 ]
 
 MYPY = False
@@ -186,5 +190,149 @@ class AllowListSecurityGroupBindInfoArgs:
     @security_group_name.setter
     def security_group_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "security_group_name", value)
+
+
+if not MYPY:
+    class DbEndpointAddressArgsDict(TypedDict):
+        dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        """
+        domain_prefix: NotRequired[pulumi.Input[builtins.str]]
+        """
+        新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        """
+        port: NotRequired[pulumi.Input[builtins.str]]
+        """
+        端口号。
+        """
+elif False:
+    DbEndpointAddressArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbEndpointAddressArgs:
+    def __init__(__self__, *,
+                 dns_visibility: Optional[pulumi.Input[builtins.bool]] = None,
+                 domain_prefix: Optional[pulumi.Input[builtins.str]] = None,
+                 port: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] dns_visibility: 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        :param pulumi.Input[builtins.str] domain_prefix: 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        :param pulumi.Input[builtins.str] port: 端口号。
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain_prefix is not None:
+            pulumi.set(__self__, "domain_prefix", domain_prefix)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @dns_visibility.setter
+    def dns_visibility(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "dns_visibility", value)
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @domain_prefix.setter
+    def domain_prefix(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain_prefix", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        端口号。
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "port", value)
+
+
+if not MYPY:
+    class DbEndpointReadOnlyNodeWeightArgsDict(TypedDict):
+        node_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        只读节点需要传入 NodeId。
+        """
+        node_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        """
+        weight: NotRequired[pulumi.Input[builtins.int]]
+        """
+        节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        """
+elif False:
+    DbEndpointReadOnlyNodeWeightArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbEndpointReadOnlyNodeWeightArgs:
+    def __init__(__self__, *,
+                 node_id: Optional[pulumi.Input[builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None,
+                 weight: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.str] node_id: 只读节点需要传入 NodeId。
+        :param pulumi.Input[builtins.str] node_type: 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        :param pulumi.Input[builtins.int] weight: 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        """
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        只读节点需要传入 NodeId。
+        """
+        return pulumi.get(self, "node_id")
+
+    @node_id.setter
+    def node_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_id", value)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        """
+        return pulumi.get(self, "weight")
+
+    @weight.setter
+    def weight(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "weight", value)
 
 

@@ -37,6 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Inputs
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
+        /// <summary>
+        /// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+        /// </summary>
+        [Input("releaseWithInstance")]
+        public Input<bool>? ReleaseWithInstance { get; set; }
+
         public ScalingConfigurationEipGetArgs()
         {
         }

@@ -9,29 +9,6 @@ import * as utilities from "../utilities";
 /**
  * 密钥管理服务（Key Management Service）是火山引擎上一站式的密钥管理和数据加密服务平台。提供简单易用的加密接口，KMS 帮助用户轻松管理密钥、保护云上核心数据的安全。同时极大降低用户自行部署密码基础设施的采购、研发成本。帮助业务轻松满足监管和合规需求。
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
- *
- * const kMSKeyDemo = new bytepluscc.kms.Key("KMSKeyDemo", {
- *     keyringName: "KMSKeyDemo",
- *     keyName: "KMSKeyDemoKeyName",
- *     keySpec: "SYMMETRIC_256",
- *     description: "description KMSKeyDemo",
- *     keyUsage: "ENCRYPT_DECRYPT",
- *     protectionLevel: "HSM",
- *     rotateState: "Enable",
- *     origin: "CloudKMS",
- *     multiRegion: false,
- *     tags: [{
- *         key: "env",
- *         value: "test",
- *     }],
- * });
- * ```
- *
  * ## Import
  *
  * ```sh
@@ -75,6 +52,14 @@ export class Key extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     */
+    public readonly keyArchiveOperation!: pulumi.Output<number>;
+    /**
+     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     */
+    public readonly keyEnableOperation!: pulumi.Output<number>;
+    /**
      * 密钥唯一标识符，UUID形式。
      */
     public /*out*/ readonly keyId!: pulumi.Output<string>;
@@ -86,6 +71,10 @@ export class Key extends pulumi.CustomResource {
      * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
      */
     public readonly keyName!: pulumi.Output<string>;
+    /**
+     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     */
+    public readonly keyRotationOperation!: pulumi.Output<number>;
     /**
      * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
      */
@@ -129,7 +118,7 @@ export class Key extends pulumi.CustomResource {
     /**
      * 密钥轮转状态，取值：Enable，Disable。
      */
-    public readonly rotateState!: pulumi.Output<string>;
+    public /*out*/ readonly rotateState!: pulumi.Output<string>;
     /**
      * 密钥删除时间。
      */
@@ -163,9 +152,12 @@ export class Key extends pulumi.CustomResource {
             const state = argsOrState as KeyState | undefined;
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["keyArchiveOperation"] = state ? state.keyArchiveOperation : undefined;
+            resourceInputs["keyEnableOperation"] = state ? state.keyEnableOperation : undefined;
             resourceInputs["keyId"] = state ? state.keyId : undefined;
             resourceInputs["keyMaterialExpireTime"] = state ? state.keyMaterialExpireTime : undefined;
             resourceInputs["keyName"] = state ? state.keyName : undefined;
+            resourceInputs["keyRotationOperation"] = state ? state.keyRotationOperation : undefined;
             resourceInputs["keySpec"] = state ? state.keySpec : undefined;
             resourceInputs["keyState"] = state ? state.keyState : undefined;
             resourceInputs["keyUsage"] = state ? state.keyUsage : undefined;
@@ -191,7 +183,10 @@ export class Key extends pulumi.CustomResource {
                 throw new Error("Missing required property 'keyringName'");
             }
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["keyArchiveOperation"] = args ? args.keyArchiveOperation : undefined;
+            resourceInputs["keyEnableOperation"] = args ? args.keyEnableOperation : undefined;
             resourceInputs["keyName"] = args ? args.keyName : undefined;
+            resourceInputs["keyRotationOperation"] = args ? args.keyRotationOperation : undefined;
             resourceInputs["keySpec"] = args ? args.keySpec : undefined;
             resourceInputs["keyUsage"] = args ? args.keyUsage : undefined;
             resourceInputs["keyringName"] = args ? args.keyringName : undefined;
@@ -199,7 +194,6 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["origin"] = args ? args.origin : undefined;
             resourceInputs["protectionLevel"] = args ? args.protectionLevel : undefined;
             resourceInputs["rotateInterval"] = args ? args.rotateInterval : undefined;
-            resourceInputs["rotateState"] = args ? args.rotateState : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["keyId"] = undefined /*out*/;
@@ -207,6 +201,7 @@ export class Key extends pulumi.CustomResource {
             resourceInputs["keyState"] = undefined /*out*/;
             resourceInputs["lastRotationTime"] = undefined /*out*/;
             resourceInputs["multiRegionConfiguration"] = undefined /*out*/;
+            resourceInputs["rotateState"] = undefined /*out*/;
             resourceInputs["scheduleDeleteTime"] = undefined /*out*/;
             resourceInputs["scheduleRotationTime"] = undefined /*out*/;
             resourceInputs["trn"] = undefined /*out*/;
@@ -230,6 +225,14 @@ export interface KeyState {
      */
     description?: pulumi.Input<string>;
     /**
+     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     */
+    keyArchiveOperation?: pulumi.Input<number>;
+    /**
+     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     */
+    keyEnableOperation?: pulumi.Input<number>;
+    /**
      * 密钥唯一标识符，UUID形式。
      */
     keyId?: pulumi.Input<string>;
@@ -241,6 +244,10 @@ export interface KeyState {
      * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
      */
     keyName?: pulumi.Input<string>;
+    /**
+     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     */
+    keyRotationOperation?: pulumi.Input<number>;
     /**
      * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
      */
@@ -313,9 +320,21 @@ export interface KeyArgs {
      */
     description?: pulumi.Input<string>;
     /**
+     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     */
+    keyArchiveOperation?: pulumi.Input<number>;
+    /**
+     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     */
+    keyEnableOperation?: pulumi.Input<number>;
+    /**
      * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
      */
     keyName: pulumi.Input<string>;
+    /**
+     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     */
+    keyRotationOperation?: pulumi.Input<number>;
     /**
      * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
      */
@@ -344,9 +363,5 @@ export interface KeyArgs {
      * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
      */
     rotateInterval?: pulumi.Input<number>;
-    /**
-     * 密钥轮转状态，取值：Enable，Disable。
-     */
-    rotateState?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.kms.KeyTag>[]>;
 }

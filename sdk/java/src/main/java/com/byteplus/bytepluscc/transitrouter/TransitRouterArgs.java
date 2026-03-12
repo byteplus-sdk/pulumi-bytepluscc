@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.transitrouter;
 import com.byteplus.bytepluscc.transitrouter.inputs.TransitRouterTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -46,6 +47,21 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    @Import(name="multicastEnabled")
+    private @Nullable Output<Boolean> multicastEnabled;
+
+    /**
+     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    public Optional<Output<Boolean>> multicastEnabled() {
+        return Optional.ofNullable(this.multicastEnabled);
     }
 
     /**
@@ -90,6 +106,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     private TransitRouterArgs(TransitRouterArgs $) {
         this.asn = $.asn;
         this.description = $.description;
+        this.multicastEnabled = $.multicastEnabled;
         this.projectName = $.projectName;
         this.tags = $.tags;
         this.transitRouterName = $.transitRouterName;
@@ -153,6 +170,27 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param multicastEnabled 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multicastEnabled(@Nullable Output<Boolean> multicastEnabled) {
+            $.multicastEnabled = multicastEnabled;
+            return this;
+        }
+
+        /**
+         * @param multicastEnabled 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multicastEnabled(Boolean multicastEnabled) {
+            return multicastEnabled(Output.of(multicastEnabled));
         }
 
         /**

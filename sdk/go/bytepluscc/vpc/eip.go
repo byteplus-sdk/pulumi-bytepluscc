@@ -14,6 +14,48 @@ import (
 
 // 公网IP（Elastic IP Address，EIP）及其公网出口带宽，是火山引擎为云资源提供的可独立购买和持有的IP连通服务。公网IP支持直接绑定云服务器（包括ECS云服务器、EBM裸金属服务器、GPU云服务器），还支持绑定公网NAT网关、负载均衡、辅助网卡等组件，为云服务器提供公网互通能力。
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/vpc"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := vpc.NewEip(ctx, "EipDemo", &vpc.EipArgs{
+//				Name:               pulumi.String("EipDemo"),
+//				Description:        pulumi.String("EipDemo description"),
+//				Isp:                pulumi.String("BGP"),
+//				BillingType:        pulumi.Int(2),
+//				Bandwidth:          pulumi.Int(3),
+//				Period:             pulumi.Int(5),
+//				ProjectName:        pulumi.String("default"),
+//				BandwidthPackageId: pulumi.String("bwp-ij5gz1lf66m874o8cth*****"),
+//				Tags: vpc.EipTagArray{
+//					&vpc.EipTagArgs{
+//						Key:   pulumi.String("env"),
+//						Value: pulumi.String("test"),
+//					},
+//				},
+//				InstanceId:   pulumi.String("i-ye48ymyy9s5i3z4*****"),
+//				InstanceType: pulumi.String("EcsInstance"),
+//				DirectMode:   pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ```sh
@@ -270,6 +312,8 @@ type eipArgs struct {
 	BillingType int `pulumi:"billingType"`
 	// 公网IP的描述信息。
 	Description *string `pulumi:"description"`
+	// 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+	DirectMode *bool `pulumi:"directMode"`
 	// 当前绑定的实例ID。
 	InstanceId *string `pulumi:"instanceId"`
 	// 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
@@ -313,6 +357,8 @@ type EipArgs struct {
 	BillingType pulumi.IntInput
 	// 公网IP的描述信息。
 	Description pulumi.StringPtrInput
+	// 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+	DirectMode pulumi.BoolPtrInput
 	// 当前绑定的实例ID。
 	InstanceId pulumi.StringPtrInput
 	// 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。

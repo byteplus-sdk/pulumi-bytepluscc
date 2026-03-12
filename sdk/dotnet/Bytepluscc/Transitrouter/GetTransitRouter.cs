@@ -89,6 +89,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        /// </summary>
+        public readonly string GrantSourceType;
+        /// <summary>
         /// 实例共享的状态。Accepted：已接受。Initial：待接受。
         /// </summary>
         public readonly string GrantStatus;
@@ -96,6 +100,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         /// Uniquely identifies the resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        /// </summary>
+        public readonly bool MulticastEnabled;
         /// <summary>
         /// 中转路由器实例的欠费关停时间。
         /// </summary>
@@ -139,9 +147,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 
             string description,
 
+            string grantSourceType,
+
             string grantStatus,
 
             string id,
+
+            bool multicastEnabled,
 
             string overdueTime,
 
@@ -163,8 +175,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
             CreationTime = creationTime;
             DeletedTime = deletedTime;
             Description = description;
+            GrantSourceType = grantSourceType;
             GrantStatus = grantStatus;
             Id = id;
+            MulticastEnabled = multicastEnabled;
             OverdueTime = overdueTime;
             ProjectName = projectName;
             Status = status;

@@ -28,10 +28,13 @@ class GetServerGroupResult:
     """
     A collection of values returned by getServerGroup.
     """
-    def __init__(__self__, create_time=None, description=None, health_check=None, id=None, ip_address_type=None, listeners=None, project_name=None, protocol=None, scheduler=None, server_count=None, server_group_id=None, server_group_name=None, server_group_type=None, servers=None, status=None, sticky_session_config=None, tags=None, update_time=None, vpc_id=None):
+    def __init__(__self__, create_time=None, cross_zone_enabled=None, description=None, health_check=None, id=None, ip_address_type=None, listeners=None, project_name=None, protocol=None, scheduler=None, server_count=None, server_group_id=None, server_group_name=None, server_group_type=None, servers=None, status=None, sticky_session_config=None, tags=None, update_time=None, vpc_id=None):
         if create_time and not isinstance(create_time, str):
             raise TypeError("Expected argument 'create_time' to be a str")
         pulumi.set(__self__, "create_time", create_time)
+        if cross_zone_enabled and not isinstance(cross_zone_enabled, str):
+            raise TypeError("Expected argument 'cross_zone_enabled' to be a str")
+        pulumi.set(__self__, "cross_zone_enabled", cross_zone_enabled)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -94,6 +97,14 @@ class GetServerGroupResult:
         后端服务器组的创建时间。
         """
         return pulumi.get(self, "create_time")
+
+    @property
+    @pulumi.getter(name="crossZoneEnabled")
+    def cross_zone_enabled(self) -> builtins.str:
+        """
+        是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        """
+        return pulumi.get(self, "cross_zone_enabled")
 
     @property
     @pulumi.getter
@@ -247,6 +258,7 @@ class AwaitableGetServerGroupResult(GetServerGroupResult):
             yield self
         return GetServerGroupResult(
             create_time=self.create_time,
+            cross_zone_enabled=self.cross_zone_enabled,
             description=self.description,
             health_check=self.health_check,
             id=self.id,
@@ -282,6 +294,7 @@ def get_server_group(id: Optional[builtins.str] = None,
 
     return AwaitableGetServerGroupResult(
         create_time=pulumi.get(__ret__, 'create_time'),
+        cross_zone_enabled=pulumi.get(__ret__, 'cross_zone_enabled'),
         description=pulumi.get(__ret__, 'description'),
         health_check=pulumi.get(__ret__, 'health_check'),
         id=pulumi.get(__ret__, 'id'),
@@ -314,6 +327,7 @@ def get_server_group_output(id: Optional[pulumi.Input[builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('bytepluscc:alb/getServerGroup:getServerGroup', __args__, opts=opts, typ=GetServerGroupResult)
     return __ret__.apply(lambda __response__: GetServerGroupResult(
         create_time=pulumi.get(__response__, 'create_time'),
+        cross_zone_enabled=pulumi.get(__response__, 'cross_zone_enabled'),
         description=pulumi.get(__response__, 'description'),
         health_check=pulumi.get(__response__, 'health_check'),
         id=pulumi.get(__response__, 'id'),

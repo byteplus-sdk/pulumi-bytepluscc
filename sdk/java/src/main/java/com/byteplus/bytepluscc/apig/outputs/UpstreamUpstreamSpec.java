@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.apig.outputs;
 
 import com.byteplus.bytepluscc.apig.outputs.UpstreamUpstreamSpecAiProvider;
+import com.byteplus.bytepluscc.apig.outputs.UpstreamUpstreamSpecDomain;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamUpstreamSpecEcsInstance;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamUpstreamSpecK8SService;
 import com.byteplus.bytepluscc.apig.outputs.UpstreamUpstreamSpecNacosService;
@@ -21,6 +22,11 @@ public final class UpstreamUpstreamSpec {
      * 
      */
     private @Nullable UpstreamUpstreamSpecAiProvider aiProvider;
+    /**
+     * @return 固定域名。
+     * 
+     */
+    private @Nullable UpstreamUpstreamSpecDomain domain;
     private @Nullable List<UpstreamUpstreamSpecEcsInstance> ecsInstances;
     /**
      * @return 容器服务。
@@ -45,6 +51,13 @@ public final class UpstreamUpstreamSpec {
      */
     public Optional<UpstreamUpstreamSpecAiProvider> aiProvider() {
         return Optional.ofNullable(this.aiProvider);
+    }
+    /**
+     * @return 固定域名。
+     * 
+     */
+    public Optional<UpstreamUpstreamSpecDomain> domain() {
+        return Optional.ofNullable(this.domain);
     }
     public List<UpstreamUpstreamSpecEcsInstance> ecsInstances() {
         return this.ecsInstances == null ? List.of() : this.ecsInstances;
@@ -81,6 +94,7 @@ public final class UpstreamUpstreamSpec {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable UpstreamUpstreamSpecAiProvider aiProvider;
+        private @Nullable UpstreamUpstreamSpecDomain domain;
         private @Nullable List<UpstreamUpstreamSpecEcsInstance> ecsInstances;
         private @Nullable UpstreamUpstreamSpecK8SService k8SService;
         private @Nullable UpstreamUpstreamSpecNacosService nacosService;
@@ -89,6 +103,7 @@ public final class UpstreamUpstreamSpec {
         public Builder(UpstreamUpstreamSpec defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aiProvider = defaults.aiProvider;
+    	      this.domain = defaults.domain;
     	      this.ecsInstances = defaults.ecsInstances;
     	      this.k8SService = defaults.k8SService;
     	      this.nacosService = defaults.nacosService;
@@ -99,6 +114,12 @@ public final class UpstreamUpstreamSpec {
         public Builder aiProvider(@Nullable UpstreamUpstreamSpecAiProvider aiProvider) {
 
             this.aiProvider = aiProvider;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domain(@Nullable UpstreamUpstreamSpecDomain domain) {
+
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
@@ -131,6 +152,7 @@ public final class UpstreamUpstreamSpec {
         public UpstreamUpstreamSpec build() {
             final var _resultValue = new UpstreamUpstreamSpec();
             _resultValue.aiProvider = aiProvider;
+            _resultValue.domain = domain;
             _resultValue.ecsInstances = ecsInstances;
             _resultValue.k8SService = k8SService;
             _resultValue.nacosService = nacosService;

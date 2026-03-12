@@ -8,6 +8,8 @@ import com.byteplus.bytepluscc.ecs.inputs.GetCommandArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetCommandPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetDeploymentSetArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetDeploymentSetPlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetHpcClusterArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetHpcClusterPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetImagePlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetInstanceArgs;
@@ -24,6 +26,8 @@ import com.byteplus.bytepluscc.ecs.outputs.GetCommandResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetCommandsResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetDeploymentSetResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetDeploymentSetsResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetHpcClusterResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetHpcClustersResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImageResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetImagesResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceResult;
@@ -212,6 +216,90 @@ public final class EcsFunctions {
      */
     public static CompletableFuture<GetDeploymentSetsResult> getDeploymentSetsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getDeploymentSets:getDeploymentSets", TypeShape.of(GetDeploymentSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static Output<GetHpcClusterResult> getHpcCluster(GetHpcClusterArgs args) {
+        return getHpcCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static CompletableFuture<GetHpcClusterResult> getHpcClusterPlain(GetHpcClusterPlainArgs args) {
+        return getHpcClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static Output<GetHpcClusterResult> getHpcCluster(GetHpcClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getHpcCluster:getHpcCluster", TypeShape.of(GetHpcClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static Output<GetHpcClusterResult> getHpcCluster(GetHpcClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getHpcCluster:getHpcCluster", TypeShape.of(GetHpcClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static CompletableFuture<GetHpcClusterResult> getHpcClusterPlain(GetHpcClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getHpcCluster:getHpcCluster", TypeShape.of(GetHpcClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static Output<GetHpcClustersResult> getHpcClusters() {
+        return getHpcClusters(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static CompletableFuture<GetHpcClustersResult> getHpcClustersPlain() {
+        return getHpcClustersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static Output<GetHpcClustersResult> getHpcClusters(InvokeArgs args) {
+        return getHpcClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static CompletableFuture<GetHpcClustersResult> getHpcClustersPlain(InvokeArgs args) {
+        return getHpcClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static Output<GetHpcClustersResult> getHpcClusters(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getHpcClusters:getHpcClusters", TypeShape.of(GetHpcClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static Output<GetHpcClustersResult> getHpcClusters(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getHpcClusters:getHpcClusters", TypeShape.of(GetHpcClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::HpcCluster
+     * 
+     */
+    public static CompletableFuture<GetHpcClustersResult> getHpcClustersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getHpcClusters:getHpcClusters", TypeShape.of(GetHpcClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::ECS::Image

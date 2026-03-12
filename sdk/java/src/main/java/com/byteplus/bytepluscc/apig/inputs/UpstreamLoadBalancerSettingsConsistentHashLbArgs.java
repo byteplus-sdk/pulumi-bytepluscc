@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.apig.inputs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final UpstreamLoadBalancerSettingsConsistentHashLbArgs Empty = new UpstreamLoadBalancerSettingsConsistentHashLbArgs();
+
+    /**
+     * 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * 
+     */
+    @Import(name="hashBalanceFactor")
+    private @Nullable Output<Integer> hashBalanceFactor;
+
+    /**
+     * @return 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * 
+     */
+    public Optional<Output<Integer>> hashBalanceFactor() {
+        return Optional.ofNullable(this.hashBalanceFactor);
+    }
 
     /**
      * 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
@@ -94,6 +110,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
     private UpstreamLoadBalancerSettingsConsistentHashLbArgs() {}
 
     private UpstreamLoadBalancerSettingsConsistentHashLbArgs(UpstreamLoadBalancerSettingsConsistentHashLbArgs $) {
+        this.hashBalanceFactor = $.hashBalanceFactor;
         this.hashKey = $.hashKey;
         this.httpCookie = $.httpCookie;
         this.httpHeaderName = $.httpHeaderName;
@@ -117,6 +134,27 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
 
         public Builder(UpstreamLoadBalancerSettingsConsistentHashLbArgs defaults) {
             $ = new UpstreamLoadBalancerSettingsConsistentHashLbArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param hashBalanceFactor 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hashBalanceFactor(@Nullable Output<Integer> hashBalanceFactor) {
+            $.hashBalanceFactor = hashBalanceFactor;
+            return this;
+        }
+
+        /**
+         * @param hashBalanceFactor 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hashBalanceFactor(Integer hashBalanceFactor) {
+            return hashBalanceFactor(Output.of(hashBalanceFactor));
         }
 
         /**

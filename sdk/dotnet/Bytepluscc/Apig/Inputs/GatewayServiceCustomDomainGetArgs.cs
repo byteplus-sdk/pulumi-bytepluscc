@@ -13,18 +13,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
 
     public sealed class GatewayServiceCustomDomainGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// 自定义域名。
-        /// </summary>
-        [Input("domain")]
-        public Input<string>? Domain { get; set; }
-
-        /// <summary>
-        /// 自定义域名ID。
-        /// </summary>
-        [Input("domainId")]
-        public Input<string>? DomainId { get; set; }
-
         public GatewayServiceCustomDomainGetArgs()
         {
         }

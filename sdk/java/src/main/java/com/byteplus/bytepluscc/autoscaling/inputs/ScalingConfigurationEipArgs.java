@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.autoscaling.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -76,6 +77,21 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         return Optional.ofNullable(this.isp);
     }
 
+    /**
+     * 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * 
+     */
+    @Import(name="releaseWithInstance")
+    private @Nullable Output<Boolean> releaseWithInstance;
+
+    /**
+     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * 
+     */
+    public Optional<Output<Boolean>> releaseWithInstance() {
+        return Optional.ofNullable(this.releaseWithInstance);
+    }
+
     private ScalingConfigurationEipArgs() {}
 
     private ScalingConfigurationEipArgs(ScalingConfigurationEipArgs $) {
@@ -83,6 +99,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         this.bandwidthPackageId = $.bandwidthPackageId;
         this.billingType = $.billingType;
         this.isp = $.isp;
+        this.releaseWithInstance = $.releaseWithInstance;
     }
 
     public static Builder builder() {
@@ -185,6 +202,27 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
          */
         public Builder isp(String isp) {
             return isp(Output.of(isp));
+        }
+
+        /**
+         * @param releaseWithInstance 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder releaseWithInstance(@Nullable Output<Boolean> releaseWithInstance) {
+            $.releaseWithInstance = releaseWithInstance;
+            return this;
+        }
+
+        /**
+         * @param releaseWithInstance 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder releaseWithInstance(Boolean releaseWithInstance) {
+            return releaseWithInstance(Output.of(releaseWithInstance));
         }
 
         public ScalingConfigurationEipArgs build() {

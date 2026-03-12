@@ -4,39 +4,11 @@
 package com.byteplus.bytepluscc.apig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class GatewayServiceCustomDomain {
-    /**
-     * @return 自定义域名。
-     * 
-     */
-    private @Nullable String domain;
-    /**
-     * @return 自定义域名ID。
-     * 
-     */
-    private @Nullable String domainId;
-
     private GatewayServiceCustomDomain() {}
-    /**
-     * @return 自定义域名。
-     * 
-     */
-    public Optional<String> domain() {
-        return Optional.ofNullable(this.domain);
-    }
-    /**
-     * @return 自定义域名ID。
-     * 
-     */
-    public Optional<String> domainId() {
-        return Optional.ofNullable(this.domainId);
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -47,31 +19,13 @@ public final class GatewayServiceCustomDomain {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String domain;
-        private @Nullable String domainId;
         public Builder() {}
         public Builder(GatewayServiceCustomDomain defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.domain = defaults.domain;
-    	      this.domainId = defaults.domainId;
         }
 
-        @CustomType.Setter
-        public Builder domain(@Nullable String domain) {
-
-            this.domain = domain;
-            return this;
-        }
-        @CustomType.Setter
-        public Builder domainId(@Nullable String domainId) {
-
-            this.domainId = domainId;
-            return this;
-        }
         public GatewayServiceCustomDomain build() {
             final var _resultValue = new GatewayServiceCustomDomain();
-            _resultValue.domain = domain;
-            _resultValue.domainId = domainId;
             return _resultValue;
         }
     }

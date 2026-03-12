@@ -43,6 +43,10 @@ export interface GetUpstreamResult {
      */
     readonly comments: string;
     /**
+     * 连接池配置。
+     */
+    readonly connectionPoolSettings: outputs.apig.GetUpstreamConnectionPoolSettings;
+    /**
      * Upstream创建时间。
      */
     readonly createdTime: string;

@@ -52,6 +52,8 @@ type LookupLoadBalancerResult struct {
 	GlobalAccelerator GetLoadBalancerGlobalAccelerator `pulumi:"globalAccelerator"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
+	// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+	Ipv6BandwidthPackageId string `pulumi:"ipv6BandwidthPackageId"`
 	// IPv6公网IP的计費配置，仅适用于公网实例。
 	Ipv6EipBillingConfig GetLoadBalancerIpv6EipBillingConfig `pulumi:"ipv6EipBillingConfig"`
 	// ALB实例计费类型，当前仅支持按量计费（取值为1）。
@@ -72,6 +74,8 @@ type LookupLoadBalancerResult struct {
 	OverdueTime string `pulumi:"overdueTime"`
 	// 实例所属项目名称。
 	ProjectName string `pulumi:"projectName"`
+	// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+	ProxyProtocolEnabled string `pulumi:"proxyProtocolEnabled"`
 	// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
 	Status string `pulumi:"status"`
 	// 为实例绑定的标签列表，用于分类和计费。
@@ -181,6 +185,11 @@ func (o LookupLoadBalancerResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLoadBalancerResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+func (o LookupLoadBalancerResultOutput) Ipv6BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLoadBalancerResult) string { return v.Ipv6BandwidthPackageId }).(pulumi.StringOutput)
+}
+
 // IPv6公网IP的计費配置，仅适用于公网实例。
 func (o LookupLoadBalancerResultOutput) Ipv6EipBillingConfig() GetLoadBalancerIpv6EipBillingConfigOutput {
 	return o.ApplyT(func(v LookupLoadBalancerResult) GetLoadBalancerIpv6EipBillingConfig { return v.Ipv6EipBillingConfig }).(GetLoadBalancerIpv6EipBillingConfigOutput)
@@ -229,6 +238,11 @@ func (o LookupLoadBalancerResultOutput) OverdueTime() pulumi.StringOutput {
 // 实例所属项目名称。
 func (o LookupLoadBalancerResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLoadBalancerResult) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+func (o LookupLoadBalancerResultOutput) ProxyProtocolEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLoadBalancerResult) string { return v.ProxyProtocolEnabled }).(pulumi.StringOutput)
 }
 
 // ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。

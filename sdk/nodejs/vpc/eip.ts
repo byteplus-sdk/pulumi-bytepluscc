@@ -9,6 +9,31 @@ import * as utilities from "../utilities";
 /**
  * 公网IP（Elastic IP Address，EIP）及其公网出口带宽，是火山引擎为云资源提供的可独立购买和持有的IP连通服务。公网IP支持直接绑定云服务器（包括ECS云服务器、EBM裸金属服务器、GPU云服务器），还支持绑定公网NAT网关、负载均衡、辅助网卡等组件，为云服务器提供公网互通能力。
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
+ *
+ * const eipDemo = new bytepluscc.vpc.Eip("EipDemo", {
+ *     name: "EipDemo",
+ *     description: "EipDemo description",
+ *     isp: "BGP",
+ *     billingType: 2,
+ *     bandwidth: 3,
+ *     period: 5,
+ *     projectName: "default",
+ *     bandwidthPackageId: "bwp-ij5gz1lf66m874o8cth*****",
+ *     tags: [{
+ *         key: "env",
+ *         value: "test",
+ *     }],
+ *     instanceId: "i-ye48ymyy9s5i3z4*****",
+ *     instanceType: "EcsInstance",
+ *     directMode: true,
+ * });
+ * ```
+ *
  * ## Import
  *
  * ```sh
@@ -78,7 +103,7 @@ export class Eip extends pulumi.CustomResource {
     /**
      * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
      */
-    public /*out*/ readonly directMode!: pulumi.Output<boolean>;
+    public readonly directMode!: pulumi.Output<boolean>;
     /**
      * 公网IP地址。
      */
@@ -228,6 +253,7 @@ export class Eip extends pulumi.CustomResource {
             resourceInputs["bandwidthPackageId"] = args ? args.bandwidthPackageId : undefined;
             resourceInputs["billingType"] = args ? args.billingType : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["directMode"] = args ? args.directMode : undefined;
             resourceInputs["instanceId"] = args ? args.instanceId : undefined;
             resourceInputs["instanceType"] = args ? args.instanceType : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
@@ -248,7 +274,6 @@ export class Eip extends pulumi.CustomResource {
             resourceInputs["businessStatus"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["deletedTime"] = undefined /*out*/;
-            resourceInputs["directMode"] = undefined /*out*/;
             resourceInputs["eipAddress"] = undefined /*out*/;
             resourceInputs["expiredTime"] = undefined /*out*/;
             resourceInputs["isBlocked"] = undefined /*out*/;
@@ -418,6 +443,10 @@ export interface EipArgs {
      * 公网IP的描述信息。
      */
     description?: pulumi.Input<string>;
+    /**
+     * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     */
+    directMode?: pulumi.Input<boolean>;
     /**
      * 当前绑定的实例ID。
      */

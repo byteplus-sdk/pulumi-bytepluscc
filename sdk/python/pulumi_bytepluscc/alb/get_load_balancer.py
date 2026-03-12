@@ -28,7 +28,7 @@ class GetLoadBalancerResult:
     """
     A collection of values returned by getLoadBalancer.
     """
-    def __init__(__self__, address_ip_version=None, bandwidth_package_id=None, business_status=None, create_time=None, delete_protection=None, deleted_time=None, description=None, dns_name=None, eip_billing_config=None, global_accelerator=None, id=None, ipv6_eip_billing_config=None, load_balancer_billing_type=None, load_balancer_edition=None, load_balancer_id=None, load_balancer_name=None, lock_reason=None, modification_protection_reason=None, modification_protection_status=None, overdue_time=None, project_name=None, status=None, tags=None, type=None, update_time=None, vpc_id=None, waf_instance_id=None, waf_protected_domain=None, waf_protection_enabled=None, zone_mappings=None):
+    def __init__(__self__, address_ip_version=None, bandwidth_package_id=None, business_status=None, create_time=None, delete_protection=None, deleted_time=None, description=None, dns_name=None, eip_billing_config=None, global_accelerator=None, id=None, ipv6_bandwidth_package_id=None, ipv6_eip_billing_config=None, load_balancer_billing_type=None, load_balancer_edition=None, load_balancer_id=None, load_balancer_name=None, lock_reason=None, modification_protection_reason=None, modification_protection_status=None, overdue_time=None, project_name=None, proxy_protocol_enabled=None, status=None, tags=None, type=None, update_time=None, vpc_id=None, waf_instance_id=None, waf_protected_domain=None, waf_protection_enabled=None, zone_mappings=None):
         if address_ip_version and not isinstance(address_ip_version, str):
             raise TypeError("Expected argument 'address_ip_version' to be a str")
         pulumi.set(__self__, "address_ip_version", address_ip_version)
@@ -62,6 +62,9 @@ class GetLoadBalancerResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if ipv6_bandwidth_package_id and not isinstance(ipv6_bandwidth_package_id, str):
+            raise TypeError("Expected argument 'ipv6_bandwidth_package_id' to be a str")
+        pulumi.set(__self__, "ipv6_bandwidth_package_id", ipv6_bandwidth_package_id)
         if ipv6_eip_billing_config and not isinstance(ipv6_eip_billing_config, dict):
             raise TypeError("Expected argument 'ipv6_eip_billing_config' to be a dict")
         pulumi.set(__self__, "ipv6_eip_billing_config", ipv6_eip_billing_config)
@@ -92,6 +95,9 @@ class GetLoadBalancerResult:
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
+        if proxy_protocol_enabled and not isinstance(proxy_protocol_enabled, str):
+            raise TypeError("Expected argument 'proxy_protocol_enabled' to be a str")
+        pulumi.set(__self__, "proxy_protocol_enabled", proxy_protocol_enabled)
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
@@ -209,6 +215,14 @@ class GetLoadBalancerResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="ipv6BandwidthPackageId")
+    def ipv6_bandwidth_package_id(self) -> builtins.str:
+        """
+        创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        """
+        return pulumi.get(self, "ipv6_bandwidth_package_id")
+
+    @property
     @pulumi.getter(name="ipv6EipBillingConfig")
     def ipv6_eip_billing_config(self) -> 'outputs.GetLoadBalancerIpv6EipBillingConfigResult':
         """
@@ -287,6 +301,14 @@ class GetLoadBalancerResult:
         实例所属项目名称。
         """
         return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter(name="proxyProtocolEnabled")
+    def proxy_protocol_enabled(self) -> builtins.str:
+        """
+        ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        """
+        return pulumi.get(self, "proxy_protocol_enabled")
 
     @property
     @pulumi.getter
@@ -378,6 +400,7 @@ class AwaitableGetLoadBalancerResult(GetLoadBalancerResult):
             eip_billing_config=self.eip_billing_config,
             global_accelerator=self.global_accelerator,
             id=self.id,
+            ipv6_bandwidth_package_id=self.ipv6_bandwidth_package_id,
             ipv6_eip_billing_config=self.ipv6_eip_billing_config,
             load_balancer_billing_type=self.load_balancer_billing_type,
             load_balancer_edition=self.load_balancer_edition,
@@ -388,6 +411,7 @@ class AwaitableGetLoadBalancerResult(GetLoadBalancerResult):
             modification_protection_status=self.modification_protection_status,
             overdue_time=self.overdue_time,
             project_name=self.project_name,
+            proxy_protocol_enabled=self.proxy_protocol_enabled,
             status=self.status,
             tags=self.tags,
             type=self.type,
@@ -424,6 +448,7 @@ def get_load_balancer(id: Optional[builtins.str] = None,
         eip_billing_config=pulumi.get(__ret__, 'eip_billing_config'),
         global_accelerator=pulumi.get(__ret__, 'global_accelerator'),
         id=pulumi.get(__ret__, 'id'),
+        ipv6_bandwidth_package_id=pulumi.get(__ret__, 'ipv6_bandwidth_package_id'),
         ipv6_eip_billing_config=pulumi.get(__ret__, 'ipv6_eip_billing_config'),
         load_balancer_billing_type=pulumi.get(__ret__, 'load_balancer_billing_type'),
         load_balancer_edition=pulumi.get(__ret__, 'load_balancer_edition'),
@@ -434,6 +459,7 @@ def get_load_balancer(id: Optional[builtins.str] = None,
         modification_protection_status=pulumi.get(__ret__, 'modification_protection_status'),
         overdue_time=pulumi.get(__ret__, 'overdue_time'),
         project_name=pulumi.get(__ret__, 'project_name'),
+        proxy_protocol_enabled=pulumi.get(__ret__, 'proxy_protocol_enabled'),
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         type=pulumi.get(__ret__, 'type'),
@@ -467,6 +493,7 @@ def get_load_balancer_output(id: Optional[pulumi.Input[builtins.str]] = None,
         eip_billing_config=pulumi.get(__response__, 'eip_billing_config'),
         global_accelerator=pulumi.get(__response__, 'global_accelerator'),
         id=pulumi.get(__response__, 'id'),
+        ipv6_bandwidth_package_id=pulumi.get(__response__, 'ipv6_bandwidth_package_id'),
         ipv6_eip_billing_config=pulumi.get(__response__, 'ipv6_eip_billing_config'),
         load_balancer_billing_type=pulumi.get(__response__, 'load_balancer_billing_type'),
         load_balancer_edition=pulumi.get(__response__, 'load_balancer_edition'),
@@ -477,6 +504,7 @@ def get_load_balancer_output(id: Optional[pulumi.Input[builtins.str]] = None,
         modification_protection_status=pulumi.get(__response__, 'modification_protection_status'),
         overdue_time=pulumi.get(__response__, 'overdue_time'),
         project_name=pulumi.get(__response__, 'project_name'),
+        proxy_protocol_enabled=pulumi.get(__response__, 'proxy_protocol_enabled'),
         status=pulumi.get(__response__, 'status'),
         tags=pulumi.get(__response__, 'tags'),
         type=pulumi.get(__response__, 'type'),

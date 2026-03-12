@@ -85,10 +85,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        /// </summary>
+        [Output("grantSourceType")]
+        public Output<string> GrantSourceType { get; private set; } = null!;
+
+        /// <summary>
         /// 实例共享的状态。Accepted：已接受。Initial：待接受。
         /// </summary>
         [Output("grantStatus")]
         public Output<string> GrantStatus { get; private set; } = null!;
+
+        /// <summary>
+        /// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        /// </summary>
+        [Output("multicastEnabled")]
+        public Output<bool> MulticastEnabled { get; private set; } = null!;
 
         /// <summary>
         /// 中转路由器实例的欠费关停时间。
@@ -189,6 +201,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        /// </summary>
+        [Input("multicastEnabled")]
+        public Input<bool>? MulticastEnabled { get; set; }
+
+        /// <summary>
         /// 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
         /// </summary>
         [Input("projectName")]
@@ -255,10 +273,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         public Input<string>? Description { get; set; }
 
         /// <summary>
+        /// 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+        /// </summary>
+        [Input("grantSourceType")]
+        public Input<string>? GrantSourceType { get; set; }
+
+        /// <summary>
         /// 实例共享的状态。Accepted：已接受。Initial：待接受。
         /// </summary>
         [Input("grantStatus")]
         public Input<string>? GrantStatus { get; set; }
+
+        /// <summary>
+        /// 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+        /// </summary>
+        [Input("multicastEnabled")]
+        public Input<bool>? MulticastEnabled { get; set; }
 
         /// <summary>
         /// 中转路由器实例的欠费关停时间。

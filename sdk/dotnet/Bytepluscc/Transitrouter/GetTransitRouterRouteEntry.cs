@@ -101,6 +101,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         /// </summary>
         public readonly string TransitRouterRouteEntryNextHopId;
         /// <summary>
+        /// 路由条目下一跳网络实例ID。
+        /// </summary>
+        public readonly string TransitRouterRouteEntryNextHopResourceId;
+        /// <summary>
+        /// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        /// </summary>
+        public readonly string TransitRouterRouteEntryNextHopResourceType;
+        /// <summary>
         /// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
         /// </summary>
         public readonly string TransitRouterRouteEntryNextHopType;
@@ -137,6 +145,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 
             string transitRouterRouteEntryNextHopId,
 
+            string transitRouterRouteEntryNextHopResourceId,
+
+            string transitRouterRouteEntryNextHopResourceType,
+
             string transitRouterRouteEntryNextHopType,
 
             string transitRouterRouteEntryType,
@@ -154,6 +166,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
             TransitRouterRouteEntryId = transitRouterRouteEntryId;
             TransitRouterRouteEntryName = transitRouterRouteEntryName;
             TransitRouterRouteEntryNextHopId = transitRouterRouteEntryNextHopId;
+            TransitRouterRouteEntryNextHopResourceId = transitRouterRouteEntryNextHopResourceId;
+            TransitRouterRouteEntryNextHopResourceType = transitRouterRouteEntryNextHopResourceType;
             TransitRouterRouteEntryNextHopType = transitRouterRouteEntryNextHopType;
             TransitRouterRouteEntryType = transitRouterRouteEntryType;
             TransitRouterRouteTableId = transitRouterRouteTableId;

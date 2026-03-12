@@ -124,6 +124,7 @@ class _DirectConnectGatewayState:
     def __init__(__self__, *,
                  account_id: Optional[pulumi.Input[builtins.str]] = None,
                  associate_cens: Optional[pulumi.Input[Sequence[pulumi.Input['DirectConnectGatewayAssociateCenArgs']]]] = None,
+                 associate_eic: Optional[pulumi.Input['DirectConnectGatewayAssociateEicArgs']] = None,
                  bgp_asn: Optional[pulumi.Input[builtins.int]] = None,
                  business_status: Optional[pulumi.Input[builtins.str]] = None,
                  created_time: Optional[pulumi.Input[builtins.str]] = None,
@@ -141,6 +142,7 @@ class _DirectConnectGatewayState:
         """
         Input properties used for looking up and filtering DirectConnectGateway resources.
         :param pulumi.Input[builtins.str] account_id: 专线网关所属账号的ID。
+        :param pulumi.Input['DirectConnectGatewayAssociateEicArgs'] associate_eic: 关联的EIC信息。
         :param pulumi.Input[builtins.int] bgp_asn: 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
         :param pulumi.Input[builtins.str] business_status: 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
         :param pulumi.Input[builtins.str] created_time: 创建专线网关的时间。
@@ -159,6 +161,8 @@ class _DirectConnectGatewayState:
             pulumi.set(__self__, "account_id", account_id)
         if associate_cens is not None:
             pulumi.set(__self__, "associate_cens", associate_cens)
+        if associate_eic is not None:
+            pulumi.set(__self__, "associate_eic", associate_eic)
         if bgp_asn is not None:
             pulumi.set(__self__, "bgp_asn", bgp_asn)
         if business_status is not None:
@@ -208,6 +212,18 @@ class _DirectConnectGatewayState:
     @associate_cens.setter
     def associate_cens(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DirectConnectGatewayAssociateCenArgs']]]]):
         pulumi.set(self, "associate_cens", value)
+
+    @property
+    @pulumi.getter(name="associateEic")
+    def associate_eic(self) -> Optional[pulumi.Input['DirectConnectGatewayAssociateEicArgs']]:
+        """
+        关联的EIC信息。
+        """
+        return pulumi.get(self, "associate_eic")
+
+    @associate_eic.setter
+    def associate_eic(self, value: Optional[pulumi.Input['DirectConnectGatewayAssociateEicArgs']]):
+        pulumi.set(self, "associate_eic", value)
 
     @property
     @pulumi.getter(name="bgpAsn")
@@ -492,6 +508,7 @@ class DirectConnectGateway(pulumi.CustomResource):
             __props__.__dict__["tags"] = tags
             __props__.__dict__["account_id"] = None
             __props__.__dict__["associate_cens"] = None
+            __props__.__dict__["associate_eic"] = None
             __props__.__dict__["business_status"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["deleted_time"] = None
@@ -512,6 +529,7 @@ class DirectConnectGateway(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             account_id: Optional[pulumi.Input[builtins.str]] = None,
             associate_cens: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectConnectGatewayAssociateCenArgs', 'DirectConnectGatewayAssociateCenArgsDict']]]]] = None,
+            associate_eic: Optional[pulumi.Input[Union['DirectConnectGatewayAssociateEicArgs', 'DirectConnectGatewayAssociateEicArgsDict']]] = None,
             bgp_asn: Optional[pulumi.Input[builtins.int]] = None,
             business_status: Optional[pulumi.Input[builtins.str]] = None,
             created_time: Optional[pulumi.Input[builtins.str]] = None,
@@ -534,6 +552,7 @@ class DirectConnectGateway(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] account_id: 专线网关所属账号的ID。
+        :param pulumi.Input[Union['DirectConnectGatewayAssociateEicArgs', 'DirectConnectGatewayAssociateEicArgsDict']] associate_eic: 关联的EIC信息。
         :param pulumi.Input[builtins.int] bgp_asn: 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
         :param pulumi.Input[builtins.str] business_status: 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
         :param pulumi.Input[builtins.str] created_time: 创建专线网关的时间。
@@ -554,6 +573,7 @@ class DirectConnectGateway(pulumi.CustomResource):
 
         __props__.__dict__["account_id"] = account_id
         __props__.__dict__["associate_cens"] = associate_cens
+        __props__.__dict__["associate_eic"] = associate_eic
         __props__.__dict__["bgp_asn"] = bgp_asn
         __props__.__dict__["business_status"] = business_status
         __props__.__dict__["created_time"] = created_time
@@ -582,6 +602,14 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="associateCens")
     def associate_cens(self) -> pulumi.Output[Sequence['outputs.DirectConnectGatewayAssociateCen']]:
         return pulumi.get(self, "associate_cens")
+
+    @property
+    @pulumi.getter(name="associateEic")
+    def associate_eic(self) -> pulumi.Output['outputs.DirectConnectGatewayAssociateEic']:
+        """
+        关联的EIC信息。
+        """
+        return pulumi.get(self, "associate_eic")
 
     @property
     @pulumi.getter(name="bgpAsn")

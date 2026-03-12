@@ -40,6 +40,8 @@ type LookupGatewayServiceResult struct {
 	CustomDomains []GetGatewayServiceCustomDomain `pulumi:"customDomains"`
 	// 域名详情。
 	DomainSpec GetGatewayServiceDomainSpec `pulumi:"domainSpec"`
+	// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+	DomainType string `pulumi:"domainType"`
 	// 默认域名。
 	Domains []GetGatewayServiceDomain `pulumi:"domains"`
 	// 网关ID。
@@ -54,8 +56,12 @@ type LookupGatewayServiceResult struct {
 	Protocols []string `pulumi:"protocols"`
 	// 服务ID。
 	ServiceId string `pulumi:"serviceId"`
-	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
 	ServiceName string `pulumi:"serviceName"`
+	// 服务默认域名网络配置。。
+	ServiceNetworkSpec GetGatewayServiceServiceNetworkSpec `pulumi:"serviceNetworkSpec"`
+	// 服务类型，取值：AIProvider：AI模型代理。
+	ServiceType string `pulumi:"serviceType"`
 	// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
 	Status string `pulumi:"status"`
 }
@@ -119,6 +125,11 @@ func (o LookupGatewayServiceResultOutput) DomainSpec() GetGatewayServiceDomainSp
 	return o.ApplyT(func(v LookupGatewayServiceResult) GetGatewayServiceDomainSpec { return v.DomainSpec }).(GetGatewayServiceDomainSpecOutput)
 }
 
+// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+func (o LookupGatewayServiceResultOutput) DomainType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.DomainType }).(pulumi.StringOutput)
+}
+
 // 默认域名。
 func (o LookupGatewayServiceResultOutput) Domains() GetGatewayServiceDomainArrayOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) []GetGatewayServiceDomain { return v.Domains }).(GetGatewayServiceDomainArrayOutput)
@@ -154,9 +165,19 @@ func (o LookupGatewayServiceResultOutput) ServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.ServiceId }).(pulumi.StringOutput)
 }
 
-// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
 func (o LookupGatewayServiceResultOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// 服务默认域名网络配置。。
+func (o LookupGatewayServiceResultOutput) ServiceNetworkSpec() GetGatewayServiceServiceNetworkSpecOutput {
+	return o.ApplyT(func(v LookupGatewayServiceResult) GetGatewayServiceServiceNetworkSpec { return v.ServiceNetworkSpec }).(GetGatewayServiceServiceNetworkSpecOutput)
+}
+
+// 服务类型，取值：AIProvider：AI模型代理。
+func (o LookupGatewayServiceResultOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.ServiceType }).(pulumi.StringOutput)
 }
 
 // Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。

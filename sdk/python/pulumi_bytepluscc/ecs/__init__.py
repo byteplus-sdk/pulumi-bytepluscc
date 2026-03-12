@@ -12,6 +12,8 @@ from .get_command import *
 from .get_commands import *
 from .get_deployment_set import *
 from .get_deployment_sets import *
+from .get_hpc_cluster import *
+from .get_hpc_clusters import *
 from .get_image import *
 from .get_images import *
 from .get_instance import *
@@ -24,6 +26,7 @@ from .get_launch_template import *
 from .get_launch_template_version import *
 from .get_launch_template_versions import *
 from .get_launch_templates import *
+from .hpc_cluster import *
 from .image import *
 from .instance import *
 from .invocation import *

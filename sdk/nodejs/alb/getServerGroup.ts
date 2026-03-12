@@ -35,6 +35,10 @@ export interface GetServerGroupResult {
      */
     readonly createTime: string;
     /**
+     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     */
+    readonly crossZoneEnabled: string;
+    /**
      * 后端服务器组的描述。
      */
     readonly description: string;

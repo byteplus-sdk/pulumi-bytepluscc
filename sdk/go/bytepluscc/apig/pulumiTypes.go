@@ -1917,10 +1917,6 @@ func (o GatewayServiceAuthSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 }
 
 type GatewayServiceCustomDomain struct {
-	// 自定义域名。
-	Domain *string `pulumi:"domain"`
-	// 自定义域名ID。
-	DomainId *string `pulumi:"domainId"`
 }
 
 // GatewayServiceCustomDomainInput is an input type that accepts GatewayServiceCustomDomainArgs and GatewayServiceCustomDomainOutput values.
@@ -1935,10 +1931,6 @@ type GatewayServiceCustomDomainInput interface {
 }
 
 type GatewayServiceCustomDomainArgs struct {
-	// 自定义域名。
-	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// 自定义域名ID。
-	DomainId pulumi.StringPtrInput `pulumi:"domainId"`
 }
 
 func (GatewayServiceCustomDomainArgs) ElementType() reflect.Type {
@@ -1990,16 +1982,6 @@ func (o GatewayServiceCustomDomainOutput) ToGatewayServiceCustomDomainOutput() G
 
 func (o GatewayServiceCustomDomainOutput) ToGatewayServiceCustomDomainOutputWithContext(ctx context.Context) GatewayServiceCustomDomainOutput {
 	return o
-}
-
-// 自定义域名。
-func (o GatewayServiceCustomDomainOutput) Domain() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GatewayServiceCustomDomain) *string { return v.Domain }).(pulumi.StringPtrOutput)
-}
-
-// 自定义域名ID。
-func (o GatewayServiceCustomDomainOutput) DomainId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GatewayServiceCustomDomain) *string { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
 type GatewayServiceCustomDomainArrayOutput struct{ *pulumi.OutputState }
@@ -2263,6 +2245,181 @@ func (o GatewayServiceDomainSpecPtrOutput) EnablePublicResolution() pulumi.BoolP
 		}
 		return v.EnablePublicResolution
 	}).(pulumi.BoolPtrOutput)
+}
+
+type GatewayServiceServiceNetworkSpec struct {
+	// 开启私网。
+	EnablePrivateNetwork *bool `pulumi:"enablePrivateNetwork"`
+	// 开启公网。
+	EnablePublicNetwork *bool `pulumi:"enablePublicNetwork"`
+	// 私网域名解析的目标IP。
+	PrivateNetworkIps []string `pulumi:"privateNetworkIps"`
+}
+
+// GatewayServiceServiceNetworkSpecInput is an input type that accepts GatewayServiceServiceNetworkSpecArgs and GatewayServiceServiceNetworkSpecOutput values.
+// You can construct a concrete instance of `GatewayServiceServiceNetworkSpecInput` via:
+//
+//	GatewayServiceServiceNetworkSpecArgs{...}
+type GatewayServiceServiceNetworkSpecInput interface {
+	pulumi.Input
+
+	ToGatewayServiceServiceNetworkSpecOutput() GatewayServiceServiceNetworkSpecOutput
+	ToGatewayServiceServiceNetworkSpecOutputWithContext(context.Context) GatewayServiceServiceNetworkSpecOutput
+}
+
+type GatewayServiceServiceNetworkSpecArgs struct {
+	// 开启私网。
+	EnablePrivateNetwork pulumi.BoolPtrInput `pulumi:"enablePrivateNetwork"`
+	// 开启公网。
+	EnablePublicNetwork pulumi.BoolPtrInput `pulumi:"enablePublicNetwork"`
+	// 私网域名解析的目标IP。
+	PrivateNetworkIps pulumi.StringArrayInput `pulumi:"privateNetworkIps"`
+}
+
+func (GatewayServiceServiceNetworkSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayServiceServiceNetworkSpec)(nil)).Elem()
+}
+
+func (i GatewayServiceServiceNetworkSpecArgs) ToGatewayServiceServiceNetworkSpecOutput() GatewayServiceServiceNetworkSpecOutput {
+	return i.ToGatewayServiceServiceNetworkSpecOutputWithContext(context.Background())
+}
+
+func (i GatewayServiceServiceNetworkSpecArgs) ToGatewayServiceServiceNetworkSpecOutputWithContext(ctx context.Context) GatewayServiceServiceNetworkSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayServiceServiceNetworkSpecOutput)
+}
+
+func (i GatewayServiceServiceNetworkSpecArgs) ToGatewayServiceServiceNetworkSpecPtrOutput() GatewayServiceServiceNetworkSpecPtrOutput {
+	return i.ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(context.Background())
+}
+
+func (i GatewayServiceServiceNetworkSpecArgs) ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayServiceServiceNetworkSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayServiceServiceNetworkSpecOutput).ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(ctx)
+}
+
+// GatewayServiceServiceNetworkSpecPtrInput is an input type that accepts GatewayServiceServiceNetworkSpecArgs, GatewayServiceServiceNetworkSpecPtr and GatewayServiceServiceNetworkSpecPtrOutput values.
+// You can construct a concrete instance of `GatewayServiceServiceNetworkSpecPtrInput` via:
+//
+//	        GatewayServiceServiceNetworkSpecArgs{...}
+//
+//	or:
+//
+//	        nil
+type GatewayServiceServiceNetworkSpecPtrInput interface {
+	pulumi.Input
+
+	ToGatewayServiceServiceNetworkSpecPtrOutput() GatewayServiceServiceNetworkSpecPtrOutput
+	ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(context.Context) GatewayServiceServiceNetworkSpecPtrOutput
+}
+
+type gatewayServiceServiceNetworkSpecPtrType GatewayServiceServiceNetworkSpecArgs
+
+func GatewayServiceServiceNetworkSpecPtr(v *GatewayServiceServiceNetworkSpecArgs) GatewayServiceServiceNetworkSpecPtrInput {
+	return (*gatewayServiceServiceNetworkSpecPtrType)(v)
+}
+
+func (*gatewayServiceServiceNetworkSpecPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayServiceServiceNetworkSpec)(nil)).Elem()
+}
+
+func (i *gatewayServiceServiceNetworkSpecPtrType) ToGatewayServiceServiceNetworkSpecPtrOutput() GatewayServiceServiceNetworkSpecPtrOutput {
+	return i.ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(context.Background())
+}
+
+func (i *gatewayServiceServiceNetworkSpecPtrType) ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayServiceServiceNetworkSpecPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GatewayServiceServiceNetworkSpecPtrOutput)
+}
+
+type GatewayServiceServiceNetworkSpecOutput struct{ *pulumi.OutputState }
+
+func (GatewayServiceServiceNetworkSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GatewayServiceServiceNetworkSpec)(nil)).Elem()
+}
+
+func (o GatewayServiceServiceNetworkSpecOutput) ToGatewayServiceServiceNetworkSpecOutput() GatewayServiceServiceNetworkSpecOutput {
+	return o
+}
+
+func (o GatewayServiceServiceNetworkSpecOutput) ToGatewayServiceServiceNetworkSpecOutputWithContext(ctx context.Context) GatewayServiceServiceNetworkSpecOutput {
+	return o
+}
+
+func (o GatewayServiceServiceNetworkSpecOutput) ToGatewayServiceServiceNetworkSpecPtrOutput() GatewayServiceServiceNetworkSpecPtrOutput {
+	return o.ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(context.Background())
+}
+
+func (o GatewayServiceServiceNetworkSpecOutput) ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayServiceServiceNetworkSpecPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GatewayServiceServiceNetworkSpec) *GatewayServiceServiceNetworkSpec {
+		return &v
+	}).(GatewayServiceServiceNetworkSpecPtrOutput)
+}
+
+// 开启私网。
+func (o GatewayServiceServiceNetworkSpecOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayServiceServiceNetworkSpec) *bool { return v.EnablePrivateNetwork }).(pulumi.BoolPtrOutput)
+}
+
+// 开启公网。
+func (o GatewayServiceServiceNetworkSpecOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GatewayServiceServiceNetworkSpec) *bool { return v.EnablePublicNetwork }).(pulumi.BoolPtrOutput)
+}
+
+// 私网域名解析的目标IP。
+func (o GatewayServiceServiceNetworkSpecOutput) PrivateNetworkIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GatewayServiceServiceNetworkSpec) []string { return v.PrivateNetworkIps }).(pulumi.StringArrayOutput)
+}
+
+type GatewayServiceServiceNetworkSpecPtrOutput struct{ *pulumi.OutputState }
+
+func (GatewayServiceServiceNetworkSpecPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GatewayServiceServiceNetworkSpec)(nil)).Elem()
+}
+
+func (o GatewayServiceServiceNetworkSpecPtrOutput) ToGatewayServiceServiceNetworkSpecPtrOutput() GatewayServiceServiceNetworkSpecPtrOutput {
+	return o
+}
+
+func (o GatewayServiceServiceNetworkSpecPtrOutput) ToGatewayServiceServiceNetworkSpecPtrOutputWithContext(ctx context.Context) GatewayServiceServiceNetworkSpecPtrOutput {
+	return o
+}
+
+func (o GatewayServiceServiceNetworkSpecPtrOutput) Elem() GatewayServiceServiceNetworkSpecOutput {
+	return o.ApplyT(func(v *GatewayServiceServiceNetworkSpec) GatewayServiceServiceNetworkSpec {
+		if v != nil {
+			return *v
+		}
+		var ret GatewayServiceServiceNetworkSpec
+		return ret
+	}).(GatewayServiceServiceNetworkSpecOutput)
+}
+
+// 开启私网。
+func (o GatewayServiceServiceNetworkSpecPtrOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayServiceServiceNetworkSpec) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePrivateNetwork
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 开启公网。
+func (o GatewayServiceServiceNetworkSpecPtrOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *GatewayServiceServiceNetworkSpec) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnablePublicNetwork
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 私网域名解析的目标IP。
+func (o GatewayServiceServiceNetworkSpecPtrOutput) PrivateNetworkIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GatewayServiceServiceNetworkSpec) []string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateNetworkIps
+	}).(pulumi.StringArrayOutput)
 }
 
 type GatewayTraceSpec struct {
@@ -3137,6 +3294,200 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) MinHealthPercent() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
+type UpstreamConnectionPoolSettings struct {
+	// 开启。
+	Enable *bool `pulumi:"enable"`
+	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	Http1MaxPendingRequests *int `pulumi:"http1MaxPendingRequests"`
+	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	IdleTimeout *int `pulumi:"idleTimeout"`
+	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	MaxConnections *int `pulumi:"maxConnections"`
+}
+
+// UpstreamConnectionPoolSettingsInput is an input type that accepts UpstreamConnectionPoolSettingsArgs and UpstreamConnectionPoolSettingsOutput values.
+// You can construct a concrete instance of `UpstreamConnectionPoolSettingsInput` via:
+//
+//	UpstreamConnectionPoolSettingsArgs{...}
+type UpstreamConnectionPoolSettingsInput interface {
+	pulumi.Input
+
+	ToUpstreamConnectionPoolSettingsOutput() UpstreamConnectionPoolSettingsOutput
+	ToUpstreamConnectionPoolSettingsOutputWithContext(context.Context) UpstreamConnectionPoolSettingsOutput
+}
+
+type UpstreamConnectionPoolSettingsArgs struct {
+	// 开启。
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	Http1MaxPendingRequests pulumi.IntPtrInput `pulumi:"http1MaxPendingRequests"`
+	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	IdleTimeout pulumi.IntPtrInput `pulumi:"idleTimeout"`
+	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
+}
+
+func (UpstreamConnectionPoolSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UpstreamConnectionPoolSettings)(nil)).Elem()
+}
+
+func (i UpstreamConnectionPoolSettingsArgs) ToUpstreamConnectionPoolSettingsOutput() UpstreamConnectionPoolSettingsOutput {
+	return i.ToUpstreamConnectionPoolSettingsOutputWithContext(context.Background())
+}
+
+func (i UpstreamConnectionPoolSettingsArgs) ToUpstreamConnectionPoolSettingsOutputWithContext(ctx context.Context) UpstreamConnectionPoolSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamConnectionPoolSettingsOutput)
+}
+
+func (i UpstreamConnectionPoolSettingsArgs) ToUpstreamConnectionPoolSettingsPtrOutput() UpstreamConnectionPoolSettingsPtrOutput {
+	return i.ToUpstreamConnectionPoolSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i UpstreamConnectionPoolSettingsArgs) ToUpstreamConnectionPoolSettingsPtrOutputWithContext(ctx context.Context) UpstreamConnectionPoolSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamConnectionPoolSettingsOutput).ToUpstreamConnectionPoolSettingsPtrOutputWithContext(ctx)
+}
+
+// UpstreamConnectionPoolSettingsPtrInput is an input type that accepts UpstreamConnectionPoolSettingsArgs, UpstreamConnectionPoolSettingsPtr and UpstreamConnectionPoolSettingsPtrOutput values.
+// You can construct a concrete instance of `UpstreamConnectionPoolSettingsPtrInput` via:
+//
+//	        UpstreamConnectionPoolSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type UpstreamConnectionPoolSettingsPtrInput interface {
+	pulumi.Input
+
+	ToUpstreamConnectionPoolSettingsPtrOutput() UpstreamConnectionPoolSettingsPtrOutput
+	ToUpstreamConnectionPoolSettingsPtrOutputWithContext(context.Context) UpstreamConnectionPoolSettingsPtrOutput
+}
+
+type upstreamConnectionPoolSettingsPtrType UpstreamConnectionPoolSettingsArgs
+
+func UpstreamConnectionPoolSettingsPtr(v *UpstreamConnectionPoolSettingsArgs) UpstreamConnectionPoolSettingsPtrInput {
+	return (*upstreamConnectionPoolSettingsPtrType)(v)
+}
+
+func (*upstreamConnectionPoolSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UpstreamConnectionPoolSettings)(nil)).Elem()
+}
+
+func (i *upstreamConnectionPoolSettingsPtrType) ToUpstreamConnectionPoolSettingsPtrOutput() UpstreamConnectionPoolSettingsPtrOutput {
+	return i.ToUpstreamConnectionPoolSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *upstreamConnectionPoolSettingsPtrType) ToUpstreamConnectionPoolSettingsPtrOutputWithContext(ctx context.Context) UpstreamConnectionPoolSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamConnectionPoolSettingsPtrOutput)
+}
+
+type UpstreamConnectionPoolSettingsOutput struct{ *pulumi.OutputState }
+
+func (UpstreamConnectionPoolSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UpstreamConnectionPoolSettings)(nil)).Elem()
+}
+
+func (o UpstreamConnectionPoolSettingsOutput) ToUpstreamConnectionPoolSettingsOutput() UpstreamConnectionPoolSettingsOutput {
+	return o
+}
+
+func (o UpstreamConnectionPoolSettingsOutput) ToUpstreamConnectionPoolSettingsOutputWithContext(ctx context.Context) UpstreamConnectionPoolSettingsOutput {
+	return o
+}
+
+func (o UpstreamConnectionPoolSettingsOutput) ToUpstreamConnectionPoolSettingsPtrOutput() UpstreamConnectionPoolSettingsPtrOutput {
+	return o.ToUpstreamConnectionPoolSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o UpstreamConnectionPoolSettingsOutput) ToUpstreamConnectionPoolSettingsPtrOutputWithContext(ctx context.Context) UpstreamConnectionPoolSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UpstreamConnectionPoolSettings) *UpstreamConnectionPoolSettings {
+		return &v
+	}).(UpstreamConnectionPoolSettingsPtrOutput)
+}
+
+// 开启。
+func (o UpstreamConnectionPoolSettingsOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+func (o UpstreamConnectionPoolSettingsOutput) Http1MaxPendingRequests() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *int { return v.Http1MaxPendingRequests }).(pulumi.IntPtrOutput)
+}
+
+// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+func (o UpstreamConnectionPoolSettingsOutput) IdleTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *int { return v.IdleTimeout }).(pulumi.IntPtrOutput)
+}
+
+// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+func (o UpstreamConnectionPoolSettingsOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
+}
+
+type UpstreamConnectionPoolSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (UpstreamConnectionPoolSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UpstreamConnectionPoolSettings)(nil)).Elem()
+}
+
+func (o UpstreamConnectionPoolSettingsPtrOutput) ToUpstreamConnectionPoolSettingsPtrOutput() UpstreamConnectionPoolSettingsPtrOutput {
+	return o
+}
+
+func (o UpstreamConnectionPoolSettingsPtrOutput) ToUpstreamConnectionPoolSettingsPtrOutputWithContext(ctx context.Context) UpstreamConnectionPoolSettingsPtrOutput {
+	return o
+}
+
+func (o UpstreamConnectionPoolSettingsPtrOutput) Elem() UpstreamConnectionPoolSettingsOutput {
+	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) UpstreamConnectionPoolSettings {
+		if v != nil {
+			return *v
+		}
+		var ret UpstreamConnectionPoolSettings
+		return ret
+	}).(UpstreamConnectionPoolSettingsOutput)
+}
+
+// 开启。
+func (o UpstreamConnectionPoolSettingsPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+func (o UpstreamConnectionPoolSettingsPtrOutput) Http1MaxPendingRequests() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Http1MaxPendingRequests
+	}).(pulumi.IntPtrOutput)
+}
+
+// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+func (o UpstreamConnectionPoolSettingsPtrOutput) IdleTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.IdleTimeout
+	}).(pulumi.IntPtrOutput)
+}
+
+// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+func (o UpstreamConnectionPoolSettingsPtrOutput) MaxConnections() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxConnections
+	}).(pulumi.IntPtrOutput)
+}
+
 type UpstreamLoadBalancerSettings struct {
 	// 一致性哈希负载均衡。
 	ConsistentHashLb *UpstreamLoadBalancerSettingsConsistentHashLb `pulumi:"consistentHashLb"`
@@ -3334,6 +3685,8 @@ func (o UpstreamLoadBalancerSettingsPtrOutput) WarmupDuration() pulumi.IntPtrOut
 }
 
 type UpstreamLoadBalancerSettingsConsistentHashLb struct {
+	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	HashBalanceFactor *int `pulumi:"hashBalanceFactor"`
 	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
 	HashKey *string `pulumi:"hashKey"`
 	// Cookie。
@@ -3358,6 +3711,8 @@ type UpstreamLoadBalancerSettingsConsistentHashLbInput interface {
 }
 
 type UpstreamLoadBalancerSettingsConsistentHashLbArgs struct {
+	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	HashBalanceFactor pulumi.IntPtrInput `pulumi:"hashBalanceFactor"`
 	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
 	HashKey pulumi.StringPtrInput `pulumi:"hashKey"`
 	// Cookie。
@@ -3447,6 +3802,11 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) ToUpstreamLoadBalanc
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput)
 }
 
+// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) HashBalanceFactor() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLb) *int { return v.HashBalanceFactor }).(pulumi.IntPtrOutput)
+}
+
 // 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
 func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) HashKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLb) *string { return v.HashKey }).(pulumi.StringPtrOutput)
@@ -3496,6 +3856,16 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) Elem() UpstreamLo
 		var ret UpstreamLoadBalancerSettingsConsistentHashLb
 		return ret
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbOutput)
+}
+
+// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HashBalanceFactor() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLb) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HashBalanceFactor
+	}).(pulumi.IntPtrOutput)
 }
 
 // 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
@@ -4916,7 +5286,9 @@ func (o UpstreamTlsSettingsPtrOutput) TlsMode() pulumi.StringPtrOutput {
 
 type UpstreamUpstreamSpec struct {
 	// AI模型代理。
-	AiProvider   *UpstreamUpstreamSpecAiProvider   `pulumi:"aiProvider"`
+	AiProvider *UpstreamUpstreamSpecAiProvider `pulumi:"aiProvider"`
+	// 固定域名。
+	Domain       *UpstreamUpstreamSpecDomain       `pulumi:"domain"`
 	EcsInstances []UpstreamUpstreamSpecEcsInstance `pulumi:"ecsInstances"`
 	// 容器服务。
 	K8SService *UpstreamUpstreamSpecK8SService `pulumi:"k8SService"`
@@ -4939,7 +5311,9 @@ type UpstreamUpstreamSpecInput interface {
 
 type UpstreamUpstreamSpecArgs struct {
 	// AI模型代理。
-	AiProvider   UpstreamUpstreamSpecAiProviderPtrInput    `pulumi:"aiProvider"`
+	AiProvider UpstreamUpstreamSpecAiProviderPtrInput `pulumi:"aiProvider"`
+	// 固定域名。
+	Domain       UpstreamUpstreamSpecDomainPtrInput        `pulumi:"domain"`
 	EcsInstances UpstreamUpstreamSpecEcsInstanceArrayInput `pulumi:"ecsInstances"`
 	// 容器服务。
 	K8SService UpstreamUpstreamSpecK8SServicePtrInput `pulumi:"k8SService"`
@@ -5031,6 +5405,11 @@ func (o UpstreamUpstreamSpecOutput) AiProvider() UpstreamUpstreamSpecAiProviderP
 	return o.ApplyT(func(v UpstreamUpstreamSpec) *UpstreamUpstreamSpecAiProvider { return v.AiProvider }).(UpstreamUpstreamSpecAiProviderPtrOutput)
 }
 
+// 固定域名。
+func (o UpstreamUpstreamSpecOutput) Domain() UpstreamUpstreamSpecDomainPtrOutput {
+	return o.ApplyT(func(v UpstreamUpstreamSpec) *UpstreamUpstreamSpecDomain { return v.Domain }).(UpstreamUpstreamSpecDomainPtrOutput)
+}
+
 func (o UpstreamUpstreamSpecOutput) EcsInstances() UpstreamUpstreamSpecEcsInstanceArrayOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpec) []UpstreamUpstreamSpecEcsInstance { return v.EcsInstances }).(UpstreamUpstreamSpecEcsInstanceArrayOutput)
 }
@@ -5082,6 +5461,16 @@ func (o UpstreamUpstreamSpecPtrOutput) AiProvider() UpstreamUpstreamSpecAiProvid
 		}
 		return v.AiProvider
 	}).(UpstreamUpstreamSpecAiProviderPtrOutput)
+}
+
+// 固定域名。
+func (o UpstreamUpstreamSpecPtrOutput) Domain() UpstreamUpstreamSpecDomainPtrOutput {
+	return o.ApplyT(func(v *UpstreamUpstreamSpec) *UpstreamUpstreamSpecDomain {
+		if v == nil {
+			return nil
+		}
+		return v.Domain
+	}).(UpstreamUpstreamSpecDomainPtrOutput)
 }
 
 func (o UpstreamUpstreamSpecPtrOutput) EcsInstances() UpstreamUpstreamSpecEcsInstanceArrayOutput {
@@ -5492,6 +5881,245 @@ func (o UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput) Port() pulumi
 		}
 		return v.Port
 	}).(pulumi.IntPtrOutput)
+}
+
+type UpstreamUpstreamSpecDomain struct {
+	DomainLists []UpstreamUpstreamSpecDomainDomainList `pulumi:"domainLists"`
+}
+
+// UpstreamUpstreamSpecDomainInput is an input type that accepts UpstreamUpstreamSpecDomainArgs and UpstreamUpstreamSpecDomainOutput values.
+// You can construct a concrete instance of `UpstreamUpstreamSpecDomainInput` via:
+//
+//	UpstreamUpstreamSpecDomainArgs{...}
+type UpstreamUpstreamSpecDomainInput interface {
+	pulumi.Input
+
+	ToUpstreamUpstreamSpecDomainOutput() UpstreamUpstreamSpecDomainOutput
+	ToUpstreamUpstreamSpecDomainOutputWithContext(context.Context) UpstreamUpstreamSpecDomainOutput
+}
+
+type UpstreamUpstreamSpecDomainArgs struct {
+	DomainLists UpstreamUpstreamSpecDomainDomainListArrayInput `pulumi:"domainLists"`
+}
+
+func (UpstreamUpstreamSpecDomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UpstreamUpstreamSpecDomain)(nil)).Elem()
+}
+
+func (i UpstreamUpstreamSpecDomainArgs) ToUpstreamUpstreamSpecDomainOutput() UpstreamUpstreamSpecDomainOutput {
+	return i.ToUpstreamUpstreamSpecDomainOutputWithContext(context.Background())
+}
+
+func (i UpstreamUpstreamSpecDomainArgs) ToUpstreamUpstreamSpecDomainOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamUpstreamSpecDomainOutput)
+}
+
+func (i UpstreamUpstreamSpecDomainArgs) ToUpstreamUpstreamSpecDomainPtrOutput() UpstreamUpstreamSpecDomainPtrOutput {
+	return i.ToUpstreamUpstreamSpecDomainPtrOutputWithContext(context.Background())
+}
+
+func (i UpstreamUpstreamSpecDomainArgs) ToUpstreamUpstreamSpecDomainPtrOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamUpstreamSpecDomainOutput).ToUpstreamUpstreamSpecDomainPtrOutputWithContext(ctx)
+}
+
+// UpstreamUpstreamSpecDomainPtrInput is an input type that accepts UpstreamUpstreamSpecDomainArgs, UpstreamUpstreamSpecDomainPtr and UpstreamUpstreamSpecDomainPtrOutput values.
+// You can construct a concrete instance of `UpstreamUpstreamSpecDomainPtrInput` via:
+//
+//	        UpstreamUpstreamSpecDomainArgs{...}
+//
+//	or:
+//
+//	        nil
+type UpstreamUpstreamSpecDomainPtrInput interface {
+	pulumi.Input
+
+	ToUpstreamUpstreamSpecDomainPtrOutput() UpstreamUpstreamSpecDomainPtrOutput
+	ToUpstreamUpstreamSpecDomainPtrOutputWithContext(context.Context) UpstreamUpstreamSpecDomainPtrOutput
+}
+
+type upstreamUpstreamSpecDomainPtrType UpstreamUpstreamSpecDomainArgs
+
+func UpstreamUpstreamSpecDomainPtr(v *UpstreamUpstreamSpecDomainArgs) UpstreamUpstreamSpecDomainPtrInput {
+	return (*upstreamUpstreamSpecDomainPtrType)(v)
+}
+
+func (*upstreamUpstreamSpecDomainPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UpstreamUpstreamSpecDomain)(nil)).Elem()
+}
+
+func (i *upstreamUpstreamSpecDomainPtrType) ToUpstreamUpstreamSpecDomainPtrOutput() UpstreamUpstreamSpecDomainPtrOutput {
+	return i.ToUpstreamUpstreamSpecDomainPtrOutputWithContext(context.Background())
+}
+
+func (i *upstreamUpstreamSpecDomainPtrType) ToUpstreamUpstreamSpecDomainPtrOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamUpstreamSpecDomainPtrOutput)
+}
+
+type UpstreamUpstreamSpecDomainOutput struct{ *pulumi.OutputState }
+
+func (UpstreamUpstreamSpecDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UpstreamUpstreamSpecDomain)(nil)).Elem()
+}
+
+func (o UpstreamUpstreamSpecDomainOutput) ToUpstreamUpstreamSpecDomainOutput() UpstreamUpstreamSpecDomainOutput {
+	return o
+}
+
+func (o UpstreamUpstreamSpecDomainOutput) ToUpstreamUpstreamSpecDomainOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainOutput {
+	return o
+}
+
+func (o UpstreamUpstreamSpecDomainOutput) ToUpstreamUpstreamSpecDomainPtrOutput() UpstreamUpstreamSpecDomainPtrOutput {
+	return o.ToUpstreamUpstreamSpecDomainPtrOutputWithContext(context.Background())
+}
+
+func (o UpstreamUpstreamSpecDomainOutput) ToUpstreamUpstreamSpecDomainPtrOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UpstreamUpstreamSpecDomain) *UpstreamUpstreamSpecDomain {
+		return &v
+	}).(UpstreamUpstreamSpecDomainPtrOutput)
+}
+
+func (o UpstreamUpstreamSpecDomainOutput) DomainLists() UpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return o.ApplyT(func(v UpstreamUpstreamSpecDomain) []UpstreamUpstreamSpecDomainDomainList { return v.DomainLists }).(UpstreamUpstreamSpecDomainDomainListArrayOutput)
+}
+
+type UpstreamUpstreamSpecDomainPtrOutput struct{ *pulumi.OutputState }
+
+func (UpstreamUpstreamSpecDomainPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UpstreamUpstreamSpecDomain)(nil)).Elem()
+}
+
+func (o UpstreamUpstreamSpecDomainPtrOutput) ToUpstreamUpstreamSpecDomainPtrOutput() UpstreamUpstreamSpecDomainPtrOutput {
+	return o
+}
+
+func (o UpstreamUpstreamSpecDomainPtrOutput) ToUpstreamUpstreamSpecDomainPtrOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainPtrOutput {
+	return o
+}
+
+func (o UpstreamUpstreamSpecDomainPtrOutput) Elem() UpstreamUpstreamSpecDomainOutput {
+	return o.ApplyT(func(v *UpstreamUpstreamSpecDomain) UpstreamUpstreamSpecDomain {
+		if v != nil {
+			return *v
+		}
+		var ret UpstreamUpstreamSpecDomain
+		return ret
+	}).(UpstreamUpstreamSpecDomainOutput)
+}
+
+func (o UpstreamUpstreamSpecDomainPtrOutput) DomainLists() UpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return o.ApplyT(func(v *UpstreamUpstreamSpecDomain) []UpstreamUpstreamSpecDomainDomainList {
+		if v == nil {
+			return nil
+		}
+		return v.DomainLists
+	}).(UpstreamUpstreamSpecDomainDomainListArrayOutput)
+}
+
+type UpstreamUpstreamSpecDomainDomainList struct {
+	// 域名。
+	Domain *string `pulumi:"domain"`
+	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	Port *int `pulumi:"port"`
+}
+
+// UpstreamUpstreamSpecDomainDomainListInput is an input type that accepts UpstreamUpstreamSpecDomainDomainListArgs and UpstreamUpstreamSpecDomainDomainListOutput values.
+// You can construct a concrete instance of `UpstreamUpstreamSpecDomainDomainListInput` via:
+//
+//	UpstreamUpstreamSpecDomainDomainListArgs{...}
+type UpstreamUpstreamSpecDomainDomainListInput interface {
+	pulumi.Input
+
+	ToUpstreamUpstreamSpecDomainDomainListOutput() UpstreamUpstreamSpecDomainDomainListOutput
+	ToUpstreamUpstreamSpecDomainDomainListOutputWithContext(context.Context) UpstreamUpstreamSpecDomainDomainListOutput
+}
+
+type UpstreamUpstreamSpecDomainDomainListArgs struct {
+	// 域名。
+	Domain pulumi.StringPtrInput `pulumi:"domain"`
+	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	Port pulumi.IntPtrInput `pulumi:"port"`
+}
+
+func (UpstreamUpstreamSpecDomainDomainListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (i UpstreamUpstreamSpecDomainDomainListArgs) ToUpstreamUpstreamSpecDomainDomainListOutput() UpstreamUpstreamSpecDomainDomainListOutput {
+	return i.ToUpstreamUpstreamSpecDomainDomainListOutputWithContext(context.Background())
+}
+
+func (i UpstreamUpstreamSpecDomainDomainListArgs) ToUpstreamUpstreamSpecDomainDomainListOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainDomainListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamUpstreamSpecDomainDomainListOutput)
+}
+
+// UpstreamUpstreamSpecDomainDomainListArrayInput is an input type that accepts UpstreamUpstreamSpecDomainDomainListArray and UpstreamUpstreamSpecDomainDomainListArrayOutput values.
+// You can construct a concrete instance of `UpstreamUpstreamSpecDomainDomainListArrayInput` via:
+//
+//	UpstreamUpstreamSpecDomainDomainListArray{ UpstreamUpstreamSpecDomainDomainListArgs{...} }
+type UpstreamUpstreamSpecDomainDomainListArrayInput interface {
+	pulumi.Input
+
+	ToUpstreamUpstreamSpecDomainDomainListArrayOutput() UpstreamUpstreamSpecDomainDomainListArrayOutput
+	ToUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(context.Context) UpstreamUpstreamSpecDomainDomainListArrayOutput
+}
+
+type UpstreamUpstreamSpecDomainDomainListArray []UpstreamUpstreamSpecDomainDomainListInput
+
+func (UpstreamUpstreamSpecDomainDomainListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (i UpstreamUpstreamSpecDomainDomainListArray) ToUpstreamUpstreamSpecDomainDomainListArrayOutput() UpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return i.ToUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(context.Background())
+}
+
+func (i UpstreamUpstreamSpecDomainDomainListArray) ToUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UpstreamUpstreamSpecDomainDomainListArrayOutput)
+}
+
+type UpstreamUpstreamSpecDomainDomainListOutput struct{ *pulumi.OutputState }
+
+func (UpstreamUpstreamSpecDomainDomainListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (o UpstreamUpstreamSpecDomainDomainListOutput) ToUpstreamUpstreamSpecDomainDomainListOutput() UpstreamUpstreamSpecDomainDomainListOutput {
+	return o
+}
+
+func (o UpstreamUpstreamSpecDomainDomainListOutput) ToUpstreamUpstreamSpecDomainDomainListOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainDomainListOutput {
+	return o
+}
+
+// 域名。
+func (o UpstreamUpstreamSpecDomainDomainListOutput) Domain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UpstreamUpstreamSpecDomainDomainList) *string { return v.Domain }).(pulumi.StringPtrOutput)
+}
+
+// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+func (o UpstreamUpstreamSpecDomainDomainListOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UpstreamUpstreamSpecDomainDomainList) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+type UpstreamUpstreamSpecDomainDomainListArrayOutput struct{ *pulumi.OutputState }
+
+func (UpstreamUpstreamSpecDomainDomainListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (o UpstreamUpstreamSpecDomainDomainListArrayOutput) ToUpstreamUpstreamSpecDomainDomainListArrayOutput() UpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return o
+}
+
+func (o UpstreamUpstreamSpecDomainDomainListArrayOutput) ToUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(ctx context.Context) UpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return o
+}
+
+func (o UpstreamUpstreamSpecDomainDomainListArrayOutput) Index(i pulumi.IntInput) UpstreamUpstreamSpecDomainDomainListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UpstreamUpstreamSpecDomainDomainList {
+		return vs[0].([]UpstreamUpstreamSpecDomainDomainList)[vs[1].(int)]
+	}).(UpstreamUpstreamSpecDomainDomainListOutput)
 }
 
 type UpstreamUpstreamSpecEcsInstance struct {
@@ -7715,6 +8343,76 @@ func (o GetGatewayServiceDomainSpecOutput) EnablePublicResolution() pulumi.BoolO
 	return o.ApplyT(func(v GetGatewayServiceDomainSpec) bool { return v.EnablePublicResolution }).(pulumi.BoolOutput)
 }
 
+type GetGatewayServiceServiceNetworkSpec struct {
+	// 开启私网。
+	EnablePrivateNetwork bool `pulumi:"enablePrivateNetwork"`
+	// 开启公网。
+	EnablePublicNetwork bool `pulumi:"enablePublicNetwork"`
+	// 私网域名解析的目标IP。
+	PrivateNetworkIps []string `pulumi:"privateNetworkIps"`
+}
+
+// GetGatewayServiceServiceNetworkSpecInput is an input type that accepts GetGatewayServiceServiceNetworkSpecArgs and GetGatewayServiceServiceNetworkSpecOutput values.
+// You can construct a concrete instance of `GetGatewayServiceServiceNetworkSpecInput` via:
+//
+//	GetGatewayServiceServiceNetworkSpecArgs{...}
+type GetGatewayServiceServiceNetworkSpecInput interface {
+	pulumi.Input
+
+	ToGetGatewayServiceServiceNetworkSpecOutput() GetGatewayServiceServiceNetworkSpecOutput
+	ToGetGatewayServiceServiceNetworkSpecOutputWithContext(context.Context) GetGatewayServiceServiceNetworkSpecOutput
+}
+
+type GetGatewayServiceServiceNetworkSpecArgs struct {
+	// 开启私网。
+	EnablePrivateNetwork pulumi.BoolInput `pulumi:"enablePrivateNetwork"`
+	// 开启公网。
+	EnablePublicNetwork pulumi.BoolInput `pulumi:"enablePublicNetwork"`
+	// 私网域名解析的目标IP。
+	PrivateNetworkIps pulumi.StringArrayInput `pulumi:"privateNetworkIps"`
+}
+
+func (GetGatewayServiceServiceNetworkSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayServiceServiceNetworkSpec)(nil)).Elem()
+}
+
+func (i GetGatewayServiceServiceNetworkSpecArgs) ToGetGatewayServiceServiceNetworkSpecOutput() GetGatewayServiceServiceNetworkSpecOutput {
+	return i.ToGetGatewayServiceServiceNetworkSpecOutputWithContext(context.Background())
+}
+
+func (i GetGatewayServiceServiceNetworkSpecArgs) ToGetGatewayServiceServiceNetworkSpecOutputWithContext(ctx context.Context) GetGatewayServiceServiceNetworkSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGatewayServiceServiceNetworkSpecOutput)
+}
+
+type GetGatewayServiceServiceNetworkSpecOutput struct{ *pulumi.OutputState }
+
+func (GetGatewayServiceServiceNetworkSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGatewayServiceServiceNetworkSpec)(nil)).Elem()
+}
+
+func (o GetGatewayServiceServiceNetworkSpecOutput) ToGetGatewayServiceServiceNetworkSpecOutput() GetGatewayServiceServiceNetworkSpecOutput {
+	return o
+}
+
+func (o GetGatewayServiceServiceNetworkSpecOutput) ToGetGatewayServiceServiceNetworkSpecOutputWithContext(ctx context.Context) GetGatewayServiceServiceNetworkSpecOutput {
+	return o
+}
+
+// 开启私网。
+func (o GetGatewayServiceServiceNetworkSpecOutput) EnablePrivateNetwork() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayServiceServiceNetworkSpec) bool { return v.EnablePrivateNetwork }).(pulumi.BoolOutput)
+}
+
+// 开启公网。
+func (o GetGatewayServiceServiceNetworkSpecOutput) EnablePublicNetwork() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGatewayServiceServiceNetworkSpec) bool { return v.EnablePublicNetwork }).(pulumi.BoolOutput)
+}
+
+// 私网域名解析的目标IP。
+func (o GetGatewayServiceServiceNetworkSpecOutput) PrivateNetworkIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGatewayServiceServiceNetworkSpec) []string { return v.PrivateNetworkIps }).(pulumi.StringArrayOutput)
+}
+
 type GetGatewayTraceSpec struct {
 	// 应用性能监控全链路版链路追踪配置。
 	ApmTraceSpec GetGatewayTraceSpecApmTraceSpec `pulumi:"apmTraceSpec"`
@@ -8137,6 +8835,85 @@ func (o GetUpstreamCircuitBreakingSettingsOutput) MinHealthPercent() pulumi.IntO
 	return o.ApplyT(func(v GetUpstreamCircuitBreakingSettings) int { return v.MinHealthPercent }).(pulumi.IntOutput)
 }
 
+type GetUpstreamConnectionPoolSettings struct {
+	// 开启。
+	Enable bool `pulumi:"enable"`
+	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	Http1MaxPendingRequests int `pulumi:"http1MaxPendingRequests"`
+	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	IdleTimeout int `pulumi:"idleTimeout"`
+	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	MaxConnections int `pulumi:"maxConnections"`
+}
+
+// GetUpstreamConnectionPoolSettingsInput is an input type that accepts GetUpstreamConnectionPoolSettingsArgs and GetUpstreamConnectionPoolSettingsOutput values.
+// You can construct a concrete instance of `GetUpstreamConnectionPoolSettingsInput` via:
+//
+//	GetUpstreamConnectionPoolSettingsArgs{...}
+type GetUpstreamConnectionPoolSettingsInput interface {
+	pulumi.Input
+
+	ToGetUpstreamConnectionPoolSettingsOutput() GetUpstreamConnectionPoolSettingsOutput
+	ToGetUpstreamConnectionPoolSettingsOutputWithContext(context.Context) GetUpstreamConnectionPoolSettingsOutput
+}
+
+type GetUpstreamConnectionPoolSettingsArgs struct {
+	// 开启。
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	Http1MaxPendingRequests pulumi.IntInput `pulumi:"http1MaxPendingRequests"`
+	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	IdleTimeout pulumi.IntInput `pulumi:"idleTimeout"`
+	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
+}
+
+func (GetUpstreamConnectionPoolSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUpstreamConnectionPoolSettings)(nil)).Elem()
+}
+
+func (i GetUpstreamConnectionPoolSettingsArgs) ToGetUpstreamConnectionPoolSettingsOutput() GetUpstreamConnectionPoolSettingsOutput {
+	return i.ToGetUpstreamConnectionPoolSettingsOutputWithContext(context.Background())
+}
+
+func (i GetUpstreamConnectionPoolSettingsArgs) ToGetUpstreamConnectionPoolSettingsOutputWithContext(ctx context.Context) GetUpstreamConnectionPoolSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUpstreamConnectionPoolSettingsOutput)
+}
+
+type GetUpstreamConnectionPoolSettingsOutput struct{ *pulumi.OutputState }
+
+func (GetUpstreamConnectionPoolSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUpstreamConnectionPoolSettings)(nil)).Elem()
+}
+
+func (o GetUpstreamConnectionPoolSettingsOutput) ToGetUpstreamConnectionPoolSettingsOutput() GetUpstreamConnectionPoolSettingsOutput {
+	return o
+}
+
+func (o GetUpstreamConnectionPoolSettingsOutput) ToGetUpstreamConnectionPoolSettingsOutputWithContext(ctx context.Context) GetUpstreamConnectionPoolSettingsOutput {
+	return o
+}
+
+// 开启。
+func (o GetUpstreamConnectionPoolSettingsOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+func (o GetUpstreamConnectionPoolSettingsOutput) Http1MaxPendingRequests() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) int { return v.Http1MaxPendingRequests }).(pulumi.IntOutput)
+}
+
+// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+func (o GetUpstreamConnectionPoolSettingsOutput) IdleTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) int { return v.IdleTimeout }).(pulumi.IntOutput)
+}
+
+// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+func (o GetUpstreamConnectionPoolSettingsOutput) MaxConnections() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) int { return v.MaxConnections }).(pulumi.IntOutput)
+}
+
 type GetUpstreamLoadBalancerSettings struct {
 	// 一致性哈希负载均衡。
 	ConsistentHashLb GetUpstreamLoadBalancerSettingsConsistentHashLb `pulumi:"consistentHashLb"`
@@ -8219,6 +8996,8 @@ func (o GetUpstreamLoadBalancerSettingsOutput) WarmupDuration() pulumi.IntOutput
 }
 
 type GetUpstreamLoadBalancerSettingsConsistentHashLb struct {
+	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	HashBalanceFactor int `pulumi:"hashBalanceFactor"`
 	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
 	HashKey string `pulumi:"hashKey"`
 	// Cookie。
@@ -8243,6 +9022,8 @@ type GetUpstreamLoadBalancerSettingsConsistentHashLbInput interface {
 }
 
 type GetUpstreamLoadBalancerSettingsConsistentHashLbArgs struct {
+	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	HashBalanceFactor pulumi.IntInput `pulumi:"hashBalanceFactor"`
 	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
 	HashKey pulumi.StringInput `pulumi:"hashKey"`
 	// Cookie。
@@ -8279,6 +9060,11 @@ func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) ToGetUpstreamLoad
 
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) ToGetUpstreamLoadBalancerSettingsConsistentHashLbOutputWithContext(ctx context.Context) GetUpstreamLoadBalancerSettingsConsistentHashLbOutput {
 	return o
+}
+
+// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) HashBalanceFactor() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLb) int { return v.HashBalanceFactor }).(pulumi.IntOutput)
 }
 
 // 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
@@ -8857,6 +9643,8 @@ func (o GetUpstreamTlsSettingsOutput) TlsMode() pulumi.StringOutput {
 type GetUpstreamUpstreamSpec struct {
 	// AI模型代理。
 	AiProvider GetUpstreamUpstreamSpecAiProvider `pulumi:"aiProvider"`
+	// 固定域名。
+	Domain GetUpstreamUpstreamSpecDomain `pulumi:"domain"`
 	// 云服务器。
 	EcsInstances []GetUpstreamUpstreamSpecEcsInstance `pulumi:"ecsInstances"`
 	// 容器服务。
@@ -8881,6 +9669,8 @@ type GetUpstreamUpstreamSpecInput interface {
 type GetUpstreamUpstreamSpecArgs struct {
 	// AI模型代理。
 	AiProvider GetUpstreamUpstreamSpecAiProviderInput `pulumi:"aiProvider"`
+	// 固定域名。
+	Domain GetUpstreamUpstreamSpecDomainInput `pulumi:"domain"`
 	// 云服务器。
 	EcsInstances GetUpstreamUpstreamSpecEcsInstanceArrayInput `pulumi:"ecsInstances"`
 	// 容器服务。
@@ -8920,6 +9710,11 @@ func (o GetUpstreamUpstreamSpecOutput) ToGetUpstreamUpstreamSpecOutputWithContex
 // AI模型代理。
 func (o GetUpstreamUpstreamSpecOutput) AiProvider() GetUpstreamUpstreamSpecAiProviderOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpec) GetUpstreamUpstreamSpecAiProvider { return v.AiProvider }).(GetUpstreamUpstreamSpecAiProviderOutput)
+}
+
+// 固定域名。
+func (o GetUpstreamUpstreamSpecOutput) Domain() GetUpstreamUpstreamSpecDomainOutput {
+	return o.ApplyT(func(v GetUpstreamUpstreamSpec) GetUpstreamUpstreamSpecDomain { return v.Domain }).(GetUpstreamUpstreamSpecDomainOutput)
 }
 
 // 云服务器。
@@ -9091,6 +9886,164 @@ func (o GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Namespace() p
 // 端口。
 func (o GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProviderCustomModelService) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetUpstreamUpstreamSpecDomain struct {
+	// 域名列表。
+	DomainLists []GetUpstreamUpstreamSpecDomainDomainList `pulumi:"domainLists"`
+}
+
+// GetUpstreamUpstreamSpecDomainInput is an input type that accepts GetUpstreamUpstreamSpecDomainArgs and GetUpstreamUpstreamSpecDomainOutput values.
+// You can construct a concrete instance of `GetUpstreamUpstreamSpecDomainInput` via:
+//
+//	GetUpstreamUpstreamSpecDomainArgs{...}
+type GetUpstreamUpstreamSpecDomainInput interface {
+	pulumi.Input
+
+	ToGetUpstreamUpstreamSpecDomainOutput() GetUpstreamUpstreamSpecDomainOutput
+	ToGetUpstreamUpstreamSpecDomainOutputWithContext(context.Context) GetUpstreamUpstreamSpecDomainOutput
+}
+
+type GetUpstreamUpstreamSpecDomainArgs struct {
+	// 域名列表。
+	DomainLists GetUpstreamUpstreamSpecDomainDomainListArrayInput `pulumi:"domainLists"`
+}
+
+func (GetUpstreamUpstreamSpecDomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUpstreamUpstreamSpecDomain)(nil)).Elem()
+}
+
+func (i GetUpstreamUpstreamSpecDomainArgs) ToGetUpstreamUpstreamSpecDomainOutput() GetUpstreamUpstreamSpecDomainOutput {
+	return i.ToGetUpstreamUpstreamSpecDomainOutputWithContext(context.Background())
+}
+
+func (i GetUpstreamUpstreamSpecDomainArgs) ToGetUpstreamUpstreamSpecDomainOutputWithContext(ctx context.Context) GetUpstreamUpstreamSpecDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUpstreamUpstreamSpecDomainOutput)
+}
+
+type GetUpstreamUpstreamSpecDomainOutput struct{ *pulumi.OutputState }
+
+func (GetUpstreamUpstreamSpecDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUpstreamUpstreamSpecDomain)(nil)).Elem()
+}
+
+func (o GetUpstreamUpstreamSpecDomainOutput) ToGetUpstreamUpstreamSpecDomainOutput() GetUpstreamUpstreamSpecDomainOutput {
+	return o
+}
+
+func (o GetUpstreamUpstreamSpecDomainOutput) ToGetUpstreamUpstreamSpecDomainOutputWithContext(ctx context.Context) GetUpstreamUpstreamSpecDomainOutput {
+	return o
+}
+
+// 域名列表。
+func (o GetUpstreamUpstreamSpecDomainOutput) DomainLists() GetUpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return o.ApplyT(func(v GetUpstreamUpstreamSpecDomain) []GetUpstreamUpstreamSpecDomainDomainList { return v.DomainLists }).(GetUpstreamUpstreamSpecDomainDomainListArrayOutput)
+}
+
+type GetUpstreamUpstreamSpecDomainDomainList struct {
+	// 域名。
+	Domain string `pulumi:"domain"`
+	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	Port int `pulumi:"port"`
+}
+
+// GetUpstreamUpstreamSpecDomainDomainListInput is an input type that accepts GetUpstreamUpstreamSpecDomainDomainListArgs and GetUpstreamUpstreamSpecDomainDomainListOutput values.
+// You can construct a concrete instance of `GetUpstreamUpstreamSpecDomainDomainListInput` via:
+//
+//	GetUpstreamUpstreamSpecDomainDomainListArgs{...}
+type GetUpstreamUpstreamSpecDomainDomainListInput interface {
+	pulumi.Input
+
+	ToGetUpstreamUpstreamSpecDomainDomainListOutput() GetUpstreamUpstreamSpecDomainDomainListOutput
+	ToGetUpstreamUpstreamSpecDomainDomainListOutputWithContext(context.Context) GetUpstreamUpstreamSpecDomainDomainListOutput
+}
+
+type GetUpstreamUpstreamSpecDomainDomainListArgs struct {
+	// 域名。
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	Port pulumi.IntInput `pulumi:"port"`
+}
+
+func (GetUpstreamUpstreamSpecDomainDomainListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (i GetUpstreamUpstreamSpecDomainDomainListArgs) ToGetUpstreamUpstreamSpecDomainDomainListOutput() GetUpstreamUpstreamSpecDomainDomainListOutput {
+	return i.ToGetUpstreamUpstreamSpecDomainDomainListOutputWithContext(context.Background())
+}
+
+func (i GetUpstreamUpstreamSpecDomainDomainListArgs) ToGetUpstreamUpstreamSpecDomainDomainListOutputWithContext(ctx context.Context) GetUpstreamUpstreamSpecDomainDomainListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUpstreamUpstreamSpecDomainDomainListOutput)
+}
+
+// GetUpstreamUpstreamSpecDomainDomainListArrayInput is an input type that accepts GetUpstreamUpstreamSpecDomainDomainListArray and GetUpstreamUpstreamSpecDomainDomainListArrayOutput values.
+// You can construct a concrete instance of `GetUpstreamUpstreamSpecDomainDomainListArrayInput` via:
+//
+//	GetUpstreamUpstreamSpecDomainDomainListArray{ GetUpstreamUpstreamSpecDomainDomainListArgs{...} }
+type GetUpstreamUpstreamSpecDomainDomainListArrayInput interface {
+	pulumi.Input
+
+	ToGetUpstreamUpstreamSpecDomainDomainListArrayOutput() GetUpstreamUpstreamSpecDomainDomainListArrayOutput
+	ToGetUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(context.Context) GetUpstreamUpstreamSpecDomainDomainListArrayOutput
+}
+
+type GetUpstreamUpstreamSpecDomainDomainListArray []GetUpstreamUpstreamSpecDomainDomainListInput
+
+func (GetUpstreamUpstreamSpecDomainDomainListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (i GetUpstreamUpstreamSpecDomainDomainListArray) ToGetUpstreamUpstreamSpecDomainDomainListArrayOutput() GetUpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return i.ToGetUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(context.Background())
+}
+
+func (i GetUpstreamUpstreamSpecDomainDomainListArray) ToGetUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(ctx context.Context) GetUpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUpstreamUpstreamSpecDomainDomainListArrayOutput)
+}
+
+type GetUpstreamUpstreamSpecDomainDomainListOutput struct{ *pulumi.OutputState }
+
+func (GetUpstreamUpstreamSpecDomainDomainListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (o GetUpstreamUpstreamSpecDomainDomainListOutput) ToGetUpstreamUpstreamSpecDomainDomainListOutput() GetUpstreamUpstreamSpecDomainDomainListOutput {
+	return o
+}
+
+func (o GetUpstreamUpstreamSpecDomainDomainListOutput) ToGetUpstreamUpstreamSpecDomainDomainListOutputWithContext(ctx context.Context) GetUpstreamUpstreamSpecDomainDomainListOutput {
+	return o
+}
+
+// 域名。
+func (o GetUpstreamUpstreamSpecDomainDomainListOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUpstreamUpstreamSpecDomainDomainList) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+func (o GetUpstreamUpstreamSpecDomainDomainListOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUpstreamUpstreamSpecDomainDomainList) int { return v.Port }).(pulumi.IntOutput)
+}
+
+type GetUpstreamUpstreamSpecDomainDomainListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUpstreamUpstreamSpecDomainDomainListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUpstreamUpstreamSpecDomainDomainList)(nil)).Elem()
+}
+
+func (o GetUpstreamUpstreamSpecDomainDomainListArrayOutput) ToGetUpstreamUpstreamSpecDomainDomainListArrayOutput() GetUpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return o
+}
+
+func (o GetUpstreamUpstreamSpecDomainDomainListArrayOutput) ToGetUpstreamUpstreamSpecDomainDomainListArrayOutputWithContext(ctx context.Context) GetUpstreamUpstreamSpecDomainDomainListArrayOutput {
+	return o
+}
+
+func (o GetUpstreamUpstreamSpecDomainDomainListArrayOutput) Index(i pulumi.IntInput) GetUpstreamUpstreamSpecDomainDomainListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUpstreamUpstreamSpecDomainDomainList {
+		return vs[0].([]GetUpstreamUpstreamSpecDomainDomainList)[vs[1].(int)]
+	}).(GetUpstreamUpstreamSpecDomainDomainListOutput)
 }
 
 type GetUpstreamUpstreamSpecEcsInstance struct {
@@ -9672,6 +10625,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceDomainArrayInput)(nil)).Elem(), GatewayServiceDomainArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceDomainSpecInput)(nil)).Elem(), GatewayServiceDomainSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceDomainSpecPtrInput)(nil)).Elem(), GatewayServiceDomainSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceServiceNetworkSpecInput)(nil)).Elem(), GatewayServiceServiceNetworkSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GatewayServiceServiceNetworkSpecPtrInput)(nil)).Elem(), GatewayServiceServiceNetworkSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecInput)(nil)).Elem(), GatewayTraceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecPtrInput)(nil)).Elem(), GatewayTraceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GatewayTraceSpecApmTraceSpecInput)(nil)).Elem(), GatewayTraceSpecApmTraceSpecArgs{})
@@ -9682,6 +10637,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamBackendTargetArrayInput)(nil)).Elem(), UpstreamBackendTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamCircuitBreakingSettingsInput)(nil)).Elem(), UpstreamCircuitBreakingSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamCircuitBreakingSettingsPtrInput)(nil)).Elem(), UpstreamCircuitBreakingSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamConnectionPoolSettingsInput)(nil)).Elem(), UpstreamConnectionPoolSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamConnectionPoolSettingsPtrInput)(nil)).Elem(), UpstreamConnectionPoolSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamLoadBalancerSettingsInput)(nil)).Elem(), UpstreamLoadBalancerSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamLoadBalancerSettingsPtrInput)(nil)).Elem(), UpstreamLoadBalancerSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamLoadBalancerSettingsConsistentHashLbInput)(nil)).Elem(), UpstreamLoadBalancerSettingsConsistentHashLbArgs{})
@@ -9708,6 +10665,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecAiProviderPtrInput)(nil)).Elem(), UpstreamUpstreamSpecAiProviderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecAiProviderCustomModelServiceInput)(nil)).Elem(), UpstreamUpstreamSpecAiProviderCustomModelServiceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecAiProviderCustomModelServicePtrInput)(nil)).Elem(), UpstreamUpstreamSpecAiProviderCustomModelServiceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecDomainInput)(nil)).Elem(), UpstreamUpstreamSpecDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecDomainPtrInput)(nil)).Elem(), UpstreamUpstreamSpecDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecDomainDomainListInput)(nil)).Elem(), UpstreamUpstreamSpecDomainDomainListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecDomainDomainListArrayInput)(nil)).Elem(), UpstreamUpstreamSpecDomainDomainListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecEcsInstanceInput)(nil)).Elem(), UpstreamUpstreamSpecEcsInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecEcsInstanceArrayInput)(nil)).Elem(), UpstreamUpstreamSpecEcsInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UpstreamUpstreamSpecK8SServiceInput)(nil)).Elem(), UpstreamUpstreamSpecK8SServiceArgs{})
@@ -9743,12 +10704,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceDomainInput)(nil)).Elem(), GetGatewayServiceDomainArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceDomainArrayInput)(nil)).Elem(), GetGatewayServiceDomainArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceDomainSpecInput)(nil)).Elem(), GetGatewayServiceDomainSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayServiceServiceNetworkSpecInput)(nil)).Elem(), GetGatewayServiceServiceNetworkSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayTraceSpecInput)(nil)).Elem(), GetGatewayTraceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayTraceSpecApmTraceSpecInput)(nil)).Elem(), GetGatewayTraceSpecApmTraceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGatewayTraceSpecTlsTraceSpecInput)(nil)).Elem(), GetGatewayTraceSpecTlsTraceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamBackendTargetInput)(nil)).Elem(), GetUpstreamBackendTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamBackendTargetArrayInput)(nil)).Elem(), GetUpstreamBackendTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamCircuitBreakingSettingsInput)(nil)).Elem(), GetUpstreamCircuitBreakingSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamConnectionPoolSettingsInput)(nil)).Elem(), GetUpstreamConnectionPoolSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamLoadBalancerSettingsInput)(nil)).Elem(), GetUpstreamLoadBalancerSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamLoadBalancerSettingsConsistentHashLbInput)(nil)).Elem(), GetUpstreamLoadBalancerSettingsConsistentHashLbArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieInput)(nil)).Elem(), GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs{})
@@ -9762,6 +10725,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecInput)(nil)).Elem(), GetUpstreamUpstreamSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecAiProviderInput)(nil)).Elem(), GetUpstreamUpstreamSpecAiProviderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecAiProviderCustomModelServiceInput)(nil)).Elem(), GetUpstreamUpstreamSpecAiProviderCustomModelServiceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecDomainInput)(nil)).Elem(), GetUpstreamUpstreamSpecDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecDomainDomainListInput)(nil)).Elem(), GetUpstreamUpstreamSpecDomainDomainListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecDomainDomainListArrayInput)(nil)).Elem(), GetUpstreamUpstreamSpecDomainDomainListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecEcsInstanceInput)(nil)).Elem(), GetUpstreamUpstreamSpecEcsInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecEcsInstanceArrayInput)(nil)).Elem(), GetUpstreamUpstreamSpecEcsInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUpstreamUpstreamSpecK8SServiceInput)(nil)).Elem(), GetUpstreamUpstreamSpecK8SServiceArgs{})
@@ -9803,6 +10769,8 @@ func init() {
 	pulumi.RegisterOutputType(GatewayServiceDomainArrayOutput{})
 	pulumi.RegisterOutputType(GatewayServiceDomainSpecOutput{})
 	pulumi.RegisterOutputType(GatewayServiceDomainSpecPtrOutput{})
+	pulumi.RegisterOutputType(GatewayServiceServiceNetworkSpecOutput{})
+	pulumi.RegisterOutputType(GatewayServiceServiceNetworkSpecPtrOutput{})
 	pulumi.RegisterOutputType(GatewayTraceSpecOutput{})
 	pulumi.RegisterOutputType(GatewayTraceSpecPtrOutput{})
 	pulumi.RegisterOutputType(GatewayTraceSpecApmTraceSpecOutput{})
@@ -9813,6 +10781,8 @@ func init() {
 	pulumi.RegisterOutputType(UpstreamBackendTargetArrayOutput{})
 	pulumi.RegisterOutputType(UpstreamCircuitBreakingSettingsOutput{})
 	pulumi.RegisterOutputType(UpstreamCircuitBreakingSettingsPtrOutput{})
+	pulumi.RegisterOutputType(UpstreamConnectionPoolSettingsOutput{})
+	pulumi.RegisterOutputType(UpstreamConnectionPoolSettingsPtrOutput{})
 	pulumi.RegisterOutputType(UpstreamLoadBalancerSettingsOutput{})
 	pulumi.RegisterOutputType(UpstreamLoadBalancerSettingsPtrOutput{})
 	pulumi.RegisterOutputType(UpstreamLoadBalancerSettingsConsistentHashLbOutput{})
@@ -9839,6 +10809,10 @@ func init() {
 	pulumi.RegisterOutputType(UpstreamUpstreamSpecAiProviderPtrOutput{})
 	pulumi.RegisterOutputType(UpstreamUpstreamSpecAiProviderCustomModelServiceOutput{})
 	pulumi.RegisterOutputType(UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput{})
+	pulumi.RegisterOutputType(UpstreamUpstreamSpecDomainOutput{})
+	pulumi.RegisterOutputType(UpstreamUpstreamSpecDomainPtrOutput{})
+	pulumi.RegisterOutputType(UpstreamUpstreamSpecDomainDomainListOutput{})
+	pulumi.RegisterOutputType(UpstreamUpstreamSpecDomainDomainListArrayOutput{})
 	pulumi.RegisterOutputType(UpstreamUpstreamSpecEcsInstanceOutput{})
 	pulumi.RegisterOutputType(UpstreamUpstreamSpecEcsInstanceArrayOutput{})
 	pulumi.RegisterOutputType(UpstreamUpstreamSpecK8SServiceOutput{})
@@ -9874,12 +10848,14 @@ func init() {
 	pulumi.RegisterOutputType(GetGatewayServiceDomainOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceDomainArrayOutput{})
 	pulumi.RegisterOutputType(GetGatewayServiceDomainSpecOutput{})
+	pulumi.RegisterOutputType(GetGatewayServiceServiceNetworkSpecOutput{})
 	pulumi.RegisterOutputType(GetGatewayTraceSpecOutput{})
 	pulumi.RegisterOutputType(GetGatewayTraceSpecApmTraceSpecOutput{})
 	pulumi.RegisterOutputType(GetGatewayTraceSpecTlsTraceSpecOutput{})
 	pulumi.RegisterOutputType(GetUpstreamBackendTargetOutput{})
 	pulumi.RegisterOutputType(GetUpstreamBackendTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetUpstreamCircuitBreakingSettingsOutput{})
+	pulumi.RegisterOutputType(GetUpstreamConnectionPoolSettingsOutput{})
 	pulumi.RegisterOutputType(GetUpstreamLoadBalancerSettingsOutput{})
 	pulumi.RegisterOutputType(GetUpstreamLoadBalancerSettingsConsistentHashLbOutput{})
 	pulumi.RegisterOutputType(GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput{})
@@ -9893,6 +10869,9 @@ func init() {
 	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecOutput{})
 	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecAiProviderOutput{})
 	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput{})
+	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecDomainOutput{})
+	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecDomainDomainListOutput{})
+	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecDomainDomainListArrayOutput{})
 	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecEcsInstanceOutput{})
 	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecEcsInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetUpstreamUpstreamSpecK8SServiceOutput{})

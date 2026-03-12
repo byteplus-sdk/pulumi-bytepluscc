@@ -33,11 +33,13 @@ __all__ = [
     'GatewayServiceCustomDomain',
     'GatewayServiceDomain',
     'GatewayServiceDomainSpec',
+    'GatewayServiceServiceNetworkSpec',
     'GatewayTraceSpec',
     'GatewayTraceSpecApmTraceSpec',
     'GatewayTraceSpecTlsTraceSpec',
     'UpstreamBackendTarget',
     'UpstreamCircuitBreakingSettings',
+    'UpstreamConnectionPoolSettings',
     'UpstreamLoadBalancerSettings',
     'UpstreamLoadBalancerSettingsConsistentHashLb',
     'UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie',
@@ -51,6 +53,8 @@ __all__ = [
     'UpstreamUpstreamSpec',
     'UpstreamUpstreamSpecAiProvider',
     'UpstreamUpstreamSpecAiProviderCustomModelService',
+    'UpstreamUpstreamSpecDomain',
+    'UpstreamUpstreamSpecDomainDomainList',
     'UpstreamUpstreamSpecEcsInstance',
     'UpstreamUpstreamSpecK8SService',
     'UpstreamUpstreamSpecNacosService',
@@ -73,11 +77,13 @@ __all__ = [
     'GetGatewayServiceCustomDomainResult',
     'GetGatewayServiceDomainResult',
     'GetGatewayServiceDomainSpecResult',
+    'GetGatewayServiceServiceNetworkSpecResult',
     'GetGatewayTraceSpecResult',
     'GetGatewayTraceSpecApmTraceSpecResult',
     'GetGatewayTraceSpecTlsTraceSpecResult',
     'GetUpstreamBackendTargetResult',
     'GetUpstreamCircuitBreakingSettingsResult',
+    'GetUpstreamConnectionPoolSettingsResult',
     'GetUpstreamLoadBalancerSettingsResult',
     'GetUpstreamLoadBalancerSettingsConsistentHashLbResult',
     'GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieResult',
@@ -91,6 +97,8 @@ __all__ = [
     'GetUpstreamUpstreamSpecResult',
     'GetUpstreamUpstreamSpecAiProviderResult',
     'GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult',
+    'GetUpstreamUpstreamSpecDomainResult',
+    'GetUpstreamUpstreamSpecDomainDomainListResult',
     'GetUpstreamUpstreamSpecEcsInstanceResult',
     'GetUpstreamUpstreamSpecK8SServiceResult',
     'GetUpstreamUpstreamSpecNacosServiceResult',
@@ -820,50 +828,8 @@ class GatewayServiceAuthSpec(dict):
 
 @pulumi.output_type
 class GatewayServiceCustomDomain(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "domainId":
-            suggest = "domain_id"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in GatewayServiceCustomDomain. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        GatewayServiceCustomDomain.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        GatewayServiceCustomDomain.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 domain: Optional[builtins.str] = None,
-                 domain_id: Optional[builtins.str] = None):
-        """
-        :param builtins.str domain: 自定义域名。
-        :param builtins.str domain_id: 自定义域名ID。
-        """
-        if domain is not None:
-            pulumi.set(__self__, "domain", domain)
-        if domain_id is not None:
-            pulumi.set(__self__, "domain_id", domain_id)
-
-    @property
-    @pulumi.getter
-    def domain(self) -> Optional[builtins.str]:
-        """
-        自定义域名。
-        """
-        return pulumi.get(self, "domain")
-
-    @property
-    @pulumi.getter(name="domainId")
-    def domain_id(self) -> Optional[builtins.str]:
-        """
-        自定义域名ID。
-        """
-        return pulumi.get(self, "domain_id")
+    def __init__(__self__):
+        pass
 
 
 @pulumi.output_type
@@ -931,6 +897,70 @@ class GatewayServiceDomainSpec(dict):
         开启私网域名公网解析。
         """
         return pulumi.get(self, "enable_public_resolution")
+
+
+@pulumi.output_type
+class GatewayServiceServiceNetworkSpec(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enablePrivateNetwork":
+            suggest = "enable_private_network"
+        elif key == "enablePublicNetwork":
+            suggest = "enable_public_network"
+        elif key == "privateNetworkIps":
+            suggest = "private_network_ips"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayServiceServiceNetworkSpec. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayServiceServiceNetworkSpec.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayServiceServiceNetworkSpec.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_private_network: Optional[builtins.bool] = None,
+                 enable_public_network: Optional[builtins.bool] = None,
+                 private_network_ips: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.bool enable_private_network: 开启私网。
+        :param builtins.bool enable_public_network: 开启公网。
+        :param Sequence[builtins.str] private_network_ips: 私网域名解析的目标IP。
+        """
+        if enable_private_network is not None:
+            pulumi.set(__self__, "enable_private_network", enable_private_network)
+        if enable_public_network is not None:
+            pulumi.set(__self__, "enable_public_network", enable_public_network)
+        if private_network_ips is not None:
+            pulumi.set(__self__, "private_network_ips", private_network_ips)
+
+    @property
+    @pulumi.getter(name="enablePrivateNetwork")
+    def enable_private_network(self) -> Optional[builtins.bool]:
+        """
+        开启私网。
+        """
+        return pulumi.get(self, "enable_private_network")
+
+    @property
+    @pulumi.getter(name="enablePublicNetwork")
+    def enable_public_network(self) -> Optional[builtins.bool]:
+        """
+        开启公网。
+        """
+        return pulumi.get(self, "enable_public_network")
+
+    @property
+    @pulumi.getter(name="privateNetworkIps")
+    def private_network_ips(self) -> Optional[Sequence[builtins.str]]:
+        """
+        私网域名解析的目标IP。
+        """
+        return pulumi.get(self, "private_network_ips")
 
 
 @pulumi.output_type
@@ -1286,6 +1316,82 @@ class UpstreamCircuitBreakingSettings(dict):
 
 
 @pulumi.output_type
+class UpstreamConnectionPoolSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "http1MaxPendingRequests":
+            suggest = "http1_max_pending_requests"
+        elif key == "idleTimeout":
+            suggest = "idle_timeout"
+        elif key == "maxConnections":
+            suggest = "max_connections"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpstreamConnectionPoolSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpstreamConnectionPoolSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpstreamConnectionPoolSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable: Optional[builtins.bool] = None,
+                 http1_max_pending_requests: Optional[builtins.int] = None,
+                 idle_timeout: Optional[builtins.int] = None,
+                 max_connections: Optional[builtins.int] = None):
+        """
+        :param builtins.bool enable: 开启。
+        :param builtins.int http1_max_pending_requests: HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        :param builtins.int idle_timeout: 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        :param builtins.int max_connections: TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if http1_max_pending_requests is not None:
+            pulumi.set(__self__, "http1_max_pending_requests", http1_max_pending_requests)
+        if idle_timeout is not None:
+            pulumi.set(__self__, "idle_timeout", idle_timeout)
+        if max_connections is not None:
+            pulumi.set(__self__, "max_connections", max_connections)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> Optional[builtins.bool]:
+        """
+        开启。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="http1MaxPendingRequests")
+    def http1_max_pending_requests(self) -> Optional[builtins.int]:
+        """
+        HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "http1_max_pending_requests")
+
+    @property
+    @pulumi.getter(name="idleTimeout")
+    def idle_timeout(self) -> Optional[builtins.int]:
+        """
+        空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "idle_timeout")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> Optional[builtins.int]:
+        """
+        TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "max_connections")
+
+
+@pulumi.output_type
 class UpstreamLoadBalancerSettings(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1368,7 +1474,9 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "hashKey":
+        if key == "hashBalanceFactor":
+            suggest = "hash_balance_factor"
+        elif key == "hashKey":
             suggest = "hash_key"
         elif key == "httpCookie":
             suggest = "http_cookie"
@@ -1391,18 +1499,22 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 hash_balance_factor: Optional[builtins.int] = None,
                  hash_key: Optional[builtins.str] = None,
                  http_cookie: Optional['outputs.UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie'] = None,
                  http_header_name: Optional[builtins.str] = None,
                  http_query_parameter_name: Optional[builtins.str] = None,
                  use_source_ip: Optional[builtins.str] = None):
         """
+        :param builtins.int hash_balance_factor: 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
         :param builtins.str hash_key: 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
         :param 'UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs' http_cookie: Cookie。
         :param builtins.str http_header_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
         :param builtins.str http_query_parameter_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
         :param builtins.str use_source_ip: 源IP地址。
         """
+        if hash_balance_factor is not None:
+            pulumi.set(__self__, "hash_balance_factor", hash_balance_factor)
         if hash_key is not None:
             pulumi.set(__self__, "hash_key", hash_key)
         if http_cookie is not None:
@@ -1413,6 +1525,14 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
             pulumi.set(__self__, "http_query_parameter_name", http_query_parameter_name)
         if use_source_ip is not None:
             pulumi.set(__self__, "use_source_ip", use_source_ip)
+
+    @property
+    @pulumi.getter(name="hashBalanceFactor")
+    def hash_balance_factor(self) -> Optional[builtins.int]:
+        """
+        过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+        """
+        return pulumi.get(self, "hash_balance_factor")
 
     @property
     @pulumi.getter(name="hashKey")
@@ -1909,18 +2029,22 @@ class UpstreamUpstreamSpec(dict):
 
     def __init__(__self__, *,
                  ai_provider: Optional['outputs.UpstreamUpstreamSpecAiProvider'] = None,
+                 domain: Optional['outputs.UpstreamUpstreamSpecDomain'] = None,
                  ecs_instances: Optional[Sequence['outputs.UpstreamUpstreamSpecEcsInstance']] = None,
                  k8_s_service: Optional['outputs.UpstreamUpstreamSpecK8SService'] = None,
                  nacos_service: Optional['outputs.UpstreamUpstreamSpecNacosService'] = None,
                  ve_faas: Optional['outputs.UpstreamUpstreamSpecVeFaas'] = None):
         """
         :param 'UpstreamUpstreamSpecAiProviderArgs' ai_provider: AI模型代理。
+        :param 'UpstreamUpstreamSpecDomainArgs' domain: 固定域名。
         :param 'UpstreamUpstreamSpecK8SServiceArgs' k8_s_service: 容器服务。
         :param 'UpstreamUpstreamSpecNacosServiceArgs' nacos_service: 注册中心。
         :param 'UpstreamUpstreamSpecVeFaasArgs' ve_faas: 函数服务。
         """
         if ai_provider is not None:
             pulumi.set(__self__, "ai_provider", ai_provider)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
         if ecs_instances is not None:
             pulumi.set(__self__, "ecs_instances", ecs_instances)
         if k8_s_service is not None:
@@ -1937,6 +2061,14 @@ class UpstreamUpstreamSpec(dict):
         AI模型代理。
         """
         return pulumi.get(self, "ai_provider")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional['outputs.UpstreamUpstreamSpecDomain']:
+        """
+        固定域名。
+        """
+        return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="ecsInstances")
@@ -2081,6 +2213,67 @@ class UpstreamUpstreamSpecAiProviderCustomModelService(dict):
     def port(self) -> Optional[builtins.int]:
         """
         端口。
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class UpstreamUpstreamSpecDomain(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domainLists":
+            suggest = "domain_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpstreamUpstreamSpecDomain. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpstreamUpstreamSpecDomain.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpstreamUpstreamSpecDomain.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain_lists: Optional[Sequence['outputs.UpstreamUpstreamSpecDomainDomainList']] = None):
+        if domain_lists is not None:
+            pulumi.set(__self__, "domain_lists", domain_lists)
+
+    @property
+    @pulumi.getter(name="domainLists")
+    def domain_lists(self) -> Optional[Sequence['outputs.UpstreamUpstreamSpecDomainDomainList']]:
+        return pulumi.get(self, "domain_lists")
+
+
+@pulumi.output_type
+class UpstreamUpstreamSpecDomainDomainList(dict):
+    def __init__(__self__, *,
+                 domain: Optional[builtins.str] = None,
+                 port: Optional[builtins.int] = None):
+        """
+        :param builtins.str domain: 域名。
+        :param builtins.int port: 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[builtins.str]:
+        """
+        域名。
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.int]:
+        """
+        端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
         """
         return pulumi.get(self, "port")
 
@@ -2950,6 +3143,46 @@ class GetGatewayServiceDomainSpecResult(dict):
 
 
 @pulumi.output_type
+class GetGatewayServiceServiceNetworkSpecResult(dict):
+    def __init__(__self__, *,
+                 enable_private_network: builtins.bool,
+                 enable_public_network: builtins.bool,
+                 private_network_ips: Sequence[builtins.str]):
+        """
+        :param builtins.bool enable_private_network: 开启私网。
+        :param builtins.bool enable_public_network: 开启公网。
+        :param Sequence[builtins.str] private_network_ips: 私网域名解析的目标IP。
+        """
+        pulumi.set(__self__, "enable_private_network", enable_private_network)
+        pulumi.set(__self__, "enable_public_network", enable_public_network)
+        pulumi.set(__self__, "private_network_ips", private_network_ips)
+
+    @property
+    @pulumi.getter(name="enablePrivateNetwork")
+    def enable_private_network(self) -> builtins.bool:
+        """
+        开启私网。
+        """
+        return pulumi.get(self, "enable_private_network")
+
+    @property
+    @pulumi.getter(name="enablePublicNetwork")
+    def enable_public_network(self) -> builtins.bool:
+        """
+        开启公网。
+        """
+        return pulumi.get(self, "enable_public_network")
+
+    @property
+    @pulumi.getter(name="privateNetworkIps")
+    def private_network_ips(self) -> Sequence[builtins.str]:
+        """
+        私网域名解析的目标IP。
+        """
+        return pulumi.get(self, "private_network_ips")
+
+
+@pulumi.output_type
 class GetGatewayTraceSpecResult(dict):
     def __init__(__self__, *,
                  apm_trace_spec: 'outputs.GetGatewayTraceSpecApmTraceSpecResult',
@@ -3183,6 +3416,57 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
 
 
 @pulumi.output_type
+class GetUpstreamConnectionPoolSettingsResult(dict):
+    def __init__(__self__, *,
+                 enable: builtins.bool,
+                 http1_max_pending_requests: builtins.int,
+                 idle_timeout: builtins.int,
+                 max_connections: builtins.int):
+        """
+        :param builtins.bool enable: 开启。
+        :param builtins.int http1_max_pending_requests: HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        :param builtins.int idle_timeout: 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        :param builtins.int max_connections: TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        """
+        pulumi.set(__self__, "enable", enable)
+        pulumi.set(__self__, "http1_max_pending_requests", http1_max_pending_requests)
+        pulumi.set(__self__, "idle_timeout", idle_timeout)
+        pulumi.set(__self__, "max_connections", max_connections)
+
+    @property
+    @pulumi.getter
+    def enable(self) -> builtins.bool:
+        """
+        开启。
+        """
+        return pulumi.get(self, "enable")
+
+    @property
+    @pulumi.getter(name="http1MaxPendingRequests")
+    def http1_max_pending_requests(self) -> builtins.int:
+        """
+        HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "http1_max_pending_requests")
+
+    @property
+    @pulumi.getter(name="idleTimeout")
+    def idle_timeout(self) -> builtins.int:
+        """
+        空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "idle_timeout")
+
+    @property
+    @pulumi.getter(name="maxConnections")
+    def max_connections(self) -> builtins.int:
+        """
+        TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        """
+        return pulumi.get(self, "max_connections")
+
+
+@pulumi.output_type
 class GetUpstreamLoadBalancerSettingsResult(dict):
     def __init__(__self__, *,
                  consistent_hash_lb: 'outputs.GetUpstreamLoadBalancerSettingsConsistentHashLbResult',
@@ -3236,23 +3520,34 @@ class GetUpstreamLoadBalancerSettingsResult(dict):
 @pulumi.output_type
 class GetUpstreamLoadBalancerSettingsConsistentHashLbResult(dict):
     def __init__(__self__, *,
+                 hash_balance_factor: builtins.int,
                  hash_key: builtins.str,
                  http_cookie: 'outputs.GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieResult',
                  http_header_name: builtins.str,
                  http_query_parameter_name: builtins.str,
                  use_source_ip: builtins.str):
         """
+        :param builtins.int hash_balance_factor: 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
         :param builtins.str hash_key: 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
         :param 'GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs' http_cookie: Cookie。
         :param builtins.str http_header_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
         :param builtins.str http_query_parameter_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
         :param builtins.str use_source_ip: 源IP地址。
         """
+        pulumi.set(__self__, "hash_balance_factor", hash_balance_factor)
         pulumi.set(__self__, "hash_key", hash_key)
         pulumi.set(__self__, "http_cookie", http_cookie)
         pulumi.set(__self__, "http_header_name", http_header_name)
         pulumi.set(__self__, "http_query_parameter_name", http_query_parameter_name)
         pulumi.set(__self__, "use_source_ip", use_source_ip)
+
+    @property
+    @pulumi.getter(name="hashBalanceFactor")
+    def hash_balance_factor(self) -> builtins.int:
+        """
+        过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+        """
+        return pulumi.get(self, "hash_balance_factor")
 
     @property
     @pulumi.getter(name="hashKey")
@@ -3597,18 +3892,21 @@ class GetUpstreamTlsSettingsResult(dict):
 class GetUpstreamUpstreamSpecResult(dict):
     def __init__(__self__, *,
                  ai_provider: 'outputs.GetUpstreamUpstreamSpecAiProviderResult',
+                 domain: 'outputs.GetUpstreamUpstreamSpecDomainResult',
                  ecs_instances: Sequence['outputs.GetUpstreamUpstreamSpecEcsInstanceResult'],
                  k8_s_service: 'outputs.GetUpstreamUpstreamSpecK8SServiceResult',
                  nacos_service: 'outputs.GetUpstreamUpstreamSpecNacosServiceResult',
                  ve_faas: 'outputs.GetUpstreamUpstreamSpecVeFaasResult'):
         """
         :param 'GetUpstreamUpstreamSpecAiProviderArgs' ai_provider: AI模型代理。
+        :param 'GetUpstreamUpstreamSpecDomainArgs' domain: 固定域名。
         :param Sequence['GetUpstreamUpstreamSpecEcsInstanceArgs'] ecs_instances: 云服务器。
         :param 'GetUpstreamUpstreamSpecK8SServiceArgs' k8_s_service: 容器服务。
         :param 'GetUpstreamUpstreamSpecNacosServiceArgs' nacos_service: 注册中心。
         :param 'GetUpstreamUpstreamSpecVeFaasArgs' ve_faas: 函数服务。
         """
         pulumi.set(__self__, "ai_provider", ai_provider)
+        pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "ecs_instances", ecs_instances)
         pulumi.set(__self__, "k8_s_service", k8_s_service)
         pulumi.set(__self__, "nacos_service", nacos_service)
@@ -3621,6 +3919,14 @@ class GetUpstreamUpstreamSpecResult(dict):
         AI模型代理。
         """
         return pulumi.get(self, "ai_provider")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> 'outputs.GetUpstreamUpstreamSpecDomainResult':
+        """
+        固定域名。
+        """
+        return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="ecsInstances")
@@ -3742,6 +4048,53 @@ class GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult(dict):
     def port(self) -> builtins.int:
         """
         端口。
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class GetUpstreamUpstreamSpecDomainResult(dict):
+    def __init__(__self__, *,
+                 domain_lists: Sequence['outputs.GetUpstreamUpstreamSpecDomainDomainListResult']):
+        """
+        :param Sequence['GetUpstreamUpstreamSpecDomainDomainListArgs'] domain_lists: 域名列表。
+        """
+        pulumi.set(__self__, "domain_lists", domain_lists)
+
+    @property
+    @pulumi.getter(name="domainLists")
+    def domain_lists(self) -> Sequence['outputs.GetUpstreamUpstreamSpecDomainDomainListResult']:
+        """
+        域名列表。
+        """
+        return pulumi.get(self, "domain_lists")
+
+
+@pulumi.output_type
+class GetUpstreamUpstreamSpecDomainDomainListResult(dict):
+    def __init__(__self__, *,
+                 domain: builtins.str,
+                 port: builtins.int):
+        """
+        :param builtins.str domain: 域名。
+        :param builtins.int port: 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        """
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        域名。
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.int:
+        """
+        端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
         """
         return pulumi.get(self, "port")
 

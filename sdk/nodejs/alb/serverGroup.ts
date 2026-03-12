@@ -48,6 +48,10 @@ export class ServerGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
+     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     */
+    public readonly crossZoneEnabled!: pulumi.Output<string>;
+    /**
      * 后端服务器组的描述。
      */
     public readonly description!: pulumi.Output<string>;
@@ -121,6 +125,7 @@ export class ServerGroup extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ServerGroupState | undefined;
             resourceInputs["createTime"] = state ? state.createTime : undefined;
+            resourceInputs["crossZoneEnabled"] = state ? state.crossZoneEnabled : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["healthCheck"] = state ? state.healthCheck : undefined;
             resourceInputs["ipAddressType"] = state ? state.ipAddressType : undefined;
@@ -143,6 +148,7 @@ export class ServerGroup extends pulumi.CustomResource {
             if ((!args || args.vpcId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'vpcId'");
             }
+            resourceInputs["crossZoneEnabled"] = args ? args.crossZoneEnabled : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["healthCheck"] = args ? args.healthCheck : undefined;
             resourceInputs["ipAddressType"] = args ? args.ipAddressType : undefined;
@@ -175,6 +181,10 @@ export interface ServerGroupState {
      * 后端服务器组的创建时间。
      */
     createTime?: pulumi.Input<string>;
+    /**
+     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     */
+    crossZoneEnabled?: pulumi.Input<string>;
     /**
      * 后端服务器组的描述。
      */
@@ -240,6 +250,10 @@ export interface ServerGroupState {
  * The set of arguments for constructing a ServerGroup resource.
  */
 export interface ServerGroupArgs {
+    /**
+     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     */
+    crossZoneEnabled?: pulumi.Input<string>;
     /**
      * 后端服务器组的描述。
      */

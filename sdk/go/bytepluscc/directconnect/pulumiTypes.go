@@ -128,6 +128,181 @@ func (o DirectConnectGatewayAssociateCenArrayOutput) Index(i pulumi.IntInput) Di
 	}).(DirectConnectGatewayAssociateCenOutput)
 }
 
+type DirectConnectGatewayAssociateEic struct {
+	// EIC的ID。
+	EicId *string `pulumi:"eicId"`
+	// EIC的用户ID。
+	EicOwnerId *string `pulumi:"eicOwnerId"`
+	// 实例在EIC中的状态。
+	EicStatus *string `pulumi:"eicStatus"`
+}
+
+// DirectConnectGatewayAssociateEicInput is an input type that accepts DirectConnectGatewayAssociateEicArgs and DirectConnectGatewayAssociateEicOutput values.
+// You can construct a concrete instance of `DirectConnectGatewayAssociateEicInput` via:
+//
+//	DirectConnectGatewayAssociateEicArgs{...}
+type DirectConnectGatewayAssociateEicInput interface {
+	pulumi.Input
+
+	ToDirectConnectGatewayAssociateEicOutput() DirectConnectGatewayAssociateEicOutput
+	ToDirectConnectGatewayAssociateEicOutputWithContext(context.Context) DirectConnectGatewayAssociateEicOutput
+}
+
+type DirectConnectGatewayAssociateEicArgs struct {
+	// EIC的ID。
+	EicId pulumi.StringPtrInput `pulumi:"eicId"`
+	// EIC的用户ID。
+	EicOwnerId pulumi.StringPtrInput `pulumi:"eicOwnerId"`
+	// 实例在EIC中的状态。
+	EicStatus pulumi.StringPtrInput `pulumi:"eicStatus"`
+}
+
+func (DirectConnectGatewayAssociateEicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DirectConnectGatewayAssociateEic)(nil)).Elem()
+}
+
+func (i DirectConnectGatewayAssociateEicArgs) ToDirectConnectGatewayAssociateEicOutput() DirectConnectGatewayAssociateEicOutput {
+	return i.ToDirectConnectGatewayAssociateEicOutputWithContext(context.Background())
+}
+
+func (i DirectConnectGatewayAssociateEicArgs) ToDirectConnectGatewayAssociateEicOutputWithContext(ctx context.Context) DirectConnectGatewayAssociateEicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DirectConnectGatewayAssociateEicOutput)
+}
+
+func (i DirectConnectGatewayAssociateEicArgs) ToDirectConnectGatewayAssociateEicPtrOutput() DirectConnectGatewayAssociateEicPtrOutput {
+	return i.ToDirectConnectGatewayAssociateEicPtrOutputWithContext(context.Background())
+}
+
+func (i DirectConnectGatewayAssociateEicArgs) ToDirectConnectGatewayAssociateEicPtrOutputWithContext(ctx context.Context) DirectConnectGatewayAssociateEicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DirectConnectGatewayAssociateEicOutput).ToDirectConnectGatewayAssociateEicPtrOutputWithContext(ctx)
+}
+
+// DirectConnectGatewayAssociateEicPtrInput is an input type that accepts DirectConnectGatewayAssociateEicArgs, DirectConnectGatewayAssociateEicPtr and DirectConnectGatewayAssociateEicPtrOutput values.
+// You can construct a concrete instance of `DirectConnectGatewayAssociateEicPtrInput` via:
+//
+//	        DirectConnectGatewayAssociateEicArgs{...}
+//
+//	or:
+//
+//	        nil
+type DirectConnectGatewayAssociateEicPtrInput interface {
+	pulumi.Input
+
+	ToDirectConnectGatewayAssociateEicPtrOutput() DirectConnectGatewayAssociateEicPtrOutput
+	ToDirectConnectGatewayAssociateEicPtrOutputWithContext(context.Context) DirectConnectGatewayAssociateEicPtrOutput
+}
+
+type directConnectGatewayAssociateEicPtrType DirectConnectGatewayAssociateEicArgs
+
+func DirectConnectGatewayAssociateEicPtr(v *DirectConnectGatewayAssociateEicArgs) DirectConnectGatewayAssociateEicPtrInput {
+	return (*directConnectGatewayAssociateEicPtrType)(v)
+}
+
+func (*directConnectGatewayAssociateEicPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DirectConnectGatewayAssociateEic)(nil)).Elem()
+}
+
+func (i *directConnectGatewayAssociateEicPtrType) ToDirectConnectGatewayAssociateEicPtrOutput() DirectConnectGatewayAssociateEicPtrOutput {
+	return i.ToDirectConnectGatewayAssociateEicPtrOutputWithContext(context.Background())
+}
+
+func (i *directConnectGatewayAssociateEicPtrType) ToDirectConnectGatewayAssociateEicPtrOutputWithContext(ctx context.Context) DirectConnectGatewayAssociateEicPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DirectConnectGatewayAssociateEicPtrOutput)
+}
+
+type DirectConnectGatewayAssociateEicOutput struct{ *pulumi.OutputState }
+
+func (DirectConnectGatewayAssociateEicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DirectConnectGatewayAssociateEic)(nil)).Elem()
+}
+
+func (o DirectConnectGatewayAssociateEicOutput) ToDirectConnectGatewayAssociateEicOutput() DirectConnectGatewayAssociateEicOutput {
+	return o
+}
+
+func (o DirectConnectGatewayAssociateEicOutput) ToDirectConnectGatewayAssociateEicOutputWithContext(ctx context.Context) DirectConnectGatewayAssociateEicOutput {
+	return o
+}
+
+func (o DirectConnectGatewayAssociateEicOutput) ToDirectConnectGatewayAssociateEicPtrOutput() DirectConnectGatewayAssociateEicPtrOutput {
+	return o.ToDirectConnectGatewayAssociateEicPtrOutputWithContext(context.Background())
+}
+
+func (o DirectConnectGatewayAssociateEicOutput) ToDirectConnectGatewayAssociateEicPtrOutputWithContext(ctx context.Context) DirectConnectGatewayAssociateEicPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DirectConnectGatewayAssociateEic) *DirectConnectGatewayAssociateEic {
+		return &v
+	}).(DirectConnectGatewayAssociateEicPtrOutput)
+}
+
+// EIC的ID。
+func (o DirectConnectGatewayAssociateEicOutput) EicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DirectConnectGatewayAssociateEic) *string { return v.EicId }).(pulumi.StringPtrOutput)
+}
+
+// EIC的用户ID。
+func (o DirectConnectGatewayAssociateEicOutput) EicOwnerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DirectConnectGatewayAssociateEic) *string { return v.EicOwnerId }).(pulumi.StringPtrOutput)
+}
+
+// 实例在EIC中的状态。
+func (o DirectConnectGatewayAssociateEicOutput) EicStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DirectConnectGatewayAssociateEic) *string { return v.EicStatus }).(pulumi.StringPtrOutput)
+}
+
+type DirectConnectGatewayAssociateEicPtrOutput struct{ *pulumi.OutputState }
+
+func (DirectConnectGatewayAssociateEicPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DirectConnectGatewayAssociateEic)(nil)).Elem()
+}
+
+func (o DirectConnectGatewayAssociateEicPtrOutput) ToDirectConnectGatewayAssociateEicPtrOutput() DirectConnectGatewayAssociateEicPtrOutput {
+	return o
+}
+
+func (o DirectConnectGatewayAssociateEicPtrOutput) ToDirectConnectGatewayAssociateEicPtrOutputWithContext(ctx context.Context) DirectConnectGatewayAssociateEicPtrOutput {
+	return o
+}
+
+func (o DirectConnectGatewayAssociateEicPtrOutput) Elem() DirectConnectGatewayAssociateEicOutput {
+	return o.ApplyT(func(v *DirectConnectGatewayAssociateEic) DirectConnectGatewayAssociateEic {
+		if v != nil {
+			return *v
+		}
+		var ret DirectConnectGatewayAssociateEic
+		return ret
+	}).(DirectConnectGatewayAssociateEicOutput)
+}
+
+// EIC的ID。
+func (o DirectConnectGatewayAssociateEicPtrOutput) EicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DirectConnectGatewayAssociateEic) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EicId
+	}).(pulumi.StringPtrOutput)
+}
+
+// EIC的用户ID。
+func (o DirectConnectGatewayAssociateEicPtrOutput) EicOwnerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DirectConnectGatewayAssociateEic) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EicOwnerId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例在EIC中的状态。
+func (o DirectConnectGatewayAssociateEicPtrOutput) EicStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DirectConnectGatewayAssociateEic) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EicStatus
+	}).(pulumi.StringPtrOutput)
+}
+
 type DirectConnectGatewayTag struct {
 	// 用户标签的标签键。长度取值范围为1~128字符。
 	Key *string `pulumi:"key"`
@@ -349,6 +524,76 @@ func (o GetDirectConnectGatewayAssociateCenArrayOutput) Index(i pulumi.IntInput)
 	}).(GetDirectConnectGatewayAssociateCenOutput)
 }
 
+type GetDirectConnectGatewayAssociateEic struct {
+	// EIC的ID。
+	EicId string `pulumi:"eicId"`
+	// EIC的用户ID。
+	EicOwnerId string `pulumi:"eicOwnerId"`
+	// 实例在EIC中的状态。
+	EicStatus string `pulumi:"eicStatus"`
+}
+
+// GetDirectConnectGatewayAssociateEicInput is an input type that accepts GetDirectConnectGatewayAssociateEicArgs and GetDirectConnectGatewayAssociateEicOutput values.
+// You can construct a concrete instance of `GetDirectConnectGatewayAssociateEicInput` via:
+//
+//	GetDirectConnectGatewayAssociateEicArgs{...}
+type GetDirectConnectGatewayAssociateEicInput interface {
+	pulumi.Input
+
+	ToGetDirectConnectGatewayAssociateEicOutput() GetDirectConnectGatewayAssociateEicOutput
+	ToGetDirectConnectGatewayAssociateEicOutputWithContext(context.Context) GetDirectConnectGatewayAssociateEicOutput
+}
+
+type GetDirectConnectGatewayAssociateEicArgs struct {
+	// EIC的ID。
+	EicId pulumi.StringInput `pulumi:"eicId"`
+	// EIC的用户ID。
+	EicOwnerId pulumi.StringInput `pulumi:"eicOwnerId"`
+	// 实例在EIC中的状态。
+	EicStatus pulumi.StringInput `pulumi:"eicStatus"`
+}
+
+func (GetDirectConnectGatewayAssociateEicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDirectConnectGatewayAssociateEic)(nil)).Elem()
+}
+
+func (i GetDirectConnectGatewayAssociateEicArgs) ToGetDirectConnectGatewayAssociateEicOutput() GetDirectConnectGatewayAssociateEicOutput {
+	return i.ToGetDirectConnectGatewayAssociateEicOutputWithContext(context.Background())
+}
+
+func (i GetDirectConnectGatewayAssociateEicArgs) ToGetDirectConnectGatewayAssociateEicOutputWithContext(ctx context.Context) GetDirectConnectGatewayAssociateEicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDirectConnectGatewayAssociateEicOutput)
+}
+
+type GetDirectConnectGatewayAssociateEicOutput struct{ *pulumi.OutputState }
+
+func (GetDirectConnectGatewayAssociateEicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDirectConnectGatewayAssociateEic)(nil)).Elem()
+}
+
+func (o GetDirectConnectGatewayAssociateEicOutput) ToGetDirectConnectGatewayAssociateEicOutput() GetDirectConnectGatewayAssociateEicOutput {
+	return o
+}
+
+func (o GetDirectConnectGatewayAssociateEicOutput) ToGetDirectConnectGatewayAssociateEicOutputWithContext(ctx context.Context) GetDirectConnectGatewayAssociateEicOutput {
+	return o
+}
+
+// EIC的ID。
+func (o GetDirectConnectGatewayAssociateEicOutput) EicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDirectConnectGatewayAssociateEic) string { return v.EicId }).(pulumi.StringOutput)
+}
+
+// EIC的用户ID。
+func (o GetDirectConnectGatewayAssociateEicOutput) EicOwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDirectConnectGatewayAssociateEic) string { return v.EicOwnerId }).(pulumi.StringOutput)
+}
+
+// 实例在EIC中的状态。
+func (o GetDirectConnectGatewayAssociateEicOutput) EicStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDirectConnectGatewayAssociateEic) string { return v.EicStatus }).(pulumi.StringOutput)
+}
+
 type GetDirectConnectGatewayTag struct {
 	// 用户标签的标签键。长度取值范围为1~128字符。
 	Key string `pulumi:"key"`
@@ -458,18 +703,24 @@ func (o GetDirectConnectGatewayTagArrayOutput) Index(i pulumi.IntInput) GetDirec
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateCenInput)(nil)).Elem(), DirectConnectGatewayAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateCenArrayInput)(nil)).Elem(), DirectConnectGatewayAssociateCenArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateEicInput)(nil)).Elem(), DirectConnectGatewayAssociateEicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayAssociateEicPtrInput)(nil)).Elem(), DirectConnectGatewayAssociateEicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayTagInput)(nil)).Elem(), DirectConnectGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DirectConnectGatewayTagArrayInput)(nil)).Elem(), DirectConnectGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateCenInput)(nil)).Elem(), GetDirectConnectGatewayAssociateCenArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateCenArrayInput)(nil)).Elem(), GetDirectConnectGatewayAssociateCenArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayAssociateEicInput)(nil)).Elem(), GetDirectConnectGatewayAssociateEicArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayTagInput)(nil)).Elem(), GetDirectConnectGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectConnectGatewayTagArrayInput)(nil)).Elem(), GetDirectConnectGatewayTagArray{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateCenOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayAssociateCenArrayOutput{})
+	pulumi.RegisterOutputType(DirectConnectGatewayAssociateEicOutput{})
+	pulumi.RegisterOutputType(DirectConnectGatewayAssociateEicPtrOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayTagOutput{})
 	pulumi.RegisterOutputType(DirectConnectGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateCenOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateCenArrayOutput{})
+	pulumi.RegisterOutputType(GetDirectConnectGatewayAssociateEicOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetDirectConnectGatewayTagArrayOutput{})
 }

@@ -24,49 +24,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.byteplus.bytepluscc.kms.Key;
- * import com.byteplus.bytepluscc.kms.KeyArgs;
- * import com.pulumi.bytepluscc.kms.inputs.KeyTagArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var kMSKeyDemo = new Key("kMSKeyDemo", KeyArgs.builder()
- *             .keyringName("KMSKeyDemo")
- *             .keyName("KMSKeyDemoKeyName")
- *             .keySpec("SYMMETRIC_256")
- *             .description("description KMSKeyDemo")
- *             .keyUsage("ENCRYPT_DECRYPT")
- *             .protectionLevel("HSM")
- *             .rotateState("Enable")
- *             .origin("CloudKMS")
- *             .multiRegion(false)
- *             .tags(KeyTagArgs.builder()
- *                 .key("env")
- *                 .value("test")
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -105,6 +62,34 @@ public class Key extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * 
+     */
+    @Export(name="keyArchiveOperation", refs={Integer.class}, tree="[0]")
+    private Output<Integer> keyArchiveOperation;
+
+    /**
+     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * 
+     */
+    public Output<Integer> keyArchiveOperation() {
+        return this.keyArchiveOperation;
+    }
+    /**
+     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * 
+     */
+    @Export(name="keyEnableOperation", refs={Integer.class}, tree="[0]")
+    private Output<Integer> keyEnableOperation;
+
+    /**
+     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * 
+     */
+    public Output<Integer> keyEnableOperation() {
+        return this.keyEnableOperation;
     }
     /**
      * 密钥唯一标识符，UUID形式。
@@ -147,6 +132,20 @@ public class Key extends com.pulumi.resources.CustomResource {
      */
     public Output<String> keyName() {
         return this.keyName;
+    }
+    /**
+     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * 
+     */
+    @Export(name="keyRotationOperation", refs={Integer.class}, tree="[0]")
+    private Output<Integer> keyRotationOperation;
+
+    /**
+     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * 
+     */
+    public Output<Integer> keyRotationOperation() {
+        return this.keyRotationOperation;
     }
     /**
      * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。

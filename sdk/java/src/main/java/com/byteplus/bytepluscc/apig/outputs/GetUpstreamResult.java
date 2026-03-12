@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.apig.outputs;
 
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamBackendTarget;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamCircuitBreakingSettings;
+import com.byteplus.bytepluscc.apig.outputs.GetUpstreamConnectionPoolSettings;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamLoadBalancerSettings;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamTlsSettings;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamUpstreamSpec;
@@ -32,6 +33,11 @@ public final class GetUpstreamResult {
      * 
      */
     private String comments;
+    /**
+     * @return 连接池配置。
+     * 
+     */
+    private GetUpstreamConnectionPoolSettings connectionPoolSettings;
     /**
      * @return Upstream创建时间。
      * 
@@ -114,6 +120,13 @@ public final class GetUpstreamResult {
      */
     public String comments() {
         return this.comments;
+    }
+    /**
+     * @return 连接池配置。
+     * 
+     */
+    public GetUpstreamConnectionPoolSettings connectionPoolSettings() {
+        return this.connectionPoolSettings;
     }
     /**
      * @return Upstream创建时间。
@@ -212,6 +225,7 @@ public final class GetUpstreamResult {
         private List<GetUpstreamBackendTarget> backendTargets;
         private GetUpstreamCircuitBreakingSettings circuitBreakingSettings;
         private String comments;
+        private GetUpstreamConnectionPoolSettings connectionPoolSettings;
         private String createdTime;
         private String gatewayId;
         private String id;
@@ -230,6 +244,7 @@ public final class GetUpstreamResult {
     	      this.backendTargets = defaults.backendTargets;
     	      this.circuitBreakingSettings = defaults.circuitBreakingSettings;
     	      this.comments = defaults.comments;
+    	      this.connectionPoolSettings = defaults.connectionPoolSettings;
     	      this.createdTime = defaults.createdTime;
     	      this.gatewayId = defaults.gatewayId;
     	      this.id = defaults.id;
@@ -269,6 +284,14 @@ public final class GetUpstreamResult {
               throw new MissingRequiredPropertyException("GetUpstreamResult", "comments");
             }
             this.comments = comments;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder connectionPoolSettings(GetUpstreamConnectionPoolSettings connectionPoolSettings) {
+            if (connectionPoolSettings == null) {
+              throw new MissingRequiredPropertyException("GetUpstreamResult", "connectionPoolSettings");
+            }
+            this.connectionPoolSettings = connectionPoolSettings;
             return this;
         }
         @CustomType.Setter
@@ -375,6 +398,7 @@ public final class GetUpstreamResult {
             _resultValue.backendTargets = backendTargets;
             _resultValue.circuitBreakingSettings = circuitBreakingSettings;
             _resultValue.comments = comments;
+            _resultValue.connectionPoolSettings = connectionPoolSettings;
             _resultValue.createdTime = createdTime;
             _resultValue.gatewayId = gatewayId;
             _resultValue.id = id;

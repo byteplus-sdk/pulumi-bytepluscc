@@ -29,6 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
+        /// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        /// </summary>
+        [Output("crossZoneEnabled")]
+        public Output<string> CrossZoneEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// 后端服务器组的描述。
         /// </summary>
         [Output("description")]
@@ -169,6 +175,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class ServerGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        /// </summary>
+        [Input("crossZoneEnabled")]
+        public Input<string>? CrossZoneEnabled { get; set; }
+
+        /// <summary>
         /// 后端服务器组的描述。
         /// </summary>
         [Input("description")]
@@ -263,6 +275,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
+
+        /// <summary>
+        /// 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+        /// </summary>
+        [Input("crossZoneEnabled")]
+        public Input<string>? CrossZoneEnabled { get; set; }
 
         /// <summary>
         /// 后端服务器组的描述。

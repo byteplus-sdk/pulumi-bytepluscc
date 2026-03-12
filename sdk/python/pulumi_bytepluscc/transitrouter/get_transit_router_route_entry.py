@@ -27,7 +27,7 @@ class GetTransitRouterRouteEntryResult:
     """
     A collection of values returned by getTransitRouterRouteEntry.
     """
-    def __init__(__self__, as_paths=None, created_time=None, description=None, destination_cidr_block=None, id=None, status=None, transit_router_route_entry_id=None, transit_router_route_entry_name=None, transit_router_route_entry_next_hop_id=None, transit_router_route_entry_next_hop_type=None, transit_router_route_entry_type=None, transit_router_route_table_id=None, updated_time=None):
+    def __init__(__self__, as_paths=None, created_time=None, description=None, destination_cidr_block=None, id=None, status=None, transit_router_route_entry_id=None, transit_router_route_entry_name=None, transit_router_route_entry_next_hop_id=None, transit_router_route_entry_next_hop_resource_id=None, transit_router_route_entry_next_hop_resource_type=None, transit_router_route_entry_next_hop_type=None, transit_router_route_entry_type=None, transit_router_route_table_id=None, updated_time=None):
         if as_paths and not isinstance(as_paths, list):
             raise TypeError("Expected argument 'as_paths' to be a list")
         pulumi.set(__self__, "as_paths", as_paths)
@@ -55,6 +55,12 @@ class GetTransitRouterRouteEntryResult:
         if transit_router_route_entry_next_hop_id and not isinstance(transit_router_route_entry_next_hop_id, str):
             raise TypeError("Expected argument 'transit_router_route_entry_next_hop_id' to be a str")
         pulumi.set(__self__, "transit_router_route_entry_next_hop_id", transit_router_route_entry_next_hop_id)
+        if transit_router_route_entry_next_hop_resource_id and not isinstance(transit_router_route_entry_next_hop_resource_id, str):
+            raise TypeError("Expected argument 'transit_router_route_entry_next_hop_resource_id' to be a str")
+        pulumi.set(__self__, "transit_router_route_entry_next_hop_resource_id", transit_router_route_entry_next_hop_resource_id)
+        if transit_router_route_entry_next_hop_resource_type and not isinstance(transit_router_route_entry_next_hop_resource_type, str):
+            raise TypeError("Expected argument 'transit_router_route_entry_next_hop_resource_type' to be a str")
+        pulumi.set(__self__, "transit_router_route_entry_next_hop_resource_type", transit_router_route_entry_next_hop_resource_type)
         if transit_router_route_entry_next_hop_type and not isinstance(transit_router_route_entry_next_hop_type, str):
             raise TypeError("Expected argument 'transit_router_route_entry_next_hop_type' to be a str")
         pulumi.set(__self__, "transit_router_route_entry_next_hop_type", transit_router_route_entry_next_hop_type)
@@ -141,6 +147,22 @@ class GetTransitRouterRouteEntryResult:
         return pulumi.get(self, "transit_router_route_entry_next_hop_id")
 
     @property
+    @pulumi.getter(name="transitRouterRouteEntryNextHopResourceId")
+    def transit_router_route_entry_next_hop_resource_id(self) -> builtins.str:
+        """
+        路由条目下一跳网络实例ID。
+        """
+        return pulumi.get(self, "transit_router_route_entry_next_hop_resource_id")
+
+    @property
+    @pulumi.getter(name="transitRouterRouteEntryNextHopResourceType")
+    def transit_router_route_entry_next_hop_resource_type(self) -> builtins.str:
+        """
+        路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        """
+        return pulumi.get(self, "transit_router_route_entry_next_hop_resource_type")
+
+    @property
     @pulumi.getter(name="transitRouterRouteEntryNextHopType")
     def transit_router_route_entry_next_hop_type(self) -> builtins.str:
         """
@@ -188,6 +210,8 @@ class AwaitableGetTransitRouterRouteEntryResult(GetTransitRouterRouteEntryResult
             transit_router_route_entry_id=self.transit_router_route_entry_id,
             transit_router_route_entry_name=self.transit_router_route_entry_name,
             transit_router_route_entry_next_hop_id=self.transit_router_route_entry_next_hop_id,
+            transit_router_route_entry_next_hop_resource_id=self.transit_router_route_entry_next_hop_resource_id,
+            transit_router_route_entry_next_hop_resource_type=self.transit_router_route_entry_next_hop_resource_type,
             transit_router_route_entry_next_hop_type=self.transit_router_route_entry_next_hop_type,
             transit_router_route_entry_type=self.transit_router_route_entry_type,
             transit_router_route_table_id=self.transit_router_route_table_id,
@@ -217,6 +241,8 @@ def get_transit_router_route_entry(id: Optional[builtins.str] = None,
         transit_router_route_entry_id=pulumi.get(__ret__, 'transit_router_route_entry_id'),
         transit_router_route_entry_name=pulumi.get(__ret__, 'transit_router_route_entry_name'),
         transit_router_route_entry_next_hop_id=pulumi.get(__ret__, 'transit_router_route_entry_next_hop_id'),
+        transit_router_route_entry_next_hop_resource_id=pulumi.get(__ret__, 'transit_router_route_entry_next_hop_resource_id'),
+        transit_router_route_entry_next_hop_resource_type=pulumi.get(__ret__, 'transit_router_route_entry_next_hop_resource_type'),
         transit_router_route_entry_next_hop_type=pulumi.get(__ret__, 'transit_router_route_entry_next_hop_type'),
         transit_router_route_entry_type=pulumi.get(__ret__, 'transit_router_route_entry_type'),
         transit_router_route_table_id=pulumi.get(__ret__, 'transit_router_route_table_id'),
@@ -243,6 +269,8 @@ def get_transit_router_route_entry_output(id: Optional[pulumi.Input[builtins.str
         transit_router_route_entry_id=pulumi.get(__response__, 'transit_router_route_entry_id'),
         transit_router_route_entry_name=pulumi.get(__response__, 'transit_router_route_entry_name'),
         transit_router_route_entry_next_hop_id=pulumi.get(__response__, 'transit_router_route_entry_next_hop_id'),
+        transit_router_route_entry_next_hop_resource_id=pulumi.get(__response__, 'transit_router_route_entry_next_hop_resource_id'),
+        transit_router_route_entry_next_hop_resource_type=pulumi.get(__response__, 'transit_router_route_entry_next_hop_resource_type'),
         transit_router_route_entry_next_hop_type=pulumi.get(__response__, 'transit_router_route_entry_next_hop_type'),
         transit_router_route_entry_type=pulumi.get(__response__, 'transit_router_route_entry_type'),
         transit_router_route_table_id=pulumi.get(__response__, 'transit_router_route_table_id'),

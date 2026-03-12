@@ -26,14 +26,21 @@ class GatewayServiceArgs:
                  gateway_id: pulumi.Input[builtins.str],
                  protocols: pulumi.Input[Sequence[pulumi.Input[builtins.str]]],
                  service_name: pulumi.Input[builtins.str],
-                 comments: Optional[pulumi.Input[builtins.str]] = None):
+                 comments: Optional[pulumi.Input[builtins.str]] = None,
+                 custom_domains: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayServiceCustomDomainArgs']]]] = None,
+                 domain_type: Optional[pulumi.Input[builtins.str]] = None,
+                 service_network_spec: Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']] = None,
+                 service_type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a GatewayService resource.
         :param pulumi.Input['GatewayServiceAuthSpecArgs'] auth_spec: 认证配置。
         :param pulumi.Input[builtins.str] gateway_id: 网关ID。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
         :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
+        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        :param pulumi.Input['GatewayServiceServiceNetworkSpecArgs'] service_network_spec: 服务默认域名网络配置。。
+        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
         """
         pulumi.set(__self__, "auth_spec", auth_spec)
         pulumi.set(__self__, "gateway_id", gateway_id)
@@ -41,6 +48,14 @@ class GatewayServiceArgs:
         pulumi.set(__self__, "service_name", service_name)
         if comments is not None:
             pulumi.set(__self__, "comments", comments)
+        if custom_domains is not None:
+            pulumi.set(__self__, "custom_domains", custom_domains)
+        if domain_type is not None:
+            pulumi.set(__self__, "domain_type", domain_type)
+        if service_network_spec is not None:
+            pulumi.set(__self__, "service_network_spec", service_network_spec)
+        if service_type is not None:
+            pulumi.set(__self__, "service_type", service_type)
 
     @property
     @pulumi.getter(name="authSpec")
@@ -82,7 +97,7 @@ class GatewayServiceArgs:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Input[builtins.str]:
         """
-        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
         """
         return pulumi.get(self, "service_name")
 
@@ -102,6 +117,51 @@ class GatewayServiceArgs:
     def comments(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "comments", value)
 
+    @property
+    @pulumi.getter(name="customDomains")
+    def custom_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayServiceCustomDomainArgs']]]]:
+        return pulumi.get(self, "custom_domains")
+
+    @custom_domains.setter
+    def custom_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayServiceCustomDomainArgs']]]]):
+        pulumi.set(self, "custom_domains", value)
+
+    @property
+    @pulumi.getter(name="domainType")
+    def domain_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        """
+        return pulumi.get(self, "domain_type")
+
+    @domain_type.setter
+    def domain_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain_type", value)
+
+    @property
+    @pulumi.getter(name="serviceNetworkSpec")
+    def service_network_spec(self) -> Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']]:
+        """
+        服务默认域名网络配置。。
+        """
+        return pulumi.get(self, "service_network_spec")
+
+    @service_network_spec.setter
+    def service_network_spec(self, value: Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']]):
+        pulumi.set(self, "service_network_spec", value)
+
+    @property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        服务类型，取值：AIProvider：AI模型代理。
+        """
+        return pulumi.get(self, "service_type")
+
+    @service_type.setter
+    def service_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "service_type", value)
+
 
 @pulumi.input_type
 class _GatewayServiceState:
@@ -111,6 +171,7 @@ class _GatewayServiceState:
                  created_time: Optional[pulumi.Input[builtins.str]] = None,
                  custom_domains: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayServiceCustomDomainArgs']]]] = None,
                  domain_spec: Optional[pulumi.Input['GatewayServiceDomainSpecArgs']] = None,
+                 domain_type: Optional[pulumi.Input[builtins.str]] = None,
                  domains: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayServiceDomainArgs']]]] = None,
                  gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  gateway_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -118,6 +179,8 @@ class _GatewayServiceState:
                  protocols: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  service_id: Optional[pulumi.Input[builtins.str]] = None,
                  service_name: Optional[pulumi.Input[builtins.str]] = None,
+                 service_network_spec: Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']] = None,
+                 service_type: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering GatewayService resources.
@@ -125,12 +188,15 @@ class _GatewayServiceState:
         :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
         :param pulumi.Input[builtins.str] created_time: 创建时间。
         :param pulumi.Input['GatewayServiceDomainSpecArgs'] domain_spec: 域名详情。
+        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
         :param pulumi.Input[builtins.str] gateway_id: 网关ID。
         :param pulumi.Input[builtins.str] gateway_name: 网关名称。
         :param pulumi.Input[builtins.str] message: 服务创建失败、删除失败或异常时的错误信息。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
         :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        :param pulumi.Input['GatewayServiceServiceNetworkSpecArgs'] service_network_spec: 服务默认域名网络配置。。
+        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
         :param pulumi.Input[builtins.str] status: Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
         """
         if auth_spec is not None:
@@ -143,6 +209,8 @@ class _GatewayServiceState:
             pulumi.set(__self__, "custom_domains", custom_domains)
         if domain_spec is not None:
             pulumi.set(__self__, "domain_spec", domain_spec)
+        if domain_type is not None:
+            pulumi.set(__self__, "domain_type", domain_type)
         if domains is not None:
             pulumi.set(__self__, "domains", domains)
         if gateway_id is not None:
@@ -157,6 +225,10 @@ class _GatewayServiceState:
             pulumi.set(__self__, "service_id", service_id)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
+        if service_network_spec is not None:
+            pulumi.set(__self__, "service_network_spec", service_network_spec)
+        if service_type is not None:
+            pulumi.set(__self__, "service_type", service_type)
         if status is not None:
             pulumi.set(__self__, "status", status)
 
@@ -216,6 +288,18 @@ class _GatewayServiceState:
     @domain_spec.setter
     def domain_spec(self, value: Optional[pulumi.Input['GatewayServiceDomainSpecArgs']]):
         pulumi.set(self, "domain_spec", value)
+
+    @property
+    @pulumi.getter(name="domainType")
+    def domain_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        """
+        return pulumi.get(self, "domain_type")
+
+    @domain_type.setter
+    def domain_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "domain_type", value)
 
     @property
     @pulumi.getter
@@ -290,13 +374,37 @@ class _GatewayServiceState:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
     def service_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "service_name", value)
+
+    @property
+    @pulumi.getter(name="serviceNetworkSpec")
+    def service_network_spec(self) -> Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']]:
+        """
+        服务默认域名网络配置。。
+        """
+        return pulumi.get(self, "service_network_spec")
+
+    @service_network_spec.setter
+    def service_network_spec(self, value: Optional[pulumi.Input['GatewayServiceServiceNetworkSpecArgs']]):
+        pulumi.set(self, "service_network_spec", value)
+
+    @property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        服务类型，取值：AIProvider：AI模型代理。
+        """
+        return pulumi.get(self, "service_type")
+
+    @service_type.setter
+    def service_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "service_type", value)
 
     @property
     @pulumi.getter
@@ -319,31 +427,16 @@ class GatewayService(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auth_spec: Optional[pulumi.Input[Union['GatewayServiceAuthSpecArgs', 'GatewayServiceAuthSpecArgsDict']]] = None,
                  comments: Optional[pulumi.Input[builtins.str]] = None,
+                 custom_domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayServiceCustomDomainArgs', 'GatewayServiceCustomDomainArgsDict']]]]] = None,
+                 domain_type: Optional[pulumi.Input[builtins.str]] = None,
                  gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  protocols: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  service_name: Optional[pulumi.Input[builtins.str]] = None,
+                 service_network_spec: Optional[pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']]] = None,
+                 service_type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
         服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        apig_gateway_service_demo = bytepluscc.apig.GatewayService("ApigGatewayServiceDemo",
-            service_name="ApigGatewayServiceDemo",
-            gateway_id="gd3vehjs7npja181xxxxx",
-            protocols=[
-                "HTTP",
-                "HTTPS",
-            ],
-            auth_spec={
-                "enable": False,
-            },
-            comments="ApigGatewayServiceDemo-test")
-        ```
 
         ## Import
 
@@ -355,9 +448,12 @@ class GatewayService(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['GatewayServiceAuthSpecArgs', 'GatewayServiceAuthSpecArgsDict']] auth_spec: 认证配置。
         :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
+        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
         :param pulumi.Input[builtins.str] gateway_id: 网关ID。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        :param pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']] service_network_spec: 服务默认域名网络配置。。
+        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
         """
         ...
     @overload
@@ -367,25 +463,6 @@ class GatewayService(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        apig_gateway_service_demo = bytepluscc.apig.GatewayService("ApigGatewayServiceDemo",
-            service_name="ApigGatewayServiceDemo",
-            gateway_id="gd3vehjs7npja181xxxxx",
-            protocols=[
-                "HTTP",
-                "HTTPS",
-            ],
-            auth_spec={
-                "enable": False,
-            },
-            comments="ApigGatewayServiceDemo-test")
-        ```
 
         ## Import
 
@@ -410,9 +487,13 @@ class GatewayService(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auth_spec: Optional[pulumi.Input[Union['GatewayServiceAuthSpecArgs', 'GatewayServiceAuthSpecArgsDict']]] = None,
                  comments: Optional[pulumi.Input[builtins.str]] = None,
+                 custom_domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayServiceCustomDomainArgs', 'GatewayServiceCustomDomainArgsDict']]]]] = None,
+                 domain_type: Optional[pulumi.Input[builtins.str]] = None,
                  gateway_id: Optional[pulumi.Input[builtins.str]] = None,
                  protocols: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  service_name: Optional[pulumi.Input[builtins.str]] = None,
+                 service_network_spec: Optional[pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']]] = None,
+                 service_type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -426,6 +507,8 @@ class GatewayService(pulumi.CustomResource):
                 raise TypeError("Missing required property 'auth_spec'")
             __props__.__dict__["auth_spec"] = auth_spec
             __props__.__dict__["comments"] = comments
+            __props__.__dict__["custom_domains"] = custom_domains
+            __props__.__dict__["domain_type"] = domain_type
             if gateway_id is None and not opts.urn:
                 raise TypeError("Missing required property 'gateway_id'")
             __props__.__dict__["gateway_id"] = gateway_id
@@ -435,8 +518,9 @@ class GatewayService(pulumi.CustomResource):
             if service_name is None and not opts.urn:
                 raise TypeError("Missing required property 'service_name'")
             __props__.__dict__["service_name"] = service_name
+            __props__.__dict__["service_network_spec"] = service_network_spec
+            __props__.__dict__["service_type"] = service_type
             __props__.__dict__["created_time"] = None
-            __props__.__dict__["custom_domains"] = None
             __props__.__dict__["domain_spec"] = None
             __props__.__dict__["domains"] = None
             __props__.__dict__["gateway_name"] = None
@@ -458,6 +542,7 @@ class GatewayService(pulumi.CustomResource):
             created_time: Optional[pulumi.Input[builtins.str]] = None,
             custom_domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayServiceCustomDomainArgs', 'GatewayServiceCustomDomainArgsDict']]]]] = None,
             domain_spec: Optional[pulumi.Input[Union['GatewayServiceDomainSpecArgs', 'GatewayServiceDomainSpecArgsDict']]] = None,
+            domain_type: Optional[pulumi.Input[builtins.str]] = None,
             domains: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayServiceDomainArgs', 'GatewayServiceDomainArgsDict']]]]] = None,
             gateway_id: Optional[pulumi.Input[builtins.str]] = None,
             gateway_name: Optional[pulumi.Input[builtins.str]] = None,
@@ -465,6 +550,8 @@ class GatewayService(pulumi.CustomResource):
             protocols: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             service_id: Optional[pulumi.Input[builtins.str]] = None,
             service_name: Optional[pulumi.Input[builtins.str]] = None,
+            service_network_spec: Optional[pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']]] = None,
+            service_type: Optional[pulumi.Input[builtins.str]] = None,
             status: Optional[pulumi.Input[builtins.str]] = None) -> 'GatewayService':
         """
         Get an existing GatewayService resource's state with the given name, id, and optional extra
@@ -477,12 +564,15 @@ class GatewayService(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] comments: 备注，长度限制为0~253个字符。
         :param pulumi.Input[builtins.str] created_time: 创建时间。
         :param pulumi.Input[Union['GatewayServiceDomainSpecArgs', 'GatewayServiceDomainSpecArgsDict']] domain_spec: 域名详情。
+        :param pulumi.Input[builtins.str] domain_type: 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
         :param pulumi.Input[builtins.str] gateway_id: 网关ID。
         :param pulumi.Input[builtins.str] gateway_name: 网关名称。
         :param pulumi.Input[builtins.str] message: 服务创建失败、删除失败或异常时的错误信息。
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] protocols: 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
         :param pulumi.Input[builtins.str] service_id: 服务ID。
-        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        :param pulumi.Input[builtins.str] service_name: 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        :param pulumi.Input[Union['GatewayServiceServiceNetworkSpecArgs', 'GatewayServiceServiceNetworkSpecArgsDict']] service_network_spec: 服务默认域名网络配置。。
+        :param pulumi.Input[builtins.str] service_type: 服务类型，取值：AIProvider：AI模型代理。
         :param pulumi.Input[builtins.str] status: Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -494,6 +584,7 @@ class GatewayService(pulumi.CustomResource):
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["custom_domains"] = custom_domains
         __props__.__dict__["domain_spec"] = domain_spec
+        __props__.__dict__["domain_type"] = domain_type
         __props__.__dict__["domains"] = domains
         __props__.__dict__["gateway_id"] = gateway_id
         __props__.__dict__["gateway_name"] = gateway_name
@@ -501,6 +592,8 @@ class GatewayService(pulumi.CustomResource):
         __props__.__dict__["protocols"] = protocols
         __props__.__dict__["service_id"] = service_id
         __props__.__dict__["service_name"] = service_name
+        __props__.__dict__["service_network_spec"] = service_network_spec
+        __props__.__dict__["service_type"] = service_type
         __props__.__dict__["status"] = status
         return GatewayService(resource_name, opts=opts, __props__=__props__)
 
@@ -540,6 +633,14 @@ class GatewayService(pulumi.CustomResource):
         域名详情。
         """
         return pulumi.get(self, "domain_spec")
+
+    @property
+    @pulumi.getter(name="domainType")
+    def domain_type(self) -> pulumi.Output[builtins.str]:
+        """
+        域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        """
+        return pulumi.get(self, "domain_type")
 
     @property
     @pulumi.getter
@@ -590,9 +691,25 @@ class GatewayService(pulumi.CustomResource):
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Output[builtins.str]:
         """
-        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+        服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
         """
         return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="serviceNetworkSpec")
+    def service_network_spec(self) -> pulumi.Output['outputs.GatewayServiceServiceNetworkSpec']:
+        """
+        服务默认域名网络配置。。
+        """
+        return pulumi.get(self, "service_network_spec")
+
+    @property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> pulumi.Output[builtins.str]:
+        """
+        服务类型，取值：AIProvider：AI模型代理。
+        """
+        return pulumi.get(self, "service_type")
 
     @property
     @pulumi.getter

@@ -12,6 +12,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -149,6 +150,20 @@ public class TransitRouter extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
+     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * 
+     */
+    @Export(name="grantSourceType", refs={String.class}, tree="[0]")
+    private Output<String> grantSourceType;
+
+    /**
+     * @return 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * 
+     */
+    public Output<String> grantSourceType() {
+        return this.grantSourceType;
+    }
+    /**
      * 实例共享的状态。Accepted：已接受。Initial：待接受。
      * 
      */
@@ -161,6 +176,20 @@ public class TransitRouter extends com.pulumi.resources.CustomResource {
      */
     public Output<String> grantStatus() {
         return this.grantStatus;
+    }
+    /**
+     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    @Export(name="multicastEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> multicastEnabled;
+
+    /**
+     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * 
+     */
+    public Output<Boolean> multicastEnabled() {
+        return this.multicastEnabled;
     }
     /**
      * 中转路由器实例的欠费关停时间。

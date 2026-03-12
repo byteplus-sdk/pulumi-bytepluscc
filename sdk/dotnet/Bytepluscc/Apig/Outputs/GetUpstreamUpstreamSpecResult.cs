@@ -19,6 +19,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         /// </summary>
         public readonly Outputs.GetUpstreamUpstreamSpecAiProviderResult AiProvider;
         /// <summary>
+        /// 固定域名。
+        /// </summary>
+        public readonly Outputs.GetUpstreamUpstreamSpecDomainResult Domain;
+        /// <summary>
         /// 云服务器。
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUpstreamUpstreamSpecEcsInstanceResult> EcsInstances;
@@ -39,6 +43,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         private GetUpstreamUpstreamSpecResult(
             Outputs.GetUpstreamUpstreamSpecAiProviderResult aiProvider,
 
+            Outputs.GetUpstreamUpstreamSpecDomainResult domain,
+
             ImmutableArray<Outputs.GetUpstreamUpstreamSpecEcsInstanceResult> ecsInstances,
 
             Outputs.GetUpstreamUpstreamSpecK8SServiceResult k8SService,
@@ -48,6 +54,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
             Outputs.GetUpstreamUpstreamSpecVeFaasResult veFaas)
         {
             AiProvider = aiProvider;
+            Domain = domain;
             EcsInstances = ecsInstances;
             K8SService = k8SService;
             NacosService = nacosService;

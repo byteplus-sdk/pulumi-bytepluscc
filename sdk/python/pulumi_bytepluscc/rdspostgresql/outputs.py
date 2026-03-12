@@ -18,8 +18,12 @@ from .. import _utilities
 __all__ = [
     'AllowListAssociatedInstance',
     'AllowListSecurityGroupBindInfo',
+    'DbEndpointAddress',
+    'DbEndpointReadOnlyNodeWeight',
     'GetAllowListAssociatedInstanceResult',
     'GetAllowListSecurityGroupBindInfoResult',
+    'GetDbEndpointAddressResult',
+    'GetDbEndpointReadOnlyNodeWeightResult',
 ]
 
 @pulumi.output_type
@@ -163,6 +167,130 @@ class AllowListSecurityGroupBindInfo(dict):
 
 
 @pulumi.output_type
+class DbEndpointAddress(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dnsVisibility":
+            suggest = "dns_visibility"
+        elif key == "domainPrefix":
+            suggest = "domain_prefix"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbEndpointAddress. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbEndpointAddress.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbEndpointAddress.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dns_visibility: Optional[builtins.bool] = None,
+                 domain_prefix: Optional[builtins.str] = None,
+                 port: Optional[builtins.str] = None):
+        """
+        :param builtins.bool dns_visibility: 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        :param builtins.str domain_prefix: 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        :param builtins.str port: 端口号。
+        """
+        if dns_visibility is not None:
+            pulumi.set(__self__, "dns_visibility", dns_visibility)
+        if domain_prefix is not None:
+            pulumi.set(__self__, "domain_prefix", domain_prefix)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> Optional[builtins.bool]:
+        """
+        是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> Optional[builtins.str]:
+        """
+        新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[builtins.str]:
+        """
+        端口号。
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
+class DbEndpointReadOnlyNodeWeight(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nodeId":
+            suggest = "node_id"
+        elif key == "nodeType":
+            suggest = "node_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbEndpointReadOnlyNodeWeight. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbEndpointReadOnlyNodeWeight.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbEndpointReadOnlyNodeWeight.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 node_id: Optional[builtins.str] = None,
+                 node_type: Optional[builtins.str] = None,
+                 weight: Optional[builtins.int] = None):
+        """
+        :param builtins.str node_id: 只读节点需要传入 NodeId。
+        :param builtins.str node_type: 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        :param builtins.int weight: 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        """
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[builtins.str]:
+        """
+        只读节点需要传入 NodeId。
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[builtins.str]:
+        """
+        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.int]:
+        """
+        节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
 class GetAllowListAssociatedInstanceResult(dict):
     def __init__(__self__, *,
                  instance_id: builtins.str,
@@ -251,5 +379,162 @@ class GetAllowListSecurityGroupBindInfoResult(dict):
         安全组名称。
         """
         return pulumi.get(self, "security_group_name")
+
+
+@pulumi.output_type
+class GetDbEndpointAddressResult(dict):
+    def __init__(__self__, *,
+                 cross_region_domain: builtins.str,
+                 dns_visibility: builtins.bool,
+                 domain: builtins.str,
+                 domain_prefix: builtins.str,
+                 domain_visibility_setting: builtins.str,
+                 eip_id: builtins.str,
+                 ip_address: builtins.str,
+                 network_type: builtins.str,
+                 port: builtins.str,
+                 subnet_id: builtins.str):
+        """
+        :param builtins.str cross_region_domain: 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+        :param builtins.bool dns_visibility: 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        :param builtins.str domain: 连接域名。
+        :param builtins.str domain_prefix: 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        :param builtins.str domain_visibility_setting: 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+        :param builtins.str eip_id: EIP 的 ID，仅对 Public 地址有效。
+        :param builtins.str ip_address: IP 地址。
+        :param builtins.str network_type: 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+        :param builtins.str port: 端口号。
+        :param builtins.str subnet_id: 子网 ID。
+        """
+        pulumi.set(__self__, "cross_region_domain", cross_region_domain)
+        pulumi.set(__self__, "dns_visibility", dns_visibility)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "domain_prefix", domain_prefix)
+        pulumi.set(__self__, "domain_visibility_setting", domain_visibility_setting)
+        pulumi.set(__self__, "eip_id", eip_id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @property
+    @pulumi.getter(name="crossRegionDomain")
+    def cross_region_domain(self) -> builtins.str:
+        """
+        可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+        """
+        return pulumi.get(self, "cross_region_domain")
+
+    @property
+    @pulumi.getter(name="dnsVisibility")
+    def dns_visibility(self) -> builtins.bool:
+        """
+        是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        """
+        return pulumi.get(self, "dns_visibility")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> builtins.str:
+        """
+        连接域名。
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="domainPrefix")
+    def domain_prefix(self) -> builtins.str:
+        """
+        新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        """
+        return pulumi.get(self, "domain_prefix")
+
+    @property
+    @pulumi.getter(name="domainVisibilitySetting")
+    def domain_visibility_setting(self) -> builtins.str:
+        """
+        私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+        """
+        return pulumi.get(self, "domain_visibility_setting")
+
+    @property
+    @pulumi.getter(name="eipId")
+    def eip_id(self) -> builtins.str:
+        """
+        EIP 的 ID，仅对 Public 地址有效。
+        """
+        return pulumi.get(self, "eip_id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> builtins.str:
+        """
+        IP 地址。
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> builtins.str:
+        """
+        网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+        """
+        return pulumi.get(self, "network_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> builtins.str:
+        """
+        端口号。
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> builtins.str:
+        """
+        子网 ID。
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetDbEndpointReadOnlyNodeWeightResult(dict):
+    def __init__(__self__, *,
+                 node_id: builtins.str,
+                 node_type: builtins.str,
+                 weight: builtins.int):
+        """
+        :param builtins.str node_id: 只读节点需要传入 NodeId。
+        :param builtins.str node_type: 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        :param builtins.int weight: 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        """
+        pulumi.set(__self__, "node_id", node_id)
+        pulumi.set(__self__, "node_type", node_type)
+        pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> builtins.str:
+        """
+        只读节点需要传入 NodeId。
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        """
+        return pulumi.get(self, "node_type")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.int:
+        """
+        节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        """
+        return pulumi.get(self, "weight")
 
 

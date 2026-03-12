@@ -61,12 +61,44 @@ public final class LoadBalancerEipBillingConfigArgs extends com.pulumi.resources
         return Optional.ofNullable(this.isp);
     }
 
+    /**
+     * 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+     * 
+     */
+    @Import(name="securityProtectionInstanceId")
+    private @Nullable Output<Integer> securityProtectionInstanceId;
+
+    /**
+     * @return 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+     * 
+     */
+    public Optional<Output<Integer>> securityProtectionInstanceId() {
+        return Optional.ofNullable(this.securityProtectionInstanceId);
+    }
+
+    /**
+     * 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+     * 
+     */
+    @Import(name="securityProtectionTypes")
+    private @Nullable Output<String> securityProtectionTypes;
+
+    /**
+     * @return 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+     * 
+     */
+    public Optional<Output<String>> securityProtectionTypes() {
+        return Optional.ofNullable(this.securityProtectionTypes);
+    }
+
     private LoadBalancerEipBillingConfigArgs() {}
 
     private LoadBalancerEipBillingConfigArgs(LoadBalancerEipBillingConfigArgs $) {
         this.bandwidth = $.bandwidth;
         this.billingType = $.billingType;
         this.isp = $.isp;
+        this.securityProtectionInstanceId = $.securityProtectionInstanceId;
+        this.securityProtectionTypes = $.securityProtectionTypes;
     }
 
     public static Builder builder() {
@@ -148,6 +180,48 @@ public final class LoadBalancerEipBillingConfigArgs extends com.pulumi.resources
          */
         public Builder isp(String isp) {
             return isp(Output.of(isp));
+        }
+
+        /**
+         * @param securityProtectionInstanceId 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionInstanceId(@Nullable Output<Integer> securityProtectionInstanceId) {
+            $.securityProtectionInstanceId = securityProtectionInstanceId;
+            return this;
+        }
+
+        /**
+         * @param securityProtectionInstanceId 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionInstanceId(Integer securityProtectionInstanceId) {
+            return securityProtectionInstanceId(Output.of(securityProtectionInstanceId));
+        }
+
+        /**
+         * @param securityProtectionTypes 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionTypes(@Nullable Output<String> securityProtectionTypes) {
+            $.securityProtectionTypes = securityProtectionTypes;
+            return this;
+        }
+
+        /**
+         * @param securityProtectionTypes 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityProtectionTypes(String securityProtectionTypes) {
+            return securityProtectionTypes(Output.of(securityProtectionTypes));
         }
 
         public LoadBalancerEipBillingConfigArgs build() {

@@ -137,6 +137,36 @@ public final class TransitRouterRouteEntryState extends com.pulumi.resources.Res
     }
 
     /**
+     * 路由条目下一跳网络实例ID。
+     * 
+     */
+    @Import(name="transitRouterRouteEntryNextHopResourceId")
+    private @Nullable Output<String> transitRouterRouteEntryNextHopResourceId;
+
+    /**
+     * @return 路由条目下一跳网络实例ID。
+     * 
+     */
+    public Optional<Output<String>> transitRouterRouteEntryNextHopResourceId() {
+        return Optional.ofNullable(this.transitRouterRouteEntryNextHopResourceId);
+    }
+
+    /**
+     * 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * 
+     */
+    @Import(name="transitRouterRouteEntryNextHopResourceType")
+    private @Nullable Output<String> transitRouterRouteEntryNextHopResourceType;
+
+    /**
+     * @return 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * 
+     */
+    public Optional<Output<String>> transitRouterRouteEntryNextHopResourceType() {
+        return Optional.ofNullable(this.transitRouterRouteEntryNextHopResourceType);
+    }
+
+    /**
      * 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
      * 
      */
@@ -207,6 +237,8 @@ public final class TransitRouterRouteEntryState extends com.pulumi.resources.Res
         this.transitRouterRouteEntryId = $.transitRouterRouteEntryId;
         this.transitRouterRouteEntryName = $.transitRouterRouteEntryName;
         this.transitRouterRouteEntryNextHopId = $.transitRouterRouteEntryNextHopId;
+        this.transitRouterRouteEntryNextHopResourceId = $.transitRouterRouteEntryNextHopResourceId;
+        this.transitRouterRouteEntryNextHopResourceType = $.transitRouterRouteEntryNextHopResourceType;
         this.transitRouterRouteEntryNextHopType = $.transitRouterRouteEntryNextHopType;
         this.transitRouterRouteEntryType = $.transitRouterRouteEntryType;
         this.transitRouterRouteTableId = $.transitRouterRouteTableId;
@@ -407,6 +439,48 @@ public final class TransitRouterRouteEntryState extends com.pulumi.resources.Res
          */
         public Builder transitRouterRouteEntryNextHopId(String transitRouterRouteEntryNextHopId) {
             return transitRouterRouteEntryNextHopId(Output.of(transitRouterRouteEntryNextHopId));
+        }
+
+        /**
+         * @param transitRouterRouteEntryNextHopResourceId 路由条目下一跳网络实例ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transitRouterRouteEntryNextHopResourceId(@Nullable Output<String> transitRouterRouteEntryNextHopResourceId) {
+            $.transitRouterRouteEntryNextHopResourceId = transitRouterRouteEntryNextHopResourceId;
+            return this;
+        }
+
+        /**
+         * @param transitRouterRouteEntryNextHopResourceId 路由条目下一跳网络实例ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transitRouterRouteEntryNextHopResourceId(String transitRouterRouteEntryNextHopResourceId) {
+            return transitRouterRouteEntryNextHopResourceId(Output.of(transitRouterRouteEntryNextHopResourceId));
+        }
+
+        /**
+         * @param transitRouterRouteEntryNextHopResourceType 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transitRouterRouteEntryNextHopResourceType(@Nullable Output<String> transitRouterRouteEntryNextHopResourceType) {
+            $.transitRouterRouteEntryNextHopResourceType = transitRouterRouteEntryNextHopResourceType;
+            return this;
+        }
+
+        /**
+         * @param transitRouterRouteEntryNextHopResourceType 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transitRouterRouteEntryNextHopResourceType(String transitRouterRouteEntryNextHopResourceType) {
+            return transitRouterRouteEntryNextHopResourceType(Output.of(transitRouterRouteEntryNextHopResourceType));
         }
 
         /**

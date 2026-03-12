@@ -22,6 +22,8 @@ type ScalingConfigurationEip struct {
 	BillingType *string `pulumi:"billingType"`
 	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
 	Isp *string `pulumi:"isp"`
+	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
 }
 
 // ScalingConfigurationEipInput is an input type that accepts ScalingConfigurationEipArgs and ScalingConfigurationEipOutput values.
@@ -44,6 +46,8 @@ type ScalingConfigurationEipArgs struct {
 	BillingType pulumi.StringPtrInput `pulumi:"billingType"`
 	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
 }
 
 func (ScalingConfigurationEipArgs) ElementType() reflect.Type {
@@ -143,6 +147,11 @@ func (o ScalingConfigurationEipOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
 
+// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+func (o ScalingConfigurationEipOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingConfigurationEip) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
+}
+
 type ScalingConfigurationEipPtrOutput struct{ *pulumi.OutputState }
 
 func (ScalingConfigurationEipPtrOutput) ElementType() reflect.Type {
@@ -205,6 +214,16 @@ func (o ScalingConfigurationEipPtrOutput) Isp() pulumi.StringPtrOutput {
 		}
 		return v.Isp
 	}).(pulumi.StringPtrOutput)
+}
+
+// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+func (o ScalingConfigurationEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScalingConfigurationEip) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ReleaseWithInstance
+	}).(pulumi.BoolPtrOutput)
 }
 
 type ScalingConfigurationInstanceTypeOverride struct {
@@ -422,7 +441,13 @@ func (o ScalingConfigurationTagArrayOutput) Index(i pulumi.IntInput) ScalingConf
 type ScalingConfigurationVolume struct {
 	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
+	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
+	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
+	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
 	Size *int `pulumi:"size"`
 	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
 	VolumeType *string `pulumi:"volumeType"`
@@ -442,7 +467,13 @@ type ScalingConfigurationVolumeInput interface {
 type ScalingConfigurationVolumeArgs struct {
 	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
+	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
+	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
+	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
 	Size pulumi.IntPtrInput `pulumi:"size"`
 	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
@@ -504,7 +535,22 @@ func (o ScalingConfigurationVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOut
 	return o.ApplyT(func(v ScalingConfigurationVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+func (o ScalingConfigurationVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScalingConfigurationVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
+}
+
+// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+func (o ScalingConfigurationVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScalingConfigurationVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
+}
+
+// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+func (o ScalingConfigurationVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingConfigurationVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
 func (o ScalingConfigurationVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
@@ -1064,6 +1110,724 @@ func (o ScalingGroupTagArrayOutput) Index(i pulumi.IntInput) ScalingGroupTagOutp
 	}).(ScalingGroupTagOutput)
 }
 
+type ScalingPolicyAlarmPolicy struct {
+	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	Condition *ScalingPolicyAlarmPolicyCondition `pulumi:"condition"`
+	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	ConditionOperator *string                             `pulumi:"conditionOperator"`
+	Conditions        []ScalingPolicyAlarmPolicyCondition `pulumi:"conditions"`
+	// 报警任务的生效时间段。
+	Effective *string `pulumi:"effective"`
+	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	EvaluationCount *int `pulumi:"evaluationCount"`
+	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	RuleType *string `pulumi:"ruleType"`
+}
+
+// ScalingPolicyAlarmPolicyInput is an input type that accepts ScalingPolicyAlarmPolicyArgs and ScalingPolicyAlarmPolicyOutput values.
+// You can construct a concrete instance of `ScalingPolicyAlarmPolicyInput` via:
+//
+//	ScalingPolicyAlarmPolicyArgs{...}
+type ScalingPolicyAlarmPolicyInput interface {
+	pulumi.Input
+
+	ToScalingPolicyAlarmPolicyOutput() ScalingPolicyAlarmPolicyOutput
+	ToScalingPolicyAlarmPolicyOutputWithContext(context.Context) ScalingPolicyAlarmPolicyOutput
+}
+
+type ScalingPolicyAlarmPolicyArgs struct {
+	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	Condition ScalingPolicyAlarmPolicyConditionPtrInput `pulumi:"condition"`
+	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	ConditionOperator pulumi.StringPtrInput                       `pulumi:"conditionOperator"`
+	Conditions        ScalingPolicyAlarmPolicyConditionArrayInput `pulumi:"conditions"`
+	// 报警任务的生效时间段。
+	Effective pulumi.StringPtrInput `pulumi:"effective"`
+	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	EvaluationCount pulumi.IntPtrInput `pulumi:"evaluationCount"`
+	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
+}
+
+func (ScalingPolicyAlarmPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingPolicyAlarmPolicy)(nil)).Elem()
+}
+
+func (i ScalingPolicyAlarmPolicyArgs) ToScalingPolicyAlarmPolicyOutput() ScalingPolicyAlarmPolicyOutput {
+	return i.ToScalingPolicyAlarmPolicyOutputWithContext(context.Background())
+}
+
+func (i ScalingPolicyAlarmPolicyArgs) ToScalingPolicyAlarmPolicyOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyAlarmPolicyOutput)
+}
+
+func (i ScalingPolicyAlarmPolicyArgs) ToScalingPolicyAlarmPolicyPtrOutput() ScalingPolicyAlarmPolicyPtrOutput {
+	return i.ToScalingPolicyAlarmPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i ScalingPolicyAlarmPolicyArgs) ToScalingPolicyAlarmPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyAlarmPolicyOutput).ToScalingPolicyAlarmPolicyPtrOutputWithContext(ctx)
+}
+
+// ScalingPolicyAlarmPolicyPtrInput is an input type that accepts ScalingPolicyAlarmPolicyArgs, ScalingPolicyAlarmPolicyPtr and ScalingPolicyAlarmPolicyPtrOutput values.
+// You can construct a concrete instance of `ScalingPolicyAlarmPolicyPtrInput` via:
+//
+//	        ScalingPolicyAlarmPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScalingPolicyAlarmPolicyPtrInput interface {
+	pulumi.Input
+
+	ToScalingPolicyAlarmPolicyPtrOutput() ScalingPolicyAlarmPolicyPtrOutput
+	ToScalingPolicyAlarmPolicyPtrOutputWithContext(context.Context) ScalingPolicyAlarmPolicyPtrOutput
+}
+
+type scalingPolicyAlarmPolicyPtrType ScalingPolicyAlarmPolicyArgs
+
+func ScalingPolicyAlarmPolicyPtr(v *ScalingPolicyAlarmPolicyArgs) ScalingPolicyAlarmPolicyPtrInput {
+	return (*scalingPolicyAlarmPolicyPtrType)(v)
+}
+
+func (*scalingPolicyAlarmPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingPolicyAlarmPolicy)(nil)).Elem()
+}
+
+func (i *scalingPolicyAlarmPolicyPtrType) ToScalingPolicyAlarmPolicyPtrOutput() ScalingPolicyAlarmPolicyPtrOutput {
+	return i.ToScalingPolicyAlarmPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *scalingPolicyAlarmPolicyPtrType) ToScalingPolicyAlarmPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyAlarmPolicyPtrOutput)
+}
+
+type ScalingPolicyAlarmPolicyOutput struct{ *pulumi.OutputState }
+
+func (ScalingPolicyAlarmPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingPolicyAlarmPolicy)(nil)).Elem()
+}
+
+func (o ScalingPolicyAlarmPolicyOutput) ToScalingPolicyAlarmPolicyOutput() ScalingPolicyAlarmPolicyOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyOutput) ToScalingPolicyAlarmPolicyOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyOutput) ToScalingPolicyAlarmPolicyPtrOutput() ScalingPolicyAlarmPolicyPtrOutput {
+	return o.ToScalingPolicyAlarmPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o ScalingPolicyAlarmPolicyOutput) ToScalingPolicyAlarmPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScalingPolicyAlarmPolicy) *ScalingPolicyAlarmPolicy {
+		return &v
+	}).(ScalingPolicyAlarmPolicyPtrOutput)
+}
+
+// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+func (o ScalingPolicyAlarmPolicyOutput) Condition() ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *ScalingPolicyAlarmPolicyCondition { return v.Condition }).(ScalingPolicyAlarmPolicyConditionPtrOutput)
+}
+
+// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+func (o ScalingPolicyAlarmPolicyOutput) ConditionOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *string { return v.ConditionOperator }).(pulumi.StringPtrOutput)
+}
+
+func (o ScalingPolicyAlarmPolicyOutput) Conditions() ScalingPolicyAlarmPolicyConditionArrayOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) []ScalingPolicyAlarmPolicyCondition { return v.Conditions }).(ScalingPolicyAlarmPolicyConditionArrayOutput)
+}
+
+// 报警任务的生效时间段。
+func (o ScalingPolicyAlarmPolicyOutput) Effective() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *string { return v.Effective }).(pulumi.StringPtrOutput)
+}
+
+// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+func (o ScalingPolicyAlarmPolicyOutput) EvaluationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *int { return v.EvaluationCount }).(pulumi.IntPtrOutput)
+}
+
+// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+func (o ScalingPolicyAlarmPolicyOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *string { return v.RuleType }).(pulumi.StringPtrOutput)
+}
+
+type ScalingPolicyAlarmPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (ScalingPolicyAlarmPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingPolicyAlarmPolicy)(nil)).Elem()
+}
+
+func (o ScalingPolicyAlarmPolicyPtrOutput) ToScalingPolicyAlarmPolicyPtrOutput() ScalingPolicyAlarmPolicyPtrOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyPtrOutput) ToScalingPolicyAlarmPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyPtrOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyPtrOutput) Elem() ScalingPolicyAlarmPolicyOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) ScalingPolicyAlarmPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret ScalingPolicyAlarmPolicy
+		return ret
+	}).(ScalingPolicyAlarmPolicyOutput)
+}
+
+// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+func (o ScalingPolicyAlarmPolicyPtrOutput) Condition() ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *ScalingPolicyAlarmPolicyCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Condition
+	}).(ScalingPolicyAlarmPolicyConditionPtrOutput)
+}
+
+// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+func (o ScalingPolicyAlarmPolicyPtrOutput) ConditionOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConditionOperator
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ScalingPolicyAlarmPolicyPtrOutput) Conditions() ScalingPolicyAlarmPolicyConditionArrayOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) []ScalingPolicyAlarmPolicyCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Conditions
+	}).(ScalingPolicyAlarmPolicyConditionArrayOutput)
+}
+
+// 报警任务的生效时间段。
+func (o ScalingPolicyAlarmPolicyPtrOutput) Effective() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Effective
+	}).(pulumi.StringPtrOutput)
+}
+
+// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+func (o ScalingPolicyAlarmPolicyPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.EvaluationCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+func (o ScalingPolicyAlarmPolicyPtrOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RuleType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScalingPolicyAlarmPolicyCondition struct {
+	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	ComparisonOperator *string `pulumi:"comparisonOperator"`
+	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	MetricName *string `pulumi:"metricName"`
+	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	MetricUnit *string `pulumi:"metricUnit"`
+	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	Threshold *string `pulumi:"threshold"`
+}
+
+// ScalingPolicyAlarmPolicyConditionInput is an input type that accepts ScalingPolicyAlarmPolicyConditionArgs and ScalingPolicyAlarmPolicyConditionOutput values.
+// You can construct a concrete instance of `ScalingPolicyAlarmPolicyConditionInput` via:
+//
+//	ScalingPolicyAlarmPolicyConditionArgs{...}
+type ScalingPolicyAlarmPolicyConditionInput interface {
+	pulumi.Input
+
+	ToScalingPolicyAlarmPolicyConditionOutput() ScalingPolicyAlarmPolicyConditionOutput
+	ToScalingPolicyAlarmPolicyConditionOutputWithContext(context.Context) ScalingPolicyAlarmPolicyConditionOutput
+}
+
+type ScalingPolicyAlarmPolicyConditionArgs struct {
+	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
+	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
+	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	MetricUnit pulumi.StringPtrInput `pulumi:"metricUnit"`
+	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	Threshold pulumi.StringPtrInput `pulumi:"threshold"`
+}
+
+func (ScalingPolicyAlarmPolicyConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (i ScalingPolicyAlarmPolicyConditionArgs) ToScalingPolicyAlarmPolicyConditionOutput() ScalingPolicyAlarmPolicyConditionOutput {
+	return i.ToScalingPolicyAlarmPolicyConditionOutputWithContext(context.Background())
+}
+
+func (i ScalingPolicyAlarmPolicyConditionArgs) ToScalingPolicyAlarmPolicyConditionOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyAlarmPolicyConditionOutput)
+}
+
+func (i ScalingPolicyAlarmPolicyConditionArgs) ToScalingPolicyAlarmPolicyConditionPtrOutput() ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return i.ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(context.Background())
+}
+
+func (i ScalingPolicyAlarmPolicyConditionArgs) ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyAlarmPolicyConditionOutput).ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(ctx)
+}
+
+// ScalingPolicyAlarmPolicyConditionPtrInput is an input type that accepts ScalingPolicyAlarmPolicyConditionArgs, ScalingPolicyAlarmPolicyConditionPtr and ScalingPolicyAlarmPolicyConditionPtrOutput values.
+// You can construct a concrete instance of `ScalingPolicyAlarmPolicyConditionPtrInput` via:
+//
+//	        ScalingPolicyAlarmPolicyConditionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScalingPolicyAlarmPolicyConditionPtrInput interface {
+	pulumi.Input
+
+	ToScalingPolicyAlarmPolicyConditionPtrOutput() ScalingPolicyAlarmPolicyConditionPtrOutput
+	ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(context.Context) ScalingPolicyAlarmPolicyConditionPtrOutput
+}
+
+type scalingPolicyAlarmPolicyConditionPtrType ScalingPolicyAlarmPolicyConditionArgs
+
+func ScalingPolicyAlarmPolicyConditionPtr(v *ScalingPolicyAlarmPolicyConditionArgs) ScalingPolicyAlarmPolicyConditionPtrInput {
+	return (*scalingPolicyAlarmPolicyConditionPtrType)(v)
+}
+
+func (*scalingPolicyAlarmPolicyConditionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (i *scalingPolicyAlarmPolicyConditionPtrType) ToScalingPolicyAlarmPolicyConditionPtrOutput() ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return i.ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(context.Background())
+}
+
+func (i *scalingPolicyAlarmPolicyConditionPtrType) ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyAlarmPolicyConditionPtrOutput)
+}
+
+// ScalingPolicyAlarmPolicyConditionArrayInput is an input type that accepts ScalingPolicyAlarmPolicyConditionArray and ScalingPolicyAlarmPolicyConditionArrayOutput values.
+// You can construct a concrete instance of `ScalingPolicyAlarmPolicyConditionArrayInput` via:
+//
+//	ScalingPolicyAlarmPolicyConditionArray{ ScalingPolicyAlarmPolicyConditionArgs{...} }
+type ScalingPolicyAlarmPolicyConditionArrayInput interface {
+	pulumi.Input
+
+	ToScalingPolicyAlarmPolicyConditionArrayOutput() ScalingPolicyAlarmPolicyConditionArrayOutput
+	ToScalingPolicyAlarmPolicyConditionArrayOutputWithContext(context.Context) ScalingPolicyAlarmPolicyConditionArrayOutput
+}
+
+type ScalingPolicyAlarmPolicyConditionArray []ScalingPolicyAlarmPolicyConditionInput
+
+func (ScalingPolicyAlarmPolicyConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (i ScalingPolicyAlarmPolicyConditionArray) ToScalingPolicyAlarmPolicyConditionArrayOutput() ScalingPolicyAlarmPolicyConditionArrayOutput {
+	return i.ToScalingPolicyAlarmPolicyConditionArrayOutputWithContext(context.Background())
+}
+
+func (i ScalingPolicyAlarmPolicyConditionArray) ToScalingPolicyAlarmPolicyConditionArrayOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyAlarmPolicyConditionArrayOutput)
+}
+
+type ScalingPolicyAlarmPolicyConditionOutput struct{ *pulumi.OutputState }
+
+func (ScalingPolicyAlarmPolicyConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (o ScalingPolicyAlarmPolicyConditionOutput) ToScalingPolicyAlarmPolicyConditionOutput() ScalingPolicyAlarmPolicyConditionOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyConditionOutput) ToScalingPolicyAlarmPolicyConditionOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyConditionOutput) ToScalingPolicyAlarmPolicyConditionPtrOutput() ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return o.ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(context.Background())
+}
+
+func (o ScalingPolicyAlarmPolicyConditionOutput) ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScalingPolicyAlarmPolicyCondition) *ScalingPolicyAlarmPolicyCondition {
+		return &v
+	}).(ScalingPolicyAlarmPolicyConditionPtrOutput)
+}
+
+// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+func (o ScalingPolicyAlarmPolicyConditionOutput) ComparisonOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
+}
+
+// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+func (o ScalingPolicyAlarmPolicyConditionOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.MetricName }).(pulumi.StringPtrOutput)
+}
+
+// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+func (o ScalingPolicyAlarmPolicyConditionOutput) MetricUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.MetricUnit }).(pulumi.StringPtrOutput)
+}
+
+// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+func (o ScalingPolicyAlarmPolicyConditionOutput) Threshold() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.Threshold }).(pulumi.StringPtrOutput)
+}
+
+type ScalingPolicyAlarmPolicyConditionPtrOutput struct{ *pulumi.OutputState }
+
+func (ScalingPolicyAlarmPolicyConditionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (o ScalingPolicyAlarmPolicyConditionPtrOutput) ToScalingPolicyAlarmPolicyConditionPtrOutput() ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyConditionPtrOutput) ToScalingPolicyAlarmPolicyConditionPtrOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionPtrOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyConditionPtrOutput) Elem() ScalingPolicyAlarmPolicyConditionOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) ScalingPolicyAlarmPolicyCondition {
+		if v != nil {
+			return *v
+		}
+		var ret ScalingPolicyAlarmPolicyCondition
+		return ret
+	}).(ScalingPolicyAlarmPolicyConditionOutput)
+}
+
+// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+func (o ScalingPolicyAlarmPolicyConditionPtrOutput) ComparisonOperator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ComparisonOperator
+	}).(pulumi.StringPtrOutput)
+}
+
+// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+func (o ScalingPolicyAlarmPolicyConditionPtrOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+func (o ScalingPolicyAlarmPolicyConditionPtrOutput) MetricUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+func (o ScalingPolicyAlarmPolicyConditionPtrOutput) Threshold() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Threshold
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScalingPolicyAlarmPolicyConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (ScalingPolicyAlarmPolicyConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (o ScalingPolicyAlarmPolicyConditionArrayOutput) ToScalingPolicyAlarmPolicyConditionArrayOutput() ScalingPolicyAlarmPolicyConditionArrayOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyConditionArrayOutput) ToScalingPolicyAlarmPolicyConditionArrayOutputWithContext(ctx context.Context) ScalingPolicyAlarmPolicyConditionArrayOutput {
+	return o
+}
+
+func (o ScalingPolicyAlarmPolicyConditionArrayOutput) Index(i pulumi.IntInput) ScalingPolicyAlarmPolicyConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScalingPolicyAlarmPolicyCondition {
+		return vs[0].([]ScalingPolicyAlarmPolicyCondition)[vs[1].(int)]
+	}).(ScalingPolicyAlarmPolicyConditionOutput)
+}
+
+type ScalingPolicyScheduledPolicy struct {
+	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	LaunchTime *string `pulumi:"launchTime"`
+	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	LaunchTimeRead *string `pulumi:"launchTimeRead"`
+	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceEndTime *string `pulumi:"recurrenceEndTime"`
+	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	RecurrenceEndTimeRead *string `pulumi:"recurrenceEndTimeRead"`
+	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	RecurrenceStartTime *string `pulumi:"recurrenceStartTime"`
+	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceType *string `pulumi:"recurrenceType"`
+	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceValue *string `pulumi:"recurrenceValue"`
+}
+
+// ScalingPolicyScheduledPolicyInput is an input type that accepts ScalingPolicyScheduledPolicyArgs and ScalingPolicyScheduledPolicyOutput values.
+// You can construct a concrete instance of `ScalingPolicyScheduledPolicyInput` via:
+//
+//	ScalingPolicyScheduledPolicyArgs{...}
+type ScalingPolicyScheduledPolicyInput interface {
+	pulumi.Input
+
+	ToScalingPolicyScheduledPolicyOutput() ScalingPolicyScheduledPolicyOutput
+	ToScalingPolicyScheduledPolicyOutputWithContext(context.Context) ScalingPolicyScheduledPolicyOutput
+}
+
+type ScalingPolicyScheduledPolicyArgs struct {
+	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	LaunchTime pulumi.StringPtrInput `pulumi:"launchTime"`
+	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	LaunchTimeRead pulumi.StringPtrInput `pulumi:"launchTimeRead"`
+	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceEndTime pulumi.StringPtrInput `pulumi:"recurrenceEndTime"`
+	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	RecurrenceEndTimeRead pulumi.StringPtrInput `pulumi:"recurrenceEndTimeRead"`
+	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	RecurrenceStartTime pulumi.StringPtrInput `pulumi:"recurrenceStartTime"`
+	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceType pulumi.StringPtrInput `pulumi:"recurrenceType"`
+	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceValue pulumi.StringPtrInput `pulumi:"recurrenceValue"`
+}
+
+func (ScalingPolicyScheduledPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (i ScalingPolicyScheduledPolicyArgs) ToScalingPolicyScheduledPolicyOutput() ScalingPolicyScheduledPolicyOutput {
+	return i.ToScalingPolicyScheduledPolicyOutputWithContext(context.Background())
+}
+
+func (i ScalingPolicyScheduledPolicyArgs) ToScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) ScalingPolicyScheduledPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyScheduledPolicyOutput)
+}
+
+func (i ScalingPolicyScheduledPolicyArgs) ToScalingPolicyScheduledPolicyPtrOutput() ScalingPolicyScheduledPolicyPtrOutput {
+	return i.ToScalingPolicyScheduledPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i ScalingPolicyScheduledPolicyArgs) ToScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyScheduledPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyScheduledPolicyOutput).ToScalingPolicyScheduledPolicyPtrOutputWithContext(ctx)
+}
+
+// ScalingPolicyScheduledPolicyPtrInput is an input type that accepts ScalingPolicyScheduledPolicyArgs, ScalingPolicyScheduledPolicyPtr and ScalingPolicyScheduledPolicyPtrOutput values.
+// You can construct a concrete instance of `ScalingPolicyScheduledPolicyPtrInput` via:
+//
+//	        ScalingPolicyScheduledPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScalingPolicyScheduledPolicyPtrInput interface {
+	pulumi.Input
+
+	ToScalingPolicyScheduledPolicyPtrOutput() ScalingPolicyScheduledPolicyPtrOutput
+	ToScalingPolicyScheduledPolicyPtrOutputWithContext(context.Context) ScalingPolicyScheduledPolicyPtrOutput
+}
+
+type scalingPolicyScheduledPolicyPtrType ScalingPolicyScheduledPolicyArgs
+
+func ScalingPolicyScheduledPolicyPtr(v *ScalingPolicyScheduledPolicyArgs) ScalingPolicyScheduledPolicyPtrInput {
+	return (*scalingPolicyScheduledPolicyPtrType)(v)
+}
+
+func (*scalingPolicyScheduledPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (i *scalingPolicyScheduledPolicyPtrType) ToScalingPolicyScheduledPolicyPtrOutput() ScalingPolicyScheduledPolicyPtrOutput {
+	return i.ToScalingPolicyScheduledPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *scalingPolicyScheduledPolicyPtrType) ToScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyScheduledPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingPolicyScheduledPolicyPtrOutput)
+}
+
+type ScalingPolicyScheduledPolicyOutput struct{ *pulumi.OutputState }
+
+func (ScalingPolicyScheduledPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (o ScalingPolicyScheduledPolicyOutput) ToScalingPolicyScheduledPolicyOutput() ScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+func (o ScalingPolicyScheduledPolicyOutput) ToScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) ScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+func (o ScalingPolicyScheduledPolicyOutput) ToScalingPolicyScheduledPolicyPtrOutput() ScalingPolicyScheduledPolicyPtrOutput {
+	return o.ToScalingPolicyScheduledPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o ScalingPolicyScheduledPolicyOutput) ToScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyScheduledPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScalingPolicyScheduledPolicy) *ScalingPolicyScheduledPolicy {
+		return &v
+	}).(ScalingPolicyScheduledPolicyPtrOutput)
+}
+
+// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+func (o ScalingPolicyScheduledPolicyOutput) LaunchTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.LaunchTime }).(pulumi.StringPtrOutput)
+}
+
+// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+func (o ScalingPolicyScheduledPolicyOutput) LaunchTimeRead() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.LaunchTimeRead }).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o ScalingPolicyScheduledPolicyOutput) RecurrenceEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceEndTime }).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+func (o ScalingPolicyScheduledPolicyOutput) RecurrenceEndTimeRead() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceEndTimeRead }).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+func (o ScalingPolicyScheduledPolicyOutput) RecurrenceStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceStartTime }).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o ScalingPolicyScheduledPolicyOutput) RecurrenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceType }).(pulumi.StringPtrOutput)
+}
+
+// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o ScalingPolicyScheduledPolicyOutput) RecurrenceValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceValue }).(pulumi.StringPtrOutput)
+}
+
+type ScalingPolicyScheduledPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (ScalingPolicyScheduledPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (o ScalingPolicyScheduledPolicyPtrOutput) ToScalingPolicyScheduledPolicyPtrOutput() ScalingPolicyScheduledPolicyPtrOutput {
+	return o
+}
+
+func (o ScalingPolicyScheduledPolicyPtrOutput) ToScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) ScalingPolicyScheduledPolicyPtrOutput {
+	return o
+}
+
+func (o ScalingPolicyScheduledPolicyPtrOutput) Elem() ScalingPolicyScheduledPolicyOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) ScalingPolicyScheduledPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret ScalingPolicyScheduledPolicy
+		return ret
+	}).(ScalingPolicyScheduledPolicyOutput)
+}
+
+// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+func (o ScalingPolicyScheduledPolicyPtrOutput) LaunchTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LaunchTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+func (o ScalingPolicyScheduledPolicyPtrOutput) LaunchTimeRead() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LaunchTimeRead
+	}).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceEndTimeRead() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceEndTimeRead
+	}).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceValue
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetScalingConfigurationEip struct {
 	// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
 	Bandwidth int `pulumi:"bandwidth"`
@@ -1073,6 +1837,8 @@ type GetScalingConfigurationEip struct {
 	BillingType string `pulumi:"billingType"`
 	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
 	Isp string `pulumi:"isp"`
+	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
 }
 
 // GetScalingConfigurationEipInput is an input type that accepts GetScalingConfigurationEipArgs and GetScalingConfigurationEipOutput values.
@@ -1095,6 +1861,8 @@ type GetScalingConfigurationEipArgs struct {
 	BillingType pulumi.StringInput `pulumi:"billingType"`
 	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
 	Isp pulumi.StringInput `pulumi:"isp"`
+	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
 }
 
 func (GetScalingConfigurationEipArgs) ElementType() reflect.Type {
@@ -1141,6 +1909,11 @@ func (o GetScalingConfigurationEipOutput) BillingType() pulumi.StringOutput {
 // 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
 func (o GetScalingConfigurationEipOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationEip) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+func (o GetScalingConfigurationEipOutput) ReleaseWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingConfigurationEip) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
 }
 
 type GetScalingConfigurationInstanceTypeOverride struct {
@@ -1358,7 +2131,13 @@ func (o GetScalingConfigurationTagArrayOutput) Index(i pulumi.IntInput) GetScali
 type GetScalingConfigurationVolume struct {
 	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
+	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
+	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
+	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
 	Size int `pulumi:"size"`
 	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
 	VolumeType string `pulumi:"volumeType"`
@@ -1378,7 +2157,13 @@ type GetScalingConfigurationVolumeInput interface {
 type GetScalingConfigurationVolumeArgs struct {
 	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
 	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
+	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
+	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
+	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
 	Size pulumi.IntInput `pulumi:"size"`
 	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
@@ -1440,7 +2225,22 @@ func (o GetScalingConfigurationVolumeOutput) DeleteWithInstance() pulumi.BoolOut
 	return o.ApplyT(func(v GetScalingConfigurationVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
 }
 
-// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+func (o GetScalingConfigurationVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingConfigurationVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
+}
+
+// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+func (o GetScalingConfigurationVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingConfigurationVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
+}
+
+// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+func (o GetScalingConfigurationVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingConfigurationVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
+}
+
+// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
 func (o GetScalingConfigurationVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) int { return v.Size }).(pulumi.IntOutput)
 }
@@ -1903,6 +2703,333 @@ func (o GetScalingGroupTagArrayOutput) Index(i pulumi.IntInput) GetScalingGroupT
 	}).(GetScalingGroupTagOutput)
 }
 
+type GetScalingPolicyAlarmPolicy struct {
+	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	Condition GetScalingPolicyAlarmPolicyCondition `pulumi:"condition"`
+	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	ConditionOperator string `pulumi:"conditionOperator"`
+	// 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+	Conditions []GetScalingPolicyAlarmPolicyCondition `pulumi:"conditions"`
+	// 报警任务的生效时间段。
+	Effective string `pulumi:"effective"`
+	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	EvaluationCount int `pulumi:"evaluationCount"`
+	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	RuleType string `pulumi:"ruleType"`
+}
+
+// GetScalingPolicyAlarmPolicyInput is an input type that accepts GetScalingPolicyAlarmPolicyArgs and GetScalingPolicyAlarmPolicyOutput values.
+// You can construct a concrete instance of `GetScalingPolicyAlarmPolicyInput` via:
+//
+//	GetScalingPolicyAlarmPolicyArgs{...}
+type GetScalingPolicyAlarmPolicyInput interface {
+	pulumi.Input
+
+	ToGetScalingPolicyAlarmPolicyOutput() GetScalingPolicyAlarmPolicyOutput
+	ToGetScalingPolicyAlarmPolicyOutputWithContext(context.Context) GetScalingPolicyAlarmPolicyOutput
+}
+
+type GetScalingPolicyAlarmPolicyArgs struct {
+	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	Condition GetScalingPolicyAlarmPolicyConditionInput `pulumi:"condition"`
+	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	ConditionOperator pulumi.StringInput `pulumi:"conditionOperator"`
+	// 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+	Conditions GetScalingPolicyAlarmPolicyConditionArrayInput `pulumi:"conditions"`
+	// 报警任务的生效时间段。
+	Effective pulumi.StringInput `pulumi:"effective"`
+	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	EvaluationCount pulumi.IntInput `pulumi:"evaluationCount"`
+	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	RuleType pulumi.StringInput `pulumi:"ruleType"`
+}
+
+func (GetScalingPolicyAlarmPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingPolicyAlarmPolicy)(nil)).Elem()
+}
+
+func (i GetScalingPolicyAlarmPolicyArgs) ToGetScalingPolicyAlarmPolicyOutput() GetScalingPolicyAlarmPolicyOutput {
+	return i.ToGetScalingPolicyAlarmPolicyOutputWithContext(context.Background())
+}
+
+func (i GetScalingPolicyAlarmPolicyArgs) ToGetScalingPolicyAlarmPolicyOutputWithContext(ctx context.Context) GetScalingPolicyAlarmPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingPolicyAlarmPolicyOutput)
+}
+
+type GetScalingPolicyAlarmPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetScalingPolicyAlarmPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingPolicyAlarmPolicy)(nil)).Elem()
+}
+
+func (o GetScalingPolicyAlarmPolicyOutput) ToGetScalingPolicyAlarmPolicyOutput() GetScalingPolicyAlarmPolicyOutput {
+	return o
+}
+
+func (o GetScalingPolicyAlarmPolicyOutput) ToGetScalingPolicyAlarmPolicyOutputWithContext(ctx context.Context) GetScalingPolicyAlarmPolicyOutput {
+	return o
+}
+
+// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+func (o GetScalingPolicyAlarmPolicyOutput) Condition() GetScalingPolicyAlarmPolicyConditionOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) GetScalingPolicyAlarmPolicyCondition { return v.Condition }).(GetScalingPolicyAlarmPolicyConditionOutput)
+}
+
+// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+func (o GetScalingPolicyAlarmPolicyOutput) ConditionOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) string { return v.ConditionOperator }).(pulumi.StringOutput)
+}
+
+// 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+func (o GetScalingPolicyAlarmPolicyOutput) Conditions() GetScalingPolicyAlarmPolicyConditionArrayOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) []GetScalingPolicyAlarmPolicyCondition { return v.Conditions }).(GetScalingPolicyAlarmPolicyConditionArrayOutput)
+}
+
+// 报警任务的生效时间段。
+func (o GetScalingPolicyAlarmPolicyOutput) Effective() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) string { return v.Effective }).(pulumi.StringOutput)
+}
+
+// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+func (o GetScalingPolicyAlarmPolicyOutput) EvaluationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) int { return v.EvaluationCount }).(pulumi.IntOutput)
+}
+
+// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+func (o GetScalingPolicyAlarmPolicyOutput) RuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) string { return v.RuleType }).(pulumi.StringOutput)
+}
+
+type GetScalingPolicyAlarmPolicyCondition struct {
+	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	ComparisonOperator string `pulumi:"comparisonOperator"`
+	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	MetricName string `pulumi:"metricName"`
+	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	MetricUnit string `pulumi:"metricUnit"`
+	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	Threshold string `pulumi:"threshold"`
+}
+
+// GetScalingPolicyAlarmPolicyConditionInput is an input type that accepts GetScalingPolicyAlarmPolicyConditionArgs and GetScalingPolicyAlarmPolicyConditionOutput values.
+// You can construct a concrete instance of `GetScalingPolicyAlarmPolicyConditionInput` via:
+//
+//	GetScalingPolicyAlarmPolicyConditionArgs{...}
+type GetScalingPolicyAlarmPolicyConditionInput interface {
+	pulumi.Input
+
+	ToGetScalingPolicyAlarmPolicyConditionOutput() GetScalingPolicyAlarmPolicyConditionOutput
+	ToGetScalingPolicyAlarmPolicyConditionOutputWithContext(context.Context) GetScalingPolicyAlarmPolicyConditionOutput
+}
+
+type GetScalingPolicyAlarmPolicyConditionArgs struct {
+	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
+	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	MetricName pulumi.StringInput `pulumi:"metricName"`
+	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	MetricUnit pulumi.StringInput `pulumi:"metricUnit"`
+	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	Threshold pulumi.StringInput `pulumi:"threshold"`
+}
+
+func (GetScalingPolicyAlarmPolicyConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (i GetScalingPolicyAlarmPolicyConditionArgs) ToGetScalingPolicyAlarmPolicyConditionOutput() GetScalingPolicyAlarmPolicyConditionOutput {
+	return i.ToGetScalingPolicyAlarmPolicyConditionOutputWithContext(context.Background())
+}
+
+func (i GetScalingPolicyAlarmPolicyConditionArgs) ToGetScalingPolicyAlarmPolicyConditionOutputWithContext(ctx context.Context) GetScalingPolicyAlarmPolicyConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingPolicyAlarmPolicyConditionOutput)
+}
+
+// GetScalingPolicyAlarmPolicyConditionArrayInput is an input type that accepts GetScalingPolicyAlarmPolicyConditionArray and GetScalingPolicyAlarmPolicyConditionArrayOutput values.
+// You can construct a concrete instance of `GetScalingPolicyAlarmPolicyConditionArrayInput` via:
+//
+//	GetScalingPolicyAlarmPolicyConditionArray{ GetScalingPolicyAlarmPolicyConditionArgs{...} }
+type GetScalingPolicyAlarmPolicyConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetScalingPolicyAlarmPolicyConditionArrayOutput() GetScalingPolicyAlarmPolicyConditionArrayOutput
+	ToGetScalingPolicyAlarmPolicyConditionArrayOutputWithContext(context.Context) GetScalingPolicyAlarmPolicyConditionArrayOutput
+}
+
+type GetScalingPolicyAlarmPolicyConditionArray []GetScalingPolicyAlarmPolicyConditionInput
+
+func (GetScalingPolicyAlarmPolicyConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (i GetScalingPolicyAlarmPolicyConditionArray) ToGetScalingPolicyAlarmPolicyConditionArrayOutput() GetScalingPolicyAlarmPolicyConditionArrayOutput {
+	return i.ToGetScalingPolicyAlarmPolicyConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetScalingPolicyAlarmPolicyConditionArray) ToGetScalingPolicyAlarmPolicyConditionArrayOutputWithContext(ctx context.Context) GetScalingPolicyAlarmPolicyConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingPolicyAlarmPolicyConditionArrayOutput)
+}
+
+type GetScalingPolicyAlarmPolicyConditionOutput struct{ *pulumi.OutputState }
+
+func (GetScalingPolicyAlarmPolicyConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (o GetScalingPolicyAlarmPolicyConditionOutput) ToGetScalingPolicyAlarmPolicyConditionOutput() GetScalingPolicyAlarmPolicyConditionOutput {
+	return o
+}
+
+func (o GetScalingPolicyAlarmPolicyConditionOutput) ToGetScalingPolicyAlarmPolicyConditionOutputWithContext(ctx context.Context) GetScalingPolicyAlarmPolicyConditionOutput {
+	return o
+}
+
+// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+func (o GetScalingPolicyAlarmPolicyConditionOutput) ComparisonOperator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.ComparisonOperator }).(pulumi.StringOutput)
+}
+
+// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+func (o GetScalingPolicyAlarmPolicyConditionOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
+// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+func (o GetScalingPolicyAlarmPolicyConditionOutput) MetricUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.MetricUnit }).(pulumi.StringOutput)
+}
+
+// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+func (o GetScalingPolicyAlarmPolicyConditionOutput) Threshold() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.Threshold }).(pulumi.StringOutput)
+}
+
+type GetScalingPolicyAlarmPolicyConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScalingPolicyAlarmPolicyConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingPolicyAlarmPolicyCondition)(nil)).Elem()
+}
+
+func (o GetScalingPolicyAlarmPolicyConditionArrayOutput) ToGetScalingPolicyAlarmPolicyConditionArrayOutput() GetScalingPolicyAlarmPolicyConditionArrayOutput {
+	return o
+}
+
+func (o GetScalingPolicyAlarmPolicyConditionArrayOutput) ToGetScalingPolicyAlarmPolicyConditionArrayOutputWithContext(ctx context.Context) GetScalingPolicyAlarmPolicyConditionArrayOutput {
+	return o
+}
+
+func (o GetScalingPolicyAlarmPolicyConditionArrayOutput) Index(i pulumi.IntInput) GetScalingPolicyAlarmPolicyConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScalingPolicyAlarmPolicyCondition {
+		return vs[0].([]GetScalingPolicyAlarmPolicyCondition)[vs[1].(int)]
+	}).(GetScalingPolicyAlarmPolicyConditionOutput)
+}
+
+type GetScalingPolicyScheduledPolicy struct {
+	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	LaunchTime string `pulumi:"launchTime"`
+	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	LaunchTimeRead string `pulumi:"launchTimeRead"`
+	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceEndTime string `pulumi:"recurrenceEndTime"`
+	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	RecurrenceEndTimeRead string `pulumi:"recurrenceEndTimeRead"`
+	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	RecurrenceStartTime string `pulumi:"recurrenceStartTime"`
+	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceType string `pulumi:"recurrenceType"`
+	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceValue string `pulumi:"recurrenceValue"`
+}
+
+// GetScalingPolicyScheduledPolicyInput is an input type that accepts GetScalingPolicyScheduledPolicyArgs and GetScalingPolicyScheduledPolicyOutput values.
+// You can construct a concrete instance of `GetScalingPolicyScheduledPolicyInput` via:
+//
+//	GetScalingPolicyScheduledPolicyArgs{...}
+type GetScalingPolicyScheduledPolicyInput interface {
+	pulumi.Input
+
+	ToGetScalingPolicyScheduledPolicyOutput() GetScalingPolicyScheduledPolicyOutput
+	ToGetScalingPolicyScheduledPolicyOutputWithContext(context.Context) GetScalingPolicyScheduledPolicyOutput
+}
+
+type GetScalingPolicyScheduledPolicyArgs struct {
+	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	LaunchTime pulumi.StringInput `pulumi:"launchTime"`
+	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	LaunchTimeRead pulumi.StringInput `pulumi:"launchTimeRead"`
+	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceEndTime pulumi.StringInput `pulumi:"recurrenceEndTime"`
+	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	RecurrenceEndTimeRead pulumi.StringInput `pulumi:"recurrenceEndTimeRead"`
+	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	RecurrenceStartTime pulumi.StringInput `pulumi:"recurrenceStartTime"`
+	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceType pulumi.StringInput `pulumi:"recurrenceType"`
+	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	RecurrenceValue pulumi.StringInput `pulumi:"recurrenceValue"`
+}
+
+func (GetScalingPolicyScheduledPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (i GetScalingPolicyScheduledPolicyArgs) ToGetScalingPolicyScheduledPolicyOutput() GetScalingPolicyScheduledPolicyOutput {
+	return i.ToGetScalingPolicyScheduledPolicyOutputWithContext(context.Background())
+}
+
+func (i GetScalingPolicyScheduledPolicyArgs) ToGetScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) GetScalingPolicyScheduledPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingPolicyScheduledPolicyOutput)
+}
+
+type GetScalingPolicyScheduledPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetScalingPolicyScheduledPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (o GetScalingPolicyScheduledPolicyOutput) ToGetScalingPolicyScheduledPolicyOutput() GetScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+func (o GetScalingPolicyScheduledPolicyOutput) ToGetScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) GetScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+func (o GetScalingPolicyScheduledPolicyOutput) LaunchTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.LaunchTime }).(pulumi.StringOutput)
+}
+
+// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+func (o GetScalingPolicyScheduledPolicyOutput) LaunchTimeRead() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.LaunchTimeRead }).(pulumi.StringOutput)
+}
+
+// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceEndTime }).(pulumi.StringOutput)
+}
+
+// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceEndTimeRead() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceEndTimeRead }).(pulumi.StringOutput)
+}
+
+// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceStartTime }).(pulumi.StringOutput)
+}
+
+// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceType }).(pulumi.StringOutput)
+}
+
+// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceValue }).(pulumi.StringOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationEipInput)(nil)).Elem(), ScalingConfigurationEipArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationEipPtrInput)(nil)).Elem(), ScalingConfigurationEipArgs{})
@@ -1920,6 +3047,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupServerGroupAttributeArrayInput)(nil)).Elem(), ScalingGroupServerGroupAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupTagInput)(nil)).Elem(), ScalingGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupTagArrayInput)(nil)).Elem(), ScalingGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyInput)(nil)).Elem(), ScalingPolicyAlarmPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyPtrInput)(nil)).Elem(), ScalingPolicyAlarmPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyConditionInput)(nil)).Elem(), ScalingPolicyAlarmPolicyConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyConditionPtrInput)(nil)).Elem(), ScalingPolicyAlarmPolicyConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyConditionArrayInput)(nil)).Elem(), ScalingPolicyAlarmPolicyConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyScheduledPolicyInput)(nil)).Elem(), ScalingPolicyScheduledPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyScheduledPolicyPtrInput)(nil)).Elem(), ScalingPolicyScheduledPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationEipInput)(nil)).Elem(), GetScalingConfigurationEipArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationInstanceTypeOverrideInput)(nil)).Elem(), GetScalingConfigurationInstanceTypeOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationInstanceTypeOverrideArrayInput)(nil)).Elem(), GetScalingConfigurationInstanceTypeOverrideArray{})
@@ -1934,6 +3068,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupServerGroupAttributeArrayInput)(nil)).Elem(), GetScalingGroupServerGroupAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupTagInput)(nil)).Elem(), GetScalingGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupTagArrayInput)(nil)).Elem(), GetScalingGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingPolicyAlarmPolicyInput)(nil)).Elem(), GetScalingPolicyAlarmPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingPolicyAlarmPolicyConditionInput)(nil)).Elem(), GetScalingPolicyAlarmPolicyConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingPolicyAlarmPolicyConditionArrayInput)(nil)).Elem(), GetScalingPolicyAlarmPolicyConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingPolicyScheduledPolicyInput)(nil)).Elem(), GetScalingPolicyScheduledPolicyArgs{})
 	pulumi.RegisterOutputType(ScalingConfigurationEipOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationEipPtrOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationInstanceTypeOverrideOutput{})
@@ -1950,6 +3088,13 @@ func init() {
 	pulumi.RegisterOutputType(ScalingGroupServerGroupAttributeArrayOutput{})
 	pulumi.RegisterOutputType(ScalingGroupTagOutput{})
 	pulumi.RegisterOutputType(ScalingGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyOutput{})
+	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyPtrOutput{})
+	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyConditionOutput{})
+	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyConditionPtrOutput{})
+	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyConditionArrayOutput{})
+	pulumi.RegisterOutputType(ScalingPolicyScheduledPolicyOutput{})
+	pulumi.RegisterOutputType(ScalingPolicyScheduledPolicyPtrOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationEipOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationInstanceTypeOverrideOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationInstanceTypeOverrideArrayOutput{})
@@ -1964,4 +3109,8 @@ func init() {
 	pulumi.RegisterOutputType(GetScalingGroupServerGroupAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetScalingGroupTagOutput{})
 	pulumi.RegisterOutputType(GetScalingGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingPolicyAlarmPolicyOutput{})
+	pulumi.RegisterOutputType(GetScalingPolicyAlarmPolicyConditionOutput{})
+	pulumi.RegisterOutputType(GetScalingPolicyAlarmPolicyConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingPolicyScheduledPolicyOutput{})
 }

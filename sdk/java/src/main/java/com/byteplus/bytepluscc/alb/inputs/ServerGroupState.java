@@ -38,6 +38,21 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * 
+     */
+    @Import(name="crossZoneEnabled")
+    private @Nullable Output<String> crossZoneEnabled;
+
+    /**
+     * @return 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+     * 
+     */
+    public Optional<Output<String>> crossZoneEnabled() {
+        return Optional.ofNullable(this.crossZoneEnabled);
+    }
+
+    /**
      * 后端服务器组的描述。
      * 
      */
@@ -272,6 +287,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     private ServerGroupState(ServerGroupState $) {
         this.createTime = $.createTime;
+        this.crossZoneEnabled = $.crossZoneEnabled;
         this.description = $.description;
         this.healthCheck = $.healthCheck;
         this.ipAddressType = $.ipAddressType;
@@ -328,6 +344,27 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
+        }
+
+        /**
+         * @param crossZoneEnabled 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder crossZoneEnabled(@Nullable Output<String> crossZoneEnabled) {
+            $.crossZoneEnabled = crossZoneEnabled;
+            return this;
+        }
+
+        /**
+         * @param crossZoneEnabled 是否开启服务器组的跨可用区负载均衡功能。取值如下：on（默认值）：开启。off：不开启。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder crossZoneEnabled(String crossZoneEnabled) {
+            return crossZoneEnabled(Output.of(crossZoneEnabled));
         }
 
         /**

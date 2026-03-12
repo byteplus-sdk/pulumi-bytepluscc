@@ -114,6 +114,21 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * 
+     */
+    @Import(name="ipv6BandwidthPackageId")
+    private @Nullable Output<String> ipv6BandwidthPackageId;
+
+    /**
+     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * 
+     */
+    public Optional<Output<String>> ipv6BandwidthPackageId() {
+        return Optional.ofNullable(this.ipv6BandwidthPackageId);
+    }
+
+    /**
      * IPv6公网IP的计費配置，仅适用于公网实例。
      * 
      */
@@ -218,6 +233,21 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * 
+     */
+    @Import(name="proxyProtocolEnabled")
+    private @Nullable Output<String> proxyProtocolEnabled;
+
+    /**
+     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * 
+     */
+    public Optional<Output<String>> proxyProtocolEnabled() {
+        return Optional.ofNullable(this.proxyProtocolEnabled);
+    }
+
     @Import(name="tags")
     private @Nullable Output<List<LoadBalancerTagArgs>> tags;
 
@@ -316,6 +346,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.eipBillingConfig = $.eipBillingConfig;
         this.globalAccelerator = $.globalAccelerator;
+        this.ipv6BandwidthPackageId = $.ipv6BandwidthPackageId;
         this.ipv6EipBillingConfig = $.ipv6EipBillingConfig;
         this.loadBalancerBillingType = $.loadBalancerBillingType;
         this.loadBalancerEdition = $.loadBalancerEdition;
@@ -323,6 +354,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         this.modificationProtectionReason = $.modificationProtectionReason;
         this.modificationProtectionStatus = $.modificationProtectionStatus;
         this.projectName = $.projectName;
+        this.proxyProtocolEnabled = $.proxyProtocolEnabled;
         this.tags = $.tags;
         this.type = $.type;
         this.vpcId = $.vpcId;
@@ -477,6 +509,27 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param ipv6BandwidthPackageId 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6BandwidthPackageId(@Nullable Output<String> ipv6BandwidthPackageId) {
+            $.ipv6BandwidthPackageId = ipv6BandwidthPackageId;
+            return this;
+        }
+
+        /**
+         * @param ipv6BandwidthPackageId 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6BandwidthPackageId(String ipv6BandwidthPackageId) {
+            return ipv6BandwidthPackageId(Output.of(ipv6BandwidthPackageId));
+        }
+
+        /**
          * @param ipv6EipBillingConfig IPv6公网IP的计費配置，仅适用于公网实例。
          * 
          * @return builder
@@ -621,6 +674,27 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
+        }
+
+        /**
+         * @param proxyProtocolEnabled ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyProtocolEnabled(@Nullable Output<String> proxyProtocolEnabled) {
+            $.proxyProtocolEnabled = proxyProtocolEnabled;
+            return this;
+        }
+
+        /**
+         * @param proxyProtocolEnabled ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyProtocolEnabled(String proxyProtocolEnabled) {
+            return proxyProtocolEnabled(Output.of(proxyProtocolEnabled));
         }
 
         public Builder tags(@Nullable Output<List<LoadBalancerTagArgs>> tags) {

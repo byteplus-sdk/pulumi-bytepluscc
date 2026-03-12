@@ -33,14 +33,59 @@ public final class ScalingConfigurationVolumeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+     * 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+     * 
+     */
+    @Import(name="extraPerformanceIops")
+    private @Nullable Output<Integer> extraPerformanceIops;
+
+    /**
+     * @return 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+     * 
+     */
+    public Optional<Output<Integer>> extraPerformanceIops() {
+        return Optional.ofNullable(this.extraPerformanceIops);
+    }
+
+    /**
+     * 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+     * 
+     */
+    @Import(name="extraPerformanceThroughputMb")
+    private @Nullable Output<Integer> extraPerformanceThroughputMb;
+
+    /**
+     * @return 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+     * 
+     */
+    public Optional<Output<Integer>> extraPerformanceThroughputMb() {
+        return Optional.ofNullable(this.extraPerformanceThroughputMb);
+    }
+
+    /**
+     * 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+     * 
+     */
+    @Import(name="extraPerformanceTypeId")
+    private @Nullable Output<String> extraPerformanceTypeId;
+
+    /**
+     * @return 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+     * 
+     */
+    public Optional<Output<String>> extraPerformanceTypeId() {
+        return Optional.ofNullable(this.extraPerformanceTypeId);
+    }
+
+    /**
+     * 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+     * @return 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -66,6 +111,9 @@ public final class ScalingConfigurationVolumeArgs extends com.pulumi.resources.R
 
     private ScalingConfigurationVolumeArgs(ScalingConfigurationVolumeArgs $) {
         this.deleteWithInstance = $.deleteWithInstance;
+        this.extraPerformanceIops = $.extraPerformanceIops;
+        this.extraPerformanceThroughputMb = $.extraPerformanceThroughputMb;
+        this.extraPerformanceTypeId = $.extraPerformanceTypeId;
         this.size = $.size;
         this.volumeType = $.volumeType;
     }
@@ -110,7 +158,70 @@ public final class ScalingConfigurationVolumeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param size 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+         * @param extraPerformanceIops 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extraPerformanceIops(@Nullable Output<Integer> extraPerformanceIops) {
+            $.extraPerformanceIops = extraPerformanceIops;
+            return this;
+        }
+
+        /**
+         * @param extraPerformanceIops 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extraPerformanceIops(Integer extraPerformanceIops) {
+            return extraPerformanceIops(Output.of(extraPerformanceIops));
+        }
+
+        /**
+         * @param extraPerformanceThroughputMb 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extraPerformanceThroughputMb(@Nullable Output<Integer> extraPerformanceThroughputMb) {
+            $.extraPerformanceThroughputMb = extraPerformanceThroughputMb;
+            return this;
+        }
+
+        /**
+         * @param extraPerformanceThroughputMb 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extraPerformanceThroughputMb(Integer extraPerformanceThroughputMb) {
+            return extraPerformanceThroughputMb(Output.of(extraPerformanceThroughputMb));
+        }
+
+        /**
+         * @param extraPerformanceTypeId 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extraPerformanceTypeId(@Nullable Output<String> extraPerformanceTypeId) {
+            $.extraPerformanceTypeId = extraPerformanceTypeId;
+            return this;
+        }
+
+        /**
+         * @param extraPerformanceTypeId 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder extraPerformanceTypeId(String extraPerformanceTypeId) {
+            return extraPerformanceTypeId(Output.of(extraPerformanceTypeId));
+        }
+
+        /**
+         * @param size 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
          * 
          * @return builder
          * 
@@ -121,7 +232,7 @@ public final class ScalingConfigurationVolumeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param size 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。
+         * @param size 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 &gt;= 500 GB。
          * 
          * @return builder
          * 

@@ -27,6 +27,8 @@ type Upstream struct {
 	CircuitBreakingSettings UpstreamCircuitBreakingSettingsOutput `pulumi:"circuitBreakingSettings"`
 	// 备注。
 	Comments pulumi.StringOutput `pulumi:"comments"`
+	// 连接池配置。
+	ConnectionPoolSettings UpstreamConnectionPoolSettingsOutput `pulumi:"connectionPoolSettings"`
 	// Upstream创建时间。
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
 	// 网关实例ID。
@@ -97,6 +99,8 @@ type upstreamState struct {
 	CircuitBreakingSettings *UpstreamCircuitBreakingSettings `pulumi:"circuitBreakingSettings"`
 	// 备注。
 	Comments *string `pulumi:"comments"`
+	// 连接池配置。
+	ConnectionPoolSettings *UpstreamConnectionPoolSettings `pulumi:"connectionPoolSettings"`
 	// Upstream创建时间。
 	CreatedTime *string `pulumi:"createdTime"`
 	// 网关实例ID。
@@ -126,6 +130,8 @@ type UpstreamState struct {
 	CircuitBreakingSettings UpstreamCircuitBreakingSettingsPtrInput
 	// 备注。
 	Comments pulumi.StringPtrInput
+	// 连接池配置。
+	ConnectionPoolSettings UpstreamConnectionPoolSettingsPtrInput
 	// Upstream创建时间。
 	CreatedTime pulumi.StringPtrInput
 	// 网关实例ID。
@@ -158,6 +164,8 @@ type upstreamArgs struct {
 	CircuitBreakingSettings *UpstreamCircuitBreakingSettings `pulumi:"circuitBreakingSettings"`
 	// 备注。
 	Comments *string `pulumi:"comments"`
+	// 连接池配置。
+	ConnectionPoolSettings *UpstreamConnectionPoolSettings `pulumi:"connectionPoolSettings"`
 	// 网关实例ID。
 	GatewayId string `pulumi:"gatewayId"`
 	// 负载均衡配置。
@@ -180,6 +188,8 @@ type UpstreamArgs struct {
 	CircuitBreakingSettings UpstreamCircuitBreakingSettingsPtrInput
 	// 备注。
 	Comments pulumi.StringPtrInput
+	// 连接池配置。
+	ConnectionPoolSettings UpstreamConnectionPoolSettingsPtrInput
 	// 网关实例ID。
 	GatewayId pulumi.StringInput
 	// 负载均衡配置。
@@ -295,6 +305,11 @@ func (o UpstreamOutput) CircuitBreakingSettings() UpstreamCircuitBreakingSetting
 // 备注。
 func (o UpstreamOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.Comments }).(pulumi.StringOutput)
+}
+
+// 连接池配置。
+func (o UpstreamOutput) ConnectionPoolSettings() UpstreamConnectionPoolSettingsOutput {
+	return o.ApplyT(func(v *Upstream) UpstreamConnectionPoolSettingsOutput { return v.ConnectionPoolSettings }).(UpstreamConnectionPoolSettingsOutput)
 }
 
 // Upstream创建时间。

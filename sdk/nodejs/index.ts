@@ -32,9 +32,11 @@ import * as hbase from "./hbase";
 import * as iam from "./iam";
 import * as kafka from "./kafka";
 import * as kms from "./kms";
+import * as mongodb from "./mongodb";
 import * as natgateway from "./natgateway";
 import * as organization from "./organization";
 import * as privatelink from "./privatelink";
+import * as privatezone from "./privatezone";
 import * as rabbitmq from "./rabbitmq";
 import * as rdsmssql from "./rdsmssql";
 import * as rdsmysql from "./rdsmysql";
@@ -44,6 +46,7 @@ import * as storageebs from "./storageebs";
 import * as tls from "./tls";
 import * as transitrouter from "./transitrouter";
 import * as types from "./types";
+import * as vedbm from "./vedbm";
 import * as vefaas from "./vefaas";
 import * as vepfs from "./vepfs";
 import * as vke from "./vke";
@@ -74,9 +77,11 @@ export {
     iam,
     kafka,
     kms,
+    mongodb,
     natgateway,
     organization,
     privatelink,
+    privatezone,
     rabbitmq,
     rdsmssql,
     rdsmysql,
@@ -86,6 +91,7 @@ export {
     tls,
     transitrouter,
     types,
+    vedbm,
     vefaas,
     vepfs,
     vke,

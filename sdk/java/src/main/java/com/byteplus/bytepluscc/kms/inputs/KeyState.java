@@ -51,6 +51,36 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * 
+     */
+    @Import(name="keyArchiveOperation")
+    private @Nullable Output<Integer> keyArchiveOperation;
+
+    /**
+     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * 
+     */
+    public Optional<Output<Integer>> keyArchiveOperation() {
+        return Optional.ofNullable(this.keyArchiveOperation);
+    }
+
+    /**
+     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * 
+     */
+    @Import(name="keyEnableOperation")
+    private @Nullable Output<Integer> keyEnableOperation;
+
+    /**
+     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * 
+     */
+    public Optional<Output<Integer>> keyEnableOperation() {
+        return Optional.ofNullable(this.keyEnableOperation);
+    }
+
+    /**
      * 密钥唯一标识符，UUID形式。
      * 
      */
@@ -93,6 +123,21 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> keyName() {
         return Optional.ofNullable(this.keyName);
+    }
+
+    /**
+     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * 
+     */
+    @Import(name="keyRotationOperation")
+    private @Nullable Output<Integer> keyRotationOperation;
+
+    /**
+     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * 
+     */
+    public Optional<Output<Integer>> keyRotationOperation() {
+        return Optional.ofNullable(this.keyRotationOperation);
     }
 
     /**
@@ -332,9 +377,12 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     private KeyState(KeyState $) {
         this.createdTime = $.createdTime;
         this.description = $.description;
+        this.keyArchiveOperation = $.keyArchiveOperation;
+        this.keyEnableOperation = $.keyEnableOperation;
         this.keyId = $.keyId;
         this.keyMaterialExpireTime = $.keyMaterialExpireTime;
         this.keyName = $.keyName;
+        this.keyRotationOperation = $.keyRotationOperation;
         this.keySpec = $.keySpec;
         this.keyState = $.keyState;
         this.keyUsage = $.keyUsage;
@@ -414,6 +462,48 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param keyArchiveOperation 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyArchiveOperation(@Nullable Output<Integer> keyArchiveOperation) {
+            $.keyArchiveOperation = keyArchiveOperation;
+            return this;
+        }
+
+        /**
+         * @param keyArchiveOperation 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyArchiveOperation(Integer keyArchiveOperation) {
+            return keyArchiveOperation(Output.of(keyArchiveOperation));
+        }
+
+        /**
+         * @param keyEnableOperation 用户主密钥启用操作（用户输入1=启用，2=禁用）
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyEnableOperation(@Nullable Output<Integer> keyEnableOperation) {
+            $.keyEnableOperation = keyEnableOperation;
+            return this;
+        }
+
+        /**
+         * @param keyEnableOperation 用户主密钥启用操作（用户输入1=启用，2=禁用）
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyEnableOperation(Integer keyEnableOperation) {
+            return keyEnableOperation(Output.of(keyEnableOperation));
+        }
+
+        /**
          * @param keyId 密钥唯一标识符，UUID形式。
          * 
          * @return builder
@@ -474,6 +564,27 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder keyName(String keyName) {
             return keyName(Output.of(keyName));
+        }
+
+        /**
+         * @param keyRotationOperation 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyRotationOperation(@Nullable Output<Integer> keyRotationOperation) {
+            $.keyRotationOperation = keyRotationOperation;
+            return this;
+        }
+
+        /**
+         * @param keyRotationOperation 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyRotationOperation(Integer keyRotationOperation) {
+            return keyRotationOperation(Output.of(keyRotationOperation));
         }
 
         /**

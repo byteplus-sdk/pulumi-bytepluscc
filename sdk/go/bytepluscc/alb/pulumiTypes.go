@@ -1125,6 +1125,10 @@ type LoadBalancerEipBillingConfig struct {
 	BillingType *int `pulumi:"billingType"`
 	// 公网IP的线路类型，BGP表示多线。
 	Isp *string `pulumi:"isp"`
+	// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
+	// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+	SecurityProtectionTypes *string `pulumi:"securityProtectionTypes"`
 }
 
 // LoadBalancerEipBillingConfigInput is an input type that accepts LoadBalancerEipBillingConfigArgs and LoadBalancerEipBillingConfigOutput values.
@@ -1145,6 +1149,10 @@ type LoadBalancerEipBillingConfigArgs struct {
 	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
 	// 公网IP的线路类型，BGP表示多线。
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
+	// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+	SecurityProtectionTypes pulumi.StringPtrInput `pulumi:"securityProtectionTypes"`
 }
 
 func (LoadBalancerEipBillingConfigArgs) ElementType() reflect.Type {
@@ -1239,6 +1247,16 @@ func (o LoadBalancerEipBillingConfigOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LoadBalancerEipBillingConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
 
+// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+func (o LoadBalancerEipBillingConfigOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LoadBalancerEipBillingConfig) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+func (o LoadBalancerEipBillingConfigOutput) SecurityProtectionTypes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LoadBalancerEipBillingConfig) *string { return v.SecurityProtectionTypes }).(pulumi.StringPtrOutput)
+}
+
 type LoadBalancerEipBillingConfigPtrOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerEipBillingConfigPtrOutput) ElementType() reflect.Type {
@@ -1290,6 +1308,26 @@ func (o LoadBalancerEipBillingConfigPtrOutput) Isp() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+func (o LoadBalancerEipBillingConfigPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerEipBillingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionInstanceId
+	}).(pulumi.IntPtrOutput)
+}
+
+// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+func (o LoadBalancerEipBillingConfigPtrOutput) SecurityProtectionTypes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LoadBalancerEipBillingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionTypes
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -6740,6 +6778,10 @@ type GetLoadBalancerEipBillingConfig struct {
 	BillingType int `pulumi:"billingType"`
 	// 公网IP的线路类型，BGP表示多线。
 	Isp string `pulumi:"isp"`
+	// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
+	// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+	SecurityProtectionTypes string `pulumi:"securityProtectionTypes"`
 }
 
 // GetLoadBalancerEipBillingConfigInput is an input type that accepts GetLoadBalancerEipBillingConfigArgs and GetLoadBalancerEipBillingConfigOutput values.
@@ -6760,6 +6802,10 @@ type GetLoadBalancerEipBillingConfigArgs struct {
 	BillingType pulumi.IntInput `pulumi:"billingType"`
 	// 公网IP的线路类型，BGP表示多线。
 	Isp pulumi.StringInput `pulumi:"isp"`
+	// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
+	// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+	SecurityProtectionTypes pulumi.StringInput `pulumi:"securityProtectionTypes"`
 }
 
 func (GetLoadBalancerEipBillingConfigArgs) ElementType() reflect.Type {
@@ -6801,6 +6847,16 @@ func (o GetLoadBalancerEipBillingConfigOutput) BillingType() pulumi.IntOutput {
 // 公网IP的线路类型，BGP表示多线。
 func (o GetLoadBalancerEipBillingConfigOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancerEipBillingConfig) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+func (o GetLoadBalancerEipBillingConfigOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLoadBalancerEipBillingConfig) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
+}
+
+// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+func (o GetLoadBalancerEipBillingConfigOutput) SecurityProtectionTypes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancerEipBillingConfig) string { return v.SecurityProtectionTypes }).(pulumi.StringOutput)
 }
 
 type GetLoadBalancerGlobalAccelerator struct {

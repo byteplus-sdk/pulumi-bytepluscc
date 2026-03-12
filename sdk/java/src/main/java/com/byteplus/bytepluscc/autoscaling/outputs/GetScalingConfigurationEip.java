@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.autoscaling.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -31,6 +32,11 @@ public final class GetScalingConfigurationEip {
      * 
      */
     private String isp;
+    /**
+     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * 
+     */
+    private Boolean releaseWithInstance;
 
     private GetScalingConfigurationEip() {}
     /**
@@ -61,6 +67,13 @@ public final class GetScalingConfigurationEip {
     public String isp() {
         return this.isp;
     }
+    /**
+     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * 
+     */
+    public Boolean releaseWithInstance() {
+        return this.releaseWithInstance;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -75,6 +88,7 @@ public final class GetScalingConfigurationEip {
         private String bandwidthPackageId;
         private String billingType;
         private String isp;
+        private Boolean releaseWithInstance;
         public Builder() {}
         public Builder(GetScalingConfigurationEip defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +96,7 @@ public final class GetScalingConfigurationEip {
     	      this.bandwidthPackageId = defaults.bandwidthPackageId;
     	      this.billingType = defaults.billingType;
     	      this.isp = defaults.isp;
+    	      this.releaseWithInstance = defaults.releaseWithInstance;
         }
 
         @CustomType.Setter
@@ -116,12 +131,21 @@ public final class GetScalingConfigurationEip {
             this.isp = isp;
             return this;
         }
+        @CustomType.Setter
+        public Builder releaseWithInstance(Boolean releaseWithInstance) {
+            if (releaseWithInstance == null) {
+              throw new MissingRequiredPropertyException("GetScalingConfigurationEip", "releaseWithInstance");
+            }
+            this.releaseWithInstance = releaseWithInstance;
+            return this;
+        }
         public GetScalingConfigurationEip build() {
             final var _resultValue = new GetScalingConfigurationEip();
             _resultValue.bandwidth = bandwidth;
             _resultValue.bandwidthPackageId = bandwidthPackageId;
             _resultValue.billingType = billingType;
             _resultValue.isp = isp;
+            _resultValue.releaseWithInstance = releaseWithInstance;
             return _resultValue;
         }
     }

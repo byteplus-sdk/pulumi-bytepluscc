@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.apig.outputs.GetGatewayServiceAuthSpec;
 import com.byteplus.bytepluscc.apig.outputs.GetGatewayServiceCustomDomain;
 import com.byteplus.bytepluscc.apig.outputs.GetGatewayServiceDomain;
 import com.byteplus.bytepluscc.apig.outputs.GetGatewayServiceDomainSpec;
+import com.byteplus.bytepluscc.apig.outputs.GetGatewayServiceServiceNetworkSpec;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
@@ -40,6 +41,11 @@ public final class GetGatewayServiceResult {
      * 
      */
     private GetGatewayServiceDomainSpec domainSpec;
+    /**
+     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * 
+     */
+    private String domainType;
     /**
      * @return 默认域名。
      * 
@@ -76,10 +82,20 @@ public final class GetGatewayServiceResult {
      */
     private String serviceId;
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      * 
      */
     private String serviceName;
+    /**
+     * @return 服务默认域名网络配置。。
+     * 
+     */
+    private GetGatewayServiceServiceNetworkSpec serviceNetworkSpec;
+    /**
+     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * 
+     */
+    private String serviceType;
     /**
      * @return Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
      * 
@@ -121,6 +137,13 @@ public final class GetGatewayServiceResult {
      */
     public GetGatewayServiceDomainSpec domainSpec() {
         return this.domainSpec;
+    }
+    /**
+     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * 
+     */
+    public String domainType() {
+        return this.domainType;
     }
     /**
      * @return 默认域名。
@@ -172,11 +195,25 @@ public final class GetGatewayServiceResult {
         return this.serviceId;
     }
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。。
+     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
      * 
      */
     public String serviceName() {
         return this.serviceName;
+    }
+    /**
+     * @return 服务默认域名网络配置。。
+     * 
+     */
+    public GetGatewayServiceServiceNetworkSpec serviceNetworkSpec() {
+        return this.serviceNetworkSpec;
+    }
+    /**
+     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * 
+     */
+    public String serviceType() {
+        return this.serviceType;
     }
     /**
      * @return Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
@@ -200,6 +237,7 @@ public final class GetGatewayServiceResult {
         private String createdTime;
         private List<GetGatewayServiceCustomDomain> customDomains;
         private GetGatewayServiceDomainSpec domainSpec;
+        private String domainType;
         private List<GetGatewayServiceDomain> domains;
         private String gatewayId;
         private String gatewayName;
@@ -208,6 +246,8 @@ public final class GetGatewayServiceResult {
         private List<String> protocols;
         private String serviceId;
         private String serviceName;
+        private GetGatewayServiceServiceNetworkSpec serviceNetworkSpec;
+        private String serviceType;
         private String status;
         public Builder() {}
         public Builder(GetGatewayServiceResult defaults) {
@@ -217,6 +257,7 @@ public final class GetGatewayServiceResult {
     	      this.createdTime = defaults.createdTime;
     	      this.customDomains = defaults.customDomains;
     	      this.domainSpec = defaults.domainSpec;
+    	      this.domainType = defaults.domainType;
     	      this.domains = defaults.domains;
     	      this.gatewayId = defaults.gatewayId;
     	      this.gatewayName = defaults.gatewayName;
@@ -225,6 +266,8 @@ public final class GetGatewayServiceResult {
     	      this.protocols = defaults.protocols;
     	      this.serviceId = defaults.serviceId;
     	      this.serviceName = defaults.serviceName;
+    	      this.serviceNetworkSpec = defaults.serviceNetworkSpec;
+    	      this.serviceType = defaults.serviceType;
     	      this.status = defaults.status;
         }
 
@@ -269,6 +312,14 @@ public final class GetGatewayServiceResult {
               throw new MissingRequiredPropertyException("GetGatewayServiceResult", "domainSpec");
             }
             this.domainSpec = domainSpec;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder domainType(String domainType) {
+            if (domainType == null) {
+              throw new MissingRequiredPropertyException("GetGatewayServiceResult", "domainType");
+            }
+            this.domainType = domainType;
             return this;
         }
         @CustomType.Setter
@@ -342,6 +393,22 @@ public final class GetGatewayServiceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder serviceNetworkSpec(GetGatewayServiceServiceNetworkSpec serviceNetworkSpec) {
+            if (serviceNetworkSpec == null) {
+              throw new MissingRequiredPropertyException("GetGatewayServiceResult", "serviceNetworkSpec");
+            }
+            this.serviceNetworkSpec = serviceNetworkSpec;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceType(String serviceType) {
+            if (serviceType == null) {
+              throw new MissingRequiredPropertyException("GetGatewayServiceResult", "serviceType");
+            }
+            this.serviceType = serviceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             if (status == null) {
               throw new MissingRequiredPropertyException("GetGatewayServiceResult", "status");
@@ -356,6 +423,7 @@ public final class GetGatewayServiceResult {
             _resultValue.createdTime = createdTime;
             _resultValue.customDomains = customDomains;
             _resultValue.domainSpec = domainSpec;
+            _resultValue.domainType = domainType;
             _resultValue.domains = domains;
             _resultValue.gatewayId = gatewayId;
             _resultValue.gatewayName = gatewayName;
@@ -364,6 +432,8 @@ public final class GetGatewayServiceResult {
             _resultValue.protocols = protocols;
             _resultValue.serviceId = serviceId;
             _resultValue.serviceName = serviceName;
+            _resultValue.serviceNetworkSpec = serviceNetworkSpec;
+            _resultValue.serviceType = serviceType;
             _resultValue.status = status;
             return _resultValue;
         }

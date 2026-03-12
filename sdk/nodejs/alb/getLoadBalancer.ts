@@ -75,6 +75,10 @@ export interface GetLoadBalancerResult {
      */
     readonly id: string;
     /**
+     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     */
+    readonly ipv6BandwidthPackageId: string;
+    /**
      * IPv6公网IP的计費配置，仅适用于公网实例。
      */
     readonly ipv6EipBillingConfig: outputs.alb.GetLoadBalancerIpv6EipBillingConfig;
@@ -114,6 +118,10 @@ export interface GetLoadBalancerResult {
      * 实例所属项目名称。
      */
     readonly projectName: string;
+    /**
+     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     */
+    readonly proxyProtocolEnabled: string;
     /**
      * ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
      */

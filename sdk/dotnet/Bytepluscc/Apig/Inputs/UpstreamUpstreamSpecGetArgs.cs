@@ -19,6 +19,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         [Input("aiProvider")]
         public Input<Inputs.UpstreamUpstreamSpecAiProviderGetArgs>? AiProvider { get; set; }
 
+        /// <summary>
+        /// 固定域名。
+        /// </summary>
+        [Input("domain")]
+        public Input<Inputs.UpstreamUpstreamSpecDomainGetArgs>? Domain { get; set; }
+
         [Input("ecsInstances")]
         private InputList<Inputs.UpstreamUpstreamSpecEcsInstanceGetArgs>? _ecsInstances;
         public InputList<Inputs.UpstreamUpstreamSpecEcsInstanceGetArgs> EcsInstances

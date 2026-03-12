@@ -6,11 +6,17 @@ package com.byteplus.bytepluscc.apig.outputs;
 import com.byteplus.bytepluscc.apig.outputs.GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetUpstreamLoadBalancerSettingsConsistentHashLb {
+    /**
+     * @return 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * 
+     */
+    private Integer hashBalanceFactor;
     /**
      * @return 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
      * 
@@ -38,6 +44,13 @@ public final class GetUpstreamLoadBalancerSettingsConsistentHashLb {
     private String useSourceIp;
 
     private GetUpstreamLoadBalancerSettingsConsistentHashLb() {}
+    /**
+     * @return 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * 
+     */
+    public Integer hashBalanceFactor() {
+        return this.hashBalanceFactor;
+    }
     /**
      * @return 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
      * 
@@ -83,6 +96,7 @@ public final class GetUpstreamLoadBalancerSettingsConsistentHashLb {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer hashBalanceFactor;
         private String hashKey;
         private GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie httpCookie;
         private String httpHeaderName;
@@ -91,6 +105,7 @@ public final class GetUpstreamLoadBalancerSettingsConsistentHashLb {
         public Builder() {}
         public Builder(GetUpstreamLoadBalancerSettingsConsistentHashLb defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.hashBalanceFactor = defaults.hashBalanceFactor;
     	      this.hashKey = defaults.hashKey;
     	      this.httpCookie = defaults.httpCookie;
     	      this.httpHeaderName = defaults.httpHeaderName;
@@ -98,6 +113,14 @@ public final class GetUpstreamLoadBalancerSettingsConsistentHashLb {
     	      this.useSourceIp = defaults.useSourceIp;
         }
 
+        @CustomType.Setter
+        public Builder hashBalanceFactor(Integer hashBalanceFactor) {
+            if (hashBalanceFactor == null) {
+              throw new MissingRequiredPropertyException("GetUpstreamLoadBalancerSettingsConsistentHashLb", "hashBalanceFactor");
+            }
+            this.hashBalanceFactor = hashBalanceFactor;
+            return this;
+        }
         @CustomType.Setter
         public Builder hashKey(String hashKey) {
             if (hashKey == null) {
@@ -140,6 +163,7 @@ public final class GetUpstreamLoadBalancerSettingsConsistentHashLb {
         }
         public GetUpstreamLoadBalancerSettingsConsistentHashLb build() {
             final var _resultValue = new GetUpstreamLoadBalancerSettingsConsistentHashLb();
+            _resultValue.hashBalanceFactor = hashBalanceFactor;
             _resultValue.hashKey = hashKey;
             _resultValue.httpCookie = httpCookie;
             _resultValue.httpHeaderName = httpHeaderName;

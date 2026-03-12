@@ -38,6 +38,10 @@ type TransitRouterRouteEntry struct {
 	TransitRouterRouteEntryName pulumi.StringOutput `pulumi:"transitRouterRouteEntryName"`
 	// 路由条目的下一跳ID。
 	TransitRouterRouteEntryNextHopId pulumi.StringOutput `pulumi:"transitRouterRouteEntryNextHopId"`
+	// 路由条目下一跳网络实例ID。
+	TransitRouterRouteEntryNextHopResourceId pulumi.StringOutput `pulumi:"transitRouterRouteEntryNextHopResourceId"`
+	// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	TransitRouterRouteEntryNextHopResourceType pulumi.StringOutput `pulumi:"transitRouterRouteEntryNextHopResourceType"`
 	// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
 	TransitRouterRouteEntryNextHopType pulumi.StringOutput `pulumi:"transitRouterRouteEntryNextHopType"`
 	// 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
@@ -103,6 +107,10 @@ type transitRouterRouteEntryState struct {
 	TransitRouterRouteEntryName *string `pulumi:"transitRouterRouteEntryName"`
 	// 路由条目的下一跳ID。
 	TransitRouterRouteEntryNextHopId *string `pulumi:"transitRouterRouteEntryNextHopId"`
+	// 路由条目下一跳网络实例ID。
+	TransitRouterRouteEntryNextHopResourceId *string `pulumi:"transitRouterRouteEntryNextHopResourceId"`
+	// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	TransitRouterRouteEntryNextHopResourceType *string `pulumi:"transitRouterRouteEntryNextHopResourceType"`
 	// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
 	TransitRouterRouteEntryNextHopType *string `pulumi:"transitRouterRouteEntryNextHopType"`
 	// 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
@@ -130,6 +138,10 @@ type TransitRouterRouteEntryState struct {
 	TransitRouterRouteEntryName pulumi.StringPtrInput
 	// 路由条目的下一跳ID。
 	TransitRouterRouteEntryNextHopId pulumi.StringPtrInput
+	// 路由条目下一跳网络实例ID。
+	TransitRouterRouteEntryNextHopResourceId pulumi.StringPtrInput
+	// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+	TransitRouterRouteEntryNextHopResourceType pulumi.StringPtrInput
 	// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
 	TransitRouterRouteEntryNextHopType pulumi.StringPtrInput
 	// 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
@@ -300,6 +312,20 @@ func (o TransitRouterRouteEntryOutput) TransitRouterRouteEntryName() pulumi.Stri
 // 路由条目的下一跳ID。
 func (o TransitRouterRouteEntryOutput) TransitRouterRouteEntryNextHopId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TransitRouterRouteEntry) pulumi.StringOutput { return v.TransitRouterRouteEntryNextHopId }).(pulumi.StringOutput)
+}
+
+// 路由条目下一跳网络实例ID。
+func (o TransitRouterRouteEntryOutput) TransitRouterRouteEntryNextHopResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v *TransitRouterRouteEntry) pulumi.StringOutput {
+		return v.TransitRouterRouteEntryNextHopResourceId
+	}).(pulumi.StringOutput)
+}
+
+// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+func (o TransitRouterRouteEntryOutput) TransitRouterRouteEntryNextHopResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *TransitRouterRouteEntry) pulumi.StringOutput {
+		return v.TransitRouterRouteEntryNextHopResourceType
+	}).(pulumi.StringOutput)
 }
 
 // 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
