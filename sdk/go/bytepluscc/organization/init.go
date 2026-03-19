@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:organization/account:Account":
 		r = &Account{}
+	case "bytepluscc:organization/organization:Organization":
+		r = &Organization{}
 	case "bytepluscc:organization/unit:Unit":
 		r = &Unit{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"organization/account",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"organization/organization",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

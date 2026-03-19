@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetIndexArgs, GetIndexResult, GetIndexOutputArgs } from "./getIndex";
+export const getIndex: typeof import("./getIndex").getIndex = null as any;
+export const getIndexOutput: typeof import("./getIndex").getIndexOutput = null as any;
+utilities.lazyLoad(exports, ["getIndex","getIndexOutput"], () => require("./getIndex"));
+
+export { GetIndicesResult } from "./getIndices";
+export const getIndices: typeof import("./getIndices").getIndices = null as any;
+export const getIndicesOutput: typeof import("./getIndices").getIndicesOutput = null as any;
+utilities.lazyLoad(exports, ["getIndices","getIndicesOutput"], () => require("./getIndices"));
+
 export { GetProjectArgs, GetProjectResult, GetProjectOutputArgs } from "./getProject";
 export const getProject: typeof import("./getProject").getProject = null as any;
 export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
@@ -15,21 +25,65 @@ export const getProjects: typeof import("./getProjects").getProjects = null as a
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
 
+export { GetScheduleSqlTaskArgs, GetScheduleSqlTaskResult, GetScheduleSqlTaskOutputArgs } from "./getScheduleSqlTask";
+export const getScheduleSqlTask: typeof import("./getScheduleSqlTask").getScheduleSqlTask = null as any;
+export const getScheduleSqlTaskOutput: typeof import("./getScheduleSqlTask").getScheduleSqlTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduleSqlTask","getScheduleSqlTaskOutput"], () => require("./getScheduleSqlTask"));
+
+export { GetScheduleSqlTasksResult } from "./getScheduleSqlTasks";
+export const getScheduleSqlTasks: typeof import("./getScheduleSqlTasks").getScheduleSqlTasks = null as any;
+export const getScheduleSqlTasksOutput: typeof import("./getScheduleSqlTasks").getScheduleSqlTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduleSqlTasks","getScheduleSqlTasksOutput"], () => require("./getScheduleSqlTasks"));
+
+export { GetTopicArgs, GetTopicResult, GetTopicOutputArgs } from "./getTopic";
+export const getTopic: typeof import("./getTopic").getTopic = null as any;
+export const getTopicOutput: typeof import("./getTopic").getTopicOutput = null as any;
+utilities.lazyLoad(exports, ["getTopic","getTopicOutput"], () => require("./getTopic"));
+
+export { GetTopicsResult } from "./getTopics";
+export const getTopics: typeof import("./getTopics").getTopics = null as any;
+export const getTopicsOutput: typeof import("./getTopics").getTopicsOutput = null as any;
+utilities.lazyLoad(exports, ["getTopics","getTopicsOutput"], () => require("./getTopics"));
+
+export { IndexArgs, IndexState } from "./index_";
+export type Index = import("./index_").Index;
+export const Index: typeof import("./index_").Index = null as any;
+utilities.lazyLoad(exports, ["Index"], () => require("./index_"));
+
 export { ProjectArgs, ProjectState } from "./project";
 export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
 utilities.lazyLoad(exports, ["Project"], () => require("./project"));
+
+export { ScheduleSqlTaskArgs, ScheduleSqlTaskState } from "./scheduleSqlTask";
+export type ScheduleSqlTask = import("./scheduleSqlTask").ScheduleSqlTask;
+export const ScheduleSqlTask: typeof import("./scheduleSqlTask").ScheduleSqlTask = null as any;
+utilities.lazyLoad(exports, ["ScheduleSqlTask"], () => require("./scheduleSqlTask"));
+
+export { TopicArgs, TopicState } from "./topic";
+export type Topic = import("./topic").Topic;
+export const Topic: typeof import("./topic").Topic = null as any;
+utilities.lazyLoad(exports, ["Topic"], () => require("./topic"));
 
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:tls/index:Index":
+                return new Index(name, <any>undefined, { urn })
             case "bytepluscc:tls/project:Project":
                 return new Project(name, <any>undefined, { urn })
+            case "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask":
+                return new ScheduleSqlTask(name, <any>undefined, { urn })
+            case "bytepluscc:tls/topic:Topic":
+                return new Topic(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/index", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/project", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/scheduleSqlTask", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/topic", _module)

@@ -4,10 +4,22 @@
 package com.byteplus.bytepluscc.tls;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.tls.inputs.GetIndexArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetIndexPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetProjectArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetProjectPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetTopicArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetTopicPlainArgs;
+import com.byteplus.bytepluscc.tls.outputs.GetIndexResult;
+import com.byteplus.bytepluscc.tls.outputs.GetIndicesResult;
 import com.byteplus.bytepluscc.tls.outputs.GetProjectResult;
 import com.byteplus.bytepluscc.tls.outputs.GetProjectsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetScheduleSqlTaskResult;
+import com.byteplus.bytepluscc.tls.outputs.GetScheduleSqlTasksResult;
+import com.byteplus.bytepluscc.tls.outputs.GetTopicResult;
+import com.byteplus.bytepluscc.tls.outputs.GetTopicsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -17,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class TlsFunctions {
+    /**
+     * Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static Output<GetIndexResult> getIndex(GetIndexArgs args) {
+        return getIndex(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static CompletableFuture<GetIndexResult> getIndexPlain(GetIndexPlainArgs args) {
+        return getIndexPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static Output<GetIndexResult> getIndex(GetIndexArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getIndex:getIndex", TypeShape.of(GetIndexResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static Output<GetIndexResult> getIndex(GetIndexArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getIndex:getIndex", TypeShape.of(GetIndexResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static CompletableFuture<GetIndexResult> getIndexPlain(GetIndexPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getIndex:getIndex", TypeShape.of(GetIndexResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static Output<GetIndicesResult> getIndices() {
+        return getIndices(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static CompletableFuture<GetIndicesResult> getIndicesPlain() {
+        return getIndicesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static Output<GetIndicesResult> getIndices(InvokeArgs args) {
+        return getIndices(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static CompletableFuture<GetIndicesResult> getIndicesPlain(InvokeArgs args) {
+        return getIndicesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static Output<GetIndicesResult> getIndices(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getIndices:getIndices", TypeShape.of(GetIndicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static Output<GetIndicesResult> getIndices(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getIndices:getIndices", TypeShape.of(GetIndicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Index
+     * 
+     */
+    public static CompletableFuture<GetIndicesResult> getIndicesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getIndices:getIndices", TypeShape.of(GetIndicesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::TLS::Project
      * 
@@ -100,5 +196,173 @@ public final class TlsFunctions {
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static Output<GetScheduleSqlTaskResult> getScheduleSqlTask(GetScheduleSqlTaskArgs args) {
+        return getScheduleSqlTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static CompletableFuture<GetScheduleSqlTaskResult> getScheduleSqlTaskPlain(GetScheduleSqlTaskPlainArgs args) {
+        return getScheduleSqlTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static Output<GetScheduleSqlTaskResult> getScheduleSqlTask(GetScheduleSqlTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getScheduleSqlTask:getScheduleSqlTask", TypeShape.of(GetScheduleSqlTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static Output<GetScheduleSqlTaskResult> getScheduleSqlTask(GetScheduleSqlTaskArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getScheduleSqlTask:getScheduleSqlTask", TypeShape.of(GetScheduleSqlTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static CompletableFuture<GetScheduleSqlTaskResult> getScheduleSqlTaskPlain(GetScheduleSqlTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getScheduleSqlTask:getScheduleSqlTask", TypeShape.of(GetScheduleSqlTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static Output<GetScheduleSqlTasksResult> getScheduleSqlTasks() {
+        return getScheduleSqlTasks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static CompletableFuture<GetScheduleSqlTasksResult> getScheduleSqlTasksPlain() {
+        return getScheduleSqlTasksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static Output<GetScheduleSqlTasksResult> getScheduleSqlTasks(InvokeArgs args) {
+        return getScheduleSqlTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static CompletableFuture<GetScheduleSqlTasksResult> getScheduleSqlTasksPlain(InvokeArgs args) {
+        return getScheduleSqlTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static Output<GetScheduleSqlTasksResult> getScheduleSqlTasks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getScheduleSqlTasks:getScheduleSqlTasks", TypeShape.of(GetScheduleSqlTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static Output<GetScheduleSqlTasksResult> getScheduleSqlTasks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getScheduleSqlTasks:getScheduleSqlTasks", TypeShape.of(GetScheduleSqlTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::ScheduleSqlTask
+     * 
+     */
+    public static CompletableFuture<GetScheduleSqlTasksResult> getScheduleSqlTasksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getScheduleSqlTasks:getScheduleSqlTasks", TypeShape.of(GetScheduleSqlTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static Output<GetTopicResult> getTopic(GetTopicArgs args) {
+        return getTopic(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static CompletableFuture<GetTopicResult> getTopicPlain(GetTopicPlainArgs args) {
+        return getTopicPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static Output<GetTopicResult> getTopic(GetTopicArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getTopic:getTopic", TypeShape.of(GetTopicResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static Output<GetTopicResult> getTopic(GetTopicArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getTopic:getTopic", TypeShape.of(GetTopicResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static CompletableFuture<GetTopicResult> getTopicPlain(GetTopicPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getTopic:getTopic", TypeShape.of(GetTopicResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static Output<GetTopicsResult> getTopics() {
+        return getTopics(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static CompletableFuture<GetTopicsResult> getTopicsPlain() {
+        return getTopicsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static Output<GetTopicsResult> getTopics(InvokeArgs args) {
+        return getTopics(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static CompletableFuture<GetTopicsResult> getTopicsPlain(InvokeArgs args) {
+        return getTopicsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static Output<GetTopicsResult> getTopics(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getTopics:getTopics", TypeShape.of(GetTopicsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static Output<GetTopicsResult> getTopics(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getTopics:getTopics", TypeShape.of(GetTopicsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::Topic
+     * 
+     */
+    public static CompletableFuture<GetTopicsResult> getTopicsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getTopics:getTopics", TypeShape.of(GetTopicsResult.class), args, Utilities.withVersion(options));
     }
 }

@@ -18,8 +18,12 @@ from .. import _utilities
 __all__ = [
     'AccountSecureContactInfo',
     'AccountTag',
+    'OrganizationOrganization',
+    'OrganizationOwner',
     'GetAccountSecureContactInfoResult',
     'GetAccountTagResult',
+    'GetOrganizationOrganizationResult',
+    'GetOrganizationOwnerResult',
 ]
 
 @pulumi.output_type
@@ -156,6 +160,180 @@ class AccountTag(dict):
 
 
 @pulumi.output_type
+class OrganizationOrganization(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "createdTime":
+            suggest = "created_time"
+        elif key == "updatedTime":
+            suggest = "updated_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OrganizationOrganization. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OrganizationOrganization.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OrganizationOrganization.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 created_time: Optional[builtins.str] = None,
+                 description: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 owner: Optional[builtins.str] = None,
+                 status: Optional[builtins.int] = None,
+                 type: Optional[builtins.int] = None,
+                 updated_time: Optional[builtins.str] = None):
+        """
+        :param builtins.str created_time: 创建时间
+        :param builtins.str description: 描述
+        :param builtins.str name: 组织名称
+        :param builtins.str owner: 管理员ID
+        :param builtins.int status: 状态
+        :param builtins.int type: 组织类型，企业组织固定是 1
+        :param builtins.str updated_time: 更新时间
+        """
+        if created_time is not None:
+            pulumi.set(__self__, "created_time", created_time)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if owner is not None:
+            pulumi.set(__self__, "owner", owner)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if updated_time is not None:
+            pulumi.set(__self__, "updated_time", updated_time)
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> Optional[builtins.str]:
+        """
+        创建时间
+        """
+        return pulumi.get(self, "created_time")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        描述
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        组织名称
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def owner(self) -> Optional[builtins.str]:
+        """
+        管理员ID
+        """
+        return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.int]:
+        """
+        状态
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.int]:
+        """
+        组织类型，企业组织固定是 1
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="updatedTime")
+    def updated_time(self) -> Optional[builtins.str]:
+        """
+        更新时间
+        """
+        return pulumi.get(self, "updated_time")
+
+
+@pulumi.output_type
+class OrganizationOwner(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accountId":
+            suggest = "account_id"
+        elif key == "accountName":
+            suggest = "account_name"
+        elif key == "mainName":
+            suggest = "main_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OrganizationOwner. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OrganizationOwner.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OrganizationOwner.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 account_id: Optional[builtins.int] = None,
+                 account_name: Optional[builtins.str] = None,
+                 main_name: Optional[builtins.str] = None):
+        """
+        :param builtins.int account_id: 账号ID
+        :param builtins.str account_name: 账号名称
+        :param builtins.str main_name: 主体名称
+        """
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if main_name is not None:
+            pulumi.set(__self__, "main_name", main_name)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[builtins.int]:
+        """
+        账号ID
+        """
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> Optional[builtins.str]:
+        """
+        账号名称
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter(name="mainName")
+    def main_name(self) -> Optional[builtins.str]:
+        """
+        主体名称
+        """
+        return pulumi.get(self, "main_name")
+
+
+@pulumi.output_type
 class GetAccountSecureContactInfoResult(dict):
     def __init__(__self__, *,
                  email: builtins.str,
@@ -255,5 +433,129 @@ class GetAccountTagResult(dict):
         标签值。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOrganizationOrganizationResult(dict):
+    def __init__(__self__, *,
+                 created_time: builtins.str,
+                 description: builtins.str,
+                 name: builtins.str,
+                 owner: builtins.str,
+                 status: builtins.int,
+                 type: builtins.int,
+                 updated_time: builtins.str):
+        """
+        :param builtins.str created_time: 创建时间
+        :param builtins.str description: 描述
+        :param builtins.str name: 组织名称
+        :param builtins.str owner: 管理员ID
+        :param builtins.int status: 状态
+        :param builtins.int type: 组织类型，企业组织固定是 1
+        :param builtins.str updated_time: 更新时间
+        """
+        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "updated_time", updated_time)
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> builtins.str:
+        """
+        创建时间
+        """
+        return pulumi.get(self, "created_time")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        描述
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        组织名称
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def owner(self) -> builtins.str:
+        """
+        管理员ID
+        """
+        return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.int:
+        """
+        状态
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.int:
+        """
+        组织类型，企业组织固定是 1
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="updatedTime")
+    def updated_time(self) -> builtins.str:
+        """
+        更新时间
+        """
+        return pulumi.get(self, "updated_time")
+
+
+@pulumi.output_type
+class GetOrganizationOwnerResult(dict):
+    def __init__(__self__, *,
+                 account_id: builtins.int,
+                 account_name: builtins.str,
+                 main_name: builtins.str):
+        """
+        :param builtins.int account_id: 账号ID
+        :param builtins.str account_name: 账号名称
+        :param builtins.str main_name: 主体名称
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "account_name", account_name)
+        pulumi.set(__self__, "main_name", main_name)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> builtins.int:
+        """
+        账号ID
+        """
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> builtins.str:
+        """
+        账号名称
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter(name="mainName")
+    def main_name(self) -> builtins.str:
+        """
+        主体名称
+        """
+        return pulumi.get(self, "main_name")
 
 

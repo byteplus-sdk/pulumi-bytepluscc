@@ -8,12 +8,16 @@ import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingConfigurationArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingConfigurationPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingGroupArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingGroupPlainArgs;
+import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingLifecycleHookArgs;
+import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingLifecycleHookPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingPolicyArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingPolicyPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingConfigurationResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingConfigurationsResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingGroupResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingGroupsResult;
+import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingLifecycleHookResult;
+import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingLifecycleHooksResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingPoliciesResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingPolicyResult;
 import com.pulumi.core.Output;
@@ -192,6 +196,90 @@ public final class AutoscalingFunctions {
      */
     public static CompletableFuture<GetScalingGroupsResult> getScalingGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getScalingGroups:getScalingGroups", TypeShape.of(GetScalingGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static Output<GetScalingLifecycleHookResult> getScalingLifecycleHook(GetScalingLifecycleHookArgs args) {
+        return getScalingLifecycleHook(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static CompletableFuture<GetScalingLifecycleHookResult> getScalingLifecycleHookPlain(GetScalingLifecycleHookPlainArgs args) {
+        return getScalingLifecycleHookPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static Output<GetScalingLifecycleHookResult> getScalingLifecycleHook(GetScalingLifecycleHookArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingLifecycleHook:getScalingLifecycleHook", TypeShape.of(GetScalingLifecycleHookResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static Output<GetScalingLifecycleHookResult> getScalingLifecycleHook(GetScalingLifecycleHookArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingLifecycleHook:getScalingLifecycleHook", TypeShape.of(GetScalingLifecycleHookResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static CompletableFuture<GetScalingLifecycleHookResult> getScalingLifecycleHookPlain(GetScalingLifecycleHookPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getScalingLifecycleHook:getScalingLifecycleHook", TypeShape.of(GetScalingLifecycleHookResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static Output<GetScalingLifecycleHooksResult> getScalingLifecycleHooks() {
+        return getScalingLifecycleHooks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static CompletableFuture<GetScalingLifecycleHooksResult> getScalingLifecycleHooksPlain() {
+        return getScalingLifecycleHooksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static Output<GetScalingLifecycleHooksResult> getScalingLifecycleHooks(InvokeArgs args) {
+        return getScalingLifecycleHooks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static CompletableFuture<GetScalingLifecycleHooksResult> getScalingLifecycleHooksPlain(InvokeArgs args) {
+        return getScalingLifecycleHooksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static Output<GetScalingLifecycleHooksResult> getScalingLifecycleHooks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingLifecycleHooks:getScalingLifecycleHooks", TypeShape.of(GetScalingLifecycleHooksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static Output<GetScalingLifecycleHooksResult> getScalingLifecycleHooks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getScalingLifecycleHooks:getScalingLifecycleHooks", TypeShape.of(GetScalingLifecycleHooksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::ScalingLifecycleHook
+     * 
+     */
+    public static CompletableFuture<GetScalingLifecycleHooksResult> getScalingLifecycleHooksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getScalingLifecycleHooks:getScalingLifecycleHooks", TypeShape.of(GetScalingLifecycleHooksResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::AutoScaling::ScalingPolicy

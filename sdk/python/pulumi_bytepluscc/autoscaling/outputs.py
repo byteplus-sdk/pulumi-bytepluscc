@@ -25,6 +25,7 @@ __all__ = [
     'ScalingGroupLaunchTemplateOverride',
     'ScalingGroupServerGroupAttribute',
     'ScalingGroupTag',
+    'ScalingLifecycleHookLifecycleCommand',
     'ScalingPolicyAlarmPolicy',
     'ScalingPolicyAlarmPolicyCondition',
     'ScalingPolicyScheduledPolicy',
@@ -36,6 +37,7 @@ __all__ = [
     'GetScalingGroupLaunchTemplateOverrideResult',
     'GetScalingGroupServerGroupAttributeResult',
     'GetScalingGroupTagResult',
+    'GetScalingLifecycleHookLifecycleCommandResult',
     'GetScalingPolicyAlarmPolicyResult',
     'GetScalingPolicyAlarmPolicyConditionResult',
     'GetScalingPolicyScheduledPolicyResult',
@@ -543,6 +545,54 @@ class ScalingGroupTag(dict):
         用户标签的标签值。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ScalingLifecycleHookLifecycleCommand(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandId":
+            suggest = "command_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScalingLifecycleHookLifecycleCommand. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScalingLifecycleHookLifecycleCommand.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScalingLifecycleHookLifecycleCommand.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 command_id: Optional[builtins.str] = None,
+                 parameters: Optional[builtins.str] = None):
+        """
+        :param builtins.str command_id: 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+        :param builtins.str parameters: 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        """
+        if command_id is not None:
+            pulumi.set(__self__, "command_id", command_id)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter(name="commandId")
+    def command_id(self) -> Optional[builtins.str]:
+        """
+        云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+        """
+        return pulumi.get(self, "command_id")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[builtins.str]:
+        """
+        云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        """
+        return pulumi.get(self, "parameters")
 
 
 @pulumi.output_type
@@ -1210,6 +1260,35 @@ class GetScalingGroupTagResult(dict):
         用户标签的标签值。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetScalingLifecycleHookLifecycleCommandResult(dict):
+    def __init__(__self__, *,
+                 command_id: builtins.str,
+                 parameters: builtins.str):
+        """
+        :param builtins.str command_id: 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+        :param builtins.str parameters: 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        """
+        pulumi.set(__self__, "command_id", command_id)
+        pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter(name="commandId")
+    def command_id(self) -> builtins.str:
+        """
+        云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+        """
+        return pulumi.get(self, "command_id")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> builtins.str:
+        """
+        云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        """
+        return pulumi.get(self, "parameters")
 
 
 @pulumi.output_type

@@ -16,6 +16,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'DatabaseDatabasesPrivilegeArgs',
+    'DatabaseDatabasesPrivilegeArgsDict',
     'InstanceChargeDetailArgs',
     'InstanceChargeDetailArgsDict',
     'InstanceEndpointArgs',
@@ -31,6 +33,78 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class DatabaseDatabasesPrivilegeArgsDict(TypedDict):
+        account_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        需授权的账号名称
+        """
+        account_privilege: NotRequired[pulumi.Input[builtins.str]]
+        """
+        授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        """
+        account_privilege_details: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        """
+elif False:
+    DatabaseDatabasesPrivilegeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDatabasesPrivilegeArgs:
+    def __init__(__self__, *,
+                 account_name: Optional[pulumi.Input[builtins.str]] = None,
+                 account_privilege: Optional[pulumi.Input[builtins.str]] = None,
+                 account_privilege_details: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.str] account_name: 需授权的账号名称
+        :param pulumi.Input[builtins.str] account_privilege: 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privilege_details: 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        """
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if account_privilege is not None:
+            pulumi.set(__self__, "account_privilege", account_privilege)
+        if account_privilege_details is not None:
+            pulumi.set(__self__, "account_privilege_details", account_privilege_details)
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        需授权的账号名称
+        """
+        return pulumi.get(self, "account_name")
+
+    @account_name.setter
+    def account_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "account_name", value)
+
+    @property
+    @pulumi.getter(name="accountPrivilege")
+    def account_privilege(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        """
+        return pulumi.get(self, "account_privilege")
+
+    @account_privilege.setter
+    def account_privilege(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "account_privilege", value)
+
+    @property
+    @pulumi.getter(name="accountPrivilegeDetails")
+    def account_privilege_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        """
+        return pulumi.get(self, "account_privilege_details")
+
+    @account_privilege_details.setter
+    def account_privilege_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "account_privilege_details", value)
+
 
 if not MYPY:
     class InstanceChargeDetailArgsDict(TypedDict):

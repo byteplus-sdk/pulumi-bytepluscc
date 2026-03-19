@@ -167,8 +167,10 @@ type registryArgs struct {
 	// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
 	Name string `pulumi:"name"`
 	// 填写实例需要关联的项目。一个实例仅支持关联一个项目
-	Project *string       `pulumi:"project"`
-	Tags    []RegistryTag `pulumi:"tags"`
+	Project *string `pulumi:"project"`
+	// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+	Status *RegistryStatus `pulumi:"status"`
+	Tags   []RegistryTag   `pulumi:"tags"`
 	// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
 	Type *string `pulumi:"type"`
 }
@@ -179,7 +181,9 @@ type RegistryArgs struct {
 	Name pulumi.StringInput
 	// 填写实例需要关联的项目。一个实例仅支持关联一个项目
 	Project pulumi.StringPtrInput
-	Tags    RegistryTagArrayInput
+	// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+	Status RegistryStatusPtrInput
+	Tags   RegistryTagArrayInput
 	// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
 	Type pulumi.StringPtrInput
 }

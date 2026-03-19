@@ -1110,6 +1110,162 @@ func (o ScalingGroupTagArrayOutput) Index(i pulumi.IntInput) ScalingGroupTagOutp
 	}).(ScalingGroupTagOutput)
 }
 
+type ScalingLifecycleHookLifecycleCommand struct {
+	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	CommandId *string `pulumi:"commandId"`
+	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	Parameters *string `pulumi:"parameters"`
+}
+
+// ScalingLifecycleHookLifecycleCommandInput is an input type that accepts ScalingLifecycleHookLifecycleCommandArgs and ScalingLifecycleHookLifecycleCommandOutput values.
+// You can construct a concrete instance of `ScalingLifecycleHookLifecycleCommandInput` via:
+//
+//	ScalingLifecycleHookLifecycleCommandArgs{...}
+type ScalingLifecycleHookLifecycleCommandInput interface {
+	pulumi.Input
+
+	ToScalingLifecycleHookLifecycleCommandOutput() ScalingLifecycleHookLifecycleCommandOutput
+	ToScalingLifecycleHookLifecycleCommandOutputWithContext(context.Context) ScalingLifecycleHookLifecycleCommandOutput
+}
+
+type ScalingLifecycleHookLifecycleCommandArgs struct {
+	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	CommandId pulumi.StringPtrInput `pulumi:"commandId"`
+	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
+}
+
+func (ScalingLifecycleHookLifecycleCommandArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingLifecycleHookLifecycleCommand)(nil)).Elem()
+}
+
+func (i ScalingLifecycleHookLifecycleCommandArgs) ToScalingLifecycleHookLifecycleCommandOutput() ScalingLifecycleHookLifecycleCommandOutput {
+	return i.ToScalingLifecycleHookLifecycleCommandOutputWithContext(context.Background())
+}
+
+func (i ScalingLifecycleHookLifecycleCommandArgs) ToScalingLifecycleHookLifecycleCommandOutputWithContext(ctx context.Context) ScalingLifecycleHookLifecycleCommandOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingLifecycleHookLifecycleCommandOutput)
+}
+
+func (i ScalingLifecycleHookLifecycleCommandArgs) ToScalingLifecycleHookLifecycleCommandPtrOutput() ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return i.ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(context.Background())
+}
+
+func (i ScalingLifecycleHookLifecycleCommandArgs) ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(ctx context.Context) ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingLifecycleHookLifecycleCommandOutput).ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(ctx)
+}
+
+// ScalingLifecycleHookLifecycleCommandPtrInput is an input type that accepts ScalingLifecycleHookLifecycleCommandArgs, ScalingLifecycleHookLifecycleCommandPtr and ScalingLifecycleHookLifecycleCommandPtrOutput values.
+// You can construct a concrete instance of `ScalingLifecycleHookLifecycleCommandPtrInput` via:
+//
+//	        ScalingLifecycleHookLifecycleCommandArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScalingLifecycleHookLifecycleCommandPtrInput interface {
+	pulumi.Input
+
+	ToScalingLifecycleHookLifecycleCommandPtrOutput() ScalingLifecycleHookLifecycleCommandPtrOutput
+	ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(context.Context) ScalingLifecycleHookLifecycleCommandPtrOutput
+}
+
+type scalingLifecycleHookLifecycleCommandPtrType ScalingLifecycleHookLifecycleCommandArgs
+
+func ScalingLifecycleHookLifecycleCommandPtr(v *ScalingLifecycleHookLifecycleCommandArgs) ScalingLifecycleHookLifecycleCommandPtrInput {
+	return (*scalingLifecycleHookLifecycleCommandPtrType)(v)
+}
+
+func (*scalingLifecycleHookLifecycleCommandPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingLifecycleHookLifecycleCommand)(nil)).Elem()
+}
+
+func (i *scalingLifecycleHookLifecycleCommandPtrType) ToScalingLifecycleHookLifecycleCommandPtrOutput() ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return i.ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(context.Background())
+}
+
+func (i *scalingLifecycleHookLifecycleCommandPtrType) ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(ctx context.Context) ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingLifecycleHookLifecycleCommandPtrOutput)
+}
+
+type ScalingLifecycleHookLifecycleCommandOutput struct{ *pulumi.OutputState }
+
+func (ScalingLifecycleHookLifecycleCommandOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingLifecycleHookLifecycleCommand)(nil)).Elem()
+}
+
+func (o ScalingLifecycleHookLifecycleCommandOutput) ToScalingLifecycleHookLifecycleCommandOutput() ScalingLifecycleHookLifecycleCommandOutput {
+	return o
+}
+
+func (o ScalingLifecycleHookLifecycleCommandOutput) ToScalingLifecycleHookLifecycleCommandOutputWithContext(ctx context.Context) ScalingLifecycleHookLifecycleCommandOutput {
+	return o
+}
+
+func (o ScalingLifecycleHookLifecycleCommandOutput) ToScalingLifecycleHookLifecycleCommandPtrOutput() ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return o.ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(context.Background())
+}
+
+func (o ScalingLifecycleHookLifecycleCommandOutput) ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(ctx context.Context) ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScalingLifecycleHookLifecycleCommand) *ScalingLifecycleHookLifecycleCommand {
+		return &v
+	}).(ScalingLifecycleHookLifecycleCommandPtrOutput)
+}
+
+// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+func (o ScalingLifecycleHookLifecycleCommandOutput) CommandId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingLifecycleHookLifecycleCommand) *string { return v.CommandId }).(pulumi.StringPtrOutput)
+}
+
+// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+func (o ScalingLifecycleHookLifecycleCommandOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingLifecycleHookLifecycleCommand) *string { return v.Parameters }).(pulumi.StringPtrOutput)
+}
+
+type ScalingLifecycleHookLifecycleCommandPtrOutput struct{ *pulumi.OutputState }
+
+func (ScalingLifecycleHookLifecycleCommandPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScalingLifecycleHookLifecycleCommand)(nil)).Elem()
+}
+
+func (o ScalingLifecycleHookLifecycleCommandPtrOutput) ToScalingLifecycleHookLifecycleCommandPtrOutput() ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return o
+}
+
+func (o ScalingLifecycleHookLifecycleCommandPtrOutput) ToScalingLifecycleHookLifecycleCommandPtrOutputWithContext(ctx context.Context) ScalingLifecycleHookLifecycleCommandPtrOutput {
+	return o
+}
+
+func (o ScalingLifecycleHookLifecycleCommandPtrOutput) Elem() ScalingLifecycleHookLifecycleCommandOutput {
+	return o.ApplyT(func(v *ScalingLifecycleHookLifecycleCommand) ScalingLifecycleHookLifecycleCommand {
+		if v != nil {
+			return *v
+		}
+		var ret ScalingLifecycleHookLifecycleCommand
+		return ret
+	}).(ScalingLifecycleHookLifecycleCommandOutput)
+}
+
+// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+func (o ScalingLifecycleHookLifecycleCommandPtrOutput) CommandId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingLifecycleHookLifecycleCommand) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CommandId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+func (o ScalingLifecycleHookLifecycleCommandPtrOutput) Parameters() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScalingLifecycleHookLifecycleCommand) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Parameters
+	}).(pulumi.StringPtrOutput)
+}
+
 type ScalingPolicyAlarmPolicy struct {
 	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
 	Condition *ScalingPolicyAlarmPolicyCondition `pulumi:"condition"`
@@ -2703,6 +2859,67 @@ func (o GetScalingGroupTagArrayOutput) Index(i pulumi.IntInput) GetScalingGroupT
 	}).(GetScalingGroupTagOutput)
 }
 
+type GetScalingLifecycleHookLifecycleCommand struct {
+	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	CommandId string `pulumi:"commandId"`
+	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	Parameters string `pulumi:"parameters"`
+}
+
+// GetScalingLifecycleHookLifecycleCommandInput is an input type that accepts GetScalingLifecycleHookLifecycleCommandArgs and GetScalingLifecycleHookLifecycleCommandOutput values.
+// You can construct a concrete instance of `GetScalingLifecycleHookLifecycleCommandInput` via:
+//
+//	GetScalingLifecycleHookLifecycleCommandArgs{...}
+type GetScalingLifecycleHookLifecycleCommandInput interface {
+	pulumi.Input
+
+	ToGetScalingLifecycleHookLifecycleCommandOutput() GetScalingLifecycleHookLifecycleCommandOutput
+	ToGetScalingLifecycleHookLifecycleCommandOutputWithContext(context.Context) GetScalingLifecycleHookLifecycleCommandOutput
+}
+
+type GetScalingLifecycleHookLifecycleCommandArgs struct {
+	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	CommandId pulumi.StringInput `pulumi:"commandId"`
+	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	Parameters pulumi.StringInput `pulumi:"parameters"`
+}
+
+func (GetScalingLifecycleHookLifecycleCommandArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingLifecycleHookLifecycleCommand)(nil)).Elem()
+}
+
+func (i GetScalingLifecycleHookLifecycleCommandArgs) ToGetScalingLifecycleHookLifecycleCommandOutput() GetScalingLifecycleHookLifecycleCommandOutput {
+	return i.ToGetScalingLifecycleHookLifecycleCommandOutputWithContext(context.Background())
+}
+
+func (i GetScalingLifecycleHookLifecycleCommandArgs) ToGetScalingLifecycleHookLifecycleCommandOutputWithContext(ctx context.Context) GetScalingLifecycleHookLifecycleCommandOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingLifecycleHookLifecycleCommandOutput)
+}
+
+type GetScalingLifecycleHookLifecycleCommandOutput struct{ *pulumi.OutputState }
+
+func (GetScalingLifecycleHookLifecycleCommandOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingLifecycleHookLifecycleCommand)(nil)).Elem()
+}
+
+func (o GetScalingLifecycleHookLifecycleCommandOutput) ToGetScalingLifecycleHookLifecycleCommandOutput() GetScalingLifecycleHookLifecycleCommandOutput {
+	return o
+}
+
+func (o GetScalingLifecycleHookLifecycleCommandOutput) ToGetScalingLifecycleHookLifecycleCommandOutputWithContext(ctx context.Context) GetScalingLifecycleHookLifecycleCommandOutput {
+	return o
+}
+
+// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+func (o GetScalingLifecycleHookLifecycleCommandOutput) CommandId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingLifecycleHookLifecycleCommand) string { return v.CommandId }).(pulumi.StringOutput)
+}
+
+// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+func (o GetScalingLifecycleHookLifecycleCommandOutput) Parameters() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingLifecycleHookLifecycleCommand) string { return v.Parameters }).(pulumi.StringOutput)
+}
+
 type GetScalingPolicyAlarmPolicy struct {
 	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
 	Condition GetScalingPolicyAlarmPolicyCondition `pulumi:"condition"`
@@ -3047,6 +3264,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupServerGroupAttributeArrayInput)(nil)).Elem(), ScalingGroupServerGroupAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupTagInput)(nil)).Elem(), ScalingGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupTagArrayInput)(nil)).Elem(), ScalingGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingLifecycleHookLifecycleCommandInput)(nil)).Elem(), ScalingLifecycleHookLifecycleCommandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingLifecycleHookLifecycleCommandPtrInput)(nil)).Elem(), ScalingLifecycleHookLifecycleCommandArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyInput)(nil)).Elem(), ScalingPolicyAlarmPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyPtrInput)(nil)).Elem(), ScalingPolicyAlarmPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingPolicyAlarmPolicyConditionInput)(nil)).Elem(), ScalingPolicyAlarmPolicyConditionArgs{})
@@ -3068,6 +3287,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupServerGroupAttributeArrayInput)(nil)).Elem(), GetScalingGroupServerGroupAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupTagInput)(nil)).Elem(), GetScalingGroupTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupTagArrayInput)(nil)).Elem(), GetScalingGroupTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingLifecycleHookLifecycleCommandInput)(nil)).Elem(), GetScalingLifecycleHookLifecycleCommandArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingPolicyAlarmPolicyInput)(nil)).Elem(), GetScalingPolicyAlarmPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingPolicyAlarmPolicyConditionInput)(nil)).Elem(), GetScalingPolicyAlarmPolicyConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingPolicyAlarmPolicyConditionArrayInput)(nil)).Elem(), GetScalingPolicyAlarmPolicyConditionArray{})
@@ -3088,6 +3308,8 @@ func init() {
 	pulumi.RegisterOutputType(ScalingGroupServerGroupAttributeArrayOutput{})
 	pulumi.RegisterOutputType(ScalingGroupTagOutput{})
 	pulumi.RegisterOutputType(ScalingGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(ScalingLifecycleHookLifecycleCommandOutput{})
+	pulumi.RegisterOutputType(ScalingLifecycleHookLifecycleCommandPtrOutput{})
 	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyOutput{})
 	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyPtrOutput{})
 	pulumi.RegisterOutputType(ScalingPolicyAlarmPolicyConditionOutput{})
@@ -3109,6 +3331,7 @@ func init() {
 	pulumi.RegisterOutputType(GetScalingGroupServerGroupAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetScalingGroupTagOutput{})
 	pulumi.RegisterOutputType(GetScalingGroupTagArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingLifecycleHookLifecycleCommandOutput{})
 	pulumi.RegisterOutputType(GetScalingPolicyAlarmPolicyOutput{})
 	pulumi.RegisterOutputType(GetScalingPolicyAlarmPolicyConditionOutput{})
 	pulumi.RegisterOutputType(GetScalingPolicyAlarmPolicyConditionArrayOutput{})

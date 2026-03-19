@@ -13,6 +13,1601 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type IndexFullText struct {
+	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	CaseSensitive *bool `pulumi:"caseSensitive"`
+	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter *string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese *bool `pulumi:"includeChinese"`
+}
+
+// IndexFullTextInput is an input type that accepts IndexFullTextArgs and IndexFullTextOutput values.
+// You can construct a concrete instance of `IndexFullTextInput` via:
+//
+//	IndexFullTextArgs{...}
+type IndexFullTextInput interface {
+	pulumi.Input
+
+	ToIndexFullTextOutput() IndexFullTextOutput
+	ToIndexFullTextOutputWithContext(context.Context) IndexFullTextOutput
+}
+
+type IndexFullTextArgs struct {
+	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
+	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
+}
+
+func (IndexFullTextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexFullText)(nil)).Elem()
+}
+
+func (i IndexFullTextArgs) ToIndexFullTextOutput() IndexFullTextOutput {
+	return i.ToIndexFullTextOutputWithContext(context.Background())
+}
+
+func (i IndexFullTextArgs) ToIndexFullTextOutputWithContext(ctx context.Context) IndexFullTextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexFullTextOutput)
+}
+
+func (i IndexFullTextArgs) ToIndexFullTextPtrOutput() IndexFullTextPtrOutput {
+	return i.ToIndexFullTextPtrOutputWithContext(context.Background())
+}
+
+func (i IndexFullTextArgs) ToIndexFullTextPtrOutputWithContext(ctx context.Context) IndexFullTextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexFullTextOutput).ToIndexFullTextPtrOutputWithContext(ctx)
+}
+
+// IndexFullTextPtrInput is an input type that accepts IndexFullTextArgs, IndexFullTextPtr and IndexFullTextPtrOutput values.
+// You can construct a concrete instance of `IndexFullTextPtrInput` via:
+//
+//	        IndexFullTextArgs{...}
+//
+//	or:
+//
+//	        nil
+type IndexFullTextPtrInput interface {
+	pulumi.Input
+
+	ToIndexFullTextPtrOutput() IndexFullTextPtrOutput
+	ToIndexFullTextPtrOutputWithContext(context.Context) IndexFullTextPtrOutput
+}
+
+type indexFullTextPtrType IndexFullTextArgs
+
+func IndexFullTextPtr(v *IndexFullTextArgs) IndexFullTextPtrInput {
+	return (*indexFullTextPtrType)(v)
+}
+
+func (*indexFullTextPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexFullText)(nil)).Elem()
+}
+
+func (i *indexFullTextPtrType) ToIndexFullTextPtrOutput() IndexFullTextPtrOutput {
+	return i.ToIndexFullTextPtrOutputWithContext(context.Background())
+}
+
+func (i *indexFullTextPtrType) ToIndexFullTextPtrOutputWithContext(ctx context.Context) IndexFullTextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexFullTextPtrOutput)
+}
+
+type IndexFullTextOutput struct{ *pulumi.OutputState }
+
+func (IndexFullTextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexFullText)(nil)).Elem()
+}
+
+func (o IndexFullTextOutput) ToIndexFullTextOutput() IndexFullTextOutput {
+	return o
+}
+
+func (o IndexFullTextOutput) ToIndexFullTextOutputWithContext(ctx context.Context) IndexFullTextOutput {
+	return o
+}
+
+func (o IndexFullTextOutput) ToIndexFullTextPtrOutput() IndexFullTextPtrOutput {
+	return o.ToIndexFullTextPtrOutputWithContext(context.Background())
+}
+
+func (o IndexFullTextOutput) ToIndexFullTextPtrOutputWithContext(ctx context.Context) IndexFullTextPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IndexFullText) *IndexFullText {
+		return &v
+	}).(IndexFullTextPtrOutput)
+}
+
+// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+func (o IndexFullTextOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexFullText) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o IndexFullTextOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexFullText) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+func (o IndexFullTextOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexFullText) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
+}
+
+type IndexFullTextPtrOutput struct{ *pulumi.OutputState }
+
+func (IndexFullTextPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexFullText)(nil)).Elem()
+}
+
+func (o IndexFullTextPtrOutput) ToIndexFullTextPtrOutput() IndexFullTextPtrOutput {
+	return o
+}
+
+func (o IndexFullTextPtrOutput) ToIndexFullTextPtrOutputWithContext(ctx context.Context) IndexFullTextPtrOutput {
+	return o
+}
+
+func (o IndexFullTextPtrOutput) Elem() IndexFullTextOutput {
+	return o.ApplyT(func(v *IndexFullText) IndexFullText {
+		if v != nil {
+			return *v
+		}
+		var ret IndexFullText
+		return ret
+	}).(IndexFullTextOutput)
+}
+
+// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+func (o IndexFullTextPtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexFullText) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o IndexFullTextPtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexFullText) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+func (o IndexFullTextPtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexFullText) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeChinese
+	}).(pulumi.BoolPtrOutput)
+}
+
+type IndexKeyValue struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key *string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value *IndexKeyValueValue `pulumi:"value"`
+}
+
+// IndexKeyValueInput is an input type that accepts IndexKeyValueArgs and IndexKeyValueOutput values.
+// You can construct a concrete instance of `IndexKeyValueInput` via:
+//
+//	IndexKeyValueArgs{...}
+type IndexKeyValueInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueOutput() IndexKeyValueOutput
+	ToIndexKeyValueOutputWithContext(context.Context) IndexKeyValueOutput
+}
+
+type IndexKeyValueArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value IndexKeyValueValuePtrInput `pulumi:"value"`
+}
+
+func (IndexKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValue)(nil)).Elem()
+}
+
+func (i IndexKeyValueArgs) ToIndexKeyValueOutput() IndexKeyValueOutput {
+	return i.ToIndexKeyValueOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueArgs) ToIndexKeyValueOutputWithContext(ctx context.Context) IndexKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueOutput)
+}
+
+// IndexKeyValueArrayInput is an input type that accepts IndexKeyValueArray and IndexKeyValueArrayOutput values.
+// You can construct a concrete instance of `IndexKeyValueArrayInput` via:
+//
+//	IndexKeyValueArray{ IndexKeyValueArgs{...} }
+type IndexKeyValueArrayInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueArrayOutput() IndexKeyValueArrayOutput
+	ToIndexKeyValueArrayOutputWithContext(context.Context) IndexKeyValueArrayOutput
+}
+
+type IndexKeyValueArray []IndexKeyValueInput
+
+func (IndexKeyValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexKeyValue)(nil)).Elem()
+}
+
+func (i IndexKeyValueArray) ToIndexKeyValueArrayOutput() IndexKeyValueArrayOutput {
+	return i.ToIndexKeyValueArrayOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueArray) ToIndexKeyValueArrayOutputWithContext(ctx context.Context) IndexKeyValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueArrayOutput)
+}
+
+type IndexKeyValueOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValue)(nil)).Elem()
+}
+
+func (o IndexKeyValueOutput) ToIndexKeyValueOutput() IndexKeyValueOutput {
+	return o
+}
+
+func (o IndexKeyValueOutput) ToIndexKeyValueOutputWithContext(ctx context.Context) IndexKeyValueOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o IndexKeyValueOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexKeyValue) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o IndexKeyValueOutput) Value() IndexKeyValueValuePtrOutput {
+	return o.ApplyT(func(v IndexKeyValue) *IndexKeyValueValue { return v.Value }).(IndexKeyValueValuePtrOutput)
+}
+
+type IndexKeyValueArrayOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexKeyValue)(nil)).Elem()
+}
+
+func (o IndexKeyValueArrayOutput) ToIndexKeyValueArrayOutput() IndexKeyValueArrayOutput {
+	return o
+}
+
+func (o IndexKeyValueArrayOutput) ToIndexKeyValueArrayOutputWithContext(ctx context.Context) IndexKeyValueArrayOutput {
+	return o
+}
+
+func (o IndexKeyValueArrayOutput) Index(i pulumi.IntInput) IndexKeyValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IndexKeyValue {
+		return vs[0].([]IndexKeyValue)[vs[1].(int)]
+	}).(IndexKeyValueOutput)
+}
+
+type IndexKeyValueValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive *bool `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter *string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese *bool `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll *bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll *bool                       `pulumi:"indexSqlAll"`
+	JsonKeys    []IndexKeyValueValueJsonKey `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag *bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType *string `pulumi:"valueType"`
+}
+
+// IndexKeyValueValueInput is an input type that accepts IndexKeyValueValueArgs and IndexKeyValueValueOutput values.
+// You can construct a concrete instance of `IndexKeyValueValueInput` via:
+//
+//	IndexKeyValueValueArgs{...}
+type IndexKeyValueValueInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueValueOutput() IndexKeyValueValueOutput
+	ToIndexKeyValueValueOutputWithContext(context.Context) IndexKeyValueValueOutput
+}
+
+type IndexKeyValueValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolPtrInput                 `pulumi:"indexSqlAll"`
+	JsonKeys    IndexKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
+}
+
+func (IndexKeyValueValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValueValue)(nil)).Elem()
+}
+
+func (i IndexKeyValueValueArgs) ToIndexKeyValueValueOutput() IndexKeyValueValueOutput {
+	return i.ToIndexKeyValueValueOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueValueArgs) ToIndexKeyValueValueOutputWithContext(ctx context.Context) IndexKeyValueValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValueOutput)
+}
+
+func (i IndexKeyValueValueArgs) ToIndexKeyValueValuePtrOutput() IndexKeyValueValuePtrOutput {
+	return i.ToIndexKeyValueValuePtrOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueValueArgs) ToIndexKeyValueValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValueOutput).ToIndexKeyValueValuePtrOutputWithContext(ctx)
+}
+
+// IndexKeyValueValuePtrInput is an input type that accepts IndexKeyValueValueArgs, IndexKeyValueValuePtr and IndexKeyValueValuePtrOutput values.
+// You can construct a concrete instance of `IndexKeyValueValuePtrInput` via:
+//
+//	        IndexKeyValueValueArgs{...}
+//
+//	or:
+//
+//	        nil
+type IndexKeyValueValuePtrInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueValuePtrOutput() IndexKeyValueValuePtrOutput
+	ToIndexKeyValueValuePtrOutputWithContext(context.Context) IndexKeyValueValuePtrOutput
+}
+
+type indexKeyValueValuePtrType IndexKeyValueValueArgs
+
+func IndexKeyValueValuePtr(v *IndexKeyValueValueArgs) IndexKeyValueValuePtrInput {
+	return (*indexKeyValueValuePtrType)(v)
+}
+
+func (*indexKeyValueValuePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexKeyValueValue)(nil)).Elem()
+}
+
+func (i *indexKeyValueValuePtrType) ToIndexKeyValueValuePtrOutput() IndexKeyValueValuePtrOutput {
+	return i.ToIndexKeyValueValuePtrOutputWithContext(context.Background())
+}
+
+func (i *indexKeyValueValuePtrType) ToIndexKeyValueValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValuePtrOutput)
+}
+
+type IndexKeyValueValueOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValueValue)(nil)).Elem()
+}
+
+func (o IndexKeyValueValueOutput) ToIndexKeyValueValueOutput() IndexKeyValueValueOutput {
+	return o
+}
+
+func (o IndexKeyValueValueOutput) ToIndexKeyValueValueOutputWithContext(ctx context.Context) IndexKeyValueValueOutput {
+	return o
+}
+
+func (o IndexKeyValueValueOutput) ToIndexKeyValueValuePtrOutput() IndexKeyValueValuePtrOutput {
+	return o.ToIndexKeyValueValuePtrOutputWithContext(context.Background())
+}
+
+func (o IndexKeyValueValueOutput) ToIndexKeyValueValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValuePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IndexKeyValueValue) *IndexKeyValueValue {
+		return &v
+	}).(IndexKeyValueValuePtrOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexKeyValueValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o IndexKeyValueValueOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o IndexKeyValueValueOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o IndexKeyValueValueOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexKeyValueValueOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexKeyValueValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
+}
+
+func (o IndexKeyValueValueOutput) JsonKeys() IndexKeyValueValueJsonKeyArrayOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) []IndexKeyValueValueJsonKey { return v.JsonKeys }).(IndexKeyValueValueJsonKeyArrayOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexKeyValueValueOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexKeyValueValueOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
+}
+
+type IndexKeyValueValuePtrOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexKeyValueValue)(nil)).Elem()
+}
+
+func (o IndexKeyValueValuePtrOutput) ToIndexKeyValueValuePtrOutput() IndexKeyValueValuePtrOutput {
+	return o
+}
+
+func (o IndexKeyValueValuePtrOutput) ToIndexKeyValueValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValuePtrOutput {
+	return o
+}
+
+func (o IndexKeyValueValuePtrOutput) Elem() IndexKeyValueValueOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) IndexKeyValueValue {
+		if v != nil {
+			return *v
+		}
+		var ret IndexKeyValueValue
+		return ret
+	}).(IndexKeyValueValueOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexKeyValueValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoIndexFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o IndexKeyValueValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o IndexKeyValueValuePtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o IndexKeyValueValuePtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeChinese
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexKeyValueValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexKeyValueValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexSqlAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o IndexKeyValueValuePtrOutput) JsonKeys() IndexKeyValueValueJsonKeyArrayOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) []IndexKeyValueValueJsonKey {
+		if v == nil {
+			return nil
+		}
+		return v.JsonKeys
+	}).(IndexKeyValueValueJsonKeyArrayOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexKeyValueValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SqlFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexKeyValueValuePtrOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ValueType
+	}).(pulumi.StringPtrOutput)
+}
+
+type IndexKeyValueValueJsonKey struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key *string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value *IndexKeyValueValueJsonKeyValue `pulumi:"value"`
+}
+
+// IndexKeyValueValueJsonKeyInput is an input type that accepts IndexKeyValueValueJsonKeyArgs and IndexKeyValueValueJsonKeyOutput values.
+// You can construct a concrete instance of `IndexKeyValueValueJsonKeyInput` via:
+//
+//	IndexKeyValueValueJsonKeyArgs{...}
+type IndexKeyValueValueJsonKeyInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueValueJsonKeyOutput() IndexKeyValueValueJsonKeyOutput
+	ToIndexKeyValueValueJsonKeyOutputWithContext(context.Context) IndexKeyValueValueJsonKeyOutput
+}
+
+type IndexKeyValueValueJsonKeyArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value IndexKeyValueValueJsonKeyValuePtrInput `pulumi:"value"`
+}
+
+func (IndexKeyValueValueJsonKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i IndexKeyValueValueJsonKeyArgs) ToIndexKeyValueValueJsonKeyOutput() IndexKeyValueValueJsonKeyOutput {
+	return i.ToIndexKeyValueValueJsonKeyOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueValueJsonKeyArgs) ToIndexKeyValueValueJsonKeyOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValueJsonKeyOutput)
+}
+
+// IndexKeyValueValueJsonKeyArrayInput is an input type that accepts IndexKeyValueValueJsonKeyArray and IndexKeyValueValueJsonKeyArrayOutput values.
+// You can construct a concrete instance of `IndexKeyValueValueJsonKeyArrayInput` via:
+//
+//	IndexKeyValueValueJsonKeyArray{ IndexKeyValueValueJsonKeyArgs{...} }
+type IndexKeyValueValueJsonKeyArrayInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueValueJsonKeyArrayOutput() IndexKeyValueValueJsonKeyArrayOutput
+	ToIndexKeyValueValueJsonKeyArrayOutputWithContext(context.Context) IndexKeyValueValueJsonKeyArrayOutput
+}
+
+type IndexKeyValueValueJsonKeyArray []IndexKeyValueValueJsonKeyInput
+
+func (IndexKeyValueValueJsonKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i IndexKeyValueValueJsonKeyArray) ToIndexKeyValueValueJsonKeyArrayOutput() IndexKeyValueValueJsonKeyArrayOutput {
+	return i.ToIndexKeyValueValueJsonKeyArrayOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueValueJsonKeyArray) ToIndexKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValueJsonKeyArrayOutput)
+}
+
+type IndexKeyValueValueJsonKeyOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueValueJsonKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o IndexKeyValueValueJsonKeyOutput) ToIndexKeyValueValueJsonKeyOutput() IndexKeyValueValueJsonKeyOutput {
+	return o
+}
+
+func (o IndexKeyValueValueJsonKeyOutput) ToIndexKeyValueValueJsonKeyOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o IndexKeyValueValueJsonKeyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKey) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o IndexKeyValueValueJsonKeyOutput) Value() IndexKeyValueValueJsonKeyValuePtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKey) *IndexKeyValueValueJsonKeyValue { return v.Value }).(IndexKeyValueValueJsonKeyValuePtrOutput)
+}
+
+type IndexKeyValueValueJsonKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueValueJsonKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o IndexKeyValueValueJsonKeyArrayOutput) ToIndexKeyValueValueJsonKeyArrayOutput() IndexKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o IndexKeyValueValueJsonKeyArrayOutput) ToIndexKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o IndexKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) IndexKeyValueValueJsonKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IndexKeyValueValueJsonKey {
+		return vs[0].([]IndexKeyValueValueJsonKey)[vs[1].(int)]
+	}).(IndexKeyValueValueJsonKeyOutput)
+}
+
+type IndexKeyValueValueJsonKeyValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll *bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll *bool `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag *bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType *string `pulumi:"valueType"`
+}
+
+// IndexKeyValueValueJsonKeyValueInput is an input type that accepts IndexKeyValueValueJsonKeyValueArgs and IndexKeyValueValueJsonKeyValueOutput values.
+// You can construct a concrete instance of `IndexKeyValueValueJsonKeyValueInput` via:
+//
+//	IndexKeyValueValueJsonKeyValueArgs{...}
+type IndexKeyValueValueJsonKeyValueInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueValueJsonKeyValueOutput() IndexKeyValueValueJsonKeyValueOutput
+	ToIndexKeyValueValueJsonKeyValueOutputWithContext(context.Context) IndexKeyValueValueJsonKeyValueOutput
+}
+
+type IndexKeyValueValueJsonKeyValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolPtrInput `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
+}
+
+func (IndexKeyValueValueJsonKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (i IndexKeyValueValueJsonKeyValueArgs) ToIndexKeyValueValueJsonKeyValueOutput() IndexKeyValueValueJsonKeyValueOutput {
+	return i.ToIndexKeyValueValueJsonKeyValueOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueValueJsonKeyValueArgs) ToIndexKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValueJsonKeyValueOutput)
+}
+
+func (i IndexKeyValueValueJsonKeyValueArgs) ToIndexKeyValueValueJsonKeyValuePtrOutput() IndexKeyValueValueJsonKeyValuePtrOutput {
+	return i.ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(context.Background())
+}
+
+func (i IndexKeyValueValueJsonKeyValueArgs) ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValueJsonKeyValueOutput).ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(ctx)
+}
+
+// IndexKeyValueValueJsonKeyValuePtrInput is an input type that accepts IndexKeyValueValueJsonKeyValueArgs, IndexKeyValueValueJsonKeyValuePtr and IndexKeyValueValueJsonKeyValuePtrOutput values.
+// You can construct a concrete instance of `IndexKeyValueValueJsonKeyValuePtrInput` via:
+//
+//	        IndexKeyValueValueJsonKeyValueArgs{...}
+//
+//	or:
+//
+//	        nil
+type IndexKeyValueValueJsonKeyValuePtrInput interface {
+	pulumi.Input
+
+	ToIndexKeyValueValueJsonKeyValuePtrOutput() IndexKeyValueValueJsonKeyValuePtrOutput
+	ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(context.Context) IndexKeyValueValueJsonKeyValuePtrOutput
+}
+
+type indexKeyValueValueJsonKeyValuePtrType IndexKeyValueValueJsonKeyValueArgs
+
+func IndexKeyValueValueJsonKeyValuePtr(v *IndexKeyValueValueJsonKeyValueArgs) IndexKeyValueValueJsonKeyValuePtrInput {
+	return (*indexKeyValueValueJsonKeyValuePtrType)(v)
+}
+
+func (*indexKeyValueValueJsonKeyValuePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (i *indexKeyValueValueJsonKeyValuePtrType) ToIndexKeyValueValueJsonKeyValuePtrOutput() IndexKeyValueValueJsonKeyValuePtrOutput {
+	return i.ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(context.Background())
+}
+
+func (i *indexKeyValueValueJsonKeyValuePtrType) ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexKeyValueValueJsonKeyValuePtrOutput)
+}
+
+type IndexKeyValueValueJsonKeyValueOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueValueJsonKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (o IndexKeyValueValueJsonKeyValueOutput) ToIndexKeyValueValueJsonKeyValueOutput() IndexKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+func (o IndexKeyValueValueJsonKeyValueOutput) ToIndexKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+func (o IndexKeyValueValueJsonKeyValueOutput) ToIndexKeyValueValueJsonKeyValuePtrOutput() IndexKeyValueValueJsonKeyValuePtrOutput {
+	return o.ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(context.Background())
+}
+
+func (o IndexKeyValueValueJsonKeyValueOutput) ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyValuePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IndexKeyValueValueJsonKeyValue) *IndexKeyValueValueJsonKeyValue {
+		return &v
+	}).(IndexKeyValueValueJsonKeyValuePtrOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
+}
+
+type IndexKeyValueValueJsonKeyValuePtrOutput struct{ *pulumi.OutputState }
+
+func (IndexKeyValueValueJsonKeyValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) ToIndexKeyValueValueJsonKeyValuePtrOutput() IndexKeyValueValueJsonKeyValuePtrOutput {
+	return o
+}
+
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) ToIndexKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexKeyValueValueJsonKeyValuePtrOutput {
+	return o
+}
+
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) Elem() IndexKeyValueValueJsonKeyValueOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) IndexKeyValueValueJsonKeyValue {
+		if v != nil {
+			return *v
+		}
+		var ret IndexKeyValueValueJsonKeyValue
+		return ret
+	}).(IndexKeyValueValueJsonKeyValueOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoIndexFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexSqlAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SqlFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexKeyValueValueJsonKeyValuePtrOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ValueType
+	}).(pulumi.StringPtrOutput)
+}
+
+type IndexUserInnerKeyValue struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key *string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value *IndexUserInnerKeyValueValue `pulumi:"value"`
+}
+
+// IndexUserInnerKeyValueInput is an input type that accepts IndexUserInnerKeyValueArgs and IndexUserInnerKeyValueOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueInput` via:
+//
+//	IndexUserInnerKeyValueArgs{...}
+type IndexUserInnerKeyValueInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueOutput() IndexUserInnerKeyValueOutput
+	ToIndexUserInnerKeyValueOutputWithContext(context.Context) IndexUserInnerKeyValueOutput
+}
+
+type IndexUserInnerKeyValueArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value IndexUserInnerKeyValueValuePtrInput `pulumi:"value"`
+}
+
+func (IndexUserInnerKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (i IndexUserInnerKeyValueArgs) ToIndexUserInnerKeyValueOutput() IndexUserInnerKeyValueOutput {
+	return i.ToIndexUserInnerKeyValueOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueArgs) ToIndexUserInnerKeyValueOutputWithContext(ctx context.Context) IndexUserInnerKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueOutput)
+}
+
+// IndexUserInnerKeyValueArrayInput is an input type that accepts IndexUserInnerKeyValueArray and IndexUserInnerKeyValueArrayOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueArrayInput` via:
+//
+//	IndexUserInnerKeyValueArray{ IndexUserInnerKeyValueArgs{...} }
+type IndexUserInnerKeyValueArrayInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueArrayOutput() IndexUserInnerKeyValueArrayOutput
+	ToIndexUserInnerKeyValueArrayOutputWithContext(context.Context) IndexUserInnerKeyValueArrayOutput
+}
+
+type IndexUserInnerKeyValueArray []IndexUserInnerKeyValueInput
+
+func (IndexUserInnerKeyValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (i IndexUserInnerKeyValueArray) ToIndexUserInnerKeyValueArrayOutput() IndexUserInnerKeyValueArrayOutput {
+	return i.ToIndexUserInnerKeyValueArrayOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueArray) ToIndexUserInnerKeyValueArrayOutputWithContext(ctx context.Context) IndexUserInnerKeyValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueArrayOutput)
+}
+
+type IndexUserInnerKeyValueOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueOutput) ToIndexUserInnerKeyValueOutput() IndexUserInnerKeyValueOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueOutput) ToIndexUserInnerKeyValueOutputWithContext(ctx context.Context) IndexUserInnerKeyValueOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o IndexUserInnerKeyValueOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValue) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o IndexUserInnerKeyValueOutput) Value() IndexUserInnerKeyValueValuePtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValue) *IndexUserInnerKeyValueValue { return v.Value }).(IndexUserInnerKeyValueValuePtrOutput)
+}
+
+type IndexUserInnerKeyValueArrayOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueArrayOutput) ToIndexUserInnerKeyValueArrayOutput() IndexUserInnerKeyValueArrayOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueArrayOutput) ToIndexUserInnerKeyValueArrayOutputWithContext(ctx context.Context) IndexUserInnerKeyValueArrayOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueArrayOutput) Index(i pulumi.IntInput) IndexUserInnerKeyValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IndexUserInnerKeyValue {
+		return vs[0].([]IndexUserInnerKeyValue)[vs[1].(int)]
+	}).(IndexUserInnerKeyValueOutput)
+}
+
+type IndexUserInnerKeyValueValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive *bool `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter *string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese *bool `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll *bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll *bool                                `pulumi:"indexSqlAll"`
+	JsonKeys    []IndexUserInnerKeyValueValueJsonKey `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag *bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType *string `pulumi:"valueType"`
+}
+
+// IndexUserInnerKeyValueValueInput is an input type that accepts IndexUserInnerKeyValueValueArgs and IndexUserInnerKeyValueValueOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueValueInput` via:
+//
+//	IndexUserInnerKeyValueValueArgs{...}
+type IndexUserInnerKeyValueValueInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueValueOutput() IndexUserInnerKeyValueValueOutput
+	ToIndexUserInnerKeyValueValueOutputWithContext(context.Context) IndexUserInnerKeyValueValueOutput
+}
+
+type IndexUserInnerKeyValueValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolPtrInput                          `pulumi:"indexSqlAll"`
+	JsonKeys    IndexUserInnerKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
+}
+
+func (IndexUserInnerKeyValueValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValueValue)(nil)).Elem()
+}
+
+func (i IndexUserInnerKeyValueValueArgs) ToIndexUserInnerKeyValueValueOutput() IndexUserInnerKeyValueValueOutput {
+	return i.ToIndexUserInnerKeyValueValueOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueValueArgs) ToIndexUserInnerKeyValueValueOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValueOutput)
+}
+
+func (i IndexUserInnerKeyValueValueArgs) ToIndexUserInnerKeyValueValuePtrOutput() IndexUserInnerKeyValueValuePtrOutput {
+	return i.ToIndexUserInnerKeyValueValuePtrOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueValueArgs) ToIndexUserInnerKeyValueValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValueOutput).ToIndexUserInnerKeyValueValuePtrOutputWithContext(ctx)
+}
+
+// IndexUserInnerKeyValueValuePtrInput is an input type that accepts IndexUserInnerKeyValueValueArgs, IndexUserInnerKeyValueValuePtr and IndexUserInnerKeyValueValuePtrOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueValuePtrInput` via:
+//
+//	        IndexUserInnerKeyValueValueArgs{...}
+//
+//	or:
+//
+//	        nil
+type IndexUserInnerKeyValueValuePtrInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueValuePtrOutput() IndexUserInnerKeyValueValuePtrOutput
+	ToIndexUserInnerKeyValueValuePtrOutputWithContext(context.Context) IndexUserInnerKeyValueValuePtrOutput
+}
+
+type indexUserInnerKeyValueValuePtrType IndexUserInnerKeyValueValueArgs
+
+func IndexUserInnerKeyValueValuePtr(v *IndexUserInnerKeyValueValueArgs) IndexUserInnerKeyValueValuePtrInput {
+	return (*indexUserInnerKeyValueValuePtrType)(v)
+}
+
+func (*indexUserInnerKeyValueValuePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexUserInnerKeyValueValue)(nil)).Elem()
+}
+
+func (i *indexUserInnerKeyValueValuePtrType) ToIndexUserInnerKeyValueValuePtrOutput() IndexUserInnerKeyValueValuePtrOutput {
+	return i.ToIndexUserInnerKeyValueValuePtrOutputWithContext(context.Background())
+}
+
+func (i *indexUserInnerKeyValueValuePtrType) ToIndexUserInnerKeyValueValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValuePtrOutput)
+}
+
+type IndexUserInnerKeyValueValueOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValueValue)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueValueOutput) ToIndexUserInnerKeyValueValueOutput() IndexUserInnerKeyValueValueOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueOutput) ToIndexUserInnerKeyValueValueOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueOutput) ToIndexUserInnerKeyValueValuePtrOutput() IndexUserInnerKeyValueValuePtrOutput {
+	return o.ToIndexUserInnerKeyValueValuePtrOutputWithContext(context.Background())
+}
+
+func (o IndexUserInnerKeyValueValueOutput) ToIndexUserInnerKeyValueValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValuePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IndexUserInnerKeyValueValue) *IndexUserInnerKeyValueValue {
+		return &v
+	}).(IndexUserInnerKeyValueValuePtrOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexUserInnerKeyValueValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o IndexUserInnerKeyValueValueOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o IndexUserInnerKeyValueValueOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o IndexUserInnerKeyValueValueOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexUserInnerKeyValueValueOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexUserInnerKeyValueValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
+}
+
+func (o IndexUserInnerKeyValueValueOutput) JsonKeys() IndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) []IndexUserInnerKeyValueValueJsonKey { return v.JsonKeys }).(IndexUserInnerKeyValueValueJsonKeyArrayOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexUserInnerKeyValueValueOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexUserInnerKeyValueValueOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
+}
+
+type IndexUserInnerKeyValueValuePtrOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexUserInnerKeyValueValue)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueValuePtrOutput) ToIndexUserInnerKeyValueValuePtrOutput() IndexUserInnerKeyValueValuePtrOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValuePtrOutput) ToIndexUserInnerKeyValueValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValuePtrOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValuePtrOutput) Elem() IndexUserInnerKeyValueValueOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) IndexUserInnerKeyValueValue {
+		if v != nil {
+			return *v
+		}
+		var ret IndexUserInnerKeyValueValue
+		return ret
+	}).(IndexUserInnerKeyValueValueOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexUserInnerKeyValueValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoIndexFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o IndexUserInnerKeyValueValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.CaseSensitive
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o IndexUserInnerKeyValueValuePtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o IndexUserInnerKeyValueValuePtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IncludeChinese
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexUserInnerKeyValueValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexUserInnerKeyValueValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexSqlAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o IndexUserInnerKeyValueValuePtrOutput) JsonKeys() IndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) []IndexUserInnerKeyValueValueJsonKey {
+		if v == nil {
+			return nil
+		}
+		return v.JsonKeys
+	}).(IndexUserInnerKeyValueValueJsonKeyArrayOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexUserInnerKeyValueValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SqlFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexUserInnerKeyValueValuePtrOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ValueType
+	}).(pulumi.StringPtrOutput)
+}
+
+type IndexUserInnerKeyValueValueJsonKey struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key *string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value *IndexUserInnerKeyValueValueJsonKeyValue `pulumi:"value"`
+}
+
+// IndexUserInnerKeyValueValueJsonKeyInput is an input type that accepts IndexUserInnerKeyValueValueJsonKeyArgs and IndexUserInnerKeyValueValueJsonKeyOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueValueJsonKeyInput` via:
+//
+//	IndexUserInnerKeyValueValueJsonKeyArgs{...}
+type IndexUserInnerKeyValueValueJsonKeyInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueValueJsonKeyOutput() IndexUserInnerKeyValueValueJsonKeyOutput
+	ToIndexUserInnerKeyValueValueJsonKeyOutputWithContext(context.Context) IndexUserInnerKeyValueValueJsonKeyOutput
+}
+
+type IndexUserInnerKeyValueValueJsonKeyArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value IndexUserInnerKeyValueValueJsonKeyValuePtrInput `pulumi:"value"`
+}
+
+func (IndexUserInnerKeyValueValueJsonKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyArgs) ToIndexUserInnerKeyValueValueJsonKeyOutput() IndexUserInnerKeyValueValueJsonKeyOutput {
+	return i.ToIndexUserInnerKeyValueValueJsonKeyOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyArgs) ToIndexUserInnerKeyValueValueJsonKeyOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValueJsonKeyOutput)
+}
+
+// IndexUserInnerKeyValueValueJsonKeyArrayInput is an input type that accepts IndexUserInnerKeyValueValueJsonKeyArray and IndexUserInnerKeyValueValueJsonKeyArrayOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueValueJsonKeyArrayInput` via:
+//
+//	IndexUserInnerKeyValueValueJsonKeyArray{ IndexUserInnerKeyValueValueJsonKeyArgs{...} }
+type IndexUserInnerKeyValueValueJsonKeyArrayInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueValueJsonKeyArrayOutput() IndexUserInnerKeyValueValueJsonKeyArrayOutput
+	ToIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(context.Context) IndexUserInnerKeyValueValueJsonKeyArrayOutput
+}
+
+type IndexUserInnerKeyValueValueJsonKeyArray []IndexUserInnerKeyValueValueJsonKeyInput
+
+func (IndexUserInnerKeyValueValueJsonKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyArray) ToIndexUserInnerKeyValueValueJsonKeyArrayOutput() IndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return i.ToIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyArray) ToIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValueJsonKeyArrayOutput)
+}
+
+type IndexUserInnerKeyValueValueJsonKeyOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueValueJsonKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyOutput) ToIndexUserInnerKeyValueValueJsonKeyOutput() IndexUserInnerKeyValueValueJsonKeyOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyOutput) ToIndexUserInnerKeyValueValueJsonKeyOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o IndexUserInnerKeyValueValueJsonKeyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKey) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o IndexUserInnerKeyValueValueJsonKeyOutput) Value() IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKey) *IndexUserInnerKeyValueValueJsonKeyValue { return v.Value }).(IndexUserInnerKeyValueValueJsonKeyValuePtrOutput)
+}
+
+type IndexUserInnerKeyValueValueJsonKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueValueJsonKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyArrayOutput) ToIndexUserInnerKeyValueValueJsonKeyArrayOutput() IndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyArrayOutput) ToIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) IndexUserInnerKeyValueValueJsonKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IndexUserInnerKeyValueValueJsonKey {
+		return vs[0].([]IndexUserInnerKeyValueValueJsonKey)[vs[1].(int)]
+	}).(IndexUserInnerKeyValueValueJsonKeyOutput)
+}
+
+type IndexUserInnerKeyValueValueJsonKeyValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll *bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll *bool `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag *bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType *string `pulumi:"valueType"`
+}
+
+// IndexUserInnerKeyValueValueJsonKeyValueInput is an input type that accepts IndexUserInnerKeyValueValueJsonKeyValueArgs and IndexUserInnerKeyValueValueJsonKeyValueOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueValueJsonKeyValueInput` via:
+//
+//	IndexUserInnerKeyValueValueJsonKeyValueArgs{...}
+type IndexUserInnerKeyValueValueJsonKeyValueInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueValueJsonKeyValueOutput() IndexUserInnerKeyValueValueJsonKeyValueOutput
+	ToIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(context.Context) IndexUserInnerKeyValueValueJsonKeyValueOutput
+}
+
+type IndexUserInnerKeyValueValueJsonKeyValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolPtrInput `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
+}
+
+func (IndexUserInnerKeyValueValueJsonKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyValueArgs) ToIndexUserInnerKeyValueValueJsonKeyValueOutput() IndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return i.ToIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyValueArgs) ToIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValueJsonKeyValueOutput)
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyValueArgs) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutput() IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return i.ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(context.Background())
+}
+
+func (i IndexUserInnerKeyValueValueJsonKeyValueArgs) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValueJsonKeyValueOutput).ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(ctx)
+}
+
+// IndexUserInnerKeyValueValueJsonKeyValuePtrInput is an input type that accepts IndexUserInnerKeyValueValueJsonKeyValueArgs, IndexUserInnerKeyValueValueJsonKeyValuePtr and IndexUserInnerKeyValueValueJsonKeyValuePtrOutput values.
+// You can construct a concrete instance of `IndexUserInnerKeyValueValueJsonKeyValuePtrInput` via:
+//
+//	        IndexUserInnerKeyValueValueJsonKeyValueArgs{...}
+//
+//	or:
+//
+//	        nil
+type IndexUserInnerKeyValueValueJsonKeyValuePtrInput interface {
+	pulumi.Input
+
+	ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutput() IndexUserInnerKeyValueValueJsonKeyValuePtrOutput
+	ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(context.Context) IndexUserInnerKeyValueValueJsonKeyValuePtrOutput
+}
+
+type indexUserInnerKeyValueValueJsonKeyValuePtrType IndexUserInnerKeyValueValueJsonKeyValueArgs
+
+func IndexUserInnerKeyValueValueJsonKeyValuePtr(v *IndexUserInnerKeyValueValueJsonKeyValueArgs) IndexUserInnerKeyValueValueJsonKeyValuePtrInput {
+	return (*indexUserInnerKeyValueValueJsonKeyValuePtrType)(v)
+}
+
+func (*indexUserInnerKeyValueValueJsonKeyValuePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexUserInnerKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (i *indexUserInnerKeyValueValueJsonKeyValuePtrType) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutput() IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return i.ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(context.Background())
+}
+
+func (i *indexUserInnerKeyValueValueJsonKeyValuePtrType) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IndexUserInnerKeyValueValueJsonKeyValuePtrOutput)
+}
+
+type IndexUserInnerKeyValueValueJsonKeyValueOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueValueJsonKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) ToIndexUserInnerKeyValueValueJsonKeyValueOutput() IndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) ToIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutput() IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return o.ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(context.Background())
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IndexUserInnerKeyValueValueJsonKeyValue) *IndexUserInnerKeyValueValueJsonKeyValue {
+		return &v
+	}).(IndexUserInnerKeyValueValueJsonKeyValuePtrOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
+}
+
+type IndexUserInnerKeyValueValueJsonKeyValuePtrOutput struct{ *pulumi.OutputState }
+
+func (IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IndexUserInnerKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutput() IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) ToIndexUserInnerKeyValueValueJsonKeyValuePtrOutputWithContext(ctx context.Context) IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
+	return o
+}
+
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) Elem() IndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) IndexUserInnerKeyValueValueJsonKeyValue {
+		if v != nil {
+			return *v
+		}
+		var ret IndexUserInnerKeyValueValueJsonKeyValue
+		return ret
+	}).(IndexUserInnerKeyValueValueJsonKeyValueOutput)
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoIndexFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IndexSqlAll
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SqlFlag
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ValueType
+	}).(pulumi.StringPtrOutput)
+}
+
 type ProjectTag struct {
 	// 标签键。
 	Key *string `pulumi:"key"`
@@ -117,6 +1712,1280 @@ func (o ProjectTagArrayOutput) Index(i pulumi.IntInput) ProjectTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectTag {
 		return vs[0].([]ProjectTag)[vs[1].(int)]
 	}).(ProjectTagOutput)
+}
+
+type ScheduleSqlTaskRequestCycle struct {
+	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	CronTab *string `pulumi:"cronTab"`
+	// 设置 Type 为 Cron 时，还需设置时区。
+	CronTimeZone *string `pulumi:"cronTimeZone"`
+	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	Time int `pulumi:"time"`
+	// 调度周期类型。可选值：Period、Fixed、Cron。
+	Type string `pulumi:"type"`
+}
+
+// ScheduleSqlTaskRequestCycleInput is an input type that accepts ScheduleSqlTaskRequestCycleArgs and ScheduleSqlTaskRequestCycleOutput values.
+// You can construct a concrete instance of `ScheduleSqlTaskRequestCycleInput` via:
+//
+//	ScheduleSqlTaskRequestCycleArgs{...}
+type ScheduleSqlTaskRequestCycleInput interface {
+	pulumi.Input
+
+	ToScheduleSqlTaskRequestCycleOutput() ScheduleSqlTaskRequestCycleOutput
+	ToScheduleSqlTaskRequestCycleOutputWithContext(context.Context) ScheduleSqlTaskRequestCycleOutput
+}
+
+type ScheduleSqlTaskRequestCycleArgs struct {
+	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	CronTab pulumi.StringPtrInput `pulumi:"cronTab"`
+	// 设置 Type 为 Cron 时，还需设置时区。
+	CronTimeZone pulumi.StringPtrInput `pulumi:"cronTimeZone"`
+	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	Time pulumi.IntInput `pulumi:"time"`
+	// 调度周期类型。可选值：Period、Fixed、Cron。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ScheduleSqlTaskRequestCycleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleSqlTaskRequestCycle)(nil)).Elem()
+}
+
+func (i ScheduleSqlTaskRequestCycleArgs) ToScheduleSqlTaskRequestCycleOutput() ScheduleSqlTaskRequestCycleOutput {
+	return i.ToScheduleSqlTaskRequestCycleOutputWithContext(context.Background())
+}
+
+func (i ScheduleSqlTaskRequestCycleArgs) ToScheduleSqlTaskRequestCycleOutputWithContext(ctx context.Context) ScheduleSqlTaskRequestCycleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleSqlTaskRequestCycleOutput)
+}
+
+func (i ScheduleSqlTaskRequestCycleArgs) ToScheduleSqlTaskRequestCyclePtrOutput() ScheduleSqlTaskRequestCyclePtrOutput {
+	return i.ToScheduleSqlTaskRequestCyclePtrOutputWithContext(context.Background())
+}
+
+func (i ScheduleSqlTaskRequestCycleArgs) ToScheduleSqlTaskRequestCyclePtrOutputWithContext(ctx context.Context) ScheduleSqlTaskRequestCyclePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleSqlTaskRequestCycleOutput).ToScheduleSqlTaskRequestCyclePtrOutputWithContext(ctx)
+}
+
+// ScheduleSqlTaskRequestCyclePtrInput is an input type that accepts ScheduleSqlTaskRequestCycleArgs, ScheduleSqlTaskRequestCyclePtr and ScheduleSqlTaskRequestCyclePtrOutput values.
+// You can construct a concrete instance of `ScheduleSqlTaskRequestCyclePtrInput` via:
+//
+//	        ScheduleSqlTaskRequestCycleArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduleSqlTaskRequestCyclePtrInput interface {
+	pulumi.Input
+
+	ToScheduleSqlTaskRequestCyclePtrOutput() ScheduleSqlTaskRequestCyclePtrOutput
+	ToScheduleSqlTaskRequestCyclePtrOutputWithContext(context.Context) ScheduleSqlTaskRequestCyclePtrOutput
+}
+
+type scheduleSqlTaskRequestCyclePtrType ScheduleSqlTaskRequestCycleArgs
+
+func ScheduleSqlTaskRequestCyclePtr(v *ScheduleSqlTaskRequestCycleArgs) ScheduleSqlTaskRequestCyclePtrInput {
+	return (*scheduleSqlTaskRequestCyclePtrType)(v)
+}
+
+func (*scheduleSqlTaskRequestCyclePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleSqlTaskRequestCycle)(nil)).Elem()
+}
+
+func (i *scheduleSqlTaskRequestCyclePtrType) ToScheduleSqlTaskRequestCyclePtrOutput() ScheduleSqlTaskRequestCyclePtrOutput {
+	return i.ToScheduleSqlTaskRequestCyclePtrOutputWithContext(context.Background())
+}
+
+func (i *scheduleSqlTaskRequestCyclePtrType) ToScheduleSqlTaskRequestCyclePtrOutputWithContext(ctx context.Context) ScheduleSqlTaskRequestCyclePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduleSqlTaskRequestCyclePtrOutput)
+}
+
+type ScheduleSqlTaskRequestCycleOutput struct{ *pulumi.OutputState }
+
+func (ScheduleSqlTaskRequestCycleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduleSqlTaskRequestCycle)(nil)).Elem()
+}
+
+func (o ScheduleSqlTaskRequestCycleOutput) ToScheduleSqlTaskRequestCycleOutput() ScheduleSqlTaskRequestCycleOutput {
+	return o
+}
+
+func (o ScheduleSqlTaskRequestCycleOutput) ToScheduleSqlTaskRequestCycleOutputWithContext(ctx context.Context) ScheduleSqlTaskRequestCycleOutput {
+	return o
+}
+
+func (o ScheduleSqlTaskRequestCycleOutput) ToScheduleSqlTaskRequestCyclePtrOutput() ScheduleSqlTaskRequestCyclePtrOutput {
+	return o.ToScheduleSqlTaskRequestCyclePtrOutputWithContext(context.Background())
+}
+
+func (o ScheduleSqlTaskRequestCycleOutput) ToScheduleSqlTaskRequestCyclePtrOutputWithContext(ctx context.Context) ScheduleSqlTaskRequestCyclePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduleSqlTaskRequestCycle) *ScheduleSqlTaskRequestCycle {
+		return &v
+	}).(ScheduleSqlTaskRequestCyclePtrOutput)
+}
+
+// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+func (o ScheduleSqlTaskRequestCycleOutput) CronTab() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) *string { return v.CronTab }).(pulumi.StringPtrOutput)
+}
+
+// 设置 Type 为 Cron 时，还需设置时区。
+func (o ScheduleSqlTaskRequestCycleOutput) CronTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) *string { return v.CronTimeZone }).(pulumi.StringPtrOutput)
+}
+
+// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+func (o ScheduleSqlTaskRequestCycleOutput) Time() pulumi.IntOutput {
+	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) int { return v.Time }).(pulumi.IntOutput)
+}
+
+// 调度周期类型。可选值：Period、Fixed、Cron。
+func (o ScheduleSqlTaskRequestCycleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type ScheduleSqlTaskRequestCyclePtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduleSqlTaskRequestCyclePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduleSqlTaskRequestCycle)(nil)).Elem()
+}
+
+func (o ScheduleSqlTaskRequestCyclePtrOutput) ToScheduleSqlTaskRequestCyclePtrOutput() ScheduleSqlTaskRequestCyclePtrOutput {
+	return o
+}
+
+func (o ScheduleSqlTaskRequestCyclePtrOutput) ToScheduleSqlTaskRequestCyclePtrOutputWithContext(ctx context.Context) ScheduleSqlTaskRequestCyclePtrOutput {
+	return o
+}
+
+func (o ScheduleSqlTaskRequestCyclePtrOutput) Elem() ScheduleSqlTaskRequestCycleOutput {
+	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) ScheduleSqlTaskRequestCycle {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduleSqlTaskRequestCycle
+		return ret
+	}).(ScheduleSqlTaskRequestCycleOutput)
+}
+
+// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+func (o ScheduleSqlTaskRequestCyclePtrOutput) CronTab() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CronTab
+	}).(pulumi.StringPtrOutput)
+}
+
+// 设置 Type 为 Cron 时，还需设置时区。
+func (o ScheduleSqlTaskRequestCyclePtrOutput) CronTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CronTimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+func (o ScheduleSqlTaskRequestCyclePtrOutput) Time() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Time
+	}).(pulumi.IntPtrOutput)
+}
+
+// 调度周期类型。可选值：Period、Fixed、Cron。
+func (o ScheduleSqlTaskRequestCyclePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type TopicTag struct {
+	// 用户标签的标签键。
+	Key *string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value *string `pulumi:"value"`
+}
+
+// TopicTagInput is an input type that accepts TopicTagArgs and TopicTagOutput values.
+// You can construct a concrete instance of `TopicTagInput` via:
+//
+//	TopicTagArgs{...}
+type TopicTagInput interface {
+	pulumi.Input
+
+	ToTopicTagOutput() TopicTagOutput
+	ToTopicTagOutputWithContext(context.Context) TopicTagOutput
+}
+
+type TopicTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TopicTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TopicTag)(nil)).Elem()
+}
+
+func (i TopicTagArgs) ToTopicTagOutput() TopicTagOutput {
+	return i.ToTopicTagOutputWithContext(context.Background())
+}
+
+func (i TopicTagArgs) ToTopicTagOutputWithContext(ctx context.Context) TopicTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TopicTagOutput)
+}
+
+// TopicTagArrayInput is an input type that accepts TopicTagArray and TopicTagArrayOutput values.
+// You can construct a concrete instance of `TopicTagArrayInput` via:
+//
+//	TopicTagArray{ TopicTagArgs{...} }
+type TopicTagArrayInput interface {
+	pulumi.Input
+
+	ToTopicTagArrayOutput() TopicTagArrayOutput
+	ToTopicTagArrayOutputWithContext(context.Context) TopicTagArrayOutput
+}
+
+type TopicTagArray []TopicTagInput
+
+func (TopicTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TopicTag)(nil)).Elem()
+}
+
+func (i TopicTagArray) ToTopicTagArrayOutput() TopicTagArrayOutput {
+	return i.ToTopicTagArrayOutputWithContext(context.Background())
+}
+
+func (i TopicTagArray) ToTopicTagArrayOutputWithContext(ctx context.Context) TopicTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TopicTagArrayOutput)
+}
+
+type TopicTagOutput struct{ *pulumi.OutputState }
+
+func (TopicTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TopicTag)(nil)).Elem()
+}
+
+func (o TopicTagOutput) ToTopicTagOutput() TopicTagOutput {
+	return o
+}
+
+func (o TopicTagOutput) ToTopicTagOutputWithContext(ctx context.Context) TopicTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o TopicTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TopicTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 用户标签的标签值。
+func (o TopicTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TopicTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type TopicTagArrayOutput struct{ *pulumi.OutputState }
+
+func (TopicTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TopicTag)(nil)).Elem()
+}
+
+func (o TopicTagArrayOutput) ToTopicTagArrayOutput() TopicTagArrayOutput {
+	return o
+}
+
+func (o TopicTagArrayOutput) ToTopicTagArrayOutputWithContext(ctx context.Context) TopicTagArrayOutput {
+	return o
+}
+
+func (o TopicTagArrayOutput) Index(i pulumi.IntInput) TopicTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TopicTag {
+		return vs[0].([]TopicTag)[vs[1].(int)]
+	}).(TopicTagOutput)
+}
+
+type GetIndexFullText struct {
+	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	CaseSensitive bool `pulumi:"caseSensitive"`
+	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese bool `pulumi:"includeChinese"`
+}
+
+// GetIndexFullTextInput is an input type that accepts GetIndexFullTextArgs and GetIndexFullTextOutput values.
+// You can construct a concrete instance of `GetIndexFullTextInput` via:
+//
+//	GetIndexFullTextArgs{...}
+type GetIndexFullTextInput interface {
+	pulumi.Input
+
+	ToGetIndexFullTextOutput() GetIndexFullTextOutput
+	ToGetIndexFullTextOutputWithContext(context.Context) GetIndexFullTextOutput
+}
+
+type GetIndexFullTextArgs struct {
+	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
+	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
+}
+
+func (GetIndexFullTextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexFullText)(nil)).Elem()
+}
+
+func (i GetIndexFullTextArgs) ToGetIndexFullTextOutput() GetIndexFullTextOutput {
+	return i.ToGetIndexFullTextOutputWithContext(context.Background())
+}
+
+func (i GetIndexFullTextArgs) ToGetIndexFullTextOutputWithContext(ctx context.Context) GetIndexFullTextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexFullTextOutput)
+}
+
+type GetIndexFullTextOutput struct{ *pulumi.OutputState }
+
+func (GetIndexFullTextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexFullText)(nil)).Elem()
+}
+
+func (o GetIndexFullTextOutput) ToGetIndexFullTextOutput() GetIndexFullTextOutput {
+	return o
+}
+
+func (o GetIndexFullTextOutput) ToGetIndexFullTextOutputWithContext(ctx context.Context) GetIndexFullTextOutput {
+	return o
+}
+
+// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+func (o GetIndexFullTextOutput) CaseSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexFullText) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
+}
+
+// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o GetIndexFullTextOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexFullText) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+func (o GetIndexFullTextOutput) IncludeChinese() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexFullText) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
+}
+
+type GetIndexKeyValue struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexKeyValueValue `pulumi:"value"`
+}
+
+// GetIndexKeyValueInput is an input type that accepts GetIndexKeyValueArgs and GetIndexKeyValueOutput values.
+// You can construct a concrete instance of `GetIndexKeyValueInput` via:
+//
+//	GetIndexKeyValueArgs{...}
+type GetIndexKeyValueInput interface {
+	pulumi.Input
+
+	ToGetIndexKeyValueOutput() GetIndexKeyValueOutput
+	ToGetIndexKeyValueOutputWithContext(context.Context) GetIndexKeyValueOutput
+}
+
+type GetIndexKeyValueArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexKeyValueValueInput `pulumi:"value"`
+}
+
+func (GetIndexKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValue)(nil)).Elem()
+}
+
+func (i GetIndexKeyValueArgs) ToGetIndexKeyValueOutput() GetIndexKeyValueOutput {
+	return i.ToGetIndexKeyValueOutputWithContext(context.Background())
+}
+
+func (i GetIndexKeyValueArgs) ToGetIndexKeyValueOutputWithContext(ctx context.Context) GetIndexKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexKeyValueOutput)
+}
+
+// GetIndexKeyValueArrayInput is an input type that accepts GetIndexKeyValueArray and GetIndexKeyValueArrayOutput values.
+// You can construct a concrete instance of `GetIndexKeyValueArrayInput` via:
+//
+//	GetIndexKeyValueArray{ GetIndexKeyValueArgs{...} }
+type GetIndexKeyValueArrayInput interface {
+	pulumi.Input
+
+	ToGetIndexKeyValueArrayOutput() GetIndexKeyValueArrayOutput
+	ToGetIndexKeyValueArrayOutputWithContext(context.Context) GetIndexKeyValueArrayOutput
+}
+
+type GetIndexKeyValueArray []GetIndexKeyValueInput
+
+func (GetIndexKeyValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexKeyValue)(nil)).Elem()
+}
+
+func (i GetIndexKeyValueArray) ToGetIndexKeyValueArrayOutput() GetIndexKeyValueArrayOutput {
+	return i.ToGetIndexKeyValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetIndexKeyValueArray) ToGetIndexKeyValueArrayOutputWithContext(ctx context.Context) GetIndexKeyValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexKeyValueArrayOutput)
+}
+
+type GetIndexKeyValueOutput struct{ *pulumi.OutputState }
+
+func (GetIndexKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValue)(nil)).Elem()
+}
+
+func (o GetIndexKeyValueOutput) ToGetIndexKeyValueOutput() GetIndexKeyValueOutput {
+	return o
+}
+
+func (o GetIndexKeyValueOutput) ToGetIndexKeyValueOutputWithContext(ctx context.Context) GetIndexKeyValueOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o GetIndexKeyValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexKeyValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o GetIndexKeyValueOutput) Value() GetIndexKeyValueValueOutput {
+	return o.ApplyT(func(v GetIndexKeyValue) GetIndexKeyValueValue { return v.Value }).(GetIndexKeyValueValueOutput)
+}
+
+type GetIndexKeyValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIndexKeyValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexKeyValue)(nil)).Elem()
+}
+
+func (o GetIndexKeyValueArrayOutput) ToGetIndexKeyValueArrayOutput() GetIndexKeyValueArrayOutput {
+	return o
+}
+
+func (o GetIndexKeyValueArrayOutput) ToGetIndexKeyValueArrayOutputWithContext(ctx context.Context) GetIndexKeyValueArrayOutput {
+	return o
+}
+
+func (o GetIndexKeyValueArrayOutput) Index(i pulumi.IntInput) GetIndexKeyValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIndexKeyValue {
+		return vs[0].([]GetIndexKeyValue)[vs[1].(int)]
+	}).(GetIndexKeyValueOutput)
+}
+
+type GetIndexKeyValueValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive bool `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese bool `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll bool `pulumi:"indexSqlAll"`
+	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	JsonKeys []GetIndexKeyValueValueJsonKey `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetIndexKeyValueValueInput is an input type that accepts GetIndexKeyValueValueArgs and GetIndexKeyValueValueOutput values.
+// You can construct a concrete instance of `GetIndexKeyValueValueInput` via:
+//
+//	GetIndexKeyValueValueArgs{...}
+type GetIndexKeyValueValueInput interface {
+	pulumi.Input
+
+	ToGetIndexKeyValueValueOutput() GetIndexKeyValueValueOutput
+	ToGetIndexKeyValueValueOutputWithContext(context.Context) GetIndexKeyValueValueOutput
+}
+
+type GetIndexKeyValueValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
+	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	JsonKeys GetIndexKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetIndexKeyValueValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValueValue)(nil)).Elem()
+}
+
+func (i GetIndexKeyValueValueArgs) ToGetIndexKeyValueValueOutput() GetIndexKeyValueValueOutput {
+	return i.ToGetIndexKeyValueValueOutputWithContext(context.Background())
+}
+
+func (i GetIndexKeyValueValueArgs) ToGetIndexKeyValueValueOutputWithContext(ctx context.Context) GetIndexKeyValueValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexKeyValueValueOutput)
+}
+
+type GetIndexKeyValueValueOutput struct{ *pulumi.OutputState }
+
+func (GetIndexKeyValueValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValueValue)(nil)).Elem()
+}
+
+func (o GetIndexKeyValueValueOutput) ToGetIndexKeyValueValueOutput() GetIndexKeyValueValueOutput {
+	return o
+}
+
+func (o GetIndexKeyValueValueOutput) ToGetIndexKeyValueValueOutputWithContext(ctx context.Context) GetIndexKeyValueValueOutput {
+	return o
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o GetIndexKeyValueValueOutput) AutoIndexFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o GetIndexKeyValueValueOutput) CaseSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o GetIndexKeyValueValueOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o GetIndexKeyValueValueOutput) IncludeChinese() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o GetIndexKeyValueValueOutput) IndexAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o GetIndexKeyValueValueOutput) IndexSqlAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
+}
+
+// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+func (o GetIndexKeyValueValueOutput) JsonKeys() GetIndexKeyValueValueJsonKeyArrayOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) []GetIndexKeyValueValueJsonKey { return v.JsonKeys }).(GetIndexKeyValueValueJsonKeyArrayOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o GetIndexKeyValueValueOutput) SqlFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o GetIndexKeyValueValueOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValue) string { return v.ValueType }).(pulumi.StringOutput)
+}
+
+type GetIndexKeyValueValueJsonKey struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexKeyValueValueJsonKeyValue `pulumi:"value"`
+}
+
+// GetIndexKeyValueValueJsonKeyInput is an input type that accepts GetIndexKeyValueValueJsonKeyArgs and GetIndexKeyValueValueJsonKeyOutput values.
+// You can construct a concrete instance of `GetIndexKeyValueValueJsonKeyInput` via:
+//
+//	GetIndexKeyValueValueJsonKeyArgs{...}
+type GetIndexKeyValueValueJsonKeyInput interface {
+	pulumi.Input
+
+	ToGetIndexKeyValueValueJsonKeyOutput() GetIndexKeyValueValueJsonKeyOutput
+	ToGetIndexKeyValueValueJsonKeyOutputWithContext(context.Context) GetIndexKeyValueValueJsonKeyOutput
+}
+
+type GetIndexKeyValueValueJsonKeyArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexKeyValueValueJsonKeyValueInput `pulumi:"value"`
+}
+
+func (GetIndexKeyValueValueJsonKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i GetIndexKeyValueValueJsonKeyArgs) ToGetIndexKeyValueValueJsonKeyOutput() GetIndexKeyValueValueJsonKeyOutput {
+	return i.ToGetIndexKeyValueValueJsonKeyOutputWithContext(context.Background())
+}
+
+func (i GetIndexKeyValueValueJsonKeyArgs) ToGetIndexKeyValueValueJsonKeyOutputWithContext(ctx context.Context) GetIndexKeyValueValueJsonKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexKeyValueValueJsonKeyOutput)
+}
+
+// GetIndexKeyValueValueJsonKeyArrayInput is an input type that accepts GetIndexKeyValueValueJsonKeyArray and GetIndexKeyValueValueJsonKeyArrayOutput values.
+// You can construct a concrete instance of `GetIndexKeyValueValueJsonKeyArrayInput` via:
+//
+//	GetIndexKeyValueValueJsonKeyArray{ GetIndexKeyValueValueJsonKeyArgs{...} }
+type GetIndexKeyValueValueJsonKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetIndexKeyValueValueJsonKeyArrayOutput() GetIndexKeyValueValueJsonKeyArrayOutput
+	ToGetIndexKeyValueValueJsonKeyArrayOutputWithContext(context.Context) GetIndexKeyValueValueJsonKeyArrayOutput
+}
+
+type GetIndexKeyValueValueJsonKeyArray []GetIndexKeyValueValueJsonKeyInput
+
+func (GetIndexKeyValueValueJsonKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i GetIndexKeyValueValueJsonKeyArray) ToGetIndexKeyValueValueJsonKeyArrayOutput() GetIndexKeyValueValueJsonKeyArrayOutput {
+	return i.ToGetIndexKeyValueValueJsonKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetIndexKeyValueValueJsonKeyArray) ToGetIndexKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) GetIndexKeyValueValueJsonKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexKeyValueValueJsonKeyArrayOutput)
+}
+
+type GetIndexKeyValueValueJsonKeyOutput struct{ *pulumi.OutputState }
+
+func (GetIndexKeyValueValueJsonKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o GetIndexKeyValueValueJsonKeyOutput) ToGetIndexKeyValueValueJsonKeyOutput() GetIndexKeyValueValueJsonKeyOutput {
+	return o
+}
+
+func (o GetIndexKeyValueValueJsonKeyOutput) ToGetIndexKeyValueValueJsonKeyOutputWithContext(ctx context.Context) GetIndexKeyValueValueJsonKeyOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o GetIndexKeyValueValueJsonKeyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKey) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o GetIndexKeyValueValueJsonKeyOutput) Value() GetIndexKeyValueValueJsonKeyValueOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKey) GetIndexKeyValueValueJsonKeyValue { return v.Value }).(GetIndexKeyValueValueJsonKeyValueOutput)
+}
+
+type GetIndexKeyValueValueJsonKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIndexKeyValueValueJsonKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o GetIndexKeyValueValueJsonKeyArrayOutput) ToGetIndexKeyValueValueJsonKeyArrayOutput() GetIndexKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o GetIndexKeyValueValueJsonKeyArrayOutput) ToGetIndexKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) GetIndexKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o GetIndexKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) GetIndexKeyValueValueJsonKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIndexKeyValueValueJsonKey {
+		return vs[0].([]GetIndexKeyValueValueJsonKey)[vs[1].(int)]
+	}).(GetIndexKeyValueValueJsonKeyOutput)
+}
+
+type GetIndexKeyValueValueJsonKeyValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive bool `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese bool `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll bool `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetIndexKeyValueValueJsonKeyValueInput is an input type that accepts GetIndexKeyValueValueJsonKeyValueArgs and GetIndexKeyValueValueJsonKeyValueOutput values.
+// You can construct a concrete instance of `GetIndexKeyValueValueJsonKeyValueInput` via:
+//
+//	GetIndexKeyValueValueJsonKeyValueArgs{...}
+type GetIndexKeyValueValueJsonKeyValueInput interface {
+	pulumi.Input
+
+	ToGetIndexKeyValueValueJsonKeyValueOutput() GetIndexKeyValueValueJsonKeyValueOutput
+	ToGetIndexKeyValueValueJsonKeyValueOutputWithContext(context.Context) GetIndexKeyValueValueJsonKeyValueOutput
+}
+
+type GetIndexKeyValueValueJsonKeyValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetIndexKeyValueValueJsonKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (i GetIndexKeyValueValueJsonKeyValueArgs) ToGetIndexKeyValueValueJsonKeyValueOutput() GetIndexKeyValueValueJsonKeyValueOutput {
+	return i.ToGetIndexKeyValueValueJsonKeyValueOutputWithContext(context.Background())
+}
+
+func (i GetIndexKeyValueValueJsonKeyValueArgs) ToGetIndexKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) GetIndexKeyValueValueJsonKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexKeyValueValueJsonKeyValueOutput)
+}
+
+type GetIndexKeyValueValueJsonKeyValueOutput struct{ *pulumi.OutputState }
+
+func (GetIndexKeyValueValueJsonKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (o GetIndexKeyValueValueJsonKeyValueOutput) ToGetIndexKeyValueValueJsonKeyValueOutput() GetIndexKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+func (o GetIndexKeyValueValueJsonKeyValueOutput) ToGetIndexKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) GetIndexKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) CaseSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) IncludeChinese() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o GetIndexKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) string { return v.ValueType }).(pulumi.StringOutput)
+}
+
+type GetIndexUserInnerKeyValue struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexUserInnerKeyValueValue `pulumi:"value"`
+}
+
+// GetIndexUserInnerKeyValueInput is an input type that accepts GetIndexUserInnerKeyValueArgs and GetIndexUserInnerKeyValueOutput values.
+// You can construct a concrete instance of `GetIndexUserInnerKeyValueInput` via:
+//
+//	GetIndexUserInnerKeyValueArgs{...}
+type GetIndexUserInnerKeyValueInput interface {
+	pulumi.Input
+
+	ToGetIndexUserInnerKeyValueOutput() GetIndexUserInnerKeyValueOutput
+	ToGetIndexUserInnerKeyValueOutputWithContext(context.Context) GetIndexUserInnerKeyValueOutput
+}
+
+type GetIndexUserInnerKeyValueArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexUserInnerKeyValueValueInput `pulumi:"value"`
+}
+
+func (GetIndexUserInnerKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (i GetIndexUserInnerKeyValueArgs) ToGetIndexUserInnerKeyValueOutput() GetIndexUserInnerKeyValueOutput {
+	return i.ToGetIndexUserInnerKeyValueOutputWithContext(context.Background())
+}
+
+func (i GetIndexUserInnerKeyValueArgs) ToGetIndexUserInnerKeyValueOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexUserInnerKeyValueOutput)
+}
+
+// GetIndexUserInnerKeyValueArrayInput is an input type that accepts GetIndexUserInnerKeyValueArray and GetIndexUserInnerKeyValueArrayOutput values.
+// You can construct a concrete instance of `GetIndexUserInnerKeyValueArrayInput` via:
+//
+//	GetIndexUserInnerKeyValueArray{ GetIndexUserInnerKeyValueArgs{...} }
+type GetIndexUserInnerKeyValueArrayInput interface {
+	pulumi.Input
+
+	ToGetIndexUserInnerKeyValueArrayOutput() GetIndexUserInnerKeyValueArrayOutput
+	ToGetIndexUserInnerKeyValueArrayOutputWithContext(context.Context) GetIndexUserInnerKeyValueArrayOutput
+}
+
+type GetIndexUserInnerKeyValueArray []GetIndexUserInnerKeyValueInput
+
+func (GetIndexUserInnerKeyValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (i GetIndexUserInnerKeyValueArray) ToGetIndexUserInnerKeyValueArrayOutput() GetIndexUserInnerKeyValueArrayOutput {
+	return i.ToGetIndexUserInnerKeyValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetIndexUserInnerKeyValueArray) ToGetIndexUserInnerKeyValueArrayOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexUserInnerKeyValueArrayOutput)
+}
+
+type GetIndexUserInnerKeyValueOutput struct{ *pulumi.OutputState }
+
+func (GetIndexUserInnerKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (o GetIndexUserInnerKeyValueOutput) ToGetIndexUserInnerKeyValueOutput() GetIndexUserInnerKeyValueOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueOutput) ToGetIndexUserInnerKeyValueOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o GetIndexUserInnerKeyValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o GetIndexUserInnerKeyValueOutput) Value() GetIndexUserInnerKeyValueValueOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValue) GetIndexUserInnerKeyValueValue { return v.Value }).(GetIndexUserInnerKeyValueValueOutput)
+}
+
+type GetIndexUserInnerKeyValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIndexUserInnerKeyValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexUserInnerKeyValue)(nil)).Elem()
+}
+
+func (o GetIndexUserInnerKeyValueArrayOutput) ToGetIndexUserInnerKeyValueArrayOutput() GetIndexUserInnerKeyValueArrayOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueArrayOutput) ToGetIndexUserInnerKeyValueArrayOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueArrayOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueArrayOutput) Index(i pulumi.IntInput) GetIndexUserInnerKeyValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIndexUserInnerKeyValue {
+		return vs[0].([]GetIndexUserInnerKeyValue)[vs[1].(int)]
+	}).(GetIndexUserInnerKeyValueOutput)
+}
+
+type GetIndexUserInnerKeyValueValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive bool `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese bool `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll bool `pulumi:"indexSqlAll"`
+	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	JsonKeys []GetIndexUserInnerKeyValueValueJsonKey `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetIndexUserInnerKeyValueValueInput is an input type that accepts GetIndexUserInnerKeyValueValueArgs and GetIndexUserInnerKeyValueValueOutput values.
+// You can construct a concrete instance of `GetIndexUserInnerKeyValueValueInput` via:
+//
+//	GetIndexUserInnerKeyValueValueArgs{...}
+type GetIndexUserInnerKeyValueValueInput interface {
+	pulumi.Input
+
+	ToGetIndexUserInnerKeyValueValueOutput() GetIndexUserInnerKeyValueValueOutput
+	ToGetIndexUserInnerKeyValueValueOutputWithContext(context.Context) GetIndexUserInnerKeyValueValueOutput
+}
+
+type GetIndexUserInnerKeyValueValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
+	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	JsonKeys GetIndexUserInnerKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetIndexUserInnerKeyValueValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValueValue)(nil)).Elem()
+}
+
+func (i GetIndexUserInnerKeyValueValueArgs) ToGetIndexUserInnerKeyValueValueOutput() GetIndexUserInnerKeyValueValueOutput {
+	return i.ToGetIndexUserInnerKeyValueValueOutputWithContext(context.Background())
+}
+
+func (i GetIndexUserInnerKeyValueValueArgs) ToGetIndexUserInnerKeyValueValueOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexUserInnerKeyValueValueOutput)
+}
+
+type GetIndexUserInnerKeyValueValueOutput struct{ *pulumi.OutputState }
+
+func (GetIndexUserInnerKeyValueValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValueValue)(nil)).Elem()
+}
+
+func (o GetIndexUserInnerKeyValueValueOutput) ToGetIndexUserInnerKeyValueValueOutput() GetIndexUserInnerKeyValueValueOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueValueOutput) ToGetIndexUserInnerKeyValueValueOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueOutput {
+	return o
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o GetIndexUserInnerKeyValueValueOutput) AutoIndexFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o GetIndexUserInnerKeyValueValueOutput) CaseSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o GetIndexUserInnerKeyValueValueOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o GetIndexUserInnerKeyValueValueOutput) IncludeChinese() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o GetIndexUserInnerKeyValueValueOutput) IndexAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o GetIndexUserInnerKeyValueValueOutput) IndexSqlAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
+}
+
+// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+func (o GetIndexUserInnerKeyValueValueOutput) JsonKeys() GetIndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) []GetIndexUserInnerKeyValueValueJsonKey { return v.JsonKeys }).(GetIndexUserInnerKeyValueValueJsonKeyArrayOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o GetIndexUserInnerKeyValueValueOutput) SqlFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o GetIndexUserInnerKeyValueValueOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) string { return v.ValueType }).(pulumi.StringOutput)
+}
+
+type GetIndexUserInnerKeyValueValueJsonKey struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key string `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexUserInnerKeyValueValueJsonKeyValue `pulumi:"value"`
+}
+
+// GetIndexUserInnerKeyValueValueJsonKeyInput is an input type that accepts GetIndexUserInnerKeyValueValueJsonKeyArgs and GetIndexUserInnerKeyValueValueJsonKeyOutput values.
+// You can construct a concrete instance of `GetIndexUserInnerKeyValueValueJsonKeyInput` via:
+//
+//	GetIndexUserInnerKeyValueValueJsonKeyArgs{...}
+type GetIndexUserInnerKeyValueValueJsonKeyInput interface {
+	pulumi.Input
+
+	ToGetIndexUserInnerKeyValueValueJsonKeyOutput() GetIndexUserInnerKeyValueValueJsonKeyOutput
+	ToGetIndexUserInnerKeyValueValueJsonKeyOutputWithContext(context.Context) GetIndexUserInnerKeyValueValueJsonKeyOutput
+}
+
+type GetIndexUserInnerKeyValueValueJsonKeyArgs struct {
+	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 需要配置键值索引的字段描述信息。
+	Value GetIndexUserInnerKeyValueValueJsonKeyValueInput `pulumi:"value"`
+}
+
+func (GetIndexUserInnerKeyValueValueJsonKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i GetIndexUserInnerKeyValueValueJsonKeyArgs) ToGetIndexUserInnerKeyValueValueJsonKeyOutput() GetIndexUserInnerKeyValueValueJsonKeyOutput {
+	return i.ToGetIndexUserInnerKeyValueValueJsonKeyOutputWithContext(context.Background())
+}
+
+func (i GetIndexUserInnerKeyValueValueJsonKeyArgs) ToGetIndexUserInnerKeyValueValueJsonKeyOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueJsonKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexUserInnerKeyValueValueJsonKeyOutput)
+}
+
+// GetIndexUserInnerKeyValueValueJsonKeyArrayInput is an input type that accepts GetIndexUserInnerKeyValueValueJsonKeyArray and GetIndexUserInnerKeyValueValueJsonKeyArrayOutput values.
+// You can construct a concrete instance of `GetIndexUserInnerKeyValueValueJsonKeyArrayInput` via:
+//
+//	GetIndexUserInnerKeyValueValueJsonKeyArray{ GetIndexUserInnerKeyValueValueJsonKeyArgs{...} }
+type GetIndexUserInnerKeyValueValueJsonKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetIndexUserInnerKeyValueValueJsonKeyArrayOutput() GetIndexUserInnerKeyValueValueJsonKeyArrayOutput
+	ToGetIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(context.Context) GetIndexUserInnerKeyValueValueJsonKeyArrayOutput
+}
+
+type GetIndexUserInnerKeyValueValueJsonKeyArray []GetIndexUserInnerKeyValueValueJsonKeyInput
+
+func (GetIndexUserInnerKeyValueValueJsonKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (i GetIndexUserInnerKeyValueValueJsonKeyArray) ToGetIndexUserInnerKeyValueValueJsonKeyArrayOutput() GetIndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return i.ToGetIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetIndexUserInnerKeyValueValueJsonKeyArray) ToGetIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexUserInnerKeyValueValueJsonKeyArrayOutput)
+}
+
+type GetIndexUserInnerKeyValueValueJsonKeyOutput struct{ *pulumi.OutputState }
+
+func (GetIndexUserInnerKeyValueValueJsonKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o GetIndexUserInnerKeyValueValueJsonKeyOutput) ToGetIndexUserInnerKeyValueValueJsonKeyOutput() GetIndexUserInnerKeyValueValueJsonKeyOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueValueJsonKeyOutput) ToGetIndexUserInnerKeyValueValueJsonKeyOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueJsonKeyOutput {
+	return o
+}
+
+// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+func (o GetIndexUserInnerKeyValueValueJsonKeyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKey) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 需要配置键值索引的字段描述信息。
+func (o GetIndexUserInnerKeyValueValueJsonKeyOutput) Value() GetIndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKey) GetIndexUserInnerKeyValueValueJsonKeyValue {
+		return v.Value
+	}).(GetIndexUserInnerKeyValueValueJsonKeyValueOutput)
+}
+
+type GetIndexUserInnerKeyValueValueJsonKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIndexUserInnerKeyValueValueJsonKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIndexUserInnerKeyValueValueJsonKey)(nil)).Elem()
+}
+
+func (o GetIndexUserInnerKeyValueValueJsonKeyArrayOutput) ToGetIndexUserInnerKeyValueValueJsonKeyArrayOutput() GetIndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueValueJsonKeyArrayOutput) ToGetIndexUserInnerKeyValueValueJsonKeyArrayOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueJsonKeyArrayOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) GetIndexUserInnerKeyValueValueJsonKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIndexUserInnerKeyValueValueJsonKey {
+		return vs[0].([]GetIndexUserInnerKeyValueValueJsonKey)[vs[1].(int)]
+	}).(GetIndexUserInnerKeyValueValueJsonKeyOutput)
+}
+
+type GetIndexUserInnerKeyValueValueJsonKeyValue struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive bool `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter string `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese bool `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll bool `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll bool `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag bool `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetIndexUserInnerKeyValueValueJsonKeyValueInput is an input type that accepts GetIndexUserInnerKeyValueValueJsonKeyValueArgs and GetIndexUserInnerKeyValueValueJsonKeyValueOutput values.
+// You can construct a concrete instance of `GetIndexUserInnerKeyValueValueJsonKeyValueInput` via:
+//
+//	GetIndexUserInnerKeyValueValueJsonKeyValueArgs{...}
+type GetIndexUserInnerKeyValueValueJsonKeyValueInput interface {
+	pulumi.Input
+
+	ToGetIndexUserInnerKeyValueValueJsonKeyValueOutput() GetIndexUserInnerKeyValueValueJsonKeyValueOutput
+	ToGetIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(context.Context) GetIndexUserInnerKeyValueValueJsonKeyValueOutput
+}
+
+type GetIndexUserInnerKeyValueValueJsonKeyValueArgs struct {
+	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
+	// 是否区分大小写。默认为 false。
+	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
+	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
+	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
+	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
+	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
+	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetIndexUserInnerKeyValueValueJsonKeyValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (i GetIndexUserInnerKeyValueValueJsonKeyValueArgs) ToGetIndexUserInnerKeyValueValueJsonKeyValueOutput() GetIndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return i.ToGetIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(context.Background())
+}
+
+func (i GetIndexUserInnerKeyValueValueJsonKeyValueArgs) ToGetIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIndexUserInnerKeyValueValueJsonKeyValueOutput)
+}
+
+type GetIndexUserInnerKeyValueValueJsonKeyValueOutput struct{ *pulumi.OutputState }
+
+func (GetIndexUserInnerKeyValueValueJsonKeyValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKeyValue)(nil)).Elem()
+}
+
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) ToGetIndexUserInnerKeyValueValueJsonKeyValueOutput() GetIndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) ToGetIndexUserInnerKeyValueValueJsonKeyValueOutputWithContext(ctx context.Context) GetIndexUserInnerKeyValueValueJsonKeyValueOutput {
+	return o
+}
+
+// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
+}
+
+// 是否区分大小写。默认为 false。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) CaseSensitive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
+}
+
+// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) string { return v.Delimiter }).(pulumi.StringOutput)
+}
+
+// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) IncludeChinese() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段中所有值为文本的字段创建索引。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
+}
+
+// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
+}
+
+// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
+}
+
+// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) string { return v.ValueType }).(pulumi.StringOutput)
 }
 
 type GetProjectTag struct {
@@ -225,13 +3094,274 @@ func (o GetProjectTagArrayOutput) Index(i pulumi.IntInput) GetProjectTagOutput {
 	}).(GetProjectTagOutput)
 }
 
+type GetScheduleSqlTaskRequestCycle struct {
+	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	CronTab string `pulumi:"cronTab"`
+	// 设置 Type 为 Cron 时，还需设置时区。
+	CronTimeZone string `pulumi:"cronTimeZone"`
+	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	Time int `pulumi:"time"`
+	// 调度周期类型。可选值：Period、Fixed、Cron。
+	Type string `pulumi:"type"`
+}
+
+// GetScheduleSqlTaskRequestCycleInput is an input type that accepts GetScheduleSqlTaskRequestCycleArgs and GetScheduleSqlTaskRequestCycleOutput values.
+// You can construct a concrete instance of `GetScheduleSqlTaskRequestCycleInput` via:
+//
+//	GetScheduleSqlTaskRequestCycleArgs{...}
+type GetScheduleSqlTaskRequestCycleInput interface {
+	pulumi.Input
+
+	ToGetScheduleSqlTaskRequestCycleOutput() GetScheduleSqlTaskRequestCycleOutput
+	ToGetScheduleSqlTaskRequestCycleOutputWithContext(context.Context) GetScheduleSqlTaskRequestCycleOutput
+}
+
+type GetScheduleSqlTaskRequestCycleArgs struct {
+	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	CronTab pulumi.StringInput `pulumi:"cronTab"`
+	// 设置 Type 为 Cron 时，还需设置时区。
+	CronTimeZone pulumi.StringInput `pulumi:"cronTimeZone"`
+	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	Time pulumi.IntInput `pulumi:"time"`
+	// 调度周期类型。可选值：Period、Fixed、Cron。
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetScheduleSqlTaskRequestCycleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleSqlTaskRequestCycle)(nil)).Elem()
+}
+
+func (i GetScheduleSqlTaskRequestCycleArgs) ToGetScheduleSqlTaskRequestCycleOutput() GetScheduleSqlTaskRequestCycleOutput {
+	return i.ToGetScheduleSqlTaskRequestCycleOutputWithContext(context.Background())
+}
+
+func (i GetScheduleSqlTaskRequestCycleArgs) ToGetScheduleSqlTaskRequestCycleOutputWithContext(ctx context.Context) GetScheduleSqlTaskRequestCycleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduleSqlTaskRequestCycleOutput)
+}
+
+type GetScheduleSqlTaskRequestCycleOutput struct{ *pulumi.OutputState }
+
+func (GetScheduleSqlTaskRequestCycleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduleSqlTaskRequestCycle)(nil)).Elem()
+}
+
+func (o GetScheduleSqlTaskRequestCycleOutput) ToGetScheduleSqlTaskRequestCycleOutput() GetScheduleSqlTaskRequestCycleOutput {
+	return o
+}
+
+func (o GetScheduleSqlTaskRequestCycleOutput) ToGetScheduleSqlTaskRequestCycleOutputWithContext(ctx context.Context) GetScheduleSqlTaskRequestCycleOutput {
+	return o
+}
+
+// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+func (o GetScheduleSqlTaskRequestCycleOutput) CronTab() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) string { return v.CronTab }).(pulumi.StringOutput)
+}
+
+// 设置 Type 为 Cron 时，还需设置时区。
+func (o GetScheduleSqlTaskRequestCycleOutput) CronTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) string { return v.CronTimeZone }).(pulumi.StringOutput)
+}
+
+// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+func (o GetScheduleSqlTaskRequestCycleOutput) Time() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) int { return v.Time }).(pulumi.IntOutput)
+}
+
+// 调度周期类型。可选值：Period、Fixed、Cron。
+func (o GetScheduleSqlTaskRequestCycleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetTopicTag struct {
+	// 用户标签的标签键。
+	Key string `pulumi:"key"`
+	// 用户标签的标签值。
+	Value string `pulumi:"value"`
+}
+
+// GetTopicTagInput is an input type that accepts GetTopicTagArgs and GetTopicTagOutput values.
+// You can construct a concrete instance of `GetTopicTagInput` via:
+//
+//	GetTopicTagArgs{...}
+type GetTopicTagInput interface {
+	pulumi.Input
+
+	ToGetTopicTagOutput() GetTopicTagOutput
+	ToGetTopicTagOutputWithContext(context.Context) GetTopicTagOutput
+}
+
+type GetTopicTagArgs struct {
+	// 用户标签的标签键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 用户标签的标签值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTopicTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTopicTag)(nil)).Elem()
+}
+
+func (i GetTopicTagArgs) ToGetTopicTagOutput() GetTopicTagOutput {
+	return i.ToGetTopicTagOutputWithContext(context.Background())
+}
+
+func (i GetTopicTagArgs) ToGetTopicTagOutputWithContext(ctx context.Context) GetTopicTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTopicTagOutput)
+}
+
+// GetTopicTagArrayInput is an input type that accepts GetTopicTagArray and GetTopicTagArrayOutput values.
+// You can construct a concrete instance of `GetTopicTagArrayInput` via:
+//
+//	GetTopicTagArray{ GetTopicTagArgs{...} }
+type GetTopicTagArrayInput interface {
+	pulumi.Input
+
+	ToGetTopicTagArrayOutput() GetTopicTagArrayOutput
+	ToGetTopicTagArrayOutputWithContext(context.Context) GetTopicTagArrayOutput
+}
+
+type GetTopicTagArray []GetTopicTagInput
+
+func (GetTopicTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTopicTag)(nil)).Elem()
+}
+
+func (i GetTopicTagArray) ToGetTopicTagArrayOutput() GetTopicTagArrayOutput {
+	return i.ToGetTopicTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetTopicTagArray) ToGetTopicTagArrayOutputWithContext(ctx context.Context) GetTopicTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTopicTagArrayOutput)
+}
+
+type GetTopicTagOutput struct{ *pulumi.OutputState }
+
+func (GetTopicTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTopicTag)(nil)).Elem()
+}
+
+func (o GetTopicTagOutput) ToGetTopicTagOutput() GetTopicTagOutput {
+	return o
+}
+
+func (o GetTopicTagOutput) ToGetTopicTagOutputWithContext(ctx context.Context) GetTopicTagOutput {
+	return o
+}
+
+// 用户标签的标签键。
+func (o GetTopicTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTopicTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 用户标签的标签值。
+func (o GetTopicTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTopicTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTopicTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTopicTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTopicTag)(nil)).Elem()
+}
+
+func (o GetTopicTagArrayOutput) ToGetTopicTagArrayOutput() GetTopicTagArrayOutput {
+	return o
+}
+
+func (o GetTopicTagArrayOutput) ToGetTopicTagArrayOutputWithContext(ctx context.Context) GetTopicTagArrayOutput {
+	return o
+}
+
+func (o GetTopicTagArrayOutput) Index(i pulumi.IntInput) GetTopicTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTopicTag {
+		return vs[0].([]GetTopicTag)[vs[1].(int)]
+	}).(GetTopicTagOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexFullTextInput)(nil)).Elem(), IndexFullTextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexFullTextPtrInput)(nil)).Elem(), IndexFullTextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueInput)(nil)).Elem(), IndexKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueArrayInput)(nil)).Elem(), IndexKeyValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueValueInput)(nil)).Elem(), IndexKeyValueValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueValuePtrInput)(nil)).Elem(), IndexKeyValueValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueValueJsonKeyInput)(nil)).Elem(), IndexKeyValueValueJsonKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueValueJsonKeyArrayInput)(nil)).Elem(), IndexKeyValueValueJsonKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueValueJsonKeyValueInput)(nil)).Elem(), IndexKeyValueValueJsonKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexKeyValueValueJsonKeyValuePtrInput)(nil)).Elem(), IndexKeyValueValueJsonKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueInput)(nil)).Elem(), IndexUserInnerKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueArrayInput)(nil)).Elem(), IndexUserInnerKeyValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueValueInput)(nil)).Elem(), IndexUserInnerKeyValueValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueValuePtrInput)(nil)).Elem(), IndexUserInnerKeyValueValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKeyInput)(nil)).Elem(), IndexUserInnerKeyValueValueJsonKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKeyArrayInput)(nil)).Elem(), IndexUserInnerKeyValueValueJsonKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKeyValueInput)(nil)).Elem(), IndexUserInnerKeyValueValueJsonKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKeyValuePtrInput)(nil)).Elem(), IndexUserInnerKeyValueValueJsonKeyValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTagInput)(nil)).Elem(), ProjectTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTagArrayInput)(nil)).Elem(), ProjectTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleSqlTaskRequestCycleInput)(nil)).Elem(), ScheduleSqlTaskRequestCycleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleSqlTaskRequestCyclePtrInput)(nil)).Elem(), ScheduleSqlTaskRequestCycleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagInput)(nil)).Elem(), TopicTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagArrayInput)(nil)).Elem(), TopicTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexFullTextInput)(nil)).Elem(), GetIndexFullTextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueInput)(nil)).Elem(), GetIndexKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueArrayInput)(nil)).Elem(), GetIndexKeyValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueValueInput)(nil)).Elem(), GetIndexKeyValueValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueValueJsonKeyInput)(nil)).Elem(), GetIndexKeyValueValueJsonKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueValueJsonKeyArrayInput)(nil)).Elem(), GetIndexKeyValueValueJsonKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexKeyValueValueJsonKeyValueInput)(nil)).Elem(), GetIndexKeyValueValueJsonKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexUserInnerKeyValueInput)(nil)).Elem(), GetIndexUserInnerKeyValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexUserInnerKeyValueArrayInput)(nil)).Elem(), GetIndexUserInnerKeyValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexUserInnerKeyValueValueInput)(nil)).Elem(), GetIndexUserInnerKeyValueValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKeyInput)(nil)).Elem(), GetIndexUserInnerKeyValueValueJsonKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKeyArrayInput)(nil)).Elem(), GetIndexUserInnerKeyValueValueJsonKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKeyValueInput)(nil)).Elem(), GetIndexUserInnerKeyValueValueJsonKeyValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectTagInput)(nil)).Elem(), GetProjectTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectTagArrayInput)(nil)).Elem(), GetProjectTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduleSqlTaskRequestCycleInput)(nil)).Elem(), GetScheduleSqlTaskRequestCycleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagInput)(nil)).Elem(), GetTopicTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagArrayInput)(nil)).Elem(), GetTopicTagArray{})
+	pulumi.RegisterOutputType(IndexFullTextOutput{})
+	pulumi.RegisterOutputType(IndexFullTextPtrOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueArrayOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueValueOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueValuePtrOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueValueJsonKeyOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueValueJsonKeyArrayOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueValueJsonKeyValueOutput{})
+	pulumi.RegisterOutputType(IndexKeyValueValueJsonKeyValuePtrOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueArrayOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueValueOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueValuePtrOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueValueJsonKeyOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueValueJsonKeyArrayOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueValueJsonKeyValueOutput{})
+	pulumi.RegisterOutputType(IndexUserInnerKeyValueValueJsonKeyValuePtrOutput{})
 	pulumi.RegisterOutputType(ProjectTagOutput{})
 	pulumi.RegisterOutputType(ProjectTagArrayOutput{})
+	pulumi.RegisterOutputType(ScheduleSqlTaskRequestCycleOutput{})
+	pulumi.RegisterOutputType(ScheduleSqlTaskRequestCyclePtrOutput{})
+	pulumi.RegisterOutputType(TopicTagOutput{})
+	pulumi.RegisterOutputType(TopicTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIndexFullTextOutput{})
+	pulumi.RegisterOutputType(GetIndexKeyValueOutput{})
+	pulumi.RegisterOutputType(GetIndexKeyValueArrayOutput{})
+	pulumi.RegisterOutputType(GetIndexKeyValueValueOutput{})
+	pulumi.RegisterOutputType(GetIndexKeyValueValueJsonKeyOutput{})
+	pulumi.RegisterOutputType(GetIndexKeyValueValueJsonKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetIndexKeyValueValueJsonKeyValueOutput{})
+	pulumi.RegisterOutputType(GetIndexUserInnerKeyValueOutput{})
+	pulumi.RegisterOutputType(GetIndexUserInnerKeyValueArrayOutput{})
+	pulumi.RegisterOutputType(GetIndexUserInnerKeyValueValueOutput{})
+	pulumi.RegisterOutputType(GetIndexUserInnerKeyValueValueJsonKeyOutput{})
+	pulumi.RegisterOutputType(GetIndexUserInnerKeyValueValueJsonKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetIndexUserInnerKeyValueValueJsonKeyValueOutput{})
 	pulumi.RegisterOutputType(GetProjectTagOutput{})
 	pulumi.RegisterOutputType(GetProjectTagArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduleSqlTaskRequestCycleOutput{})
+	pulumi.RegisterOutputType(GetTopicTagOutput{})
+	pulumi.RegisterOutputType(GetTopicTagArrayOutput{})
 }

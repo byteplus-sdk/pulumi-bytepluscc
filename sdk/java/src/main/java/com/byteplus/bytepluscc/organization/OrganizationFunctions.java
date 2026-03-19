@@ -6,10 +6,14 @@ package com.byteplus.bytepluscc.organization;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.organization.inputs.GetAccountArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetAccountPlainArgs;
+import com.byteplus.bytepluscc.organization.inputs.GetOrganizationArgs;
+import com.byteplus.bytepluscc.organization.inputs.GetOrganizationPlainArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetUnitArgs;
 import com.byteplus.bytepluscc.organization.inputs.GetUnitPlainArgs;
 import com.byteplus.bytepluscc.organization.outputs.GetAccountResult;
 import com.byteplus.bytepluscc.organization.outputs.GetAccountsResult;
+import com.byteplus.bytepluscc.organization.outputs.GetOrganizationResult;
+import com.byteplus.bytepluscc.organization.outputs.GetOrganizationsResult;
 import com.byteplus.bytepluscc.organization.outputs.GetUnitResult;
 import com.byteplus.bytepluscc.organization.outputs.GetUnitsResult;
 import com.pulumi.core.Output;
@@ -104,6 +108,90 @@ public final class OrganizationFunctions {
      */
     public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:organization/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static Output<GetOrganizationResult> getOrganization(GetOrganizationArgs args) {
+        return getOrganization(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static CompletableFuture<GetOrganizationResult> getOrganizationPlain(GetOrganizationPlainArgs args) {
+        return getOrganizationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static Output<GetOrganizationResult> getOrganization(GetOrganizationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getOrganization:getOrganization", TypeShape.of(GetOrganizationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static Output<GetOrganizationResult> getOrganization(GetOrganizationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getOrganization:getOrganization", TypeShape.of(GetOrganizationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static CompletableFuture<GetOrganizationResult> getOrganizationPlain(GetOrganizationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:organization/getOrganization:getOrganization", TypeShape.of(GetOrganizationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static Output<GetOrganizationsResult> getOrganizations() {
+        return getOrganizations(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static CompletableFuture<GetOrganizationsResult> getOrganizationsPlain() {
+        return getOrganizationsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static Output<GetOrganizationsResult> getOrganizations(InvokeArgs args) {
+        return getOrganizations(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static CompletableFuture<GetOrganizationsResult> getOrganizationsPlain(InvokeArgs args) {
+        return getOrganizationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static Output<GetOrganizationsResult> getOrganizations(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getOrganizations:getOrganizations", TypeShape.of(GetOrganizationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static Output<GetOrganizationsResult> getOrganizations(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:organization/getOrganizations:getOrganizations", TypeShape.of(GetOrganizationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Organization::Organization
+     * 
+     */
+    public static CompletableFuture<GetOrganizationsResult> getOrganizationsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:organization/getOrganizations:getOrganizations", TypeShape.of(GetOrganizationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::Organization::Unit

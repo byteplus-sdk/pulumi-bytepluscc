@@ -20,6 +20,16 @@ export const getAccounts: typeof import("./getAccounts").getAccounts = null as a
 export const getAccountsOutput: typeof import("./getAccounts").getAccountsOutput = null as any;
 utilities.lazyLoad(exports, ["getAccounts","getAccountsOutput"], () => require("./getAccounts"));
 
+export { GetOrganizationArgs, GetOrganizationResult, GetOrganizationOutputArgs } from "./getOrganization";
+export const getOrganization: typeof import("./getOrganization").getOrganization = null as any;
+export const getOrganizationOutput: typeof import("./getOrganization").getOrganizationOutput = null as any;
+utilities.lazyLoad(exports, ["getOrganization","getOrganizationOutput"], () => require("./getOrganization"));
+
+export { GetOrganizationsResult } from "./getOrganizations";
+export const getOrganizations: typeof import("./getOrganizations").getOrganizations = null as any;
+export const getOrganizationsOutput: typeof import("./getOrganizations").getOrganizationsOutput = null as any;
+utilities.lazyLoad(exports, ["getOrganizations","getOrganizationsOutput"], () => require("./getOrganizations"));
+
 export { GetUnitArgs, GetUnitResult, GetUnitOutputArgs } from "./getUnit";
 export const getUnit: typeof import("./getUnit").getUnit = null as any;
 export const getUnitOutput: typeof import("./getUnit").getUnitOutput = null as any;
@@ -29,6 +39,11 @@ export { GetUnitsResult } from "./getUnits";
 export const getUnits: typeof import("./getUnits").getUnits = null as any;
 export const getUnitsOutput: typeof import("./getUnits").getUnitsOutput = null as any;
 utilities.lazyLoad(exports, ["getUnits","getUnitsOutput"], () => require("./getUnits"));
+
+export { OrganizationArgs, OrganizationState } from "./organization";
+export type Organization = import("./organization").Organization;
+export const Organization: typeof import("./organization").Organization = null as any;
+utilities.lazyLoad(exports, ["Organization"], () => require("./organization"));
 
 export { UnitArgs, UnitState } from "./unit";
 export type Unit = import("./unit").Unit;
@@ -42,6 +57,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:organization/account:Account":
                 return new Account(name, <any>undefined, { urn })
+            case "bytepluscc:organization/organization:Organization":
+                return new Organization(name, <any>undefined, { urn })
             case "bytepluscc:organization/unit:Unit":
                 return new Unit(name, <any>undefined, { urn })
             default:
@@ -50,4 +67,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/account", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "organization/organization", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "organization/unit", _module)

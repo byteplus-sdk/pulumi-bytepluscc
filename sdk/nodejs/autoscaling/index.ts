@@ -25,6 +25,16 @@ export const getScalingGroups: typeof import("./getScalingGroups").getScalingGro
 export const getScalingGroupsOutput: typeof import("./getScalingGroups").getScalingGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getScalingGroups","getScalingGroupsOutput"], () => require("./getScalingGroups"));
 
+export { GetScalingLifecycleHookArgs, GetScalingLifecycleHookResult, GetScalingLifecycleHookOutputArgs } from "./getScalingLifecycleHook";
+export const getScalingLifecycleHook: typeof import("./getScalingLifecycleHook").getScalingLifecycleHook = null as any;
+export const getScalingLifecycleHookOutput: typeof import("./getScalingLifecycleHook").getScalingLifecycleHookOutput = null as any;
+utilities.lazyLoad(exports, ["getScalingLifecycleHook","getScalingLifecycleHookOutput"], () => require("./getScalingLifecycleHook"));
+
+export { GetScalingLifecycleHooksResult } from "./getScalingLifecycleHooks";
+export const getScalingLifecycleHooks: typeof import("./getScalingLifecycleHooks").getScalingLifecycleHooks = null as any;
+export const getScalingLifecycleHooksOutput: typeof import("./getScalingLifecycleHooks").getScalingLifecycleHooksOutput = null as any;
+utilities.lazyLoad(exports, ["getScalingLifecycleHooks","getScalingLifecycleHooksOutput"], () => require("./getScalingLifecycleHooks"));
+
 export { GetScalingPoliciesResult } from "./getScalingPolicies";
 export const getScalingPolicies: typeof import("./getScalingPolicies").getScalingPolicies = null as any;
 export const getScalingPoliciesOutput: typeof import("./getScalingPolicies").getScalingPoliciesOutput = null as any;
@@ -45,6 +55,11 @@ export type ScalingGroup = import("./scalingGroup").ScalingGroup;
 export const ScalingGroup: typeof import("./scalingGroup").ScalingGroup = null as any;
 utilities.lazyLoad(exports, ["ScalingGroup"], () => require("./scalingGroup"));
 
+export { ScalingLifecycleHookArgs, ScalingLifecycleHookState } from "./scalingLifecycleHook";
+export type ScalingLifecycleHook = import("./scalingLifecycleHook").ScalingLifecycleHook;
+export const ScalingLifecycleHook: typeof import("./scalingLifecycleHook").ScalingLifecycleHook = null as any;
+utilities.lazyLoad(exports, ["ScalingLifecycleHook"], () => require("./scalingLifecycleHook"));
+
 export { ScalingPolicyArgs, ScalingPolicyState } from "./scalingPolicy";
 export type ScalingPolicy = import("./scalingPolicy").ScalingPolicy;
 export const ScalingPolicy: typeof import("./scalingPolicy").ScalingPolicy = null as any;
@@ -59,6 +74,8 @@ const _module = {
                 return new ScalingConfiguration(name, <any>undefined, { urn })
             case "bytepluscc:autoscaling/scalingGroup:ScalingGroup":
                 return new ScalingGroup(name, <any>undefined, { urn })
+            case "bytepluscc:autoscaling/scalingLifecycleHook:ScalingLifecycleHook":
+                return new ScalingLifecycleHook(name, <any>undefined, { urn })
             case "bytepluscc:autoscaling/scalingPolicy:ScalingPolicy":
                 return new ScalingPolicy(name, <any>undefined, { urn })
             default:
@@ -68,4 +85,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingConfiguration", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingLifecycleHook", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingPolicy", _module)

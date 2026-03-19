@@ -16,11 +16,907 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'IndexFullTextArgs',
+    'IndexFullTextArgsDict',
+    'IndexKeyValueArgs',
+    'IndexKeyValueArgsDict',
+    'IndexKeyValueValueArgs',
+    'IndexKeyValueValueArgsDict',
+    'IndexKeyValueValueJsonKeyArgs',
+    'IndexKeyValueValueJsonKeyArgsDict',
+    'IndexKeyValueValueJsonKeyValueArgs',
+    'IndexKeyValueValueJsonKeyValueArgsDict',
+    'IndexUserInnerKeyValueArgs',
+    'IndexUserInnerKeyValueArgsDict',
+    'IndexUserInnerKeyValueValueArgs',
+    'IndexUserInnerKeyValueValueArgsDict',
+    'IndexUserInnerKeyValueValueJsonKeyArgs',
+    'IndexUserInnerKeyValueValueJsonKeyArgsDict',
+    'IndexUserInnerKeyValueValueJsonKeyValueArgs',
+    'IndexUserInnerKeyValueValueJsonKeyValueArgsDict',
     'ProjectTagArgs',
     'ProjectTagArgsDict',
+    'ScheduleSqlTaskRequestCycleArgs',
+    'ScheduleSqlTaskRequestCycleArgsDict',
+    'TopicTagArgs',
+    'TopicTagArgsDict',
 ]
 
 MYPY = False
+
+if not MYPY:
+    class IndexFullTextArgsDict(TypedDict):
+        case_sensitive: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+        """
+        delimiter: NotRequired[pulumi.Input[builtins.str]]
+        """
+        全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        """
+        include_chinese: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        """
+elif False:
+    IndexFullTextArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexFullTextArgs:
+    def __init__(__self__, *,
+                 case_sensitive: Optional[pulumi.Input[builtins.bool]] = None,
+                 delimiter: Optional[pulumi.Input[builtins.str]] = None,
+                 include_chinese: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.bool] case_sensitive: 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+        :param pulumi.Input[builtins.str] delimiter: 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        :param pulumi.Input[builtins.bool] include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        """
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if include_chinese is not None:
+            pulumi.set(__self__, "include_chinese", include_chinese)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        """
+        return pulumi.get(self, "delimiter")
+
+    @delimiter.setter
+    def delimiter(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "delimiter", value)
+
+    @property
+    @pulumi.getter(name="includeChinese")
+    def include_chinese(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        """
+        return pulumi.get(self, "include_chinese")
+
+    @include_chinese.setter
+    def include_chinese(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "include_chinese", value)
+
+
+if not MYPY:
+    class IndexKeyValueArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        value: NotRequired[pulumi.Input['IndexKeyValueValueArgsDict']]
+        """
+        需要配置键值索引的字段描述信息。
+        """
+elif False:
+    IndexKeyValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexKeyValueArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input['IndexKeyValueValueArgs']] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        :param pulumi.Input['IndexKeyValueValueArgs'] value: 需要配置键值索引的字段描述信息。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input['IndexKeyValueValueArgs']]:
+        """
+        需要配置键值索引的字段描述信息。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input['IndexKeyValueValueArgs']]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class IndexKeyValueValueArgsDict(TypedDict):
+        auto_index_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        case_sensitive: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否区分大小写。默认为 false。
+        """
+        delimiter: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        """
+        include_chinese: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        """
+        index_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        index_sql_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        json_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['IndexKeyValueValueJsonKeyArgsDict']]]]
+        sql_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        value_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+elif False:
+    IndexKeyValueValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexKeyValueValueArgs:
+    def __init__(__self__, *,
+                 auto_index_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 case_sensitive: Optional[pulumi.Input[builtins.bool]] = None,
+                 delimiter: Optional[pulumi.Input[builtins.str]] = None,
+                 include_chinese: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_sql_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 json_keys: Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyValueValueJsonKeyArgs']]]] = None,
+                 sql_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 value_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        :param pulumi.Input[builtins.bool] case_sensitive: 是否区分大小写。默认为 false。
+        :param pulumi.Input[builtins.str] delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        :param pulumi.Input[builtins.bool] include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        :param pulumi.Input[builtins.bool] index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
+        :param pulumi.Input[builtins.bool] index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        :param pulumi.Input[builtins.bool] sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        :param pulumi.Input[builtins.str] value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        if auto_index_flag is not None:
+            pulumi.set(__self__, "auto_index_flag", auto_index_flag)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if include_chinese is not None:
+            pulumi.set(__self__, "include_chinese", include_chinese)
+        if index_all is not None:
+            pulumi.set(__self__, "index_all", index_all)
+        if index_sql_all is not None:
+            pulumi.set(__self__, "index_sql_all", index_sql_all)
+        if json_keys is not None:
+            pulumi.set(__self__, "json_keys", json_keys)
+        if sql_flag is not None:
+            pulumi.set(__self__, "sql_flag", sql_flag)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="autoIndexFlag")
+    def auto_index_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        return pulumi.get(self, "auto_index_flag")
+
+    @auto_index_flag.setter
+    def auto_index_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_index_flag", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否区分大小写。默认为 false。
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        """
+        return pulumi.get(self, "delimiter")
+
+    @delimiter.setter
+    def delimiter(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "delimiter", value)
+
+    @property
+    @pulumi.getter(name="includeChinese")
+    def include_chinese(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        """
+        return pulumi.get(self, "include_chinese")
+
+    @include_chinese.setter
+    def include_chinese(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "include_chinese", value)
+
+    @property
+    @pulumi.getter(name="indexAll")
+    def index_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        return pulumi.get(self, "index_all")
+
+    @index_all.setter
+    def index_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_all", value)
+
+    @property
+    @pulumi.getter(name="indexSqlAll")
+    def index_sql_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        return pulumi.get(self, "index_sql_all")
+
+    @index_sql_all.setter
+    def index_sql_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_sql_all", value)
+
+    @property
+    @pulumi.getter(name="jsonKeys")
+    def json_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyValueValueJsonKeyArgs']]]]:
+        return pulumi.get(self, "json_keys")
+
+    @json_keys.setter
+    def json_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyValueValueJsonKeyArgs']]]]):
+        pulumi.set(self, "json_keys", value)
+
+    @property
+    @pulumi.getter(name="sqlFlag")
+    def sql_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        return pulumi.get(self, "sql_flag")
+
+    @sql_flag.setter
+    def sql_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "sql_flag", value)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        return pulumi.get(self, "value_type")
+
+    @value_type.setter
+    def value_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value_type", value)
+
+
+if not MYPY:
+    class IndexKeyValueValueJsonKeyArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        value: NotRequired[pulumi.Input['IndexKeyValueValueJsonKeyValueArgsDict']]
+        """
+        需要配置键值索引的字段描述信息。
+        """
+elif False:
+    IndexKeyValueValueJsonKeyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexKeyValueValueJsonKeyArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input['IndexKeyValueValueJsonKeyValueArgs']] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        :param pulumi.Input['IndexKeyValueValueJsonKeyValueArgs'] value: 需要配置键值索引的字段描述信息。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input['IndexKeyValueValueJsonKeyValueArgs']]:
+        """
+        需要配置键值索引的字段描述信息。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input['IndexKeyValueValueJsonKeyValueArgs']]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class IndexKeyValueValueJsonKeyValueArgsDict(TypedDict):
+        auto_index_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        index_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        index_sql_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        sql_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        value_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+elif False:
+    IndexKeyValueValueJsonKeyValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexKeyValueValueJsonKeyValueArgs:
+    def __init__(__self__, *,
+                 auto_index_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_sql_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 sql_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 value_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        :param pulumi.Input[builtins.bool] index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
+        :param pulumi.Input[builtins.bool] index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        :param pulumi.Input[builtins.bool] sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        :param pulumi.Input[builtins.str] value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        if auto_index_flag is not None:
+            pulumi.set(__self__, "auto_index_flag", auto_index_flag)
+        if index_all is not None:
+            pulumi.set(__self__, "index_all", index_all)
+        if index_sql_all is not None:
+            pulumi.set(__self__, "index_sql_all", index_sql_all)
+        if sql_flag is not None:
+            pulumi.set(__self__, "sql_flag", sql_flag)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="autoIndexFlag")
+    def auto_index_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        return pulumi.get(self, "auto_index_flag")
+
+    @auto_index_flag.setter
+    def auto_index_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_index_flag", value)
+
+    @property
+    @pulumi.getter(name="indexAll")
+    def index_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        return pulumi.get(self, "index_all")
+
+    @index_all.setter
+    def index_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_all", value)
+
+    @property
+    @pulumi.getter(name="indexSqlAll")
+    def index_sql_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        return pulumi.get(self, "index_sql_all")
+
+    @index_sql_all.setter
+    def index_sql_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_sql_all", value)
+
+    @property
+    @pulumi.getter(name="sqlFlag")
+    def sql_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        return pulumi.get(self, "sql_flag")
+
+    @sql_flag.setter
+    def sql_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "sql_flag", value)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        return pulumi.get(self, "value_type")
+
+    @value_type.setter
+    def value_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value_type", value)
+
+
+if not MYPY:
+    class IndexUserInnerKeyValueArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        value: NotRequired[pulumi.Input['IndexUserInnerKeyValueValueArgsDict']]
+        """
+        需要配置键值索引的字段描述信息。
+        """
+elif False:
+    IndexUserInnerKeyValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexUserInnerKeyValueArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input['IndexUserInnerKeyValueValueArgs']] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        :param pulumi.Input['IndexUserInnerKeyValueValueArgs'] value: 需要配置键值索引的字段描述信息。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input['IndexUserInnerKeyValueValueArgs']]:
+        """
+        需要配置键值索引的字段描述信息。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input['IndexUserInnerKeyValueValueArgs']]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class IndexUserInnerKeyValueValueArgsDict(TypedDict):
+        auto_index_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        case_sensitive: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否区分大小写。默认为 false。
+        """
+        delimiter: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        """
+        include_chinese: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        """
+        index_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        index_sql_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        json_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyArgsDict']]]]
+        sql_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        value_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+elif False:
+    IndexUserInnerKeyValueValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexUserInnerKeyValueValueArgs:
+    def __init__(__self__, *,
+                 auto_index_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 case_sensitive: Optional[pulumi.Input[builtins.bool]] = None,
+                 delimiter: Optional[pulumi.Input[builtins.str]] = None,
+                 include_chinese: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_sql_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 json_keys: Optional[pulumi.Input[Sequence[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyArgs']]]] = None,
+                 sql_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 value_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        :param pulumi.Input[builtins.bool] case_sensitive: 是否区分大小写。默认为 false。
+        :param pulumi.Input[builtins.str] delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        :param pulumi.Input[builtins.bool] include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        :param pulumi.Input[builtins.bool] index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
+        :param pulumi.Input[builtins.bool] index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        :param pulumi.Input[builtins.bool] sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        :param pulumi.Input[builtins.str] value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        if auto_index_flag is not None:
+            pulumi.set(__self__, "auto_index_flag", auto_index_flag)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if include_chinese is not None:
+            pulumi.set(__self__, "include_chinese", include_chinese)
+        if index_all is not None:
+            pulumi.set(__self__, "index_all", index_all)
+        if index_sql_all is not None:
+            pulumi.set(__self__, "index_sql_all", index_sql_all)
+        if json_keys is not None:
+            pulumi.set(__self__, "json_keys", json_keys)
+        if sql_flag is not None:
+            pulumi.set(__self__, "sql_flag", sql_flag)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="autoIndexFlag")
+    def auto_index_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        return pulumi.get(self, "auto_index_flag")
+
+    @auto_index_flag.setter
+    def auto_index_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_index_flag", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否区分大小写。默认为 false。
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        """
+        return pulumi.get(self, "delimiter")
+
+    @delimiter.setter
+    def delimiter(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "delimiter", value)
+
+    @property
+    @pulumi.getter(name="includeChinese")
+    def include_chinese(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        """
+        return pulumi.get(self, "include_chinese")
+
+    @include_chinese.setter
+    def include_chinese(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "include_chinese", value)
+
+    @property
+    @pulumi.getter(name="indexAll")
+    def index_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        return pulumi.get(self, "index_all")
+
+    @index_all.setter
+    def index_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_all", value)
+
+    @property
+    @pulumi.getter(name="indexSqlAll")
+    def index_sql_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        return pulumi.get(self, "index_sql_all")
+
+    @index_sql_all.setter
+    def index_sql_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_sql_all", value)
+
+    @property
+    @pulumi.getter(name="jsonKeys")
+    def json_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyArgs']]]]:
+        return pulumi.get(self, "json_keys")
+
+    @json_keys.setter
+    def json_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyArgs']]]]):
+        pulumi.set(self, "json_keys", value)
+
+    @property
+    @pulumi.getter(name="sqlFlag")
+    def sql_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        return pulumi.get(self, "sql_flag")
+
+    @sql_flag.setter
+    def sql_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "sql_flag", value)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        return pulumi.get(self, "value_type")
+
+    @value_type.setter
+    def value_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value_type", value)
+
+
+if not MYPY:
+    class IndexUserInnerKeyValueValueJsonKeyArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        value: NotRequired[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyValueArgsDict']]
+        """
+        需要配置键值索引的字段描述信息。
+        """
+elif False:
+    IndexUserInnerKeyValueValueJsonKeyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexUserInnerKeyValueValueJsonKeyArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyValueArgs']] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        :param pulumi.Input['IndexUserInnerKeyValueValueJsonKeyValueArgs'] value: 需要配置键值索引的字段描述信息。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyValueArgs']]:
+        """
+        需要配置键值索引的字段描述信息。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input['IndexUserInnerKeyValueValueJsonKeyValueArgs']]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class IndexUserInnerKeyValueValueJsonKeyValueArgsDict(TypedDict):
+        auto_index_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        index_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        index_sql_all: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        sql_flag: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        value_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+elif False:
+    IndexUserInnerKeyValueValueJsonKeyValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IndexUserInnerKeyValueValueJsonKeyValueArgs:
+    def __init__(__self__, *,
+                 auto_index_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 index_sql_all: Optional[pulumi.Input[builtins.bool]] = None,
+                 sql_flag: Optional[pulumi.Input[builtins.bool]] = None,
+                 value_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        :param pulumi.Input[builtins.bool] index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
+        :param pulumi.Input[builtins.bool] index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        :param pulumi.Input[builtins.bool] sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        :param pulumi.Input[builtins.str] value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        if auto_index_flag is not None:
+            pulumi.set(__self__, "auto_index_flag", auto_index_flag)
+        if index_all is not None:
+            pulumi.set(__self__, "index_all", index_all)
+        if index_sql_all is not None:
+            pulumi.set(__self__, "index_sql_all", index_sql_all)
+        if sql_flag is not None:
+            pulumi.set(__self__, "sql_flag", sql_flag)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="autoIndexFlag")
+    def auto_index_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        """
+        return pulumi.get(self, "auto_index_flag")
+
+    @auto_index_flag.setter
+    def auto_index_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_index_flag", value)
+
+    @property
+    @pulumi.getter(name="indexAll")
+    def index_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段中所有值为文本的字段创建索引。
+        """
+        return pulumi.get(self, "index_all")
+
+    @index_all.setter
+    def index_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_all", value)
+
+    @property
+    @pulumi.getter(name="indexSqlAll")
+    def index_sql_all(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        """
+        return pulumi.get(self, "index_sql_all")
+
+    @index_sql_all.setter
+    def index_sql_all(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "index_sql_all", value)
+
+    @property
+    @pulumi.getter(name="sqlFlag")
+    def sql_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        """
+        return pulumi.get(self, "sql_flag")
+
+    @sql_flag.setter
+    def sql_flag(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "sql_flag", value)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        """
+        return pulumi.get(self, "value_type")
+
+    @value_type.setter
+    def value_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value_type", value)
+
 
 if not MYPY:
     class ProjectTagArgsDict(TypedDict):
@@ -66,6 +962,148 @@ class ProjectTagArgs:
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         标签值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class ScheduleSqlTaskRequestCycleArgsDict(TypedDict):
+        time: pulumi.Input[builtins.int]
+        """
+        调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+        """
+        type: pulumi.Input[builtins.str]
+        """
+        调度周期类型。可选值：Period、Fixed、Cron。
+        """
+        cron_tab: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+        """
+        cron_time_zone: NotRequired[pulumi.Input[builtins.str]]
+        """
+        设置 Type 为 Cron 时，还需设置时区。
+        """
+elif False:
+    ScheduleSqlTaskRequestCycleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ScheduleSqlTaskRequestCycleArgs:
+    def __init__(__self__, *,
+                 time: pulumi.Input[builtins.int],
+                 type: pulumi.Input[builtins.str],
+                 cron_tab: Optional[pulumi.Input[builtins.str]] = None,
+                 cron_time_zone: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.int] time: 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+        :param pulumi.Input[builtins.str] type: 调度周期类型。可选值：Period、Fixed、Cron。
+        :param pulumi.Input[builtins.str] cron_tab: Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+        :param pulumi.Input[builtins.str] cron_time_zone: 设置 Type 为 Cron 时，还需设置时区。
+        """
+        pulumi.set(__self__, "time", time)
+        pulumi.set(__self__, "type", type)
+        if cron_tab is not None:
+            pulumi.set(__self__, "cron_tab", cron_tab)
+        if cron_time_zone is not None:
+            pulumi.set(__self__, "cron_time_zone", cron_time_zone)
+
+    @property
+    @pulumi.getter
+    def time(self) -> pulumi.Input[builtins.int]:
+        """
+        调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+        """
+        return pulumi.get(self, "time")
+
+    @time.setter
+    def time(self, value: pulumi.Input[builtins.int]):
+        pulumi.set(self, "time", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[builtins.str]:
+        """
+        调度周期类型。可选值：Period、Fixed、Cron。
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="cronTab")
+    def cron_tab(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+        """
+        return pulumi.get(self, "cron_tab")
+
+    @cron_tab.setter
+    def cron_tab(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cron_tab", value)
+
+    @property
+    @pulumi.getter(name="cronTimeZone")
+    def cron_time_zone(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        设置 Type 为 Cron 时，还需设置时区。
+        """
+        return pulumi.get(self, "cron_time_zone")
+
+    @cron_time_zone.setter
+    def cron_time_zone(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cron_time_zone", value)
+
+
+if not MYPY:
+    class TopicTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        用户标签的标签值。
+        """
+elif False:
+    TopicTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TopicTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
+        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        用户标签的标签值。
         """
         return pulumi.get(self, "value")
 

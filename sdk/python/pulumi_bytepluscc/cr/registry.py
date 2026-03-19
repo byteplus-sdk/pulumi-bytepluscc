@@ -24,17 +24,21 @@ class RegistryArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[builtins.str],
                  project: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input['RegistryStatusArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['RegistryTagArgs']]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Registry resource.
         :param pulumi.Input[builtins.str] name: 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
         :param pulumi.Input[builtins.str] project: 填写实例需要关联的项目。一个实例仅支持关联一个项目
+        :param pulumi.Input['RegistryStatusArgs'] status: 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
         :param pulumi.Input[builtins.str] type: 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
         """
         pulumi.set(__self__, "name", name)
         if project is not None:
             pulumi.set(__self__, "project", project)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
         if type is not None:
@@ -63,6 +67,18 @@ class RegistryArgs:
     @project.setter
     def project(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "project", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input['RegistryStatusArgs']]:
+        """
+        镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input['RegistryStatusArgs']]):
+        pulumi.set(self, "status", value)
 
     @property
     @pulumi.getter
@@ -274,6 +290,7 @@ class Registry(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  project: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RegistryTagArgs', 'RegistryTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -306,6 +323,7 @@ class Registry(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] name: 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
         :param pulumi.Input[builtins.str] project: 填写实例需要关联的项目。一个实例仅支持关联一个项目
+        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
         :param pulumi.Input[builtins.str] type: 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
         """
         ...
@@ -356,6 +374,7 @@ class Registry(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  project: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RegistryTagArgs', 'RegistryTagArgsDict']]]]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -371,6 +390,7 @@ class Registry(pulumi.CustomResource):
                 raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["project"] = project
+            __props__.__dict__["status"] = status
             __props__.__dict__["tags"] = tags
             __props__.__dict__["type"] = type
             __props__.__dict__["charge_type"] = None
@@ -379,7 +399,6 @@ class Registry(pulumi.CustomResource):
             __props__.__dict__["proxy_cache"] = None
             __props__.__dict__["proxy_cache_enabled"] = None
             __props__.__dict__["renew_type"] = None
-            __props__.__dict__["status"] = None
         super(Registry, __self__).__init__(
             'bytepluscc:cr/registry:Registry',
             resource_name,
