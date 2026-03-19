@@ -17,12 +17,14 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'DatabaseDatabasesPrivilege',
     'InstanceChargeDetail',
     'InstanceEndpoint',
     'InstanceEndpointAddress',
     'InstanceMaintenanceWindow',
     'InstanceNode',
     'InstanceTag',
+    'GetDatabaseDatabasesPrivilegeResult',
     'GetInstanceChargeDetailResult',
     'GetInstanceEndpointResult',
     'GetInstanceEndpointAddressResult',
@@ -30,6 +32,70 @@ __all__ = [
     'GetInstanceNodeResult',
     'GetInstanceTagResult',
 ]
+
+@pulumi.output_type
+class DatabaseDatabasesPrivilege(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accountName":
+            suggest = "account_name"
+        elif key == "accountPrivilege":
+            suggest = "account_privilege"
+        elif key == "accountPrivilegeDetails":
+            suggest = "account_privilege_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabasesPrivilege. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDatabasesPrivilege.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDatabasesPrivilege.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 account_name: Optional[builtins.str] = None,
+                 account_privilege: Optional[builtins.str] = None,
+                 account_privilege_details: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.str account_name: 需授权的账号名称
+        :param builtins.str account_privilege: 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        :param Sequence[builtins.str] account_privilege_details: 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        """
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if account_privilege is not None:
+            pulumi.set(__self__, "account_privilege", account_privilege)
+        if account_privilege_details is not None:
+            pulumi.set(__self__, "account_privilege_details", account_privilege_details)
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> Optional[builtins.str]:
+        """
+        需授权的账号名称
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter(name="accountPrivilege")
+    def account_privilege(self) -> Optional[builtins.str]:
+        """
+        授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        """
+        return pulumi.get(self, "account_privilege")
+
+    @property
+    @pulumi.getter(name="accountPrivilegeDetails")
+    def account_privilege_details(self) -> Optional[Sequence[builtins.str]]:
+        """
+        具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        """
+        return pulumi.get(self, "account_privilege_details")
+
 
 @pulumi.output_type
 class InstanceChargeDetail(dict):
@@ -646,6 +712,46 @@ class InstanceTag(dict):
         用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDatabaseDatabasesPrivilegeResult(dict):
+    def __init__(__self__, *,
+                 account_name: builtins.str,
+                 account_privilege: builtins.str,
+                 account_privilege_details: Sequence[builtins.str]):
+        """
+        :param builtins.str account_name: 需授权的账号名称
+        :param builtins.str account_privilege: 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        :param Sequence[builtins.str] account_privilege_details: 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        """
+        pulumi.set(__self__, "account_name", account_name)
+        pulumi.set(__self__, "account_privilege", account_privilege)
+        pulumi.set(__self__, "account_privilege_details", account_privilege_details)
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> builtins.str:
+        """
+        需授权的账号名称
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter(name="accountPrivilege")
+    def account_privilege(self) -> builtins.str:
+        """
+        授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        """
+        return pulumi.get(self, "account_privilege")
+
+    @property
+    @pulumi.getter(name="accountPrivilegeDetails")
+    def account_privilege_details(self) -> Sequence[builtins.str]:
+        """
+        具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        """
+        return pulumi.get(self, "account_privilege_details")
 
 
 @pulumi.output_type

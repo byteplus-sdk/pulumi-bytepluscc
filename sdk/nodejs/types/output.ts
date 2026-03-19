@@ -2859,6 +2859,17 @@ export namespace autoscaling {
         value: string;
     }
 
+    export interface GetScalingLifecycleHookLifecycleCommand {
+        /**
+         * 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+         */
+        commandId: string;
+        /**
+         * 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+         */
+        parameters: string;
+    }
+
     export interface GetScalingPolicyAlarmPolicy {
         /**
          * 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
@@ -3066,6 +3077,17 @@ export namespace autoscaling {
          * 用户标签的标签值。
          */
         value: string;
+    }
+
+    export interface ScalingLifecycleHookLifecycleCommand {
+        /**
+         * 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+         */
+        commandId: string;
+        /**
+         * 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+         */
+        parameters: string;
     }
 
     export interface ScalingPolicyAlarmPolicy {
@@ -7258,6 +7280,754 @@ export namespace ecs {
 
 }
 
+export namespace emr {
+    export interface ClusterApplication {
+        /**
+         * 应用配置路径。
+         */
+        applicationConfigHome: string;
+        /**
+         * 应用安装路径。
+         */
+        applicationHome: string;
+        /**
+         * 应用名称。
+         */
+        applicationName: string;
+        /**
+         * 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+         */
+        applicationState: string;
+        /**
+         * 应用版本。
+         */
+        applicationVersion: string;
+        /**
+         * 应用用户组。
+         */
+        group: string;
+        /**
+         * 是否支持客户端。
+         */
+        supportClient: boolean;
+        /**
+         * 应用用户。
+         */
+        user: string;
+    }
+
+    export interface ClusterApplicationExtra {
+        applicationComponentLayouts: outputs.emr.ClusterApplicationExtraApplicationComponentLayout[];
+        applicationConfigs: outputs.emr.ClusterApplicationExtraApplicationConfig[];
+        /**
+         * 应用名称。
+         */
+        applicationName: string;
+        /**
+         * 元数据连接id。
+         */
+        connectionId: string;
+        /**
+         * 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+         */
+        connectionType: string;
+    }
+
+    export interface ClusterApplicationExtraApplicationComponentLayout {
+        /**
+         * 组件名称。
+         */
+        componentName: string;
+        /**
+         * 组件的布局范围。
+         */
+        effectiveScope: outputs.emr.ClusterApplicationExtraApplicationComponentLayoutEffectiveScope;
+    }
+
+    export interface ClusterApplicationExtraApplicationComponentLayoutEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames: string[];
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType: string;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds: string[];
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames: string[];
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes: string[];
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds: string[];
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames: string[];
+    }
+
+    export interface ClusterApplicationExtraApplicationConfig {
+        /**
+         * 组件实例名称。
+         */
+        componentInstanceName: string;
+        /**
+         * 组件名称。
+         */
+        componentName: string;
+        /**
+         * 配置文件名。
+         */
+        configFileName: string;
+        /**
+         * 配置项名称。
+         */
+        configItemKey: string;
+        /**
+         * 配置项值。
+         */
+        configItemValue: string;
+        /**
+         * 是否删除。
+         */
+        deleted: boolean;
+        /**
+         * 影响组件。
+         */
+        effectiveScope: outputs.emr.ClusterApplicationExtraApplicationConfigEffectiveScope;
+    }
+
+    export interface ClusterApplicationExtraApplicationConfigEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames: string[];
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType: string;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds: string[];
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames: string[];
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes: string[];
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds: string[];
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames: string[];
+    }
+
+    export interface ClusterBootstrapScript {
+        /**
+         * 脚本执行范围。
+         */
+        effectiveScope: outputs.emr.ClusterBootstrapScriptEffectiveScope;
+        /**
+         * 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+         */
+        executionFailStrategy: string;
+        /**
+         * 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+         */
+        executionMoment: string;
+        /**
+         * 脚本执行优先级。取值范围：1~1000。默认值1。
+         */
+        priority: string;
+        /**
+         * 脚本参数。
+         */
+        scriptArgs: string;
+        /**
+         * 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         */
+        scriptName: string;
+        /**
+         * 脚本所在TOS路径。必填。以 tos:： 开头。
+         */
+        scriptPath: string;
+        /**
+         * 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+         */
+        scriptType: string;
+    }
+
+    export interface ClusterBootstrapScriptEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames: string[];
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType: string;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds: string[];
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames: string[];
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes: string[];
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds: string[];
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames: string[];
+    }
+
+    export interface ClusterChargePreConfig {
+        /**
+         * 是否开启自动续费。取值范围：true：开启。false：不开启。
+         */
+        autoRenew: boolean;
+        /**
+         * 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+         */
+        autoRenewPeriod: number;
+        /**
+         * 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         */
+        autoRenewPeriodUnit: string;
+        /**
+         * chargeType=PRE默认值=1，包月的购买时长单位。
+         */
+        chargePeriod: number;
+        /**
+         * chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+         */
+        chargePeriodUnit: string;
+        /**
+         * 付费类型，取值范围：PRE，POST。
+         */
+        chargeType: string;
+    }
+
+    export interface ClusterNodeAttribute {
+        /**
+         * ECS实例角色。
+         */
+        ecsIamRole: string;
+        /**
+         * 可用区ID。
+         */
+        zoneId: string;
+    }
+
+    export interface ClusterNodeGroupAttribute {
+        /**
+         * 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+         */
+        bandwidth: number;
+        /**
+         * 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+         */
+        chargeType: string;
+        dataDisks: outputs.emr.ClusterNodeGroupAttributeDataDisk[];
+        /**
+         * 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+         */
+        ecsInstanceTypes: string[];
+        /**
+         * ecs的密钥对名称。
+         */
+        ecsKeyPairName: string;
+        /**
+         * Ecs root账号的密码。
+         */
+        ecsPassword: string;
+        /**
+         * 节点组当前期望购买的节点数量。
+         */
+        nodeCount: number;
+        /**
+         * 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         */
+        nodeGroupName: string;
+        /**
+         * 节点组类型。
+         */
+        nodeGroupType: string;
+        /**
+         * 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+         */
+        subnetIds: string[];
+        /**
+         * 系统盘配置。
+         */
+        systemDisk: outputs.emr.ClusterNodeGroupAttributeSystemDisk;
+        /**
+         * 是否挂载公网ip。
+         */
+        withPublicIp: boolean;
+        /**
+         * 可用区ID。
+         */
+        zoneId: string;
+    }
+
+    export interface ClusterNodeGroupAttributeDataDisk {
+        /**
+         * 磁盘块数，默认值4，最大15，最小1。
+         */
+        count: number;
+        /**
+         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size: number;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+         */
+        volumeType: string;
+    }
+
+    export interface ClusterNodeGroupAttributeSystemDisk {
+        /**
+         * 磁盘大小。
+         */
+        size: number;
+        /**
+         * 磁盘类型。
+         */
+        volumeType: string;
+    }
+
+    export interface ClusterStateChangeReason {
+        /**
+         * 状态更新码。
+         */
+        code: string;
+        /**
+         * 状态更新原因。
+         */
+        reason: string;
+    }
+
+    export interface ClusterTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface GetClusterApplication {
+        /**
+         * 应用配置路径。
+         */
+        applicationConfigHome: string;
+        /**
+         * 应用安装路径。
+         */
+        applicationHome: string;
+        /**
+         * 应用名称。
+         */
+        applicationName: string;
+        /**
+         * 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+         */
+        applicationState: string;
+        /**
+         * 应用版本。
+         */
+        applicationVersion: string;
+        /**
+         * 应用用户组。
+         */
+        group: string;
+        /**
+         * 是否支持客户端。
+         */
+        supportClient: boolean;
+        /**
+         * 应用用户。
+         */
+        user: string;
+    }
+
+    export interface GetClusterApplicationExtra {
+        /**
+         * 服务组件的自定义部署拓扑列表。
+         */
+        applicationComponentLayouts: outputs.emr.GetClusterApplicationExtraApplicationComponentLayout[];
+        /**
+         * 服务的自定义配置参数列表。
+         */
+        applicationConfigs: outputs.emr.GetClusterApplicationExtraApplicationConfig[];
+        /**
+         * 应用名称。
+         */
+        applicationName: string;
+        /**
+         * 元数据连接id。
+         */
+        connectionId: string;
+        /**
+         * 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+         */
+        connectionType: string;
+    }
+
+    export interface GetClusterApplicationExtraApplicationComponentLayout {
+        /**
+         * 组件名称。
+         */
+        componentName: string;
+        /**
+         * 组件的布局范围。
+         */
+        effectiveScope: outputs.emr.GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope;
+    }
+
+    export interface GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames: string[];
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType: string;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds: string[];
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames: string[];
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes: string[];
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds: string[];
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames: string[];
+    }
+
+    export interface GetClusterApplicationExtraApplicationConfig {
+        /**
+         * 组件实例名称。
+         */
+        componentInstanceName: string;
+        /**
+         * 组件名称。
+         */
+        componentName: string;
+        /**
+         * 配置文件名。
+         */
+        configFileName: string;
+        /**
+         * 配置项名称。
+         */
+        configItemKey: string;
+        /**
+         * 配置项值。
+         */
+        configItemValue: string;
+        /**
+         * 是否删除。
+         */
+        deleted: boolean;
+        /**
+         * 影响组件。
+         */
+        effectiveScope: outputs.emr.GetClusterApplicationExtraApplicationConfigEffectiveScope;
+    }
+
+    export interface GetClusterApplicationExtraApplicationConfigEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames: string[];
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType: string;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds: string[];
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames: string[];
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes: string[];
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds: string[];
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames: string[];
+    }
+
+    export interface GetClusterBootstrapScript {
+        /**
+         * 脚本执行范围。
+         */
+        effectiveScope: outputs.emr.GetClusterBootstrapScriptEffectiveScope;
+        /**
+         * 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+         */
+        executionFailStrategy: string;
+        /**
+         * 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+         */
+        executionMoment: string;
+        /**
+         * 脚本执行优先级。取值范围：1~1000。默认值1。
+         */
+        priority: string;
+        /**
+         * 脚本参数。
+         */
+        scriptArgs: string;
+        /**
+         * 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         */
+        scriptName: string;
+        /**
+         * 脚本所在TOS路径。必填。以 tos:： 开头。
+         */
+        scriptPath: string;
+        /**
+         * 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+         */
+        scriptType: string;
+    }
+
+    export interface GetClusterBootstrapScriptEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames: string[];
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType: string;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds: string[];
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames: string[];
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes: string[];
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds: string[];
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames: string[];
+    }
+
+    export interface GetClusterChargePreConfig {
+        /**
+         * 是否开启自动续费。取值范围：true：开启。false：不开启。
+         */
+        autoRenew: boolean;
+        /**
+         * 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+         */
+        autoRenewPeriod: number;
+        /**
+         * 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         */
+        autoRenewPeriodUnit: string;
+        /**
+         * chargeType=PRE默认值=1，包月的购买时长单位。
+         */
+        chargePeriod: number;
+        /**
+         * chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+         */
+        chargePeriodUnit: string;
+        /**
+         * 付费类型，取值范围：PRE，POST。
+         */
+        chargeType: string;
+    }
+
+    export interface GetClusterNodeAttribute {
+        /**
+         * ECS实例角色。
+         */
+        ecsIamRole: string;
+        /**
+         * 可用区ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetClusterNodeGroupAttribute {
+        /**
+         * 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+         */
+        bandwidth: number;
+        /**
+         * 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+         */
+        chargeType: string;
+        /**
+         * 节点组创建时间。
+         */
+        createTime: number;
+        /**
+         * 数据盘配置。当前单个节点组内只支持同规格的数据盘。即List的长度限制为1。
+         */
+        dataDisks: outputs.emr.GetClusterNodeGroupAttributeDataDisk[];
+        /**
+         * 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+         */
+        ecsInstanceTypes: string[];
+        /**
+         * ecs的密钥对名称。
+         */
+        ecsKeyPairName: string;
+        /**
+         * Ecs root账号的密码。
+         */
+        ecsPassword: string;
+        /**
+         * 部署的组件名称列表。
+         */
+        layoutComponentNames: string[];
+        /**
+         * 节点组当前期望购买的节点数量。
+         */
+        nodeCount: number;
+        /**
+         * 节点组ID。
+         */
+        nodeGroupId: string;
+        /**
+         * 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         */
+        nodeGroupName: string;
+        /**
+         * 节点组状态。RUNNING,运行中。EXTENDING，扩容中。REDUCING，缩容中。DISK_EXTENDING，磁盘扩容中。MODIFYING，变配中
+         */
+        nodeGroupState: string;
+        /**
+         * 节点组类型。
+         */
+        nodeGroupType: string;
+        /**
+         * 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+         */
+        subnetIds: string[];
+        /**
+         * 系统盘配置。
+         */
+        systemDisk: outputs.emr.GetClusterNodeGroupAttributeSystemDisk;
+        /**
+         * 是否挂载公网ip。
+         */
+        withPublicIp: boolean;
+        /**
+         * 可用区ID。
+         */
+        zoneId: string;
+    }
+
+    export interface GetClusterNodeGroupAttributeDataDisk {
+        /**
+         * 磁盘块数，默认值4，最大15，最小1。
+         */
+        count: number;
+        /**
+         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size: number;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+         */
+        volumeType: string;
+    }
+
+    export interface GetClusterNodeGroupAttributeSystemDisk {
+        /**
+         * 磁盘大小。
+         */
+        size: number;
+        /**
+         * 磁盘类型。
+         */
+        volumeType: string;
+    }
+
+    export interface GetClusterStateChangeReason {
+        /**
+         * 状态更新码。
+         */
+        code: string;
+        /**
+         * 状态更新原因。
+         */
+        reason: string;
+    }
+
+    export interface GetClusterTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+}
+
 export namespace escloud {
     export interface GetInstanceInstanceConfiguration {
         /**
@@ -10116,6 +10886,98 @@ export namespace organization {
         value: string;
     }
 
+    export interface GetOrganizationOrganization {
+        /**
+         * 创建时间
+         */
+        createdTime: string;
+        /**
+         * 描述
+         */
+        description: string;
+        /**
+         * 组织名称
+         */
+        name: string;
+        /**
+         * 管理员ID
+         */
+        owner: string;
+        /**
+         * 状态
+         */
+        status: number;
+        /**
+         * 组织类型，企业组织固定是 1
+         */
+        type: number;
+        /**
+         * 更新时间
+         */
+        updatedTime: string;
+    }
+
+    export interface GetOrganizationOwner {
+        /**
+         * 账号ID
+         */
+        accountId: number;
+        /**
+         * 账号名称
+         */
+        accountName: string;
+        /**
+         * 主体名称
+         */
+        mainName: string;
+    }
+
+    export interface OrganizationOrganization {
+        /**
+         * 创建时间
+         */
+        createdTime: string;
+        /**
+         * 描述
+         */
+        description: string;
+        /**
+         * 组织名称
+         */
+        name: string;
+        /**
+         * 管理员ID
+         */
+        owner: string;
+        /**
+         * 状态
+         */
+        status: number;
+        /**
+         * 组织类型，企业组织固定是 1
+         */
+        type: number;
+        /**
+         * 更新时间
+         */
+        updatedTime: string;
+    }
+
+    export interface OrganizationOwner {
+        /**
+         * 账号ID
+         */
+        accountId: number;
+        /**
+         * 账号名称
+         */
+        accountName: string;
+        /**
+         * 主体名称
+         */
+        mainName: string;
+    }
+
 }
 
 export namespace privatelink {
@@ -12471,6 +13333,213 @@ export namespace storageebs {
 }
 
 export namespace tls {
+    export interface GetIndexFullText {
+        /**
+         * 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+         */
+        caseSensitive: boolean;
+        /**
+         * 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+    }
+
+    export interface GetIndexKeyValue {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.GetIndexKeyValueValue;
+    }
+
+    export interface GetIndexKeyValueValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive: boolean;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        /**
+         * 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+         */
+        jsonKeys: outputs.tls.GetIndexKeyValueValueJsonKey[];
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
+    export interface GetIndexKeyValueValueJsonKey {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.GetIndexKeyValueValueJsonKeyValue;
+    }
+
+    export interface GetIndexKeyValueValueJsonKeyValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive: boolean;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
+    export interface GetIndexUserInnerKeyValue {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.GetIndexUserInnerKeyValueValue;
+    }
+
+    export interface GetIndexUserInnerKeyValueValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive: boolean;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        /**
+         * 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+         */
+        jsonKeys: outputs.tls.GetIndexUserInnerKeyValueValueJsonKey[];
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
+    export interface GetIndexUserInnerKeyValueValueJsonKey {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.GetIndexUserInnerKeyValueValueJsonKeyValue;
+    }
+
+    export interface GetIndexUserInnerKeyValueValueJsonKeyValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive: boolean;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
     export interface GetProjectTag {
         /**
          * 标签键。
@@ -12482,6 +13551,213 @@ export namespace tls {
         value: string;
     }
 
+    export interface GetScheduleSqlTaskRequestCycle {
+        /**
+         * Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+         */
+        cronTab: string;
+        /**
+         * 设置 Type 为 Cron 时，还需设置时区。
+         */
+        cronTimeZone: string;
+        /**
+         * 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+         */
+        time: number;
+        /**
+         * 调度周期类型。可选值：Period、Fixed、Cron。
+         */
+        type: string;
+    }
+
+    export interface GetTopicTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
+         */
+        value: string;
+    }
+
+    export interface IndexFullText {
+        /**
+         * 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+         */
+        caseSensitive: boolean;
+        /**
+         * 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+    }
+
+    export interface IndexKeyValue {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.IndexKeyValueValue;
+    }
+
+    export interface IndexKeyValueValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive: boolean;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        jsonKeys: outputs.tls.IndexKeyValueValueJsonKey[];
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
+    export interface IndexKeyValueValueJsonKey {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.IndexKeyValueValueJsonKeyValue;
+    }
+
+    export interface IndexKeyValueValueJsonKeyValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
+    export interface IndexUserInnerKeyValue {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.IndexUserInnerKeyValueValue;
+    }
+
+    export interface IndexUserInnerKeyValueValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive: boolean;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter: string;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        jsonKeys: outputs.tls.IndexUserInnerKeyValueValueJsonKey[];
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
+    export interface IndexUserInnerKeyValueValueJsonKey {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key: string;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value: outputs.tls.IndexUserInnerKeyValueValueJsonKeyValue;
+    }
+
+    export interface IndexUserInnerKeyValueValueJsonKeyValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag: boolean;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll: boolean;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll: boolean;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag: boolean;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType: string;
+    }
+
     export interface ProjectTag {
         /**
          * 标签键。
@@ -12489,6 +13765,36 @@ export namespace tls {
         key: string;
         /**
          * 标签值。
+         */
+        value: string;
+    }
+
+    export interface ScheduleSqlTaskRequestCycle {
+        /**
+         * Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+         */
+        cronTab: string;
+        /**
+         * 设置 Type 为 Cron 时，还需设置时区。
+         */
+        cronTimeZone: string;
+        /**
+         * 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+         */
+        time: number;
+        /**
+         * 调度周期类型。可选值：Period、Fixed、Cron。
+         */
+        type: string;
+    }
+
+    export interface TopicTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key: string;
+        /**
+         * 用户标签的标签值。
          */
         value: string;
     }
@@ -12790,6 +14096,36 @@ export namespace transitrouter {
 }
 
 export namespace vedbm {
+    export interface DatabaseDatabasesPrivilege {
+        /**
+         * 需授权的账号名称
+         */
+        accountName: string;
+        /**
+         * 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+         */
+        accountPrivilege: string;
+        /**
+         * 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+         */
+        accountPrivilegeDetails: string[];
+    }
+
+    export interface GetDatabaseDatabasesPrivilege {
+        /**
+         * 需授权的账号名称
+         */
+        accountName: string;
+        /**
+         * 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+         */
+        accountPrivilege: string;
+        /**
+         * 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+         */
+        accountPrivilegeDetails: string[];
+    }
+
     export interface GetInstanceChargeDetail {
         /**
          * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。

@@ -6,6 +6,12 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .backup import *
+from .database import *
+from .get_backup import *
+from .get_backups import *
+from .get_database import *
+from .get_databases import *
 from .get_instance import *
 from .get_instances import *
 from .instance import *

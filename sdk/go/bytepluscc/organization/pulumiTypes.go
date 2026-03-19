@@ -351,6 +351,432 @@ func (o AccountTagArrayOutput) Index(i pulumi.IntInput) AccountTagOutput {
 	}).(AccountTagOutput)
 }
 
+type OrganizationOrganization struct {
+	// 创建时间
+	CreatedTime *string `pulumi:"createdTime"`
+	// 描述
+	Description *string `pulumi:"description"`
+	// 组织名称
+	Name *string `pulumi:"name"`
+	// 管理员ID
+	Owner *string `pulumi:"owner"`
+	// 状态
+	Status *int `pulumi:"status"`
+	// 组织类型，企业组织固定是 1
+	Type *int `pulumi:"type"`
+	// 更新时间
+	UpdatedTime *string `pulumi:"updatedTime"`
+}
+
+// OrganizationOrganizationInput is an input type that accepts OrganizationOrganizationArgs and OrganizationOrganizationOutput values.
+// You can construct a concrete instance of `OrganizationOrganizationInput` via:
+//
+//	OrganizationOrganizationArgs{...}
+type OrganizationOrganizationInput interface {
+	pulumi.Input
+
+	ToOrganizationOrganizationOutput() OrganizationOrganizationOutput
+	ToOrganizationOrganizationOutputWithContext(context.Context) OrganizationOrganizationOutput
+}
+
+type OrganizationOrganizationArgs struct {
+	// 创建时间
+	CreatedTime pulumi.StringPtrInput `pulumi:"createdTime"`
+	// 描述
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// 组织名称
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// 管理员ID
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// 状态
+	Status pulumi.IntPtrInput `pulumi:"status"`
+	// 组织类型，企业组织固定是 1
+	Type pulumi.IntPtrInput `pulumi:"type"`
+	// 更新时间
+	UpdatedTime pulumi.StringPtrInput `pulumi:"updatedTime"`
+}
+
+func (OrganizationOrganizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationOrganization)(nil)).Elem()
+}
+
+func (i OrganizationOrganizationArgs) ToOrganizationOrganizationOutput() OrganizationOrganizationOutput {
+	return i.ToOrganizationOrganizationOutputWithContext(context.Background())
+}
+
+func (i OrganizationOrganizationArgs) ToOrganizationOrganizationOutputWithContext(ctx context.Context) OrganizationOrganizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationOrganizationOutput)
+}
+
+func (i OrganizationOrganizationArgs) ToOrganizationOrganizationPtrOutput() OrganizationOrganizationPtrOutput {
+	return i.ToOrganizationOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (i OrganizationOrganizationArgs) ToOrganizationOrganizationPtrOutputWithContext(ctx context.Context) OrganizationOrganizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationOrganizationOutput).ToOrganizationOrganizationPtrOutputWithContext(ctx)
+}
+
+// OrganizationOrganizationPtrInput is an input type that accepts OrganizationOrganizationArgs, OrganizationOrganizationPtr and OrganizationOrganizationPtrOutput values.
+// You can construct a concrete instance of `OrganizationOrganizationPtrInput` via:
+//
+//	        OrganizationOrganizationArgs{...}
+//
+//	or:
+//
+//	        nil
+type OrganizationOrganizationPtrInput interface {
+	pulumi.Input
+
+	ToOrganizationOrganizationPtrOutput() OrganizationOrganizationPtrOutput
+	ToOrganizationOrganizationPtrOutputWithContext(context.Context) OrganizationOrganizationPtrOutput
+}
+
+type organizationOrganizationPtrType OrganizationOrganizationArgs
+
+func OrganizationOrganizationPtr(v *OrganizationOrganizationArgs) OrganizationOrganizationPtrInput {
+	return (*organizationOrganizationPtrType)(v)
+}
+
+func (*organizationOrganizationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OrganizationOrganization)(nil)).Elem()
+}
+
+func (i *organizationOrganizationPtrType) ToOrganizationOrganizationPtrOutput() OrganizationOrganizationPtrOutput {
+	return i.ToOrganizationOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (i *organizationOrganizationPtrType) ToOrganizationOrganizationPtrOutputWithContext(ctx context.Context) OrganizationOrganizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationOrganizationPtrOutput)
+}
+
+type OrganizationOrganizationOutput struct{ *pulumi.OutputState }
+
+func (OrganizationOrganizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationOrganization)(nil)).Elem()
+}
+
+func (o OrganizationOrganizationOutput) ToOrganizationOrganizationOutput() OrganizationOrganizationOutput {
+	return o
+}
+
+func (o OrganizationOrganizationOutput) ToOrganizationOrganizationOutputWithContext(ctx context.Context) OrganizationOrganizationOutput {
+	return o
+}
+
+func (o OrganizationOrganizationOutput) ToOrganizationOrganizationPtrOutput() OrganizationOrganizationPtrOutput {
+	return o.ToOrganizationOrganizationPtrOutputWithContext(context.Background())
+}
+
+func (o OrganizationOrganizationOutput) ToOrganizationOrganizationPtrOutputWithContext(ctx context.Context) OrganizationOrganizationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OrganizationOrganization) *OrganizationOrganization {
+		return &v
+	}).(OrganizationOrganizationPtrOutput)
+}
+
+// 创建时间
+func (o OrganizationOrganizationOutput) CreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationOrganization) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
+}
+
+// 描述
+func (o OrganizationOrganizationOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationOrganization) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// 组织名称
+func (o OrganizationOrganizationOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationOrganization) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// 管理员ID
+func (o OrganizationOrganizationOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationOrganization) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+// 状态
+func (o OrganizationOrganizationOutput) Status() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OrganizationOrganization) *int { return v.Status }).(pulumi.IntPtrOutput)
+}
+
+// 组织类型，企业组织固定是 1
+func (o OrganizationOrganizationOutput) Type() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OrganizationOrganization) *int { return v.Type }).(pulumi.IntPtrOutput)
+}
+
+// 更新时间
+func (o OrganizationOrganizationOutput) UpdatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationOrganization) *string { return v.UpdatedTime }).(pulumi.StringPtrOutput)
+}
+
+type OrganizationOrganizationPtrOutput struct{ *pulumi.OutputState }
+
+func (OrganizationOrganizationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OrganizationOrganization)(nil)).Elem()
+}
+
+func (o OrganizationOrganizationPtrOutput) ToOrganizationOrganizationPtrOutput() OrganizationOrganizationPtrOutput {
+	return o
+}
+
+func (o OrganizationOrganizationPtrOutput) ToOrganizationOrganizationPtrOutputWithContext(ctx context.Context) OrganizationOrganizationPtrOutput {
+	return o
+}
+
+func (o OrganizationOrganizationPtrOutput) Elem() OrganizationOrganizationOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) OrganizationOrganization {
+		if v != nil {
+			return *v
+		}
+		var ret OrganizationOrganization
+		return ret
+	}).(OrganizationOrganizationOutput)
+}
+
+// 创建时间
+func (o OrganizationOrganizationPtrOutput) CreatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 描述
+func (o OrganizationOrganizationPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// 组织名称
+func (o OrganizationOrganizationPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// 管理员ID
+func (o OrganizationOrganizationPtrOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Owner
+	}).(pulumi.StringPtrOutput)
+}
+
+// 状态
+func (o OrganizationOrganizationPtrOutput) Status() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.IntPtrOutput)
+}
+
+// 组织类型，企业组织固定是 1
+func (o OrganizationOrganizationPtrOutput) Type() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Type
+	}).(pulumi.IntPtrOutput)
+}
+
+// 更新时间
+func (o OrganizationOrganizationPtrOutput) UpdatedTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationOrganization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UpdatedTime
+	}).(pulumi.StringPtrOutput)
+}
+
+type OrganizationOwner struct {
+	// 账号ID
+	AccountId *int `pulumi:"accountId"`
+	// 账号名称
+	AccountName *string `pulumi:"accountName"`
+	// 主体名称
+	MainName *string `pulumi:"mainName"`
+}
+
+// OrganizationOwnerInput is an input type that accepts OrganizationOwnerArgs and OrganizationOwnerOutput values.
+// You can construct a concrete instance of `OrganizationOwnerInput` via:
+//
+//	OrganizationOwnerArgs{...}
+type OrganizationOwnerInput interface {
+	pulumi.Input
+
+	ToOrganizationOwnerOutput() OrganizationOwnerOutput
+	ToOrganizationOwnerOutputWithContext(context.Context) OrganizationOwnerOutput
+}
+
+type OrganizationOwnerArgs struct {
+	// 账号ID
+	AccountId pulumi.IntPtrInput `pulumi:"accountId"`
+	// 账号名称
+	AccountName pulumi.StringPtrInput `pulumi:"accountName"`
+	// 主体名称
+	MainName pulumi.StringPtrInput `pulumi:"mainName"`
+}
+
+func (OrganizationOwnerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationOwner)(nil)).Elem()
+}
+
+func (i OrganizationOwnerArgs) ToOrganizationOwnerOutput() OrganizationOwnerOutput {
+	return i.ToOrganizationOwnerOutputWithContext(context.Background())
+}
+
+func (i OrganizationOwnerArgs) ToOrganizationOwnerOutputWithContext(ctx context.Context) OrganizationOwnerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationOwnerOutput)
+}
+
+func (i OrganizationOwnerArgs) ToOrganizationOwnerPtrOutput() OrganizationOwnerPtrOutput {
+	return i.ToOrganizationOwnerPtrOutputWithContext(context.Background())
+}
+
+func (i OrganizationOwnerArgs) ToOrganizationOwnerPtrOutputWithContext(ctx context.Context) OrganizationOwnerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationOwnerOutput).ToOrganizationOwnerPtrOutputWithContext(ctx)
+}
+
+// OrganizationOwnerPtrInput is an input type that accepts OrganizationOwnerArgs, OrganizationOwnerPtr and OrganizationOwnerPtrOutput values.
+// You can construct a concrete instance of `OrganizationOwnerPtrInput` via:
+//
+//	        OrganizationOwnerArgs{...}
+//
+//	or:
+//
+//	        nil
+type OrganizationOwnerPtrInput interface {
+	pulumi.Input
+
+	ToOrganizationOwnerPtrOutput() OrganizationOwnerPtrOutput
+	ToOrganizationOwnerPtrOutputWithContext(context.Context) OrganizationOwnerPtrOutput
+}
+
+type organizationOwnerPtrType OrganizationOwnerArgs
+
+func OrganizationOwnerPtr(v *OrganizationOwnerArgs) OrganizationOwnerPtrInput {
+	return (*organizationOwnerPtrType)(v)
+}
+
+func (*organizationOwnerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OrganizationOwner)(nil)).Elem()
+}
+
+func (i *organizationOwnerPtrType) ToOrganizationOwnerPtrOutput() OrganizationOwnerPtrOutput {
+	return i.ToOrganizationOwnerPtrOutputWithContext(context.Background())
+}
+
+func (i *organizationOwnerPtrType) ToOrganizationOwnerPtrOutputWithContext(ctx context.Context) OrganizationOwnerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationOwnerPtrOutput)
+}
+
+type OrganizationOwnerOutput struct{ *pulumi.OutputState }
+
+func (OrganizationOwnerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationOwner)(nil)).Elem()
+}
+
+func (o OrganizationOwnerOutput) ToOrganizationOwnerOutput() OrganizationOwnerOutput {
+	return o
+}
+
+func (o OrganizationOwnerOutput) ToOrganizationOwnerOutputWithContext(ctx context.Context) OrganizationOwnerOutput {
+	return o
+}
+
+func (o OrganizationOwnerOutput) ToOrganizationOwnerPtrOutput() OrganizationOwnerPtrOutput {
+	return o.ToOrganizationOwnerPtrOutputWithContext(context.Background())
+}
+
+func (o OrganizationOwnerOutput) ToOrganizationOwnerPtrOutputWithContext(ctx context.Context) OrganizationOwnerPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OrganizationOwner) *OrganizationOwner {
+		return &v
+	}).(OrganizationOwnerPtrOutput)
+}
+
+// 账号ID
+func (o OrganizationOwnerOutput) AccountId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OrganizationOwner) *int { return v.AccountId }).(pulumi.IntPtrOutput)
+}
+
+// 账号名称
+func (o OrganizationOwnerOutput) AccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationOwner) *string { return v.AccountName }).(pulumi.StringPtrOutput)
+}
+
+// 主体名称
+func (o OrganizationOwnerOutput) MainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationOwner) *string { return v.MainName }).(pulumi.StringPtrOutput)
+}
+
+type OrganizationOwnerPtrOutput struct{ *pulumi.OutputState }
+
+func (OrganizationOwnerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OrganizationOwner)(nil)).Elem()
+}
+
+func (o OrganizationOwnerPtrOutput) ToOrganizationOwnerPtrOutput() OrganizationOwnerPtrOutput {
+	return o
+}
+
+func (o OrganizationOwnerPtrOutput) ToOrganizationOwnerPtrOutputWithContext(ctx context.Context) OrganizationOwnerPtrOutput {
+	return o
+}
+
+func (o OrganizationOwnerPtrOutput) Elem() OrganizationOwnerOutput {
+	return o.ApplyT(func(v *OrganizationOwner) OrganizationOwner {
+		if v != nil {
+			return *v
+		}
+		var ret OrganizationOwner
+		return ret
+	}).(OrganizationOwnerOutput)
+}
+
+// 账号ID
+func (o OrganizationOwnerPtrOutput) AccountId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *OrganizationOwner) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AccountId
+	}).(pulumi.IntPtrOutput)
+}
+
+// 账号名称
+func (o OrganizationOwnerPtrOutput) AccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationOwner) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccountName
+	}).(pulumi.StringPtrOutput)
+}
+
+// 主体名称
+func (o OrganizationOwnerPtrOutput) MainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationOwner) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MainName
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetAccountSecureContactInfo struct {
 	// 安全邮箱。
 	Email string `pulumi:"email"`
@@ -554,19 +980,207 @@ func (o GetAccountTagArrayOutput) Index(i pulumi.IntInput) GetAccountTagOutput {
 	}).(GetAccountTagOutput)
 }
 
+type GetOrganizationOrganization struct {
+	// 创建时间
+	CreatedTime string `pulumi:"createdTime"`
+	// 描述
+	Description string `pulumi:"description"`
+	// 组织名称
+	Name string `pulumi:"name"`
+	// 管理员ID
+	Owner string `pulumi:"owner"`
+	// 状态
+	Status int `pulumi:"status"`
+	// 组织类型，企业组织固定是 1
+	Type int `pulumi:"type"`
+	// 更新时间
+	UpdatedTime string `pulumi:"updatedTime"`
+}
+
+// GetOrganizationOrganizationInput is an input type that accepts GetOrganizationOrganizationArgs and GetOrganizationOrganizationOutput values.
+// You can construct a concrete instance of `GetOrganizationOrganizationInput` via:
+//
+//	GetOrganizationOrganizationArgs{...}
+type GetOrganizationOrganizationInput interface {
+	pulumi.Input
+
+	ToGetOrganizationOrganizationOutput() GetOrganizationOrganizationOutput
+	ToGetOrganizationOrganizationOutputWithContext(context.Context) GetOrganizationOrganizationOutput
+}
+
+type GetOrganizationOrganizationArgs struct {
+	// 创建时间
+	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	// 描述
+	Description pulumi.StringInput `pulumi:"description"`
+	// 组织名称
+	Name pulumi.StringInput `pulumi:"name"`
+	// 管理员ID
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// 状态
+	Status pulumi.IntInput `pulumi:"status"`
+	// 组织类型，企业组织固定是 1
+	Type pulumi.IntInput `pulumi:"type"`
+	// 更新时间
+	UpdatedTime pulumi.StringInput `pulumi:"updatedTime"`
+}
+
+func (GetOrganizationOrganizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationOrganization)(nil)).Elem()
+}
+
+func (i GetOrganizationOrganizationArgs) ToGetOrganizationOrganizationOutput() GetOrganizationOrganizationOutput {
+	return i.ToGetOrganizationOrganizationOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationOrganizationArgs) ToGetOrganizationOrganizationOutputWithContext(ctx context.Context) GetOrganizationOrganizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationOrganizationOutput)
+}
+
+type GetOrganizationOrganizationOutput struct{ *pulumi.OutputState }
+
+func (GetOrganizationOrganizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationOrganization)(nil)).Elem()
+}
+
+func (o GetOrganizationOrganizationOutput) ToGetOrganizationOrganizationOutput() GetOrganizationOrganizationOutput {
+	return o
+}
+
+func (o GetOrganizationOrganizationOutput) ToGetOrganizationOrganizationOutputWithContext(ctx context.Context) GetOrganizationOrganizationOutput {
+	return o
+}
+
+// 创建时间
+func (o GetOrganizationOrganizationOutput) CreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// 描述
+func (o GetOrganizationOrganizationOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// 组织名称
+func (o GetOrganizationOrganizationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// 管理员ID
+func (o GetOrganizationOrganizationOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+// 状态
+func (o GetOrganizationOrganizationOutput) Status() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOrganizationOrganization) int { return v.Status }).(pulumi.IntOutput)
+}
+
+// 组织类型，企业组织固定是 1
+func (o GetOrganizationOrganizationOutput) Type() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOrganizationOrganization) int { return v.Type }).(pulumi.IntOutput)
+}
+
+// 更新时间
+func (o GetOrganizationOrganizationOutput) UpdatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationOrganization) string { return v.UpdatedTime }).(pulumi.StringOutput)
+}
+
+type GetOrganizationOwner struct {
+	// 账号ID
+	AccountId int `pulumi:"accountId"`
+	// 账号名称
+	AccountName string `pulumi:"accountName"`
+	// 主体名称
+	MainName string `pulumi:"mainName"`
+}
+
+// GetOrganizationOwnerInput is an input type that accepts GetOrganizationOwnerArgs and GetOrganizationOwnerOutput values.
+// You can construct a concrete instance of `GetOrganizationOwnerInput` via:
+//
+//	GetOrganizationOwnerArgs{...}
+type GetOrganizationOwnerInput interface {
+	pulumi.Input
+
+	ToGetOrganizationOwnerOutput() GetOrganizationOwnerOutput
+	ToGetOrganizationOwnerOutputWithContext(context.Context) GetOrganizationOwnerOutput
+}
+
+type GetOrganizationOwnerArgs struct {
+	// 账号ID
+	AccountId pulumi.IntInput `pulumi:"accountId"`
+	// 账号名称
+	AccountName pulumi.StringInput `pulumi:"accountName"`
+	// 主体名称
+	MainName pulumi.StringInput `pulumi:"mainName"`
+}
+
+func (GetOrganizationOwnerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationOwner)(nil)).Elem()
+}
+
+func (i GetOrganizationOwnerArgs) ToGetOrganizationOwnerOutput() GetOrganizationOwnerOutput {
+	return i.ToGetOrganizationOwnerOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationOwnerArgs) ToGetOrganizationOwnerOutputWithContext(ctx context.Context) GetOrganizationOwnerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationOwnerOutput)
+}
+
+type GetOrganizationOwnerOutput struct{ *pulumi.OutputState }
+
+func (GetOrganizationOwnerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationOwner)(nil)).Elem()
+}
+
+func (o GetOrganizationOwnerOutput) ToGetOrganizationOwnerOutput() GetOrganizationOwnerOutput {
+	return o
+}
+
+func (o GetOrganizationOwnerOutput) ToGetOrganizationOwnerOutputWithContext(ctx context.Context) GetOrganizationOwnerOutput {
+	return o
+}
+
+// 账号ID
+func (o GetOrganizationOwnerOutput) AccountId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOrganizationOwner) int { return v.AccountId }).(pulumi.IntOutput)
+}
+
+// 账号名称
+func (o GetOrganizationOwnerOutput) AccountName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationOwner) string { return v.AccountName }).(pulumi.StringOutput)
+}
+
+// 主体名称
+func (o GetOrganizationOwnerOutput) MainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationOwner) string { return v.MainName }).(pulumi.StringOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountSecureContactInfoInput)(nil)).Elem(), AccountSecureContactInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountSecureContactInfoPtrInput)(nil)).Elem(), AccountSecureContactInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountTagInput)(nil)).Elem(), AccountTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccountTagArrayInput)(nil)).Elem(), AccountTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationOrganizationInput)(nil)).Elem(), OrganizationOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationOrganizationPtrInput)(nil)).Elem(), OrganizationOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationOwnerInput)(nil)).Elem(), OrganizationOwnerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationOwnerPtrInput)(nil)).Elem(), OrganizationOwnerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountSecureContactInfoInput)(nil)).Elem(), GetAccountSecureContactInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountTagInput)(nil)).Elem(), GetAccountTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAccountTagArrayInput)(nil)).Elem(), GetAccountTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationOrganizationInput)(nil)).Elem(), GetOrganizationOrganizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationOwnerInput)(nil)).Elem(), GetOrganizationOwnerArgs{})
 	pulumi.RegisterOutputType(AccountSecureContactInfoOutput{})
 	pulumi.RegisterOutputType(AccountSecureContactInfoPtrOutput{})
 	pulumi.RegisterOutputType(AccountTagOutput{})
 	pulumi.RegisterOutputType(AccountTagArrayOutput{})
+	pulumi.RegisterOutputType(OrganizationOrganizationOutput{})
+	pulumi.RegisterOutputType(OrganizationOrganizationPtrOutput{})
+	pulumi.RegisterOutputType(OrganizationOwnerOutput{})
+	pulumi.RegisterOutputType(OrganizationOwnerPtrOutput{})
 	pulumi.RegisterOutputType(GetAccountSecureContactInfoOutput{})
 	pulumi.RegisterOutputType(GetAccountTagOutput{})
 	pulumi.RegisterOutputType(GetAccountTagArrayOutput{})
+	pulumi.RegisterOutputType(GetOrganizationOrganizationOutput{})
+	pulumi.RegisterOutputType(GetOrganizationOwnerOutput{})
 }

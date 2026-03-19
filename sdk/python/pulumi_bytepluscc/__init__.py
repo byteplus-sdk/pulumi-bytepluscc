@@ -41,6 +41,8 @@ if typing.TYPE_CHECKING:
     dns = __dns
     import pulumi_bytepluscc.ecs as __ecs
     ecs = __ecs
+    import pulumi_bytepluscc.emr as __emr
+    emr = __emr
     import pulumi_bytepluscc.escloud as __escloud
     escloud = __escloud
     import pulumi_bytepluscc.filenas as __filenas
@@ -111,6 +113,7 @@ else:
     directconnect = _utilities.lazy_import('pulumi_bytepluscc.directconnect')
     dns = _utilities.lazy_import('pulumi_bytepluscc.dns')
     ecs = _utilities.lazy_import('pulumi_bytepluscc.ecs')
+    emr = _utilities.lazy_import('pulumi_bytepluscc.emr')
     escloud = _utilities.lazy_import('pulumi_bytepluscc.escloud')
     filenas = _utilities.lazy_import('pulumi_bytepluscc.filenas')
     fwcenter = _utilities.lazy_import('pulumi_bytepluscc.fwcenter')
@@ -268,6 +271,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.autoscaling",
   "classes": {
    "bytepluscc:autoscaling/scalingGroup:ScalingGroup": "ScalingGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "autoscaling/scalingLifecycleHook",
+  "fqn": "pulumi_bytepluscc.autoscaling",
+  "classes": {
+   "bytepluscc:autoscaling/scalingLifecycleHook:ScalingLifecycleHook": "ScalingLifecycleHook"
   }
  },
  {
@@ -560,6 +571,30 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "emr/cluster",
+  "fqn": "pulumi_bytepluscc.emr",
+  "classes": {
+   "bytepluscc:emr/cluster:Cluster": "Cluster"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "emr/clusterUser",
+  "fqn": "pulumi_bytepluscc.emr",
+  "classes": {
+   "bytepluscc:emr/clusterUser:ClusterUser": "ClusterUser"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "emr/clusterUserGroup",
+  "fqn": "pulumi_bytepluscc.emr",
+  "classes": {
+   "bytepluscc:emr/clusterUserGroup:ClusterUserGroup": "ClusterUserGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "escloud/instance",
   "fqn": "pulumi_bytepluscc.escloud",
   "classes": {
@@ -740,6 +775,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.organization",
   "classes": {
    "bytepluscc:organization/account:Account": "Account"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "organization/organization",
+  "fqn": "pulumi_bytepluscc.organization",
+  "classes": {
+   "bytepluscc:organization/organization:Organization": "Organization"
   }
  },
  {
@@ -952,10 +995,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "tls/index",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/index:Index": "Index"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "tls/project",
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/project:Project": "Project"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/scheduleSqlTask",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask": "ScheduleSqlTask"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/topic",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/topic:Topic": "Topic"
   }
  },
  {
@@ -996,6 +1063,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/vpnAttachment:VpnAttachment": "VpnAttachment"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vedbm/backup",
+  "fqn": "pulumi_bytepluscc.vedbm",
+  "classes": {
+   "bytepluscc:vedbm/backup:Backup": "Backup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vedbm/database",
+  "fqn": "pulumi_bytepluscc.vedbm",
+  "classes": {
+   "bytepluscc:vedbm/database:Database": "Database"
   }
  },
  {

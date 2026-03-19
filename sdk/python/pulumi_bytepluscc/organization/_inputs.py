@@ -20,6 +20,10 @@ __all__ = [
     'AccountSecureContactInfoArgsDict',
     'AccountTagArgs',
     'AccountTagArgsDict',
+    'OrganizationOrganizationArgs',
+    'OrganizationOrganizationArgsDict',
+    'OrganizationOwnerArgs',
+    'OrganizationOwnerArgsDict',
 ]
 
 MYPY = False
@@ -206,5 +210,229 @@ class AccountTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class OrganizationOrganizationArgsDict(TypedDict):
+        created_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        创建时间
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        描述
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        组织名称
+        """
+        owner: NotRequired[pulumi.Input[builtins.str]]
+        """
+        管理员ID
+        """
+        status: NotRequired[pulumi.Input[builtins.int]]
+        """
+        状态
+        """
+        type: NotRequired[pulumi.Input[builtins.int]]
+        """
+        组织类型，企业组织固定是 1
+        """
+        updated_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        更新时间
+        """
+elif False:
+    OrganizationOrganizationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OrganizationOrganizationArgs:
+    def __init__(__self__, *,
+                 created_time: Optional[pulumi.Input[builtins.str]] = None,
+                 description: Optional[pulumi.Input[builtins.str]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 owner: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.int]] = None,
+                 type: Optional[pulumi.Input[builtins.int]] = None,
+                 updated_time: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] created_time: 创建时间
+        :param pulumi.Input[builtins.str] description: 描述
+        :param pulumi.Input[builtins.str] name: 组织名称
+        :param pulumi.Input[builtins.str] owner: 管理员ID
+        :param pulumi.Input[builtins.int] status: 状态
+        :param pulumi.Input[builtins.int] type: 组织类型，企业组织固定是 1
+        :param pulumi.Input[builtins.str] updated_time: 更新时间
+        """
+        if created_time is not None:
+            pulumi.set(__self__, "created_time", created_time)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if owner is not None:
+            pulumi.set(__self__, "owner", owner)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if updated_time is not None:
+            pulumi.set(__self__, "updated_time", updated_time)
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        创建时间
+        """
+        return pulumi.get(self, "created_time")
+
+    @created_time.setter
+    def created_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "created_time", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        描述
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        组织名称
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def owner(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        管理员ID
+        """
+        return pulumi.get(self, "owner")
+
+    @owner.setter
+    def owner(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "owner", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        状态
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        组织类型，企业组织固定是 1
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="updatedTime")
+    def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        更新时间
+        """
+        return pulumi.get(self, "updated_time")
+
+    @updated_time.setter
+    def updated_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "updated_time", value)
+
+
+if not MYPY:
+    class OrganizationOwnerArgsDict(TypedDict):
+        account_id: NotRequired[pulumi.Input[builtins.int]]
+        """
+        账号ID
+        """
+        account_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        账号名称
+        """
+        main_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        主体名称
+        """
+elif False:
+    OrganizationOwnerArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OrganizationOwnerArgs:
+    def __init__(__self__, *,
+                 account_id: Optional[pulumi.Input[builtins.int]] = None,
+                 account_name: Optional[pulumi.Input[builtins.str]] = None,
+                 main_name: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.int] account_id: 账号ID
+        :param pulumi.Input[builtins.str] account_name: 账号名称
+        :param pulumi.Input[builtins.str] main_name: 主体名称
+        """
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if main_name is not None:
+            pulumi.set(__self__, "main_name", main_name)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        账号ID
+        """
+        return pulumi.get(self, "account_id")
+
+    @account_id.setter
+    def account_id(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "account_id", value)
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        账号名称
+        """
+        return pulumi.get(self, "account_name")
+
+    @account_name.setter
+    def account_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "account_name", value)
+
+    @property
+    @pulumi.getter(name="mainName")
+    def main_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        主体名称
+        """
+        return pulumi.get(self, "main_name")
+
+    @main_name.setter
+    def main_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "main_name", value)
 
 

@@ -1443,6 +1443,17 @@ export namespace autoscaling {
         value?: pulumi.Input<string>;
     }
 
+    export interface ScalingLifecycleHookLifecycleCommand {
+        /**
+         * 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+         */
+        commandId?: pulumi.Input<string>;
+        /**
+         * 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+         */
+        parameters?: pulumi.Input<string>;
+    }
+
     export interface ScalingPolicyAlarmPolicy {
         /**
          * 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
@@ -3523,6 +3534,369 @@ export namespace ecs {
     }
 }
 
+export namespace emr {
+    export interface ClusterApplication {
+        /**
+         * 应用配置路径。
+         */
+        applicationConfigHome?: pulumi.Input<string>;
+        /**
+         * 应用安装路径。
+         */
+        applicationHome?: pulumi.Input<string>;
+        /**
+         * 应用名称。
+         */
+        applicationName?: pulumi.Input<string>;
+        /**
+         * 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+         */
+        applicationState?: pulumi.Input<string>;
+        /**
+         * 应用版本。
+         */
+        applicationVersion?: pulumi.Input<string>;
+        /**
+         * 应用用户组。
+         */
+        group?: pulumi.Input<string>;
+        /**
+         * 是否支持客户端。
+         */
+        supportClient?: pulumi.Input<boolean>;
+        /**
+         * 应用用户。
+         */
+        user?: pulumi.Input<string>;
+    }
+
+    export interface ClusterApplicationExtra {
+        applicationComponentLayouts?: pulumi.Input<pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationComponentLayout>[]>;
+        applicationConfigs?: pulumi.Input<pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationConfig>[]>;
+        /**
+         * 应用名称。
+         */
+        applicationName?: pulumi.Input<string>;
+        /**
+         * 元数据连接id。
+         */
+        connectionId?: pulumi.Input<string>;
+        /**
+         * 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+         */
+        connectionType?: pulumi.Input<string>;
+    }
+
+    export interface ClusterApplicationExtraApplicationComponentLayout {
+        /**
+         * 组件名称。
+         */
+        componentName?: pulumi.Input<string>;
+        /**
+         * 组件的布局范围。
+         */
+        effectiveScope?: pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationComponentLayoutEffectiveScope>;
+    }
+
+    export interface ClusterApplicationExtraApplicationComponentLayoutEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType?: pulumi.Input<string>;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ClusterApplicationExtraApplicationConfig {
+        /**
+         * 组件实例名称。
+         */
+        componentInstanceName?: pulumi.Input<string>;
+        /**
+         * 组件名称。
+         */
+        componentName?: pulumi.Input<string>;
+        /**
+         * 配置文件名。
+         */
+        configFileName?: pulumi.Input<string>;
+        /**
+         * 配置项名称。
+         */
+        configItemKey?: pulumi.Input<string>;
+        /**
+         * 配置项值。
+         */
+        configItemValue?: pulumi.Input<string>;
+        /**
+         * 是否删除。
+         */
+        deleted?: pulumi.Input<boolean>;
+        /**
+         * 影响组件。
+         */
+        effectiveScope?: pulumi.Input<inputs.emr.ClusterApplicationExtraApplicationConfigEffectiveScope>;
+    }
+
+    export interface ClusterApplicationExtraApplicationConfigEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType?: pulumi.Input<string>;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ClusterBootstrapScript {
+        /**
+         * 脚本执行范围。
+         */
+        effectiveScope?: pulumi.Input<inputs.emr.ClusterBootstrapScriptEffectiveScope>;
+        /**
+         * 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+         */
+        executionFailStrategy?: pulumi.Input<string>;
+        /**
+         * 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+         */
+        executionMoment?: pulumi.Input<string>;
+        /**
+         * 脚本执行优先级。取值范围：1~1000。默认值1。
+         */
+        priority?: pulumi.Input<string>;
+        /**
+         * 脚本参数。
+         */
+        scriptArgs?: pulumi.Input<string>;
+        /**
+         * 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         */
+        scriptName?: pulumi.Input<string>;
+        /**
+         * 脚本所在TOS路径。必填。以 tos:： 开头。
+         */
+        scriptPath?: pulumi.Input<string>;
+        /**
+         * 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+         */
+        scriptType?: pulumi.Input<string>;
+    }
+
+    export interface ClusterBootstrapScriptEffectiveScope {
+        /**
+         * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         */
+        componentNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         */
+        effectiveType?: pulumi.Input<string>;
+        /**
+         * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         */
+        nodeGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         */
+        nodeGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         */
+        nodeGroupTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点ID列表，EffectiveType=NODE_ID时，必选。
+         */
+        nodeIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 节点名列表，EffectiveType=NODE_NAME时，必选。
+         */
+        nodeNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ClusterChargePreConfig {
+        /**
+         * 是否开启自动续费。取值范围：true：开启。false：不开启。
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+         */
+        autoRenewPeriod?: pulumi.Input<number>;
+        /**
+         * 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         */
+        autoRenewPeriodUnit?: pulumi.Input<string>;
+        /**
+         * chargeType=PRE默认值=1，包月的购买时长单位。
+         */
+        chargePeriod?: pulumi.Input<number>;
+        /**
+         * chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+         */
+        chargePeriodUnit?: pulumi.Input<string>;
+        /**
+         * 付费类型，取值范围：PRE，POST。
+         */
+        chargeType?: pulumi.Input<string>;
+    }
+
+    export interface ClusterNodeAttribute {
+        /**
+         * ECS实例角色。
+         */
+        ecsIamRole?: pulumi.Input<string>;
+        /**
+         * 可用区ID。
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
+    export interface ClusterNodeGroupAttribute {
+        /**
+         * 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+         */
+        bandwidth?: pulumi.Input<number>;
+        /**
+         * 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+         */
+        chargeType?: pulumi.Input<string>;
+        dataDisks?: pulumi.Input<pulumi.Input<inputs.emr.ClusterNodeGroupAttributeDataDisk>[]>;
+        /**
+         * 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+         */
+        ecsInstanceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * ecs的密钥对名称。
+         */
+        ecsKeyPairName?: pulumi.Input<string>;
+        /**
+         * Ecs root账号的密码。
+         */
+        ecsPassword?: pulumi.Input<string>;
+        /**
+         * 节点组当前期望购买的节点数量。
+         */
+        nodeCount?: pulumi.Input<number>;
+        /**
+         * 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         */
+        nodeGroupName?: pulumi.Input<string>;
+        /**
+         * 节点组类型。
+         */
+        nodeGroupType?: pulumi.Input<string>;
+        /**
+         * 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+         */
+        subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * 系统盘配置。
+         */
+        systemDisk?: pulumi.Input<inputs.emr.ClusterNodeGroupAttributeSystemDisk>;
+        /**
+         * 是否挂载公网ip。
+         */
+        withPublicIp?: pulumi.Input<boolean>;
+        /**
+         * 可用区ID。
+         */
+        zoneId?: pulumi.Input<string>;
+    }
+
+    export interface ClusterNodeGroupAttributeDataDisk {
+        /**
+         * 磁盘块数，默认值4，最大15，最小1。
+         */
+        count?: pulumi.Input<number>;
+        /**
+         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+         */
+        volumeType?: pulumi.Input<string>;
+    }
+
+    export interface ClusterNodeGroupAttributeSystemDisk {
+        /**
+         * 磁盘大小。
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 磁盘类型。
+         */
+        volumeType?: pulumi.Input<string>;
+    }
+
+    export interface ClusterStateChangeReason {
+        /**
+         * 状态更新码。
+         */
+        code?: pulumi.Input<string>;
+        /**
+         * 状态更新原因。
+         */
+        reason?: pulumi.Input<string>;
+    }
+
+    export interface ClusterTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+}
+
 export namespace escloud {
     export interface InstanceInstanceConfiguration {
         /**
@@ -4885,6 +5259,51 @@ export namespace organization {
         value?: pulumi.Input<string>;
     }
 
+    export interface OrganizationOrganization {
+        /**
+         * 创建时间
+         */
+        createdTime?: pulumi.Input<string>;
+        /**
+         * 描述
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * 组织名称
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * 管理员ID
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * 状态
+         */
+        status?: pulumi.Input<number>;
+        /**
+         * 组织类型，企业组织固定是 1
+         */
+        type?: pulumi.Input<number>;
+        /**
+         * 更新时间
+         */
+        updatedTime?: pulumi.Input<string>;
+    }
+
+    export interface OrganizationOwner {
+        /**
+         * 账号ID
+         */
+        accountId?: pulumi.Input<number>;
+        /**
+         * 账号名称
+         */
+        accountName?: pulumi.Input<string>;
+        /**
+         * 主体名称
+         */
+        mainName?: pulumi.Input<string>;
+    }
 }
 
 export namespace privatelink {
@@ -6001,6 +6420,183 @@ export namespace storageebs {
 }
 
 export namespace tls {
+    export interface IndexFullText {
+        /**
+         * 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+         */
+        caseSensitive?: pulumi.Input<boolean>;
+        /**
+         * 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese?: pulumi.Input<boolean>;
+    }
+
+    export interface IndexKeyValue {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value?: pulumi.Input<inputs.tls.IndexKeyValueValue>;
+    }
+
+    export interface IndexKeyValueValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag?: pulumi.Input<boolean>;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive?: pulumi.Input<boolean>;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll?: pulumi.Input<boolean>;
+        jsonKeys?: pulumi.Input<pulumi.Input<inputs.tls.IndexKeyValueValueJsonKey>[]>;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag?: pulumi.Input<boolean>;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType?: pulumi.Input<string>;
+    }
+
+    export interface IndexKeyValueValueJsonKey {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value?: pulumi.Input<inputs.tls.IndexKeyValueValueJsonKeyValue>;
+    }
+
+    export interface IndexKeyValueValueJsonKeyValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll?: pulumi.Input<boolean>;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag?: pulumi.Input<boolean>;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType?: pulumi.Input<string>;
+    }
+
+    export interface IndexUserInnerKeyValue {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value?: pulumi.Input<inputs.tls.IndexUserInnerKeyValueValue>;
+    }
+
+    export interface IndexUserInnerKeyValueValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag?: pulumi.Input<boolean>;
+        /**
+         * 是否区分大小写。默认为 false。
+         */
+        caseSensitive?: pulumi.Input<boolean>;
+        /**
+         * 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+         */
+        includeChinese?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll?: pulumi.Input<boolean>;
+        jsonKeys?: pulumi.Input<pulumi.Input<inputs.tls.IndexUserInnerKeyValueValueJsonKey>[]>;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag?: pulumi.Input<boolean>;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType?: pulumi.Input<string>;
+    }
+
+    export interface IndexUserInnerKeyValueValueJsonKey {
+        /**
+         * 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 需要配置键值索引的字段描述信息。
+         */
+        value?: pulumi.Input<inputs.tls.IndexUserInnerKeyValueValueJsonKeyValue>;
+    }
+
+    export interface IndexUserInnerKeyValueValueJsonKeyValue {
+        /**
+         * 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+         */
+        autoIndexFlag?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段中所有值为文本的字段创建索引。
+         */
+        indexAll?: pulumi.Input<boolean>;
+        /**
+         * 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+         */
+        indexSqlAll?: pulumi.Input<boolean>;
+        /**
+         * 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+         */
+        sqlFlag?: pulumi.Input<boolean>;
+        /**
+         * 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+         */
+        valueType?: pulumi.Input<string>;
+    }
+
     export interface ProjectTag {
         /**
          * 标签键。
@@ -6008,6 +6604,36 @@ export namespace tls {
         key?: pulumi.Input<string>;
         /**
          * 标签值。
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ScheduleSqlTaskRequestCycle {
+        /**
+         * Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+         */
+        cronTab?: pulumi.Input<string>;
+        /**
+         * 设置 Type 为 Cron 时，还需设置时区。
+         */
+        cronTimeZone?: pulumi.Input<string>;
+        /**
+         * 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+         */
+        time: pulumi.Input<number>;
+        /**
+         * 调度周期类型。可选值：Period、Fixed、Cron。
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface TopicTag {
+        /**
+         * 用户标签的标签键。
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * 用户标签的标签值。
          */
         value?: pulumi.Input<string>;
     }
@@ -6158,6 +6784,21 @@ export namespace transitrouter {
 }
 
 export namespace vedbm {
+    export interface DatabaseDatabasesPrivilege {
+        /**
+         * 需授权的账号名称
+         */
+        accountName?: pulumi.Input<string>;
+        /**
+         * 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+         */
+        accountPrivilege?: pulumi.Input<string>;
+        /**
+         * 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+         */
+        accountPrivilegeDetails?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface InstanceChargeDetail {
         /**
          * 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。

@@ -316,6 +316,9 @@
                     }
                 }
             },
+            "bytepluscc_autoscaling_scaling_lifecycle_hook": {
+                "current": "bytepluscc:autoscaling/scalingLifecycleHook:ScalingLifecycleHook"
+            },
             "bytepluscc_autoscaling_scaling_policy": {
                 "current": "bytepluscc:autoscaling/scalingPolicy:ScalingPolicy",
                 "fields": {
@@ -959,6 +962,149 @@
                     }
                 }
             },
+            "bytepluscc_emr_cluster": {
+                "current": "bytepluscc:emr/cluster:Cluster",
+                "fields": {
+                    "application_extras": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "application_component_layouts": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "effective_scope": {
+                                                "fields": {
+                                                    "component_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_types": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_names": {
+                                                        "maxItemsOne": false
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "application_configs": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "effective_scope": {
+                                                "fields": {
+                                                    "component_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_types": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_names": {
+                                                        "maxItemsOne": false
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "application_names": {
+                        "maxItemsOne": false
+                    },
+                    "applications": {
+                        "maxItemsOne": false
+                    },
+                    "bootstrap_scripts": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "effective_scope": {
+                                    "fields": {
+                                        "component_names": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_group_ids": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_group_names": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_group_types": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_ids": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_names": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "cluster_domain_names": {
+                        "maxItemsOne": false
+                    },
+                    "node_group_attributes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "data_disks": {
+                                    "maxItemsOne": false
+                                },
+                                "ecs_instance_types": {
+                                    "maxItemsOne": false
+                                },
+                                "subnet_ids": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_cluster_user": {
+                "current": "bytepluscc:emr/clusterUser:ClusterUser",
+                "fields": {
+                    "user_group_names": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_cluster_user_group": {
+                "current": "bytepluscc:emr/clusterUserGroup:ClusterUserGroup",
+                "fields": {
+                    "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_escloud_instance": {
                 "current": "bytepluscc:escloud/instance:Instance",
                 "fields": {
@@ -1244,6 +1390,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_organization_organization": {
+                "current": "bytepluscc:organization/organization:Organization"
             },
             "bytepluscc_organization_unit": {
                 "current": "bytepluscc:organization/unit:Unit"
@@ -1633,8 +1782,52 @@
                     }
                 }
             },
+            "bytepluscc_tls_index": {
+                "current": "bytepluscc:tls/index:Index",
+                "fields": {
+                    "key_value": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "value": {
+                                    "fields": {
+                                        "json_keys": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "user_inner_key_value": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "value": {
+                                    "fields": {
+                                        "json_keys": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_tls_project": {
                 "current": "bytepluscc:tls/project:Project",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_schedule_sql_task": {
+                "current": "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask"
+            },
+            "bytepluscc_tls_topic": {
+                "current": "bytepluscc:tls/topic:Topic",
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
@@ -1691,6 +1884,24 @@
                 "fields": {
                     "tags": {
                         "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vedbm_backup": {
+                "current": "bytepluscc:vedbm/backup:Backup"
+            },
+            "bytepluscc_vedbm_database": {
+                "current": "bytepluscc:vedbm/database:Database",
+                "fields": {
+                    "databases_privileges": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "account_privilege_detail": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -2737,6 +2948,17 @@
                     }
                 }
             },
+            "bytepluscc_autoscaling_scaling_lifecycle_hook": {
+                "current": "bytepluscc:autoscaling/getScalingLifecycleHook:getScalingLifecycleHook"
+            },
+            "bytepluscc_autoscaling_scaling_lifecycle_hooks": {
+                "current": "bytepluscc:autoscaling/getScalingLifecycleHooks:getScalingLifecycleHooks",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_autoscaling_scaling_policies": {
                 "current": "bytepluscc:autoscaling/getScalingPolicies:getScalingPolicies",
                 "fields": {
@@ -3671,6 +3893,176 @@
                     }
                 }
             },
+            "bytepluscc_emr_cluster": {
+                "current": "bytepluscc:emr/getCluster:getCluster",
+                "fields": {
+                    "application_extras": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "application_component_layouts": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "effective_scope": {
+                                                "fields": {
+                                                    "component_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_types": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_names": {
+                                                        "maxItemsOne": false
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "application_configs": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "effective_scope": {
+                                                "fields": {
+                                                    "component_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_names": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_group_types": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_ids": {
+                                                        "maxItemsOne": false
+                                                    },
+                                                    "node_names": {
+                                                        "maxItemsOne": false
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "application_names": {
+                        "maxItemsOne": false
+                    },
+                    "applications": {
+                        "maxItemsOne": false
+                    },
+                    "bootstrap_scripts": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "effective_scope": {
+                                    "fields": {
+                                        "component_names": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_group_ids": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_group_names": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_group_types": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_ids": {
+                                            "maxItemsOne": false
+                                        },
+                                        "node_names": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "cluster_domain_names": {
+                        "maxItemsOne": false
+                    },
+                    "node_group_attributes": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "data_disks": {
+                                    "maxItemsOne": false
+                                },
+                                "ecs_instance_types": {
+                                    "maxItemsOne": false
+                                },
+                                "layout_component_names": {
+                                    "maxItemsOne": false
+                                },
+                                "subnet_ids": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_cluster_user": {
+                "current": "bytepluscc:emr/getClusterUser:getClusterUser",
+                "fields": {
+                    "user_group_names": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_cluster_user_group": {
+                "current": "bytepluscc:emr/getClusterUserGroup:getClusterUserGroup",
+                "fields": {
+                    "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_cluster_user_groups": {
+                "current": "bytepluscc:emr/getClusterUserGroups:getClusterUserGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_cluster_users": {
+                "current": "bytepluscc:emr/getClusterUsers:getClusterUsers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_clusters": {
+                "current": "bytepluscc:emr/getClusters:getClusters",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_escloud_instance": {
                 "current": "bytepluscc:escloud/getInstance:getInstance",
                 "fields": {
@@ -4135,6 +4527,17 @@
             },
             "bytepluscc_organization_accounts": {
                 "current": "bytepluscc:organization/getAccounts:getAccounts",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_organization_organization": {
+                "current": "bytepluscc:organization/getOrganization:getOrganization"
+            },
+            "bytepluscc_organization_organizations": {
+                "current": "bytepluscc:organization/getOrganizations:getOrganizations",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -4737,6 +5140,47 @@
                     }
                 }
             },
+            "bytepluscc_tls_index": {
+                "current": "bytepluscc:tls/getIndex:getIndex",
+                "fields": {
+                    "key_value": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "value": {
+                                    "fields": {
+                                        "json_keys": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "user_inner_key_value": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "value": {
+                                    "fields": {
+                                        "json_keys": {
+                                            "maxItemsOne": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_tls_indices": {
+                "current": "bytepluscc:tls/getIndices:getIndices",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_tls_project": {
                 "current": "bytepluscc:tls/getProject:getProject",
                 "fields": {
@@ -4747,6 +5191,33 @@
             },
             "bytepluscc_tls_projects": {
                 "current": "bytepluscc:tls/getProjects:getProjects",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_schedule_sql_task": {
+                "current": "bytepluscc:tls/getScheduleSqlTask:getScheduleSqlTask"
+            },
+            "bytepluscc_tls_schedule_sql_tasks": {
+                "current": "bytepluscc:tls/getScheduleSqlTasks:getScheduleSqlTasks",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_topic": {
+                "current": "bytepluscc:tls/getTopic:getTopic",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_topics": {
+                "current": "bytepluscc:tls/getTopics:getTopics",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -4840,6 +5311,40 @@
             },
             "bytepluscc_transitrouter_vpn_attachments": {
                 "current": "bytepluscc:transitrouter/getVpnAttachments:getVpnAttachments",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vedbm_backup": {
+                "current": "bytepluscc:vedbm/getBackup:getBackup"
+            },
+            "bytepluscc_vedbm_backups": {
+                "current": "bytepluscc:vedbm/getBackups:getBackups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vedbm_database": {
+                "current": "bytepluscc:vedbm/getDatabase:getDatabase",
+                "fields": {
+                    "databases_privileges": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "account_privilege_detail": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_vedbm_databases": {
+                "current": "bytepluscc:vedbm/getDatabases:getDatabases",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

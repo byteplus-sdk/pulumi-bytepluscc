@@ -13,6 +13,121 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type DatabaseDatabasesPrivilege struct {
+	// 需授权的账号名称
+	AccountName *string `pulumi:"accountName"`
+	// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+	AccountPrivilege *string `pulumi:"accountPrivilege"`
+	// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
+}
+
+// DatabaseDatabasesPrivilegeInput is an input type that accepts DatabaseDatabasesPrivilegeArgs and DatabaseDatabasesPrivilegeOutput values.
+// You can construct a concrete instance of `DatabaseDatabasesPrivilegeInput` via:
+//
+//	DatabaseDatabasesPrivilegeArgs{...}
+type DatabaseDatabasesPrivilegeInput interface {
+	pulumi.Input
+
+	ToDatabaseDatabasesPrivilegeOutput() DatabaseDatabasesPrivilegeOutput
+	ToDatabaseDatabasesPrivilegeOutputWithContext(context.Context) DatabaseDatabasesPrivilegeOutput
+}
+
+type DatabaseDatabasesPrivilegeArgs struct {
+	// 需授权的账号名称
+	AccountName pulumi.StringPtrInput `pulumi:"accountName"`
+	// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+	AccountPrivilege pulumi.StringPtrInput `pulumi:"accountPrivilege"`
+	// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
+}
+
+func (DatabaseDatabasesPrivilegeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (i DatabaseDatabasesPrivilegeArgs) ToDatabaseDatabasesPrivilegeOutput() DatabaseDatabasesPrivilegeOutput {
+	return i.ToDatabaseDatabasesPrivilegeOutputWithContext(context.Background())
+}
+
+func (i DatabaseDatabasesPrivilegeArgs) ToDatabaseDatabasesPrivilegeOutputWithContext(ctx context.Context) DatabaseDatabasesPrivilegeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseDatabasesPrivilegeOutput)
+}
+
+// DatabaseDatabasesPrivilegeArrayInput is an input type that accepts DatabaseDatabasesPrivilegeArray and DatabaseDatabasesPrivilegeArrayOutput values.
+// You can construct a concrete instance of `DatabaseDatabasesPrivilegeArrayInput` via:
+//
+//	DatabaseDatabasesPrivilegeArray{ DatabaseDatabasesPrivilegeArgs{...} }
+type DatabaseDatabasesPrivilegeArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseDatabasesPrivilegeArrayOutput() DatabaseDatabasesPrivilegeArrayOutput
+	ToDatabaseDatabasesPrivilegeArrayOutputWithContext(context.Context) DatabaseDatabasesPrivilegeArrayOutput
+}
+
+type DatabaseDatabasesPrivilegeArray []DatabaseDatabasesPrivilegeInput
+
+func (DatabaseDatabasesPrivilegeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (i DatabaseDatabasesPrivilegeArray) ToDatabaseDatabasesPrivilegeArrayOutput() DatabaseDatabasesPrivilegeArrayOutput {
+	return i.ToDatabaseDatabasesPrivilegeArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseDatabasesPrivilegeArray) ToDatabaseDatabasesPrivilegeArrayOutputWithContext(ctx context.Context) DatabaseDatabasesPrivilegeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseDatabasesPrivilegeArrayOutput)
+}
+
+type DatabaseDatabasesPrivilegeOutput struct{ *pulumi.OutputState }
+
+func (DatabaseDatabasesPrivilegeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (o DatabaseDatabasesPrivilegeOutput) ToDatabaseDatabasesPrivilegeOutput() DatabaseDatabasesPrivilegeOutput {
+	return o
+}
+
+func (o DatabaseDatabasesPrivilegeOutput) ToDatabaseDatabasesPrivilegeOutputWithContext(ctx context.Context) DatabaseDatabasesPrivilegeOutput {
+	return o
+}
+
+// 需授权的账号名称
+func (o DatabaseDatabasesPrivilegeOutput) AccountName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabasesPrivilege) *string { return v.AccountName }).(pulumi.StringPtrOutput)
+}
+
+// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+func (o DatabaseDatabasesPrivilegeOutput) AccountPrivilege() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabasesPrivilege) *string { return v.AccountPrivilege }).(pulumi.StringPtrOutput)
+}
+
+// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+func (o DatabaseDatabasesPrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DatabaseDatabasesPrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
+}
+
+type DatabaseDatabasesPrivilegeArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseDatabasesPrivilegeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (o DatabaseDatabasesPrivilegeArrayOutput) ToDatabaseDatabasesPrivilegeArrayOutput() DatabaseDatabasesPrivilegeArrayOutput {
+	return o
+}
+
+func (o DatabaseDatabasesPrivilegeArrayOutput) ToDatabaseDatabasesPrivilegeArrayOutputWithContext(ctx context.Context) DatabaseDatabasesPrivilegeArrayOutput {
+	return o
+}
+
+func (o DatabaseDatabasesPrivilegeArrayOutput) Index(i pulumi.IntInput) DatabaseDatabasesPrivilegeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseDatabasesPrivilege {
+		return vs[0].([]DatabaseDatabasesPrivilege)[vs[1].(int)]
+	}).(DatabaseDatabasesPrivilegeOutput)
+}
+
 type InstanceChargeDetail struct {
 	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
 	AutoRenew *bool `pulumi:"autoRenew"`
@@ -1061,6 +1176,121 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	}).(InstanceTagOutput)
 }
 
+type GetDatabaseDatabasesPrivilege struct {
+	// 需授权的账号名称
+	AccountName string `pulumi:"accountName"`
+	// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+	AccountPrivilege string `pulumi:"accountPrivilege"`
+	// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
+}
+
+// GetDatabaseDatabasesPrivilegeInput is an input type that accepts GetDatabaseDatabasesPrivilegeArgs and GetDatabaseDatabasesPrivilegeOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabasesPrivilegeInput` via:
+//
+//	GetDatabaseDatabasesPrivilegeArgs{...}
+type GetDatabaseDatabasesPrivilegeInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabasesPrivilegeOutput() GetDatabaseDatabasesPrivilegeOutput
+	ToGetDatabaseDatabasesPrivilegeOutputWithContext(context.Context) GetDatabaseDatabasesPrivilegeOutput
+}
+
+type GetDatabaseDatabasesPrivilegeArgs struct {
+	// 需授权的账号名称
+	AccountName pulumi.StringInput `pulumi:"accountName"`
+	// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+	AccountPrivilege pulumi.StringInput `pulumi:"accountPrivilege"`
+	// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
+}
+
+func (GetDatabaseDatabasesPrivilegeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabasesPrivilegeArgs) ToGetDatabaseDatabasesPrivilegeOutput() GetDatabaseDatabasesPrivilegeOutput {
+	return i.ToGetDatabaseDatabasesPrivilegeOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabasesPrivilegeArgs) ToGetDatabaseDatabasesPrivilegeOutputWithContext(ctx context.Context) GetDatabaseDatabasesPrivilegeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabasesPrivilegeOutput)
+}
+
+// GetDatabaseDatabasesPrivilegeArrayInput is an input type that accepts GetDatabaseDatabasesPrivilegeArray and GetDatabaseDatabasesPrivilegeArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabasesPrivilegeArrayInput` via:
+//
+//	GetDatabaseDatabasesPrivilegeArray{ GetDatabaseDatabasesPrivilegeArgs{...} }
+type GetDatabaseDatabasesPrivilegeArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabasesPrivilegeArrayOutput() GetDatabaseDatabasesPrivilegeArrayOutput
+	ToGetDatabaseDatabasesPrivilegeArrayOutputWithContext(context.Context) GetDatabaseDatabasesPrivilegeArrayOutput
+}
+
+type GetDatabaseDatabasesPrivilegeArray []GetDatabaseDatabasesPrivilegeInput
+
+func (GetDatabaseDatabasesPrivilegeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabasesPrivilegeArray) ToGetDatabaseDatabasesPrivilegeArrayOutput() GetDatabaseDatabasesPrivilegeArrayOutput {
+	return i.ToGetDatabaseDatabasesPrivilegeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabasesPrivilegeArray) ToGetDatabaseDatabasesPrivilegeArrayOutputWithContext(ctx context.Context) GetDatabaseDatabasesPrivilegeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabasesPrivilegeArrayOutput)
+}
+
+type GetDatabaseDatabasesPrivilegeOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabasesPrivilegeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabasesPrivilegeOutput) ToGetDatabaseDatabasesPrivilegeOutput() GetDatabaseDatabasesPrivilegeOutput {
+	return o
+}
+
+func (o GetDatabaseDatabasesPrivilegeOutput) ToGetDatabaseDatabasesPrivilegeOutputWithContext(ctx context.Context) GetDatabaseDatabasesPrivilegeOutput {
+	return o
+}
+
+// 需授权的账号名称
+func (o GetDatabaseDatabasesPrivilegeOutput) AccountName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabasesPrivilege) string { return v.AccountName }).(pulumi.StringOutput)
+}
+
+// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+func (o GetDatabaseDatabasesPrivilegeOutput) AccountPrivilege() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabasesPrivilege) string { return v.AccountPrivilege }).(pulumi.StringOutput)
+}
+
+// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+func (o GetDatabaseDatabasesPrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabasesPrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseDatabasesPrivilegeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabasesPrivilegeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabasesPrivilege)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabasesPrivilegeArrayOutput) ToGetDatabaseDatabasesPrivilegeArrayOutput() GetDatabaseDatabasesPrivilegeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabasesPrivilegeArrayOutput) ToGetDatabaseDatabasesPrivilegeArrayOutputWithContext(ctx context.Context) GetDatabaseDatabasesPrivilegeArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabasesPrivilegeArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabasesPrivilegeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabasesPrivilege {
+		return vs[0].([]GetDatabaseDatabasesPrivilege)[vs[1].(int)]
+	}).(GetDatabaseDatabasesPrivilegeOutput)
+}
+
 type GetInstanceChargeDetail struct {
 	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
 	AutoRenew bool `pulumi:"autoRenew"`
@@ -1878,6 +2108,8 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasesPrivilegeInput)(nil)).Elem(), DatabaseDatabasesPrivilegeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseDatabasesPrivilegeArrayInput)(nil)).Elem(), DatabaseDatabasesPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailInput)(nil)).Elem(), InstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeDetailPtrInput)(nil)).Elem(), InstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEndpointInput)(nil)).Elem(), InstanceEndpointArgs{})
@@ -1890,6 +2122,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeArrayInput)(nil)).Elem(), InstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasesPrivilegeInput)(nil)).Elem(), GetDatabaseDatabasesPrivilegeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabasesPrivilegeArrayInput)(nil)).Elem(), GetDatabaseDatabasesPrivilegeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeDetailInput)(nil)).Elem(), GetInstanceChargeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointInput)(nil)).Elem(), GetInstanceEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEndpointArrayInput)(nil)).Elem(), GetInstanceEndpointArray{})
@@ -1900,6 +2134,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeArrayInput)(nil)).Elem(), GetInstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterOutputType(DatabaseDatabasesPrivilegeOutput{})
+	pulumi.RegisterOutputType(DatabaseDatabasesPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceChargeDetailOutput{})
 	pulumi.RegisterOutputType(InstanceChargeDetailPtrOutput{})
 	pulumi.RegisterOutputType(InstanceEndpointOutput{})
@@ -1912,6 +2148,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceNodeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabasesPrivilegeOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabasesPrivilegeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceChargeDetailOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointOutput{})
 	pulumi.RegisterOutputType(GetInstanceEndpointArrayOutput{})

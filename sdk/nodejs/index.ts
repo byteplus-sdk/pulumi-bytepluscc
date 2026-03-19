@@ -25,6 +25,7 @@ import * as cr from "./cr";
 import * as directconnect from "./directconnect";
 import * as dns from "./dns";
 import * as ecs from "./ecs";
+import * as emr from "./emr";
 import * as escloud from "./escloud";
 import * as filenas from "./filenas";
 import * as fwcenter from "./fwcenter";
@@ -70,6 +71,7 @@ export {
     directconnect,
     dns,
     ecs,
+    emr,
     escloud,
     filenas,
     fwcenter,

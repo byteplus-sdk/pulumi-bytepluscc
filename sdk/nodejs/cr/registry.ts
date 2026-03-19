@@ -95,7 +95,7 @@ export class Registry extends pulumi.CustomResource {
     /**
      * 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
      */
-    public /*out*/ readonly status!: pulumi.Output<outputs.cr.RegistryStatus>;
+    public readonly status!: pulumi.Output<outputs.cr.RegistryStatus>;
     public readonly tags!: pulumi.Output<outputs.cr.RegistryTag[]>;
     /**
      * 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
@@ -133,6 +133,7 @@ export class Registry extends pulumi.CustomResource {
             }
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["project"] = args ? args.project : undefined;
+            resourceInputs["status"] = args ? args.status : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["chargeType"] = undefined /*out*/;
@@ -141,7 +142,6 @@ export class Registry extends pulumi.CustomResource {
             resourceInputs["proxyCache"] = undefined /*out*/;
             resourceInputs["proxyCacheEnabled"] = undefined /*out*/;
             resourceInputs["renewType"] = undefined /*out*/;
-            resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Registry.__pulumiType, name, resourceInputs, opts);
@@ -207,6 +207,10 @@ export interface RegistryArgs {
      * 填写实例需要关联的项目。一个实例仅支持关联一个项目
      */
     project?: pulumi.Input<string>;
+    /**
+     * 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+     */
+    status?: pulumi.Input<inputs.cr.RegistryStatus>;
     tags?: pulumi.Input<pulumi.Input<inputs.cr.RegistryTag>[]>;
     /**
      * 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
