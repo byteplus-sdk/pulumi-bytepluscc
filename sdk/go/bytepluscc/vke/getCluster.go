@@ -42,6 +42,8 @@ type LookupClusterResult struct {
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
+	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	IrsaConfig GetClusterIrsaConfig `pulumi:"irsaConfig"`
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
@@ -136,6 +138,11 @@ func (o LookupClusterResultOutput) Description() pulumi.StringOutput {
 // Uniquely identifies the resource.
 func (o LookupClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// IRSA（IAM Role for Service Account）能力相关参数配置。
+func (o LookupClusterResultOutput) IrsaConfig() GetClusterIrsaConfigOutput {
+	return o.ApplyT(func(v LookupClusterResult) GetClusterIrsaConfig { return v.IrsaConfig }).(GetClusterIrsaConfigOutput)
 }
 
 // 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）

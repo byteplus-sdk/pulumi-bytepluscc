@@ -65,6 +65,21 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * 
+     */
+    @Import(name="ipFamily")
+    private @Nullable Output<String> ipFamily;
+
+    /**
+     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * 
+     */
+    public Optional<Output<String>> ipFamily() {
+        return Optional.ofNullable(this.ipFamily);
+    }
+
+    /**
      * 节点公网访问配置，参数值说明：false：未开启。true：已开启。
      * 
      */
@@ -130,6 +145,7 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
         this.apiServerEndpoints = $.apiServerEndpoints;
         this.apiServerPublicAccessConfig = $.apiServerPublicAccessConfig;
         this.apiServerPublicAccessEnabled = $.apiServerPublicAccessEnabled;
+        this.ipFamily = $.ipFamily;
         this.resourcePublicAccessDefaultEnabled = $.resourcePublicAccessDefaultEnabled;
         this.securityGroupIds = $.securityGroupIds;
         this.subnetIds = $.subnetIds;
@@ -215,6 +231,27 @@ public final class ClusterClusterConfigArgs extends com.pulumi.resources.Resourc
          */
         public Builder apiServerPublicAccessEnabled(Boolean apiServerPublicAccessEnabled) {
             return apiServerPublicAccessEnabled(Output.of(apiServerPublicAccessEnabled));
+        }
+
+        /**
+         * @param ipFamily 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipFamily(@Nullable Output<String> ipFamily) {
+            $.ipFamily = ipFamily;
+            return this;
+        }
+
+        /**
+         * @param ipFamily 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipFamily(String ipFamily) {
+            return ipFamily(Output.of(ipFamily));
         }
 
         /**

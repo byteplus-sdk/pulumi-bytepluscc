@@ -26,7 +26,7 @@ class ClusterArgs:
                  cluster_config: Optional[pulumi.Input['ClusterClusterConfigArgs']] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 kubernetes_version: Optional[pulumi.Input[builtins.str]] = None,
+                 irsa_config: Optional[pulumi.Input['ClusterIrsaConfigArgs']] = None,
                  kubernetes_version_create: Optional[pulumi.Input[builtins.str]] = None,
                  logging_config: Optional[pulumi.Input['ClusterLoggingConfigArgs']] = None,
                  monitoring_config: Optional[pulumi.Input['ClusterMonitoringConfigArgs']] = None,
@@ -41,7 +41,7 @@ class ClusterArgs:
         :param pulumi.Input['ClusterClusterConfigArgs'] cluster_config: 集群控制面及部分节点的网络配置。
         :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
         :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
-        :param pulumi.Input[builtins.str] kubernetes_version: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        :param pulumi.Input['ClusterIrsaConfigArgs'] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
         :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
         :param pulumi.Input['ClusterLoggingConfigArgs'] logging_config: 集群的日志配置信息。
         :param pulumi.Input['ClusterMonitoringConfigArgs'] monitoring_config: 监控配置信息。
@@ -57,8 +57,8 @@ class ClusterArgs:
             pulumi.set(__self__, "delete_protection_enabled", delete_protection_enabled)
         if description is not None:
             pulumi.set(__self__, "description", description)
-        if kubernetes_version is not None:
-            pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+        if irsa_config is not None:
+            pulumi.set(__self__, "irsa_config", irsa_config)
         if kubernetes_version_create is not None:
             pulumi.set(__self__, "kubernetes_version_create", kubernetes_version_create)
         if logging_config is not None:
@@ -125,16 +125,16 @@ class ClusterArgs:
         pulumi.set(self, "description", value)
 
     @property
-    @pulumi.getter(name="kubernetesVersion")
-    def kubernetes_version(self) -> Optional[pulumi.Input[builtins.str]]:
+    @pulumi.getter(name="irsaConfig")
+    def irsa_config(self) -> Optional[pulumi.Input['ClusterIrsaConfigArgs']]:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        IRSA（IAM Role for Service Account）能力相关参数配置。
         """
-        return pulumi.get(self, "kubernetes_version")
+        return pulumi.get(self, "irsa_config")
 
-    @kubernetes_version.setter
-    def kubernetes_version(self, value: Optional[pulumi.Input[builtins.str]]):
-        pulumi.set(self, "kubernetes_version", value)
+    @irsa_config.setter
+    def irsa_config(self, value: Optional[pulumi.Input['ClusterIrsaConfigArgs']]):
+        pulumi.set(self, "irsa_config", value)
 
     @property
     @pulumi.getter(name="kubernetesVersionCreate")
@@ -238,6 +238,7 @@ class _ClusterState:
                  created_time: Optional[pulumi.Input[builtins.str]] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 irsa_config: Optional[pulumi.Input['ClusterIrsaConfigArgs']] = None,
                  kubernetes_version: Optional[pulumi.Input[builtins.str]] = None,
                  kubernetes_version_create: Optional[pulumi.Input[builtins.str]] = None,
                  logging_config: Optional[pulumi.Input['ClusterLoggingConfigArgs']] = None,
@@ -260,6 +261,7 @@ class _ClusterState:
         :param pulumi.Input[builtins.str] created_time: 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
         :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
         :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
+        :param pulumi.Input['ClusterIrsaConfigArgs'] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
         :param pulumi.Input[builtins.str] kubernetes_version: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
         :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
         :param pulumi.Input['ClusterLoggingConfigArgs'] logging_config: 集群的日志配置信息。
@@ -285,6 +287,8 @@ class _ClusterState:
             pulumi.set(__self__, "delete_protection_enabled", delete_protection_enabled)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if irsa_config is not None:
+            pulumi.set(__self__, "irsa_config", irsa_config)
         if kubernetes_version is not None:
             pulumi.set(__self__, "kubernetes_version", kubernetes_version)
         if kubernetes_version_create is not None:
@@ -375,6 +379,18 @@ class _ClusterState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="irsaConfig")
+    def irsa_config(self) -> Optional[pulumi.Input['ClusterIrsaConfigArgs']]:
+        """
+        IRSA（IAM Role for Service Account）能力相关参数配置。
+        """
+        return pulumi.get(self, "irsa_config")
+
+    @irsa_config.setter
+    def irsa_config(self, value: Optional[pulumi.Input['ClusterIrsaConfigArgs']]):
+        pulumi.set(self, "irsa_config", value)
 
     @property
     @pulumi.getter(name="kubernetesVersion")
@@ -563,7 +579,7 @@ class Cluster(pulumi.CustomResource):
                  cluster_config: Optional[pulumi.Input[Union['ClusterClusterConfigArgs', 'ClusterClusterConfigArgsDict']]] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 kubernetes_version: Optional[pulumi.Input[builtins.str]] = None,
+                 irsa_config: Optional[pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']]] = None,
                  kubernetes_version_create: Optional[pulumi.Input[builtins.str]] = None,
                  logging_config: Optional[pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']]] = None,
                  monitoring_config: Optional[pulumi.Input[Union['ClusterMonitoringConfigArgs', 'ClusterMonitoringConfigArgsDict']]] = None,
@@ -588,7 +604,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Union['ClusterClusterConfigArgs', 'ClusterClusterConfigArgsDict']] cluster_config: 集群控制面及部分节点的网络配置。
         :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
         :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
-        :param pulumi.Input[builtins.str] kubernetes_version: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        :param pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
         :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
         :param pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']] logging_config: 集群的日志配置信息。
         :param pulumi.Input[Union['ClusterMonitoringConfigArgs', 'ClusterMonitoringConfigArgsDict']] monitoring_config: 监控配置信息。
@@ -631,7 +647,7 @@ class Cluster(pulumi.CustomResource):
                  cluster_config: Optional[pulumi.Input[Union['ClusterClusterConfigArgs', 'ClusterClusterConfigArgsDict']]] = None,
                  delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
-                 kubernetes_version: Optional[pulumi.Input[builtins.str]] = None,
+                 irsa_config: Optional[pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']]] = None,
                  kubernetes_version_create: Optional[pulumi.Input[builtins.str]] = None,
                  logging_config: Optional[pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']]] = None,
                  monitoring_config: Optional[pulumi.Input[Union['ClusterMonitoringConfigArgs', 'ClusterMonitoringConfigArgsDict']]] = None,
@@ -653,7 +669,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["cluster_config"] = cluster_config
             __props__.__dict__["delete_protection_enabled"] = delete_protection_enabled
             __props__.__dict__["description"] = description
-            __props__.__dict__["kubernetes_version"] = kubernetes_version
+            __props__.__dict__["irsa_config"] = irsa_config
             __props__.__dict__["kubernetes_version_create"] = kubernetes_version_create
             __props__.__dict__["logging_config"] = logging_config
             __props__.__dict__["monitoring_config"] = monitoring_config
@@ -667,6 +683,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["tags"] = tags
             __props__.__dict__["cluster_id"] = None
             __props__.__dict__["created_time"] = None
+            __props__.__dict__["kubernetes_version"] = None
             __props__.__dict__["message"] = None
             __props__.__dict__["node_statistics"] = None
             __props__.__dict__["status"] = None
@@ -687,6 +704,7 @@ class Cluster(pulumi.CustomResource):
             created_time: Optional[pulumi.Input[builtins.str]] = None,
             delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
+            irsa_config: Optional[pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']]] = None,
             kubernetes_version: Optional[pulumi.Input[builtins.str]] = None,
             kubernetes_version_create: Optional[pulumi.Input[builtins.str]] = None,
             logging_config: Optional[pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']]] = None,
@@ -714,6 +732,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] created_time: 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
         :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
         :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
+        :param pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
         :param pulumi.Input[builtins.str] kubernetes_version: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
         :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
         :param pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']] logging_config: 集群的日志配置信息。
@@ -738,6 +757,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["delete_protection_enabled"] = delete_protection_enabled
         __props__.__dict__["description"] = description
+        __props__.__dict__["irsa_config"] = irsa_config
         __props__.__dict__["kubernetes_version"] = kubernetes_version
         __props__.__dict__["kubernetes_version_create"] = kubernetes_version_create
         __props__.__dict__["logging_config"] = logging_config
@@ -794,6 +814,14 @@ class Cluster(pulumi.CustomResource):
         集群描述。长度限制为 300 个字符以内。
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="irsaConfig")
+    def irsa_config(self) -> pulumi.Output['outputs.ClusterIrsaConfig']:
+        """
+        IRSA（IAM Role for Service Account）能力相关参数配置。
+        """
+        return pulumi.get(self, "irsa_config")
 
     @property
     @pulumi.getter(name="kubernetesVersion")

@@ -29,6 +29,7 @@ __all__ = [
     'ClbTag',
     'ListenerHealthCheck',
     'ListenerTag',
+    'NlbAccessLog',
     'NlbListenerHealth',
     'NlbListenerTag',
     'NlbSecurityPolicyTag',
@@ -55,6 +56,7 @@ __all__ = [
     'GetClbTagResult',
     'GetListenerHealthCheckResult',
     'GetListenerTagResult',
+    'GetNlbAccessLogResult',
     'GetNlbListenerHealthResult',
     'GetNlbListenerTagResult',
     'GetNlbSecurityPolicyTagResult',
@@ -879,6 +881,70 @@ class ListenerTag(dict):
         用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class NlbAccessLog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessLogEnabled":
+            suggest = "access_log_enabled"
+        elif key == "projectId":
+            suggest = "project_id"
+        elif key == "topicId":
+            suggest = "topic_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NlbAccessLog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NlbAccessLog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NlbAccessLog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_log_enabled: Optional[builtins.bool] = None,
+                 project_id: Optional[builtins.str] = None,
+                 topic_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool access_log_enabled: 是否开启访问日志。true：是。flase：否。
+        :param builtins.str project_id: 日志项目的ID。
+        :param builtins.str topic_id: 日志主题的ID。
+        """
+        if access_log_enabled is not None:
+            pulumi.set(__self__, "access_log_enabled", access_log_enabled)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter(name="accessLogEnabled")
+    def access_log_enabled(self) -> Optional[builtins.bool]:
+        """
+        是否开启访问日志。true：是。flase：否。
+        """
+        return pulumi.get(self, "access_log_enabled")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[builtins.str]:
+        """
+        日志项目的ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[builtins.str]:
+        """
+        日志主题的ID。
+        """
+        return pulumi.get(self, "topic_id")
 
 
 @pulumi.output_type
@@ -2508,6 +2574,46 @@ class GetListenerTagResult(dict):
         用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetNlbAccessLogResult(dict):
+    def __init__(__self__, *,
+                 access_log_enabled: builtins.bool,
+                 project_id: builtins.str,
+                 topic_id: builtins.str):
+        """
+        :param builtins.bool access_log_enabled: 是否开启访问日志。true：是。flase：否。
+        :param builtins.str project_id: 日志项目的ID。
+        :param builtins.str topic_id: 日志主题的ID。
+        """
+        pulumi.set(__self__, "access_log_enabled", access_log_enabled)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter(name="accessLogEnabled")
+    def access_log_enabled(self) -> builtins.bool:
+        """
+        是否开启访问日志。true：是。flase：否。
+        """
+        return pulumi.get(self, "access_log_enabled")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        日志项目的ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> builtins.str:
+        """
+        日志主题的ID。
+        """
+        return pulumi.get(self, "topic_id")
 
 
 @pulumi.output_type

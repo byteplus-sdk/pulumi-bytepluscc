@@ -109,6 +109,10 @@ export class Record extends pulumi.CustomResource {
      */
     public readonly weight!: pulumi.Output<number>;
     /**
+     * 该记录集是否开启了负载均衡。
+     */
+    public readonly weightEnabled!: pulumi.Output<boolean>;
+    /**
      * 域名 ID。
      */
     public readonly zid!: pulumi.Output<number>;
@@ -138,6 +142,7 @@ export class Record extends pulumi.CustomResource {
             resourceInputs["updatedAt"] = state ? state.updatedAt : undefined;
             resourceInputs["value"] = state ? state.value : undefined;
             resourceInputs["weight"] = state ? state.weight : undefined;
+            resourceInputs["weightEnabled"] = state ? state.weightEnabled : undefined;
             resourceInputs["zid"] = state ? state.zid : undefined;
         } else {
             const args = argsOrState as RecordArgs | undefined;
@@ -161,6 +166,7 @@ export class Record extends pulumi.CustomResource {
             resourceInputs["type"] = args ? args.type : undefined;
             resourceInputs["value"] = args ? args.value : undefined;
             resourceInputs["weight"] = args ? args.weight : undefined;
+            resourceInputs["weightEnabled"] = args ? args.weightEnabled : undefined;
             resourceInputs["zid"] = args ? args.zid : undefined;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["lastOperator"] = undefined /*out*/;
@@ -225,6 +231,10 @@ export interface RecordState {
      */
     weight?: pulumi.Input<number>;
     /**
+     * 该记录集是否开启了负载均衡。
+     */
+    weightEnabled?: pulumi.Input<boolean>;
+    /**
      * 域名 ID。
      */
     zid?: pulumi.Input<number>;
@@ -266,6 +276,10 @@ export interface RecordArgs {
      * 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
      */
     weight?: pulumi.Input<number>;
+    /**
+     * 该记录集是否开启了负载均衡。
+     */
+    weightEnabled?: pulumi.Input<boolean>;
     /**
      * 域名 ID。
      */

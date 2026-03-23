@@ -9,8 +9,11 @@ import typing
 from .allow_list import *
 from .get_allow_list import *
 from .get_allow_lists import *
+from .get_instance import *
+from .get_instances import *
 from .get_topic import *
 from .get_topics import *
+from .instance import *
 from .topic import *
 from ._inputs import *
 from . import outputs

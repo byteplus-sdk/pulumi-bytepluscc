@@ -78,6 +78,11 @@ public final class GetRecordResult {
      */
     private Integer weight;
     /**
+     * @return 该记录集是否开启了负载均衡。
+     * 
+     */
+    private Boolean weightEnabled;
+    /**
      * @return 域名 ID。
      * 
      */
@@ -176,6 +181,13 @@ public final class GetRecordResult {
         return this.weight;
     }
     /**
+     * @return 该记录集是否开启了负载均衡。
+     * 
+     */
+    public Boolean weightEnabled() {
+        return this.weightEnabled;
+    }
+    /**
      * @return 域名 ID。
      * 
      */
@@ -205,6 +217,7 @@ public final class GetRecordResult {
         private String updatedAt;
         private String value;
         private Integer weight;
+        private Boolean weightEnabled;
         private Integer zid;
         public Builder() {}
         public Builder(GetRecordResult defaults) {
@@ -222,6 +235,7 @@ public final class GetRecordResult {
     	      this.updatedAt = defaults.updatedAt;
     	      this.value = defaults.value;
     	      this.weight = defaults.weight;
+    	      this.weightEnabled = defaults.weightEnabled;
     	      this.zid = defaults.zid;
         }
 
@@ -330,6 +344,14 @@ public final class GetRecordResult {
             return this;
         }
         @CustomType.Setter
+        public Builder weightEnabled(Boolean weightEnabled) {
+            if (weightEnabled == null) {
+              throw new MissingRequiredPropertyException("GetRecordResult", "weightEnabled");
+            }
+            this.weightEnabled = weightEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder zid(Integer zid) {
             if (zid == null) {
               throw new MissingRequiredPropertyException("GetRecordResult", "zid");
@@ -352,6 +374,7 @@ public final class GetRecordResult {
             _resultValue.updatedAt = updatedAt;
             _resultValue.value = value;
             _resultValue.weight = weight;
+            _resultValue.weightEnabled = weightEnabled;
             _resultValue.zid = zid;
             return _resultValue;
         }

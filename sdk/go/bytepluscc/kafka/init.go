@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:kafka/allowList:AllowList":
 		r = &AllowList{}
+	case "bytepluscc:kafka/instance:Instance":
+		r = &Instance{}
 	case "bytepluscc:kafka/topic:Topic":
 		r = &Topic{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"kafka/allowList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"kafka/instance",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

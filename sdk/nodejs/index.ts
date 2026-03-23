@@ -54,6 +54,7 @@ import * as vke from "./vke";
 import * as vmp from "./vmp";
 import * as vpc from "./vpc";
 import * as vpn from "./vpn";
+import * as waf from "./waf";
 
 export {
     alb,
@@ -100,6 +101,7 @@ export {
     vmp,
     vpc,
     vpn,
+    waf,
 };
 pulumi.runtime.registerResourcePackage("bytepluscc", {
     version: utilities.getVersion(),

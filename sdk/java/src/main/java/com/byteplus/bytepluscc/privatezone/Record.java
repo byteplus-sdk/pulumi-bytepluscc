@@ -239,6 +239,20 @@ public class Record extends com.pulumi.resources.CustomResource {
         return this.weight;
     }
     /**
+     * 该记录集是否开启了负载均衡。
+     * 
+     */
+    @Export(name="weightEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> weightEnabled;
+
+    /**
+     * @return 该记录集是否开启了负载均衡。
+     * 
+     */
+    public Output<Boolean> weightEnabled() {
+        return this.weightEnabled;
+    }
+    /**
      * 域名 ID。
      * 
      */

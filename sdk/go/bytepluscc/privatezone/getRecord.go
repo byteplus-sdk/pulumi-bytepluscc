@@ -56,6 +56,8 @@ type LookupRecordResult struct {
 	Value string `pulumi:"value"`
 	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 	Weight int `pulumi:"weight"`
+	// 该记录集是否开启了负载均衡。
+	WeightEnabled bool `pulumi:"weightEnabled"`
 	// 域名 ID。
 	Zid int `pulumi:"zid"`
 }
@@ -157,6 +159,11 @@ func (o LookupRecordResultOutput) Value() pulumi.StringOutput {
 // 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 func (o LookupRecordResultOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRecordResult) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+// 该记录集是否开启了负载均衡。
+func (o LookupRecordResultOutput) WeightEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupRecordResult) bool { return v.WeightEnabled }).(pulumi.BoolOutput)
 }
 
 // 域名 ID。

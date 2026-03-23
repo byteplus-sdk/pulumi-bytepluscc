@@ -22,6 +22,8 @@ import (
 type Nlb struct {
 	pulumi.CustomResourceState
 
+	// NLB实例的访问日志信息。
+	AccessLog NlbAccessLogOutput `pulumi:"accessLog"`
 	// NLB实例所属的账号ID。
 	AccountId pulumi.StringOutput `pulumi:"accountId"`
 	// NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
@@ -116,6 +118,8 @@ func GetNlb(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Nlb resources.
 type nlbState struct {
+	// NLB实例的访问日志信息。
+	AccessLog *NlbAccessLog `pulumi:"accessLog"`
 	// NLB实例所属的账号ID。
 	AccountId *string `pulumi:"accountId"`
 	// NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
@@ -169,6 +173,8 @@ type nlbState struct {
 }
 
 type NlbState struct {
+	// NLB实例的访问日志信息。
+	AccessLog NlbAccessLogPtrInput
 	// NLB实例所属的账号ID。
 	AccountId pulumi.StringPtrInput
 	// NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
@@ -373,6 +379,11 @@ func (o NlbOutput) ToNlbOutput() NlbOutput {
 
 func (o NlbOutput) ToNlbOutputWithContext(ctx context.Context) NlbOutput {
 	return o
+}
+
+// NLB实例的访问日志信息。
+func (o NlbOutput) AccessLog() NlbAccessLogOutput {
+	return o.ApplyT(func(v *Nlb) NlbAccessLogOutput { return v.AccessLog }).(NlbAccessLogOutput)
 }
 
 // NLB实例所属的账号ID。

@@ -139,6 +139,21 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * 该记录集是否开启了负载均衡。
+     * 
+     */
+    @Import(name="weightEnabled")
+    private @Nullable Output<Boolean> weightEnabled;
+
+    /**
+     * @return 该记录集是否开启了负载均衡。
+     * 
+     */
+    public Optional<Output<Boolean>> weightEnabled() {
+        return Optional.ofNullable(this.weightEnabled);
+    }
+
+    /**
      * 域名 ID。
      * 
      */
@@ -164,6 +179,7 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
         this.type = $.type;
         this.value = $.value;
         this.weight = $.weight;
+        this.weightEnabled = $.weightEnabled;
         this.zid = $.zid;
     }
 
@@ -351,6 +367,27 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder weight(Integer weight) {
             return weight(Output.of(weight));
+        }
+
+        /**
+         * @param weightEnabled 该记录集是否开启了负载均衡。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder weightEnabled(@Nullable Output<Boolean> weightEnabled) {
+            $.weightEnabled = weightEnabled;
+            return this;
+        }
+
+        /**
+         * @param weightEnabled 该记录集是否开启了负载均衡。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder weightEnabled(Boolean weightEnabled) {
+            return weightEnabled(Output.of(weightEnabled));
         }
 
         /**

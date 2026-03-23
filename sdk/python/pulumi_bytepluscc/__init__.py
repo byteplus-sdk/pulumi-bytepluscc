@@ -97,6 +97,8 @@ if typing.TYPE_CHECKING:
     vpc = __vpc
     import pulumi_bytepluscc.vpn as __vpn
     vpn = __vpn
+    import pulumi_bytepluscc.waf as __waf
+    waf = __waf
 else:
     alb = _utilities.lazy_import('pulumi_bytepluscc.alb')
     apig = _utilities.lazy_import('pulumi_bytepluscc.apig')
@@ -141,6 +143,7 @@ else:
     vmp = _utilities.lazy_import('pulumi_bytepluscc.vmp')
     vpc = _utilities.lazy_import('pulumi_bytepluscc.vpc')
     vpn = _utilities.lazy_import('pulumi_bytepluscc.vpn')
+    waf = _utilities.lazy_import('pulumi_bytepluscc.waf')
 
 _utilities.register(
     resource_modules="""
@@ -303,6 +306,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.bmq",
   "classes": {
    "bytepluscc:bmq/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cdn/domain",
+  "fqn": "pulumi_bytepluscc.cdn",
+  "classes": {
+   "bytepluscc:cdn/domain:Domain": "Domain"
   }
  },
  {
@@ -699,6 +710,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "kafka/instance",
+  "fqn": "pulumi_bytepluscc.kafka",
+  "classes": {
+   "bytepluscc:kafka/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "kafka/topic",
   "fqn": "pulumi_bytepluscc.kafka",
   "classes": {
@@ -1067,6 +1086,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vedbm/allowList",
+  "fqn": "pulumi_bytepluscc.vedbm",
+  "classes": {
+   "bytepluscc:vedbm/allowList:AllowList": "AllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vedbm/backup",
   "fqn": "pulumi_bytepluscc.vedbm",
   "classes": {
@@ -1319,6 +1346,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpn",
   "classes": {
    "bytepluscc:vpn/vpnGateway:VpnGateway": "VpnGateway"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "waf/domain",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/domain:Domain": "Domain"
   }
  }
 ]

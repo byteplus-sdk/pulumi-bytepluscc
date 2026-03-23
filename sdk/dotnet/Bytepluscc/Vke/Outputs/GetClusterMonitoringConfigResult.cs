@@ -19,6 +19,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterMonitoringConfigComponentConfigResult> ComponentConfigs;
         /// <summary>
+        /// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+        /// </summary>
+        public readonly bool EnableMetricsExternalCollection;
+        /// <summary>
         /// 监控数据所属的工作区 ID。
         /// </summary>
         public readonly string WorkspaceId;
@@ -27,9 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         private GetClusterMonitoringConfigResult(
             ImmutableArray<Outputs.GetClusterMonitoringConfigComponentConfigResult> componentConfigs,
 
+            bool enableMetricsExternalCollection,
+
             string workspaceId)
         {
             ComponentConfigs = componentConfigs;
+            EnableMetricsExternalCollection = enableMetricsExternalCollection;
             WorkspaceId = workspaceId;
         }
     }

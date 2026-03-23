@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.vke.ClusterArgs;
 import com.byteplus.bytepluscc.vke.inputs.ClusterState;
 import com.byteplus.bytepluscc.vke.outputs.ClusterClusterConfig;
+import com.byteplus.bytepluscc.vke.outputs.ClusterIrsaConfig;
 import com.byteplus.bytepluscc.vke.outputs.ClusterLoggingConfig;
 import com.byteplus.bytepluscc.vke.outputs.ClusterMonitoringConfig;
 import com.byteplus.bytepluscc.vke.outputs.ClusterNodeStatistics;
@@ -109,6 +110,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> description() {
         return this.description;
+    }
+    /**
+     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     * 
+     */
+    @Export(name="irsaConfig", refs={ClusterIrsaConfig.class}, tree="[0]")
+    private Output<ClusterIrsaConfig> irsaConfig;
+
+    /**
+     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
+     * 
+     */
+    public Output<ClusterIrsaConfig> irsaConfig() {
+        return this.irsaConfig;
     }
     /**
      * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）

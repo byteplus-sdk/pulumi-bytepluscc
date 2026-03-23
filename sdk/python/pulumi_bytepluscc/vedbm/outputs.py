@@ -17,6 +17,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AllowListAssociatedInstance',
     'DatabaseDatabasesPrivilege',
     'InstanceChargeDetail',
     'InstanceEndpoint',
@@ -24,6 +25,7 @@ __all__ = [
     'InstanceMaintenanceWindow',
     'InstanceNode',
     'InstanceTag',
+    'GetAllowListAssociatedInstanceResult',
     'GetDatabaseDatabasesPrivilegeResult',
     'GetInstanceChargeDetailResult',
     'GetInstanceEndpointResult',
@@ -32,6 +34,42 @@ __all__ = [
     'GetInstanceNodeResult',
     'GetInstanceTagResult',
 ]
+
+@pulumi.output_type
+class AllowListAssociatedInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AllowListAssociatedInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AllowListAssociatedInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str instance_id: 实例ID。
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        实例ID。
+        """
+        return pulumi.get(self, "instance_id")
+
 
 @pulumi.output_type
 class DatabaseDatabasesPrivilege(dict):
@@ -712,6 +750,46 @@ class InstanceTag(dict):
         用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetAllowListAssociatedInstanceResult(dict):
+    def __init__(__self__, *,
+                 instance_id: builtins.str,
+                 instance_name: builtins.str,
+                 vpc: builtins.str):
+        """
+        :param builtins.str instance_id: 实例ID。
+        :param builtins.str instance_name: 实例名称。
+        :param builtins.str vpc: 实例所属VPC ID。
+        """
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "vpc", vpc)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        实例ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> builtins.str:
+        """
+        实例名称。
+        """
+        return pulumi.get(self, "instance_name")
+
+    @property
+    @pulumi.getter
+    def vpc(self) -> builtins.str:
+        """
+        实例所属VPC ID。
+        """
+        return pulumi.get(self, "vpc")
 
 
 @pulumi.output_type

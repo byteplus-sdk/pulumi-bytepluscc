@@ -25,6 +25,7 @@ __all__ = [
     'ClusterClusterConfigApiServerEndpointsPublicIp',
     'ClusterClusterConfigApiServerPublicAccessConfig',
     'ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig',
+    'ClusterIrsaConfig',
     'ClusterLoggingConfig',
     'ClusterLoggingConfigLogSetup',
     'ClusterMonitoringConfig',
@@ -97,6 +98,7 @@ __all__ = [
     'GetClusterClusterConfigApiServerEndpointsPublicIpResult',
     'GetClusterClusterConfigApiServerPublicAccessConfigResult',
     'GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigResult',
+    'GetClusterIrsaConfigResult',
     'GetClusterLoggingConfigResult',
     'GetClusterLoggingConfigLogSetupResult',
     'GetClusterMonitoringConfigResult',
@@ -207,6 +209,8 @@ class ClusterClusterConfig(dict):
             suggest = "api_server_public_access_config"
         elif key == "apiServerPublicAccessEnabled":
             suggest = "api_server_public_access_enabled"
+        elif key == "ipFamily":
+            suggest = "ip_family"
         elif key == "resourcePublicAccessDefaultEnabled":
             suggest = "resource_public_access_default_enabled"
         elif key == "securityGroupIds":
@@ -231,6 +235,7 @@ class ClusterClusterConfig(dict):
                  api_server_endpoints: Optional['outputs.ClusterClusterConfigApiServerEndpoints'] = None,
                  api_server_public_access_config: Optional['outputs.ClusterClusterConfigApiServerPublicAccessConfig'] = None,
                  api_server_public_access_enabled: Optional[builtins.bool] = None,
+                 ip_family: Optional[builtins.str] = None,
                  resource_public_access_default_enabled: Optional[builtins.bool] = None,
                  security_group_ids: Optional[Sequence[builtins.str]] = None,
                  subnet_ids: Optional[Sequence[builtins.str]] = None,
@@ -239,6 +244,7 @@ class ClusterClusterConfig(dict):
         :param 'ClusterClusterConfigApiServerEndpointsArgs' api_server_endpoints: 集群 API Server 访问的 IPv4 地址信息。
         :param 'ClusterClusterConfigApiServerPublicAccessConfigArgs' api_server_public_access_config: 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
         :param builtins.bool api_server_public_access_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        :param builtins.str ip_family: 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
         :param builtins.bool resource_public_access_default_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
         :param Sequence[builtins.str] security_group_ids: 集群控制面及节点使用的的安全组。
         :param Sequence[builtins.str] subnet_ids: 集群控制面在私有网络内通信的子网 ID。
@@ -250,6 +256,8 @@ class ClusterClusterConfig(dict):
             pulumi.set(__self__, "api_server_public_access_config", api_server_public_access_config)
         if api_server_public_access_enabled is not None:
             pulumi.set(__self__, "api_server_public_access_enabled", api_server_public_access_enabled)
+        if ip_family is not None:
+            pulumi.set(__self__, "ip_family", ip_family)
         if resource_public_access_default_enabled is not None:
             pulumi.set(__self__, "resource_public_access_default_enabled", resource_public_access_default_enabled)
         if security_group_ids is not None:
@@ -282,6 +290,14 @@ class ClusterClusterConfig(dict):
         节点公网访问配置，参数值说明：false：未开启。true：已开启。
         """
         return pulumi.get(self, "api_server_public_access_enabled")
+
+    @property
+    @pulumi.getter(name="ipFamily")
+    def ip_family(self) -> Optional[builtins.str]:
+        """
+        集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+        """
+        return pulumi.get(self, "ip_family")
 
     @property
     @pulumi.getter(name="resourcePublicAccessDefaultEnabled")
@@ -501,6 +517,106 @@ class ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig(d
 
 
 @pulumi.output_type
+class ClusterIrsaConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jwksUrl":
+            suggest = "jwks_url"
+        elif key == "oidcTrn":
+            suggest = "oidc_trn"
+        elif key == "openIdConfigUrl":
+            suggest = "open_id_config_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterIrsaConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterIrsaConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterIrsaConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 audience: Optional[builtins.str] = None,
+                 enabled: Optional[builtins.bool] = None,
+                 issuer: Optional[builtins.str] = None,
+                 jwks_url: Optional[builtins.str] = None,
+                 oidc_trn: Optional[builtins.str] = None,
+                 open_id_config_url: Optional[builtins.str] = None):
+        """
+        :param builtins.str audience: 接受令牌的标识符。
+        :param builtins.bool enabled: 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        :param builtins.str issuer: OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        :param builtins.str jwks_url: JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        :param builtins.str oidc_trn: OIDC 提供商 TRN。
+        :param builtins.str open_id_config_url: OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        """
+        if audience is not None:
+            pulumi.set(__self__, "audience", audience)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if jwks_url is not None:
+            pulumi.set(__self__, "jwks_url", jwks_url)
+        if oidc_trn is not None:
+            pulumi.set(__self__, "oidc_trn", oidc_trn)
+        if open_id_config_url is not None:
+            pulumi.set(__self__, "open_id_config_url", open_id_config_url)
+
+    @property
+    @pulumi.getter
+    def audience(self) -> Optional[builtins.str]:
+        """
+        接受令牌的标识符。
+        """
+        return pulumi.get(self, "audience")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> Optional[builtins.bool]:
+        """
+        是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def issuer(self) -> Optional[builtins.str]:
+        """
+        OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        """
+        return pulumi.get(self, "issuer")
+
+    @property
+    @pulumi.getter(name="jwksUrl")
+    def jwks_url(self) -> Optional[builtins.str]:
+        """
+        JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        """
+        return pulumi.get(self, "jwks_url")
+
+    @property
+    @pulumi.getter(name="oidcTrn")
+    def oidc_trn(self) -> Optional[builtins.str]:
+        """
+        OIDC 提供商 TRN。
+        """
+        return pulumi.get(self, "oidc_trn")
+
+    @property
+    @pulumi.getter(name="openIdConfigUrl")
+    def open_id_config_url(self) -> Optional[builtins.str]:
+        """
+        OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        """
+        return pulumi.get(self, "open_id_config_url")
+
+
+@pulumi.output_type
 class ClusterLoggingConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -615,6 +731,8 @@ class ClusterMonitoringConfig(dict):
         suggest = None
         if key == "componentConfigs":
             suggest = "component_configs"
+        elif key == "enableMetricsExternalCollection":
+            suggest = "enable_metrics_external_collection"
         elif key == "workspaceId":
             suggest = "workspace_id"
 
@@ -631,12 +749,16 @@ class ClusterMonitoringConfig(dict):
 
     def __init__(__self__, *,
                  component_configs: Optional[Sequence['outputs.ClusterMonitoringConfigComponentConfig']] = None,
+                 enable_metrics_external_collection: Optional[builtins.bool] = None,
                  workspace_id: Optional[builtins.str] = None):
         """
+        :param builtins.bool enable_metrics_external_collection: 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
         :param builtins.str workspace_id: 监控数据所属的工作区 ID。
         """
         if component_configs is not None:
             pulumi.set(__self__, "component_configs", component_configs)
+        if enable_metrics_external_collection is not None:
+            pulumi.set(__self__, "enable_metrics_external_collection", enable_metrics_external_collection)
         if workspace_id is not None:
             pulumi.set(__self__, "workspace_id", workspace_id)
 
@@ -644,6 +766,14 @@ class ClusterMonitoringConfig(dict):
     @pulumi.getter(name="componentConfigs")
     def component_configs(self) -> Optional[Sequence['outputs.ClusterMonitoringConfigComponentConfig']]:
         return pulumi.get(self, "component_configs")
+
+    @property
+    @pulumi.getter(name="enableMetricsExternalCollection")
+    def enable_metrics_external_collection(self) -> Optional[builtins.bool]:
+        """
+        是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+        """
+        return pulumi.get(self, "enable_metrics_external_collection")
 
     @property
     @pulumi.getter(name="workspaceId")
@@ -864,6 +994,8 @@ class ClusterPodsConfigFlannelConfig(dict):
             suggest = "max_pods_per_node"
         elif key == "podCidrs":
             suggest = "pod_cidrs"
+        elif key == "subnetIds":
+            suggest = "subnet_ids"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ClusterPodsConfigFlannelConfig. Access the value via the '{suggest}' property getter instead.")
@@ -878,15 +1010,19 @@ class ClusterPodsConfigFlannelConfig(dict):
 
     def __init__(__self__, *,
                  max_pods_per_node: Optional[builtins.int] = None,
-                 pod_cidrs: Optional[Sequence[builtins.str]] = None):
+                 pod_cidrs: Optional[Sequence[builtins.str]] = None,
+                 subnet_ids: Optional[Sequence[builtins.str]] = None):
         """
         :param builtins.int max_pods_per_node: Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
         :param Sequence[builtins.str] pod_cidrs: Flannel 容器网络的 Pod CIDR。
+        :param Sequence[builtins.str] subnet_ids: Flannel 容器网络模型对应的 Pod 子网 ID 列表。
         """
         if max_pods_per_node is not None:
             pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
         if pod_cidrs is not None:
             pulumi.set(__self__, "pod_cidrs", pod_cidrs)
+        if subnet_ids is not None:
+            pulumi.set(__self__, "subnet_ids", subnet_ids)
 
     @property
     @pulumi.getter(name="maxPodsPerNode")
@@ -903,6 +1039,14 @@ class ClusterPodsConfigFlannelConfig(dict):
         Flannel 容器网络的 Pod CIDR。
         """
         return pulumi.get(self, "pod_cidrs")
+
+    @property
+    @pulumi.getter(name="subnetIds")
+    def subnet_ids(self) -> Optional[Sequence[builtins.str]]:
+        """
+        Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        """
+        return pulumi.get(self, "subnet_ids")
 
 
 @pulumi.output_type
@@ -4921,6 +5065,7 @@ class GetClusterClusterConfigResult(dict):
                  api_server_endpoints: 'outputs.GetClusterClusterConfigApiServerEndpointsResult',
                  api_server_public_access_config: 'outputs.GetClusterClusterConfigApiServerPublicAccessConfigResult',
                  api_server_public_access_enabled: builtins.bool,
+                 ip_family: builtins.str,
                  resource_public_access_default_enabled: builtins.bool,
                  security_group_ids: Sequence[builtins.str],
                  subnet_ids: Sequence[builtins.str],
@@ -4929,6 +5074,7 @@ class GetClusterClusterConfigResult(dict):
         :param 'GetClusterClusterConfigApiServerEndpointsArgs' api_server_endpoints: 集群 API Server 访问的 IPv4 地址信息。
         :param 'GetClusterClusterConfigApiServerPublicAccessConfigArgs' api_server_public_access_config: 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
         :param builtins.bool api_server_public_access_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        :param builtins.str ip_family: 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
         :param builtins.bool resource_public_access_default_enabled: 节点公网访问配置，参数值说明：false：未开启。true：已开启。
         :param Sequence[builtins.str] security_group_ids: 集群控制面及节点使用的的安全组。
         :param Sequence[builtins.str] subnet_ids: 集群控制面在私有网络内通信的子网 ID。
@@ -4937,6 +5083,7 @@ class GetClusterClusterConfigResult(dict):
         pulumi.set(__self__, "api_server_endpoints", api_server_endpoints)
         pulumi.set(__self__, "api_server_public_access_config", api_server_public_access_config)
         pulumi.set(__self__, "api_server_public_access_enabled", api_server_public_access_enabled)
+        pulumi.set(__self__, "ip_family", ip_family)
         pulumi.set(__self__, "resource_public_access_default_enabled", resource_public_access_default_enabled)
         pulumi.set(__self__, "security_group_ids", security_group_ids)
         pulumi.set(__self__, "subnet_ids", subnet_ids)
@@ -4965,6 +5112,14 @@ class GetClusterClusterConfigResult(dict):
         节点公网访问配置，参数值说明：false：未开启。true：已开启。
         """
         return pulumi.get(self, "api_server_public_access_enabled")
+
+    @property
+    @pulumi.getter(name="ipFamily")
+    def ip_family(self) -> builtins.str:
+        """
+        集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+        """
+        return pulumi.get(self, "ip_family")
 
     @property
     @pulumi.getter(name="resourcePublicAccessDefaultEnabled")
@@ -5123,6 +5278,79 @@ class GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfi
 
 
 @pulumi.output_type
+class GetClusterIrsaConfigResult(dict):
+    def __init__(__self__, *,
+                 audience: builtins.str,
+                 enabled: builtins.bool,
+                 issuer: builtins.str,
+                 jwks_url: builtins.str,
+                 oidc_trn: builtins.str,
+                 open_id_config_url: builtins.str):
+        """
+        :param builtins.str audience: 接受令牌的标识符。
+        :param builtins.bool enabled: 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        :param builtins.str issuer: OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        :param builtins.str jwks_url: JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        :param builtins.str oidc_trn: OIDC 提供商 TRN。
+        :param builtins.str open_id_config_url: OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        """
+        pulumi.set(__self__, "audience", audience)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "jwks_url", jwks_url)
+        pulumi.set(__self__, "oidc_trn", oidc_trn)
+        pulumi.set(__self__, "open_id_config_url", open_id_config_url)
+
+    @property
+    @pulumi.getter
+    def audience(self) -> builtins.str:
+        """
+        接受令牌的标识符。
+        """
+        return pulumi.get(self, "audience")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> builtins.bool:
+        """
+        是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def issuer(self) -> builtins.str:
+        """
+        OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        """
+        return pulumi.get(self, "issuer")
+
+    @property
+    @pulumi.getter(name="jwksUrl")
+    def jwks_url(self) -> builtins.str:
+        """
+        JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        """
+        return pulumi.get(self, "jwks_url")
+
+    @property
+    @pulumi.getter(name="oidcTrn")
+    def oidc_trn(self) -> builtins.str:
+        """
+        OIDC 提供商 TRN。
+        """
+        return pulumi.get(self, "oidc_trn")
+
+    @property
+    @pulumi.getter(name="openIdConfigUrl")
+    def open_id_config_url(self) -> builtins.str:
+        """
+        OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        """
+        return pulumi.get(self, "open_id_config_url")
+
+
+@pulumi.output_type
 class GetClusterLoggingConfigResult(dict):
     def __init__(__self__, *,
                  log_project_id: builtins.str,
@@ -5206,12 +5434,15 @@ class GetClusterLoggingConfigLogSetupResult(dict):
 class GetClusterMonitoringConfigResult(dict):
     def __init__(__self__, *,
                  component_configs: Sequence['outputs.GetClusterMonitoringConfigComponentConfigResult'],
+                 enable_metrics_external_collection: builtins.bool,
                  workspace_id: builtins.str):
         """
         :param Sequence['GetClusterMonitoringConfigComponentConfigArgs'] component_configs: 监控组件的配置列表。
+        :param builtins.bool enable_metrics_external_collection: 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
         :param builtins.str workspace_id: 监控数据所属的工作区 ID。
         """
         pulumi.set(__self__, "component_configs", component_configs)
+        pulumi.set(__self__, "enable_metrics_external_collection", enable_metrics_external_collection)
         pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
@@ -5221,6 +5452,14 @@ class GetClusterMonitoringConfigResult(dict):
         监控组件的配置列表。
         """
         return pulumi.get(self, "component_configs")
+
+    @property
+    @pulumi.getter(name="enableMetricsExternalCollection")
+    def enable_metrics_external_collection(self) -> builtins.bool:
+        """
+        是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+        """
+        return pulumi.get(self, "enable_metrics_external_collection")
 
     @property
     @pulumi.getter(name="workspaceId")
@@ -5377,13 +5616,16 @@ class GetClusterPodsConfigResult(dict):
 class GetClusterPodsConfigFlannelConfigResult(dict):
     def __init__(__self__, *,
                  max_pods_per_node: builtins.int,
-                 pod_cidrs: Sequence[builtins.str]):
+                 pod_cidrs: Sequence[builtins.str],
+                 subnet_ids: Sequence[builtins.str]):
         """
         :param builtins.int max_pods_per_node: Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
         :param Sequence[builtins.str] pod_cidrs: Flannel 容器网络的 Pod CIDR。
+        :param Sequence[builtins.str] subnet_ids: Flannel 容器网络模型对应的 Pod 子网 ID 列表。
         """
         pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
         pulumi.set(__self__, "pod_cidrs", pod_cidrs)
+        pulumi.set(__self__, "subnet_ids", subnet_ids)
 
     @property
     @pulumi.getter(name="maxPodsPerNode")
@@ -5400,6 +5642,14 @@ class GetClusterPodsConfigFlannelConfigResult(dict):
         Flannel 容器网络的 Pod CIDR。
         """
         return pulumi.get(self, "pod_cidrs")
+
+    @property
+    @pulumi.getter(name="subnetIds")
+    def subnet_ids(self) -> Sequence[builtins.str]:
+        """
+        Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        """
+        return pulumi.get(self, "subnet_ids")
 
 
 @pulumi.output_type

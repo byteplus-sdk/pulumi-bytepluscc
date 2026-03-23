@@ -47,11 +47,27 @@ public final class ClusterPodsConfigFlannelConfigArgs extends com.pulumi.resourc
         return Optional.ofNullable(this.podCidrs);
     }
 
+    /**
+     * Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * 
+     */
+    @Import(name="subnetIds")
+    private @Nullable Output<List<String>> subnetIds;
+
+    /**
+     * @return Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * 
+     */
+    public Optional<Output<List<String>>> subnetIds() {
+        return Optional.ofNullable(this.subnetIds);
+    }
+
     private ClusterPodsConfigFlannelConfigArgs() {}
 
     private ClusterPodsConfigFlannelConfigArgs(ClusterPodsConfigFlannelConfigArgs $) {
         this.maxPodsPerNode = $.maxPodsPerNode;
         this.podCidrs = $.podCidrs;
+        this.subnetIds = $.subnetIds;
     }
 
     public static Builder builder() {
@@ -122,6 +138,37 @@ public final class ClusterPodsConfigFlannelConfigArgs extends com.pulumi.resourc
          */
         public Builder podCidrs(String... podCidrs) {
             return podCidrs(List.of(podCidrs));
+        }
+
+        /**
+         * @param subnetIds Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetIds(@Nullable Output<List<String>> subnetIds) {
+            $.subnetIds = subnetIds;
+            return this;
+        }
+
+        /**
+         * @param subnetIds Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetIds(List<String> subnetIds) {
+            return subnetIds(Output.of(subnetIds));
+        }
+
+        /**
+         * @param subnetIds Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetIds(String... subnetIds) {
+            return subnetIds(List.of(subnetIds));
         }
 
         public ClusterPodsConfigFlannelConfigArgs build() {

@@ -28,7 +28,8 @@ class RecordArgs:
                  line: Optional[pulumi.Input[builtins.str]] = None,
                  remark: Optional[pulumi.Input[builtins.str]] = None,
                  ttl: Optional[pulumi.Input[builtins.int]] = None,
-                 weight: Optional[pulumi.Input[builtins.int]] = None):
+                 weight: Optional[pulumi.Input[builtins.int]] = None,
+                 weight_enabled: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a Record resource.
         :param pulumi.Input[builtins.str] host: 子域名的域名前缀。
@@ -40,6 +41,7 @@ class RecordArgs:
         :param pulumi.Input[builtins.str] remark: 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
         :param pulumi.Input[builtins.int] ttl: 解析记录的过期时间。单位为秒。默认值为 600。
         :param pulumi.Input[builtins.int] weight: 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        :param pulumi.Input[builtins.bool] weight_enabled: 该记录集是否开启了负载均衡。
         """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "type", type)
@@ -55,6 +57,8 @@ class RecordArgs:
             pulumi.set(__self__, "ttl", ttl)
         if weight is not None:
             pulumi.set(__self__, "weight", weight)
+        if weight_enabled is not None:
+            pulumi.set(__self__, "weight_enabled", weight_enabled)
 
     @property
     @pulumi.getter
@@ -164,6 +168,18 @@ class RecordArgs:
     def weight(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "weight", value)
 
+    @property
+    @pulumi.getter(name="weightEnabled")
+    def weight_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        该记录集是否开启了负载均衡。
+        """
+        return pulumi.get(self, "weight_enabled")
+
+    @weight_enabled.setter
+    def weight_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "weight_enabled", value)
+
 
 @pulumi.input_type
 class _RecordState:
@@ -180,6 +196,7 @@ class _RecordState:
                  updated_at: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.int]] = None,
+                 weight_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  zid: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering Record resources.
@@ -195,6 +212,7 @@ class _RecordState:
         :param pulumi.Input[builtins.str] updated_at: 解析记录最近一次的更新时间。
         :param pulumi.Input[builtins.str] value: 记录值。
         :param pulumi.Input[builtins.int] weight: 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        :param pulumi.Input[builtins.bool] weight_enabled: 该记录集是否开启了负载均衡。
         :param pulumi.Input[builtins.int] zid: 域名 ID。
         """
         if created_at is not None:
@@ -221,6 +239,8 @@ class _RecordState:
             pulumi.set(__self__, "value", value)
         if weight is not None:
             pulumi.set(__self__, "weight", weight)
+        if weight_enabled is not None:
+            pulumi.set(__self__, "weight_enabled", weight_enabled)
         if zid is not None:
             pulumi.set(__self__, "zid", zid)
 
@@ -369,6 +389,18 @@ class _RecordState:
         pulumi.set(self, "weight", value)
 
     @property
+    @pulumi.getter(name="weightEnabled")
+    def weight_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        该记录集是否开启了负载均衡。
+        """
+        return pulumi.get(self, "weight_enabled")
+
+    @weight_enabled.setter
+    def weight_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "weight_enabled", value)
+
+    @property
     @pulumi.getter
     def zid(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -395,6 +427,7 @@ class Record(pulumi.CustomResource):
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.int]] = None,
+                 weight_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  zid: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
         """
@@ -434,6 +467,7 @@ class Record(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] type: 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
         :param pulumi.Input[builtins.str] value: 记录值。
         :param pulumi.Input[builtins.int] weight: 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        :param pulumi.Input[builtins.bool] weight_enabled: 该记录集是否开启了负载均衡。
         :param pulumi.Input[builtins.int] zid: 域名 ID。
         """
         ...
@@ -492,6 +526,7 @@ class Record(pulumi.CustomResource):
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None,
                  weight: Optional[pulumi.Input[builtins.int]] = None,
+                 weight_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  zid: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -516,6 +551,7 @@ class Record(pulumi.CustomResource):
                 raise TypeError("Missing required property 'value'")
             __props__.__dict__["value"] = value
             __props__.__dict__["weight"] = weight
+            __props__.__dict__["weight_enabled"] = weight_enabled
             if zid is None and not opts.urn:
                 raise TypeError("Missing required property 'zid'")
             __props__.__dict__["zid"] = zid
@@ -545,6 +581,7 @@ class Record(pulumi.CustomResource):
             updated_at: Optional[pulumi.Input[builtins.str]] = None,
             value: Optional[pulumi.Input[builtins.str]] = None,
             weight: Optional[pulumi.Input[builtins.int]] = None,
+            weight_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             zid: Optional[pulumi.Input[builtins.int]] = None) -> 'Record':
         """
         Get an existing Record resource's state with the given name, id, and optional extra
@@ -565,6 +602,7 @@ class Record(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] updated_at: 解析记录最近一次的更新时间。
         :param pulumi.Input[builtins.str] value: 记录值。
         :param pulumi.Input[builtins.int] weight: 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        :param pulumi.Input[builtins.bool] weight_enabled: 该记录集是否开启了负载均衡。
         :param pulumi.Input[builtins.int] zid: 域名 ID。
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -583,6 +621,7 @@ class Record(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         __props__.__dict__["value"] = value
         __props__.__dict__["weight"] = weight
+        __props__.__dict__["weight_enabled"] = weight_enabled
         __props__.__dict__["zid"] = zid
         return Record(resource_name, opts=opts, __props__=__props__)
 
@@ -681,6 +720,14 @@ class Record(pulumi.CustomResource):
         记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
         """
         return pulumi.get(self, "weight")
+
+    @property
+    @pulumi.getter(name="weightEnabled")
+    def weight_enabled(self) -> pulumi.Output[builtins.bool]:
+        """
+        该记录集是否开启了负载均衡。
+        """
+        return pulumi.get(self, "weight_enabled")
 
     @property
     @pulumi.getter

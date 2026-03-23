@@ -53,6 +53,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// IRSA（IAM Role for Service Account）能力相关参数配置。
+        /// </summary>
+        [Output("irsaConfig")]
+        public Output<Outputs.ClusterIrsaConfig> IrsaConfig { get; private set; } = null!;
+
+        /// <summary>
         /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
         /// </summary>
         [Output("kubernetesVersion")]
@@ -205,10 +211,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        /// IRSA（IAM Role for Service Account）能力相关参数配置。
         /// </summary>
-        [Input("kubernetesVersion")]
-        public Input<string>? KubernetesVersion { get; set; }
+        [Input("irsaConfig")]
+        public Input<Inputs.ClusterIrsaConfigArgs>? IrsaConfig { get; set; }
 
         /// <summary>
         /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
@@ -303,6 +309,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// IRSA（IAM Role for Service Account）能力相关参数配置。
+        /// </summary>
+        [Input("irsaConfig")]
+        public Input<Inputs.ClusterIrsaConfigGetArgs>? IrsaConfig { get; set; }
 
         /// <summary>
         /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）

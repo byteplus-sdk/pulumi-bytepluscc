@@ -18,6 +18,12 @@ from .. import _utilities
 __all__ = [
     'AllowListAssociatedInstanceArgs',
     'AllowListAssociatedInstanceArgsDict',
+    'InstanceChargeInfoArgs',
+    'InstanceChargeInfoArgsDict',
+    'InstanceConnectionInfoArgs',
+    'InstanceConnectionInfoArgsDict',
+    'InstanceTagArgs',
+    'InstanceTagArgsDict',
     'TopicAccessPolicyArgs',
     'TopicAccessPolicyArgsDict',
     'TopicTagArgs',
@@ -56,6 +62,342 @@ class AllowListAssociatedInstanceArgs:
     @instance_id.setter
     def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "instance_id", value)
+
+
+if not MYPY:
+    class InstanceChargeInfoArgsDict(TypedDict):
+        auto_renew: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+        """
+        charge_expire_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        包年包月实例的到期时间。
+        """
+        charge_start_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例的计费开始时间。
+        """
+        charge_status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+        """
+        charge_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+        """
+        overdue_reclaim_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例欠费关停后的预计释放时间。
+        """
+        overdue_time: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例的欠费关停时间。
+        """
+        period: NotRequired[pulumi.Input[builtins.int]]
+        """
+        包年包月类型实例的购买时长。
+        """
+        period_unit: NotRequired[pulumi.Input[builtins.str]]
+        """
+        包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+        """
+elif False:
+    InstanceChargeInfoArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceChargeInfoArgs:
+    def __init__(__self__, *,
+                 auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
+                 charge_expire_time: Optional[pulumi.Input[builtins.str]] = None,
+                 charge_start_time: Optional[pulumi.Input[builtins.str]] = None,
+                 charge_status: Optional[pulumi.Input[builtins.str]] = None,
+                 charge_type: Optional[pulumi.Input[builtins.str]] = None,
+                 overdue_reclaim_time: Optional[pulumi.Input[builtins.str]] = None,
+                 overdue_time: Optional[pulumi.Input[builtins.str]] = None,
+                 period: Optional[pulumi.Input[builtins.int]] = None,
+                 period_unit: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] auto_renew: 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+        :param pulumi.Input[builtins.str] charge_expire_time: 包年包月实例的到期时间。
+        :param pulumi.Input[builtins.str] charge_start_time: 实例的计费开始时间。
+        :param pulumi.Input[builtins.str] charge_status: 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+        :param pulumi.Input[builtins.str] charge_type: 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+        :param pulumi.Input[builtins.str] overdue_reclaim_time: 实例欠费关停后的预计释放时间。
+        :param pulumi.Input[builtins.str] overdue_time: 实例的欠费关停时间。
+        :param pulumi.Input[builtins.int] period: 包年包月类型实例的购买时长。
+        :param pulumi.Input[builtins.str] period_unit: 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+        """
+        if auto_renew is not None:
+            pulumi.set(__self__, "auto_renew", auto_renew)
+        if charge_expire_time is not None:
+            pulumi.set(__self__, "charge_expire_time", charge_expire_time)
+        if charge_start_time is not None:
+            pulumi.set(__self__, "charge_start_time", charge_start_time)
+        if charge_status is not None:
+            pulumi.set(__self__, "charge_status", charge_status)
+        if charge_type is not None:
+            pulumi.set(__self__, "charge_type", charge_type)
+        if overdue_reclaim_time is not None:
+            pulumi.set(__self__, "overdue_reclaim_time", overdue_reclaim_time)
+        if overdue_time is not None:
+            pulumi.set(__self__, "overdue_time", overdue_time)
+        if period is not None:
+            pulumi.set(__self__, "period", period)
+        if period_unit is not None:
+            pulumi.set(__self__, "period_unit", period_unit)
+
+    @property
+    @pulumi.getter(name="autoRenew")
+    def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+        """
+        return pulumi.get(self, "auto_renew")
+
+    @auto_renew.setter
+    def auto_renew(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_renew", value)
+
+    @property
+    @pulumi.getter(name="chargeExpireTime")
+    def charge_expire_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        包年包月实例的到期时间。
+        """
+        return pulumi.get(self, "charge_expire_time")
+
+    @charge_expire_time.setter
+    def charge_expire_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "charge_expire_time", value)
+
+    @property
+    @pulumi.getter(name="chargeStartTime")
+    def charge_start_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例的计费开始时间。
+        """
+        return pulumi.get(self, "charge_start_time")
+
+    @charge_start_time.setter
+    def charge_start_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "charge_start_time", value)
+
+    @property
+    @pulumi.getter(name="chargeStatus")
+    def charge_status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+        """
+        return pulumi.get(self, "charge_status")
+
+    @charge_status.setter
+    def charge_status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "charge_status", value)
+
+    @property
+    @pulumi.getter(name="chargeType")
+    def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+        """
+        return pulumi.get(self, "charge_type")
+
+    @charge_type.setter
+    def charge_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "charge_type", value)
+
+    @property
+    @pulumi.getter(name="overdueReclaimTime")
+    def overdue_reclaim_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例欠费关停后的预计释放时间。
+        """
+        return pulumi.get(self, "overdue_reclaim_time")
+
+    @overdue_reclaim_time.setter
+    def overdue_reclaim_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "overdue_reclaim_time", value)
+
+    @property
+    @pulumi.getter(name="overdueTime")
+    def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例的欠费关停时间。
+        """
+        return pulumi.get(self, "overdue_time")
+
+    @overdue_time.setter
+    def overdue_time(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "overdue_time", value)
+
+    @property
+    @pulumi.getter
+    def period(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        包年包月类型实例的购买时长。
+        """
+        return pulumi.get(self, "period")
+
+    @period.setter
+    def period(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "period", value)
+
+    @property
+    @pulumi.getter(name="periodUnit")
+    def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+        """
+        return pulumi.get(self, "period_unit")
+
+    @period_unit.setter
+    def period_unit(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "period_unit", value)
+
+
+if not MYPY:
+    class InstanceConnectionInfoArgsDict(TypedDict):
+        endpoint_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+        """
+        internal_endpoint: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例私网访问域名。
+        """
+        network_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        接入点的网络类型。统一为 PrivateNetwork。
+        """
+        public_endpoint: NotRequired[pulumi.Input[builtins.str]]
+        """
+        实例公网访问域名。
+        """
+elif False:
+    InstanceConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceConnectionInfoArgs:
+    def __init__(__self__, *,
+                 endpoint_type: Optional[pulumi.Input[builtins.str]] = None,
+                 internal_endpoint: Optional[pulumi.Input[builtins.str]] = None,
+                 network_type: Optional[pulumi.Input[builtins.str]] = None,
+                 public_endpoint: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] endpoint_type: 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+        :param pulumi.Input[builtins.str] internal_endpoint: 实例私网访问域名。
+        :param pulumi.Input[builtins.str] network_type: 接入点的网络类型。统一为 PrivateNetwork。
+        :param pulumi.Input[builtins.str] public_endpoint: 实例公网访问域名。
+        """
+        if endpoint_type is not None:
+            pulumi.set(__self__, "endpoint_type", endpoint_type)
+        if internal_endpoint is not None:
+            pulumi.set(__self__, "internal_endpoint", internal_endpoint)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if public_endpoint is not None:
+            pulumi.set(__self__, "public_endpoint", public_endpoint)
+
+    @property
+    @pulumi.getter(name="endpointType")
+    def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+        """
+        return pulumi.get(self, "endpoint_type")
+
+    @endpoint_type.setter
+    def endpoint_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "endpoint_type", value)
+
+    @property
+    @pulumi.getter(name="internalEndpoint")
+    def internal_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例私网访问域名。
+        """
+        return pulumi.get(self, "internal_endpoint")
+
+    @internal_endpoint.setter
+    def internal_endpoint(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "internal_endpoint", value)
+
+    @property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        接入点的网络类型。统一为 PrivateNetwork。
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "network_type", value)
+
+    @property
+    @pulumi.getter(name="publicEndpoint")
+    def public_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        实例公网访问域名。
+        """
+        return pulumi.get(self, "public_endpoint")
+
+    @public_endpoint.setter
+    def public_endpoint(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "public_endpoint", value)
+
+
+if not MYPY:
+    class InstanceTagArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签的键。
+        """
+        value: NotRequired[pulumi.Input[builtins.str]]
+        """
+        标签的值。
+        """
+elif False:
+    InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceTagArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[builtins.str]] = None,
+                 value: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key: 标签的键。
+        :param pulumi.Input[builtins.str] value: 标签的值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签的键。
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        标签的值。
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:

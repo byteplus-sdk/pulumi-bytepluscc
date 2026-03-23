@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { DomainArgs, DomainState } from "./domain";
+export type Domain = import("./domain").Domain;
+export const Domain: typeof import("./domain").Domain = null as any;
+utilities.lazyLoad(exports, ["Domain"], () => require("./domain"));
+
+export { GetDomainArgs, GetDomainResult, GetDomainOutputArgs } from "./getDomain";
+export const getDomain: typeof import("./getDomain").getDomain = null as any;
+export const getDomainOutput: typeof import("./getDomain").getDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getDomain","getDomainOutput"], () => require("./getDomain"));
+
+export { GetDomainsResult } from "./getDomains";
+export const getDomains: typeof import("./getDomains").getDomains = null as any;
+export const getDomainsOutput: typeof import("./getDomains").getDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomains","getDomainsOutput"], () => require("./getDomains"));
+
 export { GetShareConfigArgs, GetShareConfigResult, GetShareConfigOutputArgs } from "./getShareConfig";
 export const getShareConfig: typeof import("./getShareConfig").getShareConfig = null as any;
 export const getShareConfigOutput: typeof import("./getShareConfig").getShareConfigOutput = null as any;
@@ -25,6 +40,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:cdn/domain:Domain":
+                return new Domain(name, <any>undefined, { urn })
             case "bytepluscc:cdn/shareConfig:ShareConfig":
                 return new ShareConfig(name, <any>undefined, { urn })
             default:
@@ -32,4 +49,5 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "cdn/domain", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cdn/shareConfig", _module)

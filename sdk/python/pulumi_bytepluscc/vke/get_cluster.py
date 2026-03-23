@@ -28,7 +28,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, cluster_config=None, cluster_id=None, created_time=None, delete_protection_enabled=None, description=None, id=None, kubernetes_version=None, kubernetes_version_create=None, logging_config=None, message=None, monitoring_config=None, name=None, node_statistics=None, pods_config=None, project_name=None, services_config=None, source_region=None, status=None, tags=None, type=None, updated_time=None):
+    def __init__(__self__, cluster_config=None, cluster_id=None, created_time=None, delete_protection_enabled=None, description=None, id=None, irsa_config=None, kubernetes_version=None, kubernetes_version_create=None, logging_config=None, message=None, monitoring_config=None, name=None, node_statistics=None, pods_config=None, project_name=None, services_config=None, source_region=None, status=None, tags=None, type=None, updated_time=None):
         if cluster_config and not isinstance(cluster_config, dict):
             raise TypeError("Expected argument 'cluster_config' to be a dict")
         pulumi.set(__self__, "cluster_config", cluster_config)
@@ -47,6 +47,9 @@ class GetClusterResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if irsa_config and not isinstance(irsa_config, dict):
+            raise TypeError("Expected argument 'irsa_config' to be a dict")
+        pulumi.set(__self__, "irsa_config", irsa_config)
         if kubernetes_version and not isinstance(kubernetes_version, str):
             raise TypeError("Expected argument 'kubernetes_version' to be a str")
         pulumi.set(__self__, "kubernetes_version", kubernetes_version)
@@ -140,6 +143,14 @@ class GetClusterResult:
         Uniquely identifies the resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="irsaConfig")
+    def irsa_config(self) -> 'outputs.GetClusterIrsaConfigResult':
+        """
+        IRSA（IAM Role for Service Account）能力相关参数配置。
+        """
+        return pulumi.get(self, "irsa_config")
 
     @property
     @pulumi.getter(name="kubernetesVersion")
@@ -274,6 +285,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             delete_protection_enabled=self.delete_protection_enabled,
             description=self.description,
             id=self.id,
+            irsa_config=self.irsa_config,
             kubernetes_version=self.kubernetes_version,
             kubernetes_version_create=self.kubernetes_version_create,
             logging_config=self.logging_config,
@@ -311,6 +323,7 @@ def get_cluster(id: Optional[builtins.str] = None,
         delete_protection_enabled=pulumi.get(__ret__, 'delete_protection_enabled'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
+        irsa_config=pulumi.get(__ret__, 'irsa_config'),
         kubernetes_version=pulumi.get(__ret__, 'kubernetes_version'),
         kubernetes_version_create=pulumi.get(__ret__, 'kubernetes_version_create'),
         logging_config=pulumi.get(__ret__, 'logging_config'),
@@ -345,6 +358,7 @@ def get_cluster_output(id: Optional[pulumi.Input[builtins.str]] = None,
         delete_protection_enabled=pulumi.get(__response__, 'delete_protection_enabled'),
         description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
+        irsa_config=pulumi.get(__response__, 'irsa_config'),
         kubernetes_version=pulumi.get(__response__, 'kubernetes_version'),
         kubernetes_version_create=pulumi.get(__response__, 'kubernetes_version_create'),
         logging_config=pulumi.get(__response__, 'logging_config'),

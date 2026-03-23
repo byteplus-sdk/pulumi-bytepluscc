@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.vke.outputs;
 
 import com.byteplus.bytepluscc.vke.outputs.GetClusterClusterConfig;
+import com.byteplus.bytepluscc.vke.outputs.GetClusterIrsaConfig;
 import com.byteplus.bytepluscc.vke.outputs.GetClusterLoggingConfig;
 import com.byteplus.bytepluscc.vke.outputs.GetClusterMonitoringConfig;
 import com.byteplus.bytepluscc.vke.outputs.GetClusterNodeStatistics;
@@ -50,6 +51,11 @@ public final class GetClusterResult {
      * 
      */
     private String id;
+    /**
+     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
+     * 
+     */
+    private GetClusterIrsaConfig irsaConfig;
     /**
      * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
      * 
@@ -168,6 +174,13 @@ public final class GetClusterResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
+     * 
+     */
+    public GetClusterIrsaConfig irsaConfig() {
+        return this.irsaConfig;
     }
     /**
      * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
@@ -290,6 +303,7 @@ public final class GetClusterResult {
         private Boolean deleteProtectionEnabled;
         private String description;
         private String id;
+        private GetClusterIrsaConfig irsaConfig;
         private String kubernetesVersion;
         private String kubernetesVersionCreate;
         private GetClusterLoggingConfig loggingConfig;
@@ -314,6 +328,7 @@ public final class GetClusterResult {
     	      this.deleteProtectionEnabled = defaults.deleteProtectionEnabled;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
+    	      this.irsaConfig = defaults.irsaConfig;
     	      this.kubernetesVersion = defaults.kubernetesVersion;
     	      this.kubernetesVersionCreate = defaults.kubernetesVersionCreate;
     	      this.loggingConfig = defaults.loggingConfig;
@@ -377,6 +392,14 @@ public final class GetClusterResult {
               throw new MissingRequiredPropertyException("GetClusterResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder irsaConfig(GetClusterIrsaConfig irsaConfig) {
+            if (irsaConfig == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "irsaConfig");
+            }
+            this.irsaConfig = irsaConfig;
             return this;
         }
         @CustomType.Setter
@@ -510,6 +533,7 @@ public final class GetClusterResult {
             _resultValue.deleteProtectionEnabled = deleteProtectionEnabled;
             _resultValue.description = description;
             _resultValue.id = id;
+            _resultValue.irsaConfig = irsaConfig;
             _resultValue.kubernetesVersion = kubernetesVersion;
             _resultValue.kubernetesVersionCreate = kubernetesVersionCreate;
             _resultValue.loggingConfig = loggingConfig;

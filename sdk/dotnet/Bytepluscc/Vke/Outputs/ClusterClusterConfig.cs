@@ -27,6 +27,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// </summary>
         public readonly bool? ApiServerPublicAccessEnabled;
         /// <summary>
+        /// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+        /// </summary>
+        public readonly string? IpFamily;
+        /// <summary>
         /// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
         /// </summary>
         public readonly bool? ResourcePublicAccessDefaultEnabled;
@@ -51,6 +55,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
 
             bool? apiServerPublicAccessEnabled,
 
+            string? ipFamily,
+
             bool? resourcePublicAccessDefaultEnabled,
 
             ImmutableArray<string> securityGroupIds,
@@ -62,6 +68,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
             ApiServerEndpoints = apiServerEndpoints;
             ApiServerPublicAccessConfig = apiServerPublicAccessConfig;
             ApiServerPublicAccessEnabled = apiServerPublicAccessEnabled;
+            IpFamily = ipFamily;
             ResourcePublicAccessDefaultEnabled = resourcePublicAccessDefaultEnabled;
             SecurityGroupIds = securityGroupIds;
             SubnetIds = subnetIds;

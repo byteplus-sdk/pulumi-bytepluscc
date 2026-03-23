@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AllowListArgs, AllowListState } from "./allowList";
+export type AllowList = import("./allowList").AllowList;
+export const AllowList: typeof import("./allowList").AllowList = null as any;
+utilities.lazyLoad(exports, ["AllowList"], () => require("./allowList"));
+
 export { BackupArgs, BackupState } from "./backup";
 export type Backup = import("./backup").Backup;
 export const Backup: typeof import("./backup").Backup = null as any;
@@ -14,6 +19,16 @@ export { DatabaseArgs, DatabaseState } from "./database";
 export type Database = import("./database").Database;
 export const Database: typeof import("./database").Database = null as any;
 utilities.lazyLoad(exports, ["Database"], () => require("./database"));
+
+export { GetAllowListArgs, GetAllowListResult, GetAllowListOutputArgs } from "./getAllowList";
+export const getAllowList: typeof import("./getAllowList").getAllowList = null as any;
+export const getAllowListOutput: typeof import("./getAllowList").getAllowListOutput = null as any;
+utilities.lazyLoad(exports, ["getAllowList","getAllowListOutput"], () => require("./getAllowList"));
+
+export { GetAllowListsResult } from "./getAllowLists";
+export const getAllowLists: typeof import("./getAllowLists").getAllowLists = null as any;
+export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
+utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
 
 export { GetBackupArgs, GetBackupResult, GetBackupOutputArgs } from "./getBackup";
 export const getBackup: typeof import("./getBackup").getBackup = null as any;
@@ -55,6 +70,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vedbm/allowList:AllowList":
+                return new AllowList(name, <any>undefined, { urn })
             case "bytepluscc:vedbm/backup:Backup":
                 return new Backup(name, <any>undefined, { urn })
             case "bytepluscc:vedbm/database:Database":
@@ -66,6 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/backup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/database", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vedbm/instance", _module)

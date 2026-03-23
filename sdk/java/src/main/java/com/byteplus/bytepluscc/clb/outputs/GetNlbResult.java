@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.clb.outputs;
 
+import com.byteplus.bytepluscc.clb.outputs.GetNlbAccessLog;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbTag;
 import com.byteplus.bytepluscc.clb.outputs.GetNlbZoneMapping;
 import com.pulumi.core.annotations.CustomType;
@@ -15,6 +16,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNlbResult {
+    /**
+     * @return NLB实例的访问日志信息。
+     * 
+     */
+    private GetNlbAccessLog accessLog;
     /**
      * @return NLB实例所属的账号ID。
      * 
@@ -152,6 +158,13 @@ public final class GetNlbResult {
     private List<GetNlbZoneMapping> zoneMappings;
 
     private GetNlbResult() {}
+    /**
+     * @return NLB实例的访问日志信息。
+     * 
+     */
+    public GetNlbAccessLog accessLog() {
+        return this.accessLog;
+    }
     /**
      * @return NLB实例所属的账号ID。
      * 
@@ -351,6 +364,7 @@ public final class GetNlbResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private GetNlbAccessLog accessLog;
         private String accountId;
         private String billingStatus;
         private Integer billingType;
@@ -381,6 +395,7 @@ public final class GetNlbResult {
         public Builder() {}
         public Builder(GetNlbResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.accessLog = defaults.accessLog;
     	      this.accountId = defaults.accountId;
     	      this.billingStatus = defaults.billingStatus;
     	      this.billingType = defaults.billingType;
@@ -410,6 +425,14 @@ public final class GetNlbResult {
     	      this.zoneMappings = defaults.zoneMappings;
         }
 
+        @CustomType.Setter
+        public Builder accessLog(GetNlbAccessLog accessLog) {
+            if (accessLog == null) {
+              throw new MissingRequiredPropertyException("GetNlbResult", "accessLog");
+            }
+            this.accessLog = accessLog;
+            return this;
+        }
         @CustomType.Setter
         public Builder accountId(String accountId) {
             if (accountId == null) {
@@ -637,6 +660,7 @@ public final class GetNlbResult {
         }
         public GetNlbResult build() {
             final var _resultValue = new GetNlbResult();
+            _resultValue.accessLog = accessLog;
             _resultValue.accountId = accountId;
             _resultValue.billingStatus = billingStatus;
             _resultValue.billingType = billingType;

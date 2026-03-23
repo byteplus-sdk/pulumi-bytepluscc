@@ -23,6 +23,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public partial class Nlb : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// NLB实例的访问日志信息。
+        /// </summary>
+        [Output("accessLog")]
+        public Output<Outputs.NlbAccessLog> AccessLog { get; private set; } = null!;
+
+        /// <summary>
         /// NLB实例所属的账号ID。
         /// </summary>
         [Output("accountId")]
@@ -327,6 +333,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 
     public sealed class NlbState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// NLB实例的访问日志信息。
+        /// </summary>
+        [Input("accessLog")]
+        public Input<Inputs.NlbAccessLogGetArgs>? AccessLog { get; set; }
+
         /// <summary>
         /// NLB实例所属的账号ID。
         /// </summary>

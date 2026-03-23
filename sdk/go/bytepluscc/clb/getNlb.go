@@ -30,6 +30,8 @@ type LookupNlbArgs struct {
 
 // A collection of values returned by getNlb.
 type LookupNlbResult struct {
+	// NLB实例的访问日志信息。
+	AccessLog GetNlbAccessLog `pulumi:"accessLog"`
 	// NLB实例所属的账号ID。
 	AccountId string `pulumi:"accountId"`
 	// NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
@@ -118,6 +120,11 @@ func (o LookupNlbResultOutput) ToLookupNlbResultOutput() LookupNlbResultOutput {
 
 func (o LookupNlbResultOutput) ToLookupNlbResultOutputWithContext(ctx context.Context) LookupNlbResultOutput {
 	return o
+}
+
+// NLB实例的访问日志信息。
+func (o LookupNlbResultOutput) AccessLog() GetNlbAccessLogOutput {
+	return o.ApplyT(func(v LookupNlbResult) GetNlbAccessLog { return v.AccessLog }).(GetNlbAccessLogOutput)
 }
 
 // NLB实例所属的账号ID。

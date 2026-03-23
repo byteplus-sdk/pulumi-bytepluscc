@@ -117,6 +117,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         /// </summary>
         public readonly int Weight;
         /// <summary>
+        /// 该记录集是否开启了负载均衡。
+        /// </summary>
+        public readonly bool WeightEnabled;
+        /// <summary>
         /// 域名 ID。
         /// </summary>
         public readonly int Zid;
@@ -149,6 +153,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 
             int weight,
 
+            bool weightEnabled,
+
             int zid)
         {
             CreatedAt = createdAt;
@@ -164,6 +170,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
             UpdatedAt = updatedAt;
             Value = value;
             Weight = weight;
+            WeightEnabled = weightEnabled;
             Zid = zid;
         }
     }

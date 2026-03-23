@@ -23,6 +23,11 @@ public final class ClusterPodsConfigFlannelConfig {
      * 
      */
     private @Nullable List<String> podCidrs;
+    /**
+     * @return Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * 
+     */
+    private @Nullable List<String> subnetIds;
 
     private ClusterPodsConfigFlannelConfig() {}
     /**
@@ -39,6 +44,13 @@ public final class ClusterPodsConfigFlannelConfig {
     public List<String> podCidrs() {
         return this.podCidrs == null ? List.of() : this.podCidrs;
     }
+    /**
+     * @return Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * 
+     */
+    public List<String> subnetIds() {
+        return this.subnetIds == null ? List.of() : this.subnetIds;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -51,11 +63,13 @@ public final class ClusterPodsConfigFlannelConfig {
     public static final class Builder {
         private @Nullable Integer maxPodsPerNode;
         private @Nullable List<String> podCidrs;
+        private @Nullable List<String> subnetIds;
         public Builder() {}
         public Builder(ClusterPodsConfigFlannelConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxPodsPerNode = defaults.maxPodsPerNode;
     	      this.podCidrs = defaults.podCidrs;
+    	      this.subnetIds = defaults.subnetIds;
         }
 
         @CustomType.Setter
@@ -73,10 +87,20 @@ public final class ClusterPodsConfigFlannelConfig {
         public Builder podCidrs(String... podCidrs) {
             return podCidrs(List.of(podCidrs));
         }
+        @CustomType.Setter
+        public Builder subnetIds(@Nullable List<String> subnetIds) {
+
+            this.subnetIds = subnetIds;
+            return this;
+        }
+        public Builder subnetIds(String... subnetIds) {
+            return subnetIds(List.of(subnetIds));
+        }
         public ClusterPodsConfigFlannelConfig build() {
             final var _resultValue = new ClusterPodsConfigFlannelConfig();
             _resultValue.maxPodsPerNode = maxPodsPerNode;
             _resultValue.podCidrs = podCidrs;
+            _resultValue.subnetIds = subnetIds;
             return _resultValue;
         }
     }

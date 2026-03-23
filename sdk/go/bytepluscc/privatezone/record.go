@@ -80,6 +80,8 @@ type Record struct {
 	Value pulumi.StringOutput `pulumi:"value"`
 	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 	Weight pulumi.IntOutput `pulumi:"weight"`
+	// 该记录集是否开启了负载均衡。
+	WeightEnabled pulumi.BoolOutput `pulumi:"weightEnabled"`
 	// 域名 ID。
 	Zid pulumi.IntOutput `pulumi:"zid"`
 }
@@ -150,6 +152,8 @@ type recordState struct {
 	Value *string `pulumi:"value"`
 	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 	Weight *int `pulumi:"weight"`
+	// 该记录集是否开启了负载均衡。
+	WeightEnabled *bool `pulumi:"weightEnabled"`
 	// 域名 ID。
 	Zid *int `pulumi:"zid"`
 }
@@ -179,6 +183,8 @@ type RecordState struct {
 	Value pulumi.StringPtrInput
 	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 	Weight pulumi.IntPtrInput
+	// 该记录集是否开启了负载均衡。
+	WeightEnabled pulumi.BoolPtrInput
 	// 域名 ID。
 	Zid pulumi.IntPtrInput
 }
@@ -204,6 +210,8 @@ type recordArgs struct {
 	Value string `pulumi:"value"`
 	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 	Weight *int `pulumi:"weight"`
+	// 该记录集是否开启了负载均衡。
+	WeightEnabled *bool `pulumi:"weightEnabled"`
 	// 域名 ID。
 	Zid int `pulumi:"zid"`
 }
@@ -226,6 +234,8 @@ type RecordArgs struct {
 	Value pulumi.StringInput
 	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 	Weight pulumi.IntPtrInput
+	// 该记录集是否开启了负载均衡。
+	WeightEnabled pulumi.BoolPtrInput
 	// 域名 ID。
 	Zid pulumi.IntInput
 }
@@ -375,6 +385,11 @@ func (o RecordOutput) Value() pulumi.StringOutput {
 // 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
 func (o RecordOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v *Record) pulumi.IntOutput { return v.Weight }).(pulumi.IntOutput)
+}
+
+// 该记录集是否开启了负载均衡。
+func (o RecordOutput) WeightEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Record) pulumi.BoolOutput { return v.WeightEnabled }).(pulumi.BoolOutput)
 }
 
 // 域名 ID。

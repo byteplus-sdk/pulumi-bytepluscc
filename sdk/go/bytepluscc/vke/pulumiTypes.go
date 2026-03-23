@@ -260,6 +260,8 @@ type ClusterClusterConfig struct {
 	ApiServerPublicAccessConfig *ClusterClusterConfigApiServerPublicAccessConfig `pulumi:"apiServerPublicAccessConfig"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ApiServerPublicAccessEnabled *bool `pulumi:"apiServerPublicAccessEnabled"`
+	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	IpFamily *string `pulumi:"ipFamily"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ResourcePublicAccessDefaultEnabled *bool `pulumi:"resourcePublicAccessDefaultEnabled"`
 	// 集群控制面及节点使用的的安全组。
@@ -288,6 +290,8 @@ type ClusterClusterConfigArgs struct {
 	ApiServerPublicAccessConfig ClusterClusterConfigApiServerPublicAccessConfigPtrInput `pulumi:"apiServerPublicAccessConfig"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ApiServerPublicAccessEnabled pulumi.BoolPtrInput `pulumi:"apiServerPublicAccessEnabled"`
+	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	IpFamily pulumi.StringPtrInput `pulumi:"ipFamily"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ResourcePublicAccessDefaultEnabled pulumi.BoolPtrInput `pulumi:"resourcePublicAccessDefaultEnabled"`
 	// 集群控制面及节点使用的的安全组。
@@ -392,6 +396,11 @@ func (o ClusterClusterConfigOutput) ApiServerPublicAccessEnabled() pulumi.BoolPt
 	return o.ApplyT(func(v ClusterClusterConfig) *bool { return v.ApiServerPublicAccessEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+func (o ClusterClusterConfigOutput) IpFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterClusterConfig) *string { return v.IpFamily }).(pulumi.StringPtrOutput)
+}
+
 // 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 func (o ClusterClusterConfigOutput) ResourcePublicAccessDefaultEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterClusterConfig) *bool { return v.ResourcePublicAccessDefaultEnabled }).(pulumi.BoolPtrOutput)
@@ -464,6 +473,16 @@ func (o ClusterClusterConfigPtrOutput) ApiServerPublicAccessEnabled() pulumi.Boo
 		}
 		return v.ApiServerPublicAccessEnabled
 	}).(pulumi.BoolPtrOutput)
+}
+
+// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+func (o ClusterClusterConfigPtrOutput) IpFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterClusterConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IpFamily
+	}).(pulumi.StringPtrOutput)
 }
 
 // 节点公网访问配置，参数值说明：false：未开启。true：已开启。
@@ -1258,6 +1277,238 @@ func (o ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig
 	}).(pulumi.StringPtrOutput)
 }
 
+type ClusterIrsaConfig struct {
+	// 接受令牌的标识符。
+	Audience *string `pulumi:"audience"`
+	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	Enabled *bool `pulumi:"enabled"`
+	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	Issuer *string `pulumi:"issuer"`
+	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	JwksUrl *string `pulumi:"jwksUrl"`
+	// OIDC 提供商 TRN。
+	OidcTrn *string `pulumi:"oidcTrn"`
+	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	OpenIdConfigUrl *string `pulumi:"openIdConfigUrl"`
+}
+
+// ClusterIrsaConfigInput is an input type that accepts ClusterIrsaConfigArgs and ClusterIrsaConfigOutput values.
+// You can construct a concrete instance of `ClusterIrsaConfigInput` via:
+//
+//	ClusterIrsaConfigArgs{...}
+type ClusterIrsaConfigInput interface {
+	pulumi.Input
+
+	ToClusterIrsaConfigOutput() ClusterIrsaConfigOutput
+	ToClusterIrsaConfigOutputWithContext(context.Context) ClusterIrsaConfigOutput
+}
+
+type ClusterIrsaConfigArgs struct {
+	// 接受令牌的标识符。
+	Audience pulumi.StringPtrInput `pulumi:"audience"`
+	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
+	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	Issuer pulumi.StringPtrInput `pulumi:"issuer"`
+	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	JwksUrl pulumi.StringPtrInput `pulumi:"jwksUrl"`
+	// OIDC 提供商 TRN。
+	OidcTrn pulumi.StringPtrInput `pulumi:"oidcTrn"`
+	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	OpenIdConfigUrl pulumi.StringPtrInput `pulumi:"openIdConfigUrl"`
+}
+
+func (ClusterIrsaConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterIrsaConfig)(nil)).Elem()
+}
+
+func (i ClusterIrsaConfigArgs) ToClusterIrsaConfigOutput() ClusterIrsaConfigOutput {
+	return i.ToClusterIrsaConfigOutputWithContext(context.Background())
+}
+
+func (i ClusterIrsaConfigArgs) ToClusterIrsaConfigOutputWithContext(ctx context.Context) ClusterIrsaConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterIrsaConfigOutput)
+}
+
+func (i ClusterIrsaConfigArgs) ToClusterIrsaConfigPtrOutput() ClusterIrsaConfigPtrOutput {
+	return i.ToClusterIrsaConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterIrsaConfigArgs) ToClusterIrsaConfigPtrOutputWithContext(ctx context.Context) ClusterIrsaConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterIrsaConfigOutput).ToClusterIrsaConfigPtrOutputWithContext(ctx)
+}
+
+// ClusterIrsaConfigPtrInput is an input type that accepts ClusterIrsaConfigArgs, ClusterIrsaConfigPtr and ClusterIrsaConfigPtrOutput values.
+// You can construct a concrete instance of `ClusterIrsaConfigPtrInput` via:
+//
+//	        ClusterIrsaConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterIrsaConfigPtrInput interface {
+	pulumi.Input
+
+	ToClusterIrsaConfigPtrOutput() ClusterIrsaConfigPtrOutput
+	ToClusterIrsaConfigPtrOutputWithContext(context.Context) ClusterIrsaConfigPtrOutput
+}
+
+type clusterIrsaConfigPtrType ClusterIrsaConfigArgs
+
+func ClusterIrsaConfigPtr(v *ClusterIrsaConfigArgs) ClusterIrsaConfigPtrInput {
+	return (*clusterIrsaConfigPtrType)(v)
+}
+
+func (*clusterIrsaConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterIrsaConfig)(nil)).Elem()
+}
+
+func (i *clusterIrsaConfigPtrType) ToClusterIrsaConfigPtrOutput() ClusterIrsaConfigPtrOutput {
+	return i.ToClusterIrsaConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterIrsaConfigPtrType) ToClusterIrsaConfigPtrOutputWithContext(ctx context.Context) ClusterIrsaConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterIrsaConfigPtrOutput)
+}
+
+type ClusterIrsaConfigOutput struct{ *pulumi.OutputState }
+
+func (ClusterIrsaConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterIrsaConfig)(nil)).Elem()
+}
+
+func (o ClusterIrsaConfigOutput) ToClusterIrsaConfigOutput() ClusterIrsaConfigOutput {
+	return o
+}
+
+func (o ClusterIrsaConfigOutput) ToClusterIrsaConfigOutputWithContext(ctx context.Context) ClusterIrsaConfigOutput {
+	return o
+}
+
+func (o ClusterIrsaConfigOutput) ToClusterIrsaConfigPtrOutput() ClusterIrsaConfigPtrOutput {
+	return o.ToClusterIrsaConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterIrsaConfigOutput) ToClusterIrsaConfigPtrOutputWithContext(ctx context.Context) ClusterIrsaConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterIrsaConfig) *ClusterIrsaConfig {
+		return &v
+	}).(ClusterIrsaConfigPtrOutput)
+}
+
+// 接受令牌的标识符。
+func (o ClusterIrsaConfigOutput) Audience() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.Audience }).(pulumi.StringPtrOutput)
+}
+
+// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+func (o ClusterIrsaConfigOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ClusterIrsaConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+func (o ClusterIrsaConfigOutput) Issuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.Issuer }).(pulumi.StringPtrOutput)
+}
+
+// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+func (o ClusterIrsaConfigOutput) JwksUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.JwksUrl }).(pulumi.StringPtrOutput)
+}
+
+// OIDC 提供商 TRN。
+func (o ClusterIrsaConfigOutput) OidcTrn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.OidcTrn }).(pulumi.StringPtrOutput)
+}
+
+// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+func (o ClusterIrsaConfigOutput) OpenIdConfigUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterIrsaConfig) *string { return v.OpenIdConfigUrl }).(pulumi.StringPtrOutput)
+}
+
+type ClusterIrsaConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterIrsaConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterIrsaConfig)(nil)).Elem()
+}
+
+func (o ClusterIrsaConfigPtrOutput) ToClusterIrsaConfigPtrOutput() ClusterIrsaConfigPtrOutput {
+	return o
+}
+
+func (o ClusterIrsaConfigPtrOutput) ToClusterIrsaConfigPtrOutputWithContext(ctx context.Context) ClusterIrsaConfigPtrOutput {
+	return o
+}
+
+func (o ClusterIrsaConfigPtrOutput) Elem() ClusterIrsaConfigOutput {
+	return o.ApplyT(func(v *ClusterIrsaConfig) ClusterIrsaConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterIrsaConfig
+		return ret
+	}).(ClusterIrsaConfigOutput)
+}
+
+// 接受令牌的标识符。
+func (o ClusterIrsaConfigPtrOutput) Audience() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Audience
+	}).(pulumi.StringPtrOutput)
+}
+
+// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+func (o ClusterIrsaConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClusterIrsaConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+func (o ClusterIrsaConfigPtrOutput) Issuer() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Issuer
+	}).(pulumi.StringPtrOutput)
+}
+
+// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+func (o ClusterIrsaConfigPtrOutput) JwksUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JwksUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// OIDC 提供商 TRN。
+func (o ClusterIrsaConfigPtrOutput) OidcTrn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OidcTrn
+	}).(pulumi.StringPtrOutput)
+}
+
+// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+func (o ClusterIrsaConfigPtrOutput) OpenIdConfigUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterIrsaConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OpenIdConfigUrl
+	}).(pulumi.StringPtrOutput)
+}
+
 type ClusterLoggingConfig struct {
 	// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
 	LogProjectId *string                        `pulumi:"logProjectId"`
@@ -1527,6 +1778,8 @@ func (o ClusterLoggingConfigLogSetupArrayOutput) Index(i pulumi.IntInput) Cluste
 
 type ClusterMonitoringConfig struct {
 	ComponentConfigs []ClusterMonitoringConfigComponentConfig `pulumi:"componentConfigs"`
+	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	EnableMetricsExternalCollection *bool `pulumi:"enableMetricsExternalCollection"`
 	// 监控数据所属的工作区 ID。
 	WorkspaceId *string `pulumi:"workspaceId"`
 }
@@ -1544,6 +1797,8 @@ type ClusterMonitoringConfigInput interface {
 
 type ClusterMonitoringConfigArgs struct {
 	ComponentConfigs ClusterMonitoringConfigComponentConfigArrayInput `pulumi:"componentConfigs"`
+	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	EnableMetricsExternalCollection pulumi.BoolPtrInput `pulumi:"enableMetricsExternalCollection"`
 	// 监控数据所属的工作区 ID。
 	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
 }
@@ -1629,6 +1884,11 @@ func (o ClusterMonitoringConfigOutput) ComponentConfigs() ClusterMonitoringConfi
 	return o.ApplyT(func(v ClusterMonitoringConfig) []ClusterMonitoringConfigComponentConfig { return v.ComponentConfigs }).(ClusterMonitoringConfigComponentConfigArrayOutput)
 }
 
+// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+func (o ClusterMonitoringConfigOutput) EnableMetricsExternalCollection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ClusterMonitoringConfig) *bool { return v.EnableMetricsExternalCollection }).(pulumi.BoolPtrOutput)
+}
+
 // 监控数据所属的工作区 ID。
 func (o ClusterMonitoringConfigOutput) WorkspaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterMonitoringConfig) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
@@ -1665,6 +1925,16 @@ func (o ClusterMonitoringConfigPtrOutput) ComponentConfigs() ClusterMonitoringCo
 		}
 		return v.ComponentConfigs
 	}).(ClusterMonitoringConfigComponentConfigArrayOutput)
+}
+
+// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+func (o ClusterMonitoringConfigPtrOutput) EnableMetricsExternalCollection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ClusterMonitoringConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableMetricsExternalCollection
+	}).(pulumi.BoolPtrOutput)
 }
 
 // 监控数据所属的工作区 ID。
@@ -2195,6 +2465,8 @@ type ClusterPodsConfigFlannelConfig struct {
 	MaxPodsPerNode *int `pulumi:"maxPodsPerNode"`
 	// Flannel 容器网络的 Pod CIDR。
 	PodCidrs []string `pulumi:"podCidrs"`
+	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	SubnetIds []string `pulumi:"subnetIds"`
 }
 
 // ClusterPodsConfigFlannelConfigInput is an input type that accepts ClusterPodsConfigFlannelConfigArgs and ClusterPodsConfigFlannelConfigOutput values.
@@ -2213,6 +2485,8 @@ type ClusterPodsConfigFlannelConfigArgs struct {
 	MaxPodsPerNode pulumi.IntPtrInput `pulumi:"maxPodsPerNode"`
 	// Flannel 容器网络的 Pod CIDR。
 	PodCidrs pulumi.StringArrayInput `pulumi:"podCidrs"`
+	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 }
 
 func (ClusterPodsConfigFlannelConfigArgs) ElementType() reflect.Type {
@@ -2302,6 +2576,11 @@ func (o ClusterPodsConfigFlannelConfigOutput) PodCidrs() pulumi.StringArrayOutpu
 	return o.ApplyT(func(v ClusterPodsConfigFlannelConfig) []string { return v.PodCidrs }).(pulumi.StringArrayOutput)
 }
 
+// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+func (o ClusterPodsConfigFlannelConfigOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClusterPodsConfigFlannelConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
+}
+
 type ClusterPodsConfigFlannelConfigPtrOutput struct{ *pulumi.OutputState }
 
 func (ClusterPodsConfigFlannelConfigPtrOutput) ElementType() reflect.Type {
@@ -2343,6 +2622,16 @@ func (o ClusterPodsConfigFlannelConfigPtrOutput) PodCidrs() pulumi.StringArrayOu
 			return nil
 		}
 		return v.PodCidrs
+	}).(pulumi.StringArrayOutput)
+}
+
+// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+func (o ClusterPodsConfigFlannelConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ClusterPodsConfigFlannelConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetIds
 	}).(pulumi.StringArrayOutput)
 }
 
@@ -12484,6 +12773,8 @@ type GetClusterClusterConfig struct {
 	ApiServerPublicAccessConfig GetClusterClusterConfigApiServerPublicAccessConfig `pulumi:"apiServerPublicAccessConfig"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ApiServerPublicAccessEnabled bool `pulumi:"apiServerPublicAccessEnabled"`
+	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	IpFamily string `pulumi:"ipFamily"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ResourcePublicAccessDefaultEnabled bool `pulumi:"resourcePublicAccessDefaultEnabled"`
 	// 集群控制面及节点使用的的安全组。
@@ -12512,6 +12803,8 @@ type GetClusterClusterConfigArgs struct {
 	ApiServerPublicAccessConfig GetClusterClusterConfigApiServerPublicAccessConfigInput `pulumi:"apiServerPublicAccessConfig"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ApiServerPublicAccessEnabled pulumi.BoolInput `pulumi:"apiServerPublicAccessEnabled"`
+	// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+	IpFamily pulumi.StringInput `pulumi:"ipFamily"`
 	// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 	ResourcePublicAccessDefaultEnabled pulumi.BoolInput `pulumi:"resourcePublicAccessDefaultEnabled"`
 	// 集群控制面及节点使用的的安全组。
@@ -12563,6 +12856,11 @@ func (o GetClusterClusterConfigOutput) ApiServerPublicAccessConfig() GetClusterC
 // 节点公网访问配置，参数值说明：false：未开启。true：已开启。
 func (o GetClusterClusterConfigOutput) ApiServerPublicAccessEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterClusterConfig) bool { return v.ApiServerPublicAccessEnabled }).(pulumi.BoolOutput)
+}
+
+// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+func (o GetClusterClusterConfigOutput) IpFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterClusterConfig) string { return v.IpFamily }).(pulumi.StringOutput)
 }
 
 // 节点公网访问配置，参数值说明：false：未开启。true：已开启。
@@ -12884,6 +13182,103 @@ func (o GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkCon
 	}).(pulumi.StringOutput)
 }
 
+type GetClusterIrsaConfig struct {
+	// 接受令牌的标识符。
+	Audience string `pulumi:"audience"`
+	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	Enabled bool `pulumi:"enabled"`
+	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	Issuer string `pulumi:"issuer"`
+	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	JwksUrl string `pulumi:"jwksUrl"`
+	// OIDC 提供商 TRN。
+	OidcTrn string `pulumi:"oidcTrn"`
+	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	OpenIdConfigUrl string `pulumi:"openIdConfigUrl"`
+}
+
+// GetClusterIrsaConfigInput is an input type that accepts GetClusterIrsaConfigArgs and GetClusterIrsaConfigOutput values.
+// You can construct a concrete instance of `GetClusterIrsaConfigInput` via:
+//
+//	GetClusterIrsaConfigArgs{...}
+type GetClusterIrsaConfigInput interface {
+	pulumi.Input
+
+	ToGetClusterIrsaConfigOutput() GetClusterIrsaConfigOutput
+	ToGetClusterIrsaConfigOutputWithContext(context.Context) GetClusterIrsaConfigOutput
+}
+
+type GetClusterIrsaConfigArgs struct {
+	// 接受令牌的标识符。
+	Audience pulumi.StringInput `pulumi:"audience"`
+	// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+	Enabled pulumi.BoolInput `pulumi:"enabled"`
+	// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+	Issuer pulumi.StringInput `pulumi:"issuer"`
+	// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+	JwksUrl pulumi.StringInput `pulumi:"jwksUrl"`
+	// OIDC 提供商 TRN。
+	OidcTrn pulumi.StringInput `pulumi:"oidcTrn"`
+	// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+	OpenIdConfigUrl pulumi.StringInput `pulumi:"openIdConfigUrl"`
+}
+
+func (GetClusterIrsaConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterIrsaConfig)(nil)).Elem()
+}
+
+func (i GetClusterIrsaConfigArgs) ToGetClusterIrsaConfigOutput() GetClusterIrsaConfigOutput {
+	return i.ToGetClusterIrsaConfigOutputWithContext(context.Background())
+}
+
+func (i GetClusterIrsaConfigArgs) ToGetClusterIrsaConfigOutputWithContext(ctx context.Context) GetClusterIrsaConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterIrsaConfigOutput)
+}
+
+type GetClusterIrsaConfigOutput struct{ *pulumi.OutputState }
+
+func (GetClusterIrsaConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterIrsaConfig)(nil)).Elem()
+}
+
+func (o GetClusterIrsaConfigOutput) ToGetClusterIrsaConfigOutput() GetClusterIrsaConfigOutput {
+	return o
+}
+
+func (o GetClusterIrsaConfigOutput) ToGetClusterIrsaConfigOutputWithContext(ctx context.Context) GetClusterIrsaConfigOutput {
+	return o
+}
+
+// 接受令牌的标识符。
+func (o GetClusterIrsaConfigOutput) Audience() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.Audience }).(pulumi.StringOutput)
+}
+
+// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+func (o GetClusterIrsaConfigOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterIrsaConfig) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+func (o GetClusterIrsaConfigOutput) Issuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.Issuer }).(pulumi.StringOutput)
+}
+
+// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+func (o GetClusterIrsaConfigOutput) JwksUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.JwksUrl }).(pulumi.StringOutput)
+}
+
+// OIDC 提供商 TRN。
+func (o GetClusterIrsaConfigOutput) OidcTrn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.OidcTrn }).(pulumi.StringOutput)
+}
+
+// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+func (o GetClusterIrsaConfigOutput) OpenIdConfigUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterIrsaConfig) string { return v.OpenIdConfigUrl }).(pulumi.StringOutput)
+}
+
 type GetClusterLoggingConfig struct {
 	// 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
 	LogProjectId string `pulumi:"logProjectId"`
@@ -13072,6 +13467,8 @@ func (o GetClusterLoggingConfigLogSetupArrayOutput) Index(i pulumi.IntInput) Get
 type GetClusterMonitoringConfig struct {
 	// 监控组件的配置列表。
 	ComponentConfigs []GetClusterMonitoringConfigComponentConfig `pulumi:"componentConfigs"`
+	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	EnableMetricsExternalCollection bool `pulumi:"enableMetricsExternalCollection"`
 	// 监控数据所属的工作区 ID。
 	WorkspaceId string `pulumi:"workspaceId"`
 }
@@ -13090,6 +13487,8 @@ type GetClusterMonitoringConfigInput interface {
 type GetClusterMonitoringConfigArgs struct {
 	// 监控组件的配置列表。
 	ComponentConfigs GetClusterMonitoringConfigComponentConfigArrayInput `pulumi:"componentConfigs"`
+	// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+	EnableMetricsExternalCollection pulumi.BoolInput `pulumi:"enableMetricsExternalCollection"`
 	// 监控数据所属的工作区 ID。
 	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
 }
@@ -13125,6 +13524,11 @@ func (o GetClusterMonitoringConfigOutput) ComponentConfigs() GetClusterMonitorin
 	return o.ApplyT(func(v GetClusterMonitoringConfig) []GetClusterMonitoringConfigComponentConfig {
 		return v.ComponentConfigs
 	}).(GetClusterMonitoringConfigComponentConfigArrayOutput)
+}
+
+// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+func (o GetClusterMonitoringConfigOutput) EnableMetricsExternalCollection() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClusterMonitoringConfig) bool { return v.EnableMetricsExternalCollection }).(pulumi.BoolOutput)
 }
 
 // 监控数据所属的工作区 ID。
@@ -13410,6 +13814,8 @@ type GetClusterPodsConfigFlannelConfig struct {
 	MaxPodsPerNode int `pulumi:"maxPodsPerNode"`
 	// Flannel 容器网络的 Pod CIDR。
 	PodCidrs []string `pulumi:"podCidrs"`
+	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	SubnetIds []string `pulumi:"subnetIds"`
 }
 
 // GetClusterPodsConfigFlannelConfigInput is an input type that accepts GetClusterPodsConfigFlannelConfigArgs and GetClusterPodsConfigFlannelConfigOutput values.
@@ -13428,6 +13834,8 @@ type GetClusterPodsConfigFlannelConfigArgs struct {
 	MaxPodsPerNode pulumi.IntInput `pulumi:"maxPodsPerNode"`
 	// Flannel 容器网络的 Pod CIDR。
 	PodCidrs pulumi.StringArrayInput `pulumi:"podCidrs"`
+	// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 }
 
 func (GetClusterPodsConfigFlannelConfigArgs) ElementType() reflect.Type {
@@ -13464,6 +13872,11 @@ func (o GetClusterPodsConfigFlannelConfigOutput) MaxPodsPerNode() pulumi.IntOutp
 // Flannel 容器网络的 Pod CIDR。
 func (o GetClusterPodsConfigFlannelConfigOutput) PodCidrs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterPodsConfigFlannelConfig) []string { return v.PodCidrs }).(pulumi.StringArrayOutput)
+}
+
+// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+func (o GetClusterPodsConfigFlannelConfigOutput) SubnetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterPodsConfigFlannelConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
 type GetClusterPodsConfigVpcCniConfig struct {
@@ -19152,6 +19565,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterConfigApiServerPublicAccessConfigPtrInput)(nil)).Elem(), ClusterClusterConfigApiServerPublicAccessConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigInput)(nil)).Elem(), ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrInput)(nil)).Elem(), ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterIrsaConfigInput)(nil)).Elem(), ClusterIrsaConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterIrsaConfigPtrInput)(nil)).Elem(), ClusterIrsaConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterLoggingConfigInput)(nil)).Elem(), ClusterLoggingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterLoggingConfigPtrInput)(nil)).Elem(), ClusterLoggingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterLoggingConfigLogSetupInput)(nil)).Elem(), ClusterLoggingConfigLogSetupArgs{})
@@ -19289,6 +19704,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterClusterConfigApiServerEndpointsPublicIpInput)(nil)).Elem(), GetClusterClusterConfigApiServerEndpointsPublicIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterClusterConfigApiServerPublicAccessConfigInput)(nil)).Elem(), GetClusterClusterConfigApiServerPublicAccessConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigInput)(nil)).Elem(), GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterIrsaConfigInput)(nil)).Elem(), GetClusterIrsaConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterLoggingConfigInput)(nil)).Elem(), GetClusterLoggingConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterLoggingConfigLogSetupInput)(nil)).Elem(), GetClusterLoggingConfigLogSetupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterLoggingConfigLogSetupArrayInput)(nil)).Elem(), GetClusterLoggingConfigLogSetupArray{})
@@ -19394,6 +19810,8 @@ func init() {
 	pulumi.RegisterOutputType(ClusterClusterConfigApiServerPublicAccessConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput{})
 	pulumi.RegisterOutputType(ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigPtrOutput{})
+	pulumi.RegisterOutputType(ClusterIrsaConfigOutput{})
+	pulumi.RegisterOutputType(ClusterIrsaConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterLoggingConfigOutput{})
 	pulumi.RegisterOutputType(ClusterLoggingConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterLoggingConfigLogSetupOutput{})
@@ -19531,6 +19949,7 @@ func init() {
 	pulumi.RegisterOutputType(GetClusterClusterConfigApiServerEndpointsPublicIpOutput{})
 	pulumi.RegisterOutputType(GetClusterClusterConfigApiServerPublicAccessConfigOutput{})
 	pulumi.RegisterOutputType(GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfigOutput{})
+	pulumi.RegisterOutputType(GetClusterIrsaConfigOutput{})
 	pulumi.RegisterOutputType(GetClusterLoggingConfigOutput{})
 	pulumi.RegisterOutputType(GetClusterLoggingConfigLogSetupOutput{})
 	pulumi.RegisterOutputType(GetClusterLoggingConfigLogSetupArrayOutput{})

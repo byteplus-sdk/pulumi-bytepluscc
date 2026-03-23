@@ -17,6 +17,156 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'DomainAreaAccessRule',
+    'DomainBrowserCach',
+    'DomainBrowserCachCacheAction',
+    'DomainBrowserCachCondition',
+    'DomainBrowserCachConditionConditionRule',
+    'DomainCach',
+    'DomainCachCacheAction',
+    'DomainCachCondition',
+    'DomainCachConditionConditionRule',
+    'DomainCacheHost',
+    'DomainCacheHostCacheHostRule',
+    'DomainCacheHostCacheHostRuleCacheHostAction',
+    'DomainCacheHostCacheHostRuleCondition',
+    'DomainCacheHostCacheHostRuleConditionConditionRule',
+    'DomainCacheKey',
+    'DomainCacheKeyCacheKeyAction',
+    'DomainCacheKeyCacheKeyActionCacheKeyComponent',
+    'DomainCacheKeyCondition',
+    'DomainCacheKeyConditionConditionRule',
+    'DomainCompression',
+    'DomainCompressionCompressionRule',
+    'DomainCompressionCompressionRuleCompressionAction',
+    'DomainCompressionCompressionRuleCondition',
+    'DomainCompressionCompressionRuleConditionConditionRule',
+    'DomainConditionalOrigin',
+    'DomainConditionalOriginOriginRule',
+    'DomainConditionalOriginOriginRuleActions',
+    'DomainConditionalOriginOriginRuleActionsOriginLine',
+    'DomainConditionalOriginOriginRuleCondition',
+    'DomainConditionalOriginOriginRuleConditionConditionGroup',
+    'DomainConditionalOriginOriginRuleConditionConditionGroupCondition',
+    'DomainCustomErrorPage',
+    'DomainCustomErrorPageErrorPageRule',
+    'DomainCustomErrorPageErrorPageRuleErrorPageAction',
+    'DomainCustomizeAccessRule',
+    'DomainCustomizeAccessRuleCustomizeInstance',
+    'DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule',
+    'DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction',
+    'DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition',
+    'DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRule',
+    'DomainDomainLock',
+    'DomainDownloadSpeedLimit',
+    'DomainDownloadSpeedLimitDownloadSpeedLimitRule',
+    'DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition',
+    'DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRule',
+    'DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction',
+    'DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime',
+    'DomainHttpForcedRedirect',
+    'DomainHttps',
+    'DomainHttpsCertCheck',
+    'DomainHttpsCertCheckCertInfoList',
+    'DomainHttpsCertCheckCertInfoListCertificate',
+    'DomainHttpsCertInfo',
+    'DomainHttpsCertInfoCertificate',
+    'DomainHttpsCertInfoList',
+    'DomainHttpsCertInfoListCertificate',
+    'DomainHttpsForcedRedirect',
+    'DomainHttpsHsts',
+    'DomainIPv6',
+    'DomainIpAccessRule',
+    'DomainIpAccessRuleSharedConfig',
+    'DomainMethodDeniedRule',
+    'DomainMultiRange',
+    'DomainNegativeCach',
+    'DomainNegativeCachCondition',
+    'DomainNegativeCachConditionConditionRule',
+    'DomainNegativeCachNegativeCacheRule',
+    'DomainOfflineCache',
+    'DomainOrigin',
+    'DomainOriginAccessRule',
+    'DomainOriginArg',
+    'DomainOriginArgCondition',
+    'DomainOriginArgConditionConditionRule',
+    'DomainOriginArgOriginArgAction',
+    'DomainOriginArgOriginArgActionOriginArgComponent',
+    'DomainOriginCertCheck',
+    'DomainOriginCondition',
+    'DomainOriginConditionConditionRule',
+    'DomainOriginOriginAction',
+    'DomainOriginOriginActionOriginLine',
+    'DomainOriginOriginActionOriginLinePrivateBucketAuth',
+    'DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation',
+    'DomainOriginRetry',
+    'DomainOriginRewrite',
+    'DomainOriginRewriteOriginRewriteRule',
+    'DomainOriginRewriteOriginRewriteRuleCondition',
+    'DomainOriginRewriteOriginRewriteRuleConditionConditionRule',
+    'DomainOriginRewriteOriginRewriteRuleOriginRewriteAction',
+    'DomainOriginSni',
+    'DomainPageOptimization',
+    'DomainQuic',
+    'DomainRedirectionRewrite',
+    'DomainRedirectionRewriteRedirectionRule',
+    'DomainRedirectionRewriteRedirectionRuleRedirectionAction',
+    'DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponents',
+    'DomainRefererAccessRule',
+    'DomainRefererAccessRuleReferersType',
+    'DomainRefererAccessRuleReferersTypeCommonType',
+    'DomainRefererAccessRuleReferersTypeRegularType',
+    'DomainRefererAccessRuleSharedConfig',
+    'DomainRemoteAuth',
+    'DomainRemoteAuthRemoteAuthRule',
+    'DomainRemoteAuthRemoteAuthRuleCondition',
+    'DomainRemoteAuthRemoteAuthRuleConditionConditionRule',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents',
+    'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance',
+    'DomainRequestBlockRule',
+    'DomainRequestBlockRuleBlockRule',
+    'DomainRequestBlockRuleBlockRuleBlockAction',
+    'DomainRequestBlockRuleBlockRuleCondition',
+    'DomainRequestBlockRuleBlockRuleConditionConditionRule',
+    'DomainRequestHeader',
+    'DomainRequestHeaderCondition',
+    'DomainRequestHeaderConditionConditionRule',
+    'DomainRequestHeaderRequestHeaderAction',
+    'DomainRequestHeaderRequestHeaderActionRequestHeaderInstance',
+    'DomainResponseHeader',
+    'DomainResponseHeaderCondition',
+    'DomainResponseHeaderConditionConditionRule',
+    'DomainResponseHeaderResponseHeaderAction',
+    'DomainResponseHeaderResponseHeaderActionResponseHeaderInstance',
+    'DomainRewriteHls',
+    'DomainSignedUrlAuth',
+    'DomainSignedUrlAuthSignedUrlAuthRule',
+    'DomainSignedUrlAuthSignedUrlAuthRuleCondition',
+    'DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRule',
+    'DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction',
+    'DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules',
+    'DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance',
+    'DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule',
+    'DomainTag',
+    'DomainTimeout',
+    'DomainTimeoutTimeoutRule',
+    'DomainTimeoutTimeoutRuleCondition',
+    'DomainTimeoutTimeoutRuleConditionConditionRule',
+    'DomainTimeoutTimeoutRuleTimeoutAction',
+    'DomainUaAccessRule',
+    'DomainUrlNormalize',
+    'DomainVideoDrag',
     'ShareConfigAllowIpAccessRule',
     'ShareConfigAllowRefererAccessRule',
     'ShareConfigAllowRefererAccessRuleCommonType',
@@ -25,6 +175,156 @@ __all__ = [
     'ShareConfigDenyIpAccessRule',
     'ShareConfigDenyRefererAccessRule',
     'ShareConfigDenyRefererAccessRuleCommonType',
+    'GetDomainAreaAccessRuleResult',
+    'GetDomainBrowserCachResult',
+    'GetDomainBrowserCachCacheActionResult',
+    'GetDomainBrowserCachConditionResult',
+    'GetDomainBrowserCachConditionConditionRuleResult',
+    'GetDomainCachResult',
+    'GetDomainCachCacheActionResult',
+    'GetDomainCachConditionResult',
+    'GetDomainCachConditionConditionRuleResult',
+    'GetDomainCacheHostResult',
+    'GetDomainCacheHostCacheHostRuleResult',
+    'GetDomainCacheHostCacheHostRuleCacheHostActionResult',
+    'GetDomainCacheHostCacheHostRuleConditionResult',
+    'GetDomainCacheHostCacheHostRuleConditionConditionRuleResult',
+    'GetDomainCacheKeyResult',
+    'GetDomainCacheKeyCacheKeyActionResult',
+    'GetDomainCacheKeyCacheKeyActionCacheKeyComponentResult',
+    'GetDomainCacheKeyConditionResult',
+    'GetDomainCacheKeyConditionConditionRuleResult',
+    'GetDomainCompressionResult',
+    'GetDomainCompressionCompressionRuleResult',
+    'GetDomainCompressionCompressionRuleCompressionActionResult',
+    'GetDomainCompressionCompressionRuleConditionResult',
+    'GetDomainCompressionCompressionRuleConditionConditionRuleResult',
+    'GetDomainConditionalOriginResult',
+    'GetDomainConditionalOriginOriginRuleResult',
+    'GetDomainConditionalOriginOriginRuleActionsResult',
+    'GetDomainConditionalOriginOriginRuleActionsOriginLineResult',
+    'GetDomainConditionalOriginOriginRuleConditionResult',
+    'GetDomainConditionalOriginOriginRuleConditionConditionGroupResult',
+    'GetDomainConditionalOriginOriginRuleConditionConditionGroupConditionResult',
+    'GetDomainCustomErrorPageResult',
+    'GetDomainCustomErrorPageErrorPageRuleResult',
+    'GetDomainCustomErrorPageErrorPageRuleErrorPageActionResult',
+    'GetDomainCustomizeAccessRuleResult',
+    'GetDomainCustomizeAccessRuleCustomizeInstanceResult',
+    'GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleResult',
+    'GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionResult',
+    'GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionResult',
+    'GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleResult',
+    'GetDomainDomainLockResult',
+    'GetDomainDownloadSpeedLimitResult',
+    'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleResult',
+    'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionResult',
+    'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleResult',
+    'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionResult',
+    'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeResult',
+    'GetDomainHttpForcedRedirectResult',
+    'GetDomainHttpsResult',
+    'GetDomainHttpsCertCheckResult',
+    'GetDomainHttpsCertCheckCertInfoListResult',
+    'GetDomainHttpsCertCheckCertInfoListCertificateResult',
+    'GetDomainHttpsCertInfoResult',
+    'GetDomainHttpsCertInfoCertificateResult',
+    'GetDomainHttpsCertInfoListResult',
+    'GetDomainHttpsCertInfoListCertificateResult',
+    'GetDomainHttpsForcedRedirectResult',
+    'GetDomainHttpsHstsResult',
+    'GetDomainIPv6Result',
+    'GetDomainIpAccessRuleResult',
+    'GetDomainIpAccessRuleSharedConfigResult',
+    'GetDomainMethodDeniedRuleResult',
+    'GetDomainMultiRangeResult',
+    'GetDomainNegativeCachResult',
+    'GetDomainNegativeCachConditionResult',
+    'GetDomainNegativeCachConditionConditionRuleResult',
+    'GetDomainNegativeCachNegativeCacheRuleResult',
+    'GetDomainOfflineCacheResult',
+    'GetDomainOriginResult',
+    'GetDomainOriginAccessRuleResult',
+    'GetDomainOriginArgResult',
+    'GetDomainOriginArgConditionResult',
+    'GetDomainOriginArgConditionConditionRuleResult',
+    'GetDomainOriginArgOriginArgActionResult',
+    'GetDomainOriginArgOriginArgActionOriginArgComponentResult',
+    'GetDomainOriginCertCheckResult',
+    'GetDomainOriginConditionResult',
+    'GetDomainOriginConditionConditionRuleResult',
+    'GetDomainOriginOriginActionResult',
+    'GetDomainOriginOriginActionOriginLineResult',
+    'GetDomainOriginOriginActionOriginLinePrivateBucketAuthResult',
+    'GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationResult',
+    'GetDomainOriginRetryResult',
+    'GetDomainOriginRewriteResult',
+    'GetDomainOriginRewriteOriginRewriteRuleResult',
+    'GetDomainOriginRewriteOriginRewriteRuleConditionResult',
+    'GetDomainOriginRewriteOriginRewriteRuleConditionConditionRuleResult',
+    'GetDomainOriginRewriteOriginRewriteRuleOriginRewriteActionResult',
+    'GetDomainOriginSniResult',
+    'GetDomainPageOptimizationResult',
+    'GetDomainQuicResult',
+    'GetDomainRedirectionRewriteResult',
+    'GetDomainRedirectionRewriteRedirectionRuleResult',
+    'GetDomainRedirectionRewriteRedirectionRuleRedirectionActionResult',
+    'GetDomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsResult',
+    'GetDomainRefererAccessRuleResult',
+    'GetDomainRefererAccessRuleReferersTypeResult',
+    'GetDomainRefererAccessRuleReferersTypeCommonTypeResult',
+    'GetDomainRefererAccessRuleReferersTypeRegularTypeResult',
+    'GetDomainRefererAccessRuleSharedConfigResult',
+    'GetDomainRemoteAuthResult',
+    'GetDomainRemoteAuthRemoteAuthRuleResult',
+    'GetDomainRemoteAuthRemoteAuthRuleConditionResult',
+    'GetDomainRemoteAuthRemoteAuthRuleConditionConditionRuleResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsResult',
+    'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceResult',
+    'GetDomainRequestBlockRuleResult',
+    'GetDomainRequestBlockRuleBlockRuleResult',
+    'GetDomainRequestBlockRuleBlockRuleBlockActionResult',
+    'GetDomainRequestBlockRuleBlockRuleConditionResult',
+    'GetDomainRequestBlockRuleBlockRuleConditionConditionRuleResult',
+    'GetDomainRequestHeaderResult',
+    'GetDomainRequestHeaderConditionResult',
+    'GetDomainRequestHeaderConditionConditionRuleResult',
+    'GetDomainRequestHeaderRequestHeaderActionResult',
+    'GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstanceResult',
+    'GetDomainResponseHeaderResult',
+    'GetDomainResponseHeaderConditionResult',
+    'GetDomainResponseHeaderConditionConditionRuleResult',
+    'GetDomainResponseHeaderResponseHeaderActionResult',
+    'GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceResult',
+    'GetDomainRewriteHlsResult',
+    'GetDomainSignedUrlAuthResult',
+    'GetDomainSignedUrlAuthSignedUrlAuthRuleResult',
+    'GetDomainSignedUrlAuthSignedUrlAuthRuleConditionResult',
+    'GetDomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleResult',
+    'GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionResult',
+    'GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesResult',
+    'GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceResult',
+    'GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleResult',
+    'GetDomainTagResult',
+    'GetDomainTimeoutResult',
+    'GetDomainTimeoutTimeoutRuleResult',
+    'GetDomainTimeoutTimeoutRuleConditionResult',
+    'GetDomainTimeoutTimeoutRuleConditionConditionRuleResult',
+    'GetDomainTimeoutTimeoutRuleTimeoutActionResult',
+    'GetDomainUaAccessRuleResult',
+    'GetDomainUrlNormalizeResult',
+    'GetDomainVideoDragResult',
     'GetShareConfigAllowIpAccessRuleResult',
     'GetShareConfigAllowRefererAccessRuleResult',
     'GetShareConfigAllowRefererAccessRuleCommonTypeResult',
@@ -34,6 +334,8387 @@ __all__ = [
     'GetShareConfigDenyRefererAccessRuleResult',
     'GetShareConfigDenyRefererAccessRuleCommonTypeResult',
 ]
+
+@pulumi.output_type
+class DomainAreaAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ruleType":
+            suggest = "rule_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainAreaAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainAreaAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainAreaAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 areas: Optional[Sequence[builtins.str]] = None,
+                 rule_type: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param Sequence[builtins.str] areas: 表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+        :param builtins.str rule_type: 表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if areas is not None:
+            pulumi.set(__self__, "areas", areas)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def areas(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+        """
+        return pulumi.get(self, "areas")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[builtins.str]:
+        """
+        表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainBrowserCach(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheAction":
+            suggest = "cache_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainBrowserCach. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainBrowserCach.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainBrowserCach.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_action: Optional['outputs.DomainBrowserCachCacheAction'] = None,
+                 condition: Optional['outputs.DomainBrowserCachCondition'] = None):
+        """
+        :param 'DomainBrowserCachCacheActionArgs' cache_action: 表示缓存行为的相关配置。
+        :param 'DomainBrowserCachConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if cache_action is not None:
+            pulumi.set(__self__, "cache_action", cache_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheAction")
+    def cache_action(self) -> Optional['outputs.DomainBrowserCachCacheAction']:
+        """
+        表示缓存行为的相关配置。
+        """
+        return pulumi.get(self, "cache_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainBrowserCachCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainBrowserCachCacheAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultPolicy":
+            suggest = "default_policy"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainBrowserCachCacheAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainBrowserCachCacheAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainBrowserCachCacheAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 default_policy: Optional[builtins.str] = None,
+                 ignore_case: Optional[builtins.bool] = None,
+                 ttl: Optional[builtins.int] = None):
+        """
+        :param builtins.str action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        :param builtins.str default_policy: 该参数被多个 CDN 特性共享。
+        :param builtins.bool ignore_case: 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        :param builtins.int ttl: 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if default_policy is not None:
+            pulumi.set(__self__, "default_policy", default_policy)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="defaultPolicy")
+    def default_policy(self) -> Optional[builtins.str]:
+        """
+        该参数被多个 CDN 特性共享。
+        """
+        return pulumi.get(self, "default_policy")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[builtins.bool]:
+        """
+        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> Optional[builtins.int]:
+        """
+        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class DomainBrowserCachCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainBrowserCachCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainBrowserCachCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainBrowserCachCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainBrowserCachConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainBrowserCachConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainBrowserCachConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainCach(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheAction":
+            suggest = "cache_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCach. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCach.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCach.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_action: Optional['outputs.DomainCachCacheAction'] = None,
+                 condition: Optional['outputs.DomainCachCondition'] = None):
+        """
+        :param 'DomainCachCacheActionArgs' cache_action: 表示缓存行为的相关配置。
+        :param 'DomainCachConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if cache_action is not None:
+            pulumi.set(__self__, "cache_action", cache_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheAction")
+    def cache_action(self) -> Optional['outputs.DomainCachCacheAction']:
+        """
+        表示缓存行为的相关配置。
+        """
+        return pulumi.get(self, "cache_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainCachCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainCachCacheAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultPolicy":
+            suggest = "default_policy"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCachCacheAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCachCacheAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCachCacheAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 default_policy: Optional[builtins.str] = None,
+                 ignore_case: Optional[builtins.bool] = None,
+                 ttl: Optional[builtins.int] = None):
+        """
+        :param builtins.str action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        :param builtins.str default_policy: 该参数被多个 CDN 特性共享。
+        :param builtins.bool ignore_case: 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        :param builtins.int ttl: 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if default_policy is not None:
+            pulumi.set(__self__, "default_policy", default_policy)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="defaultPolicy")
+    def default_policy(self) -> Optional[builtins.str]:
+        """
+        该参数被多个 CDN 特性共享。
+        """
+        return pulumi.get(self, "default_policy")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[builtins.bool]:
+        """
+        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> Optional[builtins.int]:
+        """
+        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class DomainCachCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCachCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCachCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCachCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainCachConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainCachConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainCachConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainCacheHost(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheHostRules":
+            suggest = "cache_host_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheHost. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheHost.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheHost.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_host_rules: Optional[Sequence['outputs.DomainCacheHostCacheHostRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if cache_host_rules is not None:
+            pulumi.set(__self__, "cache_host_rules", cache_host_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="cacheHostRules")
+    def cache_host_rules(self) -> Optional[Sequence['outputs.DomainCacheHostCacheHostRule']]:
+        return pulumi.get(self, "cache_host_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainCacheHostCacheHostRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheHostAction":
+            suggest = "cache_host_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheHostCacheHostRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheHostCacheHostRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheHostCacheHostRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_host_action: Optional['outputs.DomainCacheHostCacheHostRuleCacheHostAction'] = None,
+                 condition: Optional['outputs.DomainCacheHostCacheHostRuleCondition'] = None):
+        """
+        :param 'DomainCacheHostCacheHostRuleCacheHostActionArgs' cache_host_action: 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        :param 'DomainCacheHostCacheHostRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if cache_host_action is not None:
+            pulumi.set(__self__, "cache_host_action", cache_host_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheHostAction")
+    def cache_host_action(self) -> Optional['outputs.DomainCacheHostCacheHostRuleCacheHostAction']:
+        """
+        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        """
+        return pulumi.get(self, "cache_host_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainCacheHostCacheHostRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainCacheHostCacheHostRuleCacheHostAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheHost":
+            suggest = "cache_host"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheHostCacheHostRuleCacheHostAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheHostCacheHostRuleCacheHostAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheHostCacheHostRuleCacheHostAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_host: Optional[builtins.str] = None):
+        """
+        :param builtins.str cache_host: 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        """
+        if cache_host is not None:
+            pulumi.set(__self__, "cache_host", cache_host)
+
+    @property
+    @pulumi.getter(name="cacheHost")
+    def cache_host(self) -> Optional[builtins.str]:
+        """
+        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        """
+        return pulumi.get(self, "cache_host")
+
+
+@pulumi.output_type
+class DomainCacheHostCacheHostRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheHostCacheHostRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheHostCacheHostRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheHostCacheHostRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainCacheHostCacheHostRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainCacheHostCacheHostRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainCacheHostCacheHostRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainCacheKey(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheKeyAction":
+            suggest = "cache_key_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheKey. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheKey.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheKey.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_key_action: Optional['outputs.DomainCacheKeyCacheKeyAction'] = None,
+                 condition: Optional['outputs.DomainCacheKeyCondition'] = None):
+        """
+        :param 'DomainCacheKeyCacheKeyActionArgs' cache_key_action: 表示在 Condition 情况下，内容分发网络执行的操作。
+        :param 'DomainCacheKeyConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if cache_key_action is not None:
+            pulumi.set(__self__, "cache_key_action", cache_key_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheKeyAction")
+    def cache_key_action(self) -> Optional['outputs.DomainCacheKeyCacheKeyAction']:
+        """
+        表示在 Condition 情况下，内容分发网络执行的操作。
+        """
+        return pulumi.get(self, "cache_key_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainCacheKeyCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainCacheKeyCacheKeyAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheKeyComponents":
+            suggest = "cache_key_components"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheKeyCacheKeyAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheKeyCacheKeyAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheKeyCacheKeyAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_key_components: Optional[Sequence['outputs.DomainCacheKeyCacheKeyActionCacheKeyComponent']] = None):
+        if cache_key_components is not None:
+            pulumi.set(__self__, "cache_key_components", cache_key_components)
+
+    @property
+    @pulumi.getter(name="cacheKeyComponents")
+    def cache_key_components(self) -> Optional[Sequence['outputs.DomainCacheKeyCacheKeyActionCacheKeyComponent']]:
+        return pulumi.get(self, "cache_key_components")
+
+
+@pulumi.output_type
+class DomainCacheKeyCacheKeyActionCacheKeyComponent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ignoreCase":
+            suggest = "ignore_case"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheKeyCacheKeyActionCacheKeyComponent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheKeyCacheKeyActionCacheKeyComponent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheKeyCacheKeyActionCacheKeyComponent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 ignore_case: Optional[builtins.bool] = None,
+                 object: Optional[builtins.str] = None,
+                 subobject: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+        :param builtins.bool ignore_case: 表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        :param builtins.str object: 表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+        :param builtins.str subobject: 指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if subobject is not None:
+            pulumi.set(__self__, "subobject", subobject)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[builtins.bool]:
+        """
+        表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def subobject(self) -> Optional[builtins.str]:
+        """
+        指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+        """
+        return pulumi.get(self, "subobject")
+
+
+@pulumi.output_type
+class DomainCacheKeyCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCacheKeyCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCacheKeyCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCacheKeyCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainCacheKeyConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainCacheKeyConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainCacheKeyConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainCompression(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compressionRules":
+            suggest = "compression_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCompression. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCompression.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCompression.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compression_rules: Optional[Sequence['outputs.DomainCompressionCompressionRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        """
+        if compression_rules is not None:
+            pulumi.set(__self__, "compression_rules", compression_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="compressionRules")
+    def compression_rules(self) -> Optional[Sequence['outputs.DomainCompressionCompressionRule']]:
+        return pulumi.get(self, "compression_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainCompressionCompressionRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compressionAction":
+            suggest = "compression_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCompressionCompressionRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCompressionCompressionRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCompressionCompressionRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compression_action: Optional['outputs.DomainCompressionCompressionRuleCompressionAction'] = None,
+                 condition: Optional['outputs.DomainCompressionCompressionRuleCondition'] = None):
+        """
+        :param 'DomainCompressionCompressionRuleCompressionActionArgs' compression_action: 表示压缩操作的配置。
+        :param 'DomainCompressionCompressionRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if compression_action is not None:
+            pulumi.set(__self__, "compression_action", compression_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="compressionAction")
+    def compression_action(self) -> Optional['outputs.DomainCompressionCompressionRuleCompressionAction']:
+        """
+        表示压缩操作的配置。
+        """
+        return pulumi.get(self, "compression_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainCompressionCompressionRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainCompressionCompressionRuleCompressionAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compressionFormat":
+            suggest = "compression_format"
+        elif key == "compressionTarget":
+            suggest = "compression_target"
+        elif key == "compressionTypes":
+            suggest = "compression_types"
+        elif key == "maxFileSizeKb":
+            suggest = "max_file_size_kb"
+        elif key == "minFileSizeKb":
+            suggest = "min_file_size_kb"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCompressionCompressionRuleCompressionAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCompressionCompressionRuleCompressionAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCompressionCompressionRuleCompressionAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compression_format: Optional[builtins.str] = None,
+                 compression_target: Optional[builtins.str] = None,
+                 compression_types: Optional[Sequence[builtins.str]] = None,
+                 max_file_size_kb: Optional[builtins.int] = None,
+                 min_file_size_kb: Optional[builtins.int] = None):
+        """
+        :param builtins.str compression_format: 如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+        :param builtins.str compression_target: 指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+        :param Sequence[builtins.str] compression_types: 压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+        :param builtins.int max_file_size_kb: 表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+        :param builtins.int min_file_size_kb: 表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+        """
+        if compression_format is not None:
+            pulumi.set(__self__, "compression_format", compression_format)
+        if compression_target is not None:
+            pulumi.set(__self__, "compression_target", compression_target)
+        if compression_types is not None:
+            pulumi.set(__self__, "compression_types", compression_types)
+        if max_file_size_kb is not None:
+            pulumi.set(__self__, "max_file_size_kb", max_file_size_kb)
+        if min_file_size_kb is not None:
+            pulumi.set(__self__, "min_file_size_kb", min_file_size_kb)
+
+    @property
+    @pulumi.getter(name="compressionFormat")
+    def compression_format(self) -> Optional[builtins.str]:
+        """
+        如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+        """
+        return pulumi.get(self, "compression_format")
+
+    @property
+    @pulumi.getter(name="compressionTarget")
+    def compression_target(self) -> Optional[builtins.str]:
+        """
+        指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+        """
+        return pulumi.get(self, "compression_target")
+
+    @property
+    @pulumi.getter(name="compressionTypes")
+    def compression_types(self) -> Optional[Sequence[builtins.str]]:
+        """
+        压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+        """
+        return pulumi.get(self, "compression_types")
+
+    @property
+    @pulumi.getter(name="maxFileSizeKb")
+    def max_file_size_kb(self) -> Optional[builtins.int]:
+        """
+        表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+        """
+        return pulumi.get(self, "max_file_size_kb")
+
+    @property
+    @pulumi.getter(name="minFileSizeKb")
+    def min_file_size_kb(self) -> Optional[builtins.int]:
+        """
+        表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+        """
+        return pulumi.get(self, "min_file_size_kb")
+
+
+@pulumi.output_type
+class DomainCompressionCompressionRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCompressionCompressionRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCompressionCompressionRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCompressionCompressionRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainCompressionCompressionRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainCompressionCompressionRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainCompressionCompressionRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainConditionalOrigin(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originRules":
+            suggest = "origin_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainConditionalOrigin. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainConditionalOrigin.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainConditionalOrigin.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 origin_rules: Optional[Sequence['outputs.DomainConditionalOriginOriginRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param Sequence['DomainConditionalOriginOriginRuleArgs'] origin_rules: 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if origin_rules is not None:
+            pulumi.set(__self__, "origin_rules", origin_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="originRules")
+    def origin_rules(self) -> Optional[Sequence['outputs.DomainConditionalOriginOriginRule']]:
+        """
+        表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+        """
+        return pulumi.get(self, "origin_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainConditionalOriginOriginRule(dict):
+    def __init__(__self__, *,
+                 actions: Optional['outputs.DomainConditionalOriginOriginRuleActions'] = None,
+                 condition: Optional['outputs.DomainConditionalOriginOriginRuleCondition'] = None):
+        """
+        :param 'DomainConditionalOriginOriginRuleActionsArgs' actions: 表示列表中一条规则的操作配置。
+        :param 'DomainConditionalOriginOriginRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter
+    def actions(self) -> Optional['outputs.DomainConditionalOriginOriginRuleActions']:
+        """
+        表示列表中一条规则的操作配置。
+        """
+        return pulumi.get(self, "actions")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainConditionalOriginOriginRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainConditionalOriginOriginRuleActions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originLines":
+            suggest = "origin_lines"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainConditionalOriginOriginRuleActions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainConditionalOriginOriginRuleActions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainConditionalOriginOriginRuleActions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 origin_lines: Optional[Sequence['outputs.DomainConditionalOriginOriginRuleActionsOriginLine']] = None):
+        if origin_lines is not None:
+            pulumi.set(__self__, "origin_lines", origin_lines)
+
+    @property
+    @pulumi.getter(name="originLines")
+    def origin_lines(self) -> Optional[Sequence['outputs.DomainConditionalOriginOriginRuleActionsOriginLine']]:
+        return pulumi.get(self, "origin_lines")
+
+
+@pulumi.output_type
+class DomainConditionalOriginOriginRuleActionsOriginLine(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpPort":
+            suggest = "http_port"
+        elif key == "httpsPort":
+            suggest = "https_port"
+        elif key == "instanceType":
+            suggest = "instance_type"
+        elif key == "originHost":
+            suggest = "origin_host"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainConditionalOriginOriginRuleActionsOriginLine. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainConditionalOriginOriginRuleActionsOriginLine.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainConditionalOriginOriginRuleActionsOriginLine.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: Optional[builtins.str] = None,
+                 http_port: Optional[builtins.str] = None,
+                 https_port: Optional[builtins.str] = None,
+                 instance_type: Optional[builtins.str] = None,
+                 origin_host: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+        :param builtins.str http_port: 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+        :param builtins.str https_port: 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+        :param builtins.str instance_type: 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+        :param builtins.str origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if http_port is not None:
+            pulumi.set(__self__, "http_port", http_port)
+        if https_port is not None:
+            pulumi.set(__self__, "https_port", https_port)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+        if origin_host is not None:
+            pulumi.set(__self__, "origin_host", origin_host)
+
+    @property
+    @pulumi.getter
+    def address(self) -> Optional[builtins.str]:
+        """
+        表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="httpPort")
+    def http_port(self) -> Optional[builtins.str]:
+        """
+        表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+        """
+        return pulumi.get(self, "http_port")
+
+    @property
+    @pulumi.getter(name="httpsPort")
+    def https_port(self) -> Optional[builtins.str]:
+        """
+        表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+        """
+        return pulumi.get(self, "https_port")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> Optional[builtins.str]:
+        """
+        表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter(name="originHost")
+    def origin_host(self) -> Optional[builtins.str]:
+        """
+        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+        """
+        return pulumi.get(self, "origin_host")
+
+
+@pulumi.output_type
+class DomainConditionalOriginOriginRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionGroups":
+            suggest = "condition_groups"
+        elif key == "isGroup":
+            suggest = "is_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainConditionalOriginOriginRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainConditionalOriginOriginRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainConditionalOriginOriginRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_groups: Optional[Sequence['outputs.DomainConditionalOriginOriginRuleConditionConditionGroup']] = None,
+                 connective: Optional[builtins.str] = None,
+                 is_group: Optional[builtins.bool] = None):
+        """
+        :param builtins.str connective: 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+        :param builtins.bool is_group: 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        """
+        if condition_groups is not None:
+            pulumi.set(__self__, "condition_groups", condition_groups)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+        if is_group is not None:
+            pulumi.set(__self__, "is_group", is_group)
+
+    @property
+    @pulumi.getter(name="conditionGroups")
+    def condition_groups(self) -> Optional[Sequence['outputs.DomainConditionalOriginOriginRuleConditionConditionGroup']]:
+        return pulumi.get(self, "condition_groups")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+        """
+        return pulumi.get(self, "connective")
+
+    @property
+    @pulumi.getter(name="isGroup")
+    def is_group(self) -> Optional[builtins.bool]:
+        """
+        表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        """
+        return pulumi.get(self, "is_group")
+
+
+@pulumi.output_type
+class DomainConditionalOriginOriginRuleConditionConditionGroup(dict):
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainConditionalOriginOriginRuleConditionConditionGroupCondition'] = None):
+        """
+        :param 'DomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainConditionalOriginOriginRuleConditionConditionGroupCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainConditionalOriginOriginRuleConditionConditionGroupCondition(dict):
+    def __init__(__self__, *,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 values: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.str object: 表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
+        :param builtins.str operator: 表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
+        :param Sequence[builtins.str] values: 表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+        """
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class DomainCustomErrorPage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorPageRules":
+            suggest = "error_page_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomErrorPage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomErrorPage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomErrorPage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_page_rules: Optional[Sequence['outputs.DomainCustomErrorPageErrorPageRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if error_page_rules is not None:
+            pulumi.set(__self__, "error_page_rules", error_page_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="errorPageRules")
+    def error_page_rules(self) -> Optional[Sequence['outputs.DomainCustomErrorPageErrorPageRule']]:
+        return pulumi.get(self, "error_page_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainCustomErrorPageErrorPageRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorPageAction":
+            suggest = "error_page_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomErrorPageErrorPageRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomErrorPageErrorPageRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomErrorPageErrorPageRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_page_action: Optional['outputs.DomainCustomErrorPageErrorPageRuleErrorPageAction'] = None):
+        """
+        :param 'DomainCustomErrorPageErrorPageRuleErrorPageActionArgs' error_page_action: 表示规则的相关配置。
+        """
+        if error_page_action is not None:
+            pulumi.set(__self__, "error_page_action", error_page_action)
+
+    @property
+    @pulumi.getter(name="errorPageAction")
+    def error_page_action(self) -> Optional['outputs.DomainCustomErrorPageErrorPageRuleErrorPageAction']:
+        """
+        表示规则的相关配置。
+        """
+        return pulumi.get(self, "error_page_action")
+
+
+@pulumi.output_type
+class DomainCustomErrorPageErrorPageRuleErrorPageAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "redirectCode":
+            suggest = "redirect_code"
+        elif key == "redirectUrl":
+            suggest = "redirect_url"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomErrorPageErrorPageRuleErrorPageAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomErrorPageErrorPageRuleErrorPageAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomErrorPageErrorPageRuleErrorPageAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 redirect_code: Optional[builtins.str] = None,
+                 redirect_url: Optional[builtins.str] = None,
+                 status_code: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+        :param builtins.str redirect_code: 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        :param builtins.str redirect_url: 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+        :param builtins.str status_code: 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if redirect_code is not None:
+            pulumi.set(__self__, "redirect_code", redirect_code)
+        if redirect_url is not None:
+            pulumi.set(__self__, "redirect_url", redirect_url)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="redirectCode")
+    def redirect_code(self) -> Optional[builtins.str]:
+        """
+        表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        """
+        return pulumi.get(self, "redirect_code")
+
+    @property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> Optional[builtins.str]:
+        """
+        表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class DomainCustomizeAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customizeInstances":
+            suggest = "customize_instances"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomizeAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomizeAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomizeAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 customize_instances: Optional[Sequence['outputs.DomainCustomizeAccessRuleCustomizeInstance']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if customize_instances is not None:
+            pulumi.set(__self__, "customize_instances", customize_instances)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="customizeInstances")
+    def customize_instances(self) -> Optional[Sequence['outputs.DomainCustomizeAccessRuleCustomizeInstance']]:
+        return pulumi.get(self, "customize_instances")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainCustomizeAccessRuleCustomizeInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customizeRule":
+            suggest = "customize_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomizeAccessRuleCustomizeInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 customize_rule: Optional['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule'] = None):
+        """
+        :param 'DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs' customize_rule: 表示列表中一条规则的配置。
+        """
+        if customize_rule is not None:
+            pulumi.set(__self__, "customize_rule", customize_rule)
+
+    @property
+    @pulumi.getter(name="customizeRule")
+    def customize_rule(self) -> Optional['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule']:
+        """
+        表示列表中一条规则的配置。
+        """
+        return pulumi.get(self, "customize_rule")
+
+
+@pulumi.output_type
+class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessAction":
+            suggest = "access_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_action: Optional['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction'] = None,
+                 condition: Optional['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition'] = None):
+        """
+        :param 'DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs' access_action: 表示该规则中的黑名单或者白名单的配置。
+        :param 'DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        if access_action is not None:
+            pulumi.set(__self__, "access_action", access_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="accessAction")
+    def access_action(self) -> Optional['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction']:
+        """
+        表示该规则中的黑名单或者白名单的配置。
+        """
+        return pulumi.get(self, "access_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowEmpty":
+            suggest = "allow_empty"
+        elif key == "listRules":
+            suggest = "list_rules"
+        elif key == "requestHeader":
+            suggest = "request_header"
+        elif key == "ruleType":
+            suggest = "rule_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_empty: Optional[builtins.bool] = None,
+                 list_rules: Optional[Sequence[builtins.str]] = None,
+                 request_header: Optional[builtins.str] = None,
+                 rule_type: Optional[builtins.str] = None):
+        """
+        :param builtins.bool allow_empty: 表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+        :param Sequence[builtins.str] list_rules: 表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+        :param builtins.str request_header: 表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+        :param builtins.str rule_type: 表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        """
+        if allow_empty is not None:
+            pulumi.set(__self__, "allow_empty", allow_empty)
+        if list_rules is not None:
+            pulumi.set(__self__, "list_rules", list_rules)
+        if request_header is not None:
+            pulumi.set(__self__, "request_header", request_header)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> Optional[builtins.bool]:
+        """
+        表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter(name="listRules")
+    def list_rules(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+        """
+        return pulumi.get(self, "list_rules")
+
+    @property
+    @pulumi.getter(name="requestHeader")
+    def request_header(self) -> Optional[builtins.str]:
+        """
+        表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+        """
+        return pulumi.get(self, "request_header")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[builtins.str]:
+        """
+        表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        """
+        return pulumi.get(self, "rule_type")
+
+
+@pulumi.output_type
+class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainDomainLock(dict):
+    def __init__(__self__, *,
+                 remark: Optional[builtins.str] = None,
+                 status: Optional[builtins.str] = None):
+        """
+        :param builtins.str remark: 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+        :param builtins.str status: 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        """
+        if remark is not None:
+            pulumi.set(__self__, "remark", remark)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def remark(self) -> Optional[builtins.str]:
+        """
+        表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+        """
+        return pulumi.get(self, "remark")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class DomainDownloadSpeedLimit(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "downloadSpeedLimitRules":
+            suggest = "download_speed_limit_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainDownloadSpeedLimit. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainDownloadSpeedLimit.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainDownloadSpeedLimit.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 download_speed_limit_rules: Optional[Sequence['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if download_speed_limit_rules is not None:
+            pulumi.set(__self__, "download_speed_limit_rules", download_speed_limit_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="downloadSpeedLimitRules")
+    def download_speed_limit_rules(self) -> Optional[Sequence['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRule']]:
+        return pulumi.get(self, "download_speed_limit_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainDownloadSpeedLimitDownloadSpeedLimitRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "downloadSpeedLimitAction":
+            suggest = "download_speed_limit_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainDownloadSpeedLimitDownloadSpeedLimitRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition'] = None,
+                 download_speed_limit_action: Optional['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction'] = None):
+        """
+        :param 'DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs' download_speed_limit_action: 表示限速配置。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if download_speed_limit_action is not None:
+            pulumi.set(__self__, "download_speed_limit_action", download_speed_limit_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="downloadSpeedLimitAction")
+    def download_speed_limit_action(self) -> Optional['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction']:
+        """
+        表示限速配置。
+        """
+        return pulumi.get(self, "download_speed_limit_action")
+
+
+@pulumi.output_type
+class DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "speedLimitRate":
+            suggest = "speed_limit_rate"
+        elif key == "speedLimitRateAfter":
+            suggest = "speed_limit_rate_after"
+        elif key == "speedLimitTime":
+            suggest = "speed_limit_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 speed_limit_rate: Optional[builtins.int] = None,
+                 speed_limit_rate_after: Optional[builtins.int] = None,
+                 speed_limit_time: Optional['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime'] = None):
+        """
+        :param builtins.int speed_limit_rate: 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+        :param builtins.int speed_limit_rate_after: 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+        :param 'DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs' speed_limit_time: 表示限速发生的日期和时间段。
+        """
+        if speed_limit_rate is not None:
+            pulumi.set(__self__, "speed_limit_rate", speed_limit_rate)
+        if speed_limit_rate_after is not None:
+            pulumi.set(__self__, "speed_limit_rate_after", speed_limit_rate_after)
+        if speed_limit_time is not None:
+            pulumi.set(__self__, "speed_limit_time", speed_limit_time)
+
+    @property
+    @pulumi.getter(name="speedLimitRate")
+    def speed_limit_rate(self) -> Optional[builtins.int]:
+        """
+        表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+        """
+        return pulumi.get(self, "speed_limit_rate")
+
+    @property
+    @pulumi.getter(name="speedLimitRateAfter")
+    def speed_limit_rate_after(self) -> Optional[builtins.int]:
+        """
+        表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+        """
+        return pulumi.get(self, "speed_limit_rate_after")
+
+    @property
+    @pulumi.getter(name="speedLimitTime")
+    def speed_limit_time(self) -> Optional['outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime']:
+        """
+        表示限速发生的日期和时间段。
+        """
+        return pulumi.get(self, "speed_limit_time")
+
+
+@pulumi.output_type
+class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "beginTime":
+            suggest = "begin_time"
+        elif key == "dayWeek":
+            suggest = "day_week"
+        elif key == "endTime":
+            suggest = "end_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 begin_time: Optional[builtins.str] = None,
+                 day_week: Optional[builtins.str] = None,
+                 end_time: Optional[builtins.str] = None):
+        """
+        :param builtins.str begin_time: 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        :param builtins.str day_week: 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+        :param builtins.str end_time: 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        """
+        if begin_time is not None:
+            pulumi.set(__self__, "begin_time", begin_time)
+        if day_week is not None:
+            pulumi.set(__self__, "day_week", day_week)
+        if end_time is not None:
+            pulumi.set(__self__, "end_time", end_time)
+
+    @property
+    @pulumi.getter(name="beginTime")
+    def begin_time(self) -> Optional[builtins.str]:
+        """
+        表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        """
+        return pulumi.get(self, "begin_time")
+
+    @property
+    @pulumi.getter(name="dayWeek")
+    def day_week(self) -> Optional[builtins.str]:
+        """
+        表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+        """
+        return pulumi.get(self, "day_week")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> Optional[builtins.str]:
+        """
+        表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        """
+        return pulumi.get(self, "end_time")
+
+
+@pulumi.output_type
+class DomainHttpForcedRedirect(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableForcedRedirect":
+            suggest = "enable_forced_redirect"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpForcedRedirect. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpForcedRedirect.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpForcedRedirect.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_forced_redirect: Optional[builtins.bool] = None,
+                 status_code: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_forced_redirect: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        :param builtins.str status_code: 表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+        """
+        if enable_forced_redirect is not None:
+            pulumi.set(__self__, "enable_forced_redirect", enable_forced_redirect)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter(name="enableForcedRedirect")
+    def enable_forced_redirect(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        """
+        return pulumi.get(self, "enable_forced_redirect")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class DomainHttps(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certCheck":
+            suggest = "cert_check"
+        elif key == "certInfo":
+            suggest = "cert_info"
+        elif key == "certInfoLists":
+            suggest = "cert_info_lists"
+        elif key == "disableHttp":
+            suggest = "disable_http"
+        elif key == "forcedRedirect":
+            suggest = "forced_redirect"
+        elif key == "tlsVersions":
+            suggest = "tls_versions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttps. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttps.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttps.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cert_check: Optional['outputs.DomainHttpsCertCheck'] = None,
+                 cert_info: Optional['outputs.DomainHttpsCertInfo'] = None,
+                 cert_info_lists: Optional[Sequence['outputs.DomainHttpsCertInfoList']] = None,
+                 disable_http: Optional[builtins.bool] = None,
+                 forced_redirect: Optional['outputs.DomainHttpsForcedRedirect'] = None,
+                 hsts: Optional['outputs.DomainHttpsHsts'] = None,
+                 http2: Optional[builtins.bool] = None,
+                 ocsp: Optional[builtins.bool] = None,
+                 switch: Optional[builtins.bool] = None,
+                 tls_versions: Optional[Sequence[builtins.str]] = None):
+        """
+        :param 'DomainHttpsCertCheckArgs' cert_check: 表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+        :param 'DomainHttpsCertInfoArgs' cert_info: 表示要与加速域名关联的单本证书。
+        :param builtins.bool disable_http: 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+        :param 'DomainHttpsForcedRedirectArgs' forced_redirect: 表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+        :param 'DomainHttpsHstsArgs' hsts: 表示 HSTS 特性的配置模块。该特性默认是禁用。
+        :param builtins.bool http2: HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+        :param builtins.bool ocsp: 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+        :param builtins.bool switch: 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+        :param Sequence[builtins.str] tls_versions: 表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        """
+        if cert_check is not None:
+            pulumi.set(__self__, "cert_check", cert_check)
+        if cert_info is not None:
+            pulumi.set(__self__, "cert_info", cert_info)
+        if cert_info_lists is not None:
+            pulumi.set(__self__, "cert_info_lists", cert_info_lists)
+        if disable_http is not None:
+            pulumi.set(__self__, "disable_http", disable_http)
+        if forced_redirect is not None:
+            pulumi.set(__self__, "forced_redirect", forced_redirect)
+        if hsts is not None:
+            pulumi.set(__self__, "hsts", hsts)
+        if http2 is not None:
+            pulumi.set(__self__, "http2", http2)
+        if ocsp is not None:
+            pulumi.set(__self__, "ocsp", ocsp)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+        if tls_versions is not None:
+            pulumi.set(__self__, "tls_versions", tls_versions)
+
+    @property
+    @pulumi.getter(name="certCheck")
+    def cert_check(self) -> Optional['outputs.DomainHttpsCertCheck']:
+        """
+        表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+        """
+        return pulumi.get(self, "cert_check")
+
+    @property
+    @pulumi.getter(name="certInfo")
+    def cert_info(self) -> Optional['outputs.DomainHttpsCertInfo']:
+        """
+        表示要与加速域名关联的单本证书。
+        """
+        return pulumi.get(self, "cert_info")
+
+    @property
+    @pulumi.getter(name="certInfoLists")
+    def cert_info_lists(self) -> Optional[Sequence['outputs.DomainHttpsCertInfoList']]:
+        return pulumi.get(self, "cert_info_lists")
+
+    @property
+    @pulumi.getter(name="disableHttp")
+    def disable_http(self) -> Optional[builtins.bool]:
+        """
+        表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "disable_http")
+
+    @property
+    @pulumi.getter(name="forcedRedirect")
+    def forced_redirect(self) -> Optional['outputs.DomainHttpsForcedRedirect']:
+        """
+        表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+        """
+        return pulumi.get(self, "forced_redirect")
+
+    @property
+    @pulumi.getter
+    def hsts(self) -> Optional['outputs.DomainHttpsHsts']:
+        """
+        表示 HSTS 特性的配置模块。该特性默认是禁用。
+        """
+        return pulumi.get(self, "hsts")
+
+    @property
+    @pulumi.getter
+    def http2(self) -> Optional[builtins.bool]:
+        """
+        HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+        """
+        return pulumi.get(self, "http2")
+
+    @property
+    @pulumi.getter
+    def ocsp(self) -> Optional[builtins.bool]:
+        """
+        指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ocsp")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="tlsVersions")
+    def tls_versions(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        """
+        return pulumi.get(self, "tls_versions")
+
+
+@pulumi.output_type
+class DomainHttpsCertCheck(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certInfoLists":
+            suggest = "cert_info_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsCertCheck. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsCertCheck.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsCertCheck.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cert_info_lists: Optional[Sequence['outputs.DomainHttpsCertCheckCertInfoList']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if cert_info_lists is not None:
+            pulumi.set(__self__, "cert_info_lists", cert_info_lists)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="certInfoLists")
+    def cert_info_lists(self) -> Optional[Sequence['outputs.DomainHttpsCertCheckCertInfoList']]:
+        return pulumi.get(self, "cert_info_lists")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainHttpsCertCheckCertInfoList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certId":
+            suggest = "cert_id"
+        elif key == "certName":
+            suggest = "cert_name"
+        elif key == "effectiveTime":
+            suggest = "effective_time"
+        elif key == "encryType":
+            suggest = "encry_type"
+        elif key == "expireTime":
+            suggest = "expire_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsCertCheckCertInfoList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsCertCheckCertInfoList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsCertCheckCertInfoList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cert_id: Optional[builtins.str] = None,
+                 cert_name: Optional[builtins.str] = None,
+                 certificate: Optional['outputs.DomainHttpsCertCheckCertInfoListCertificate'] = None,
+                 effective_time: Optional[builtins.int] = None,
+                 encry_type: Optional[builtins.str] = None,
+                 expire_time: Optional[builtins.int] = None,
+                 source: Optional[builtins.str] = None):
+        """
+        :param builtins.str cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        :param builtins.str cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        :param 'DomainHttpsCertCheckCertInfoListCertificateArgs' certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        :param builtins.int effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
+        :param builtins.str encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        :param builtins.int expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
+        :param builtins.str source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        if cert_id is not None:
+            pulumi.set(__self__, "cert_id", cert_id)
+        if cert_name is not None:
+            pulumi.set(__self__, "cert_name", cert_name)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if effective_time is not None:
+            pulumi.set(__self__, "effective_time", effective_time)
+        if encry_type is not None:
+            pulumi.set(__self__, "encry_type", encry_type)
+        if expire_time is not None:
+            pulumi.set(__self__, "expire_time", expire_time)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="certId")
+    def cert_id(self) -> Optional[builtins.str]:
+        """
+        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        """
+        return pulumi.get(self, "cert_id")
+
+    @property
+    @pulumi.getter(name="certName")
+    def cert_name(self) -> Optional[builtins.str]:
+        """
+        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        """
+        return pulumi.get(self, "cert_name")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional['outputs.DomainHttpsCertCheckCertInfoListCertificate']:
+        """
+        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="effectiveTime")
+    def effective_time(self) -> Optional[builtins.int]:
+        """
+        表示该证书的签发时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "effective_time")
+
+    @property
+    @pulumi.getter(name="encryType")
+    def encry_type(self) -> Optional[builtins.str]:
+        """
+        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        """
+        return pulumi.get(self, "encry_type")
+
+    @property
+    @pulumi.getter(name="expireTime")
+    def expire_time(self) -> Optional[builtins.int]:
+        """
+        表示该证书的到期时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "expire_time")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[builtins.str]:
+        """
+        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class DomainHttpsCertCheckCertInfoListCertificate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionCert":
+            suggest = "encryption_cert"
+        elif key == "encryptionKey":
+            suggest = "encryption_key"
+        elif key == "privateKey":
+            suggest = "private_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsCertCheckCertInfoListCertificate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsCertCheckCertInfoListCertificate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsCertCheckCertInfoListCertificate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate: Optional[builtins.str] = None,
+                 encryption_cert: Optional[builtins.str] = None,
+                 encryption_key: Optional[builtins.str] = None,
+                 private_key: Optional[builtins.str] = None):
+        """
+        :param builtins.str certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        :param builtins.str encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        :param builtins.str encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        :param builtins.str private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if encryption_cert is not None:
+            pulumi.set(__self__, "encryption_cert", encryption_cert)
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[builtins.str]:
+        """
+        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="encryptionCert")
+    def encryption_cert(self) -> Optional[builtins.str]:
+        """
+        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        """
+        return pulumi.get(self, "encryption_cert")
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> Optional[builtins.str]:
+        """
+        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[builtins.str]:
+        """
+        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class DomainHttpsCertInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certId":
+            suggest = "cert_id"
+        elif key == "certName":
+            suggest = "cert_name"
+        elif key == "effectiveTime":
+            suggest = "effective_time"
+        elif key == "encryType":
+            suggest = "encry_type"
+        elif key == "expireTime":
+            suggest = "expire_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsCertInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsCertInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsCertInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cert_id: Optional[builtins.str] = None,
+                 cert_name: Optional[builtins.str] = None,
+                 certificate: Optional['outputs.DomainHttpsCertInfoCertificate'] = None,
+                 effective_time: Optional[builtins.int] = None,
+                 encry_type: Optional[builtins.str] = None,
+                 expire_time: Optional[builtins.int] = None,
+                 source: Optional[builtins.str] = None):
+        """
+        :param builtins.str cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        :param builtins.str cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        :param 'DomainHttpsCertInfoCertificateArgs' certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        :param builtins.int effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
+        :param builtins.str encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        :param builtins.int expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
+        :param builtins.str source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        if cert_id is not None:
+            pulumi.set(__self__, "cert_id", cert_id)
+        if cert_name is not None:
+            pulumi.set(__self__, "cert_name", cert_name)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if effective_time is not None:
+            pulumi.set(__self__, "effective_time", effective_time)
+        if encry_type is not None:
+            pulumi.set(__self__, "encry_type", encry_type)
+        if expire_time is not None:
+            pulumi.set(__self__, "expire_time", expire_time)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="certId")
+    def cert_id(self) -> Optional[builtins.str]:
+        """
+        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        """
+        return pulumi.get(self, "cert_id")
+
+    @property
+    @pulumi.getter(name="certName")
+    def cert_name(self) -> Optional[builtins.str]:
+        """
+        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        """
+        return pulumi.get(self, "cert_name")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional['outputs.DomainHttpsCertInfoCertificate']:
+        """
+        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="effectiveTime")
+    def effective_time(self) -> Optional[builtins.int]:
+        """
+        表示该证书的签发时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "effective_time")
+
+    @property
+    @pulumi.getter(name="encryType")
+    def encry_type(self) -> Optional[builtins.str]:
+        """
+        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        """
+        return pulumi.get(self, "encry_type")
+
+    @property
+    @pulumi.getter(name="expireTime")
+    def expire_time(self) -> Optional[builtins.int]:
+        """
+        表示该证书的到期时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "expire_time")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[builtins.str]:
+        """
+        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class DomainHttpsCertInfoCertificate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionCert":
+            suggest = "encryption_cert"
+        elif key == "encryptionKey":
+            suggest = "encryption_key"
+        elif key == "privateKey":
+            suggest = "private_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsCertInfoCertificate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsCertInfoCertificate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsCertInfoCertificate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate: Optional[builtins.str] = None,
+                 encryption_cert: Optional[builtins.str] = None,
+                 encryption_key: Optional[builtins.str] = None,
+                 private_key: Optional[builtins.str] = None):
+        """
+        :param builtins.str certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        :param builtins.str encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        :param builtins.str encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        :param builtins.str private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if encryption_cert is not None:
+            pulumi.set(__self__, "encryption_cert", encryption_cert)
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[builtins.str]:
+        """
+        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="encryptionCert")
+    def encryption_cert(self) -> Optional[builtins.str]:
+        """
+        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        """
+        return pulumi.get(self, "encryption_cert")
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> Optional[builtins.str]:
+        """
+        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[builtins.str]:
+        """
+        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class DomainHttpsCertInfoList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certId":
+            suggest = "cert_id"
+        elif key == "certName":
+            suggest = "cert_name"
+        elif key == "effectiveTime":
+            suggest = "effective_time"
+        elif key == "encryType":
+            suggest = "encry_type"
+        elif key == "expireTime":
+            suggest = "expire_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsCertInfoList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsCertInfoList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsCertInfoList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cert_id: Optional[builtins.str] = None,
+                 cert_name: Optional[builtins.str] = None,
+                 certificate: Optional['outputs.DomainHttpsCertInfoListCertificate'] = None,
+                 effective_time: Optional[builtins.int] = None,
+                 encry_type: Optional[builtins.str] = None,
+                 expire_time: Optional[builtins.int] = None,
+                 source: Optional[builtins.str] = None):
+        """
+        :param builtins.str cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        :param builtins.str cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        :param 'DomainHttpsCertInfoListCertificateArgs' certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        :param builtins.int effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
+        :param builtins.str encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        :param builtins.int expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
+        :param builtins.str source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        if cert_id is not None:
+            pulumi.set(__self__, "cert_id", cert_id)
+        if cert_name is not None:
+            pulumi.set(__self__, "cert_name", cert_name)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if effective_time is not None:
+            pulumi.set(__self__, "effective_time", effective_time)
+        if encry_type is not None:
+            pulumi.set(__self__, "encry_type", encry_type)
+        if expire_time is not None:
+            pulumi.set(__self__, "expire_time", expire_time)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="certId")
+    def cert_id(self) -> Optional[builtins.str]:
+        """
+        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        """
+        return pulumi.get(self, "cert_id")
+
+    @property
+    @pulumi.getter(name="certName")
+    def cert_name(self) -> Optional[builtins.str]:
+        """
+        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        """
+        return pulumi.get(self, "cert_name")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional['outputs.DomainHttpsCertInfoListCertificate']:
+        """
+        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="effectiveTime")
+    def effective_time(self) -> Optional[builtins.int]:
+        """
+        表示该证书的签发时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "effective_time")
+
+    @property
+    @pulumi.getter(name="encryType")
+    def encry_type(self) -> Optional[builtins.str]:
+        """
+        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        """
+        return pulumi.get(self, "encry_type")
+
+    @property
+    @pulumi.getter(name="expireTime")
+    def expire_time(self) -> Optional[builtins.int]:
+        """
+        表示该证书的到期时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "expire_time")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[builtins.str]:
+        """
+        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class DomainHttpsCertInfoListCertificate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionCert":
+            suggest = "encryption_cert"
+        elif key == "encryptionKey":
+            suggest = "encryption_key"
+        elif key == "privateKey":
+            suggest = "private_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsCertInfoListCertificate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsCertInfoListCertificate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsCertInfoListCertificate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate: Optional[builtins.str] = None,
+                 encryption_cert: Optional[builtins.str] = None,
+                 encryption_key: Optional[builtins.str] = None,
+                 private_key: Optional[builtins.str] = None):
+        """
+        :param builtins.str certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        :param builtins.str encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        :param builtins.str encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        :param builtins.str private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if encryption_cert is not None:
+            pulumi.set(__self__, "encryption_cert", encryption_cert)
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[builtins.str]:
+        """
+        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="encryptionCert")
+    def encryption_cert(self) -> Optional[builtins.str]:
+        """
+        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        """
+        return pulumi.get(self, "encryption_cert")
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> Optional[builtins.str]:
+        """
+        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[builtins.str]:
+        """
+        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class DomainHttpsForcedRedirect(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableForcedRedirect":
+            suggest = "enable_forced_redirect"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainHttpsForcedRedirect. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainHttpsForcedRedirect.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainHttpsForcedRedirect.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_forced_redirect: Optional[builtins.bool] = None,
+                 status_code: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_forced_redirect: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        :param builtins.str status_code: 表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        """
+        if enable_forced_redirect is not None:
+            pulumi.set(__self__, "enable_forced_redirect", enable_forced_redirect)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter(name="enableForcedRedirect")
+    def enable_forced_redirect(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        """
+        return pulumi.get(self, "enable_forced_redirect")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class DomainHttpsHsts(dict):
+    def __init__(__self__, *,
+                 subdomain: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None,
+                 ttl: Optional[builtins.int] = None):
+        """
+        :param builtins.str subdomain: 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param builtins.int ttl: 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+        """
+        if subdomain is not None:
+            pulumi.set(__self__, "subdomain", subdomain)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def subdomain(self) -> Optional[builtins.str]:
+        """
+        表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+        """
+        return pulumi.get(self, "subdomain")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> Optional[builtins.int]:
+        """
+        表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class DomainIPv6(dict):
+    def __init__(__self__, *,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        """
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainIpAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ruleType":
+            suggest = "rule_type"
+        elif key == "sharedConfig":
+            suggest = "shared_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainIpAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainIpAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainIpAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ips: Optional[Sequence[builtins.str]] = None,
+                 rule_type: Optional[builtins.str] = None,
+                 shared_config: Optional['outputs.DomainIpAccessRuleSharedConfig'] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param Sequence[builtins.str] ips: 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+        :param builtins.str rule_type: 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+        :param 'DomainIpAccessRuleSharedConfigArgs' shared_config: 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if ips is not None:
+            pulumi.set(__self__, "ips", ips)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+        if shared_config is not None:
+            pulumi.set(__self__, "shared_config", shared_config)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def ips(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "ips")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[builtins.str]:
+        """
+        表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter(name="sharedConfig")
+    def shared_config(self) -> Optional['outputs.DomainIpAccessRuleSharedConfig']:
+        """
+        表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+        """
+        return pulumi.get(self, "shared_config")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainIpAccessRuleSharedConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configName":
+            suggest = "config_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainIpAccessRuleSharedConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainIpAccessRuleSharedConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainIpAccessRuleSharedConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str config_name: 表示一个全局配置的名称。
+        """
+        if config_name is not None:
+            pulumi.set(__self__, "config_name", config_name)
+
+    @property
+    @pulumi.getter(name="configName")
+    def config_name(self) -> Optional[builtins.str]:
+        """
+        表示一个全局配置的名称。
+        """
+        return pulumi.get(self, "config_name")
+
+
+@pulumi.output_type
+class DomainMethodDeniedRule(dict):
+    def __init__(__self__, *,
+                 methods: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.str methods: 表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+        :param builtins.bool switch: 配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+        """
+        if methods is not None:
+            pulumi.set(__self__, "methods", methods)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def methods(self) -> Optional[builtins.str]:
+        """
+        表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+        """
+        return pulumi.get(self, "methods")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainMultiRange(dict):
+    def __init__(__self__, *,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        """
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainNegativeCach(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "negativeCacheRule":
+            suggest = "negative_cache_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainNegativeCach. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainNegativeCach.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainNegativeCach.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainNegativeCachCondition'] = None,
+                 negative_cache_rule: Optional['outputs.DomainNegativeCachNegativeCacheRule'] = None):
+        """
+        :param 'DomainNegativeCachConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainNegativeCachNegativeCacheRuleArgs' negative_cache_rule: 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if negative_cache_rule is not None:
+            pulumi.set(__self__, "negative_cache_rule", negative_cache_rule)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainNegativeCachCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="negativeCacheRule")
+    def negative_cache_rule(self) -> Optional['outputs.DomainNegativeCachNegativeCacheRule']:
+        """
+        表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        """
+        return pulumi.get(self, "negative_cache_rule")
+
+
+@pulumi.output_type
+class DomainNegativeCachCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainNegativeCachCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainNegativeCachCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainNegativeCachCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainNegativeCachConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainNegativeCachConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainNegativeCachConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainNegativeCachNegativeCacheRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainNegativeCachNegativeCacheRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainNegativeCachNegativeCacheRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainNegativeCachNegativeCacheRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 ignore_case: Optional[builtins.bool] = None,
+                 status_code: Optional[builtins.str] = None,
+                 ttl: Optional[builtins.int] = None):
+        """
+        :param builtins.str action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        :param builtins.bool ignore_case: 表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        :param builtins.str status_code: 指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+        :param builtins.int ttl: 表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[builtins.bool]:
+        """
+        表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+        """
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> Optional[builtins.int]:
+        """
+        表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class DomainOfflineCache(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOfflineCache. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOfflineCache.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOfflineCache.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object: Optional[builtins.str] = None,
+                 status_code: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.str object: 表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+        :param builtins.str status_code: 表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+        """
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainOrigin(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originAction":
+            suggest = "origin_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOrigin. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOrigin.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOrigin.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 origin_action: 'outputs.DomainOriginOriginAction',
+                 condition: Optional['outputs.DomainOriginCondition'] = None):
+        """
+        :param 'DomainOriginOriginActionArgs' origin_action: 表示源站配置。
+        :param 'DomainOriginConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "origin_action", origin_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="originAction")
+    def origin_action(self) -> 'outputs.DomainOriginOriginAction':
+        """
+        表示源站配置。
+        """
+        return pulumi.get(self, "origin_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainOriginCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class DomainOriginAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowEmpty":
+            suggest = "allow_empty"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "ruleType":
+            suggest = "rule_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_empty: Optional[builtins.bool] = None,
+                 ignore_case: Optional[builtins.bool] = None,
+                 origins: Optional[Sequence[builtins.str]] = None,
+                 rule_type: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool allow_empty: 表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        :param builtins.bool ignore_case: 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+        :param Sequence[builtins.str] origins: RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+        :param builtins.str rule_type: Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if allow_empty is not None:
+            pulumi.set(__self__, "allow_empty", allow_empty)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if origins is not None:
+            pulumi.set(__self__, "origins", origins)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> Optional[builtins.bool]:
+        """
+        表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[builtins.bool]:
+        """
+        表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def origins(self) -> Optional[Sequence[builtins.str]]:
+        """
+        RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+        """
+        return pulumi.get(self, "origins")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[builtins.str]:
+        """
+        Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainOriginArg(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originArgAction":
+            suggest = "origin_arg_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginArg. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginArg.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginArg.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainOriginArgCondition'] = None,
+                 origin_arg_action: Optional['outputs.DomainOriginArgOriginArgAction'] = None):
+        """
+        :param 'DomainOriginArgConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainOriginArgOriginArgActionArgs' origin_arg_action: 表示在满足 Condition 条件时所执行的操作。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if origin_arg_action is not None:
+            pulumi.set(__self__, "origin_arg_action", origin_arg_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainOriginArgCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="originArgAction")
+    def origin_arg_action(self) -> Optional['outputs.DomainOriginArgOriginArgAction']:
+        """
+        表示在满足 Condition 条件时所执行的操作。
+        """
+        return pulumi.get(self, "origin_arg_action")
+
+
+@pulumi.output_type
+class DomainOriginArgCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginArgCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginArgCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginArgCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainOriginArgConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainOriginArgConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainOriginArgConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainOriginArgOriginArgAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originArgComponents":
+            suggest = "origin_arg_components"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginArgOriginArgAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginArgOriginArgAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginArgOriginArgAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 origin_arg_components: Optional[Sequence['outputs.DomainOriginArgOriginArgActionOriginArgComponent']] = None):
+        if origin_arg_components is not None:
+            pulumi.set(__self__, "origin_arg_components", origin_arg_components)
+
+    @property
+    @pulumi.getter(name="originArgComponents")
+    def origin_arg_components(self) -> Optional[Sequence['outputs.DomainOriginArgOriginArgActionOriginArgComponent']]:
+        return pulumi.get(self, "origin_arg_components")
+
+
+@pulumi.output_type
+class DomainOriginArgOriginArgActionOriginArgComponent(dict):
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 subobject: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+        :param builtins.str object: 表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+        :param builtins.str subobject: 表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if subobject is not None:
+            pulumi.set(__self__, "subobject", subobject)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def subobject(self) -> Optional[builtins.str]:
+        """
+        表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        """
+        return pulumi.get(self, "subobject")
+
+
+@pulumi.output_type
+class DomainOriginCertCheck(dict):
+    def __init__(__self__, *,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: Switch
+        """
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        Switch
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainOriginCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainOriginConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainOriginConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainOriginConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainOriginOriginAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originLines":
+            suggest = "origin_lines"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginOriginAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginOriginAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginOriginAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 origin_lines: Sequence['outputs.DomainOriginOriginActionOriginLine']):
+        pulumi.set(__self__, "origin_lines", origin_lines)
+
+    @property
+    @pulumi.getter(name="originLines")
+    def origin_lines(self) -> Sequence['outputs.DomainOriginOriginActionOriginLine']:
+        return pulumi.get(self, "origin_lines")
+
+
+@pulumi.output_type
+class DomainOriginOriginActionOriginLine(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceType":
+            suggest = "instance_type"
+        elif key == "originType":
+            suggest = "origin_type"
+        elif key == "httpPort":
+            suggest = "http_port"
+        elif key == "httpsPort":
+            suggest = "https_port"
+        elif key == "originHost":
+            suggest = "origin_host"
+        elif key == "privateBucketAccess":
+            suggest = "private_bucket_access"
+        elif key == "privateBucketAuth":
+            suggest = "private_bucket_auth"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginOriginActionOriginLine. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginOriginActionOriginLine.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginOriginActionOriginLine.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 instance_type: builtins.str,
+                 origin_type: builtins.str,
+                 http_port: Optional[builtins.str] = None,
+                 https_port: Optional[builtins.str] = None,
+                 origin_host: Optional[builtins.str] = None,
+                 private_bucket_access: Optional[builtins.bool] = None,
+                 private_bucket_auth: Optional['outputs.DomainOriginOriginActionOriginLinePrivateBucketAuth'] = None,
+                 region: Optional[builtins.str] = None,
+                 weight: Optional[builtins.str] = None):
+        """
+        :param builtins.str address: 表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+        :param builtins.str instance_type: 表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+        :param builtins.str origin_type: 表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+        :param builtins.str http_port: 表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        :param builtins.str https_port: 表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        :param builtins.str origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        :param builtins.bool private_bucket_access: 表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+        :param 'DomainOriginOriginActionOriginLinePrivateBucketAuthArgs' private_bucket_auth: 表示第三方云厂商的对象存储桶的鉴权信息。
+        :param builtins.str region: 该参数暂不对外开放，请勿使用该参数。
+        :param builtins.str weight: 表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "origin_type", origin_type)
+        if http_port is not None:
+            pulumi.set(__self__, "http_port", http_port)
+        if https_port is not None:
+            pulumi.set(__self__, "https_port", https_port)
+        if origin_host is not None:
+            pulumi.set(__self__, "origin_host", origin_host)
+        if private_bucket_access is not None:
+            pulumi.set(__self__, "private_bucket_access", private_bucket_access)
+        if private_bucket_auth is not None:
+            pulumi.set(__self__, "private_bucket_auth", private_bucket_auth)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if weight is not None:
+            pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> builtins.str:
+        """
+        表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter(name="originType")
+    def origin_type(self) -> builtins.str:
+        """
+        表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+        """
+        return pulumi.get(self, "origin_type")
+
+    @property
+    @pulumi.getter(name="httpPort")
+    def http_port(self) -> Optional[builtins.str]:
+        """
+        表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        return pulumi.get(self, "http_port")
+
+    @property
+    @pulumi.getter(name="httpsPort")
+    def https_port(self) -> Optional[builtins.str]:
+        """
+        表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        return pulumi.get(self, "https_port")
+
+    @property
+    @pulumi.getter(name="originHost")
+    def origin_host(self) -> Optional[builtins.str]:
+        """
+        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        """
+        return pulumi.get(self, "origin_host")
+
+    @property
+    @pulumi.getter(name="privateBucketAccess")
+    def private_bucket_access(self) -> Optional[builtins.bool]:
+        """
+        表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "private_bucket_access")
+
+    @property
+    @pulumi.getter(name="privateBucketAuth")
+    def private_bucket_auth(self) -> Optional['outputs.DomainOriginOriginActionOriginLinePrivateBucketAuth']:
+        """
+        表示第三方云厂商的对象存储桶的鉴权信息。
+        """
+        return pulumi.get(self, "private_bucket_auth")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[builtins.str]:
+        """
+        该参数暂不对外开放，请勿使用该参数。
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> Optional[builtins.str]:
+        """
+        表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class DomainOriginOriginActionOriginLinePrivateBucketAuth(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authType":
+            suggest = "auth_type"
+        elif key == "tosAuthInformation":
+            suggest = "tos_auth_information"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginOriginActionOriginLinePrivateBucketAuth. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginOriginActionOriginLinePrivateBucketAuth.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginOriginActionOriginLinePrivateBucketAuth.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auth_type: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None,
+                 tos_auth_information: Optional['outputs.DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation'] = None):
+        """
+        :param builtins.str auth_type: 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+        :param builtins.bool switch: 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+        :param 'DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs' tos_auth_information: 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        """
+        if auth_type is not None:
+            pulumi.set(__self__, "auth_type", auth_type)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+        if tos_auth_information is not None:
+            pulumi.set(__self__, "tos_auth_information", tos_auth_information)
+
+    @property
+    @pulumi.getter(name="authType")
+    def auth_type(self) -> Optional[builtins.str]:
+        """
+        表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+        """
+        return pulumi.get(self, "auth_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="tosAuthInformation")
+    def tos_auth_information(self) -> Optional['outputs.DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation']:
+        """
+        表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        """
+        return pulumi.get(self, "tos_auth_information")
+
+
+@pulumi.output_type
+class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessKeyId":
+            suggest = "access_key_id"
+        elif key == "accessKeySecret":
+            suggest = "access_key_secret"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_key_id: Optional[builtins.str] = None,
+                 access_key_secret: Optional[builtins.str] = None):
+        """
+        :param builtins.str access_key_id: 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+        :param builtins.str access_key_secret: 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        """
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if access_key_secret is not None:
+            pulumi.set(__self__, "access_key_secret", access_key_secret)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> Optional[builtins.str]:
+        """
+        表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter(name="accessKeySecret")
+    def access_key_secret(self) -> Optional[builtins.str]:
+        """
+        表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        """
+        return pulumi.get(self, "access_key_secret")
+
+
+@pulumi.output_type
+class DomainOriginRetry(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginRetry. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginRetry.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginRetry.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 status_code: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.str status_code: 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+        """
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainOriginRewrite(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originRewriteRules":
+            suggest = "origin_rewrite_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginRewrite. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginRewrite.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginRewrite.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 origin_rewrite_rules: Optional[Sequence['outputs.DomainOriginRewriteOriginRewriteRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        if origin_rewrite_rules is not None:
+            pulumi.set(__self__, "origin_rewrite_rules", origin_rewrite_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="originRewriteRules")
+    def origin_rewrite_rules(self) -> Optional[Sequence['outputs.DomainOriginRewriteOriginRewriteRule']]:
+        return pulumi.get(self, "origin_rewrite_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainOriginRewriteOriginRewriteRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "originRewriteAction":
+            suggest = "origin_rewrite_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginRewriteOriginRewriteRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginRewriteOriginRewriteRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginRewriteOriginRewriteRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainOriginRewriteOriginRewriteRuleCondition'] = None,
+                 origin_rewrite_action: Optional['outputs.DomainOriginRewriteOriginRewriteRuleOriginRewriteAction'] = None):
+        """
+        :param 'DomainOriginRewriteOriginRewriteRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs' origin_rewrite_action: 表示一个回源路径改写的规则配置。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if origin_rewrite_action is not None:
+            pulumi.set(__self__, "origin_rewrite_action", origin_rewrite_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainOriginRewriteOriginRewriteRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="originRewriteAction")
+    def origin_rewrite_action(self) -> Optional['outputs.DomainOriginRewriteOriginRewriteRuleOriginRewriteAction']:
+        """
+        表示一个回源路径改写的规则配置。
+        """
+        return pulumi.get(self, "origin_rewrite_action")
+
+
+@pulumi.output_type
+class DomainOriginRewriteOriginRewriteRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginRewriteOriginRewriteRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginRewriteOriginRewriteRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginRewriteOriginRewriteRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainOriginRewriteOriginRewriteRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainOriginRewriteOriginRewriteRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainOriginRewriteOriginRewriteRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainOriginRewriteOriginRewriteRuleOriginRewriteAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rewriteType":
+            suggest = "rewrite_type"
+        elif key == "sourcePath":
+            suggest = "source_path"
+        elif key == "targetPath":
+            suggest = "target_path"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginRewriteOriginRewriteRuleOriginRewriteAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginRewriteOriginRewriteRuleOriginRewriteAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginRewriteOriginRewriteRuleOriginRewriteAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rewrite_type: Optional[builtins.str] = None,
+                 source_path: Optional[builtins.str] = None,
+                 target_path: Optional[builtins.str] = None):
+        """
+        :param builtins.str rewrite_type: 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+        :param builtins.str source_path: 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+        :param builtins.str target_path: 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+        """
+        if rewrite_type is not None:
+            pulumi.set(__self__, "rewrite_type", rewrite_type)
+        if source_path is not None:
+            pulumi.set(__self__, "source_path", source_path)
+        if target_path is not None:
+            pulumi.set(__self__, "target_path", target_path)
+
+    @property
+    @pulumi.getter(name="rewriteType")
+    def rewrite_type(self) -> Optional[builtins.str]:
+        """
+        表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+        """
+        return pulumi.get(self, "rewrite_type")
+
+    @property
+    @pulumi.getter(name="sourcePath")
+    def source_path(self) -> Optional[builtins.str]:
+        """
+        表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+        """
+        return pulumi.get(self, "source_path")
+
+    @property
+    @pulumi.getter(name="targetPath")
+    def target_path(self) -> Optional[builtins.str]:
+        """
+        表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+        """
+        return pulumi.get(self, "target_path")
+
+
+@pulumi.output_type
+class DomainOriginSni(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sniDomain":
+            suggest = "sni_domain"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainOriginSni. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainOriginSni.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainOriginSni.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sni_domain: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.str sni_domain: 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if sni_domain is not None:
+            pulumi.set(__self__, "sni_domain", sni_domain)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="sniDomain")
+    def sni_domain(self) -> Optional[builtins.str]:
+        """
+        指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+        """
+        return pulumi.get(self, "sni_domain")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainPageOptimization(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "optimizationTypes":
+            suggest = "optimization_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainPageOptimization. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainPageOptimization.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainPageOptimization.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 optimization_types: Optional[Sequence[builtins.str]] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param Sequence[builtins.str] optimization_types: 表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if optimization_types is not None:
+            pulumi.set(__self__, "optimization_types", optimization_types)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="optimizationTypes")
+    def optimization_types(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+        """
+        return pulumi.get(self, "optimization_types")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainQuic(dict):
+    def __init__(__self__, *,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        """
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainRedirectionRewrite(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "redirectionRules":
+            suggest = "redirection_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRedirectionRewrite. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRedirectionRewrite.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRedirectionRewrite.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 redirection_rules: Optional[Sequence['outputs.DomainRedirectionRewriteRedirectionRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        """
+        if redirection_rules is not None:
+            pulumi.set(__self__, "redirection_rules", redirection_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="redirectionRules")
+    def redirection_rules(self) -> Optional[Sequence['outputs.DomainRedirectionRewriteRedirectionRule']]:
+        return pulumi.get(self, "redirection_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainRedirectionRewriteRedirectionRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "redirectionAction":
+            suggest = "redirection_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRedirectionRewriteRedirectionRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRedirectionRewriteRedirectionRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRedirectionRewriteRedirectionRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 redirection_action: Optional['outputs.DomainRedirectionRewriteRedirectionRuleRedirectionAction'] = None):
+        """
+        :param 'DomainRedirectionRewriteRedirectionRuleRedirectionActionArgs' redirection_action: 表示一个 URL 重定向改写的规则。
+        """
+        if redirection_action is not None:
+            pulumi.set(__self__, "redirection_action", redirection_action)
+
+    @property
+    @pulumi.getter(name="redirectionAction")
+    def redirection_action(self) -> Optional['outputs.DomainRedirectionRewriteRedirectionRuleRedirectionAction']:
+        """
+        表示一个 URL 重定向改写的规则。
+        """
+        return pulumi.get(self, "redirection_action")
+
+
+@pulumi.output_type
+class DomainRedirectionRewriteRedirectionRuleRedirectionAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "redirectCode":
+            suggest = "redirect_code"
+        elif key == "sourcePath":
+            suggest = "source_path"
+        elif key == "targetHost":
+            suggest = "target_host"
+        elif key == "targetPath":
+            suggest = "target_path"
+        elif key == "targetProtocol":
+            suggest = "target_protocol"
+        elif key == "targetQueryComponents":
+            suggest = "target_query_components"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRedirectionRewriteRedirectionRuleRedirectionAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRedirectionRewriteRedirectionRuleRedirectionAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRedirectionRewriteRedirectionRuleRedirectionAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 redirect_code: Optional[builtins.str] = None,
+                 source_path: Optional[builtins.str] = None,
+                 target_host: Optional[builtins.str] = None,
+                 target_path: Optional[builtins.str] = None,
+                 target_protocol: Optional[builtins.str] = None,
+                 target_query_components: Optional['outputs.DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponents'] = None):
+        """
+        :param builtins.str redirect_code: 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        :param builtins.str source_path: 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        :param builtins.str target_host: 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+        :param builtins.str target_path: 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        :param builtins.str target_protocol: 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+        :param 'DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs' target_query_components: 表示原请求 URL 中的查询参数的处理方式。
+        """
+        if redirect_code is not None:
+            pulumi.set(__self__, "redirect_code", redirect_code)
+        if source_path is not None:
+            pulumi.set(__self__, "source_path", source_path)
+        if target_host is not None:
+            pulumi.set(__self__, "target_host", target_host)
+        if target_path is not None:
+            pulumi.set(__self__, "target_path", target_path)
+        if target_protocol is not None:
+            pulumi.set(__self__, "target_protocol", target_protocol)
+        if target_query_components is not None:
+            pulumi.set(__self__, "target_query_components", target_query_components)
+
+    @property
+    @pulumi.getter(name="redirectCode")
+    def redirect_code(self) -> Optional[builtins.str]:
+        """
+        表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        """
+        return pulumi.get(self, "redirect_code")
+
+    @property
+    @pulumi.getter(name="sourcePath")
+    def source_path(self) -> Optional[builtins.str]:
+        """
+        表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        """
+        return pulumi.get(self, "source_path")
+
+    @property
+    @pulumi.getter(name="targetHost")
+    def target_host(self) -> Optional[builtins.str]:
+        """
+        表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+        """
+        return pulumi.get(self, "target_host")
+
+    @property
+    @pulumi.getter(name="targetPath")
+    def target_path(self) -> Optional[builtins.str]:
+        """
+        表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        """
+        return pulumi.get(self, "target_path")
+
+    @property
+    @pulumi.getter(name="targetProtocol")
+    def target_protocol(self) -> Optional[builtins.str]:
+        """
+        表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+        """
+        return pulumi.get(self, "target_protocol")
+
+    @property
+    @pulumi.getter(name="targetQueryComponents")
+    def target_query_components(self) -> Optional['outputs.DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponents']:
+        """
+        表示原请求 URL 中的查询参数的处理方式。
+        """
+        return pulumi.get(self, "target_query_components")
+
+
+@pulumi.output_type
+class DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponents(dict):
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+        :param builtins.str value: 表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainRefererAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowEmpty":
+            suggest = "allow_empty"
+        elif key == "referersType":
+            suggest = "referers_type"
+        elif key == "ruleType":
+            suggest = "rule_type"
+        elif key == "sharedConfig":
+            suggest = "shared_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRefererAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRefererAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRefererAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_empty: Optional[builtins.bool] = None,
+                 referers: Optional[Sequence[builtins.str]] = None,
+                 referers_type: Optional['outputs.DomainRefererAccessRuleReferersType'] = None,
+                 rule_type: Optional[builtins.str] = None,
+                 shared_config: Optional['outputs.DomainRefererAccessRuleSharedConfig'] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool allow_empty: 表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+        :param Sequence[builtins.str] referers: 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+        :param 'DomainRefererAccessRuleReferersTypeArgs' referers_type: 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+        :param builtins.str rule_type: 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        :param 'DomainRefererAccessRuleSharedConfigArgs' shared_config: 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if allow_empty is not None:
+            pulumi.set(__self__, "allow_empty", allow_empty)
+        if referers is not None:
+            pulumi.set(__self__, "referers", referers)
+        if referers_type is not None:
+            pulumi.set(__self__, "referers_type", referers_type)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+        if shared_config is not None:
+            pulumi.set(__self__, "shared_config", shared_config)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> Optional[builtins.bool]:
+        """
+        表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter
+    def referers(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "referers")
+
+    @property
+    @pulumi.getter(name="referersType")
+    def referers_type(self) -> Optional['outputs.DomainRefererAccessRuleReferersType']:
+        """
+        表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "referers_type")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[builtins.str]:
+        """
+        表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter(name="sharedConfig")
+    def shared_config(self) -> Optional['outputs.DomainRefererAccessRuleSharedConfig']:
+        """
+        表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+        """
+        return pulumi.get(self, "shared_config")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainRefererAccessRuleReferersType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commonType":
+            suggest = "common_type"
+        elif key == "regularType":
+            suggest = "regular_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRefererAccessRuleReferersType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRefererAccessRuleReferersType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRefererAccessRuleReferersType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 common_type: Optional['outputs.DomainRefererAccessRuleReferersTypeCommonType'] = None,
+                 regular_type: Optional['outputs.DomainRefererAccessRuleReferersTypeRegularType'] = None):
+        """
+        :param 'DomainRefererAccessRuleReferersTypeCommonTypeArgs' common_type: 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+        :param 'DomainRefererAccessRuleReferersTypeRegularTypeArgs' regular_type: 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+        """
+        if common_type is not None:
+            pulumi.set(__self__, "common_type", common_type)
+        if regular_type is not None:
+            pulumi.set(__self__, "regular_type", regular_type)
+
+    @property
+    @pulumi.getter(name="commonType")
+    def common_type(self) -> Optional['outputs.DomainRefererAccessRuleReferersTypeCommonType']:
+        """
+        表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+        """
+        return pulumi.get(self, "common_type")
+
+    @property
+    @pulumi.getter(name="regularType")
+    def regular_type(self) -> Optional['outputs.DomainRefererAccessRuleReferersTypeRegularType']:
+        """
+        表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+        """
+        return pulumi.get(self, "regular_type")
+
+
+@pulumi.output_type
+class DomainRefererAccessRuleReferersTypeCommonType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "ignoreScheme":
+            suggest = "ignore_scheme"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRefererAccessRuleReferersTypeCommonType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRefererAccessRuleReferersTypeCommonType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRefererAccessRuleReferersTypeCommonType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ignore_case: Optional[builtins.bool] = None,
+                 ignore_scheme: Optional[builtins.bool] = None,
+                 referers: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.bool ignore_case: 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+        :param builtins.bool ignore_scheme: 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+        :param Sequence[builtins.str] referers: 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+        """
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if ignore_scheme is not None:
+            pulumi.set(__self__, "ignore_scheme", ignore_scheme)
+        if referers is not None:
+            pulumi.set(__self__, "referers", referers)
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[builtins.bool]:
+        """
+        表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="ignoreScheme")
+    def ignore_scheme(self) -> Optional[builtins.bool]:
+        """
+        表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_scheme")
+
+    @property
+    @pulumi.getter
+    def referers(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+        """
+        return pulumi.get(self, "referers")
+
+
+@pulumi.output_type
+class DomainRefererAccessRuleReferersTypeRegularType(dict):
+    def __init__(__self__, *,
+                 referers: Optional[Sequence[builtins.str]] = None):
+        """
+        :param Sequence[builtins.str] referers: 表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        """
+        if referers is not None:
+            pulumi.set(__self__, "referers", referers)
+
+    @property
+    @pulumi.getter
+    def referers(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        """
+        return pulumi.get(self, "referers")
+
+
+@pulumi.output_type
+class DomainRefererAccessRuleSharedConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configName":
+            suggest = "config_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRefererAccessRuleSharedConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRefererAccessRuleSharedConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRefererAccessRuleSharedConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_name: Optional[builtins.str] = None):
+        """
+        :param builtins.str config_name: 表示一个全局配置的名称。
+        """
+        if config_name is not None:
+            pulumi.set(__self__, "config_name", config_name)
+
+    @property
+    @pulumi.getter(name="configName")
+    def config_name(self) -> Optional[builtins.str]:
+        """
+        表示一个全局配置的名称。
+        """
+        return pulumi.get(self, "config_name")
+
+
+@pulumi.output_type
+class DomainRemoteAuth(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "remoteAuthRules":
+            suggest = "remote_auth_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuth. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuth.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuth.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 remote_auth_rules: Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if remote_auth_rules is not None:
+            pulumi.set(__self__, "remote_auth_rules", remote_auth_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="remoteAuthRules")
+    def remote_auth_rules(self) -> Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRule']]:
+        return pulumi.get(self, "remote_auth_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "remoteAuthRuleAction":
+            suggest = "remote_auth_rule_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainRemoteAuthRemoteAuthRuleCondition'] = None,
+                 remote_auth_rule_action: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction'] = None):
+        """
+        :param 'DomainRemoteAuthRemoteAuthRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs' remote_auth_rule_action: 表示具体的鉴权配置。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if remote_auth_rule_action is not None:
+            pulumi.set(__self__, "remote_auth_rule_action", remote_auth_rule_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="remoteAuthRuleAction")
+    def remote_auth_rule_action(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction']:
+        """
+        表示具体的鉴权配置。
+        """
+        return pulumi.get(self, "remote_auth_rule_action")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authModeConfig":
+            suggest = "auth_mode_config"
+        elif key == "authResponseConfig":
+            suggest = "auth_response_config"
+        elif key == "queryStringRules":
+            suggest = "query_string_rules"
+        elif key == "requestBodyRules":
+            suggest = "request_body_rules"
+        elif key == "requestHeaderRules":
+            suggest = "request_header_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auth_mode_config: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig'] = None,
+                 auth_response_config: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig'] = None,
+                 query_string_rules: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules'] = None,
+                 request_body_rules: Optional[builtins.str] = None,
+                 request_header_rules: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules'] = None):
+        """
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs' auth_mode_config: 表示鉴权服务器的配置。
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs' auth_response_config: 内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs' query_string_rules: 表示鉴权请求的参数设置。
+        :param builtins.str request_body_rules: 表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs' request_header_rules: 表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        """
+        if auth_mode_config is not None:
+            pulumi.set(__self__, "auth_mode_config", auth_mode_config)
+        if auth_response_config is not None:
+            pulumi.set(__self__, "auth_response_config", auth_response_config)
+        if query_string_rules is not None:
+            pulumi.set(__self__, "query_string_rules", query_string_rules)
+        if request_body_rules is not None:
+            pulumi.set(__self__, "request_body_rules", request_body_rules)
+        if request_header_rules is not None:
+            pulumi.set(__self__, "request_header_rules", request_header_rules)
+
+    @property
+    @pulumi.getter(name="authModeConfig")
+    def auth_mode_config(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig']:
+        """
+        表示鉴权服务器的配置。
+        """
+        return pulumi.get(self, "auth_mode_config")
+
+    @property
+    @pulumi.getter(name="authResponseConfig")
+    def auth_response_config(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig']:
+        """
+        内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+        """
+        return pulumi.get(self, "auth_response_config")
+
+    @property
+    @pulumi.getter(name="queryStringRules")
+    def query_string_rules(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules']:
+        """
+        表示鉴权请求的参数设置。
+        """
+        return pulumi.get(self, "query_string_rules")
+
+    @property
+    @pulumi.getter(name="requestBodyRules")
+    def request_body_rules(self) -> Optional[builtins.str]:
+        """
+        表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+        """
+        return pulumi.get(self, "request_body_rules")
+
+    @property
+    @pulumi.getter(name="requestHeaderRules")
+    def request_header_rules(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules']:
+        """
+        表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        """
+        return pulumi.get(self, "request_header_rules")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupRemoteAddr":
+            suggest = "backup_remote_addr"
+        elif key == "masterRemoteAddr":
+            suggest = "master_remote_addr"
+        elif key == "pathType":
+            suggest = "path_type"
+        elif key == "pathValue":
+            suggest = "path_value"
+        elif key == "requestMethod":
+            suggest = "request_method"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_remote_addr: Optional[builtins.str] = None,
+                 master_remote_addr: Optional[builtins.str] = None,
+                 path_type: Optional[builtins.str] = None,
+                 path_value: Optional[builtins.str] = None,
+                 request_method: Optional[builtins.str] = None):
+        """
+        :param builtins.str backup_remote_addr: 表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+        :param builtins.str master_remote_addr: 表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \\n\\n://\\n\\n:\\n\\n 或 \\n\\n://\\n\\n:\\n\\n，其中：\\n\\n 是 http 或者 https。\\n\\n 不能是 localhost。\\n\\n 不能是 127.0.0.1。\\n\\n 是可选的。
+        :param builtins.str path_type: 表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+        :param builtins.str path_value: 表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+        :param builtins.str request_method: 表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+        """
+        if backup_remote_addr is not None:
+            pulumi.set(__self__, "backup_remote_addr", backup_remote_addr)
+        if master_remote_addr is not None:
+            pulumi.set(__self__, "master_remote_addr", master_remote_addr)
+        if path_type is not None:
+            pulumi.set(__self__, "path_type", path_type)
+        if path_value is not None:
+            pulumi.set(__self__, "path_value", path_value)
+        if request_method is not None:
+            pulumi.set(__self__, "request_method", request_method)
+
+    @property
+    @pulumi.getter(name="backupRemoteAddr")
+    def backup_remote_addr(self) -> Optional[builtins.str]:
+        """
+        表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+        """
+        return pulumi.get(self, "backup_remote_addr")
+
+    @property
+    @pulumi.getter(name="masterRemoteAddr")
+    def master_remote_addr(self) -> Optional[builtins.str]:
+        """
+        表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \\n\\n://\\n\\n:\\n\\n 或 \\n\\n://\\n\\n:\\n\\n，其中：\\n\\n 是 http 或者 https。\\n\\n 不能是 localhost。\\n\\n 不能是 127.0.0.1。\\n\\n 是可选的。
+        """
+        return pulumi.get(self, "master_remote_addr")
+
+    @property
+    @pulumi.getter(name="pathType")
+    def path_type(self) -> Optional[builtins.str]:
+        """
+        表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+        """
+        return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="pathValue")
+    def path_value(self) -> Optional[builtins.str]:
+        """
+        表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "path_value")
+
+    @property
+    @pulumi.getter(name="requestMethod")
+    def request_method(self) -> Optional[builtins.str]:
+        """
+        表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+        """
+        return pulumi.get(self, "request_method")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheAction":
+            suggest = "cache_action"
+        elif key == "responseAction":
+            suggest = "response_action"
+        elif key == "statusCodeAction":
+            suggest = "status_code_action"
+        elif key == "timeOutAction":
+            suggest = "time_out_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cache_action: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction'] = None,
+                 response_action: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction'] = None,
+                 status_code_action: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction'] = None,
+                 time_out_action: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction'] = None):
+        """
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs' cache_action: 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs' response_action: 表示鉴权失败时，内容分发网络如何响应用户。
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs' status_code_action: 表示内容分发网络对鉴权状态码的处理方式。
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs' time_out_action: 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        """
+        if cache_action is not None:
+            pulumi.set(__self__, "cache_action", cache_action)
+        if response_action is not None:
+            pulumi.set(__self__, "response_action", response_action)
+        if status_code_action is not None:
+            pulumi.set(__self__, "status_code_action", status_code_action)
+        if time_out_action is not None:
+            pulumi.set(__self__, "time_out_action", time_out_action)
+
+    @property
+    @pulumi.getter(name="cacheAction")
+    def cache_action(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction']:
+        """
+        内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+        """
+        return pulumi.get(self, "cache_action")
+
+    @property
+    @pulumi.getter(name="responseAction")
+    def response_action(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction']:
+        """
+        表示鉴权失败时，内容分发网络如何响应用户。
+        """
+        return pulumi.get(self, "response_action")
+
+    @property
+    @pulumi.getter(name="statusCodeAction")
+    def status_code_action(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction']:
+        """
+        表示内容分发网络对鉴权状态码的处理方式。
+        """
+        return pulumi.get(self, "status_code_action")
+
+    @property
+    @pulumi.getter(name="timeOutAction")
+    def time_out_action(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction']:
+        """
+        表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        """
+        return pulumi.get(self, "time_out_action")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cacheKeys":
+            suggest = "cache_keys"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 cache_keys: Optional[Sequence[builtins.str]] = None,
+                 ttl: Optional[builtins.int] = None):
+        """
+        :param builtins.str action: 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+        :param Sequence[builtins.str] cache_keys: 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+        :param builtins.int ttl: 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if cache_keys is not None:
+            pulumi.set(__self__, "cache_keys", cache_keys)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="cacheKeys")
+    def cache_keys(self) -> Optional[Sequence[builtins.str]]:
+        """
+        缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+        """
+        return pulumi.get(self, "cache_keys")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> Optional[builtins.int]:
+        """
+        表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 status_code: Optional[builtins.str] = None):
+        """
+        :param builtins.str status_code: 表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        """
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultAction":
+            suggest = "default_action"
+        elif key == "failCode":
+            suggest = "fail_code"
+        elif key == "successCode":
+            suggest = "success_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 default_action: Optional[builtins.str] = None,
+                 fail_code: Optional[builtins.str] = None,
+                 success_code: Optional[builtins.str] = None):
+        """
+        :param builtins.str default_action: 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        :param builtins.str fail_code: 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+        :param builtins.str success_code: 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+        """
+        if default_action is not None:
+            pulumi.set(__self__, "default_action", default_action)
+        if fail_code is not None:
+            pulumi.set(__self__, "fail_code", fail_code)
+        if success_code is not None:
+            pulumi.set(__self__, "success_code", success_code)
+
+    @property
+    @pulumi.getter(name="defaultAction")
+    def default_action(self) -> Optional[builtins.str]:
+        """
+        表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        """
+        return pulumi.get(self, "default_action")
+
+    @property
+    @pulumi.getter(name="failCode")
+    def fail_code(self) -> Optional[builtins.str]:
+        """
+        表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+        """
+        return pulumi.get(self, "fail_code")
+
+    @property
+    @pulumi.getter(name="successCode")
+    def success_code(self) -> Optional[builtins.str]:
+        """
+        表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+        """
+        return pulumi.get(self, "success_code")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction(dict):
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 time: Optional[builtins.int] = None):
+        """
+        :param builtins.str action: 表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        :param builtins.int time: 表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def time(self) -> Optional[builtins.int]:
+        """
+        表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        """
+        return pulumi.get(self, "time")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "queryStringComponents":
+            suggest = "query_string_components"
+        elif key == "queryStringInstances":
+            suggest = "query_string_instances"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 query_string_components: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents'] = None,
+                 query_string_instances: Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance']] = None):
+        """
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs' query_string_components: 表示鉴权请求参数的设置策略。
+        """
+        if query_string_components is not None:
+            pulumi.set(__self__, "query_string_components", query_string_components)
+        if query_string_instances is not None:
+            pulumi.set(__self__, "query_string_instances", query_string_instances)
+
+    @property
+    @pulumi.getter(name="queryStringComponents")
+    def query_string_components(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents']:
+        """
+        表示鉴权请求参数的设置策略。
+        """
+        return pulumi.get(self, "query_string_components")
+
+    @property
+    @pulumi.getter(name="queryStringInstances")
+    def query_string_instances(self) -> Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance']]:
+        return pulumi.get(self, "query_string_instances")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents(dict):
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+        :param builtins.str value: 表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueType":
+            suggest = "value_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None,
+                 value_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+        :param builtins.str key: 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
+        :param builtins.str value: 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+        :param builtins.str value_type: 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[builtins.str]:
+        """
+        表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestHeaderComponents":
+            suggest = "request_header_components"
+        elif key == "requestHeaderInstances":
+            suggest = "request_header_instances"
+        elif key == "requestHost":
+            suggest = "request_host"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 request_header_components: Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents'] = None,
+                 request_header_instances: Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance']] = None,
+                 request_host: Optional[builtins.str] = None):
+        """
+        :param 'DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs' request_header_components: 表示鉴权请求头的设置策略。
+        :param builtins.str request_host: 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        """
+        if request_header_components is not None:
+            pulumi.set(__self__, "request_header_components", request_header_components)
+        if request_header_instances is not None:
+            pulumi.set(__self__, "request_header_instances", request_header_instances)
+        if request_host is not None:
+            pulumi.set(__self__, "request_host", request_host)
+
+    @property
+    @pulumi.getter(name="requestHeaderComponents")
+    def request_header_components(self) -> Optional['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents']:
+        """
+        表示鉴权请求头的设置策略。
+        """
+        return pulumi.get(self, "request_header_components")
+
+    @property
+    @pulumi.getter(name="requestHeaderInstances")
+    def request_header_instances(self) -> Optional[Sequence['outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance']]:
+        return pulumi.get(self, "request_header_instances")
+
+    @property
+    @pulumi.getter(name="requestHost")
+    def request_host(self) -> Optional[builtins.str]:
+        """
+        表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        """
+        return pulumi.get(self, "request_host")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents(dict):
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+        :param builtins.str value: 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueType":
+            suggest = "value_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None,
+                 value_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        :param builtins.str key: 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        :param builtins.str value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        :param builtins.str value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[builtins.str]:
+        """
+        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class DomainRequestBlockRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockRules":
+            suggest = "block_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestBlockRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestBlockRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestBlockRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_rules: Optional[Sequence['outputs.DomainRequestBlockRuleBlockRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        if block_rules is not None:
+            pulumi.set(__self__, "block_rules", block_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="blockRules")
+    def block_rules(self) -> Optional[Sequence['outputs.DomainRequestBlockRuleBlockRule']]:
+        return pulumi.get(self, "block_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainRequestBlockRuleBlockRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockAction":
+            suggest = "block_action"
+        elif key == "ruleName":
+            suggest = "rule_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestBlockRuleBlockRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestBlockRuleBlockRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestBlockRuleBlockRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_action: Optional['outputs.DomainRequestBlockRuleBlockRuleBlockAction'] = None,
+                 condition: Optional['outputs.DomainRequestBlockRuleBlockRuleCondition'] = None,
+                 rule_name: Optional[builtins.str] = None):
+        """
+        :param 'DomainRequestBlockRuleBlockRuleBlockActionArgs' block_action: 表示列表中一条规则的拦截配置。
+        :param 'DomainRequestBlockRuleBlockRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param builtins.str rule_name: 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        """
+        if block_action is not None:
+            pulumi.set(__self__, "block_action", block_action)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
+
+    @property
+    @pulumi.getter(name="blockAction")
+    def block_action(self) -> Optional['outputs.DomainRequestBlockRuleBlockRuleBlockAction']:
+        """
+        表示列表中一条规则的拦截配置。
+        """
+        return pulumi.get(self, "block_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainRequestBlockRuleBlockRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[builtins.str]:
+        """
+        表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        """
+        return pulumi.get(self, "rule_name")
+
+
+@pulumi.output_type
+class DomainRequestBlockRuleBlockRuleBlockAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorPage":
+            suggest = "error_page"
+        elif key == "redirectUrl":
+            suggest = "redirect_url"
+        elif key == "statusCode":
+            suggest = "status_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestBlockRuleBlockRuleBlockAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestBlockRuleBlockRuleBlockAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestBlockRuleBlockRuleBlockAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 error_page: Optional[builtins.str] = None,
+                 redirect_url: Optional[builtins.str] = None,
+                 status_code: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+        :param builtins.str error_page: 当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+        :param builtins.str redirect_url: 当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+        :param builtins.str status_code: 表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if error_page is not None:
+            pulumi.set(__self__, "error_page", error_page)
+        if redirect_url is not None:
+            pulumi.set(__self__, "redirect_url", redirect_url)
+        if status_code is not None:
+            pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="errorPage")
+    def error_page(self) -> Optional[builtins.str]:
+        """
+        当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+        """
+        return pulumi.get(self, "error_page")
+
+    @property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> Optional[builtins.str]:
+        """
+        当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> Optional[builtins.str]:
+        """
+        表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class DomainRequestBlockRuleBlockRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestBlockRuleBlockRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestBlockRuleBlockRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestBlockRuleBlockRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainRequestBlockRuleBlockRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainRequestBlockRuleBlockRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainRequestBlockRuleBlockRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainRequestHeader(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestHeaderAction":
+            suggest = "request_header_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestHeader. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestHeader.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestHeader.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainRequestHeaderCondition'] = None,
+                 request_header_action: Optional['outputs.DomainRequestHeaderRequestHeaderAction'] = None):
+        """
+        :param 'DomainRequestHeaderConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainRequestHeaderRequestHeaderActionArgs' request_header_action: 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if request_header_action is not None:
+            pulumi.set(__self__, "request_header_action", request_header_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainRequestHeaderCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="requestHeaderAction")
+    def request_header_action(self) -> Optional['outputs.DomainRequestHeaderRequestHeaderAction']:
+        """
+        表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        return pulumi.get(self, "request_header_action")
+
+
+@pulumi.output_type
+class DomainRequestHeaderCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestHeaderCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestHeaderCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestHeaderCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainRequestHeaderConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainRequestHeaderConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainRequestHeaderConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainRequestHeaderRequestHeaderAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestHeaderInstances":
+            suggest = "request_header_instances"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestHeaderRequestHeaderAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestHeaderRequestHeaderAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestHeaderRequestHeaderAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 request_header_instances: Optional[Sequence['outputs.DomainRequestHeaderRequestHeaderActionRequestHeaderInstance']] = None):
+        if request_header_instances is not None:
+            pulumi.set(__self__, "request_header_instances", request_header_instances)
+
+    @property
+    @pulumi.getter(name="requestHeaderInstances")
+    def request_header_instances(self) -> Optional[Sequence['outputs.DomainRequestHeaderRequestHeaderActionRequestHeaderInstance']]:
+        return pulumi.get(self, "request_header_instances")
+
+
+@pulumi.output_type
+class DomainRequestHeaderRequestHeaderActionRequestHeaderInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueType":
+            suggest = "value_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRequestHeaderRequestHeaderActionRequestHeaderInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRequestHeaderRequestHeaderActionRequestHeaderInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRequestHeaderRequestHeaderActionRequestHeaderInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: Optional[builtins.str] = None,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None,
+                 value_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str action: 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        :param builtins.str key: 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        :param builtins.str value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        :param builtins.str value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[builtins.str]:
+        """
+        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class DomainResponseHeader(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "responseHeaderAction":
+            suggest = "response_header_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainResponseHeader. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainResponseHeader.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainResponseHeader.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainResponseHeaderCondition'] = None,
+                 response_header_action: Optional['outputs.DomainResponseHeaderResponseHeaderAction'] = None):
+        """
+        :param 'DomainResponseHeaderConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainResponseHeaderResponseHeaderActionArgs' response_header_action: 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if response_header_action is not None:
+            pulumi.set(__self__, "response_header_action", response_header_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainResponseHeaderCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="responseHeaderAction")
+    def response_header_action(self) -> Optional['outputs.DomainResponseHeaderResponseHeaderAction']:
+        """
+        表示内容分发网络在响应用户请求的时候，对响应头的操作。
+        """
+        return pulumi.get(self, "response_header_action")
+
+
+@pulumi.output_type
+class DomainResponseHeaderCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainResponseHeaderCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainResponseHeaderCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainResponseHeaderCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainResponseHeaderConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainResponseHeaderConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainResponseHeaderConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainResponseHeaderResponseHeaderAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "responseHeaderInstances":
+            suggest = "response_header_instances"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainResponseHeaderResponseHeaderAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainResponseHeaderResponseHeaderAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainResponseHeaderResponseHeaderAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 response_header_instances: Optional[Sequence['outputs.DomainResponseHeaderResponseHeaderActionResponseHeaderInstance']] = None):
+        if response_header_instances is not None:
+            pulumi.set(__self__, "response_header_instances", response_header_instances)
+
+    @property
+    @pulumi.getter(name="responseHeaderInstances")
+    def response_header_instances(self) -> Optional[Sequence['outputs.DomainResponseHeaderResponseHeaderActionResponseHeaderInstance']]:
+        return pulumi.get(self, "response_header_instances")
+
+
+@pulumi.output_type
+class DomainResponseHeaderResponseHeaderActionResponseHeaderInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessOriginControl":
+            suggest = "access_origin_control"
+        elif key == "valueType":
+            suggest = "value_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainResponseHeaderResponseHeaderActionResponseHeaderInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainResponseHeaderResponseHeaderActionResponseHeaderInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainResponseHeaderResponseHeaderActionResponseHeaderInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_origin_control: Optional[builtins.bool] = None,
+                 action: Optional[builtins.str] = None,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None,
+                 value_type: Optional[builtins.str] = None):
+        """
+        :param builtins.bool access_origin_control: 表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+        :param builtins.str action: 指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+        :param builtins.str key: 指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        :param builtins.str value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        :param builtins.str value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        if access_origin_control is not None:
+            pulumi.set(__self__, "access_origin_control", access_origin_control)
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_type is not None:
+            pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="accessOriginControl")
+    def access_origin_control(self) -> Optional[builtins.bool]:
+        """
+        表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+        """
+        return pulumi.get(self, "access_origin_control")
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[builtins.str]:
+        """
+        指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> Optional[builtins.str]:
+        """
+        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class DomainRewriteHls(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "signName":
+            suggest = "sign_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainRewriteHls. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainRewriteHls.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainRewriteHls.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sign_name: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.str sign_name: 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        if sign_name is not None:
+            pulumi.set(__self__, "sign_name", sign_name)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="signName")
+    def sign_name(self) -> Optional[builtins.str]:
+        """
+        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+        """
+        return pulumi.get(self, "sign_name")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuth(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "signedUrlAuthRules":
+            suggest = "signed_url_auth_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainSignedUrlAuth. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainSignedUrlAuth.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainSignedUrlAuth.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 signed_url_auth_rules: Optional[Sequence['outputs.DomainSignedUrlAuthSignedUrlAuthRule']] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        if signed_url_auth_rules is not None:
+            pulumi.set(__self__, "signed_url_auth_rules", signed_url_auth_rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="signedUrlAuthRules")
+    def signed_url_auth_rules(self) -> Optional[Sequence['outputs.DomainSignedUrlAuthSignedUrlAuthRule']]:
+        return pulumi.get(self, "signed_url_auth_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuthSignedUrlAuthRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "signedUrlAuthAction":
+            suggest = "signed_url_auth_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainSignedUrlAuthSignedUrlAuthRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleCondition'] = None,
+                 signed_url_auth_action: Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction'] = None):
+        """
+        :param 'DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs' signed_url_auth_action: 表示签名计算的配置。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if signed_url_auth_action is not None:
+            pulumi.set(__self__, "signed_url_auth_action", signed_url_auth_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="signedUrlAuthAction")
+    def signed_url_auth_action(self) -> Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction']:
+        """
+        表示签名计算的配置。
+        """
+        return pulumi.get(self, "signed_url_auth_action")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuthSignedUrlAuthRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainSignedUrlAuthSignedUrlAuthRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authAlgorithm":
+            suggest = "auth_algorithm"
+        elif key == "backupSecretKey":
+            suggest = "backup_secret_key"
+        elif key == "customVariableRules":
+            suggest = "custom_variable_rules"
+        elif key == "keepOriginArg":
+            suggest = "keep_origin_arg"
+        elif key == "masterSecretKey":
+            suggest = "master_secret_key"
+        elif key == "rewriteM3U8":
+            suggest = "rewrite_m3_u8"
+        elif key == "rewriteM3U8Rule":
+            suggest = "rewrite_m3_u8_rule"
+        elif key == "signName":
+            suggest = "sign_name"
+        elif key == "signatureRules":
+            suggest = "signature_rules"
+        elif key == "timeFormat":
+            suggest = "time_format"
+        elif key == "timeName":
+            suggest = "time_name"
+        elif key == "urlAuthType":
+            suggest = "url_auth_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auth_algorithm: Optional[builtins.str] = None,
+                 backup_secret_key: Optional[builtins.str] = None,
+                 custom_variable_rules: Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules'] = None,
+                 duration: Optional[builtins.int] = None,
+                 keep_origin_arg: Optional[builtins.bool] = None,
+                 master_secret_key: Optional[builtins.str] = None,
+                 rewrite_m3_u8: Optional[builtins.bool] = None,
+                 rewrite_m3_u8_rule: Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule'] = None,
+                 sign_name: Optional[builtins.str] = None,
+                 signature_rules: Optional[Sequence[builtins.str]] = None,
+                 time_format: Optional[builtins.str] = None,
+                 time_name: Optional[builtins.str] = None,
+                 url_auth_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str auth_algorithm: 表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+        :param builtins.str backup_secret_key: 表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        :param 'DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs' custom_variable_rules: 表示自定义签算变量。
+        :param builtins.int duration: 签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+        :param builtins.bool keep_origin_arg: 该参数暂不对外开放，请勿使用该参数。
+        :param builtins.str master_secret_key: 表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        :param builtins.bool rewrite_m3_u8: 表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+        :param 'DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs' rewrite_m3_u8_rule: 表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+        :param builtins.str sign_name: 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+        :param Sequence[builtins.str] signature_rules: 当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+        :param builtins.str time_format: 进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+        :param builtins.str time_name: 表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+        :param builtins.str url_auth_type: 签名类型。
+        """
+        if auth_algorithm is not None:
+            pulumi.set(__self__, "auth_algorithm", auth_algorithm)
+        if backup_secret_key is not None:
+            pulumi.set(__self__, "backup_secret_key", backup_secret_key)
+        if custom_variable_rules is not None:
+            pulumi.set(__self__, "custom_variable_rules", custom_variable_rules)
+        if duration is not None:
+            pulumi.set(__self__, "duration", duration)
+        if keep_origin_arg is not None:
+            pulumi.set(__self__, "keep_origin_arg", keep_origin_arg)
+        if master_secret_key is not None:
+            pulumi.set(__self__, "master_secret_key", master_secret_key)
+        if rewrite_m3_u8 is not None:
+            pulumi.set(__self__, "rewrite_m3_u8", rewrite_m3_u8)
+        if rewrite_m3_u8_rule is not None:
+            pulumi.set(__self__, "rewrite_m3_u8_rule", rewrite_m3_u8_rule)
+        if sign_name is not None:
+            pulumi.set(__self__, "sign_name", sign_name)
+        if signature_rules is not None:
+            pulumi.set(__self__, "signature_rules", signature_rules)
+        if time_format is not None:
+            pulumi.set(__self__, "time_format", time_format)
+        if time_name is not None:
+            pulumi.set(__self__, "time_name", time_name)
+        if url_auth_type is not None:
+            pulumi.set(__self__, "url_auth_type", url_auth_type)
+
+    @property
+    @pulumi.getter(name="authAlgorithm")
+    def auth_algorithm(self) -> Optional[builtins.str]:
+        """
+        表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+        """
+        return pulumi.get(self, "auth_algorithm")
+
+    @property
+    @pulumi.getter(name="backupSecretKey")
+    def backup_secret_key(self) -> Optional[builtins.str]:
+        """
+        表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        """
+        return pulumi.get(self, "backup_secret_key")
+
+    @property
+    @pulumi.getter(name="customVariableRules")
+    def custom_variable_rules(self) -> Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules']:
+        """
+        表示自定义签算变量。
+        """
+        return pulumi.get(self, "custom_variable_rules")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> Optional[builtins.int]:
+        """
+        签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+        """
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="keepOriginArg")
+    def keep_origin_arg(self) -> Optional[builtins.bool]:
+        """
+        该参数暂不对外开放，请勿使用该参数。
+        """
+        return pulumi.get(self, "keep_origin_arg")
+
+    @property
+    @pulumi.getter(name="masterSecretKey")
+    def master_secret_key(self) -> Optional[builtins.str]:
+        """
+        表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        """
+        return pulumi.get(self, "master_secret_key")
+
+    @property
+    @pulumi.getter(name="rewriteM3U8")
+    def rewrite_m3_u8(self) -> Optional[builtins.bool]:
+        """
+        表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+        """
+        return pulumi.get(self, "rewrite_m3_u8")
+
+    @property
+    @pulumi.getter(name="rewriteM3U8Rule")
+    def rewrite_m3_u8_rule(self) -> Optional['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule']:
+        """
+        表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+        """
+        return pulumi.get(self, "rewrite_m3_u8_rule")
+
+    @property
+    @pulumi.getter(name="signName")
+    def sign_name(self) -> Optional[builtins.str]:
+        """
+        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+        """
+        return pulumi.get(self, "sign_name")
+
+    @property
+    @pulumi.getter(name="signatureRules")
+    def signature_rules(self) -> Optional[Sequence[builtins.str]]:
+        """
+        当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+        """
+        return pulumi.get(self, "signature_rules")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> Optional[builtins.str]:
+        """
+        进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeName")
+    def time_name(self) -> Optional[builtins.str]:
+        """
+        表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+        """
+        return pulumi.get(self, "time_name")
+
+    @property
+    @pulumi.getter(name="urlAuthType")
+    def url_auth_type(self) -> Optional[builtins.str]:
+        """
+        签名类型。
+        """
+        return pulumi.get(self, "url_auth_type")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customVariableInstances":
+            suggest = "custom_variable_instances"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_variable_instances: Optional[Sequence['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance']] = None):
+        if custom_variable_instances is not None:
+            pulumi.set(__self__, "custom_variable_instances", custom_variable_instances)
+
+    @property
+    @pulumi.getter(name="customVariableInstances")
+    def custom_variable_instances(self) -> Optional[Sequence['outputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance']]:
+        return pulumi.get(self, "custom_variable_instances")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance(dict):
+    def __init__(__self__, *,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str operator: 表示变量的匹配方式。该参数的取值只能是 match。
+        :param builtins.str type: 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+        :param builtins.str value: 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        """
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示变量的匹配方式。该参数的取值只能是 match。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "deleteParam":
+            suggest = "delete_param"
+        elif key == "keepM3U8Param":
+            suggest = "keep_m3_u8_param"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8Rule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 delete_param: Optional[builtins.bool] = None,
+                 keep_m3_u8_param: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool delete_param: 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+        :param builtins.bool keep_m3_u8_param: 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+        """
+        if delete_param is not None:
+            pulumi.set(__self__, "delete_param", delete_param)
+        if keep_m3_u8_param is not None:
+            pulumi.set(__self__, "keep_m3_u8_param", keep_m3_u8_param)
+
+    @property
+    @pulumi.getter(name="deleteParam")
+    def delete_param(self) -> Optional[builtins.bool]:
+        """
+        表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+        """
+        return pulumi.get(self, "delete_param")
+
+    @property
+    @pulumi.getter(name="keepM3U8Param")
+    def keep_m3_u8_param(self) -> Optional[builtins.bool]:
+        """
+        表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+        """
+        return pulumi.get(self, "keep_m3_u8_param")
+
+
+@pulumi.output_type
+class DomainTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainTimeout(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeoutRules":
+            suggest = "timeout_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainTimeout. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainTimeout.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainTimeout.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 switch: Optional[builtins.bool] = None,
+                 timeout_rules: Optional[Sequence['outputs.DomainTimeoutTimeoutRule']] = None):
+        """
+        :param builtins.bool switch: 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+        """
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+        if timeout_rules is not None:
+            pulumi.set(__self__, "timeout_rules", timeout_rules)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="timeoutRules")
+    def timeout_rules(self) -> Optional[Sequence['outputs.DomainTimeoutTimeoutRule']]:
+        return pulumi.get(self, "timeout_rules")
+
+
+@pulumi.output_type
+class DomainTimeoutTimeoutRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeoutAction":
+            suggest = "timeout_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainTimeoutTimeoutRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainTimeoutTimeoutRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainTimeoutTimeoutRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: Optional['outputs.DomainTimeoutTimeoutRuleCondition'] = None,
+                 timeout_action: Optional['outputs.DomainTimeoutTimeoutRuleTimeoutAction'] = None):
+        """
+        :param 'DomainTimeoutTimeoutRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'DomainTimeoutTimeoutRuleTimeoutActionArgs' timeout_action: 表示超时时间的配置。
+        """
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if timeout_action is not None:
+            pulumi.set(__self__, "timeout_action", timeout_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional['outputs.DomainTimeoutTimeoutRuleCondition']:
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="timeoutAction")
+    def timeout_action(self) -> Optional['outputs.DomainTimeoutTimeoutRuleTimeoutAction']:
+        """
+        表示超时时间的配置。
+        """
+        return pulumi.get(self, "timeout_action")
+
+
+@pulumi.output_type
+class DomainTimeoutTimeoutRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionRules":
+            suggest = "condition_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainTimeoutTimeoutRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainTimeoutTimeoutRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainTimeoutTimeoutRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_rules: Optional[Sequence['outputs.DomainTimeoutTimeoutRuleConditionConditionRule']] = None,
+                 connective: Optional[builtins.str] = None):
+        """
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        if condition_rules is not None:
+            pulumi.set(__self__, "condition_rules", condition_rules)
+        if connective is not None:
+            pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Optional[Sequence['outputs.DomainTimeoutTimeoutRuleConditionConditionRule']]:
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> Optional[builtins.str]:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class DomainTimeoutTimeoutRuleConditionConditionRule(dict):
+    def __init__(__self__, *,
+                 name: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None,
+                 operator: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[builtins.str]:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DomainTimeoutTimeoutRuleTimeoutAction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpTimeout":
+            suggest = "http_timeout"
+        elif key == "tcpTimeout":
+            suggest = "tcp_timeout"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainTimeoutTimeoutRuleTimeoutAction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainTimeoutTimeoutRuleTimeoutAction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainTimeoutTimeoutRuleTimeoutAction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http_timeout: Optional[builtins.int] = None,
+                 tcp_timeout: Optional[builtins.int] = None):
+        """
+        :param builtins.int http_timeout: 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        :param builtins.int tcp_timeout: 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        """
+        if http_timeout is not None:
+            pulumi.set(__self__, "http_timeout", http_timeout)
+        if tcp_timeout is not None:
+            pulumi.set(__self__, "tcp_timeout", tcp_timeout)
+
+    @property
+    @pulumi.getter(name="httpTimeout")
+    def http_timeout(self) -> Optional[builtins.int]:
+        """
+        表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        """
+        return pulumi.get(self, "http_timeout")
+
+    @property
+    @pulumi.getter(name="tcpTimeout")
+    def tcp_timeout(self) -> Optional[builtins.int]:
+        """
+        表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        """
+        return pulumi.get(self, "tcp_timeout")
+
+
+@pulumi.output_type
+class DomainUaAccessRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowEmpty":
+            suggest = "allow_empty"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "ruleType":
+            suggest = "rule_type"
+        elif key == "userAgents":
+            suggest = "user_agents"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainUaAccessRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainUaAccessRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainUaAccessRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_empty: Optional[builtins.bool] = None,
+                 ignore_case: Optional[builtins.bool] = None,
+                 rule_type: Optional[builtins.str] = None,
+                 switch: Optional[builtins.bool] = None,
+                 user_agents: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.bool allow_empty: 表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        :param builtins.bool ignore_case: 表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+        :param builtins.str rule_type: 表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+        :param builtins.bool switch: 表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+        :param Sequence[builtins.str] user_agents: 表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+        """
+        if allow_empty is not None:
+            pulumi.set(__self__, "allow_empty", allow_empty)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+        if user_agents is not None:
+            pulumi.set(__self__, "user_agents", user_agents)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> Optional[builtins.bool]:
+        """
+        表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[builtins.bool]:
+        """
+        表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[builtins.str]:
+        """
+        表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="userAgents")
+    def user_agents(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+        """
+        return pulumi.get(self, "user_agents")
+
+
+@pulumi.output_type
+class DomainUrlNormalize(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "normalizeObjects":
+            suggest = "normalize_objects"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DomainUrlNormalize. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DomainUrlNormalize.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DomainUrlNormalize.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 normalize_objects: Optional[Sequence[builtins.str]] = None,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param Sequence[builtins.str] normalize_objects: 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        :param builtins.bool switch: 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        """
+        if normalize_objects is not None:
+            pulumi.set(__self__, "normalize_objects", normalize_objects)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="normalizeObjects")
+    def normalize_objects(self) -> Optional[Sequence[builtins.str]]:
+        """
+        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        """
+        return pulumi.get(self, "normalize_objects")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class DomainVideoDrag(dict):
+    def __init__(__self__, *,
+                 switch: Optional[builtins.bool] = None):
+        """
+        :param builtins.bool switch: 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+        """
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> Optional[builtins.bool]:
+        """
+        智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+        """
+        return pulumi.get(self, "switch")
+
 
 @pulumi.output_type
 class ShareConfigAllowIpAccessRule(dict):
@@ -351,6 +9032,5973 @@ class ShareConfigDenyRefererAccessRuleCommonType(dict):
         表示一个条目列表，列表中的每个条目是一个字符串。列表的额度如下：列表最多可以包含 4,000 个条目。所有条目的总长度不能超过 200,000 个字符。CDN 在创建该全局配置时，会将列表中重复的条目删除。重复条目不占额度。
         """
         return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class GetDomainAreaAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 areas: Sequence[builtins.str],
+                 rule_type: builtins.str,
+                 switch: builtins.bool):
+        """
+        :param Sequence[builtins.str] areas: 表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+        :param builtins.str rule_type: 表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "areas", areas)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def areas(self) -> Sequence[builtins.str]:
+        """
+        表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+        """
+        return pulumi.get(self, "areas")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> builtins.str:
+        """
+        表示 "地域访问控制" 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainBrowserCachResult(dict):
+    def __init__(__self__, *,
+                 cache_action: 'outputs.GetDomainBrowserCachCacheActionResult',
+                 condition: 'outputs.GetDomainBrowserCachConditionResult'):
+        """
+        :param 'GetDomainBrowserCachCacheActionArgs' cache_action: 表示缓存行为的相关配置。
+        :param 'GetDomainBrowserCachConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "cache_action", cache_action)
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheAction")
+    def cache_action(self) -> 'outputs.GetDomainBrowserCachCacheActionResult':
+        """
+        表示缓存行为的相关配置。
+        """
+        return pulumi.get(self, "cache_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainBrowserCachConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainBrowserCachCacheActionResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 default_policy: builtins.str,
+                 ignore_case: builtins.bool,
+                 ttl: builtins.int):
+        """
+        :param builtins.str action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        :param builtins.str default_policy: 该参数被多个 CDN 特性共享。
+        :param builtins.bool ignore_case: 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        :param builtins.int ttl: 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "default_policy", default_policy)
+        pulumi.set(__self__, "ignore_case", ignore_case)
+        pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="defaultPolicy")
+    def default_policy(self) -> builtins.str:
+        """
+        该参数被多个 CDN 特性共享。
+        """
+        return pulumi.get(self, "default_policy")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> builtins.bool:
+        """
+        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> builtins.int:
+        """
+        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class GetDomainBrowserCachConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainBrowserCachConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainBrowserCachConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainBrowserCachConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainBrowserCachConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainCachResult(dict):
+    def __init__(__self__, *,
+                 cache_action: 'outputs.GetDomainCachCacheActionResult',
+                 condition: 'outputs.GetDomainCachConditionResult'):
+        """
+        :param 'GetDomainCachCacheActionArgs' cache_action: 表示缓存行为的相关配置。
+        :param 'GetDomainCachConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "cache_action", cache_action)
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheAction")
+    def cache_action(self) -> 'outputs.GetDomainCachCacheActionResult':
+        """
+        表示缓存行为的相关配置。
+        """
+        return pulumi.get(self, "cache_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainCachConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainCachCacheActionResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 default_policy: builtins.str,
+                 ignore_case: builtins.bool,
+                 ttl: builtins.int):
+        """
+        :param builtins.str action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        :param builtins.str default_policy: 该参数被多个 CDN 特性共享。
+        :param builtins.bool ignore_case: 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        :param builtins.int ttl: 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "default_policy", default_policy)
+        pulumi.set(__self__, "ignore_case", ignore_case)
+        pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="defaultPolicy")
+    def default_policy(self) -> builtins.str:
+        """
+        该参数被多个 CDN 特性共享。
+        """
+        return pulumi.get(self, "default_policy")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> builtins.bool:
+        """
+        表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> builtins.int:
+        """
+        表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class GetDomainCachConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainCachConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainCachConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainCachConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainCachConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainCacheHostResult(dict):
+    def __init__(__self__, *,
+                 cache_host_rules: Sequence['outputs.GetDomainCacheHostCacheHostRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainCacheHostCacheHostRuleArgs'] cache_host_rules: 表示一组共享缓存 HOST 的配置。当前您只能只能创建一个配置。当 Switch 是 true 时，该参数为必填。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "cache_host_rules", cache_host_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="cacheHostRules")
+    def cache_host_rules(self) -> Sequence['outputs.GetDomainCacheHostCacheHostRuleResult']:
+        """
+        表示一组共享缓存 HOST 的配置。当前您只能只能创建一个配置。当 Switch 是 true 时，该参数为必填。
+        """
+        return pulumi.get(self, "cache_host_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainCacheHostCacheHostRuleResult(dict):
+    def __init__(__self__, *,
+                 cache_host_action: 'outputs.GetDomainCacheHostCacheHostRuleCacheHostActionResult',
+                 condition: 'outputs.GetDomainCacheHostCacheHostRuleConditionResult'):
+        """
+        :param 'GetDomainCacheHostCacheHostRuleCacheHostActionArgs' cache_host_action: 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        :param 'GetDomainCacheHostCacheHostRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "cache_host_action", cache_host_action)
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheHostAction")
+    def cache_host_action(self) -> 'outputs.GetDomainCacheHostCacheHostRuleCacheHostActionResult':
+        """
+        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        """
+        return pulumi.get(self, "cache_host_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainCacheHostCacheHostRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainCacheHostCacheHostRuleCacheHostActionResult(dict):
+    def __init__(__self__, *,
+                 cache_host: builtins.str):
+        """
+        :param builtins.str cache_host: 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        """
+        pulumi.set(__self__, "cache_host", cache_host)
+
+    @property
+    @pulumi.getter(name="cacheHost")
+    def cache_host(self) -> builtins.str:
+        """
+        表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        """
+        return pulumi.get(self, "cache_host")
+
+
+@pulumi.output_type
+class GetDomainCacheHostCacheHostRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainCacheHostCacheHostRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainCacheHostCacheHostRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainCacheHostCacheHostRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainCacheHostCacheHostRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainCacheKeyResult(dict):
+    def __init__(__self__, *,
+                 cache_key_action: 'outputs.GetDomainCacheKeyCacheKeyActionResult',
+                 condition: 'outputs.GetDomainCacheKeyConditionResult'):
+        """
+        :param 'GetDomainCacheKeyCacheKeyActionArgs' cache_key_action: 表示在 Condition 情况下，内容分发网络执行的操作。
+        :param 'GetDomainCacheKeyConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "cache_key_action", cache_key_action)
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="cacheKeyAction")
+    def cache_key_action(self) -> 'outputs.GetDomainCacheKeyCacheKeyActionResult':
+        """
+        表示在 Condition 情况下，内容分发网络执行的操作。
+        """
+        return pulumi.get(self, "cache_key_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainCacheKeyConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainCacheKeyCacheKeyActionResult(dict):
+    def __init__(__self__, *,
+                 cache_key_components: Sequence['outputs.GetDomainCacheKeyCacheKeyActionCacheKeyComponentResult']):
+        """
+        :param Sequence['GetDomainCacheKeyCacheKeyActionCacheKeyComponentArgs'] cache_key_components: 表示一个操作配置的列表。当前您仅可设置一个操作配置。
+        """
+        pulumi.set(__self__, "cache_key_components", cache_key_components)
+
+    @property
+    @pulumi.getter(name="cacheKeyComponents")
+    def cache_key_components(self) -> Sequence['outputs.GetDomainCacheKeyCacheKeyActionCacheKeyComponentResult']:
+        """
+        表示一个操作配置的列表。当前您仅可设置一个操作配置。
+        """
+        return pulumi.get(self, "cache_key_components")
+
+
+@pulumi.output_type
+class GetDomainCacheKeyCacheKeyActionCacheKeyComponentResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 ignore_case: builtins.bool,
+                 object: builtins.str,
+                 subobject: builtins.str):
+        """
+        :param builtins.str action: 执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+        :param builtins.bool ignore_case: 表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        :param builtins.str object: 表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+        :param builtins.str subobject: 指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "ignore_case", ignore_case)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "subobject", subobject)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> builtins.bool:
+        """
+        表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def subobject(self) -> builtins.str:
+        """
+        指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+        """
+        return pulumi.get(self, "subobject")
+
+
+@pulumi.output_type
+class GetDomainCacheKeyConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainCacheKeyConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainCacheKeyConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainCacheKeyConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainCacheKeyConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainCompressionResult(dict):
+    def __init__(__self__, *,
+                 compression_rules: Sequence['outputs.GetDomainCompressionCompressionRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainCompressionCompressionRuleArgs'] compression_rules: 表示一组智能压缩的配置规则。当 Switch 是 true 时，该参数为必填。
+        :param builtins.bool switch: 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        """
+        pulumi.set(__self__, "compression_rules", compression_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="compressionRules")
+    def compression_rules(self) -> Sequence['outputs.GetDomainCompressionCompressionRuleResult']:
+        """
+        表示一组智能压缩的配置规则。当 Switch 是 true 时，该参数为必填。
+        """
+        return pulumi.get(self, "compression_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainCompressionCompressionRuleResult(dict):
+    def __init__(__self__, *,
+                 compression_action: 'outputs.GetDomainCompressionCompressionRuleCompressionActionResult',
+                 condition: 'outputs.GetDomainCompressionCompressionRuleConditionResult'):
+        """
+        :param 'GetDomainCompressionCompressionRuleCompressionActionArgs' compression_action: 表示压缩操作的配置。
+        :param 'GetDomainCompressionCompressionRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "compression_action", compression_action)
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="compressionAction")
+    def compression_action(self) -> 'outputs.GetDomainCompressionCompressionRuleCompressionActionResult':
+        """
+        表示压缩操作的配置。
+        """
+        return pulumi.get(self, "compression_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainCompressionCompressionRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainCompressionCompressionRuleCompressionActionResult(dict):
+    def __init__(__self__, *,
+                 compression_format: builtins.str,
+                 compression_target: builtins.str,
+                 compression_types: Sequence[builtins.str],
+                 max_file_size_kb: builtins.int,
+                 min_file_size_kb: builtins.int):
+        """
+        :param builtins.str compression_format: 如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+        :param builtins.str compression_target: 指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+        :param Sequence[builtins.str] compression_types: 压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+        :param builtins.int max_file_size_kb: 表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+        :param builtins.int min_file_size_kb: 表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+        """
+        pulumi.set(__self__, "compression_format", compression_format)
+        pulumi.set(__self__, "compression_target", compression_target)
+        pulumi.set(__self__, "compression_types", compression_types)
+        pulumi.set(__self__, "max_file_size_kb", max_file_size_kb)
+        pulumi.set(__self__, "min_file_size_kb", min_file_size_kb)
+
+    @property
+    @pulumi.getter(name="compressionFormat")
+    def compression_format(self) -> builtins.str:
+        """
+        如果匹配条件是基于 Content-Type 头部（此时，Condition 是 null 或不指定），该参数用来指定 Content-Type 的匹配条件，有以下取值：default: 表示匹配条件是 Content-Type 头部匹配默认 Content-Type 列表中包含的文件类型。customize：表示匹配条件是 Content-Type 头部匹配自定义的文件类型。如果 Conditon 不为 null，表示匹配条件是在 ConditionRule 中定义的。此时，该参数必须设置为 all。
+        """
+        return pulumi.get(self, "compression_format")
+
+    @property
+    @pulumi.getter(name="compressionTarget")
+    def compression_target(self) -> builtins.str:
+        """
+        指定压缩的文件类型。该参数的说明如下：如果 CompressionFormat 为 default，该参数必须设置为 *，表示默认的 Content-Type 列表。该列表包含以下文件类型：text/html、text/xml、text/plain、text/css、application/javascript、application/x-javascript、application/rss+xml、text/javascript、image/tiff、image/svg+xml、application/json、application/xml、text/plain; charset=utf-8。如果 CompressionFormat 为 customize，需要指定一个或者多个文件类型。多个文件类型以逗号（,）分隔。如果 CompressionFormat 为 all，该参数必须设置为 *。
+        """
+        return pulumi.get(self, "compression_target")
+
+    @property
+    @pulumi.getter(name="compressionTypes")
+    def compression_types(self) -> Sequence[builtins.str]:
+        """
+        压缩算法，gzip,br 指定类型压缩，default：默认所有文件压缩，次数Target为*；customize：自定义文件类型压缩. choices: [default, customize]
+        """
+        return pulumi.get(self, "compression_types")
+
+    @property
+    @pulumi.getter(name="maxFileSizeKb")
+    def max_file_size_kb(self) -> builtins.int:
+        """
+        表示文件大小范围的最小值，CDN 仅对大小在 MinFileSizeKB 和 MaxFileSizeKB 所表示的范围内的文件进行压缩。该参数的取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。该参数的默认值是 0。
+        """
+        return pulumi.get(self, "max_file_size_kb")
+
+    @property
+    @pulumi.getter(name="minFileSizeKb")
+    def min_file_size_kb(self) -> builtins.int:
+        """
+        表示文件大小范围的最大值，取值范围是 0   - 2,147,483,647，单位是 KB，使用的进制是 1,024。如果不指定该参数，表示您不限制文件大小的上限。
+        """
+        return pulumi.get(self, "min_file_size_kb")
+
+
+@pulumi.output_type
+class GetDomainCompressionCompressionRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainCompressionCompressionRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainCompressionCompressionRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainCompressionCompressionRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainCompressionCompressionRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainConditionalOriginResult(dict):
+    def __init__(__self__, *,
+                 origin_rules: Sequence['outputs.GetDomainConditionalOriginOriginRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainConditionalOriginOriginRuleArgs'] origin_rules: 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "origin_rules", origin_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="originRules")
+    def origin_rules(self) -> Sequence['outputs.GetDomainConditionalOriginOriginRuleResult']:
+        """
+        表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+        """
+        return pulumi.get(self, "origin_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainConditionalOriginOriginRuleResult(dict):
+    def __init__(__self__, *,
+                 actions: 'outputs.GetDomainConditionalOriginOriginRuleActionsResult',
+                 condition: 'outputs.GetDomainConditionalOriginOriginRuleConditionResult'):
+        """
+        :param 'GetDomainConditionalOriginOriginRuleActionsArgs' actions: 表示列表中一条规则的操作配置。
+        :param 'GetDomainConditionalOriginOriginRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter
+    def actions(self) -> 'outputs.GetDomainConditionalOriginOriginRuleActionsResult':
+        """
+        表示列表中一条规则的操作配置。
+        """
+        return pulumi.get(self, "actions")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainConditionalOriginOriginRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainConditionalOriginOriginRuleActionsResult(dict):
+    def __init__(__self__, *,
+                 origin_lines: Sequence['outputs.GetDomainConditionalOriginOriginRuleActionsOriginLineResult']):
+        """
+        :param Sequence['GetDomainConditionalOriginOriginRuleActionsOriginLineArgs'] origin_lines: 表示一个源站配置列表。当前，列表中只能包含一个源站配置。
+        """
+        pulumi.set(__self__, "origin_lines", origin_lines)
+
+    @property
+    @pulumi.getter(name="originLines")
+    def origin_lines(self) -> Sequence['outputs.GetDomainConditionalOriginOriginRuleActionsOriginLineResult']:
+        """
+        表示一个源站配置列表。当前，列表中只能包含一个源站配置。
+        """
+        return pulumi.get(self, "origin_lines")
+
+
+@pulumi.output_type
+class GetDomainConditionalOriginOriginRuleActionsOriginLineResult(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 http_port: builtins.str,
+                 https_port: builtins.str,
+                 instance_type: builtins.str,
+                 origin_host: builtins.str):
+        """
+        :param builtins.str address: 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+        :param builtins.str http_port: 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+        :param builtins.str https_port: 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+        :param builtins.str instance_type: 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+        :param builtins.str origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "http_port", http_port)
+        pulumi.set(__self__, "https_port", https_port)
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "origin_host", origin_host)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="httpPort")
+    def http_port(self) -> builtins.str:
+        """
+        表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+        """
+        return pulumi.get(self, "http_port")
+
+    @property
+    @pulumi.getter(name="httpsPort")
+    def https_port(self) -> builtins.str:
+        """
+        表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+        """
+        return pulumi.get(self, "https_port")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> builtins.str:
+        """
+        表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter(name="originHost")
+    def origin_host(self) -> builtins.str:
+        """
+        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+        """
+        return pulumi.get(self, "origin_host")
+
+
+@pulumi.output_type
+class GetDomainConditionalOriginOriginRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_groups: Sequence['outputs.GetDomainConditionalOriginOriginRuleConditionConditionGroupResult'],
+                 connective: builtins.str,
+                 is_group: builtins.bool):
+        """
+        :param Sequence['GetDomainConditionalOriginOriginRuleConditionConditionGroupArgs'] condition_groups: ConditionGroups
+        :param builtins.str connective: 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+        :param builtins.bool is_group: 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        """
+        pulumi.set(__self__, "condition_groups", condition_groups)
+        pulumi.set(__self__, "connective", connective)
+        pulumi.set(__self__, "is_group", is_group)
+
+    @property
+    @pulumi.getter(name="conditionGroups")
+    def condition_groups(self) -> Sequence['outputs.GetDomainConditionalOriginOriginRuleConditionConditionGroupResult']:
+        """
+        ConditionGroups
+        """
+        return pulumi.get(self, "condition_groups")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+        """
+        return pulumi.get(self, "connective")
+
+    @property
+    @pulumi.getter(name="isGroup")
+    def is_group(self) -> builtins.bool:
+        """
+        表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        """
+        return pulumi.get(self, "is_group")
+
+
+@pulumi.output_type
+class GetDomainConditionalOriginOriginRuleConditionConditionGroupResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainConditionalOriginOriginRuleConditionConditionGroupConditionResult'):
+        """
+        :param 'GetDomainConditionalOriginOriginRuleConditionConditionGroupConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainConditionalOriginOriginRuleConditionConditionGroupConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainConditionalOriginOriginRuleConditionConditionGroupConditionResult(dict):
+    def __init__(__self__, *,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 values: Sequence[builtins.str]):
+        """
+        :param builtins.str object: 表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
+        :param builtins.str operator: 表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
+        :param Sequence[builtins.str] values: 表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示一个过滤类型。该参数有以下取值：path：表示请求 URL 中的完整路径。directory：表示路径中的任意一个目录。假设路径是 /a/b/c/d/file，则 /a/、/b/c/、/d/ 都是目录。filetype：表示路径末尾的扩展名。full*querystring：表示请求 URL 中的查询字符串。client*ip：表示客户端的 IP 地址或者 IP 地址的归属地。如果您指定了 Condition，Object 必填。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示一个对比类型。不同的 Object 对应不同的取值。当 Object 是 path、directory 或 filetype 时，该参数的取值有 equal、not*equal。当 Object 是 path 时，该参数还有额外取值 regex*match、regex*not*match。当 Object 是 full*querystring 时，该参数的取值有 regex*match、regex*not*match。当 Object 是 client*ip 时，该参数的取值有 equal、not*equal、belong、not*belong。各对比类型的说明如下：equal：表示如果 Object 匹配了 Value 中的某个过滤值，该请求就满足这个过滤条件。not*equal：表示如果 Object 不匹配 Value 中的所有过滤值，该请求才满足这个过滤条件。regex*match：表示如果 Value 中的某个正则表达式匹配了 Object 中的任何部分，该请求就满足这个过滤条件。regex*not*match：表示如果 Value 中的所有正则表达式都不匹配 Object 中的任何部分，该请求才满足这个过滤条件。belong：表示如果客户端 IP 地址归属地在 Value 所表示国家和地区列表中，该请求就满足这个过滤条件。not*belong：表示如果客户端 IP 地址归属地不在 Value 所表示国家和地区列表中，该请求才满足这个过滤条件。如果您指定了 Condition，Operator 必填。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        """
+        表示一个或者多个过滤值。过滤值之间使用分号（;）分隔。该参数的输入要求如下：当 Object 是 path、directory 或 filetype 时，所有过滤值的总长度不能超过 1,024 个字符，不能包含以下字符：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。当 Object 是 path 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头，但不能以 / 结尾。您可以在过滤值中使用一个或者多个星号（*），每个星号表示一个或者多个字符。例如：/www/img/my*image.png。当 Object 是 directory 时，该参数有以下额外要求：每个过滤值必须以斜杠（/）开头和结尾。例如：/www/img/。当 Object 是 filetype 时，该参数有以下额外要求：每个过滤值无需以句点（.）开头。例如：png;txt。当 Object 是 full*querystring 时，该参数的输入要求如下：所有过滤值的总长度不能超过 256 个字符。过滤值可以包含数字、字母、百分号（%）、下划线（*）、中划线（-）。当 Object 是 client*ip 时，如果 Operator 是 equal 或者 not*equal，该参数的输入要求如下：IP 地址的数量不能超过 5 个。IP 地址必须是 IPv4 地址。如果您指定了 Condition，Value 必填。
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetDomainCustomErrorPageResult(dict):
+    def __init__(__self__, *,
+                 error_page_rules: Sequence['outputs.GetDomainCustomErrorPageErrorPageRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainCustomErrorPageErrorPageRuleArgs'] error_page_rules: 表示一个配置规则的集合。您最多可以添加 50 条规则。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "error_page_rules", error_page_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="errorPageRules")
+    def error_page_rules(self) -> Sequence['outputs.GetDomainCustomErrorPageErrorPageRuleResult']:
+        """
+        表示一个配置规则的集合。您最多可以添加 50 条规则。
+        """
+        return pulumi.get(self, "error_page_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainCustomErrorPageErrorPageRuleResult(dict):
+    def __init__(__self__, *,
+                 error_page_action: 'outputs.GetDomainCustomErrorPageErrorPageRuleErrorPageActionResult'):
+        """
+        :param 'GetDomainCustomErrorPageErrorPageRuleErrorPageActionArgs' error_page_action: 表示规则的相关配置。
+        """
+        pulumi.set(__self__, "error_page_action", error_page_action)
+
+    @property
+    @pulumi.getter(name="errorPageAction")
+    def error_page_action(self) -> 'outputs.GetDomainCustomErrorPageErrorPageRuleErrorPageActionResult':
+        """
+        表示规则的相关配置。
+        """
+        return pulumi.get(self, "error_page_action")
+
+
+@pulumi.output_type
+class GetDomainCustomErrorPageErrorPageRuleErrorPageActionResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 redirect_code: builtins.str,
+                 redirect_url: builtins.str,
+                 status_code: builtins.str):
+        """
+        :param builtins.str action: 表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+        :param builtins.str redirect_code: 表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        :param builtins.str redirect_url: 表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+        :param builtins.str status_code: 表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "redirect_code", redirect_code)
+        pulumi.set(__self__, "redirect_url", redirect_url)
+        pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示实际的操作。当前您只能指定该参数值为 redirect。表示对客户端请求进行重定向。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="redirectCode")
+    def redirect_code(self) -> builtins.str:
+        """
+        表示重定向的响应状态码。您可以根据需求选择合适的状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        """
+        return pulumi.get(self, "redirect_code")
+
+    @property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> builtins.str:
+        """
+        表示跳转的目标地址，长度不能超过 1,024 个字符。地址必须包含协议，域名以及路径，并且符合 URL 的规范。
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        表示一个状态码，取值范围是 400-599。您可以输入 4xx 或者 5xx。4xx 表示 400-499 之间的所有状态码。5xx 表示 500-599 之间的所有状态码。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class GetDomainCustomizeAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 customize_instances: Sequence['outputs.GetDomainCustomizeAccessRuleCustomizeInstanceResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainCustomizeAccessRuleCustomizeInstanceArgs'] customize_instances: 表示一个规则列表。列表中的每条规则中定义了一个黑名单或者白名单的配置。列表中最多可以包含 10 条规则。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "customize_instances", customize_instances)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="customizeInstances")
+    def customize_instances(self) -> Sequence['outputs.GetDomainCustomizeAccessRuleCustomizeInstanceResult']:
+        """
+        表示一个规则列表。列表中的每条规则中定义了一个黑名单或者白名单的配置。列表中最多可以包含 10 条规则。
+        """
+        return pulumi.get(self, "customize_instances")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainCustomizeAccessRuleCustomizeInstanceResult(dict):
+    def __init__(__self__, *,
+                 customize_rule: 'outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleResult'):
+        """
+        :param 'GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs' customize_rule: 表示列表中一条规则的配置。
+        """
+        pulumi.set(__self__, "customize_rule", customize_rule)
+
+    @property
+    @pulumi.getter(name="customizeRule")
+    def customize_rule(self) -> 'outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleResult':
+        """
+        表示列表中一条规则的配置。
+        """
+        return pulumi.get(self, "customize_rule")
+
+
+@pulumi.output_type
+class GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleResult(dict):
+    def __init__(__self__, *,
+                 access_action: 'outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionResult',
+                 condition: 'outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionResult'):
+        """
+        :param 'GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs' access_action: 表示该规则中的黑名单或者白名单的配置。
+        :param 'GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        """
+        pulumi.set(__self__, "access_action", access_action)
+        pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="accessAction")
+    def access_action(self) -> 'outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionResult':
+        """
+        表示该规则中的黑名单或者白名单的配置。
+        """
+        return pulumi.get(self, "access_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionResult(dict):
+    def __init__(__self__, *,
+                 allow_empty: builtins.bool,
+                 list_rules: Sequence[builtins.str],
+                 request_header: builtins.str,
+                 rule_type: builtins.str):
+        """
+        :param builtins.bool allow_empty: 表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+        :param Sequence[builtins.str] list_rules: 表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+        :param builtins.str request_header: 表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+        :param builtins.str rule_type: 表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        """
+        pulumi.set(__self__, "allow_empty", allow_empty)
+        pulumi.set(__self__, "list_rules", list_rules)
+        pulumi.set(__self__, "request_header", request_header)
+        pulumi.set(__self__, "rule_type", rule_type)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> builtins.bool:
+        """
+        表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter(name="listRules")
+    def list_rules(self) -> Sequence[builtins.str]:
+        """
+        表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+        """
+        return pulumi.get(self, "list_rules")
+
+    @property
+    @pulumi.getter(name="requestHeader")
+    def request_header(self) -> builtins.str:
+        """
+        表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+        """
+        return pulumi.get(self, "request_header")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> builtins.str:
+        """
+        表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        """
+        return pulumi.get(self, "rule_type")
+
+
+@pulumi.output_type
+class GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainDomainLockResult(dict):
+    def __init__(__self__, *,
+                 remark: builtins.str,
+                 status: builtins.str):
+        """
+        :param builtins.str remark: 表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+        :param builtins.str status: 表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        """
+        pulumi.set(__self__, "remark", remark)
+        pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def remark(self) -> builtins.str:
+        """
+        表示该加速域名被锁定的原因。如果 Status 是 on，该参数值表示原因的描述。如果 Status 是 off，该参数值是空（""）。
+        """
+        return pulumi.get(self, "remark")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        表示该加速域名的锁定状态。该参数有以下取值：on：表示该加速域名已被锁定。off：表示该加速域名未被锁定。
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetDomainDownloadSpeedLimitResult(dict):
+    def __init__(__self__, *,
+                 download_speed_limit_rules: Sequence['outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs'] download_speed_limit_rules: 表示下载限速的规则。当 Switch 是 true 时，该参数为必填。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "download_speed_limit_rules", download_speed_limit_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="downloadSpeedLimitRules")
+    def download_speed_limit_rules(self) -> Sequence['outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleResult']:
+        """
+        表示下载限速的规则。当 Switch 是 true 时，该参数为必填。
+        """
+        return pulumi.get(self, "download_speed_limit_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionResult',
+                 download_speed_limit_action: 'outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionResult'):
+        """
+        :param 'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionArgs' download_speed_limit_action: 表示限速配置。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "download_speed_limit_action", download_speed_limit_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="downloadSpeedLimitAction")
+    def download_speed_limit_action(self) -> 'outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionResult':
+        """
+        表示限速配置。
+        """
+        return pulumi.get(self, "download_speed_limit_action")
+
+
+@pulumi.output_type
+class GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionResult(dict):
+    def __init__(__self__, *,
+                 speed_limit_rate: builtins.int,
+                 speed_limit_rate_after: builtins.int,
+                 speed_limit_time: 'outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeResult'):
+        """
+        :param builtins.int speed_limit_rate: 表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+        :param builtins.int speed_limit_rate_after: 表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+        :param 'GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs' speed_limit_time: 表示限速发生的日期和时间段。
+        """
+        pulumi.set(__self__, "speed_limit_rate", speed_limit_rate)
+        pulumi.set(__self__, "speed_limit_rate_after", speed_limit_rate_after)
+        pulumi.set(__self__, "speed_limit_time", speed_limit_time)
+
+    @property
+    @pulumi.getter(name="speedLimitRate")
+    def speed_limit_rate(self) -> builtins.int:
+        """
+        表示单个请求的下载速度上限，单位是B/S。该参数的取值范围是 1-1,073,741,824,000,000，使用的进制转换是1,024。
+        """
+        return pulumi.get(self, "speed_limit_rate")
+
+    @property
+    @pulumi.getter(name="speedLimitRateAfter")
+    def speed_limit_rate_after(self) -> builtins.int:
+        """
+        表示一个数据量。在单个请求下载的数据量达到该值时，才对该请求启用下载限速。单位是Byte。该参数的取值范围是 0-1,073,741,824,000,000，使用的进制转换是1,024。
+        """
+        return pulumi.get(self, "speed_limit_rate_after")
+
+    @property
+    @pulumi.getter(name="speedLimitTime")
+    def speed_limit_time(self) -> 'outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeResult':
+        """
+        表示限速发生的日期和时间段。
+        """
+        return pulumi.get(self, "speed_limit_time")
+
+
+@pulumi.output_type
+class GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeResult(dict):
+    def __init__(__self__, *,
+                 begin_time: builtins.str,
+                 day_week: builtins.str,
+                 end_time: builtins.str):
+        """
+        :param builtins.str begin_time: 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        :param builtins.str day_week: 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+        :param builtins.str end_time: 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        """
+        pulumi.set(__self__, "begin_time", begin_time)
+        pulumi.set(__self__, "day_week", day_week)
+        pulumi.set(__self__, "end_time", end_time)
+
+    @property
+    @pulumi.getter(name="beginTime")
+    def begin_time(self) -> builtins.str:
+        """
+        表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        """
+        return pulumi.get(self, "begin_time")
+
+    @property
+    @pulumi.getter(name="dayWeek")
+    def day_week(self) -> builtins.str:
+        """
+        表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+        """
+        return pulumi.get(self, "day_week")
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> builtins.str:
+        """
+        表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+        """
+        return pulumi.get(self, "end_time")
+
+
+@pulumi.output_type
+class GetDomainHttpForcedRedirectResult(dict):
+    def __init__(__self__, *,
+                 enable_forced_redirect: builtins.bool,
+                 status_code: builtins.str):
+        """
+        :param builtins.bool enable_forced_redirect: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        :param builtins.str status_code: 表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+        """
+        pulumi.set(__self__, "enable_forced_redirect", enable_forced_redirect)
+        pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter(name="enableForcedRedirect")
+    def enable_forced_redirect(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        """
+        return pulumi.get(self, "enable_forced_redirect")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class GetDomainHttpsResult(dict):
+    def __init__(__self__, *,
+                 cert_check: 'outputs.GetDomainHttpsCertCheckResult',
+                 cert_info: 'outputs.GetDomainHttpsCertInfoResult',
+                 cert_info_lists: Sequence['outputs.GetDomainHttpsCertInfoListResult'],
+                 disable_http: builtins.bool,
+                 forced_redirect: 'outputs.GetDomainHttpsForcedRedirectResult',
+                 hsts: 'outputs.GetDomainHttpsHstsResult',
+                 http2: builtins.bool,
+                 ocsp: builtins.bool,
+                 switch: builtins.bool,
+                 tls_versions: Sequence[builtins.str]):
+        """
+        :param 'GetDomainHttpsCertCheckArgs' cert_check: 表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+        :param 'GetDomainHttpsCertInfoArgs' cert_info: 表示要与加速域名关联的单本证书。
+        :param Sequence['GetDomainHttpsCertInfoListArgs'] cert_info_lists: 表示要与加速域名关联的双证书。
+        :param builtins.bool disable_http: 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+        :param 'GetDomainHttpsForcedRedirectArgs' forced_redirect: 表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+        :param 'GetDomainHttpsHstsArgs' hsts: 表示 HSTS 特性的配置模块。该特性默认是禁用。
+        :param builtins.bool http2: HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+        :param builtins.bool ocsp: 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+        :param builtins.bool switch: 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+        :param Sequence[builtins.str] tls_versions: 表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        """
+        pulumi.set(__self__, "cert_check", cert_check)
+        pulumi.set(__self__, "cert_info", cert_info)
+        pulumi.set(__self__, "cert_info_lists", cert_info_lists)
+        pulumi.set(__self__, "disable_http", disable_http)
+        pulumi.set(__self__, "forced_redirect", forced_redirect)
+        pulumi.set(__self__, "hsts", hsts)
+        pulumi.set(__self__, "http2", http2)
+        pulumi.set(__self__, "ocsp", ocsp)
+        pulumi.set(__self__, "switch", switch)
+        pulumi.set(__self__, "tls_versions", tls_versions)
+
+    @property
+    @pulumi.getter(name="certCheck")
+    def cert_check(self) -> 'outputs.GetDomainHttpsCertCheckResult':
+        """
+        表示 "访问双向认证" 特性的配置模块。要配置 "访问双向认证"。
+        """
+        return pulumi.get(self, "cert_check")
+
+    @property
+    @pulumi.getter(name="certInfo")
+    def cert_info(self) -> 'outputs.GetDomainHttpsCertInfoResult':
+        """
+        表示要与加速域名关联的单本证书。
+        """
+        return pulumi.get(self, "cert_info")
+
+    @property
+    @pulumi.getter(name="certInfoLists")
+    def cert_info_lists(self) -> Sequence['outputs.GetDomainHttpsCertInfoListResult']:
+        """
+        表示要与加速域名关联的双证书。
+        """
+        return pulumi.get(self, "cert_info_lists")
+
+    @property
+    @pulumi.getter(name="disableHttp")
+    def disable_http(self) -> builtins.bool:
+        """
+        表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "disable_http")
+
+    @property
+    @pulumi.getter(name="forcedRedirect")
+    def forced_redirect(self) -> 'outputs.GetDomainHttpsForcedRedirectResult':
+        """
+        表示 "HTTP 强制跳转到 HTTPS" 特性的配置模块。该特性默认是禁用。
+        """
+        return pulumi.get(self, "forced_redirect")
+
+    @property
+    @pulumi.getter
+    def hsts(self) -> 'outputs.GetDomainHttpsHstsResult':
+        """
+        表示 HSTS 特性的配置模块。该特性默认是禁用。
+        """
+        return pulumi.get(self, "hsts")
+
+    @property
+    @pulumi.getter
+    def http2(self) -> builtins.bool:
+        """
+        HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+        """
+        return pulumi.get(self, "http2")
+
+    @property
+    @pulumi.getter
+    def ocsp(self) -> builtins.bool:
+        """
+        指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ocsp")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="tlsVersions")
+    def tls_versions(self) -> Sequence[builtins.str]:
+        """
+        表示 "TLS 版本" 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 ["tlsv1.1", "tlsv1.2", "tlsv1.3"]
+        """
+        return pulumi.get(self, "tls_versions")
+
+
+@pulumi.output_type
+class GetDomainHttpsCertCheckResult(dict):
+    def __init__(__self__, *,
+                 cert_info_lists: Sequence['outputs.GetDomainHttpsCertCheckCertInfoListResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainHttpsCertCheckCertInfoListArgs'] cert_info_lists: 表示要与该加速域名关联的一个 CA 证书的列表。列表中最多包含两个 CA 证书。这些 CA 证书可以是已经托管在内容分发网络的，也可以是待上传的。CA 证书使用的加密算法可以是 RSA、ECC 或者 SM2。如果一个 CA 证书是托管在内容分发网络的，您需要在 CertId 中指定该证书的 ID。如果该证书是待上传的，您需要指定 Certificate 结构体，在该结构体中定义该证书。您上传证书后，该证书是托管在内容分发网络的。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "cert_info_lists", cert_info_lists)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="certInfoLists")
+    def cert_info_lists(self) -> Sequence['outputs.GetDomainHttpsCertCheckCertInfoListResult']:
+        """
+        表示要与该加速域名关联的一个 CA 证书的列表。列表中最多包含两个 CA 证书。这些 CA 证书可以是已经托管在内容分发网络的，也可以是待上传的。CA 证书使用的加密算法可以是 RSA、ECC 或者 SM2。如果一个 CA 证书是托管在内容分发网络的，您需要在 CertId 中指定该证书的 ID。如果该证书是待上传的，您需要指定 Certificate 结构体，在该结构体中定义该证书。您上传证书后，该证书是托管在内容分发网络的。
+        """
+        return pulumi.get(self, "cert_info_lists")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainHttpsCertCheckCertInfoListResult(dict):
+    def __init__(__self__, *,
+                 cert_id: builtins.str,
+                 cert_name: builtins.str,
+                 certificate: 'outputs.GetDomainHttpsCertCheckCertInfoListCertificateResult',
+                 effective_time: builtins.int,
+                 encry_type: builtins.str,
+                 expire_time: builtins.int,
+                 source: builtins.str):
+        """
+        :param builtins.str cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        :param builtins.str cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        :param 'GetDomainHttpsCertCheckCertInfoListCertificateArgs' certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        :param builtins.int effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
+        :param builtins.str encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        :param builtins.int expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
+        :param builtins.str source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        pulumi.set(__self__, "cert_id", cert_id)
+        pulumi.set(__self__, "cert_name", cert_name)
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "effective_time", effective_time)
+        pulumi.set(__self__, "encry_type", encry_type)
+        pulumi.set(__self__, "expire_time", expire_time)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="certId")
+    def cert_id(self) -> builtins.str:
+        """
+        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        """
+        return pulumi.get(self, "cert_id")
+
+    @property
+    @pulumi.getter(name="certName")
+    def cert_name(self) -> builtins.str:
+        """
+        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        """
+        return pulumi.get(self, "cert_name")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> 'outputs.GetDomainHttpsCertCheckCertInfoListCertificateResult':
+        """
+        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="effectiveTime")
+    def effective_time(self) -> builtins.int:
+        """
+        表示该证书的签发时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "effective_time")
+
+    @property
+    @pulumi.getter(name="encryType")
+    def encry_type(self) -> builtins.str:
+        """
+        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        """
+        return pulumi.get(self, "encry_type")
+
+    @property
+    @pulumi.getter(name="expireTime")
+    def expire_time(self) -> builtins.int:
+        """
+        表示该证书的到期时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "expire_time")
+
+    @property
+    @pulumi.getter
+    def source(self) -> builtins.str:
+        """
+        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetDomainHttpsCertCheckCertInfoListCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate: builtins.str,
+                 encryption_cert: builtins.str,
+                 encryption_key: builtins.str,
+                 private_key: builtins.str):
+        """
+        :param builtins.str certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        :param builtins.str encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        :param builtins.str encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        :param builtins.str private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "encryption_cert", encryption_cert)
+        pulumi.set(__self__, "encryption_key", encryption_key)
+        pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> builtins.str:
+        """
+        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="encryptionCert")
+    def encryption_cert(self) -> builtins.str:
+        """
+        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        """
+        return pulumi.get(self, "encryption_cert")
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> builtins.str:
+        """
+        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> builtins.str:
+        """
+        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class GetDomainHttpsCertInfoResult(dict):
+    def __init__(__self__, *,
+                 cert_id: builtins.str,
+                 cert_name: builtins.str,
+                 certificate: 'outputs.GetDomainHttpsCertInfoCertificateResult',
+                 effective_time: builtins.int,
+                 encry_type: builtins.str,
+                 expire_time: builtins.int,
+                 source: builtins.str):
+        """
+        :param builtins.str cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        :param builtins.str cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        :param 'GetDomainHttpsCertInfoCertificateArgs' certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        :param builtins.int effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
+        :param builtins.str encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        :param builtins.int expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
+        :param builtins.str source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        pulumi.set(__self__, "cert_id", cert_id)
+        pulumi.set(__self__, "cert_name", cert_name)
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "effective_time", effective_time)
+        pulumi.set(__self__, "encry_type", encry_type)
+        pulumi.set(__self__, "expire_time", expire_time)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="certId")
+    def cert_id(self) -> builtins.str:
+        """
+        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        """
+        return pulumi.get(self, "cert_id")
+
+    @property
+    @pulumi.getter(name="certName")
+    def cert_name(self) -> builtins.str:
+        """
+        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        """
+        return pulumi.get(self, "cert_name")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> 'outputs.GetDomainHttpsCertInfoCertificateResult':
+        """
+        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="effectiveTime")
+    def effective_time(self) -> builtins.int:
+        """
+        表示该证书的签发时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "effective_time")
+
+    @property
+    @pulumi.getter(name="encryType")
+    def encry_type(self) -> builtins.str:
+        """
+        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        """
+        return pulumi.get(self, "encry_type")
+
+    @property
+    @pulumi.getter(name="expireTime")
+    def expire_time(self) -> builtins.int:
+        """
+        表示该证书的到期时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "expire_time")
+
+    @property
+    @pulumi.getter
+    def source(self) -> builtins.str:
+        """
+        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetDomainHttpsCertInfoCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate: builtins.str,
+                 encryption_cert: builtins.str,
+                 encryption_key: builtins.str,
+                 private_key: builtins.str):
+        """
+        :param builtins.str certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        :param builtins.str encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        :param builtins.str encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        :param builtins.str private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "encryption_cert", encryption_cert)
+        pulumi.set(__self__, "encryption_key", encryption_key)
+        pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> builtins.str:
+        """
+        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="encryptionCert")
+    def encryption_cert(self) -> builtins.str:
+        """
+        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        """
+        return pulumi.get(self, "encryption_cert")
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> builtins.str:
+        """
+        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> builtins.str:
+        """
+        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class GetDomainHttpsCertInfoListResult(dict):
+    def __init__(__self__, *,
+                 cert_id: builtins.str,
+                 cert_name: builtins.str,
+                 certificate: 'outputs.GetDomainHttpsCertInfoListCertificateResult',
+                 effective_time: builtins.int,
+                 encry_type: builtins.str,
+                 expire_time: builtins.int,
+                 source: builtins.str):
+        """
+        :param builtins.str cert_id: 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        :param builtins.str cert_name: 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        :param 'GetDomainHttpsCertInfoListCertificateArgs' certificate: 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        :param builtins.int effective_time: 表示该证书的签发时间，单位是 Unix 时间戳。
+        :param builtins.str encry_type: 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        :param builtins.int expire_time: 表示该证书的到期时间，单位是 Unix 时间戳。
+        :param builtins.str source: 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        pulumi.set(__self__, "cert_id", cert_id)
+        pulumi.set(__self__, "cert_name", cert_name)
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "effective_time", effective_time)
+        pulumi.set(__self__, "encry_type", encry_type)
+        pulumi.set(__self__, "expire_time", expire_time)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="certId")
+    def cert_id(self) -> builtins.str:
+        """
+        表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        """
+        return pulumi.get(self, "cert_id")
+
+    @property
+    @pulumi.getter(name="certName")
+    def cert_name(self) -> builtins.str:
+        """
+        表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        """
+        return pulumi.get(self, "cert_name")
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> 'outputs.GetDomainHttpsCertInfoListCertificateResult':
+        """
+        表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="effectiveTime")
+    def effective_time(self) -> builtins.int:
+        """
+        表示该证书的签发时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "effective_time")
+
+    @property
+    @pulumi.getter(name="encryType")
+    def encry_type(self) -> builtins.str:
+        """
+        表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        """
+        return pulumi.get(self, "encry_type")
+
+    @property
+    @pulumi.getter(name="expireTime")
+    def expire_time(self) -> builtins.int:
+        """
+        表示该证书的到期时间，单位是 Unix 时间戳。
+        """
+        return pulumi.get(self, "expire_time")
+
+    @property
+    @pulumi.getter
+    def source(self) -> builtins.str:
+        """
+        表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        """
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class GetDomainHttpsCertInfoListCertificateResult(dict):
+    def __init__(__self__, *,
+                 certificate: builtins.str,
+                 encryption_cert: builtins.str,
+                 encryption_key: builtins.str,
+                 private_key: builtins.str):
+        """
+        :param builtins.str certificate: 表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        :param builtins.str encryption_cert: 表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        :param builtins.str encryption_key: 表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        :param builtins.str private_key: 表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        pulumi.set(__self__, "certificate", certificate)
+        pulumi.set(__self__, "encryption_cert", encryption_cert)
+        pulumi.set(__self__, "encryption_key", encryption_key)
+        pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> builtins.str:
+        """
+        表示证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该证书文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="encryptionCert")
+    def encryption_cert(self) -> builtins.str:
+        """
+        表示国密证书的证书文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件中包含的公钥用于加密会话密钥。文件的扩展名是 .crt 或者 .pem，并且证书文件必须包含完整的证书链。如果待上传的证书不是国密证书，该参数无效。
+        """
+        return pulumi.get(self, "encryption_cert")
+
+    @property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> builtins.str:
+        """
+        表示国密证书的私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该文件用于解密，扩展名是 .key 或者 .pem。文件名类似 <domain>_encrypt.key。
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> builtins.str:
+        """
+        表示私钥文件的内容。内容中的换行必须使用 \\r\\n 替换。该私钥文件的扩展名是 .key 或者 .pem。如果该证书使用的加密算法是 RSA 或者 ECC，该文件是您要上传的服务器证书的私钥文件。文件名类似 <domain>.key。该私钥文件中包含的私钥用于验证服务器的签名和加密会话密钥。如果该证书使用的加密算法是 SM2，该文件是您要上传的国密证书的私钥文件。文件名类似 <domain>_sign.key。该私钥文件中包含的私钥用于验证服务器的签名。对于待上传的证书，该参数必填。
+        """
+        return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class GetDomainHttpsForcedRedirectResult(dict):
+    def __init__(__self__, *,
+                 enable_forced_redirect: builtins.bool,
+                 status_code: builtins.str):
+        """
+        :param builtins.bool enable_forced_redirect: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        :param builtins.str status_code: 表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        """
+        pulumi.set(__self__, "enable_forced_redirect", enable_forced_redirect)
+        pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter(name="enableForcedRedirect")
+    def enable_forced_redirect(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        """
+        return pulumi.get(self, "enable_forced_redirect")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class GetDomainHttpsHstsResult(dict):
+    def __init__(__self__, *,
+                 subdomain: builtins.str,
+                 switch: builtins.bool,
+                 ttl: builtins.int):
+        """
+        :param builtins.str subdomain: 表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        :param builtins.int ttl: 表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+        """
+        pulumi.set(__self__, "subdomain", subdomain)
+        pulumi.set(__self__, "switch", switch)
+        pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def subdomain(self) -> builtins.str:
+        """
+        表示 HSTS 配置是否也应用于加速域名的子域名。该参数有以下取值：include：表示 HSTS 配置应用于子域名站点。exclude：表示 HSTS 配置不应用于子域名站点。该参数的默认值是 exclude。
+        """
+        return pulumi.get(self, "subdomain")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> builtins.int:
+        """
+        表示 Strict-Transport-Security 响应头在浏览器中的缓存过期时间，单位是秒。如果 Switch 是 true，该参数为必填。该参数的取值范围是 0   - 31,536,000。31,536,000 秒表示 365 天。如果该参数值为 0，其效果等同于禁用 HSTS 设置。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class GetDomainIPv6Result(dict):
+    def __init__(__self__, *,
+                 switch: builtins.bool):
+        """
+        :param builtins.bool switch: 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        """
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainIpAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 ips: Sequence[builtins.str],
+                 rule_type: builtins.str,
+                 shared_config: 'outputs.GetDomainIpAccessRuleSharedConfigResult',
+                 switch: builtins.bool):
+        """
+        :param Sequence[builtins.str] ips: 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+        :param builtins.str rule_type: 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+        :param 'GetDomainIpAccessRuleSharedConfigArgs' shared_config: 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "ips", ips)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "shared_config", shared_config)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def ips(self) -> Sequence[builtins.str]:
+        """
+        表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "ips")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> builtins.str:
+        """
+        表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter(name="sharedConfig")
+    def shared_config(self) -> 'outputs.GetDomainIpAccessRuleSharedConfigResult':
+        """
+        表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+        """
+        return pulumi.get(self, "shared_config")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainIpAccessRuleSharedConfigResult(dict):
+    def __init__(__self__, *,
+                 config_name: builtins.str):
+        """
+        :param builtins.str config_name: 表示一个全局配置的名称。
+        """
+        pulumi.set(__self__, "config_name", config_name)
+
+    @property
+    @pulumi.getter(name="configName")
+    def config_name(self) -> builtins.str:
+        """
+        表示一个全局配置的名称。
+        """
+        return pulumi.get(self, "config_name")
+
+
+@pulumi.output_type
+class GetDomainMethodDeniedRuleResult(dict):
+    def __init__(__self__, *,
+                 methods: builtins.str,
+                 switch: builtins.bool):
+        """
+        :param builtins.str methods: 表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+        :param builtins.bool switch: 配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+        """
+        pulumi.set(__self__, "methods", methods)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def methods(self) -> builtins.str:
+        """
+        表示被禁用的一个或多个 HTTP 请求方法。当 Switch 是 true 时，该参数为必填。多个方法使用逗号（,）分隔。该参数有以下取值：get：表示禁用 GET 请求方法。post：表示禁用 POST 请求方法。delete：表示禁用 DELETE 请求方法。put：表示禁用 PUT 请求方法。head：表示禁用 HEAD 请求方法。patch：表示 PATCH 请求方法。connect：表示 CONNECT 请求方法。options：表示 OPTIONS 请求方法。
+        """
+        return pulumi.get(self, "methods")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        配置开关 禁用方法，多个用逗号,分割，开启时必填. choices: [get, post, head, delete, put]
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainMultiRangeResult(dict):
+    def __init__(__self__, *,
+                 switch: builtins.bool):
+        """
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。该特性启用后，CDN 允许指定了多重范围的 Range 请求。false：表示不启用该特性。如果收到一个指定了多重范围的 Range 请求，CDN 会拒绝该请求并返回 416 响应状态码。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainNegativeCachResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainNegativeCachConditionResult',
+                 negative_cache_rule: 'outputs.GetDomainNegativeCachNegativeCacheRuleResult'):
+        """
+        :param 'GetDomainNegativeCachConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainNegativeCachNegativeCacheRuleArgs' negative_cache_rule: 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "negative_cache_rule", negative_cache_rule)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainNegativeCachConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="negativeCacheRule")
+    def negative_cache_rule(self) -> 'outputs.GetDomainNegativeCachNegativeCacheRuleResult':
+        """
+        表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        """
+        return pulumi.get(self, "negative_cache_rule")
+
+
+@pulumi.output_type
+class GetDomainNegativeCachConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainNegativeCachConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainNegativeCachConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainNegativeCachConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainNegativeCachConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainNegativeCachNegativeCacheRuleResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 ignore_case: builtins.bool,
+                 status_code: builtins.str,
+                 ttl: builtins.int):
+        """
+        :param builtins.str action: 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        :param builtins.bool ignore_case: 表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        :param builtins.str status_code: 指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+        :param builtins.int ttl: 表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "ignore_case", ignore_case)
+        pulumi.set(__self__, "status_code", status_code)
+        pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> builtins.bool:
+        """
+        表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+        """
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> builtins.int:
+        """
+        表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class GetDomainOfflineCacheResult(dict):
+    def __init__(__self__, *,
+                 object: builtins.str,
+                 status_code: builtins.str,
+                 switch: builtins.bool):
+        """
+        :param builtins.str object: 表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+        :param builtins.str status_code: 表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "status_code", status_code)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+        """
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainOriginResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainOriginConditionResult',
+                 origin_action: 'outputs.GetDomainOriginOriginActionResult'):
+        """
+        :param 'GetDomainOriginConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainOriginOriginActionArgs' origin_action: 表示源站配置。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "origin_action", origin_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainOriginConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="originAction")
+    def origin_action(self) -> 'outputs.GetDomainOriginOriginActionResult':
+        """
+        表示源站配置。
+        """
+        return pulumi.get(self, "origin_action")
+
+
+@pulumi.output_type
+class GetDomainOriginAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 allow_empty: builtins.bool,
+                 ignore_case: builtins.bool,
+                 origins: Sequence[builtins.str],
+                 rule_type: builtins.str,
+                 switch: builtins.bool):
+        """
+        :param builtins.bool allow_empty: 表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        :param builtins.bool ignore_case: 表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+        :param Sequence[builtins.str] origins: RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+        :param builtins.str rule_type: Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "allow_empty", allow_empty)
+        pulumi.set(__self__, "ignore_case", ignore_case)
+        pulumi.set(__self__, "origins", origins)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> builtins.bool:
+        """
+        表示用户请求头的 Origin 头部为空（""）时，请求是否允许被放行。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> builtins.bool:
+        """
+        表示 Origin 是否是大小写敏感的。该参数有以下取值：true: 表示 Origin 是大小写不敏感的。false: 表示 Origin 是大小写敏感的。该参数的默认值是 true。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter
+    def origins(self) -> Sequence[builtins.str]:
+        """
+        RuleType对应的地址列表。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入100个地址。输入域名时，无需包含http:// 或 https://。该参数值的长度不能超过 3000 个字符。
+        """
+        return pulumi.get(self, "origins")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> builtins.str:
+        """
+        Origin 名单配置类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainOriginArgResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainOriginArgConditionResult',
+                 origin_arg_action: 'outputs.GetDomainOriginArgOriginArgActionResult'):
+        """
+        :param 'GetDomainOriginArgConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainOriginArgOriginArgActionArgs' origin_arg_action: 表示在满足 Condition 条件时所执行的操作。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "origin_arg_action", origin_arg_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainOriginArgConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="originArgAction")
+    def origin_arg_action(self) -> 'outputs.GetDomainOriginArgOriginArgActionResult':
+        """
+        表示在满足 Condition 条件时所执行的操作。
+        """
+        return pulumi.get(self, "origin_arg_action")
+
+
+@pulumi.output_type
+class GetDomainOriginArgConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainOriginArgConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainOriginArgConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainOriginArgConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainOriginArgConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainOriginArgOriginArgActionResult(dict):
+    def __init__(__self__, *,
+                 origin_arg_components: Sequence['outputs.GetDomainOriginArgOriginArgActionOriginArgComponentResult']):
+        """
+        :param Sequence['GetDomainOriginArgOriginArgActionOriginArgComponentArgs'] origin_arg_components: 表示一个操作列表。这些操作定义了 CDN 如何设置回源请求中的查询参数。当前，列表中只能包含一个操作。
+        """
+        pulumi.set(__self__, "origin_arg_components", origin_arg_components)
+
+    @property
+    @pulumi.getter(name="originArgComponents")
+    def origin_arg_components(self) -> Sequence['outputs.GetDomainOriginArgOriginArgActionOriginArgComponentResult']:
+        """
+        表示一个操作列表。这些操作定义了 CDN 如何设置回源请求中的查询参数。当前，列表中只能包含一个操作。
+        """
+        return pulumi.get(self, "origin_arg_components")
+
+
+@pulumi.output_type
+class GetDomainOriginArgOriginArgActionOriginArgComponentResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 object: builtins.str,
+                 subobject: builtins.str):
+        """
+        :param builtins.str action: include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+        :param builtins.str object: 表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+        :param builtins.str subobject: 表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "subobject", subobject)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def subobject(self) -> builtins.str:
+        """
+        表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        """
+        return pulumi.get(self, "subobject")
+
+
+@pulumi.output_type
+class GetDomainOriginCertCheckResult(dict):
+    def __init__(__self__, *,
+                 switch: builtins.bool):
+        """
+        :param builtins.bool switch: Switch
+        """
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        Switch
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainOriginConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainOriginConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainOriginConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainOriginConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainOriginConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainOriginOriginActionResult(dict):
+    def __init__(__self__, *,
+                 origin_lines: Sequence['outputs.GetDomainOriginOriginActionOriginLineResult']):
+        """
+        :param Sequence['GetDomainOriginOriginActionOriginLineArgs'] origin_lines: 表示一个源站配置列表。每个配置可以包含一个或者多个源站。
+        """
+        pulumi.set(__self__, "origin_lines", origin_lines)
+
+    @property
+    @pulumi.getter(name="originLines")
+    def origin_lines(self) -> Sequence['outputs.GetDomainOriginOriginActionOriginLineResult']:
+        """
+        表示一个源站配置列表。每个配置可以包含一个或者多个源站。
+        """
+        return pulumi.get(self, "origin_lines")
+
+
+@pulumi.output_type
+class GetDomainOriginOriginActionOriginLineResult(dict):
+    def __init__(__self__, *,
+                 address: builtins.str,
+                 http_port: builtins.str,
+                 https_port: builtins.str,
+                 instance_type: builtins.str,
+                 origin_host: builtins.str,
+                 origin_type: builtins.str,
+                 private_bucket_access: builtins.bool,
+                 private_bucket_auth: 'outputs.GetDomainOriginOriginActionOriginLinePrivateBucketAuthResult',
+                 region: builtins.str,
+                 weight: builtins.str):
+        """
+        :param builtins.str address: 表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+        :param builtins.str http_port: 表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        :param builtins.str https_port: 表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        :param builtins.str instance_type: 表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+        :param builtins.str origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        :param builtins.str origin_type: 表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+        :param builtins.bool private_bucket_access: 表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+        :param 'GetDomainOriginOriginActionOriginLinePrivateBucketAuthArgs' private_bucket_auth: 表示第三方云厂商的对象存储桶的鉴权信息。
+        :param builtins.str region: 该参数暂不对外开放，请勿使用该参数。
+        :param builtins.str weight: 表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "http_port", http_port)
+        pulumi.set(__self__, "https_port", https_port)
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "origin_host", origin_host)
+        pulumi.set(__self__, "origin_type", origin_type)
+        pulumi.set(__self__, "private_bucket_access", private_bucket_access)
+        pulumi.set(__self__, "private_bucket_auth", private_bucket_auth)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "weight", weight)
+
+    @property
+    @pulumi.getter
+    def address(self) -> builtins.str:
+        """
+        表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+        """
+        return pulumi.get(self, "address")
+
+    @property
+    @pulumi.getter(name="httpPort")
+    def http_port(self) -> builtins.str:
+        """
+        表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        return pulumi.get(self, "http_port")
+
+    @property
+    @pulumi.getter(name="httpsPort")
+    def https_port(self) -> builtins.str:
+        """
+        表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        return pulumi.get(self, "https_port")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> builtins.str:
+        """
+        表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter(name="originHost")
+    def origin_host(self) -> builtins.str:
+        """
+        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        """
+        return pulumi.get(self, "origin_host")
+
+    @property
+    @pulumi.getter(name="originType")
+    def origin_type(self) -> builtins.str:
+        """
+        表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+        """
+        return pulumi.get(self, "origin_type")
+
+    @property
+    @pulumi.getter(name="privateBucketAccess")
+    def private_bucket_access(self) -> builtins.bool:
+        """
+        表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "private_bucket_access")
+
+    @property
+    @pulumi.getter(name="privateBucketAuth")
+    def private_bucket_auth(self) -> 'outputs.GetDomainOriginOriginActionOriginLinePrivateBucketAuthResult':
+        """
+        表示第三方云厂商的对象存储桶的鉴权信息。
+        """
+        return pulumi.get(self, "private_bucket_auth")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        该参数暂不对外开放，请勿使用该参数。
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def weight(self) -> builtins.str:
+        """
+        表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetDomainOriginOriginActionOriginLinePrivateBucketAuthResult(dict):
+    def __init__(__self__, *,
+                 auth_type: builtins.str,
+                 switch: builtins.bool,
+                 tos_auth_information: 'outputs.GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationResult'):
+        """
+        :param builtins.str auth_type: 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+        :param builtins.bool switch: 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+        :param 'GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs' tos_auth_information: 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        """
+        pulumi.set(__self__, "auth_type", auth_type)
+        pulumi.set(__self__, "switch", switch)
+        pulumi.set(__self__, "tos_auth_information", tos_auth_information)
+
+    @property
+    @pulumi.getter(name="authType")
+    def auth_type(self) -> builtins.str:
+        """
+        表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+        """
+        return pulumi.get(self, "auth_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="tosAuthInformation")
+    def tos_auth_information(self) -> 'outputs.GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationResult':
+        """
+        表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        """
+        return pulumi.get(self, "tos_auth_information")
+
+
+@pulumi.output_type
+class GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationResult(dict):
+    def __init__(__self__, *,
+                 access_key_id: builtins.str,
+                 access_key_secret: builtins.str):
+        """
+        :param builtins.str access_key_id: 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+        :param builtins.str access_key_secret: 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        """
+        pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "access_key_secret", access_key_secret)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> builtins.str:
+        """
+        表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter(name="accessKeySecret")
+    def access_key_secret(self) -> builtins.str:
+        """
+        表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+        """
+        return pulumi.get(self, "access_key_secret")
+
+
+@pulumi.output_type
+class GetDomainOriginRetryResult(dict):
+    def __init__(__self__, *,
+                 status_code: builtins.str,
+                 switch: builtins.bool):
+        """
+        :param builtins.str status_code: 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "status_code", status_code)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+        """
+        return pulumi.get(self, "status_code")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainOriginRewriteResult(dict):
+    def __init__(__self__, *,
+                 origin_rewrite_rules: Sequence['outputs.GetDomainOriginRewriteOriginRewriteRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainOriginRewriteOriginRewriteRuleArgs'] origin_rewrite_rules: 表示一个规则列表。当 Switch 是 true 时，该参数为必填。列表中最多可以包含 50 条规则。列表中规则的顺序定义了规则的优先级。列表中第一条规则的优先级最高。规则中的 SourcePath 定义了规则的作用范围。如果您创建了多条规则，作用范围较大的规则应出现在作用范围较小的规则后面。当收到一个用户请求时，CDN 按规则的优先级，从高到低尝试将请求与规则匹配。如果请求匹配了一条规则，CDN 就停止处理其余规则。
+        :param builtins.bool switch: 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "origin_rewrite_rules", origin_rewrite_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="originRewriteRules")
+    def origin_rewrite_rules(self) -> Sequence['outputs.GetDomainOriginRewriteOriginRewriteRuleResult']:
+        """
+        表示一个规则列表。当 Switch 是 true 时，该参数为必填。列表中最多可以包含 50 条规则。列表中规则的顺序定义了规则的优先级。列表中第一条规则的优先级最高。规则中的 SourcePath 定义了规则的作用范围。如果您创建了多条规则，作用范围较大的规则应出现在作用范围较小的规则后面。当收到一个用户请求时，CDN 按规则的优先级，从高到低尝试将请求与规则匹配。如果请求匹配了一条规则，CDN 就停止处理其余规则。
+        """
+        return pulumi.get(self, "origin_rewrite_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainOriginRewriteOriginRewriteRuleResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainOriginRewriteOriginRewriteRuleConditionResult',
+                 origin_rewrite_action: 'outputs.GetDomainOriginRewriteOriginRewriteRuleOriginRewriteActionResult'):
+        """
+        :param 'GetDomainOriginRewriteOriginRewriteRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs' origin_rewrite_action: 表示一个回源路径改写的规则配置。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "origin_rewrite_action", origin_rewrite_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainOriginRewriteOriginRewriteRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="originRewriteAction")
+    def origin_rewrite_action(self) -> 'outputs.GetDomainOriginRewriteOriginRewriteRuleOriginRewriteActionResult':
+        """
+        表示一个回源路径改写的规则配置。
+        """
+        return pulumi.get(self, "origin_rewrite_action")
+
+
+@pulumi.output_type
+class GetDomainOriginRewriteOriginRewriteRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainOriginRewriteOriginRewriteRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainOriginRewriteOriginRewriteRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainOriginRewriteOriginRewriteRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainOriginRewriteOriginRewriteRuleOriginRewriteActionResult(dict):
+    def __init__(__self__, *,
+                 rewrite_type: builtins.str,
+                 source_path: builtins.str,
+                 target_path: builtins.str):
+        """
+        :param builtins.str rewrite_type: 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+        :param builtins.str source_path: 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+        :param builtins.str target_path: 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+        """
+        pulumi.set(__self__, "rewrite_type", rewrite_type)
+        pulumi.set(__self__, "source_path", source_path)
+        pulumi.set(__self__, "target_path", target_path)
+
+    @property
+    @pulumi.getter(name="rewriteType")
+    def rewrite_type(self) -> builtins.str:
+        """
+        表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+        """
+        return pulumi.get(self, "rewrite_type")
+
+    @property
+    @pulumi.getter(name="sourcePath")
+    def source_path(self) -> builtins.str:
+        """
+        表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+        """
+        return pulumi.get(self, "source_path")
+
+    @property
+    @pulumi.getter(name="targetPath")
+    def target_path(self) -> builtins.str:
+        """
+        表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+        """
+        return pulumi.get(self, "target_path")
+
+
+@pulumi.output_type
+class GetDomainOriginSniResult(dict):
+    def __init__(__self__, *,
+                 sni_domain: builtins.str,
+                 switch: builtins.bool):
+        """
+        :param builtins.str sni_domain: 指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "sni_domain", sni_domain)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="sniDomain")
+    def sni_domain(self) -> builtins.str:
+        """
+        指定回源 SNI 的域名。当 Switch 是 true 时，该参数为必填。该参数值的长度不能超过 1,024 个字符。
+        """
+        return pulumi.get(self, "sni_domain")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainPageOptimizationResult(dict):
+    def __init__(__self__, *,
+                 optimization_types: Sequence[builtins.str],
+                 switch: builtins.bool):
+        """
+        :param Sequence[builtins.str] optimization_types: 表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "optimization_types", optimization_types)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="optimizationTypes")
+    def optimization_types(self) -> Sequence[builtins.str]:
+        """
+        表示优化的对象。该参数有以下取值：html: 表示 HTML 页面。js: 表示 Javascript 代码。css: 表示 CSS 代码。该参数的默认值是 html。如果您指定了 js 或者 js，html 也必须指定。
+        """
+        return pulumi.get(self, "optimization_types")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainQuicResult(dict):
+    def __init__(__self__, *,
+                 switch: builtins.bool):
+        """
+        :param builtins.bool switch: QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        """
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainRedirectionRewriteResult(dict):
+    def __init__(__self__, *,
+                 redirection_rules: Sequence['outputs.GetDomainRedirectionRewriteRedirectionRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainRedirectionRewriteRedirectionRuleArgs'] redirection_rules: 表示一个 URL 重定向改写的规则的列表。当 Switch 是 true 时，该参数为必填。该列表最多可以包含 50 条规则。
+        :param builtins.bool switch: 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        """
+        pulumi.set(__self__, "redirection_rules", redirection_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="redirectionRules")
+    def redirection_rules(self) -> Sequence['outputs.GetDomainRedirectionRewriteRedirectionRuleResult']:
+        """
+        表示一个 URL 重定向改写的规则的列表。当 Switch 是 true 时，该参数为必填。该列表最多可以包含 50 条规则。
+        """
+        return pulumi.get(self, "redirection_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainRedirectionRewriteRedirectionRuleResult(dict):
+    def __init__(__self__, *,
+                 redirection_action: 'outputs.GetDomainRedirectionRewriteRedirectionRuleRedirectionActionResult'):
+        """
+        :param 'GetDomainRedirectionRewriteRedirectionRuleRedirectionActionArgs' redirection_action: 表示一个 URL 重定向改写的规则。
+        """
+        pulumi.set(__self__, "redirection_action", redirection_action)
+
+    @property
+    @pulumi.getter(name="redirectionAction")
+    def redirection_action(self) -> 'outputs.GetDomainRedirectionRewriteRedirectionRuleRedirectionActionResult':
+        """
+        表示一个 URL 重定向改写的规则。
+        """
+        return pulumi.get(self, "redirection_action")
+
+
+@pulumi.output_type
+class GetDomainRedirectionRewriteRedirectionRuleRedirectionActionResult(dict):
+    def __init__(__self__, *,
+                 redirect_code: builtins.str,
+                 source_path: builtins.str,
+                 target_host: builtins.str,
+                 target_path: builtins.str,
+                 target_protocol: builtins.str,
+                 target_query_components: 'outputs.GetDomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsResult'):
+        """
+        :param builtins.str redirect_code: 表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        :param builtins.str source_path: 表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        :param builtins.str target_host: 表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+        :param builtins.str target_path: 表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        :param builtins.str target_protocol: 表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+        :param 'GetDomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsArgs' target_query_components: 表示原请求 URL 中的查询参数的处理方式。
+        """
+        pulumi.set(__self__, "redirect_code", redirect_code)
+        pulumi.set(__self__, "source_path", source_path)
+        pulumi.set(__self__, "target_host", target_host)
+        pulumi.set(__self__, "target_path", target_path)
+        pulumi.set(__self__, "target_protocol", target_protocol)
+        pulumi.set(__self__, "target_query_components", target_query_components)
+
+    @property
+    @pulumi.getter(name="redirectCode")
+    def redirect_code(self) -> builtins.str:
+        """
+        表示 URL 重定向的响应状态码。该参数的取值有 301、302、303、307、308。需要留意的是：对于 301 和 302，如果原请求使用的方法不是 GET，那么客户端向新的URL发送请求时，新请求使用的方法可能变成 GET。对于 303，新请求使用的方法是 GET。对于 307 和 308，新请求使用的方法与原请求相同，不会被改变。
+        """
+        return pulumi.get(self, "redirect_code")
+
+    @property
+    @pulumi.getter(name="sourcePath")
+    def source_path(self) -> builtins.str:
+        """
+        表示文件的原路径。也就是请求中包含的路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        """
+        return pulumi.get(self, "source_path")
+
+    @property
+    @pulumi.getter(name="targetHost")
+    def target_host(self) -> builtins.str:
+        """
+        表示目标路径所归属站点的域名或者 IP 地址。IP 地址必须是 IPv4 类型的地址。该参数值的长度不能超过 1,024 个字符。该参数的默认值就是您的加速域名。
+        """
+        return pulumi.get(self, "target_host")
+
+    @property
+    @pulumi.getter(name="targetPath")
+    def target_path(self) -> builtins.str:
+        """
+        表示跳转后的目标路径。路径必须以斜杠（/）开头并且不能包含连续斜杠（//）、百分号（%）、空格。该参数值的长度不能超过 1,024 个字符。
+        """
+        return pulumi.get(self, "target_path")
+
+    @property
+    @pulumi.getter(name="targetProtocol")
+    def target_protocol(self) -> builtins.str:
+        """
+        表示 URL重定向后的新请求所使用的协议。该参数有以下取值：followclient：表示使用原请求的协议。http：表示新请求强制使用 HTTP 协议。https：表示新请求强制使用 HTTPS 协议。
+        """
+        return pulumi.get(self, "target_protocol")
+
+    @property
+    @pulumi.getter(name="targetQueryComponents")
+    def target_query_components(self) -> 'outputs.GetDomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsResult':
+        """
+        表示原请求 URL 中的查询参数的处理方式。
+        """
+        return pulumi.get(self, "target_query_components")
+
+
+@pulumi.output_type
+class GetDomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str action: 表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+        :param builtins.str value: 表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainRefererAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 allow_empty: builtins.bool,
+                 referers: Sequence[builtins.str],
+                 referers_type: 'outputs.GetDomainRefererAccessRuleReferersTypeResult',
+                 rule_type: builtins.str,
+                 shared_config: 'outputs.GetDomainRefererAccessRuleSharedConfigResult',
+                 switch: builtins.bool):
+        """
+        :param builtins.bool allow_empty: 表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+        :param Sequence[builtins.str] referers: 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+        :param 'GetDomainRefererAccessRuleReferersTypeArgs' referers_type: 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+        :param builtins.str rule_type: 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        :param 'GetDomainRefererAccessRuleSharedConfigArgs' shared_config: 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "allow_empty", allow_empty)
+        pulumi.set(__self__, "referers", referers)
+        pulumi.set(__self__, "referers_type", referers_type)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "shared_config", shared_config)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> builtins.bool:
+        """
+        表示用户请求头的 Referer 头部为空（""）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter
+    def referers(self) -> Sequence[builtins.str]:
+        """
+        表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "referers")
+
+    @property
+    @pulumi.getter(name="referersType")
+    def referers_type(self) -> 'outputs.GetDomainRefererAccessRuleReferersTypeResult':
+        """
+        表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+        """
+        return pulumi.get(self, "referers_type")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> builtins.str:
+        """
+        表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter(name="sharedConfig")
+    def shared_config(self) -> 'outputs.GetDomainRefererAccessRuleSharedConfigResult':
+        """
+        表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+        """
+        return pulumi.get(self, "shared_config")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainRefererAccessRuleReferersTypeResult(dict):
+    def __init__(__self__, *,
+                 common_type: 'outputs.GetDomainRefererAccessRuleReferersTypeCommonTypeResult',
+                 regular_type: 'outputs.GetDomainRefererAccessRuleReferersTypeRegularTypeResult'):
+        """
+        :param 'GetDomainRefererAccessRuleReferersTypeCommonTypeArgs' common_type: 表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+        :param 'GetDomainRefererAccessRuleReferersTypeRegularTypeArgs' regular_type: 表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+        """
+        pulumi.set(__self__, "common_type", common_type)
+        pulumi.set(__self__, "regular_type", regular_type)
+
+    @property
+    @pulumi.getter(name="commonType")
+    def common_type(self) -> 'outputs.GetDomainRefererAccessRuleReferersTypeCommonTypeResult':
+        """
+        表示一个 CommonType 对象，其包含一个常规 Referer 的列表。
+        """
+        return pulumi.get(self, "common_type")
+
+    @property
+    @pulumi.getter(name="regularType")
+    def regular_type(self) -> 'outputs.GetDomainRefererAccessRuleReferersTypeRegularTypeResult':
+        """
+        表示一个 RegularType 对象，其包含一个正则表达式列表用来匹配请求的 Referer 头部值。该参数为白名单功能。要使用该参数，请提交工单。需要注意的是，如果请求的 Referer 头部值匹配 CommonType 下的 Referers 名单或者 RegularType 下的 Referers 名单，内容分发网络就认为是匹配。
+        """
+        return pulumi.get(self, "regular_type")
+
+
+@pulumi.output_type
+class GetDomainRefererAccessRuleReferersTypeCommonTypeResult(dict):
+    def __init__(__self__, *,
+                 ignore_case: builtins.bool,
+                 ignore_scheme: builtins.bool,
+                 referers: Sequence[builtins.str]):
+        """
+        :param builtins.bool ignore_case: 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+        :param builtins.bool ignore_scheme: 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+        :param Sequence[builtins.str] referers: 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+        """
+        pulumi.set(__self__, "ignore_case", ignore_case)
+        pulumi.set(__self__, "ignore_scheme", ignore_scheme)
+        pulumi.set(__self__, "referers", referers)
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> builtins.bool:
+        """
+        表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="ignoreScheme")
+    def ignore_scheme(self) -> builtins.bool:
+        """
+        表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_scheme")
+
+    @property
+    @pulumi.getter
+    def referers(self) -> Sequence[builtins.str]:
+        """
+        表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+        """
+        return pulumi.get(self, "referers")
+
+
+@pulumi.output_type
+class GetDomainRefererAccessRuleReferersTypeRegularTypeResult(dict):
+    def __init__(__self__, *,
+                 referers: Sequence[builtins.str]):
+        """
+        :param Sequence[builtins.str] referers: 表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        """
+        pulumi.set(__self__, "referers", referers)
+
+    @property
+    @pulumi.getter
+    def referers(self) -> Sequence[builtins.str]:
+        """
+        表示一个 Referer 正则表达式的列表。该参数值的长度不能超过 30,000 个字符。
+        """
+        return pulumi.get(self, "referers")
+
+
+@pulumi.output_type
+class GetDomainRefererAccessRuleSharedConfigResult(dict):
+    def __init__(__self__, *,
+                 config_name: builtins.str):
+        """
+        :param builtins.str config_name: 表示一个全局配置的名称。
+        """
+        pulumi.set(__self__, "config_name", config_name)
+
+    @property
+    @pulumi.getter(name="configName")
+    def config_name(self) -> builtins.str:
+        """
+        表示一个全局配置的名称。
+        """
+        return pulumi.get(self, "config_name")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthResult(dict):
+    def __init__(__self__, *,
+                 remote_auth_rules: Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainRemoteAuthRemoteAuthRuleArgs'] remote_auth_rules: 表示远程鉴权的配置规则列表。当 Switch 是 true 时，该参数为必填。您只能添加一个配置规则。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "remote_auth_rules", remote_auth_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="remoteAuthRules")
+    def remote_auth_rules(self) -> Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleResult']:
+        """
+        表示远程鉴权的配置规则列表。当 Switch 是 true 时，该参数为必填。您只能添加一个配置规则。
+        """
+        return pulumi.get(self, "remote_auth_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainRemoteAuthRemoteAuthRuleConditionResult',
+                 remote_auth_rule_action: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionResult'):
+        """
+        :param 'GetDomainRemoteAuthRemoteAuthRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs' remote_auth_rule_action: 表示具体的鉴权配置。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "remote_auth_rule_action", remote_auth_rule_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="remoteAuthRuleAction")
+    def remote_auth_rule_action(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionResult':
+        """
+        表示具体的鉴权配置。
+        """
+        return pulumi.get(self, "remote_auth_rule_action")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainRemoteAuthRemoteAuthRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionResult(dict):
+    def __init__(__self__, *,
+                 auth_mode_config: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigResult',
+                 auth_response_config: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResult',
+                 query_string_rules: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesResult',
+                 request_body_rules: builtins.str,
+                 request_header_rules: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesResult'):
+        """
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigArgs' auth_mode_config: 表示鉴权服务器的配置。
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigArgs' auth_response_config: 内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs' query_string_rules: 表示鉴权请求的参数设置。
+        :param builtins.str request_body_rules: 表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs' request_header_rules: 表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        """
+        pulumi.set(__self__, "auth_mode_config", auth_mode_config)
+        pulumi.set(__self__, "auth_response_config", auth_response_config)
+        pulumi.set(__self__, "query_string_rules", query_string_rules)
+        pulumi.set(__self__, "request_body_rules", request_body_rules)
+        pulumi.set(__self__, "request_header_rules", request_header_rules)
+
+    @property
+    @pulumi.getter(name="authModeConfig")
+    def auth_mode_config(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigResult':
+        """
+        表示鉴权服务器的配置。
+        """
+        return pulumi.get(self, "auth_mode_config")
+
+    @property
+    @pulumi.getter(name="authResponseConfig")
+    def auth_response_config(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResult':
+        """
+        内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+        """
+        return pulumi.get(self, "auth_response_config")
+
+    @property
+    @pulumi.getter(name="queryStringRules")
+    def query_string_rules(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesResult':
+        """
+        表示鉴权请求的参数设置。
+        """
+        return pulumi.get(self, "query_string_rules")
+
+    @property
+    @pulumi.getter(name="requestBodyRules")
+    def request_body_rules(self) -> builtins.str:
+        """
+        表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+        """
+        return pulumi.get(self, "request_body_rules")
+
+    @property
+    @pulumi.getter(name="requestHeaderRules")
+    def request_header_rules(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesResult':
+        """
+        表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        """
+        return pulumi.get(self, "request_header_rules")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigResult(dict):
+    def __init__(__self__, *,
+                 backup_remote_addr: builtins.str,
+                 master_remote_addr: builtins.str,
+                 path_type: builtins.str,
+                 path_value: builtins.str,
+                 request_method: builtins.str):
+        """
+        :param builtins.str backup_remote_addr: 表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+        :param builtins.str master_remote_addr: 表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \\n\\n://\\n\\n:\\n\\n 或 \\n\\n://\\n\\n:\\n\\n，其中：\\n\\n 是 http 或者 https。\\n\\n 不能是 localhost。\\n\\n 不能是 127.0.0.1。\\n\\n 是可选的。
+        :param builtins.str path_type: 表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+        :param builtins.str path_value: 表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+        :param builtins.str request_method: 表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+        """
+        pulumi.set(__self__, "backup_remote_addr", backup_remote_addr)
+        pulumi.set(__self__, "master_remote_addr", master_remote_addr)
+        pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "path_value", path_value)
+        pulumi.set(__self__, "request_method", request_method)
+
+    @property
+    @pulumi.getter(name="backupRemoteAddr")
+    def backup_remote_addr(self) -> builtins.str:
+        """
+        表示鉴权服务器的备地址。地址格式和要求与主地址相同。
+        """
+        return pulumi.get(self, "backup_remote_addr")
+
+    @property
+    @pulumi.getter(name="masterRemoteAddr")
+    def master_remote_addr(self) -> builtins.str:
+        """
+        表示鉴权服务器的主地址，长度不能超过 100 个字符。主地址的格式是 \\n\\n://\\n\\n:\\n\\n 或 \\n\\n://\\n\\n:\\n\\n，其中：\\n\\n 是 http 或者 https。\\n\\n 不能是 localhost。\\n\\n 不能是 127.0.0.1。\\n\\n 是可选的。
+        """
+        return pulumi.get(self, "master_remote_addr")
+
+    @property
+    @pulumi.getter(name="pathType")
+    def path_type(self) -> builtins.str:
+        """
+        表示鉴权请求的路径。鉴权地址和请求路径组成了完整的鉴权 URL。内容分发网络会把用户的请求转发到该鉴权 URL。该参数有以下取值：constant：表示鉴权请求中的路径与用户请求中的路径相同。variable：表示您需要在 pathValue 参数中指定一个鉴权请求中的路径。
+        """
+        return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="pathValue")
+    def path_value(self) -> builtins.str:
+        """
+        表示一个鉴权请求的路径，长度不能超过 100 个字符。路径必须以斜杠（/）开头，可以包含除了以下字符的可打印 ASCII 字符：连续斜杠（//）、百分号（%）、美元符号（$）、空格、问号（?）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "path_value")
+
+    @property
+    @pulumi.getter(name="requestMethod")
+    def request_method(self) -> builtins.str:
+        """
+        表示在发送鉴权请求时，内容分发网络所使用的请求方法。该参数有以下取值：default：表示鉴权请求所使用的方法与用户的请求相同。get：表示鉴权请求使用 GET 方法。post：表示鉴权请求使用 POST方法。head：表示鉴权请求使用 HEAD 方法。
+        """
+        return pulumi.get(self, "request_method")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResult(dict):
+    def __init__(__self__, *,
+                 cache_action: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionResult',
+                 response_action: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionResult',
+                 status_code_action: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionResult',
+                 time_out_action: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionResult'):
+        """
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs' cache_action: 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs' response_action: 表示鉴权失败时，内容分发网络如何响应用户。
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionArgs' status_code_action: 表示内容分发网络对鉴权状态码的处理方式。
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionArgs' time_out_action: 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        """
+        pulumi.set(__self__, "cache_action", cache_action)
+        pulumi.set(__self__, "response_action", response_action)
+        pulumi.set(__self__, "status_code_action", status_code_action)
+        pulumi.set(__self__, "time_out_action", time_out_action)
+
+    @property
+    @pulumi.getter(name="cacheAction")
+    def cache_action(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionResult':
+        """
+        内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+        """
+        return pulumi.get(self, "cache_action")
+
+    @property
+    @pulumi.getter(name="responseAction")
+    def response_action(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionResult':
+        """
+        表示鉴权失败时，内容分发网络如何响应用户。
+        """
+        return pulumi.get(self, "response_action")
+
+    @property
+    @pulumi.getter(name="statusCodeAction")
+    def status_code_action(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionResult':
+        """
+        表示内容分发网络对鉴权状态码的处理方式。
+        """
+        return pulumi.get(self, "status_code_action")
+
+    @property
+    @pulumi.getter(name="timeOutAction")
+    def time_out_action(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionResult':
+        """
+        表示鉴权超时后，内容分发网络如何处理鉴权请求。
+        """
+        return pulumi.get(self, "time_out_action")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 cache_keys: Sequence[builtins.str],
+                 ttl: builtins.int):
+        """
+        :param builtins.str action: 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+        :param Sequence[builtins.str] cache_keys: 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+        :param builtins.int ttl: 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "cache_keys", cache_keys)
+        pulumi.set(__self__, "ttl", ttl)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="cacheKeys")
+    def cache_keys(self) -> Sequence[builtins.str]:
+        """
+        缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+        """
+        return pulumi.get(self, "cache_keys")
+
+    @property
+    @pulumi.getter
+    def ttl(self) -> builtins.int:
+        """
+        表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+        """
+        return pulumi.get(self, "ttl")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionResult(dict):
+    def __init__(__self__, *,
+                 status_code: builtins.str):
+        """
+        :param builtins.str status_code: 表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        """
+        pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeActionResult(dict):
+    def __init__(__self__, *,
+                 default_action: builtins.str,
+                 fail_code: builtins.str,
+                 success_code: builtins.str):
+        """
+        :param builtins.str default_action: 表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        :param builtins.str fail_code: 表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+        :param builtins.str success_code: 表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+        """
+        pulumi.set(__self__, "default_action", default_action)
+        pulumi.set(__self__, "fail_code", fail_code)
+        pulumi.set(__self__, "success_code", success_code)
+
+    @property
+    @pulumi.getter(name="defaultAction")
+    def default_action(self) -> builtins.str:
+        """
+        表示如果鉴权状态码既不是 FailCode，又不是 SuccessCode 时，内容分发网络处理鉴权请求的方式。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        """
+        return pulumi.get(self, "default_action")
+
+    @property
+    @pulumi.getter(name="failCode")
+    def fail_code(self) -> builtins.str:
+        """
+        表示鉴权失败时的鉴权状态码。您可以指定范围在 400-499 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 4xx 表示 400-499 中的任意一个状态码。该参数的默认值是 401。
+        """
+        return pulumi.get(self, "fail_code")
+
+    @property
+    @pulumi.getter(name="successCode")
+    def success_code(self) -> builtins.str:
+        """
+        表示鉴权成功时的鉴权状态码。您可以指定范围在 200-299 中的一个或者多个状态码。多个状态码使用英文分号（;）分隔。您也可以指定 2xx 表示 200-299 中的任意一个状态码。该参数的默认值是 200。
+        """
+        return pulumi.get(self, "success_code")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 time: builtins.int):
+        """
+        :param builtins.str action: 表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        :param builtins.int time: 表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "time", time)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def time(self) -> builtins.int:
+        """
+        表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        """
+        return pulumi.get(self, "time")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesResult(dict):
+    def __init__(__self__, *,
+                 query_string_components: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsResult',
+                 query_string_instances: Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceResult']):
+        """
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs' query_string_components: 表示鉴权请求参数的设置策略。
+        :param Sequence['GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs'] query_string_instances: 表示鉴权请求中额外的参数设置。您最多可以设置 50 个参数。
+        """
+        pulumi.set(__self__, "query_string_components", query_string_components)
+        pulumi.set(__self__, "query_string_instances", query_string_instances)
+
+    @property
+    @pulumi.getter(name="queryStringComponents")
+    def query_string_components(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsResult':
+        """
+        表示鉴权请求参数的设置策略。
+        """
+        return pulumi.get(self, "query_string_components")
+
+    @property
+    @pulumi.getter(name="queryStringInstances")
+    def query_string_instances(self) -> Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceResult']:
+        """
+        表示鉴权请求中额外的参数设置。您最多可以设置 50 个参数。
+        """
+        return pulumi.get(self, "query_string_instances")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str action: 表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+        :param builtins.str value: 表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 key: builtins.str,
+                 value: builtins.str,
+                 value_type: builtins.str):
+        """
+        :param builtins.str action: 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+        :param builtins.str key: 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
+        :param builtins.str value: 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+        :param builtins.str value_type: 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> builtins.str:
+        """
+        表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesResult(dict):
+    def __init__(__self__, *,
+                 request_header_components: 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsResult',
+                 request_header_instances: Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceResult'],
+                 request_host: builtins.str):
+        """
+        :param 'GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs' request_header_components: 表示鉴权请求头的设置策略。
+        :param Sequence['GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgs'] request_header_instances: 表示一组鉴权请求头的设置。需要留意的是，在内容分发网络发起鉴权请求时，请求中可能已经包含了以下头部：X-Forwarded-Protocol，X-Forwarded-Proto，X-Client-Scheme：这三个头部都表示用户请求所使用协议，没有区别。X-Real-IP：表示用户真实的 IP 地址。该头部的值不会受代理服务器的影响。X-Forwarded-For：表示用户的 IP 地址。如果用户的请求经过了代理服务器，该头部的值会变成代理服务器的 IP 地址。不建议您在该参数中对这些头部进行设置。如果您设置了这些头部，这些头部的原始值会被覆盖。
+        :param builtins.str request_host: 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        """
+        pulumi.set(__self__, "request_header_components", request_header_components)
+        pulumi.set(__self__, "request_header_instances", request_header_instances)
+        pulumi.set(__self__, "request_host", request_host)
+
+    @property
+    @pulumi.getter(name="requestHeaderComponents")
+    def request_header_components(self) -> 'outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsResult':
+        """
+        表示鉴权请求头的设置策略。
+        """
+        return pulumi.get(self, "request_header_components")
+
+    @property
+    @pulumi.getter(name="requestHeaderInstances")
+    def request_header_instances(self) -> Sequence['outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceResult']:
+        """
+        表示一组鉴权请求头的设置。需要留意的是，在内容分发网络发起鉴权请求时，请求中可能已经包含了以下头部：X-Forwarded-Protocol，X-Forwarded-Proto，X-Client-Scheme：这三个头部都表示用户请求所使用协议，没有区别。X-Real-IP：表示用户真实的 IP 地址。该头部的值不会受代理服务器的影响。X-Forwarded-For：表示用户的 IP 地址。如果用户的请求经过了代理服务器，该头部的值会变成代理服务器的 IP 地址。不建议您在该参数中对这些头部进行设置。如果您设置了这些头部，这些头部的原始值会被覆盖。
+        """
+        return pulumi.get(self, "request_header_instances")
+
+    @property
+    @pulumi.getter(name="requestHost")
+    def request_host(self) -> builtins.str:
+        """
+        表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        """
+        return pulumi.get(self, "request_host")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str action: 表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+        :param builtins.str value: 表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示鉴权请求头是否包含用户请求头。该参数有以下取值：exclude：表示鉴权请求头中不包含任何用户请求头。include：表示鉴权请求头中包含所有用户请求头。includePart：表示鉴权请求头包含指定的用户请求头。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示 Action 参数所对应的参数值，长度不能超过 1,024 个字符。该参数有以下说明：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，Value 参数的取值是用户请求中的一个或者多个头部。多个头部使用英文分号（;）分隔。其取值不能只是 *，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）该参数的默认值是 *。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 key: builtins.str,
+                 value: builtins.str,
+                 value_type: builtins.str):
+        """
+        :param builtins.str action: 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        :param builtins.str key: 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        :param builtins.str value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        :param builtins.str value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> builtins.str:
+        """
+        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetDomainRequestBlockRuleResult(dict):
+    def __init__(__self__, *,
+                 block_rules: Sequence['outputs.GetDomainRequestBlockRuleBlockRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainRequestBlockRuleBlockRuleArgs'] block_rules: 表示一个拦截规则列表。列表中最多可以包含 10 条规则。当 Switch 是 true 时，该参数为必填。
+        :param builtins.bool switch: 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "block_rules", block_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="blockRules")
+    def block_rules(self) -> Sequence['outputs.GetDomainRequestBlockRuleBlockRuleResult']:
+        """
+        表示一个拦截规则列表。列表中最多可以包含 10 条规则。当 Switch 是 true 时，该参数为必填。
+        """
+        return pulumi.get(self, "block_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainRequestBlockRuleBlockRuleResult(dict):
+    def __init__(__self__, *,
+                 block_action: 'outputs.GetDomainRequestBlockRuleBlockRuleBlockActionResult',
+                 condition: 'outputs.GetDomainRequestBlockRuleBlockRuleConditionResult',
+                 rule_name: builtins.str):
+        """
+        :param 'GetDomainRequestBlockRuleBlockRuleBlockActionArgs' block_action: 表示列表中一条规则的拦截配置。
+        :param 'GetDomainRequestBlockRuleBlockRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param builtins.str rule_name: 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        """
+        pulumi.set(__self__, "block_action", block_action)
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "rule_name", rule_name)
+
+    @property
+    @pulumi.getter(name="blockAction")
+    def block_action(self) -> 'outputs.GetDomainRequestBlockRuleBlockRuleBlockActionResult':
+        """
+        表示列表中一条规则的拦截配置。
+        """
+        return pulumi.get(self, "block_action")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainRequestBlockRuleBlockRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> builtins.str:
+        """
+        表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        """
+        return pulumi.get(self, "rule_name")
+
+
+@pulumi.output_type
+class GetDomainRequestBlockRuleBlockRuleBlockActionResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 error_page: builtins.str,
+                 redirect_url: builtins.str,
+                 status_code: builtins.str):
+        """
+        :param builtins.str action: 表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+        :param builtins.str error_page: 当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+        :param builtins.str redirect_url: 当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+        :param builtins.str status_code: 表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "error_page", error_page)
+        pulumi.set(__self__, "redirect_url", redirect_url)
+        pulumi.set(__self__, "status_code", status_code)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示内容分发网络如何拦截匹配的请求。该参数有以下取值：refuse：表示内容分发网络拒绝请求并响应一个 4xx 的错误码。错误码在 StatusCode 中指定。redirect：表示内容分发网络将请求重定向到 RedirectUrl 中指定的 URL。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="errorPage")
+    def error_page(self) -> builtins.str:
+        """
+        当 Action 是 refuse 时，该参数是可选的，说明如下：如果指定该参数，该参数表示全局配置下的一个自定义响应页面的名称。也就是说，当内容分发网络拒绝请求时，返回该自定义页面。需要留意的是，"全局配置" 是一个白名单功能。要使用该功能，请 提交工单。如果不指定该参数，表示内容分发网络使用 StatusCode 中指定错误码的标准响应正文。当 Action 是 redirect 时，该参数无效，可以不指定。
+        """
+        return pulumi.get(self, "error_page")
+
+    @property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> builtins.str:
+        """
+        当 Action 是 redirect 时，该参数必填，表示重定向 URL。URL 必须以 http:// 或 https:// 开头，长度不能超过 1,024 个字符。当 Action 是 refuse 时，该参数无效，可以不指定。
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @property
+    @pulumi.getter(name="statusCode")
+    def status_code(self) -> builtins.str:
+        """
+        表示对于拦截的请求，内容分发网络的响应状态码。当 Action 是 refuse 时，该参数表示一个 400-499 范围内的错误码。当 Action 是 redirect 时，该参数有以下取值：301：表示响应状态码是 301。302：表示响应状态码是 302。
+        """
+        return pulumi.get(self, "status_code")
+
+
+@pulumi.output_type
+class GetDomainRequestBlockRuleBlockRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainRequestBlockRuleBlockRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainRequestBlockRuleBlockRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainRequestBlockRuleBlockRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainRequestBlockRuleBlockRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainRequestHeaderResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainRequestHeaderConditionResult',
+                 request_header_action: 'outputs.GetDomainRequestHeaderRequestHeaderActionResult'):
+        """
+        :param 'GetDomainRequestHeaderConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainRequestHeaderRequestHeaderActionArgs' request_header_action: 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "request_header_action", request_header_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainRequestHeaderConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="requestHeaderAction")
+    def request_header_action(self) -> 'outputs.GetDomainRequestHeaderRequestHeaderActionResult':
+        """
+        表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        return pulumi.get(self, "request_header_action")
+
+
+@pulumi.output_type
+class GetDomainRequestHeaderConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainRequestHeaderConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainRequestHeaderConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainRequestHeaderConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainRequestHeaderConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainRequestHeaderRequestHeaderActionResult(dict):
+    def __init__(__self__, *,
+                 request_header_instances: Sequence['outputs.GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstanceResult']):
+        """
+        :param Sequence['GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs'] request_header_instances: 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        pulumi.set(__self__, "request_header_instances", request_header_instances)
+
+    @property
+    @pulumi.getter(name="requestHeaderInstances")
+    def request_header_instances(self) -> Sequence['outputs.GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstanceResult']:
+        """
+        表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        return pulumi.get(self, "request_header_instances")
+
+
+@pulumi.output_type
+class GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstanceResult(dict):
+    def __init__(__self__, *,
+                 action: builtins.str,
+                 key: builtins.str,
+                 value: builtins.str,
+                 value_type: builtins.str):
+        """
+        :param builtins.str action: 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        :param builtins.str key: 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        :param builtins.str value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        :param builtins.str value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> builtins.str:
+        """
+        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetDomainResponseHeaderResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainResponseHeaderConditionResult',
+                 response_header_action: 'outputs.GetDomainResponseHeaderResponseHeaderActionResult'):
+        """
+        :param 'GetDomainResponseHeaderConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainResponseHeaderResponseHeaderActionArgs' response_header_action: 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "response_header_action", response_header_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainResponseHeaderConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="responseHeaderAction")
+    def response_header_action(self) -> 'outputs.GetDomainResponseHeaderResponseHeaderActionResult':
+        """
+        表示内容分发网络在响应用户请求的时候，对响应头的操作。
+        """
+        return pulumi.get(self, "response_header_action")
+
+
+@pulumi.output_type
+class GetDomainResponseHeaderConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainResponseHeaderConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainResponseHeaderConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainResponseHeaderConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainResponseHeaderConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainResponseHeaderResponseHeaderActionResult(dict):
+    def __init__(__self__, *,
+                 response_header_instances: Sequence['outputs.GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceResult']):
+        """
+        :param Sequence['GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs'] response_header_instances: 表示一个响应头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        pulumi.set(__self__, "response_header_instances", response_header_instances)
+
+    @property
+    @pulumi.getter(name="responseHeaderInstances")
+    def response_header_instances(self) -> Sequence['outputs.GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceResult']:
+        """
+        表示一个响应头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        """
+        return pulumi.get(self, "response_header_instances")
+
+
+@pulumi.output_type
+class GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceResult(dict):
+    def __init__(__self__, *,
+                 access_origin_control: builtins.bool,
+                 action: builtins.str,
+                 key: builtins.str,
+                 value: builtins.str,
+                 value_type: builtins.str):
+        """
+        :param builtins.bool access_origin_control: 表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+        :param builtins.str action: 指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+        :param builtins.str key: 指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        :param builtins.str value: 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        :param builtins.str value_type: 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        pulumi.set(__self__, "access_origin_control", access_origin_control)
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="accessOriginControl")
+    def access_origin_control(self) -> builtins.bool:
+        """
+        表示在内容分发网络响应用户请求时，是否校验请求头中的 Origin 字段。该参数有以下取值：true：表示内容分发网络会校验 Origin 字段。如果校验成功，内容分发网络会在响应头中包含 Access-Control-Allow-Origin 字段。字段值与 Origin 字段值相同。如果校验失败，响应头中不会包含 Access-Control-Allow-Origin 字段。false：表示内容分发网络不会校验 Origin 字段。在响应头中，内容分发网络会包含 Access-Control-Allow-Origin 字段。字段值是您配置的 Access-Control-Allow-Origin 的内容。该参数的默认值是 false。该参数仅在以下条件都满足的情况下有效：Action 是 set。Key 是 Access-Control-Allow-Origin。ValueType 是 constant。
+        """
+        return pulumi.get(self, "access_origin_control")
+
+    @property
+    @pulumi.getter
+    def action(self) -> builtins.str:
+        """
+        指定对响应头的操作。该参数有以下取值：set：表示设置一个头部。设置操作包括添加与修改。如果源站响应中已包含该头部，该头部的值会被覆盖。如果源站响应中没有包含该头部，该头部会被添加。delete，表示删除一个头部。
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        指定一个头部的名称。名称不能超过 1,024个字符，不区分大小写，可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"），Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> builtins.str:
+        """
+        指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetDomainRewriteHlsResult(dict):
+    def __init__(__self__, *,
+                 sign_name: builtins.str,
+                 switch: builtins.bool):
+        """
+        :param builtins.str sign_name: 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        pulumi.set(__self__, "sign_name", sign_name)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="signName")
+    def sign_name(self) -> builtins.str:
+        """
+        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。该参数的默认值是 DrmAuthToken。
+        """
+        return pulumi.get(self, "sign_name")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthResult(dict):
+    def __init__(__self__, *,
+                 signed_url_auth_rules: Sequence['outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleResult'],
+                 switch: builtins.bool):
+        """
+        :param Sequence['GetDomainSignedUrlAuthSignedUrlAuthRuleArgs'] signed_url_auth_rules: 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        :param builtins.bool switch: 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        pulumi.set(__self__, "signed_url_auth_rules", signed_url_auth_rules)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="signedUrlAuthRules")
+    def signed_url_auth_rules(self) -> Sequence['outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleResult']:
+        """
+        表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        """
+        return pulumi.get(self, "signed_url_auth_rules")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthSignedUrlAuthRuleResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleConditionResult',
+                 signed_url_auth_action: 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionResult'):
+        """
+        :param 'GetDomainSignedUrlAuthSignedUrlAuthRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs' signed_url_auth_action: 表示签名计算的配置。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "signed_url_auth_action", signed_url_auth_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="signedUrlAuthAction")
+    def signed_url_auth_action(self) -> 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionResult':
+        """
+        表示签名计算的配置。
+        """
+        return pulumi.get(self, "signed_url_auth_action")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthSignedUrlAuthRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthSignedUrlAuthRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionResult(dict):
+    def __init__(__self__, *,
+                 auth_algorithm: builtins.str,
+                 backup_secret_key: builtins.str,
+                 custom_variable_rules: 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesResult',
+                 duration: builtins.int,
+                 keep_origin_arg: builtins.bool,
+                 master_secret_key: builtins.str,
+                 rewrite_m3_u8: builtins.bool,
+                 rewrite_m3_u8_rule: 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleResult',
+                 sign_name: builtins.str,
+                 signature_rules: Sequence[builtins.str],
+                 time_format: builtins.str,
+                 time_name: builtins.str,
+                 url_auth_type: builtins.str):
+        """
+        :param builtins.str auth_algorithm: 表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+        :param builtins.str backup_secret_key: 表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        :param 'GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs' custom_variable_rules: 表示自定义签算变量。
+        :param builtins.int duration: 签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+        :param builtins.bool keep_origin_arg: 该参数暂不对外开放，请勿使用该参数。
+        :param builtins.str master_secret_key: 表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        :param builtins.bool rewrite_m3_u8: 表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+        :param 'GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs' rewrite_m3_u8_rule: 表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+        :param builtins.str sign_name: 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+        :param Sequence[builtins.str] signature_rules: 当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+        :param builtins.str time_format: 进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+        :param builtins.str time_name: 表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+        :param builtins.str url_auth_type: 签名类型。
+        """
+        pulumi.set(__self__, "auth_algorithm", auth_algorithm)
+        pulumi.set(__self__, "backup_secret_key", backup_secret_key)
+        pulumi.set(__self__, "custom_variable_rules", custom_variable_rules)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "keep_origin_arg", keep_origin_arg)
+        pulumi.set(__self__, "master_secret_key", master_secret_key)
+        pulumi.set(__self__, "rewrite_m3_u8", rewrite_m3_u8)
+        pulumi.set(__self__, "rewrite_m3_u8_rule", rewrite_m3_u8_rule)
+        pulumi.set(__self__, "sign_name", sign_name)
+        pulumi.set(__self__, "signature_rules", signature_rules)
+        pulumi.set(__self__, "time_format", time_format)
+        pulumi.set(__self__, "time_name", time_name)
+        pulumi.set(__self__, "url_auth_type", url_auth_type)
+
+    @property
+    @pulumi.getter(name="authAlgorithm")
+    def auth_algorithm(self) -> builtins.str:
+        """
+        表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+        """
+        return pulumi.get(self, "auth_algorithm")
+
+    @property
+    @pulumi.getter(name="backupSecretKey")
+    def backup_secret_key(self) -> builtins.str:
+        """
+        表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        """
+        return pulumi.get(self, "backup_secret_key")
+
+    @property
+    @pulumi.getter(name="customVariableRules")
+    def custom_variable_rules(self) -> 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesResult':
+        """
+        表示自定义签算变量。
+        """
+        return pulumi.get(self, "custom_variable_rules")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> builtins.int:
+        """
+        签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+        """
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="keepOriginArg")
+    def keep_origin_arg(self) -> builtins.bool:
+        """
+        该参数暂不对外开放，请勿使用该参数。
+        """
+        return pulumi.get(self, "keep_origin_arg")
+
+    @property
+    @pulumi.getter(name="masterSecretKey")
+    def master_secret_key(self) -> builtins.str:
+        """
+        表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        """
+        return pulumi.get(self, "master_secret_key")
+
+    @property
+    @pulumi.getter(name="rewriteM3U8")
+    def rewrite_m3_u8(self) -> builtins.bool:
+        """
+        表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+        """
+        return pulumi.get(self, "rewrite_m3_u8")
+
+    @property
+    @pulumi.getter(name="rewriteM3U8Rule")
+    def rewrite_m3_u8_rule(self) -> 'outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleResult':
+        """
+        表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+        """
+        return pulumi.get(self, "rewrite_m3_u8_rule")
+
+    @property
+    @pulumi.getter(name="signName")
+    def sign_name(self) -> builtins.str:
+        """
+        表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+        """
+        return pulumi.get(self, "sign_name")
+
+    @property
+    @pulumi.getter(name="signatureRules")
+    def signature_rules(self) -> Sequence[builtins.str]:
+        """
+        当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+        """
+        return pulumi.get(self, "signature_rules")
+
+    @property
+    @pulumi.getter(name="timeFormat")
+    def time_format(self) -> builtins.str:
+        """
+        进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+        """
+        return pulumi.get(self, "time_format")
+
+    @property
+    @pulumi.getter(name="timeName")
+    def time_name(self) -> builtins.str:
+        """
+        表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+        """
+        return pulumi.get(self, "time_name")
+
+    @property
+    @pulumi.getter(name="urlAuthType")
+    def url_auth_type(self) -> builtins.str:
+        """
+        签名类型。
+        """
+        return pulumi.get(self, "url_auth_type")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesResult(dict):
+    def __init__(__self__, *,
+                 custom_variable_instances: Sequence['outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceResult']):
+        """
+        :param Sequence['GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs'] custom_variable_instances: 表示一个变量列表。
+        """
+        pulumi.set(__self__, "custom_variable_instances", custom_variable_instances)
+
+    @property
+    @pulumi.getter(name="customVariableInstances")
+    def custom_variable_instances(self) -> Sequence['outputs.GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceResult']:
+        """
+        表示一个变量列表。
+        """
+        return pulumi.get(self, "custom_variable_instances")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceResult(dict):
+    def __init__(__self__, *,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str operator: 表示变量的匹配方式。该参数的取值只能是 match。
+        :param builtins.str type: 表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+        :param builtins.str value: 表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        """
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示变量的匹配方式。该参数的取值只能是 match。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示变量的类型。该参数有以下取值：queryString：表示该变量是请求中的一个查询参数。requestHeader：表示该变量是请求中的一个头部字段。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示变量的名称，长度不超过 100 个字符。变量名称的要求如下：如果 Type 是 queryString，变量名称可以包含字母、数字、连字符（-）、逗号（,）、句号（.）、感叹号（!）。如果 Type 是 requestHeader，变量名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（"）、冒号（:）、Delete（ASCII code 127）
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleResult(dict):
+    def __init__(__self__, *,
+                 delete_param: builtins.bool,
+                 keep_m3_u8_param: builtins.bool):
+        """
+        :param builtins.bool delete_param: 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+        :param builtins.bool keep_m3_u8_param: 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+        """
+        pulumi.set(__self__, "delete_param", delete_param)
+        pulumi.set(__self__, "keep_m3_u8_param", keep_m3_u8_param)
+
+    @property
+    @pulumi.getter(name="deleteParam")
+    def delete_param(self) -> builtins.bool:
+        """
+        表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+        """
+        return pulumi.get(self, "delete_param")
+
+    @property
+    @pulumi.getter(name="keepM3U8Param")
+    def keep_m3_u8_param(self) -> builtins.bool:
+        """
+        表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+        """
+        return pulumi.get(self, "keep_m3_u8_param")
+
+
+@pulumi.output_type
+class GetDomainTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: 标签键。
+        :param builtins.str value: 标签值。
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        标签键。
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        标签值。
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainTimeoutResult(dict):
+    def __init__(__self__, *,
+                 switch: builtins.bool,
+                 timeout_rules: Sequence['outputs.GetDomainTimeoutTimeoutRuleResult']):
+        """
+        :param builtins.bool switch: 指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+        :param Sequence['GetDomainTimeoutTimeoutRuleArgs'] timeout_rules: 表示一组超时时间的配置。当前您只能指定一个配置。当 Switch 是 true 时，该参数为必填。
+        """
+        pulumi.set(__self__, "switch", switch)
+        pulumi.set(__self__, "timeout_rules", timeout_rules)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        指定是否启用回源超时时间的配置。该参数有以下取值：true：表示启用回源超时时间的配置。false：表示禁用回源超时时间的配置。此时，TCP 请求和 HTTP 请求的超时时间使用系统默认值，分别是 2 秒和 60 秒。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="timeoutRules")
+    def timeout_rules(self) -> Sequence['outputs.GetDomainTimeoutTimeoutRuleResult']:
+        """
+        表示一组超时时间的配置。当前您只能指定一个配置。当 Switch 是 true 时，该参数为必填。
+        """
+        return pulumi.get(self, "timeout_rules")
+
+
+@pulumi.output_type
+class GetDomainTimeoutTimeoutRuleResult(dict):
+    def __init__(__self__, *,
+                 condition: 'outputs.GetDomainTimeoutTimeoutRuleConditionResult',
+                 timeout_action: 'outputs.GetDomainTimeoutTimeoutRuleTimeoutActionResult'):
+        """
+        :param 'GetDomainTimeoutTimeoutRuleConditionArgs' condition: 表示该配置模块的生效条件，由一组规则组成。
+        :param 'GetDomainTimeoutTimeoutRuleTimeoutActionArgs' timeout_action: 表示超时时间的配置。
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "timeout_action", timeout_action)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.GetDomainTimeoutTimeoutRuleConditionResult':
+        """
+        表示该配置模块的生效条件，由一组规则组成。
+        """
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="timeoutAction")
+    def timeout_action(self) -> 'outputs.GetDomainTimeoutTimeoutRuleTimeoutActionResult':
+        """
+        表示超时时间的配置。
+        """
+        return pulumi.get(self, "timeout_action")
+
+
+@pulumi.output_type
+class GetDomainTimeoutTimeoutRuleConditionResult(dict):
+    def __init__(__self__, *,
+                 condition_rules: Sequence['outputs.GetDomainTimeoutTimeoutRuleConditionConditionRuleResult'],
+                 connective: builtins.str):
+        """
+        :param Sequence['GetDomainTimeoutTimeoutRuleConditionConditionRuleArgs'] condition_rules: 表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        :param builtins.str connective: 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        pulumi.set(__self__, "condition_rules", condition_rules)
+        pulumi.set(__self__, "connective", connective)
+
+    @property
+    @pulumi.getter(name="conditionRules")
+    def condition_rules(self) -> Sequence['outputs.GetDomainTimeoutTimeoutRuleConditionConditionRuleResult']:
+        """
+        表示一个规则集合。在收到一个用户请求时，内容分发网络按集合中规则的出现顺序将规则与请求匹配。如果一条规则匹配了请求，内容分发网络就停止匹配剩余规则。
+        """
+        return pulumi.get(self, "condition_rules")
+
+    @property
+    @pulumi.getter
+    def connective(self) -> builtins.str:
+        """
+        表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 "AND"。OR：表示逻辑关系是 "OR"。该参数的默认值是 OR。
+        """
+        return pulumi.get(self, "connective")
+
+
+@pulumi.output_type
+class GetDomainTimeoutTimeoutRuleConditionConditionRuleResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 object: builtins.str,
+                 operator: builtins.str,
+                 type: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str name: 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        :param builtins.str object: 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        :param builtins.str operator: 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        :param builtins.str type: 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        :param builtins.str value: 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def object(self) -> builtins.str:
+        """
+        表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> builtins.str:
+        """
+        表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        表示目标类型。该参数取值是 url，表示目标是一个 URL。
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDomainTimeoutTimeoutRuleTimeoutActionResult(dict):
+    def __init__(__self__, *,
+                 http_timeout: builtins.int,
+                 tcp_timeout: builtins.int):
+        """
+        :param builtins.int http_timeout: 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        :param builtins.int tcp_timeout: 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        """
+        pulumi.set(__self__, "http_timeout", http_timeout)
+        pulumi.set(__self__, "tcp_timeout", tcp_timeout)
+
+    @property
+    @pulumi.getter(name="httpTimeout")
+    def http_timeout(self) -> builtins.int:
+        """
+        表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        """
+        return pulumi.get(self, "http_timeout")
+
+    @property
+    @pulumi.getter(name="tcpTimeout")
+    def tcp_timeout(self) -> builtins.int:
+        """
+        表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        """
+        return pulumi.get(self, "tcp_timeout")
+
+
+@pulumi.output_type
+class GetDomainUaAccessRuleResult(dict):
+    def __init__(__self__, *,
+                 allow_empty: builtins.bool,
+                 ignore_case: builtins.bool,
+                 rule_type: builtins.str,
+                 switch: builtins.bool,
+                 user_agents: Sequence[builtins.str]):
+        """
+        :param builtins.bool allow_empty: 表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        :param builtins.bool ignore_case: 表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+        :param builtins.str rule_type: 表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+        :param builtins.bool switch: 表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+        :param Sequence[builtins.str] user_agents: 表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+        """
+        pulumi.set(__self__, "allow_empty", allow_empty)
+        pulumi.set(__self__, "ignore_case", ignore_case)
+        pulumi.set(__self__, "rule_type", rule_type)
+        pulumi.set(__self__, "switch", switch)
+        pulumi.set(__self__, "user_agents", user_agents)
+
+    @property
+    @pulumi.getter(name="allowEmpty")
+    def allow_empty(self) -> builtins.bool:
+        """
+        表示是否允许 UA 为空（""）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "allow_empty")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> builtins.bool:
+        """
+        表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+        """
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> builtins.str:
+        """
+        表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+        """
+        return pulumi.get(self, "switch")
+
+    @property
+    @pulumi.getter(name="userAgents")
+    def user_agents(self) -> Sequence[builtins.str]:
+        """
+        表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+        """
+        return pulumi.get(self, "user_agents")
+
+
+@pulumi.output_type
+class GetDomainUrlNormalizeResult(dict):
+    def __init__(__self__, *,
+                 normalize_objects: Sequence[builtins.str],
+                 switch: builtins.bool):
+        """
+        :param Sequence[builtins.str] normalize_objects: 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        :param builtins.bool switch: 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        """
+        pulumi.set(__self__, "normalize_objects", normalize_objects)
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter(name="normalizeObjects")
+    def normalize_objects(self) -> Sequence[builtins.str]:
+        """
+        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        """
+        return pulumi.get(self, "normalize_objects")
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+        """
+        return pulumi.get(self, "switch")
+
+
+@pulumi.output_type
+class GetDomainVideoDragResult(dict):
+    def __init__(__self__, *,
+                 switch: builtins.bool):
+        """
+        :param builtins.bool switch: 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+        """
+        pulumi.set(__self__, "switch", switch)
+
+    @property
+    @pulumi.getter
+    def switch(self) -> builtins.bool:
+        """
+        智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+        """
+        return pulumi.get(self, "switch")
 
 
 @pulumi.output_type
