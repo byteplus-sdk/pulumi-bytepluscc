@@ -30,6 +30,11 @@ public final class GetClusterClusterConfig {
      */
     private Boolean apiServerPublicAccessEnabled;
     /**
+     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * 
+     */
+    private String ipFamily;
+    /**
      * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
      * 
      */
@@ -73,6 +78,13 @@ public final class GetClusterClusterConfig {
         return this.apiServerPublicAccessEnabled;
     }
     /**
+     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * 
+     */
+    public String ipFamily() {
+        return this.ipFamily;
+    }
+    /**
      * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
      * 
      */
@@ -113,6 +125,7 @@ public final class GetClusterClusterConfig {
         private GetClusterClusterConfigApiServerEndpoints apiServerEndpoints;
         private GetClusterClusterConfigApiServerPublicAccessConfig apiServerPublicAccessConfig;
         private Boolean apiServerPublicAccessEnabled;
+        private String ipFamily;
         private Boolean resourcePublicAccessDefaultEnabled;
         private List<String> securityGroupIds;
         private List<String> subnetIds;
@@ -123,6 +136,7 @@ public final class GetClusterClusterConfig {
     	      this.apiServerEndpoints = defaults.apiServerEndpoints;
     	      this.apiServerPublicAccessConfig = defaults.apiServerPublicAccessConfig;
     	      this.apiServerPublicAccessEnabled = defaults.apiServerPublicAccessEnabled;
+    	      this.ipFamily = defaults.ipFamily;
     	      this.resourcePublicAccessDefaultEnabled = defaults.resourcePublicAccessDefaultEnabled;
     	      this.securityGroupIds = defaults.securityGroupIds;
     	      this.subnetIds = defaults.subnetIds;
@@ -151,6 +165,14 @@ public final class GetClusterClusterConfig {
               throw new MissingRequiredPropertyException("GetClusterClusterConfig", "apiServerPublicAccessEnabled");
             }
             this.apiServerPublicAccessEnabled = apiServerPublicAccessEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipFamily(String ipFamily) {
+            if (ipFamily == null) {
+              throw new MissingRequiredPropertyException("GetClusterClusterConfig", "ipFamily");
+            }
+            this.ipFamily = ipFamily;
             return this;
         }
         @CustomType.Setter
@@ -196,6 +218,7 @@ public final class GetClusterClusterConfig {
             _resultValue.apiServerEndpoints = apiServerEndpoints;
             _resultValue.apiServerPublicAccessConfig = apiServerPublicAccessConfig;
             _resultValue.apiServerPublicAccessEnabled = apiServerPublicAccessEnabled;
+            _resultValue.ipFamily = ipFamily;
             _resultValue.resourcePublicAccessDefaultEnabled = resourcePublicAccessDefaultEnabled;
             _resultValue.securityGroupIds = securityGroupIds;
             _resultValue.subnetIds = subnetIds;

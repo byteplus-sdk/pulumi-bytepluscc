@@ -65,6 +65,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public sealed class GetNlbResult
     {
         /// <summary>
+        /// NLB实例的访问日志信息。
+        /// </summary>
+        public readonly Outputs.GetNlbAccessLogResult AccessLog;
+        /// <summary>
         /// NLB实例所属的账号ID。
         /// </summary>
         public readonly string AccountId;
@@ -175,6 +179,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 
         [OutputConstructor]
         private GetNlbResult(
+            Outputs.GetNlbAccessLogResult accessLog,
+
             string accountId,
 
             string billingStatus,
@@ -229,6 +235,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 
             ImmutableArray<Outputs.GetNlbZoneMappingResult> zoneMappings)
         {
+            AccessLog = accessLog;
             AccountId = accountId;
             BillingStatus = billingStatus;
             BillingType = billingType;

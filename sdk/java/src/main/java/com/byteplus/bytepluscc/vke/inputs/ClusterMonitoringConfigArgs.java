@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.vke.inputs;
 import com.byteplus.bytepluscc.vke.inputs.ClusterMonitoringConfigComponentConfigArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +23,21 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
     public Optional<Output<List<ClusterMonitoringConfigComponentConfigArgs>>> componentConfigs() {
         return Optional.ofNullable(this.componentConfigs);
+    }
+
+    /**
+     * 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * 
+     */
+    @Import(name="enableMetricsExternalCollection")
+    private @Nullable Output<Boolean> enableMetricsExternalCollection;
+
+    /**
+     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * 
+     */
+    public Optional<Output<Boolean>> enableMetricsExternalCollection() {
+        return Optional.ofNullable(this.enableMetricsExternalCollection);
     }
 
     /**
@@ -43,6 +59,7 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
     private ClusterMonitoringConfigArgs(ClusterMonitoringConfigArgs $) {
         this.componentConfigs = $.componentConfigs;
+        this.enableMetricsExternalCollection = $.enableMetricsExternalCollection;
         this.workspaceId = $.workspaceId;
     }
 
@@ -75,6 +92,27 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
         public Builder componentConfigs(ClusterMonitoringConfigComponentConfigArgs... componentConfigs) {
             return componentConfigs(List.of(componentConfigs));
+        }
+
+        /**
+         * @param enableMetricsExternalCollection 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableMetricsExternalCollection(@Nullable Output<Boolean> enableMetricsExternalCollection) {
+            $.enableMetricsExternalCollection = enableMetricsExternalCollection;
+            return this;
+        }
+
+        /**
+         * @param enableMetricsExternalCollection 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableMetricsExternalCollection(Boolean enableMetricsExternalCollection) {
+            return enableMetricsExternalCollection(Output.of(enableMetricsExternalCollection));
         }
 
         /**

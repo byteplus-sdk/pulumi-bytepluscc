@@ -121,6 +121,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         public Output<int> Weight { get; private set; } = null!;
 
         /// <summary>
+        /// 该记录集是否开启了负载均衡。
+        /// </summary>
+        [Output("weightEnabled")]
+        public Output<bool> WeightEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// 域名 ID。
         /// </summary>
         [Output("zid")]
@@ -222,6 +228,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         public Input<int>? Weight { get; set; }
 
         /// <summary>
+        /// 该记录集是否开启了负载均衡。
+        /// </summary>
+        [Input("weightEnabled")]
+        public Input<bool>? WeightEnabled { get; set; }
+
+        /// <summary>
         /// 域名 ID。
         /// </summary>
         [Input("zid", required: true)]
@@ -306,6 +318,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }
+
+        /// <summary>
+        /// 该记录集是否开启了负载均衡。
+        /// </summary>
+        [Input("weightEnabled")]
+        public Input<bool>? WeightEnabled { get; set; }
 
         /// <summary>
         /// 域名 ID。

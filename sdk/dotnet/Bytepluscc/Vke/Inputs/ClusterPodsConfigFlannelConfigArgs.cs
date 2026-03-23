@@ -31,6 +31,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
             set => _podCidrs = value;
         }
 
+        [Input("subnetIds")]
+        private InputList<string>? _subnetIds;
+
+        /// <summary>
+        /// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        /// </summary>
+        public InputList<string> SubnetIds
+        {
+            get => _subnetIds ?? (_subnetIds = new InputList<string>());
+            set => _subnetIds = value;
+        }
+
         public ClusterPodsConfigFlannelConfigArgs()
         {
         }

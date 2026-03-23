@@ -258,6 +258,7 @@ class NlbArgs:
 @pulumi.input_type
 class _NlbState:
     def __init__(__self__, *,
+                 access_log: Optional[pulumi.Input['NlbAccessLogArgs']] = None,
                  account_id: Optional[pulumi.Input[builtins.str]] = None,
                  billing_status: Optional[pulumi.Input[builtins.str]] = None,
                  billing_type: Optional[pulumi.Input[builtins.int]] = None,
@@ -286,6 +287,7 @@ class _NlbState:
                  zone_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['NlbZoneMappingArgs']]]] = None):
         """
         Input properties used for looking up and filtering Nlb resources.
+        :param pulumi.Input['NlbAccessLogArgs'] access_log: NLB实例的访问日志信息。
         :param pulumi.Input[builtins.str] account_id: NLB实例所属的账号ID。
         :param pulumi.Input[builtins.str] billing_status: NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
         :param pulumi.Input[builtins.int] billing_type: NLB实例的计费类型。3：按使用量计费
@@ -311,6 +313,8 @@ class _NlbState:
         :param pulumi.Input[builtins.str] updated_time: NLB实例的更新时间。
         :param pulumi.Input[builtins.str] vpc_id: NLB实例所属的VPC ID。
         """
+        if access_log is not None:
+            pulumi.set(__self__, "access_log", access_log)
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
         if billing_status is not None:
@@ -363,6 +367,18 @@ class _NlbState:
             pulumi.set(__self__, "vpc_id", vpc_id)
         if zone_mappings is not None:
             pulumi.set(__self__, "zone_mappings", zone_mappings)
+
+    @property
+    @pulumi.getter(name="accessLog")
+    def access_log(self) -> Optional[pulumi.Input['NlbAccessLogArgs']]:
+        """
+        NLB实例的访问日志信息。
+        """
+        return pulumi.get(self, "access_log")
+
+    @access_log.setter
+    def access_log(self, value: Optional[pulumi.Input['NlbAccessLogArgs']]):
+        pulumi.set(self, "access_log", value)
 
     @property
     @pulumi.getter(name="accountId")
@@ -795,6 +811,7 @@ class Nlb(pulumi.CustomResource):
             if zone_mappings is None and not opts.urn:
                 raise TypeError("Missing required property 'zone_mappings'")
             __props__.__dict__["zone_mappings"] = zone_mappings
+            __props__.__dict__["access_log"] = None
             __props__.__dict__["billing_status"] = None
             __props__.__dict__["billing_type"] = None
             __props__.__dict__["created_time"] = None
@@ -816,6 +833,7 @@ class Nlb(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            access_log: Optional[pulumi.Input[Union['NlbAccessLogArgs', 'NlbAccessLogArgsDict']]] = None,
             account_id: Optional[pulumi.Input[builtins.str]] = None,
             billing_status: Optional[pulumi.Input[builtins.str]] = None,
             billing_type: Optional[pulumi.Input[builtins.int]] = None,
@@ -849,6 +867,7 @@ class Nlb(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['NlbAccessLogArgs', 'NlbAccessLogArgsDict']] access_log: NLB实例的访问日志信息。
         :param pulumi.Input[builtins.str] account_id: NLB实例所属的账号ID。
         :param pulumi.Input[builtins.str] billing_status: NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
         :param pulumi.Input[builtins.int] billing_type: NLB实例的计费类型。3：按使用量计费
@@ -878,6 +897,7 @@ class Nlb(pulumi.CustomResource):
 
         __props__ = _NlbState.__new__(_NlbState)
 
+        __props__.__dict__["access_log"] = access_log
         __props__.__dict__["account_id"] = account_id
         __props__.__dict__["billing_status"] = billing_status
         __props__.__dict__["billing_type"] = billing_type
@@ -905,6 +925,14 @@ class Nlb(pulumi.CustomResource):
         __props__.__dict__["vpc_id"] = vpc_id
         __props__.__dict__["zone_mappings"] = zone_mappings
         return Nlb(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="accessLog")
+    def access_log(self) -> pulumi.Output['outputs.NlbAccessLog']:
+        """
+        NLB实例的访问日志信息。
+        """
+        return pulumi.get(self, "access_log")
 
     @property
     @pulumi.getter(name="accountId")

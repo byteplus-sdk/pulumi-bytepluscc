@@ -32,6 +32,8 @@ type Cluster struct {
 	DeleteProtectionEnabled pulumi.BoolOutput `pulumi:"deleteProtectionEnabled"`
 	// 集群描述。长度限制为 300 个字符以内。
 	Description pulumi.StringOutput `pulumi:"description"`
+	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	IrsaConfig ClusterIrsaConfigOutput `pulumi:"irsaConfig"`
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
 	KubernetesVersion pulumi.StringOutput `pulumi:"kubernetesVersion"`
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
@@ -106,6 +108,8 @@ type clusterState struct {
 	DeleteProtectionEnabled *bool `pulumi:"deleteProtectionEnabled"`
 	// 集群描述。长度限制为 300 个字符以内。
 	Description *string `pulumi:"description"`
+	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	IrsaConfig *ClusterIrsaConfig `pulumi:"irsaConfig"`
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
 	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
@@ -148,6 +152,8 @@ type ClusterState struct {
 	DeleteProtectionEnabled pulumi.BoolPtrInput
 	// 集群描述。长度限制为 300 个字符以内。
 	Description pulumi.StringPtrInput
+	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	IrsaConfig ClusterIrsaConfigPtrInput
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
 	KubernetesVersion pulumi.StringPtrInput
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
@@ -190,8 +196,8 @@ type clusterArgs struct {
 	DeleteProtectionEnabled *bool `pulumi:"deleteProtectionEnabled"`
 	// 集群描述。长度限制为 300 个字符以内。
 	Description *string `pulumi:"description"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
-	KubernetesVersion *string `pulumi:"kubernetesVersion"`
+	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	IrsaConfig *ClusterIrsaConfig `pulumi:"irsaConfig"`
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
 	KubernetesVersionCreate *string `pulumi:"kubernetesVersionCreate"`
 	// 集群的日志配置信息。
@@ -219,8 +225,8 @@ type ClusterArgs struct {
 	DeleteProtectionEnabled pulumi.BoolPtrInput
 	// 集群描述。长度限制为 300 个字符以内。
 	Description pulumi.StringPtrInput
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
-	KubernetesVersion pulumi.StringPtrInput
+	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	IrsaConfig ClusterIrsaConfigPtrInput
 	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
 	KubernetesVersionCreate pulumi.StringPtrInput
 	// 集群的日志配置信息。
@@ -350,6 +356,11 @@ func (o ClusterOutput) DeleteProtectionEnabled() pulumi.BoolOutput {
 // 集群描述。长度限制为 300 个字符以内。
 func (o ClusterOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// IRSA（IAM Role for Service Account）能力相关参数配置。
+func (o ClusterOutput) IrsaConfig() ClusterIrsaConfigOutput {
+	return o.ApplyT(func(v *Cluster) ClusterIrsaConfigOutput { return v.IrsaConfig }).(ClusterIrsaConfigOutput)
 }
 
 // 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）

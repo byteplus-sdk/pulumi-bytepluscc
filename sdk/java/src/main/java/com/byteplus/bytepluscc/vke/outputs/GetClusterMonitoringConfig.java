@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.vke.outputs;
 import com.byteplus.bytepluscc.vke.outputs.GetClusterMonitoringConfigComponentConfig;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,6 +18,11 @@ public final class GetClusterMonitoringConfig {
      * 
      */
     private List<GetClusterMonitoringConfigComponentConfig> componentConfigs;
+    /**
+     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * 
+     */
+    private Boolean enableMetricsExternalCollection;
     /**
      * @return 监控数据所属的工作区 ID。
      * 
@@ -30,6 +36,13 @@ public final class GetClusterMonitoringConfig {
      */
     public List<GetClusterMonitoringConfigComponentConfig> componentConfigs() {
         return this.componentConfigs;
+    }
+    /**
+     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * 
+     */
+    public Boolean enableMetricsExternalCollection() {
+        return this.enableMetricsExternalCollection;
     }
     /**
      * @return 监控数据所属的工作区 ID。
@@ -49,11 +62,13 @@ public final class GetClusterMonitoringConfig {
     @CustomType.Builder
     public static final class Builder {
         private List<GetClusterMonitoringConfigComponentConfig> componentConfigs;
+        private Boolean enableMetricsExternalCollection;
         private String workspaceId;
         public Builder() {}
         public Builder(GetClusterMonitoringConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.componentConfigs = defaults.componentConfigs;
+    	      this.enableMetricsExternalCollection = defaults.enableMetricsExternalCollection;
     	      this.workspaceId = defaults.workspaceId;
         }
 
@@ -69,6 +84,14 @@ public final class GetClusterMonitoringConfig {
             return componentConfigs(List.of(componentConfigs));
         }
         @CustomType.Setter
+        public Builder enableMetricsExternalCollection(Boolean enableMetricsExternalCollection) {
+            if (enableMetricsExternalCollection == null) {
+              throw new MissingRequiredPropertyException("GetClusterMonitoringConfig", "enableMetricsExternalCollection");
+            }
+            this.enableMetricsExternalCollection = enableMetricsExternalCollection;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
             if (workspaceId == null) {
               throw new MissingRequiredPropertyException("GetClusterMonitoringConfig", "workspaceId");
@@ -79,6 +102,7 @@ public final class GetClusterMonitoringConfig {
         public GetClusterMonitoringConfig build() {
             final var _resultValue = new GetClusterMonitoringConfig();
             _resultValue.componentConfigs = componentConfigs;
+            _resultValue.enableMetricsExternalCollection = enableMetricsExternalCollection;
             _resultValue.workspaceId = workspaceId;
             return _resultValue;
         }

@@ -89,6 +89,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// IRSA（IAM Role for Service Account）能力相关参数配置。
+        /// </summary>
+        public readonly Outputs.GetClusterIrsaConfigResult IrsaConfig;
+        /// <summary>
         /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
         /// </summary>
         public readonly string KubernetesVersion;
@@ -163,6 +167,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
 
             string id,
 
+            Outputs.GetClusterIrsaConfigResult irsaConfig,
+
             string kubernetesVersion,
 
             string kubernetesVersionCreate,
@@ -199,6 +205,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
             DeleteProtectionEnabled = deleteProtectionEnabled;
             Description = description;
             Id = id;
+            IrsaConfig = irsaConfig;
             KubernetesVersion = kubernetesVersion;
             KubernetesVersionCreate = kubernetesVersionCreate;
             LoggingConfig = loggingConfig;

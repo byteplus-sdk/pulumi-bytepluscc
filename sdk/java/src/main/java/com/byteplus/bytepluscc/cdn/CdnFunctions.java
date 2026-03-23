@@ -4,8 +4,12 @@
 package com.byteplus.bytepluscc.cdn;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.cdn.inputs.GetDomainArgs;
+import com.byteplus.bytepluscc.cdn.inputs.GetDomainPlainArgs;
 import com.byteplus.bytepluscc.cdn.inputs.GetShareConfigArgs;
 import com.byteplus.bytepluscc.cdn.inputs.GetShareConfigPlainArgs;
+import com.byteplus.bytepluscc.cdn.outputs.GetDomainResult;
+import com.byteplus.bytepluscc.cdn.outputs.GetDomainsResult;
 import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigResult;
 import com.byteplus.bytepluscc.cdn.outputs.GetShareConfigsResult;
 import com.pulumi.core.Output;
@@ -17,6 +21,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class CdnFunctions {
+    /**
+     * Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static Output<GetDomainResult> getDomain(GetDomainArgs args) {
+        return getDomain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args) {
+        return getDomainPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static Output<GetDomainResult> getDomain(GetDomainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cdn/getDomain:getDomain", TypeShape.of(GetDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static Output<GetDomainResult> getDomain(GetDomainArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cdn/getDomain:getDomain", TypeShape.of(GetDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cdn/getDomain:getDomain", TypeShape.of(GetDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static Output<GetDomainsResult> getDomains() {
+        return getDomains(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static CompletableFuture<GetDomainsResult> getDomainsPlain() {
+        return getDomainsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static Output<GetDomainsResult> getDomains(InvokeArgs args) {
+        return getDomains(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static CompletableFuture<GetDomainsResult> getDomainsPlain(InvokeArgs args) {
+        return getDomainsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static Output<GetDomainsResult> getDomains(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cdn/getDomains:getDomains", TypeShape.of(GetDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static Output<GetDomainsResult> getDomains(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cdn/getDomains:getDomains", TypeShape.of(GetDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CDN::Domain
+     * 
+     */
+    public static CompletableFuture<GetDomainsResult> getDomainsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cdn/getDomains:getDomains", TypeShape.of(GetDomainsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::CDN::ShareConfig
      * 

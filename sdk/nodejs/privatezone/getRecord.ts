@@ -81,6 +81,10 @@ export interface GetRecordResult {
      */
     readonly weight: number;
     /**
+     * 该记录集是否开启了负载均衡。
+     */
+    readonly weightEnabled: boolean;
+    /**
      * 域名 ID。
      */
     readonly zid: number;

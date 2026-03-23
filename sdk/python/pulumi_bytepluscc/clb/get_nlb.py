@@ -28,7 +28,10 @@ class GetNlbResult:
     """
     A collection of values returned by getNlb.
     """
-    def __init__(__self__, account_id=None, billing_status=None, billing_type=None, created_time=None, cross_zone_enabled=None, description=None, dns_name=None, expected_overdue_time=None, id=None, ip_address_version=None, ipv4_bandwidth_package_id=None, ipv4_network_type=None, ipv6_bandwidth_package_id=None, ipv6_network_type=None, load_balancer_id=None, load_balancer_name=None, managed_security_group_id=None, modification_protection_status=None, overdue_time=None, project_name=None, reclaimed_time=None, security_group_ids=None, status=None, tags=None, updated_time=None, vpc_id=None, zone_mappings=None):
+    def __init__(__self__, access_log=None, account_id=None, billing_status=None, billing_type=None, created_time=None, cross_zone_enabled=None, description=None, dns_name=None, expected_overdue_time=None, id=None, ip_address_version=None, ipv4_bandwidth_package_id=None, ipv4_network_type=None, ipv6_bandwidth_package_id=None, ipv6_network_type=None, load_balancer_id=None, load_balancer_name=None, managed_security_group_id=None, modification_protection_status=None, overdue_time=None, project_name=None, reclaimed_time=None, security_group_ids=None, status=None, tags=None, updated_time=None, vpc_id=None, zone_mappings=None):
+        if access_log and not isinstance(access_log, dict):
+            raise TypeError("Expected argument 'access_log' to be a dict")
+        pulumi.set(__self__, "access_log", access_log)
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -110,6 +113,14 @@ class GetNlbResult:
         if zone_mappings and not isinstance(zone_mappings, list):
             raise TypeError("Expected argument 'zone_mappings' to be a list")
         pulumi.set(__self__, "zone_mappings", zone_mappings)
+
+    @property
+    @pulumi.getter(name="accessLog")
+    def access_log(self) -> 'outputs.GetNlbAccessLogResult':
+        """
+        NLB实例的访问日志信息。
+        """
+        return pulumi.get(self, "access_log")
 
     @property
     @pulumi.getter(name="accountId")
@@ -334,6 +345,7 @@ class AwaitableGetNlbResult(GetNlbResult):
         if False:
             yield self
         return GetNlbResult(
+            access_log=self.access_log,
             account_id=self.account_id,
             billing_status=self.billing_status,
             billing_type=self.billing_type,
@@ -377,6 +389,7 @@ def get_nlb(id: Optional[builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('bytepluscc:clb/getNlb:getNlb', __args__, opts=opts, typ=GetNlbResult).value
 
     return AwaitableGetNlbResult(
+        access_log=pulumi.get(__ret__, 'access_log'),
         account_id=pulumi.get(__ret__, 'account_id'),
         billing_status=pulumi.get(__ret__, 'billing_status'),
         billing_type=pulumi.get(__ret__, 'billing_type'),
@@ -417,6 +430,7 @@ def get_nlb_output(id: Optional[pulumi.Input[builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('bytepluscc:clb/getNlb:getNlb', __args__, opts=opts, typ=GetNlbResult)
     return __ret__.apply(lambda __response__: GetNlbResult(
+        access_log=pulumi.get(__response__, 'access_log'),
         account_id=pulumi.get(__response__, 'account_id'),
         billing_status=pulumi.get(__response__, 'billing_status'),
         billing_type=pulumi.get(__response__, 'billing_type'),

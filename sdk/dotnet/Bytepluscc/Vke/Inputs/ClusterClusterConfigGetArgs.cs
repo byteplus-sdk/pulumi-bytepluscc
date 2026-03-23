@@ -32,6 +32,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         public Input<bool>? ApiServerPublicAccessEnabled { get; set; }
 
         /// <summary>
+        /// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+        /// </summary>
+        [Input("ipFamily")]
+        public Input<string>? IpFamily { get; set; }
+
+        /// <summary>
         /// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
         /// </summary>
         [Input("resourcePublicAccessDefaultEnabled")]

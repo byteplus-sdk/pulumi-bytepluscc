@@ -20,6 +20,16 @@ export const getAllowLists: typeof import("./getAllowLists").getAllowLists = nul
 export const getAllowListsOutput: typeof import("./getAllowLists").getAllowListsOutput = null as any;
 utilities.lazyLoad(exports, ["getAllowLists","getAllowListsOutput"], () => require("./getAllowLists"));
 
+export { GetInstanceArgs, GetInstanceResult, GetInstanceOutputArgs } from "./getInstance";
+export const getInstance: typeof import("./getInstance").getInstance = null as any;
+export const getInstanceOutput: typeof import("./getInstance").getInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getInstance","getInstanceOutput"], () => require("./getInstance"));
+
+export { GetInstancesResult } from "./getInstances";
+export const getInstances: typeof import("./getInstances").getInstances = null as any;
+export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
+
 export { GetTopicArgs, GetTopicResult, GetTopicOutputArgs } from "./getTopic";
 export const getTopic: typeof import("./getTopic").getTopic = null as any;
 export const getTopicOutput: typeof import("./getTopic").getTopicOutput = null as any;
@@ -29,6 +39,11 @@ export { GetTopicsResult } from "./getTopics";
 export const getTopics: typeof import("./getTopics").getTopics = null as any;
 export const getTopicsOutput: typeof import("./getTopics").getTopicsOutput = null as any;
 utilities.lazyLoad(exports, ["getTopics","getTopicsOutput"], () => require("./getTopics"));
+
+export { InstanceArgs, InstanceState } from "./instance";
+export type Instance = import("./instance").Instance;
+export const Instance: typeof import("./instance").Instance = null as any;
+utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
 
 export { TopicArgs, TopicState } from "./topic";
 export type Topic = import("./topic").Topic;
@@ -42,6 +57,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:kafka/allowList:AllowList":
                 return new AllowList(name, <any>undefined, { urn })
+            case "bytepluscc:kafka/instance:Instance":
+                return new Instance(name, <any>undefined, { urn })
             case "bytepluscc:kafka/topic:Topic":
                 return new Topic(name, <any>undefined, { urn })
             default:
@@ -50,4 +67,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/allowList", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "kafka/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "kafka/topic", _module)

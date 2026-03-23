@@ -22,15 +22,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// Flannel 容器网络的 Pod CIDR。
         /// </summary>
         public readonly ImmutableArray<string> PodCidrs;
+        /// <summary>
+        /// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        /// </summary>
+        public readonly ImmutableArray<string> SubnetIds;
 
         [OutputConstructor]
         private GetClusterPodsConfigFlannelConfigResult(
             int maxPodsPerNode,
 
-            ImmutableArray<string> podCidrs)
+            ImmutableArray<string> podCidrs,
+
+            ImmutableArray<string> subnetIds)
         {
             MaxPodsPerNode = maxPodsPerNode;
             PodCidrs = podCidrs;
+            SubnetIds = subnetIds;
         }
     }
 }

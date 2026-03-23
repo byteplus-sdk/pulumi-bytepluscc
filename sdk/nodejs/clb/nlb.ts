@@ -44,6 +44,10 @@ export class Nlb extends pulumi.CustomResource {
     }
 
     /**
+     * NLB实例的访问日志信息。
+     */
+    public /*out*/ readonly accessLog!: pulumi.Output<outputs.clb.NlbAccessLog>;
+    /**
      * NLB实例所属的账号ID。
      */
     public readonly accountId!: pulumi.Output<string>;
@@ -155,6 +159,7 @@ export class Nlb extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NlbState | undefined;
+            resourceInputs["accessLog"] = state ? state.accessLog : undefined;
             resourceInputs["accountId"] = state ? state.accountId : undefined;
             resourceInputs["billingStatus"] = state ? state.billingStatus : undefined;
             resourceInputs["billingType"] = state ? state.billingType : undefined;
@@ -210,6 +215,7 @@ export class Nlb extends pulumi.CustomResource {
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["vpcId"] = args ? args.vpcId : undefined;
             resourceInputs["zoneMappings"] = args ? args.zoneMappings : undefined;
+            resourceInputs["accessLog"] = undefined /*out*/;
             resourceInputs["billingStatus"] = undefined /*out*/;
             resourceInputs["billingType"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
@@ -231,6 +237,10 @@ export class Nlb extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Nlb resources.
  */
 export interface NlbState {
+    /**
+     * NLB实例的访问日志信息。
+     */
+    accessLog?: pulumi.Input<inputs.clb.NlbAccessLog>;
     /**
      * NLB实例所属的账号ID。
      */

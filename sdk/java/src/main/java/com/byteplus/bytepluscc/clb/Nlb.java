@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.clb;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.clb.NlbArgs;
 import com.byteplus.bytepluscc.clb.inputs.NlbState;
+import com.byteplus.bytepluscc.clb.outputs.NlbAccessLog;
 import com.byteplus.bytepluscc.clb.outputs.NlbTag;
 import com.byteplus.bytepluscc.clb.outputs.NlbZoneMapping;
 import com.pulumi.core.Output;
@@ -35,6 +36,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:clb/nlb:Nlb")
 public class Nlb extends com.pulumi.resources.CustomResource {
+    /**
+     * NLB实例的访问日志信息。
+     * 
+     */
+    @Export(name="accessLog", refs={NlbAccessLog.class}, tree="[0]")
+    private Output<NlbAccessLog> accessLog;
+
+    /**
+     * @return NLB实例的访问日志信息。
+     * 
+     */
+    public Output<NlbAccessLog> accessLog() {
+        return this.accessLog;
+    }
     /**
      * NLB实例所属的账号ID。
      * 

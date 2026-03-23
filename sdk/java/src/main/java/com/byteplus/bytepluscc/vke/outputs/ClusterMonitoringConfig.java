@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.vke.outputs;
 
 import com.byteplus.bytepluscc.vke.outputs.ClusterMonitoringConfigComponentConfig;
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,11 @@ import javax.annotation.Nullable;
 public final class ClusterMonitoringConfig {
     private @Nullable List<ClusterMonitoringConfigComponentConfig> componentConfigs;
     /**
+     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * 
+     */
+    private @Nullable Boolean enableMetricsExternalCollection;
+    /**
      * @return 监控数据所属的工作区 ID。
      * 
      */
@@ -23,6 +29,13 @@ public final class ClusterMonitoringConfig {
     private ClusterMonitoringConfig() {}
     public List<ClusterMonitoringConfigComponentConfig> componentConfigs() {
         return this.componentConfigs == null ? List.of() : this.componentConfigs;
+    }
+    /**
+     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * 
+     */
+    public Optional<Boolean> enableMetricsExternalCollection() {
+        return Optional.ofNullable(this.enableMetricsExternalCollection);
     }
     /**
      * @return 监控数据所属的工作区 ID。
@@ -42,11 +55,13 @@ public final class ClusterMonitoringConfig {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<ClusterMonitoringConfigComponentConfig> componentConfigs;
+        private @Nullable Boolean enableMetricsExternalCollection;
         private @Nullable String workspaceId;
         public Builder() {}
         public Builder(ClusterMonitoringConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.componentConfigs = defaults.componentConfigs;
+    	      this.enableMetricsExternalCollection = defaults.enableMetricsExternalCollection;
     	      this.workspaceId = defaults.workspaceId;
         }
 
@@ -60,6 +75,12 @@ public final class ClusterMonitoringConfig {
             return componentConfigs(List.of(componentConfigs));
         }
         @CustomType.Setter
+        public Builder enableMetricsExternalCollection(@Nullable Boolean enableMetricsExternalCollection) {
+
+            this.enableMetricsExternalCollection = enableMetricsExternalCollection;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workspaceId(@Nullable String workspaceId) {
 
             this.workspaceId = workspaceId;
@@ -68,6 +89,7 @@ public final class ClusterMonitoringConfig {
         public ClusterMonitoringConfig build() {
             final var _resultValue = new ClusterMonitoringConfig();
             _resultValue.componentConfigs = componentConfigs;
+            _resultValue.enableMetricsExternalCollection = enableMetricsExternalCollection;
             _resultValue.workspaceId = workspaceId;
             return _resultValue;
         }

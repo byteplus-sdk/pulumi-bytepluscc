@@ -1991,6 +1991,181 @@ func (o ListenerTagArrayOutput) Index(i pulumi.IntInput) ListenerTagOutput {
 	}).(ListenerTagOutput)
 }
 
+type NlbAccessLog struct {
+	// 是否开启访问日志。true：是。flase：否。
+	AccessLogEnabled *bool `pulumi:"accessLogEnabled"`
+	// 日志项目的ID。
+	ProjectId *string `pulumi:"projectId"`
+	// 日志主题的ID。
+	TopicId *string `pulumi:"topicId"`
+}
+
+// NlbAccessLogInput is an input type that accepts NlbAccessLogArgs and NlbAccessLogOutput values.
+// You can construct a concrete instance of `NlbAccessLogInput` via:
+//
+//	NlbAccessLogArgs{...}
+type NlbAccessLogInput interface {
+	pulumi.Input
+
+	ToNlbAccessLogOutput() NlbAccessLogOutput
+	ToNlbAccessLogOutputWithContext(context.Context) NlbAccessLogOutput
+}
+
+type NlbAccessLogArgs struct {
+	// 是否开启访问日志。true：是。flase：否。
+	AccessLogEnabled pulumi.BoolPtrInput `pulumi:"accessLogEnabled"`
+	// 日志项目的ID。
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+	// 日志主题的ID。
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+}
+
+func (NlbAccessLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbAccessLog)(nil)).Elem()
+}
+
+func (i NlbAccessLogArgs) ToNlbAccessLogOutput() NlbAccessLogOutput {
+	return i.ToNlbAccessLogOutputWithContext(context.Background())
+}
+
+func (i NlbAccessLogArgs) ToNlbAccessLogOutputWithContext(ctx context.Context) NlbAccessLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbAccessLogOutput)
+}
+
+func (i NlbAccessLogArgs) ToNlbAccessLogPtrOutput() NlbAccessLogPtrOutput {
+	return i.ToNlbAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (i NlbAccessLogArgs) ToNlbAccessLogPtrOutputWithContext(ctx context.Context) NlbAccessLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbAccessLogOutput).ToNlbAccessLogPtrOutputWithContext(ctx)
+}
+
+// NlbAccessLogPtrInput is an input type that accepts NlbAccessLogArgs, NlbAccessLogPtr and NlbAccessLogPtrOutput values.
+// You can construct a concrete instance of `NlbAccessLogPtrInput` via:
+//
+//	        NlbAccessLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type NlbAccessLogPtrInput interface {
+	pulumi.Input
+
+	ToNlbAccessLogPtrOutput() NlbAccessLogPtrOutput
+	ToNlbAccessLogPtrOutputWithContext(context.Context) NlbAccessLogPtrOutput
+}
+
+type nlbAccessLogPtrType NlbAccessLogArgs
+
+func NlbAccessLogPtr(v *NlbAccessLogArgs) NlbAccessLogPtrInput {
+	return (*nlbAccessLogPtrType)(v)
+}
+
+func (*nlbAccessLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NlbAccessLog)(nil)).Elem()
+}
+
+func (i *nlbAccessLogPtrType) ToNlbAccessLogPtrOutput() NlbAccessLogPtrOutput {
+	return i.ToNlbAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (i *nlbAccessLogPtrType) ToNlbAccessLogPtrOutputWithContext(ctx context.Context) NlbAccessLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NlbAccessLogPtrOutput)
+}
+
+type NlbAccessLogOutput struct{ *pulumi.OutputState }
+
+func (NlbAccessLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NlbAccessLog)(nil)).Elem()
+}
+
+func (o NlbAccessLogOutput) ToNlbAccessLogOutput() NlbAccessLogOutput {
+	return o
+}
+
+func (o NlbAccessLogOutput) ToNlbAccessLogOutputWithContext(ctx context.Context) NlbAccessLogOutput {
+	return o
+}
+
+func (o NlbAccessLogOutput) ToNlbAccessLogPtrOutput() NlbAccessLogPtrOutput {
+	return o.ToNlbAccessLogPtrOutputWithContext(context.Background())
+}
+
+func (o NlbAccessLogOutput) ToNlbAccessLogPtrOutputWithContext(ctx context.Context) NlbAccessLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NlbAccessLog) *NlbAccessLog {
+		return &v
+	}).(NlbAccessLogPtrOutput)
+}
+
+// 是否开启访问日志。true：是。flase：否。
+func (o NlbAccessLogOutput) AccessLogEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NlbAccessLog) *bool { return v.AccessLogEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// 日志项目的ID。
+func (o NlbAccessLogOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbAccessLog) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+// 日志主题的ID。
+func (o NlbAccessLogOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NlbAccessLog) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+type NlbAccessLogPtrOutput struct{ *pulumi.OutputState }
+
+func (NlbAccessLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NlbAccessLog)(nil)).Elem()
+}
+
+func (o NlbAccessLogPtrOutput) ToNlbAccessLogPtrOutput() NlbAccessLogPtrOutput {
+	return o
+}
+
+func (o NlbAccessLogPtrOutput) ToNlbAccessLogPtrOutputWithContext(ctx context.Context) NlbAccessLogPtrOutput {
+	return o
+}
+
+func (o NlbAccessLogPtrOutput) Elem() NlbAccessLogOutput {
+	return o.ApplyT(func(v *NlbAccessLog) NlbAccessLog {
+		if v != nil {
+			return *v
+		}
+		var ret NlbAccessLog
+		return ret
+	}).(NlbAccessLogOutput)
+}
+
+// 是否开启访问日志。true：是。flase：否。
+func (o NlbAccessLogPtrOutput) AccessLogEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NlbAccessLog) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AccessLogEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 日志项目的ID。
+func (o NlbAccessLogPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// 日志主题的ID。
+func (o NlbAccessLogPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NlbAccessLog) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
+	}).(pulumi.StringPtrOutput)
+}
+
 type NlbListenerHealth struct {
 	// 后端服务器的实例 ID或IP地址。
 	InstanceId *string `pulumi:"instanceId"`
@@ -5293,6 +5468,76 @@ func (o GetListenerTagArrayOutput) Index(i pulumi.IntInput) GetListenerTagOutput
 	}).(GetListenerTagOutput)
 }
 
+type GetNlbAccessLog struct {
+	// 是否开启访问日志。true：是。flase：否。
+	AccessLogEnabled bool `pulumi:"accessLogEnabled"`
+	// 日志项目的ID。
+	ProjectId string `pulumi:"projectId"`
+	// 日志主题的ID。
+	TopicId string `pulumi:"topicId"`
+}
+
+// GetNlbAccessLogInput is an input type that accepts GetNlbAccessLogArgs and GetNlbAccessLogOutput values.
+// You can construct a concrete instance of `GetNlbAccessLogInput` via:
+//
+//	GetNlbAccessLogArgs{...}
+type GetNlbAccessLogInput interface {
+	pulumi.Input
+
+	ToGetNlbAccessLogOutput() GetNlbAccessLogOutput
+	ToGetNlbAccessLogOutputWithContext(context.Context) GetNlbAccessLogOutput
+}
+
+type GetNlbAccessLogArgs struct {
+	// 是否开启访问日志。true：是。flase：否。
+	AccessLogEnabled pulumi.BoolInput `pulumi:"accessLogEnabled"`
+	// 日志项目的ID。
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// 日志主题的ID。
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+}
+
+func (GetNlbAccessLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbAccessLog)(nil)).Elem()
+}
+
+func (i GetNlbAccessLogArgs) ToGetNlbAccessLogOutput() GetNlbAccessLogOutput {
+	return i.ToGetNlbAccessLogOutputWithContext(context.Background())
+}
+
+func (i GetNlbAccessLogArgs) ToGetNlbAccessLogOutputWithContext(ctx context.Context) GetNlbAccessLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNlbAccessLogOutput)
+}
+
+type GetNlbAccessLogOutput struct{ *pulumi.OutputState }
+
+func (GetNlbAccessLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNlbAccessLog)(nil)).Elem()
+}
+
+func (o GetNlbAccessLogOutput) ToGetNlbAccessLogOutput() GetNlbAccessLogOutput {
+	return o
+}
+
+func (o GetNlbAccessLogOutput) ToGetNlbAccessLogOutputWithContext(ctx context.Context) GetNlbAccessLogOutput {
+	return o
+}
+
+// 是否开启访问日志。true：是。flase：否。
+func (o GetNlbAccessLogOutput) AccessLogEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNlbAccessLog) bool { return v.AccessLogEnabled }).(pulumi.BoolOutput)
+}
+
+// 日志项目的ID。
+func (o GetNlbAccessLogOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbAccessLog) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// 日志主题的ID。
+func (o GetNlbAccessLogOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNlbAccessLog) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
 type GetNlbListenerHealth struct {
 	// 后端服务器的实例 ID或IP地址。
 	InstanceId string `pulumi:"instanceId"`
@@ -6977,6 +7222,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerHealthCheckPtrInput)(nil)).Elem(), ListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagInput)(nil)).Elem(), ListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ListenerTagArrayInput)(nil)).Elem(), ListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbAccessLogInput)(nil)).Elem(), NlbAccessLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NlbAccessLogPtrInput)(nil)).Elem(), NlbAccessLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerHealthInput)(nil)).Elem(), NlbListenerHealthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerHealthArrayInput)(nil)).Elem(), NlbListenerHealthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NlbListenerTagInput)(nil)).Elem(), NlbListenerTagArgs{})
@@ -7024,6 +7271,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerHealthCheckInput)(nil)).Elem(), GetListenerHealthCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagInput)(nil)).Elem(), GetListenerTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListenerTagArrayInput)(nil)).Elem(), GetListenerTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbAccessLogInput)(nil)).Elem(), GetNlbAccessLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerHealthInput)(nil)).Elem(), GetNlbListenerHealthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerHealthArrayInput)(nil)).Elem(), GetNlbListenerHealthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNlbListenerTagInput)(nil)).Elem(), GetNlbListenerTagArgs{})
@@ -7074,6 +7322,8 @@ func init() {
 	pulumi.RegisterOutputType(ListenerHealthCheckPtrOutput{})
 	pulumi.RegisterOutputType(ListenerTagOutput{})
 	pulumi.RegisterOutputType(ListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(NlbAccessLogOutput{})
+	pulumi.RegisterOutputType(NlbAccessLogPtrOutput{})
 	pulumi.RegisterOutputType(NlbListenerHealthOutput{})
 	pulumi.RegisterOutputType(NlbListenerHealthArrayOutput{})
 	pulumi.RegisterOutputType(NlbListenerTagOutput{})
@@ -7121,6 +7371,7 @@ func init() {
 	pulumi.RegisterOutputType(GetListenerHealthCheckOutput{})
 	pulumi.RegisterOutputType(GetListenerTagOutput{})
 	pulumi.RegisterOutputType(GetListenerTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNlbAccessLogOutput{})
 	pulumi.RegisterOutputType(GetNlbListenerHealthOutput{})
 	pulumi.RegisterOutputType(GetNlbListenerHealthArrayOutput{})
 	pulumi.RegisterOutputType(GetNlbListenerTagOutput{})

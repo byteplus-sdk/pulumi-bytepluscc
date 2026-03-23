@@ -31,6 +31,11 @@ public final class ClusterClusterConfig {
      */
     private @Nullable Boolean apiServerPublicAccessEnabled;
     /**
+     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * 
+     */
+    private @Nullable String ipFamily;
+    /**
      * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
      * 
      */
@@ -74,6 +79,13 @@ public final class ClusterClusterConfig {
         return Optional.ofNullable(this.apiServerPublicAccessEnabled);
     }
     /**
+     * @return 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+     * 
+     */
+    public Optional<String> ipFamily() {
+        return Optional.ofNullable(this.ipFamily);
+    }
+    /**
      * @return 节点公网访问配置，参数值说明：false：未开启。true：已开启。
      * 
      */
@@ -114,6 +126,7 @@ public final class ClusterClusterConfig {
         private @Nullable ClusterClusterConfigApiServerEndpoints apiServerEndpoints;
         private @Nullable ClusterClusterConfigApiServerPublicAccessConfig apiServerPublicAccessConfig;
         private @Nullable Boolean apiServerPublicAccessEnabled;
+        private @Nullable String ipFamily;
         private @Nullable Boolean resourcePublicAccessDefaultEnabled;
         private @Nullable List<String> securityGroupIds;
         private @Nullable List<String> subnetIds;
@@ -124,6 +137,7 @@ public final class ClusterClusterConfig {
     	      this.apiServerEndpoints = defaults.apiServerEndpoints;
     	      this.apiServerPublicAccessConfig = defaults.apiServerPublicAccessConfig;
     	      this.apiServerPublicAccessEnabled = defaults.apiServerPublicAccessEnabled;
+    	      this.ipFamily = defaults.ipFamily;
     	      this.resourcePublicAccessDefaultEnabled = defaults.resourcePublicAccessDefaultEnabled;
     	      this.securityGroupIds = defaults.securityGroupIds;
     	      this.subnetIds = defaults.subnetIds;
@@ -146,6 +160,12 @@ public final class ClusterClusterConfig {
         public Builder apiServerPublicAccessEnabled(@Nullable Boolean apiServerPublicAccessEnabled) {
 
             this.apiServerPublicAccessEnabled = apiServerPublicAccessEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipFamily(@Nullable String ipFamily) {
+
+            this.ipFamily = ipFamily;
             return this;
         }
         @CustomType.Setter
@@ -183,6 +203,7 @@ public final class ClusterClusterConfig {
             _resultValue.apiServerEndpoints = apiServerEndpoints;
             _resultValue.apiServerPublicAccessConfig = apiServerPublicAccessConfig;
             _resultValue.apiServerPublicAccessEnabled = apiServerPublicAccessEnabled;
+            _resultValue.ipFamily = ipFamily;
             _resultValue.resourcePublicAccessDefaultEnabled = resourcePublicAccessDefaultEnabled;
             _resultValue.securityGroupIds = securityGroupIds;
             _resultValue.subnetIds = subnetIds;

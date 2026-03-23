@@ -4,12 +4,16 @@
 package com.byteplus.bytepluscc.vedbm;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vedbm.inputs.GetAllowListArgs;
+import com.byteplus.bytepluscc.vedbm.inputs.GetAllowListPlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetBackupArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetBackupPlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetDatabaseArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetDatabasePlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.vedbm.outputs.GetAllowListResult;
+import com.byteplus.bytepluscc.vedbm.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetBackupResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetBackupsResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetDatabaseResult;
@@ -25,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VedbmFunctions {
+    /**
+     * Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args) {
+        return getAllowList(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args) {
+        return getAllowListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static Output<GetAllowListResult> getAllowList(GetAllowListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListResult> getAllowListPlain(GetAllowListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vedbm/getAllowList:getAllowList", TypeShape.of(GetAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists() {
+        return getAllowLists(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain() {
+        return getAllowListsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args) {
+        return getAllowLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args) {
+        return getAllowListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static Output<GetAllowListsResult> getAllowLists(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::AllowList
+     * 
+     */
+    public static CompletableFuture<GetAllowListsResult> getAllowListsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vedbm/getAllowLists:getAllowLists", TypeShape.of(GetAllowListsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VEDBM::Backup
      * 

@@ -110,6 +110,525 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 	}).(AllowListAssociatedInstanceOutput)
 }
 
+type InstanceChargeInfo struct {
+	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	AutoRenew *bool `pulumi:"autoRenew"`
+	// 包年包月实例的到期时间。
+	ChargeExpireTime *string `pulumi:"chargeExpireTime"`
+	// 实例的计费开始时间。
+	ChargeStartTime *string `pulumi:"chargeStartTime"`
+	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	ChargeStatus *string `pulumi:"chargeStatus"`
+	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	ChargeType *string `pulumi:"chargeType"`
+	// 实例欠费关停后的预计释放时间。
+	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
+	// 实例的欠费关停时间。
+	OverdueTime *string `pulumi:"overdueTime"`
+	// 包年包月类型实例的购买时长。
+	Period *int `pulumi:"period"`
+	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	PeriodUnit *string `pulumi:"periodUnit"`
+}
+
+// InstanceChargeInfoInput is an input type that accepts InstanceChargeInfoArgs and InstanceChargeInfoOutput values.
+// You can construct a concrete instance of `InstanceChargeInfoInput` via:
+//
+//	InstanceChargeInfoArgs{...}
+type InstanceChargeInfoInput interface {
+	pulumi.Input
+
+	ToInstanceChargeInfoOutput() InstanceChargeInfoOutput
+	ToInstanceChargeInfoOutputWithContext(context.Context) InstanceChargeInfoOutput
+}
+
+type InstanceChargeInfoArgs struct {
+	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
+	// 包年包月实例的到期时间。
+	ChargeExpireTime pulumi.StringPtrInput `pulumi:"chargeExpireTime"`
+	// 实例的计费开始时间。
+	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
+	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
+	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
+	// 实例欠费关停后的预计释放时间。
+	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
+	// 实例的欠费关停时间。
+	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
+	// 包年包月类型实例的购买时长。
+	Period pulumi.IntPtrInput `pulumi:"period"`
+	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
+}
+
+func (InstanceChargeInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceChargeInfo)(nil)).Elem()
+}
+
+func (i InstanceChargeInfoArgs) ToInstanceChargeInfoOutput() InstanceChargeInfoOutput {
+	return i.ToInstanceChargeInfoOutputWithContext(context.Background())
+}
+
+func (i InstanceChargeInfoArgs) ToInstanceChargeInfoOutputWithContext(ctx context.Context) InstanceChargeInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeInfoOutput)
+}
+
+func (i InstanceChargeInfoArgs) ToInstanceChargeInfoPtrOutput() InstanceChargeInfoPtrOutput {
+	return i.ToInstanceChargeInfoPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceChargeInfoArgs) ToInstanceChargeInfoPtrOutputWithContext(ctx context.Context) InstanceChargeInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeInfoOutput).ToInstanceChargeInfoPtrOutputWithContext(ctx)
+}
+
+// InstanceChargeInfoPtrInput is an input type that accepts InstanceChargeInfoArgs, InstanceChargeInfoPtr and InstanceChargeInfoPtrOutput values.
+// You can construct a concrete instance of `InstanceChargeInfoPtrInput` via:
+//
+//	        InstanceChargeInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceChargeInfoPtrInput interface {
+	pulumi.Input
+
+	ToInstanceChargeInfoPtrOutput() InstanceChargeInfoPtrOutput
+	ToInstanceChargeInfoPtrOutputWithContext(context.Context) InstanceChargeInfoPtrOutput
+}
+
+type instanceChargeInfoPtrType InstanceChargeInfoArgs
+
+func InstanceChargeInfoPtr(v *InstanceChargeInfoArgs) InstanceChargeInfoPtrInput {
+	return (*instanceChargeInfoPtrType)(v)
+}
+
+func (*instanceChargeInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceChargeInfo)(nil)).Elem()
+}
+
+func (i *instanceChargeInfoPtrType) ToInstanceChargeInfoPtrOutput() InstanceChargeInfoPtrOutput {
+	return i.ToInstanceChargeInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceChargeInfoPtrType) ToInstanceChargeInfoPtrOutputWithContext(ctx context.Context) InstanceChargeInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceChargeInfoPtrOutput)
+}
+
+type InstanceChargeInfoOutput struct{ *pulumi.OutputState }
+
+func (InstanceChargeInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceChargeInfo)(nil)).Elem()
+}
+
+func (o InstanceChargeInfoOutput) ToInstanceChargeInfoOutput() InstanceChargeInfoOutput {
+	return o
+}
+
+func (o InstanceChargeInfoOutput) ToInstanceChargeInfoOutputWithContext(ctx context.Context) InstanceChargeInfoOutput {
+	return o
+}
+
+func (o InstanceChargeInfoOutput) ToInstanceChargeInfoPtrOutput() InstanceChargeInfoPtrOutput {
+	return o.ToInstanceChargeInfoPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceChargeInfoOutput) ToInstanceChargeInfoPtrOutputWithContext(ctx context.Context) InstanceChargeInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceChargeInfo) *InstanceChargeInfo {
+		return &v
+	}).(InstanceChargeInfoPtrOutput)
+}
+
+// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+func (o InstanceChargeInfoOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
+}
+
+// 包年包月实例的到期时间。
+func (o InstanceChargeInfoOutput) ChargeExpireTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeExpireTime }).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费开始时间。
+func (o InstanceChargeInfoOutput) ChargeStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+func (o InstanceChargeInfoOutput) ChargeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+func (o InstanceChargeInfoOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
+}
+
+// 实例欠费关停后的预计释放时间。
+func (o InstanceChargeInfoOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
+}
+
+// 实例的欠费关停时间。
+func (o InstanceChargeInfoOutput) OverdueTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
+}
+
+// 包年包月类型实例的购买时长。
+func (o InstanceChargeInfoOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *int { return v.Period }).(pulumi.IntPtrOutput)
+}
+
+// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+func (o InstanceChargeInfoOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
+}
+
+type InstanceChargeInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceChargeInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceChargeInfo)(nil)).Elem()
+}
+
+func (o InstanceChargeInfoPtrOutput) ToInstanceChargeInfoPtrOutput() InstanceChargeInfoPtrOutput {
+	return o
+}
+
+func (o InstanceChargeInfoPtrOutput) ToInstanceChargeInfoPtrOutputWithContext(ctx context.Context) InstanceChargeInfoPtrOutput {
+	return o
+}
+
+func (o InstanceChargeInfoPtrOutput) Elem() InstanceChargeInfoOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) InstanceChargeInfo {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceChargeInfo
+		return ret
+	}).(InstanceChargeInfoOutput)
+}
+
+// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+func (o InstanceChargeInfoPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenew
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 包年包月实例的到期时间。
+func (o InstanceChargeInfoPtrOutput) ChargeExpireTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeExpireTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费开始时间。
+func (o InstanceChargeInfoPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+func (o InstanceChargeInfoPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+func (o InstanceChargeInfoPtrOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例欠费关停后的预计释放时间。
+func (o InstanceChargeInfoPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OverdueReclaimTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 实例的欠费关停时间。
+func (o InstanceChargeInfoPtrOutput) OverdueTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OverdueTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// 包年包月类型实例的购买时长。
+func (o InstanceChargeInfoPtrOutput) Period() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Period
+	}).(pulumi.IntPtrOutput)
+}
+
+// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+func (o InstanceChargeInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceChargeInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeriodUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceConnectionInfo struct {
+	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	EndpointType *string `pulumi:"endpointType"`
+	// 实例私网访问域名。
+	InternalEndpoint *string `pulumi:"internalEndpoint"`
+	// 接入点的网络类型。统一为 PrivateNetwork。
+	NetworkType *string `pulumi:"networkType"`
+	// 实例公网访问域名。
+	PublicEndpoint *string `pulumi:"publicEndpoint"`
+}
+
+// InstanceConnectionInfoInput is an input type that accepts InstanceConnectionInfoArgs and InstanceConnectionInfoOutput values.
+// You can construct a concrete instance of `InstanceConnectionInfoInput` via:
+//
+//	InstanceConnectionInfoArgs{...}
+type InstanceConnectionInfoInput interface {
+	pulumi.Input
+
+	ToInstanceConnectionInfoOutput() InstanceConnectionInfoOutput
+	ToInstanceConnectionInfoOutputWithContext(context.Context) InstanceConnectionInfoOutput
+}
+
+type InstanceConnectionInfoArgs struct {
+	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
+	// 实例私网访问域名。
+	InternalEndpoint pulumi.StringPtrInput `pulumi:"internalEndpoint"`
+	// 接入点的网络类型。统一为 PrivateNetwork。
+	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
+	// 实例公网访问域名。
+	PublicEndpoint pulumi.StringPtrInput `pulumi:"publicEndpoint"`
+}
+
+func (InstanceConnectionInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceConnectionInfo)(nil)).Elem()
+}
+
+func (i InstanceConnectionInfoArgs) ToInstanceConnectionInfoOutput() InstanceConnectionInfoOutput {
+	return i.ToInstanceConnectionInfoOutputWithContext(context.Background())
+}
+
+func (i InstanceConnectionInfoArgs) ToInstanceConnectionInfoOutputWithContext(ctx context.Context) InstanceConnectionInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceConnectionInfoOutput)
+}
+
+// InstanceConnectionInfoArrayInput is an input type that accepts InstanceConnectionInfoArray and InstanceConnectionInfoArrayOutput values.
+// You can construct a concrete instance of `InstanceConnectionInfoArrayInput` via:
+//
+//	InstanceConnectionInfoArray{ InstanceConnectionInfoArgs{...} }
+type InstanceConnectionInfoArrayInput interface {
+	pulumi.Input
+
+	ToInstanceConnectionInfoArrayOutput() InstanceConnectionInfoArrayOutput
+	ToInstanceConnectionInfoArrayOutputWithContext(context.Context) InstanceConnectionInfoArrayOutput
+}
+
+type InstanceConnectionInfoArray []InstanceConnectionInfoInput
+
+func (InstanceConnectionInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceConnectionInfo)(nil)).Elem()
+}
+
+func (i InstanceConnectionInfoArray) ToInstanceConnectionInfoArrayOutput() InstanceConnectionInfoArrayOutput {
+	return i.ToInstanceConnectionInfoArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceConnectionInfoArray) ToInstanceConnectionInfoArrayOutputWithContext(ctx context.Context) InstanceConnectionInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceConnectionInfoArrayOutput)
+}
+
+type InstanceConnectionInfoOutput struct{ *pulumi.OutputState }
+
+func (InstanceConnectionInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceConnectionInfo)(nil)).Elem()
+}
+
+func (o InstanceConnectionInfoOutput) ToInstanceConnectionInfoOutput() InstanceConnectionInfoOutput {
+	return o
+}
+
+func (o InstanceConnectionInfoOutput) ToInstanceConnectionInfoOutputWithContext(ctx context.Context) InstanceConnectionInfoOutput {
+	return o
+}
+
+// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+func (o InstanceConnectionInfoOutput) EndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
+}
+
+// 实例私网访问域名。
+func (o InstanceConnectionInfoOutput) InternalEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.InternalEndpoint }).(pulumi.StringPtrOutput)
+}
+
+// 接入点的网络类型。统一为 PrivateNetwork。
+func (o InstanceConnectionInfoOutput) NetworkType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
+}
+
+// 实例公网访问域名。
+func (o InstanceConnectionInfoOutput) PublicEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.PublicEndpoint }).(pulumi.StringPtrOutput)
+}
+
+type InstanceConnectionInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceConnectionInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceConnectionInfo)(nil)).Elem()
+}
+
+func (o InstanceConnectionInfoArrayOutput) ToInstanceConnectionInfoArrayOutput() InstanceConnectionInfoArrayOutput {
+	return o
+}
+
+func (o InstanceConnectionInfoArrayOutput) ToInstanceConnectionInfoArrayOutputWithContext(ctx context.Context) InstanceConnectionInfoArrayOutput {
+	return o
+}
+
+func (o InstanceConnectionInfoArrayOutput) Index(i pulumi.IntInput) InstanceConnectionInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceConnectionInfo {
+		return vs[0].([]InstanceConnectionInfo)[vs[1].(int)]
+	}).(InstanceConnectionInfoOutput)
+}
+
+type InstanceTag struct {
+	// 标签的键。
+	Key *string `pulumi:"key"`
+	// 标签的值。
+	Value *string `pulumi:"value"`
+}
+
+// InstanceTagInput is an input type that accepts InstanceTagArgs and InstanceTagOutput values.
+// You can construct a concrete instance of `InstanceTagInput` via:
+//
+//	InstanceTagArgs{...}
+type InstanceTagInput interface {
+	pulumi.Input
+
+	ToInstanceTagOutput() InstanceTagOutput
+	ToInstanceTagOutputWithContext(context.Context) InstanceTagOutput
+}
+
+type InstanceTagArgs struct {
+	// 标签的键。
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// 标签的值。
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (InstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutput() InstanceTagOutput {
+	return i.ToInstanceTagOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArgs) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagOutput)
+}
+
+// InstanceTagArrayInput is an input type that accepts InstanceTagArray and InstanceTagArrayOutput values.
+// You can construct a concrete instance of `InstanceTagArrayInput` via:
+//
+//	InstanceTagArray{ InstanceTagArgs{...} }
+type InstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToInstanceTagArrayOutput() InstanceTagArrayOutput
+	ToInstanceTagArrayOutputWithContext(context.Context) InstanceTagArrayOutput
+}
+
+type InstanceTagArray []InstanceTagInput
+
+func (InstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return i.ToInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceTagArray) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTagArrayOutput)
+}
+
+type InstanceTagOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutput() InstanceTagOutput {
+	return o
+}
+
+func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) InstanceTagOutput {
+	return o
+}
+
+// 标签的键。
+func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// 标签的值。
+func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type InstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTag)(nil)).Elem()
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutput() InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) ToInstanceTagArrayOutputWithContext(ctx context.Context) InstanceTagArrayOutput {
+	return o
+}
+
+func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceTag {
+		return vs[0].([]InstanceTag)[vs[1].(int)]
+	}).(InstanceTagOutput)
+}
+
 type TopicAccessPolicy struct {
 	// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
 	AccessPolicy *string `pulumi:"accessPolicy"`
@@ -428,6 +947,360 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 	}).(GetAllowListAssociatedInstanceOutput)
 }
 
+type GetInstanceChargeInfo struct {
+	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	AutoRenew bool `pulumi:"autoRenew"`
+	// 包年包月实例的到期时间。
+	ChargeExpireTime string `pulumi:"chargeExpireTime"`
+	// 实例的计费开始时间。
+	ChargeStartTime string `pulumi:"chargeStartTime"`
+	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	ChargeStatus string `pulumi:"chargeStatus"`
+	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	ChargeType string `pulumi:"chargeType"`
+	// 实例欠费关停后的预计释放时间。
+	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
+	// 实例的欠费关停时间。
+	OverdueTime string `pulumi:"overdueTime"`
+	// 包年包月类型实例的购买时长。
+	Period int `pulumi:"period"`
+	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	PeriodUnit string `pulumi:"periodUnit"`
+}
+
+// GetInstanceChargeInfoInput is an input type that accepts GetInstanceChargeInfoArgs and GetInstanceChargeInfoOutput values.
+// You can construct a concrete instance of `GetInstanceChargeInfoInput` via:
+//
+//	GetInstanceChargeInfoArgs{...}
+type GetInstanceChargeInfoInput interface {
+	pulumi.Input
+
+	ToGetInstanceChargeInfoOutput() GetInstanceChargeInfoOutput
+	ToGetInstanceChargeInfoOutputWithContext(context.Context) GetInstanceChargeInfoOutput
+}
+
+type GetInstanceChargeInfoArgs struct {
+	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
+	// 包年包月实例的到期时间。
+	ChargeExpireTime pulumi.StringInput `pulumi:"chargeExpireTime"`
+	// 实例的计费开始时间。
+	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
+	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
+	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// 实例欠费关停后的预计释放时间。
+	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
+	// 实例的欠费关停时间。
+	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
+	// 包年包月类型实例的购买时长。
+	Period pulumi.IntInput `pulumi:"period"`
+	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
+}
+
+func (GetInstanceChargeInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceChargeInfo)(nil)).Elem()
+}
+
+func (i GetInstanceChargeInfoArgs) ToGetInstanceChargeInfoOutput() GetInstanceChargeInfoOutput {
+	return i.ToGetInstanceChargeInfoOutputWithContext(context.Background())
+}
+
+func (i GetInstanceChargeInfoArgs) ToGetInstanceChargeInfoOutputWithContext(ctx context.Context) GetInstanceChargeInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceChargeInfoOutput)
+}
+
+type GetInstanceChargeInfoOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceChargeInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceChargeInfo)(nil)).Elem()
+}
+
+func (o GetInstanceChargeInfoOutput) ToGetInstanceChargeInfoOutput() GetInstanceChargeInfoOutput {
+	return o
+}
+
+func (o GetInstanceChargeInfoOutput) ToGetInstanceChargeInfoOutputWithContext(ctx context.Context) GetInstanceChargeInfoOutput {
+	return o
+}
+
+// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+func (o GetInstanceChargeInfoOutput) AutoRenew() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) bool { return v.AutoRenew }).(pulumi.BoolOutput)
+}
+
+// 包年包月实例的到期时间。
+func (o GetInstanceChargeInfoOutput) ChargeExpireTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeExpireTime }).(pulumi.StringOutput)
+}
+
+// 实例的计费开始时间。
+func (o GetInstanceChargeInfoOutput) ChargeStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeStartTime }).(pulumi.StringOutput)
+}
+
+// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+func (o GetInstanceChargeInfoOutput) ChargeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeStatus }).(pulumi.StringOutput)
+}
+
+// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+func (o GetInstanceChargeInfoOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// 实例欠费关停后的预计释放时间。
+func (o GetInstanceChargeInfoOutput) OverdueReclaimTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
+}
+
+// 实例的欠费关停时间。
+func (o GetInstanceChargeInfoOutput) OverdueTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.OverdueTime }).(pulumi.StringOutput)
+}
+
+// 包年包月类型实例的购买时长。
+func (o GetInstanceChargeInfoOutput) Period() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) int { return v.Period }).(pulumi.IntOutput)
+}
+
+// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+func (o GetInstanceChargeInfoOutput) PeriodUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.PeriodUnit }).(pulumi.StringOutput)
+}
+
+type GetInstanceConnectionInfo struct {
+	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	EndpointType string `pulumi:"endpointType"`
+	// 实例私网访问域名。
+	InternalEndpoint string `pulumi:"internalEndpoint"`
+	// 接入点的网络类型。统一为 PrivateNetwork。
+	NetworkType string `pulumi:"networkType"`
+	// 实例公网访问域名。
+	PublicEndpoint string `pulumi:"publicEndpoint"`
+}
+
+// GetInstanceConnectionInfoInput is an input type that accepts GetInstanceConnectionInfoArgs and GetInstanceConnectionInfoOutput values.
+// You can construct a concrete instance of `GetInstanceConnectionInfoInput` via:
+//
+//	GetInstanceConnectionInfoArgs{...}
+type GetInstanceConnectionInfoInput interface {
+	pulumi.Input
+
+	ToGetInstanceConnectionInfoOutput() GetInstanceConnectionInfoOutput
+	ToGetInstanceConnectionInfoOutputWithContext(context.Context) GetInstanceConnectionInfoOutput
+}
+
+type GetInstanceConnectionInfoArgs struct {
+	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	EndpointType pulumi.StringInput `pulumi:"endpointType"`
+	// 实例私网访问域名。
+	InternalEndpoint pulumi.StringInput `pulumi:"internalEndpoint"`
+	// 接入点的网络类型。统一为 PrivateNetwork。
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// 实例公网访问域名。
+	PublicEndpoint pulumi.StringInput `pulumi:"publicEndpoint"`
+}
+
+func (GetInstanceConnectionInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConnectionInfo)(nil)).Elem()
+}
+
+func (i GetInstanceConnectionInfoArgs) ToGetInstanceConnectionInfoOutput() GetInstanceConnectionInfoOutput {
+	return i.ToGetInstanceConnectionInfoOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConnectionInfoArgs) ToGetInstanceConnectionInfoOutputWithContext(ctx context.Context) GetInstanceConnectionInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConnectionInfoOutput)
+}
+
+// GetInstanceConnectionInfoArrayInput is an input type that accepts GetInstanceConnectionInfoArray and GetInstanceConnectionInfoArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConnectionInfoArrayInput` via:
+//
+//	GetInstanceConnectionInfoArray{ GetInstanceConnectionInfoArgs{...} }
+type GetInstanceConnectionInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConnectionInfoArrayOutput() GetInstanceConnectionInfoArrayOutput
+	ToGetInstanceConnectionInfoArrayOutputWithContext(context.Context) GetInstanceConnectionInfoArrayOutput
+}
+
+type GetInstanceConnectionInfoArray []GetInstanceConnectionInfoInput
+
+func (GetInstanceConnectionInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConnectionInfo)(nil)).Elem()
+}
+
+func (i GetInstanceConnectionInfoArray) ToGetInstanceConnectionInfoArrayOutput() GetInstanceConnectionInfoArrayOutput {
+	return i.ToGetInstanceConnectionInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConnectionInfoArray) ToGetInstanceConnectionInfoArrayOutputWithContext(ctx context.Context) GetInstanceConnectionInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConnectionInfoArrayOutput)
+}
+
+type GetInstanceConnectionInfoOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConnectionInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConnectionInfo)(nil)).Elem()
+}
+
+func (o GetInstanceConnectionInfoOutput) ToGetInstanceConnectionInfoOutput() GetInstanceConnectionInfoOutput {
+	return o
+}
+
+func (o GetInstanceConnectionInfoOutput) ToGetInstanceConnectionInfoOutputWithContext(ctx context.Context) GetInstanceConnectionInfoOutput {
+	return o
+}
+
+// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+func (o GetInstanceConnectionInfoOutput) EndpointType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.EndpointType }).(pulumi.StringOutput)
+}
+
+// 实例私网访问域名。
+func (o GetInstanceConnectionInfoOutput) InternalEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.InternalEndpoint }).(pulumi.StringOutput)
+}
+
+// 接入点的网络类型。统一为 PrivateNetwork。
+func (o GetInstanceConnectionInfoOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// 实例公网访问域名。
+func (o GetInstanceConnectionInfoOutput) PublicEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.PublicEndpoint }).(pulumi.StringOutput)
+}
+
+type GetInstanceConnectionInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConnectionInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConnectionInfo)(nil)).Elem()
+}
+
+func (o GetInstanceConnectionInfoArrayOutput) ToGetInstanceConnectionInfoArrayOutput() GetInstanceConnectionInfoArrayOutput {
+	return o
+}
+
+func (o GetInstanceConnectionInfoArrayOutput) ToGetInstanceConnectionInfoArrayOutputWithContext(ctx context.Context) GetInstanceConnectionInfoArrayOutput {
+	return o
+}
+
+func (o GetInstanceConnectionInfoArrayOutput) Index(i pulumi.IntInput) GetInstanceConnectionInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConnectionInfo {
+		return vs[0].([]GetInstanceConnectionInfo)[vs[1].(int)]
+	}).(GetInstanceConnectionInfoOutput)
+}
+
+type GetInstanceTag struct {
+	// 标签的键。
+	Key string `pulumi:"key"`
+	// 标签的值。
+	Value string `pulumi:"value"`
+}
+
+// GetInstanceTagInput is an input type that accepts GetInstanceTagArgs and GetInstanceTagOutput values.
+// You can construct a concrete instance of `GetInstanceTagInput` via:
+//
+//	GetInstanceTagArgs{...}
+type GetInstanceTagInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagOutput() GetInstanceTagOutput
+	ToGetInstanceTagOutputWithContext(context.Context) GetInstanceTagOutput
+}
+
+type GetInstanceTagArgs struct {
+	// 标签的键。
+	Key pulumi.StringInput `pulumi:"key"`
+	// 标签的值。
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetInstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return i.ToGetInstanceTagOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArgs) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagOutput)
+}
+
+// GetInstanceTagArrayInput is an input type that accepts GetInstanceTagArray and GetInstanceTagArrayOutput values.
+// You can construct a concrete instance of `GetInstanceTagArrayInput` via:
+//
+//	GetInstanceTagArray{ GetInstanceTagArgs{...} }
+type GetInstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput
+	ToGetInstanceTagArrayOutputWithContext(context.Context) GetInstanceTagArrayOutput
+}
+
+type GetInstanceTagArray []GetInstanceTagInput
+
+func (GetInstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return i.ToGetInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTagArray) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTagArrayOutput)
+}
+
+type GetInstanceTagOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutput() GetInstanceTagOutput {
+	return o
+}
+
+func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Context) GetInstanceTagOutput {
+	return o
+}
+
+// 标签的键。
+func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// 标签的值。
+func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetInstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTag)(nil)).Elem()
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutput() GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) ToGetInstanceTagArrayOutputWithContext(ctx context.Context) GetInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceTag {
+		return vs[0].([]GetInstanceTag)[vs[1].(int)]
+	}).(GetInstanceTagOutput)
+}
+
 type GetTopicAccessPolicy struct {
 	// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
 	AccessPolicy string `pulumi:"accessPolicy"`
@@ -643,24 +1516,46 @@ func (o GetTopicTagArrayOutput) Index(i pulumi.IntInput) GetTopicTagOutput {
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoInput)(nil)).Elem(), InstanceChargeInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceChargeInfoPtrInput)(nil)).Elem(), InstanceChargeInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoInput)(nil)).Elem(), InstanceConnectionInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoArrayInput)(nil)).Elem(), InstanceConnectionInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicAccessPolicyInput)(nil)).Elem(), TopicAccessPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicAccessPolicyArrayInput)(nil)).Elem(), TopicAccessPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagInput)(nil)).Elem(), TopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagArrayInput)(nil)).Elem(), TopicTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceChargeInfoInput)(nil)).Elem(), GetInstanceChargeInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoInput)(nil)).Elem(), GetInstanceConnectionInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoArrayInput)(nil)).Elem(), GetInstanceConnectionInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicAccessPolicyInput)(nil)).Elem(), GetTopicAccessPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicAccessPolicyArrayInput)(nil)).Elem(), GetTopicAccessPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagInput)(nil)).Elem(), GetTopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagArrayInput)(nil)).Elem(), GetTopicTagArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(InstanceChargeInfoOutput{})
+	pulumi.RegisterOutputType(InstanceChargeInfoPtrOutput{})
+	pulumi.RegisterOutputType(InstanceConnectionInfoOutput{})
+	pulumi.RegisterOutputType(InstanceConnectionInfoArrayOutput{})
+	pulumi.RegisterOutputType(InstanceTagOutput{})
+	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(TopicAccessPolicyOutput{})
 	pulumi.RegisterOutputType(TopicAccessPolicyArrayOutput{})
 	pulumi.RegisterOutputType(TopicTagOutput{})
 	pulumi.RegisterOutputType(TopicTagArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceChargeInfoOutput{})
+	pulumi.RegisterOutputType(GetInstanceConnectionInfoOutput{})
+	pulumi.RegisterOutputType(GetInstanceConnectionInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagOutput{})
+	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTopicAccessPolicyOutput{})
 	pulumi.RegisterOutputType(GetTopicAccessPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetTopicTagOutput{})

@@ -64,9 +64,13 @@ export class Cluster extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     */
+    public readonly irsaConfig!: pulumi.Output<outputs.vke.ClusterIrsaConfig>;
+    /**
      * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
      */
-    public readonly kubernetesVersion!: pulumi.Output<string>;
+    public /*out*/ readonly kubernetesVersion!: pulumi.Output<string>;
     /**
      * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
      */
@@ -139,6 +143,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["createdTime"] = state ? state.createdTime : undefined;
             resourceInputs["deleteProtectionEnabled"] = state ? state.deleteProtectionEnabled : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["irsaConfig"] = state ? state.irsaConfig : undefined;
             resourceInputs["kubernetesVersion"] = state ? state.kubernetesVersion : undefined;
             resourceInputs["kubernetesVersionCreate"] = state ? state.kubernetesVersionCreate : undefined;
             resourceInputs["loggingConfig"] = state ? state.loggingConfig : undefined;
@@ -162,7 +167,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["clusterConfig"] = args ? args.clusterConfig : undefined;
             resourceInputs["deleteProtectionEnabled"] = args ? args.deleteProtectionEnabled : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["kubernetesVersion"] = args ? args.kubernetesVersion : undefined;
+            resourceInputs["irsaConfig"] = args ? args.irsaConfig : undefined;
             resourceInputs["kubernetesVersionCreate"] = args ? args.kubernetesVersionCreate : undefined;
             resourceInputs["loggingConfig"] = args ? args.loggingConfig : undefined;
             resourceInputs["monitoringConfig"] = args ? args.monitoringConfig : undefined;
@@ -174,6 +179,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["clusterId"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
+            resourceInputs["kubernetesVersion"] = undefined /*out*/;
             resourceInputs["message"] = undefined /*out*/;
             resourceInputs["nodeStatistics"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
@@ -209,6 +215,10 @@ export interface ClusterState {
      * 集群描述。长度限制为 300 个字符以内。
      */
     description?: pulumi.Input<string>;
+    /**
+     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     */
+    irsaConfig?: pulumi.Input<inputs.vke.ClusterIrsaConfig>;
     /**
      * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
      */
@@ -285,9 +295,9 @@ export interface ClusterArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * IRSA（IAM Role for Service Account）能力相关参数配置。
      */
-    kubernetesVersion?: pulumi.Input<string>;
+    irsaConfig?: pulumi.Input<inputs.vke.ClusterIrsaConfig>;
     /**
      * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
      */

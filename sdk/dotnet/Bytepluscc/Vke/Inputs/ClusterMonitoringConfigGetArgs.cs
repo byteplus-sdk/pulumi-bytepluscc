@@ -22,6 +22,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
+        /// 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+        /// </summary>
+        [Input("enableMetricsExternalCollection")]
+        public Input<bool>? EnableMetricsExternalCollection { get; set; }
+
+        /// <summary>
         /// 监控数据所属的工作区 ID。
         /// </summary>
         [Input("workspaceId")]

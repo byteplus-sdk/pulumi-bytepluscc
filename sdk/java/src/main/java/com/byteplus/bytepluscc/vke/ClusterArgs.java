@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.vke;
 
 import com.byteplus.bytepluscc.vke.inputs.ClusterClusterConfigArgs;
+import com.byteplus.bytepluscc.vke.inputs.ClusterIrsaConfigArgs;
 import com.byteplus.bytepluscc.vke.inputs.ClusterLoggingConfigArgs;
 import com.byteplus.bytepluscc.vke.inputs.ClusterMonitoringConfigArgs;
 import com.byteplus.bytepluscc.vke.inputs.ClusterPodsConfigArgs;
@@ -70,18 +71,18 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * IRSA（IAM Role for Service Account）能力相关参数配置。
      * 
      */
-    @Import(name="kubernetesVersion")
-    private @Nullable Output<String> kubernetesVersion;
+    @Import(name="irsaConfig")
+    private @Nullable Output<ClusterIrsaConfigArgs> irsaConfig;
 
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
      * 
      */
-    public Optional<Output<String>> kubernetesVersion() {
-        return Optional.ofNullable(this.kubernetesVersion);
+    public Optional<Output<ClusterIrsaConfigArgs>> irsaConfig() {
+        return Optional.ofNullable(this.irsaConfig);
     }
 
     /**
@@ -217,7 +218,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.clusterConfig = $.clusterConfig;
         this.deleteProtectionEnabled = $.deleteProtectionEnabled;
         this.description = $.description;
-        this.kubernetesVersion = $.kubernetesVersion;
+        this.irsaConfig = $.irsaConfig;
         this.kubernetesVersionCreate = $.kubernetesVersionCreate;
         this.loggingConfig = $.loggingConfig;
         this.monitoringConfig = $.monitoringConfig;
@@ -311,24 +312,24 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubernetesVersion 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+         * @param irsaConfig IRSA（IAM Role for Service Account）能力相关参数配置。
          * 
          * @return builder
          * 
          */
-        public Builder kubernetesVersion(@Nullable Output<String> kubernetesVersion) {
-            $.kubernetesVersion = kubernetesVersion;
+        public Builder irsaConfig(@Nullable Output<ClusterIrsaConfigArgs> irsaConfig) {
+            $.irsaConfig = irsaConfig;
             return this;
         }
 
         /**
-         * @param kubernetesVersion 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+         * @param irsaConfig IRSA（IAM Role for Service Account）能力相关参数配置。
          * 
          * @return builder
          * 
          */
-        public Builder kubernetesVersion(String kubernetesVersion) {
-            return kubernetesVersion(Output.of(kubernetesVersion));
+        public Builder irsaConfig(ClusterIrsaConfigArgs irsaConfig) {
+            return irsaConfig(Output.of(irsaConfig));
         }
 
         /**

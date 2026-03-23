@@ -6,6 +6,9 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .domain import *
+from .get_domain import *
+from .get_domains import *
 from .get_share_config import *
 from .get_share_configs import *
 from .share_config import *

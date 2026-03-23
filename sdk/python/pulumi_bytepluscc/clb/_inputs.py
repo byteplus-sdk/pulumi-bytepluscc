@@ -42,6 +42,8 @@ __all__ = [
     'ListenerHealthCheckArgsDict',
     'ListenerTagArgs',
     'ListenerTagArgsDict',
+    'NlbAccessLogArgs',
+    'NlbAccessLogArgsDict',
     'NlbListenerHealthArgs',
     'NlbListenerHealthArgsDict',
     'NlbListenerTagArgs',
@@ -1146,6 +1148,78 @@ class ListenerTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class NlbAccessLogArgsDict(TypedDict):
+        access_log_enabled: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否开启访问日志。true：是。flase：否。
+        """
+        project_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        日志项目的ID。
+        """
+        topic_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        日志主题的ID。
+        """
+elif False:
+    NlbAccessLogArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NlbAccessLogArgs:
+    def __init__(__self__, *,
+                 access_log_enabled: Optional[pulumi.Input[builtins.bool]] = None,
+                 project_id: Optional[pulumi.Input[builtins.str]] = None,
+                 topic_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] access_log_enabled: 是否开启访问日志。true：是。flase：否。
+        :param pulumi.Input[builtins.str] project_id: 日志项目的ID。
+        :param pulumi.Input[builtins.str] topic_id: 日志主题的ID。
+        """
+        if access_log_enabled is not None:
+            pulumi.set(__self__, "access_log_enabled", access_log_enabled)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+
+    @property
+    @pulumi.getter(name="accessLogEnabled")
+    def access_log_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否开启访问日志。true：是。flase：否。
+        """
+        return pulumi.get(self, "access_log_enabled")
+
+    @access_log_enabled.setter
+    def access_log_enabled(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "access_log_enabled", value)
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        日志项目的ID。
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "project_id", value)
+
+    @property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        日志主题的ID。
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "topic_id", value)
 
 
 if not MYPY:

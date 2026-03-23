@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.clb.inputs;
 
+import com.byteplus.bytepluscc.clb.inputs.NlbAccessLogArgs;
 import com.byteplus.bytepluscc.clb.inputs.NlbTagArgs;
 import com.byteplus.bytepluscc.clb.inputs.NlbZoneMappingArgs;
 import com.pulumi.core.Output;
@@ -19,6 +20,21 @@ import javax.annotation.Nullable;
 public final class NlbState extends com.pulumi.resources.ResourceArgs {
 
     public static final NlbState Empty = new NlbState();
+
+    /**
+     * NLB实例的访问日志信息。
+     * 
+     */
+    @Import(name="accessLog")
+    private @Nullable Output<NlbAccessLogArgs> accessLog;
+
+    /**
+     * @return NLB实例的访问日志信息。
+     * 
+     */
+    public Optional<Output<NlbAccessLogArgs>> accessLog() {
+        return Optional.ofNullable(this.accessLog);
+    }
 
     /**
      * NLB实例所属的账号ID。
@@ -397,6 +413,7 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
     private NlbState() {}
 
     private NlbState(NlbState $) {
+        this.accessLog = $.accessLog;
         this.accountId = $.accountId;
         this.billingStatus = $.billingStatus;
         this.billingType = $.billingType;
@@ -441,6 +458,27 @@ public final class NlbState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(NlbState defaults) {
             $ = new NlbState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param accessLog NLB实例的访问日志信息。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accessLog(@Nullable Output<NlbAccessLogArgs> accessLog) {
+            $.accessLog = accessLog;
+            return this;
+        }
+
+        /**
+         * @param accessLog NLB实例的访问日志信息。
+         * 
+         * @return builder
+         * 
+         */
+        public Builder accessLog(NlbAccessLogArgs accessLog) {
+            return accessLog(Output.of(accessLog));
         }
 
         /**

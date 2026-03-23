@@ -31,6 +31,10 @@ export interface GetNlbArgs {
  */
 export interface GetNlbResult {
     /**
+     * NLB实例的访问日志信息。
+     */
+    readonly accessLog: outputs.clb.GetNlbAccessLog;
+    /**
      * NLB实例所属的账号ID。
      */
     readonly accountId: string;

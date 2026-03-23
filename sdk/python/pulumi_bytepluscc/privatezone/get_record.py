@@ -27,7 +27,7 @@ class GetRecordResult:
     """
     A collection of values returned by getRecord.
     """
-    def __init__(__self__, created_at=None, enable=None, host=None, id=None, last_operator=None, line=None, record_id=None, remark=None, ttl=None, type=None, updated_at=None, value=None, weight=None, zid=None):
+    def __init__(__self__, created_at=None, enable=None, host=None, id=None, last_operator=None, line=None, record_id=None, remark=None, ttl=None, type=None, updated_at=None, value=None, weight=None, weight_enabled=None, zid=None):
         if created_at and not isinstance(created_at, str):
             raise TypeError("Expected argument 'created_at' to be a str")
         pulumi.set(__self__, "created_at", created_at)
@@ -67,6 +67,9 @@ class GetRecordResult:
         if weight and not isinstance(weight, int):
             raise TypeError("Expected argument 'weight' to be a int")
         pulumi.set(__self__, "weight", weight)
+        if weight_enabled and not isinstance(weight_enabled, bool):
+            raise TypeError("Expected argument 'weight_enabled' to be a bool")
+        pulumi.set(__self__, "weight_enabled", weight_enabled)
         if zid and not isinstance(zid, int):
             raise TypeError("Expected argument 'zid' to be a int")
         pulumi.set(__self__, "zid", zid)
@@ -176,6 +179,14 @@ class GetRecordResult:
         return pulumi.get(self, "weight")
 
     @property
+    @pulumi.getter(name="weightEnabled")
+    def weight_enabled(self) -> builtins.bool:
+        """
+        该记录集是否开启了负载均衡。
+        """
+        return pulumi.get(self, "weight_enabled")
+
+    @property
     @pulumi.getter
     def zid(self) -> builtins.int:
         """
@@ -203,6 +214,7 @@ class AwaitableGetRecordResult(GetRecordResult):
             updated_at=self.updated_at,
             value=self.value,
             weight=self.weight,
+            weight_enabled=self.weight_enabled,
             zid=self.zid)
 
 
@@ -233,6 +245,7 @@ def get_record(id: Optional[builtins.str] = None,
         updated_at=pulumi.get(__ret__, 'updated_at'),
         value=pulumi.get(__ret__, 'value'),
         weight=pulumi.get(__ret__, 'weight'),
+        weight_enabled=pulumi.get(__ret__, 'weight_enabled'),
         zid=pulumi.get(__ret__, 'zid'))
 def get_record_output(id: Optional[pulumi.Input[builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecordResult]:
@@ -260,4 +273,5 @@ def get_record_output(id: Optional[pulumi.Input[builtins.str]] = None,
         updated_at=pulumi.get(__response__, 'updated_at'),
         value=pulumi.get(__response__, 'value'),
         weight=pulumi.get(__response__, 'weight'),
+        weight_enabled=pulumi.get(__response__, 'weight_enabled'),
         zid=pulumi.get(__response__, 'zid')))

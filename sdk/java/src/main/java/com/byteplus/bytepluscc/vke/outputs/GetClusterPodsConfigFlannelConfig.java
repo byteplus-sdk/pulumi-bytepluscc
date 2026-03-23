@@ -22,6 +22,11 @@ public final class GetClusterPodsConfigFlannelConfig {
      * 
      */
     private List<String> podCidrs;
+    /**
+     * @return Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * 
+     */
+    private List<String> subnetIds;
 
     private GetClusterPodsConfigFlannelConfig() {}
     /**
@@ -38,6 +43,13 @@ public final class GetClusterPodsConfigFlannelConfig {
     public List<String> podCidrs() {
         return this.podCidrs;
     }
+    /**
+     * @return Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * 
+     */
+    public List<String> subnetIds() {
+        return this.subnetIds;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -50,11 +62,13 @@ public final class GetClusterPodsConfigFlannelConfig {
     public static final class Builder {
         private Integer maxPodsPerNode;
         private List<String> podCidrs;
+        private List<String> subnetIds;
         public Builder() {}
         public Builder(GetClusterPodsConfigFlannelConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.maxPodsPerNode = defaults.maxPodsPerNode;
     	      this.podCidrs = defaults.podCidrs;
+    	      this.subnetIds = defaults.subnetIds;
         }
 
         @CustomType.Setter
@@ -76,10 +90,22 @@ public final class GetClusterPodsConfigFlannelConfig {
         public Builder podCidrs(String... podCidrs) {
             return podCidrs(List.of(podCidrs));
         }
+        @CustomType.Setter
+        public Builder subnetIds(List<String> subnetIds) {
+            if (subnetIds == null) {
+              throw new MissingRequiredPropertyException("GetClusterPodsConfigFlannelConfig", "subnetIds");
+            }
+            this.subnetIds = subnetIds;
+            return this;
+        }
+        public Builder subnetIds(String... subnetIds) {
+            return subnetIds(List.of(subnetIds));
+        }
         public GetClusterPodsConfigFlannelConfig build() {
             final var _resultValue = new GetClusterPodsConfigFlannelConfig();
             _resultValue.maxPodsPerNode = maxPodsPerNode;
             _resultValue.podCidrs = podCidrs;
+            _resultValue.subnetIds = subnetIds;
             return _resultValue;
         }
     }
