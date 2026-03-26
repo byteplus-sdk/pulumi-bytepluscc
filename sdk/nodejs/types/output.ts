@@ -8165,6 +8165,25 @@ export namespace cdn {
 }
 
 export namespace cen {
+    export interface CenInstance {
+        /**
+         * 网络实例的ID。
+         */
+        instanceId: string;
+        /**
+         * 网络实例所属账号的ID。
+         */
+        instanceOwnerId: string;
+        /**
+         * 网络实例所在的地域。
+         */
+        instanceRegionId: string;
+        /**
+         * 网络实例的类型。
+         */
+        instanceType: string;
+    }
+
     export interface CenTag {
         /**
          * 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
@@ -8174,6 +8193,37 @@ export namespace cen {
          * 用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
          */
         value: string;
+    }
+
+    export interface GetCenInstance {
+        /**
+         * 云企业网实例的ID。
+         */
+        cenId: string;
+        /**
+         * 网络实例的创建时间。
+         */
+        creationTime: string;
+        /**
+         * 网络实例的ID。
+         */
+        instanceId: string;
+        /**
+         * 网络实例所属账号的ID。
+         */
+        instanceOwnerId: string;
+        /**
+         * 网络实例所在的地域。
+         */
+        instanceRegionId: string;
+        /**
+         * 网络实例的类型。
+         */
+        instanceType: string;
+        /**
+         * 网络实例的加载状态。Attaching：加载中Available：可用
+         */
+        status: string;
     }
 
     export interface GetCenTag {
@@ -12410,6 +12460,220 @@ export namespace emr {
          * 用户标签的标签值。
          */
         value: string;
+    }
+
+    export interface GetNodeGroupApplicationLayout {
+        /**
+         * 应用名称。
+         */
+        applicationName: string;
+        /**
+         * 组件的自定义配置参数列表。
+         */
+        layoutComponentNames: string[];
+    }
+
+    export interface GetNodeGroupChargePreConfig {
+        /**
+         * 是否开启自动续费。
+         */
+        autoRenew: boolean;
+        /**
+         * 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+         */
+        autoRenewPeriod: number;
+        /**
+         * 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         */
+        autoRenewPeriodUnit: string;
+        /**
+         * chargeType=PRE默认值=1，包月的购买时长单位。
+         */
+        chargePeriod: number;
+        /**
+         * chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+         */
+        chargePeriodUnit: string;
+        /**
+         * 付费类型，枚举值：POST，PRE。
+         */
+        chargeType: string;
+    }
+
+    export interface GetNodeGroupDataDisk {
+        /**
+         * 磁盘块数，默认值4，最大15，最小1。
+         */
+        count: number;
+        /**
+         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size: number;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         */
+        volumeType: string;
+    }
+
+    export interface GetNodeGroupNode {
+        /**
+         * 节点创建时间。
+         */
+        createdTime: number;
+        /**
+         * ecs实例规格。
+         */
+        ecsInstanceType: string;
+        /**
+         * 节点FQDN。
+         */
+        nodeFqdn: string;
+        /**
+         * 节点ID。
+         */
+        nodeId: string;
+        /**
+         * 节点名称。
+         */
+        nodeName: string;
+        /**
+         * 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+         */
+        nodeState: string;
+        /**
+         * 私有IP。
+         */
+        privateIp: string;
+        /**
+         * 公网IP。
+         */
+        publicIp: string;
+        /**
+         * 准备完毕时间。
+         */
+        readyTime: number;
+        /**
+         * 集群终止时间。
+         */
+        terminateTime: number;
+    }
+
+    export interface GetNodeGroupSystemDisk {
+        /**
+         * 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size: number;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         */
+        volumeType: string;
+    }
+
+    export interface NodeGroupApplicationLayout {
+        /**
+         * 应用名称。
+         */
+        applicationName: string;
+        /**
+         * 组件的自定义配置参数列表。
+         */
+        layoutComponentNames: string[];
+    }
+
+    export interface NodeGroupChargePreConfig {
+        /**
+         * 是否开启自动续费。
+         */
+        autoRenew: boolean;
+        /**
+         * 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+         */
+        autoRenewPeriod: number;
+        /**
+         * 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         */
+        autoRenewPeriodUnit: string;
+        /**
+         * chargeType=PRE默认值=1，包月的购买时长单位。
+         */
+        chargePeriod: number;
+        /**
+         * chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+         */
+        chargePeriodUnit: string;
+        /**
+         * 付费类型，枚举值：POST，PRE。
+         */
+        chargeType: string;
+    }
+
+    export interface NodeGroupDataDisk {
+        /**
+         * 磁盘块数，默认值4，最大15，最小1。
+         */
+        count: number;
+        /**
+         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size: number;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         */
+        volumeType: string;
+    }
+
+    export interface NodeGroupNode {
+        /**
+         * 节点创建时间。
+         */
+        createdTime: number;
+        /**
+         * ecs实例规格。
+         */
+        ecsInstanceType: string;
+        /**
+         * 节点FQDN。
+         */
+        nodeFqdn: string;
+        /**
+         * 节点ID。
+         */
+        nodeId: string;
+        /**
+         * 节点名称。
+         */
+        nodeName: string;
+        /**
+         * 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+         */
+        nodeState: string;
+        /**
+         * 私有IP。
+         */
+        privateIp: string;
+        /**
+         * 公网IP。
+         */
+        publicIp: string;
+        /**
+         * 准备完毕时间。
+         */
+        readyTime: number;
+        /**
+         * 集群终止时间。
+         */
+        terminateTime: number;
+    }
+
+    export interface NodeGroupSystemDisk {
+        /**
+         * 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size: number;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         */
+        volumeType: string;
     }
 
 }

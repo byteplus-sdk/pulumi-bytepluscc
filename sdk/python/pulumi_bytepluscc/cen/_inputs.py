@@ -16,11 +16,105 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'CenInstanceArgs',
+    'CenInstanceArgsDict',
     'CenTagArgs',
     'CenTagArgsDict',
 ]
 
 MYPY = False
+
+if not MYPY:
+    class CenInstanceArgsDict(TypedDict):
+        instance_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        网络实例的ID。
+        """
+        instance_owner_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        网络实例所属账号的ID。
+        """
+        instance_region_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        网络实例所在的地域。
+        """
+        instance_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        网络实例的类型。
+        """
+elif False:
+    CenInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CenInstanceArgs:
+    def __init__(__self__, *,
+                 instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_owner_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_region_id: Optional[pulumi.Input[builtins.str]] = None,
+                 instance_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] instance_id: 网络实例的ID。
+        :param pulumi.Input[builtins.str] instance_owner_id: 网络实例所属账号的ID。
+        :param pulumi.Input[builtins.str] instance_region_id: 网络实例所在的地域。
+        :param pulumi.Input[builtins.str] instance_type: 网络实例的类型。
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if instance_owner_id is not None:
+            pulumi.set(__self__, "instance_owner_id", instance_owner_id)
+        if instance_region_id is not None:
+            pulumi.set(__self__, "instance_region_id", instance_region_id)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        网络实例的ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_id", value)
+
+    @property
+    @pulumi.getter(name="instanceOwnerId")
+    def instance_owner_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        网络实例所属账号的ID。
+        """
+        return pulumi.get(self, "instance_owner_id")
+
+    @instance_owner_id.setter
+    def instance_owner_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_owner_id", value)
+
+    @property
+    @pulumi.getter(name="instanceRegionId")
+    def instance_region_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        网络实例所在的地域。
+        """
+        return pulumi.get(self, "instance_region_id")
+
+    @instance_region_id.setter
+    def instance_region_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_region_id", value)
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        网络实例的类型。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @instance_type.setter
+    def instance_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "instance_type", value)
+
 
 if not MYPY:
     class CenTagArgsDict(TypedDict):

@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ClusterUser{}
 	case "bytepluscc:emr/clusterUserGroup:ClusterUserGroup":
 		r = &ClusterUserGroup{}
+	case "bytepluscc:emr/nodeGroup:NodeGroup":
+		r = &NodeGroup{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +55,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"emr/clusterUserGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"emr/nodeGroup",
 		&module{version},
 	)
 }

@@ -46,6 +46,16 @@ __all__ = [
     'ClusterStateChangeReasonArgsDict',
     'ClusterTagArgs',
     'ClusterTagArgsDict',
+    'NodeGroupApplicationLayoutArgs',
+    'NodeGroupApplicationLayoutArgsDict',
+    'NodeGroupChargePreConfigArgs',
+    'NodeGroupChargePreConfigArgsDict',
+    'NodeGroupDataDiskArgs',
+    'NodeGroupDataDiskArgsDict',
+    'NodeGroupNodeArgs',
+    'NodeGroupNodeArgsDict',
+    'NodeGroupSystemDiskArgs',
+    'NodeGroupSystemDiskArgsDict',
 ]
 
 MYPY = False
@@ -1827,5 +1837,525 @@ class ClusterTagArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class NodeGroupApplicationLayoutArgsDict(TypedDict):
+        application_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        应用名称。
+        """
+        layout_component_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        组件的自定义配置参数列表。
+        """
+elif False:
+    NodeGroupApplicationLayoutArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodeGroupApplicationLayoutArgs:
+    def __init__(__self__, *,
+                 application_name: Optional[pulumi.Input[builtins.str]] = None,
+                 layout_component_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
+        """
+        :param pulumi.Input[builtins.str] application_name: 应用名称。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] layout_component_names: 组件的自定义配置参数列表。
+        """
+        if application_name is not None:
+            pulumi.set(__self__, "application_name", application_name)
+        if layout_component_names is not None:
+            pulumi.set(__self__, "layout_component_names", layout_component_names)
+
+    @property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        应用名称。
+        """
+        return pulumi.get(self, "application_name")
+
+    @application_name.setter
+    def application_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "application_name", value)
+
+    @property
+    @pulumi.getter(name="layoutComponentNames")
+    def layout_component_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        组件的自定义配置参数列表。
+        """
+        return pulumi.get(self, "layout_component_names")
+
+    @layout_component_names.setter
+    def layout_component_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "layout_component_names", value)
+
+
+if not MYPY:
+    class NodeGroupChargePreConfigArgsDict(TypedDict):
+        auto_renew: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        是否开启自动续费。
+        """
+        auto_renew_period: NotRequired[pulumi.Input[builtins.int]]
+        """
+        自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+        """
+        auto_renew_period_unit: NotRequired[pulumi.Input[builtins.str]]
+        """
+        自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        """
+        charge_period: NotRequired[pulumi.Input[builtins.int]]
+        """
+        chargeType=PRE默认值=1，包月的购买时长单位。
+        """
+        charge_period_unit: NotRequired[pulumi.Input[builtins.str]]
+        """
+        chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+        """
+        charge_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        付费类型，枚举值：POST，PRE。
+        """
+elif False:
+    NodeGroupChargePreConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodeGroupChargePreConfigArgs:
+    def __init__(__self__, *,
+                 auto_renew: Optional[pulumi.Input[builtins.bool]] = None,
+                 auto_renew_period: Optional[pulumi.Input[builtins.int]] = None,
+                 auto_renew_period_unit: Optional[pulumi.Input[builtins.str]] = None,
+                 charge_period: Optional[pulumi.Input[builtins.int]] = None,
+                 charge_period_unit: Optional[pulumi.Input[builtins.str]] = None,
+                 charge_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。
+        :param pulumi.Input[builtins.int] auto_renew_period: 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+        :param pulumi.Input[builtins.str] auto_renew_period_unit: 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        :param pulumi.Input[builtins.int] charge_period: chargeType=PRE默认值=1，包月的购买时长单位。
+        :param pulumi.Input[builtins.str] charge_period_unit: chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+        :param pulumi.Input[builtins.str] charge_type: 付费类型，枚举值：POST，PRE。
+        """
+        if auto_renew is not None:
+            pulumi.set(__self__, "auto_renew", auto_renew)
+        if auto_renew_period is not None:
+            pulumi.set(__self__, "auto_renew_period", auto_renew_period)
+        if auto_renew_period_unit is not None:
+            pulumi.set(__self__, "auto_renew_period_unit", auto_renew_period_unit)
+        if charge_period is not None:
+            pulumi.set(__self__, "charge_period", charge_period)
+        if charge_period_unit is not None:
+            pulumi.set(__self__, "charge_period_unit", charge_period_unit)
+        if charge_type is not None:
+            pulumi.set(__self__, "charge_type", charge_type)
+
+    @property
+    @pulumi.getter(name="autoRenew")
+    def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        是否开启自动续费。
+        """
+        return pulumi.get(self, "auto_renew")
+
+    @auto_renew.setter
+    def auto_renew(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "auto_renew", value)
+
+    @property
+    @pulumi.getter(name="autoRenewPeriod")
+    def auto_renew_period(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+        """
+        return pulumi.get(self, "auto_renew_period")
+
+    @auto_renew_period.setter
+    def auto_renew_period(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "auto_renew_period", value)
+
+    @property
+    @pulumi.getter(name="autoRenewPeriodUnit")
+    def auto_renew_period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        """
+        return pulumi.get(self, "auto_renew_period_unit")
+
+    @auto_renew_period_unit.setter
+    def auto_renew_period_unit(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "auto_renew_period_unit", value)
+
+    @property
+    @pulumi.getter(name="chargePeriod")
+    def charge_period(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        chargeType=PRE默认值=1，包月的购买时长单位。
+        """
+        return pulumi.get(self, "charge_period")
+
+    @charge_period.setter
+    def charge_period(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "charge_period", value)
+
+    @property
+    @pulumi.getter(name="chargePeriodUnit")
+    def charge_period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+        """
+        return pulumi.get(self, "charge_period_unit")
+
+    @charge_period_unit.setter
+    def charge_period_unit(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "charge_period_unit", value)
+
+    @property
+    @pulumi.getter(name="chargeType")
+    def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        付费类型，枚举值：POST，PRE。
+        """
+        return pulumi.get(self, "charge_type")
+
+    @charge_type.setter
+    def charge_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "charge_type", value)
+
+
+if not MYPY:
+    class NodeGroupDataDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[builtins.int]]
+        """
+        磁盘块数，默认值4，最大15，最小1。
+        """
+        size: NotRequired[pulumi.Input[builtins.int]]
+        """
+        磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        """
+        volume_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        """
+elif False:
+    NodeGroupDataDiskArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodeGroupDataDiskArgs:
+    def __init__(__self__, *,
+                 count: Optional[pulumi.Input[builtins.int]] = None,
+                 size: Optional[pulumi.Input[builtins.int]] = None,
+                 volume_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.int] count: 磁盘块数，默认值4，最大15，最小1。
+        :param pulumi.Input[builtins.int] size: 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        :param pulumi.Input[builtins.str] volume_type: 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        """
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @property
+    @pulumi.getter
+    def count(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        磁盘块数，默认值4，最大15，最小1。
+        """
+        return pulumi.get(self, "count")
+
+    @count.setter
+    def count(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "count", value)
+
+    @property
+    @pulumi.getter
+    def size(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "size", value)
+
+    @property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "volume_type", value)
+
+
+if not MYPY:
+    class NodeGroupNodeArgsDict(TypedDict):
+        created_time: NotRequired[pulumi.Input[builtins.int]]
+        """
+        节点创建时间。
+        """
+        ecs_instance_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        ecs实例规格。
+        """
+        node_fqdn: NotRequired[pulumi.Input[builtins.str]]
+        """
+        节点FQDN。
+        """
+        node_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        节点ID。
+        """
+        node_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        节点名称。
+        """
+        node_state: NotRequired[pulumi.Input[builtins.str]]
+        """
+        节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+        """
+        private_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        私有IP。
+        """
+        public_ip: NotRequired[pulumi.Input[builtins.str]]
+        """
+        公网IP。
+        """
+        ready_time: NotRequired[pulumi.Input[builtins.int]]
+        """
+        准备完毕时间。
+        """
+        terminate_time: NotRequired[pulumi.Input[builtins.int]]
+        """
+        集群终止时间。
+        """
+elif False:
+    NodeGroupNodeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodeGroupNodeArgs:
+    def __init__(__self__, *,
+                 created_time: Optional[pulumi.Input[builtins.int]] = None,
+                 ecs_instance_type: Optional[pulumi.Input[builtins.str]] = None,
+                 node_fqdn: Optional[pulumi.Input[builtins.str]] = None,
+                 node_id: Optional[pulumi.Input[builtins.str]] = None,
+                 node_name: Optional[pulumi.Input[builtins.str]] = None,
+                 node_state: Optional[pulumi.Input[builtins.str]] = None,
+                 private_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 public_ip: Optional[pulumi.Input[builtins.str]] = None,
+                 ready_time: Optional[pulumi.Input[builtins.int]] = None,
+                 terminate_time: Optional[pulumi.Input[builtins.int]] = None):
+        """
+        :param pulumi.Input[builtins.int] created_time: 节点创建时间。
+        :param pulumi.Input[builtins.str] ecs_instance_type: ecs实例规格。
+        :param pulumi.Input[builtins.str] node_fqdn: 节点FQDN。
+        :param pulumi.Input[builtins.str] node_id: 节点ID。
+        :param pulumi.Input[builtins.str] node_name: 节点名称。
+        :param pulumi.Input[builtins.str] node_state: 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+        :param pulumi.Input[builtins.str] private_ip: 私有IP。
+        :param pulumi.Input[builtins.str] public_ip: 公网IP。
+        :param pulumi.Input[builtins.int] ready_time: 准备完毕时间。
+        :param pulumi.Input[builtins.int] terminate_time: 集群终止时间。
+        """
+        if created_time is not None:
+            pulumi.set(__self__, "created_time", created_time)
+        if ecs_instance_type is not None:
+            pulumi.set(__self__, "ecs_instance_type", ecs_instance_type)
+        if node_fqdn is not None:
+            pulumi.set(__self__, "node_fqdn", node_fqdn)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+        if node_state is not None:
+            pulumi.set(__self__, "node_state", node_state)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if public_ip is not None:
+            pulumi.set(__self__, "public_ip", public_ip)
+        if ready_time is not None:
+            pulumi.set(__self__, "ready_time", ready_time)
+        if terminate_time is not None:
+            pulumi.set(__self__, "terminate_time", terminate_time)
+
+    @property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        节点创建时间。
+        """
+        return pulumi.get(self, "created_time")
+
+    @created_time.setter
+    def created_time(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "created_time", value)
+
+    @property
+    @pulumi.getter(name="ecsInstanceType")
+    def ecs_instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        ecs实例规格。
+        """
+        return pulumi.get(self, "ecs_instance_type")
+
+    @ecs_instance_type.setter
+    def ecs_instance_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ecs_instance_type", value)
+
+    @property
+    @pulumi.getter(name="nodeFqdn")
+    def node_fqdn(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        节点FQDN。
+        """
+        return pulumi.get(self, "node_fqdn")
+
+    @node_fqdn.setter
+    def node_fqdn(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_fqdn", value)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        节点ID。
+        """
+        return pulumi.get(self, "node_id")
+
+    @node_id.setter
+    def node_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_id", value)
+
+    @property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        节点名称。
+        """
+        return pulumi.get(self, "node_name")
+
+    @node_name.setter
+    def node_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_name", value)
+
+    @property
+    @pulumi.getter(name="nodeState")
+    def node_state(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+        """
+        return pulumi.get(self, "node_state")
+
+    @node_state.setter
+    def node_state(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_state", value)
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        私有IP。
+        """
+        return pulumi.get(self, "private_ip")
+
+    @private_ip.setter
+    def private_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "private_ip", value)
+
+    @property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        公网IP。
+        """
+        return pulumi.get(self, "public_ip")
+
+    @public_ip.setter
+    def public_ip(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "public_ip", value)
+
+    @property
+    @pulumi.getter(name="readyTime")
+    def ready_time(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        准备完毕时间。
+        """
+        return pulumi.get(self, "ready_time")
+
+    @ready_time.setter
+    def ready_time(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "ready_time", value)
+
+    @property
+    @pulumi.getter(name="terminateTime")
+    def terminate_time(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        集群终止时间。
+        """
+        return pulumi.get(self, "terminate_time")
+
+    @terminate_time.setter
+    def terminate_time(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "terminate_time", value)
+
+
+if not MYPY:
+    class NodeGroupSystemDiskArgsDict(TypedDict):
+        size: NotRequired[pulumi.Input[builtins.int]]
+        """
+        系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        """
+        volume_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        """
+elif False:
+    NodeGroupSystemDiskArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NodeGroupSystemDiskArgs:
+    def __init__(__self__, *,
+                 size: Optional[pulumi.Input[builtins.int]] = None,
+                 volume_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.int] size: 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        :param pulumi.Input[builtins.str] volume_type: 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        """
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @property
+    @pulumi.getter
+    def size(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "size", value)
+
+    @property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "volume_type", value)
 
 

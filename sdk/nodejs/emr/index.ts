@@ -50,6 +50,21 @@ export const getClusters: typeof import("./getClusters").getClusters = null as a
 export const getClustersOutput: typeof import("./getClusters").getClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getClusters","getClustersOutput"], () => require("./getClusters"));
 
+export { GetNodeGroupArgs, GetNodeGroupResult, GetNodeGroupOutputArgs } from "./getNodeGroup";
+export const getNodeGroup: typeof import("./getNodeGroup").getNodeGroup = null as any;
+export const getNodeGroupOutput: typeof import("./getNodeGroup").getNodeGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getNodeGroup","getNodeGroupOutput"], () => require("./getNodeGroup"));
+
+export { GetNodeGroupsResult } from "./getNodeGroups";
+export const getNodeGroups: typeof import("./getNodeGroups").getNodeGroups = null as any;
+export const getNodeGroupsOutput: typeof import("./getNodeGroups").getNodeGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getNodeGroups","getNodeGroupsOutput"], () => require("./getNodeGroups"));
+
+export { NodeGroupArgs, NodeGroupState } from "./nodeGroup";
+export type NodeGroup = import("./nodeGroup").NodeGroup;
+export const NodeGroup: typeof import("./nodeGroup").NodeGroup = null as any;
+utilities.lazyLoad(exports, ["NodeGroup"], () => require("./nodeGroup"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -61,6 +76,8 @@ const _module = {
                 return new ClusterUser(name, <any>undefined, { urn })
             case "bytepluscc:emr/clusterUserGroup:ClusterUserGroup":
                 return new ClusterUserGroup(name, <any>undefined, { urn })
+            case "bytepluscc:emr/nodeGroup:NodeGroup":
+                return new NodeGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -69,3 +86,4 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "emr/cluster", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "emr/clusterUser", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "emr/clusterUserGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "emr/nodeGroup", _module)

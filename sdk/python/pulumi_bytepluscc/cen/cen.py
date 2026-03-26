@@ -24,6 +24,7 @@ class CenArgs:
     def __init__(__self__, *,
                  cen_name: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['CenInstanceArgs']]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CenTagArgs']]]] = None):
         """
@@ -36,6 +37,8 @@ class CenArgs:
             pulumi.set(__self__, "cen_name", cen_name)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if instances is not None:
+            pulumi.set(__self__, "instances", instances)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if tags is not None:
@@ -64,6 +67,15 @@ class CenArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CenInstanceArgs']]]]:
+        return pulumi.get(self, "instances")
+
+    @instances.setter
+    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CenInstanceArgs']]]]):
+        pulumi.set(self, "instances", value)
 
     @property
     @pulumi.getter(name="projectName")
@@ -96,6 +108,7 @@ class _CenState:
                  cen_name: Optional[pulumi.Input[builtins.str]] = None,
                  creation_time: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['CenInstanceArgs']]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  status: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CenTagArgs']]]] = None,
@@ -124,6 +137,8 @@ class _CenState:
             pulumi.set(__self__, "creation_time", creation_time)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if instances is not None:
+            pulumi.set(__self__, "instances", instances)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if status is not None:
@@ -206,6 +221,15 @@ class _CenState:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter
+    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CenInstanceArgs']]]]:
+        return pulumi.get(self, "instances")
+
+    @instances.setter
+    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CenInstanceArgs']]]]):
+        pulumi.set(self, "instances", value)
+
+    @property
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -259,27 +283,12 @@ class Cen(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cen_name: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CenInstanceArgs', 'CenInstanceArgsDict']]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CenTagArgs', 'CenTagArgsDict']]]]] = None,
                  __props__=None):
         """
         云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        c_encen_demo = bytepluscc.cen.Cen("CENCENDemo",
-            cen_name="CENCENDemo",
-            description="CENCENDemo descripiton",
-            project_name="iac",
-            tags=[{
-                "key": "dev",
-                "value": "test",
-            }])
-        ```
 
         ## Import
 
@@ -301,22 +310,6 @@ class Cen(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_bytepluscc as bytepluscc
-
-        c_encen_demo = bytepluscc.cen.Cen("CENCENDemo",
-            cen_name="CENCENDemo",
-            description="CENCENDemo descripiton",
-            project_name="iac",
-            tags=[{
-                "key": "dev",
-                "value": "test",
-            }])
-        ```
 
         ## Import
 
@@ -341,6 +334,7 @@ class Cen(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cen_name: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CenInstanceArgs', 'CenInstanceArgsDict']]]]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CenTagArgs', 'CenTagArgsDict']]]]] = None,
                  __props__=None):
@@ -354,6 +348,7 @@ class Cen(pulumi.CustomResource):
 
             __props__.__dict__["cen_name"] = cen_name
             __props__.__dict__["description"] = description
+            __props__.__dict__["instances"] = instances
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["tags"] = tags
             __props__.__dict__["account_id"] = None
@@ -378,6 +373,7 @@ class Cen(pulumi.CustomResource):
             cen_name: Optional[pulumi.Input[builtins.str]] = None,
             creation_time: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
+            instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CenInstanceArgs', 'CenInstanceArgsDict']]]]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             status: Optional[pulumi.Input[builtins.str]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CenTagArgs', 'CenTagArgsDict']]]]] = None,
@@ -409,6 +405,7 @@ class Cen(pulumi.CustomResource):
         __props__.__dict__["cen_name"] = cen_name
         __props__.__dict__["creation_time"] = creation_time
         __props__.__dict__["description"] = description
+        __props__.__dict__["instances"] = instances
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["status"] = status
         __props__.__dict__["tags"] = tags
@@ -462,6 +459,11 @@ class Cen(pulumi.CustomResource):
         CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def instances(self) -> pulumi.Output[Sequence['outputs.CenInstance']]:
+        return pulumi.get(self, "instances")
 
     @property
     @pulumi.getter(name="projectName")

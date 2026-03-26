@@ -10,12 +10,16 @@ import com.byteplus.bytepluscc.emr.inputs.GetClusterUserArgs;
 import com.byteplus.bytepluscc.emr.inputs.GetClusterUserGroupArgs;
 import com.byteplus.bytepluscc.emr.inputs.GetClusterUserGroupPlainArgs;
 import com.byteplus.bytepluscc.emr.inputs.GetClusterUserPlainArgs;
+import com.byteplus.bytepluscc.emr.inputs.GetNodeGroupArgs;
+import com.byteplus.bytepluscc.emr.inputs.GetNodeGroupPlainArgs;
 import com.byteplus.bytepluscc.emr.outputs.GetClusterResult;
 import com.byteplus.bytepluscc.emr.outputs.GetClusterUserGroupResult;
 import com.byteplus.bytepluscc.emr.outputs.GetClusterUserGroupsResult;
 import com.byteplus.bytepluscc.emr.outputs.GetClusterUserResult;
 import com.byteplus.bytepluscc.emr.outputs.GetClusterUsersResult;
 import com.byteplus.bytepluscc.emr.outputs.GetClustersResult;
+import com.byteplus.bytepluscc.emr.outputs.GetNodeGroupResult;
+import com.byteplus.bytepluscc.emr.outputs.GetNodeGroupsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -276,5 +280,89 @@ public final class EmrFunctions {
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:emr/getClusters:getClusters", TypeShape.of(GetClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static Output<GetNodeGroupResult> getNodeGroup(GetNodeGroupArgs args) {
+        return getNodeGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static CompletableFuture<GetNodeGroupResult> getNodeGroupPlain(GetNodeGroupPlainArgs args) {
+        return getNodeGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static Output<GetNodeGroupResult> getNodeGroup(GetNodeGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:emr/getNodeGroup:getNodeGroup", TypeShape.of(GetNodeGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static Output<GetNodeGroupResult> getNodeGroup(GetNodeGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:emr/getNodeGroup:getNodeGroup", TypeShape.of(GetNodeGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static CompletableFuture<GetNodeGroupResult> getNodeGroupPlain(GetNodeGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:emr/getNodeGroup:getNodeGroup", TypeShape.of(GetNodeGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static Output<GetNodeGroupsResult> getNodeGroups() {
+        return getNodeGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static CompletableFuture<GetNodeGroupsResult> getNodeGroupsPlain() {
+        return getNodeGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static Output<GetNodeGroupsResult> getNodeGroups(InvokeArgs args) {
+        return getNodeGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static CompletableFuture<GetNodeGroupsResult> getNodeGroupsPlain(InvokeArgs args) {
+        return getNodeGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static Output<GetNodeGroupsResult> getNodeGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:emr/getNodeGroups:getNodeGroups", TypeShape.of(GetNodeGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static Output<GetNodeGroupsResult> getNodeGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:emr/getNodeGroups:getNodeGroups", TypeShape.of(GetNodeGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::EMR::NodeGroup
+     * 
+     */
+    public static CompletableFuture<GetNodeGroupsResult> getNodeGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:emr/getNodeGroups:getNodeGroups", TypeShape.of(GetNodeGroupsResult.class), args, Utilities.withVersion(options));
     }
 }

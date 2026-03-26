@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.cen.outputs;
 
+import com.byteplus.bytepluscc.cen.outputs.GetCenInstance;
 import com.byteplus.bytepluscc.cen.outputs.GetCenTag;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -47,6 +48,11 @@ public final class GetCenResult {
      * 
      */
     private String id;
+    /**
+     * @return 已关联的网络实例列表
+     * 
+     */
+    private List<GetCenInstance> instances;
     /**
      * @return CEN实例所属项目的名称。不填则默认为default。
      * 
@@ -119,6 +125,13 @@ public final class GetCenResult {
         return this.id;
     }
     /**
+     * @return 已关联的网络实例列表
+     * 
+     */
+    public List<GetCenInstance> instances() {
+        return this.instances;
+    }
+    /**
      * @return CEN实例所属项目的名称。不填则默认为default。
      * 
      */
@@ -163,6 +176,7 @@ public final class GetCenResult {
         private String creationTime;
         private String description;
         private String id;
+        private List<GetCenInstance> instances;
         private String projectName;
         private String status;
         private List<GetCenTag> tags;
@@ -177,6 +191,7 @@ public final class GetCenResult {
     	      this.creationTime = defaults.creationTime;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
+    	      this.instances = defaults.instances;
     	      this.projectName = defaults.projectName;
     	      this.status = defaults.status;
     	      this.tags = defaults.tags;
@@ -243,6 +258,17 @@ public final class GetCenResult {
             return this;
         }
         @CustomType.Setter
+        public Builder instances(List<GetCenInstance> instances) {
+            if (instances == null) {
+              throw new MissingRequiredPropertyException("GetCenResult", "instances");
+            }
+            this.instances = instances;
+            return this;
+        }
+        public Builder instances(GetCenInstance... instances) {
+            return instances(List.of(instances));
+        }
+        @CustomType.Setter
         public Builder projectName(String projectName) {
             if (projectName == null) {
               throw new MissingRequiredPropertyException("GetCenResult", "projectName");
@@ -286,6 +312,7 @@ public final class GetCenResult {
             _resultValue.creationTime = creationTime;
             _resultValue.description = description;
             _resultValue.id = id;
+            _resultValue.instances = instances;
             _resultValue.projectName = projectName;
             _resultValue.status = status;
             _resultValue.tags = tags;

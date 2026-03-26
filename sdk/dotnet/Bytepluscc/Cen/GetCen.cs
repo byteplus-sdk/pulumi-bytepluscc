@@ -93,6 +93,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// 已关联的网络实例列表
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCenInstanceResult> Instances;
+        /// <summary>
         /// CEN实例所属项目的名称。不填则默认为default。
         /// </summary>
         public readonly string ProjectName;
@@ -125,6 +129,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
 
             string id,
 
+            ImmutableArray<Outputs.GetCenInstanceResult> instances,
+
             string projectName,
 
             string status,
@@ -140,6 +146,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
             CreationTime = creationTime;
             Description = description;
             Id = id;
+            Instances = instances;
             ProjectName = projectName;
             Status = status;
             Tags = tags;
