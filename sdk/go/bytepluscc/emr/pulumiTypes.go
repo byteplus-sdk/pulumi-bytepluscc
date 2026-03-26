@@ -2611,6 +2611,793 @@ func (o ClusterTagArrayOutput) Index(i pulumi.IntInput) ClusterTagOutput {
 	}).(ClusterTagOutput)
 }
 
+type NodeGroupApplicationLayout struct {
+	// 应用名称。
+	ApplicationName *string `pulumi:"applicationName"`
+	// 组件的自定义配置参数列表。
+	LayoutComponentNames []string `pulumi:"layoutComponentNames"`
+}
+
+// NodeGroupApplicationLayoutInput is an input type that accepts NodeGroupApplicationLayoutArgs and NodeGroupApplicationLayoutOutput values.
+// You can construct a concrete instance of `NodeGroupApplicationLayoutInput` via:
+//
+//	NodeGroupApplicationLayoutArgs{...}
+type NodeGroupApplicationLayoutInput interface {
+	pulumi.Input
+
+	ToNodeGroupApplicationLayoutOutput() NodeGroupApplicationLayoutOutput
+	ToNodeGroupApplicationLayoutOutputWithContext(context.Context) NodeGroupApplicationLayoutOutput
+}
+
+type NodeGroupApplicationLayoutArgs struct {
+	// 应用名称。
+	ApplicationName pulumi.StringPtrInput `pulumi:"applicationName"`
+	// 组件的自定义配置参数列表。
+	LayoutComponentNames pulumi.StringArrayInput `pulumi:"layoutComponentNames"`
+}
+
+func (NodeGroupApplicationLayoutArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (i NodeGroupApplicationLayoutArgs) ToNodeGroupApplicationLayoutOutput() NodeGroupApplicationLayoutOutput {
+	return i.ToNodeGroupApplicationLayoutOutputWithContext(context.Background())
+}
+
+func (i NodeGroupApplicationLayoutArgs) ToNodeGroupApplicationLayoutOutputWithContext(ctx context.Context) NodeGroupApplicationLayoutOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupApplicationLayoutOutput)
+}
+
+// NodeGroupApplicationLayoutArrayInput is an input type that accepts NodeGroupApplicationLayoutArray and NodeGroupApplicationLayoutArrayOutput values.
+// You can construct a concrete instance of `NodeGroupApplicationLayoutArrayInput` via:
+//
+//	NodeGroupApplicationLayoutArray{ NodeGroupApplicationLayoutArgs{...} }
+type NodeGroupApplicationLayoutArrayInput interface {
+	pulumi.Input
+
+	ToNodeGroupApplicationLayoutArrayOutput() NodeGroupApplicationLayoutArrayOutput
+	ToNodeGroupApplicationLayoutArrayOutputWithContext(context.Context) NodeGroupApplicationLayoutArrayOutput
+}
+
+type NodeGroupApplicationLayoutArray []NodeGroupApplicationLayoutInput
+
+func (NodeGroupApplicationLayoutArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (i NodeGroupApplicationLayoutArray) ToNodeGroupApplicationLayoutArrayOutput() NodeGroupApplicationLayoutArrayOutput {
+	return i.ToNodeGroupApplicationLayoutArrayOutputWithContext(context.Background())
+}
+
+func (i NodeGroupApplicationLayoutArray) ToNodeGroupApplicationLayoutArrayOutputWithContext(ctx context.Context) NodeGroupApplicationLayoutArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupApplicationLayoutArrayOutput)
+}
+
+type NodeGroupApplicationLayoutOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupApplicationLayoutOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (o NodeGroupApplicationLayoutOutput) ToNodeGroupApplicationLayoutOutput() NodeGroupApplicationLayoutOutput {
+	return o
+}
+
+func (o NodeGroupApplicationLayoutOutput) ToNodeGroupApplicationLayoutOutputWithContext(ctx context.Context) NodeGroupApplicationLayoutOutput {
+	return o
+}
+
+// 应用名称。
+func (o NodeGroupApplicationLayoutOutput) ApplicationName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupApplicationLayout) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
+}
+
+// 组件的自定义配置参数列表。
+func (o NodeGroupApplicationLayoutOutput) LayoutComponentNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NodeGroupApplicationLayout) []string { return v.LayoutComponentNames }).(pulumi.StringArrayOutput)
+}
+
+type NodeGroupApplicationLayoutArrayOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupApplicationLayoutArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (o NodeGroupApplicationLayoutArrayOutput) ToNodeGroupApplicationLayoutArrayOutput() NodeGroupApplicationLayoutArrayOutput {
+	return o
+}
+
+func (o NodeGroupApplicationLayoutArrayOutput) ToNodeGroupApplicationLayoutArrayOutputWithContext(ctx context.Context) NodeGroupApplicationLayoutArrayOutput {
+	return o
+}
+
+func (o NodeGroupApplicationLayoutArrayOutput) Index(i pulumi.IntInput) NodeGroupApplicationLayoutOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodeGroupApplicationLayout {
+		return vs[0].([]NodeGroupApplicationLayout)[vs[1].(int)]
+	}).(NodeGroupApplicationLayoutOutput)
+}
+
+type NodeGroupChargePreConfig struct {
+	// 是否开启自动续费。
+	AutoRenew *bool `pulumi:"autoRenew"`
+	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	AutoRenewPeriod *int `pulumi:"autoRenewPeriod"`
+	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	AutoRenewPeriodUnit *string `pulumi:"autoRenewPeriodUnit"`
+	// chargeType=PRE默认值=1，包月的购买时长单位。
+	ChargePeriod *int `pulumi:"chargePeriod"`
+	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	ChargePeriodUnit *string `pulumi:"chargePeriodUnit"`
+	// 付费类型，枚举值：POST，PRE。
+	ChargeType *string `pulumi:"chargeType"`
+}
+
+// NodeGroupChargePreConfigInput is an input type that accepts NodeGroupChargePreConfigArgs and NodeGroupChargePreConfigOutput values.
+// You can construct a concrete instance of `NodeGroupChargePreConfigInput` via:
+//
+//	NodeGroupChargePreConfigArgs{...}
+type NodeGroupChargePreConfigInput interface {
+	pulumi.Input
+
+	ToNodeGroupChargePreConfigOutput() NodeGroupChargePreConfigOutput
+	ToNodeGroupChargePreConfigOutputWithContext(context.Context) NodeGroupChargePreConfigOutput
+}
+
+type NodeGroupChargePreConfigArgs struct {
+	// 是否开启自动续费。
+	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
+	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	AutoRenewPeriod pulumi.IntPtrInput `pulumi:"autoRenewPeriod"`
+	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	AutoRenewPeriodUnit pulumi.StringPtrInput `pulumi:"autoRenewPeriodUnit"`
+	// chargeType=PRE默认值=1，包月的购买时长单位。
+	ChargePeriod pulumi.IntPtrInput `pulumi:"chargePeriod"`
+	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	ChargePeriodUnit pulumi.StringPtrInput `pulumi:"chargePeriodUnit"`
+	// 付费类型，枚举值：POST，PRE。
+	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
+}
+
+func (NodeGroupChargePreConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupChargePreConfig)(nil)).Elem()
+}
+
+func (i NodeGroupChargePreConfigArgs) ToNodeGroupChargePreConfigOutput() NodeGroupChargePreConfigOutput {
+	return i.ToNodeGroupChargePreConfigOutputWithContext(context.Background())
+}
+
+func (i NodeGroupChargePreConfigArgs) ToNodeGroupChargePreConfigOutputWithContext(ctx context.Context) NodeGroupChargePreConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupChargePreConfigOutput)
+}
+
+func (i NodeGroupChargePreConfigArgs) ToNodeGroupChargePreConfigPtrOutput() NodeGroupChargePreConfigPtrOutput {
+	return i.ToNodeGroupChargePreConfigPtrOutputWithContext(context.Background())
+}
+
+func (i NodeGroupChargePreConfigArgs) ToNodeGroupChargePreConfigPtrOutputWithContext(ctx context.Context) NodeGroupChargePreConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupChargePreConfigOutput).ToNodeGroupChargePreConfigPtrOutputWithContext(ctx)
+}
+
+// NodeGroupChargePreConfigPtrInput is an input type that accepts NodeGroupChargePreConfigArgs, NodeGroupChargePreConfigPtr and NodeGroupChargePreConfigPtrOutput values.
+// You can construct a concrete instance of `NodeGroupChargePreConfigPtrInput` via:
+//
+//	        NodeGroupChargePreConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodeGroupChargePreConfigPtrInput interface {
+	pulumi.Input
+
+	ToNodeGroupChargePreConfigPtrOutput() NodeGroupChargePreConfigPtrOutput
+	ToNodeGroupChargePreConfigPtrOutputWithContext(context.Context) NodeGroupChargePreConfigPtrOutput
+}
+
+type nodeGroupChargePreConfigPtrType NodeGroupChargePreConfigArgs
+
+func NodeGroupChargePreConfigPtr(v *NodeGroupChargePreConfigArgs) NodeGroupChargePreConfigPtrInput {
+	return (*nodeGroupChargePreConfigPtrType)(v)
+}
+
+func (*nodeGroupChargePreConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeGroupChargePreConfig)(nil)).Elem()
+}
+
+func (i *nodeGroupChargePreConfigPtrType) ToNodeGroupChargePreConfigPtrOutput() NodeGroupChargePreConfigPtrOutput {
+	return i.ToNodeGroupChargePreConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *nodeGroupChargePreConfigPtrType) ToNodeGroupChargePreConfigPtrOutputWithContext(ctx context.Context) NodeGroupChargePreConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupChargePreConfigPtrOutput)
+}
+
+type NodeGroupChargePreConfigOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupChargePreConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupChargePreConfig)(nil)).Elem()
+}
+
+func (o NodeGroupChargePreConfigOutput) ToNodeGroupChargePreConfigOutput() NodeGroupChargePreConfigOutput {
+	return o
+}
+
+func (o NodeGroupChargePreConfigOutput) ToNodeGroupChargePreConfigOutputWithContext(ctx context.Context) NodeGroupChargePreConfigOutput {
+	return o
+}
+
+func (o NodeGroupChargePreConfigOutput) ToNodeGroupChargePreConfigPtrOutput() NodeGroupChargePreConfigPtrOutput {
+	return o.ToNodeGroupChargePreConfigPtrOutputWithContext(context.Background())
+}
+
+func (o NodeGroupChargePreConfigOutput) ToNodeGroupChargePreConfigPtrOutputWithContext(ctx context.Context) NodeGroupChargePreConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodeGroupChargePreConfig) *NodeGroupChargePreConfig {
+		return &v
+	}).(NodeGroupChargePreConfigPtrOutput)
+}
+
+// 是否开启自动续费。
+func (o NodeGroupChargePreConfigOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodeGroupChargePreConfig) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
+}
+
+// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+func (o NodeGroupChargePreConfigOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupChargePreConfig) *int { return v.AutoRenewPeriod }).(pulumi.IntPtrOutput)
+}
+
+// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+func (o NodeGroupChargePreConfigOutput) AutoRenewPeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupChargePreConfig) *string { return v.AutoRenewPeriodUnit }).(pulumi.StringPtrOutput)
+}
+
+// chargeType=PRE默认值=1，包月的购买时长单位。
+func (o NodeGroupChargePreConfigOutput) ChargePeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupChargePreConfig) *int { return v.ChargePeriod }).(pulumi.IntPtrOutput)
+}
+
+// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+func (o NodeGroupChargePreConfigOutput) ChargePeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupChargePreConfig) *string { return v.ChargePeriodUnit }).(pulumi.StringPtrOutput)
+}
+
+// 付费类型，枚举值：POST，PRE。
+func (o NodeGroupChargePreConfigOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupChargePreConfig) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
+}
+
+type NodeGroupChargePreConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupChargePreConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeGroupChargePreConfig)(nil)).Elem()
+}
+
+func (o NodeGroupChargePreConfigPtrOutput) ToNodeGroupChargePreConfigPtrOutput() NodeGroupChargePreConfigPtrOutput {
+	return o
+}
+
+func (o NodeGroupChargePreConfigPtrOutput) ToNodeGroupChargePreConfigPtrOutputWithContext(ctx context.Context) NodeGroupChargePreConfigPtrOutput {
+	return o
+}
+
+func (o NodeGroupChargePreConfigPtrOutput) Elem() NodeGroupChargePreConfigOutput {
+	return o.ApplyT(func(v *NodeGroupChargePreConfig) NodeGroupChargePreConfig {
+		if v != nil {
+			return *v
+		}
+		var ret NodeGroupChargePreConfig
+		return ret
+	}).(NodeGroupChargePreConfigOutput)
+}
+
+// 是否开启自动续费。
+func (o NodeGroupChargePreConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NodeGroupChargePreConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenew
+	}).(pulumi.BoolPtrOutput)
+}
+
+// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+func (o NodeGroupChargePreConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NodeGroupChargePreConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenewPeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+func (o NodeGroupChargePreConfigPtrOutput) AutoRenewPeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodeGroupChargePreConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AutoRenewPeriodUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// chargeType=PRE默认值=1，包月的购买时长单位。
+func (o NodeGroupChargePreConfigPtrOutput) ChargePeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NodeGroupChargePreConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ChargePeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+func (o NodeGroupChargePreConfigPtrOutput) ChargePeriodUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodeGroupChargePreConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargePeriodUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+// 付费类型，枚举值：POST，PRE。
+func (o NodeGroupChargePreConfigPtrOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodeGroupChargePreConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type NodeGroupDataDisk struct {
+	// 磁盘块数，默认值4，最大15，最小1。
+	Count *int `pulumi:"count"`
+	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size *int `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// NodeGroupDataDiskInput is an input type that accepts NodeGroupDataDiskArgs and NodeGroupDataDiskOutput values.
+// You can construct a concrete instance of `NodeGroupDataDiskInput` via:
+//
+//	NodeGroupDataDiskArgs{...}
+type NodeGroupDataDiskInput interface {
+	pulumi.Input
+
+	ToNodeGroupDataDiskOutput() NodeGroupDataDiskOutput
+	ToNodeGroupDataDiskOutputWithContext(context.Context) NodeGroupDataDiskOutput
+}
+
+type NodeGroupDataDiskArgs struct {
+	// 磁盘块数，默认值4，最大15，最小1。
+	Count pulumi.IntPtrInput `pulumi:"count"`
+	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (NodeGroupDataDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupDataDisk)(nil)).Elem()
+}
+
+func (i NodeGroupDataDiskArgs) ToNodeGroupDataDiskOutput() NodeGroupDataDiskOutput {
+	return i.ToNodeGroupDataDiskOutputWithContext(context.Background())
+}
+
+func (i NodeGroupDataDiskArgs) ToNodeGroupDataDiskOutputWithContext(ctx context.Context) NodeGroupDataDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupDataDiskOutput)
+}
+
+// NodeGroupDataDiskArrayInput is an input type that accepts NodeGroupDataDiskArray and NodeGroupDataDiskArrayOutput values.
+// You can construct a concrete instance of `NodeGroupDataDiskArrayInput` via:
+//
+//	NodeGroupDataDiskArray{ NodeGroupDataDiskArgs{...} }
+type NodeGroupDataDiskArrayInput interface {
+	pulumi.Input
+
+	ToNodeGroupDataDiskArrayOutput() NodeGroupDataDiskArrayOutput
+	ToNodeGroupDataDiskArrayOutputWithContext(context.Context) NodeGroupDataDiskArrayOutput
+}
+
+type NodeGroupDataDiskArray []NodeGroupDataDiskInput
+
+func (NodeGroupDataDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeGroupDataDisk)(nil)).Elem()
+}
+
+func (i NodeGroupDataDiskArray) ToNodeGroupDataDiskArrayOutput() NodeGroupDataDiskArrayOutput {
+	return i.ToNodeGroupDataDiskArrayOutputWithContext(context.Background())
+}
+
+func (i NodeGroupDataDiskArray) ToNodeGroupDataDiskArrayOutputWithContext(ctx context.Context) NodeGroupDataDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupDataDiskArrayOutput)
+}
+
+type NodeGroupDataDiskOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupDataDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupDataDisk)(nil)).Elem()
+}
+
+func (o NodeGroupDataDiskOutput) ToNodeGroupDataDiskOutput() NodeGroupDataDiskOutput {
+	return o
+}
+
+func (o NodeGroupDataDiskOutput) ToNodeGroupDataDiskOutputWithContext(ctx context.Context) NodeGroupDataDiskOutput {
+	return o
+}
+
+// 磁盘块数，默认值4，最大15，最小1。
+func (o NodeGroupDataDiskOutput) Count() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupDataDisk) *int { return v.Count }).(pulumi.IntPtrOutput)
+}
+
+// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+func (o NodeGroupDataDiskOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupDataDisk) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+func (o NodeGroupDataDiskOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupDataDisk) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type NodeGroupDataDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupDataDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeGroupDataDisk)(nil)).Elem()
+}
+
+func (o NodeGroupDataDiskArrayOutput) ToNodeGroupDataDiskArrayOutput() NodeGroupDataDiskArrayOutput {
+	return o
+}
+
+func (o NodeGroupDataDiskArrayOutput) ToNodeGroupDataDiskArrayOutputWithContext(ctx context.Context) NodeGroupDataDiskArrayOutput {
+	return o
+}
+
+func (o NodeGroupDataDiskArrayOutput) Index(i pulumi.IntInput) NodeGroupDataDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodeGroupDataDisk {
+		return vs[0].([]NodeGroupDataDisk)[vs[1].(int)]
+	}).(NodeGroupDataDiskOutput)
+}
+
+type NodeGroupNode struct {
+	// 节点创建时间。
+	CreatedTime *int `pulumi:"createdTime"`
+	// ecs实例规格。
+	EcsInstanceType *string `pulumi:"ecsInstanceType"`
+	// 节点FQDN。
+	NodeFqdn *string `pulumi:"nodeFqdn"`
+	// 节点ID。
+	NodeId *string `pulumi:"nodeId"`
+	// 节点名称。
+	NodeName *string `pulumi:"nodeName"`
+	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	NodeState *string `pulumi:"nodeState"`
+	// 私有IP。
+	PrivateIp *string `pulumi:"privateIp"`
+	// 公网IP。
+	PublicIp *string `pulumi:"publicIp"`
+	// 准备完毕时间。
+	ReadyTime *int `pulumi:"readyTime"`
+	// 集群终止时间。
+	TerminateTime *int `pulumi:"terminateTime"`
+}
+
+// NodeGroupNodeInput is an input type that accepts NodeGroupNodeArgs and NodeGroupNodeOutput values.
+// You can construct a concrete instance of `NodeGroupNodeInput` via:
+//
+//	NodeGroupNodeArgs{...}
+type NodeGroupNodeInput interface {
+	pulumi.Input
+
+	ToNodeGroupNodeOutput() NodeGroupNodeOutput
+	ToNodeGroupNodeOutputWithContext(context.Context) NodeGroupNodeOutput
+}
+
+type NodeGroupNodeArgs struct {
+	// 节点创建时间。
+	CreatedTime pulumi.IntPtrInput `pulumi:"createdTime"`
+	// ecs实例规格。
+	EcsInstanceType pulumi.StringPtrInput `pulumi:"ecsInstanceType"`
+	// 节点FQDN。
+	NodeFqdn pulumi.StringPtrInput `pulumi:"nodeFqdn"`
+	// 节点ID。
+	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
+	// 节点名称。
+	NodeName pulumi.StringPtrInput `pulumi:"nodeName"`
+	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	NodeState pulumi.StringPtrInput `pulumi:"nodeState"`
+	// 私有IP。
+	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
+	// 公网IP。
+	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
+	// 准备完毕时间。
+	ReadyTime pulumi.IntPtrInput `pulumi:"readyTime"`
+	// 集群终止时间。
+	TerminateTime pulumi.IntPtrInput `pulumi:"terminateTime"`
+}
+
+func (NodeGroupNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupNode)(nil)).Elem()
+}
+
+func (i NodeGroupNodeArgs) ToNodeGroupNodeOutput() NodeGroupNodeOutput {
+	return i.ToNodeGroupNodeOutputWithContext(context.Background())
+}
+
+func (i NodeGroupNodeArgs) ToNodeGroupNodeOutputWithContext(ctx context.Context) NodeGroupNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupNodeOutput)
+}
+
+// NodeGroupNodeArrayInput is an input type that accepts NodeGroupNodeArray and NodeGroupNodeArrayOutput values.
+// You can construct a concrete instance of `NodeGroupNodeArrayInput` via:
+//
+//	NodeGroupNodeArray{ NodeGroupNodeArgs{...} }
+type NodeGroupNodeArrayInput interface {
+	pulumi.Input
+
+	ToNodeGroupNodeArrayOutput() NodeGroupNodeArrayOutput
+	ToNodeGroupNodeArrayOutputWithContext(context.Context) NodeGroupNodeArrayOutput
+}
+
+type NodeGroupNodeArray []NodeGroupNodeInput
+
+func (NodeGroupNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeGroupNode)(nil)).Elem()
+}
+
+func (i NodeGroupNodeArray) ToNodeGroupNodeArrayOutput() NodeGroupNodeArrayOutput {
+	return i.ToNodeGroupNodeArrayOutputWithContext(context.Background())
+}
+
+func (i NodeGroupNodeArray) ToNodeGroupNodeArrayOutputWithContext(ctx context.Context) NodeGroupNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupNodeArrayOutput)
+}
+
+type NodeGroupNodeOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupNode)(nil)).Elem()
+}
+
+func (o NodeGroupNodeOutput) ToNodeGroupNodeOutput() NodeGroupNodeOutput {
+	return o
+}
+
+func (o NodeGroupNodeOutput) ToNodeGroupNodeOutputWithContext(ctx context.Context) NodeGroupNodeOutput {
+	return o
+}
+
+// 节点创建时间。
+func (o NodeGroupNodeOutput) CreatedTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *int { return v.CreatedTime }).(pulumi.IntPtrOutput)
+}
+
+// ecs实例规格。
+func (o NodeGroupNodeOutput) EcsInstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *string { return v.EcsInstanceType }).(pulumi.StringPtrOutput)
+}
+
+// 节点FQDN。
+func (o NodeGroupNodeOutput) NodeFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeFqdn }).(pulumi.StringPtrOutput)
+}
+
+// 节点ID。
+func (o NodeGroupNodeOutput) NodeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
+}
+
+// 节点名称。
+func (o NodeGroupNodeOutput) NodeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeName }).(pulumi.StringPtrOutput)
+}
+
+// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+func (o NodeGroupNodeOutput) NodeState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeState }).(pulumi.StringPtrOutput)
+}
+
+// 私有IP。
+func (o NodeGroupNodeOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
+}
+
+// 公网IP。
+func (o NodeGroupNodeOutput) PublicIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
+}
+
+// 准备完毕时间。
+func (o NodeGroupNodeOutput) ReadyTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *int { return v.ReadyTime }).(pulumi.IntPtrOutput)
+}
+
+// 集群终止时间。
+func (o NodeGroupNodeOutput) TerminateTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupNode) *int { return v.TerminateTime }).(pulumi.IntPtrOutput)
+}
+
+type NodeGroupNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NodeGroupNode)(nil)).Elem()
+}
+
+func (o NodeGroupNodeArrayOutput) ToNodeGroupNodeArrayOutput() NodeGroupNodeArrayOutput {
+	return o
+}
+
+func (o NodeGroupNodeArrayOutput) ToNodeGroupNodeArrayOutputWithContext(ctx context.Context) NodeGroupNodeArrayOutput {
+	return o
+}
+
+func (o NodeGroupNodeArrayOutput) Index(i pulumi.IntInput) NodeGroupNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodeGroupNode {
+		return vs[0].([]NodeGroupNode)[vs[1].(int)]
+	}).(NodeGroupNodeOutput)
+}
+
+type NodeGroupSystemDisk struct {
+	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size *int `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// NodeGroupSystemDiskInput is an input type that accepts NodeGroupSystemDiskArgs and NodeGroupSystemDiskOutput values.
+// You can construct a concrete instance of `NodeGroupSystemDiskInput` via:
+//
+//	NodeGroupSystemDiskArgs{...}
+type NodeGroupSystemDiskInput interface {
+	pulumi.Input
+
+	ToNodeGroupSystemDiskOutput() NodeGroupSystemDiskOutput
+	ToNodeGroupSystemDiskOutputWithContext(context.Context) NodeGroupSystemDiskOutput
+}
+
+type NodeGroupSystemDiskArgs struct {
+	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (NodeGroupSystemDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupSystemDisk)(nil)).Elem()
+}
+
+func (i NodeGroupSystemDiskArgs) ToNodeGroupSystemDiskOutput() NodeGroupSystemDiskOutput {
+	return i.ToNodeGroupSystemDiskOutputWithContext(context.Background())
+}
+
+func (i NodeGroupSystemDiskArgs) ToNodeGroupSystemDiskOutputWithContext(ctx context.Context) NodeGroupSystemDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupSystemDiskOutput)
+}
+
+func (i NodeGroupSystemDiskArgs) ToNodeGroupSystemDiskPtrOutput() NodeGroupSystemDiskPtrOutput {
+	return i.ToNodeGroupSystemDiskPtrOutputWithContext(context.Background())
+}
+
+func (i NodeGroupSystemDiskArgs) ToNodeGroupSystemDiskPtrOutputWithContext(ctx context.Context) NodeGroupSystemDiskPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupSystemDiskOutput).ToNodeGroupSystemDiskPtrOutputWithContext(ctx)
+}
+
+// NodeGroupSystemDiskPtrInput is an input type that accepts NodeGroupSystemDiskArgs, NodeGroupSystemDiskPtr and NodeGroupSystemDiskPtrOutput values.
+// You can construct a concrete instance of `NodeGroupSystemDiskPtrInput` via:
+//
+//	        NodeGroupSystemDiskArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodeGroupSystemDiskPtrInput interface {
+	pulumi.Input
+
+	ToNodeGroupSystemDiskPtrOutput() NodeGroupSystemDiskPtrOutput
+	ToNodeGroupSystemDiskPtrOutputWithContext(context.Context) NodeGroupSystemDiskPtrOutput
+}
+
+type nodeGroupSystemDiskPtrType NodeGroupSystemDiskArgs
+
+func NodeGroupSystemDiskPtr(v *NodeGroupSystemDiskArgs) NodeGroupSystemDiskPtrInput {
+	return (*nodeGroupSystemDiskPtrType)(v)
+}
+
+func (*nodeGroupSystemDiskPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeGroupSystemDisk)(nil)).Elem()
+}
+
+func (i *nodeGroupSystemDiskPtrType) ToNodeGroupSystemDiskPtrOutput() NodeGroupSystemDiskPtrOutput {
+	return i.ToNodeGroupSystemDiskPtrOutputWithContext(context.Background())
+}
+
+func (i *nodeGroupSystemDiskPtrType) ToNodeGroupSystemDiskPtrOutputWithContext(ctx context.Context) NodeGroupSystemDiskPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodeGroupSystemDiskPtrOutput)
+}
+
+type NodeGroupSystemDiskOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupSystemDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodeGroupSystemDisk)(nil)).Elem()
+}
+
+func (o NodeGroupSystemDiskOutput) ToNodeGroupSystemDiskOutput() NodeGroupSystemDiskOutput {
+	return o
+}
+
+func (o NodeGroupSystemDiskOutput) ToNodeGroupSystemDiskOutputWithContext(ctx context.Context) NodeGroupSystemDiskOutput {
+	return o
+}
+
+func (o NodeGroupSystemDiskOutput) ToNodeGroupSystemDiskPtrOutput() NodeGroupSystemDiskPtrOutput {
+	return o.ToNodeGroupSystemDiskPtrOutputWithContext(context.Background())
+}
+
+func (o NodeGroupSystemDiskOutput) ToNodeGroupSystemDiskPtrOutputWithContext(ctx context.Context) NodeGroupSystemDiskPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodeGroupSystemDisk) *NodeGroupSystemDisk {
+		return &v
+	}).(NodeGroupSystemDiskPtrOutput)
+}
+
+// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+func (o NodeGroupSystemDiskOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NodeGroupSystemDisk) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+func (o NodeGroupSystemDiskOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodeGroupSystemDisk) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type NodeGroupSystemDiskPtrOutput struct{ *pulumi.OutputState }
+
+func (NodeGroupSystemDiskPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodeGroupSystemDisk)(nil)).Elem()
+}
+
+func (o NodeGroupSystemDiskPtrOutput) ToNodeGroupSystemDiskPtrOutput() NodeGroupSystemDiskPtrOutput {
+	return o
+}
+
+func (o NodeGroupSystemDiskPtrOutput) ToNodeGroupSystemDiskPtrOutputWithContext(ctx context.Context) NodeGroupSystemDiskPtrOutput {
+	return o
+}
+
+func (o NodeGroupSystemDiskPtrOutput) Elem() NodeGroupSystemDiskOutput {
+	return o.ApplyT(func(v *NodeGroupSystemDisk) NodeGroupSystemDisk {
+		if v != nil {
+			return *v
+		}
+		var ret NodeGroupSystemDisk
+		return ret
+	}).(NodeGroupSystemDiskOutput)
+}
+
+// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+func (o NodeGroupSystemDiskPtrOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *NodeGroupSystemDisk) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Size
+	}).(pulumi.IntPtrOutput)
+}
+
+// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+func (o NodeGroupSystemDiskPtrOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodeGroupSystemDisk) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VolumeType
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetClusterApplication struct {
 	// 应用配置路径。
 	ApplicationConfigHome string `pulumi:"applicationConfigHome"`
@@ -4401,6 +5188,563 @@ func (o GetClusterTagArrayOutput) Index(i pulumi.IntInput) GetClusterTagOutput {
 	}).(GetClusterTagOutput)
 }
 
+type GetNodeGroupApplicationLayout struct {
+	// 应用名称。
+	ApplicationName string `pulumi:"applicationName"`
+	// 组件的自定义配置参数列表。
+	LayoutComponentNames []string `pulumi:"layoutComponentNames"`
+}
+
+// GetNodeGroupApplicationLayoutInput is an input type that accepts GetNodeGroupApplicationLayoutArgs and GetNodeGroupApplicationLayoutOutput values.
+// You can construct a concrete instance of `GetNodeGroupApplicationLayoutInput` via:
+//
+//	GetNodeGroupApplicationLayoutArgs{...}
+type GetNodeGroupApplicationLayoutInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupApplicationLayoutOutput() GetNodeGroupApplicationLayoutOutput
+	ToGetNodeGroupApplicationLayoutOutputWithContext(context.Context) GetNodeGroupApplicationLayoutOutput
+}
+
+type GetNodeGroupApplicationLayoutArgs struct {
+	// 应用名称。
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// 组件的自定义配置参数列表。
+	LayoutComponentNames pulumi.StringArrayInput `pulumi:"layoutComponentNames"`
+}
+
+func (GetNodeGroupApplicationLayoutArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (i GetNodeGroupApplicationLayoutArgs) ToGetNodeGroupApplicationLayoutOutput() GetNodeGroupApplicationLayoutOutput {
+	return i.ToGetNodeGroupApplicationLayoutOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupApplicationLayoutArgs) ToGetNodeGroupApplicationLayoutOutputWithContext(ctx context.Context) GetNodeGroupApplicationLayoutOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupApplicationLayoutOutput)
+}
+
+// GetNodeGroupApplicationLayoutArrayInput is an input type that accepts GetNodeGroupApplicationLayoutArray and GetNodeGroupApplicationLayoutArrayOutput values.
+// You can construct a concrete instance of `GetNodeGroupApplicationLayoutArrayInput` via:
+//
+//	GetNodeGroupApplicationLayoutArray{ GetNodeGroupApplicationLayoutArgs{...} }
+type GetNodeGroupApplicationLayoutArrayInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupApplicationLayoutArrayOutput() GetNodeGroupApplicationLayoutArrayOutput
+	ToGetNodeGroupApplicationLayoutArrayOutputWithContext(context.Context) GetNodeGroupApplicationLayoutArrayOutput
+}
+
+type GetNodeGroupApplicationLayoutArray []GetNodeGroupApplicationLayoutInput
+
+func (GetNodeGroupApplicationLayoutArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (i GetNodeGroupApplicationLayoutArray) ToGetNodeGroupApplicationLayoutArrayOutput() GetNodeGroupApplicationLayoutArrayOutput {
+	return i.ToGetNodeGroupApplicationLayoutArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupApplicationLayoutArray) ToGetNodeGroupApplicationLayoutArrayOutputWithContext(ctx context.Context) GetNodeGroupApplicationLayoutArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupApplicationLayoutArrayOutput)
+}
+
+type GetNodeGroupApplicationLayoutOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupApplicationLayoutOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (o GetNodeGroupApplicationLayoutOutput) ToGetNodeGroupApplicationLayoutOutput() GetNodeGroupApplicationLayoutOutput {
+	return o
+}
+
+func (o GetNodeGroupApplicationLayoutOutput) ToGetNodeGroupApplicationLayoutOutputWithContext(ctx context.Context) GetNodeGroupApplicationLayoutOutput {
+	return o
+}
+
+// 应用名称。
+func (o GetNodeGroupApplicationLayoutOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupApplicationLayout) string { return v.ApplicationName }).(pulumi.StringOutput)
+}
+
+// 组件的自定义配置参数列表。
+func (o GetNodeGroupApplicationLayoutOutput) LayoutComponentNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNodeGroupApplicationLayout) []string { return v.LayoutComponentNames }).(pulumi.StringArrayOutput)
+}
+
+type GetNodeGroupApplicationLayoutArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupApplicationLayoutArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeGroupApplicationLayout)(nil)).Elem()
+}
+
+func (o GetNodeGroupApplicationLayoutArrayOutput) ToGetNodeGroupApplicationLayoutArrayOutput() GetNodeGroupApplicationLayoutArrayOutput {
+	return o
+}
+
+func (o GetNodeGroupApplicationLayoutArrayOutput) ToGetNodeGroupApplicationLayoutArrayOutputWithContext(ctx context.Context) GetNodeGroupApplicationLayoutArrayOutput {
+	return o
+}
+
+func (o GetNodeGroupApplicationLayoutArrayOutput) Index(i pulumi.IntInput) GetNodeGroupApplicationLayoutOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodeGroupApplicationLayout {
+		return vs[0].([]GetNodeGroupApplicationLayout)[vs[1].(int)]
+	}).(GetNodeGroupApplicationLayoutOutput)
+}
+
+type GetNodeGroupChargePreConfig struct {
+	// 是否开启自动续费。
+	AutoRenew bool `pulumi:"autoRenew"`
+	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	AutoRenewPeriod int `pulumi:"autoRenewPeriod"`
+	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	AutoRenewPeriodUnit string `pulumi:"autoRenewPeriodUnit"`
+	// chargeType=PRE默认值=1，包月的购买时长单位。
+	ChargePeriod int `pulumi:"chargePeriod"`
+	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	ChargePeriodUnit string `pulumi:"chargePeriodUnit"`
+	// 付费类型，枚举值：POST，PRE。
+	ChargeType string `pulumi:"chargeType"`
+}
+
+// GetNodeGroupChargePreConfigInput is an input type that accepts GetNodeGroupChargePreConfigArgs and GetNodeGroupChargePreConfigOutput values.
+// You can construct a concrete instance of `GetNodeGroupChargePreConfigInput` via:
+//
+//	GetNodeGroupChargePreConfigArgs{...}
+type GetNodeGroupChargePreConfigInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupChargePreConfigOutput() GetNodeGroupChargePreConfigOutput
+	ToGetNodeGroupChargePreConfigOutputWithContext(context.Context) GetNodeGroupChargePreConfigOutput
+}
+
+type GetNodeGroupChargePreConfigArgs struct {
+	// 是否开启自动续费。
+	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
+	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	AutoRenewPeriod pulumi.IntInput `pulumi:"autoRenewPeriod"`
+	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	AutoRenewPeriodUnit pulumi.StringInput `pulumi:"autoRenewPeriodUnit"`
+	// chargeType=PRE默认值=1，包月的购买时长单位。
+	ChargePeriod pulumi.IntInput `pulumi:"chargePeriod"`
+	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	ChargePeriodUnit pulumi.StringInput `pulumi:"chargePeriodUnit"`
+	// 付费类型，枚举值：POST，PRE。
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+}
+
+func (GetNodeGroupChargePreConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupChargePreConfig)(nil)).Elem()
+}
+
+func (i GetNodeGroupChargePreConfigArgs) ToGetNodeGroupChargePreConfigOutput() GetNodeGroupChargePreConfigOutput {
+	return i.ToGetNodeGroupChargePreConfigOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupChargePreConfigArgs) ToGetNodeGroupChargePreConfigOutputWithContext(ctx context.Context) GetNodeGroupChargePreConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupChargePreConfigOutput)
+}
+
+type GetNodeGroupChargePreConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupChargePreConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupChargePreConfig)(nil)).Elem()
+}
+
+func (o GetNodeGroupChargePreConfigOutput) ToGetNodeGroupChargePreConfigOutput() GetNodeGroupChargePreConfigOutput {
+	return o
+}
+
+func (o GetNodeGroupChargePreConfigOutput) ToGetNodeGroupChargePreConfigOutputWithContext(ctx context.Context) GetNodeGroupChargePreConfigOutput {
+	return o
+}
+
+// 是否开启自动续费。
+func (o GetNodeGroupChargePreConfigOutput) AutoRenew() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodeGroupChargePreConfig) bool { return v.AutoRenew }).(pulumi.BoolOutput)
+}
+
+// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+func (o GetNodeGroupChargePreConfigOutput) AutoRenewPeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupChargePreConfig) int { return v.AutoRenewPeriod }).(pulumi.IntOutput)
+}
+
+// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+func (o GetNodeGroupChargePreConfigOutput) AutoRenewPeriodUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupChargePreConfig) string { return v.AutoRenewPeriodUnit }).(pulumi.StringOutput)
+}
+
+// chargeType=PRE默认值=1，包月的购买时长单位。
+func (o GetNodeGroupChargePreConfigOutput) ChargePeriod() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupChargePreConfig) int { return v.ChargePeriod }).(pulumi.IntOutput)
+}
+
+// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+func (o GetNodeGroupChargePreConfigOutput) ChargePeriodUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupChargePreConfig) string { return v.ChargePeriodUnit }).(pulumi.StringOutput)
+}
+
+// 付费类型，枚举值：POST，PRE。
+func (o GetNodeGroupChargePreConfigOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupChargePreConfig) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+type GetNodeGroupDataDisk struct {
+	// 磁盘块数，默认值4，最大15，最小1。
+	Count int `pulumi:"count"`
+	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size int `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetNodeGroupDataDiskInput is an input type that accepts GetNodeGroupDataDiskArgs and GetNodeGroupDataDiskOutput values.
+// You can construct a concrete instance of `GetNodeGroupDataDiskInput` via:
+//
+//	GetNodeGroupDataDiskArgs{...}
+type GetNodeGroupDataDiskInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupDataDiskOutput() GetNodeGroupDataDiskOutput
+	ToGetNodeGroupDataDiskOutputWithContext(context.Context) GetNodeGroupDataDiskOutput
+}
+
+type GetNodeGroupDataDiskArgs struct {
+	// 磁盘块数，默认值4，最大15，最小1。
+	Count pulumi.IntInput `pulumi:"count"`
+	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size pulumi.IntInput `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetNodeGroupDataDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupDataDisk)(nil)).Elem()
+}
+
+func (i GetNodeGroupDataDiskArgs) ToGetNodeGroupDataDiskOutput() GetNodeGroupDataDiskOutput {
+	return i.ToGetNodeGroupDataDiskOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupDataDiskArgs) ToGetNodeGroupDataDiskOutputWithContext(ctx context.Context) GetNodeGroupDataDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupDataDiskOutput)
+}
+
+// GetNodeGroupDataDiskArrayInput is an input type that accepts GetNodeGroupDataDiskArray and GetNodeGroupDataDiskArrayOutput values.
+// You can construct a concrete instance of `GetNodeGroupDataDiskArrayInput` via:
+//
+//	GetNodeGroupDataDiskArray{ GetNodeGroupDataDiskArgs{...} }
+type GetNodeGroupDataDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupDataDiskArrayOutput() GetNodeGroupDataDiskArrayOutput
+	ToGetNodeGroupDataDiskArrayOutputWithContext(context.Context) GetNodeGroupDataDiskArrayOutput
+}
+
+type GetNodeGroupDataDiskArray []GetNodeGroupDataDiskInput
+
+func (GetNodeGroupDataDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeGroupDataDisk)(nil)).Elem()
+}
+
+func (i GetNodeGroupDataDiskArray) ToGetNodeGroupDataDiskArrayOutput() GetNodeGroupDataDiskArrayOutput {
+	return i.ToGetNodeGroupDataDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupDataDiskArray) ToGetNodeGroupDataDiskArrayOutputWithContext(ctx context.Context) GetNodeGroupDataDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupDataDiskArrayOutput)
+}
+
+type GetNodeGroupDataDiskOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupDataDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupDataDisk)(nil)).Elem()
+}
+
+func (o GetNodeGroupDataDiskOutput) ToGetNodeGroupDataDiskOutput() GetNodeGroupDataDiskOutput {
+	return o
+}
+
+func (o GetNodeGroupDataDiskOutput) ToGetNodeGroupDataDiskOutputWithContext(ctx context.Context) GetNodeGroupDataDiskOutput {
+	return o
+}
+
+// 磁盘块数，默认值4，最大15，最小1。
+func (o GetNodeGroupDataDiskOutput) Count() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupDataDisk) int { return v.Count }).(pulumi.IntOutput)
+}
+
+// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+func (o GetNodeGroupDataDiskOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupDataDisk) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+func (o GetNodeGroupDataDiskOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupDataDisk) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetNodeGroupDataDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupDataDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeGroupDataDisk)(nil)).Elem()
+}
+
+func (o GetNodeGroupDataDiskArrayOutput) ToGetNodeGroupDataDiskArrayOutput() GetNodeGroupDataDiskArrayOutput {
+	return o
+}
+
+func (o GetNodeGroupDataDiskArrayOutput) ToGetNodeGroupDataDiskArrayOutputWithContext(ctx context.Context) GetNodeGroupDataDiskArrayOutput {
+	return o
+}
+
+func (o GetNodeGroupDataDiskArrayOutput) Index(i pulumi.IntInput) GetNodeGroupDataDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodeGroupDataDisk {
+		return vs[0].([]GetNodeGroupDataDisk)[vs[1].(int)]
+	}).(GetNodeGroupDataDiskOutput)
+}
+
+type GetNodeGroupNode struct {
+	// 节点创建时间。
+	CreatedTime int `pulumi:"createdTime"`
+	// ecs实例规格。
+	EcsInstanceType string `pulumi:"ecsInstanceType"`
+	// 节点FQDN。
+	NodeFqdn string `pulumi:"nodeFqdn"`
+	// 节点ID。
+	NodeId string `pulumi:"nodeId"`
+	// 节点名称。
+	NodeName string `pulumi:"nodeName"`
+	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	NodeState string `pulumi:"nodeState"`
+	// 私有IP。
+	PrivateIp string `pulumi:"privateIp"`
+	// 公网IP。
+	PublicIp string `pulumi:"publicIp"`
+	// 准备完毕时间。
+	ReadyTime int `pulumi:"readyTime"`
+	// 集群终止时间。
+	TerminateTime int `pulumi:"terminateTime"`
+}
+
+// GetNodeGroupNodeInput is an input type that accepts GetNodeGroupNodeArgs and GetNodeGroupNodeOutput values.
+// You can construct a concrete instance of `GetNodeGroupNodeInput` via:
+//
+//	GetNodeGroupNodeArgs{...}
+type GetNodeGroupNodeInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupNodeOutput() GetNodeGroupNodeOutput
+	ToGetNodeGroupNodeOutputWithContext(context.Context) GetNodeGroupNodeOutput
+}
+
+type GetNodeGroupNodeArgs struct {
+	// 节点创建时间。
+	CreatedTime pulumi.IntInput `pulumi:"createdTime"`
+	// ecs实例规格。
+	EcsInstanceType pulumi.StringInput `pulumi:"ecsInstanceType"`
+	// 节点FQDN。
+	NodeFqdn pulumi.StringInput `pulumi:"nodeFqdn"`
+	// 节点ID。
+	NodeId pulumi.StringInput `pulumi:"nodeId"`
+	// 节点名称。
+	NodeName pulumi.StringInput `pulumi:"nodeName"`
+	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	NodeState pulumi.StringInput `pulumi:"nodeState"`
+	// 私有IP。
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// 公网IP。
+	PublicIp pulumi.StringInput `pulumi:"publicIp"`
+	// 准备完毕时间。
+	ReadyTime pulumi.IntInput `pulumi:"readyTime"`
+	// 集群终止时间。
+	TerminateTime pulumi.IntInput `pulumi:"terminateTime"`
+}
+
+func (GetNodeGroupNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupNode)(nil)).Elem()
+}
+
+func (i GetNodeGroupNodeArgs) ToGetNodeGroupNodeOutput() GetNodeGroupNodeOutput {
+	return i.ToGetNodeGroupNodeOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupNodeArgs) ToGetNodeGroupNodeOutputWithContext(ctx context.Context) GetNodeGroupNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupNodeOutput)
+}
+
+// GetNodeGroupNodeArrayInput is an input type that accepts GetNodeGroupNodeArray and GetNodeGroupNodeArrayOutput values.
+// You can construct a concrete instance of `GetNodeGroupNodeArrayInput` via:
+//
+//	GetNodeGroupNodeArray{ GetNodeGroupNodeArgs{...} }
+type GetNodeGroupNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupNodeArrayOutput() GetNodeGroupNodeArrayOutput
+	ToGetNodeGroupNodeArrayOutputWithContext(context.Context) GetNodeGroupNodeArrayOutput
+}
+
+type GetNodeGroupNodeArray []GetNodeGroupNodeInput
+
+func (GetNodeGroupNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeGroupNode)(nil)).Elem()
+}
+
+func (i GetNodeGroupNodeArray) ToGetNodeGroupNodeArrayOutput() GetNodeGroupNodeArrayOutput {
+	return i.ToGetNodeGroupNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupNodeArray) ToGetNodeGroupNodeArrayOutputWithContext(ctx context.Context) GetNodeGroupNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupNodeArrayOutput)
+}
+
+type GetNodeGroupNodeOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupNode)(nil)).Elem()
+}
+
+func (o GetNodeGroupNodeOutput) ToGetNodeGroupNodeOutput() GetNodeGroupNodeOutput {
+	return o
+}
+
+func (o GetNodeGroupNodeOutput) ToGetNodeGroupNodeOutputWithContext(ctx context.Context) GetNodeGroupNodeOutput {
+	return o
+}
+
+// 节点创建时间。
+func (o GetNodeGroupNodeOutput) CreatedTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) int { return v.CreatedTime }).(pulumi.IntOutput)
+}
+
+// ecs实例规格。
+func (o GetNodeGroupNodeOutput) EcsInstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) string { return v.EcsInstanceType }).(pulumi.StringOutput)
+}
+
+// 节点FQDN。
+func (o GetNodeGroupNodeOutput) NodeFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeFqdn }).(pulumi.StringOutput)
+}
+
+// 节点ID。
+func (o GetNodeGroupNodeOutput) NodeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeId }).(pulumi.StringOutput)
+}
+
+// 节点名称。
+func (o GetNodeGroupNodeOutput) NodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeName }).(pulumi.StringOutput)
+}
+
+// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+func (o GetNodeGroupNodeOutput) NodeState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeState }).(pulumi.StringOutput)
+}
+
+// 私有IP。
+func (o GetNodeGroupNodeOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// 公网IP。
+func (o GetNodeGroupNodeOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) string { return v.PublicIp }).(pulumi.StringOutput)
+}
+
+// 准备完毕时间。
+func (o GetNodeGroupNodeOutput) ReadyTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) int { return v.ReadyTime }).(pulumi.IntOutput)
+}
+
+// 集群终止时间。
+func (o GetNodeGroupNodeOutput) TerminateTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupNode) int { return v.TerminateTime }).(pulumi.IntOutput)
+}
+
+type GetNodeGroupNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNodeGroupNode)(nil)).Elem()
+}
+
+func (o GetNodeGroupNodeArrayOutput) ToGetNodeGroupNodeArrayOutput() GetNodeGroupNodeArrayOutput {
+	return o
+}
+
+func (o GetNodeGroupNodeArrayOutput) ToGetNodeGroupNodeArrayOutputWithContext(ctx context.Context) GetNodeGroupNodeArrayOutput {
+	return o
+}
+
+func (o GetNodeGroupNodeArrayOutput) Index(i pulumi.IntInput) GetNodeGroupNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNodeGroupNode {
+		return vs[0].([]GetNodeGroupNode)[vs[1].(int)]
+	}).(GetNodeGroupNodeOutput)
+}
+
+type GetNodeGroupSystemDisk struct {
+	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size int `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetNodeGroupSystemDiskInput is an input type that accepts GetNodeGroupSystemDiskArgs and GetNodeGroupSystemDiskOutput values.
+// You can construct a concrete instance of `GetNodeGroupSystemDiskInput` via:
+//
+//	GetNodeGroupSystemDiskArgs{...}
+type GetNodeGroupSystemDiskInput interface {
+	pulumi.Input
+
+	ToGetNodeGroupSystemDiskOutput() GetNodeGroupSystemDiskOutput
+	ToGetNodeGroupSystemDiskOutputWithContext(context.Context) GetNodeGroupSystemDiskOutput
+}
+
+type GetNodeGroupSystemDiskArgs struct {
+	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	Size pulumi.IntInput `pulumi:"size"`
+	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetNodeGroupSystemDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupSystemDisk)(nil)).Elem()
+}
+
+func (i GetNodeGroupSystemDiskArgs) ToGetNodeGroupSystemDiskOutput() GetNodeGroupSystemDiskOutput {
+	return i.ToGetNodeGroupSystemDiskOutputWithContext(context.Background())
+}
+
+func (i GetNodeGroupSystemDiskArgs) ToGetNodeGroupSystemDiskOutputWithContext(ctx context.Context) GetNodeGroupSystemDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodeGroupSystemDiskOutput)
+}
+
+type GetNodeGroupSystemDiskOutput struct{ *pulumi.OutputState }
+
+func (GetNodeGroupSystemDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodeGroupSystemDisk)(nil)).Elem()
+}
+
+func (o GetNodeGroupSystemDiskOutput) ToGetNodeGroupSystemDiskOutput() GetNodeGroupSystemDiskOutput {
+	return o
+}
+
+func (o GetNodeGroupSystemDiskOutput) ToGetNodeGroupSystemDiskOutputWithContext(ctx context.Context) GetNodeGroupSystemDiskOutput {
+	return o
+}
+
+// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+func (o GetNodeGroupSystemDiskOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNodeGroupSystemDisk) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+func (o GetNodeGroupSystemDiskOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodeGroupSystemDisk) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterApplicationInput)(nil)).Elem(), ClusterApplicationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterApplicationArrayInput)(nil)).Elem(), ClusterApplicationArray{})
@@ -4432,6 +5776,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterStateChangeReasonPtrInput)(nil)).Elem(), ClusterStateChangeReasonArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterTagInput)(nil)).Elem(), ClusterTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterTagArrayInput)(nil)).Elem(), ClusterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupApplicationLayoutInput)(nil)).Elem(), NodeGroupApplicationLayoutArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupApplicationLayoutArrayInput)(nil)).Elem(), NodeGroupApplicationLayoutArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupChargePreConfigInput)(nil)).Elem(), NodeGroupChargePreConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupChargePreConfigPtrInput)(nil)).Elem(), NodeGroupChargePreConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupDataDiskInput)(nil)).Elem(), NodeGroupDataDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupDataDiskArrayInput)(nil)).Elem(), NodeGroupDataDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupNodeInput)(nil)).Elem(), NodeGroupNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupNodeArrayInput)(nil)).Elem(), NodeGroupNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupSystemDiskInput)(nil)).Elem(), NodeGroupSystemDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodeGroupSystemDiskPtrInput)(nil)).Elem(), NodeGroupSystemDiskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterApplicationInput)(nil)).Elem(), GetClusterApplicationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterApplicationArrayInput)(nil)).Elem(), GetClusterApplicationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterApplicationExtraInput)(nil)).Elem(), GetClusterApplicationExtraArgs{})
@@ -4455,6 +5809,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterStateChangeReasonInput)(nil)).Elem(), GetClusterStateChangeReasonArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterTagInput)(nil)).Elem(), GetClusterTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterTagArrayInput)(nil)).Elem(), GetClusterTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupApplicationLayoutInput)(nil)).Elem(), GetNodeGroupApplicationLayoutArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupApplicationLayoutArrayInput)(nil)).Elem(), GetNodeGroupApplicationLayoutArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupChargePreConfigInput)(nil)).Elem(), GetNodeGroupChargePreConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupDataDiskInput)(nil)).Elem(), GetNodeGroupDataDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupDataDiskArrayInput)(nil)).Elem(), GetNodeGroupDataDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupNodeInput)(nil)).Elem(), GetNodeGroupNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupNodeArrayInput)(nil)).Elem(), GetNodeGroupNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeGroupSystemDiskInput)(nil)).Elem(), GetNodeGroupSystemDiskArgs{})
 	pulumi.RegisterOutputType(ClusterApplicationOutput{})
 	pulumi.RegisterOutputType(ClusterApplicationArrayOutput{})
 	pulumi.RegisterOutputType(ClusterApplicationExtraOutput{})
@@ -4485,6 +5847,16 @@ func init() {
 	pulumi.RegisterOutputType(ClusterStateChangeReasonPtrOutput{})
 	pulumi.RegisterOutputType(ClusterTagOutput{})
 	pulumi.RegisterOutputType(ClusterTagArrayOutput{})
+	pulumi.RegisterOutputType(NodeGroupApplicationLayoutOutput{})
+	pulumi.RegisterOutputType(NodeGroupApplicationLayoutArrayOutput{})
+	pulumi.RegisterOutputType(NodeGroupChargePreConfigOutput{})
+	pulumi.RegisterOutputType(NodeGroupChargePreConfigPtrOutput{})
+	pulumi.RegisterOutputType(NodeGroupDataDiskOutput{})
+	pulumi.RegisterOutputType(NodeGroupDataDiskArrayOutput{})
+	pulumi.RegisterOutputType(NodeGroupNodeOutput{})
+	pulumi.RegisterOutputType(NodeGroupNodeArrayOutput{})
+	pulumi.RegisterOutputType(NodeGroupSystemDiskOutput{})
+	pulumi.RegisterOutputType(NodeGroupSystemDiskPtrOutput{})
 	pulumi.RegisterOutputType(GetClusterApplicationOutput{})
 	pulumi.RegisterOutputType(GetClusterApplicationArrayOutput{})
 	pulumi.RegisterOutputType(GetClusterApplicationExtraOutput{})
@@ -4508,4 +5880,12 @@ func init() {
 	pulumi.RegisterOutputType(GetClusterStateChangeReasonOutput{})
 	pulumi.RegisterOutputType(GetClusterTagOutput{})
 	pulumi.RegisterOutputType(GetClusterTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupApplicationLayoutOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupApplicationLayoutArrayOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupChargePreConfigOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupDataDiskOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupDataDiskArrayOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupNodeOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetNodeGroupSystemDiskOutput{})
 }

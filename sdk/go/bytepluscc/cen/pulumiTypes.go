@@ -13,6 +13,130 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type CenInstance struct {
+	// 网络实例的ID。
+	InstanceId *string `pulumi:"instanceId"`
+	// 网络实例所属账号的ID。
+	InstanceOwnerId *string `pulumi:"instanceOwnerId"`
+	// 网络实例所在的地域。
+	InstanceRegionId *string `pulumi:"instanceRegionId"`
+	// 网络实例的类型。
+	InstanceType *string `pulumi:"instanceType"`
+}
+
+// CenInstanceInput is an input type that accepts CenInstanceArgs and CenInstanceOutput values.
+// You can construct a concrete instance of `CenInstanceInput` via:
+//
+//	CenInstanceArgs{...}
+type CenInstanceInput interface {
+	pulumi.Input
+
+	ToCenInstanceOutput() CenInstanceOutput
+	ToCenInstanceOutputWithContext(context.Context) CenInstanceOutput
+}
+
+type CenInstanceArgs struct {
+	// 网络实例的ID。
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// 网络实例所属账号的ID。
+	InstanceOwnerId pulumi.StringPtrInput `pulumi:"instanceOwnerId"`
+	// 网络实例所在的地域。
+	InstanceRegionId pulumi.StringPtrInput `pulumi:"instanceRegionId"`
+	// 网络实例的类型。
+	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
+}
+
+func (CenInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CenInstance)(nil)).Elem()
+}
+
+func (i CenInstanceArgs) ToCenInstanceOutput() CenInstanceOutput {
+	return i.ToCenInstanceOutputWithContext(context.Background())
+}
+
+func (i CenInstanceArgs) ToCenInstanceOutputWithContext(ctx context.Context) CenInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CenInstanceOutput)
+}
+
+// CenInstanceArrayInput is an input type that accepts CenInstanceArray and CenInstanceArrayOutput values.
+// You can construct a concrete instance of `CenInstanceArrayInput` via:
+//
+//	CenInstanceArray{ CenInstanceArgs{...} }
+type CenInstanceArrayInput interface {
+	pulumi.Input
+
+	ToCenInstanceArrayOutput() CenInstanceArrayOutput
+	ToCenInstanceArrayOutputWithContext(context.Context) CenInstanceArrayOutput
+}
+
+type CenInstanceArray []CenInstanceInput
+
+func (CenInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CenInstance)(nil)).Elem()
+}
+
+func (i CenInstanceArray) ToCenInstanceArrayOutput() CenInstanceArrayOutput {
+	return i.ToCenInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i CenInstanceArray) ToCenInstanceArrayOutputWithContext(ctx context.Context) CenInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CenInstanceArrayOutput)
+}
+
+type CenInstanceOutput struct{ *pulumi.OutputState }
+
+func (CenInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CenInstance)(nil)).Elem()
+}
+
+func (o CenInstanceOutput) ToCenInstanceOutput() CenInstanceOutput {
+	return o
+}
+
+func (o CenInstanceOutput) ToCenInstanceOutputWithContext(ctx context.Context) CenInstanceOutput {
+	return o
+}
+
+// 网络实例的ID。
+func (o CenInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CenInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// 网络实例所属账号的ID。
+func (o CenInstanceOutput) InstanceOwnerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CenInstance) *string { return v.InstanceOwnerId }).(pulumi.StringPtrOutput)
+}
+
+// 网络实例所在的地域。
+func (o CenInstanceOutput) InstanceRegionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CenInstance) *string { return v.InstanceRegionId }).(pulumi.StringPtrOutput)
+}
+
+// 网络实例的类型。
+func (o CenInstanceOutput) InstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CenInstance) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
+}
+
+type CenInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (CenInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CenInstance)(nil)).Elem()
+}
+
+func (o CenInstanceArrayOutput) ToCenInstanceArrayOutput() CenInstanceArrayOutput {
+	return o
+}
+
+func (o CenInstanceArrayOutput) ToCenInstanceArrayOutputWithContext(ctx context.Context) CenInstanceArrayOutput {
+	return o
+}
+
+func (o CenInstanceArrayOutput) Index(i pulumi.IntInput) CenInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CenInstance {
+		return vs[0].([]CenInstance)[vs[1].(int)]
+	}).(CenInstanceOutput)
+}
+
 type CenTag struct {
 	// 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
 	Key *string `pulumi:"key"`
@@ -117,6 +241,157 @@ func (o CenTagArrayOutput) Index(i pulumi.IntInput) CenTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CenTag {
 		return vs[0].([]CenTag)[vs[1].(int)]
 	}).(CenTagOutput)
+}
+
+type GetCenInstance struct {
+	// 云企业网实例的ID。
+	CenId string `pulumi:"cenId"`
+	// 网络实例的创建时间。
+	CreationTime string `pulumi:"creationTime"`
+	// 网络实例的ID。
+	InstanceId string `pulumi:"instanceId"`
+	// 网络实例所属账号的ID。
+	InstanceOwnerId string `pulumi:"instanceOwnerId"`
+	// 网络实例所在的地域。
+	InstanceRegionId string `pulumi:"instanceRegionId"`
+	// 网络实例的类型。
+	InstanceType string `pulumi:"instanceType"`
+	// 网络实例的加载状态。Attaching：加载中Available：可用
+	Status string `pulumi:"status"`
+}
+
+// GetCenInstanceInput is an input type that accepts GetCenInstanceArgs and GetCenInstanceOutput values.
+// You can construct a concrete instance of `GetCenInstanceInput` via:
+//
+//	GetCenInstanceArgs{...}
+type GetCenInstanceInput interface {
+	pulumi.Input
+
+	ToGetCenInstanceOutput() GetCenInstanceOutput
+	ToGetCenInstanceOutputWithContext(context.Context) GetCenInstanceOutput
+}
+
+type GetCenInstanceArgs struct {
+	// 云企业网实例的ID。
+	CenId pulumi.StringInput `pulumi:"cenId"`
+	// 网络实例的创建时间。
+	CreationTime pulumi.StringInput `pulumi:"creationTime"`
+	// 网络实例的ID。
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// 网络实例所属账号的ID。
+	InstanceOwnerId pulumi.StringInput `pulumi:"instanceOwnerId"`
+	// 网络实例所在的地域。
+	InstanceRegionId pulumi.StringInput `pulumi:"instanceRegionId"`
+	// 网络实例的类型。
+	InstanceType pulumi.StringInput `pulumi:"instanceType"`
+	// 网络实例的加载状态。Attaching：加载中Available：可用
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetCenInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCenInstance)(nil)).Elem()
+}
+
+func (i GetCenInstanceArgs) ToGetCenInstanceOutput() GetCenInstanceOutput {
+	return i.ToGetCenInstanceOutputWithContext(context.Background())
+}
+
+func (i GetCenInstanceArgs) ToGetCenInstanceOutputWithContext(ctx context.Context) GetCenInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCenInstanceOutput)
+}
+
+// GetCenInstanceArrayInput is an input type that accepts GetCenInstanceArray and GetCenInstanceArrayOutput values.
+// You can construct a concrete instance of `GetCenInstanceArrayInput` via:
+//
+//	GetCenInstanceArray{ GetCenInstanceArgs{...} }
+type GetCenInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetCenInstanceArrayOutput() GetCenInstanceArrayOutput
+	ToGetCenInstanceArrayOutputWithContext(context.Context) GetCenInstanceArrayOutput
+}
+
+type GetCenInstanceArray []GetCenInstanceInput
+
+func (GetCenInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCenInstance)(nil)).Elem()
+}
+
+func (i GetCenInstanceArray) ToGetCenInstanceArrayOutput() GetCenInstanceArrayOutput {
+	return i.ToGetCenInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetCenInstanceArray) ToGetCenInstanceArrayOutputWithContext(ctx context.Context) GetCenInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCenInstanceArrayOutput)
+}
+
+type GetCenInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetCenInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCenInstance)(nil)).Elem()
+}
+
+func (o GetCenInstanceOutput) ToGetCenInstanceOutput() GetCenInstanceOutput {
+	return o
+}
+
+func (o GetCenInstanceOutput) ToGetCenInstanceOutputWithContext(ctx context.Context) GetCenInstanceOutput {
+	return o
+}
+
+// 云企业网实例的ID。
+func (o GetCenInstanceOutput) CenId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCenInstance) string { return v.CenId }).(pulumi.StringOutput)
+}
+
+// 网络实例的创建时间。
+func (o GetCenInstanceOutput) CreationTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCenInstance) string { return v.CreationTime }).(pulumi.StringOutput)
+}
+
+// 网络实例的ID。
+func (o GetCenInstanceOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// 网络实例所属账号的ID。
+func (o GetCenInstanceOutput) InstanceOwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceOwnerId }).(pulumi.StringOutput)
+}
+
+// 网络实例所在的地域。
+func (o GetCenInstanceOutput) InstanceRegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceRegionId }).(pulumi.StringOutput)
+}
+
+// 网络实例的类型。
+func (o GetCenInstanceOutput) InstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCenInstance) string { return v.InstanceType }).(pulumi.StringOutput)
+}
+
+// 网络实例的加载状态。Attaching：加载中Available：可用
+func (o GetCenInstanceOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCenInstance) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetCenInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCenInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCenInstance)(nil)).Elem()
+}
+
+func (o GetCenInstanceArrayOutput) ToGetCenInstanceArrayOutput() GetCenInstanceArrayOutput {
+	return o
+}
+
+func (o GetCenInstanceArrayOutput) ToGetCenInstanceArrayOutputWithContext(ctx context.Context) GetCenInstanceArrayOutput {
+	return o
+}
+
+func (o GetCenInstanceArrayOutput) Index(i pulumi.IntInput) GetCenInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCenInstance {
+		return vs[0].([]GetCenInstance)[vs[1].(int)]
+	}).(GetCenInstanceOutput)
 }
 
 type GetCenTag struct {
@@ -226,12 +501,20 @@ func (o GetCenTagArrayOutput) Index(i pulumi.IntInput) GetCenTagOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CenInstanceInput)(nil)).Elem(), CenInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CenInstanceArrayInput)(nil)).Elem(), CenInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenTagInput)(nil)).Elem(), CenTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CenTagArrayInput)(nil)).Elem(), CenTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCenInstanceInput)(nil)).Elem(), GetCenInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCenInstanceArrayInput)(nil)).Elem(), GetCenInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenTagInput)(nil)).Elem(), GetCenTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCenTagArrayInput)(nil)).Elem(), GetCenTagArray{})
+	pulumi.RegisterOutputType(CenInstanceOutput{})
+	pulumi.RegisterOutputType(CenInstanceArrayOutput{})
 	pulumi.RegisterOutputType(CenTagOutput{})
 	pulumi.RegisterOutputType(CenTagArrayOutput{})
+	pulumi.RegisterOutputType(GetCenInstanceOutput{})
+	pulumi.RegisterOutputType(GetCenInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetCenTagOutput{})
 	pulumi.RegisterOutputType(GetCenTagArrayOutput{})
 }

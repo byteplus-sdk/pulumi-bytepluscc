@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.cen.inputs;
 
+import com.byteplus.bytepluscc.cen.inputs.CenInstanceArgs;
 import com.byteplus.bytepluscc.cen.inputs.CenTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -107,6 +108,13 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.description);
     }
 
+    @Import(name="instances")
+    private @Nullable Output<List<CenInstanceArgs>> instances;
+
+    public Optional<Output<List<CenInstanceArgs>>> instances() {
+        return Optional.ofNullable(this.instances);
+    }
+
     /**
      * CEN实例所属项目的名称。不填则默认为default。
      * 
@@ -168,6 +176,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         this.cenName = $.cenName;
         this.creationTime = $.creationTime;
         this.description = $.description;
+        this.instances = $.instances;
         this.projectName = $.projectName;
         this.status = $.status;
         this.tags = $.tags;
@@ -326,6 +335,19 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        public Builder instances(@Nullable Output<List<CenInstanceArgs>> instances) {
+            $.instances = instances;
+            return this;
+        }
+
+        public Builder instances(List<CenInstanceArgs> instances) {
+            return instances(Output.of(instances));
+        }
+
+        public Builder instances(CenInstanceArgs... instances) {
+            return instances(List.of(instances));
         }
 
         /**

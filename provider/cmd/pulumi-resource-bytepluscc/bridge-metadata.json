@@ -967,6 +967,9 @@
                     "cen_bandwidth_package_ids": {
                         "maxItemsOne": false
                     },
+                    "instances": {
+                        "maxItemsOne": false
+                    },
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -1619,6 +1622,36 @@
                 "current": "bytepluscc:emr/clusterUserGroup:ClusterUserGroup",
                 "fields": {
                     "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_node_group": {
+                "current": "bytepluscc:emr/nodeGroup:NodeGroup",
+                "fields": {
+                    "application_layouts": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "layout_component_names": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "data_disks": {
+                        "maxItemsOne": false
+                    },
+                    "ecs_instance_types": {
+                        "maxItemsOne": false
+                    },
+                    "layout_component_names": {
+                        "maxItemsOne": false
+                    },
+                    "nodes": {
+                        "maxItemsOne": false
+                    },
+                    "subnet_ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -4253,6 +4286,9 @@
                     "cen_bandwidth_package_ids": {
                         "maxItemsOne": false
                     },
+                    "instances": {
+                        "maxItemsOne": false
+                    },
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -5189,6 +5225,44 @@
             },
             "bytepluscc_emr_clusters": {
                 "current": "bytepluscc:emr/getClusters:getClusters",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_node_group": {
+                "current": "bytepluscc:emr/getNodeGroup:getNodeGroup",
+                "fields": {
+                    "application_layouts": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "layout_component_names": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "data_disks": {
+                        "maxItemsOne": false
+                    },
+                    "ecs_instance_types": {
+                        "maxItemsOne": false
+                    },
+                    "layout_component_names": {
+                        "maxItemsOne": false
+                    },
+                    "nodes": {
+                        "maxItemsOne": false
+                    },
+                    "subnet_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_emr_node_groups": {
+                "current": "bytepluscc:emr/getNodeGroups:getNodeGroups",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false

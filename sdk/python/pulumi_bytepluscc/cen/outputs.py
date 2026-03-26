@@ -16,9 +16,89 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'CenInstance',
     'CenTag',
+    'GetCenInstanceResult',
     'GetCenTagResult',
 ]
+
+@pulumi.output_type
+class CenInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceId":
+            suggest = "instance_id"
+        elif key == "instanceOwnerId":
+            suggest = "instance_owner_id"
+        elif key == "instanceRegionId":
+            suggest = "instance_region_id"
+        elif key == "instanceType":
+            suggest = "instance_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CenInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CenInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CenInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_id: Optional[builtins.str] = None,
+                 instance_owner_id: Optional[builtins.str] = None,
+                 instance_region_id: Optional[builtins.str] = None,
+                 instance_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str instance_id: 网络实例的ID。
+        :param builtins.str instance_owner_id: 网络实例所属账号的ID。
+        :param builtins.str instance_region_id: 网络实例所在的地域。
+        :param builtins.str instance_type: 网络实例的类型。
+        """
+        if instance_id is not None:
+            pulumi.set(__self__, "instance_id", instance_id)
+        if instance_owner_id is not None:
+            pulumi.set(__self__, "instance_owner_id", instance_owner_id)
+        if instance_region_id is not None:
+            pulumi.set(__self__, "instance_region_id", instance_region_id)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> Optional[builtins.str]:
+        """
+        网络实例的ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceOwnerId")
+    def instance_owner_id(self) -> Optional[builtins.str]:
+        """
+        网络实例所属账号的ID。
+        """
+        return pulumi.get(self, "instance_owner_id")
+
+    @property
+    @pulumi.getter(name="instanceRegionId")
+    def instance_region_id(self) -> Optional[builtins.str]:
+        """
+        网络实例所在的地域。
+        """
+        return pulumi.get(self, "instance_region_id")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> Optional[builtins.str]:
+        """
+        网络实例的类型。
+        """
+        return pulumi.get(self, "instance_type")
+
 
 @pulumi.output_type
 class CenTag(dict):
@@ -49,6 +129,90 @@ class CenTag(dict):
         用户标签的标签值。长度限制为0～256个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCenInstanceResult(dict):
+    def __init__(__self__, *,
+                 cen_id: builtins.str,
+                 creation_time: builtins.str,
+                 instance_id: builtins.str,
+                 instance_owner_id: builtins.str,
+                 instance_region_id: builtins.str,
+                 instance_type: builtins.str,
+                 status: builtins.str):
+        """
+        :param builtins.str cen_id: 云企业网实例的ID。
+        :param builtins.str creation_time: 网络实例的创建时间。
+        :param builtins.str instance_id: 网络实例的ID。
+        :param builtins.str instance_owner_id: 网络实例所属账号的ID。
+        :param builtins.str instance_region_id: 网络实例所在的地域。
+        :param builtins.str instance_type: 网络实例的类型。
+        :param builtins.str status: 网络实例的加载状态。Attaching：加载中Available：可用
+        """
+        pulumi.set(__self__, "cen_id", cen_id)
+        pulumi.set(__self__, "creation_time", creation_time)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "instance_owner_id", instance_owner_id)
+        pulumi.set(__self__, "instance_region_id", instance_region_id)
+        pulumi.set(__self__, "instance_type", instance_type)
+        pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter(name="cenId")
+    def cen_id(self) -> builtins.str:
+        """
+        云企业网实例的ID。
+        """
+        return pulumi.get(self, "cen_id")
+
+    @property
+    @pulumi.getter(name="creationTime")
+    def creation_time(self) -> builtins.str:
+        """
+        网络实例的创建时间。
+        """
+        return pulumi.get(self, "creation_time")
+
+    @property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> builtins.str:
+        """
+        网络实例的ID。
+        """
+        return pulumi.get(self, "instance_id")
+
+    @property
+    @pulumi.getter(name="instanceOwnerId")
+    def instance_owner_id(self) -> builtins.str:
+        """
+        网络实例所属账号的ID。
+        """
+        return pulumi.get(self, "instance_owner_id")
+
+    @property
+    @pulumi.getter(name="instanceRegionId")
+    def instance_region_id(self) -> builtins.str:
+        """
+        网络实例所在的地域。
+        """
+        return pulumi.get(self, "instance_region_id")
+
+    @property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> builtins.str:
+        """
+        网络实例的类型。
+        """
+        return pulumi.get(self, "instance_type")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        网络实例的加载状态。Attaching：加载中Available：可用
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type

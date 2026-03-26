@@ -3967,6 +3967,25 @@ export namespace cdn {
 }
 
 export namespace cen {
+    export interface CenInstance {
+        /**
+         * 网络实例的ID。
+         */
+        instanceId?: pulumi.Input<string>;
+        /**
+         * 网络实例所属账号的ID。
+         */
+        instanceOwnerId?: pulumi.Input<string>;
+        /**
+         * 网络实例所在的地域。
+         */
+        instanceRegionId?: pulumi.Input<string>;
+        /**
+         * 网络实例的类型。
+         */
+        instanceType?: pulumi.Input<string>;
+    }
+
     export interface CenTag {
         /**
          * 用户标签的标签键。长度限制为1～128个字符。大小写敏感，不能以空格开头或结尾。允许包含字母、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复
@@ -6028,6 +6047,112 @@ export namespace emr {
         value?: pulumi.Input<string>;
     }
 
+    export interface NodeGroupApplicationLayout {
+        /**
+         * 应用名称。
+         */
+        applicationName?: pulumi.Input<string>;
+        /**
+         * 组件的自定义配置参数列表。
+         */
+        layoutComponentNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface NodeGroupChargePreConfig {
+        /**
+         * 是否开启自动续费。
+         */
+        autoRenew?: pulumi.Input<boolean>;
+        /**
+         * 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+         */
+        autoRenewPeriod?: pulumi.Input<number>;
+        /**
+         * 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         */
+        autoRenewPeriodUnit?: pulumi.Input<string>;
+        /**
+         * chargeType=PRE默认值=1，包月的购买时长单位。
+         */
+        chargePeriod?: pulumi.Input<number>;
+        /**
+         * chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+         */
+        chargePeriodUnit?: pulumi.Input<string>;
+        /**
+         * 付费类型，枚举值：POST，PRE。
+         */
+        chargeType?: pulumi.Input<string>;
+    }
+
+    export interface NodeGroupDataDisk {
+        /**
+         * 磁盘块数，默认值4，最大15，最小1。
+         */
+        count?: pulumi.Input<number>;
+        /**
+         * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         */
+        volumeType?: pulumi.Input<string>;
+    }
+
+    export interface NodeGroupNode {
+        /**
+         * 节点创建时间。
+         */
+        createdTime?: pulumi.Input<number>;
+        /**
+         * ecs实例规格。
+         */
+        ecsInstanceType?: pulumi.Input<string>;
+        /**
+         * 节点FQDN。
+         */
+        nodeFqdn?: pulumi.Input<string>;
+        /**
+         * 节点ID。
+         */
+        nodeId?: pulumi.Input<string>;
+        /**
+         * 节点名称。
+         */
+        nodeName?: pulumi.Input<string>;
+        /**
+         * 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+         */
+        nodeState?: pulumi.Input<string>;
+        /**
+         * 私有IP。
+         */
+        privateIp?: pulumi.Input<string>;
+        /**
+         * 公网IP。
+         */
+        publicIp?: pulumi.Input<string>;
+        /**
+         * 准备完毕时间。
+         */
+        readyTime?: pulumi.Input<number>;
+        /**
+         * 集群终止时间。
+         */
+        terminateTime?: pulumi.Input<number>;
+    }
+
+    export interface NodeGroupSystemDisk {
+        /**
+         * 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         */
+        size?: pulumi.Input<number>;
+        /**
+         * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+         */
+        volumeType?: pulumi.Input<string>;
+    }
 }
 
 export namespace escloud {

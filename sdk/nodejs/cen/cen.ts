@@ -9,23 +9,6 @@ import * as utilities from "../utilities";
 /**
  * 云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as bytepluscc from "@byteplus/pulumi-bytepluscc";
- *
- * const cENCENDemo = new bytepluscc.cen.Cen("CENCENDemo", {
- *     cenName: "CENCENDemo",
- *     description: "CENCENDemo descripiton",
- *     projectName: "iac",
- *     tags: [{
- *         key: "dev",
- *         value: "test",
- *     }],
- * });
- * ```
- *
  * ## Import
  *
  * ```sh
@@ -84,6 +67,7 @@ export class Cen extends pulumi.CustomResource {
      * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
      */
     public readonly description!: pulumi.Output<string>;
+    public readonly instances!: pulumi.Output<outputs.cen.CenInstance[]>;
     /**
      * CEN实例所属项目的名称。不填则默认为default。
      */
@@ -117,6 +101,7 @@ export class Cen extends pulumi.CustomResource {
             resourceInputs["cenName"] = state ? state.cenName : undefined;
             resourceInputs["creationTime"] = state ? state.creationTime : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["instances"] = state ? state.instances : undefined;
             resourceInputs["projectName"] = state ? state.projectName : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
@@ -125,6 +110,7 @@ export class Cen extends pulumi.CustomResource {
             const args = argsOrState as CenArgs | undefined;
             resourceInputs["cenName"] = args ? args.cenName : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["instances"] = args ? args.instances : undefined;
             resourceInputs["projectName"] = args ? args.projectName : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["accountId"] = undefined /*out*/;
@@ -167,6 +153,7 @@ export interface CenState {
      * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
      */
     description?: pulumi.Input<string>;
+    instances?: pulumi.Input<pulumi.Input<inputs.cen.CenInstance>[]>;
     /**
      * CEN实例所属项目的名称。不填则默认为default。
      */
@@ -194,6 +181,7 @@ export interface CenArgs {
      * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
      */
     description?: pulumi.Input<string>;
+    instances?: pulumi.Input<pulumi.Input<inputs.cen.CenInstance>[]>;
     /**
      * CEN实例所属项目的名称。不填则默认为default。
      */

@@ -59,6 +59,10 @@ export interface GetCenResult {
      */
     readonly id: string;
     /**
+     * 已关联的网络实例列表
+     */
+    readonly instances: outputs.cen.GetCenInstance[];
+    /**
      * CEN实例所属项目的名称。不填则默认为default。
      */
     readonly projectName: string;

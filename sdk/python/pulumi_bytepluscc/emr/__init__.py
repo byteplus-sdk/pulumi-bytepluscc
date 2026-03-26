@@ -15,5 +15,8 @@ from .get_cluster_user_group import *
 from .get_cluster_user_groups import *
 from .get_cluster_users import *
 from .get_clusters import *
+from .get_node_group import *
+from .get_node_groups import *
+from .node_group import *
 from ._inputs import *
 from . import outputs

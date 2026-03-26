@@ -28,7 +28,7 @@ class GetCenResult:
     """
     A collection of values returned by getCen.
     """
-    def __init__(__self__, account_id=None, cen_bandwidth_package_ids=None, cen_id=None, cen_name=None, creation_time=None, description=None, id=None, project_name=None, status=None, tags=None, update_time=None):
+    def __init__(__self__, account_id=None, cen_bandwidth_package_ids=None, cen_id=None, cen_name=None, creation_time=None, description=None, id=None, instances=None, project_name=None, status=None, tags=None, update_time=None):
         if account_id and not isinstance(account_id, str):
             raise TypeError("Expected argument 'account_id' to be a str")
         pulumi.set(__self__, "account_id", account_id)
@@ -50,6 +50,9 @@ class GetCenResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if instances and not isinstance(instances, list):
+            raise TypeError("Expected argument 'instances' to be a list")
+        pulumi.set(__self__, "instances", instances)
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
@@ -120,6 +123,14 @@ class GetCenResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter
+    def instances(self) -> Sequence['outputs.GetCenInstanceResult']:
+        """
+        已关联的网络实例列表
+        """
+        return pulumi.get(self, "instances")
+
+    @property
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
@@ -165,6 +176,7 @@ class AwaitableGetCenResult(GetCenResult):
             creation_time=self.creation_time,
             description=self.description,
             id=self.id,
+            instances=self.instances,
             project_name=self.project_name,
             status=self.status,
             tags=self.tags,
@@ -192,6 +204,7 @@ def get_cen(id: Optional[builtins.str] = None,
         creation_time=pulumi.get(__ret__, 'creation_time'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
+        instances=pulumi.get(__ret__, 'instances'),
         project_name=pulumi.get(__ret__, 'project_name'),
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
@@ -216,6 +229,7 @@ def get_cen_output(id: Optional[pulumi.Input[builtins.str]] = None,
         creation_time=pulumi.get(__response__, 'creation_time'),
         description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
+        instances=pulumi.get(__response__, 'instances'),
         project_name=pulumi.get(__response__, 'project_name'),
         status=pulumi.get(__response__, 'status'),
         tags=pulumi.get(__response__, 'tags'),

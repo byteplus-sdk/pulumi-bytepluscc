@@ -606,6 +606,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "emr/nodeGroup",
+  "fqn": "pulumi_bytepluscc.emr",
+  "classes": {
+   "bytepluscc:emr/nodeGroup:NodeGroup": "NodeGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "escloud/instance",
   "fqn": "pulumi_bytepluscc.escloud",
   "classes": {

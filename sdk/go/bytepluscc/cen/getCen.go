@@ -44,6 +44,8 @@ type LookupCenResult struct {
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
+	// 已关联的网络实例列表
+	Instances []GetCenInstance `pulumi:"instances"`
 	// CEN实例所属项目的名称。不填则默认为default。
 	ProjectName string `pulumi:"projectName"`
 	// CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
@@ -121,6 +123,11 @@ func (o LookupCenResultOutput) Description() pulumi.StringOutput {
 // Uniquely identifies the resource.
 func (o LookupCenResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCenResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// 已关联的网络实例列表
+func (o LookupCenResultOutput) Instances() GetCenInstanceArrayOutput {
+	return o.ApplyT(func(v LookupCenResult) []GetCenInstance { return v.Instances }).(GetCenInstanceArrayOutput)
 }
 
 // CEN实例所属项目的名称。不填则默认为default。

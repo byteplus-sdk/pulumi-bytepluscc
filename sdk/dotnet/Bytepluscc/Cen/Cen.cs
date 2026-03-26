@@ -13,34 +13,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     /// <summary>
     /// 云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var cENCENDemo = new Bytepluscc.Cen.Cen("CENCENDemo", new()
-    ///     {
-    ///         CenName = "CENCENDemo",
-    ///         Description = "CENCENDemo descripiton",
-    ///         ProjectName = "iac",
-    ///         Tags = new[]
-    ///         {
-    ///             new Bytepluscc.Cen.Inputs.CenTagArgs
-    ///             {
-    ///                 Key = "dev",
-    ///                 Value = "test",
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ```sh
@@ -85,6 +57,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        [Output("instances")]
+        public Output<ImmutableArray<Outputs.CenInstance>> Instances { get; private set; } = null!;
 
         /// <summary>
         /// CEN实例所属项目的名称。不填则默认为default。
@@ -166,6 +141,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        [Input("instances")]
+        private InputList<Inputs.CenInstanceArgs>? _instances;
+        public InputList<Inputs.CenInstanceArgs> Instances
+        {
+            get => _instances ?? (_instances = new InputList<Inputs.CenInstanceArgs>());
+            set => _instances = value;
+        }
+
         /// <summary>
         /// CEN实例所属项目的名称。不填则默认为default。
         /// </summary>
@@ -229,6 +212,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        [Input("instances")]
+        private InputList<Inputs.CenInstanceGetArgs>? _instances;
+        public InputList<Inputs.CenInstanceGetArgs> Instances
+        {
+            get => _instances ?? (_instances = new InputList<Inputs.CenInstanceGetArgs>());
+            set => _instances = value;
+        }
 
         /// <summary>
         /// CEN实例所属项目的名称。不填则默认为default。
